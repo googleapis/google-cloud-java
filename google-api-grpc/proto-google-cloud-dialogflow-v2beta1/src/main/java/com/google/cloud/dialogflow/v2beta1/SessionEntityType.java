@@ -158,10 +158,12 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The collection of session entities extends the collection of entities in
      * the corresponding developer entity type.
-     * Calls to `ListSessionEntityTypes`, `GetSessionEntityType`,
-     * `CreateSessionEntityType` and `UpdateSessionEntityType` return the full
-     * collection of entities from the developer entity type in the agent's
-     * default language and the session entity type.
+     * Note: Even in this override mode calls to `ListSessionEntityTypes`,
+     * `GetSessionEntityType`, `CreateSessionEntityType` and
+     * `UpdateSessionEntityType` only return the additional entities added in
+     * this session entity type. If you want to get the supplemented list,
+     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.GetEntityType] on the developer entity type
+     * and merge.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2;</code>
@@ -197,10 +199,12 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The collection of session entities extends the collection of entities in
      * the corresponding developer entity type.
-     * Calls to `ListSessionEntityTypes`, `GetSessionEntityType`,
-     * `CreateSessionEntityType` and `UpdateSessionEntityType` return the full
-     * collection of entities from the developer entity type in the agent's
-     * default language and the session entity type.
+     * Note: Even in this override mode calls to `ListSessionEntityTypes`,
+     * `GetSessionEntityType`, `CreateSessionEntityType` and
+     * `UpdateSessionEntityType` only return the additional entities added in
+     * this session entity type. If you want to get the supplemented list,
+     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.GetEntityType] on the developer entity type
+     * and merge.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2;</code>
@@ -297,6 +301,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
    * If `Environment ID` is not specified, we assume default 'draft'
    * environment. If `User ID` is not specified, we assume default '-' user.
+   * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+   * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -323,6 +329,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
    * If `Environment ID` is not specified, we assume default 'draft'
    * environment. If `User ID` is not specified, we assume default '-' user.
+   * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+   * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -865,6 +873,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
      * environment. If `User ID` is not specified, we assume default '-' user.
+     * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+     * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -891,6 +901,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
      * environment. If `User ID` is not specified, we assume default '-' user.
+     * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+     * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -917,6 +929,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
      * environment. If `User ID` is not specified, we assume default '-' user.
+     * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+     * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -941,6 +955,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
      * environment. If `User ID` is not specified, we assume default '-' user.
+     * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+     * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -962,6 +978,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
      * environment. If `User ID` is not specified, we assume default '-' user.
+     * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+     * type in the same agent that will be overridden or supplemented.
      * </pre>
      *
      * <code>string name = 1;</code>

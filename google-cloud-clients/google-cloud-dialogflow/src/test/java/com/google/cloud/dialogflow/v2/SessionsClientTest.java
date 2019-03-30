@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -99,8 +100,12 @@ public class SessionsClientTest {
   @SuppressWarnings("all")
   public void detectIntentTest() {
     String responseId = "responseId1847552473";
+    ByteString outputAudio = ByteString.copyFromUtf8("24");
     DetectIntentResponse expectedResponse =
-        DetectIntentResponse.newBuilder().setResponseId(responseId).build();
+        DetectIntentResponse.newBuilder()
+            .setResponseId(responseId)
+            .setOutputAudio(outputAudio)
+            .build();
     mockSessions.addResponse(expectedResponse);
 
     SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
@@ -142,8 +147,12 @@ public class SessionsClientTest {
   @SuppressWarnings("all")
   public void streamingDetectIntentTest() throws Exception {
     String responseId = "responseId1847552473";
+    ByteString outputAudio = ByteString.copyFromUtf8("24");
     StreamingDetectIntentResponse expectedResponse =
-        StreamingDetectIntentResponse.newBuilder().setResponseId(responseId).build();
+        StreamingDetectIntentResponse.newBuilder()
+            .setResponseId(responseId)
+            .setOutputAudio(outputAudio)
+            .build();
     mockSessions.addResponse(expectedResponse);
     String session = "session1984987798";
     QueryInput queryInput = QueryInput.newBuilder().build();

@@ -14,7 +14,9 @@ public interface WebhookRequestOrBuilder
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
    * <code>string session = 4;</code>
@@ -26,7 +28,9 @@ public interface WebhookRequestOrBuilder
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
    * <code>string session = 4;</code>

@@ -425,12 +425,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required. The primary value associated with this entity entry.
+     * For example, if the entity type is *vegetable*, the value could be
+     * *scallions*.
      * For `KIND_MAP` entity types:
-     *   A canonical name to be used in place of synonyms.
+     * *   A canonical value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
-     *   A string that can contain references to other entity types (with or
-     *   without aliases).
+     * *   A string that can contain references to other entity types (with or
+     *     without aliases).
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -440,12 +442,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required. The primary value associated with this entity entry.
+     * For example, if the entity type is *vegetable*, the value could be
+     * *scallions*.
      * For `KIND_MAP` entity types:
-     *   A canonical name to be used in place of synonyms.
+     * *   A canonical value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
-     *   A string that can contain references to other entity types (with or
-     *   without aliases).
+     * *   A string that can contain references to other entity types (with or
+     *     without aliases).
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -456,8 +460,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -467,8 +474,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -478,8 +488,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -489,8 +502,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -501,7 +517,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Represents an entity.
+   * An **entity entry** for an associated entity type.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.EntityType.Entity}
@@ -606,12 +622,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required. The primary value associated with this entity entry.
+     * For example, if the entity type is *vegetable*, the value could be
+     * *scallions*.
      * For `KIND_MAP` entity types:
-     *   A canonical name to be used in place of synonyms.
+     * *   A canonical value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
-     *   A string that can contain references to other entity types (with or
-     *   without aliases).
+     * *   A string that can contain references to other entity types (with or
+     *     without aliases).
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -631,12 +649,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required. The primary value associated with this entity entry.
+     * For example, if the entity type is *vegetable*, the value could be
+     * *scallions*.
      * For `KIND_MAP` entity types:
-     *   A canonical name to be used in place of synonyms.
+     * *   A canonical value to be used in place of synonyms.
      * For `KIND_LIST` entity types:
-     *   A string that can contain references to other entity types (with or
-     *   without aliases).
+     * *   A string that can contain references to other entity types (with or
+     *     without aliases).
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -659,8 +679,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -672,8 +695,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -685,8 +711,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -698,8 +727,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A collection of synonyms. For `KIND_LIST` entity types this
-     * must contain exactly one synonym equal to `value`.
+     * Required. A collection of value synonyms. For example, if the entity type
+     * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+     * onions*.
+     * For `KIND_LIST` entity types:
+     * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
      * <code>repeated string synonyms = 2;</code>
@@ -889,7 +921,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents an entity.
+     * An **entity entry** for an associated entity type.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.EntityType.Entity}
@@ -1074,12 +1106,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
+       * Required. The primary value associated with this entity entry.
+       * For example, if the entity type is *vegetable*, the value could be
+       * *scallions*.
        * For `KIND_MAP` entity types:
-       *   A canonical name to be used in place of synonyms.
+       * *   A canonical value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
-       *   A string that can contain references to other entity types (with or
-       *   without aliases).
+       * *   A string that can contain references to other entity types (with or
+       *     without aliases).
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -1099,12 +1133,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
+       * Required. The primary value associated with this entity entry.
+       * For example, if the entity type is *vegetable*, the value could be
+       * *scallions*.
        * For `KIND_MAP` entity types:
-       *   A canonical name to be used in place of synonyms.
+       * *   A canonical value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
-       *   A string that can contain references to other entity types (with or
-       *   without aliases).
+       * *   A string that can contain references to other entity types (with or
+       *     without aliases).
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -1124,12 +1160,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
+       * Required. The primary value associated with this entity entry.
+       * For example, if the entity type is *vegetable*, the value could be
+       * *scallions*.
        * For `KIND_MAP` entity types:
-       *   A canonical name to be used in place of synonyms.
+       * *   A canonical value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
-       *   A string that can contain references to other entity types (with or
-       *   without aliases).
+       * *   A string that can contain references to other entity types (with or
+       *     without aliases).
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -1147,12 +1185,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
+       * Required. The primary value associated with this entity entry.
+       * For example, if the entity type is *vegetable*, the value could be
+       * *scallions*.
        * For `KIND_MAP` entity types:
-       *   A canonical name to be used in place of synonyms.
+       * *   A canonical value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
-       *   A string that can contain references to other entity types (with or
-       *   without aliases).
+       * *   A string that can contain references to other entity types (with or
+       *     without aliases).
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -1167,12 +1207,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
+       * Required. The primary value associated with this entity entry.
+       * For example, if the entity type is *vegetable*, the value could be
+       * *scallions*.
        * For `KIND_MAP` entity types:
-       *   A canonical name to be used in place of synonyms.
+       * *   A canonical value to be used in place of synonyms.
        * For `KIND_LIST` entity types:
-       *   A string that can contain references to other entity types (with or
-       *   without aliases).
+       * *   A string that can contain references to other entity types (with or
+       *     without aliases).
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -1201,8 +1243,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1214,8 +1259,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1227,8 +1275,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1240,8 +1291,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1253,8 +1307,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1272,8 +1329,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1291,8 +1351,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1307,8 +1370,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1323,8 +1389,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A collection of synonyms. For `KIND_LIST` entity types this
-       * must contain exactly one synonym equal to `value`.
+       * Required. A collection of value synonyms. For example, if the entity type
+       * is *vegetable*, and `value` is *scallions*, a synonym could be *green
+       * onions*.
+       * For `KIND_LIST` entity types:
+       * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
        * <code>repeated string synonyms = 2;</code>
@@ -1399,10 +1468,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required for all methods except `create` (`create` populates the name
-   * automatically.
-   * The unique identifier of the entity type. Format:
-   * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * The unique identifier of the entity type.
+   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1422,10 +1491,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required for all methods except `create` (`create` populates the name
-   * automatically.
-   * The unique identifier of the entity type. Format:
-   * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * The unique identifier of the entity type.
+   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1448,7 +1517,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the entity.
+   * Required. The name of the entity type.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -1468,7 +1537,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the entity.
+   * Required. The name of the entity type.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -1560,7 +1629,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -1572,7 +1641,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -1585,7 +1654,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -1597,7 +1666,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -1609,7 +1678,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2054,10 +2123,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for all methods except `create` (`create` populates the name
-     * automatically.
-     * The unique identifier of the entity type. Format:
-     * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+     * The unique identifier of the entity type.
+     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+     * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2077,10 +2146,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for all methods except `create` (`create` populates the name
-     * automatically.
-     * The unique identifier of the entity type. Format:
-     * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+     * The unique identifier of the entity type.
+     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+     * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2100,10 +2169,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for all methods except `create` (`create` populates the name
-     * automatically.
-     * The unique identifier of the entity type. Format:
-     * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+     * The unique identifier of the entity type.
+     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+     * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2121,10 +2190,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for all methods except `create` (`create` populates the name
-     * automatically.
-     * The unique identifier of the entity type. Format:
-     * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+     * The unique identifier of the entity type.
+     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+     * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2139,10 +2208,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for all methods except `create` (`create` populates the name
-     * automatically.
-     * The unique identifier of the entity type. Format:
-     * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+     * The unique identifier of the entity type.
+     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+     * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2163,7 +2232,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the entity.
+     * Required. The name of the entity type.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2183,7 +2252,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the entity.
+     * Required. The name of the entity type.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2203,7 +2272,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the entity.
+     * Required. The name of the entity type.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2221,7 +2290,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the entity.
+     * Required. The name of the entity type.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2236,7 +2305,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the entity.
+     * Required. The name of the entity type.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2442,7 +2511,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2458,7 +2527,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2474,7 +2543,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2490,7 +2559,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2513,7 +2582,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2533,7 +2602,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2555,7 +2624,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2578,7 +2647,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2598,7 +2667,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2618,7 +2687,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2639,7 +2708,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2658,7 +2727,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2677,7 +2746,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2690,7 +2759,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2707,7 +2776,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2724,7 +2793,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2737,7 +2806,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -2752,7 +2821,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The collection of entities associated with the entity type.
+     * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>

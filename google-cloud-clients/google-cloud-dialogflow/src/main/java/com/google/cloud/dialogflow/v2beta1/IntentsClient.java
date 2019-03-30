@@ -54,7 +54,7 @@ import javax.annotation.Generated;
  *
  * <p>&#42; &#42;&#42;Contexts&#42;&#42; - provide additional context for intent analysis. For
  * example, if an intent is related to an object in your application that plays music, you can
- * provide a context to determine when to match the intent if the user input is “turn it off”. You
+ * provide a context to determine when to match the intent if the user input is "turn it off". You
  * can include a context that matches the intent when there is previous user input of "play music",
  * and not when there is previous user input of "turn on the light".
  *
@@ -68,7 +68,7 @@ import javax.annotation.Generated;
  * Dialogflow API agent to better match intents.
  *
  * <p>For more information about intents, see the [Dialogflow
- * documentation](https://dialogflow.com/docs/intents).
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -267,9 +267,9 @@ public class IntentsClient implements BackgroundResource {
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param languageCode Optional. The language to list training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent before they can be used.
+   *     messages for. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(ProjectAgentName parent, String languageCode) {
@@ -300,9 +300,9 @@ public class IntentsClient implements BackgroundResource {
    * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param languageCode Optional. The language to list training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent before they can be used.
+   *     messages for. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntentsPagedResponse listIntents(String parent, String languageCode) {
@@ -456,9 +456,9 @@ public class IntentsClient implements BackgroundResource {
    * @param name Required. The name of the intent. Format: `projects/&lt;Project
    *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * @param languageCode Optional. The language to retrieve training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     messages for. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(IntentName name, String languageCode) {
@@ -488,9 +488,9 @@ public class IntentsClient implements BackgroundResource {
    * @param name Required. The name of the intent. Format: `projects/&lt;Project
    *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * @param languageCode Optional. The language to retrieve training phrases, parameters and rich
-   *     messages for. If not specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     messages for. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(String name, String languageCode) {
@@ -619,9 +619,9 @@ public class IntentsClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @param intent Required. The intent to create.
    * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [More than a
-   *     dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note:
-   *     languages must be enabled in the agent, before they can be used.
+   *     defined in `intent`. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(ProjectAgentName parent, Intent intent, String languageCode) {
@@ -654,9 +654,9 @@ public class IntentsClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @param intent Required. The intent to create.
    * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [More than a
-   *     dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note:
-   *     languages must be enabled in the agent, before they can be used.
+   *     defined in `intent`. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent createIntent(String parent, Intent intent, String languageCode) {
@@ -733,12 +733,11 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param intent Required. The intent to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param intent Required. The intent to update.
    * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [More than a
-   *     dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note:
-   *     languages must be enabled in the agent, before they can be used.
+   *     defined in `intent`. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent updateIntent(Intent intent, String languageCode) {
@@ -763,12 +762,11 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param intent Required. The intent to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param intent Required. The intent to update.
    * @param languageCode Optional. The language of training phrases, parameters and rich messages
-   *     defined in `intent`. If not specified, the agent's default language is used. [More than a
-   *     dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note:
-   *     languages must be enabled in the agent, before they can be used.
+   *     defined in `intent`. If not specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @param updateMask Optional. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -834,7 +832,7 @@ public class IntentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified intent.
+   * Deletes the specified intent and its direct or indirect followup intents.
    *
    * <p>Sample code:
    *
@@ -845,8 +843,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent to delete. If this intent has direct or indirect
+   *     followup intents, we also delete them.
+   *     <p>Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(IntentName name) {
@@ -858,7 +857,7 @@ public class IntentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified intent.
+   * Deletes the specified intent and its direct or indirect followup intents.
    *
    * <p>Sample code:
    *
@@ -869,8 +868,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent to delete. If this intent has direct or indirect
+   *     followup intents, we also delete them.
+   *     <p>Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(String name) {
@@ -881,7 +881,7 @@ public class IntentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified intent.
+   * Deletes the specified intent and its direct or indirect followup intents.
    *
    * <p>Sample code:
    *
@@ -904,7 +904,7 @@ public class IntentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified intent.
+   * Deletes the specified intent and its direct or indirect followup intents.
    *
    * <p>Sample code:
    *

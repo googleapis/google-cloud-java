@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for
- * [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
+ * Request message for [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListDocumentsRequest}
@@ -391,8 +390,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for
-   * [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
+   * Request message for [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListDocumentsRequest}

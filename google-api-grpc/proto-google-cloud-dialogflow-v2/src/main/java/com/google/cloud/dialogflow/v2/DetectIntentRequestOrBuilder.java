@@ -115,6 +115,43 @@ public interface DetectIntentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   */
+  boolean hasOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The natural language speech audio to be processed. This field
    * should be populated iff `query_input` is set to an input audio config.
    * A single request can contain up to 1 minute of speech audio data.

@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
+ * The request message for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateIntentRequest}
@@ -138,7 +137,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The intent to update.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -151,7 +149,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The intent to update.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -166,7 +163,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The intent to update.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -183,9 +179,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
-   * used. [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * used. [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -207,9 +204,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
-   * used. [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * used. [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -498,8 +496,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for
-   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
+   * The request message for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateIntentRequest}
@@ -699,7 +696,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -712,7 +708,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -731,7 +726,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -754,7 +748,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -774,7 +767,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -801,7 +793,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -822,7 +813,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -837,7 +827,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -856,7 +845,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -885,9 +873,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -909,9 +898,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -933,9 +923,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -955,9 +946,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -974,9 +966,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>

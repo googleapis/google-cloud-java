@@ -8,6 +8,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * <pre>
  * A document resource.
+ * Note: resource `projects.agent.knowledgeBases.documents` is deprecated,
+ * please use `projects.knowledgeBases.documents` instead.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
@@ -111,6 +113,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               sourceCase_ = 6;
               source_ = s;
+              break;
+            }
+          case 74:
+            {
+              sourceCase_ = 9;
+              source_ = input.readBytes();
               break;
             }
           default:
@@ -313,7 +321,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
   public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     CONTENT_URI(5),
+    @java.lang.Deprecated
     CONTENT(6),
+    RAW_CONTENT(9),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -332,6 +342,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return CONTENT_URI;
         case 6:
           return CONTENT;
+        case 9:
+          return RAW_CONTENT;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -644,10 +656,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getContent() {
     java.lang.Object ref = "";
     if (sourceCase_ == 6) {
@@ -670,10 +685,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = "";
     if (sourceCase_ == 6) {
@@ -689,6 +707,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RAW_CONTENT_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * </pre>
+   *
+   * <code>bytes raw_content = 9;</code>
+   */
+  public com.google.protobuf.ByteString getRawContent() {
+    if (sourceCase_ == 9) {
+      return (com.google.protobuf.ByteString) source_;
+    }
+    return com.google.protobuf.ByteString.EMPTY;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -728,6 +764,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, source_);
     }
+    if (sourceCase_ == 9) {
+      output.writeBytes(9, (com.google.protobuf.ByteString) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -765,6 +804,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, source_);
     }
+    if (sourceCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              9, (com.google.protobuf.ByteString) source_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -792,6 +836,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         break;
       case 6:
         if (!getContent().equals(other.getContent())) return false;
+        break;
+      case 9:
+        if (!getRawContent().equals(other.getRawContent())) return false;
         break;
       case 0:
       default:
@@ -825,6 +872,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getContent().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + RAW_CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getRawContent().hashCode();
         break;
       case 0:
       default:
@@ -934,6 +985,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A document resource.
+   * Note: resource `projects.agent.knowledgeBases.documents` is deprecated,
+   * please use `projects.knowledgeBases.documents` instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
@@ -1027,6 +1080,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (sourceCase_ == 6) {
         result.source_ = source_;
       }
+      if (sourceCase_ == 9) {
+        result.source_ = source_;
+      }
       result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -1113,6 +1169,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             sourceCase_ = 6;
             source_ = other.source_;
             onChanged();
+            break;
+          }
+        case RAW_CONTENT:
+          {
+            setRawContent(other.getRawContent());
             break;
           }
         case SOURCE_NOT_SET:
@@ -1811,10 +1872,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getContent() {
       java.lang.Object ref = "";
       if (sourceCase_ == 6) {
@@ -1837,10 +1901,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 6) {
@@ -1863,10 +1930,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setContent(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1882,10 +1952,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearContent() {
       if (sourceCase_ == 6) {
         sourceCase_ = 0;
@@ -1900,10 +1973,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1912,6 +1988,60 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 6;
       source_ = value;
       onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     */
+    public com.google.protobuf.ByteString getRawContent() {
+      if (sourceCase_ == 9) {
+        return (com.google.protobuf.ByteString) source_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     */
+    public Builder setRawContent(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 9;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     */
+    public Builder clearRawContent() {
+      if (sourceCase_ == 9) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
       return this;
     }
 

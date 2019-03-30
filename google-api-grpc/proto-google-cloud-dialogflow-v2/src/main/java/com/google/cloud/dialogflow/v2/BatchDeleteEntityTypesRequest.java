@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntityTypes].
+ * The request message for [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest}
@@ -387,8 +386,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for
-   * [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntityTypes].
+   * The request message for [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest}

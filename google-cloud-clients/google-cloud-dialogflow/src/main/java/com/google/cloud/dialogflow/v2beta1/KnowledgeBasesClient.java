@@ -171,8 +171,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list of knowledge bases for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to list of knowledge bases for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(ProjectName parent) {
@@ -198,8 +198,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list of knowledge bases for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to list of knowledge bases for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(String parent) {
@@ -397,8 +397,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a knowledge base for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to create a knowledge base for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @param knowledgeBase Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -426,8 +426,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a knowledge base for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to create a knowledge base for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @param knowledgeBase Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

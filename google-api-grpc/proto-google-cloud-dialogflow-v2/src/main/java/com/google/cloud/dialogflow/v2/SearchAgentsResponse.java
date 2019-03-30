@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for
- * [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
+ * The response message for [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SearchAgentsResponse}
@@ -396,8 +395,7 @@ public final class SearchAgentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for
-   * [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
+   * The response message for [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SearchAgentsResponse}

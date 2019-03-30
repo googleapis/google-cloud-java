@@ -15,6 +15,8 @@ public interface SessionEntityTypeOrBuilder
    * Required. The unique identifier of this session entity type. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
    * Display Name&gt;`.
+   * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+   * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -27,6 +29,8 @@ public interface SessionEntityTypeOrBuilder
    * Required. The unique identifier of this session entity type. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
    * Display Name&gt;`.
+   * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+   * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
    * <code>string name = 1;</code>
