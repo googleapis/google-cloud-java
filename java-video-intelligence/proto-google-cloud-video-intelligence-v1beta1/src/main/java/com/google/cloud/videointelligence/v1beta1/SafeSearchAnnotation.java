@@ -32,7 +32,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     medical_ = 0;
     violent_ = 0;
     racy_ = 0;
-    timeOffset_ = 0L;
   }
 
   @java.lang.Override
@@ -101,7 +100,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -385,15 +384,14 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation other =
         (com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation) obj;
 
-    boolean result = true;
-    result = result && adult_ == other.adult_;
-    result = result && spoof_ == other.spoof_;
-    result = result && medical_ == other.medical_;
-    result = result && violent_ == other.violent_;
-    result = result && racy_ == other.racy_;
-    result = result && (getTimeOffset() == other.getTimeOffset());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (adult_ != other.adult_) return false;
+    if (spoof_ != other.spoof_) return false;
+    if (medical_ != other.medical_) return false;
+    if (violent_ != other.violent_) return false;
+    if (racy_ != other.racy_) return false;
+    if (getTimeOffset() != other.getTimeOffset()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -617,35 +615,35 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1153,7 +1151,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
