@@ -26,7 +26,6 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     mid_ = "";
     languageCode_ = "";
     name_ = "";
-    score_ = 0F;
   }
 
   @java.lang.Override
@@ -97,7 +96,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -387,20 +386,17 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     com.google.cloud.vision.v1p4beta1.LocalizedObjectAnnotation other =
         (com.google.cloud.vision.v1p4beta1.LocalizedObjectAnnotation) obj;
 
-    boolean result = true;
-    result = result && getMid().equals(other.getMid());
-    result = result && getLanguageCode().equals(other.getLanguageCode());
-    result = result && getName().equals(other.getName());
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getScore())
-                == java.lang.Float.floatToIntBits(other.getScore()));
-    result = result && (hasBoundingPoly() == other.hasBoundingPoly());
+    if (!getMid().equals(other.getMid())) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (java.lang.Float.floatToIntBits(getScore())
+        != java.lang.Float.floatToIntBits(other.getScore())) return false;
+    if (hasBoundingPoly() != other.hasBoundingPoly()) return false;
     if (hasBoundingPoly()) {
-      result = result && getBoundingPoly().equals(other.getBoundingPoly());
+      if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -624,35 +620,35 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1052,7 +1048,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.cloud.vision.v1p4beta1.BoundingPoly boundingPoly_ = null;
+    private com.google.cloud.vision.v1p4beta1.BoundingPoly boundingPoly_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.BoundingPoly,
             com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder,
@@ -1236,7 +1232,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

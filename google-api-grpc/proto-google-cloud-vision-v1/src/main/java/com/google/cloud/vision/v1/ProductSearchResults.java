@@ -68,7 +68,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1.ProductSearchResults.Result>();
@@ -82,7 +82,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 productGroupedResults_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>();
@@ -96,7 +96,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -108,10 +108,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         results_ = java.util.Collections.unmodifiableList(results_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -225,7 +225,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     private Result() {
-      score_ = 0F;
       image_ = "";
     }
 
@@ -283,7 +282,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -472,18 +471,15 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1.ProductSearchResults.Result other =
           (com.google.cloud.vision.v1.ProductSearchResults.Result) obj;
 
-      boolean result = true;
-      result = result && (hasProduct() == other.hasProduct());
+      if (hasProduct() != other.hasProduct()) return false;
       if (hasProduct()) {
-        result = result && getProduct().equals(other.getProduct());
+        if (!getProduct().equals(other.getProduct())) return false;
       }
-      result =
-          result
-              && (java.lang.Float.floatToIntBits(getScore())
-                  == java.lang.Float.floatToIntBits(other.getScore()));
-      result = result && getImage().equals(other.getImage());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+      if (!getImage().equals(other.getImage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -699,23 +695,23 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -723,13 +719,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -785,7 +781,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         return this;
       }
 
-      private com.google.cloud.vision.v1.Product product_ = null;
+      private com.google.cloud.vision.v1.Product product_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.vision.v1.Product,
               com.google.cloud.vision.v1.Product.Builder,
@@ -1115,7 +1111,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1318,7 +1314,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   results_ =
                       new java.util.ArrayList<
                           com.google.cloud.vision.v1.ProductSearchResults.Result>();
@@ -1332,7 +1328,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1344,7 +1340,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
         }
         this.unknownFields = unknownFields.build();
@@ -1525,14 +1521,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1.ProductSearchResults.GroupedResult other =
           (com.google.cloud.vision.v1.ProductSearchResults.GroupedResult) obj;
 
-      boolean result = true;
-      result = result && (hasBoundingPoly() == other.hasBoundingPoly());
+      if (hasBoundingPoly() != other.hasBoundingPoly()) return false;
       if (hasBoundingPoly()) {
-        result = result && getBoundingPoly().equals(other.getBoundingPoly());
+        if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
       }
-      result = result && getResultsList().equals(other.getResultsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getResultsList().equals(other.getResultsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1749,7 +1744,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           result.boundingPoly_ = boundingPolyBuilder_.build();
         }
         if (resultsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             results_ = java.util.Collections.unmodifiableList(results_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -1764,23 +1759,23 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1788,13 +1783,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1875,7 +1870,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
       private int bitField0_;
 
-      private com.google.cloud.vision.v1.BoundingPoly boundingPoly_ = null;
+      private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.vision.v1.BoundingPoly,
               com.google.cloud.vision.v1.BoundingPoly.Builder,
@@ -2061,7 +2056,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           java.util.Collections.emptyList();
 
       private void ensureResultsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           results_ =
               new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.Result>(
                   results_);
@@ -2415,10 +2410,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                   com.google.cloud.vision.v1.ProductSearchResults.Result,
                   com.google.cloud.vision.v1.ProductSearchResults.Result.Builder,
                   com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>(
-                  results_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
+                  results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           results_ = null;
         }
         return resultsBuilder_;
@@ -2427,7 +2419,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2740,15 +2732,14 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     com.google.cloud.vision.v1.ProductSearchResults other =
         (com.google.cloud.vision.v1.ProductSearchResults) obj;
 
-    boolean result = true;
-    result = result && (hasIndexTime() == other.hasIndexTime());
+    if (hasIndexTime() != other.hasIndexTime()) return false;
     if (hasIndexTime()) {
-      result = result && getIndexTime().equals(other.getIndexTime());
+      if (!getIndexTime().equals(other.getIndexTime())) return false;
     }
-    result = result && getResultsList().equals(other.getResultsList());
-    result = result && getProductGroupedResultsList().equals(other.getProductGroupedResultsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getResultsList().equals(other.getResultsList())) return false;
+    if (!getProductGroupedResultsList().equals(other.getProductGroupedResultsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2971,7 +2962,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         result.indexTime_ = indexTimeBuilder_.build();
       }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -2980,7 +2971,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         result.results_ = resultsBuilder_.build();
       }
       if (productGroupedResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -2995,35 +2986,35 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3127,7 +3118,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private com.google.protobuf.Timestamp indexTime_ = null;
+    private com.google.protobuf.Timestamp indexTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3315,7 +3306,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.Result>(
                 results_);
@@ -3664,10 +3655,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.ProductSearchResults.Result,
                 com.google.cloud.vision.v1.ProductSearchResults.Result.Builder,
                 com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>(
-                results_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;
@@ -3677,7 +3665,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         productGroupedResults_ = java.util.Collections.emptyList();
 
     private void ensureProductGroupedResultsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         productGroupedResults_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>(
                 productGroupedResults_);
@@ -4126,7 +4114,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.ProductSearchResults.GroupedResult.Builder,
                 com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder>(
                 productGroupedResults_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         productGroupedResults_ = null;
@@ -4136,7 +4124,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

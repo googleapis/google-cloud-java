@@ -69,7 +69,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 responses_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>();
@@ -83,7 +83,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -95,7 +95,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         responses_ = java.util.Collections.unmodifiableList(responses_);
       }
       this.unknownFields = unknownFields.build();
@@ -277,14 +277,13 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     com.google.cloud.vision.v1p3beta1.AnnotateFileResponse other =
         (com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) obj;
 
-    boolean result = true;
-    result = result && (hasInputConfig() == other.hasInputConfig());
+    if (hasInputConfig() != other.hasInputConfig()) return false;
     if (hasInputConfig()) {
-      result = result && getInputConfig().equals(other.getInputConfig());
+      if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
-    result = result && getResponsesList().equals(other.getResponsesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getResponsesList().equals(other.getResponsesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -498,7 +497,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         result.inputConfig_ = inputConfigBuilder_.build();
       }
       if (responsesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           responses_ = java.util.Collections.unmodifiableList(responses_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -513,35 +512,35 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -619,7 +618,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private com.google.cloud.vision.v1p3beta1.InputConfig inputConfig_ = null;
+    private com.google.cloud.vision.v1p3beta1.InputConfig inputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p3beta1.InputConfig,
             com.google.cloud.vision.v1p3beta1.InputConfig.Builder,
@@ -805,7 +804,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureResponsesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         responses_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>(
                 responses_);
@@ -1158,10 +1157,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1p3beta1.AnnotateImageResponse,
                 com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder,
                 com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>(
-                responses_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                responses_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         responses_ = null;
       }
       return responsesBuilder_;
@@ -1169,7 +1165,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
