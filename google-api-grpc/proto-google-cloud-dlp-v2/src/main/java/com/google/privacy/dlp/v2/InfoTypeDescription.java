@@ -70,7 +70,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
           case 24:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 supportedBy_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -83,7 +83,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   supportedBy_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000004;
                 }
@@ -101,7 +101,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -113,7 +113,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
       }
       this.unknownFields = unknownFields.build();
@@ -426,13 +426,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     com.google.privacy.dlp.v2.InfoTypeDescription other =
         (com.google.privacy.dlp.v2.InfoTypeDescription) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && supportedBy_.equals(other.supportedBy_);
-    result = result && getDescription().equals(other.getDescription());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!supportedBy_.equals(other.supportedBy_)) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -636,7 +635,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -649,35 +648,35 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -936,7 +935,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> supportedBy_ = java.util.Collections.emptyList();
 
     private void ensureSupportedByIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         supportedBy_ = new java.util.ArrayList<java.lang.Integer>(supportedBy_);
         bitField0_ |= 0x00000004;
       }
@@ -1221,7 +1220,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -83,7 +83,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -207,7 +207,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    * <pre>
    * The trigger id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *
@@ -230,7 +230,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    * <pre>
    * The trigger id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *
@@ -305,15 +305,14 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     com.google.privacy.dlp.v2.CreateJobTriggerRequest other =
         (com.google.privacy.dlp.v2.CreateJobTriggerRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasJobTrigger() == other.hasJobTrigger());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasJobTrigger() != other.hasJobTrigger()) return false;
     if (hasJobTrigger()) {
-      result = result && getJobTrigger().equals(other.getJobTrigger());
+      if (!getJobTrigger().equals(other.getJobTrigger())) return false;
     }
-    result = result && getTriggerId().equals(other.getTriggerId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTriggerId().equals(other.getTriggerId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -526,35 +525,35 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -705,7 +704,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.privacy.dlp.v2.JobTrigger jobTrigger_ = null;
+    private com.google.privacy.dlp.v2.JobTrigger jobTrigger_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.JobTrigger,
             com.google.privacy.dlp.v2.JobTrigger.Builder,
@@ -893,7 +892,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * <pre>
      * The trigger id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -916,7 +915,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * <pre>
      * The trigger id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -939,7 +938,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * <pre>
      * The trigger id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -960,7 +959,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * <pre>
      * The trigger id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -978,7 +977,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
      * <pre>
      * The trigger id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -997,7 +996,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

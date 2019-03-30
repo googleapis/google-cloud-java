@@ -53,7 +53,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 storedInfoTypes_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoType>();
                 mutable_bitField0_ |= 0x00000001;
@@ -72,7 +72,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -84,7 +84,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         storedInfoTypes_ = java.util.Collections.unmodifiableList(storedInfoTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -268,11 +268,10 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
     com.google.privacy.dlp.v2.ListStoredInfoTypesResponse other =
         (com.google.privacy.dlp.v2.ListStoredInfoTypesResponse) obj;
 
-    boolean result = true;
-    result = result && getStoredInfoTypesList().equals(other.getStoredInfoTypesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getStoredInfoTypesList().equals(other.getStoredInfoTypesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -474,7 +473,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (storedInfoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           storedInfoTypes_ = java.util.Collections.unmodifiableList(storedInfoTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -490,35 +489,35 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -601,7 +600,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         java.util.Collections.emptyList();
 
     private void ensureStoredInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         storedInfoTypes_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoType>(storedInfoTypes_);
         bitField0_ |= 0x00000001;
@@ -944,7 +943,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
                 com.google.privacy.dlp.v2.StoredInfoType.Builder,
                 com.google.privacy.dlp.v2.StoredInfoTypeOrBuilder>(
                 storedInfoTypes_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         storedInfoTypes_ = null;
@@ -1053,7 +1052,7 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

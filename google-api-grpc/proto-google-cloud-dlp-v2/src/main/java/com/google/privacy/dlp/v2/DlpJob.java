@@ -166,7 +166,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
                 mutable_bitField0_ |= 0x00000200;
               }
@@ -176,7 +176,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -188,7 +188,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -957,38 +957,36 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.DlpJob other = (com.google.privacy.dlp.v2.DlpJob) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && type_ == other.type_;
-    result = result && state_ == other.state_;
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (!getName().equals(other.getName())) return false;
+    if (type_ != other.type_) return false;
+    if (state_ != other.state_) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && getJobTriggerName().equals(other.getJobTriggerName());
-    result = result && getErrorsList().equals(other.getErrorsList());
-    result = result && getDetailsCase().equals(other.getDetailsCase());
-    if (!result) return false;
+    if (!getJobTriggerName().equals(other.getJobTriggerName())) return false;
+    if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
       case 4:
-        result = result && getRiskDetails().equals(other.getRiskDetails());
+        if (!getRiskDetails().equals(other.getRiskDetails())) return false;
         break;
       case 5:
-        result = result && getInspectDetails().equals(other.getInspectDetails());
+        if (!getInspectDetails().equals(other.getInspectDetails())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1276,7 +1274,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
       result.jobTriggerName_ = jobTriggerName_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
           bitField0_ = (bitField0_ & ~0x00000200);
         }
@@ -1292,35 +1290,35 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2100,7 +2098,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       return inspectDetailsBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2279,7 +2277,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2454,7 +2452,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2732,7 +2730,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
         bitField0_ |= 0x00000200;
       }
@@ -3068,10 +3066,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
-                getParentForChildren(),
-                isClean());
+                errors_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;
@@ -3079,7 +3074,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

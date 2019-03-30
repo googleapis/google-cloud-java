@@ -128,7 +128,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -482,27 +482,26 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.Finding other = (com.google.privacy.dlp.v2.Finding) obj;
 
-    boolean result = true;
-    result = result && getQuote().equals(other.getQuote());
-    result = result && (hasInfoType() == other.hasInfoType());
+    if (!getQuote().equals(other.getQuote())) return false;
+    if (hasInfoType() != other.hasInfoType()) return false;
     if (hasInfoType()) {
-      result = result && getInfoType().equals(other.getInfoType());
+      if (!getInfoType().equals(other.getInfoType())) return false;
     }
-    result = result && likelihood_ == other.likelihood_;
-    result = result && (hasLocation() == other.hasLocation());
+    if (likelihood_ != other.likelihood_) return false;
+    if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
-      result = result && getLocation().equals(other.getLocation());
+      if (!getLocation().equals(other.getLocation())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasQuoteInfo() == other.hasQuoteInfo());
+    if (hasQuoteInfo() != other.hasQuoteInfo()) return false;
     if (hasQuoteInfo()) {
-      result = result && getQuoteInfo().equals(other.getQuoteInfo());
+      if (!getQuoteInfo().equals(other.getQuoteInfo())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -758,35 +757,35 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -963,7 +962,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.privacy.dlp.v2.InfoType infoType_ = null;
+    private com.google.privacy.dlp.v2.InfoType infoType_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InfoType,
             com.google.privacy.dlp.v2.InfoType.Builder,
@@ -1229,7 +1228,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.privacy.dlp.v2.Location location_ = null;
+    private com.google.privacy.dlp.v2.Location location_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Location,
             com.google.privacy.dlp.v2.Location.Builder,
@@ -1410,7 +1409,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return locationBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1589,7 +1588,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.QuoteInfo quoteInfo_ = null;
+    private com.google.privacy.dlp.v2.QuoteInfo quoteInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.QuoteInfo,
             com.google.privacy.dlp.v2.QuoteInfo.Builder,
@@ -1790,7 +1789,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
