@@ -61,7 +61,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 documents_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -126,7 +126,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -138,7 +138,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         documents_ = documents_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -562,30 +562,28 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
     com.google.firestore.v1beta1.BatchGetDocumentsRequest other =
         (com.google.firestore.v1beta1.BatchGetDocumentsRequest) obj;
 
-    boolean result = true;
-    result = result && getDatabase().equals(other.getDatabase());
-    result = result && getDocumentsList().equals(other.getDocumentsList());
-    result = result && (hasMask() == other.hasMask());
+    if (!getDatabase().equals(other.getDatabase())) return false;
+    if (!getDocumentsList().equals(other.getDocumentsList())) return false;
+    if (hasMask() != other.hasMask()) return false;
     if (hasMask()) {
-      result = result && getMask().equals(other.getMask());
+      if (!getMask().equals(other.getMask())) return false;
     }
-    result = result && getConsistencySelectorCase().equals(other.getConsistencySelectorCase());
-    if (!result) return false;
+    if (!getConsistencySelectorCase().equals(other.getConsistencySelectorCase())) return false;
     switch (consistencySelectorCase_) {
       case 4:
-        result = result && getTransaction().equals(other.getTransaction());
+        if (!getTransaction().equals(other.getTransaction())) return false;
         break;
       case 5:
-        result = result && getNewTransaction().equals(other.getNewTransaction());
+        if (!getNewTransaction().equals(other.getNewTransaction())) return false;
         break;
       case 7:
-        result = result && getReadTime().equals(other.getReadTime());
+        if (!getReadTime().equals(other.getReadTime())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -809,7 +807,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.database_ = database_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         documents_ = documents_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -844,35 +842,35 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1075,7 +1073,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDocumentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         documents_ = new com.google.protobuf.LazyStringArrayList(documents_);
         bitField0_ |= 0x00000002;
       }
@@ -1241,7 +1239,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.firestore.v1beta1.DocumentMask mask_ = null;
+    private com.google.firestore.v1beta1.DocumentMask mask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1beta1.DocumentMask,
             com.google.firestore.v1beta1.DocumentMask.Builder,
@@ -1934,7 +1932,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
