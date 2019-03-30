@@ -25,7 +25,6 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
   private CommuteFilter() {
     commuteMethod_ = 0;
-    allowImpreciseAddresses_ = false;
   }
 
   @java.lang.Override
@@ -118,7 +117,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -655,31 +654,29 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.talent.v4beta1.CommuteFilter other =
         (com.google.cloud.talent.v4beta1.CommuteFilter) obj;
 
-    boolean result = true;
-    result = result && commuteMethod_ == other.commuteMethod_;
-    result = result && (hasStartCoordinates() == other.hasStartCoordinates());
+    if (commuteMethod_ != other.commuteMethod_) return false;
+    if (hasStartCoordinates() != other.hasStartCoordinates()) return false;
     if (hasStartCoordinates()) {
-      result = result && getStartCoordinates().equals(other.getStartCoordinates());
+      if (!getStartCoordinates().equals(other.getStartCoordinates())) return false;
     }
-    result = result && (hasTravelDuration() == other.hasTravelDuration());
+    if (hasTravelDuration() != other.hasTravelDuration()) return false;
     if (hasTravelDuration()) {
-      result = result && getTravelDuration().equals(other.getTravelDuration());
+      if (!getTravelDuration().equals(other.getTravelDuration())) return false;
     }
-    result = result && (getAllowImpreciseAddresses() == other.getAllowImpreciseAddresses());
-    result = result && getTrafficOptionCase().equals(other.getTrafficOptionCase());
-    if (!result) return false;
+    if (getAllowImpreciseAddresses() != other.getAllowImpreciseAddresses()) return false;
+    if (!getTrafficOptionCase().equals(other.getTrafficOptionCase())) return false;
     switch (trafficOptionCase_) {
       case 5:
-        result = result && getRoadTrafficValue() == other.getRoadTrafficValue();
+        if (getRoadTrafficValue() != other.getRoadTrafficValue()) return false;
         break;
       case 6:
-        result = result && getDepartureTime().equals(other.getDepartureTime());
+        if (!getDepartureTime().equals(other.getDepartureTime())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -933,35 +930,35 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1128,7 +1125,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.LatLng startCoordinates_ = null;
+    private com.google.type.LatLng startCoordinates_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         startCoordinatesBuilder_;
@@ -1321,7 +1318,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       return startCoordinatesBuilder_;
     }
 
-    private com.google.protobuf.Duration travelDuration_ = null;
+    private com.google.protobuf.Duration travelDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -1898,7 +1895,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
