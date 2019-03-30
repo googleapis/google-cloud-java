@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -59,5 +60,4 @@ public class IntParserTest {
     } catch (IllegalArgumentException e) {
     }
   }
-
 }

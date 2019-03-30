@@ -19,6 +19,7 @@ package com.google.cloud;
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
+
 import com.google.common.testing.EqualsTester;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -19,6 +19,7 @@ package com.google.cloud;
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
+
 import com.google.common.testing.EqualsTester;
 import java.util.Calendar;
 import java.util.Date;
@@ -184,7 +185,7 @@ public class TimestampTest {
     assertThat(Timestamp.parseTimestamp(TEST_TIME_ISO))
         .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
     assertThat(Timestamp.parseTimestamp("2015-10-12T15:14:54.0Z"))
-    .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
+        .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
     parseInvalidTimestamp("");
     parseInvalidTimestamp("0001-01-01 00:00:00Z");
     parseInvalidTimestamp("0001-1-1 00:00:00Z");
@@ -211,7 +212,8 @@ public class TimestampTest {
         .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
     assertThat(Timestamp.parseTimestamp("2015-10-12T15:14:54.0"))
         .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
-    assertThat(Timestamp.parseTimestamp("0001-01-01T00:00:00.123456789").getNanos()).isEqualTo(123456789);
+    assertThat(Timestamp.parseTimestamp("0001-01-01T00:00:00.123456789").getNanos())
+        .isEqualTo(123456789);
     parseInvalidTimestamp("0001-01-01 00:00:00");
     parseInvalidTimestamp("0001-1-1 00:00:00");
     parseInvalidTimestamp("0001-01-01T00:00:00.");

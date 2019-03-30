@@ -26,8 +26,9 @@ import com.google.common.base.Preconditions;
  */
 class IntParser {
 
-  private static final int[] POWERS_OF_10 =
-      {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
+  private static final int[] POWERS_OF_10 = {
+    1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000
+  };
 
   /** Parses an int from the given input between the specified begin and end. */
   static int parseInt(String input, int begin, int end) {
@@ -68,5 +69,4 @@ class IntParser {
       throw new NumberFormatException("Not a digit: " + c);
     }
   }
-
 }
