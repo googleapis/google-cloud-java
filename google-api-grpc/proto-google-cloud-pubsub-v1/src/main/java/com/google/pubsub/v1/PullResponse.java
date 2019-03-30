@@ -52,7 +52,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -63,7 +63,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -75,7 +75,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         receivedMessages_ = java.util.Collections.unmodifiableList(receivedMessages_);
       }
       this.unknownFields = unknownFields.build();
@@ -221,10 +221,9 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.pubsub.v1.PullResponse other = (com.google.pubsub.v1.PullResponse) obj;
 
-    boolean result = true;
-    result = result && getReceivedMessagesList().equals(other.getReceivedMessagesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getReceivedMessagesList().equals(other.getReceivedMessagesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -418,7 +417,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
       com.google.pubsub.v1.PullResponse result = new com.google.pubsub.v1.PullResponse(this);
       int from_bitField0_ = bitField0_;
       if (receivedMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           receivedMessages_ = java.util.Collections.unmodifiableList(receivedMessages_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -432,35 +431,35 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -537,7 +536,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureReceivedMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         receivedMessages_ =
             new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>(receivedMessages_);
         bitField0_ |= 0x00000001;
@@ -933,7 +932,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.pubsub.v1.ReceivedMessage.Builder,
                 com.google.pubsub.v1.ReceivedMessageOrBuilder>(
                 receivedMessages_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         receivedMessages_ = null;
@@ -943,7 +942,7 @@ public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
