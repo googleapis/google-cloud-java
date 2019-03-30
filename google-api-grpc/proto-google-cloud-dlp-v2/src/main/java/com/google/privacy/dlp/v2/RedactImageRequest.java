@@ -26,7 +26,6 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
   private RedactImageRequest() {
     parent_ = "";
     imageRedactionConfigs_ = java.util.Collections.emptyList();
-    includeFindings_ = false;
   }
 
   @java.lang.Override
@@ -78,7 +77,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 imageRedactionConfigs_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>();
@@ -113,7 +112,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -125,7 +124,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -326,7 +325,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -574,25 +573,23 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig other =
           (com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig) obj;
 
-      boolean result = true;
-      result = result && (hasRedactionColor() == other.hasRedactionColor());
+      if (hasRedactionColor() != other.hasRedactionColor()) return false;
       if (hasRedactionColor()) {
-        result = result && getRedactionColor().equals(other.getRedactionColor());
+        if (!getRedactionColor().equals(other.getRedactionColor())) return false;
       }
-      result = result && getTargetCase().equals(other.getTargetCase());
-      if (!result) return false;
+      if (!getTargetCase().equals(other.getTargetCase())) return false;
       switch (targetCase_) {
         case 1:
-          result = result && getInfoType().equals(other.getInfoType());
+          if (!getInfoType().equals(other.getInfoType())) return false;
           break;
         case 2:
-          result = result && (getRedactAllText() == other.getRedactAllText());
+          if (getRedactAllText() != other.getRedactAllText()) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -827,23 +824,23 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -851,13 +848,13 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1217,7 +1214,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.privacy.dlp.v2.Color redactionColor_ = null;
+      private com.google.privacy.dlp.v2.Color redactionColor_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Color,
               com.google.privacy.dlp.v2.Color.Builder,
@@ -1410,7 +1407,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1754,20 +1751,19 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     com.google.privacy.dlp.v2.RedactImageRequest other =
         (com.google.privacy.dlp.v2.RedactImageRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasInspectConfig() == other.hasInspectConfig());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasInspectConfig() != other.hasInspectConfig()) return false;
     if (hasInspectConfig()) {
-      result = result && getInspectConfig().equals(other.getInspectConfig());
+      if (!getInspectConfig().equals(other.getInspectConfig())) return false;
     }
-    result = result && getImageRedactionConfigsList().equals(other.getImageRedactionConfigsList());
-    result = result && (getIncludeFindings() == other.getIncludeFindings());
-    result = result && (hasByteItem() == other.hasByteItem());
+    if (!getImageRedactionConfigsList().equals(other.getImageRedactionConfigsList())) return false;
+    if (getIncludeFindings() != other.getIncludeFindings()) return false;
+    if (hasByteItem() != other.hasByteItem()) return false;
     if (hasByteItem()) {
-      result = result && getByteItem().equals(other.getByteItem());
+      if (!getByteItem().equals(other.getByteItem())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1999,7 +1995,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         result.inspectConfig_ = inspectConfigBuilder_.build();
       }
       if (imageRedactionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           imageRedactionConfigs_ = java.util.Collections.unmodifiableList(imageRedactionConfigs_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -2020,35 +2016,35 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2228,7 +2224,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.privacy.dlp.v2.InspectConfig inspectConfig_ = null;
+    private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectConfig,
             com.google.privacy.dlp.v2.InspectConfig.Builder,
@@ -2414,7 +2410,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         imageRedactionConfigs_ = java.util.Collections.emptyList();
 
     private void ensureImageRedactionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         imageRedactionConfigs_ =
             new java.util.ArrayList<
                 com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>(
@@ -2813,7 +2809,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
                 com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig.Builder,
                 com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>(
                 imageRedactionConfigs_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         imageRedactionConfigs_ = null;
@@ -2868,7 +2864,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.privacy.dlp.v2.ByteContentItem byteItem_ = null;
+    private com.google.privacy.dlp.v2.ByteContentItem byteItem_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.ByteContentItem,
             com.google.privacy.dlp.v2.ByteContentItem.Builder,
@@ -3051,7 +3047,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

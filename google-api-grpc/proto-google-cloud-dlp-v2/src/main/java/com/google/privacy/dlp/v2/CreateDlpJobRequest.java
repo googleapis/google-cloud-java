@@ -101,7 +101,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -264,7 +264,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The job id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *
@@ -287,7 +287,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The job id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *
@@ -372,23 +372,21 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     com.google.privacy.dlp.v2.CreateDlpJobRequest other =
         (com.google.privacy.dlp.v2.CreateDlpJobRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getJobId().equals(other.getJobId());
-    result = result && getJobCase().equals(other.getJobCase());
-    if (!result) return false;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getJobId().equals(other.getJobId())) return false;
+    if (!getJobCase().equals(other.getJobCase())) return false;
     switch (jobCase_) {
       case 2:
-        result = result && getInspectJob().equals(other.getInspectJob());
+        if (!getInspectJob().equals(other.getInspectJob())) return false;
         break;
       case 3:
-        result = result && getRiskJob().equals(other.getRiskJob());
+        if (!getRiskJob().equals(other.getRiskJob())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -617,35 +615,35 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1088,7 +1086,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The job id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -1111,7 +1109,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The job id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -1134,7 +1132,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The job id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -1155,7 +1153,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The job id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -1173,7 +1171,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The job id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
-     * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+     * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
      * characters. Can be empty to allow the system to generate one.
      * </pre>
      *
@@ -1192,7 +1190,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

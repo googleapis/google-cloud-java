@@ -7,7 +7,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Summary of a single tranformation.
+ * Summary of a single transformation.
  * Only one of 'transformation', 'field_transformation', or 'record_suppress'
  * will be set.
  * </pre>
@@ -27,7 +27,6 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
   private TransformationSummary() {
     fieldTransformations_ = java.util.Collections.emptyList();
     results_ = java.util.Collections.emptyList();
-    transformedBytes_ = 0L;
   }
 
   @java.lang.Override
@@ -103,7 +102,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.TransformationSummary.SummaryResult>();
@@ -117,7 +116,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 fieldTransformations_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.FieldTransformation>();
                 mutable_bitField0_ |= 0x00000008;
@@ -150,7 +149,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -162,10 +161,10 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         results_ = java.util.Collections.unmodifiableList(results_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         fieldTransformations_ = java.util.Collections.unmodifiableList(fieldTransformations_);
       }
       this.unknownFields = unknownFields.build();
@@ -349,7 +348,6 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     }
 
     private SummaryResult() {
-      count_ = 0L;
       code_ = 0;
       details_ = "";
     }
@@ -399,7 +397,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -566,12 +564,11 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       com.google.privacy.dlp.v2.TransformationSummary.SummaryResult other =
           (com.google.privacy.dlp.v2.TransformationSummary.SummaryResult) obj;
 
-      boolean result = true;
-      result = result && (getCount() == other.getCount());
-      result = result && code_ == other.code_;
-      result = result && getDetails().equals(other.getDetails());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getCount() != other.getCount()) return false;
+      if (code_ != other.code_) return false;
+      if (!getDetails().equals(other.getDetails())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -779,23 +776,23 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -803,13 +800,13 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1044,7 +1041,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1467,28 +1464,27 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
     com.google.privacy.dlp.v2.TransformationSummary other =
         (com.google.privacy.dlp.v2.TransformationSummary) obj;
 
-    boolean result = true;
-    result = result && (hasInfoType() == other.hasInfoType());
+    if (hasInfoType() != other.hasInfoType()) return false;
     if (hasInfoType()) {
-      result = result && getInfoType().equals(other.getInfoType());
+      if (!getInfoType().equals(other.getInfoType())) return false;
     }
-    result = result && (hasField() == other.hasField());
+    if (hasField() != other.hasField()) return false;
     if (hasField()) {
-      result = result && getField().equals(other.getField());
+      if (!getField().equals(other.getField())) return false;
     }
-    result = result && (hasTransformation() == other.hasTransformation());
+    if (hasTransformation() != other.hasTransformation()) return false;
     if (hasTransformation()) {
-      result = result && getTransformation().equals(other.getTransformation());
+      if (!getTransformation().equals(other.getTransformation())) return false;
     }
-    result = result && getFieldTransformationsList().equals(other.getFieldTransformationsList());
-    result = result && (hasRecordSuppress() == other.hasRecordSuppress());
+    if (!getFieldTransformationsList().equals(other.getFieldTransformationsList())) return false;
+    if (hasRecordSuppress() != other.hasRecordSuppress()) return false;
     if (hasRecordSuppress()) {
-      result = result && getRecordSuppress().equals(other.getRecordSuppress());
+      if (!getRecordSuppress().equals(other.getRecordSuppress())) return false;
     }
-    result = result && getResultsList().equals(other.getResultsList());
-    result = result && (getTransformedBytes() == other.getTransformedBytes());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getResultsList().equals(other.getResultsList())) return false;
+    if (getTransformedBytes() != other.getTransformedBytes()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1628,7 +1624,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Summary of a single tranformation.
+   * Summary of a single transformation.
    * Only one of 'transformation', 'field_transformation', or 'record_suppress'
    * will be set.
    * </pre>
@@ -1757,7 +1753,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         result.transformation_ = transformationBuilder_.build();
       }
       if (fieldTransformationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           fieldTransformations_ = java.util.Collections.unmodifiableList(fieldTransformations_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -1771,7 +1767,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         result.recordSuppress_ = recordSuppressBuilder_.build();
       }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -1787,35 +1783,35 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1931,7 +1927,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.privacy.dlp.v2.InfoType infoType_ = null;
+    private com.google.privacy.dlp.v2.InfoType infoType_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InfoType,
             com.google.privacy.dlp.v2.InfoType.Builder,
@@ -2112,7 +2108,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return infoTypeBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.FieldId field_ = null;
+    private com.google.privacy.dlp.v2.FieldId field_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,
             com.google.privacy.dlp.v2.FieldId.Builder,
@@ -2287,7 +2283,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return fieldBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.PrimitiveTransformation transformation_ = null;
+    private com.google.privacy.dlp.v2.PrimitiveTransformation transformation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.PrimitiveTransformation,
             com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
@@ -2473,7 +2469,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureFieldTransformationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         fieldTransformations_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.FieldTransformation>(
                 fieldTransformations_);
@@ -2858,7 +2854,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
                 com.google.privacy.dlp.v2.FieldTransformation.Builder,
                 com.google.privacy.dlp.v2.FieldTransformationOrBuilder>(
                 fieldTransformations_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         fieldTransformations_ = null;
@@ -2866,7 +2862,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       return fieldTransformationsBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.RecordSuppression recordSuppress_ = null;
+    private com.google.privacy.dlp.v2.RecordSuppression recordSuppress_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RecordSuppression,
             com.google.privacy.dlp.v2.RecordSuppression.Builder,
@@ -3052,7 +3048,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult>(
                 results_);
@@ -3300,10 +3296,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
                 com.google.privacy.dlp.v2.TransformationSummary.SummaryResult,
                 com.google.privacy.dlp.v2.TransformationSummary.SummaryResult.Builder,
                 com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder>(
-                results_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
-                getParentForChildren(),
-                isClean());
+                results_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;
@@ -3355,7 +3348,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
