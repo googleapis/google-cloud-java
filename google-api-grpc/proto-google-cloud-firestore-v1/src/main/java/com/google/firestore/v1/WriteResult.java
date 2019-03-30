@@ -67,7 +67,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 transformResults_ = new java.util.ArrayList<com.google.firestore.v1.Value>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -77,7 +77,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -89,7 +89,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         transformResults_ = java.util.Collections.unmodifiableList(transformResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -280,14 +280,13 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.firestore.v1.WriteResult other = (com.google.firestore.v1.WriteResult) obj;
 
-    boolean result = true;
-    result = result && (hasUpdateTime() == other.hasUpdateTime());
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      result = result && getUpdateTime().equals(other.getUpdateTime());
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    result = result && getTransformResultsList().equals(other.getTransformResultsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTransformResultsList().equals(other.getTransformResultsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -497,7 +496,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       if (transformResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           transformResults_ = java.util.Collections.unmodifiableList(transformResults_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -512,35 +511,35 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -616,7 +615,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.Timestamp updateTime_ = null;
+    private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -826,7 +825,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTransformResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         transformResults_ =
             new java.util.ArrayList<com.google.firestore.v1.Value>(transformResults_);
         bitField0_ |= 0x00000002;
@@ -1184,7 +1183,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
                 com.google.firestore.v1.Value.Builder,
                 com.google.firestore.v1.ValueOrBuilder>(
                 transformResults_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         transformResults_ = null;
@@ -1194,7 +1193,7 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

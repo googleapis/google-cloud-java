@@ -75,7 +75,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 writes_ = new java.util.ArrayList<com.google.firestore.v1.Write>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -90,7 +90,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000010;
@@ -103,7 +103,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -115,7 +115,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         writes_ = java.util.Collections.unmodifiableList(writes_);
       }
       this.unknownFields = unknownFields.build();
@@ -518,14 +518,13 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.firestore.v1.WriteRequest other = (com.google.firestore.v1.WriteRequest) obj;
 
-    boolean result = true;
-    result = result && getDatabase().equals(other.getDatabase());
-    result = result && getStreamId().equals(other.getStreamId());
-    result = result && getWritesList().equals(other.getWritesList());
-    result = result && getStreamToken().equals(other.getStreamToken());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getDatabase().equals(other.getDatabase())) return false;
+    if (!getStreamId().equals(other.getStreamId())) return false;
+    if (!getWritesList().equals(other.getWritesList())) return false;
+    if (!getStreamToken().equals(other.getStreamToken())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -765,7 +764,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       result.database_ = database_;
       result.streamId_ = streamId_;
       if (writesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           writes_ = java.util.Collections.unmodifiableList(writes_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -783,35 +782,35 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1108,7 +1107,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWritesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         writes_ = new java.util.ArrayList<com.google.firestore.v1.Write>(writes_);
         bitField0_ |= 0x00000004;
       }
@@ -1515,10 +1514,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.firestore.v1.Write,
                 com.google.firestore.v1.Write.Builder,
                 com.google.firestore.v1.WriteOrBuilder>(
-                writes_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                writes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         writes_ = null;
       }
       return writesBuilder_;
@@ -1752,7 +1748,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

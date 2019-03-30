@@ -24,7 +24,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   private RunQueryResponse() {
     transaction_ = com.google.protobuf.ByteString.EMPTY;
-    skippedResults_ = 0;
   }
 
   @java.lang.Override
@@ -93,7 +92,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -317,19 +316,18 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
     com.google.firestore.v1.RunQueryResponse other = (com.google.firestore.v1.RunQueryResponse) obj;
 
-    boolean result = true;
-    result = result && getTransaction().equals(other.getTransaction());
-    result = result && (hasDocument() == other.hasDocument());
+    if (!getTransaction().equals(other.getTransaction())) return false;
+    if (hasDocument() != other.hasDocument()) return false;
     if (hasDocument()) {
-      result = result && getDocument().equals(other.getDocument());
+      if (!getDocument().equals(other.getDocument())) return false;
     }
-    result = result && (hasReadTime() == other.hasReadTime());
+    if (hasReadTime() != other.hasReadTime()) return false;
     if (hasReadTime()) {
-      result = result && getReadTime().equals(other.getReadTime());
+      if (!getReadTime().equals(other.getReadTime())) return false;
     }
-    result = result && (getSkippedResults() == other.getSkippedResults());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getSkippedResults() != other.getSkippedResults()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -557,35 +555,35 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -697,7 +695,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.firestore.v1.Document document_ = null;
+    private com.google.firestore.v1.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1.Document,
             com.google.firestore.v1.Document.Builder,
@@ -887,7 +885,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       return documentBuilder_;
     }
 
-    private com.google.protobuf.Timestamp readTime_ = null;
+    private com.google.protobuf.Timestamp readTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1156,7 +1154,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

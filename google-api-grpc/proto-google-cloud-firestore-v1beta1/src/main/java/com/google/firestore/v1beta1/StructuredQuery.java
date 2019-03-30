@@ -25,7 +25,6 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   private StructuredQuery() {
     from_ = java.util.Collections.emptyList();
     orderBy_ = java.util.Collections.emptyList();
-    offset_ = 0;
   }
 
   @java.lang.Override
@@ -71,7 +70,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 from_ =
                     new java.util.ArrayList<
                         com.google.firestore.v1beta1.StructuredQuery.CollectionSelector>();
@@ -102,7 +101,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 orderBy_ =
                     new java.util.ArrayList<com.google.firestore.v1beta1.StructuredQuery.Order>();
                 mutable_bitField0_ |= 0x00000008;
@@ -167,7 +166,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -179,10 +178,10 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         from_ = java.util.Collections.unmodifiableList(from_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         orderBy_ = java.util.Collections.unmodifiableList(orderBy_);
       }
       this.unknownFields = unknownFields.build();
@@ -412,7 +411,6 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     private CollectionSelector() {
       collectionId_ = "";
-      allDescendants_ = false;
     }
 
     @java.lang.Override
@@ -453,7 +451,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -598,11 +596,10 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.CollectionSelector other =
           (com.google.firestore.v1beta1.StructuredQuery.CollectionSelector) obj;
 
-      boolean result = true;
-      result = result && getCollectionId().equals(other.getCollectionId());
-      result = result && (getAllDescendants() == other.getAllDescendants());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getCollectionId().equals(other.getCollectionId())) return false;
+      if (getAllDescendants() != other.getAllDescendants()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -806,23 +803,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -830,13 +827,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1044,7 +1041,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1305,7 +1302,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1581,24 +1578,22 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.Filter other =
           (com.google.firestore.v1beta1.StructuredQuery.Filter) obj;
 
-      boolean result = true;
-      result = result && getFilterTypeCase().equals(other.getFilterTypeCase());
-      if (!result) return false;
+      if (!getFilterTypeCase().equals(other.getFilterTypeCase())) return false;
       switch (filterTypeCase_) {
         case 1:
-          result = result && getCompositeFilter().equals(other.getCompositeFilter());
+          if (!getCompositeFilter().equals(other.getCompositeFilter())) return false;
           break;
         case 2:
-          result = result && getFieldFilter().equals(other.getFieldFilter());
+          if (!getFieldFilter().equals(other.getFieldFilter())) return false;
           break;
         case 3:
-          result = result && getUnaryFilter().equals(other.getUnaryFilter());
+          if (!getUnaryFilter().equals(other.getUnaryFilter())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1829,23 +1824,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1853,13 +1848,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2579,7 +2574,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2768,7 +2763,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   filters_ =
                       new java.util.ArrayList<
                           com.google.firestore.v1beta1.StructuredQuery.Filter>();
@@ -2782,7 +2777,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2794,7 +2789,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           filters_ = java.util.Collections.unmodifiableList(filters_);
         }
         this.unknownFields = unknownFields.build();
@@ -3102,11 +3097,10 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.CompositeFilter other =
           (com.google.firestore.v1beta1.StructuredQuery.CompositeFilter) obj;
 
-      boolean result = true;
-      result = result && op_ == other.op_;
-      result = result && getFiltersList().equals(other.getFiltersList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (op_ != other.op_) return false;
+      if (!getFiltersList().equals(other.getFiltersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3312,7 +3306,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         int to_bitField0_ = 0;
         result.op_ = op_;
         if (filtersBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             filters_ = java.util.Collections.unmodifiableList(filters_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -3327,23 +3321,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -3351,13 +3345,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3520,7 +3514,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           java.util.Collections.emptyList();
 
       private void ensureFiltersIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           filters_ =
               new java.util.ArrayList<com.google.firestore.v1beta1.StructuredQuery.Filter>(
                   filters_);
@@ -3887,10 +3881,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
                   com.google.firestore.v1beta1.StructuredQuery.Filter,
                   com.google.firestore.v1beta1.StructuredQuery.Filter.Builder,
                   com.google.firestore.v1beta1.StructuredQuery.FilterOrBuilder>(
-                  filters_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
+                  filters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           filters_ = null;
         }
         return filtersBuilder_;
@@ -3899,7 +3890,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4129,7 +4120,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -4572,18 +4563,17 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.FieldFilter other =
           (com.google.firestore.v1beta1.StructuredQuery.FieldFilter) obj;
 
-      boolean result = true;
-      result = result && (hasField() == other.hasField());
+      if (hasField() != other.hasField()) return false;
       if (hasField()) {
-        result = result && getField().equals(other.getField());
+        if (!getField().equals(other.getField())) return false;
       }
-      result = result && op_ == other.op_;
-      result = result && (hasValue() == other.hasValue());
+      if (op_ != other.op_) return false;
+      if (hasValue() != other.hasValue()) return false;
       if (hasValue()) {
-        result = result && getValue().equals(other.getValue());
+        if (!getValue().equals(other.getValue())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4809,23 +4799,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -4833,13 +4823,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -4894,7 +4884,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.firestore.v1beta1.StructuredQuery.FieldReference field_ = null;
+      private com.google.firestore.v1beta1.StructuredQuery.FieldReference field_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.firestore.v1beta1.StructuredQuery.FieldReference,
               com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder,
@@ -5156,7 +5146,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.firestore.v1beta1.Value value_ = null;
+      private com.google.firestore.v1beta1.Value value_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.firestore.v1beta1.Value,
               com.google.firestore.v1beta1.Value.Builder,
@@ -5336,7 +5326,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -5502,7 +5492,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               break;
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   fields_ =
                       new java.util.ArrayList<
                           com.google.firestore.v1beta1.StructuredQuery.FieldReference>();
@@ -5516,7 +5506,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -5528,7 +5518,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
         }
         this.unknownFields = unknownFields.build();
@@ -5673,10 +5663,9 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.Projection other =
           (com.google.firestore.v1beta1.StructuredQuery.Projection) obj;
 
-      boolean result = true;
-      result = result && getFieldsList().equals(other.getFieldsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFieldsList().equals(other.getFieldsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5875,7 +5864,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             new com.google.firestore.v1beta1.StructuredQuery.Projection(this);
         int from_bitField0_ = bitField0_;
         if (fieldsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             fields_ = java.util.Collections.unmodifiableList(fields_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -5889,23 +5878,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -5913,13 +5902,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -5998,7 +5987,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           java.util.Collections.emptyList();
 
       private void ensureFieldsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           fields_ =
               new java.util.ArrayList<com.google.firestore.v1beta1.StructuredQuery.FieldReference>(
                   fields_);
@@ -6390,10 +6379,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
                   com.google.firestore.v1beta1.StructuredQuery.FieldReference,
                   com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder,
                   com.google.firestore.v1beta1.StructuredQuery.FieldReferenceOrBuilder>(
-                  fields_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           fields_ = null;
         }
         return fieldsBuilder_;
@@ -6402,7 +6388,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -6588,7 +6574,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -6939,19 +6925,17 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.UnaryFilter other =
           (com.google.firestore.v1beta1.StructuredQuery.UnaryFilter) obj;
 
-      boolean result = true;
-      result = result && op_ == other.op_;
-      result = result && getOperandTypeCase().equals(other.getOperandTypeCase());
-      if (!result) return false;
+      if (op_ != other.op_) return false;
+      if (!getOperandTypeCase().equals(other.getOperandTypeCase())) return false;
       switch (operandTypeCase_) {
         case 2:
-          result = result && getField().equals(other.getField());
+          if (!getField().equals(other.getField())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7165,23 +7149,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -7189,13 +7173,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -7557,7 +7541,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -7737,7 +7721,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -7898,14 +7882,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.Order other =
           (com.google.firestore.v1beta1.StructuredQuery.Order) obj;
 
-      boolean result = true;
-      result = result && (hasField() == other.hasField());
+      if (hasField() != other.hasField()) return false;
       if (hasField()) {
-        result = result && getField().equals(other.getField());
+        if (!getField().equals(other.getField())) return false;
       }
-      result = result && direction_ == other.direction_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (direction_ != other.direction_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8115,23 +8098,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -8139,13 +8122,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -8197,7 +8180,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.firestore.v1beta1.StructuredQuery.FieldReference field_ = null;
+      private com.google.firestore.v1beta1.StructuredQuery.FieldReference field_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.firestore.v1beta1.StructuredQuery.FieldReference,
               com.google.firestore.v1beta1.StructuredQuery.FieldReference.Builder,
@@ -8461,7 +8444,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8576,7 +8559,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -8680,10 +8663,9 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       com.google.firestore.v1beta1.StructuredQuery.FieldReference other =
           (com.google.firestore.v1beta1.StructuredQuery.FieldReference) obj;
 
-      boolean result = true;
-      result = result && getFieldPath().equals(other.getFieldPath());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFieldPath().equals(other.getFieldPath())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8880,23 +8862,23 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -8904,13 +8886,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -9019,7 +9001,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -9576,32 +9558,31 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     com.google.firestore.v1beta1.StructuredQuery other =
         (com.google.firestore.v1beta1.StructuredQuery) obj;
 
-    boolean result = true;
-    result = result && (hasSelect() == other.hasSelect());
+    if (hasSelect() != other.hasSelect()) return false;
     if (hasSelect()) {
-      result = result && getSelect().equals(other.getSelect());
+      if (!getSelect().equals(other.getSelect())) return false;
     }
-    result = result && getFromList().equals(other.getFromList());
-    result = result && (hasWhere() == other.hasWhere());
+    if (!getFromList().equals(other.getFromList())) return false;
+    if (hasWhere() != other.hasWhere()) return false;
     if (hasWhere()) {
-      result = result && getWhere().equals(other.getWhere());
+      if (!getWhere().equals(other.getWhere())) return false;
     }
-    result = result && getOrderByList().equals(other.getOrderByList());
-    result = result && (hasStartAt() == other.hasStartAt());
+    if (!getOrderByList().equals(other.getOrderByList())) return false;
+    if (hasStartAt() != other.hasStartAt()) return false;
     if (hasStartAt()) {
-      result = result && getStartAt().equals(other.getStartAt());
+      if (!getStartAt().equals(other.getStartAt())) return false;
     }
-    result = result && (hasEndAt() == other.hasEndAt());
+    if (hasEndAt() != other.hasEndAt()) return false;
     if (hasEndAt()) {
-      result = result && getEndAt().equals(other.getEndAt());
+      if (!getEndAt().equals(other.getEndAt())) return false;
     }
-    result = result && (getOffset() == other.getOffset());
-    result = result && (hasLimit() == other.hasLimit());
+    if (getOffset() != other.getOffset()) return false;
+    if (hasLimit() != other.hasLimit()) return false;
     if (hasLimit()) {
-      result = result && getLimit().equals(other.getLimit());
+      if (!getLimit().equals(other.getLimit())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -9868,7 +9849,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         result.select_ = selectBuilder_.build();
       }
       if (fromBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           from_ = java.util.Collections.unmodifiableList(from_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -9882,7 +9863,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         result.where_ = whereBuilder_.build();
       }
       if (orderByBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           orderBy_ = java.util.Collections.unmodifiableList(orderBy_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -9913,35 +9894,35 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -10059,7 +10040,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.firestore.v1beta1.StructuredQuery.Projection select_ = null;
+    private com.google.firestore.v1beta1.StructuredQuery.Projection select_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1beta1.StructuredQuery.Projection,
             com.google.firestore.v1beta1.StructuredQuery.Projection.Builder,
@@ -10245,7 +10226,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureFromIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         from_ =
             new java.util.ArrayList<
                 com.google.firestore.v1beta1.StructuredQuery.CollectionSelector>(from_);
@@ -10602,16 +10583,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
                 com.google.firestore.v1beta1.StructuredQuery.CollectionSelector,
                 com.google.firestore.v1beta1.StructuredQuery.CollectionSelector.Builder,
                 com.google.firestore.v1beta1.StructuredQuery.CollectionSelectorOrBuilder>(
-                from_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                from_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         from_ = null;
       }
       return fromBuilder_;
     }
 
-    private com.google.firestore.v1beta1.StructuredQuery.Filter where_ = null;
+    private com.google.firestore.v1beta1.StructuredQuery.Filter where_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1beta1.StructuredQuery.Filter,
             com.google.firestore.v1beta1.StructuredQuery.Filter.Builder,
@@ -10797,7 +10775,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureOrderByIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         orderBy_ =
             new java.util.ArrayList<com.google.firestore.v1beta1.StructuredQuery.Order>(orderBy_);
         bitField0_ |= 0x00000008;
@@ -11374,16 +11352,13 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
                 com.google.firestore.v1beta1.StructuredQuery.Order,
                 com.google.firestore.v1beta1.StructuredQuery.Order.Builder,
                 com.google.firestore.v1beta1.StructuredQuery.OrderOrBuilder>(
-                orderBy_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
-                getParentForChildren(),
-                isClean());
+                orderBy_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         orderBy_ = null;
       }
       return orderByBuilder_;
     }
 
-    private com.google.firestore.v1beta1.Cursor startAt_ = null;
+    private com.google.firestore.v1beta1.Cursor startAt_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1beta1.Cursor,
             com.google.firestore.v1beta1.Cursor.Builder,
@@ -11564,7 +11539,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       return startAtBuilder_;
     }
 
-    private com.google.firestore.v1beta1.Cursor endAt_ = null;
+    private com.google.firestore.v1beta1.Cursor endAt_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1beta1.Cursor,
             com.google.firestore.v1beta1.Cursor.Builder,
@@ -11791,7 +11766,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.Int32Value limit_ = null;
+    private com.google.protobuf.Int32Value limit_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Int32Value,
             com.google.protobuf.Int32Value.Builder,
@@ -11986,7 +11961,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
