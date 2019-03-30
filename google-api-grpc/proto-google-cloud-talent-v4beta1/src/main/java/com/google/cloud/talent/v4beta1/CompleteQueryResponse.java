@@ -53,7 +53,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 completionResults_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult>();
@@ -84,7 +84,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -96,7 +96,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         completionResults_ = java.util.Collections.unmodifiableList(completionResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -260,7 +260,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -474,12 +474,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult other =
           (com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult) obj;
 
-      boolean result = true;
-      result = result && getSuggestion().equals(other.getSuggestion());
-      result = result && type_ == other.type_;
-      result = result && getImageUri().equals(other.getImageUri());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getSuggestion().equals(other.getSuggestion())) return false;
+      if (type_ != other.type_) return false;
+      if (!getImageUri().equals(other.getImageUri())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -692,23 +691,23 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -716,13 +715,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1054,7 +1053,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1283,14 +1282,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     com.google.cloud.talent.v4beta1.CompleteQueryResponse other =
         (com.google.cloud.talent.v4beta1.CompleteQueryResponse) obj;
 
-    boolean result = true;
-    result = result && getCompletionResultsList().equals(other.getCompletionResultsList());
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (!getCompletionResultsList().equals(other.getCompletionResultsList())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1499,7 +1497,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (completionResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           completionResults_ = java.util.Collections.unmodifiableList(completionResults_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1519,35 +1517,35 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1629,7 +1627,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         completionResults_ = java.util.Collections.emptyList();
 
     private void ensureCompletionResultsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         completionResults_ =
             new java.util.ArrayList<
                 com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult>(
@@ -2033,7 +2031,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult.Builder,
                 com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResultOrBuilder>(
                 completionResults_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         completionResults_ = null;
@@ -2041,7 +2039,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       return completionResultsBuilder_;
     }
 
-    private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_ = null;
+    private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.ResponseMetadata,
             com.google.cloud.talent.v4beta1.ResponseMetadata.Builder,
@@ -2234,7 +2232,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
