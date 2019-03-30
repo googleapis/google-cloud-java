@@ -23,7 +23,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
   }
 
   private CropHintsParams() {
-    aspectRatios_ = java.util.Collections.emptyList();
+    aspectRatios_ = emptyFloatList();
   }
 
   @java.lang.Override
@@ -52,31 +52,30 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
             break;
           case 13:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                aspectRatios_ = new java.util.ArrayList<java.lang.Float>();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                aspectRatios_ = newFloatList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              aspectRatios_.add(input.readFloat());
+              aspectRatios_.addFloat(input.readFloat());
               break;
             }
           case 10:
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)
-                  && input.getBytesUntilLimit() > 0) {
-                aspectRatios_ = new java.util.ArrayList<java.lang.Float>();
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                aspectRatios_ = newFloatList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                aspectRatios_.add(input.readFloat());
+                aspectRatios_.addFloat(input.readFloat());
               }
               input.popLimit(limit);
               break;
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -88,8 +87,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        aspectRatios_ = java.util.Collections.unmodifiableList(aspectRatios_);
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        aspectRatios_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -112,7 +111,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ASPECT_RATIOS_FIELD_NUMBER = 1;
-  private java.util.List<java.lang.Float> aspectRatios_;
+  private com.google.protobuf.Internal.FloatList aspectRatios_;
   /**
    *
    *
@@ -162,7 +161,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
    * <code>repeated float aspect_ratios = 1;</code>
    */
   public float getAspectRatios(int index) {
-    return aspectRatios_.get(index);
+    return aspectRatios_.getFloat(index);
   }
 
   private int aspectRatiosMemoizedSerializedSize = -1;
@@ -187,7 +186,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       output.writeUInt32NoTag(aspectRatiosMemoizedSerializedSize);
     }
     for (int i = 0; i < aspectRatios_.size(); i++) {
-      output.writeFloatNoTag(aspectRatios_.get(i));
+      output.writeFloatNoTag(aspectRatios_.getFloat(i));
     }
     unknownFields.writeTo(output);
   }
@@ -224,10 +223,9 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.vision.v1p2beta1.CropHintsParams other =
         (com.google.cloud.vision.v1p2beta1.CropHintsParams) obj;
 
-    boolean result = true;
-    result = result && getAspectRatiosList().equals(other.getAspectRatiosList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAspectRatiosList().equals(other.getAspectRatiosList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -386,7 +384,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      aspectRatios_ = java.util.Collections.emptyList();
+      aspectRatios_ = emptyFloatList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -416,8 +414,8 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.vision.v1p2beta1.CropHintsParams result =
           new com.google.cloud.vision.v1p2beta1.CropHintsParams(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        aspectRatios_ = java.util.Collections.unmodifiableList(aspectRatios_);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        aspectRatios_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.aspectRatios_ = aspectRatios_;
@@ -427,35 +425,35 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -513,11 +511,11 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private java.util.List<java.lang.Float> aspectRatios_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.FloatList aspectRatios_ = emptyFloatList();
 
     private void ensureAspectRatiosIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        aspectRatios_ = new java.util.ArrayList<java.lang.Float>(aspectRatios_);
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        aspectRatios_ = mutableCopy(aspectRatios_);
         bitField0_ |= 0x00000001;
       }
     }
@@ -536,7 +534,9 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * <code>repeated float aspect_ratios = 1;</code>
      */
     public java.util.List<java.lang.Float> getAspectRatiosList() {
-      return java.util.Collections.unmodifiableList(aspectRatios_);
+      return ((bitField0_ & 0x00000001) != 0)
+          ? java.util.Collections.unmodifiableList(aspectRatios_)
+          : aspectRatios_;
     }
     /**
      *
@@ -570,7 +570,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * <code>repeated float aspect_ratios = 1;</code>
      */
     public float getAspectRatios(int index) {
-      return aspectRatios_.get(index);
+      return aspectRatios_.getFloat(index);
     }
     /**
      *
@@ -588,7 +588,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      */
     public Builder setAspectRatios(int index, float value) {
       ensureAspectRatiosIsMutable();
-      aspectRatios_.set(index, value);
+      aspectRatios_.setFloat(index, value);
       onChanged();
       return this;
     }
@@ -608,7 +608,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      */
     public Builder addAspectRatios(float value) {
       ensureAspectRatiosIsMutable();
-      aspectRatios_.add(value);
+      aspectRatios_.addFloat(value);
       onChanged();
       return this;
     }
@@ -647,7 +647,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
      * <code>repeated float aspect_ratios = 1;</code>
      */
     public Builder clearAspectRatios() {
-      aspectRatios_ = java.util.Collections.emptyList();
+      aspectRatios_ = emptyFloatList();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -655,7 +655,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
