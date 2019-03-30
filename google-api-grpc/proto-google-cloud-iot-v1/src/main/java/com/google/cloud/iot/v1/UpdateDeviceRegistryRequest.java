@@ -81,7 +81,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -262,17 +262,16 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
     com.google.cloud.iot.v1.UpdateDeviceRegistryRequest other =
         (com.google.cloud.iot.v1.UpdateDeviceRegistryRequest) obj;
 
-    boolean result = true;
-    result = result && (hasDeviceRegistry() == other.hasDeviceRegistry());
+    if (hasDeviceRegistry() != other.hasDeviceRegistry()) return false;
     if (hasDeviceRegistry()) {
-      result = result && getDeviceRegistry().equals(other.getDeviceRegistry());
+      if (!getDeviceRegistry().equals(other.getDeviceRegistry())) return false;
     }
-    result = result && (hasUpdateMask() == other.hasUpdateMask());
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
-      result = result && getUpdateMask().equals(other.getUpdateMask());
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -490,35 +489,35 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -570,7 +569,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.cloud.iot.v1.DeviceRegistry deviceRegistry_ = null;
+    private com.google.cloud.iot.v1.DeviceRegistry deviceRegistry_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.DeviceRegistry,
             com.google.cloud.iot.v1.DeviceRegistry.Builder,
@@ -770,7 +769,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
       return deviceRegistryBuilder_;
     }
 
-    private com.google.protobuf.FieldMask updateMask_ = null;
+    private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
@@ -987,7 +986,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
