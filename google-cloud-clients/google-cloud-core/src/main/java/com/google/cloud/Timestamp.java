@@ -17,18 +17,15 @@
 package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
-import com.google.protobuf.util.Timestamps;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
-import org.threeten.bp.format.DateTimeFormatterBuilder;
-import org.threeten.bp.temporal.TemporalAccessor;
+import com.google.api.client.util.Preconditions;
+import com.google.protobuf.util.Timestamps;
 
 /**
  * Represents a timestamp with nanosecond precision. Timestamps cover the range [0001-01-01,
@@ -48,15 +45,6 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
       new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
 
   private static final DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-
-  private static final DateTimeFormatter timestampParser =
-      new DateTimeFormatterBuilder()
-          .appendOptional(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-          .optionalStart()
-          .appendOffsetId()
-          .optionalEnd()
-          .toFormatter()
-          .withZone(ZoneOffset.UTC);
 
   private final long seconds;
   private final int nanos;
@@ -181,9 +169,43 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * the timezone offset (always ends in "Z").
    */
   public static Timestamp parseTimestamp(String timestamp) {
-    TemporalAccessor temporalAccessor = timestampParser.parse(timestamp);
-    Instant instant = Instant.from(temporalAccessor);
-    return ofTimeSecondsAndNanos(instant.getEpochSecond(), instant.getNano());
+    Preconditions.checkNotNull(timestamp);
+    final String invalidTimestamp = "Invalid timestamp: " + timestamp;
+    Preconditions.checkArgument(timestamp.length() >= 19 && timestamp.length() <= 30, invalidTimestamp);
+    Preconditions.checkArgument(timestamp.charAt(4) == '-', invalidTimestamp);
+    Preconditions.checkArgument(timestamp.charAt(7) == '-', invalidTimestamp);
+    Preconditions.checkArgument(timestamp.charAt(10) == 'T', invalidTimestamp);
+    Preconditions.checkArgument(
+        (timestamp.length() == 19 && timestamp.charAt(18) != 'Z')
+        ||
+        (timestamp.length() == 20 && timestamp.charAt(19) == 'Z')
+        ||
+        (timestamp.charAt(19) == '.' && timestamp.length() > 20 && timestamp.charAt(20) != 'Z'),
+        invalidTimestamp);
+    int year = IntParser.parseInt(timestamp, 0, 4);
+    int month = IntParser.parseInt(timestamp, 5, 7);
+    int day = IntParser.parseInt(timestamp, 8, 10);
+    int hour = IntParser.parseInt(timestamp, 11, 13);
+    int minute = IntParser.parseInt(timestamp, 14, 16);
+    int second = IntParser.parseInt(timestamp, 17, 19);
+    int fraction = 0;
+    if(timestamp.length() > 20) {
+      if(timestamp.charAt(19) == '.') {
+        int endIndex;
+        if(timestamp.charAt(timestamp.length() - 1) == 'Z') {
+          endIndex = timestamp.length() - 1;
+        } else {
+          endIndex = timestamp.length();
+        }
+        if(endIndex - 20 > 9) {
+          throw new IllegalArgumentException(invalidTimestamp);
+        }
+        fraction = IntParser.parseInt(timestamp, 20, endIndex);
+      } else {
+      }
+    }
+    LocalDateTime ldt = LocalDateTime.of(year, month, day, hour, minute, second, fraction);
+    return ofTimeSecondsAndNanos(ldt.toEpochSecond(ZoneOffset.UTC), ldt.getNano());
   }
 
   private StringBuilder toString(StringBuilder b) {

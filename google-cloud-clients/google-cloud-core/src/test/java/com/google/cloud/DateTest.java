@@ -18,7 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
-
+import static org.junit.Assert.fail;
 import com.google.common.testing.EqualsTester;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,6 +38,20 @@ public class DateTest {
     assertThat(date.getYear()).isEqualTo(2016);
     assertThat(date.getMonth()).isEqualTo(9);
     assertThat(date.getDayOfMonth()).isEqualTo(18);
+    parseInvalidDate("2016/09/18");
+    parseInvalidDate("2016 09 18");
+    parseInvalidDate("2016-9-18");
+    parseInvalidDate("2016-09-18T10:00");
+    parseInvalidDate("");
+  }
+
+  private void parseInvalidDate(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid date");
+    }
   }
 
   @Test
