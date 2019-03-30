@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.ListEntityTypes].
+ * The request message for [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.ListEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListEntityTypesRequest}
@@ -166,9 +165,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The language to list entity synonyms for. If not specified,
    * the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -190,9 +190,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The language to list entity synonyms for. If not specified,
    * the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -459,8 +460,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for
-   * [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.ListEntityTypes].
+   * The request message for [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.ListEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListEntityTypesRequest}
@@ -741,9 +741,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The language to list entity synonyms for. If not specified,
      * the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -765,9 +766,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The language to list entity synonyms for. If not specified,
      * the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -789,9 +791,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The language to list entity synonyms for. If not specified,
      * the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -811,9 +814,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The language to list entity synonyms for. If not specified,
      * the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -830,9 +834,10 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The language to list entity synonyms for. If not specified,
      * the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>

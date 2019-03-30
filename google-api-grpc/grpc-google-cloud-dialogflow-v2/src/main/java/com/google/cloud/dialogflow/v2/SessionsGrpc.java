@@ -15,10 +15,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  * <pre>
  * A session represents an interaction with a user. You retrieve user input
- * and pass it to the
- * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
- * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
- * method to determine user intent and respond.
+ * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
+ * user intent and respond.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -171,10 +170,9 @@ public final class SessionsGrpc {
    *
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the
-   * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method to determine user intent and respond.
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
+   * user intent and respond.
    * </pre>
    */
   public abstract static class SessionsImplBase implements io.grpc.BindableService {
@@ -240,10 +238,9 @@ public final class SessionsGrpc {
    *
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the
-   * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method to determine user intent and respond.
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
+   * user intent and respond.
    * </pre>
    */
   public static final class SessionsStub extends io.grpc.stub.AbstractStub<SessionsStub> {
@@ -305,10 +302,9 @@ public final class SessionsGrpc {
    *
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the
-   * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method to determine user intent and respond.
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
+   * user intent and respond.
    * </pre>
    */
   public static final class SessionsBlockingStub
@@ -348,10 +344,9 @@ public final class SessionsGrpc {
    *
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the
-   * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method to determine user intent and respond.
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
+   * user intent and respond.
    * </pre>
    */
   public static final class SessionsFutureStub

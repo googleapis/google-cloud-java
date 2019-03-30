@@ -175,11 +175,29 @@ public interface DocumentOrBuilder
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getContent();
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
+   * </pre>
+   *
+   * <code>string content = 6 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getContentBytes();
+
   /**
    *
    *
@@ -188,9 +206,9 @@ public interface DocumentOrBuilder
    * EXTRACTIVE_QA and FAQ knowledge types.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>bytes raw_content = 9;</code>
    */
-  com.google.protobuf.ByteString getContentBytes();
+  com.google.protobuf.ByteString getRawContent();
 
   public com.google.cloud.dialogflow.v2beta1.Document.SourceCase getSourceCase();
 }

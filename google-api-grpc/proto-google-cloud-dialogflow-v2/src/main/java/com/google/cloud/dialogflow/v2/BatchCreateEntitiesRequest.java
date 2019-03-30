@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
+ * The request message for [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchCreateEntitiesRequest}
@@ -169,7 +168,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The collection of entities to create.
+   * Required. The entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -181,7 +180,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The collection of entities to create.
+   * Required. The entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -194,7 +193,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The collection of entities to create.
+   * Required. The entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -206,7 +205,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The collection of entities to create.
+   * Required. The entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -218,7 +217,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The collection of entities to create.
+   * Required. The entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -235,9 +234,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -259,9 +259,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -462,8 +463,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request message for
-   * [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
+   * The request message for [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchCreateEntitiesRequest}
@@ -794,7 +794,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -810,7 +810,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -826,7 +826,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -842,7 +842,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -864,7 +864,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -884,7 +884,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -906,7 +906,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -928,7 +928,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -948,7 +948,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -968,7 +968,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -988,7 +988,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1007,7 +1007,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1026,7 +1026,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1038,7 +1038,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1055,7 +1055,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1072,7 +1072,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1085,7 +1085,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1098,7 +1098,7 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The collection of entities to create.
+     * Required. The entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 2;</code>
@@ -1132,9 +1132,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1156,9 +1157,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1180,9 +1182,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1202,9 +1205,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1221,9 +1225,10 @@ public final class BatchCreateEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>

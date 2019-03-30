@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [Agents.ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent].
+ * The request message for [Agents.ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ImportAgentRequest}
@@ -474,8 +473,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for
-   * [Agents.ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent].
+   * The request message for [Agents.ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ImportAgentRequest}

@@ -14,16 +14,16 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * An intent represents a mapping between input from a user and an action to
  * be taken by your application. When you pass user input to the
  * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
- * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
- * method, the Dialogflow API analyzes the input and searches for a matching
- * intent. If no match is found, the Dialogflow API returns a fallback intent
- * (`is_fallback` = true).
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method, the
+ * Dialogflow API analyzes the input and searches
+ * for a matching intent. If no match is found, the Dialogflow API returns a
+ * fallback intent (`is_fallback` = true).
  * You can provide additional information for the Dialogflow API to use to
  * match user input to an intent by adding the following to your intent.
  * *   **Contexts** - provide additional context for intent analysis. For
  *     example, if an intent is related to an object in your application that
  *     plays music, you can provide a context to determine when to match the
- *     intent if the user input is “turn it off”.  You can include a context
+ *     intent if the user input is "turn it off". You can include a context
  *     that matches the intent when there is previous user input of
  *     "play music", and not when there is previous user input of
  *     "turn on the light".
@@ -36,7 +36,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * *   **Training phrases** - provide examples of user input to train the
  *     Dialogflow API agent to better match intents.
  * For more information about intents, see the
- * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+ * [Dialogflow
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -455,16 +456,16 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method, the Dialogflow API analyzes the input and searches for a matching
-   * intent. If no match is found, the Dialogflow API returns a fallback intent
-   * (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method, the
+   * Dialogflow API analyzes the input and searches
+   * for a matching intent. If no match is found, the Dialogflow API returns a
+   * fallback intent (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -477,7 +478,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public abstract static class IntentsImplBase implements io.grpc.BindableService {
@@ -539,7 +541,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public void deleteIntent(
@@ -553,8 +555,7 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response:
-     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public void batchUpdateIntents(
@@ -634,16 +635,16 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method, the Dialogflow API analyzes the input and searches for a matching
-   * intent. If no match is found, the Dialogflow API returns a fallback intent
-   * (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method, the
+   * Dialogflow API analyzes the input and searches
+   * for a matching intent. If no match is found, the Dialogflow API returns a
+   * fallback intent (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -656,7 +657,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsStub extends io.grpc.stub.AbstractStub<IntentsStub> {
@@ -742,7 +744,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public void deleteIntent(
@@ -759,8 +761,7 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response:
-     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public void batchUpdateIntents(
@@ -797,16 +798,16 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method, the Dialogflow API analyzes the input and searches for a matching
-   * intent. If no match is found, the Dialogflow API returns a fallback intent
-   * (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method, the
+   * Dialogflow API analyzes the input and searches
+   * for a matching intent. If no match is found, the Dialogflow API returns a
+   * fallback intent (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -819,7 +820,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsBlockingStub
@@ -892,7 +894,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public com.google.protobuf.Empty deleteIntent(
@@ -906,8 +908,7 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response:
-     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateIntents(
@@ -938,16 +939,16 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent])
-   * method, the Dialogflow API analyzes the input and searches for a matching
-   * intent. If no match is found, the Dialogflow API returns a fallback intent
-   * (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method, the
+   * Dialogflow API analyzes the input and searches
+   * for a matching intent. If no match is found, the Dialogflow API returns a
+   * fallback intent (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -960,7 +961,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsFutureStub extends io.grpc.stub.AbstractStub<IntentsFutureStub> {
@@ -1034,7 +1036,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1048,8 +1050,7 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response:
-     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

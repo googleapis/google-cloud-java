@@ -87,7 +87,10 @@ import org.threeten.bp.Duration;
 public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTypesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/dialogflow")
+          .build();
 
   private final PagedCallSettings<
           ListSessionEntityTypesRequest,

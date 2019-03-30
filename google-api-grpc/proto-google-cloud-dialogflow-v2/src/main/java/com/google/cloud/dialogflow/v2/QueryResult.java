@@ -190,6 +190,23 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
               languageCode_ = s;
               break;
             }
+          case 138:
+            {
+              com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder subBuilder = null;
+              if (sentimentAnalysisResult_ != null) {
+                subBuilder = sentimentAnalysisResult_.toBuilder();
+              }
+              sentimentAnalysisResult_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.SentimentAnalysisResult.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sentimentAnalysisResult_);
+                sentimentAnalysisResult_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -293,7 +310,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The language that was triggered during intent detection.
-   * See [Language Support](https://dialogflow.com/docs/reference/language)
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -315,7 +333,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The language that was triggered during intent detection.
-   * See [Language Support](https://dialogflow.com/docs/reference/language)
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -343,10 +362,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * indicates an estimated greater likelihood that the recognized words are
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
-   * You should not rely on this field as it isn't guaranteed to be accurate, or
-   * even set. In particular this field isn't set in Webhook calls and for
-   * StreamingDetectIntent since the streaming endpoint has separate confidence
-   * estimates per portion of the audio in StreamingRecognitionResult.
+   * This field is not guaranteed to be accurate or set. In particular this
+   * field isn't set for StreamingDetectIntent since the streaming endpoint has
+   * separate confidence estimates per portion of the audio in
+   * StreamingRecognitionResult.
    * </pre>
    *
    * <code>float speech_recognition_confidence = 2;</code>
@@ -463,6 +482,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
+   * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
@@ -483,6 +503,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
+   * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
@@ -786,6 +807,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The intent detection confidence. Values range from 0.0
    * (completely uncertain) to 1.0 (completely certain).
+   * If there are `multiple knowledge_answers` messages, this value is set to
+   * the greatest `knowledgeAnswers.match_confidence` value in the list.
    * </pre>
    *
    * <code>float intent_detection_confidence = 12;</code>
@@ -800,8 +823,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -813,8 +837,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -828,14 +853,63 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
    */
   public com.google.protobuf.StructOrBuilder getDiagnosticInfoOrBuilder() {
     return getDiagnosticInfo();
+  }
+
+  public static final int SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER = 17;
+  private com.google.cloud.dialogflow.v2.SentimentAnalysisResult sentimentAnalysisResult_;
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  public boolean hasSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  public com.google.cloud.dialogflow.v2.SentimentAnalysisResult getSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ == null
+        ? com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()
+        : sentimentAnalysisResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  public com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder
+      getSentimentAnalysisResultOrBuilder() {
+    return getSentimentAnalysisResult();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -894,6 +968,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (!getLanguageCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, languageCode_);
     }
+    if (sentimentAnalysisResult_ != null) {
+      output.writeMessage(17, getSentimentAnalysisResult());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -948,6 +1025,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (!getLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, languageCode_);
     }
+    if (sentimentAnalysisResult_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getSentimentAnalysisResult());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -991,6 +1073,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasDiagnosticInfo() != other.hasDiagnosticInfo()) return false;
     if (hasDiagnosticInfo()) {
       if (!getDiagnosticInfo().equals(other.getDiagnosticInfo())) return false;
+    }
+    if (hasSentimentAnalysisResult() != other.hasSentimentAnalysisResult()) return false;
+    if (hasSentimentAnalysisResult()) {
+      if (!getSentimentAnalysisResult().equals(other.getSentimentAnalysisResult())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1042,6 +1128,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasDiagnosticInfo()) {
       hash = (37 * hash) + DIAGNOSTIC_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosticInfo().hashCode();
+    }
+    if (hasSentimentAnalysisResult()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1243,6 +1333,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         diagnosticInfo_ = null;
         diagnosticInfoBuilder_ = null;
       }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
       return this;
     }
 
@@ -1317,6 +1413,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         result.diagnosticInfo_ = diagnosticInfo_;
       } else {
         result.diagnosticInfo_ = diagnosticInfoBuilder_.build();
+      }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResult_;
+      } else {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResultBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1462,6 +1563,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDiagnosticInfo()) {
         mergeDiagnosticInfo(other.getDiagnosticInfo());
+      }
+      if (other.hasSentimentAnalysisResult()) {
+        mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1624,7 +1728,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The language that was triggered during intent detection.
-     * See [Language Support](https://dialogflow.com/docs/reference/language)
+     * See [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1646,7 +1751,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The language that was triggered during intent detection.
-     * See [Language Support](https://dialogflow.com/docs/reference/language)
+     * See [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1668,7 +1774,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The language that was triggered during intent detection.
-     * See [Language Support](https://dialogflow.com/docs/reference/language)
+     * See [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1688,7 +1795,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The language that was triggered during intent detection.
-     * See [Language Support](https://dialogflow.com/docs/reference/language)
+     * See [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1705,7 +1813,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The language that was triggered during intent detection.
-     * See [Language Support](https://dialogflow.com/docs/reference/language)
+     * See [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
      * for a list of the currently supported language codes.
      * </pre>
      *
@@ -1731,10 +1840,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
-     * You should not rely on this field as it isn't guaranteed to be accurate, or
-     * even set. In particular this field isn't set in Webhook calls and for
-     * StreamingDetectIntent since the streaming endpoint has separate confidence
-     * estimates per portion of the audio in StreamingRecognitionResult.
+     * This field is not guaranteed to be accurate or set. In particular this
+     * field isn't set for StreamingDetectIntent since the streaming endpoint has
+     * separate confidence estimates per portion of the audio in
+     * StreamingRecognitionResult.
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
@@ -1750,10 +1859,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
-     * You should not rely on this field as it isn't guaranteed to be accurate, or
-     * even set. In particular this field isn't set in Webhook calls and for
-     * StreamingDetectIntent since the streaming endpoint has separate confidence
-     * estimates per portion of the audio in StreamingRecognitionResult.
+     * This field is not guaranteed to be accurate or set. In particular this
+     * field isn't set for StreamingDetectIntent since the streaming endpoint has
+     * separate confidence estimates per portion of the audio in
+     * StreamingRecognitionResult.
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
@@ -1772,10 +1881,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
-     * You should not rely on this field as it isn't guaranteed to be accurate, or
-     * even set. In particular this field isn't set in Webhook calls and for
-     * StreamingDetectIntent since the streaming endpoint has separate confidence
-     * estimates per portion of the audio in StreamingRecognitionResult.
+     * This field is not guaranteed to be accurate or set. In particular this
+     * field isn't set for StreamingDetectIntent since the streaming endpoint has
+     * separate confidence estimates per portion of the audio in
+     * StreamingRecognitionResult.
      * </pre>
      *
      * <code>float speech_recognition_confidence = 2;</code>
@@ -2118,6 +2227,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The text to be pronounced to the user or shown on the screen.
+     * Note: This is a legacy field, `fulfillment_messages` should be preferred.
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
@@ -2138,6 +2248,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The text to be pronounced to the user or shown on the screen.
+     * Note: This is a legacy field, `fulfillment_messages` should be preferred.
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
@@ -2158,6 +2269,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The text to be pronounced to the user or shown on the screen.
+     * Note: This is a legacy field, `fulfillment_messages` should be preferred.
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
@@ -2176,6 +2288,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The text to be pronounced to the user or shown on the screen.
+     * Note: This is a legacy field, `fulfillment_messages` should be preferred.
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
@@ -2191,6 +2304,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The text to be pronounced to the user or shown on the screen.
+     * Note: This is a legacy field, `fulfillment_messages` should be preferred.
      * </pre>
      *
      * <code>string fulfillment_text = 6;</code>
@@ -3470,6 +3584,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * If there are `multiple knowledge_answers` messages, this value is set to
+     * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
@@ -3483,6 +3599,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * If there are `multiple knowledge_answers` messages, this value is set to
+     * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
@@ -3499,6 +3617,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The intent detection confidence. Values range from 0.0
      * (completely uncertain) to 1.0 (completely certain).
+     * If there are `multiple knowledge_answers` messages, this value is set to
+     * the greatest `knowledgeAnswers.match_confidence` value in the list.
      * </pre>
      *
      * <code>float intent_detection_confidence = 12;</code>
@@ -3520,8 +3640,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3533,8 +3654,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3552,8 +3674,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3575,8 +3698,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3595,8 +3719,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3622,8 +3747,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3643,8 +3769,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3658,8 +3785,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3677,8 +3805,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The free-form diagnostic info. For example, this field
-     * could contain webhook call latency.
+     * The free-form diagnostic info. For example, this field could contain
+     * webhook call latency. The string keys of the Struct's fields map can change
+     * without notice.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -3698,6 +3827,211 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         diagnosticInfo_ = null;
       }
       return diagnosticInfoBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.SentimentAnalysisResult sentimentAnalysisResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder>
+        sentimentAnalysisResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public boolean hasSentimentAnalysisResult() {
+      return sentimentAnalysisResultBuilder_ != null || sentimentAnalysisResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisResult getSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        return sentimentAnalysisResult_ == null
+            ? com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()
+            : sentimentAnalysisResult_;
+      } else {
+        return sentimentAnalysisResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysisResult_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder builderForValue) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder mergeSentimentAnalysisResult(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (sentimentAnalysisResult_ != null) {
+          sentimentAnalysisResult_ =
+              com.google.cloud.dialogflow.v2.SentimentAnalysisResult.newBuilder(
+                      sentimentAnalysisResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sentimentAnalysisResult_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder clearSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder
+        getSentimentAnalysisResultBuilder() {
+
+      onChanged();
+      return getSentimentAnalysisResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder
+        getSentimentAnalysisResultOrBuilder() {
+      if (sentimentAnalysisResultBuilder_ != null) {
+        return sentimentAnalysisResultBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysisResult_ == null
+            ? com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()
+            : sentimentAnalysisResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result, which depends on the
+     * `sentiment_analysis_request_config` specified in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder>
+        getSentimentAnalysisResultFieldBuilder() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SentimentAnalysisResult,
+                com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder,
+                com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder>(
+                getSentimentAnalysisResult(), getParentForChildren(), isClean());
+        sentimentAnalysisResult_ = null;
+      }
+      return sentimentAnalysisResultBuilder_;
     }
 
     @java.lang.Override

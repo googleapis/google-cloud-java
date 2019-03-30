@@ -47,10 +47,10 @@ import javax.annotation.Generated;
  * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) request,
  * or as output contexts included in the returned intent. Contexts expire when an intent is matched,
  * after the number of `DetectIntent` requests specified by the `lifespan_count` parameter, or after
- * 10 minutes if no intents are matched for a `DetectIntent` request.
+ * 20 minutes if no intents are matched for a `DetectIntent` request.
  *
  * <p>For more information about contexts, see the [Dialogflow
- * documentation](https://dialogflow.com/docs/contexts).
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -408,6 +408,8 @@ public class ContextsClient implements BackgroundResource {
   /**
    * Creates a context.
    *
+   * <p>If the specified context already exists, overrides the context.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -440,6 +442,8 @@ public class ContextsClient implements BackgroundResource {
   /**
    * Creates a context.
    *
+   * <p>If the specified context already exists, overrides the context.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -469,6 +473,8 @@ public class ContextsClient implements BackgroundResource {
   /**
    * Creates a context.
    *
+   * <p>If the specified context already exists, overrides the context.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -493,6 +499,8 @@ public class ContextsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a context.
+   *
+   * <p>If the specified context already exists, overrides the context.
    *
    * <p>Sample code:
    *

@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [Agents.ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent].
+ * The request message for [Agents.ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ExportAgentRequest}
@@ -369,8 +368,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for
-   * [Agents.ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent].
+   * The request message for [Agents.ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ExportAgentRequest}
