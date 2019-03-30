@@ -23,10 +23,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private ColorInfo() {
-    score_ = 0F;
-    pixelFraction_ = 0F;
-  }
+  private ColorInfo() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -78,7 +75,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -237,21 +234,16 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vision.v1p4beta1.ColorInfo other =
         (com.google.cloud.vision.v1p4beta1.ColorInfo) obj;
 
-    boolean result = true;
-    result = result && (hasColor() == other.hasColor());
+    if (hasColor() != other.hasColor()) return false;
     if (hasColor()) {
-      result = result && getColor().equals(other.getColor());
+      if (!getColor().equals(other.getColor())) return false;
     }
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getScore())
-                == java.lang.Float.floatToIntBits(other.getScore()));
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getPixelFraction())
-                == java.lang.Float.floatToIntBits(other.getPixelFraction()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Float.floatToIntBits(getScore())
+        != java.lang.Float.floatToIntBits(other.getScore())) return false;
+    if (java.lang.Float.floatToIntBits(getPixelFraction())
+        != java.lang.Float.floatToIntBits(other.getPixelFraction())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -465,35 +457,35 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -546,7 +538,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.Color color_ = null;
+    private com.google.type.Color color_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Color, com.google.type.Color.Builder, com.google.type.ColorOrBuilder>
         colorBuilder_;
@@ -808,7 +800,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -69,7 +69,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 languageHints_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -129,7 +129,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -141,7 +141,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -484,26 +484,25 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vision.v1p4beta1.ImageContext other =
         (com.google.cloud.vision.v1p4beta1.ImageContext) obj;
 
-    boolean result = true;
-    result = result && (hasLatLongRect() == other.hasLatLongRect());
+    if (hasLatLongRect() != other.hasLatLongRect()) return false;
     if (hasLatLongRect()) {
-      result = result && getLatLongRect().equals(other.getLatLongRect());
+      if (!getLatLongRect().equals(other.getLatLongRect())) return false;
     }
-    result = result && getLanguageHintsList().equals(other.getLanguageHintsList());
-    result = result && (hasCropHintsParams() == other.hasCropHintsParams());
+    if (!getLanguageHintsList().equals(other.getLanguageHintsList())) return false;
+    if (hasCropHintsParams() != other.hasCropHintsParams()) return false;
     if (hasCropHintsParams()) {
-      result = result && getCropHintsParams().equals(other.getCropHintsParams());
+      if (!getCropHintsParams().equals(other.getCropHintsParams())) return false;
     }
-    result = result && (hasProductSearchParams() == other.hasProductSearchParams());
+    if (hasProductSearchParams() != other.hasProductSearchParams()) return false;
     if (hasProductSearchParams()) {
-      result = result && getProductSearchParams().equals(other.getProductSearchParams());
+      if (!getProductSearchParams().equals(other.getProductSearchParams())) return false;
     }
-    result = result && (hasWebDetectionParams() == other.hasWebDetectionParams());
+    if (hasWebDetectionParams() != other.hasWebDetectionParams()) return false;
     if (hasWebDetectionParams()) {
-      result = result && getWebDetectionParams().equals(other.getWebDetectionParams());
+      if (!getWebDetectionParams().equals(other.getWebDetectionParams())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -738,7 +737,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.latLongRect_ = latLongRectBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -765,35 +764,35 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -861,7 +860,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.cloud.vision.v1p4beta1.LatLongRect latLongRect_ = null;
+    private com.google.cloud.vision.v1p4beta1.LatLongRect latLongRect_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.LatLongRect,
             com.google.cloud.vision.v1p4beta1.LatLongRect.Builder,
@@ -1047,7 +1046,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageHintsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
         bitField0_ |= 0x00000002;
       }
@@ -1249,7 +1248,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.vision.v1p4beta1.CropHintsParams cropHintsParams_ = null;
+    private com.google.cloud.vision.v1p4beta1.CropHintsParams cropHintsParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.CropHintsParams,
             com.google.cloud.vision.v1p4beta1.CropHintsParams.Builder,
@@ -1432,7 +1431,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       return cropHintsParamsBuilder_;
     }
 
-    private com.google.cloud.vision.v1p4beta1.ProductSearchParams productSearchParams_ = null;
+    private com.google.cloud.vision.v1p4beta1.ProductSearchParams productSearchParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.ProductSearchParams,
             com.google.cloud.vision.v1p4beta1.ProductSearchParams.Builder,
@@ -1618,7 +1617,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       return productSearchParamsBuilder_;
     }
 
-    private com.google.cloud.vision.v1p4beta1.WebDetectionParams webDetectionParams_ = null;
+    private com.google.cloud.vision.v1p4beta1.WebDetectionParams webDetectionParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.WebDetectionParams,
             com.google.cloud.vision.v1p4beta1.WebDetectionParams.Builder,
@@ -1806,7 +1805,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
