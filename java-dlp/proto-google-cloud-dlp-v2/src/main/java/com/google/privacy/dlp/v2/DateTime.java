@@ -104,7 +104,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -164,9 +164,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private TimeZone() {
-      offsetMinutes_ = 0;
-    }
+    private TimeZone() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -199,7 +197,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -292,10 +290,9 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.DateTime.TimeZone other =
           (com.google.privacy.dlp.v2.DateTime.TimeZone) obj;
 
-      boolean result = true;
-      result = result && (getOffsetMinutes() == other.getOffsetMinutes());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getOffsetMinutes() != other.getOffsetMinutes()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -482,23 +479,23 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -506,13 +503,13 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -609,7 +606,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -807,22 +804,21 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.DateTime other = (com.google.privacy.dlp.v2.DateTime) obj;
 
-    boolean result = true;
-    result = result && (hasDate() == other.hasDate());
+    if (hasDate() != other.hasDate()) return false;
     if (hasDate()) {
-      result = result && getDate().equals(other.getDate());
+      if (!getDate().equals(other.getDate())) return false;
     }
-    result = result && dayOfWeek_ == other.dayOfWeek_;
-    result = result && (hasTime() == other.hasTime());
+    if (dayOfWeek_ != other.dayOfWeek_) return false;
+    if (hasTime() != other.hasTime()) return false;
     if (hasTime()) {
-      result = result && getTime().equals(other.getTime());
+      if (!getTime().equals(other.getTime())) return false;
     }
-    result = result && (hasTimeZone() == other.hasTimeZone());
+    if (hasTimeZone() != other.hasTimeZone()) return false;
     if (hasTimeZone()) {
-      result = result && getTimeZone().equals(other.getTimeZone());
+      if (!getTimeZone().equals(other.getTimeZone())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1059,35 +1055,35 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1143,7 +1139,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.Date date_ = null;
+    private com.google.type.Date date_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         dateBuilder_;
@@ -1355,7 +1351,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.TimeOfDay time_ = null;
+    private com.google.type.TimeOfDay time_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.TimeOfDay,
             com.google.type.TimeOfDay.Builder,
@@ -1456,7 +1452,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
       return timeBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_ = null;
+    private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DateTime.TimeZone,
             com.google.privacy.dlp.v2.DateTime.TimeZone.Builder,
@@ -1568,7 +1564,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
