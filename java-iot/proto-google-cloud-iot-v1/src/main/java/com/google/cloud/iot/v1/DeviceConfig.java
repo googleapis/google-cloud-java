@@ -23,7 +23,6 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private DeviceConfig() {
-    version_ = 0L;
     binaryData_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -93,7 +92,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -329,19 +328,18 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.iot.v1.DeviceConfig other = (com.google.cloud.iot.v1.DeviceConfig) obj;
 
-    boolean result = true;
-    result = result && (getVersion() == other.getVersion());
-    result = result && (hasCloudUpdateTime() == other.hasCloudUpdateTime());
+    if (getVersion() != other.getVersion()) return false;
+    if (hasCloudUpdateTime() != other.hasCloudUpdateTime()) return false;
     if (hasCloudUpdateTime()) {
-      result = result && getCloudUpdateTime().equals(other.getCloudUpdateTime());
+      if (!getCloudUpdateTime().equals(other.getCloudUpdateTime())) return false;
     }
-    result = result && (hasDeviceAckTime() == other.hasDeviceAckTime());
+    if (hasDeviceAckTime() != other.hasDeviceAckTime()) return false;
     if (hasDeviceAckTime()) {
-      result = result && getDeviceAckTime().equals(other.getDeviceAckTime());
+      if (!getDeviceAckTime().equals(other.getDeviceAckTime())) return false;
     }
-    result = result && getBinaryData().equals(other.getBinaryData());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getBinaryData().equals(other.getBinaryData())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -567,35 +565,35 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -704,7 +702,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp cloudUpdateTime_ = null;
+    private com.google.protobuf.Timestamp cloudUpdateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -894,7 +892,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       return cloudUpdateTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp deviceAckTime_ = null;
+    private com.google.protobuf.Timestamp deviceAckTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1196,7 +1194,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
