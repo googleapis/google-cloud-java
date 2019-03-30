@@ -24,8 +24,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
   private CustomAttribute() {
     stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    longValues_ = java.util.Collections.emptyList();
-    filterable_ = false;
+    longValues_ = emptyLongList();
   }
 
   @java.lang.Override
@@ -55,7 +54,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stringValues_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -64,24 +63,23 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
             }
           case 16:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                longValues_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                longValues_ = newLongList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              longValues_.add(input.readInt64());
+              longValues_.addLong(input.readInt64());
               break;
             }
           case 18:
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
-                  && input.getBytesUntilLimit() > 0) {
-                longValues_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                longValues_ = newLongList();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                longValues_.add(input.readInt64());
+                longValues_.addLong(input.readInt64());
               }
               input.popLimit(limit);
               break;
@@ -93,7 +91,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -105,11 +103,11 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         stringValues_ = stringValues_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-        longValues_ = java.util.Collections.unmodifiableList(longValues_);
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        longValues_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -224,7 +222,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LONG_VALUES_FIELD_NUMBER = 2;
-  private java.util.List<java.lang.Long> longValues_;
+  private com.google.protobuf.Internal.LongList longValues_;
   /**
    *
    *
@@ -283,7 +281,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * <code>repeated int64 long_values = 2;</code>
    */
   public long getLongValues(int index) {
-    return longValues_.get(index);
+    return longValues_.getLong(index);
   }
 
   private int longValuesMemoizedSerializedSize = -1;
@@ -329,7 +327,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       output.writeUInt32NoTag(longValuesMemoizedSerializedSize);
     }
     for (int i = 0; i < longValues_.size(); i++) {
-      output.writeInt64NoTag(longValues_.get(i));
+      output.writeInt64NoTag(longValues_.getLong(i));
     }
     if (filterable_ != false) {
       output.writeBool(3, filterable_);
@@ -354,7 +352,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     {
       int dataSize = 0;
       for (int i = 0; i < longValues_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(longValues_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(longValues_.getLong(i));
       }
       size += dataSize;
       if (!getLongValuesList().isEmpty()) {
@@ -382,12 +381,11 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.talent.v4beta1.CustomAttribute other =
         (com.google.cloud.talent.v4beta1.CustomAttribute) obj;
 
-    boolean result = true;
-    result = result && getStringValuesList().equals(other.getStringValuesList());
-    result = result && getLongValuesList().equals(other.getLongValuesList());
-    result = result && (getFilterable() == other.getFilterable());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getStringValuesList().equals(other.getStringValuesList())) return false;
+    if (!getLongValuesList().equals(other.getLongValuesList())) return false;
+    if (getFilterable() != other.getFilterable()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -554,7 +552,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       super.clear();
       stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      longValues_ = java.util.Collections.emptyList();
+      longValues_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000002);
       filterable_ = false;
 
@@ -587,13 +585,13 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
           new com.google.cloud.talent.v4beta1.CustomAttribute(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         stringValues_ = stringValues_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.stringValues_ = stringValues_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        longValues_ = java.util.Collections.unmodifiableList(longValues_);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        longValues_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.longValues_ = longValues_;
@@ -605,35 +603,35 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -707,7 +705,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStringValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         stringValues_ = new com.google.protobuf.LazyStringArrayList(stringValues_);
         bitField0_ |= 0x00000001;
       }
@@ -936,11 +934,11 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private java.util.List<java.lang.Long> longValues_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.LongList longValues_ = emptyLongList();
 
     private void ensureLongValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        longValues_ = new java.util.ArrayList<java.lang.Long>(longValues_);
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        longValues_ = mutableCopy(longValues_);
         bitField0_ |= 0x00000002;
       }
     }
@@ -962,7 +960,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>repeated int64 long_values = 2;</code>
      */
     public java.util.List<java.lang.Long> getLongValuesList() {
-      return java.util.Collections.unmodifiableList(longValues_);
+      return ((bitField0_ & 0x00000002) != 0)
+          ? java.util.Collections.unmodifiableList(longValues_)
+          : longValues_;
     }
     /**
      *
@@ -1002,7 +1002,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>repeated int64 long_values = 2;</code>
      */
     public long getLongValues(int index) {
-      return longValues_.get(index);
+      return longValues_.getLong(index);
     }
     /**
      *
@@ -1023,7 +1023,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      */
     public Builder setLongValues(int index, long value) {
       ensureLongValuesIsMutable();
-      longValues_.set(index, value);
+      longValues_.setLong(index, value);
       onChanged();
       return this;
     }
@@ -1046,7 +1046,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      */
     public Builder addLongValues(long value) {
       ensureLongValuesIsMutable();
-      longValues_.add(value);
+      longValues_.addLong(value);
       onChanged();
       return this;
     }
@@ -1091,7 +1091,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>repeated int64 long_values = 2;</code>
      */
     public Builder clearLongValues() {
-      longValues_ = java.util.Collections.emptyList();
+      longValues_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
@@ -1152,7 +1152,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

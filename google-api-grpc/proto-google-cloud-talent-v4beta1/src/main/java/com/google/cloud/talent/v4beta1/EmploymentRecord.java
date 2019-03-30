@@ -196,7 +196,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -983,40 +983,39 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     com.google.cloud.talent.v4beta1.EmploymentRecord other =
         (com.google.cloud.talent.v4beta1.EmploymentRecord) obj;
 
-    boolean result = true;
-    result = result && (hasStartDate() == other.hasStartDate());
+    if (hasStartDate() != other.hasStartDate()) return false;
     if (hasStartDate()) {
-      result = result && getStartDate().equals(other.getStartDate());
+      if (!getStartDate().equals(other.getStartDate())) return false;
     }
-    result = result && (hasEndDate() == other.hasEndDate());
+    if (hasEndDate() != other.hasEndDate()) return false;
     if (hasEndDate()) {
-      result = result && getEndDate().equals(other.getEndDate());
+      if (!getEndDate().equals(other.getEndDate())) return false;
     }
-    result = result && getEmployerName().equals(other.getEmployerName());
-    result = result && getDivisionName().equals(other.getDivisionName());
-    result = result && (hasAddress() == other.hasAddress());
+    if (!getEmployerName().equals(other.getEmployerName())) return false;
+    if (!getDivisionName().equals(other.getDivisionName())) return false;
+    if (hasAddress() != other.hasAddress()) return false;
     if (hasAddress()) {
-      result = result && getAddress().equals(other.getAddress());
+      if (!getAddress().equals(other.getAddress())) return false;
     }
-    result = result && getJobTitle().equals(other.getJobTitle());
-    result = result && getJobDescription().equals(other.getJobDescription());
-    result = result && (hasIsSupervisor() == other.hasIsSupervisor());
+    if (!getJobTitle().equals(other.getJobTitle())) return false;
+    if (!getJobDescription().equals(other.getJobDescription())) return false;
+    if (hasIsSupervisor() != other.hasIsSupervisor()) return false;
     if (hasIsSupervisor()) {
-      result = result && getIsSupervisor().equals(other.getIsSupervisor());
+      if (!getIsSupervisor().equals(other.getIsSupervisor())) return false;
     }
-    result = result && (hasIsSelfEmployed() == other.hasIsSelfEmployed());
+    if (hasIsSelfEmployed() != other.hasIsSelfEmployed()) return false;
     if (hasIsSelfEmployed()) {
-      result = result && getIsSelfEmployed().equals(other.getIsSelfEmployed());
+      if (!getIsSelfEmployed().equals(other.getIsSelfEmployed())) return false;
     }
-    result = result && (hasIsCurrent() == other.hasIsCurrent());
+    if (hasIsCurrent() != other.hasIsCurrent()) return false;
     if (hasIsCurrent()) {
-      result = result && getIsCurrent().equals(other.getIsCurrent());
+      if (!getIsCurrent().equals(other.getIsCurrent())) return false;
     }
-    result = result && getJobTitleSnippet().equals(other.getJobTitleSnippet());
-    result = result && getJobDescriptionSnippet().equals(other.getJobDescriptionSnippet());
-    result = result && getEmployerNameSnippet().equals(other.getEmployerNameSnippet());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getJobTitleSnippet().equals(other.getJobTitleSnippet())) return false;
+    if (!getJobDescriptionSnippet().equals(other.getJobDescriptionSnippet())) return false;
+    if (!getEmployerNameSnippet().equals(other.getEmployerNameSnippet())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1329,35 +1328,35 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1448,7 +1447,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.type.Date startDate_ = null;
+    private com.google.type.Date startDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         startDateBuilder_;
@@ -1724,7 +1723,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return startDateBuilder_;
     }
 
-    private com.google.type.Date endDate_ = null;
+    private com.google.type.Date endDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endDateBuilder_;
@@ -2119,7 +2118,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.Address address_ = null;
+    private com.google.cloud.talent.v4beta1.Address address_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Address,
             com.google.cloud.talent.v4beta1.Address.Builder,
@@ -2522,7 +2521,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.BoolValue isSupervisor_ = null;
+    private com.google.protobuf.BoolValue isSupervisor_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -2712,7 +2711,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return isSupervisorBuilder_;
     }
 
-    private com.google.protobuf.BoolValue isSelfEmployed_ = null;
+    private com.google.protobuf.BoolValue isSelfEmployed_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -2902,7 +2901,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return isSelfEmployedBuilder_;
     }
 
-    private com.google.protobuf.BoolValue isCurrent_ = null;
+    private com.google.protobuf.BoolValue isCurrent_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -3430,7 +3429,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

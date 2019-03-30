@@ -119,7 +119,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 interviews_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -218,7 +218,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -230,7 +230,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         interviews_ = java.util.Collections.unmodifiableList(interviews_);
       }
       this.unknownFields = unknownFields.build();
@@ -1636,40 +1636,39 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.talent.v4beta1.Application other =
         (com.google.cloud.talent.v4beta1.Application) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getExternalId().equals(other.getExternalId());
-    result = result && getProfile().equals(other.getProfile());
-    result = result && getJob().equals(other.getJob());
-    result = result && getCompany().equals(other.getCompany());
-    result = result && (hasApplicationDate() == other.hasApplicationDate());
+    if (!getName().equals(other.getName())) return false;
+    if (!getExternalId().equals(other.getExternalId())) return false;
+    if (!getProfile().equals(other.getProfile())) return false;
+    if (!getJob().equals(other.getJob())) return false;
+    if (!getCompany().equals(other.getCompany())) return false;
+    if (hasApplicationDate() != other.hasApplicationDate()) return false;
     if (hasApplicationDate()) {
-      result = result && getApplicationDate().equals(other.getApplicationDate());
+      if (!getApplicationDate().equals(other.getApplicationDate())) return false;
     }
-    result = result && stage_ == other.stage_;
-    result = result && state_ == other.state_;
-    result = result && getInterviewsList().equals(other.getInterviewsList());
-    result = result && (hasReferral() == other.hasReferral());
+    if (stage_ != other.stage_) return false;
+    if (state_ != other.state_) return false;
+    if (!getInterviewsList().equals(other.getInterviewsList())) return false;
+    if (hasReferral() != other.hasReferral()) return false;
     if (hasReferral()) {
-      result = result && getReferral().equals(other.getReferral());
+      if (!getReferral().equals(other.getReferral())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasUpdateTime() == other.hasUpdateTime());
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      result = result && getUpdateTime().equals(other.getUpdateTime());
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    result = result && getOutcomeNotes().equals(other.getOutcomeNotes());
-    result = result && outcome_ == other.outcome_;
-    result = result && (hasIsMatch() == other.hasIsMatch());
+    if (!getOutcomeNotes().equals(other.getOutcomeNotes())) return false;
+    if (outcome_ != other.outcome_) return false;
+    if (hasIsMatch() != other.hasIsMatch()) return false;
     if (hasIsMatch()) {
-      result = result && getIsMatch().equals(other.getIsMatch());
+      if (!getIsMatch().equals(other.getIsMatch())) return false;
     }
-    result = result && getJobTitleSnippet().equals(other.getJobTitleSnippet());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getJobTitleSnippet().equals(other.getJobTitleSnippet())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1968,7 +1967,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       result.stage_ = stage_;
       result.state_ = state_;
       if (interviewsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           interviews_ = java.util.Collections.unmodifiableList(interviews_);
           bitField0_ = (bitField0_ & ~0x00000100);
         }
@@ -2006,35 +2005,35 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2729,7 +2728,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.Date applicationDate_ = null;
+    private com.google.type.Date applicationDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         applicationDateBuilder_;
@@ -3096,7 +3095,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInterviewsIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         interviews_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>(interviews_);
         bitField0_ |= 0x00000100;
@@ -3491,16 +3490,13 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Interview,
                 com.google.cloud.talent.v4beta1.Interview.Builder,
                 com.google.cloud.talent.v4beta1.InterviewOrBuilder>(
-                interviews_,
-                ((bitField0_ & 0x00000100) == 0x00000100),
-                getParentForChildren(),
-                isClean());
+                interviews_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         interviews_ = null;
       }
       return interviewsBuilder_;
     }
 
-    private com.google.protobuf.BoolValue referral_ = null;
+    private com.google.protobuf.BoolValue referral_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -3684,7 +3680,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return referralBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3872,7 +3868,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp updateTime_ = null;
+    private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -4250,7 +4246,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.BoolValue isMatch_ = null;
+    private com.google.protobuf.BoolValue isMatch_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -4549,7 +4545,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

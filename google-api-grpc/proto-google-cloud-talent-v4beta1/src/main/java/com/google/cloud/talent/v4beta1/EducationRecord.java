@@ -180,7 +180,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -877,45 +877,43 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.talent.v4beta1.EducationRecord other =
         (com.google.cloud.talent.v4beta1.EducationRecord) obj;
 
-    boolean result = true;
-    result = result && (hasStartDate() == other.hasStartDate());
+    if (hasStartDate() != other.hasStartDate()) return false;
     if (hasStartDate()) {
-      result = result && getStartDate().equals(other.getStartDate());
+      if (!getStartDate().equals(other.getStartDate())) return false;
     }
-    result = result && (hasEndDate() == other.hasEndDate());
+    if (hasEndDate() != other.hasEndDate()) return false;
     if (hasEndDate()) {
-      result = result && getEndDate().equals(other.getEndDate());
+      if (!getEndDate().equals(other.getEndDate())) return false;
     }
-    result = result && (hasExpectedGraduationDate() == other.hasExpectedGraduationDate());
+    if (hasExpectedGraduationDate() != other.hasExpectedGraduationDate()) return false;
     if (hasExpectedGraduationDate()) {
-      result = result && getExpectedGraduationDate().equals(other.getExpectedGraduationDate());
+      if (!getExpectedGraduationDate().equals(other.getExpectedGraduationDate())) return false;
     }
-    result = result && getSchoolName().equals(other.getSchoolName());
-    result = result && (hasAddress() == other.hasAddress());
+    if (!getSchoolName().equals(other.getSchoolName())) return false;
+    if (hasAddress() != other.hasAddress()) return false;
     if (hasAddress()) {
-      result = result && getAddress().equals(other.getAddress());
+      if (!getAddress().equals(other.getAddress())) return false;
     }
-    result = result && getDescription().equals(other.getDescription());
-    result = result && (hasIsCurrent() == other.hasIsCurrent());
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasIsCurrent() != other.hasIsCurrent()) return false;
     if (hasIsCurrent()) {
-      result = result && getIsCurrent().equals(other.getIsCurrent());
+      if (!getIsCurrent().equals(other.getIsCurrent())) return false;
     }
-    result = result && getSchoolNameSnippet().equals(other.getSchoolNameSnippet());
-    result = result && getDegreeSnippet().equals(other.getDegreeSnippet());
-    result = result && getDegreeCase().equals(other.getDegreeCase());
-    if (!result) return false;
+    if (!getSchoolNameSnippet().equals(other.getSchoolNameSnippet())) return false;
+    if (!getDegreeSnippet().equals(other.getDegreeSnippet())) return false;
+    if (!getDegreeCase().equals(other.getDegreeCase())) return false;
     switch (degreeCase_) {
       case 6:
-        result = result && getDegreeDescription().equals(other.getDegreeDescription());
+        if (!getDegreeDescription().equals(other.getDegreeDescription())) return false;
         break;
       case 7:
-        result = result && getStructuredDegree().equals(other.getStructuredDegree());
+        if (!getStructuredDegree().equals(other.getStructuredDegree())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1223,35 +1221,35 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1359,7 +1357,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.type.Date startDate_ = null;
+    private com.google.type.Date startDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         startDateBuilder_;
@@ -1536,7 +1534,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       return startDateBuilder_;
     }
 
-    private com.google.type.Date endDate_ = null;
+    private com.google.type.Date endDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endDateBuilder_;
@@ -1713,7 +1711,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       return endDateBuilder_;
     }
 
-    private com.google.type.Date expectedGraduationDate_ = null;
+    private com.google.type.Date expectedGraduationDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         expectedGraduationDateBuilder_;
@@ -2006,7 +2004,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.Address address_ = null;
+    private com.google.cloud.talent.v4beta1.Address address_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Address,
             com.google.cloud.talent.v4beta1.Address.Builder,
@@ -2631,7 +2629,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.BoolValue isCurrent_ = null;
+    private com.google.protobuf.BoolValue isCurrent_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -3045,7 +3043,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
