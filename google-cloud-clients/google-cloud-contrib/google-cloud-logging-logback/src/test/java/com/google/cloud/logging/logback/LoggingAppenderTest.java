@@ -51,6 +51,7 @@ public class LoggingAppenderTest {
     TestLoggingAppender() {
       super(logging);
     }
+
     @Override
     String getProjectId() {
       return projectId;

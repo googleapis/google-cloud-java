@@ -78,8 +78,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private Set<String> enhancerClassNames = new HashSet<>();
   private Set<String> loggingEventEnhancerClassNames = new HashSet<>();
 
-  public LoggingAppender() {
-  }
+  public LoggingAppender() {}
 
   @VisibleForTesting
   protected LoggingAppender(Logging logging) {
