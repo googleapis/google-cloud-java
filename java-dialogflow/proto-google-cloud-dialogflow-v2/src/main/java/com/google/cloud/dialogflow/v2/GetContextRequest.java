@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
+ * The request message for [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.GetContextRequest}
@@ -300,8 +299,7 @@ public final class GetContextRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for
-   * [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
+   * The request message for [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.GetContextRequest}

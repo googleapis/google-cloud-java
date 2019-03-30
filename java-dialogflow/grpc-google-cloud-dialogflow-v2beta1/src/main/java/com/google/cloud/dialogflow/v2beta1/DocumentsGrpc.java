@@ -253,6 +253,120 @@ public final class DocumentsGrpc {
     return getDeleteDocumentMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateDocumentMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+          com.google.longrunning.Operation>
+      METHOD_UPDATE_DOCUMENT = getUpdateDocumentMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+          com.google.longrunning.Operation>
+      getUpdateDocumentMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+          com.google.longrunning.Operation>
+      getUpdateDocumentMethod() {
+    return getUpdateDocumentMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+          com.google.longrunning.Operation>
+      getUpdateDocumentMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+            com.google.longrunning.Operation>
+        getUpdateDocumentMethod;
+    if ((getUpdateDocumentMethod = DocumentsGrpc.getUpdateDocumentMethod) == null) {
+      synchronized (DocumentsGrpc.class) {
+        if ((getUpdateDocumentMethod = DocumentsGrpc.getUpdateDocumentMethod) == null) {
+          DocumentsGrpc.getUpdateDocumentMethod =
+              getUpdateDocumentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.dialogflow.v2beta1.Documents", "UpdateDocument"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DocumentsMethodDescriptorSupplier("UpdateDocument"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDocumentMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getReloadDocumentMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+          com.google.longrunning.Operation>
+      METHOD_RELOAD_DOCUMENT = getReloadDocumentMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+          com.google.longrunning.Operation>
+      getReloadDocumentMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+          com.google.longrunning.Operation>
+      getReloadDocumentMethod() {
+    return getReloadDocumentMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+          com.google.longrunning.Operation>
+      getReloadDocumentMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+            com.google.longrunning.Operation>
+        getReloadDocumentMethod;
+    if ((getReloadDocumentMethod = DocumentsGrpc.getReloadDocumentMethod) == null) {
+      synchronized (DocumentsGrpc.class) {
+        if ((getReloadDocumentMethod = DocumentsGrpc.getReloadDocumentMethod) == null) {
+          DocumentsGrpc.getReloadDocumentMethod =
+              getReloadDocumentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.dialogflow.v2beta1.Documents", "ReloadDocument"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DocumentsMethodDescriptorSupplier("ReloadDocument"))
+                      .build();
+        }
+      }
+    }
+    return getReloadDocumentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentsStub newStub(io.grpc.Channel channel) {
     return new DocumentsStub(channel);
@@ -313,8 +427,7 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void createDocument(
@@ -329,14 +442,46 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void deleteDocument(
         com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteDocumentMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public void updateDocument(
+        com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateDocumentMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public void reloadDocument(
+        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getReloadDocumentMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -367,6 +512,18 @@ public final class DocumentsGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_DOCUMENT)))
+          .addMethod(
+              getUpdateDocumentMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_DOCUMENT)))
+          .addMethod(
+              getReloadDocumentMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RELOAD_DOCUMENT)))
           .build();
     }
   }
@@ -432,8 +589,7 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void createDocument(
@@ -451,8 +607,7 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void deleteDocument(
@@ -460,6 +615,45 @@ public final class DocumentsGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteDocumentMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public void updateDocument(
+        com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateDocumentMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public void reloadDocument(
+        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getReloadDocumentMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -520,8 +714,7 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation createDocument(
@@ -536,14 +729,46 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation deleteDocument(
         com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteDocumentMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDocument(
+        com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateDocumentMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public com.google.longrunning.Operation reloadDocument(
+        com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getReloadDocumentMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -603,8 +828,7 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -619,8 +843,7 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata:
-     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -628,12 +851,47 @@ public final class DocumentsGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteDocumentMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified document.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDocument(com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateDocumentMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reloads the specified document from its specified source, content_uri or
+     * content. The previously loaded content of the document will be deleted.
+     * Note: Even when the content of the document has not changed, there still
+     * may be side effects because of internal implementation changes.
+     * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        reloadDocument(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getReloadDocumentMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DOCUMENTS = 0;
   private static final int METHODID_GET_DOCUMENT = 1;
   private static final int METHODID_CREATE_DOCUMENT = 2;
   private static final int METHODID_DELETE_DOCUMENT = 3;
+  private static final int METHODID_UPDATE_DOCUMENT = 4;
+  private static final int METHODID_RELOAD_DOCUMENT = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -673,6 +931,16 @@ public final class DocumentsGrpc {
         case METHODID_DELETE_DOCUMENT:
           serviceImpl.deleteDocument(
               (com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DOCUMENT:
+          serviceImpl.updateDocument(
+              (com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RELOAD_DOCUMENT:
+          serviceImpl.reloadDocument(
+              (com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -743,6 +1011,8 @@ public final class DocumentsGrpc {
                       .addMethod(getGetDocumentMethodHelper())
                       .addMethod(getCreateDocumentMethodHelper())
                       .addMethod(getDeleteDocumentMethodHelper())
+                      .addMethod(getUpdateDocumentMethodHelper())
+                      .addMethod(getReloadDocumentMethodHelper())
                       .build();
         }
       }

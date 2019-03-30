@@ -408,9 +408,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The default language of the agent as a language tag. See
-   * [Language Support](https://dialogflow.com/docs/reference/language) for a
-   * list of the currently supported language codes.
-   * This field cannot be set by the `Update` method.
+   * [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. This field cannot be
+   * set by the `Update` method.
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
@@ -431,9 +432,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The default language of the agent as a language tag. See
-   * [Language Support](https://dialogflow.com/docs/reference/language) for a
-   * list of the currently supported language codes.
-   * This field cannot be set by the `Update` method.
+   * [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. This field cannot be
+   * set by the `Update` method.
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
@@ -605,7 +607,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
-   * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+   * [Web
+   * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+   * integration.
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
@@ -627,7 +631,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
-   * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+   * [Web
+   * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+   * integration.
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
@@ -698,7 +704,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. To filter out false positive results and still get variety in
    * matched natural language inputs for your agent, you can tune the machine
    * learning classification threshold. If the returned score value is less than
-   * the threshold value, then a fallback intent is be triggered or, if there
+   * the threshold value, then a fallback intent will be triggered or, if there
    * are no fallback intents defined, no intent will be triggered. The score
    * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
    * If set to 0.0, the default of 0.3 is used.
@@ -1390,9 +1396,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1413,9 +1420,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1436,9 +1444,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1457,9 +1466,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1475,9 +1485,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1856,7 +1867,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1878,7 +1891,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1900,7 +1915,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1920,7 +1937,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1937,7 +1956,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -2081,7 +2102,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
      * learning classification threshold. If the returned score value is less than
-     * the threshold value, then a fallback intent is be triggered or, if there
+     * the threshold value, then a fallback intent will be triggered or, if there
      * are no fallback intents defined, no intent will be triggered. The score
      * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
      * If set to 0.0, the default of 0.3 is used.
@@ -2099,7 +2120,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
      * learning classification threshold. If the returned score value is less than
-     * the threshold value, then a fallback intent is be triggered or, if there
+     * the threshold value, then a fallback intent will be triggered or, if there
      * are no fallback intents defined, no intent will be triggered. The score
      * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
      * If set to 0.0, the default of 0.3 is used.
@@ -2120,7 +2141,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
      * learning classification threshold. If the returned score value is less than
-     * the threshold value, then a fallback intent is be triggered or, if there
+     * the threshold value, then a fallback intent will be triggered or, if there
      * are no fallback intents defined, no intent will be triggered. The score
      * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
      * If set to 0.0, the default of 0.3 is used.

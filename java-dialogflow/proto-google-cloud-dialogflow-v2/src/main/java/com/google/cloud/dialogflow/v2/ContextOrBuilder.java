@@ -14,6 +14,8 @@ public interface ContextOrBuilder
    * <pre>
    * Required. The unique identifier of the context. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   * The `Context ID` is always converted to lowercase, may only contain
+   * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -25,6 +27,8 @@ public interface ContextOrBuilder
    * <pre>
    * Required. The unique identifier of the context. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   * The `Context ID` is always converted to lowercase, may only contain
+   * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -37,7 +41,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. The number of conversational query requests after which the
    * context expires. If set to `0` (the default) the context expires
-   * immediately. Contexts expire automatically after 10 minutes even if there
+   * immediately. Contexts expire automatically after 20 minutes if there
    * are no matching queries.
    * </pre>
    *
@@ -50,8 +54,9 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. The collection of parameters associated with this context.
-   * Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for
-   * syntax.
+   * Refer to [this
+   * doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters)
+   * for syntax.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>
@@ -62,8 +67,9 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. The collection of parameters associated with this context.
-   * Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for
-   * syntax.
+   * Refer to [this
+   * doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters)
+   * for syntax.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>
@@ -74,8 +80,9 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. The collection of parameters associated with this context.
-   * Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for
-   * syntax.
+   * Refer to [this
+   * doc](https://cloud.google.com/dialogflow-enterprise/docs/intents-actions-parameters)
+   * for syntax.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 3;</code>

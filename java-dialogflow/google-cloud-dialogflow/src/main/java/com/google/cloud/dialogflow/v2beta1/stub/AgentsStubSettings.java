@@ -95,7 +95,10 @@ import org.threeten.bp.Duration;
 public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/dialogflow")
+          .build();
 
   private final UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings;
   private final PagedCallSettings<

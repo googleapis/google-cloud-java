@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntities].
+ * The request message for [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntities].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest}
@@ -227,9 +226,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -251,9 +251,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -459,8 +460,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request message for
-   * [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntities].
+   * The request message for [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntities].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest}
@@ -911,9 +911,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -935,9 +936,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -959,9 +961,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -981,9 +984,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1000,9 +1004,10 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>

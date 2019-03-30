@@ -12,10 +12,10 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required for all methods except `create` (`create` populates the name
-   * automatically.
-   * The unique identifier of the entity type. Format:
-   * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * The unique identifier of the entity type.
+   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -25,10 +25,10 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required for all methods except `create` (`create` populates the name
-   * automatically.
-   * The unique identifier of the entity type. Format:
-   * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * The unique identifier of the entity type.
+   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
+   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
+   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entity.
+   * Required. The name of the entity type.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -49,7 +49,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entity.
+   * Required. The name of the entity type.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -106,7 +106,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -116,7 +116,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -126,7 +126,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -136,7 +136,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
@@ -147,7 +147,7 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of entities associated with the entity type.
+   * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>

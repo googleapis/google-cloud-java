@@ -25,6 +25,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
 
   private OriginalDetectIntentRequest() {
     source_ = "";
+    version_ = "";
   }
 
   @java.lang.Override
@@ -56,6 +57,13 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
               java.lang.String s = input.readStringRequireUtf8();
 
               source_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
               break;
             }
           case 26:
@@ -151,14 +159,69 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int VERSION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object version_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAYLOAD_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct payload_;
   /**
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -170,8 +233,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -183,8 +256,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -210,6 +293,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     if (!getSourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
     }
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
+    }
     if (payload_ != null) {
       output.writeMessage(3, getPayload());
     }
@@ -224,6 +310,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     size = 0;
     if (!getSourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
+    }
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
     }
     if (payload_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPayload());
@@ -245,6 +334,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
         (com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest) obj;
 
     if (!getSource().equals(other.getSource())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
     if (hasPayload() != other.hasPayload()) return false;
     if (hasPayload()) {
       if (!getPayload().equals(other.getPayload())) return false;
@@ -262,6 +352,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getSource().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
@@ -415,6 +507,8 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
       super.clear();
       source_ = "";
 
+      version_ = "";
+
       if (payloadBuilder_ == null) {
         payload_ = null;
       } else {
@@ -449,6 +543,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
       com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest result =
           new com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest(this);
       result.source_ = source_;
+      result.version_ = version_;
       if (payloadBuilder_ == null) {
         result.payload_ = payload_;
       } else {
@@ -506,6 +601,10 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        onChanged();
+      }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
         onChanged();
       }
       if (other.hasPayload()) {
@@ -640,6 +739,105 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
       return this;
     }
 
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder clearVersion() {
+
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the protocol used for this request.
+     * This field is AoG-specific.
+     * </pre>
+     *
+     * <code>string version = 2;</code>
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      version_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Struct payload_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
@@ -650,8 +848,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -663,8 +871,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -680,8 +898,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -703,8 +931,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -723,8 +961,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -748,8 +996,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -769,8 +1027,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -784,8 +1052,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -801,8 +1079,18 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. This field is set to the value of `QueryParameters.payload` field
-     * passed in the request.
+     * Optional. This field is set to the value of the `QueryParameters.payload`
+     * field passed in the request. Some integrations that query a Dialogflow
+     * agent may provide additional information in the payload.
+     * In particular for the Telephony Gateway this field has the form:
+     * &lt;pre&gt;{
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }&lt;/pre&gt;
+     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Edition agents and populated with the caller ID in [E.164
+     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>

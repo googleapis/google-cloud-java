@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
+ * The request message for [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest}
@@ -396,8 +395,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The request message for
-   * [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
+   * The request message for [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest}

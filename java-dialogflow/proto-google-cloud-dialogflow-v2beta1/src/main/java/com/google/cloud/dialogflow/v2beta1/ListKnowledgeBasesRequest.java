@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for
- * [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
+ * Request message for [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest}
@@ -111,8 +110,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The agent to list of knowledge bases for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to list of knowledge bases for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -132,8 +131,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The agent to list of knowledge bases for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to list of knowledge bases for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -391,8 +390,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for
-   * [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
+   * Request message for [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest}
@@ -568,8 +566,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The agent to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to list of knowledge bases for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -589,8 +587,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The agent to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to list of knowledge bases for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -610,8 +608,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The agent to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to list of knowledge bases for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -629,8 +627,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The agent to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to list of knowledge bases for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -645,8 +643,8 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The agent to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to list of knowledge bases for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>

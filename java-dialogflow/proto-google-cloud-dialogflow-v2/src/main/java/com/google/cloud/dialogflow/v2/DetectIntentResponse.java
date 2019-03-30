@@ -24,6 +24,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
 
   private DetectIntentResponse() {
     responseId_ = "";
+    outputAudio_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -83,6 +84,27 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
               if (subBuilder != null) {
                 subBuilder.mergeFrom(webhookStatus_);
                 webhookStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 34:
+            {
+              outputAudio_ = input.readBytes();
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder subBuilder = null;
+              if (outputAudioConfig_ != null) {
+                subBuilder = outputAudioConfig_.toBuilder();
+              }
+              outputAudioConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.OutputAudioConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputAudioConfig_);
+                outputAudioConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -172,7 +194,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -184,7 +207,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -198,7 +222,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -213,8 +238,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -226,8 +250,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -239,14 +262,74 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
    */
   public com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder() {
     return getWebhookStatus();
+  }
+
+  public static final int OUTPUT_AUDIO_FIELD_NUMBER = 4;
+  private com.google.protobuf.ByteString outputAudio_;
+  /**
+   *
+   *
+   * <pre>
+   * The audio data bytes encoded as specified in the request.
+   * Note: The output audio is generated based on the values of default platform
+   * text responses found in the `query_result.fulfillment_messages` field. If
+   * multiple default text responses exist, they will be concatenated when
+   * generating audio. If no default platform text responses exist, the
+   * generated audio content will be empty.
+   * </pre>
+   *
+   * <code>bytes output_audio = 4;</code>
+   */
+  public com.google.protobuf.ByteString getOutputAudio() {
+    return outputAudio_;
+  }
+
+  public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.dialogflow.v2.OutputAudioConfig outputAudioConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The config used by the speech synthesizer to generate the output audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  public boolean hasOutputAudioConfig() {
+    return outputAudioConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config used by the speech synthesizer to generate the output audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
+    return outputAudioConfig_ == null
+        ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
+        : outputAudioConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The config used by the speech synthesizer to generate the output audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+    return getOutputAudioConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -272,6 +355,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     if (webhookStatus_ != null) {
       output.writeMessage(3, getWebhookStatus());
     }
+    if (!outputAudio_.isEmpty()) {
+      output.writeBytes(4, outputAudio_);
+    }
+    if (outputAudioConfig_ != null) {
+      output.writeMessage(6, getOutputAudioConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -289,6 +378,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     }
     if (webhookStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getWebhookStatus());
+    }
+    if (!outputAudio_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, outputAudio_);
+    }
+    if (outputAudioConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getOutputAudioConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -315,6 +410,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     if (hasWebhookStatus()) {
       if (!getWebhookStatus().equals(other.getWebhookStatus())) return false;
     }
+    if (!getOutputAudio().equals(other.getOutputAudio())) return false;
+    if (hasOutputAudioConfig() != other.hasOutputAudioConfig()) return false;
+    if (hasOutputAudioConfig()) {
+      if (!getOutputAudioConfig().equals(other.getOutputAudioConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -335,6 +435,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     if (hasWebhookStatus()) {
       hash = (37 * hash) + WEBHOOK_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getWebhookStatus().hashCode();
+    }
+    hash = (37 * hash) + OUTPUT_AUDIO_FIELD_NUMBER;
+    hash = (53 * hash) + getOutputAudio().hashCode();
+    if (hasOutputAudioConfig()) {
+      hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputAudioConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -495,6 +601,14 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         webhookStatus_ = null;
         webhookStatusBuilder_ = null;
       }
+      outputAudio_ = com.google.protobuf.ByteString.EMPTY;
+
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -532,6 +646,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         result.webhookStatus_ = webhookStatus_;
       } else {
         result.webhookStatus_ = webhookStatusBuilder_.build();
+      }
+      result.outputAudio_ = outputAudio_;
+      if (outputAudioConfigBuilder_ == null) {
+        result.outputAudioConfig_ = outputAudioConfig_;
+      } else {
+        result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -592,6 +712,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       }
       if (other.hasWebhookStatus()) {
         mergeWebhookStatus(other.getWebhookStatus());
+      }
+      if (other.getOutputAudio() != com.google.protobuf.ByteString.EMPTY) {
+        setOutputAudio(other.getOutputAudio());
+      }
+      if (other.hasOutputAudioConfig()) {
+        mergeOutputAudioConfig(other.getOutputAudioConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -732,7 +858,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -744,7 +871,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -762,7 +890,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -784,7 +913,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -804,7 +934,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -830,7 +961,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -850,7 +982,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -864,7 +997,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -882,7 +1016,8 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The results of the conversational query or event processing.
+     * The selected results of the conversational query or event processing.
+     * See `alternative_query_results` for additional potential results.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -912,8 +1047,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -925,8 +1059,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -942,8 +1075,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -965,8 +1097,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -985,8 +1116,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1010,8 +1140,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1031,8 +1160,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1046,8 +1174,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1063,8 +1190,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1082,6 +1208,251 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         webhookStatus_ = null;
       }
       return webhookStatusBuilder_;
+    }
+
+    private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
+     * </pre>
+     *
+     * <code>bytes output_audio = 4;</code>
+     */
+    public com.google.protobuf.ByteString getOutputAudio() {
+      return outputAudio_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
+     * </pre>
+     *
+     * <code>bytes output_audio = 4;</code>
+     */
+    public Builder setOutputAudio(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      outputAudio_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
+     * </pre>
+     *
+     * <code>bytes output_audio = 4;</code>
+     */
+    public Builder clearOutputAudio() {
+
+      outputAudio_ = getDefaultInstance().getOutputAudio();
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.OutputAudioConfig outputAudioConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.OutputAudioConfig,
+            com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>
+        outputAudioConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public boolean hasOutputAudioConfig() {
+      return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        return outputAudioConfig_ == null
+            ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
+            : outputAudioConfig_;
+      } else {
+        return outputAudioConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder setOutputAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputAudioConfig_ = value;
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder setOutputAudioConfig(
+        com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder builderForValue) {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder mergeOutputAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (outputAudioConfig_ != null) {
+          outputAudioConfig_ =
+              com.google.cloud.dialogflow.v2.OutputAudioConfig.newBuilder(outputAudioConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputAudioConfig_ = value;
+        }
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public Builder clearOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+        onChanged();
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
+
+      onChanged();
+      return getOutputAudioConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder
+        getOutputAudioConfigOrBuilder() {
+      if (outputAudioConfigBuilder_ != null) {
+        return outputAudioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputAudioConfig_ == null
+            ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
+            : outputAudioConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The config used by the speech synthesizer to generate the output audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.OutputAudioConfig,
+            com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>
+        getOutputAudioConfigFieldBuilder() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.OutputAudioConfig,
+                com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
+                com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>(
+                getOutputAudioConfig(), getParentForChildren(), isClean());
+        outputAudioConfig_ = null;
+      }
+      return outputAudioConfigBuilder_;
     }
 
     @java.lang.Override

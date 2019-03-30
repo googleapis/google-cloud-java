@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
+ * The request message for [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.DeleteIntentRequest}
@@ -98,7 +97,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the intent to delete.
+   * Required. The name of the intent to delete. If this intent has direct or
+   * indirect followup intents, we also delete them.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -119,7 +119,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the intent to delete.
+   * Required. The name of the intent to delete. If this intent has direct or
+   * indirect followup intents, we also delete them.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -300,8 +301,7 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for
-   * [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
+   * The request message for [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.DeleteIntentRequest}
@@ -461,7 +461,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -482,7 +483,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -503,7 +505,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -522,7 +525,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -538,7 +542,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
