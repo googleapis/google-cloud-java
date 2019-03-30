@@ -24,9 +24,8 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
   private ListDevicesRequest() {
     parent_ = "";
-    deviceNumIds_ = java.util.Collections.emptyList();
+    deviceNumIds_ = emptyLongList();
     deviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -63,24 +62,23 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             }
           case 16:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                deviceNumIds_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                deviceNumIds_ = newLongList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              deviceNumIds_.add(input.readUInt64());
+              deviceNumIds_.addLong(input.readUInt64());
               break;
             }
           case 18:
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
-                  && input.getBytesUntilLimit() > 0) {
-                deviceNumIds_ = new java.util.ArrayList<java.lang.Long>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                deviceNumIds_ = newLongList();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                deviceNumIds_.add(input.readUInt64());
+                deviceNumIds_.addLong(input.readUInt64());
               }
               input.popLimit(limit);
               break;
@@ -88,7 +86,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 deviceIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -140,7 +138,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -152,10 +150,10 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-        deviceNumIds_ = java.util.Collections.unmodifiableList(deviceNumIds_);
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        deviceNumIds_.makeImmutable(); // C
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         deviceIds_ = deviceIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -225,7 +223,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DEVICE_NUM_IDS_FIELD_NUMBER = 2;
-  private java.util.List<java.lang.Long> deviceNumIds_;
+  private com.google.protobuf.Internal.LongList deviceNumIds_;
   /**
    *
    *
@@ -263,7 +261,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    * <code>repeated uint64 device_num_ids = 2;</code>
    */
   public long getDeviceNumIds(int index) {
-    return deviceNumIds_.get(index);
+    return deviceNumIds_.getLong(index);
   }
 
   private int deviceNumIdsMemoizedSerializedSize = -1;
@@ -497,7 +495,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       output.writeUInt32NoTag(deviceNumIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < deviceNumIds_.size(); i++) {
-      output.writeUInt64NoTag(deviceNumIds_.get(i));
+      output.writeUInt64NoTag(deviceNumIds_.getLong(i));
     }
     for (int i = 0; i < deviceIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deviceIds_.getRaw(i));
@@ -530,7 +528,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       int dataSize = 0;
       for (int i = 0; i < deviceNumIds_.size(); i++) {
         dataSize +=
-            com.google.protobuf.CodedOutputStream.computeUInt64SizeNoTag(deviceNumIds_.get(i));
+            com.google.protobuf.CodedOutputStream.computeUInt64SizeNoTag(deviceNumIds_.getLong(i));
       }
       size += dataSize;
       if (!getDeviceNumIdsList().isEmpty()) {
@@ -575,22 +573,21 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.iot.v1.ListDevicesRequest other =
         (com.google.cloud.iot.v1.ListDevicesRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getDeviceNumIdsList().equals(other.getDeviceNumIdsList());
-    result = result && getDeviceIdsList().equals(other.getDeviceIdsList());
-    result = result && (hasFieldMask() == other.hasFieldMask());
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getDeviceNumIdsList().equals(other.getDeviceNumIdsList())) return false;
+    if (!getDeviceIdsList().equals(other.getDeviceIdsList())) return false;
+    if (hasFieldMask() != other.hasFieldMask()) return false;
     if (hasFieldMask()) {
-      result = result && getFieldMask().equals(other.getFieldMask());
+      if (!getFieldMask().equals(other.getFieldMask())) return false;
     }
-    result = result && (hasGatewayListOptions() == other.hasGatewayListOptions());
+    if (hasGatewayListOptions() != other.hasGatewayListOptions()) return false;
     if (hasGatewayListOptions()) {
-      result = result && getGatewayListOptions().equals(other.getGatewayListOptions());
+      if (!getGatewayListOptions().equals(other.getGatewayListOptions())) return false;
     }
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -769,7 +766,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       parent_ = "";
 
-      deviceNumIds_ = java.util.Collections.emptyList();
+      deviceNumIds_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000002);
       deviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -819,12 +816,12 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        deviceNumIds_ = java.util.Collections.unmodifiableList(deviceNumIds_);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        deviceNumIds_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.deviceNumIds_ = deviceNumIds_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         deviceIds_ = deviceIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -848,35 +845,35 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1058,11 +1055,11 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private java.util.List<java.lang.Long> deviceNumIds_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.LongList deviceNumIds_ = emptyLongList();
 
     private void ensureDeviceNumIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        deviceNumIds_ = new java.util.ArrayList<java.lang.Long>(deviceNumIds_);
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        deviceNumIds_ = mutableCopy(deviceNumIds_);
         bitField0_ |= 0x00000002;
       }
     }
@@ -1077,7 +1074,9 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>repeated uint64 device_num_ids = 2;</code>
      */
     public java.util.List<java.lang.Long> getDeviceNumIdsList() {
-      return java.util.Collections.unmodifiableList(deviceNumIds_);
+      return ((bitField0_ & 0x00000002) != 0)
+          ? java.util.Collections.unmodifiableList(deviceNumIds_)
+          : deviceNumIds_;
     }
     /**
      *
@@ -1103,7 +1102,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>repeated uint64 device_num_ids = 2;</code>
      */
     public long getDeviceNumIds(int index) {
-      return deviceNumIds_.get(index);
+      return deviceNumIds_.getLong(index);
     }
     /**
      *
@@ -1117,7 +1116,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder setDeviceNumIds(int index, long value) {
       ensureDeviceNumIdsIsMutable();
-      deviceNumIds_.set(index, value);
+      deviceNumIds_.setLong(index, value);
       onChanged();
       return this;
     }
@@ -1133,7 +1132,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder addDeviceNumIds(long value) {
       ensureDeviceNumIdsIsMutable();
-      deviceNumIds_.add(value);
+      deviceNumIds_.addLong(value);
       onChanged();
       return this;
     }
@@ -1164,7 +1163,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      * <code>repeated uint64 device_num_ids = 2;</code>
      */
     public Builder clearDeviceNumIds() {
-      deviceNumIds_ = java.util.Collections.emptyList();
+      deviceNumIds_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
@@ -1174,7 +1173,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDeviceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         deviceIds_ = new com.google.protobuf.LazyStringArrayList(deviceIds_);
         bitField0_ |= 0x00000004;
       }
@@ -1322,7 +1321,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.FieldMask fieldMask_ = null;
+    private com.google.protobuf.FieldMask fieldMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
@@ -1515,7 +1514,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
       return fieldMaskBuilder_;
     }
 
-    private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_ = null;
+    private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.GatewayListOptions,
             com.google.cloud.iot.v1.GatewayListOptions.Builder,
@@ -1856,7 +1855,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

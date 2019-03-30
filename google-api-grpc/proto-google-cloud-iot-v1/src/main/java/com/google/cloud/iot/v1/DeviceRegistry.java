@@ -101,7 +101,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 credentials_ =
                     new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>();
                 mutable_bitField0_ |= 0x00000080;
@@ -128,7 +128,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 eventNotificationConfigs_ =
                     new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>();
                 mutable_bitField0_ |= 0x00000004;
@@ -147,7 +147,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -159,10 +159,10 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         credentials_ = java.util.Collections.unmodifiableList(credentials_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         eventNotificationConfigs_ =
             java.util.Collections.unmodifiableList(eventNotificationConfigs_);
       }
@@ -756,27 +756,26 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.iot.v1.DeviceRegistry other = (com.google.cloud.iot.v1.DeviceRegistry) obj;
 
-    boolean result = true;
-    result = result && getId().equals(other.getId());
-    result = result && getName().equals(other.getName());
-    result =
-        result && getEventNotificationConfigsList().equals(other.getEventNotificationConfigsList());
-    result = result && (hasStateNotificationConfig() == other.hasStateNotificationConfig());
+    if (!getId().equals(other.getId())) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (!getEventNotificationConfigsList().equals(other.getEventNotificationConfigsList()))
+      return false;
+    if (hasStateNotificationConfig() != other.hasStateNotificationConfig()) return false;
     if (hasStateNotificationConfig()) {
-      result = result && getStateNotificationConfig().equals(other.getStateNotificationConfig());
+      if (!getStateNotificationConfig().equals(other.getStateNotificationConfig())) return false;
     }
-    result = result && (hasMqttConfig() == other.hasMqttConfig());
+    if (hasMqttConfig() != other.hasMqttConfig()) return false;
     if (hasMqttConfig()) {
-      result = result && getMqttConfig().equals(other.getMqttConfig());
+      if (!getMqttConfig().equals(other.getMqttConfig())) return false;
     }
-    result = result && (hasHttpConfig() == other.hasHttpConfig());
+    if (hasHttpConfig() != other.hasHttpConfig()) return false;
     if (hasHttpConfig()) {
-      result = result && getHttpConfig().equals(other.getHttpConfig());
+      if (!getHttpConfig().equals(other.getHttpConfig())) return false;
     }
-    result = result && logLevel_ == other.logLevel_;
-    result = result && getCredentialsList().equals(other.getCredentialsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (logLevel_ != other.logLevel_) return false;
+    if (!getCredentialsList().equals(other.getCredentialsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1028,7 +1027,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       result.id_ = id_;
       result.name_ = name_;
       if (eventNotificationConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           eventNotificationConfigs_ =
               java.util.Collections.unmodifiableList(eventNotificationConfigs_);
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -1054,7 +1053,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       }
       result.logLevel_ = logLevel_;
       if (credentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           credentials_ = java.util.Collections.unmodifiableList(credentials_);
           bitField0_ = (bitField0_ & ~0x00000080);
         }
@@ -1069,35 +1068,35 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1414,7 +1413,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         eventNotificationConfigs_ = java.util.Collections.emptyList();
 
     private void ensureEventNotificationConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         eventNotificationConfigs_ =
             new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>(
                 eventNotificationConfigs_);
@@ -1927,7 +1926,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.iot.v1.EventNotificationConfig.Builder,
                 com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>(
                 eventNotificationConfigs_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         eventNotificationConfigs_ = null;
@@ -1935,7 +1934,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return eventNotificationConfigsBuilder_;
     }
 
-    private com.google.cloud.iot.v1.StateNotificationConfig stateNotificationConfig_ = null;
+    private com.google.cloud.iot.v1.StateNotificationConfig stateNotificationConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.StateNotificationConfig,
             com.google.cloud.iot.v1.StateNotificationConfig.Builder,
@@ -2166,7 +2165,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return stateNotificationConfigBuilder_;
     }
 
-    private com.google.cloud.iot.v1.MqttConfig mqttConfig_ = null;
+    private com.google.cloud.iot.v1.MqttConfig mqttConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.MqttConfig,
             com.google.cloud.iot.v1.MqttConfig.Builder,
@@ -2347,7 +2346,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       return mqttConfigBuilder_;
     }
 
-    private com.google.cloud.iot.v1.HttpConfig httpConfig_ = null;
+    private com.google.cloud.iot.v1.HttpConfig httpConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.HttpConfig,
             com.google.cloud.iot.v1.HttpConfig.Builder,
@@ -2617,7 +2616,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCredentialsIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         credentials_ =
             new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>(credentials_);
         bitField0_ |= 0x00000080;
@@ -3120,10 +3119,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.iot.v1.RegistryCredential,
                 com.google.cloud.iot.v1.RegistryCredential.Builder,
                 com.google.cloud.iot.v1.RegistryCredentialOrBuilder>(
-                credentials_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
-                getParentForChildren(),
-                isClean());
+                credentials_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         credentials_ = null;
       }
       return credentialsBuilder_;
@@ -3131,7 +3127,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
