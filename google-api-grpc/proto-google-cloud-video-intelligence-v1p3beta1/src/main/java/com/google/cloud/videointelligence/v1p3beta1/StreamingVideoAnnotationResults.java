@@ -56,7 +56,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 shotAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.VideoSegment>();
@@ -70,7 +70,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 labelAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>();
@@ -103,7 +103,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 objectAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>();
@@ -118,7 +118,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -130,13 +130,13 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
       }
       this.unknownFields = unknownFields.build();
@@ -503,16 +503,15 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
     com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults other =
         (com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults) obj;
 
-    boolean result = true;
-    result = result && getShotAnnotationsList().equals(other.getShotAnnotationsList());
-    result = result && getLabelAnnotationsList().equals(other.getLabelAnnotationsList());
-    result = result && (hasExplicitAnnotation() == other.hasExplicitAnnotation());
+    if (!getShotAnnotationsList().equals(other.getShotAnnotationsList())) return false;
+    if (!getLabelAnnotationsList().equals(other.getLabelAnnotationsList())) return false;
+    if (hasExplicitAnnotation() != other.hasExplicitAnnotation()) return false;
     if (hasExplicitAnnotation()) {
-      result = result && getExplicitAnnotation().equals(other.getExplicitAnnotation());
+      if (!getExplicitAnnotation().equals(other.getExplicitAnnotation())) return false;
     }
-    result = result && getObjectAnnotationsList().equals(other.getObjectAnnotationsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getObjectAnnotationsList().equals(other.getObjectAnnotationsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -755,7 +754,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (shotAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -764,7 +763,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
         result.shotAnnotations_ = shotAnnotationsBuilder_.build();
       }
       if (labelAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -778,7 +777,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
         result.explicitAnnotation_ = explicitAnnotationBuilder_.build();
       }
       if (objectAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -793,35 +792,35 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -963,7 +962,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
         shotAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureShotAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         shotAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.VideoSegment>(
                 shotAnnotations_);
@@ -1339,7 +1338,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
                 com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>(
                 shotAnnotations_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         shotAnnotations_ = null;
@@ -1351,7 +1350,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
         labelAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureLabelAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         labelAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>(
                 labelAnnotations_);
@@ -1746,7 +1745,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
                 com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder>(
                 labelAnnotations_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         labelAnnotations_ = null;
@@ -1755,7 +1754,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
     }
 
     private com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation
-        explicitAnnotation_ = null;
+        explicitAnnotation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation,
             com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation.Builder,
@@ -1968,7 +1967,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
         objectAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureObjectAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         objectAnnotations_ =
             new java.util.ArrayList<
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>(
@@ -2372,7 +2371,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotationOrBuilder>(
                 objectAnnotations_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         objectAnnotations_ = null;
@@ -2382,7 +2381,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
