@@ -154,7 +154,10 @@ public class SessionPoolOptions {
     }
 
     /**
-     * If no session is available in the pool and the maximum number of sessions has been reached, the session pool will wait for this duration for a session to become available. If this duration is exceeded, the request will throw a {@link SpannerException} with the error code {@code RESOURCE_EXHAUSTED}.
+     * If no session is available in the pool and the maximum number of sessions has been reached,
+     * the session pool will wait for this duration for a session to become available. If this
+     * duration is exceeded, the request will throw a {@link SpannerException} with the error code
+     * {@code RESOURCE_EXHAUSTED}.
      *
      * <p>The default wait time is 60 seconds.
      */

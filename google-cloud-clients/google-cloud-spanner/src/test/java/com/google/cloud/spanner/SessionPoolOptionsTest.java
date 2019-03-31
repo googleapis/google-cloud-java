@@ -61,4 +61,14 @@ public class SessionPoolOptionsTest {
     assertEquals(minSessions, options.getMinSessions());
     assertEquals(maxSessions, options.getMaxSessions());
   }
+
+  @Test
+  public void setMaxWaitForSession() {
+    final long defaultMaxWait = 60000L;
+    SessionPoolOptions options =
+        SessionPoolOptions.newBuilder().setMaxWaitForSessionMillis(10000L).build();
+    assertEquals(options.getMaxWaitForSessionMillis(), 10000L);
+    options = SessionPoolOptions.newBuilder().build();
+    assertEquals(options.getMaxWaitForSessionMillis(), defaultMaxWait);
+  }
 }

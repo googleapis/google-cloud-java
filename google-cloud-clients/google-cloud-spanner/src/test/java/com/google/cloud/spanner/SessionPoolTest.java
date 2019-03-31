@@ -455,6 +455,26 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   }
 
   @Test
+  public void failOnGetSessionTimeout() {
+    options =
+        SessionPoolOptions.newBuilder()
+            .setMinSessions(1)
+            .setMaxSessions(1)
+            .setMaxWaitForSessionMillis(10L)
+            .build();
+    Session mockSession = mockSession();
+    when(client.createSession(db)).thenReturn(mockSession);
+    pool = createPool();
+    Session session1 = pool.getReadSession();
+    expectedException.expect(isSpannerException(ErrorCode.RESOURCE_EXHAUSTED));
+    pool.getReadSession();
+    session1.close();
+    session1 = pool.getReadSession();
+    assertThat(session1).isNotNull();
+    session1.close();
+  }
+
+  @Test
   public void poolWorksWhenSessionNotFound() {
     Session mockSession1 = mockSession();
     Session mockSession2 = mockSession();

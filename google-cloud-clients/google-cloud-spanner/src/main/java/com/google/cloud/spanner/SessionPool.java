@@ -17,21 +17,7 @@
 package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
@@ -49,6 +35,21 @@ import io.opencensus.trace.Annotation;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracing;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /**
  * Maintains a pool of sessions some of which might be prepared for write by invoking
@@ -502,17 +503,20 @@ final class SessionPool {
     private PooledSession poll(long waitMillis) throws SpannerException {
       try {
         SessionOrError s = waiter.poll(waitMillis, TimeUnit.MILLISECONDS);
-        if(s == null) {
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.RESOURCE_EXHAUSTED, "Waiting for a session to become available timed out. "
-              + "The maximum time the client should wait for a session to become available can be set by calling "
-              + "SessionPoolOptions#Builder#setMaxWaitForSessionMillis(long).");
+        if (s == null) {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.RESOURCE_EXHAUSTED,
+              "Waiting for a session to become available timed out. "
+                  + "The maximum time the client should wait for a session to become available can be set by calling "
+                  + "SessionPoolOptions#Builder#setMaxWaitForSessionMillis(long).");
         }
-        if(s.e != null) {
+        if (s.e != null) {
           throw newSpannerException(s.e);
         }
         return s.session;
       } catch (InterruptedException e) {
-        throw SpannerExceptionFactory.newSpannerException(ErrorCode.CANCELLED, "Waiting for session cancelled", e);
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.CANCELLED, "Waiting for session cancelled", e);
       }
     }
   }
