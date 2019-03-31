@@ -460,7 +460,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         SessionPoolOptions.newBuilder()
             .setMinSessions(1)
             .setMaxSessions(1)
-            .setMaxWaitForSessionMillis(10L)
+            .setMaxWaitForSessionMillis(200L)
             .build();
     Session mockSession = mockSession();
     when(client.createSession(db)).thenReturn(mockSession);
