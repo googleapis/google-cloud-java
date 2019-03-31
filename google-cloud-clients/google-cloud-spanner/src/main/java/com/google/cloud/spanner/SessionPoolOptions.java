@@ -28,6 +28,7 @@ public class SessionPoolOptions {
   private final int maxIdleSessions;
   private final float writeSessionsFraction;
   private final ActionOnExhaustion actionOnExhaustion;
+  private final long maxWaitForSessionMillis;
   private final int keepAliveIntervalMinutes;
 
   private SessionPoolOptions(Builder builder) {
@@ -36,6 +37,7 @@ public class SessionPoolOptions {
     this.maxIdleSessions = builder.maxIdleSessions;
     this.writeSessionsFraction = builder.writeSessionsFraction;
     this.actionOnExhaustion = builder.actionOnExhaustion;
+    this.maxWaitForSessionMillis = builder.maxWaitForSessionMillis;
     this.keepAliveIntervalMinutes = builder.keepAliveIntervalMinutes;
   }
 
@@ -67,6 +69,10 @@ public class SessionPoolOptions {
     return actionOnExhaustion == ActionOnExhaustion.BLOCK;
   }
 
+  public long getMaxWaitForSessionMillis() {
+    return maxWaitForSessionMillis;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -83,6 +89,7 @@ public class SessionPoolOptions {
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
+    private long maxWaitForSessionMillis = 60_000L;
     private int keepAliveIntervalMinutes = 30;
 
     /**
@@ -143,6 +150,16 @@ public class SessionPoolOptions {
      */
     public Builder setBlockIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.BLOCK;
+      return this;
+    }
+
+    /**
+     * If no session is available in the pool and the maximum number of sessions has been reached, the session pool will wait for this duration for a session to become available. If this duration is exceeded, the request will throw a {@link SpannerException} with the error code {@code RESOURCE_EXHAUSTED}.
+     *
+     * <p>The default wait time is 60 seconds.
+     */
+    public Builder setMaxWaitForSessionMillis(long maxWaitMillis) {
+      this.maxWaitForSessionMillis = maxWaitMillis;
       return this;
     }
 
