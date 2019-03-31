@@ -202,7 +202,9 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
         if (endIndex - 20 > 9) {
           throw new IllegalArgumentException(invalidTimestamp);
         }
-        fraction = IntParser.parseInt(timestamp, 20, endIndex);
+        // Adjust the result to nanoseconds if the input length is less than 9 digits (9 - (endIndex
+        // - 20)).
+        fraction = IntParser.parseInt(timestamp, 20, endIndex, 9 - (endIndex - 20));
       } else {
       }
     }

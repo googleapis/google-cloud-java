@@ -32,7 +32,17 @@ class IntParser {
 
   /** Parses an int from the given input between the specified begin and end. */
   static int parseInt(String input, int begin, int end) {
+    return parseInt(input, begin, end, 0);
+  }
+
+  /**
+   * Parses an int from the given input between the specified begin and end. The value is multiplied
+   * by 10^exponent. The exponent must be between 0 and 10 inclusive.
+   */
+  static int parseInt(String input, int begin, int end, int exponent) {
     Preconditions.checkNotNull(input);
+    Preconditions.checkArgument(
+        exponent >= 0 && exponent < POWERS_OF_10.length, "Exponent out of range");
     Preconditions.checkArgument(end - begin <= 10, "Max input length is 10");
     Preconditions.checkArgument(end >= begin, "End must be greater or equal to begin");
     Preconditions.checkArgument(begin >= 0, "Begin must be >= 0");
@@ -41,7 +51,7 @@ class IntParser {
     for (int index = begin; index < end; index++) {
       res += parseDigit(input.charAt(index), input) * POWERS_OF_10[end - index - 1];
     }
-    return res;
+    return res * POWERS_OF_10[exponent];
   }
 
   private static int parseDigit(char c, String input) {
