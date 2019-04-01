@@ -30,7 +30,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -115,7 +115,7 @@ public class ClusterControllerClientTest {
     Cluster actualResponse = client.createClusterAsync(projectId, region, cluster).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateClusterRequest actualRequest = (CreateClusterRequest) actualRequests.get(0);
 
@@ -178,7 +178,7 @@ public class ClusterControllerClientTest {
         client.updateClusterAsync(projectId, region, clusterName, cluster, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateClusterRequest actualRequest = (UpdateClusterRequest) actualRequests.get(0);
 
@@ -234,7 +234,7 @@ public class ClusterControllerClientTest {
     Empty actualResponse = client.deleteClusterAsync(projectId, region, clusterName).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteClusterRequest actualRequest = (DeleteClusterRequest) actualRequests.get(0);
 
@@ -288,7 +288,7 @@ public class ClusterControllerClientTest {
     Cluster actualResponse = client.getCluster(projectId, region, clusterName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetClusterRequest actualRequest = (GetClusterRequest) actualRequests.get(0);
 
@@ -341,7 +341,7 @@ public class ClusterControllerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getClustersList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
 
@@ -393,7 +393,7 @@ public class ClusterControllerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getClustersList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
 
@@ -443,7 +443,7 @@ public class ClusterControllerClientTest {
     Empty actualResponse = client.diagnoseClusterAsync(projectId, region, clusterName).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DiagnoseClusterRequest actualRequest = (DiagnoseClusterRequest) actualRequests.get(0);
 

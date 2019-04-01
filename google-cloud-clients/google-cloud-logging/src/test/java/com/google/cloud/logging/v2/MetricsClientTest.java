@@ -39,7 +39,7 @@ import com.google.logging.v2.ProjectMetricName;
 import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -117,7 +117,7 @@ public class MetricsClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMetricsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListLogMetricsRequest actualRequest = (ListLogMetricsRequest) actualRequests.get(0);
 
@@ -165,7 +165,7 @@ public class MetricsClientTest {
     LogMetric actualResponse = client.getLogMetric(metricName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetLogMetricRequest actualRequest = (GetLogMetricRequest) actualRequests.get(0);
 
@@ -214,7 +214,7 @@ public class MetricsClientTest {
     LogMetric actualResponse = client.createLogMetric(parent, metric);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateLogMetricRequest actualRequest = (CreateLogMetricRequest) actualRequests.get(0);
 
@@ -265,7 +265,7 @@ public class MetricsClientTest {
     LogMetric actualResponse = client.updateLogMetric(metricName, metric);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateLogMetricRequest actualRequest = (UpdateLogMetricRequest) actualRequests.get(0);
 
@@ -304,7 +304,7 @@ public class MetricsClientTest {
 
     client.deleteLogMetric(metricName);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogMetricRequest actualRequest = (DeleteLogMetricRequest) actualRequests.get(0);
 

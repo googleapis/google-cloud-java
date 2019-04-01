@@ -30,7 +30,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -119,7 +119,7 @@ public class DataTransferServiceClientTest {
     DataSource actualResponse = client.getDataSource(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDataSourceRequest actualRequest = (GetDataSourceRequest) actualRequests.get(0);
 
@@ -167,7 +167,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDataSourcesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDataSourcesRequest actualRequest = (ListDataSourcesRequest) actualRequests.get(0);
 
@@ -226,7 +226,7 @@ public class DataTransferServiceClientTest {
     TransferConfig actualResponse = client.createTransferConfig(parent, transferConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTransferConfigRequest actualRequest = (CreateTransferConfigRequest) actualRequests.get(0);
 
@@ -287,7 +287,7 @@ public class DataTransferServiceClientTest {
     TransferConfig actualResponse = client.updateTransferConfig(transferConfig, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateTransferConfigRequest actualRequest = (UpdateTransferConfigRequest) actualRequests.get(0);
 
@@ -326,7 +326,7 @@ public class DataTransferServiceClientTest {
 
     client.deleteTransferConfig(name);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTransferConfigRequest actualRequest = (DeleteTransferConfigRequest) actualRequests.get(0);
 
@@ -384,7 +384,7 @@ public class DataTransferServiceClientTest {
     TransferConfig actualResponse = client.getTransferConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTransferConfigRequest actualRequest = (GetTransferConfigRequest) actualRequests.get(0);
 
@@ -432,7 +432,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTransferConfigsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTransferConfigsRequest actualRequest = (ListTransferConfigsRequest) actualRequests.get(0);
 
@@ -474,7 +474,7 @@ public class DataTransferServiceClientTest {
         client.scheduleTransferRuns(parent, startTime, endTime);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ScheduleTransferRunsRequest actualRequest = (ScheduleTransferRunsRequest) actualRequests.get(0);
 
@@ -528,7 +528,7 @@ public class DataTransferServiceClientTest {
     TransferRun actualResponse = client.getTransferRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTransferRunRequest actualRequest = (GetTransferRunRequest) actualRequests.get(0);
 
@@ -565,7 +565,7 @@ public class DataTransferServiceClientTest {
 
     client.deleteTransferRun(name);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTransferRunRequest actualRequest = (DeleteTransferRunRequest) actualRequests.get(0);
 
@@ -613,7 +613,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTransferRunsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTransferRunsRequest actualRequest = (ListTransferRunsRequest) actualRequests.get(0);
 
@@ -661,7 +661,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTransferMessagesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTransferLogsRequest actualRequest = (ListTransferLogsRequest) actualRequests.get(0);
 
@@ -701,7 +701,7 @@ public class DataTransferServiceClientTest {
     CheckValidCredsResponse actualResponse = client.checkValidCreds(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDataTransferService.getRequests();
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CheckValidCredsRequest actualRequest = (CheckValidCredsRequest) actualRequests.get(0);
 

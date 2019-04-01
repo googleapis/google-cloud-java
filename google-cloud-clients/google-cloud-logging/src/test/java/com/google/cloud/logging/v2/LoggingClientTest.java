@@ -42,7 +42,7 @@ import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -112,7 +112,7 @@ public class LoggingClientTest {
 
     client.deleteLog(logName);
 
-    List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockLoggingServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogRequest actualRequest = (DeleteLogRequest) actualRequests.get(0);
 
@@ -154,7 +154,7 @@ public class LoggingClientTest {
         client.writeLogEntries(logName, resource, labels, entries);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockLoggingServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     WriteLogEntriesRequest actualRequest = (WriteLogEntriesRequest) actualRequests.get(0);
 
@@ -211,7 +211,7 @@ public class LoggingClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntriesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockLoggingServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListLogEntriesRequest actualRequest = (ListLogEntriesRequest) actualRequests.get(0);
 
@@ -263,7 +263,7 @@ public class LoggingClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getLogNamesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
+    List<AbstractMessage> actualRequests = mockLoggingServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListLogsRequest actualRequest = (ListLogsRequest) actualRequests.get(0);
 

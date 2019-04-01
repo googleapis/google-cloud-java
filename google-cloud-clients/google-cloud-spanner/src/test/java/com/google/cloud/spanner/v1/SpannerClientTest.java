@@ -30,7 +30,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -113,7 +113,7 @@ public class SpannerClientTest {
     Session actualResponse = client.createSession(database);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateSessionRequest actualRequest = (CreateSessionRequest) actualRequests.get(0);
 
@@ -152,7 +152,7 @@ public class SpannerClientTest {
     Session actualResponse = client.getSession(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSessionRequest actualRequest = (GetSessionRequest) actualRequests.get(0);
 
@@ -200,7 +200,7 @@ public class SpannerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSessionsRequest actualRequest = (ListSessionsRequest) actualRequests.get(0);
 
@@ -237,7 +237,7 @@ public class SpannerClientTest {
 
     client.deleteSession(name);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSessionRequest actualRequest = (DeleteSessionRequest) actualRequests.get(0);
 
@@ -397,7 +397,7 @@ public class SpannerClientTest {
     Transaction actualResponse = client.beginTransaction(session, options);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BeginTransactionRequest actualRequest = (BeginTransactionRequest) actualRequests.get(0);
 
@@ -439,7 +439,7 @@ public class SpannerClientTest {
     CommitResponse actualResponse = client.commit(session, transactionId, mutations);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CommitRequest actualRequest = (CommitRequest) actualRequests.get(0);
 
@@ -483,7 +483,7 @@ public class SpannerClientTest {
     CommitResponse actualResponse = client.commit(session, singleUseTransaction, mutations);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CommitRequest actualRequest = (CommitRequest) actualRequests.get(0);
 
@@ -525,7 +525,7 @@ public class SpannerClientTest {
 
     client.rollback(session, transactionId);
 
-    List<GeneratedMessageV3> actualRequests = mockSpanner.getRequests();
+    List<AbstractMessage> actualRequests = mockSpanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RollbackRequest actualRequest = (RollbackRequest) actualRequests.get(0);
 
