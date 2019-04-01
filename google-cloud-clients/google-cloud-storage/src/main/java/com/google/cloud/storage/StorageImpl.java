@@ -598,6 +598,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return writer(targetOptions.x(), targetOptions.y());
   }
 
+  @Override
+  public BlobWriteChannel writer(URL signURL) {
+    final StorageOptions options = StorageOptions.newBuilder().build();
+    return new BlobWriteChannel(options, signURL);
+  }
+
   private BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
     return new BlobWriteChannel(getOptions(), blobInfo, optionsMap);

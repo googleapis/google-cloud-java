@@ -823,6 +823,39 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
+  public String getUploadId(String signURL) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_OPEN);
+    Scope scope = tracer.withSpan(span);
+    try {
+      GenericUrl url = new GenericUrl(signURL);
+      url.set("uploadType", "resumable");
+      String bytesArrayParameters = "";
+      byte[] bytesArray = new byte[bytesArrayParameters.length()];
+      HttpRequestFactory requestFactory = storage.getRequestFactory();
+      HttpRequest httpRequest =
+          requestFactory.buildPostRequest(
+              url, new ByteArrayContent("", bytesArray, 0, bytesArray.length));
+      HttpHeaders requestHeaders = httpRequest.getHeaders();
+      requestHeaders.set("X-Upload-Content-Type", firstNonNull("", "application/octet-stream"));
+      requestHeaders.set("x-goog-resumable", "start");
+      HttpResponse response = httpRequest.execute();
+      if (response.getStatusCode() != 201) {
+        GoogleJsonError error = new GoogleJsonError();
+        error.setCode(response.getStatusCode());
+        error.setMessage(response.getStatusMessage());
+        throw translate(error);
+      }
+      return response.getHeaders().getLocation();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
   public RewriteResponse openRewrite(RewriteRequest rewriteRequest) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_OPEN_REWRITE);
     Scope scope = tracer.withSpan(span);

@@ -22,13 +22,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
-import com.google.cloud.FieldSelector;
+import com.google.cloud.*;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.Service;
-import com.google.cloud.Tuple;
-import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
@@ -39,14 +34,7 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.security.Key;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -2067,6 +2055,13 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   WriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
+
+  /**
+   * accept signURL and return a channel for writing content.
+   *
+   * @throws StorageException upon failure
+   */
+  WriteChannel writer(URL signURL);
 
   /**
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a

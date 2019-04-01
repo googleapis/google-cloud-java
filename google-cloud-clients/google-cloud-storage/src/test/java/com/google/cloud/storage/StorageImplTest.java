@@ -59,6 +59,7 @@ import com.google.common.net.UrlEscapers;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.ByteBuffer;
@@ -318,6 +319,9 @@ public class StorageImplTest {
       "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9saJR9c6y"
           + "EkPPhszldvQTY486uPxyD/D7HdfnGW/Nbw5JUhfvecAdudDEhNAQ3PNabyDMI+TpiHy4NTWOrgdcWrzj6VXcdc"
           + "+uuABnPwRCdcyJ1xl2kOrPksRnp1auNGMLOe4IpEBjGY7baX9UG8+A45MbG0aHmkR59Op/aR9XowIDAQAB";
+
+  private static final String SIGN_URL =
+      "http://www.test.com/test-bucket/test1.txt?GoogleAccessId=testClient-test@test.com&Expires=1553839761&Signature=MJUBXAZ7";
 
   private static final ApiClock TIME_SOURCE =
       new ApiClock() {
@@ -2834,5 +2838,15 @@ public class StorageImplTest {
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
     storage.get(blob);
+  }
+
+  @Test
+  public void testWriterWithSignURL() throws MalformedURLException {
+    EasyMock.expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn("upload-id");
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    WriteChannel writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    assertNotNull(writer);
+    assertTrue(writer.isOpen());
   }
 }

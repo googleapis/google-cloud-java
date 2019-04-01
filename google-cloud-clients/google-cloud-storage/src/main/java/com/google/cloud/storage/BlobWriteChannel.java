@@ -24,6 +24,7 @@ import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.v1.StorageRpc;
+import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -34,8 +35,16 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     this(options, blob, open(options, blob, optionsMap));
   }
 
+  BlobWriteChannel(StorageOptions options, URL signURL) {
+    this(options, getUploadId(signURL.toString(), options));
+  }
+
   BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
     super(options, blobInfo, uploadId);
+  }
+
+  BlobWriteChannel(StorageOptions options, String uploadId) {
+    super(options, null, uploadId);
   }
 
   @Override
@@ -73,6 +82,23 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
             @Override
             public String call() {
               return options.getStorageRpcV1().open(blob.toPb(), optionsMap);
+            }
+          },
+          options.getRetrySettings(),
+          StorageImpl.EXCEPTION_HANDLER,
+          options.getClock());
+    } catch (RetryHelper.RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  private static String getUploadId(final String signURL, final StorageOptions options) {
+    try {
+      return runWithRetries(
+          new Callable<String>() {
+            @Override
+            public String call() {
+              return options.getStorageRpcV1().getUploadId(signURL);
             }
           },
           options.getRetrySettings(),

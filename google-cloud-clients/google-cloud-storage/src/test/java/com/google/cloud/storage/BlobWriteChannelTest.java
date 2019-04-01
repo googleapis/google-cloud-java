@@ -37,6 +37,7 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableMap;
 import java.io.IOException;
 import java.net.SocketException;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
@@ -60,6 +61,8 @@ public class BlobWriteChannelTest {
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
   private static final int CUSTOM_CHUNK_SIZE = 4 * MIN_CHUNK_SIZE;
   private static final Random RANDOM = new Random();
+  private static final String SIGN_URL =
+      "http://www.test.com/test-bucket/test1.txt?GoogleAccessId=testClient-test@test.com&Expires=1553839761&Signature=MJUBXAZ7";
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -263,6 +266,122 @@ public class BlobWriteChannelTest {
     assertEquals(state, state2);
     assertEquals(state.hashCode(), state2.hashCode());
     assertEquals(state.toString(), state2.toString());
+  }
+
+  @Test
+  public void testWriteWithSignURLAndWithoutFlush() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    assertEquals(MIN_CHUNK_SIZE, writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE)));
+  }
+
+  @Test
+  public void testWriteWithSignURLAndWithFlush() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    storageRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(CUSTOM_CHUNK_SIZE), eq(false));
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    writer.setChunkSize(CUSTOM_CHUNK_SIZE);
+    ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
+    assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
+    assertArrayEquals(buffer.array(), capturedBuffer.getValue());
+  }
+
+  @Test
+  public void testWriteWithSignURLAndFlush() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    storageRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(DEFAULT_CHUNK_SIZE), eq(false));
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    ByteBuffer[] buffers = new ByteBuffer[DEFAULT_CHUNK_SIZE / MIN_CHUNK_SIZE];
+    for (int i = 0; i < buffers.length; i++) {
+      buffers[i] = randomBuffer(MIN_CHUNK_SIZE);
+      assertEquals(MIN_CHUNK_SIZE, writer.write(buffers[i]));
+    }
+    for (int i = 0; i < buffers.length; i++) {
+      assertArrayEquals(
+          buffers[i].array(),
+          Arrays.copyOfRange(
+              capturedBuffer.getValue(), MIN_CHUNK_SIZE * i, MIN_CHUNK_SIZE * (i + 1)));
+    }
+  }
+
+  @Test
+  public void testCloseWithSignURLWithoutFlush() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    assertTrue(writer.isOpen());
+    writer.close();
+    assertArrayEquals(new byte[0], capturedBuffer.getValue());
+    assertTrue(!writer.isOpen());
+  }
+
+  @Test
+  public void testCloseWithSignURLWithFlush() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    ByteBuffer buffer = randomBuffer(MIN_CHUNK_SIZE);
+    storageRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(MIN_CHUNK_SIZE), eq(true));
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    assertTrue(writer.isOpen());
+    writer.write(buffer);
+    writer.close();
+    assertEquals(DEFAULT_CHUNK_SIZE, capturedBuffer.getValue().length);
+    assertArrayEquals(buffer.array(), Arrays.copyOf(capturedBuffer.getValue(), MIN_CHUNK_SIZE));
+    assertTrue(!writer.isOpen());
+  }
+
+  @Test
+  public void testWriteWithSignURLClosed() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    writer.close();
+    try {
+      writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE));
+      fail("Expected BlobWriteChannel write to throw IOException");
+    } catch (IOException ex) {
+      // expected
+    }
+  }
+
+  @Test
+  public void testSaveAndRestoreWithSignURL() throws IOException {
+    expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance(CaptureType.ALL);
+    Capture<Long> capturedPosition = Capture.newInstance(CaptureType.ALL);
+    storageRpcMock.write(
+        eq(UPLOAD_ID),
+        capture(capturedBuffer),
+        eq(0),
+        captureLong(capturedPosition),
+        eq(DEFAULT_CHUNK_SIZE),
+        eq(false));
+    expectLastCall().times(2);
+    replay(storageRpcMock);
+    ByteBuffer buffer1 = randomBuffer(DEFAULT_CHUNK_SIZE);
+    ByteBuffer buffer2 = randomBuffer(DEFAULT_CHUNK_SIZE);
+    writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    assertEquals(DEFAULT_CHUNK_SIZE, writer.write(buffer1));
+    assertArrayEquals(buffer1.array(), capturedBuffer.getValues().get(0));
+    assertEquals(new Long(0L), capturedPosition.getValues().get(0));
+    RestorableState<WriteChannel> writerState = writer.capture();
+    WriteChannel restoredWriter = writerState.restore();
+    assertEquals(DEFAULT_CHUNK_SIZE, restoredWriter.write(buffer2));
+    assertArrayEquals(buffer2.array(), capturedBuffer.getValues().get(1));
+    assertEquals(new Long(DEFAULT_CHUNK_SIZE), capturedPosition.getValues().get(1));
   }
 
   private static ByteBuffer randomBuffer(int size) {
