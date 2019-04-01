@@ -30,9 +30,9 @@ import com.google.common.collect.Lists;
 import com.google.containeranalysis.v1beta1.NoteName;
 import com.google.containeranalysis.v1beta1.OccurrenceName;
 import com.google.containeranalysis.v1beta1.ProjectName;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grafeas.v1beta1.BatchCreateNotesRequest;
 import io.grafeas.v1beta1.BatchCreateNotesResponse;
 import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;
@@ -131,7 +131,7 @@ public class GrafeasV1Beta1ClientTest {
     Occurrence actualResponse = client.getOccurrence(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetOccurrenceRequest actualRequest = (GetOccurrenceRequest) actualRequests.get(0);
 
@@ -180,7 +180,7 @@ public class GrafeasV1Beta1ClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getOccurrencesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListOccurrencesRequest actualRequest = (ListOccurrencesRequest) actualRequests.get(0);
 
@@ -219,7 +219,7 @@ public class GrafeasV1Beta1ClientTest {
 
     client.deleteOccurrence(name);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteOccurrenceRequest actualRequest = (DeleteOccurrenceRequest) actualRequests.get(0);
 
@@ -266,7 +266,7 @@ public class GrafeasV1Beta1ClientTest {
     Occurrence actualResponse = client.createOccurrence(parent, occurrence);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateOccurrenceRequest actualRequest = (CreateOccurrenceRequest) actualRequests.get(0);
 
@@ -309,7 +309,7 @@ public class GrafeasV1Beta1ClientTest {
         client.batchCreateOccurrences(parent, occurrences);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateOccurrencesRequest actualRequest =
         (BatchCreateOccurrencesRequest) actualRequests.get(0);
@@ -360,7 +360,7 @@ public class GrafeasV1Beta1ClientTest {
     Occurrence actualResponse = client.updateOccurrence(name, occurrence, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateOccurrenceRequest actualRequest = (UpdateOccurrenceRequest) actualRequests.get(0);
 
@@ -410,7 +410,7 @@ public class GrafeasV1Beta1ClientTest {
     Note actualResponse = client.getOccurrenceNote(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetOccurrenceNoteRequest actualRequest = (GetOccurrenceNoteRequest) actualRequests.get(0);
 
@@ -456,7 +456,7 @@ public class GrafeasV1Beta1ClientTest {
     Note actualResponse = client.getNote(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetNoteRequest actualRequest = (GetNoteRequest) actualRequests.get(0);
 
@@ -502,7 +502,7 @@ public class GrafeasV1Beta1ClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getNotesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListNotesRequest actualRequest = (ListNotesRequest) actualRequests.get(0);
 
@@ -541,7 +541,7 @@ public class GrafeasV1Beta1ClientTest {
 
     client.deleteNote(name);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteNoteRequest actualRequest = (DeleteNoteRequest) actualRequests.get(0);
 
@@ -589,7 +589,7 @@ public class GrafeasV1Beta1ClientTest {
     Note actualResponse = client.createNote(parent, noteId, note);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateNoteRequest actualRequest = (CreateNoteRequest) actualRequests.get(0);
 
@@ -632,7 +632,7 @@ public class GrafeasV1Beta1ClientTest {
     BatchCreateNotesResponse actualResponse = client.batchCreateNotes(parent, notes);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateNotesRequest actualRequest = (BatchCreateNotesRequest) actualRequests.get(0);
 
@@ -682,7 +682,7 @@ public class GrafeasV1Beta1ClientTest {
     Note actualResponse = client.updateNote(name, note, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateNoteRequest actualRequest = (UpdateNoteRequest) actualRequests.get(0);
 
@@ -735,7 +735,7 @@ public class GrafeasV1Beta1ClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getOccurrencesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListNoteOccurrencesRequest actualRequest = (ListNoteOccurrencesRequest) actualRequests.get(0);
 
@@ -778,7 +778,7 @@ public class GrafeasV1Beta1ClientTest {
         client.getVulnerabilityOccurrencesSummary(parent, filter);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGrafeasV1Beta1.getRequests();
+    List<AbstractMessage> actualRequests = mockGrafeasV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetVulnerabilityOccurrencesSummaryRequest actualRequest =
         (GetVulnerabilityOccurrencesSummaryRequest) actualRequests.get(0);
