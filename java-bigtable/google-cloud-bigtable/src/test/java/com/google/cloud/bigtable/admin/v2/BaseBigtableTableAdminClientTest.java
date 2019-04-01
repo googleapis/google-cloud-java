@@ -50,9 +50,9 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -122,7 +122,7 @@ public class BaseBigtableTableAdminClientTest {
     Table actualResponse = client.createTable(parent, tableId, table);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTableRequest actualRequest = (CreateTableRequest) actualRequests.get(0);
 
@@ -175,7 +175,7 @@ public class BaseBigtableTableAdminClientTest {
         client.createTableFromSnapshotAsync(parent, tableId, sourceSnapshot).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTableFromSnapshotRequest actualRequest =
         (CreateTableFromSnapshotRequest) actualRequests.get(0);
@@ -231,7 +231,7 @@ public class BaseBigtableTableAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTablesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTablesRequest actualRequest = (ListTablesRequest) actualRequests.get(0);
 
@@ -270,7 +270,7 @@ public class BaseBigtableTableAdminClientTest {
     Table actualResponse = client.getTable(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTableRequest actualRequest = (GetTableRequest) actualRequests.get(0);
 
@@ -307,7 +307,7 @@ public class BaseBigtableTableAdminClientTest {
 
     client.deleteTable(name);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTableRequest actualRequest = (DeleteTableRequest) actualRequests.get(0);
 
@@ -347,7 +347,7 @@ public class BaseBigtableTableAdminClientTest {
     Table actualResponse = client.modifyColumnFamilies(name, modifications);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ModifyColumnFamiliesRequest actualRequest = (ModifyColumnFamiliesRequest) actualRequests.get(0);
 
@@ -389,7 +389,7 @@ public class BaseBigtableTableAdminClientTest {
     GenerateConsistencyTokenResponse actualResponse = client.generateConsistencyToken(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GenerateConsistencyTokenRequest actualRequest =
         (GenerateConsistencyTokenRequest) actualRequests.get(0);
@@ -431,7 +431,7 @@ public class BaseBigtableTableAdminClientTest {
     CheckConsistencyResponse actualResponse = client.checkConsistency(name, consistencyToken);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CheckConsistencyRequest actualRequest = (CheckConsistencyRequest) actualRequests.get(0);
 
@@ -489,7 +489,7 @@ public class BaseBigtableTableAdminClientTest {
         client.snapshotTableAsync(name, cluster, snapshotId, description).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SnapshotTableRequest actualRequest = (SnapshotTableRequest) actualRequests.get(0);
 
@@ -544,7 +544,7 @@ public class BaseBigtableTableAdminClientTest {
     Snapshot actualResponse = client.getSnapshot(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSnapshotRequest actualRequest = (GetSnapshotRequest) actualRequests.get(0);
 
@@ -592,7 +592,7 @@ public class BaseBigtableTableAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSnapshotsRequest actualRequest = (ListSnapshotsRequest) actualRequests.get(0);
 
@@ -629,7 +629,7 @@ public class BaseBigtableTableAdminClientTest {
 
     client.deleteSnapshot(name);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSnapshotRequest actualRequest = (DeleteSnapshotRequest) actualRequests.get(0);
 

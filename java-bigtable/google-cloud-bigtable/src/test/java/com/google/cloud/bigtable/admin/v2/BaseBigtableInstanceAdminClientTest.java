@@ -57,11 +57,11 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -143,7 +143,7 @@ public class BaseBigtableInstanceAdminClientTest {
         client.createInstanceAsync(parent, instanceId, instance, clusters).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
@@ -192,7 +192,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Instance actualResponse = client.getInstance(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
 
@@ -232,7 +232,7 @@ public class BaseBigtableInstanceAdminClientTest {
     ListInstancesResponse actualResponse = client.listInstances(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
 
@@ -280,7 +280,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Instance actualResponse = client.partialUpdateInstanceAsync(instance, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PartialUpdateInstanceRequest actualRequest =
         (PartialUpdateInstanceRequest) actualRequests.get(0);
@@ -322,7 +322,7 @@ public class BaseBigtableInstanceAdminClientTest {
 
     client.deleteInstance(name);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
 
@@ -376,7 +376,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Cluster actualResponse = client.createClusterAsync(parent, clusterId, cluster).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateClusterRequest actualRequest = (CreateClusterRequest) actualRequests.get(0);
 
@@ -428,7 +428,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Cluster actualResponse = client.getCluster(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetClusterRequest actualRequest = (GetClusterRequest) actualRequests.get(0);
 
@@ -468,7 +468,7 @@ public class BaseBigtableInstanceAdminClientTest {
     ListClustersResponse actualResponse = client.listClusters(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
 
@@ -505,7 +505,7 @@ public class BaseBigtableInstanceAdminClientTest {
 
     client.deleteCluster(name);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteClusterRequest actualRequest = (DeleteClusterRequest) actualRequests.get(0);
 
@@ -549,7 +549,7 @@ public class BaseBigtableInstanceAdminClientTest {
     AppProfile actualResponse = client.createAppProfile(parent, appProfileId, appProfile);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateAppProfileRequest actualRequest = (CreateAppProfileRequest) actualRequests.get(0);
 
@@ -595,7 +595,7 @@ public class BaseBigtableInstanceAdminClientTest {
     AppProfile actualResponse = client.getAppProfile(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAppProfileRequest actualRequest = (GetAppProfileRequest) actualRequests.get(0);
 
@@ -643,7 +643,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAppProfilesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListAppProfilesRequest actualRequest = (ListAppProfilesRequest) actualRequests.get(0);
 
@@ -692,7 +692,7 @@ public class BaseBigtableInstanceAdminClientTest {
     AppProfile actualResponse = client.updateAppProfileAsync(appProfile, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateAppProfileRequest actualRequest = (UpdateAppProfileRequest) actualRequests.get(0);
 
@@ -733,7 +733,7 @@ public class BaseBigtableInstanceAdminClientTest {
 
     client.deleteAppProfile(name);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteAppProfileRequest actualRequest = (DeleteAppProfileRequest) actualRequests.get(0);
 
@@ -773,7 +773,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -814,7 +814,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -856,7 +856,7 @@ public class BaseBigtableInstanceAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 

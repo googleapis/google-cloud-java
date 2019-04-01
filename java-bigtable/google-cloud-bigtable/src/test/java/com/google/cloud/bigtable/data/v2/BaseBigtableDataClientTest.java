@@ -41,8 +41,8 @@ import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.bigtable.v2.TableName;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -200,7 +200,7 @@ public class BaseBigtableDataClientTest {
     MutateRowResponse actualResponse = client.mutateRow(tableName, rowKey, mutations);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtable.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtable.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     MutateRowRequest actualRequest = (MutateRowRequest) actualRequests.get(0);
 
@@ -302,7 +302,7 @@ public class BaseBigtableDataClientTest {
         client.checkAndMutateRow(tableName, rowKey, predicateFilter, trueMutations, falseMutations);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtable.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtable.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CheckAndMutateRowRequest actualRequest = (CheckAndMutateRowRequest) actualRequests.get(0);
 
@@ -350,7 +350,7 @@ public class BaseBigtableDataClientTest {
     ReadModifyWriteRowResponse actualResponse = client.readModifyWriteRow(tableName, rowKey, rules);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigtable.getRequests();
+    List<AbstractMessage> actualRequests = mockBigtable.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ReadModifyWriteRowRequest actualRequest = (ReadModifyWriteRowRequest) actualRequests.get(0);
 
