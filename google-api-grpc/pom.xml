@@ -734,6 +734,16 @@
         <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
         <version>0.2.1-beta-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-talent-v4beta1:current}-->
       </dependency>
+        <dependency>
+            <groupId>com.google.api.grpc</groupId>
+            <artifactId>proto-google-cloud-webrisk-v1beta1</artifactId>
+            <version>0.0.1-beta-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-webrisk-v1beta1:current}-->
+        </dependency>
+        <dependency>
+            <groupId>com.google.api.grpc</groupId>
+            <artifactId>grpc-google-cloud-webrisk-v1beta1</artifactId>
+            <version>0.0.1-beta-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-webrisk-v1beta1:current}-->
+        </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -796,7 +806,7 @@
     <module>grpc-google-cloud-vision-v1p2beta1</module>
     <module>grpc-google-cloud-vision-v1p3beta1</module>
     <module>grpc-google-cloud-vision-v1p4beta1</module>
-    <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
+    <module>grpc-google-cloud-webrisk-v1beta1</module><module>grpc-google-cloud-websecurityscanner-v1alpha</module>
 
     <module>proto-google-cloud-asset-v1</module>
     <module>proto-google-cloud-asset-v1beta1</module>
@@ -857,7 +867,7 @@
     <module>proto-google-cloud-vision-v1p2beta1</module>
     <module>proto-google-cloud-vision-v1p3beta1</module>
     <module>proto-google-cloud-vision-v1p4beta1</module>
-    <module>proto-google-cloud-websecurityscanner-v1alpha</module>
+    <module>proto-google-cloud-webrisk-v1beta1</module><module>proto-google-cloud-websecurityscanner-v1alpha</module>
   </modules>
 
   <build>
