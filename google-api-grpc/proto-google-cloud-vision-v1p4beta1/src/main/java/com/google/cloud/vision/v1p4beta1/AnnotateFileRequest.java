@@ -24,7 +24,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
   private AnnotateFileRequest() {
     features_ = java.util.Collections.emptyList();
-    pages_ = java.util.Collections.emptyList();
+    pages_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -69,7 +69,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 features_ = new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.Feature>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -96,31 +96,30 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             }
           case 32:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                pages_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                pages_ = newIntList();
                 mutable_bitField0_ |= 0x00000008;
               }
-              pages_.add(input.readInt32());
+              pages_.addInt(input.readInt32());
               break;
             }
           case 34:
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)
-                  && input.getBytesUntilLimit() > 0) {
-                pages_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                pages_ = newIntList();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
-                pages_.add(input.readInt32());
+                pages_.addInt(input.readInt32());
               }
               input.popLimit(limit);
               break;
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -132,11 +131,11 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-        pages_ = java.util.Collections.unmodifiableList(pages_);
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        pages_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -306,7 +305,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PAGES_FIELD_NUMBER = 4;
-  private java.util.List<java.lang.Integer> pages_;
+  private com.google.protobuf.Internal.IntList pages_;
   /**
    *
    *
@@ -368,7 +367,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    * <code>repeated int32 pages = 4;</code>
    */
   public int getPages(int index) {
-    return pages_.get(index);
+    return pages_.getInt(index);
   }
 
   private int pagesMemoizedSerializedSize = -1;
@@ -402,7 +401,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       output.writeUInt32NoTag(pagesMemoizedSerializedSize);
     }
     for (int i = 0; i < pages_.size(); i++) {
-      output.writeInt32NoTag(pages_.get(i));
+      output.writeInt32NoTag(pages_.getInt(i));
     }
     unknownFields.writeTo(output);
   }
@@ -425,7 +424,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     {
       int dataSize = 0;
       for (int i = 0; i < pages_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(pages_.get(i));
+        dataSize += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(pages_.getInt(i));
       }
       size += dataSize;
       if (!getPagesList().isEmpty()) {
@@ -450,19 +449,18 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.vision.v1p4beta1.AnnotateFileRequest other =
         (com.google.cloud.vision.v1p4beta1.AnnotateFileRequest) obj;
 
-    boolean result = true;
-    result = result && (hasInputConfig() == other.hasInputConfig());
+    if (hasInputConfig() != other.hasInputConfig()) return false;
     if (hasInputConfig()) {
-      result = result && getInputConfig().equals(other.getInputConfig());
+      if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
-    result = result && getFeaturesList().equals(other.getFeaturesList());
-    result = result && (hasImageContext() == other.hasImageContext());
+    if (!getFeaturesList().equals(other.getFeaturesList())) return false;
+    if (hasImageContext() != other.hasImageContext()) return false;
     if (hasImageContext()) {
-      result = result && getImageContext().equals(other.getImageContext());
+      if (!getImageContext().equals(other.getImageContext())) return false;
     }
-    result = result && getPagesList().equals(other.getPagesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPagesList().equals(other.getPagesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -654,7 +652,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         imageContext_ = null;
         imageContextBuilder_ = null;
       }
-      pages_ = java.util.Collections.emptyList();
+      pages_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
@@ -691,7 +689,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         result.inputConfig_ = inputConfigBuilder_.build();
       }
       if (featuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           features_ = java.util.Collections.unmodifiableList(features_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -704,8 +702,8 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.imageContext_ = imageContextBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        pages_ = java.util.Collections.unmodifiableList(pages_);
+      if (((bitField0_ & 0x00000008) != 0)) {
+        pages_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.pages_ = pages_;
@@ -716,35 +714,35 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -835,7 +833,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private com.google.cloud.vision.v1p4beta1.InputConfig inputConfig_ = null;
+    private com.google.cloud.vision.v1p4beta1.InputConfig inputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.InputConfig,
             com.google.cloud.vision.v1p4beta1.InputConfig.Builder,
@@ -1021,7 +1019,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         features_ = new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.Feature>(features_);
         bitField0_ |= 0x00000002;
       }
@@ -1360,16 +1358,13 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
                 com.google.cloud.vision.v1p4beta1.Feature,
                 com.google.cloud.vision.v1p4beta1.Feature.Builder,
                 com.google.cloud.vision.v1p4beta1.FeatureOrBuilder>(
-                features_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                features_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         features_ = null;
       }
       return featuresBuilder_;
     }
 
-    private com.google.cloud.vision.v1p4beta1.ImageContext imageContext_ = null;
+    private com.google.cloud.vision.v1p4beta1.ImageContext imageContext_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.ImageContext,
             com.google.cloud.vision.v1p4beta1.ImageContext.Builder,
@@ -1551,11 +1546,11 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       return imageContextBuilder_;
     }
 
-    private java.util.List<java.lang.Integer> pages_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.IntList pages_ = emptyIntList();
 
     private void ensurePagesIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        pages_ = new java.util.ArrayList<java.lang.Integer>(pages_);
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        pages_ = mutableCopy(pages_);
         bitField0_ |= 0x00000008;
       }
     }
@@ -1578,7 +1573,9 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
      * <code>repeated int32 pages = 4;</code>
      */
     public java.util.List<java.lang.Integer> getPagesList() {
-      return java.util.Collections.unmodifiableList(pages_);
+      return ((bitField0_ & 0x00000008) != 0)
+          ? java.util.Collections.unmodifiableList(pages_)
+          : pages_;
     }
     /**
      *
@@ -1620,7 +1617,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
      * <code>repeated int32 pages = 4;</code>
      */
     public int getPages(int index) {
-      return pages_.get(index);
+      return pages_.getInt(index);
     }
     /**
      *
@@ -1642,7 +1639,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder setPages(int index, int value) {
       ensurePagesIsMutable();
-      pages_.set(index, value);
+      pages_.setInt(index, value);
       onChanged();
       return this;
     }
@@ -1666,7 +1663,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder addPages(int value) {
       ensurePagesIsMutable();
-      pages_.add(value);
+      pages_.addInt(value);
       onChanged();
       return this;
     }
@@ -1713,7 +1710,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
      * <code>repeated int32 pages = 4;</code>
      */
     public Builder clearPages() {
-      pages_ = java.util.Collections.emptyList();
+      pages_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
@@ -1721,7 +1718,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

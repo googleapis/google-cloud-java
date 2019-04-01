@@ -87,7 +87,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -390,7 +390,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                   suffixes_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000008;
                 }
@@ -400,7 +400,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   prefixes_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000010;
                 }
@@ -409,7 +409,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -421,10 +421,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -804,14 +804,13 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName other =
           (com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName) obj;
 
-      boolean result = true;
-      result = result && getGivenName().equals(other.getGivenName());
-      result = result && getMiddleInitial().equals(other.getMiddleInitial());
-      result = result && getFamilyName().equals(other.getFamilyName());
-      result = result && getSuffixesList().equals(other.getSuffixesList());
-      result = result && getPrefixesList().equals(other.getPrefixesList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getGivenName().equals(other.getGivenName())) return false;
+      if (!getMiddleInitial().equals(other.getMiddleInitial())) return false;
+      if (!getFamilyName().equals(other.getFamilyName())) return false;
+      if (!getSuffixesList().equals(other.getSuffixesList())) return false;
+      if (!getPrefixesList().equals(other.getPrefixesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1028,12 +1027,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         result.givenName_ = givenName_;
         result.middleInitial_ = middleInitial_;
         result.familyName_ = familyName_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.suffixes_ = suffixes_;
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -1045,23 +1044,23 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1069,13 +1068,13 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1519,7 +1518,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSuffixesIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           suffixes_ = new com.google.protobuf.LazyStringArrayList(suffixes_);
           bitField0_ |= 0x00000008;
         }
@@ -1680,7 +1679,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
           bitField0_ |= 0x00000010;
         }
@@ -1840,7 +1839,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2141,22 +2140,20 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.talent.v4beta1.PersonName other =
         (com.google.cloud.talent.v4beta1.PersonName) obj;
 
-    boolean result = true;
-    result = result && getPreferredName().equals(other.getPreferredName());
-    result = result && getPersonNameCase().equals(other.getPersonNameCase());
-    if (!result) return false;
+    if (!getPreferredName().equals(other.getPreferredName())) return false;
+    if (!getPersonNameCase().equals(other.getPersonNameCase())) return false;
     switch (personNameCase_) {
       case 1:
-        result = result && getFormattedName().equals(other.getFormattedName());
+        if (!getFormattedName().equals(other.getFormattedName())) return false;
         break;
       case 2:
-        result = result && getStructuredName().equals(other.getStructuredName());
+        if (!getStructuredName().equals(other.getStructuredName())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2374,35 +2371,35 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2925,7 +2922,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

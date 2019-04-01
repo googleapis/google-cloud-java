@@ -26,7 +26,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   private Dataset() {
     name_ = "";
     displayName_ = "";
-    exampleCount_ = 0;
   }
 
   @java.lang.Override
@@ -155,7 +154,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -627,38 +626,32 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.automl.v1beta1.Dataset other = (com.google.cloud.automl.v1beta1.Dataset) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && (getExampleCount() == other.getExampleCount());
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (getExampleCount() != other.getExampleCount()) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && getDatasetMetadataCase().equals(other.getDatasetMetadataCase());
-    if (!result) return false;
+    if (!getDatasetMetadataCase().equals(other.getDatasetMetadataCase())) return false;
     switch (datasetMetadataCase_) {
       case 23:
-        result =
-            result && getTranslationDatasetMetadata().equals(other.getTranslationDatasetMetadata());
+        if (!getTranslationDatasetMetadata().equals(other.getTranslationDatasetMetadata()))
+          return false;
         break;
       case 24:
-        result =
-            result
-                && getImageClassificationDatasetMetadata()
-                    .equals(other.getImageClassificationDatasetMetadata());
+        if (!getImageClassificationDatasetMetadata()
+            .equals(other.getImageClassificationDatasetMetadata())) return false;
         break;
       case 25:
-        result =
-            result
-                && getTextClassificationDatasetMetadata()
-                    .equals(other.getTextClassificationDatasetMetadata());
+        if (!getTextClassificationDatasetMetadata()
+            .equals(other.getTextClassificationDatasetMetadata())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -917,35 +910,35 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1991,7 +1984,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2172,7 +2165,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

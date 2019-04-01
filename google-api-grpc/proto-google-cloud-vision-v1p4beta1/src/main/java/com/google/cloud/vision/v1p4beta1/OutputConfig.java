@@ -22,9 +22,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private OutputConfig() {
-    batchSize_ = 0;
-  }
+  private OutputConfig() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -73,7 +71,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -220,14 +218,13 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vision.v1p4beta1.OutputConfig other =
         (com.google.cloud.vision.v1p4beta1.OutputConfig) obj;
 
-    boolean result = true;
-    result = result && (hasGcsDestination() == other.hasGcsDestination());
+    if (hasGcsDestination() != other.hasGcsDestination()) return false;
     if (hasGcsDestination()) {
-      result = result && getGcsDestination().equals(other.getGcsDestination());
+      if (!getGcsDestination().equals(other.getGcsDestination())) return false;
     }
-    result = result && (getBatchSize() == other.getBatchSize());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getBatchSize() != other.getBatchSize()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -435,35 +432,35 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -513,7 +510,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.vision.v1p4beta1.GcsDestination gcsDestination_ = null;
+    private com.google.cloud.vision.v1p4beta1.GcsDestination gcsDestination_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.GcsDestination,
             com.google.cloud.vision.v1p4beta1.GcsDestination.Builder,
@@ -765,7 +762,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

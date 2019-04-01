@@ -27,10 +27,8 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   }
 
   private TraceSpan() {
-    spanId_ = 0L;
     kind_ = 0;
     name_ = "";
-    parentSpanId_ = 0L;
   }
 
   @java.lang.Override
@@ -113,7 +111,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000040;
@@ -126,7 +124,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -822,22 +820,21 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     com.google.devtools.cloudtrace.v1.TraceSpan other =
         (com.google.devtools.cloudtrace.v1.TraceSpan) obj;
 
-    boolean result = true;
-    result = result && (getSpanId() == other.getSpanId());
-    result = result && kind_ == other.kind_;
-    result = result && getName().equals(other.getName());
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (getSpanId() != other.getSpanId()) return false;
+    if (kind_ != other.kind_) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && (getParentSpanId() == other.getParentSpanId());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getParentSpanId() != other.getParentSpanId()) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1109,35 +1106,35 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1462,7 +1459,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1637,7 +1634,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2220,7 +2217,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

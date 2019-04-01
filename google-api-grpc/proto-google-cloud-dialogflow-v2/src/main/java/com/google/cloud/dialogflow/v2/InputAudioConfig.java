@@ -24,7 +24,6 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
   private InputAudioConfig() {
     audioEncoding_ = 0;
-    sampleRateHertz_ = 0;
     languageCode_ = "";
     phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -75,7 +74,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 phraseHints_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -84,7 +83,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -96,7 +95,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -157,8 +156,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-   * details.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+   * more details.
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -175,9 +176,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -199,9 +200,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -226,7 +227,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -241,7 +244,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -256,7 +261,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -271,7 +278,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -351,13 +360,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.dialogflow.v2.InputAudioConfig other =
         (com.google.cloud.dialogflow.v2.InputAudioConfig) obj;
 
-    boolean result = true;
-    result = result && audioEncoding_ == other.audioEncoding_;
-    result = result && (getSampleRateHertz() == other.getSampleRateHertz());
-    result = result && getLanguageCode().equals(other.getLanguageCode());
-    result = result && getPhraseHintsList().equals(other.getPhraseHintsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (audioEncoding_ != other.audioEncoding_) return false;
+    if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getPhraseHintsList().equals(other.getPhraseHintsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -562,7 +570,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       result.audioEncoding_ = audioEncoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
@@ -574,35 +582,35 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -751,8 +759,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -765,8 +775,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -782,8 +794,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-     * details.
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+     * more details.
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -802,9 +816,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -826,9 +840,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -850,9 +864,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -872,9 +886,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -891,9 +905,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The language of the supplied audio. Dialogflow does not do
      * translations. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -913,7 +927,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePhraseHintsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         phraseHints_ = new com.google.protobuf.LazyStringArrayList(phraseHints_);
         bitField0_ |= 0x00000008;
       }
@@ -924,7 +938,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -939,7 +955,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -954,7 +972,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -969,7 +989,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -984,7 +1006,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -1005,7 +1029,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -1026,7 +1052,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -1044,7 +1072,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -1062,7 +1092,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The collection of phrase hints which are used to boost accuracy
      * of speech recognition.
-     * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+     * Refer to
+     * [Cloud Speech API
+     * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      * </pre>
      *
@@ -1081,7 +1113,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

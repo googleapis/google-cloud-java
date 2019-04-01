@@ -71,7 +71,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 path_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Key.PathElement>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -82,7 +82,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -94,7 +94,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         path_ = java.util.Collections.unmodifiableList(path_);
       }
       this.unknownFields = unknownFields.build();
@@ -261,7 +261,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -518,22 +518,20 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.Key.PathElement other =
           (com.google.privacy.dlp.v2.Key.PathElement) obj;
 
-      boolean result = true;
-      result = result && getKind().equals(other.getKind());
-      result = result && getIdTypeCase().equals(other.getIdTypeCase());
-      if (!result) return false;
+      if (!getKind().equals(other.getKind())) return false;
+      if (!getIdTypeCase().equals(other.getIdTypeCase())) return false;
       switch (idTypeCase_) {
         case 2:
-          result = result && (getId() == other.getId());
+          if (getId() != other.getId()) return false;
           break;
         case 3:
-          result = result && getName().equals(other.getName());
+          if (!getName().equals(other.getName())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -751,23 +749,23 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -775,13 +773,13 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1147,7 +1145,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1393,14 +1391,13 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.Key other = (com.google.privacy.dlp.v2.Key) obj;
 
-    boolean result = true;
-    result = result && (hasPartitionId() == other.hasPartitionId());
+    if (hasPartitionId() != other.hasPartitionId()) return false;
     if (hasPartitionId()) {
-      result = result && getPartitionId().equals(other.getPartitionId());
+      if (!getPartitionId().equals(other.getPartitionId())) return false;
     }
-    result = result && getPathList().equals(other.getPathList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPathList().equals(other.getPathList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1612,7 +1609,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         result.partitionId_ = partitionIdBuilder_.build();
       }
       if (pathBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           path_ = java.util.Collections.unmodifiableList(path_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -1627,35 +1624,35 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1731,7 +1728,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.privacy.dlp.v2.PartitionId partitionId_ = null;
+    private com.google.privacy.dlp.v2.PartitionId partitionId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.PartitionId,
             com.google.privacy.dlp.v2.PartitionId.Builder,
@@ -1934,7 +1931,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePathIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         path_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Key.PathElement>(path_);
         bitField0_ |= 0x00000002;
       }
@@ -2398,10 +2395,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Key.PathElement,
                 com.google.privacy.dlp.v2.Key.PathElement.Builder,
                 com.google.privacy.dlp.v2.Key.PathElementOrBuilder>(
-                path_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                path_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         path_ = null;
       }
       return pathBuilder_;
@@ -2409,7 +2403,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

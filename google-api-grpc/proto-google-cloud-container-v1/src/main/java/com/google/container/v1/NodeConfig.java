@@ -24,13 +24,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
   private NodeConfig() {
     machineType_ = "";
-    diskSizeGb_ = 0;
     oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     serviceAccount_ = "";
     imageType_ = "";
-    localSsdCount_ = 0;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    preemptible_ = false;
     accelerators_ = java.util.Collections.emptyList();
     diskType_ = "";
     minCpuPlatform_ = "";
@@ -75,7 +72,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 oauthScopes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -84,7 +81,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
@@ -106,7 +103,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000040;
@@ -125,7 +122,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -146,7 +143,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 accelerators_ =
                     new java.util.ArrayList<com.google.container.v1.AcceleratorConfig>();
                 mutable_bitField0_ |= 0x00000400;
@@ -172,7 +169,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -184,13 +181,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         oauthScopes_ = oauthScopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
       }
       this.unknownFields = unknownFields.build();
@@ -1178,22 +1175,21 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.NodeConfig other = (com.google.container.v1.NodeConfig) obj;
 
-    boolean result = true;
-    result = result && getMachineType().equals(other.getMachineType());
-    result = result && (getDiskSizeGb() == other.getDiskSizeGb());
-    result = result && getOauthScopesList().equals(other.getOauthScopesList());
-    result = result && getServiceAccount().equals(other.getServiceAccount());
-    result = result && internalGetMetadata().equals(other.internalGetMetadata());
-    result = result && getImageType().equals(other.getImageType());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && (getLocalSsdCount() == other.getLocalSsdCount());
-    result = result && getTagsList().equals(other.getTagsList());
-    result = result && (getPreemptible() == other.getPreemptible());
-    result = result && getAcceleratorsList().equals(other.getAcceleratorsList());
-    result = result && getDiskType().equals(other.getDiskType());
-    result = result && getMinCpuPlatform().equals(other.getMinCpuPlatform());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getMachineType().equals(other.getMachineType())) return false;
+    if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    if (!getOauthScopesList().equals(other.getOauthScopesList())) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (!getImageType().equals(other.getImageType())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getLocalSsdCount() != other.getLocalSsdCount()) return false;
+    if (!getTagsList().equals(other.getTagsList())) return false;
+    if (getPreemptible() != other.getPreemptible()) return false;
+    if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
+    if (!getDiskType().equals(other.getDiskType())) return false;
+    if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1467,7 +1463,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       int to_bitField0_ = 0;
       result.machineType_ = machineType_;
       result.diskSizeGb_ = diskSizeGb_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         oauthScopes_ = oauthScopes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -1479,14 +1475,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       result.localSsdCount_ = localSsdCount_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         tags_ = tags_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.tags_ = tags_;
       result.preemptible_ = preemptible_;
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
@@ -1503,35 +1499,35 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1823,7 +1819,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
         bitField0_ |= 0x00000004;
       }
@@ -2797,7 +2793,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
         bitField0_ |= 0x00000100;
       }
@@ -3017,7 +3013,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.container.v1.AcceleratorConfig>(accelerators_);
         bitField0_ |= 0x00000400;
@@ -3394,10 +3390,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.AcceleratorConfig,
                 com.google.container.v1.AcceleratorConfig.Builder,
                 com.google.container.v1.AcceleratorConfigOrBuilder>(
-                accelerators_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
-                getParentForChildren(),
-                isClean());
+                accelerators_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -3628,7 +3621,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

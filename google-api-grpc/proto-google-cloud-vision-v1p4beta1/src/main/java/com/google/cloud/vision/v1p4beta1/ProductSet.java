@@ -98,7 +98,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -383,19 +383,18 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vision.v1p4beta1.ProductSet other =
         (com.google.cloud.vision.v1p4beta1.ProductSet) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && (hasIndexTime() == other.hasIndexTime());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (hasIndexTime() != other.hasIndexTime()) return false;
     if (hasIndexTime()) {
-      result = result && getIndexTime().equals(other.getIndexTime());
+      if (!getIndexTime().equals(other.getIndexTime())) return false;
     }
-    result = result && (hasIndexError() == other.hasIndexError());
+    if (hasIndexError() != other.hasIndexError()) return false;
     if (hasIndexError()) {
-      result = result && getIndexError().equals(other.getIndexError());
+      if (!getIndexError().equals(other.getIndexError())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -625,35 +624,35 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -919,7 +918,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp indexTime_ = null;
+    private com.google.protobuf.Timestamp indexTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1130,7 +1129,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
       return indexTimeBuilder_;
     }
 
-    private com.google.rpc.Status indexError_ = null;
+    private com.google.rpc.Status indexError_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         indexErrorBuilder_;
@@ -1320,7 +1319,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

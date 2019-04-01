@@ -12,9 +12,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Required for all methods except `create` (`create` populates the name
-   * automatically.
    * The unique identifier of this intent.
+   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+   * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -25,9 +25,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Required for all methods except `create` (`create` populates the name
-   * automatically.
    * The unique identifier of this intent.
+   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+   * methods.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -60,7 +60,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates whether webhooks are enabled for the intent.
+   * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
@@ -70,7 +70,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates whether webhooks are enabled for the intent.
+   * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent.WebhookState webhook_state = 6;</code>
@@ -82,7 +82,9 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
-   * priorities. Zero or negative numbers mean that the intent is disabled.
+   * priorities. If this is zero or unspecified, we use the default
+   * priority 500000.
+   * Negative numbers mean that the intent is disabled.
    * </pre>
    *
    * <code>int32 priority = 3;</code>
@@ -251,7 +253,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of examples/templates that the agent is
+   * Optional. The collection of examples that the agent is
    * trained on.
    * </pre>
    *
@@ -264,7 +266,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of examples/templates that the agent is
+   * Optional. The collection of examples that the agent is
    * trained on.
    * </pre>
    *
@@ -276,7 +278,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of examples/templates that the agent is
+   * Optional. The collection of examples that the agent is
    * trained on.
    * </pre>
    *
@@ -288,7 +290,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of examples/templates that the agent is
+   * Optional. The collection of examples that the agent is
    * trained on.
    * </pre>
    *
@@ -301,7 +303,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of examples/templates that the agent is
+   * Optional. The collection of examples that the agent is
    * trained on.
    * </pre>
    *
@@ -599,8 +601,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the root intent in the chain of followup intents.
-   * It identifies the correct followup intents chain for this intent.
+   * Read-only. The unique identifier of the root intent in the chain of
+   * followup intents. It identifies the correct followup intents chain for
+   * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -611,8 +614,9 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the root intent in the chain of followup intents.
-   * It identifies the correct followup intents chain for this intent.
+   * Read-only. The unique identifier of the root intent in the chain of
+   * followup intents. It identifies the correct followup intents chain for
+   * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -624,8 +628,10 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the parent intent in the chain of followup
-   * intents.
+   * Read-only after creation. The unique identifier of the parent intent in the
+   * chain of followup intents. You can set this field when creating an intent,
+   * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
+   * make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -637,8 +643,10 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the parent intent in the chain of followup
-   * intents.
+   * Read-only after creation. The unique identifier of the parent intent in the
+   * chain of followup intents. You can set this field when creating an intent,
+   * for example with [CreateIntent][] or [BatchUpdateIntents][], in order to
+   * make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -651,8 +659,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Collection of information about all followup intents that have
-   * name of this intent as a root_name.
+   * Read-only. Information about all followup intents that have this intent as
+   * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -665,8 +673,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Collection of information about all followup intents that have
-   * name of this intent as a root_name.
+   * Read-only. Information about all followup intents that have this intent as
+   * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -678,8 +686,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Collection of information about all followup intents that have
-   * name of this intent as a root_name.
+   * Read-only. Information about all followup intents that have this intent as
+   * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -691,8 +699,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Collection of information about all followup intents that have
-   * name of this intent as a root_name.
+   * Read-only. Information about all followup intents that have this intent as
+   * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -705,8 +713,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Collection of information about all followup intents that have
-   * name of this intent as a root_name.
+   * Read-only. Information about all followup intents that have this intent as
+   * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>

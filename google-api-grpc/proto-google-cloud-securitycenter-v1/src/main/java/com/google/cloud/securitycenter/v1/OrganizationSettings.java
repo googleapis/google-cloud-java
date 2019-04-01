@@ -25,7 +25,6 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
 
   private OrganizationSettings() {
     name_ = "";
-    enableAssetDiscovery_ = false;
   }
 
   @java.lang.Override
@@ -85,7 +84,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -240,7 +239,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   projectIds_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -256,7 +255,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -268,7 +267,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           projectIds_ = projectIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -613,11 +612,10 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig other =
           (com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig) obj;
 
-      boolean result = true;
-      result = result && getProjectIdsList().equals(other.getProjectIdsList());
-      result = result && inclusionMode_ == other.inclusionMode_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getProjectIdsList().equals(other.getProjectIdsList())) return false;
+      if (inclusionMode_ != other.inclusionMode_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -827,7 +825,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
             new com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           projectIds_ = projectIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -840,23 +838,23 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -864,13 +862,13 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -942,7 +940,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureProjectIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           projectIds_ = new com.google.protobuf.LazyStringArrayList(projectIds_);
           bitField0_ |= 0x00000001;
         }
@@ -1179,7 +1177,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1409,15 +1407,14 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     com.google.cloud.securitycenter.v1.OrganizationSettings other =
         (com.google.cloud.securitycenter.v1.OrganizationSettings) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (getEnableAssetDiscovery() == other.getEnableAssetDiscovery());
-    result = result && (hasAssetDiscoveryConfig() == other.hasAssetDiscoveryConfig());
+    if (!getName().equals(other.getName())) return false;
+    if (getEnableAssetDiscovery() != other.getEnableAssetDiscovery()) return false;
+    if (hasAssetDiscoveryConfig() != other.hasAssetDiscoveryConfig()) return false;
     if (hasAssetDiscoveryConfig()) {
-      result = result && getAssetDiscoveryConfig().equals(other.getAssetDiscoveryConfig());
+      if (!getAssetDiscoveryConfig().equals(other.getAssetDiscoveryConfig())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1632,35 +1629,35 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1879,7 +1876,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
-        assetDiscoveryConfig_ = null;
+        assetDiscoveryConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig,
             com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.Builder,
@@ -2092,7 +2089,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

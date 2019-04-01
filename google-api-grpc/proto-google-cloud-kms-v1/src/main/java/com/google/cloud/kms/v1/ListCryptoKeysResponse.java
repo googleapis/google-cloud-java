@@ -26,7 +26,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
   private ListCryptoKeysResponse() {
     cryptoKeys_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    totalSize_ = 0;
   }
 
   @java.lang.Override
@@ -55,7 +54,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cryptoKeys_ = new java.util.ArrayList<com.google.cloud.kms.v1.CryptoKey>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -77,7 +76,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -89,7 +88,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         cryptoKeys_ = java.util.Collections.unmodifiableList(cryptoKeys_);
       }
       this.unknownFields = unknownFields.build();
@@ -297,12 +296,11 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     com.google.cloud.kms.v1.ListCryptoKeysResponse other =
         (com.google.cloud.kms.v1.ListCryptoKeysResponse) obj;
 
-    boolean result = true;
-    result = result && getCryptoKeysList().equals(other.getCryptoKeysList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && (getTotalSize() == other.getTotalSize());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getCryptoKeysList().equals(other.getCryptoKeysList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (getTotalSize() != other.getTotalSize()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -508,7 +506,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (cryptoKeysBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           cryptoKeys_ = java.util.Collections.unmodifiableList(cryptoKeys_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -525,35 +523,35 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -637,7 +635,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureCryptoKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         cryptoKeys_ = new java.util.ArrayList<com.google.cloud.kms.v1.CryptoKey>(cryptoKeys_);
         bitField0_ |= 0x00000001;
       }
@@ -975,10 +973,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.kms.v1.CryptoKey,
                 com.google.cloud.kms.v1.CryptoKey.Builder,
                 com.google.cloud.kms.v1.CryptoKeyOrBuilder>(
-                cryptoKeys_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                cryptoKeys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         cryptoKeys_ = null;
       }
       return cryptoKeysBuilder_;
@@ -1137,7 +1132,7 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

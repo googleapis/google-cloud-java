@@ -109,7 +109,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -495,18 +495,17 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.MasterAuth other = (com.google.container.v1.MasterAuth) obj;
 
-    boolean result = true;
-    result = result && getUsername().equals(other.getUsername());
-    result = result && getPassword().equals(other.getPassword());
-    result = result && (hasClientCertificateConfig() == other.hasClientCertificateConfig());
+    if (!getUsername().equals(other.getUsername())) return false;
+    if (!getPassword().equals(other.getPassword())) return false;
+    if (hasClientCertificateConfig() != other.hasClientCertificateConfig()) return false;
     if (hasClientCertificateConfig()) {
-      result = result && getClientCertificateConfig().equals(other.getClientCertificateConfig());
+      if (!getClientCertificateConfig().equals(other.getClientCertificateConfig())) return false;
     }
-    result = result && getClusterCaCertificate().equals(other.getClusterCaCertificate());
-    result = result && getClientCertificate().equals(other.getClientCertificate());
-    result = result && getClientKey().equals(other.getClientKey());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getClusterCaCertificate().equals(other.getClusterCaCertificate())) return false;
+    if (!getClientCertificate().equals(other.getClientCertificate())) return false;
+    if (!getClientKey().equals(other.getClientKey())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -734,35 +733,35 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1042,7 +1041,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.ClientCertificateConfig clientCertificateConfig_ = null;
+    private com.google.container.v1.ClientCertificateConfig clientCertificateConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.ClientCertificateConfig,
             com.google.container.v1.ClientCertificateConfig.Builder,
@@ -1545,7 +1544,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -23,7 +23,6 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
   }
 
   private SearchProfilesResponse() {
-    estimatedTotalSize_ = 0L;
     nextPageToken_ = "";
     histogramQueryResults_ = java.util.Collections.emptyList();
     summarizedProfiles_ = java.util.Collections.emptyList();
@@ -100,7 +99,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 histogramQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>();
                 mutable_bitField0_ |= 0x00000010;
@@ -113,7 +112,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 summarizedProfiles_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.SummarizedProfile>();
                 mutable_bitField0_ |= 0x00000020;
@@ -126,7 +125,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -138,10 +137,10 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         summarizedProfiles_ = java.util.Collections.unmodifiableList(summarizedProfiles_);
       }
       this.unknownFields = unknownFields.build();
@@ -537,21 +536,20 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
     com.google.cloud.talent.v4beta1.SearchProfilesResponse other =
         (com.google.cloud.talent.v4beta1.SearchProfilesResponse) obj;
 
-    boolean result = true;
-    result = result && (getEstimatedTotalSize() == other.getEstimatedTotalSize());
-    result = result && (hasSpellCorrection() == other.hasSpellCorrection());
+    if (getEstimatedTotalSize() != other.getEstimatedTotalSize()) return false;
+    if (hasSpellCorrection() != other.hasSpellCorrection()) return false;
     if (hasSpellCorrection()) {
-      result = result && getSpellCorrection().equals(other.getSpellCorrection());
+      if (!getSpellCorrection().equals(other.getSpellCorrection())) return false;
     }
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && getHistogramQueryResultsList().equals(other.getHistogramQueryResultsList());
-    result = result && getSummarizedProfilesList().equals(other.getSummarizedProfilesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getHistogramQueryResultsList().equals(other.getHistogramQueryResultsList())) return false;
+    if (!getSummarizedProfilesList().equals(other.getSummarizedProfilesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -800,7 +798,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
       }
       result.nextPageToken_ = nextPageToken_;
       if (histogramQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -809,7 +807,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         result.histogramQueryResults_ = histogramQueryResultsBuilder_.build();
       }
       if (summarizedProfilesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           summarizedProfiles_ = java.util.Collections.unmodifiableList(summarizedProfiles_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -824,35 +822,35 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1014,7 +1012,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.SpellingCorrection spellCorrection_ = null;
+    private com.google.cloud.talent.v4beta1.SpellingCorrection spellCorrection_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.SpellingCorrection,
             com.google.cloud.talent.v4beta1.SpellingCorrection.Builder,
@@ -1197,7 +1195,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
       return spellCorrectionBuilder_;
     }
 
-    private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_ = null;
+    private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.ResponseMetadata,
             com.google.cloud.talent.v4beta1.ResponseMetadata.Builder,
@@ -1491,7 +1489,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         histogramQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureHistogramQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         histogramQueryResults_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>(
                 histogramQueryResults_);
@@ -1880,7 +1878,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.talent.v4beta1.HistogramQueryResult.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>(
                 histogramQueryResults_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueryResults_ = null;
@@ -1892,7 +1890,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureSummarizedProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         summarizedProfiles_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.SummarizedProfile>(
                 summarizedProfiles_);
@@ -2261,7 +2259,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.talent.v4beta1.SummarizedProfile.Builder,
                 com.google.cloud.talent.v4beta1.SummarizedProfileOrBuilder>(
                 summarizedProfiles_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         summarizedProfiles_ = null;
@@ -2271,7 +2269,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

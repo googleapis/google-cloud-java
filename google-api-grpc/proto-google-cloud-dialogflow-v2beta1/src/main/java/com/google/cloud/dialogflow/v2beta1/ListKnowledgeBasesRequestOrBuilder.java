@@ -12,8 +12,8 @@ public interface ListKnowledgeBasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The agent to list of knowledge bases for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to list of knowledge bases for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -23,8 +23,8 @@ public interface ListKnowledgeBasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The agent to list of knowledge bases for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to list of knowledge bases for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>

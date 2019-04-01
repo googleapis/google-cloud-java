@@ -92,7 +92,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -102,7 +102,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -114,7 +114,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -434,19 +434,18 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     com.google.privacy.dlp.v2.StoredInfoTypeVersion other =
         (com.google.privacy.dlp.v2.StoredInfoTypeVersion) obj;
 
-    boolean result = true;
-    result = result && (hasConfig() == other.hasConfig());
+    if (hasConfig() != other.hasConfig()) return false;
     if (hasConfig()) {
-      result = result && getConfig().equals(other.getConfig());
+      if (!getConfig().equals(other.getConfig())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && state_ == other.state_;
-    result = result && getErrorsList().equals(other.getErrorsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (state_ != other.state_) return false;
+    if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -679,7 +678,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       result.state_ = state_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -694,35 +693,35 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -805,7 +804,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_ = null;
+    private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.StoredInfoTypeConfig,
             com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder,
@@ -987,7 +986,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       return configBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1260,7 +1259,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
         bitField0_ |= 0x00000008;
       }
@@ -1776,10 +1775,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
-                getParentForChildren(),
-                isClean());
+                errors_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;
@@ -1787,7 +1783,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

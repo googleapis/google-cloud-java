@@ -34,8 +34,10 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
-   * details.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
+   * more details.
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -48,9 +50,9 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -62,9 +64,9 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -77,7 +79,9 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -90,7 +94,9 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -103,7 +109,9 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *
@@ -116,7 +124,9 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
-   * Refer to [Cloud Speech API documentation](/speech/docs/basics#phrase-hints)
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    * </pre>
    *

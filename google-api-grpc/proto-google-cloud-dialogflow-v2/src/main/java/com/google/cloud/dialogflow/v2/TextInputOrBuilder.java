@@ -13,7 +13,7 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
-   * Text length must not exceed 256 bytes.
+   * Text length must not exceed 256 characters.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -24,7 +24,7 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
-   * Text length must not exceed 256 bytes.
+   * Text length must not exceed 256 characters.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -36,9 +36,9 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The language of this conversational query. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -49,9 +49,9 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The language of this conversational query. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 2;</code>

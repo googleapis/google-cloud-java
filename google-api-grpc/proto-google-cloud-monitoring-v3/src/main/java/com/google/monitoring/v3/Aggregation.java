@@ -89,7 +89,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 groupByFields_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -98,7 +98,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -110,7 +110,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         groupByFields_ = groupByFields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -1612,16 +1612,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.monitoring.v3.Aggregation other = (com.google.monitoring.v3.Aggregation) obj;
 
-    boolean result = true;
-    result = result && (hasAlignmentPeriod() == other.hasAlignmentPeriod());
+    if (hasAlignmentPeriod() != other.hasAlignmentPeriod()) return false;
     if (hasAlignmentPeriod()) {
-      result = result && getAlignmentPeriod().equals(other.getAlignmentPeriod());
+      if (!getAlignmentPeriod().equals(other.getAlignmentPeriod())) return false;
     }
-    result = result && perSeriesAligner_ == other.perSeriesAligner_;
-    result = result && crossSeriesReducer_ == other.crossSeriesReducer_;
-    result = result && getGroupByFieldsList().equals(other.getGroupByFieldsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (perSeriesAligner_ != other.perSeriesAligner_) return false;
+    if (crossSeriesReducer_ != other.crossSeriesReducer_) return false;
+    if (!getGroupByFieldsList().equals(other.getGroupByFieldsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1839,7 +1838,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       result.perSeriesAligner_ = perSeriesAligner_;
       result.crossSeriesReducer_ = crossSeriesReducer_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         groupByFields_ = groupByFields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
@@ -1851,35 +1850,35 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1944,7 +1943,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.Duration alignmentPeriod_ = null;
+    private com.google.protobuf.Duration alignmentPeriod_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -2434,7 +2433,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupByFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         groupByFields_ = new com.google.protobuf.LazyStringArrayList(groupByFields_);
         bitField0_ |= 0x00000008;
       }
@@ -2692,7 +2691,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

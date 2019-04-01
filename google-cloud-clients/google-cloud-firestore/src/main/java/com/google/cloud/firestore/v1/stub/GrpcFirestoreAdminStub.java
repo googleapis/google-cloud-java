@@ -24,7 +24,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.firestore.admin.v1.CreateIndexRequest;
 import com.google.firestore.admin.v1.DeleteIndexRequest;
 import com.google.firestore.admin.v1.ExportDocumentsRequest;
@@ -43,6 +45,7 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -186,38 +189,119 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
     GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         GrpcCallSettings.<CreateIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(createIndexMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateIndexRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateIndexRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
             .setMethodDescriptor(listIndexesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListIndexesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListIndexesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
             .setMethodDescriptor(getIndexMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIndexRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIndexRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteIndexRequest, Empty> deleteIndexTransportSettings =
         GrpcCallSettings.<DeleteIndexRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteIndexMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteIndexRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteIndexRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         GrpcCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
             .setMethodDescriptor(importDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportDocumentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportDocumentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ExportDocumentsRequest, Operation> exportDocumentsTransportSettings =
         GrpcCallSettings.<ExportDocumentsRequest, Operation>newBuilder()
             .setMethodDescriptor(exportDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExportDocumentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExportDocumentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetFieldRequest, Field> getFieldTransportSettings =
         GrpcCallSettings.<GetFieldRequest, Field>newBuilder()
             .setMethodDescriptor(getFieldMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetFieldRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetFieldRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListFieldsRequest, ListFieldsResponse> listFieldsTransportSettings =
         GrpcCallSettings.<ListFieldsRequest, ListFieldsResponse>newBuilder()
             .setMethodDescriptor(listFieldsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListFieldsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListFieldsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateFieldRequest, Operation> updateFieldTransportSettings =
         GrpcCallSettings.<UpdateFieldRequest, Operation>newBuilder()
             .setMethodDescriptor(updateFieldMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateFieldRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateFieldRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("field.name", String.valueOf(request.getField().getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.createIndexCallable =

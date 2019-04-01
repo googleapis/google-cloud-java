@@ -231,18 +231,18 @@ public class IamCredentialsClientTest {
         SignJwtResponse.newBuilder().setKeyId(keyId).setSignedJwt(signedJwt).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
+    ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     String payload = "-114";
 
-    SignJwtResponse actualResponse = client.signJwt(formattedName, delegates, payload);
+    SignJwtResponse actualResponse = client.signJwt(name, delegates, payload);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SignJwtRequest actualRequest = (SignJwtRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ServiceAccountName.parse(actualRequest.getName()));
     Assert.assertEquals(delegates, actualRequest.getDelegatesList());
     Assert.assertEquals(payload, actualRequest.getPayload());
     Assert.assertTrue(
@@ -258,11 +258,11 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
+      ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       String payload = "-114";
 
-      client.signJwt(formattedName, delegates, payload);
+      client.signJwt(name, delegates, payload);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

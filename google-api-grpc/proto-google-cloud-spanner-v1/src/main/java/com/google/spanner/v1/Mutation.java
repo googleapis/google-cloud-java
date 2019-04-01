@@ -132,7 +132,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -404,7 +404,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   columns_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000002;
                 }
@@ -413,7 +413,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   values_ = new java.util.ArrayList<com.google.protobuf.ListValue>();
                   mutable_bitField0_ |= 0x00000004;
                 }
@@ -423,7 +423,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -435,10 +435,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           columns_ = columns_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
         }
         this.unknownFields = unknownFields.build();
@@ -742,12 +742,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.spanner.v1.Mutation.Write other = (com.google.spanner.v1.Mutation.Write) obj;
 
-      boolean result = true;
-      result = result && getTable().equals(other.getTable());
-      result = result && getColumnsList().equals(other.getColumnsList());
-      result = result && getValuesList().equals(other.getValuesList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getTable().equals(other.getTable())) return false;
+      if (!getColumnsList().equals(other.getColumnsList())) return false;
+      if (!getValuesList().equals(other.getValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -959,13 +958,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.table_ = table_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           columns_ = columns_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.columns_ = columns_;
         if (valuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             values_ = java.util.Collections.unmodifiableList(values_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -980,23 +979,23 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1004,13 +1003,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1195,7 +1194,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureColumnsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           columns_ = new com.google.protobuf.LazyStringArrayList(columns_);
           bitField0_ |= 0x00000002;
         }
@@ -1374,7 +1373,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           values_ = new java.util.ArrayList<com.google.protobuf.ListValue>(values_);
           bitField0_ |= 0x00000004;
         }
@@ -1872,10 +1871,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.ListValue,
                   com.google.protobuf.ListValue.Builder,
                   com.google.protobuf.ListValueOrBuilder>(
-                  values_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
+                  values_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           values_ = null;
         }
         return valuesBuilder_;
@@ -1884,7 +1880,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2070,7 +2066,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2243,14 +2239,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.spanner.v1.Mutation.Delete other = (com.google.spanner.v1.Mutation.Delete) obj;
 
-      boolean result = true;
-      result = result && getTable().equals(other.getTable());
-      result = result && (hasKeySet() == other.hasKeySet());
+      if (!getTable().equals(other.getTable())) return false;
+      if (hasKeySet() != other.hasKeySet()) return false;
       if (hasKeySet()) {
-        result = result && getKeySet().equals(other.getKeySet());
+        if (!getKeySet().equals(other.getKeySet())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2460,23 +2455,23 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2484,13 +2479,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2635,7 +2630,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.spanner.v1.KeySet keySet_ = null;
+      private com.google.spanner.v1.KeySet keySet_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.spanner.v1.KeySet,
               com.google.spanner.v1.KeySet.Builder,
@@ -2840,7 +2835,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3263,30 +3258,28 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.spanner.v1.Mutation other = (com.google.spanner.v1.Mutation) obj;
 
-    boolean result = true;
-    result = result && getOperationCase().equals(other.getOperationCase());
-    if (!result) return false;
+    if (!getOperationCase().equals(other.getOperationCase())) return false;
     switch (operationCase_) {
       case 1:
-        result = result && getInsert().equals(other.getInsert());
+        if (!getInsert().equals(other.getInsert())) return false;
         break;
       case 2:
-        result = result && getUpdate().equals(other.getUpdate());
+        if (!getUpdate().equals(other.getUpdate())) return false;
         break;
       case 3:
-        result = result && getInsertOrUpdate().equals(other.getInsertOrUpdate());
+        if (!getInsertOrUpdate().equals(other.getInsertOrUpdate())) return false;
         break;
       case 4:
-        result = result && getReplace().equals(other.getReplace());
+        if (!getReplace().equals(other.getReplace())) return false;
         break;
       case 5:
-        result = result && getDelete().equals(other.getDelete());
+        if (!getDelete().equals(other.getDelete())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3535,35 +3528,35 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -4740,7 +4733,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

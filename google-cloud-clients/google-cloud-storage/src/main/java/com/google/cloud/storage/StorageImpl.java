@@ -52,6 +52,7 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -638,7 +639,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       stPath.append(PATH_DELIMITER);
     }
     stPath.append(blobInfo.getBucket());
-    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)) {
+    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)
+        && !Strings.isNullOrEmpty(blobInfo.getName())) {
       stPath.append(PATH_DELIMITER);
     }
     if (blobInfo.getName().startsWith(PATH_DELIMITER)) {

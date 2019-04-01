@@ -80,7 +80,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -296,24 +296,22 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     com.google.devtools.cloudtrace.v2.AttributeValue other =
         (com.google.devtools.cloudtrace.v2.AttributeValue) obj;
 
-    boolean result = true;
-    result = result && getValueCase().equals(other.getValueCase());
-    if (!result) return false;
+    if (!getValueCase().equals(other.getValueCase())) return false;
     switch (valueCase_) {
       case 1:
-        result = result && getStringValue().equals(other.getStringValue());
+        if (!getStringValue().equals(other.getStringValue())) return false;
         break;
       case 2:
-        result = result && (getIntValue() == other.getIntValue());
+        if (getIntValue() != other.getIntValue()) return false;
         break;
       case 3:
-        result = result && (getBoolValue() == other.getBoolValue());
+        if (getBoolValue() != other.getBoolValue()) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -533,35 +531,35 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -941,7 +939,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

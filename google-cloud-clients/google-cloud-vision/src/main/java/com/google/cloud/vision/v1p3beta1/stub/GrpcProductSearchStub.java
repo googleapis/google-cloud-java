@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest;
 import com.google.cloud.vision.v1p3beta1.BatchOperationMetadata;
@@ -55,12 +56,14 @@ import com.google.cloud.vision.v1p3beta1.ReferenceImage;
 import com.google.cloud.vision.v1p3beta1.RemoveProductFromProductSetRequest;
 import com.google.cloud.vision.v1p3beta1.UpdateProductRequest;
 import com.google.cloud.vision.v1p3beta1.UpdateProductSetRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -323,80 +326,244 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     GrpcCallSettings<CreateProductSetRequest, ProductSet> createProductSetTransportSettings =
         GrpcCallSettings.<CreateProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(createProductSetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateProductSetRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateProductSetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListProductSetsRequest, ListProductSetsResponse>
         listProductSetsTransportSettings =
             GrpcCallSettings.<ListProductSetsRequest, ListProductSetsResponse>newBuilder()
                 .setMethodDescriptor(listProductSetsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListProductSetsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListProductSetsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetProductSetRequest, ProductSet> getProductSetTransportSettings =
         GrpcCallSettings.<GetProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(getProductSetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetProductSetRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetProductSetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetTransportSettings =
         GrpcCallSettings.<UpdateProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(updateProductSetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateProductSetRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateProductSetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put(
+                        "product_set.name", String.valueOf(request.getProductSet().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteProductSetRequest, Empty> deleteProductSetTransportSettings =
         GrpcCallSettings.<DeleteProductSetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductSetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteProductSetRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteProductSetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         GrpcCallSettings.<CreateProductRequest, Product>newBuilder()
             .setMethodDescriptor(createProductMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateProductRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateProductRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
             .setMethodDescriptor(listProductsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListProductsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListProductsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
         GrpcCallSettings.<GetProductRequest, Product>newBuilder()
             .setMethodDescriptor(getProductMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetProductRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetProductRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         GrpcCallSettings.<UpdateProductRequest, Product>newBuilder()
             .setMethodDescriptor(updateProductMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateProductRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateProductRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("product.name", String.valueOf(request.getProduct().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteProductRequest, Empty> deleteProductTransportSettings =
         GrpcCallSettings.<DeleteProductRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteProductRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteProductRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageTransportSettings =
             GrpcCallSettings.<CreateReferenceImageRequest, ReferenceImage>newBuilder()
                 .setMethodDescriptor(createReferenceImageMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateReferenceImageRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateReferenceImageRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
         GrpcCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteReferenceImageMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteReferenceImageRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteReferenceImageRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListReferenceImagesRequest, ListReferenceImagesResponse>
         listReferenceImagesTransportSettings =
             GrpcCallSettings.<ListReferenceImagesRequest, ListReferenceImagesResponse>newBuilder()
                 .setMethodDescriptor(listReferenceImagesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListReferenceImagesRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListReferenceImagesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetReferenceImageRequest, ReferenceImage> getReferenceImageTransportSettings =
         GrpcCallSettings.<GetReferenceImageRequest, ReferenceImage>newBuilder()
             .setMethodDescriptor(getReferenceImageMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetReferenceImageRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetReferenceImageRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<AddProductToProductSetRequest, Empty> addProductToProductSetTransportSettings =
         GrpcCallSettings.<AddProductToProductSetRequest, Empty>newBuilder()
             .setMethodDescriptor(addProductToProductSetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<AddProductToProductSetRequest>() {
+                  @Override
+                  public Map<String, String> extract(AddProductToProductSetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<RemoveProductFromProductSetRequest, Empty>
         removeProductFromProductSetTransportSettings =
             GrpcCallSettings.<RemoveProductFromProductSetRequest, Empty>newBuilder()
                 .setMethodDescriptor(removeProductFromProductSetMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<RemoveProductFromProductSetRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          RemoveProductFromProductSetRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
         listProductsInProductSetTransportSettings =
             GrpcCallSettings
                 .<ListProductsInProductSetRequest, ListProductsInProductSetResponse>newBuilder()
                 .setMethodDescriptor(listProductsInProductSetMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListProductsInProductSetRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListProductsInProductSetRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
         GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
             .setMethodDescriptor(importProductSetsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportProductSetsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportProductSetsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.createProductSetCallable =

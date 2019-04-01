@@ -55,7 +55,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -65,7 +65,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 rows_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Table.Row>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -76,7 +76,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -88,10 +88,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         headers_ = java.util.Collections.unmodifiableList(headers_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         rows_ = java.util.Collections.unmodifiableList(rows_);
       }
       this.unknownFields = unknownFields.build();
@@ -170,7 +170,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   values_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -180,7 +180,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -192,7 +192,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
         }
         this.unknownFields = unknownFields.build();
@@ -283,10 +283,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.privacy.dlp.v2.Table.Row other = (com.google.privacy.dlp.v2.Table.Row) obj;
 
-      boolean result = true;
-      result = result && getValuesList().equals(other.getValuesList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getValuesList().equals(other.getValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -474,7 +473,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.Table.Row result = new com.google.privacy.dlp.v2.Table.Row(this);
         int from_bitField0_ = bitField0_;
         if (valuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             values_ = java.util.Collections.unmodifiableList(values_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -488,23 +487,23 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -512,13 +511,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -595,7 +594,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           values_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>(values_);
           bitField0_ |= 0x00000001;
         }
@@ -787,10 +786,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
                   com.google.privacy.dlp.v2.Value,
                   com.google.privacy.dlp.v2.Value.Builder,
                   com.google.privacy.dlp.v2.ValueOrBuilder>(
-                  values_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  values_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           values_ = null;
         }
         return valuesBuilder_;
@@ -799,7 +795,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -946,11 +942,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.Table other = (com.google.privacy.dlp.v2.Table) obj;
 
-    boolean result = true;
-    result = result && getHeadersList().equals(other.getHeadersList());
-    result = result && getRowsList().equals(other.getRowsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getHeadersList().equals(other.getHeadersList())) return false;
+    if (!getRowsList().equals(other.getRowsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1156,7 +1151,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.Table result = new com.google.privacy.dlp.v2.Table(this);
       int from_bitField0_ = bitField0_;
       if (headersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           headers_ = java.util.Collections.unmodifiableList(headers_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1165,7 +1160,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         result.headers_ = headersBuilder_.build();
       }
       if (rowsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           rows_ = java.util.Collections.unmodifiableList(rows_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -1179,35 +1174,35 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1311,7 +1306,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         headers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(headers_);
         bitField0_ |= 0x00000001;
       }
@@ -1505,10 +1500,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.FieldId,
                 com.google.privacy.dlp.v2.FieldId.Builder,
                 com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                headers_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                headers_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         headers_ = null;
       }
       return headersBuilder_;
@@ -1518,7 +1510,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRowsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         rows_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Table.Row>(rows_);
         bitField0_ |= 0x00000002;
       }
@@ -1710,10 +1702,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Table.Row,
                 com.google.privacy.dlp.v2.Table.Row.Builder,
                 com.google.privacy.dlp.v2.Table.RowOrBuilder>(
-                rows_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                rows_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         rows_ = null;
       }
       return rowsBuilder_;
@@ -1721,7 +1710,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

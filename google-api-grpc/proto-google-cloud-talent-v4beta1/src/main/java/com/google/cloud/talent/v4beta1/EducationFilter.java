@@ -27,7 +27,6 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
     school_ = "";
     fieldOfStudy_ = "";
     degreeType_ = 0;
-    negated_ = false;
   }
 
   @java.lang.Override
@@ -82,7 +81,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -326,13 +325,12 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.talent.v4beta1.EducationFilter other =
         (com.google.cloud.talent.v4beta1.EducationFilter) obj;
 
-    boolean result = true;
-    result = result && getSchool().equals(other.getSchool());
-    result = result && getFieldOfStudy().equals(other.getFieldOfStudy());
-    result = result && degreeType_ == other.degreeType_;
-    result = result && (getNegated() == other.getNegated());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getSchool().equals(other.getSchool())) return false;
+    if (!getFieldOfStudy().equals(other.getFieldOfStudy())) return false;
+    if (degreeType_ != other.degreeType_) return false;
+    if (getNegated() != other.getNegated()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -541,35 +539,35 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -979,7 +977,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

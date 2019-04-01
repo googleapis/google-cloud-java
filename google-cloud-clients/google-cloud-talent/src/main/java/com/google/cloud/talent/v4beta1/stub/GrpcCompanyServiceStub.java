@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.Company;
 import com.google.cloud.talent.v4beta1.CreateCompanyRequest;
@@ -31,10 +32,12 @@ import com.google.cloud.talent.v4beta1.GetCompanyRequest;
 import com.google.cloud.talent.v4beta1.ListCompaniesRequest;
 import com.google.cloud.talent.v4beta1.ListCompaniesResponse;
 import com.google.cloud.talent.v4beta1.UpdateCompanyRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -145,22 +148,67 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
     GrpcCallSettings<CreateCompanyRequest, Company> createCompanyTransportSettings =
         GrpcCallSettings.<CreateCompanyRequest, Company>newBuilder()
             .setMethodDescriptor(createCompanyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateCompanyRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateCompanyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetCompanyRequest, Company> getCompanyTransportSettings =
         GrpcCallSettings.<GetCompanyRequest, Company>newBuilder()
             .setMethodDescriptor(getCompanyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetCompanyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetCompanyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateCompanyRequest, Company> updateCompanyTransportSettings =
         GrpcCallSettings.<UpdateCompanyRequest, Company>newBuilder()
             .setMethodDescriptor(updateCompanyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateCompanyRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateCompanyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("company.name", String.valueOf(request.getCompany().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteCompanyRequest, Empty> deleteCompanyTransportSettings =
         GrpcCallSettings.<DeleteCompanyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCompanyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteCompanyRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteCompanyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListCompaniesRequest, ListCompaniesResponse> listCompaniesTransportSettings =
         GrpcCallSettings.<ListCompaniesRequest, ListCompaniesResponse>newBuilder()
             .setMethodDescriptor(listCompaniesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListCompaniesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListCompaniesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.createCompanyCallable =

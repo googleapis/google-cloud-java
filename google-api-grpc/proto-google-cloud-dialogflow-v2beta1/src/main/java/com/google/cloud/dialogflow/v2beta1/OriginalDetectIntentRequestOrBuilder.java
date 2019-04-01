@@ -58,20 +58,18 @@ public interface OriginalDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
-   * This field is used for the telephony gateway. It should have a
-   * structure similar to this JSON message:
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
    * &lt;pre&gt;{
    *  "telephony": {
    *    "caller_id": "+18558363987"
    *  }
    * }&lt;/pre&gt;
-   * Note: The caller ID field (`caller_id`) will be in
-   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
-   * for Enterprise Edition and not for Standard Edition agents. When the
-   * telephony gateway is used with a standard tier agent the `caller_id` field
-   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -81,20 +79,18 @@ public interface OriginalDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
-   * This field is used for the telephony gateway. It should have a
-   * structure similar to this JSON message:
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
    * &lt;pre&gt;{
    *  "telephony": {
    *    "caller_id": "+18558363987"
    *  }
    * }&lt;/pre&gt;
-   * Note: The caller ID field (`caller_id`) will be in
-   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
-   * for Enterprise Edition and not for Standard Edition agents. When the
-   * telephony gateway is used with a standard tier agent the `caller_id` field
-   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -104,20 +100,18 @@ public interface OriginalDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
-   * This field is used for the telephony gateway. It should have a
-   * structure similar to this JSON message:
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
    * &lt;pre&gt;{
    *  "telephony": {
    *    "caller_id": "+18558363987"
    *  }
    * }&lt;/pre&gt;
-   * Note: The caller ID field (`caller_id`) will be in
-   * [E.164 format](https://en.wikipedia.org/wiki/E.164) and is only supported
-   * for Enterprise Edition and not for Standard Edition agents. When the
-   * telephony gateway is used with a standard tier agent the `caller_id` field
-   * above will have a value of `REDACTED_IN_STANDARD_TIER_AGENT`.
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>

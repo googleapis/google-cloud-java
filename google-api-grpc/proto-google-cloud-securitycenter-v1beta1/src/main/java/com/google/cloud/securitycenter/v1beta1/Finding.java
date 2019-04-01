@@ -103,7 +103,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 sourceProperties_ =
                     com.google.protobuf.MapField.newMapField(
                         SourcePropertiesDefaultEntryHolder.defaultEntry);
@@ -168,7 +168,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -986,28 +986,27 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.securitycenter.v1beta1.Finding other =
         (com.google.cloud.securitycenter.v1beta1.Finding) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getParent().equals(other.getParent());
-    result = result && getResourceName().equals(other.getResourceName());
-    result = result && state_ == other.state_;
-    result = result && getCategory().equals(other.getCategory());
-    result = result && getExternalUri().equals(other.getExternalUri());
-    result = result && internalGetSourceProperties().equals(other.internalGetSourceProperties());
-    result = result && (hasSecurityMarks() == other.hasSecurityMarks());
+    if (!getName().equals(other.getName())) return false;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getResourceName().equals(other.getResourceName())) return false;
+    if (state_ != other.state_) return false;
+    if (!getCategory().equals(other.getCategory())) return false;
+    if (!getExternalUri().equals(other.getExternalUri())) return false;
+    if (!internalGetSourceProperties().equals(other.internalGetSourceProperties())) return false;
+    if (hasSecurityMarks() != other.hasSecurityMarks()) return false;
     if (hasSecurityMarks()) {
-      result = result && getSecurityMarks().equals(other.getSecurityMarks());
+      if (!getSecurityMarks().equals(other.getSecurityMarks())) return false;
     }
-    result = result && (hasEventTime() == other.hasEventTime());
+    if (hasEventTime() != other.hasEventTime()) return false;
     if (hasEventTime()) {
-      result = result && getEventTime().equals(other.getEventTime());
+      if (!getEventTime().equals(other.getEventTime())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1304,35 +1303,35 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2211,7 +2210,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_ = null;
+    private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1beta1.SecurityMarks,
             com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
@@ -2412,7 +2411,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return securityMarksBuilder_;
     }
 
-    private com.google.protobuf.Timestamp eventTime_ = null;
+    private com.google.protobuf.Timestamp eventTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2605,7 +2604,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return eventTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2786,7 +2785,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

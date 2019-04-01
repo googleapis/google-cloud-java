@@ -28,7 +28,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     insertId_ = "";
     trace_ = "";
     spanId_ = "";
-    traceSampled_ = false;
   }
 
   @java.lang.Override
@@ -152,7 +151,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000400;
@@ -254,7 +253,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1356,59 +1355,57 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.logging.v2.LogEntry other = (com.google.logging.v2.LogEntry) obj;
 
-    boolean result = true;
-    result = result && getLogName().equals(other.getLogName());
-    result = result && (hasResource() == other.hasResource());
+    if (!getLogName().equals(other.getLogName())) return false;
+    if (hasResource() != other.hasResource()) return false;
     if (hasResource()) {
-      result = result && getResource().equals(other.getResource());
+      if (!getResource().equals(other.getResource())) return false;
     }
-    result = result && (hasTimestamp() == other.hasTimestamp());
+    if (hasTimestamp() != other.hasTimestamp()) return false;
     if (hasTimestamp()) {
-      result = result && getTimestamp().equals(other.getTimestamp());
+      if (!getTimestamp().equals(other.getTimestamp())) return false;
     }
-    result = result && (hasReceiveTimestamp() == other.hasReceiveTimestamp());
+    if (hasReceiveTimestamp() != other.hasReceiveTimestamp()) return false;
     if (hasReceiveTimestamp()) {
-      result = result && getReceiveTimestamp().equals(other.getReceiveTimestamp());
+      if (!getReceiveTimestamp().equals(other.getReceiveTimestamp())) return false;
     }
-    result = result && severity_ == other.severity_;
-    result = result && getInsertId().equals(other.getInsertId());
-    result = result && (hasHttpRequest() == other.hasHttpRequest());
+    if (severity_ != other.severity_) return false;
+    if (!getInsertId().equals(other.getInsertId())) return false;
+    if (hasHttpRequest() != other.hasHttpRequest()) return false;
     if (hasHttpRequest()) {
-      result = result && getHttpRequest().equals(other.getHttpRequest());
+      if (!getHttpRequest().equals(other.getHttpRequest())) return false;
     }
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && (hasOperation() == other.hasOperation());
+    if (hasOperation() != other.hasOperation()) return false;
     if (hasOperation()) {
-      result = result && getOperation().equals(other.getOperation());
+      if (!getOperation().equals(other.getOperation())) return false;
     }
-    result = result && getTrace().equals(other.getTrace());
-    result = result && getSpanId().equals(other.getSpanId());
-    result = result && (getTraceSampled() == other.getTraceSampled());
-    result = result && (hasSourceLocation() == other.hasSourceLocation());
+    if (!getTrace().equals(other.getTrace())) return false;
+    if (!getSpanId().equals(other.getSpanId())) return false;
+    if (getTraceSampled() != other.getTraceSampled()) return false;
+    if (hasSourceLocation() != other.hasSourceLocation()) return false;
     if (hasSourceLocation()) {
-      result = result && getSourceLocation().equals(other.getSourceLocation());
+      if (!getSourceLocation().equals(other.getSourceLocation())) return false;
     }
-    result = result && getPayloadCase().equals(other.getPayloadCase());
-    if (!result) return false;
+    if (!getPayloadCase().equals(other.getPayloadCase())) return false;
     switch (payloadCase_) {
       case 2:
-        result = result && getProtoPayload().equals(other.getProtoPayload());
+        if (!getProtoPayload().equals(other.getProtoPayload())) return false;
         break;
       case 3:
-        result = result && getTextPayload().equals(other.getTextPayload());
+        if (!getTextPayload().equals(other.getTextPayload())) return false;
         break;
       case 6:
-        result = result && getJsonPayload().equals(other.getJsonPayload());
+        if (!getJsonPayload().equals(other.getJsonPayload())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1794,35 +1791,35 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2128,7 +2125,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.api.MonitoredResource resource_ = null;
+    private com.google.api.MonitoredResource resource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.MonitoredResource,
             com.google.api.MonitoredResource.Builder,
@@ -2862,7 +2859,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return jsonPayloadBuilder_;
     }
 
-    private com.google.protobuf.Timestamp timestamp_ = null;
+    private com.google.protobuf.Timestamp timestamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3136,7 +3133,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return timestampBuilder_;
     }
 
-    private com.google.protobuf.Timestamp receiveTimestamp_ = null;
+    private com.google.protobuf.Timestamp receiveTimestamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3517,7 +3514,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.logging.type.HttpRequest httpRequest_ = null;
+    private com.google.logging.type.HttpRequest httpRequest_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.type.HttpRequest,
             com.google.logging.type.HttpRequest.Builder,
@@ -3866,7 +3863,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.api.MonitoredResourceMetadata metadata_ = null;
+    private com.google.api.MonitoredResourceMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.MonitoredResourceMetadata,
             com.google.api.MonitoredResourceMetadata.Builder,
@@ -4065,7 +4062,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return metadataBuilder_;
     }
 
-    private com.google.logging.v2.LogEntryOperation operation_ = null;
+    private com.google.logging.v2.LogEntryOperation operation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.LogEntryOperation,
             com.google.logging.v2.LogEntryOperation.Builder,
@@ -4532,7 +4529,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.logging.v2.LogEntrySourceLocation sourceLocation_ = null;
+    private com.google.logging.v2.LogEntrySourceLocation sourceLocation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.LogEntrySourceLocation,
             com.google.logging.v2.LogEntrySourceLocation.Builder,
@@ -4725,7 +4722,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

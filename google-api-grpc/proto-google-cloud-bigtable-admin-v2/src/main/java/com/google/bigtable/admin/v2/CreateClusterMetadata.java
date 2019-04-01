@@ -97,7 +97,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -305,21 +305,20 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     com.google.bigtable.admin.v2.CreateClusterMetadata other =
         (com.google.bigtable.admin.v2.CreateClusterMetadata) obj;
 
-    boolean result = true;
-    result = result && (hasOriginalRequest() == other.hasOriginalRequest());
+    if (hasOriginalRequest() != other.hasOriginalRequest()) return false;
     if (hasOriginalRequest()) {
-      result = result && getOriginalRequest().equals(other.getOriginalRequest());
+      if (!getOriginalRequest().equals(other.getOriginalRequest())) return false;
     }
-    result = result && (hasRequestTime() == other.hasRequestTime());
+    if (hasRequestTime() != other.hasRequestTime()) return false;
     if (hasRequestTime()) {
-      result = result && getRequestTime().equals(other.getRequestTime());
+      if (!getRequestTime().equals(other.getRequestTime())) return false;
     }
-    result = result && (hasFinishTime() == other.hasFinishTime());
+    if (hasFinishTime() != other.hasFinishTime()) return false;
     if (hasFinishTime()) {
-      result = result && getFinishTime().equals(other.getFinishTime());
+      if (!getFinishTime().equals(other.getFinishTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -552,35 +551,35 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -635,7 +634,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.bigtable.admin.v2.CreateClusterRequest originalRequest_ = null;
+    private com.google.bigtable.admin.v2.CreateClusterRequest originalRequest_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.CreateClusterRequest,
             com.google.bigtable.admin.v2.CreateClusterRequest.Builder,
@@ -818,7 +817,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       return originalRequestBuilder_;
     }
 
-    private com.google.protobuf.Timestamp requestTime_ = null;
+    private com.google.protobuf.Timestamp requestTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -999,7 +998,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       return requestTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp finishTime_ = null;
+    private com.google.protobuf.Timestamp finishTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1180,7 +1179,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

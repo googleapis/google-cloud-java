@@ -24,7 +24,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
 
   private WorkflowMetadata() {
     template_ = "";
-    version_ = 0;
     state_ = 0;
     clusterName_ = "";
     clusterUuid_ = "";
@@ -130,7 +129,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 parameters_ =
                     com.google.protobuf.MapField.newMapField(
                         ParametersDefaultEntryHolder.defaultEntry);
@@ -182,7 +181,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -976,35 +975,34 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     com.google.cloud.dataproc.v1.WorkflowMetadata other =
         (com.google.cloud.dataproc.v1.WorkflowMetadata) obj;
 
-    boolean result = true;
-    result = result && getTemplate().equals(other.getTemplate());
-    result = result && (getVersion() == other.getVersion());
-    result = result && (hasCreateCluster() == other.hasCreateCluster());
+    if (!getTemplate().equals(other.getTemplate())) return false;
+    if (getVersion() != other.getVersion()) return false;
+    if (hasCreateCluster() != other.hasCreateCluster()) return false;
     if (hasCreateCluster()) {
-      result = result && getCreateCluster().equals(other.getCreateCluster());
+      if (!getCreateCluster().equals(other.getCreateCluster())) return false;
     }
-    result = result && (hasGraph() == other.hasGraph());
+    if (hasGraph() != other.hasGraph()) return false;
     if (hasGraph()) {
-      result = result && getGraph().equals(other.getGraph());
+      if (!getGraph().equals(other.getGraph())) return false;
     }
-    result = result && (hasDeleteCluster() == other.hasDeleteCluster());
+    if (hasDeleteCluster() != other.hasDeleteCluster()) return false;
     if (hasDeleteCluster()) {
-      result = result && getDeleteCluster().equals(other.getDeleteCluster());
+      if (!getDeleteCluster().equals(other.getDeleteCluster())) return false;
     }
-    result = result && state_ == other.state_;
-    result = result && getClusterName().equals(other.getClusterName());
-    result = result && internalGetParameters().equals(other.internalGetParameters());
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (state_ != other.state_) return false;
+    if (!getClusterName().equals(other.getClusterName())) return false;
+    if (!internalGetParameters().equals(other.internalGetParameters())) return false;
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && getClusterUuid().equals(other.getClusterUuid());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getClusterUuid().equals(other.getClusterUuid())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1322,35 +1320,35 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1571,7 +1569,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.cloud.dataproc.v1.ClusterOperation createCluster_ = null;
+    private com.google.cloud.dataproc.v1.ClusterOperation createCluster_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ClusterOperation,
             com.google.cloud.dataproc.v1.ClusterOperation.Builder,
@@ -1753,7 +1751,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return createClusterBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.WorkflowGraph graph_ = null;
+    private com.google.cloud.dataproc.v1.WorkflowGraph graph_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.WorkflowGraph,
             com.google.cloud.dataproc.v1.WorkflowGraph.Builder,
@@ -1934,7 +1932,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return graphBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.ClusterOperation deleteCluster_ = null;
+    private com.google.cloud.dataproc.v1.ClusterOperation deleteCluster_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ClusterOperation,
             com.google.cloud.dataproc.v1.ClusterOperation.Builder,
@@ -2443,7 +2441,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2618,7 +2616,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2889,7 +2887,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

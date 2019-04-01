@@ -21,12 +21,15 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -102,6 +105,15 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
         reportErrorEventTransportSettings =
             GrpcCallSettings.<ReportErrorEventRequest, ReportErrorEventResponse>newBuilder()
                 .setMethodDescriptor(reportErrorEventMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ReportErrorEventRequest>() {
+                      @Override
+                      public Map<String, String> extract(ReportErrorEventRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("project_name", String.valueOf(request.getProjectName()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.reportErrorEventCallable =

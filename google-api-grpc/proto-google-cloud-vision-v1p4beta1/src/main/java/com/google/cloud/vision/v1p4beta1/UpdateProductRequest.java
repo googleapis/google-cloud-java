@@ -81,7 +81,7 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -259,17 +259,16 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.vision.v1p4beta1.UpdateProductRequest other =
         (com.google.cloud.vision.v1p4beta1.UpdateProductRequest) obj;
 
-    boolean result = true;
-    result = result && (hasProduct() == other.hasProduct());
+    if (hasProduct() != other.hasProduct()) return false;
     if (hasProduct()) {
-      result = result && getProduct().equals(other.getProduct());
+      if (!getProduct().equals(other.getProduct())) return false;
     }
-    result = result && (hasUpdateMask() == other.hasUpdateMask());
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
-      result = result && getUpdateMask().equals(other.getUpdateMask());
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -488,35 +487,35 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -568,7 +567,7 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.vision.v1p4beta1.Product product_ = null;
+    private com.google.cloud.vision.v1p4beta1.Product product_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.Product,
             com.google.cloud.vision.v1p4beta1.Product.Builder,
@@ -758,7 +757,7 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
       return productBuilder_;
     }
 
-    private com.google.protobuf.FieldMask updateMask_ = null;
+    private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
@@ -975,7 +974,7 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
