@@ -31,11 +31,11 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -109,7 +109,7 @@ public class CloudTasksClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getQueuesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListQueuesRequest actualRequest = (ListQueuesRequest) actualRequests.get(0);
 
@@ -148,7 +148,7 @@ public class CloudTasksClientTest {
     Queue actualResponse = client.getQueue(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetQueueRequest actualRequest = (GetQueueRequest) actualRequests.get(0);
 
@@ -188,7 +188,7 @@ public class CloudTasksClientTest {
     Queue actualResponse = client.createQueue(parent, queue);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateQueueRequest actualRequest = (CreateQueueRequest) actualRequests.get(0);
 
@@ -230,7 +230,7 @@ public class CloudTasksClientTest {
     Queue actualResponse = client.updateQueue(queue, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateQueueRequest actualRequest = (UpdateQueueRequest) actualRequests.get(0);
 
@@ -269,7 +269,7 @@ public class CloudTasksClientTest {
 
     client.deleteQueue(name);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteQueueRequest actualRequest = (DeleteQueueRequest) actualRequests.get(0);
 
@@ -308,7 +308,7 @@ public class CloudTasksClientTest {
     Queue actualResponse = client.purgeQueue(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PurgeQueueRequest actualRequest = (PurgeQueueRequest) actualRequests.get(0);
 
@@ -347,7 +347,7 @@ public class CloudTasksClientTest {
     Queue actualResponse = client.pauseQueue(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PauseQueueRequest actualRequest = (PauseQueueRequest) actualRequests.get(0);
 
@@ -386,7 +386,7 @@ public class CloudTasksClientTest {
     Queue actualResponse = client.resumeQueue(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ResumeQueueRequest actualRequest = (ResumeQueueRequest) actualRequests.get(0);
 
@@ -426,7 +426,7 @@ public class CloudTasksClientTest {
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -467,7 +467,7 @@ public class CloudTasksClientTest {
     Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -508,7 +508,7 @@ public class CloudTasksClientTest {
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
@@ -555,7 +555,7 @@ public class CloudTasksClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTasksList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTasksRequest actualRequest = (ListTasksRequest) actualRequests.get(0);
 
@@ -594,7 +594,7 @@ public class CloudTasksClientTest {
     Task actualResponse = client.getTask(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTaskRequest actualRequest = (GetTaskRequest) actualRequests.get(0);
 
@@ -634,7 +634,7 @@ public class CloudTasksClientTest {
     Task actualResponse = client.createTask(parent, task);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTaskRequest actualRequest = (CreateTaskRequest) actualRequests.get(0);
 
@@ -673,7 +673,7 @@ public class CloudTasksClientTest {
 
     client.deleteTask(name);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTaskRequest actualRequest = (DeleteTaskRequest) actualRequests.get(0);
 
@@ -711,7 +711,7 @@ public class CloudTasksClientTest {
 
     client.acknowledgeTask(name, scheduleTime);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AcknowledgeTaskRequest actualRequest = (AcknowledgeTaskRequest) actualRequests.get(0);
 
@@ -754,7 +754,7 @@ public class CloudTasksClientTest {
     Task actualResponse = client.renewLease(name, scheduleTime, leaseDuration);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RenewLeaseRequest actualRequest = (RenewLeaseRequest) actualRequests.get(0);
 
@@ -798,7 +798,7 @@ public class CloudTasksClientTest {
     Task actualResponse = client.cancelLease(name, scheduleTime);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CancelLeaseRequest actualRequest = (CancelLeaseRequest) actualRequests.get(0);
 
@@ -839,7 +839,7 @@ public class CloudTasksClientTest {
     Task actualResponse = client.runTask(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudTasks.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RunTaskRequest actualRequest = (RunTaskRequest) actualRequests.get(0);
 
