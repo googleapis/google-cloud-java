@@ -24,8 +24,8 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -96,7 +96,7 @@ public class VideoIntelligenceServiceClientTest {
     AnnotateVideoResponse actualResponse = client.annotateVideoAsync(inputUri, features).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockVideoIntelligenceService.getRequests();
+    List<AbstractMessage> actualRequests = mockVideoIntelligenceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnnotateVideoRequest actualRequest = (AnnotateVideoRequest) actualRequests.get(0);
 

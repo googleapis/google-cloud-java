@@ -17,8 +17,8 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceGrpc.DataTransferServiceImplBase;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,7 +28,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private ArrayList<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockDataTransferServiceImpl() {
@@ -36,15 +36,15 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

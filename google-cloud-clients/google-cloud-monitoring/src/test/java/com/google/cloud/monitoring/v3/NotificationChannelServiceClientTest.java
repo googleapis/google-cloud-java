@@ -40,9 +40,9 @@ import com.google.monitoring.v3.NotificationChannelDescriptorName;
 import com.google.monitoring.v3.NotificationChannelName;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -132,7 +132,7 @@ public class NotificationChannelServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getChannelDescriptorsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListNotificationChannelDescriptorsRequest actualRequest =
         (ListNotificationChannelDescriptorsRequest) actualRequests.get(0);
@@ -182,7 +182,7 @@ public class NotificationChannelServiceClientTest {
     NotificationChannelDescriptor actualResponse = client.getNotificationChannelDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetNotificationChannelDescriptorRequest actualRequest =
         (GetNotificationChannelDescriptorRequest) actualRequests.get(0);
@@ -232,7 +232,7 @@ public class NotificationChannelServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getNotificationChannelsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListNotificationChannelsRequest actualRequest =
         (ListNotificationChannelsRequest) actualRequests.get(0);
@@ -282,7 +282,7 @@ public class NotificationChannelServiceClientTest {
     NotificationChannel actualResponse = client.getNotificationChannel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetNotificationChannelRequest actualRequest =
         (GetNotificationChannelRequest) actualRequests.get(0);
@@ -334,7 +334,7 @@ public class NotificationChannelServiceClientTest {
         client.createNotificationChannel(name, notificationChannel);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateNotificationChannelRequest actualRequest =
         (CreateNotificationChannelRequest) actualRequests.get(0);
@@ -387,7 +387,7 @@ public class NotificationChannelServiceClientTest {
         client.updateNotificationChannel(updateMask, notificationChannel);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateNotificationChannelRequest actualRequest =
         (UpdateNotificationChannelRequest) actualRequests.get(0);
@@ -429,7 +429,7 @@ public class NotificationChannelServiceClientTest {
 
     client.deleteNotificationChannel(name, force);
 
-    List<GeneratedMessageV3> actualRequests = mockNotificationChannelService.getRequests();
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteNotificationChannelRequest actualRequest =
         (DeleteNotificationChannelRequest) actualRequests.get(0);

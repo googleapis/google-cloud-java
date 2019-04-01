@@ -16,8 +16,8 @@
 package com.google.cloud.spanner.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -48,7 +48,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockSpannerImpl extends SpannerImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private ArrayList<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockSpannerImpl() {
@@ -56,15 +56,15 @@ public class MockSpannerImpl extends SpannerImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

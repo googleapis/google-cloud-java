@@ -39,8 +39,8 @@ import com.google.firestore.v1.RunQueryResponse;
 import com.google.firestore.v1.UpdateDocumentRequest;
 import com.google.firestore.v1.WriteRequest;
 import com.google.firestore.v1.WriteResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -50,7 +50,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockFirestoreImpl extends FirestoreImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private ArrayList<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockFirestoreImpl() {
@@ -58,15 +58,15 @@ public class MockFirestoreImpl extends FirestoreImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

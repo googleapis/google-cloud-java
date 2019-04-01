@@ -22,9 +22,9 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -92,7 +92,7 @@ public class IamCredentialsClientTest {
         client.generateAccessToken(name, delegates, scope, lifetime);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GenerateAccessTokenRequest actualRequest = (GenerateAccessTokenRequest) actualRequests.get(0);
 
@@ -142,7 +142,7 @@ public class IamCredentialsClientTest {
         client.generateIdToken(name, delegates, audience, includeEmail);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GenerateIdTokenRequest actualRequest = (GenerateIdTokenRequest) actualRequests.get(0);
 
@@ -191,7 +191,7 @@ public class IamCredentialsClientTest {
     SignBlobResponse actualResponse = client.signBlob(name, delegates, payload);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SignBlobRequest actualRequest = (SignBlobRequest) actualRequests.get(0);
 
@@ -238,7 +238,7 @@ public class IamCredentialsClientTest {
     SignJwtResponse actualResponse = client.signJwt(name, delegates, payload);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SignJwtRequest actualRequest = (SignJwtRequest) actualRequests.get(0);
 
@@ -285,7 +285,7 @@ public class IamCredentialsClientTest {
         client.generateIdentityBindingAccessToken(name, scope, jwt);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GenerateIdentityBindingAccessTokenRequest actualRequest =
         (GenerateIdentityBindingAccessTokenRequest) actualRequests.get(0);

@@ -31,8 +31,8 @@ import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -42,7 +42,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private ArrayList<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockConfigServiceV2Impl() {
@@ -50,15 +50,15 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

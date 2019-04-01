@@ -17,7 +17,7 @@ package com.google.cloud.kms.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceImplBase;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -27,7 +27,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private ArrayList<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockKeyManagementServiceImpl() {
@@ -35,15 +35,15 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

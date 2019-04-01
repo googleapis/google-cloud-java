@@ -27,10 +27,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -102,7 +102,7 @@ public class CloudRedisClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getInstancesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
 
@@ -166,7 +166,7 @@ public class CloudRedisClientTest {
     Instance actualResponse = client.getInstance(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
 
@@ -240,7 +240,7 @@ public class CloudRedisClientTest {
     Instance actualResponse = client.createInstanceAsync(parent, instanceId, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
@@ -325,7 +325,7 @@ public class CloudRedisClientTest {
     Instance actualResponse = client.updateInstanceAsync(updateMask, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateInstanceRequest actualRequest = (UpdateInstanceRequest) actualRequests.get(0);
 
@@ -379,7 +379,7 @@ public class CloudRedisClientTest {
     Empty actualResponse = client.deleteInstanceAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
 
