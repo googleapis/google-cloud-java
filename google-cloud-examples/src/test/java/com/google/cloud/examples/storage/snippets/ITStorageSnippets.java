@@ -585,22 +585,23 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testV4SignedURLs() throws IOException{
+  public void testV4SignedURLs() throws IOException {
     String tempBucket = RemoteStorageHelper.generateBucketName();
     Bucket bucket = storageSnippets.createBucket(tempBucket);
     assertNotNull(bucket);
     String tempObject = "test-upload-signed-url-object";
     URL uploadUrl = storageSnippets.generateV4GPutbjectSignedUrl(tempBucket, tempObject);
-    HttpsURLConnection connection = (HttpsURLConnection)uploadUrl.openConnection();
+    HttpsURLConnection connection = (HttpsURLConnection) uploadUrl.openConnection();
     connection.setRequestMethod("PUT");
     connection.setDoOutput(true);
+    connection.setRequestProperty("Content-Type", "application/octet-stream");
     byte[] write = new byte[BLOB_BYTE_CONTENT.length];
     try (OutputStream out = connection.getOutputStream()) {
       out.write(BLOB_BYTE_CONTENT);
       assertEquals(connection.getResponseCode(), 200);
     }
     URL downloadUrl = storageSnippets.generateV4GetObjectSignedUrl(tempBucket, tempObject);
-    connection = (HttpsURLConnection)downloadUrl.openConnection();
+    connection = (HttpsURLConnection) downloadUrl.openConnection();
     byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
     try (InputStream responseStream = connection.getInputStream()) {
       assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));

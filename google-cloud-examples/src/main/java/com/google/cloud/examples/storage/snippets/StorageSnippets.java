@@ -39,6 +39,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.CopyWriter;
+import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
@@ -1476,7 +1477,8 @@ public class StorageSnippets {
   }
 
   /** Example of how to generate a GET V4 Signed URL */
-  public URL generateV4GetObjectSignedUrl(String bucketName, String objectName) throws StorageException {
+  public URL generateV4GetObjectSignedUrl(String bucketName, String objectName)
+      throws StorageException {
     // [START storage_generate_signed_url_v4]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1487,17 +1489,24 @@ public class StorageSnippets {
     // The name of an object, e.g. "my-object"
     // String objectName = "my-object";
 
+    // Define resource
     BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
-    URL url = storage.signUrl(blobinfo, 7, TimeUnit.DAYS, Storage.SignUrlOption.withV4Signature());
+
+    // Generate Signed URL
+    URL url =
+        storage.signUrl(blobinfo, 15, TimeUnit.MINUTES, Storage.SignUrlOption.withV4Signature());
 
     System.out.println("Generated GET signed URL:");
     System.out.println(url);
+    System.out.println("You can use this URL with any user agent, for example:");
+    System.out.println("curl '" + url + "'");
     // [END storage_generate_signed_url_v4]
     return url;
   }
 
   /** Example of how to generate a PUT V4 Signed URL */
-  public URL generateV4GPutbjectSignedUrl(String bucketName, String objectName) throws StorageException {
+  public URL generateV4GPutbjectSignedUrl(String bucketName, String objectName)
+      throws StorageException {
     // [START storage_generate_upload_signed_url_v4]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1508,12 +1517,29 @@ public class StorageSnippets {
     // The name of a new object to upload, e.g. "my-object"
     // String objectName = "my-object";
 
+    // Define Resource
     BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
-    URL url = storage.signUrl(blobinfo, 7, TimeUnit.DAYS, Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+
+    // Generate Signed URL
+    Map<String, String> extensionHeaders = new HashMap<>();
+    extensionHeaders.put("Content-Type", "application/octet-stream");
+
+    URL url =
+        storage.signUrl(
+            blobinfo,
+            15,
+            TimeUnit.MINUTES,
+            Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+            Storage.SignUrlOption.withExtHeaders(extensionHeaders),
             Storage.SignUrlOption.withV4Signature());
 
     System.out.println("Generated PUT signed URL:");
     System.out.println(url);
+    System.out.println("You can use this URL with any user agent, for example:");
+    System.out.println(
+        "curl -X PUT -H 'Content-Type: application/octet-stream'--upload-file my-file '"
+            + url
+            + "'");
     // [END storage_generate_upload_signed_url_v4]
     return url;
   }
