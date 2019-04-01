@@ -431,6 +431,7 @@
     <module>google-cloud-core-http</module>
     <module>google-cloud-core-grpc</module>
     <module>google-cloud-dataproc</module>
+    <module>google-cloud-datalabeling</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-dlp</module>
     <module>google-cloud-dialogflow</module>
