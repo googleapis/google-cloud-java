@@ -29,9 +29,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -105,7 +105,7 @@ public class AutoMlClientTest {
     Dataset actualResponse = client.createDataset(parent, dataset);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateDatasetRequest actualRequest = (CreateDatasetRequest) actualRequests.get(0);
 
@@ -153,7 +153,7 @@ public class AutoMlClientTest {
     Dataset actualResponse = client.getDataset(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDatasetRequest actualRequest = (GetDatasetRequest) actualRequests.get(0);
 
@@ -201,7 +201,7 @@ public class AutoMlClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDatasetsRequest actualRequest = (ListDatasetsRequest) actualRequests.get(0);
 
@@ -245,7 +245,7 @@ public class AutoMlClientTest {
     Empty actualResponse = client.deleteDatasetAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
 
@@ -292,7 +292,7 @@ public class AutoMlClientTest {
     Empty actualResponse = client.importDataAsync(name, inputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportDataRequest actualRequest = (ImportDataRequest) actualRequests.get(0);
 
@@ -341,7 +341,7 @@ public class AutoMlClientTest {
     Empty actualResponse = client.exportDataAsync(name, outputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportDataRequest actualRequest = (ExportDataRequest) actualRequests.get(0);
 
@@ -398,7 +398,7 @@ public class AutoMlClientTest {
     Model actualResponse = client.createModelAsync(parent, model).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateModelRequest actualRequest = (CreateModelRequest) actualRequests.get(0);
 
@@ -448,7 +448,7 @@ public class AutoMlClientTest {
     Model actualResponse = client.getModel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetModelRequest actualRequest = (GetModelRequest) actualRequests.get(0);
 
@@ -493,7 +493,7 @@ public class AutoMlClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getModelList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListModelsRequest actualRequest = (ListModelsRequest) actualRequests.get(0);
 
@@ -537,7 +537,7 @@ public class AutoMlClientTest {
     Empty actualResponse = client.deleteModelAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteModelRequest actualRequest = (DeleteModelRequest) actualRequests.get(0);
 
@@ -579,7 +579,7 @@ public class AutoMlClientTest {
     Operation actualResponse = client.deployModel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeployModelRequest actualRequest = (DeployModelRequest) actualRequests.get(0);
 
@@ -619,7 +619,7 @@ public class AutoMlClientTest {
     Operation actualResponse = client.undeployModel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UndeployModelRequest actualRequest = (UndeployModelRequest) actualRequests.get(0);
 
@@ -666,7 +666,7 @@ public class AutoMlClientTest {
     ModelEvaluation actualResponse = client.getModelEvaluation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetModelEvaluationRequest actualRequest = (GetModelEvaluationRequest) actualRequests.get(0);
 
@@ -715,7 +715,7 @@ public class AutoMlClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getModelEvaluationList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockAutoMl.getRequests();
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListModelEvaluationsRequest actualRequest = (ListModelEvaluationsRequest) actualRequests.get(0);
 
