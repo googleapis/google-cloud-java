@@ -820,6 +820,16 @@
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
         <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
+        <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
+        <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
+        <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
+      </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-translate</artifactId>
