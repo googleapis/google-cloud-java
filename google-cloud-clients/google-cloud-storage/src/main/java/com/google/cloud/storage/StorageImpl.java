@@ -82,8 +82,6 @@ import java.util.logging.Logger;
 
 final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
-  private static final Logger log = Logger.getLogger(StorageImpl.class.getName());
-
   private static final byte[] EMPTY_BYTE_ARRAY = {};
   private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
@@ -677,13 +675,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         stBuilder.append("GoogleAccessId=").append(credentials.getAccount());
         stBuilder.append("&Expires=").append(expiration);
         stBuilder.append("&Signature=").append(signature);
-
-        log.warning(
-            "You have generated a signed URL using the V2 signing implementation. This is currently "
-                + "the default, but in the future, this will default to V4. You may experience breaking changes "
-                + "if you use long expiration times with V4, since the maximum expiration time for V4 is 7 days. To "
-                + "opt-in to V4 signing, specify Storage.SignUrlOption.withV4Signature() as a parameter to "
-                + "the signUrl() method.");
       }
 
       return new URL(stBuilder.toString());
