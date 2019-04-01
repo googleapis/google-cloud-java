@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'asset'
-versions = ['v1beta1']
+versions = ['v1', 'v1beta1']
 config_pattern = '/google/cloud/asset/artman_cloudasset_{version}.yaml'
 
 for version in versions:
