@@ -16,8 +16,8 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;

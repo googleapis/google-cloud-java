@@ -16,8 +16,8 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;

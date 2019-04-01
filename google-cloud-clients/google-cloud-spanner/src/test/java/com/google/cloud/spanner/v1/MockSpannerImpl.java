@@ -16,8 +16,8 @@
 package com.google.cloud.spanner.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;

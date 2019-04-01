@@ -17,8 +17,8 @@ package com.google.cloud.websecurityscanner.v1alpha;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerGrpc.WebSecurityScannerImplBase;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;

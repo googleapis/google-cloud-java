@@ -17,8 +17,8 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceGrpc.DataTransferServiceImplBase;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;

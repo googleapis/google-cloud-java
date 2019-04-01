@@ -16,8 +16,8 @@
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
 import com.google.api.core.BetaApi;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grafeas.v1beta1.BatchCreateNotesRequest;
 import io.grafeas.v1beta1.BatchCreateNotesResponse;
 import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;

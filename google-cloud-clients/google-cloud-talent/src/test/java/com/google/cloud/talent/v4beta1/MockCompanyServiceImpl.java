@@ -17,8 +17,8 @@ package com.google.cloud.talent.v4beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.talent.v4beta1.CompanyServiceGrpc.CompanyServiceImplBase;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;

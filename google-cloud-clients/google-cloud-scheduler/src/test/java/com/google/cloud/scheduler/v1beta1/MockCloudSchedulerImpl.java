@@ -17,8 +17,8 @@ package com.google.cloud.scheduler.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerGrpc.CloudSchedulerImplBase;
-import com.google.protobuf.Empty;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
