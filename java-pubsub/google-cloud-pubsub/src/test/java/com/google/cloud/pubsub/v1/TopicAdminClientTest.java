@@ -31,9 +31,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
@@ -115,7 +115,7 @@ public class TopicAdminClientTest {
     Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     Topic actualRequest = (Topic) actualRequests.get(0);
 
@@ -159,7 +159,7 @@ public class TopicAdminClientTest {
     PublishResponse actualResponse = client.publish(topic, messages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PublishRequest actualRequest = (PublishRequest) actualRequests.get(0);
 
@@ -202,7 +202,7 @@ public class TopicAdminClientTest {
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTopicRequest actualRequest = (GetTopicRequest) actualRequests.get(0);
 
@@ -250,7 +250,7 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTopicsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTopicsRequest actualRequest = (ListTopicsRequest) actualRequests.get(0);
 
@@ -305,7 +305,7 @@ public class TopicAdminClientTest {
         ProjectSubscriptionName.parse(expectedResponse.getSubscriptionsList().get(0)),
         resourceNames.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTopicSubscriptionsRequest actualRequest =
         (ListTopicSubscriptionsRequest) actualRequests.get(0);
@@ -343,7 +343,7 @@ public class TopicAdminClientTest {
 
     client.deleteTopic(topic);
 
-    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTopicRequest actualRequest = (DeleteTopicRequest) actualRequests.get(0);
 
@@ -384,7 +384,7 @@ public class TopicAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -426,7 +426,7 @@ public class TopicAdminClientTest {
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -466,7 +466,7 @@ public class TopicAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 

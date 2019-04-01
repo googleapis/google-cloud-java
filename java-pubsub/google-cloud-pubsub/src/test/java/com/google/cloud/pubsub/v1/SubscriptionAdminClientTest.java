@@ -35,9 +35,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
@@ -147,7 +147,7 @@ public class SubscriptionAdminClientTest {
         client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     Subscription actualRequest = (Subscription) actualRequests.get(0);
 
@@ -204,7 +204,7 @@ public class SubscriptionAdminClientTest {
     Subscription actualResponse = client.getSubscription(subscription);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSubscriptionRequest actualRequest = (GetSubscriptionRequest) actualRequests.get(0);
 
@@ -254,7 +254,7 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSubscriptionsRequest actualRequest = (ListSubscriptionsRequest) actualRequests.get(0);
 
@@ -292,7 +292,7 @@ public class SubscriptionAdminClientTest {
 
     client.deleteSubscription(subscription);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSubscriptionRequest actualRequest = (DeleteSubscriptionRequest) actualRequests.get(0);
 
@@ -334,7 +334,7 @@ public class SubscriptionAdminClientTest {
 
     client.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ModifyAckDeadlineRequest actualRequest = (ModifyAckDeadlineRequest) actualRequests.get(0);
 
@@ -379,7 +379,7 @@ public class SubscriptionAdminClientTest {
 
     client.acknowledge(subscription, ackIds);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AcknowledgeRequest actualRequest = (AcknowledgeRequest) actualRequests.get(0);
 
@@ -424,7 +424,7 @@ public class SubscriptionAdminClientTest {
     PullResponse actualResponse = client.pull(subscription, returnImmediately, maxMessages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PullRequest actualRequest = (PullRequest) actualRequests.get(0);
 
@@ -534,7 +534,7 @@ public class SubscriptionAdminClientTest {
 
     client.modifyPushConfig(subscription, pushConfig);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ModifyPushConfigRequest actualRequest = (ModifyPushConfigRequest) actualRequests.get(0);
 
@@ -586,7 +586,7 @@ public class SubscriptionAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSnapshotsRequest actualRequest = (ListSnapshotsRequest) actualRequests.get(0);
 
@@ -629,7 +629,7 @@ public class SubscriptionAdminClientTest {
     Snapshot actualResponse = client.createSnapshot(name, subscription);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateSnapshotRequest actualRequest = (CreateSnapshotRequest) actualRequests.get(0);
 
@@ -670,7 +670,7 @@ public class SubscriptionAdminClientTest {
 
     client.deleteSnapshot(snapshot);
 
-    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSnapshotRequest actualRequest = (DeleteSnapshotRequest) actualRequests.get(0);
 
@@ -711,7 +711,7 @@ public class SubscriptionAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -753,7 +753,7 @@ public class SubscriptionAdminClientTest {
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -793,7 +793,7 @@ public class SubscriptionAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
