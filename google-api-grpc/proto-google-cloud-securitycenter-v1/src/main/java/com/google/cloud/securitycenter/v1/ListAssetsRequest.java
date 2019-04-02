@@ -235,6 +235,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   * The following are the allowed field and operator combinations:
+   * name | `=`
+   * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * iam_policy.policy_blob | '=', ':'
+   * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks | '=', ':'
+   * security_center_properties.resource_name | '=', ':'
+   * security_center_properties.resource_type | '=', ':'
+   * security_center_properties.resource_parent | '=', ':'
+   * security_center_properties.resource_project | '=', ':'
+   * security_center_properties.resource_owners | '=', ':'
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -274,6 +285,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   * The following are the allowed field and operator combinations:
+   * name | `=`
+   * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * iam_policy.policy_blob | '=', ':'
+   * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks | '=', ':'
+   * security_center_properties.resource_name | '=', ':'
+   * security_center_properties.resource_type | '=', ':'
+   * security_center_properties.resource_parent | '=', ':'
+   * security_center_properties.resource_project | '=', ':'
+   * security_center_properties.resource_owners | '=', ':'
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -305,6 +327,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * desc,resource_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,resource_properties.a_property" and "
    * name     desc  ,   resource_properties.a_property  " are equivalent.
+   * The following fields are supported:
+   * name
+   * update_time
+   * resource_properties
+   * security_marks
+   * security_center_properties.resource_name
+   * security_center_properties.resource_parent
+   * security_center_properties.resource_project
+   * security_center_properties.resource_type
    * </pre>
    *
    * <code>string order_by = 3;</code>
@@ -332,6 +363,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * desc,resource_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,resource_properties.a_property" and "
    * name     desc  ,   resource_properties.a_property  " are equivalent.
+   * The following fields are supported:
+   * name
+   * update_time
+   * resource_properties
+   * security_marks
+   * security_center_properties.resource_name
+   * security_center_properties.resource_parent
+   * security_center_properties.resource_project
+   * security_center_properties.resource_type
    * </pre>
    *
    * <code>string order_by = 3;</code>
@@ -1193,6 +1233,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following are the allowed field and operator combinations:
+     * name | `=`
+     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * iam_policy.policy_blob | '=', ':'
+     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * security_center_properties.resource_name | '=', ':'
+     * security_center_properties.resource_type | '=', ':'
+     * security_center_properties.resource_parent | '=', ':'
+     * security_center_properties.resource_project | '=', ':'
+     * security_center_properties.resource_owners | '=', ':'
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1232,6 +1283,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following are the allowed field and operator combinations:
+     * name | `=`
+     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * iam_policy.policy_blob | '=', ':'
+     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * security_center_properties.resource_name | '=', ':'
+     * security_center_properties.resource_type | '=', ':'
+     * security_center_properties.resource_parent | '=', ':'
+     * security_center_properties.resource_project | '=', ':'
+     * security_center_properties.resource_owners | '=', ':'
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1271,6 +1333,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following are the allowed field and operator combinations:
+     * name | `=`
+     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * iam_policy.policy_blob | '=', ':'
+     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * security_center_properties.resource_name | '=', ':'
+     * security_center_properties.resource_type | '=', ':'
+     * security_center_properties.resource_parent | '=', ':'
+     * security_center_properties.resource_project | '=', ':'
+     * security_center_properties.resource_owners | '=', ':'
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1308,6 +1381,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following are the allowed field and operator combinations:
+     * name | `=`
+     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * iam_policy.policy_blob | '=', ':'
+     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * security_center_properties.resource_name | '=', ':'
+     * security_center_properties.resource_type | '=', ':'
+     * security_center_properties.resource_parent | '=', ':'
+     * security_center_properties.resource_project | '=', ':'
+     * security_center_properties.resource_owners | '=', ':'
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1342,6 +1426,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following are the allowed field and operator combinations:
+     * name | `=`
+     * update_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * iam_policy.policy_blob | '=', ':'
+     * resource_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * security_center_properties.resource_name | '=', ':'
+     * security_center_properties.resource_type | '=', ':'
+     * security_center_properties.resource_parent | '=', ':'
+     * security_center_properties.resource_project | '=', ':'
+     * security_center_properties.resource_owners | '=', ':'
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1371,6 +1466,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * desc,resource_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,resource_properties.a_property" and "
      * name     desc  ,   resource_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * update_time
+     * resource_properties
+     * security_marks
+     * security_center_properties.resource_name
+     * security_center_properties.resource_parent
+     * security_center_properties.resource_project
+     * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1398,6 +1502,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * desc,resource_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,resource_properties.a_property" and "
      * name     desc  ,   resource_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * update_time
+     * resource_properties
+     * security_marks
+     * security_center_properties.resource_name
+     * security_center_properties.resource_parent
+     * security_center_properties.resource_project
+     * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1425,6 +1538,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * desc,resource_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,resource_properties.a_property" and "
      * name     desc  ,   resource_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * update_time
+     * resource_properties
+     * security_marks
+     * security_center_properties.resource_name
+     * security_center_properties.resource_parent
+     * security_center_properties.resource_project
+     * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1450,6 +1572,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * desc,resource_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,resource_properties.a_property" and "
      * name     desc  ,   resource_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * update_time
+     * resource_properties
+     * security_marks
+     * security_center_properties.resource_name
+     * security_center_properties.resource_parent
+     * security_center_properties.resource_project
+     * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1472,6 +1603,15 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * desc,resource_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,resource_properties.a_property" and "
      * name     desc  ,   resource_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * update_time
+     * resource_properties
+     * security_marks
+     * security_center_properties.resource_name
+     * security_center_properties.resource_parent
+     * security_center_properties.resource_project
+     * security_center_properties.resource_type
      * </pre>
      *
      * <code>string order_by = 3;</code>
