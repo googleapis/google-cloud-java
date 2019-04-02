@@ -222,6 +222,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   * The following field and operator combinations are supported:
+   * name | `=`
+   * parent | '=', ':'
+   * resource_name | '=', ':'
+   * state | '=', ':'
+   * category | '=', ':'
+   * external_uri | '=', ':'
+   * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks | '=', ':'
+   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -259,6 +269,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   * The following field and operator combinations are supported:
+   * name | `=`
+   * parent | '=', ':'
+   * resource_name | '=', ':'
+   * state | '=', ':'
+   * category | '=', ':'
+   * external_uri | '=', ':'
+   * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks | '=', ':'
+   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -289,8 +309,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * resource_name
    * * category
    * * state
-   * * state_change
    * * parent
+   * The following fields are supported when compare_duration is set:
+   * * state_change
    * </pre>
    *
    * <code>string group_by = 3;</code>
@@ -317,8 +338,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * resource_name
    * * category
    * * state
-   * * state_change
    * * parent
+   * The following fields are supported when compare_duration is set:
+   * * state_change
    * </pre>
    *
    * <code>string group_by = 3;</code>
@@ -1116,6 +1138,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1153,6 +1185,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1190,6 +1232,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1225,6 +1277,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1257,6 +1319,16 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1285,8 +1357,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * resource_name
      * * category
      * * state
-     * * state_change
      * * parent
+     * The following fields are supported when compare_duration is set:
+     * * state_change
      * </pre>
      *
      * <code>string group_by = 3;</code>
@@ -1313,8 +1386,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * resource_name
      * * category
      * * state
-     * * state_change
      * * parent
+     * The following fields are supported when compare_duration is set:
+     * * state_change
      * </pre>
      *
      * <code>string group_by = 3;</code>
@@ -1341,8 +1415,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * resource_name
      * * category
      * * state
-     * * state_change
      * * parent
+     * The following fields are supported when compare_duration is set:
+     * * state_change
      * </pre>
      *
      * <code>string group_by = 3;</code>
@@ -1367,8 +1442,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * resource_name
      * * category
      * * state
-     * * state_change
      * * parent
+     * The following fields are supported when compare_duration is set:
+     * * state_change
      * </pre>
      *
      * <code>string group_by = 3;</code>
@@ -1390,8 +1466,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * resource_name
      * * category
      * * state
-     * * state_change
      * * parent
+     * The following fields are supported when compare_duration is set:
+     * * state_change
      * </pre>
      *
      * <code>string group_by = 3;</code>
