@@ -50,6 +50,8 @@ import com.google.cloud.dialogflow.v2beta1.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse;
+import com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest;
+import com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -107,6 +109,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   private final UnaryCallSettings<DeleteDocumentRequest, Operation> deleteDocumentSettings;
   private final OperationCallSettings<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationSettings;
+  private final UnaryCallSettings<UpdateDocumentRequest, Operation> updateDocumentSettings;
+  private final UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings;
 
   /** Returns the object with the settings used for calls to listDocuments. */
   public PagedCallSettings<ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
@@ -141,6 +145,16 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   public OperationCallSettings<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationSettings() {
     return deleteDocumentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDocument. */
+  public UnaryCallSettings<UpdateDocumentRequest, Operation> updateDocumentSettings() {
+    return updateDocumentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reloadDocument. */
+  public UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
+    return reloadDocumentSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -216,6 +230,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     createDocumentOperationSettings = settingsBuilder.createDocumentOperationSettings().build();
     deleteDocumentSettings = settingsBuilder.deleteDocumentSettings().build();
     deleteDocumentOperationSettings = settingsBuilder.deleteDocumentOperationSettings().build();
+    updateDocumentSettings = settingsBuilder.updateDocumentSettings().build();
+    reloadDocumentSettings = settingsBuilder.reloadDocumentSettings().build();
   }
 
   private static final PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, Document>
@@ -289,6 +305,10 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
         deleteDocumentOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDocumentRequest, Operation>
+        updateDocumentSettings;
+    private final UnaryCallSettings.Builder<ReloadDocumentRequest, Operation>
+        reloadDocumentSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -343,12 +363,18 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
       deleteDocumentOperationSettings = OperationCallSettings.newBuilder();
 
+      updateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      reloadDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listDocumentsSettings,
               getDocumentSettings,
               createDocumentSettings,
-              deleteDocumentSettings);
+              deleteDocumentSettings,
+              updateDocumentSettings,
+              reloadDocumentSettings);
 
       initDefaults(this);
     }
@@ -382,6 +408,16 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       builder
           .deleteDocumentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .reloadDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .createDocumentOperationSettings()
@@ -444,13 +480,17 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       createDocumentOperationSettings = settings.createDocumentOperationSettings.toBuilder();
       deleteDocumentSettings = settings.deleteDocumentSettings.toBuilder();
       deleteDocumentOperationSettings = settings.deleteDocumentOperationSettings.toBuilder();
+      updateDocumentSettings = settings.updateDocumentSettings.toBuilder();
+      reloadDocumentSettings = settings.reloadDocumentSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listDocumentsSettings,
               getDocumentSettings,
               createDocumentSettings,
-              deleteDocumentSettings);
+              deleteDocumentSettings,
+              updateDocumentSettings,
+              reloadDocumentSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -506,6 +546,16 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     public OperationCallSettings.Builder<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
         deleteDocumentOperationSettings() {
       return deleteDocumentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDocument. */
+    public UnaryCallSettings.Builder<UpdateDocumentRequest, Operation> updateDocumentSettings() {
+      return updateDocumentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reloadDocument. */
+    public UnaryCallSettings.Builder<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
+      return reloadDocumentSettings;
     }
 
     @Override
