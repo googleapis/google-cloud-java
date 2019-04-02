@@ -168,7 +168,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-bom</artifactId>
-        <version>1.42.0</version>
+        <version>1.43.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -353,6 +353,21 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-http</artifactId>
         <version>1.67.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datalabeling</artifactId>
+        <version>0.85.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
+        <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-datalabeling-v1beta1</artifactId>
+        <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datalabeling-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -829,6 +844,16 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
         <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+      </dependency>
+        <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
+        <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
+        <version>0.50.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

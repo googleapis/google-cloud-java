@@ -30,10 +30,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -110,7 +110,7 @@ public class ProductSearchClientTest {
     Product actualResponse = client.createProduct(parent, product, productId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateProductRequest actualRequest = (CreateProductRequest) actualRequests.get(0);
 
@@ -162,7 +162,7 @@ public class ProductSearchClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getProductsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListProductsRequest actualRequest = (ListProductsRequest) actualRequests.get(0);
 
@@ -210,7 +210,7 @@ public class ProductSearchClientTest {
     Product actualResponse = client.getProduct(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetProductRequest actualRequest = (GetProductRequest) actualRequests.get(0);
 
@@ -259,7 +259,7 @@ public class ProductSearchClientTest {
     Product actualResponse = client.updateProduct(product, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateProductRequest actualRequest = (UpdateProductRequest) actualRequests.get(0);
 
@@ -298,7 +298,7 @@ public class ProductSearchClientTest {
 
     client.deleteProduct(name);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteProductRequest actualRequest = (DeleteProductRequest) actualRequests.get(0);
 
@@ -348,7 +348,7 @@ public class ProductSearchClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getReferenceImagesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListReferenceImagesRequest actualRequest = (ListReferenceImagesRequest) actualRequests.get(0);
 
@@ -391,7 +391,7 @@ public class ProductSearchClientTest {
     ReferenceImage actualResponse = client.getReferenceImage(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetReferenceImageRequest actualRequest = (GetReferenceImageRequest) actualRequests.get(0);
 
@@ -430,7 +430,7 @@ public class ProductSearchClientTest {
 
     client.deleteReferenceImage(name);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteReferenceImageRequest actualRequest = (DeleteReferenceImageRequest) actualRequests.get(0);
 
@@ -476,7 +476,7 @@ public class ProductSearchClientTest {
         client.createReferenceImage(parent, referenceImage, referenceImageId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateReferenceImageRequest actualRequest = (CreateReferenceImageRequest) actualRequests.get(0);
 
@@ -523,7 +523,7 @@ public class ProductSearchClientTest {
     ProductSet actualResponse = client.createProductSet(parent, productSet, productSetId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateProductSetRequest actualRequest = (CreateProductSetRequest) actualRequests.get(0);
 
@@ -575,7 +575,7 @@ public class ProductSearchClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getProductSetsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListProductSetsRequest actualRequest = (ListProductSetsRequest) actualRequests.get(0);
 
@@ -616,7 +616,7 @@ public class ProductSearchClientTest {
     ProductSet actualResponse = client.getProductSet(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetProductSetRequest actualRequest = (GetProductSetRequest) actualRequests.get(0);
 
@@ -658,7 +658,7 @@ public class ProductSearchClientTest {
     ProductSet actualResponse = client.updateProductSet(productSet, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateProductSetRequest actualRequest = (UpdateProductSetRequest) actualRequests.get(0);
 
@@ -697,7 +697,7 @@ public class ProductSearchClientTest {
 
     client.deleteProductSet(name);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteProductSetRequest actualRequest = (DeleteProductSetRequest) actualRequests.get(0);
 
@@ -735,7 +735,7 @@ public class ProductSearchClientTest {
 
     client.addProductToProductSet(name, product);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AddProductToProductSetRequest actualRequest =
         (AddProductToProductSetRequest) actualRequests.get(0);
@@ -776,7 +776,7 @@ public class ProductSearchClientTest {
 
     client.removeProductFromProductSet(name, product);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RemoveProductFromProductSetRequest actualRequest =
         (RemoveProductFromProductSetRequest) actualRequests.get(0);
@@ -827,7 +827,7 @@ public class ProductSearchClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getProductsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListProductsInProductSetRequest actualRequest =
         (ListProductsInProductSetRequest) actualRequests.get(0);
@@ -874,7 +874,7 @@ public class ProductSearchClientTest {
         client.importProductSetsAsync(parent, inputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProductSearch.getRequests();
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportProductSetsRequest actualRequest = (ImportProductSetsRequest) actualRequests.get(0);
 

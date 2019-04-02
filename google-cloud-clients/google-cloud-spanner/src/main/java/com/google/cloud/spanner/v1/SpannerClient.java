@@ -1399,10 +1399,10 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String sql = "";
    *   PartitionQueryRequest request = PartitionQueryRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setSql(sql)
    *     .build();
    *   PartitionResponse response = spannerClient.partitionQuery(request);
@@ -1433,10 +1433,10 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String sql = "";
    *   PartitionQueryRequest request = PartitionQueryRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setSql(sql)
    *     .build();
    *   ApiFuture&lt;PartitionResponse&gt; future = spannerClient.partitionQueryCallable().futureCall(request);
@@ -1467,11 +1467,11 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String table = "";
    *   KeySet keySet = KeySet.newBuilder().build();
    *   PartitionReadRequest request = PartitionReadRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setTable(table)
    *     .setKeySet(keySet)
    *     .build();
@@ -1504,11 +1504,11 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String table = "";
    *   KeySet keySet = KeySet.newBuilder().build();
    *   PartitionReadRequest request = PartitionReadRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setTable(table)
    *     .setKeySet(keySet)
    *     .build();

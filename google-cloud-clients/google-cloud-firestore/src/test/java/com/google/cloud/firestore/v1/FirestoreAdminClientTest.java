@@ -44,8 +44,8 @@ import com.google.firestore.admin.v1.ListIndexesResponse;
 import com.google.firestore.admin.v1.ParentName;
 import com.google.firestore.admin.v1.UpdateFieldRequest;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -109,7 +109,7 @@ public class FirestoreAdminClientTest {
     Operation actualResponse = client.createIndex(formattedParent, index);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateIndexRequest actualRequest = (CreateIndexRequest) actualRequests.get(0);
 
@@ -159,7 +159,7 @@ public class FirestoreAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getIndexesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListIndexesRequest actualRequest = (ListIndexesRequest) actualRequests.get(0);
 
@@ -198,7 +198,7 @@ public class FirestoreAdminClientTest {
     Index actualResponse = client.getIndex(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIndexRequest actualRequest = (GetIndexRequest) actualRequests.get(0);
 
@@ -235,7 +235,7 @@ public class FirestoreAdminClientTest {
 
     client.deleteIndex(name);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteIndexRequest actualRequest = (DeleteIndexRequest) actualRequests.get(0);
 
@@ -275,7 +275,7 @@ public class FirestoreAdminClientTest {
     Operation actualResponse = client.importDocuments(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportDocumentsRequest actualRequest = (ImportDocumentsRequest) actualRequests.get(0);
 
@@ -315,7 +315,7 @@ public class FirestoreAdminClientTest {
     Operation actualResponse = client.exportDocuments(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportDocumentsRequest actualRequest = (ExportDocumentsRequest) actualRequests.get(0);
 
@@ -354,7 +354,7 @@ public class FirestoreAdminClientTest {
     Field actualResponse = client.getField(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetFieldRequest actualRequest = (GetFieldRequest) actualRequests.get(0);
 
@@ -402,7 +402,7 @@ public class FirestoreAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getFieldsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListFieldsRequest actualRequest = (ListFieldsRequest) actualRequests.get(0);
 
@@ -442,7 +442,7 @@ public class FirestoreAdminClientTest {
     Operation actualResponse = client.updateField(field);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateFieldRequest actualRequest = (UpdateFieldRequest) actualRequests.get(0);
 

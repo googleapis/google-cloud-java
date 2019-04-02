@@ -15,14 +15,18 @@
  */
 package com.google.cloud.automl.v1beta1.stub;
 
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListColumnSpecsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListDatasetsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.automl.v1beta1.AnnotationSpec;
+import com.google.cloud.automl.v1beta1.ColumnSpec;
 import com.google.cloud.automl.v1beta1.CreateDatasetRequest;
 import com.google.cloud.automl.v1beta1.CreateModelRequest;
 import com.google.cloud.automl.v1beta1.Dataset;
@@ -30,20 +34,33 @@ import com.google.cloud.automl.v1beta1.DeleteDatasetRequest;
 import com.google.cloud.automl.v1beta1.DeleteModelRequest;
 import com.google.cloud.automl.v1beta1.DeployModelRequest;
 import com.google.cloud.automl.v1beta1.ExportDataRequest;
+import com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest;
+import com.google.cloud.automl.v1beta1.ExportModelRequest;
+import com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest;
+import com.google.cloud.automl.v1beta1.GetColumnSpecRequest;
 import com.google.cloud.automl.v1beta1.GetDatasetRequest;
 import com.google.cloud.automl.v1beta1.GetModelEvaluationRequest;
 import com.google.cloud.automl.v1beta1.GetModelRequest;
+import com.google.cloud.automl.v1beta1.GetTableSpecRequest;
 import com.google.cloud.automl.v1beta1.ImportDataRequest;
+import com.google.cloud.automl.v1beta1.ListColumnSpecsRequest;
+import com.google.cloud.automl.v1beta1.ListColumnSpecsResponse;
 import com.google.cloud.automl.v1beta1.ListDatasetsRequest;
 import com.google.cloud.automl.v1beta1.ListDatasetsResponse;
 import com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse;
 import com.google.cloud.automl.v1beta1.ListModelsRequest;
 import com.google.cloud.automl.v1beta1.ListModelsResponse;
+import com.google.cloud.automl.v1beta1.ListTableSpecsRequest;
+import com.google.cloud.automl.v1beta1.ListTableSpecsResponse;
 import com.google.cloud.automl.v1beta1.Model;
 import com.google.cloud.automl.v1beta1.ModelEvaluation;
 import com.google.cloud.automl.v1beta1.OperationMetadata;
+import com.google.cloud.automl.v1beta1.TableSpec;
 import com.google.cloud.automl.v1beta1.UndeployModelRequest;
+import com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest;
+import com.google.cloud.automl.v1beta1.UpdateDatasetRequest;
+import com.google.cloud.automl.v1beta1.UpdateTableSpecRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -162,6 +179,57 @@ public abstract class AutoMlStub implements BackgroundResource {
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationsCallable()");
+  }
+
+  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
+  }
+
+  public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAnnotationSpecCallable()");
+  }
+
+  public UnaryCallable<GetTableSpecRequest, TableSpec> getTableSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTableSpecCallable()");
+  }
+
+  public UnaryCallable<ListTableSpecsRequest, ListTableSpecsPagedResponse>
+      listTableSpecsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTableSpecsPagedCallable()");
+  }
+
+  public UnaryCallable<ListTableSpecsRequest, ListTableSpecsResponse> listTableSpecsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTableSpecsCallable()");
+  }
+
+  public UnaryCallable<UpdateTableSpecRequest, TableSpec> updateTableSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTableSpecCallable()");
+  }
+
+  public UnaryCallable<GetColumnSpecRequest, ColumnSpec> getColumnSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: getColumnSpecCallable()");
+  }
+
+  public UnaryCallable<ListColumnSpecsRequest, ListColumnSpecsPagedResponse>
+      listColumnSpecsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listColumnSpecsPagedCallable()");
+  }
+
+  public UnaryCallable<ListColumnSpecsRequest, ListColumnSpecsResponse> listColumnSpecsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listColumnSpecsCallable()");
+  }
+
+  public UnaryCallable<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateColumnSpecCallable()");
+  }
+
+  public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
+  }
+
+  public UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportEvaluatedExamplesCallable()");
   }
 
   @Override

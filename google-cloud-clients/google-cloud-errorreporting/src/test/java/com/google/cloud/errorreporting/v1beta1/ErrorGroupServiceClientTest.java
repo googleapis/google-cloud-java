@@ -26,7 +26,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.GroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -97,7 +97,7 @@ public class ErrorGroupServiceClientTest {
     ErrorGroup actualResponse = client.getGroup(groupName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
@@ -138,7 +138,7 @@ public class ErrorGroupServiceClientTest {
     ErrorGroup actualResponse = client.updateGroup(group);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
 

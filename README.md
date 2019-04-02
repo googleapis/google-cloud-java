@@ -43,6 +43,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
+-  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)

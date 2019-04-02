@@ -15,9 +15,11 @@
  */
 package com.google.cloud.automl.v1beta1.stub;
 
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListColumnSpecsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListDatasetsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -45,6 +47,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.automl.v1beta1.AnnotationSpec;
+import com.google.cloud.automl.v1beta1.ColumnSpec;
 import com.google.cloud.automl.v1beta1.CreateDatasetRequest;
 import com.google.cloud.automl.v1beta1.CreateModelRequest;
 import com.google.cloud.automl.v1beta1.Dataset;
@@ -52,20 +56,33 @@ import com.google.cloud.automl.v1beta1.DeleteDatasetRequest;
 import com.google.cloud.automl.v1beta1.DeleteModelRequest;
 import com.google.cloud.automl.v1beta1.DeployModelRequest;
 import com.google.cloud.automl.v1beta1.ExportDataRequest;
+import com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesRequest;
+import com.google.cloud.automl.v1beta1.ExportModelRequest;
+import com.google.cloud.automl.v1beta1.GetAnnotationSpecRequest;
+import com.google.cloud.automl.v1beta1.GetColumnSpecRequest;
 import com.google.cloud.automl.v1beta1.GetDatasetRequest;
 import com.google.cloud.automl.v1beta1.GetModelEvaluationRequest;
 import com.google.cloud.automl.v1beta1.GetModelRequest;
+import com.google.cloud.automl.v1beta1.GetTableSpecRequest;
 import com.google.cloud.automl.v1beta1.ImportDataRequest;
+import com.google.cloud.automl.v1beta1.ListColumnSpecsRequest;
+import com.google.cloud.automl.v1beta1.ListColumnSpecsResponse;
 import com.google.cloud.automl.v1beta1.ListDatasetsRequest;
 import com.google.cloud.automl.v1beta1.ListDatasetsResponse;
 import com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.automl.v1beta1.ListModelEvaluationsResponse;
 import com.google.cloud.automl.v1beta1.ListModelsRequest;
 import com.google.cloud.automl.v1beta1.ListModelsResponse;
+import com.google.cloud.automl.v1beta1.ListTableSpecsRequest;
+import com.google.cloud.automl.v1beta1.ListTableSpecsResponse;
 import com.google.cloud.automl.v1beta1.Model;
 import com.google.cloud.automl.v1beta1.ModelEvaluation;
 import com.google.cloud.automl.v1beta1.OperationMetadata;
+import com.google.cloud.automl.v1beta1.TableSpec;
 import com.google.cloud.automl.v1beta1.UndeployModelRequest;
+import com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest;
+import com.google.cloud.automl.v1beta1.UpdateDatasetRequest;
+import com.google.cloud.automl.v1beta1.UpdateTableSpecRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -142,6 +159,22 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings;
+  private final UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings;
+  private final UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec>
+      getAnnotationSpecSettings;
+  private final UnaryCallSettings<GetTableSpecRequest, TableSpec> getTableSpecSettings;
+  private final PagedCallSettings<
+          ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+      listTableSpecsSettings;
+  private final UnaryCallSettings<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings;
+  private final UnaryCallSettings<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings;
+  private final PagedCallSettings<
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+      listColumnSpecsSettings;
+  private final UnaryCallSettings<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecSettings;
+  private final UnaryCallSettings<ExportModelRequest, Operation> exportModelSettings;
+  private final UnaryCallSettings<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesSettings;
 
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
@@ -255,6 +288,61 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     return listModelEvaluationsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDataset. */
+  public UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
+    return updateDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAnnotationSpec. */
+  public UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecSettings() {
+    return getAnnotationSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTableSpec. */
+  public UnaryCallSettings<GetTableSpecRequest, TableSpec> getTableSpecSettings() {
+    return getTableSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTableSpecs. */
+  public PagedCallSettings<
+          ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+      listTableSpecsSettings() {
+    return listTableSpecsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTableSpec. */
+  public UnaryCallSettings<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings() {
+    return updateTableSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getColumnSpec. */
+  public UnaryCallSettings<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings() {
+    return getColumnSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listColumnSpecs. */
+  public PagedCallSettings<
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+      listColumnSpecsSettings() {
+    return listColumnSpecsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateColumnSpec. */
+  public UnaryCallSettings<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecSettings() {
+    return updateColumnSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportModel. */
+  public UnaryCallSettings<ExportModelRequest, Operation> exportModelSettings() {
+    return exportModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluatedExamples. */
+  public UnaryCallSettings<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesSettings() {
+    return exportEvaluatedExamplesSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AutoMlStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -341,6 +429,16 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     undeployModelSettings = settingsBuilder.undeployModelSettings().build();
     getModelEvaluationSettings = settingsBuilder.getModelEvaluationSettings().build();
     listModelEvaluationsSettings = settingsBuilder.listModelEvaluationsSettings().build();
+    updateDatasetSettings = settingsBuilder.updateDatasetSettings().build();
+    getAnnotationSpecSettings = settingsBuilder.getAnnotationSpecSettings().build();
+    getTableSpecSettings = settingsBuilder.getTableSpecSettings().build();
+    listTableSpecsSettings = settingsBuilder.listTableSpecsSettings().build();
+    updateTableSpecSettings = settingsBuilder.updateTableSpecSettings().build();
+    getColumnSpecSettings = settingsBuilder.getColumnSpecSettings().build();
+    listColumnSpecsSettings = settingsBuilder.listColumnSpecsSettings().build();
+    updateColumnSpecSettings = settingsBuilder.updateColumnSpecSettings().build();
+    exportModelSettings = settingsBuilder.exportModelSettings().build();
+    exportEvaluatedExamplesSettings = settingsBuilder.exportEvaluatedExamplesSettings().build();
   }
 
   private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
@@ -456,6 +554,82 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListTableSpecsRequest, ListTableSpecsResponse, TableSpec>
+      LIST_TABLE_SPECS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTableSpecsRequest, ListTableSpecsResponse, TableSpec>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTableSpecsRequest injectToken(ListTableSpecsRequest payload, String token) {
+              return ListTableSpecsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTableSpecsRequest injectPageSize(
+                ListTableSpecsRequest payload, int pageSize) {
+              return ListTableSpecsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTableSpecsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTableSpecsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TableSpec> extractResources(ListTableSpecsResponse payload) {
+              return payload.getTableSpecsList() != null
+                  ? payload.getTableSpecsList()
+                  : ImmutableList.<TableSpec>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ColumnSpec>
+      LIST_COLUMN_SPECS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListColumnSpecsRequest, ListColumnSpecsResponse, ColumnSpec>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListColumnSpecsRequest injectToken(
+                ListColumnSpecsRequest payload, String token) {
+              return ListColumnSpecsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListColumnSpecsRequest injectPageSize(
+                ListColumnSpecsRequest payload, int pageSize) {
+              return ListColumnSpecsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListColumnSpecsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListColumnSpecsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ColumnSpec> extractResources(ListColumnSpecsResponse payload) {
+              return payload.getColumnSpecsList() != null
+                  ? payload.getColumnSpecsList()
+                  : ImmutableList.<ColumnSpec>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
       LIST_DATASETS_PAGE_STR_FACT =
@@ -514,6 +688,40 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+      LIST_TABLE_SPECS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTableSpecsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTableSpecsRequest, ListTableSpecsResponse> callable,
+                ListTableSpecsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTableSpecsResponse> futureResponse) {
+              PageContext<ListTableSpecsRequest, ListTableSpecsResponse, TableSpec> pageContext =
+                  PageContext.create(callable, LIST_TABLE_SPECS_PAGE_STR_DESC, request, context);
+              return ListTableSpecsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+      LIST_COLUMN_SPECS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>() {
+            @Override
+            public ApiFuture<ListColumnSpecsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListColumnSpecsRequest, ListColumnSpecsResponse> callable,
+                ListColumnSpecsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListColumnSpecsResponse> futureResponse) {
+              PageContext<ListColumnSpecsRequest, ListColumnSpecsResponse, ColumnSpec> pageContext =
+                  PageContext.create(callable, LIST_COLUMN_SPECS_PAGE_STR_DESC, request, context);
+              return ListColumnSpecsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for AutoMlStubSettings. */
   public static class Builder extends StubSettings.Builder<AutoMlStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -551,6 +759,24 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings;
+    private final UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings;
+    private final UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
+        getAnnotationSpecSettings;
+    private final UnaryCallSettings.Builder<GetTableSpecRequest, TableSpec> getTableSpecSettings;
+    private final PagedCallSettings.Builder<
+            ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+        listTableSpecsSettings;
+    private final UnaryCallSettings.Builder<UpdateTableSpecRequest, TableSpec>
+        updateTableSpecSettings;
+    private final UnaryCallSettings.Builder<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings;
+    private final PagedCallSettings.Builder<
+            ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+        listColumnSpecsSettings;
+    private final UnaryCallSettings.Builder<UpdateColumnSpecRequest, ColumnSpec>
+        updateColumnSpecSettings;
+    private final UnaryCallSettings.Builder<ExportModelRequest, Operation> exportModelSettings;
+    private final UnaryCallSettings.Builder<ExportEvaluatedExamplesRequest, Operation>
+        exportEvaluatedExamplesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -632,6 +858,26 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       listModelEvaluationsSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATIONS_PAGE_STR_FACT);
 
+      updateDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getTableSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listTableSpecsSettings = PagedCallSettings.newBuilder(LIST_TABLE_SPECS_PAGE_STR_FACT);
+
+      updateTableSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getColumnSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listColumnSpecsSettings = PagedCallSettings.newBuilder(LIST_COLUMN_SPECS_PAGE_STR_FACT);
+
+      updateColumnSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      exportModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      exportEvaluatedExamplesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createDatasetSettings,
@@ -647,7 +893,17 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
               deployModelSettings,
               undeployModelSettings,
               getModelEvaluationSettings,
-              listModelEvaluationsSettings);
+              listModelEvaluationsSettings,
+              updateDatasetSettings,
+              getAnnotationSpecSettings,
+              getTableSpecSettings,
+              listTableSpecsSettings,
+              updateTableSpecSettings,
+              getColumnSpecSettings,
+              listColumnSpecsSettings,
+              updateColumnSpecSettings,
+              exportModelSettings,
+              exportEvaluatedExamplesSettings);
 
       initDefaults(this);
     }
@@ -730,6 +986,56 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
       builder
           .listModelEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getAnnotationSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getTableSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listTableSpecsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateTableSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getColumnSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listColumnSpecsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateColumnSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .exportModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .exportEvaluatedExamplesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
@@ -869,6 +1175,16 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       undeployModelSettings = settings.undeployModelSettings.toBuilder();
       getModelEvaluationSettings = settings.getModelEvaluationSettings.toBuilder();
       listModelEvaluationsSettings = settings.listModelEvaluationsSettings.toBuilder();
+      updateDatasetSettings = settings.updateDatasetSettings.toBuilder();
+      getAnnotationSpecSettings = settings.getAnnotationSpecSettings.toBuilder();
+      getTableSpecSettings = settings.getTableSpecSettings.toBuilder();
+      listTableSpecsSettings = settings.listTableSpecsSettings.toBuilder();
+      updateTableSpecSettings = settings.updateTableSpecSettings.toBuilder();
+      getColumnSpecSettings = settings.getColumnSpecSettings.toBuilder();
+      listColumnSpecsSettings = settings.listColumnSpecsSettings.toBuilder();
+      updateColumnSpecSettings = settings.updateColumnSpecSettings.toBuilder();
+      exportModelSettings = settings.exportModelSettings.toBuilder();
+      exportEvaluatedExamplesSettings = settings.exportEvaluatedExamplesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -885,7 +1201,17 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
               deployModelSettings,
               undeployModelSettings,
               getModelEvaluationSettings,
-              listModelEvaluationsSettings);
+              listModelEvaluationsSettings,
+              updateDatasetSettings,
+              getAnnotationSpecSettings,
+              getTableSpecSettings,
+              listTableSpecsSettings,
+              updateTableSpecSettings,
+              getColumnSpecSettings,
+              listColumnSpecsSettings,
+              updateColumnSpecSettings,
+              exportModelSettings,
+              exportEvaluatedExamplesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1020,6 +1346,63 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return listModelEvaluationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataset. */
+    public UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
+      return updateDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAnnotationSpec. */
+    public UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
+        getAnnotationSpecSettings() {
+      return getAnnotationSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTableSpec. */
+    public UnaryCallSettings.Builder<GetTableSpecRequest, TableSpec> getTableSpecSettings() {
+      return getTableSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTableSpecs. */
+    public PagedCallSettings.Builder<
+            ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+        listTableSpecsSettings() {
+      return listTableSpecsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTableSpec. */
+    public UnaryCallSettings.Builder<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings() {
+      return updateTableSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getColumnSpec. */
+    public UnaryCallSettings.Builder<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings() {
+      return getColumnSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listColumnSpecs. */
+    public PagedCallSettings.Builder<
+            ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+        listColumnSpecsSettings() {
+      return listColumnSpecsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateColumnSpec. */
+    public UnaryCallSettings.Builder<UpdateColumnSpecRequest, ColumnSpec>
+        updateColumnSpecSettings() {
+      return updateColumnSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportModel. */
+    public UnaryCallSettings.Builder<ExportModelRequest, Operation> exportModelSettings() {
+      return exportModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluatedExamples. */
+    public UnaryCallSettings.Builder<ExportEvaluatedExamplesRequest, Operation>
+        exportEvaluatedExamplesSettings() {
+      return exportEvaluatedExamplesSettings;
     }
 
     @Override

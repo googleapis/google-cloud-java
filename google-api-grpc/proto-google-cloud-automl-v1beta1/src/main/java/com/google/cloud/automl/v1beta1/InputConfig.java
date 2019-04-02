@@ -7,7 +7,217 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Input configuration.
+ * Input configuration for ImportData Action.
+ * The format of input depends on dataset_metadata the Dataset into which
+ * the import is happening has. As input source the
+ * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
+ * is expected, unless specified otherwise. If a file with identical content
+ * (even if it had different GCS_FILE_PATH) is mentioned multiple times , then
+ * its label, bounding boxes etc. are appended. The same file should be always
+ * provided with the same ML_USE and GCS_FILE_PATH, if it is not then
+ * these values are nondeterministically selected from the given ones.
+ * The formats are represented in EBNF with commas being literal and with
+ * non-terminal symbols defined near the end of this comment. The formats are:
+ *  *  For Image Object Detection:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
+ *           GCS_FILE_PATH leads to image of up to 30MB in size. Supported
+ *           extensions: .JPEG, .GIF, .PNG.
+ *           Each image is assumed to be exhaustively labeled. The
+ *           minimum allowed BOUNDING_BOX edge length is 0.01, and no more than
+ *           500 BOUNDING_BOX-es per image are allowed.
+ *         Three sample rows:
+ *           TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
+ *           TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
+ *           TEST,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
+ *  *  For Video Classification:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,GCS_FILE_PATH
+ *           where ML_USE VALIDATE value should not be used. The GCS_FILE_PATH
+ *           should lead to another .csv file which describes examples that have
+ *           given ML_USE, using the following row format:
+ *           GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
+ *           Here GCS_FILE_PATH leads to a video of up to 50GB in size and up
+ *           to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+ *           TIME_SEGMENT_START and TIME_SEGMENT_END must be within the
+ *           length of the video, and end has to be after the start. Any segment
+ *           of a video which has one or more labels on it, is considered a
+ *           hard negative for all other labels. Any segment with no labels on
+ *           it is considered to be unknown.
+ *         Sample top level CSV file:
+ *           TRAIN,gs://folder/train_videos.csv
+ *           TEST,gs://folder/test_videos.csv
+ *           UNASSIGNED,gs://folder/other_videos.csv
+ *         Three sample rows of a CSV file for a particular ML_USE:
+ *           gs://folder/video1.avi,car,120,180.000021
+ *           gs://folder/video1.avi,bike,150,180.000021
+ *           gs://folder/vid2.avi,car,0,60.5
+ *  *  For Text Extraction:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,GCS_FILE_PATH
+ *           GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which either
+ *           imports text in-line or as documents.
+ *           The in-line .JSONL file contains, per line, a proto that wraps a
+ *             TextSnippet proto (in json representation) followed by one or
+ *             more AnnotationPayload protos (called annotations), which have
+ *             display_name and text_extraction detail populated.
+ *             Given text is expected to be annotated exhaustively, e.g. if you
+ *             look for animals and text contains "dolphin" that is not labeled,
+ *             then "dolphin" will be assumed to not be an animal.
+ *             Any given text snippet content must have 30,000 characters or
+ *             less, and also be UTF-8 NFC encoded (ASCII already is).
+ *           The document .JSONL file contains, per line, a proto that wraps a
+ *             Document proto with input_config set. Only PDF documents are
+ *             supported now, and each document may be up to 2MB large.
+ *             Currently annotations on documents cannot be specified at import.
+ *           Any given .JSONL file must be 100MB or smaller.
+ *         Three sample CSV rows:
+ *           TRAIN,gs://folder/file1.jsonl
+ *           VALIDATE,gs://folder/file2.jsonl
+ *           TEST,gs://folder/file3.jsonl
+ *         Sample in-line JSON Lines file (presented here with artificial line
+ *         breaks, but the only actual line break is denoted by &#92;n).:
+ *           {
+ *             "text_snippet": {
+ *               "content": "dog car cat"
+ *             },
+ *             "annotations": [
+ *                {
+ *                  "display_name": "animal",
+ *                  "text_extraction": {
+ *                    "text_segment": {"start_offset": 0, "end_offset": 2}
+ *                  }
+ *                },
+ *                {
+ *                  "display_name": "vehicle",
+ *                  "text_extraction": {
+ *                    "text_segment": {"start_offset": 4, "end_offset": 6}
+ *                  }
+ *                },
+ *                {
+ *                  "display_name": "animal",
+ *                  "text_extraction": {
+ *                    "text_segment": {"start_offset": 8, "end_offset": 10}
+ *                  }
+ *                }
+ *             ]
+ *           }&#92;n
+ *           {
+ *              "text_snippet": {
+ *                "content": "This dog is good."
+ *              },
+ *              "annotations": [
+ *                 {
+ *                   "display_name": "animal",
+ *                   "text_extraction": {
+ *                     "text_segment": {"start_offset": 5, "end_offset": 7}
+ *                   }
+ *                 }
+ *              ]
+ *           }
+ *         Sample document JSON Lines file (presented here with artificial line
+ *         breaks, but the only actual line break is denoted by &#92;n).:
+ *           {
+ *             "document": {
+ *               "input_config": {
+ *                 "gcs_source": { "input_uris": [ "gs://folder/document1.pdf" ]
+ *                 }
+ *               }
+ *             }
+ *           }&#92;n
+ *           {
+ *             "document": {
+ *               "input_config": {
+ *                 "gcs_source": { "input_uris": [ "gs://folder/document2.pdf" ]
+ *                 }
+ *               }
+ *             }
+ *           }
+ *   *  For Tables:
+ *         Either
+ *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
+ * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
+ *         can be used. All inputs will be concatenated into a single
+ * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
+ *         For gcs_source:
+ *           CSV file(s), where first file must have a header containing unique
+ *           column names, other files may have such header line too, and all
+ *           other lines contain values for the header columns. Each line must
+ *           have 1,000,000 or fewer characters.
+ *           First three sample rows of a CSV file:
+ *           "Id","First Name","Last Name","Dob","Addresses"
+ * "1","John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+ * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
+ *         For bigquery_source:
+ *           An URI of a BigQuery table.
+ *         An imported table must have between 2 and 1,000 columns, inclusive,
+ *         and between 1,000 and 10,000,000 rows, inclusive.
+ *  *  For Text Sentiment:
+ *         CSV file(s) with each line in format:
+ *           ML_USE,TEXT_SNIPPET,SENTIMENT
+ *           TEXT_SNIPPET must have up to 500 characters.
+ *         Three sample rows:
+ *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
+ *         TRAIN,"I need Claritin so bad",3
+ *         TEST,"Thank god for Claritin.",4
+ *  Definitions:
+ *  ML_USE = "TRAIN" | "VALIDATE" | "TEST" | "UNASSIGNED"
+ *           Describes how the given example (file) should be used for model
+ *           training. "UNASSIGNED" can be used when user has no preference.
+ *  GCS_FILE_PATH = A path to file on GCS, e.g. "gs://folder/image1.png".
+ *  LABEL = A display name of an object on an image, video etc., e.g. "dog".
+ *          Must be up to 32 characters long and can consist only of ASCII
+ *          Latin letters A-Z and a-z, underscores(_), and ASCII digits 0-9.
+ *          For each label an AnnotationSpec is created which display_name
+ *          becomes the label; AnnotationSpecs are given back in predictions.
+ *  INSTANCE_ID = A positive integer that identifies a specific instance of a
+ *                labeled entity on an example. Used e.g. to track two cars on
+ *                a video while being able to tell apart which one is which.
+ *  BOUNDING_BOX = VERTEX,VERTEX,VERTEX,VERTEX | VERTEX,,,VERTEX,,
+ *                 A rectangle parallel to the frame of the example (image,
+ *                 video). If 4 vertices are given they are connected by edges
+ *                 in the order provided, if 2 are given they are recognized
+ *                 as diagonally opposite vertices of the rectangle.
+ *  VERTEX = COORDINATE,COORDINATE
+ *           First coordinate is horizontal (x), the second is vertical (y).
+ *  COORDINATE = A float in 0 to 1 range, relative to total length of
+ *               image or video in given dimension. For fractions the
+ *               leading non-decimal 0 can be omitted (i.e. 0.3 = .3).
+ *               Point 0,0 is in top left.
+ *  TIME_SEGMENT_START = TIME_OFFSET
+ *                       Expresses a beginning, inclusive, of a time segment
+ *                       within an example that has a time dimension
+ *                       (e.g. video).
+ *  TIME_SEGMENT_END = TIME_OFFSET
+ *                     Expresses an end, exclusive, of a time segment within
+ *                     an example that has a time dimension (e.g. video).
+ *  TIME_OFFSET = A number of seconds as measured from the start of an
+ *                example (e.g. video). Fractions are allowed, up to a
+ *                microsecond precision. "inf" is allowed, and it means the end
+ *                of the example.
+ *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded.
+ *  SENTIMENT = An integer between 0 and
+ *              Dataset.text_sentiment_dataset_metadata.sentiment_max
+ *              (inclusive). Describes the ordinal of the sentiment - higher
+ *              value means a more positive sentiment. All the values are
+ *              completely relative, i.e. neither 0 needs to mean a negative or
+ *              neutral sentiment nor sentiment_max needs to mean a positive one
+ *              - it is just required that 0 is the least positive sentiment
+ *              in the data, and sentiment_max is the  most positive one.
+ *              The SENTIMENT shouldn't be confused with "score" or "magnitude"
+ *              from the previous Natural Language Sentiment Analysis API.
+ *              All SENTIMENT values between 0 and sentiment_max must be
+ *              represented in the imported data. On prediction the same 0 to
+ *              sentiment_max range will be used. The difference between
+ *              neighboring sentiment values needs not to be uniform, e.g. 1 and
+ *              2 may be similar whereas the difference between 2 and 3 may be
+ *              huge.
+ *  Errors:
+ *  If any of the provided CSV files can't be parsed or if more than certain
+ *  percent of CSV rows cannot be processed then the operation fails and
+ *  nothing is imported. Regardless of overall success or failure the per-row
+ *  failures, up to a certain count cap, will be listed in
+ *  Operation.metadata.partial_failures.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.InputConfig}
@@ -64,6 +274,35 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
               sourceCase_ = 1;
               break;
             }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                params_ =
+                    com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
+                  input.readMessage(
+                      ParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              params_.getMutableMap().put(params__.getKey(), params__.getValue());
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.automl.v1beta1.BigQuerySource.Builder subBuilder = null;
+              if (sourceCase_ == 3) {
+                subBuilder = ((com.google.cloud.automl.v1beta1.BigQuerySource) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.BigQuerySource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.BigQuerySource) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 3;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +327,17 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_automl_v1beta1_InputConfig_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 2:
+        return internalGetParams();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -98,11 +348,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.InputConfig.Builder.class);
   }
 
+  private int bitField0_;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
   public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     GCS_SOURCE(1),
+    BIGQUERY_SOURCE(3),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -119,6 +371,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return GCS_SOURCE;
+        case 3:
+          return BIGQUERY_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -140,7 +394,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -152,7 +406,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -167,7 +421,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -177,6 +431,171 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.automl.v1beta1.GcsSource) source_;
     }
     return com.google.cloud.automl.v1beta1.GcsSource.getDefaultInstance();
+  }
+
+  public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location for the input content.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+   */
+  public boolean hasBigquerySource() {
+    return sourceCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location for the input content.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
+    if (sourceCase_ == 3) {
+      return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
+    }
+    return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location for the input content.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
+    if (sourceCase_ == 3) {
+      return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
+    }
+    return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
+  }
+
+  public static final int PARAMS_FIELD_NUMBER = 2;
+
+  private static final class ParamsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.automl.v1beta1.Io
+                .internal_static_google_cloud_automl_v1beta1_InputConfig_ParamsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
+    if (params_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ParamsDefaultEntryHolder.defaultEntry);
+    }
+    return params_;
+  }
+
+  public int getParamsCount() {
+    return internalGetParams().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  public boolean containsParams(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetParams().getMap().containsKey(key);
+  }
+  /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getParams() {
+    return getParamsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
+    return internalGetParams().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  public java.lang.String getParamsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -196,6 +615,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.automl.v1beta1.GcsSource) source_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetParams(), ParamsDefaultEntryHolder.defaultEntry, 2);
+    if (sourceCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.automl.v1beta1.BigQuerySource) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -209,6 +633,21 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.automl.v1beta1.GcsSource) source_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetParams().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
+          ParamsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, params__);
+    }
+    if (sourceCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.automl.v1beta1.BigQuerySource) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,10 +665,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.automl.v1beta1.InputConfig other =
         (com.google.cloud.automl.v1beta1.InputConfig) obj;
 
+    if (!internalGetParams().equals(other.internalGetParams())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 1:
         if (!getGcsSource().equals(other.getGcsSource())) return false;
+        break;
+      case 3:
+        if (!getBigquerySource().equals(other.getBigquerySource())) return false;
         break;
       case 0:
       default:
@@ -245,10 +688,18 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (!internalGetParams().getMap().isEmpty()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetParams().hashCode();
+    }
     switch (sourceCase_) {
       case 1:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getGcsSource().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + BIGQUERY_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBigquerySource().hashCode();
         break;
       case 0:
       default:
@@ -357,7 +808,217 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input configuration.
+   * Input configuration for ImportData Action.
+   * The format of input depends on dataset_metadata the Dataset into which
+   * the import is happening has. As input source the
+   * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
+   * is expected, unless specified otherwise. If a file with identical content
+   * (even if it had different GCS_FILE_PATH) is mentioned multiple times , then
+   * its label, bounding boxes etc. are appended. The same file should be always
+   * provided with the same ML_USE and GCS_FILE_PATH, if it is not then
+   * these values are nondeterministically selected from the given ones.
+   * The formats are represented in EBNF with commas being literal and with
+   * non-terminal symbols defined near the end of this comment. The formats are:
+   *  *  For Image Object Detection:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
+   *           GCS_FILE_PATH leads to image of up to 30MB in size. Supported
+   *           extensions: .JPEG, .GIF, .PNG.
+   *           Each image is assumed to be exhaustively labeled. The
+   *           minimum allowed BOUNDING_BOX edge length is 0.01, and no more than
+   *           500 BOUNDING_BOX-es per image are allowed.
+   *         Three sample rows:
+   *           TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
+   *           TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
+   *           TEST,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
+   *  *  For Video Classification:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,GCS_FILE_PATH
+   *           where ML_USE VALIDATE value should not be used. The GCS_FILE_PATH
+   *           should lead to another .csv file which describes examples that have
+   *           given ML_USE, using the following row format:
+   *           GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
+   *           Here GCS_FILE_PATH leads to a video of up to 50GB in size and up
+   *           to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+   *           TIME_SEGMENT_START and TIME_SEGMENT_END must be within the
+   *           length of the video, and end has to be after the start. Any segment
+   *           of a video which has one or more labels on it, is considered a
+   *           hard negative for all other labels. Any segment with no labels on
+   *           it is considered to be unknown.
+   *         Sample top level CSV file:
+   *           TRAIN,gs://folder/train_videos.csv
+   *           TEST,gs://folder/test_videos.csv
+   *           UNASSIGNED,gs://folder/other_videos.csv
+   *         Three sample rows of a CSV file for a particular ML_USE:
+   *           gs://folder/video1.avi,car,120,180.000021
+   *           gs://folder/video1.avi,bike,150,180.000021
+   *           gs://folder/vid2.avi,car,0,60.5
+   *  *  For Text Extraction:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,GCS_FILE_PATH
+   *           GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which either
+   *           imports text in-line or as documents.
+   *           The in-line .JSONL file contains, per line, a proto that wraps a
+   *             TextSnippet proto (in json representation) followed by one or
+   *             more AnnotationPayload protos (called annotations), which have
+   *             display_name and text_extraction detail populated.
+   *             Given text is expected to be annotated exhaustively, e.g. if you
+   *             look for animals and text contains "dolphin" that is not labeled,
+   *             then "dolphin" will be assumed to not be an animal.
+   *             Any given text snippet content must have 30,000 characters or
+   *             less, and also be UTF-8 NFC encoded (ASCII already is).
+   *           The document .JSONL file contains, per line, a proto that wraps a
+   *             Document proto with input_config set. Only PDF documents are
+   *             supported now, and each document may be up to 2MB large.
+   *             Currently annotations on documents cannot be specified at import.
+   *           Any given .JSONL file must be 100MB or smaller.
+   *         Three sample CSV rows:
+   *           TRAIN,gs://folder/file1.jsonl
+   *           VALIDATE,gs://folder/file2.jsonl
+   *           TEST,gs://folder/file3.jsonl
+   *         Sample in-line JSON Lines file (presented here with artificial line
+   *         breaks, but the only actual line break is denoted by &#92;n).:
+   *           {
+   *             "text_snippet": {
+   *               "content": "dog car cat"
+   *             },
+   *             "annotations": [
+   *                {
+   *                  "display_name": "animal",
+   *                  "text_extraction": {
+   *                    "text_segment": {"start_offset": 0, "end_offset": 2}
+   *                  }
+   *                },
+   *                {
+   *                  "display_name": "vehicle",
+   *                  "text_extraction": {
+   *                    "text_segment": {"start_offset": 4, "end_offset": 6}
+   *                  }
+   *                },
+   *                {
+   *                  "display_name": "animal",
+   *                  "text_extraction": {
+   *                    "text_segment": {"start_offset": 8, "end_offset": 10}
+   *                  }
+   *                }
+   *             ]
+   *           }&#92;n
+   *           {
+   *              "text_snippet": {
+   *                "content": "This dog is good."
+   *              },
+   *              "annotations": [
+   *                 {
+   *                   "display_name": "animal",
+   *                   "text_extraction": {
+   *                     "text_segment": {"start_offset": 5, "end_offset": 7}
+   *                   }
+   *                 }
+   *              ]
+   *           }
+   *         Sample document JSON Lines file (presented here with artificial line
+   *         breaks, but the only actual line break is denoted by &#92;n).:
+   *           {
+   *             "document": {
+   *               "input_config": {
+   *                 "gcs_source": { "input_uris": [ "gs://folder/document1.pdf" ]
+   *                 }
+   *               }
+   *             }
+   *           }&#92;n
+   *           {
+   *             "document": {
+   *               "input_config": {
+   *                 "gcs_source": { "input_uris": [ "gs://folder/document2.pdf" ]
+   *                 }
+   *               }
+   *             }
+   *           }
+   *   *  For Tables:
+   *         Either
+   *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
+   * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
+   *         can be used. All inputs will be concatenated into a single
+   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
+   *         For gcs_source:
+   *           CSV file(s), where first file must have a header containing unique
+   *           column names, other files may have such header line too, and all
+   *           other lines contain values for the header columns. Each line must
+   *           have 1,000,000 or fewer characters.
+   *           First three sample rows of a CSV file:
+   *           "Id","First Name","Last Name","Dob","Addresses"
+   * "1","John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+   * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
+   *         For bigquery_source:
+   *           An URI of a BigQuery table.
+   *         An imported table must have between 2 and 1,000 columns, inclusive,
+   *         and between 1,000 and 10,000,000 rows, inclusive.
+   *  *  For Text Sentiment:
+   *         CSV file(s) with each line in format:
+   *           ML_USE,TEXT_SNIPPET,SENTIMENT
+   *           TEXT_SNIPPET must have up to 500 characters.
+   *         Three sample rows:
+   *         TRAIN,"&#64;freewrytin God is way too good for Claritin",2
+   *         TRAIN,"I need Claritin so bad",3
+   *         TEST,"Thank god for Claritin.",4
+   *  Definitions:
+   *  ML_USE = "TRAIN" | "VALIDATE" | "TEST" | "UNASSIGNED"
+   *           Describes how the given example (file) should be used for model
+   *           training. "UNASSIGNED" can be used when user has no preference.
+   *  GCS_FILE_PATH = A path to file on GCS, e.g. "gs://folder/image1.png".
+   *  LABEL = A display name of an object on an image, video etc., e.g. "dog".
+   *          Must be up to 32 characters long and can consist only of ASCII
+   *          Latin letters A-Z and a-z, underscores(_), and ASCII digits 0-9.
+   *          For each label an AnnotationSpec is created which display_name
+   *          becomes the label; AnnotationSpecs are given back in predictions.
+   *  INSTANCE_ID = A positive integer that identifies a specific instance of a
+   *                labeled entity on an example. Used e.g. to track two cars on
+   *                a video while being able to tell apart which one is which.
+   *  BOUNDING_BOX = VERTEX,VERTEX,VERTEX,VERTEX | VERTEX,,,VERTEX,,
+   *                 A rectangle parallel to the frame of the example (image,
+   *                 video). If 4 vertices are given they are connected by edges
+   *                 in the order provided, if 2 are given they are recognized
+   *                 as diagonally opposite vertices of the rectangle.
+   *  VERTEX = COORDINATE,COORDINATE
+   *           First coordinate is horizontal (x), the second is vertical (y).
+   *  COORDINATE = A float in 0 to 1 range, relative to total length of
+   *               image or video in given dimension. For fractions the
+   *               leading non-decimal 0 can be omitted (i.e. 0.3 = .3).
+   *               Point 0,0 is in top left.
+   *  TIME_SEGMENT_START = TIME_OFFSET
+   *                       Expresses a beginning, inclusive, of a time segment
+   *                       within an example that has a time dimension
+   *                       (e.g. video).
+   *  TIME_SEGMENT_END = TIME_OFFSET
+   *                     Expresses an end, exclusive, of a time segment within
+   *                     an example that has a time dimension (e.g. video).
+   *  TIME_OFFSET = A number of seconds as measured from the start of an
+   *                example (e.g. video). Fractions are allowed, up to a
+   *                microsecond precision. "inf" is allowed, and it means the end
+   *                of the example.
+   *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded.
+   *  SENTIMENT = An integer between 0 and
+   *              Dataset.text_sentiment_dataset_metadata.sentiment_max
+   *              (inclusive). Describes the ordinal of the sentiment - higher
+   *              value means a more positive sentiment. All the values are
+   *              completely relative, i.e. neither 0 needs to mean a negative or
+   *              neutral sentiment nor sentiment_max needs to mean a positive one
+   *              - it is just required that 0 is the least positive sentiment
+   *              in the data, and sentiment_max is the  most positive one.
+   *              The SENTIMENT shouldn't be confused with "score" or "magnitude"
+   *              from the previous Natural Language Sentiment Analysis API.
+   *              All SENTIMENT values between 0 and sentiment_max must be
+   *              represented in the imported data. On prediction the same 0 to
+   *              sentiment_max range will be used. The difference between
+   *              neighboring sentiment values needs not to be uniform, e.g. 1 and
+   *              2 may be similar whereas the difference between 2 and 3 may be
+   *              huge.
+   *  Errors:
+   *  If any of the provided CSV files can't be parsed or if more than certain
+   *  percent of CSV rows cannot be processed then the operation fails and
+   *  nothing is imported. Regardless of overall success or failure the per-row
+   *  failures, up to a certain count cap, will be listed in
+   *  Operation.metadata.partial_failures.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.InputConfig}
@@ -369,6 +1030,26 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.automl.v1beta1.Io
           .internal_static_google_cloud_automl_v1beta1_InputConfig_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 2:
+          return internalGetParams();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 2:
+          return internalGetMutableParams();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -398,6 +1079,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      internalGetMutableParams().clear();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -427,6 +1109,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.InputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.InputConfig result =
           new com.google.cloud.automl.v1beta1.InputConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (sourceCase_ == 1) {
         if (gcsSourceBuilder_ == null) {
           result.source_ = source_;
@@ -434,6 +1118,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           result.source_ = gcsSourceBuilder_.build();
         }
       }
+      if (sourceCase_ == 3) {
+        if (bigquerySourceBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = bigquerySourceBuilder_.build();
+        }
+      }
+      result.params_ = internalGetParams();
+      result.params_.makeImmutable();
+      result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -484,10 +1178,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.InputConfig other) {
       if (other == com.google.cloud.automl.v1beta1.InputConfig.getDefaultInstance()) return this;
+      internalGetMutableParams().mergeFrom(other.internalGetParams());
       switch (other.getSourceCase()) {
         case GCS_SOURCE:
           {
             mergeGcsSource(other.getGcsSource());
+            break;
+          }
+        case BIGQUERY_SOURCE:
+          {
+            mergeBigquerySource(other.getBigquerySource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -538,6 +1238,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.GcsSource,
             com.google.cloud.automl.v1beta1.GcsSource.Builder,
@@ -547,7 +1249,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -559,7 +1261,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -581,7 +1283,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -603,7 +1305,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -622,7 +1324,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -653,7 +1355,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -678,7 +1380,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -690,7 +1392,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -709,7 +1411,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location for the input content.
+     * The Google Cloud Storage location for the input content.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -737,6 +1439,409 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gcsSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.BigQuerySource,
+            com.google.cloud.automl.v1beta1.BigQuerySource.Builder,
+            com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder>
+        bigquerySourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public boolean hasBigquerySource() {
+      return sourceCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
+      if (bigquerySourceBuilder_ == null) {
+        if (sourceCase_ == 3) {
+          return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
+        }
+        return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 3) {
+          return bigquerySourceBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public Builder setBigquerySource(com.google.cloud.automl.v1beta1.BigQuerySource value) {
+      if (bigquerySourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        bigquerySourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public Builder setBigquerySource(
+        com.google.cloud.automl.v1beta1.BigQuerySource.Builder builderForValue) {
+      if (bigquerySourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigquerySourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public Builder mergeBigquerySource(com.google.cloud.automl.v1beta1.BigQuerySource value) {
+      if (bigquerySourceBuilder_ == null) {
+        if (sourceCase_ == 3
+            && source_ != com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.automl.v1beta1.BigQuerySource.newBuilder(
+                      (com.google.cloud.automl.v1beta1.BigQuerySource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 3) {
+          bigquerySourceBuilder_.mergeFrom(value);
+        }
+        bigquerySourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public Builder clearBigquerySource() {
+      if (bigquerySourceBuilder_ == null) {
+        if (sourceCase_ == 3) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 3) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        bigquerySourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.BigQuerySource.Builder getBigquerySourceBuilder() {
+      return getBigquerySourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
+      if ((sourceCase_ == 3) && (bigquerySourceBuilder_ != null)) {
+        return bigquerySourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 3) {
+          return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
+        }
+        return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location for the input content.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.BigQuerySource,
+            com.google.cloud.automl.v1beta1.BigQuerySource.Builder,
+            com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder>
+        getBigquerySourceFieldBuilder() {
+      if (bigquerySourceBuilder_ == null) {
+        if (!(sourceCase_ == 3)) {
+          source_ = com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
+        }
+        bigquerySourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.BigQuerySource,
+                com.google.cloud.automl.v1beta1.BigQuerySource.Builder,
+                com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder>(
+                (com.google.cloud.automl.v1beta1.BigQuerySource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 3;
+      onChanged();
+      ;
+      return bigquerySourceBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
+      if (params_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(ParamsDefaultEntryHolder.defaultEntry);
+      }
+      return params_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableParams() {
+      onChanged();
+      ;
+      if (params_ == null) {
+        params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
+      }
+      if (!params_.isMutable()) {
+        params_ = params_.copy();
+      }
+      return params_;
+    }
+
+    public int getParamsCount() {
+      return internalGetParams().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public boolean containsParams(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetParams().getMap().containsKey(key);
+    }
+    /** Use {@link #getParamsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getParams() {
+      return getParamsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
+      return internalGetParams().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public java.lang.String getParamsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public java.lang.String getParamsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearParams() {
+      internalGetMutableParams().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public Builder removeParams(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableParams().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
+      return internalGetMutableParams().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public Builder putParams(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableParams().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional domain-specific parameters describing the semantic of the
+     * imported data, any string must be up to 25000
+     * characters long.
+     * *  For Tables:
+     *    `schema_inference_version` - (integer) Required. The version of the
+     *        algorithm that should be used for the initial inference of the
+     *        schema (columns' DataTypes) of the table the data is being imported
+     *        into. Allowed values: "1".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; params = 2;</code>
+     */
+    public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableParams().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

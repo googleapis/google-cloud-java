@@ -25,8 +25,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -118,7 +118,7 @@ public class ProfileServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getProfilesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockProfileService.getRequests();
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListProfilesRequest actualRequest = (ListProfilesRequest) actualRequests.get(0);
 
@@ -175,7 +175,7 @@ public class ProfileServiceClientTest {
     Profile actualResponse = client.createProfile(parent, profile);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProfileService.getRequests();
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateProfileRequest actualRequest = (CreateProfileRequest) actualRequests.get(0);
 
@@ -233,7 +233,7 @@ public class ProfileServiceClientTest {
     Profile actualResponse = client.getProfile(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProfileService.getRequests();
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetProfileRequest actualRequest = (GetProfileRequest) actualRequests.get(0);
 
@@ -289,7 +289,7 @@ public class ProfileServiceClientTest {
     Profile actualResponse = client.updateProfile(profile);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockProfileService.getRequests();
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateProfileRequest actualRequest = (UpdateProfileRequest) actualRequests.get(0);
 
@@ -326,7 +326,7 @@ public class ProfileServiceClientTest {
 
     client.deleteProfile(name);
 
-    List<GeneratedMessageV3> actualRequests = mockProfileService.getRequests();
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteProfileRequest actualRequest = (DeleteProfileRequest) actualRequests.get(0);
 

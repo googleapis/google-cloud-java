@@ -7,7 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * The GCS location where the output must be written to
+ * The Google Cloud Storage location where the output is to be written to.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.GcsDestination}
@@ -307,7 +307,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location where the output must be written to
+   * The Google Cloud Storage location where the output is to be written to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.GcsDestination}
