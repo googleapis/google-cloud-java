@@ -219,7 +219,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
     }
     if (answerAggregationType_
         != com.google.cloud.datalabeling.v1beta1.StringAggregationType
-            .STRING_AGGREGATION_TYPE_UNSPECIFIED.getNumber()) {
+            .STRING_AGGREGATION_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(3, answerAggregationType_);
     }
     unknownFields.writeTo(output);
@@ -239,7 +240,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
     }
     if (answerAggregationType_
         != com.google.cloud.datalabeling.v1beta1.StringAggregationType
-            .STRING_AGGREGATION_TYPE_UNSPECIFIED.getNumber()) {
+            .STRING_AGGREGATION_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, answerAggregationType_);
     }
     size += unknownFields.getSerializedSize();

@@ -372,7 +372,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     if (annotationSentiment_
         != com.google.cloud.datalabeling.v1beta1.AnnotationSentiment
-            .ANNOTATION_SENTIMENT_UNSPECIFIED.getNumber()) {
+            .ANNOTATION_SENTIMENT_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(6, annotationSentiment_);
     }
     unknownFields.writeTo(output);
@@ -400,7 +401,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     }
     if (annotationSentiment_
         != com.google.cloud.datalabeling.v1beta1.AnnotationSentiment
-            .ANNOTATION_SENTIMENT_UNSPECIFIED.getNumber()) {
+            .ANNOTATION_SENTIMENT_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, annotationSentiment_);
     }
     size += unknownFields.getSerializedSize();
