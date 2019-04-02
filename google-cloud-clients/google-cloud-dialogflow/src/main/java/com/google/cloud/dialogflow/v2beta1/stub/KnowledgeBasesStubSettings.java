@@ -45,6 +45,7 @@ import com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse;
+import com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -98,6 +99,8 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
   private final UnaryCallSettings<CreateKnowledgeBaseRequest, KnowledgeBase>
       createKnowledgeBaseSettings;
   private final UnaryCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseSettings;
+  private final UnaryCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
+      updateKnowledgeBaseSettings;
 
   /** Returns the object with the settings used for calls to listKnowledgeBases. */
   public PagedCallSettings<
@@ -120,6 +123,12 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
   /** Returns the object with the settings used for calls to deleteKnowledgeBase. */
   public UnaryCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseSettings() {
     return deleteKnowledgeBaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKnowledgeBase. */
+  public UnaryCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
+      updateKnowledgeBaseSettings() {
+    return updateKnowledgeBaseSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -194,6 +203,7 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
     getKnowledgeBaseSettings = settingsBuilder.getKnowledgeBaseSettings().build();
     createKnowledgeBaseSettings = settingsBuilder.createKnowledgeBaseSettings().build();
     deleteKnowledgeBaseSettings = settingsBuilder.deleteKnowledgeBaseSettings().build();
+    updateKnowledgeBaseSettings = settingsBuilder.updateKnowledgeBaseSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -270,6 +280,8 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
         createKnowledgeBaseSettings;
     private final UnaryCallSettings.Builder<DeleteKnowledgeBaseRequest, Empty>
         deleteKnowledgeBaseSettings;
+    private final UnaryCallSettings.Builder<UpdateKnowledgeBaseRequest, KnowledgeBase>
+        updateKnowledgeBaseSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -320,12 +332,15 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
 
       deleteKnowledgeBaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateKnowledgeBaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listKnowledgeBasesSettings,
               getKnowledgeBaseSettings,
               createKnowledgeBaseSettings,
-              deleteKnowledgeBaseSettings);
+              deleteKnowledgeBaseSettings,
+              updateKnowledgeBaseSettings);
 
       initDefaults(this);
     }
@@ -361,6 +376,11 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .updateKnowledgeBaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -371,13 +391,15 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
       getKnowledgeBaseSettings = settings.getKnowledgeBaseSettings.toBuilder();
       createKnowledgeBaseSettings = settings.createKnowledgeBaseSettings.toBuilder();
       deleteKnowledgeBaseSettings = settings.deleteKnowledgeBaseSettings.toBuilder();
+      updateKnowledgeBaseSettings = settings.updateKnowledgeBaseSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listKnowledgeBasesSettings,
               getKnowledgeBaseSettings,
               createKnowledgeBaseSettings,
-              deleteKnowledgeBaseSettings);
+              deleteKnowledgeBaseSettings,
+              updateKnowledgeBaseSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -419,6 +441,12 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
     public UnaryCallSettings.Builder<DeleteKnowledgeBaseRequest, Empty>
         deleteKnowledgeBaseSettings() {
       return deleteKnowledgeBaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKnowledgeBase. */
+    public UnaryCallSettings.Builder<UpdateKnowledgeBaseRequest, KnowledgeBase>
+        updateKnowledgeBaseSettings() {
+      return updateKnowledgeBaseSettings;
     }
 
     @Override
