@@ -29,7 +29,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockWorkflowTemplateServiceImpl() {
