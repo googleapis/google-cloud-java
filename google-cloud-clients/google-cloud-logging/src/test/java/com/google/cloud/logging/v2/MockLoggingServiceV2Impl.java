@@ -37,7 +37,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockLoggingServiceV2Impl() {
