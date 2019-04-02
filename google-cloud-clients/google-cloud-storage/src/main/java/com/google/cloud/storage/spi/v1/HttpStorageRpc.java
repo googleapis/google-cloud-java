@@ -823,7 +823,7 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public String getUploadId(String signURL) {
+  public String open(String signURL) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_OPEN);
     Scope scope = tracer.withSpan(span);
     try {

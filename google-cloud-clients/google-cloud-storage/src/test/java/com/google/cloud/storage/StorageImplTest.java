@@ -2842,7 +2842,7 @@ public class StorageImplTest {
 
   @Test
   public void testWriterWithSignURL() throws MalformedURLException {
-    EasyMock.expect(storageRpcMock.getUploadId(SIGN_URL)).andReturn("upload-id");
+    EasyMock.expect(storageRpcMock.open(SIGN_URL)).andReturn("upload-id");
     EasyMock.replay(storageRpcMock);
     initializeService();
     WriteChannel writer = new BlobWriteChannel(options, new URL(SIGN_URL));

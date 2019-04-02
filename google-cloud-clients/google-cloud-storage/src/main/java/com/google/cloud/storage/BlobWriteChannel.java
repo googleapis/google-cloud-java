@@ -36,7 +36,7 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
   }
 
   BlobWriteChannel(StorageOptions options, URL signURL) {
-    this(options, getUploadId(signURL.toString(), options));
+    this(options, open(signURL.toString(), options));
   }
 
   BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
@@ -92,13 +92,13 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     }
   }
 
-  private static String getUploadId(final String signURL, final StorageOptions options) {
+  private static String open(final String signURL, final StorageOptions options) {
     try {
       return runWithRetries(
           new Callable<String>() {
             @Override
             public String call() {
-              return options.getStorageRpcV1().getUploadId(signURL);
+              return options.getStorageRpcV1().open(signURL);
             }
           },
           options.getRetrySettings(),
