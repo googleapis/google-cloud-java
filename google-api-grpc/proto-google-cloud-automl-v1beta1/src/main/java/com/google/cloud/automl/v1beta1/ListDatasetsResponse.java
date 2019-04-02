@@ -7,8 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Response message for
- * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
+ * Response message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsResponse}
@@ -54,7 +53,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 datasets_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.Dataset>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -72,7 +71,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -84,7 +83,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         datasets_ = java.util.Collections.unmodifiableList(datasets_);
       }
       this.unknownFields = unknownFields.build();
@@ -179,9 +178,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to
-   * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-   * to obtain that page.
+   * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -202,9 +199,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to
-   * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-   * to obtain that page.
+   * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -272,11 +267,10 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     com.google.cloud.automl.v1beta1.ListDatasetsResponse other =
         (com.google.cloud.automl.v1beta1.ListDatasetsResponse) obj;
 
-    boolean result = true;
-    result = result && getDatasetsList().equals(other.getDatasetsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getDatasetsList().equals(other.getDatasetsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -396,8 +390,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for
-   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
+   * Response message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsResponse}
@@ -478,7 +471,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (datasetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           datasets_ = java.util.Collections.unmodifiableList(datasets_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -494,35 +487,35 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -605,7 +598,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureDatasetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         datasets_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.Dataset>(datasets_);
         bitField0_ |= 0x00000001;
       }
@@ -944,10 +937,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.automl.v1beta1.Dataset,
                 com.google.cloud.automl.v1beta1.Dataset.Builder,
                 com.google.cloud.automl.v1beta1.DatasetOrBuilder>(
-                datasets_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                datasets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         datasets_ = null;
       }
       return datasetsBuilder_;
@@ -959,9 +949,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -982,9 +970,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1005,9 +991,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1026,9 +1010,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1044,9 +1026,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1064,7 +1044,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

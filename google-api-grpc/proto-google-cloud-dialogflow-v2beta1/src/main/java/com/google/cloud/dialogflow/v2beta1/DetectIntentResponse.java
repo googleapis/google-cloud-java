@@ -362,8 +362,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -375,8 +374,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -388,8 +386,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -405,6 +402,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The audio data bytes encoded as specified in the request.
+   * Note: The output audio is generated based on the values of default platform
+   * text responses found in the `query_result.fulfillment_messages` field. If
+   * multiple default text responses exist, they will be concatenated when
+   * generating audio. If no default platform text responses exist, the
+   * generated audio content will be empty.
    * </pre>
    *
    * <code>bytes output_audio = 4;</code>
@@ -1748,8 +1750,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1761,8 +1762,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1778,8 +1778,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1801,8 +1800,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1821,8 +1819,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1846,8 +1843,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1867,8 +1863,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1882,8 +1877,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1899,8 +1893,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the status of the webhook request. `webhook_status`
-     * is never populated in webhook requests.
+     * Specifies the status of the webhook request.
      * </pre>
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -1926,6 +1919,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
      * </pre>
      *
      * <code>bytes output_audio = 4;</code>
@@ -1938,6 +1936,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
      * </pre>
      *
      * <code>bytes output_audio = 4;</code>
@@ -1956,6 +1959,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The audio data bytes encoded as specified in the request.
+     * Note: The output audio is generated based on the values of default platform
+     * text responses found in the `query_result.fulfillment_messages` field. If
+     * multiple default text responses exist, they will be concatenated when
+     * generating audio. If no default platform text responses exist, the
+     * generated audio content will be empty.
      * </pre>
      *
      * <code>bytes output_audio = 4;</code>

@@ -33,9 +33,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     super(builder);
   }
 
-  private FixedSizeBucketingConfig() {
-    bucketSize_ = 0D;
-  }
+  private FixedSizeBucketingConfig() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -98,7 +96,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -298,21 +296,18 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     com.google.privacy.dlp.v2.FixedSizeBucketingConfig other =
         (com.google.privacy.dlp.v2.FixedSizeBucketingConfig) obj;
 
-    boolean result = true;
-    result = result && (hasLowerBound() == other.hasLowerBound());
+    if (hasLowerBound() != other.hasLowerBound()) return false;
     if (hasLowerBound()) {
-      result = result && getLowerBound().equals(other.getLowerBound());
+      if (!getLowerBound().equals(other.getLowerBound())) return false;
     }
-    result = result && (hasUpperBound() == other.hasUpperBound());
+    if (hasUpperBound() != other.hasUpperBound()) return false;
     if (hasUpperBound()) {
-      result = result && getUpperBound().equals(other.getUpperBound());
+      if (!getUpperBound().equals(other.getUpperBound())) return false;
     }
-    result =
-        result
-            && (java.lang.Double.doubleToLongBits(getBucketSize())
-                == java.lang.Double.doubleToLongBits(other.getBucketSize()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Double.doubleToLongBits(getBucketSize())
+        != java.lang.Double.doubleToLongBits(other.getBucketSize())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -549,35 +544,35 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -632,7 +627,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.privacy.dlp.v2.Value lowerBound_ = null;
+    private com.google.privacy.dlp.v2.Value lowerBound_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Value,
             com.google.privacy.dlp.v2.Value.Builder,
@@ -831,7 +826,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       return lowerBoundBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.Value upperBound_ = null;
+    private com.google.privacy.dlp.v2.Value upperBound_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Value,
             com.google.privacy.dlp.v2.Value.Builder,
@@ -1094,7 +1089,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

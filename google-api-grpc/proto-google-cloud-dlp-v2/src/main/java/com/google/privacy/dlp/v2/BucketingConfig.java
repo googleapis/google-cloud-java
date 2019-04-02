@@ -60,7 +60,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 buckets_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.BucketingConfig.Bucket>();
                 mutable_bitField0_ |= 0x00000001;
@@ -73,7 +73,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -85,7 +85,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         buckets_ = java.util.Collections.unmodifiableList(buckets_);
       }
       this.unknownFields = unknownFields.build();
@@ -304,7 +304,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -518,21 +518,20 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       com.google.privacy.dlp.v2.BucketingConfig.Bucket other =
           (com.google.privacy.dlp.v2.BucketingConfig.Bucket) obj;
 
-      boolean result = true;
-      result = result && (hasMin() == other.hasMin());
+      if (hasMin() != other.hasMin()) return false;
       if (hasMin()) {
-        result = result && getMin().equals(other.getMin());
+        if (!getMin().equals(other.getMin())) return false;
       }
-      result = result && (hasMax() == other.hasMax());
+      if (hasMax() != other.hasMax()) return false;
       if (hasMax()) {
-        result = result && getMax().equals(other.getMax());
+        if (!getMax().equals(other.getMax())) return false;
       }
-      result = result && (hasReplacementValue() == other.hasReplacementValue());
+      if (hasReplacementValue() != other.hasReplacementValue()) return false;
       if (hasReplacementValue()) {
-        result = result && getReplacementValue().equals(other.getReplacementValue());
+        if (!getReplacementValue().equals(other.getReplacementValue())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -767,23 +766,23 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -791,13 +790,13 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -852,7 +851,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.privacy.dlp.v2.Value min_ = null;
+      private com.google.privacy.dlp.v2.Value min_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Value,
               com.google.privacy.dlp.v2.Value.Builder,
@@ -1035,7 +1034,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return minBuilder_;
       }
 
-      private com.google.privacy.dlp.v2.Value max_ = null;
+      private com.google.privacy.dlp.v2.Value max_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Value,
               com.google.privacy.dlp.v2.Value.Builder,
@@ -1209,7 +1208,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         return maxBuilder_;
       }
 
-      private com.google.privacy.dlp.v2.Value replacementValue_ = null;
+      private com.google.privacy.dlp.v2.Value replacementValue_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Value,
               com.google.privacy.dlp.v2.Value.Builder,
@@ -1402,7 +1401,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1560,10 +1559,9 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
     com.google.privacy.dlp.v2.BucketingConfig other =
         (com.google.privacy.dlp.v2.BucketingConfig) obj;
 
-    boolean result = true;
-    result = result && getBucketsList().equals(other.getBucketsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getBucketsList().equals(other.getBucketsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1767,7 +1765,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
           new com.google.privacy.dlp.v2.BucketingConfig(this);
       int from_bitField0_ = bitField0_;
       if (bucketsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           buckets_ = java.util.Collections.unmodifiableList(buckets_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1781,35 +1779,35 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1886,7 +1884,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureBucketsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         buckets_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.BucketingConfig.Bucket>(buckets_);
         bitField0_ |= 0x00000001;
@@ -2228,10 +2226,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
                 com.google.privacy.dlp.v2.BucketingConfig.Bucket,
                 com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder,
                 com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>(
-                buckets_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                buckets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         buckets_ = null;
       }
       return bucketsBuilder_;
@@ -2239,7 +2234,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

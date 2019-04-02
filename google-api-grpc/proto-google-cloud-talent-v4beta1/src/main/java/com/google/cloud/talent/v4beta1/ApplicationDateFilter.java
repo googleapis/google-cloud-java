@@ -86,7 +86,7 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -259,17 +259,16 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
     com.google.cloud.talent.v4beta1.ApplicationDateFilter other =
         (com.google.cloud.talent.v4beta1.ApplicationDateFilter) obj;
 
-    boolean result = true;
-    result = result && (hasStartDate() == other.hasStartDate());
+    if (hasStartDate() != other.hasStartDate()) return false;
     if (hasStartDate()) {
-      result = result && getStartDate().equals(other.getStartDate());
+      if (!getStartDate().equals(other.getStartDate())) return false;
     }
-    result = result && (hasEndDate() == other.hasEndDate());
+    if (hasEndDate() != other.hasEndDate()) return false;
     if (hasEndDate()) {
-      result = result && getEndDate().equals(other.getEndDate());
+      if (!getEndDate().equals(other.getEndDate())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -496,35 +495,35 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -576,7 +575,7 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.type.Date startDate_ = null;
+    private com.google.type.Date startDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         startDateBuilder_;
@@ -762,7 +761,7 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
       return startDateBuilder_;
     }
 
-    private com.google.type.Date endDate_ = null;
+    private com.google.type.Date endDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endDateBuilder_;
@@ -950,7 +949,7 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

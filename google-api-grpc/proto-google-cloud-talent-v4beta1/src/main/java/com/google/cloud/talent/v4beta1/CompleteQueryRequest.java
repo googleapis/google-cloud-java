@@ -27,7 +27,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     parent_ = "";
     query_ = "";
     languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    pageSize_ = 0;
     company_ = "";
     scope_ = 0;
     type_ = 0;
@@ -74,7 +73,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 languageCodes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -109,7 +108,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -121,7 +120,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -946,16 +945,15 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.talent.v4beta1.CompleteQueryRequest other =
         (com.google.cloud.talent.v4beta1.CompleteQueryRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getQuery().equals(other.getQuery());
-    result = result && getLanguageCodesList().equals(other.getLanguageCodesList());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getCompany().equals(other.getCompany());
-    result = result && scope_ == other.scope_;
-    result = result && type_ == other.type_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getQuery().equals(other.getQuery())) return false;
+    if (!getLanguageCodesList().equals(other.getLanguageCodesList())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getCompany().equals(other.getCompany())) return false;
+    if (scope_ != other.scope_) return false;
+    if (type_ != other.type_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1172,7 +1170,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.query_ = query_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -1188,35 +1186,35 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1522,7 +1520,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
         bitField0_ |= 0x00000004;
       }
@@ -2213,7 +2211,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

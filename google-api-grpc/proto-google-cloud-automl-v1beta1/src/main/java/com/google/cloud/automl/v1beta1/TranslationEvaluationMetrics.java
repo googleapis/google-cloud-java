@@ -22,10 +22,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     super(builder);
   }
 
-  private TranslationEvaluationMetrics() {
-    bleuScore_ = 0D;
-    baseBleuScore_ = 0D;
-  }
+  private TranslationEvaluationMetrics() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -63,7 +60,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -176,17 +173,12 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics other =
         (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) obj;
 
-    boolean result = true;
-    result =
-        result
-            && (java.lang.Double.doubleToLongBits(getBleuScore())
-                == java.lang.Double.doubleToLongBits(other.getBleuScore()));
-    result =
-        result
-            && (java.lang.Double.doubleToLongBits(getBaseBleuScore())
-                == java.lang.Double.doubleToLongBits(other.getBaseBleuScore()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Double.doubleToLongBits(getBleuScore())
+        != java.lang.Double.doubleToLongBits(other.getBleuScore())) return false;
+    if (java.lang.Double.doubleToLongBits(getBaseBleuScore())
+        != java.lang.Double.doubleToLongBits(other.getBaseBleuScore())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -392,35 +384,35 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -563,7 +555,7 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

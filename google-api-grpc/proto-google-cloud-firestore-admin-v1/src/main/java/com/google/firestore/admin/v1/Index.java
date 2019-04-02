@@ -70,7 +70,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 fields_ = new java.util.ArrayList<com.google.firestore.admin.v1.Index.IndexField>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -88,7 +88,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -100,7 +100,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
       }
       this.unknownFields = unknownFields.build();
@@ -593,7 +593,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1119,22 +1119,20 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       com.google.firestore.admin.v1.Index.IndexField other =
           (com.google.firestore.admin.v1.Index.IndexField) obj;
 
-      boolean result = true;
-      result = result && getFieldPath().equals(other.getFieldPath());
-      result = result && getValueModeCase().equals(other.getValueModeCase());
-      if (!result) return false;
+      if (!getFieldPath().equals(other.getFieldPath())) return false;
+      if (!getValueModeCase().equals(other.getValueModeCase())) return false;
       switch (valueModeCase_) {
         case 2:
-          result = result && getOrderValue() == other.getOrderValue();
+          if (getOrderValue() != other.getOrderValue()) return false;
           break;
         case 3:
-          result = result && getArrayConfigValue() == other.getArrayConfigValue();
+          if (getArrayConfigValue() != other.getArrayConfigValue()) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1352,23 +1350,23 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1376,13 +1374,13 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1748,7 +1746,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2089,13 +2087,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.firestore.admin.v1.Index other = (com.google.firestore.admin.v1.Index) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && queryScope_ == other.queryScope_;
-    result = result && getFieldsList().equals(other.getFieldsList());
-    result = result && state_ == other.state_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (queryScope_ != other.queryScope_) return false;
+    if (!getFieldsList().equals(other.getFieldsList())) return false;
+    if (state_ != other.state_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2305,7 +2302,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.queryScope_ = queryScope_;
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -2321,35 +2318,35 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2651,7 +2648,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         fields_ = new java.util.ArrayList<com.google.firestore.admin.v1.Index.IndexField>(fields_);
         bitField0_ |= 0x00000004;
       }
@@ -3135,10 +3132,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
                 com.google.firestore.admin.v1.Index.IndexField,
                 com.google.firestore.admin.v1.Index.IndexField.Builder,
                 com.google.firestore.admin.v1.Index.IndexFieldOrBuilder>(
-                fields_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                fields_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         fields_ = null;
       }
       return fieldsBuilder_;
@@ -3227,7 +3221,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

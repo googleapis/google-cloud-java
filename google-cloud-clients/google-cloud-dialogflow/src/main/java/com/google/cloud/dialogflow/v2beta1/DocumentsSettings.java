@@ -102,6 +102,16 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     return ((DocumentsStubSettings) getStubSettings()).deleteDocumentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDocument. */
+  public UnaryCallSettings<UpdateDocumentRequest, Operation> updateDocumentSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).updateDocumentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reloadDocument. */
+  public UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).reloadDocumentSettings();
+  }
+
   public static final DocumentsSettings create(DocumentsStubSettings stub) throws IOException {
     return new DocumentsSettings.Builder(stub.toBuilder()).build();
   }
@@ -235,6 +245,16 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     public OperationCallSettings.Builder<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
         deleteDocumentOperationSettings() {
       return getStubSettingsBuilder().deleteDocumentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDocument. */
+    public UnaryCallSettings.Builder<UpdateDocumentRequest, Operation> updateDocumentSettings() {
+      return getStubSettingsBuilder().updateDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reloadDocument. */
+    public UnaryCallSettings.Builder<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
+      return getStubSettingsBuilder().reloadDocumentSettings();
     }
 
     @Override

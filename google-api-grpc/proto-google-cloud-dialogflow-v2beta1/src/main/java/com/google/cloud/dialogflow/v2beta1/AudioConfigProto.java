@@ -13,6 +13,10 @@ public final class AudioConfigProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_fieldAccessorTable;
@@ -35,33 +39,43 @@ public final class AudioConfigProto {
     java.lang.String[] descriptorData = {
       "\n2google/cloud/dialogflow/v2beta1/audio_"
           + "config.proto\022\037google.cloud.dialogflow.v2"
-          + "beta1\032\034google/api/annotations.proto\"k\n\024V"
-          + "oiceSelectionParams\022\014\n\004name\030\001 \001(\t\022E\n\013ssm"
-          + "l_gender\030\002 \001(\01620.google.cloud.dialogflow"
-          + ".v2beta1.SsmlVoiceGender\"\270\001\n\026SynthesizeS"
-          + "peechConfig\022\025\n\rspeaking_rate\030\001 \001(\001\022\r\n\005pi"
-          + "tch\030\002 \001(\001\022\026\n\016volume_gain_db\030\003 \001(\001\022\032\n\022eff"
-          + "ects_profile_id\030\005 \003(\t\022D\n\005voice\030\004 \001(\01325.g"
-          + "oogle.cloud.dialogflow.v2beta1.VoiceSele"
-          + "ctionParams\"\327\001\n\021OutputAudioConfig\022L\n\016aud"
-          + "io_encoding\030\001 \001(\01624.google.cloud.dialogf"
-          + "low.v2beta1.OutputAudioEncoding\022\031\n\021sampl"
-          + "e_rate_hertz\030\002 \001(\005\022Y\n\030synthesize_speech_"
-          + "config\030\003 \001(\01327.google.cloud.dialogflow.v"
-          + "2beta1.SynthesizeSpeechConfig*\215\001\n\017SsmlVo"
-          + "iceGender\022!\n\035SSML_VOICE_GENDER_UNSPECIFI"
-          + "ED\020\000\022\032\n\026SSML_VOICE_GENDER_MALE\020\001\022\034\n\030SSML"
-          + "_VOICE_GENDER_FEMALE\020\002\022\035\n\031SSML_VOICE_GEN"
-          + "DER_NEUTRAL\020\003*\244\001\n\023OutputAudioEncoding\022%\n"
-          + "!OUTPUT_AUDIO_ENCODING_UNSPECIFIED\020\000\022#\n\037"
-          + "OUTPUT_AUDIO_ENCODING_LINEAR_16\020\001\022\035\n\031OUT"
-          + "PUT_AUDIO_ENCODING_MP3\020\002\022\"\n\036OUTPUT_AUDIO"
-          + "_ENCODING_OGG_OPUS\020\003B\256\001\n#com.google.clou"
-          + "d.dialogflow.v2beta1B\020AudioConfigProtoP\001"
-          + "ZIgoogle.golang.org/genproto/googleapis/"
-          + "cloud/dialogflow/v2beta1;dialogflow\370\001\001\242\002"
-          + "\002DF\252\002\037Google.Cloud.Dialogflow.V2beta1b\006p"
-          + "roto3"
+          + "beta1\032\034google/api/annotations.proto\"\261\001\n\020"
+          + "InputAudioConfig\022F\n\016audio_encoding\030\001 \001(\016"
+          + "2..google.cloud.dialogflow.v2beta1.Audio"
+          + "Encoding\022\031\n\021sample_rate_hertz\030\002 \001(\005\022\025\n\rl"
+          + "anguage_code\030\003 \001(\t\022\024\n\014phrase_hints\030\004 \003(\t"
+          + "\022\r\n\005model\030\007 \001(\t\"k\n\024VoiceSelectionParams\022"
+          + "\014\n\004name\030\001 \001(\t\022E\n\013ssml_gender\030\002 \001(\01620.goo"
+          + "gle.cloud.dialogflow.v2beta1.SsmlVoiceGe"
+          + "nder\"\270\001\n\026SynthesizeSpeechConfig\022\025\n\rspeak"
+          + "ing_rate\030\001 \001(\001\022\r\n\005pitch\030\002 \001(\001\022\026\n\016volume_"
+          + "gain_db\030\003 \001(\001\022\032\n\022effects_profile_id\030\005 \003("
+          + "\t\022D\n\005voice\030\004 \001(\01325.google.cloud.dialogfl"
+          + "ow.v2beta1.VoiceSelectionParams\"\327\001\n\021Outp"
+          + "utAudioConfig\022L\n\016audio_encoding\030\001 \001(\01624."
+          + "google.cloud.dialogflow.v2beta1.OutputAu"
+          + "dioEncoding\022\031\n\021sample_rate_hertz\030\002 \001(\005\022Y"
+          + "\n\030synthesize_speech_config\030\003 \001(\01327.googl"
+          + "e.cloud.dialogflow.v2beta1.SynthesizeSpe"
+          + "echConfig*\373\001\n\rAudioEncoding\022\036\n\032AUDIO_ENC"
+          + "ODING_UNSPECIFIED\020\000\022\034\n\030AUDIO_ENCODING_LI"
+          + "NEAR_16\020\001\022\027\n\023AUDIO_ENCODING_FLAC\020\002\022\030\n\024AU"
+          + "DIO_ENCODING_MULAW\020\003\022\026\n\022AUDIO_ENCODING_A"
+          + "MR\020\004\022\031\n\025AUDIO_ENCODING_AMR_WB\020\005\022\033\n\027AUDIO"
+          + "_ENCODING_OGG_OPUS\020\006\022)\n%AUDIO_ENCODING_S"
+          + "PEEX_WITH_HEADER_BYTE\020\007*\215\001\n\017SsmlVoiceGen"
+          + "der\022!\n\035SSML_VOICE_GENDER_UNSPECIFIED\020\000\022\032"
+          + "\n\026SSML_VOICE_GENDER_MALE\020\001\022\034\n\030SSML_VOICE"
+          + "_GENDER_FEMALE\020\002\022\035\n\031SSML_VOICE_GENDER_NE"
+          + "UTRAL\020\003*\244\001\n\023OutputAudioEncoding\022%\n!OUTPU"
+          + "T_AUDIO_ENCODING_UNSPECIFIED\020\000\022#\n\037OUTPUT"
+          + "_AUDIO_ENCODING_LINEAR_16\020\001\022\035\n\031OUTPUT_AU"
+          + "DIO_ENCODING_MP3\020\002\022\"\n\036OUTPUT_AUDIO_ENCOD"
+          + "ING_OGG_OPUS\020\003B\256\001\n#com.google.cloud.dial"
+          + "ogflow.v2beta1B\020AudioConfigProtoP\001ZIgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "dialogflow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037"
+          + "Google.Cloud.Dialogflow.V2beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -77,8 +91,16 @@ public final class AudioConfigProto {
           com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
-    internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_descriptor =
+    internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_InputAudioConfig_descriptor,
+            new java.lang.String[] {
+              "AudioEncoding", "SampleRateHertz", "LanguageCode", "PhraseHints", "Model",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_descriptor,
@@ -86,7 +108,7 @@ public final class AudioConfigProto {
               "Name", "SsmlGender",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor,
@@ -94,7 +116,7 @@ public final class AudioConfigProto {
               "SpeakingRate", "Pitch", "VolumeGainDb", "EffectsProfileId", "Voice",
             });
     internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor,

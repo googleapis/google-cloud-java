@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for
- * [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
+ * The request message for [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.CreateIntentRequest}
@@ -216,9 +215,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
-   * used. [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * used. [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -240,9 +240,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
-   * used. [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * used. [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -486,8 +487,7 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for
-   * [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
+   * The request message for [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.CreateIntentRequest}
@@ -956,9 +956,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -980,9 +981,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1004,9 +1006,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1026,9 +1029,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1045,9 +1049,10 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>

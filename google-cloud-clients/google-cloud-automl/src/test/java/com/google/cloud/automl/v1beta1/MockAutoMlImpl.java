@@ -18,7 +18,7 @@ package com.google.cloud.automl.v1beta1;
 import com.google.api.core.BetaApi;
 import com.google.cloud.automl.v1beta1.AutoMlGrpc.AutoMlImplBase;
 import com.google.longrunning.Operation;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,7 +28,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockAutoMlImpl extends AutoMlImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockAutoMlImpl() {
@@ -36,15 +36,15 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 
@@ -102,6 +102,21 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   }
 
   @Override
+  public void updateDataset(
+      UpdateDatasetRequest request, StreamObserver<Dataset> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Dataset) {
+      requests.add(request);
+      responseObserver.onNext((Dataset) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void deleteDataset(
       DeleteDatasetRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
@@ -136,6 +151,111 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getAnnotationSpec(
+      GetAnnotationSpecRequest request, StreamObserver<AnnotationSpec> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AnnotationSpec) {
+      requests.add(request);
+      responseObserver.onNext((AnnotationSpec) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getTableSpec(
+      GetTableSpecRequest request, StreamObserver<TableSpec> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof TableSpec) {
+      requests.add(request);
+      responseObserver.onNext((TableSpec) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listTableSpecs(
+      ListTableSpecsRequest request, StreamObserver<ListTableSpecsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListTableSpecsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListTableSpecsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateTableSpec(
+      UpdateTableSpecRequest request, StreamObserver<TableSpec> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof TableSpec) {
+      requests.add(request);
+      responseObserver.onNext((TableSpec) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getColumnSpec(
+      GetColumnSpecRequest request, StreamObserver<ColumnSpec> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ColumnSpec) {
+      requests.add(request);
+      responseObserver.onNext((ColumnSpec) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listColumnSpecs(
+      ListColumnSpecsRequest request, StreamObserver<ListColumnSpecsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListColumnSpecsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListColumnSpecsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateColumnSpec(
+      UpdateColumnSpecRequest request, StreamObserver<ColumnSpec> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ColumnSpec) {
+      requests.add(request);
+      responseObserver.onNext((ColumnSpec) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -218,6 +338,35 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void undeployModel(
       UndeployModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void exportModel(ExportModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void exportEvaluatedExamples(
+      ExportEvaluatedExamplesRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);

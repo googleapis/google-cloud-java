@@ -8,10 +8,10 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * Events allow for matching intents by event name instead of the natural
- * language input. For instance, input `&lt;event: { name: “welcome_event”,
- * parameters: { name: “Sam” } }&gt;` can trigger a personalized welcome response.
+ * language input. For instance, input `&lt;event: { name: "welcome_event",
+ * parameters: { name: "Sam" } }&gt;` can trigger a personalized welcome response.
  * The parameter `name` may be used by the agent in the response:
- * `“Hello #welcome_event.name! What can I do for you today?”`.
+ * `"Hello #welcome_event.name! What can I do for you today?"`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.EventInput}
@@ -207,9 +207,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The language of this query. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -230,9 +230,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The language of this query. See [Language
-   * Support](https://dialogflow.com/docs/languages) for a list of the
-   * currently supported language codes. Note that queries in the same session
-   * do not necessarily need to specify the same language.
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. Note that queries in
+   * the same session do not necessarily need to specify the same language.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -436,10 +436,10 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Events allow for matching intents by event name instead of the natural
-   * language input. For instance, input `&lt;event: { name: “welcome_event”,
-   * parameters: { name: “Sam” } }&gt;` can trigger a personalized welcome response.
+   * language input. For instance, input `&lt;event: { name: "welcome_event",
+   * parameters: { name: "Sam" } }&gt;` can trigger a personalized welcome response.
    * The parameter `name` may be used by the agent in the response:
-   * `“Hello #welcome_event.name! What can I do for you today?”`.
+   * `"Hello #welcome_event.name! What can I do for you today?"`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.EventInput}
@@ -888,9 +888,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The language of this query. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -911,9 +911,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The language of this query. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -934,9 +934,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The language of this query. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -955,9 +955,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The language of this query. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -973,9 +973,9 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The language of this query. See [Language
-     * Support](https://dialogflow.com/docs/languages) for a list of the
-     * currently supported language codes. Note that queries in the same session
-     * do not necessarily need to specify the same language.
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. Note that queries in
+     * the same session do not necessarily need to specify the same language.
      * </pre>
      *
      * <code>string language_code = 3;</code>

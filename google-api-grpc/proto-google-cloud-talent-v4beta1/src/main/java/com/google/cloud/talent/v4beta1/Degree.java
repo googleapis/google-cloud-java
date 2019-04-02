@@ -69,7 +69,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 fieldsOfStudy_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -78,7 +78,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -90,7 +90,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         fieldsOfStudy_ = fieldsOfStudy_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -321,12 +321,11 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.talent.v4beta1.Degree other = (com.google.cloud.talent.v4beta1.Degree) obj;
 
-    boolean result = true;
-    result = result && degreeType_ == other.degreeType_;
-    result = result && getDegreeName().equals(other.getDegreeName());
-    result = result && getFieldsOfStudyList().equals(other.getFieldsOfStudyList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (degreeType_ != other.degreeType_) return false;
+    if (!getDegreeName().equals(other.getDegreeName())) return false;
+    if (!getFieldsOfStudyList().equals(other.getFieldsOfStudyList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -526,7 +525,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       int to_bitField0_ = 0;
       result.degreeType_ = degreeType_;
       result.degreeName_ = degreeName_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         fieldsOfStudy_ = fieldsOfStudy_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -538,35 +537,35 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -823,7 +822,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsOfStudyIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         fieldsOfStudy_ = new com.google.protobuf.LazyStringArrayList(fieldsOfStudy_);
         bitField0_ |= 0x00000004;
       }
@@ -991,7 +990,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

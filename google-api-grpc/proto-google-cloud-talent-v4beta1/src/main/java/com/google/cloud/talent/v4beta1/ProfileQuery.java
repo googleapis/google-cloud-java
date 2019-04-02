@@ -72,7 +72,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 locationFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.LocationFilter>();
                 mutable_bitField0_ |= 0x00000002;
@@ -84,7 +84,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 jobTitleFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.JobTitleFilter>();
                 mutable_bitField0_ |= 0x00000004;
@@ -96,7 +96,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 employerFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.EmployerFilter>();
                 mutable_bitField0_ |= 0x00000008;
@@ -108,7 +108,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 educationFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.EducationFilter>();
                 mutable_bitField0_ |= 0x00000010;
@@ -120,7 +120,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 skillFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.SkillFilter>();
                 mutable_bitField0_ |= 0x00000020;
@@ -132,7 +132,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 workExperienceFilter_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.WorkExperienceFilter>();
                 mutable_bitField0_ |= 0x00000040;
@@ -145,7 +145,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 timeFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.TimeFilter>();
                 mutable_bitField0_ |= 0x00000080;
@@ -172,7 +172,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 applicationDateFilters_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.ApplicationDateFilter>();
@@ -186,7 +186,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 applicationOutcomeNotesFilters_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>();
@@ -200,7 +200,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 applicationLastStageFilters_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.ApplicationLastStageFilter>();
@@ -214,7 +214,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 applicationJobFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationJobFilter>();
                 mutable_bitField0_ |= 0x00001000;
@@ -227,7 +227,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 applicationStatusFilters_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.ApplicationStatusFilter>();
@@ -248,7 +248,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -260,42 +260,42 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jobTitleFilters_ = java.util.Collections.unmodifiableList(jobTitleFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         employerFilters_ = java.util.Collections.unmodifiableList(employerFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         educationFilters_ = java.util.Collections.unmodifiableList(educationFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         skillFilters_ = java.util.Collections.unmodifiableList(skillFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         workExperienceFilter_ = java.util.Collections.unmodifiableList(workExperienceFilter_);
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         timeFilters_ = java.util.Collections.unmodifiableList(timeFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         applicationDateFilters_ = java.util.Collections.unmodifiableList(applicationDateFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         applicationOutcomeNotesFilters_ =
             java.util.Collections.unmodifiableList(applicationOutcomeNotesFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         applicationLastStageFilters_ =
             java.util.Collections.unmodifiableList(applicationLastStageFilters_);
       }
-      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         applicationJobFilters_ = java.util.Collections.unmodifiableList(applicationJobFilters_);
       }
-      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         applicationStatusFilters_ =
             java.util.Collections.unmodifiableList(applicationStatusFilters_);
       }
@@ -1778,35 +1778,30 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.talent.v4beta1.ProfileQuery other =
         (com.google.cloud.talent.v4beta1.ProfileQuery) obj;
 
-    boolean result = true;
-    result = result && getQuery().equals(other.getQuery());
-    result = result && getLocationFiltersList().equals(other.getLocationFiltersList());
-    result = result && getJobTitleFiltersList().equals(other.getJobTitleFiltersList());
-    result = result && getEmployerFiltersList().equals(other.getEmployerFiltersList());
-    result = result && getEducationFiltersList().equals(other.getEducationFiltersList());
-    result = result && getSkillFiltersList().equals(other.getSkillFiltersList());
-    result = result && getWorkExperienceFilterList().equals(other.getWorkExperienceFilterList());
-    result = result && getTimeFiltersList().equals(other.getTimeFiltersList());
-    result = result && (hasHirableFilter() == other.hasHirableFilter());
+    if (!getQuery().equals(other.getQuery())) return false;
+    if (!getLocationFiltersList().equals(other.getLocationFiltersList())) return false;
+    if (!getJobTitleFiltersList().equals(other.getJobTitleFiltersList())) return false;
+    if (!getEmployerFiltersList().equals(other.getEmployerFiltersList())) return false;
+    if (!getEducationFiltersList().equals(other.getEducationFiltersList())) return false;
+    if (!getSkillFiltersList().equals(other.getSkillFiltersList())) return false;
+    if (!getWorkExperienceFilterList().equals(other.getWorkExperienceFilterList())) return false;
+    if (!getTimeFiltersList().equals(other.getTimeFiltersList())) return false;
+    if (hasHirableFilter() != other.hasHirableFilter()) return false;
     if (hasHirableFilter()) {
-      result = result && getHirableFilter().equals(other.getHirableFilter());
+      if (!getHirableFilter().equals(other.getHirableFilter())) return false;
     }
-    result =
-        result && getApplicationDateFiltersList().equals(other.getApplicationDateFiltersList());
-    result =
-        result
-            && getApplicationOutcomeNotesFiltersList()
-                .equals(other.getApplicationOutcomeNotesFiltersList());
-    result =
-        result
-            && getApplicationLastStageFiltersList()
-                .equals(other.getApplicationLastStageFiltersList());
-    result = result && getApplicationJobFiltersList().equals(other.getApplicationJobFiltersList());
-    result =
-        result && getApplicationStatusFiltersList().equals(other.getApplicationStatusFiltersList());
-    result = result && getCustomFieldFilter().equals(other.getCustomFieldFilter());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getApplicationDateFiltersList().equals(other.getApplicationDateFiltersList()))
+      return false;
+    if (!getApplicationOutcomeNotesFiltersList()
+        .equals(other.getApplicationOutcomeNotesFiltersList())) return false;
+    if (!getApplicationLastStageFiltersList().equals(other.getApplicationLastStageFiltersList()))
+      return false;
+    if (!getApplicationJobFiltersList().equals(other.getApplicationJobFiltersList())) return false;
+    if (!getApplicationStatusFiltersList().equals(other.getApplicationStatusFiltersList()))
+      return false;
+    if (!getCustomFieldFilter().equals(other.getCustomFieldFilter())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2143,7 +2138,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       int to_bitField0_ = 0;
       result.query_ = query_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -2152,7 +2147,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.locationFilters_ = locationFiltersBuilder_.build();
       }
       if (jobTitleFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           jobTitleFilters_ = java.util.Collections.unmodifiableList(jobTitleFilters_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -2161,7 +2156,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.jobTitleFilters_ = jobTitleFiltersBuilder_.build();
       }
       if (employerFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           employerFilters_ = java.util.Collections.unmodifiableList(employerFilters_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -2170,7 +2165,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.employerFilters_ = employerFiltersBuilder_.build();
       }
       if (educationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           educationFilters_ = java.util.Collections.unmodifiableList(educationFilters_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -2179,7 +2174,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.educationFilters_ = educationFiltersBuilder_.build();
       }
       if (skillFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           skillFilters_ = java.util.Collections.unmodifiableList(skillFilters_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -2188,7 +2183,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.skillFilters_ = skillFiltersBuilder_.build();
       }
       if (workExperienceFilterBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           workExperienceFilter_ = java.util.Collections.unmodifiableList(workExperienceFilter_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -2197,7 +2192,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.workExperienceFilter_ = workExperienceFilterBuilder_.build();
       }
       if (timeFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           timeFilters_ = java.util.Collections.unmodifiableList(timeFilters_);
           bitField0_ = (bitField0_ & ~0x00000080);
         }
@@ -2211,7 +2206,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.hirableFilter_ = hirableFilterBuilder_.build();
       }
       if (applicationDateFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           applicationDateFilters_ = java.util.Collections.unmodifiableList(applicationDateFilters_);
           bitField0_ = (bitField0_ & ~0x00000200);
         }
@@ -2220,7 +2215,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.applicationDateFilters_ = applicationDateFiltersBuilder_.build();
       }
       if (applicationOutcomeNotesFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           applicationOutcomeNotesFilters_ =
               java.util.Collections.unmodifiableList(applicationOutcomeNotesFilters_);
           bitField0_ = (bitField0_ & ~0x00000400);
@@ -2230,7 +2225,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.applicationOutcomeNotesFilters_ = applicationOutcomeNotesFiltersBuilder_.build();
       }
       if (applicationLastStageFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           applicationLastStageFilters_ =
               java.util.Collections.unmodifiableList(applicationLastStageFilters_);
           bitField0_ = (bitField0_ & ~0x00000800);
@@ -2240,7 +2235,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.applicationLastStageFilters_ = applicationLastStageFiltersBuilder_.build();
       }
       if (applicationJobFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           applicationJobFilters_ = java.util.Collections.unmodifiableList(applicationJobFilters_);
           bitField0_ = (bitField0_ & ~0x00001000);
         }
@@ -2249,7 +2244,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result.applicationJobFilters_ = applicationJobFiltersBuilder_.build();
       }
       if (applicationStatusFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           applicationStatusFilters_ =
               java.util.Collections.unmodifiableList(applicationStatusFilters_);
           bitField0_ = (bitField0_ & ~0x00002000);
@@ -2266,35 +2261,35 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2784,7 +2779,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         locationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.LocationFilter>(
                 locationFilters_);
@@ -3276,7 +3271,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.LocationFilter.Builder,
                 com.google.cloud.talent.v4beta1.LocationFilterOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -3288,7 +3283,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureJobTitleFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jobTitleFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.JobTitleFilter>(
                 jobTitleFilters_);
@@ -3780,7 +3775,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.JobTitleFilter.Builder,
                 com.google.cloud.talent.v4beta1.JobTitleFilterOrBuilder>(
                 jobTitleFilters_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         jobTitleFilters_ = null;
@@ -3792,7 +3787,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEmployerFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         employerFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.EmployerFilter>(
                 employerFilters_);
@@ -4320,7 +4315,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.EmployerFilter.Builder,
                 com.google.cloud.talent.v4beta1.EmployerFilterOrBuilder>(
                 employerFilters_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         employerFilters_ = null;
@@ -4332,7 +4327,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEducationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         educationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.EducationFilter>(
                 educationFilters_);
@@ -4843,7 +4838,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.EducationFilter.Builder,
                 com.google.cloud.talent.v4beta1.EducationFilterOrBuilder>(
                 educationFilters_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         educationFilters_ = null;
@@ -4855,7 +4850,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSkillFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         skillFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.SkillFilter>(skillFilters_);
         bitField0_ |= 0x00000020;
@@ -5341,10 +5336,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.SkillFilter,
                 com.google.cloud.talent.v4beta1.SkillFilter.Builder,
                 com.google.cloud.talent.v4beta1.SkillFilterOrBuilder>(
-                skillFilters_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
-                getParentForChildren(),
-                isClean());
+                skillFilters_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         skillFilters_ = null;
       }
       return skillFiltersBuilder_;
@@ -5354,7 +5346,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         workExperienceFilter_ = java.util.Collections.emptyList();
 
     private void ensureWorkExperienceFilterIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         workExperienceFilter_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.WorkExperienceFilter>(
                 workExperienceFilter_);
@@ -5850,7 +5842,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.WorkExperienceFilter.Builder,
                 com.google.cloud.talent.v4beta1.WorkExperienceFilterOrBuilder>(
                 workExperienceFilter_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         workExperienceFilter_ = null;
@@ -5862,7 +5854,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTimeFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         timeFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.TimeFilter>(timeFilters_);
         bitField0_ |= 0x00000080;
@@ -6257,16 +6249,13 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.TimeFilter,
                 com.google.cloud.talent.v4beta1.TimeFilter.Builder,
                 com.google.cloud.talent.v4beta1.TimeFilterOrBuilder>(
-                timeFilters_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
-                getParentForChildren(),
-                isClean());
+                timeFilters_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         timeFilters_ = null;
       }
       return timeFiltersBuilder_;
     }
 
-    private com.google.protobuf.BoolValue hirableFilter_ = null;
+    private com.google.protobuf.BoolValue hirableFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -6460,7 +6449,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         applicationDateFilters_ = java.util.Collections.emptyList();
 
     private void ensureApplicationDateFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         applicationDateFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationDateFilter>(
                 applicationDateFilters_);
@@ -6868,7 +6857,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.ApplicationDateFilter.Builder,
                 com.google.cloud.talent.v4beta1.ApplicationDateFilterOrBuilder>(
                 applicationDateFilters_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         applicationDateFilters_ = null;
@@ -6880,7 +6869,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         applicationOutcomeNotesFilters_ = java.util.Collections.emptyList();
 
     private void ensureApplicationOutcomeNotesFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         applicationOutcomeNotesFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>(
                 applicationOutcomeNotesFilters_);
@@ -7312,7 +7301,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder,
                 com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>(
                 applicationOutcomeNotesFilters_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         applicationOutcomeNotesFilters_ = null;
@@ -7324,7 +7313,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         applicationLastStageFilters_ = java.util.Collections.emptyList();
 
     private void ensureApplicationLastStageFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         applicationLastStageFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationLastStageFilter>(
                 applicationLastStageFilters_);
@@ -7756,7 +7745,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.ApplicationLastStageFilter.Builder,
                 com.google.cloud.talent.v4beta1.ApplicationLastStageFilterOrBuilder>(
                 applicationLastStageFilters_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         applicationLastStageFilters_ = null;
@@ -7768,7 +7757,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         applicationJobFilters_ = java.util.Collections.emptyList();
 
     private void ensureApplicationJobFiltersIsMutable() {
-      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         applicationJobFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationJobFilter>(
                 applicationJobFilters_);
@@ -8175,7 +8164,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.ApplicationJobFilter.Builder,
                 com.google.cloud.talent.v4beta1.ApplicationJobFilterOrBuilder>(
                 applicationJobFilters_,
-                ((bitField0_ & 0x00001000) == 0x00001000),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         applicationJobFilters_ = null;
@@ -8187,7 +8176,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         applicationStatusFilters_ = java.util.Collections.emptyList();
 
     private void ensureApplicationStatusFiltersIsMutable() {
-      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         applicationStatusFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationStatusFilter>(
                 applicationStatusFilters_);
@@ -8598,7 +8587,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.ApplicationStatusFilter.Builder,
                 com.google.cloud.talent.v4beta1.ApplicationStatusFilterOrBuilder>(
                 applicationStatusFilters_,
-                ((bitField0_ & 0x00002000) == 0x00002000),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         applicationStatusFilters_ = null;
@@ -8797,7 +8786,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

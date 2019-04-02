@@ -369,9 +369,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -385,9 +385,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -401,9 +401,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -416,9 +416,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -431,9 +431,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -495,9 +495,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-   * Note: This field is `repeated` for forward compatibility, currently only
-   * the first one is supported, we may return an error if multiple
-   * KnowledgeBases are specified.
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
@@ -512,9 +509,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-   * Note: This field is `repeated` for forward compatibility, currently only
-   * the first one is supported, we may return an error if multiple
-   * KnowledgeBases are specified.
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
@@ -529,9 +523,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-   * Note: This field is `repeated` for forward compatibility, currently only
-   * the first one is supported, we may return an error if multiple
-   * KnowledgeBases are specified.
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
@@ -546,9 +537,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
    * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-   * Note: This field is `repeated` for forward compatibility, currently only
-   * the first one is supported, we may return an error if multiple
-   * KnowledgeBases are specified.
    * </pre>
    *
    * <code>repeated string knowledge_base_names = 12;</code>
@@ -1902,9 +1890,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -1922,9 +1910,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -1941,9 +1929,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -1960,9 +1948,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -1986,9 +1974,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2009,9 +1997,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2035,9 +2023,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2061,9 +2049,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2084,9 +2072,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2107,9 +2095,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2131,9 +2119,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2153,9 +2141,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2175,9 +2163,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2191,9 +2179,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2211,9 +2199,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2231,9 +2219,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2248,9 +2236,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2266,9 +2254,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
@@ -2499,9 +2487,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2516,9 +2501,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2533,9 +2515,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2550,9 +2529,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2567,9 +2543,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2590,9 +2563,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2613,9 +2583,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2633,9 +2600,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>
@@ -2653,9 +2617,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * Optional. KnowledgeBases to get alternative results from. If not set, the
      * KnowledgeBases enabled in the agent (through UI) will be used.
      * Format:  `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
-     * Note: This field is `repeated` for forward compatibility, currently only
-     * the first one is supported, we may return an error if multiple
-     * KnowledgeBases are specified.
      * </pre>
      *
      * <code>repeated string knowledge_base_names = 12;</code>

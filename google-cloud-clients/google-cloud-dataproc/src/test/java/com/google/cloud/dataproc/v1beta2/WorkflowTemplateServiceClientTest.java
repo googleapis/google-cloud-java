@@ -27,9 +27,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -110,7 +110,7 @@ public class WorkflowTemplateServiceClientTest {
     WorkflowTemplate actualResponse = client.createWorkflowTemplate(parent, template);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateWorkflowTemplateRequest actualRequest =
         (CreateWorkflowTemplateRequest) actualRequests.get(0);
@@ -161,7 +161,7 @@ public class WorkflowTemplateServiceClientTest {
     WorkflowTemplate actualResponse = client.getWorkflowTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetWorkflowTemplateRequest actualRequest = (GetWorkflowTemplateRequest) actualRequests.get(0);
 
@@ -207,7 +207,7 @@ public class WorkflowTemplateServiceClientTest {
     Empty actualResponse = client.instantiateWorkflowTemplateAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     InstantiateWorkflowTemplateRequest actualRequest =
         (InstantiateWorkflowTemplateRequest) actualRequests.get(0);
@@ -255,7 +255,7 @@ public class WorkflowTemplateServiceClientTest {
     Empty actualResponse = client.instantiateWorkflowTemplateAsync(parameters).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     InstantiateWorkflowTemplateRequest actualRequest =
         (InstantiateWorkflowTemplateRequest) actualRequests.get(0);
@@ -304,7 +304,7 @@ public class WorkflowTemplateServiceClientTest {
         client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     InstantiateInlineWorkflowTemplateRequest actualRequest =
         (InstantiateInlineWorkflowTemplateRequest) actualRequests.get(0);
@@ -356,7 +356,7 @@ public class WorkflowTemplateServiceClientTest {
     WorkflowTemplate actualResponse = client.updateWorkflowTemplate(template);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateWorkflowTemplateRequest actualRequest =
         (UpdateWorkflowTemplateRequest) actualRequests.get(0);
@@ -405,7 +405,7 @@ public class WorkflowTemplateServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTemplatesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListWorkflowTemplatesRequest actualRequest =
         (ListWorkflowTemplatesRequest) actualRequests.get(0);
@@ -444,7 +444,7 @@ public class WorkflowTemplateServiceClientTest {
 
     client.deleteWorkflowTemplate(name);
 
-    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteWorkflowTemplateRequest actualRequest =
         (DeleteWorkflowTemplateRequest) actualRequests.get(0);

@@ -22,7 +22,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -85,7 +85,7 @@ public class LanguageServiceClientTest {
     AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeSentimentRequest actualRequest = (AnalyzeSentimentRequest) actualRequests.get(0);
 
@@ -126,7 +126,7 @@ public class LanguageServiceClientTest {
     AnalyzeEntitiesResponse actualResponse = client.analyzeEntities(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeEntitiesRequest actualRequest = (AnalyzeEntitiesRequest) actualRequests.get(0);
 
@@ -170,7 +170,7 @@ public class LanguageServiceClientTest {
         client.analyzeEntitySentiment(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeEntitySentimentRequest actualRequest =
         (AnalyzeEntitySentimentRequest) actualRequests.get(0);
@@ -214,7 +214,7 @@ public class LanguageServiceClientTest {
     AnalyzeSyntaxResponse actualResponse = client.analyzeSyntax(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeSyntaxRequest actualRequest = (AnalyzeSyntaxRequest) actualRequests.get(0);
 
@@ -254,7 +254,7 @@ public class LanguageServiceClientTest {
     ClassifyTextResponse actualResponse = client.classifyText(document);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ClassifyTextRequest actualRequest = (ClassifyTextRequest) actualRequests.get(0);
 
@@ -296,7 +296,7 @@ public class LanguageServiceClientTest {
     AnnotateTextResponse actualResponse = client.annotateText(document, features, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnnotateTextRequest actualRequest = (AnnotateTextRequest) actualRequests.get(0);
 

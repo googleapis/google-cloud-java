@@ -116,6 +116,24 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 82:
+            {
+              com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder subBuilder =
+                  null;
+              if (sentimentAnalysisRequestConfig_ != null) {
+                subBuilder = sentimentAnalysisRequestConfig_.toBuilder();
+              }
+              sentimentAnalysisRequestConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sentimentAnalysisRequestConfig_);
+                sentimentAnalysisRequestConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -336,9 +354,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -351,9 +369,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -366,9 +384,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -380,9 +398,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -394,9 +412,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -448,6 +466,59 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return getPayload();
   }
 
+  public static final int SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
+      sentimentAnalysisRequestConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
+   */
+  public boolean hasSentimentAnalysisRequestConfig() {
+    return sentimentAnalysisRequestConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
+   */
+  public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
+      getSentimentAnalysisRequestConfig() {
+    return sentimentAnalysisRequestConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.getDefaultInstance()
+        : sentimentAnalysisRequestConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
+   */
+  public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
+      getSentimentAnalysisRequestConfigOrBuilder() {
+    return getSentimentAnalysisRequestConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -480,6 +551,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (payload_ != null) {
       output.writeMessage(6, getPayload());
     }
+    if (sentimentAnalysisRequestConfig_ != null) {
+      output.writeMessage(10, getSentimentAnalysisRequestConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -508,6 +582,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (payload_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPayload());
     }
+    if (sentimentAnalysisRequestConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getSentimentAnalysisRequestConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -535,6 +614,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasPayload() != other.hasPayload()) return false;
     if (hasPayload()) {
       if (!getPayload().equals(other.getPayload())) return false;
+    }
+    if (hasSentimentAnalysisRequestConfig() != other.hasSentimentAnalysisRequestConfig())
+      return false;
+    if (hasSentimentAnalysisRequestConfig()) {
+      if (!getSentimentAnalysisRequestConfig().equals(other.getSentimentAnalysisRequestConfig()))
+        return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -566,6 +651,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
+    }
+    if (hasSentimentAnalysisRequestConfig()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysisRequestConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -743,6 +832,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         payload_ = null;
         payloadBuilder_ = null;
       }
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfig_ = null;
+      } else {
+        sentimentAnalysisRequestConfig_ = null;
+        sentimentAnalysisRequestConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -801,6 +896,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         result.payload_ = payload_;
       } else {
         result.payload_ = payloadBuilder_.build();
+      }
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfig_;
+      } else {
+        result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfigBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -918,6 +1018,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasPayload()) {
         mergePayload(other.getPayload());
+      }
+      if (other.hasSentimentAnalysisRequestConfig()) {
+        mergeSentimentAnalysisRequestConfig(other.getSentimentAnalysisRequestConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1665,9 +1768,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1684,9 +1787,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1702,9 +1805,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1720,9 +1823,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1745,9 +1848,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1767,9 +1870,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1791,9 +1894,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1816,9 +1919,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1838,9 +1941,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1860,9 +1963,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1882,9 +1985,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1903,9 +2006,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1924,9 +2027,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1939,9 +2042,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1958,9 +2061,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1977,9 +2080,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -1992,9 +2095,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -2008,9 +2111,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The collection of session entity types to replace or extend
-     * developer entities with for this query only. The entity synonyms apply
-     * to all languages.
+     * Optional. Additional session entity types to replace or extend developer
+     * entity types with. The entity synonyms apply to all languages and persist
+     * for the session of this query.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -2222,6 +2325,223 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         payload_ = null;
       }
       return payloadBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
+        sentimentAnalysisRequestConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder>
+        sentimentAnalysisRequestConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public boolean hasSentimentAnalysisRequestConfig() {
+      return sentimentAnalysisRequestConfigBuilder_ != null
+          || sentimentAnalysisRequestConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
+        getSentimentAnalysisRequestConfig() {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        return sentimentAnalysisRequestConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.getDefaultInstance()
+            : sentimentAnalysisRequestConfig_;
+      } else {
+        return sentimentAnalysisRequestConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public Builder setSentimentAnalysisRequestConfig(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig value) {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysisRequestConfig_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public Builder setSentimentAnalysisRequestConfig(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder builderForValue) {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public Builder mergeSentimentAnalysisRequestConfig(
+        com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig value) {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        if (sentimentAnalysisRequestConfig_ != null) {
+          sentimentAnalysisRequestConfig_ =
+              com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.newBuilder(
+                      sentimentAnalysisRequestConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sentimentAnalysisRequestConfig_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public Builder clearSentimentAnalysisRequestConfig() {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfig_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysisRequestConfig_ = null;
+        sentimentAnalysisRequestConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder
+        getSentimentAnalysisRequestConfigBuilder() {
+
+      onChanged();
+      return getSentimentAnalysisRequestConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
+        getSentimentAnalysisRequestConfigOrBuilder() {
+      if (sentimentAnalysisRequestConfigBuilder_ != null) {
+        return sentimentAnalysisRequestConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysisRequestConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.getDefaultInstance()
+            : sentimentAnalysisRequestConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the type of sentiment analysis to perform. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder,
+            com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder>
+        getSentimentAnalysisRequestConfigFieldBuilder() {
+      if (sentimentAnalysisRequestConfigBuilder_ == null) {
+        sentimentAnalysisRequestConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig,
+                com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig.Builder,
+                com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder>(
+                getSentimentAnalysisRequestConfig(), getParentForChildren(), isClean());
+        sentimentAnalysisRequestConfig_ = null;
+      }
+      return sentimentAnalysisRequestConfigBuilder_;
     }
 
     @java.lang.Override

@@ -52,9 +52,9 @@ import com.google.firestore.v1.UpdateDocumentRequest;
 import com.google.firestore.v1.Write;
 import com.google.firestore.v1.WriteRequest;
 import com.google.firestore.v1.WriteResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -119,7 +119,7 @@ public class FirestoreClientTest {
     Document actualResponse = client.updateDocument(document, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestore.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestore.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateDocumentRequest actualRequest = (UpdateDocumentRequest) actualRequests.get(0);
 
@@ -158,7 +158,7 @@ public class FirestoreClientTest {
 
     client.deleteDocument(name);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestore.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestore.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteDocumentRequest actualRequest = (DeleteDocumentRequest) actualRequests.get(0);
 
@@ -257,7 +257,7 @@ public class FirestoreClientTest {
     BeginTransactionResponse actualResponse = client.beginTransaction(formattedDatabase);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestore.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestore.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BeginTransactionRequest actualRequest = (BeginTransactionRequest) actualRequests.get(0);
 
@@ -296,7 +296,7 @@ public class FirestoreClientTest {
     CommitResponse actualResponse = client.commit(formattedDatabase, writes);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestore.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestore.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CommitRequest actualRequest = (CommitRequest) actualRequests.get(0);
 
@@ -336,7 +336,7 @@ public class FirestoreClientTest {
 
     client.rollback(formattedDatabase, transaction);
 
-    List<GeneratedMessageV3> actualRequests = mockFirestore.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestore.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RollbackRequest actualRequest = (RollbackRequest) actualRequests.get(0);
 
@@ -531,7 +531,7 @@ public class FirestoreClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCollectionIdsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockFirestore.getRequests();
+    List<AbstractMessage> actualRequests = mockFirestore.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListCollectionIdsRequest actualRequest = (ListCollectionIdsRequest) actualRequests.get(0);
 

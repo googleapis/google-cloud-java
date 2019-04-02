@@ -15,9 +15,11 @@
  */
 package com.google.cloud.automl.v1beta1;
 
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListColumnSpecsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListDatasetsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -182,6 +184,61 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings() {
     return ((AutoMlStubSettings) getStubSettings()).listModelEvaluationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDataset. */
+  public UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).updateDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAnnotationSpec. */
+  public UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getAnnotationSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTableSpec. */
+  public UnaryCallSettings<GetTableSpecRequest, TableSpec> getTableSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getTableSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTableSpecs. */
+  public PagedCallSettings<
+          ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+      listTableSpecsSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).listTableSpecsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTableSpec. */
+  public UnaryCallSettings<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).updateTableSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getColumnSpec. */
+  public UnaryCallSettings<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getColumnSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listColumnSpecs. */
+  public PagedCallSettings<
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+      listColumnSpecsSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).listColumnSpecsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateColumnSpec. */
+  public UnaryCallSettings<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).updateColumnSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportModel. */
+  public UnaryCallSettings<ExportModelRequest, Operation> exportModelSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluatedExamples. */
+  public UnaryCallSettings<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportEvaluatedExamplesSettings();
   }
 
   public static final AutoMlSettings create(AutoMlStubSettings stub) throws IOException {
@@ -396,6 +453,63 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return getStubSettingsBuilder().listModelEvaluationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataset. */
+    public UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
+      return getStubSettingsBuilder().updateDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAnnotationSpec. */
+    public UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
+        getAnnotationSpecSettings() {
+      return getStubSettingsBuilder().getAnnotationSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTableSpec. */
+    public UnaryCallSettings.Builder<GetTableSpecRequest, TableSpec> getTableSpecSettings() {
+      return getStubSettingsBuilder().getTableSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTableSpecs. */
+    public PagedCallSettings.Builder<
+            ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+        listTableSpecsSettings() {
+      return getStubSettingsBuilder().listTableSpecsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTableSpec. */
+    public UnaryCallSettings.Builder<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings() {
+      return getStubSettingsBuilder().updateTableSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getColumnSpec. */
+    public UnaryCallSettings.Builder<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings() {
+      return getStubSettingsBuilder().getColumnSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listColumnSpecs. */
+    public PagedCallSettings.Builder<
+            ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+        listColumnSpecsSettings() {
+      return getStubSettingsBuilder().listColumnSpecsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateColumnSpec. */
+    public UnaryCallSettings.Builder<UpdateColumnSpecRequest, ColumnSpec>
+        updateColumnSpecSettings() {
+      return getStubSettingsBuilder().updateColumnSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportModel. */
+    public UnaryCallSettings.Builder<ExportModelRequest, Operation> exportModelSettings() {
+      return getStubSettingsBuilder().exportModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluatedExamples. */
+    public UnaryCallSettings.Builder<ExportEvaluatedExamplesRequest, Operation>
+        exportEvaluatedExamplesSettings() {
+      return getStubSettingsBuilder().exportEvaluatedExamplesSettings();
     }
 
     @Override

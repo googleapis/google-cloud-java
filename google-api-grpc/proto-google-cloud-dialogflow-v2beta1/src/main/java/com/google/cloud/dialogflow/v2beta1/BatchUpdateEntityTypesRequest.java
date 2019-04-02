@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes].
+ * The request message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest}
@@ -290,7 +289,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The collection of entity type to update or create.
+   * The collection of entity types to update or create.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -302,7 +301,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The collection of entity type to update or create.
+   * The collection of entity types to update or create.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -317,7 +316,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The collection of entity type to update or create.
+   * The collection of entity types to update or create.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -338,9 +337,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_types`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 4;</code>
@@ -362,9 +362,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_types`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 4;</code>
@@ -646,8 +647,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for
-   * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes].
+   * The request message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest}
@@ -1101,7 +1101,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1113,7 +1113,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1135,7 +1135,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1158,7 +1158,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1178,7 +1178,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1211,7 +1211,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1236,7 +1236,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1249,7 +1249,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1269,7 +1269,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The collection of entity type to update or create.
+     * The collection of entity types to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.EntityTypeBatch entity_type_batch_inline = 3;</code>
@@ -1307,9 +1307,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 4;</code>
@@ -1331,9 +1332,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 4;</code>
@@ -1355,9 +1357,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 4;</code>
@@ -1377,9 +1380,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 4;</code>
@@ -1396,9 +1400,10 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 4;</code>

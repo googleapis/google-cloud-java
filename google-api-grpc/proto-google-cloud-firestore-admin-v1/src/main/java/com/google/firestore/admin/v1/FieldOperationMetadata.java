@@ -92,7 +92,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 indexConfigDeltas_ =
                     new java.util.ArrayList<
                         com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta>();
@@ -146,7 +146,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -158,7 +158,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         indexConfigDeltas_ = java.util.Collections.unmodifiableList(indexConfigDeltas_);
       }
       this.unknownFields = unknownFields.build();
@@ -315,7 +315,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -630,14 +630,13 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta other =
           (com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta) obj;
 
-      boolean result = true;
-      result = result && changeType_ == other.changeType_;
-      result = result && (hasIndex() == other.hasIndex());
+      if (changeType_ != other.changeType_) return false;
+      if (hasIndex() != other.hasIndex()) return false;
       if (hasIndex()) {
-        result = result && getIndex().equals(other.getIndex());
+        if (!getIndex().equals(other.getIndex())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -854,23 +853,23 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -878,13 +877,13 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1033,7 +1032,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return this;
       }
 
-      private com.google.firestore.admin.v1.Index index_ = null;
+      private com.google.firestore.admin.v1.Index index_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.firestore.admin.v1.Index,
               com.google.firestore.admin.v1.Index.Builder,
@@ -1213,7 +1212,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1673,28 +1672,27 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     com.google.firestore.admin.v1.FieldOperationMetadata other =
         (com.google.firestore.admin.v1.FieldOperationMetadata) obj;
 
-    boolean result = true;
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && getField().equals(other.getField());
-    result = result && getIndexConfigDeltasList().equals(other.getIndexConfigDeltasList());
-    result = result && state_ == other.state_;
-    result = result && (hasProgressDocuments() == other.hasProgressDocuments());
+    if (!getField().equals(other.getField())) return false;
+    if (!getIndexConfigDeltasList().equals(other.getIndexConfigDeltasList())) return false;
+    if (state_ != other.state_) return false;
+    if (hasProgressDocuments() != other.hasProgressDocuments()) return false;
     if (hasProgressDocuments()) {
-      result = result && getProgressDocuments().equals(other.getProgressDocuments());
+      if (!getProgressDocuments().equals(other.getProgressDocuments())) return false;
     }
-    result = result && (hasProgressBytes() == other.hasProgressBytes());
+    if (hasProgressBytes() != other.hasProgressBytes()) return false;
     if (hasProgressBytes()) {
-      result = result && getProgressBytes().equals(other.getProgressBytes());
+      if (!getProgressBytes().equals(other.getProgressBytes())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1951,7 +1949,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       result.field_ = field_;
       if (indexConfigDeltasBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           indexConfigDeltas_ = java.util.Collections.unmodifiableList(indexConfigDeltas_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -1977,35 +1975,35 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2099,7 +2097,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2274,7 +2272,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2561,7 +2559,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         indexConfigDeltas_ = java.util.Collections.emptyList();
 
     private void ensureIndexConfigDeltasIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         indexConfigDeltas_ =
             new java.util.ArrayList<
                 com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta>(
@@ -2983,7 +2981,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
                 com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta.Builder,
                 com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDeltaOrBuilder>(
                 indexConfigDeltas_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         indexConfigDeltas_ = null;
@@ -3067,7 +3065,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.firestore.admin.v1.Progress progressDocuments_ = null;
+    private com.google.firestore.admin.v1.Progress progressDocuments_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.admin.v1.Progress,
             com.google.firestore.admin.v1.Progress.Builder,
@@ -3249,7 +3247,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       return progressDocumentsBuilder_;
     }
 
-    private com.google.firestore.admin.v1.Progress progressBytes_ = null;
+    private com.google.firestore.admin.v1.Progress progressBytes_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.admin.v1.Progress,
             com.google.firestore.admin.v1.Progress.Builder,
@@ -3433,7 +3431,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

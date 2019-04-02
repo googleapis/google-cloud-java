@@ -43,6 +43,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
+-  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
@@ -66,7 +67,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.84.0-alpha</version>
+        <version>0.85.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -85,11 +86,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.66.0'
+compile 'com.google.cloud:google-cloud-storage:1.67.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.66.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.67.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -110,7 +111,7 @@ If you are running into problems with version conflicts, the easiest way to solv
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.84.0-alpha</version>
+        <version>0.85.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

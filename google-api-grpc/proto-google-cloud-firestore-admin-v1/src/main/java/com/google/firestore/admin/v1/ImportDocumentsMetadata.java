@@ -125,7 +125,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 collectionIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -141,7 +141,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -153,7 +153,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         collectionIds_ = collectionIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -552,28 +552,27 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
     com.google.firestore.admin.v1.ImportDocumentsMetadata other =
         (com.google.firestore.admin.v1.ImportDocumentsMetadata) obj;
 
-    boolean result = true;
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && operationState_ == other.operationState_;
-    result = result && (hasProgressDocuments() == other.hasProgressDocuments());
+    if (operationState_ != other.operationState_) return false;
+    if (hasProgressDocuments() != other.hasProgressDocuments()) return false;
     if (hasProgressDocuments()) {
-      result = result && getProgressDocuments().equals(other.getProgressDocuments());
+      if (!getProgressDocuments().equals(other.getProgressDocuments())) return false;
     }
-    result = result && (hasProgressBytes() == other.hasProgressBytes());
+    if (hasProgressBytes() != other.hasProgressBytes()) return false;
     if (hasProgressBytes()) {
-      result = result && getProgressBytes().equals(other.getProgressBytes());
+      if (!getProgressBytes().equals(other.getProgressBytes())) return false;
     }
-    result = result && getCollectionIdsList().equals(other.getCollectionIdsList());
-    result = result && getInputUriPrefix().equals(other.getInputUriPrefix());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getCollectionIdsList().equals(other.getCollectionIdsList())) return false;
+    if (!getInputUriPrefix().equals(other.getInputUriPrefix())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -834,7 +833,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       } else {
         result.progressBytes_ = progressBytesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         collectionIds_ = collectionIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
@@ -847,35 +846,35 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -952,7 +951,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     private int bitField0_;
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1127,7 +1126,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1387,7 +1386,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.firestore.admin.v1.Progress progressDocuments_ = null;
+    private com.google.firestore.admin.v1.Progress progressDocuments_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.admin.v1.Progress,
             com.google.firestore.admin.v1.Progress.Builder,
@@ -1569,7 +1568,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
       return progressDocumentsBuilder_;
     }
 
-    private com.google.firestore.admin.v1.Progress progressBytes_ = null;
+    private com.google.firestore.admin.v1.Progress progressBytes_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.admin.v1.Progress,
             com.google.firestore.admin.v1.Progress.Builder,
@@ -1755,7 +1754,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCollectionIdsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         collectionIds_ = new com.google.protobuf.LazyStringArrayList(collectionIds_);
         bitField0_ |= 0x00000020;
       }
@@ -1990,7 +1989,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

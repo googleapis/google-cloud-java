@@ -27,8 +27,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
   private InspectConfig() {
     infoTypes_ = java.util.Collections.emptyList();
     minLikelihood_ = 0;
-    includeQuote_ = false;
-    excludeInfoTypes_ = false;
     customInfoTypes_ = java.util.Collections.emptyList();
     contentOptions_ = java.util.Collections.emptyList();
     ruleSet_ = java.util.Collections.emptyList();
@@ -60,7 +58,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -105,7 +103,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 customInfoTypes_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType>();
                 mutable_bitField0_ |= 0x00000020;
@@ -118,7 +116,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           case 64:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 contentOptions_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000040;
               }
@@ -131,7 +129,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                   contentOptions_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000040;
                 }
@@ -142,7 +140,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>();
                 mutable_bitField0_ |= 0x00000080;
               }
@@ -153,7 +151,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -165,16 +163,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         customInfoTypes_ = java.util.Collections.unmodifiableList(customInfoTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         contentOptions_ = java.util.Collections.unmodifiableList(contentOptions_);
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
       }
       this.unknownFields = unknownFields.build();
@@ -307,8 +305,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private FindingLimits() {
-      maxFindingsPerItem_ = 0;
-      maxFindingsPerRequest_ = 0;
       maxFindingsPerInfoType_ = java.util.Collections.emptyList();
     }
 
@@ -348,7 +344,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   maxFindingsPerInfoType_ =
                       new java.util.ArrayList<
                           com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit>();
@@ -363,7 +359,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -375,7 +371,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           maxFindingsPerInfoType_ = java.util.Collections.unmodifiableList(maxFindingsPerInfoType_);
         }
         this.unknownFields = unknownFields.build();
@@ -474,9 +470,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         super(builder);
       }
 
-      private InfoTypeLimit() {
-        maxFindings_ = 0;
-      }
+      private InfoTypeLimit() {}
 
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -525,7 +519,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -674,14 +668,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit other =
             (com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit) obj;
 
-        boolean result = true;
-        result = result && (hasInfoType() == other.hasInfoType());
+        if (hasInfoType() != other.hasInfoType()) return false;
         if (hasInfoType()) {
-          result = result && getInfoType().equals(other.getInfoType());
+          if (!getInfoType().equals(other.getInfoType())) return false;
         }
-        result = result && (getMaxFindings() == other.getMaxFindings());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (getMaxFindings() != other.getMaxFindings()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -900,23 +893,23 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -924,13 +917,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -987,7 +980,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.privacy.dlp.v2.InfoType infoType_ = null;
+        private com.google.privacy.dlp.v2.InfoType infoType_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.InfoType,
                 com.google.privacy.dlp.v2.InfoType.Builder,
@@ -1242,7 +1235,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -1469,13 +1462,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.InspectConfig.FindingLimits other =
           (com.google.privacy.dlp.v2.InspectConfig.FindingLimits) obj;
 
-      boolean result = true;
-      result = result && (getMaxFindingsPerItem() == other.getMaxFindingsPerItem());
-      result = result && (getMaxFindingsPerRequest() == other.getMaxFindingsPerRequest());
-      result =
-          result && getMaxFindingsPerInfoTypeList().equals(other.getMaxFindingsPerInfoTypeList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getMaxFindingsPerItem() != other.getMaxFindingsPerItem()) return false;
+      if (getMaxFindingsPerRequest() != other.getMaxFindingsPerRequest()) return false;
+      if (!getMaxFindingsPerInfoTypeList().equals(other.getMaxFindingsPerInfoTypeList()))
+        return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1677,7 +1669,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         result.maxFindingsPerItem_ = maxFindingsPerItem_;
         result.maxFindingsPerRequest_ = maxFindingsPerRequest_;
         if (maxFindingsPerInfoTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             maxFindingsPerInfoType_ =
                 java.util.Collections.unmodifiableList(maxFindingsPerInfoType_);
             bitField0_ = (bitField0_ & ~0x00000004);
@@ -1693,23 +1685,23 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1717,13 +1709,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1911,7 +1903,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
           maxFindingsPerInfoType_ = java.util.Collections.emptyList();
 
       private void ensureMaxFindingsPerInfoTypeIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           maxFindingsPerInfoType_ =
               new java.util.ArrayList<
                   com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit>(
@@ -2315,7 +2307,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                   com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit.Builder,
                   com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimitOrBuilder>(
                   maxFindingsPerInfoType_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           maxFindingsPerInfoType_ = null;
@@ -2326,7 +2318,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2895,20 +2887,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.InspectConfig other = (com.google.privacy.dlp.v2.InspectConfig) obj;
 
-    boolean result = true;
-    result = result && getInfoTypesList().equals(other.getInfoTypesList());
-    result = result && minLikelihood_ == other.minLikelihood_;
-    result = result && (hasLimits() == other.hasLimits());
+    if (!getInfoTypesList().equals(other.getInfoTypesList())) return false;
+    if (minLikelihood_ != other.minLikelihood_) return false;
+    if (hasLimits() != other.hasLimits()) return false;
     if (hasLimits()) {
-      result = result && getLimits().equals(other.getLimits());
+      if (!getLimits().equals(other.getLimits())) return false;
     }
-    result = result && (getIncludeQuote() == other.getIncludeQuote());
-    result = result && (getExcludeInfoTypes() == other.getExcludeInfoTypes());
-    result = result && getCustomInfoTypesList().equals(other.getCustomInfoTypesList());
-    result = result && contentOptions_.equals(other.contentOptions_);
-    result = result && getRuleSetList().equals(other.getRuleSetList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getIncludeQuote() != other.getIncludeQuote()) return false;
+    if (getExcludeInfoTypes() != other.getExcludeInfoTypes()) return false;
+    if (!getCustomInfoTypesList().equals(other.getCustomInfoTypesList())) return false;
+    if (!contentOptions_.equals(other.contentOptions_)) return false;
+    if (!getRuleSetList().equals(other.getRuleSetList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3157,7 +3148,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (infoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -3174,7 +3165,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       result.includeQuote_ = includeQuote_;
       result.excludeInfoTypes_ = excludeInfoTypes_;
       if (customInfoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           customInfoTypes_ = java.util.Collections.unmodifiableList(customInfoTypes_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -3182,13 +3173,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.customInfoTypes_ = customInfoTypesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         contentOptions_ = java.util.Collections.unmodifiableList(contentOptions_);
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.contentOptions_ = contentOptions_;
       if (ruleSetBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
           bitField0_ = (bitField0_ & ~0x00000080);
         }
@@ -3203,35 +3194,35 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3384,7 +3375,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>(infoTypes_);
         bitField0_ |= 0x00000001;
       }
@@ -3884,10 +3875,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.InfoType,
                 com.google.privacy.dlp.v2.InfoType.Builder,
                 com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                infoTypes_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                infoTypes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         infoTypes_ = null;
       }
       return infoTypesBuilder_;
@@ -3979,7 +3967,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.privacy.dlp.v2.InspectConfig.FindingLimits limits_ = null;
+    private com.google.privacy.dlp.v2.InspectConfig.FindingLimits limits_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectConfig.FindingLimits,
             com.google.privacy.dlp.v2.InspectConfig.FindingLimits.Builder,
@@ -4184,7 +4172,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCustomInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         customInfoTypes_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType>(customInfoTypes_);
         bitField0_ |= 0x00000020;
@@ -4545,7 +4533,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.Builder,
                 com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder>(
                 customInfoTypes_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         customInfoTypes_ = null;
@@ -4556,7 +4544,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> contentOptions_ = java.util.Collections.emptyList();
 
     private void ensureContentOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         contentOptions_ = new java.util.ArrayList<java.lang.Integer>(contentOptions_);
         bitField0_ |= 0x00000040;
       }
@@ -4756,7 +4744,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRuleSetIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>(ruleSet_);
         bitField0_ |= 0x00000080;
       }
@@ -5131,10 +5119,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.InspectionRuleSet,
                 com.google.privacy.dlp.v2.InspectionRuleSet.Builder,
                 com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>(
-                ruleSet_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
-                getParentForChildren(),
-                isClean());
+                ruleSet_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         ruleSet_ = null;
       }
       return ruleSetBuilder_;
@@ -5142,7 +5127,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

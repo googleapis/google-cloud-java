@@ -28,9 +28,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     histogramQueryResults_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
     locationFilters_ = java.util.Collections.emptyList();
-    estimatedTotalSize_ = 0;
-    totalSize_ = 0;
-    broadenedQueryJobsCount_ = 0;
   }
 
   @java.lang.Override
@@ -59,7 +56,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 matchingJobs_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob>();
@@ -73,7 +70,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 histogramQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>();
                 mutable_bitField0_ |= 0x00000002;
@@ -93,7 +90,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 locationFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>();
                 mutable_bitField0_ |= 0x00000008;
@@ -153,7 +150,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -165,13 +162,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         matchingJobs_ = java.util.Collections.unmodifiableList(matchingJobs_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
       }
       this.unknownFields = unknownFields.build();
@@ -455,7 +452,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -788,20 +785,19 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob other =
           (com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob) obj;
 
-      boolean result = true;
-      result = result && (hasJob() == other.hasJob());
+      if (hasJob() != other.hasJob()) return false;
       if (hasJob()) {
-        result = result && getJob().equals(other.getJob());
+        if (!getJob().equals(other.getJob())) return false;
       }
-      result = result && getJobSummary().equals(other.getJobSummary());
-      result = result && getJobTitleSnippet().equals(other.getJobTitleSnippet());
-      result = result && getSearchTextSnippet().equals(other.getSearchTextSnippet());
-      result = result && (hasCommuteInfo() == other.hasCommuteInfo());
+      if (!getJobSummary().equals(other.getJobSummary())) return false;
+      if (!getJobTitleSnippet().equals(other.getJobTitleSnippet())) return false;
+      if (!getSearchTextSnippet().equals(other.getSearchTextSnippet())) return false;
+      if (hasCommuteInfo() != other.hasCommuteInfo()) return false;
       if (hasCommuteInfo()) {
-        result = result && getCommuteInfo().equals(other.getCommuteInfo());
+        if (!getCommuteInfo().equals(other.getCommuteInfo())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1040,23 +1036,23 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1064,13 +1060,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1137,7 +1133,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.cloud.talent.v4beta1.Job job_ = null;
+      private com.google.cloud.talent.v4beta1.Job job_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Job,
               com.google.cloud.talent.v4beta1.Job.Builder,
@@ -1645,7 +1641,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commuteInfo_ = null;
+      private com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commuteInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo,
               com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.Builder,
@@ -1844,7 +1840,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2051,7 +2047,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2225,17 +2221,16 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo other =
           (com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo) obj;
 
-      boolean result = true;
-      result = result && (hasJobLocation() == other.hasJobLocation());
+      if (hasJobLocation() != other.hasJobLocation()) return false;
       if (hasJobLocation()) {
-        result = result && getJobLocation().equals(other.getJobLocation());
+        if (!getJobLocation().equals(other.getJobLocation())) return false;
       }
-      result = result && (hasTravelDuration() == other.hasTravelDuration());
+      if (hasTravelDuration() != other.hasTravelDuration()) return false;
       if (hasTravelDuration()) {
-        result = result && getTravelDuration().equals(other.getTravelDuration());
+        if (!getTravelDuration().equals(other.getTravelDuration())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2458,23 +2453,23 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2482,13 +2477,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2543,7 +2538,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.cloud.talent.v4beta1.Location jobLocation_ = null;
+      private com.google.cloud.talent.v4beta1.Location jobLocation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Location,
               com.google.cloud.talent.v4beta1.Location.Builder,
@@ -2725,7 +2720,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return jobLocationBuilder_;
       }
 
-      private com.google.protobuf.Duration travelDuration_ = null;
+      private com.google.protobuf.Duration travelDuration_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration,
               com.google.protobuf.Duration.Builder,
@@ -2936,7 +2931,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3498,24 +3493,23 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     com.google.cloud.talent.v4beta1.SearchJobsResponse other =
         (com.google.cloud.talent.v4beta1.SearchJobsResponse) obj;
 
-    boolean result = true;
-    result = result && getMatchingJobsList().equals(other.getMatchingJobsList());
-    result = result && getHistogramQueryResultsList().equals(other.getHistogramQueryResultsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && getLocationFiltersList().equals(other.getLocationFiltersList());
-    result = result && (getEstimatedTotalSize() == other.getEstimatedTotalSize());
-    result = result && (getTotalSize() == other.getTotalSize());
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (!getMatchingJobsList().equals(other.getMatchingJobsList())) return false;
+    if (!getHistogramQueryResultsList().equals(other.getHistogramQueryResultsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getLocationFiltersList().equals(other.getLocationFiltersList())) return false;
+    if (getEstimatedTotalSize() != other.getEstimatedTotalSize()) return false;
+    if (getTotalSize() != other.getTotalSize()) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && (getBroadenedQueryJobsCount() == other.getBroadenedQueryJobsCount());
-    result = result && (hasSpellCorrection() == other.hasSpellCorrection());
+    if (getBroadenedQueryJobsCount() != other.getBroadenedQueryJobsCount()) return false;
+    if (hasSpellCorrection() != other.hasSpellCorrection()) return false;
     if (hasSpellCorrection()) {
-      result = result && getSpellCorrection().equals(other.getSpellCorrection());
+      if (!getSpellCorrection().equals(other.getSpellCorrection())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3771,7 +3765,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (matchingJobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           matchingJobs_ = java.util.Collections.unmodifiableList(matchingJobs_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -3780,7 +3774,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         result.matchingJobs_ = matchingJobsBuilder_.build();
       }
       if (histogramQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           histogramQueryResults_ = java.util.Collections.unmodifiableList(histogramQueryResults_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -3790,7 +3784,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       result.nextPageToken_ = nextPageToken_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -3818,35 +3812,35 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3998,7 +3992,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         matchingJobs_ = java.util.Collections.emptyList();
 
     private void ensureMatchingJobsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         matchingJobs_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob>(
                 matchingJobs_);
@@ -4392,10 +4386,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob,
                 com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob.Builder,
                 com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJobOrBuilder>(
-                matchingJobs_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                matchingJobs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         matchingJobs_ = null;
       }
       return matchingJobsBuilder_;
@@ -4405,7 +4396,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         histogramQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureHistogramQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         histogramQueryResults_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQueryResult>(
                 histogramQueryResults_);
@@ -4794,7 +4785,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.talent.v4beta1.HistogramQueryResult.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>(
                 histogramQueryResults_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueryResults_ = null;
@@ -4905,7 +4896,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         locationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>(locationFilters_);
         bitField0_ |= 0x00000008;
@@ -5284,7 +5275,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.talent.v4beta1.Location.Builder,
                 com.google.cloud.talent.v4beta1.LocationOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -5392,7 +5383,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_ = null;
+    private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.ResponseMetadata,
             com.google.cloud.talent.v4beta1.ResponseMetadata.Builder,
@@ -5645,7 +5636,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.SpellingCorrection spellCorrection_ = null;
+    private com.google.cloud.talent.v4beta1.SpellingCorrection spellCorrection_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.SpellingCorrection,
             com.google.cloud.talent.v4beta1.SpellingCorrection.Builder,
@@ -5830,7 +5821,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

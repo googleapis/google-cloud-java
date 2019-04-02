@@ -66,7 +66,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * <pre>
    * The trigger id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *
@@ -79,7 +79,7 @@ public interface CreateJobTriggerRequestOrBuilder
    * <pre>
    * The trigger id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *

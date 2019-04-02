@@ -805,7 +805,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `state_change`). The string value should follow SQL syntax: comma separated list of fields.
    *     For example: "parent,resource_name".
    *     <p>The following fields are supported:
-   *     <p>&#42; resource_name &#42; category &#42; state &#42; state_change &#42; parent
+   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
+   *     <p>The following fields are supported when compare_duration is set:
+   *     <p>&#42; state_change
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
@@ -843,7 +845,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *     `state_change`). The string value should follow SQL syntax: comma separated list of fields.
    *     For example: "parent,resource_name".
    *     <p>The following fields are supported:
-   *     <p>&#42; resource_name &#42; category &#42; state &#42; state_change &#42; parent
+   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
+   *     <p>The following fields are supported when compare_duration is set:
+   *     <p>&#42; state_change
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GroupFindingsPagedResponse groupFindings(String parent, String groupBy) {

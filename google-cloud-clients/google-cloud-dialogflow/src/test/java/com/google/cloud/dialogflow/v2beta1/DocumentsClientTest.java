@@ -27,9 +27,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -125,7 +125,7 @@ public class DocumentsClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDocumentsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDocuments.getRequests();
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDocumentsRequest actualRequest = (ListDocumentsRequest) actualRequests.get(0);
 
@@ -173,7 +173,7 @@ public class DocumentsClientTest {
     Document actualResponse = client.getDocument(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDocuments.getRequests();
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDocumentRequest actualRequest = (GetDocumentRequest) actualRequests.get(0);
 
@@ -228,7 +228,7 @@ public class DocumentsClientTest {
     Document actualResponse = client.createDocumentAsync(parent, document).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDocuments.getRequests();
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateDocumentRequest actualRequest = (CreateDocumentRequest) actualRequests.get(0);
 
@@ -276,7 +276,7 @@ public class DocumentsClientTest {
     Empty actualResponse = client.deleteDocumentAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDocuments.getRequests();
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteDocumentRequest actualRequest = (DeleteDocumentRequest) actualRequests.get(0);
 

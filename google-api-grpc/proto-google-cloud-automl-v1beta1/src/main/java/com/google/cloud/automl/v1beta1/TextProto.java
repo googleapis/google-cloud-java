@@ -20,6 +20,22 @@ public final class TextProto {
       internal_static_google_cloud_automl_v1beta1_TextClassificationModelMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_TextClassificationModelMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -36,11 +52,15 @@ public final class TextProto {
           + "ssificationDatasetMetadata\022L\n\023classifica"
           + "tion_type\030\001 \001(\0162/.google.cloud.automl.v1"
           + "beta1.ClassificationType\"!\n\037TextClassifi"
-          + "cationModelMetadataB\217\001\n\037com.google.cloud"
-          + ".automl.v1beta1B\tTextProtoP\001ZAgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/automl"
-          + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
-          + "beta1b\006proto3"
+          + "cationModelMetadata\"\037\n\035TextExtractionDat"
+          + "asetMetadata\"\035\n\033TextExtractionModelMetad"
+          + "ata\"5\n\034TextSentimentDatasetMetadata\022\025\n\rs"
+          + "entiment_max\030\001 \001(\005\"\034\n\032TextSentimentModel"
+          + "MetadataB\217\001\n\037com.google.cloud.automl.v1b"
+          + "eta1B\tTextProtoP\001ZAgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/automl/v1beta1;au"
+          + "toml\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006prot"
+          + "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -70,6 +90,32 @@ public final class TextProto {
     internal_static_google_cloud_automl_v1beta1_TextClassificationModelMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TextClassificationModelMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_descriptor,
+            new java.lang.String[] {
+              "SentimentMax",
+            });
+    internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_descriptor,
             new java.lang.String[] {});
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();

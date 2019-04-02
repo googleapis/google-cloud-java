@@ -12,6 +12,45 @@ public interface DeployModelRequestOrBuilder
    *
    *
    * <pre>
+   * Model deployment metadata specific to Image Object Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+   * </code>
+   */
+  boolean hasImageObjectDetectionModelDeploymentMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Object Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+      getImageObjectDetectionModelDeploymentMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Object Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder
+      getImageObjectDetectionModelDeploymentMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Resource name of the model to deploy.
    * </pre>
    *
@@ -28,4 +67,7 @@ public interface DeployModelRequestOrBuilder
    * <code>string name = 1;</code>
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  public com.google.cloud.automl.v1beta1.DeployModelRequest.ModelDeploymentMetadataCase
+      getModelDeploymentMetadataCase();
 }

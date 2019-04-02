@@ -95,7 +95,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -328,18 +328,17 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse other =
         (com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse) obj;
 
-    boolean result = true;
-    result = result && (hasError() == other.hasError());
+    if (hasError() != other.hasError()) return false;
     if (hasError()) {
-      result = result && getError().equals(other.getError());
+      if (!getError().equals(other.getError())) return false;
     }
-    result = result && (hasAnnotationResults() == other.hasAnnotationResults());
+    if (hasAnnotationResults() != other.hasAnnotationResults()) return false;
     if (hasAnnotationResults()) {
-      result = result && getAnnotationResults().equals(other.getAnnotationResults());
+      if (!getAnnotationResults().equals(other.getAnnotationResults())) return false;
     }
-    result = result && getAnnotationResultsUri().equals(other.getAnnotationResultsUri());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAnnotationResultsUri().equals(other.getAnnotationResultsUri())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -577,35 +576,35 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -667,7 +666,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       return this;
     }
 
-    private com.google.rpc.Status error_ = null;
+    private com.google.rpc.Status error_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
@@ -846,7 +845,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     }
 
     private com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
-        annotationResults_ = null;
+        annotationResults_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults,
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults.Builder,
@@ -1168,7 +1167,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

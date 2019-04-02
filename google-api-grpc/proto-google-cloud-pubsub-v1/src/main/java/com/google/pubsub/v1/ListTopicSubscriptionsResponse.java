@@ -55,7 +55,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 subscriptions_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -71,7 +71,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -83,7 +83,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         subscriptions_ = subscriptions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -261,11 +261,10 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
     com.google.pubsub.v1.ListTopicSubscriptionsResponse other =
         (com.google.pubsub.v1.ListTopicSubscriptionsResponse) obj;
 
-    boolean result = true;
-    result = result && getSubscriptionsList().equals(other.getSubscriptionsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getSubscriptionsList().equals(other.getSubscriptionsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -459,7 +458,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
           new com.google.pubsub.v1.ListTopicSubscriptionsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         subscriptions_ = subscriptions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
@@ -472,35 +471,35 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -566,7 +565,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubscriptionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         subscriptions_ = new com.google.protobuf.LazyStringArrayList(subscriptions_);
         bitField0_ |= 0x00000001;
       }
@@ -811,7 +810,7 @@ public final class ListTopicSubscriptionsResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
