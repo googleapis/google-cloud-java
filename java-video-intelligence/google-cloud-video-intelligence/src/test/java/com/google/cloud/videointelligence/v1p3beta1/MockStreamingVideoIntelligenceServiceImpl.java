@@ -28,7 +28,7 @@ import java.util.Queue;
 @BetaApi
 public class MockStreamingVideoIntelligenceServiceImpl
     extends StreamingVideoIntelligenceServiceImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockStreamingVideoIntelligenceServiceImpl() {
