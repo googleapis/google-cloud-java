@@ -22,6 +22,7 @@ import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.fail;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.filter.ThresholdFilter;
@@ -31,6 +32,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
@@ -209,6 +211,32 @@ public class LoggingAppenderTest {
     verify(logging);
     assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
     assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
+  }
+
+  @Test
+  public void testCreateLoggingOptions() {
+    // Try to build LoggingOptions with custom credentials.
+    final String nonExistentFile = "/path/to/non/existent/file";
+    LoggingAppender appender = new LoggingAppender();
+    appender.setCredentialsFile(nonExistentFile);
+    try {
+      appender.getLoggingOptions();
+      fail("Expected exception");
+    } catch (Exception e) {
+      assertThat(e.getMessage().contains(nonExistentFile));
+    }
+    // Try to build LoggingOptions with default credentials.
+    LoggingOptions defaultOptions = null;
+    try {
+      defaultOptions = LoggingOptions.getDefaultInstance();
+    } catch (Exception e) {
+      // Could not build a default LoggingOptions instance.
+    }
+    if (defaultOptions != null) {
+      appender = new LoggingAppender();
+      LoggingOptions options = appender.getLoggingOptions();
+      assertThat(options).isEqualTo(defaultOptions);
+    }
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {
