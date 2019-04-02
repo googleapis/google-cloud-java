@@ -1118,7 +1118,8 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     }
     if (responseType_
         != com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.ResponseType
-            .RESPONSE_TYPE_UNSPECIFIED.getNumber()) {
+            .RESPONSE_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, responseType_);
     }
     if (additions_ != null) {
@@ -1147,7 +1148,8 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     }
     if (responseType_
         != com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.ResponseType
-            .RESPONSE_TYPE_UNSPECIFIED.getNumber()) {
+            .RESPONSE_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, responseType_);
     }
     if (additions_ != null) {
