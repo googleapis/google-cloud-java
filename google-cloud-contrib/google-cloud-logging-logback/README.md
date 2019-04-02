@@ -50,6 +50,8 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
       <level>INFO</level>
     </filter>
     <log>application.log</log> <!-- Optional : default java.log -->
+    <!-- Optional : will use the default credentials of the environment if this property is not set -->
+    <credentialsFile>/path/to/credentials.json</credentialsFile>
     <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer> <!-- Optional -->
     <enhancer>com.example.enhancers.AnotherEnhancer</enhancer> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
@@ -88,6 +90,7 @@ Authentication
 See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
+You can also specify custom credentials by setting the optional property credentialsFile in your configuration file.
 
 Limitations
 -----------
