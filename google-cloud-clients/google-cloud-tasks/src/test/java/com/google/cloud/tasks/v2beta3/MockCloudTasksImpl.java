@@ -33,7 +33,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockCloudTasksImpl extends CloudTasksImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockCloudTasksImpl() {
