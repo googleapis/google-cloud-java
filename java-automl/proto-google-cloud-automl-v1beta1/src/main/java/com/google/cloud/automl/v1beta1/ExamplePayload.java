@@ -80,6 +80,38 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
               payloadCase_ = 2;
               break;
             }
+          case 26:
+            {
+              com.google.cloud.automl.v1beta1.Row.Builder subBuilder = null;
+              if (payloadCase_ == 3) {
+                subBuilder = ((com.google.cloud.automl.v1beta1.Row) payload_).toBuilder();
+              }
+              payload_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.Row.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.Row) payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+              payloadCase_ = 3;
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.automl.v1beta1.Document.Builder subBuilder = null;
+              if (payloadCase_ == 4) {
+                subBuilder = ((com.google.cloud.automl.v1beta1.Document) payload_).toBuilder();
+              }
+              payload_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.Document.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.Document) payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+              payloadCase_ = 4;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -120,6 +152,8 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   public enum PayloadCase implements com.google.protobuf.Internal.EnumLite {
     IMAGE(1),
     TEXT_SNIPPET(2),
+    DOCUMENT(4),
+    ROW(3),
     PAYLOAD_NOT_SET(0);
     private final int value;
 
@@ -138,6 +172,10 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
           return IMAGE;
         case 2:
           return TEXT_SNIPPET;
+        case 4:
+          return DOCUMENT;
+        case 3:
+          return ROW;
         case 0:
           return PAYLOAD_NOT_SET;
         default:
@@ -159,7 +197,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An example image.
+   * Example image.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -171,7 +209,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An example image.
+   * Example image.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -186,7 +224,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An example image.
+   * Example image.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -242,6 +280,94 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.automl.v1beta1.TextSnippet.getDefaultInstance();
   }
 
+  public static final int DOCUMENT_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+   */
+  public boolean hasDocument() {
+    return payloadCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+   */
+  public com.google.cloud.automl.v1beta1.Document getDocument() {
+    if (payloadCase_ == 4) {
+      return (com.google.cloud.automl.v1beta1.Document) payload_;
+    }
+    return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+   */
+  public com.google.cloud.automl.v1beta1.DocumentOrBuilder getDocumentOrBuilder() {
+    if (payloadCase_ == 4) {
+      return (com.google.cloud.automl.v1beta1.Document) payload_;
+    }
+    return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
+  }
+
+  public static final int ROW_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Example relational table row.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+   */
+  public boolean hasRow() {
+    return payloadCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Example relational table row.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.Row getRow() {
+    if (payloadCase_ == 3) {
+      return (com.google.cloud.automl.v1beta1.Row) payload_;
+    }
+    return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Example relational table row.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.RowOrBuilder getRowOrBuilder() {
+    if (payloadCase_ == 3) {
+      return (com.google.cloud.automl.v1beta1.Row) payload_;
+    }
+    return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -262,6 +388,12 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     if (payloadCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.automl.v1beta1.TextSnippet) payload_);
     }
+    if (payloadCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.automl.v1beta1.Row) payload_);
+    }
+    if (payloadCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.automl.v1beta1.Document) payload_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -280,6 +412,16 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.automl.v1beta1.TextSnippet) payload_);
+    }
+    if (payloadCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.automl.v1beta1.Row) payload_);
+    }
+    if (payloadCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.automl.v1beta1.Document) payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -305,6 +447,12 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getTextSnippet().equals(other.getTextSnippet())) return false;
         break;
+      case 4:
+        if (!getDocument().equals(other.getDocument())) return false;
+        break;
+      case 3:
+        if (!getRow().equals(other.getRow())) return false;
+        break;
       case 0:
       default:
     }
@@ -327,6 +475,14 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + TEXT_SNIPPET_FIELD_NUMBER;
         hash = (53 * hash) + getTextSnippet().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getDocument().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + ROW_FIELD_NUMBER;
+        hash = (53 * hash) + getRow().hashCode();
         break;
       case 0:
       default:
@@ -519,6 +675,20 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
           result.payload_ = textSnippetBuilder_.build();
         }
       }
+      if (payloadCase_ == 4) {
+        if (documentBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = documentBuilder_.build();
+        }
+      }
+      if (payloadCase_ == 3) {
+        if (rowBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = rowBuilder_.build();
+        }
+      }
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -580,6 +750,16 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             mergeTextSnippet(other.getTextSnippet());
             break;
           }
+        case DOCUMENT:
+          {
+            mergeDocument(other.getDocument());
+            break;
+          }
+        case ROW:
+          {
+            mergeRow(other.getRow());
+            break;
+          }
         case PAYLOAD_NOT_SET:
           {
             break;
@@ -637,7 +817,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -649,7 +829,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -671,7 +851,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -693,7 +873,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -712,7 +892,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -743,7 +923,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -768,7 +948,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -780,7 +960,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -799,7 +979,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An example image.
+     * Example image.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -1029,6 +1209,406 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return textSnippetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.Document,
+            com.google.cloud.automl.v1beta1.Document.Builder,
+            com.google.cloud.automl.v1beta1.DocumentOrBuilder>
+        documentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public boolean hasDocument() {
+      return payloadCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public com.google.cloud.automl.v1beta1.Document getDocument() {
+      if (documentBuilder_ == null) {
+        if (payloadCase_ == 4) {
+          return (com.google.cloud.automl.v1beta1.Document) payload_;
+        }
+        return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 4) {
+          return documentBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public Builder setDocument(com.google.cloud.automl.v1beta1.Document value) {
+      if (documentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        documentBuilder_.setMessage(value);
+      }
+      payloadCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public Builder setDocument(com.google.cloud.automl.v1beta1.Document.Builder builderForValue) {
+      if (documentBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        documentBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public Builder mergeDocument(com.google.cloud.automl.v1beta1.Document value) {
+      if (documentBuilder_ == null) {
+        if (payloadCase_ == 4
+            && payload_ != com.google.cloud.automl.v1beta1.Document.getDefaultInstance()) {
+          payload_ =
+              com.google.cloud.automl.v1beta1.Document.newBuilder(
+                      (com.google.cloud.automl.v1beta1.Document) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 4) {
+          documentBuilder_.mergeFrom(value);
+        }
+        documentBuilder_.setMessage(value);
+      }
+      payloadCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public Builder clearDocument() {
+      if (documentBuilder_ == null) {
+        if (payloadCase_ == 4) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 4) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        documentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public com.google.cloud.automl.v1beta1.Document.Builder getDocumentBuilder() {
+      return getDocumentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    public com.google.cloud.automl.v1beta1.DocumentOrBuilder getDocumentOrBuilder() {
+      if ((payloadCase_ == 4) && (documentBuilder_ != null)) {
+        return documentBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 4) {
+          return (com.google.cloud.automl.v1beta1.Document) payload_;
+        }
+        return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example document.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.Document,
+            com.google.cloud.automl.v1beta1.Document.Builder,
+            com.google.cloud.automl.v1beta1.DocumentOrBuilder>
+        getDocumentFieldBuilder() {
+      if (documentBuilder_ == null) {
+        if (!(payloadCase_ == 4)) {
+          payload_ = com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
+        }
+        documentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.Document,
+                com.google.cloud.automl.v1beta1.Document.Builder,
+                com.google.cloud.automl.v1beta1.DocumentOrBuilder>(
+                (com.google.cloud.automl.v1beta1.Document) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 4;
+      onChanged();
+      ;
+      return documentBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.Row,
+            com.google.cloud.automl.v1beta1.Row.Builder,
+            com.google.cloud.automl.v1beta1.RowOrBuilder>
+        rowBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public boolean hasRow() {
+      return payloadCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.Row getRow() {
+      if (rowBuilder_ == null) {
+        if (payloadCase_ == 3) {
+          return (com.google.cloud.automl.v1beta1.Row) payload_;
+        }
+        return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 3) {
+          return rowBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public Builder setRow(com.google.cloud.automl.v1beta1.Row value) {
+      if (rowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        rowBuilder_.setMessage(value);
+      }
+      payloadCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public Builder setRow(com.google.cloud.automl.v1beta1.Row.Builder builderForValue) {
+      if (rowBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        rowBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public Builder mergeRow(com.google.cloud.automl.v1beta1.Row value) {
+      if (rowBuilder_ == null) {
+        if (payloadCase_ == 3
+            && payload_ != com.google.cloud.automl.v1beta1.Row.getDefaultInstance()) {
+          payload_ =
+              com.google.cloud.automl.v1beta1.Row.newBuilder(
+                      (com.google.cloud.automl.v1beta1.Row) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 3) {
+          rowBuilder_.mergeFrom(value);
+        }
+        rowBuilder_.setMessage(value);
+      }
+      payloadCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public Builder clearRow() {
+      if (rowBuilder_ == null) {
+        if (payloadCase_ == 3) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 3) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        rowBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.Row.Builder getRowBuilder() {
+      return getRowFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.RowOrBuilder getRowOrBuilder() {
+      if ((payloadCase_ == 3) && (rowBuilder_ != null)) {
+        return rowBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 3) {
+          return (com.google.cloud.automl.v1beta1.Row) payload_;
+        }
+        return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example relational table row.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.Row,
+            com.google.cloud.automl.v1beta1.Row.Builder,
+            com.google.cloud.automl.v1beta1.RowOrBuilder>
+        getRowFieldBuilder() {
+      if (rowBuilder_ == null) {
+        if (!(payloadCase_ == 3)) {
+          payload_ = com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
+        }
+        rowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.Row,
+                com.google.cloud.automl.v1beta1.Row.Builder,
+                com.google.cloud.automl.v1beta1.RowOrBuilder>(
+                (com.google.cloud.automl.v1beta1.Row) payload_, getParentForChildren(), isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 3;
+      onChanged();
+      ;
+      return rowBuilder_;
     }
 
     @java.lang.Override

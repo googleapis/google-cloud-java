@@ -742,6 +742,1488 @@ public final class ClassificationProto {
     }
   }
 
+  public interface VideoClassificationAnnotationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.VideoClassificationAnnotation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Expresses the type of video classification. Possible values:
+     * *  `segment` - Classification done on a specified by user
+     *        time segment of a video. AnnotationSpec is answered to be present
+     *        in that time segment, if it is present in any part of it. The video
+     *        ML model evaluations are done only for this type of classification.
+     * *  `shot`- Shot-level classification.
+     *        AutoML Video Intelligence determines the boundaries
+     *        for each camera shot in the entire segment of the video that user
+     *        specified in the request configuration. AutoML Video Intelligence
+     *        then returns labels and their confidence scores for each detected
+     *        shot, along with the start and end time of the shot.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+     *        confidence scores for each second of the entire segment of the video
+     *        that user specified in the request configuration.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    java.lang.String getType();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Expresses the type of video classification. Possible values:
+     * *  `segment` - Classification done on a specified by user
+     *        time segment of a video. AnnotationSpec is answered to be present
+     *        in that time segment, if it is present in any part of it. The video
+     *        ML model evaluations are done only for this type of classification.
+     * *  `shot`- Shot-level classification.
+     *        AutoML Video Intelligence determines the boundaries
+     *        for each camera shot in the entire segment of the video that user
+     *        specified in the request configuration. AutoML Video Intelligence
+     *        then returns labels and their confidence scores for each detected
+     *        shot, along with the start and end time of the shot.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+     *        confidence scores for each second of the entire segment of the video
+     *        that user specified in the request configuration.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    com.google.protobuf.ByteString getTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The classification details of this annotation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+     * </code>
+     */
+    boolean hasClassificationAnnotation();
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The classification details of this annotation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+     * </code>
+     */
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        getClassificationAnnotation();
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The classification details of this annotation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+     * </code>
+     */
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
+        getClassificationAnnotationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The time segment of the video to which the
+     * annotation applies.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     */
+    boolean hasTimeSegment();
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The time segment of the video to which the
+     * annotation applies.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     */
+    com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment();
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The time segment of the video to which the
+     * annotation applies.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     */
+    com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains annotation details specific to video classification.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.automl.v1beta1.VideoClassificationAnnotation}
+   */
+  public static final class VideoClassificationAnnotation
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.VideoClassificationAnnotation)
+      VideoClassificationAnnotationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VideoClassificationAnnotation.newBuilder() to construct.
+    private VideoClassificationAnnotation(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VideoClassificationAnnotation() {
+      type_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private VideoClassificationAnnotation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                type_ = s;
+                break;
+              }
+            case 18:
+              {
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+                    subBuilder = null;
+                if (classificationAnnotation_ != null) {
+                  subBuilder = classificationAnnotation_.toBuilder();
+                }
+                classificationAnnotation_ =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(classificationAnnotation_);
+                  classificationAnnotation_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 26:
+              {
+                com.google.cloud.automl.v1beta1.TimeSegment.Builder subBuilder = null;
+                if (timeSegment_ != null) {
+                  subBuilder = timeSegment_.toBuilder();
+                }
+                timeSegment_ =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.TimeSegment.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(timeSegment_);
+                  timeSegment_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ClassificationProto
+          .internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.automl.v1beta1.ClassificationProto
+          .internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                  .class,
+              com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                  .Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Expresses the type of video classification. Possible values:
+     * *  `segment` - Classification done on a specified by user
+     *        time segment of a video. AnnotationSpec is answered to be present
+     *        in that time segment, if it is present in any part of it. The video
+     *        ML model evaluations are done only for this type of classification.
+     * *  `shot`- Shot-level classification.
+     *        AutoML Video Intelligence determines the boundaries
+     *        for each camera shot in the entire segment of the video that user
+     *        specified in the request configuration. AutoML Video Intelligence
+     *        then returns labels and their confidence scores for each detected
+     *        shot, along with the start and end time of the shot.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+     *        confidence scores for each second of the entire segment of the video
+     *        that user specified in the request configuration.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Expresses the type of video classification. Possible values:
+     * *  `segment` - Classification done on a specified by user
+     *        time segment of a video. AnnotationSpec is answered to be present
+     *        in that time segment, if it is present in any part of it. The video
+     *        ML model evaluations are done only for this type of classification.
+     * *  `shot`- Shot-level classification.
+     *        AutoML Video Intelligence determines the boundaries
+     *        for each camera shot in the entire segment of the video that user
+     *        specified in the request configuration. AutoML Video Intelligence
+     *        then returns labels and their confidence scores for each detected
+     *        shot, along with the start and end time of the shot.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+     *        confidence scores for each second of the entire segment of the video
+     *        that user specified in the request configuration.
+     *        WARNING: Model evaluation is not done for this classification type,
+     *        the quality of it depends on training data, but there are no
+     *        metrics provided to describe that quality.
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLASSIFICATION_ANNOTATION_FIELD_NUMBER = 2;
+    private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        classificationAnnotation_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The classification details of this annotation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+     * </code>
+     */
+    public boolean hasClassificationAnnotation() {
+      return classificationAnnotation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The classification details of this annotation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        getClassificationAnnotation() {
+      return classificationAnnotation_ == null
+          ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+              .getDefaultInstance()
+          : classificationAnnotation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The classification details of this annotation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
+        getClassificationAnnotationOrBuilder() {
+      return getClassificationAnnotation();
+    }
+
+    public static final int TIME_SEGMENT_FIELD_NUMBER = 3;
+    private com.google.cloud.automl.v1beta1.TimeSegment timeSegment_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The time segment of the video to which the
+     * annotation applies.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     */
+    public boolean hasTimeSegment() {
+      return timeSegment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The time segment of the video to which the
+     * annotation applies.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment() {
+      return timeSegment_ == null
+          ? com.google.cloud.automl.v1beta1.TimeSegment.getDefaultInstance()
+          : timeSegment_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only . The time segment of the video to which the
+     * annotation applies.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
+      return getTimeSegment();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (classificationAnnotation_ != null) {
+        output.writeMessage(2, getClassificationAnnotation());
+      }
+      if (timeSegment_ != null) {
+        output.writeMessage(3, getTimeSegment());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (classificationAnnotation_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getClassificationAnnotation());
+      }
+      if (timeSegment_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTimeSegment());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation other =
+          (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation) obj;
+
+      if (!getType().equals(other.getType())) return false;
+      if (hasClassificationAnnotation() != other.hasClassificationAnnotation()) return false;
+      if (hasClassificationAnnotation()) {
+        if (!getClassificationAnnotation().equals(other.getClassificationAnnotation()))
+          return false;
+      }
+      if (hasTimeSegment() != other.hasTimeSegment()) return false;
+      if (hasTimeSegment()) {
+        if (!getTimeSegment().equals(other.getTimeSegment())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      if (hasClassificationAnnotation()) {
+        hash = (37 * hash) + CLASSIFICATION_ANNOTATION_FIELD_NUMBER;
+        hash = (53 * hash) + getClassificationAnnotation().hashCode();
+      }
+      if (hasTimeSegment()) {
+        hash = (37 * hash) + TIME_SEGMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeSegment().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains annotation details specific to video classification.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.automl.v1beta1.VideoClassificationAnnotation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.VideoClassificationAnnotation)
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                    .class,
+                com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        if (classificationAnnotationBuilder_ == null) {
+          classificationAnnotation_ = null;
+        } else {
+          classificationAnnotation_ = null;
+          classificationAnnotationBuilder_ = null;
+        }
+        if (timeSegmentBuilder_ == null) {
+          timeSegment_ = null;
+        } else {
+          timeSegment_ = null;
+          timeSegmentBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+          getDefaultInstanceForType() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+          build() {
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+          buildPartial() {
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation result =
+            new com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation(
+                this);
+        result.type_ = type_;
+        if (classificationAnnotationBuilder_ == null) {
+          result.classificationAnnotation_ = classificationAnnotation_;
+        } else {
+          result.classificationAnnotation_ = classificationAnnotationBuilder_.build();
+        }
+        if (timeSegmentBuilder_ == null) {
+          result.timeSegment_ = timeSegment_;
+        } else {
+          result.timeSegment_ = timeSegmentBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation) {
+          return mergeFrom(
+              (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation other) {
+        if (other
+            == com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                .getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (other.hasClassificationAnnotation()) {
+          mergeClassificationAnnotation(other.getClassificationAnnotation());
+        }
+        if (other.hasTimeSegment()) {
+          mergeTimeSegment(other.getTimeSegment());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Expresses the type of video classification. Possible values:
+       * *  `segment` - Classification done on a specified by user
+       *        time segment of a video. AnnotationSpec is answered to be present
+       *        in that time segment, if it is present in any part of it. The video
+       *        ML model evaluations are done only for this type of classification.
+       * *  `shot`- Shot-level classification.
+       *        AutoML Video Intelligence determines the boundaries
+       *        for each camera shot in the entire segment of the video that user
+       *        specified in the request configuration. AutoML Video Intelligence
+       *        then returns labels and their confidence scores for each detected
+       *        shot, along with the start and end time of the shot.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+       *        confidence scores for each second of the entire segment of the video
+       *        that user specified in the request configuration.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Expresses the type of video classification. Possible values:
+       * *  `segment` - Classification done on a specified by user
+       *        time segment of a video. AnnotationSpec is answered to be present
+       *        in that time segment, if it is present in any part of it. The video
+       *        ML model evaluations are done only for this type of classification.
+       * *  `shot`- Shot-level classification.
+       *        AutoML Video Intelligence determines the boundaries
+       *        for each camera shot in the entire segment of the video that user
+       *        specified in the request configuration. AutoML Video Intelligence
+       *        then returns labels and their confidence scores for each detected
+       *        shot, along with the start and end time of the shot.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+       *        confidence scores for each second of the entire segment of the video
+       *        that user specified in the request configuration.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public com.google.protobuf.ByteString getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Expresses the type of video classification. Possible values:
+       * *  `segment` - Classification done on a specified by user
+       *        time segment of a video. AnnotationSpec is answered to be present
+       *        in that time segment, if it is present in any part of it. The video
+       *        ML model evaluations are done only for this type of classification.
+       * *  `shot`- Shot-level classification.
+       *        AutoML Video Intelligence determines the boundaries
+       *        for each camera shot in the entire segment of the video that user
+       *        specified in the request configuration. AutoML Video Intelligence
+       *        then returns labels and their confidence scores for each detected
+       *        shot, along with the start and end time of the shot.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+       *        confidence scores for each second of the entire segment of the video
+       *        that user specified in the request configuration.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public Builder setType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Expresses the type of video classification. Possible values:
+       * *  `segment` - Classification done on a specified by user
+       *        time segment of a video. AnnotationSpec is answered to be present
+       *        in that time segment, if it is present in any part of it. The video
+       *        ML model evaluations are done only for this type of classification.
+       * *  `shot`- Shot-level classification.
+       *        AutoML Video Intelligence determines the boundaries
+       *        for each camera shot in the entire segment of the video that user
+       *        specified in the request configuration. AutoML Video Intelligence
+       *        then returns labels and their confidence scores for each detected
+       *        shot, along with the start and end time of the shot.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+       *        confidence scores for each second of the entire segment of the video
+       *        that user specified in the request configuration.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public Builder clearType() {
+
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Expresses the type of video classification. Possible values:
+       * *  `segment` - Classification done on a specified by user
+       *        time segment of a video. AnnotationSpec is answered to be present
+       *        in that time segment, if it is present in any part of it. The video
+       *        ML model evaluations are done only for this type of classification.
+       * *  `shot`- Shot-level classification.
+       *        AutoML Video Intelligence determines the boundaries
+       *        for each camera shot in the entire segment of the video that user
+       *        specified in the request configuration. AutoML Video Intelligence
+       *        then returns labels and their confidence scores for each detected
+       *        shot, along with the start and end time of the shot.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * *  `1s_interval` - AutoML Video Intelligence returns labels and their
+       *        confidence scores for each second of the entire segment of the video
+       *        that user specified in the request configuration.
+       *        WARNING: Model evaluation is not done for this classification type,
+       *        the quality of it depends on training data, but there are no
+       *        metrics provided to describe that quality.
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+          classificationAnnotation_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder>
+          classificationAnnotationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public boolean hasClassificationAnnotation() {
+        return classificationAnnotationBuilder_ != null || classificationAnnotation_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+          getClassificationAnnotation() {
+        if (classificationAnnotationBuilder_ == null) {
+          return classificationAnnotation_ == null
+              ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                  .getDefaultInstance()
+              : classificationAnnotation_;
+        } else {
+          return classificationAnnotationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public Builder setClassificationAnnotation(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
+        if (classificationAnnotationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          classificationAnnotation_ = value;
+          onChanged();
+        } else {
+          classificationAnnotationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public Builder setClassificationAnnotation(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+              builderForValue) {
+        if (classificationAnnotationBuilder_ == null) {
+          classificationAnnotation_ = builderForValue.build();
+          onChanged();
+        } else {
+          classificationAnnotationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public Builder mergeClassificationAnnotation(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
+        if (classificationAnnotationBuilder_ == null) {
+          if (classificationAnnotation_ != null) {
+            classificationAnnotation_ =
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                    .newBuilder(classificationAnnotation_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            classificationAnnotation_ = value;
+          }
+          onChanged();
+        } else {
+          classificationAnnotationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public Builder clearClassificationAnnotation() {
+        if (classificationAnnotationBuilder_ == null) {
+          classificationAnnotation_ = null;
+          onChanged();
+        } else {
+          classificationAnnotation_ = null;
+          classificationAnnotationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+          getClassificationAnnotationBuilder() {
+
+        onChanged();
+        return getClassificationAnnotationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
+          getClassificationAnnotationOrBuilder() {
+        if (classificationAnnotationBuilder_ != null) {
+          return classificationAnnotationBuilder_.getMessageOrBuilder();
+        } else {
+          return classificationAnnotation_ == null
+              ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                  .getDefaultInstance()
+              : classificationAnnotation_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The classification details of this annotation.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder>
+          getClassificationAnnotationFieldBuilder() {
+        if (classificationAnnotationBuilder_ == null) {
+          classificationAnnotationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation,
+                  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                      .Builder,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationAnnotationOrBuilder>(
+                  getClassificationAnnotation(), getParentForChildren(), isClean());
+          classificationAnnotation_ = null;
+        }
+        return classificationAnnotationBuilder_;
+      }
+
+      private com.google.cloud.automl.v1beta1.TimeSegment timeSegment_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.automl.v1beta1.TimeSegment,
+              com.google.cloud.automl.v1beta1.TimeSegment.Builder,
+              com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder>
+          timeSegmentBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public boolean hasTimeSegment() {
+        return timeSegmentBuilder_ != null || timeSegment_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment() {
+        if (timeSegmentBuilder_ == null) {
+          return timeSegment_ == null
+              ? com.google.cloud.automl.v1beta1.TimeSegment.getDefaultInstance()
+              : timeSegment_;
+        } else {
+          return timeSegmentBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public Builder setTimeSegment(com.google.cloud.automl.v1beta1.TimeSegment value) {
+        if (timeSegmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timeSegment_ = value;
+          onChanged();
+        } else {
+          timeSegmentBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public Builder setTimeSegment(
+          com.google.cloud.automl.v1beta1.TimeSegment.Builder builderForValue) {
+        if (timeSegmentBuilder_ == null) {
+          timeSegment_ = builderForValue.build();
+          onChanged();
+        } else {
+          timeSegmentBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public Builder mergeTimeSegment(com.google.cloud.automl.v1beta1.TimeSegment value) {
+        if (timeSegmentBuilder_ == null) {
+          if (timeSegment_ != null) {
+            timeSegment_ =
+                com.google.cloud.automl.v1beta1.TimeSegment.newBuilder(timeSegment_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            timeSegment_ = value;
+          }
+          onChanged();
+        } else {
+          timeSegmentBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public Builder clearTimeSegment() {
+        if (timeSegmentBuilder_ == null) {
+          timeSegment_ = null;
+          onChanged();
+        } else {
+          timeSegment_ = null;
+          timeSegmentBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public com.google.cloud.automl.v1beta1.TimeSegment.Builder getTimeSegmentBuilder() {
+
+        onChanged();
+        return getTimeSegmentFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      public com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
+        if (timeSegmentBuilder_ != null) {
+          return timeSegmentBuilder_.getMessageOrBuilder();
+        } else {
+          return timeSegment_ == null
+              ? com.google.cloud.automl.v1beta1.TimeSegment.getDefaultInstance()
+              : timeSegment_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only . The time segment of the video to which the
+       * annotation applies.
+       * </pre>
+       *
+       * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.automl.v1beta1.TimeSegment,
+              com.google.cloud.automl.v1beta1.TimeSegment.Builder,
+              com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder>
+          getTimeSegmentFieldBuilder() {
+        if (timeSegmentBuilder_ == null) {
+          timeSegmentBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.automl.v1beta1.TimeSegment,
+                  com.google.cloud.automl.v1beta1.TimeSegment.Builder,
+                  com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder>(
+                  getTimeSegment(), getParentForChildren(), isClean());
+          timeSegment_ = null;
+        }
+        return timeSegmentBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.VideoClassificationAnnotation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.VideoClassificationAnnotation)
+    private static final com.google.cloud.automl.v1beta1.ClassificationProto
+            .VideoClassificationAnnotation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation();
+    }
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VideoClassificationAnnotation> PARSER =
+        new com.google.protobuf.AbstractParser<VideoClassificationAnnotation>() {
+          @java.lang.Override
+          public VideoClassificationAnnotation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new VideoClassificationAnnotation(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<VideoClassificationAnnotation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VideoClassificationAnnotation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ClassificationEvaluationMetricsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics)
@@ -751,7 +2233,8 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. The Area under precision recall curve metric.
+     * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged
+     * for the overall evaluation.
      * </pre>
      *
      * <code>float au_prc = 1;</code>
@@ -762,19 +2245,49 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. The Area under precision recall curve metric based on priors.
+     * Output only. The Area Under Precision-Recall Curve metric based on priors.
+     * Micro-averaged for the overall evaluation.
+     * Deprecated.
      * </pre>
      *
-     * <code>float base_au_prc = 2;</code>
+     * <code>float base_au_prc = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     float getBaseAuPrc();
 
     /**
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. The Area Under Receiver Operating Characteristic curve metric.
+     * Micro-averaged for the overall evaluation.
+     * </pre>
+     *
+     * <code>float au_roc = 6;</code>
+     */
+    float getAuRoc();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Log Loss metric.
+     * </pre>
+     *
+     * <code>float log_loss = 7;</code>
+     */
+    float getLogLoss();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -789,8 +2302,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -804,8 +2321,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -817,8 +2338,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -834,8 +2359,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -942,7 +2471,8 @@ public final class ClassificationProto {
    *
    * <pre>
    * Model evaluation metrics for classification problems.
-   * Visible only to v1beta1
+   * Note: For Video Classification this metrics only describe quality of the
+   * Video Classification predictions of "segment_classification" type.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics}
@@ -1000,12 +2530,12 @@ public final class ClassificationProto {
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   confidenceMetricsEntry_ =
                       new java.util.ArrayList<
                           com.google.cloud.automl.v1beta1.ClassificationProto
                               .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 confidenceMetricsEntry_.add(
                     input.readMessage(
@@ -1037,11 +2567,21 @@ public final class ClassificationProto {
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                   annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000040;
                 }
                 annotationSpecId_.add(s);
+                break;
+              }
+            case 53:
+              {
+                auRoc_ = input.readFloat();
+                break;
+              }
+            case 61:
+              {
+                logLoss_ = input.readFloat();
                 break;
               }
             default:
@@ -1058,10 +2598,10 @@ public final class ClassificationProto {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
           confidenceMetricsEntry_ = java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
         }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -1095,7 +2635,8 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The confidence threshold value used to compute the metrics.
+       * Output only. Metrics are computed with an assumption that the model
+       * never returns predictions with score lower than this value.
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
@@ -1106,7 +2647,21 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Recall under the given confidence threshold.
+       * Output only. Metrics are computed with an assumption that the model
+       * always returns at most this many predictions (ordered by their score,
+       * descendingly), but they all still need to meet the confidence_threshold.
+       * </pre>
+       *
+       * <code>int32 position_threshold = 14;</code>
+       */
+      int getPositionThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Recall (True Positive Rate) for the given confidence
+       * threshold.
        * </pre>
        *
        * <code>float recall = 2;</code>
@@ -1117,12 +2672,23 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Precision under the given confidence threshold.
+       * Output only. Precision for the given confidence threshold.
        * </pre>
        *
        * <code>float precision = 3;</code>
        */
       float getPrecision();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. False Positive Rate for the given confidence threshold.
+       * </pre>
+       *
+       * <code>float false_positive_rate = 8;</code>
+       */
+      float getFalsePositiveRate();
 
       /**
        *
@@ -1139,9 +2705,9 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The recall when only considering the label that has the
-       * highest prediction score and not below the confidence threshold for each
-       * example.
+       * Output only. The Recall (True Positive Rate) when only considering the
+       * label that has the highest prediction score and not below the confidence
+       * threshold for each example.
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
@@ -1153,7 +2719,7 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. The precision when only considering the label that has the
-       * highest predictionscore and not below the confidence threshold for each
+       * highest prediction score and not below the confidence threshold for each
        * example.
        * </pre>
        *
@@ -1165,15 +2731,73 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The harmonic mean of
-       * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The False Positive Rate when only considering the label that
+       * has the highest prediction score and not below the confidence threshold
+       * for each example.
+       * </pre>
+       *
+       * <code>float false_positive_rate_at1 = 9;</code>
+       */
+      float getFalsePositiveRateAt1();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
        */
       float getF1ScoreAt1();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of model created labels that match a ground truth
+       * label.
+       * </pre>
+       *
+       * <code>int64 true_positive_count = 10;</code>
+       */
+      long getTruePositiveCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of model created labels that do not match a
+       * ground truth label.
+       * </pre>
+       *
+       * <code>int64 false_positive_count = 11;</code>
+       */
+      long getFalsePositiveCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of ground truth labels that are not matched
+       * by a model created label.
+       * </pre>
+       *
+       * <code>int64 false_negative_count = 12;</code>
+       */
+      long getFalseNegativeCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of labels that were not created by the model,
+       * but if they would, they would not match a ground truth label.
+       * </pre>
+       *
+       * <code>int64 true_negative_count = 13;</code>
+       */
+      long getTrueNegativeCount();
     }
     /**
      *
@@ -1256,6 +2880,41 @@ public final class ClassificationProto {
                   f1ScoreAt1_ = input.readFloat();
                   break;
                 }
+              case 69:
+                {
+                  falsePositiveRate_ = input.readFloat();
+                  break;
+                }
+              case 77:
+                {
+                  falsePositiveRateAt1_ = input.readFloat();
+                  break;
+                }
+              case 80:
+                {
+                  truePositiveCount_ = input.readInt64();
+                  break;
+                }
+              case 88:
+                {
+                  falsePositiveCount_ = input.readInt64();
+                  break;
+                }
+              case 96:
+                {
+                  falseNegativeCount_ = input.readInt64();
+                  break;
+                }
+              case 104:
+                {
+                  trueNegativeCount_ = input.readInt64();
+                  break;
+                }
+              case 112:
+                {
+                  positionThreshold_ = input.readInt32();
+                  break;
+                }
               default:
                 {
                   if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1299,7 +2958,8 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The confidence threshold value used to compute the metrics.
+       * Output only. Metrics are computed with an assumption that the model
+       * never returns predictions with score lower than this value.
        * </pre>
        *
        * <code>float confidence_threshold = 1;</code>
@@ -1308,13 +2968,31 @@ public final class ClassificationProto {
         return confidenceThreshold_;
       }
 
+      public static final int POSITION_THRESHOLD_FIELD_NUMBER = 14;
+      private int positionThreshold_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metrics are computed with an assumption that the model
+       * always returns at most this many predictions (ordered by their score,
+       * descendingly), but they all still need to meet the confidence_threshold.
+       * </pre>
+       *
+       * <code>int32 position_threshold = 14;</code>
+       */
+      public int getPositionThreshold() {
+        return positionThreshold_;
+      }
+
       public static final int RECALL_FIELD_NUMBER = 2;
       private float recall_;
       /**
        *
        *
        * <pre>
-       * Output only. Recall under the given confidence threshold.
+       * Output only. Recall (True Positive Rate) for the given confidence
+       * threshold.
        * </pre>
        *
        * <code>float recall = 2;</code>
@@ -1329,13 +3007,28 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Precision under the given confidence threshold.
+       * Output only. Precision for the given confidence threshold.
        * </pre>
        *
        * <code>float precision = 3;</code>
        */
       public float getPrecision() {
         return precision_;
+      }
+
+      public static final int FALSE_POSITIVE_RATE_FIELD_NUMBER = 8;
+      private float falsePositiveRate_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. False Positive Rate for the given confidence threshold.
+       * </pre>
+       *
+       * <code>float false_positive_rate = 8;</code>
+       */
+      public float getFalsePositiveRate() {
+        return falsePositiveRate_;
       }
 
       public static final int F1_SCORE_FIELD_NUMBER = 4;
@@ -1359,9 +3052,9 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The recall when only considering the label that has the
-       * highest prediction score and not below the confidence threshold for each
-       * example.
+       * Output only. The Recall (True Positive Rate) when only considering the
+       * label that has the highest prediction score and not below the confidence
+       * threshold for each example.
        * </pre>
        *
        * <code>float recall_at1 = 5;</code>
@@ -1377,7 +3070,7 @@ public final class ClassificationProto {
        *
        * <pre>
        * Output only. The precision when only considering the label that has the
-       * highest predictionscore and not below the confidence threshold for each
+       * highest prediction score and not below the confidence threshold for each
        * example.
        * </pre>
        *
@@ -1387,22 +3080,100 @@ public final class ClassificationProto {
         return precisionAt1_;
       }
 
+      public static final int FALSE_POSITIVE_RATE_AT1_FIELD_NUMBER = 9;
+      private float falsePositiveRateAt1_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The False Positive Rate when only considering the label that
+       * has the highest prediction score and not below the confidence threshold
+       * for each example.
+       * </pre>
+       *
+       * <code>float false_positive_rate_at1 = 9;</code>
+       */
+      public float getFalsePositiveRateAt1() {
+        return falsePositiveRateAt1_;
+      }
+
       public static final int F1_SCORE_AT1_FIELD_NUMBER = 7;
       private float f1ScoreAt1_;
       /**
        *
        *
        * <pre>
-       * Output only. The harmonic mean of
-       * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-       * and
-       * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
        */
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
+      }
+
+      public static final int TRUE_POSITIVE_COUNT_FIELD_NUMBER = 10;
+      private long truePositiveCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of model created labels that match a ground truth
+       * label.
+       * </pre>
+       *
+       * <code>int64 true_positive_count = 10;</code>
+       */
+      public long getTruePositiveCount() {
+        return truePositiveCount_;
+      }
+
+      public static final int FALSE_POSITIVE_COUNT_FIELD_NUMBER = 11;
+      private long falsePositiveCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of model created labels that do not match a
+       * ground truth label.
+       * </pre>
+       *
+       * <code>int64 false_positive_count = 11;</code>
+       */
+      public long getFalsePositiveCount() {
+        return falsePositiveCount_;
+      }
+
+      public static final int FALSE_NEGATIVE_COUNT_FIELD_NUMBER = 12;
+      private long falseNegativeCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of ground truth labels that are not matched
+       * by a model created label.
+       * </pre>
+       *
+       * <code>int64 false_negative_count = 12;</code>
+       */
+      public long getFalseNegativeCount() {
+        return falseNegativeCount_;
+      }
+
+      public static final int TRUE_NEGATIVE_COUNT_FIELD_NUMBER = 13;
+      private long trueNegativeCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of labels that were not created by the model,
+       * but if they would, they would not match a ground truth label.
+       * </pre>
+       *
+       * <code>int64 true_negative_count = 13;</code>
+       */
+      public long getTrueNegativeCount() {
+        return trueNegativeCount_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1440,6 +3211,27 @@ public final class ClassificationProto {
         if (f1ScoreAt1_ != 0F) {
           output.writeFloat(7, f1ScoreAt1_);
         }
+        if (falsePositiveRate_ != 0F) {
+          output.writeFloat(8, falsePositiveRate_);
+        }
+        if (falsePositiveRateAt1_ != 0F) {
+          output.writeFloat(9, falsePositiveRateAt1_);
+        }
+        if (truePositiveCount_ != 0L) {
+          output.writeInt64(10, truePositiveCount_);
+        }
+        if (falsePositiveCount_ != 0L) {
+          output.writeInt64(11, falsePositiveCount_);
+        }
+        if (falseNegativeCount_ != 0L) {
+          output.writeInt64(12, falseNegativeCount_);
+        }
+        if (trueNegativeCount_ != 0L) {
+          output.writeInt64(13, trueNegativeCount_);
+        }
+        if (positionThreshold_ != 0) {
+          output.writeInt32(14, positionThreshold_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -1470,6 +3262,27 @@ public final class ClassificationProto {
         if (f1ScoreAt1_ != 0F) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, f1ScoreAt1_);
         }
+        if (falsePositiveRate_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, falsePositiveRate_);
+        }
+        if (falsePositiveRateAt1_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, falsePositiveRateAt1_);
+        }
+        if (truePositiveCount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, truePositiveCount_);
+        }
+        if (falsePositiveCount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, falsePositiveCount_);
+        }
+        if (falseNegativeCount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, falseNegativeCount_);
+        }
+        if (trueNegativeCount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, trueNegativeCount_);
+        }
+        if (positionThreshold_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, positionThreshold_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1495,18 +3308,27 @@ public final class ClassificationProto {
 
         if (java.lang.Float.floatToIntBits(getConfidenceThreshold())
             != java.lang.Float.floatToIntBits(other.getConfidenceThreshold())) return false;
+        if (getPositionThreshold() != other.getPositionThreshold()) return false;
         if (java.lang.Float.floatToIntBits(getRecall())
             != java.lang.Float.floatToIntBits(other.getRecall())) return false;
         if (java.lang.Float.floatToIntBits(getPrecision())
             != java.lang.Float.floatToIntBits(other.getPrecision())) return false;
+        if (java.lang.Float.floatToIntBits(getFalsePositiveRate())
+            != java.lang.Float.floatToIntBits(other.getFalsePositiveRate())) return false;
         if (java.lang.Float.floatToIntBits(getF1Score())
             != java.lang.Float.floatToIntBits(other.getF1Score())) return false;
         if (java.lang.Float.floatToIntBits(getRecallAt1())
             != java.lang.Float.floatToIntBits(other.getRecallAt1())) return false;
         if (java.lang.Float.floatToIntBits(getPrecisionAt1())
             != java.lang.Float.floatToIntBits(other.getPrecisionAt1())) return false;
+        if (java.lang.Float.floatToIntBits(getFalsePositiveRateAt1())
+            != java.lang.Float.floatToIntBits(other.getFalsePositiveRateAt1())) return false;
         if (java.lang.Float.floatToIntBits(getF1ScoreAt1())
             != java.lang.Float.floatToIntBits(other.getF1ScoreAt1())) return false;
+        if (getTruePositiveCount() != other.getTruePositiveCount()) return false;
+        if (getFalsePositiveCount() != other.getFalsePositiveCount()) return false;
+        if (getFalseNegativeCount() != other.getFalseNegativeCount()) return false;
+        if (getTrueNegativeCount() != other.getTrueNegativeCount()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -1520,18 +3342,32 @@ public final class ClassificationProto {
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + CONFIDENCE_THRESHOLD_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidenceThreshold());
+        hash = (37 * hash) + POSITION_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getPositionThreshold();
         hash = (37 * hash) + RECALL_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getRecall());
         hash = (37 * hash) + PRECISION_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getPrecision());
+        hash = (37 * hash) + FALSE_POSITIVE_RATE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getFalsePositiveRate());
         hash = (37 * hash) + F1_SCORE_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getF1Score());
         hash = (37 * hash) + RECALL_AT1_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getRecallAt1());
         hash = (37 * hash) + PRECISION_AT1_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getPrecisionAt1());
+        hash = (37 * hash) + FALSE_POSITIVE_RATE_AT1_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getFalsePositiveRateAt1());
         hash = (37 * hash) + F1_SCORE_AT1_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getF1ScoreAt1());
+        hash = (37 * hash) + TRUE_POSITIVE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTruePositiveCount());
+        hash = (37 * hash) + FALSE_POSITIVE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFalsePositiveCount());
+        hash = (37 * hash) + FALSE_NEGATIVE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFalseNegativeCount());
+        hash = (37 * hash) + TRUE_NEGATIVE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrueNegativeCount());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1709,9 +3545,13 @@ public final class ClassificationProto {
           super.clear();
           confidenceThreshold_ = 0F;
 
+          positionThreshold_ = 0;
+
           recall_ = 0F;
 
           precision_ = 0F;
+
+          falsePositiveRate_ = 0F;
 
           f1Score_ = 0F;
 
@@ -1719,7 +3559,17 @@ public final class ClassificationProto {
 
           precisionAt1_ = 0F;
 
+          falsePositiveRateAt1_ = 0F;
+
           f1ScoreAt1_ = 0F;
+
+          truePositiveCount_ = 0L;
+
+          falsePositiveCount_ = 0L;
+
+          falseNegativeCount_ = 0L;
+
+          trueNegativeCount_ = 0L;
 
           return this;
         }
@@ -1761,12 +3611,19 @@ public final class ClassificationProto {
                   new com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntry(this);
           result.confidenceThreshold_ = confidenceThreshold_;
+          result.positionThreshold_ = positionThreshold_;
           result.recall_ = recall_;
           result.precision_ = precision_;
+          result.falsePositiveRate_ = falsePositiveRate_;
           result.f1Score_ = f1Score_;
           result.recallAt1_ = recallAt1_;
           result.precisionAt1_ = precisionAt1_;
+          result.falsePositiveRateAt1_ = falsePositiveRateAt1_;
           result.f1ScoreAt1_ = f1ScoreAt1_;
+          result.truePositiveCount_ = truePositiveCount_;
+          result.falsePositiveCount_ = falsePositiveCount_;
+          result.falseNegativeCount_ = falseNegativeCount_;
+          result.trueNegativeCount_ = trueNegativeCount_;
           onBuilt();
           return result;
         }
@@ -1832,11 +3689,17 @@ public final class ClassificationProto {
           if (other.getConfidenceThreshold() != 0F) {
             setConfidenceThreshold(other.getConfidenceThreshold());
           }
+          if (other.getPositionThreshold() != 0) {
+            setPositionThreshold(other.getPositionThreshold());
+          }
           if (other.getRecall() != 0F) {
             setRecall(other.getRecall());
           }
           if (other.getPrecision() != 0F) {
             setPrecision(other.getPrecision());
+          }
+          if (other.getFalsePositiveRate() != 0F) {
+            setFalsePositiveRate(other.getFalsePositiveRate());
           }
           if (other.getF1Score() != 0F) {
             setF1Score(other.getF1Score());
@@ -1847,8 +3710,23 @@ public final class ClassificationProto {
           if (other.getPrecisionAt1() != 0F) {
             setPrecisionAt1(other.getPrecisionAt1());
           }
+          if (other.getFalsePositiveRateAt1() != 0F) {
+            setFalsePositiveRateAt1(other.getFalsePositiveRateAt1());
+          }
           if (other.getF1ScoreAt1() != 0F) {
             setF1ScoreAt1(other.getF1ScoreAt1());
+          }
+          if (other.getTruePositiveCount() != 0L) {
+            setTruePositiveCount(other.getTruePositiveCount());
+          }
+          if (other.getFalsePositiveCount() != 0L) {
+            setFalsePositiveCount(other.getFalsePositiveCount());
+          }
+          if (other.getFalseNegativeCount() != 0L) {
+            setFalseNegativeCount(other.getFalseNegativeCount());
+          }
+          if (other.getTrueNegativeCount() != 0L) {
+            setTrueNegativeCount(other.getTrueNegativeCount());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1889,7 +3767,8 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The confidence threshold value used to compute the metrics.
+         * Output only. Metrics are computed with an assumption that the model
+         * never returns predictions with score lower than this value.
          * </pre>
          *
          * <code>float confidence_threshold = 1;</code>
@@ -1901,7 +3780,8 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The confidence threshold value used to compute the metrics.
+         * Output only. Metrics are computed with an assumption that the model
+         * never returns predictions with score lower than this value.
          * </pre>
          *
          * <code>float confidence_threshold = 1;</code>
@@ -1916,7 +3796,8 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The confidence threshold value used to compute the metrics.
+         * Output only. Metrics are computed with an assumption that the model
+         * never returns predictions with score lower than this value.
          * </pre>
          *
          * <code>float confidence_threshold = 1;</code>
@@ -1928,12 +3809,63 @@ public final class ClassificationProto {
           return this;
         }
 
+        private int positionThreshold_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Metrics are computed with an assumption that the model
+         * always returns at most this many predictions (ordered by their score,
+         * descendingly), but they all still need to meet the confidence_threshold.
+         * </pre>
+         *
+         * <code>int32 position_threshold = 14;</code>
+         */
+        public int getPositionThreshold() {
+          return positionThreshold_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Metrics are computed with an assumption that the model
+         * always returns at most this many predictions (ordered by their score,
+         * descendingly), but they all still need to meet the confidence_threshold.
+         * </pre>
+         *
+         * <code>int32 position_threshold = 14;</code>
+         */
+        public Builder setPositionThreshold(int value) {
+
+          positionThreshold_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Metrics are computed with an assumption that the model
+         * always returns at most this many predictions (ordered by their score,
+         * descendingly), but they all still need to meet the confidence_threshold.
+         * </pre>
+         *
+         * <code>int32 position_threshold = 14;</code>
+         */
+        public Builder clearPositionThreshold() {
+
+          positionThreshold_ = 0;
+          onChanged();
+          return this;
+        }
+
         private float recall_;
         /**
          *
          *
          * <pre>
-         * Output only. Recall under the given confidence threshold.
+         * Output only. Recall (True Positive Rate) for the given confidence
+         * threshold.
          * </pre>
          *
          * <code>float recall = 2;</code>
@@ -1945,7 +3877,8 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. Recall under the given confidence threshold.
+         * Output only. Recall (True Positive Rate) for the given confidence
+         * threshold.
          * </pre>
          *
          * <code>float recall = 2;</code>
@@ -1960,7 +3893,8 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. Recall under the given confidence threshold.
+         * Output only. Recall (True Positive Rate) for the given confidence
+         * threshold.
          * </pre>
          *
          * <code>float recall = 2;</code>
@@ -1977,7 +3911,7 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. Precision under the given confidence threshold.
+         * Output only. Precision for the given confidence threshold.
          * </pre>
          *
          * <code>float precision = 3;</code>
@@ -1989,7 +3923,7 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. Precision under the given confidence threshold.
+         * Output only. Precision for the given confidence threshold.
          * </pre>
          *
          * <code>float precision = 3;</code>
@@ -2004,7 +3938,7 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. Precision under the given confidence threshold.
+         * Output only. Precision for the given confidence threshold.
          * </pre>
          *
          * <code>float precision = 3;</code>
@@ -2012,6 +3946,50 @@ public final class ClassificationProto {
         public Builder clearPrecision() {
 
           precision_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float falsePositiveRate_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. False Positive Rate for the given confidence threshold.
+         * </pre>
+         *
+         * <code>float false_positive_rate = 8;</code>
+         */
+        public float getFalsePositiveRate() {
+          return falsePositiveRate_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. False Positive Rate for the given confidence threshold.
+         * </pre>
+         *
+         * <code>float false_positive_rate = 8;</code>
+         */
+        public Builder setFalsePositiveRate(float value) {
+
+          falsePositiveRate_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. False Positive Rate for the given confidence threshold.
+         * </pre>
+         *
+         * <code>float false_positive_rate = 8;</code>
+         */
+        public Builder clearFalsePositiveRate() {
+
+          falsePositiveRate_ = 0F;
           onChanged();
           return this;
         }
@@ -2065,9 +4043,9 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The recall when only considering the label that has the
-         * highest prediction score and not below the confidence threshold for each
-         * example.
+         * Output only. The Recall (True Positive Rate) when only considering the
+         * label that has the highest prediction score and not below the confidence
+         * threshold for each example.
          * </pre>
          *
          * <code>float recall_at1 = 5;</code>
@@ -2079,9 +4057,9 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The recall when only considering the label that has the
-         * highest prediction score and not below the confidence threshold for each
-         * example.
+         * Output only. The Recall (True Positive Rate) when only considering the
+         * label that has the highest prediction score and not below the confidence
+         * threshold for each example.
          * </pre>
          *
          * <code>float recall_at1 = 5;</code>
@@ -2096,9 +4074,9 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The recall when only considering the label that has the
-         * highest prediction score and not below the confidence threshold for each
-         * example.
+         * Output only. The Recall (True Positive Rate) when only considering the
+         * label that has the highest prediction score and not below the confidence
+         * threshold for each example.
          * </pre>
          *
          * <code>float recall_at1 = 5;</code>
@@ -2116,7 +4094,7 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. The precision when only considering the label that has the
-         * highest predictionscore and not below the confidence threshold for each
+         * highest prediction score and not below the confidence threshold for each
          * example.
          * </pre>
          *
@@ -2130,7 +4108,7 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. The precision when only considering the label that has the
-         * highest predictionscore and not below the confidence threshold for each
+         * highest prediction score and not below the confidence threshold for each
          * example.
          * </pre>
          *
@@ -2147,7 +4125,7 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. The precision when only considering the label that has the
-         * highest predictionscore and not below the confidence threshold for each
+         * highest prediction score and not below the confidence threshold for each
          * example.
          * </pre>
          *
@@ -2160,15 +4138,62 @@ public final class ClassificationProto {
           return this;
         }
 
+        private float falsePositiveRateAt1_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The False Positive Rate when only considering the label that
+         * has the highest prediction score and not below the confidence threshold
+         * for each example.
+         * </pre>
+         *
+         * <code>float false_positive_rate_at1 = 9;</code>
+         */
+        public float getFalsePositiveRateAt1() {
+          return falsePositiveRateAt1_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The False Positive Rate when only considering the label that
+         * has the highest prediction score and not below the confidence threshold
+         * for each example.
+         * </pre>
+         *
+         * <code>float false_positive_rate_at1 = 9;</code>
+         */
+        public Builder setFalsePositiveRateAt1(float value) {
+
+          falsePositiveRateAt1_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The False Positive Rate when only considering the label that
+         * has the highest prediction score and not below the confidence threshold
+         * for each example.
+         * </pre>
+         *
+         * <code>float false_positive_rate_at1 = 9;</code>
+         */
+        public Builder clearFalsePositiveRateAt1() {
+
+          falsePositiveRateAt1_ = 0F;
+          onChanged();
+          return this;
+        }
+
         private float f1ScoreAt1_;
         /**
          *
          *
          * <pre>
-         * Output only. The harmonic mean of
-         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-         * and
-         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -2180,10 +4205,7 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of
-         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-         * and
-         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -2198,10 +4220,7 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of
-         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
-         * and
-         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -2209,6 +4228,194 @@ public final class ClassificationProto {
         public Builder clearF1ScoreAt1() {
 
           f1ScoreAt1_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private long truePositiveCount_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of model created labels that match a ground truth
+         * label.
+         * </pre>
+         *
+         * <code>int64 true_positive_count = 10;</code>
+         */
+        public long getTruePositiveCount() {
+          return truePositiveCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of model created labels that match a ground truth
+         * label.
+         * </pre>
+         *
+         * <code>int64 true_positive_count = 10;</code>
+         */
+        public Builder setTruePositiveCount(long value) {
+
+          truePositiveCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of model created labels that match a ground truth
+         * label.
+         * </pre>
+         *
+         * <code>int64 true_positive_count = 10;</code>
+         */
+        public Builder clearTruePositiveCount() {
+
+          truePositiveCount_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long falsePositiveCount_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of model created labels that do not match a
+         * ground truth label.
+         * </pre>
+         *
+         * <code>int64 false_positive_count = 11;</code>
+         */
+        public long getFalsePositiveCount() {
+          return falsePositiveCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of model created labels that do not match a
+         * ground truth label.
+         * </pre>
+         *
+         * <code>int64 false_positive_count = 11;</code>
+         */
+        public Builder setFalsePositiveCount(long value) {
+
+          falsePositiveCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of model created labels that do not match a
+         * ground truth label.
+         * </pre>
+         *
+         * <code>int64 false_positive_count = 11;</code>
+         */
+        public Builder clearFalsePositiveCount() {
+
+          falsePositiveCount_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long falseNegativeCount_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of ground truth labels that are not matched
+         * by a model created label.
+         * </pre>
+         *
+         * <code>int64 false_negative_count = 12;</code>
+         */
+        public long getFalseNegativeCount() {
+          return falseNegativeCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of ground truth labels that are not matched
+         * by a model created label.
+         * </pre>
+         *
+         * <code>int64 false_negative_count = 12;</code>
+         */
+        public Builder setFalseNegativeCount(long value) {
+
+          falseNegativeCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of ground truth labels that are not matched
+         * by a model created label.
+         * </pre>
+         *
+         * <code>int64 false_negative_count = 12;</code>
+         */
+        public Builder clearFalseNegativeCount() {
+
+          falseNegativeCount_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long trueNegativeCount_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of labels that were not created by the model,
+         * but if they would, they would not match a ground truth label.
+         * </pre>
+         *
+         * <code>int64 true_negative_count = 13;</code>
+         */
+        public long getTrueNegativeCount() {
+          return trueNegativeCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of labels that were not created by the model,
+         * but if they would, they would not match a ground truth label.
+         * </pre>
+         *
+         * <code>int64 true_negative_count = 13;</code>
+         */
+        public Builder setTrueNegativeCount(long value) {
+
+          trueNegativeCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The number of labels that were not created by the model,
+         * but if they would, they would not match a ground truth label.
+         * </pre>
+         *
+         * <code>int64 true_negative_count = 13;</code>
+         */
+        public Builder clearTrueNegativeCount() {
+
+          trueNegativeCount_ = 0L;
           onChanged();
           return this;
         }
@@ -2539,8 +4746,8 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
-         * The number of values each row is equal to the size of
-         * annotatin_spec_id.
+         * The number of values each row has (i.e. the length of the row) is equal
+         * to the length of the annotation_spec_id field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -2551,8 +4758,8 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
-         * The number of values each row is equal to the size of
-         * annotatin_spec_id.
+         * The number of values each row has (i.e. the length of the row) is equal
+         * to the length of the annotation_spec_id field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -2563,8 +4770,8 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
-         * The number of values each row is equal to the size of
-         * annotatin_spec_id.
+         * The number of values each row has (i.e. the length of the row) is equal
+         * to the length of the annotation_spec_id field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -2690,8 +4897,8 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
-         * The number of values each row is equal to the size of
-         * annotatin_spec_id.
+         * The number of values each row has (i.e. the length of the row) is equal
+         * to the length of the annotation_spec_id field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -2704,8 +4911,8 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
-         * The number of values each row is equal to the size of
-         * annotatin_spec_id.
+         * The number of values each row has (i.e. the length of the row) is equal
+         * to the length of the annotation_spec_id field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -2718,8 +4925,8 @@ public final class ClassificationProto {
          *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
-         * The number of values each row is equal to the size of
-         * annotatin_spec_id.
+         * The number of values each row has (i.e. the length of the row) is equal
+         * to the length of the annotation_spec_id field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -3161,8 +5368,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -3177,8 +5384,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -3191,8 +5398,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -3205,8 +5412,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -3222,8 +5429,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -3239,8 +5446,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -3257,8 +5464,8 @@ public final class ClassificationProto {
            *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
-           * The number of values each row is equal to the size of
-           * annotatin_spec_id.
+           * The number of values each row has (i.e. the length of the row) is equal
+           * to the length of the annotation_spec_id field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -4675,7 +6882,8 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. The Area under precision recall curve metric.
+     * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged
+     * for the overall evaluation.
      * </pre>
      *
      * <code>float au_prc = 1;</code>
@@ -4690,13 +6898,47 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. The Area under precision recall curve metric based on priors.
+     * Output only. The Area Under Precision-Recall Curve metric based on priors.
+     * Micro-averaged for the overall evaluation.
+     * Deprecated.
      * </pre>
      *
-     * <code>float base_au_prc = 2;</code>
+     * <code>float base_au_prc = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public float getBaseAuPrc() {
       return baseAuPrc_;
+    }
+
+    public static final int AU_ROC_FIELD_NUMBER = 6;
+    private float auRoc_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Area Under Receiver Operating Characteristic curve metric.
+     * Micro-averaged for the overall evaluation.
+     * </pre>
+     *
+     * <code>float au_roc = 6;</code>
+     */
+    public float getAuRoc() {
+      return auRoc_;
+    }
+
+    public static final int LOG_LOSS_FIELD_NUMBER = 7;
+    private float logLoss_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Log Loss metric.
+     * </pre>
+     *
+     * <code>float log_loss = 7;</code>
+     */
+    public float getLogLoss() {
+      return logLoss_;
     }
 
     public static final int CONFIDENCE_METRICS_ENTRY_FIELD_NUMBER = 3;
@@ -4708,8 +6950,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -4726,8 +6972,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -4745,8 +6995,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -4760,8 +7014,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -4777,8 +7035,12 @@ public final class ClassificationProto {
      *
      *
      * <pre>
-     * Output only. Metrics that have confidence thresholds.
-     * Precision-recall curve can be derived from it.
+     * Output only. Metrics for each confidence_threshold in
+     * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+     * position_threshold = INT32_MAX_VALUE.
+     * Precision-recall curve is derived from them.
+     * The above metrics may also be supplied for additional values of
+     * position_threshold.
      * </pre>
      *
      * <code>
@@ -4934,6 +7196,12 @@ public final class ClassificationProto {
       for (int i = 0; i < annotationSpecId_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, annotationSpecId_.getRaw(i));
       }
+      if (auRoc_ != 0F) {
+        output.writeFloat(6, auRoc_);
+      }
+      if (logLoss_ != 0F) {
+        output.writeFloat(7, logLoss_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4965,6 +7233,12 @@ public final class ClassificationProto {
         size += dataSize;
         size += 1 * getAnnotationSpecIdList().size();
       }
+      if (auRoc_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, auRoc_);
+      }
+      if (logLoss_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, logLoss_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4987,6 +7261,10 @@ public final class ClassificationProto {
           != java.lang.Float.floatToIntBits(other.getAuPrc())) return false;
       if (java.lang.Float.floatToIntBits(getBaseAuPrc())
           != java.lang.Float.floatToIntBits(other.getBaseAuPrc())) return false;
+      if (java.lang.Float.floatToIntBits(getAuRoc())
+          != java.lang.Float.floatToIntBits(other.getAuRoc())) return false;
+      if (java.lang.Float.floatToIntBits(getLogLoss())
+          != java.lang.Float.floatToIntBits(other.getLogLoss())) return false;
       if (!getConfidenceMetricsEntryList().equals(other.getConfidenceMetricsEntryList()))
         return false;
       if (hasConfusionMatrix() != other.hasConfusionMatrix()) return false;
@@ -5009,6 +7287,10 @@ public final class ClassificationProto {
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getAuPrc());
       hash = (37 * hash) + BASE_AU_PRC_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getBaseAuPrc());
+      hash = (37 * hash) + AU_ROC_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getAuRoc());
+      hash = (37 * hash) + LOG_LOSS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getLogLoss());
       if (getConfidenceMetricsEntryCount() > 0) {
         hash = (37 * hash) + CONFIDENCE_METRICS_ENTRY_FIELD_NUMBER;
         hash = (53 * hash) + getConfidenceMetricsEntryList().hashCode();
@@ -5147,7 +7429,8 @@ public final class ClassificationProto {
      *
      * <pre>
      * Model evaluation metrics for classification problems.
-     * Visible only to v1beta1
+     * Note: For Video Classification this metrics only describe quality of the
+     * Video Classification predictions of "segment_classification" type.
      * </pre>
      *
      * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics}
@@ -5199,9 +7482,13 @@ public final class ClassificationProto {
 
         baseAuPrc_ = 0F;
 
+        auRoc_ = 0F;
+
+        logLoss_ = 0F;
+
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           confidenceMetricsEntryBuilder_.clear();
         }
@@ -5212,7 +7499,7 @@ public final class ClassificationProto {
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -5250,11 +7537,13 @@ public final class ClassificationProto {
         int to_bitField0_ = 0;
         result.auPrc_ = auPrc_;
         result.baseAuPrc_ = baseAuPrc_;
+        result.auRoc_ = auRoc_;
+        result.logLoss_ = logLoss_;
         if (confidenceMetricsEntryBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             confidenceMetricsEntry_ =
                 java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.confidenceMetricsEntry_ = confidenceMetricsEntry_;
         } else {
@@ -5265,9 +7554,9 @@ public final class ClassificationProto {
         } else {
           result.confusionMatrix_ = confusionMatrixBuilder_.build();
         }
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.annotationSpecId_ = annotationSpecId_;
         result.bitField0_ = to_bitField0_;
@@ -5336,11 +7625,17 @@ public final class ClassificationProto {
         if (other.getBaseAuPrc() != 0F) {
           setBaseAuPrc(other.getBaseAuPrc());
         }
+        if (other.getAuRoc() != 0F) {
+          setAuRoc(other.getAuRoc());
+        }
+        if (other.getLogLoss() != 0F) {
+          setLogLoss(other.getLogLoss());
+        }
         if (confidenceMetricsEntryBuilder_ == null) {
           if (!other.confidenceMetricsEntry_.isEmpty()) {
             if (confidenceMetricsEntry_.isEmpty()) {
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureConfidenceMetricsEntryIsMutable();
               confidenceMetricsEntry_.addAll(other.confidenceMetricsEntry_);
@@ -5353,7 +7648,7 @@ public final class ClassificationProto {
               confidenceMetricsEntryBuilder_.dispose();
               confidenceMetricsEntryBuilder_ = null;
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000010);
               confidenceMetricsEntryBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConfidenceMetricsEntryFieldBuilder()
@@ -5369,7 +7664,7 @@ public final class ClassificationProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -5415,7 +7710,8 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The Area under precision recall curve metric.
+       * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged
+       * for the overall evaluation.
        * </pre>
        *
        * <code>float au_prc = 1;</code>
@@ -5427,7 +7723,8 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The Area under precision recall curve metric.
+       * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged
+       * for the overall evaluation.
        * </pre>
        *
        * <code>float au_prc = 1;</code>
@@ -5442,7 +7739,8 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The Area under precision recall curve metric.
+       * Output only. The Area Under Precision-Recall Curve metric. Micro-averaged
+       * for the overall evaluation.
        * </pre>
        *
        * <code>float au_prc = 1;</code>
@@ -5459,11 +7757,14 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The Area under precision recall curve metric based on priors.
+       * Output only. The Area Under Precision-Recall Curve metric based on priors.
+       * Micro-averaged for the overall evaluation.
+       * Deprecated.
        * </pre>
        *
-       * <code>float base_au_prc = 2;</code>
+       * <code>float base_au_prc = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public float getBaseAuPrc() {
         return baseAuPrc_;
       }
@@ -5471,11 +7772,14 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The Area under precision recall curve metric based on priors.
+       * Output only. The Area Under Precision-Recall Curve metric based on priors.
+       * Micro-averaged for the overall evaluation.
+       * Deprecated.
        * </pre>
        *
-       * <code>float base_au_prc = 2;</code>
+       * <code>float base_au_prc = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder setBaseAuPrc(float value) {
 
         baseAuPrc_ = value;
@@ -5486,14 +7790,108 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The Area under precision recall curve metric based on priors.
+       * Output only. The Area Under Precision-Recall Curve metric based on priors.
+       * Micro-averaged for the overall evaluation.
+       * Deprecated.
        * </pre>
        *
-       * <code>float base_au_prc = 2;</code>
+       * <code>float base_au_prc = 2 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder clearBaseAuPrc() {
 
         baseAuPrc_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float auRoc_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Area Under Receiver Operating Characteristic curve metric.
+       * Micro-averaged for the overall evaluation.
+       * </pre>
+       *
+       * <code>float au_roc = 6;</code>
+       */
+      public float getAuRoc() {
+        return auRoc_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Area Under Receiver Operating Characteristic curve metric.
+       * Micro-averaged for the overall evaluation.
+       * </pre>
+       *
+       * <code>float au_roc = 6;</code>
+       */
+      public Builder setAuRoc(float value) {
+
+        auRoc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Area Under Receiver Operating Characteristic curve metric.
+       * Micro-averaged for the overall evaluation.
+       * </pre>
+       *
+       * <code>float au_roc = 6;</code>
+       */
+      public Builder clearAuRoc() {
+
+        auRoc_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float logLoss_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Log Loss metric.
+       * </pre>
+       *
+       * <code>float log_loss = 7;</code>
+       */
+      public float getLogLoss() {
+        return logLoss_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Log Loss metric.
+       * </pre>
+       *
+       * <code>float log_loss = 7;</code>
+       */
+      public Builder setLogLoss(float value) {
+
+        logLoss_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Log Loss metric.
+       * </pre>
+       *
+       * <code>float log_loss = 7;</code>
+       */
+      public Builder clearLogLoss() {
+
+        logLoss_ = 0F;
         onChanged();
         return this;
       }
@@ -5504,13 +7902,13 @@ public final class ClassificationProto {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
 
       private void ensureConfidenceMetricsEntryIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           confidenceMetricsEntry_ =
               new java.util.ArrayList<
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>(
                   confidenceMetricsEntry_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -5527,8 +7925,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5549,8 +7951,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5568,8 +7974,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5589,8 +7999,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5618,8 +8032,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5644,8 +8062,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5672,8 +8094,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5701,8 +8127,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5726,8 +8156,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5752,8 +8186,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5779,8 +8217,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5790,7 +8232,7 @@ public final class ClassificationProto {
       public Builder clearConfidenceMetricsEntry() {
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           confidenceMetricsEntryBuilder_.clear();
@@ -5801,8 +8243,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5823,8 +8269,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5840,8 +8290,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5861,8 +8315,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5884,8 +8342,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5904,8 +8366,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5925,8 +8391,12 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. Metrics that have confidence thresholds.
-       * Precision-recall curve can be derived from it.
+       * Output only. Metrics for each confidence_threshold in
+       * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and
+       * position_threshold = INT32_MAX_VALUE.
+       * Precision-recall curve is derived from them.
+       * The above metrics may also be supplied for additional values of
+       * position_threshold.
        * </pre>
        *
        * <code>
@@ -5958,7 +8428,7 @@ public final class ClassificationProto {
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>(
                   confidenceMetricsEntry_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           confidenceMetricsEntry_ = null;
@@ -6225,9 +8695,9 @@ public final class ClassificationProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000040;
         }
       }
       /**
@@ -6340,7 +8810,7 @@ public final class ClassificationProto {
        */
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -6427,6 +8897,10 @@ public final class ClassificationProto {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable;
@@ -6453,31 +8927,44 @@ public final class ClassificationProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/automl/v1beta1/classifica"
           + "tion.proto\022\033google.cloud.automl.v1beta1\032"
-          + "\034google/api/annotations.proto\")\n\030Classif"
-          + "icationAnnotation\022\r\n\005score\030\001 \001(\002\"\235\005\n\037Cla"
-          + "ssificationEvaluationMetrics\022\016\n\006au_prc\030\001"
-          + " \001(\002\022\023\n\013base_au_prc\030\002 \001(\002\022u\n\030confidence_"
-          + "metrics_entry\030\003 \003(\0132S.google.cloud.autom"
-          + "l.v1beta1.ClassificationEvaluationMetric"
-          + "s.ConfidenceMetricsEntry\022f\n\020confusion_ma"
-          + "trix\030\004 \001(\0132L.google.cloud.automl.v1beta1"
-          + ".ClassificationEvaluationMetrics.Confusi"
-          + "onMatrix\022\032\n\022annotation_spec_id\030\005 \003(\t\032\254\001\n"
-          + "\026ConfidenceMetricsEntry\022\034\n\024confidence_th"
-          + "reshold\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecisi"
-          + "on\030\003 \001(\002\022\020\n\010f1_score\030\004 \001(\002\022\022\n\nrecall_at1"
-          + "\030\005 \001(\002\022\025\n\rprecision_at1\030\006 \001(\002\022\024\n\014f1_scor"
-          + "e_at1\030\007 \001(\002\032\252\001\n\017ConfusionMatrix\022\032\n\022annot"
-          + "ation_spec_id\030\001 \003(\t\022]\n\003row\030\002 \003(\0132P.googl"
-          + "e.cloud.automl.v1beta1.ClassificationEva"
-          + "luationMetrics.ConfusionMatrix.Row\032\034\n\003Ro"
-          + "w\022\025\n\rexample_count\030\001 \003(\005*Y\n\022Classificati"
-          + "onType\022#\n\037CLASSIFICATION_TYPE_UNSPECIFIE"
-          + "D\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002B\227\001\n\037"
-          + "com.google.cloud.automl.v1beta1B\023Classif"
-          + "icationProtoZAgoogle.golang.org/genproto"
-          + "/googleapis/cloud/automl/v1beta1;automl\312"
-          + "\002\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "\034google/api/annotations.proto\032*google/cl"
+          + "oud/automl/v1beta1/temporal.proto\")\n\030Cla"
+          + "ssificationAnnotation\022\r\n\005score\030\001 \001(\002\"\307\001\n"
+          + "\035VideoClassificationAnnotation\022\014\n\004type\030\001"
+          + " \001(\t\022X\n\031classification_annotation\030\002 \001(\0132"
+          + "5.google.cloud.automl.v1beta1.Classifica"
+          + "tionAnnotation\022>\n\014time_segment\030\003 \001(\0132(.g"
+          + "oogle.cloud.automl.v1beta1.TimeSegment\"\223"
+          + "\007\n\037ClassificationEvaluationMetrics\022\016\n\006au"
+          + "_prc\030\001 \001(\002\022\027\n\013base_au_prc\030\002 \001(\002B\002\030\001\022\016\n\006a"
+          + "u_roc\030\006 \001(\002\022\020\n\010log_loss\030\007 \001(\002\022u\n\030confide"
+          + "nce_metrics_entry\030\003 \003(\0132S.google.cloud.a"
+          + "utoml.v1beta1.ClassificationEvaluationMe"
+          + "trics.ConfidenceMetricsEntry\022f\n\020confusio"
+          + "n_matrix\030\004 \001(\0132L.google.cloud.automl.v1b"
+          + "eta1.ClassificationEvaluationMetrics.Con"
+          + "fusionMatrix\022\032\n\022annotation_spec_id\030\005 \003(\t"
+          + "\032\374\002\n\026ConfidenceMetricsEntry\022\034\n\024confidenc"
+          + "e_threshold\030\001 \001(\002\022\032\n\022position_threshold\030"
+          + "\016 \001(\005\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecision\030\003 \001(\002"
+          + "\022\033\n\023false_positive_rate\030\010 \001(\002\022\020\n\010f1_scor"
+          + "e\030\004 \001(\002\022\022\n\nrecall_at1\030\005 \001(\002\022\025\n\rprecision"
+          + "_at1\030\006 \001(\002\022\037\n\027false_positive_rate_at1\030\t "
+          + "\001(\002\022\024\n\014f1_score_at1\030\007 \001(\002\022\033\n\023true_positi"
+          + "ve_count\030\n \001(\003\022\034\n\024false_positive_count\030\013"
+          + " \001(\003\022\034\n\024false_negative_count\030\014 \001(\003\022\033\n\023tr"
+          + "ue_negative_count\030\r \001(\003\032\252\001\n\017ConfusionMat"
+          + "rix\022\032\n\022annotation_spec_id\030\001 \003(\t\022]\n\003row\030\002"
+          + " \003(\0132P.google.cloud.automl.v1beta1.Class"
+          + "ificationEvaluationMetrics.ConfusionMatr"
+          + "ix.Row\032\034\n\003Row\022\025\n\rexample_count\030\001 \003(\005*Y\n\022"
+          + "ClassificationType\022#\n\037CLASSIFICATION_TYP"
+          + "E_UNSPECIFIED\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTI"
+          + "LABEL\020\002B\227\001\n\037com.google.cloud.automl.v1be"
+          + "ta1B\023ClassificationProtoZAgoogle.golang."
+          + "org/genproto/googleapis/cloud/automl/v1b"
+          + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
+          + "1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -6491,6 +8978,7 @@ public final class ClassificationProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
@@ -6501,13 +8989,27 @@ public final class ClassificationProto {
             new java.lang.String[] {
               "Score",
             });
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor =
+    internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_VideoClassificationAnnotation_descriptor,
+            new java.lang.String[] {
+              "Type", "ClassificationAnnotation", "TimeSegment",
+            });
+    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor,
             new java.lang.String[] {
-              "AuPrc", "BaseAuPrc", "ConfidenceMetricsEntry", "ConfusionMatrix", "AnnotationSpecId",
+              "AuPrc",
+              "BaseAuPrc",
+              "AuRoc",
+              "LogLoss",
+              "ConfidenceMetricsEntry",
+              "ConfusionMatrix",
+              "AnnotationSpecId",
             });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor =
         internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor
@@ -6518,12 +9020,19 @@ public final class ClassificationProto {
             internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor,
             new java.lang.String[] {
               "ConfidenceThreshold",
+              "PositionThreshold",
               "Recall",
               "Precision",
+              "FalsePositiveRate",
               "F1Score",
               "RecallAt1",
               "PrecisionAt1",
+              "FalsePositiveRateAt1",
               "F1ScoreAt1",
+              "TruePositiveCount",
+              "FalsePositiveCount",
+              "FalseNegativeCount",
+              "TrueNegativeCount",
             });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor =
         internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor
@@ -6546,6 +9055,7 @@ public final class ClassificationProto {
               "ExampleCount",
             });
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -18,8 +18,10 @@ package com.google.cloud.automl.v1beta1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.automl.v1beta1.BatchPredictRequest;
 import com.google.cloud.automl.v1beta1.PredictRequest;
 import com.google.cloud.automl.v1beta1.PredictResponse;
+import com.google.longrunning.Operation;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -34,6 +36,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     throw new UnsupportedOperationException("Not implemented: predictCallable()");
+  }
+
+  public UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchPredictCallable()");
   }
 
   @Override

@@ -90,12 +90,16 @@ public class AutoMlClientTest {
   public void createDatasetTest() {
     String name = "name3373707";
     String displayName = "displayName1615086568";
+    String description = "description-1724546052";
     int exampleCount = 1517063674;
+    String etag = "etag3123477";
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(name)
             .setDisplayName(displayName)
+            .setDescription(description)
             .setExampleCount(exampleCount)
+            .setEtag(etag)
             .build();
     mockAutoMl.addResponse(expectedResponse);
 
@@ -139,12 +143,16 @@ public class AutoMlClientTest {
   public void getDatasetTest() {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
+    String description = "description-1724546052";
     int exampleCount = 1517063674;
+    String etag = "etag3123477";
     Dataset expectedResponse =
         Dataset.newBuilder()
             .setName(name2)
             .setDisplayName(displayName)
+            .setDescription(description)
             .setExampleCount(exampleCount)
+            .setEtag(etag)
             .build();
     mockAutoMl.addResponse(expectedResponse);
 
@@ -651,11 +659,13 @@ public class AutoMlClientTest {
   public void getModelEvaluationTest() {
     String name2 = "name2-1052831874";
     String annotationSpecId = "annotationSpecId60690191";
+    String displayName = "displayName1615086568";
     int evaluatedExampleCount = 277565350;
     ModelEvaluation expectedResponse =
         ModelEvaluation.newBuilder()
             .setName(name2)
             .setAnnotationSpecId(annotationSpecId)
+            .setDisplayName(displayName)
             .setEvaluatedExampleCount(evaluatedExampleCount)
             .build();
     mockAutoMl.addResponse(expectedResponse);
