@@ -52,7 +52,7 @@ Getting Started
 #### Prerequisites
 > Note: Cloud Web Risk is not yet publicly available. You must be whitelisted in order to gain access. 
 
-See [Setting up the Web Risk API][product-docs-quickstart] in the product documentation on for a link to the sign-up form.
+See [Setting up the Web Risk API][product-docs-quickstart] in the product documentation for a link to the sign-up form.
 
 You will need a [Google Developers Console](https://console.developers.google.com/) project with the Cloud Web Risk API enabled. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
