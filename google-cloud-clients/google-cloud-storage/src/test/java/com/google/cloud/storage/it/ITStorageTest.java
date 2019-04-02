@@ -2549,10 +2549,10 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
     URL signUrl =
-            storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
     byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
     try (WriteChannel writer = storage.writer(signUrl)) {
-        writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
+      writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
     }
 
     int lengthOfDownLoadBytes = -1;
@@ -2565,6 +2565,5 @@ public class ITStorageTest {
 
     assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
     assertTrue(storage.delete(BUCKET, blobName));
-
   }
 }
