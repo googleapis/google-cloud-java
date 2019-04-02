@@ -41,7 +41,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockMetricServiceImpl extends MetricServiceImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockMetricServiceImpl() {
