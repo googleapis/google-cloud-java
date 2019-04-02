@@ -686,6 +686,98 @@ public class DocumentsClient implements BackgroundResource {
     return stub.deleteDocumentCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified document. Operation &lt;response:
+   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder().build();
+   *   Operation response = documentsClient.updateDocument(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation updateDocument(UpdateDocumentRequest request) {
+    return updateDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified document. Operation &lt;response:
+   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder().build();
+   *   ApiFuture&lt;Operation&gt; future = documentsClient.updateDocumentCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
+    return stub.updateDocumentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Reloads the specified document from its specified source, content_uri or content. The
+   * previously loaded content of the document will be deleted. Note: Even when the content of the
+   * document has not changed, there still may be side effects because of internal implementation
+   * changes. Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+   * metadata:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+   *   Operation response = documentsClient.reloadDocument(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation reloadDocument(ReloadDocumentRequest request) {
+    return reloadDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Reloads the specified document from its specified source, content_uri or content. The
+   * previously loaded content of the document will be deleted. Note: Even when the content of the
+   * document has not changed, there still may be side effects because of internal implementation
+   * changes. Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
+   * metadata:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+   *   ApiFuture&lt;Operation&gt; future = documentsClient.reloadDocumentCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
+    return stub.reloadDocumentCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

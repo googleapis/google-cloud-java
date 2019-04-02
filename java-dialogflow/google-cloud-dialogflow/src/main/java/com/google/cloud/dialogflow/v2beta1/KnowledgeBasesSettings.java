@@ -86,6 +86,12 @@ public class KnowledgeBasesSettings extends ClientSettings<KnowledgeBasesSetting
     return ((KnowledgeBasesStubSettings) getStubSettings()).deleteKnowledgeBaseSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKnowledgeBase. */
+  public UnaryCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
+      updateKnowledgeBaseSettings() {
+    return ((KnowledgeBasesStubSettings) getStubSettings()).updateKnowledgeBaseSettings();
+  }
+
   public static final KnowledgeBasesSettings create(KnowledgeBasesStubSettings stub)
       throws IOException {
     return new KnowledgeBasesSettings.Builder(stub.toBuilder()).build();
@@ -206,6 +212,12 @@ public class KnowledgeBasesSettings extends ClientSettings<KnowledgeBasesSetting
     public UnaryCallSettings.Builder<DeleteKnowledgeBaseRequest, Empty>
         deleteKnowledgeBaseSettings() {
       return getStubSettingsBuilder().deleteKnowledgeBaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKnowledgeBase. */
+    public UnaryCallSettings.Builder<UpdateKnowledgeBaseRequest, KnowledgeBase>
+        updateKnowledgeBaseSettings() {
+      return getStubSettingsBuilder().updateKnowledgeBaseSettings();
     }
 
     @Override

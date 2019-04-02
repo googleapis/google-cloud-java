@@ -26,6 +26,7 @@ import com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse;
+import com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -59,6 +60,10 @@ public abstract class KnowledgeBasesStub implements BackgroundResource {
 
   public UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteKnowledgeBaseCallable()");
+  }
+
+  public UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase> updateKnowledgeBaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKnowledgeBaseCallable()");
   }
 
   @Override
