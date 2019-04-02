@@ -26,6 +26,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   private Dataset() {
     name_ = "";
     displayName_ = "";
+    description_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +68,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
               displayName_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 114:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
@@ -79,6 +88,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                 createTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
               break;
             }
           case 168:
@@ -152,6 +168,118 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
               datasetMetadataCase_ = 25;
               break;
             }
+          case 210:
+            {
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder
+                  subBuilder = null;
+              if (datasetMetadataCase_ == 26) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+                            datasetMetadata_)
+                        .toBuilder();
+              }
+              datasetMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+                        datasetMetadata_);
+                datasetMetadata_ = subBuilder.buildPartial();
+              }
+              datasetMetadataCase_ = 26;
+              break;
+            }
+          case 226:
+            {
+              com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder subBuilder =
+                  null;
+              if (datasetMetadataCase_ == 28) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata)
+                            datasetMetadata_)
+                        .toBuilder();
+              }
+              datasetMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata)
+                        datasetMetadata_);
+                datasetMetadata_ = subBuilder.buildPartial();
+              }
+              datasetMetadataCase_ = 28;
+              break;
+            }
+          case 242:
+            {
+              com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder subBuilder =
+                  null;
+              if (datasetMetadataCase_ == 30) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata)
+                            datasetMetadata_)
+                        .toBuilder();
+              }
+              datasetMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata)
+                        datasetMetadata_);
+                datasetMetadata_ = subBuilder.buildPartial();
+              }
+              datasetMetadataCase_ = 30;
+              break;
+            }
+          case 250:
+            {
+              com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder
+                  subBuilder = null;
+              if (datasetMetadataCase_ == 31) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+                            datasetMetadata_)
+                        .toBuilder();
+              }
+              datasetMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+                        datasetMetadata_);
+                datasetMetadata_ = subBuilder.buildPartial();
+              }
+              datasetMetadataCase_ = 31;
+              break;
+            }
+          case 266:
+            {
+              com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder subBuilder = null;
+              if (datasetMetadataCase_ == 33) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_)
+                        .toBuilder();
+              }
+              datasetMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TablesDatasetMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_);
+                datasetMetadata_ = subBuilder.buildPartial();
+              }
+              datasetMetadataCase_ = 33;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -193,6 +321,11 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     TRANSLATION_DATASET_METADATA(23),
     IMAGE_CLASSIFICATION_DATASET_METADATA(24),
     TEXT_CLASSIFICATION_DATASET_METADATA(25),
+    IMAGE_OBJECT_DETECTION_DATASET_METADATA(26),
+    VIDEO_CLASSIFICATION_DATASET_METADATA(31),
+    TEXT_EXTRACTION_DATASET_METADATA(28),
+    TEXT_SENTIMENT_DATASET_METADATA(30),
+    TABLES_DATASET_METADATA(33),
     DATASETMETADATA_NOT_SET(0);
     private final int value;
 
@@ -213,6 +346,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return IMAGE_CLASSIFICATION_DATASET_METADATA;
         case 25:
           return TEXT_CLASSIFICATION_DATASET_METADATA;
+        case 26:
+          return IMAGE_OBJECT_DETECTION_DATASET_METADATA;
+        case 31:
+          return VIDEO_CLASSIFICATION_DATASET_METADATA;
+        case 28:
+          return TEXT_EXTRACTION_DATASET_METADATA;
+        case 30:
+          return TEXT_SENTIMENT_DATASET_METADATA;
+        case 33:
+          return TABLES_DATASET_METADATA;
         case 0:
           return DATASETMETADATA_NOT_SET;
         default:
@@ -385,6 +528,259 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata.getDefaultInstance();
   }
 
+  public static final int IMAGE_OBJECT_DETECTION_DATASET_METADATA_FIELD_NUMBER = 26;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  public boolean hasImageObjectDetectionDatasetMetadata() {
+    return datasetMetadataCase_ == 26;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+      getImageObjectDetectionDatasetMetadata() {
+    if (datasetMetadataCase_ == 26) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder
+      getImageObjectDetectionDatasetMetadataOrBuilder() {
+    if (datasetMetadataCase_ == 26) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.getDefaultInstance();
+  }
+
+  public static final int VIDEO_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER = 31;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+   * </code>
+   */
+  public boolean hasVideoClassificationDatasetMetadata() {
+    return datasetMetadataCase_ == 31;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+      getVideoClassificationDatasetMetadata() {
+    if (datasetMetadataCase_ == 31) {
+      return (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder
+      getVideoClassificationDatasetMetadataOrBuilder() {
+    if (datasetMetadataCase_ == 31) {
+      return (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_EXTRACTION_DATASET_METADATA_FIELD_NUMBER = 28;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  public boolean hasTextExtractionDatasetMetadata() {
+    return datasetMetadataCase_ == 28;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata
+      getTextExtractionDatasetMetadata() {
+    if (datasetMetadataCase_ == 28) {
+      return (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder
+      getTextExtractionDatasetMetadataOrBuilder() {
+    if (datasetMetadataCase_ == 28) {
+      return (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_SENTIMENT_DATASET_METADATA_FIELD_NUMBER = 30;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  public boolean hasTextSentimentDatasetMetadata() {
+    return datasetMetadataCase_ == 30;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata
+      getTextSentimentDatasetMetadata() {
+    if (datasetMetadataCase_ == 30) {
+      return (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder
+      getTextSentimentDatasetMetadataOrBuilder() {
+    if (datasetMetadataCase_ == 30) {
+      return (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
+  }
+
+  public static final int TABLES_DATASET_METADATA_FIELD_NUMBER = 33;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   */
+  public boolean hasTablesDatasetMetadata() {
+    return datasetMetadataCase_ == 33;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TablesDatasetMetadata getTablesDatasetMetadata() {
+    if (datasetMetadataCase_ == 33) {
+      return (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder
+      getTablesDatasetMetadataOrBuilder() {
+    if (datasetMetadataCase_ == 33) {
+      return (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -437,8 +833,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the dataset to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
    * (_), and ASCII digits 0-9.
    * </pre>
    *
@@ -460,8 +856,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the dataset to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
    * (_), and ASCII digits 0-9.
    * </pre>
    *
@@ -473,6 +869,51 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 3;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * User-provided description of the dataset. The description can be up to
+   * 25000 characters long.
+   * </pre>
+   *
+   * <code>string description = 3;</code>
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-provided description of the dataset. The description can be up to
+   * 25000 characters long.
+   * </pre>
+   *
+   * <code>string description = 3;</code>
+   */
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -533,6 +974,51 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return getCreateTime();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 17;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 17;</code>
+   */
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 17;</code>
+   */
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -553,8 +1039,14 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
+    }
     if (createTime_ != null) {
       output.writeMessage(14, getCreateTime());
+    }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, etag_);
     }
     if (exampleCount_ != 0) {
       output.writeInt32(21, exampleCount_);
@@ -572,6 +1064,28 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           25, (com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata) datasetMetadata_);
     }
+    if (datasetMetadataCase_ == 26) {
+      output.writeMessage(
+          26,
+          (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata) datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 28) {
+      output.writeMessage(
+          28, (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 30) {
+      output.writeMessage(
+          30, (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 31) {
+      output.writeMessage(
+          31,
+          (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata) datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 33) {
+      output.writeMessage(
+          33, (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -587,8 +1101,14 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+    }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getCreateTime());
+    }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, etag_);
     }
     if (exampleCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(21, exampleCount_);
@@ -611,6 +1131,35 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
               25,
               (com.google.cloud.automl.v1beta1.TextClassificationDatasetMetadata) datasetMetadata_);
     }
+    if (datasetMetadataCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26,
+              (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+                  datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 30) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31,
+              (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+                  datasetMetadata_);
+    }
+    if (datasetMetadataCase_ == 33) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33, (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -628,11 +1177,13 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (getExampleCount() != other.getExampleCount()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getDatasetMetadataCase().equals(other.getDatasetMetadataCase())) return false;
     switch (datasetMetadataCase_) {
       case 23:
@@ -646,6 +1197,25 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       case 25:
         if (!getTextClassificationDatasetMetadata()
             .equals(other.getTextClassificationDatasetMetadata())) return false;
+        break;
+      case 26:
+        if (!getImageObjectDetectionDatasetMetadata()
+            .equals(other.getImageObjectDetectionDatasetMetadata())) return false;
+        break;
+      case 31:
+        if (!getVideoClassificationDatasetMetadata()
+            .equals(other.getVideoClassificationDatasetMetadata())) return false;
+        break;
+      case 28:
+        if (!getTextExtractionDatasetMetadata().equals(other.getTextExtractionDatasetMetadata()))
+          return false;
+        break;
+      case 30:
+        if (!getTextSentimentDatasetMetadata().equals(other.getTextSentimentDatasetMetadata()))
+          return false;
+        break;
+      case 33:
+        if (!getTablesDatasetMetadata().equals(other.getTablesDatasetMetadata())) return false;
         break;
       case 0:
       default:
@@ -665,12 +1235,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + EXAMPLE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getExampleCount();
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     switch (datasetMetadataCase_) {
       case 23:
         hash = (37 * hash) + TRANSLATION_DATASET_METADATA_FIELD_NUMBER;
@@ -683,6 +1257,26 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       case 25:
         hash = (37 * hash) + TEXT_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getTextClassificationDatasetMetadata().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + IMAGE_OBJECT_DETECTION_DATASET_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getImageObjectDetectionDatasetMetadata().hashCode();
+        break;
+      case 31:
+        hash = (37 * hash) + VIDEO_CLASSIFICATION_DATASET_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoClassificationDatasetMetadata().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + TEXT_EXTRACTION_DATASET_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextExtractionDatasetMetadata().hashCode();
+        break;
+      case 30:
+        hash = (37 * hash) + TEXT_SENTIMENT_DATASET_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSentimentDatasetMetadata().hashCode();
+        break;
+      case 33:
+        hash = (37 * hash) + TABLES_DATASET_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTablesDatasetMetadata().hashCode();
         break;
       case 0:
       default:
@@ -837,6 +1431,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
       displayName_ = "";
 
+      description_ = "";
+
       exampleCount_ = 0;
 
       if (createTimeBuilder_ == null) {
@@ -845,6 +1441,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
+      etag_ = "";
+
       datasetMetadataCase_ = 0;
       datasetMetadata_ = null;
       return this;
@@ -895,14 +1493,51 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           result.datasetMetadata_ = textClassificationDatasetMetadataBuilder_.build();
         }
       }
+      if (datasetMetadataCase_ == 26) {
+        if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+          result.datasetMetadata_ = datasetMetadata_;
+        } else {
+          result.datasetMetadata_ = imageObjectDetectionDatasetMetadataBuilder_.build();
+        }
+      }
+      if (datasetMetadataCase_ == 31) {
+        if (videoClassificationDatasetMetadataBuilder_ == null) {
+          result.datasetMetadata_ = datasetMetadata_;
+        } else {
+          result.datasetMetadata_ = videoClassificationDatasetMetadataBuilder_.build();
+        }
+      }
+      if (datasetMetadataCase_ == 28) {
+        if (textExtractionDatasetMetadataBuilder_ == null) {
+          result.datasetMetadata_ = datasetMetadata_;
+        } else {
+          result.datasetMetadata_ = textExtractionDatasetMetadataBuilder_.build();
+        }
+      }
+      if (datasetMetadataCase_ == 30) {
+        if (textSentimentDatasetMetadataBuilder_ == null) {
+          result.datasetMetadata_ = datasetMetadata_;
+        } else {
+          result.datasetMetadata_ = textSentimentDatasetMetadataBuilder_.build();
+        }
+      }
+      if (datasetMetadataCase_ == 33) {
+        if (tablesDatasetMetadataBuilder_ == null) {
+          result.datasetMetadata_ = datasetMetadata_;
+        } else {
+          result.datasetMetadata_ = tablesDatasetMetadataBuilder_.build();
+        }
+      }
       result.name_ = name_;
       result.displayName_ = displayName_;
+      result.description_ = description_;
       result.exampleCount_ = exampleCount_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
+      result.etag_ = etag_;
       result.datasetMetadataCase_ = datasetMetadataCase_;
       onBuilt();
       return result;
@@ -961,11 +1596,19 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         displayName_ = other.displayName_;
         onChanged();
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
       if (other.getExampleCount() != 0) {
         setExampleCount(other.getExampleCount());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
       switch (other.getDatasetMetadataCase()) {
         case TRANSLATION_DATASET_METADATA:
@@ -981,6 +1624,32 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         case TEXT_CLASSIFICATION_DATASET_METADATA:
           {
             mergeTextClassificationDatasetMetadata(other.getTextClassificationDatasetMetadata());
+            break;
+          }
+        case IMAGE_OBJECT_DETECTION_DATASET_METADATA:
+          {
+            mergeImageObjectDetectionDatasetMetadata(
+                other.getImageObjectDetectionDatasetMetadata());
+            break;
+          }
+        case VIDEO_CLASSIFICATION_DATASET_METADATA:
+          {
+            mergeVideoClassificationDatasetMetadata(other.getVideoClassificationDatasetMetadata());
+            break;
+          }
+        case TEXT_EXTRACTION_DATASET_METADATA:
+          {
+            mergeTextExtractionDatasetMetadata(other.getTextExtractionDatasetMetadata());
+            break;
+          }
+        case TEXT_SENTIMENT_DATASET_METADATA:
+          {
+            mergeTextSentimentDatasetMetadata(other.getTextSentimentDatasetMetadata());
+            break;
+          }
+        case TABLES_DATASET_METADATA:
+          {
+            mergeTablesDatasetMetadata(other.getTablesDatasetMetadata());
             break;
           }
         case DATASETMETADATA_NOT_SET:
@@ -1732,6 +2401,1146 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return textClassificationDatasetMetadataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder>
+        imageObjectDetectionDatasetMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public boolean hasImageObjectDetectionDatasetMetadata() {
+      return datasetMetadataCase_ == 26;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+        getImageObjectDetectionDatasetMetadata() {
+      if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 26) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+              datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+            .getDefaultInstance();
+      } else {
+        if (datasetMetadataCase_ == 26) {
+          return imageObjectDetectionDatasetMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public Builder setImageObjectDetectionDatasetMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata value) {
+      if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetMetadata_ = value;
+        onChanged();
+      } else {
+        imageObjectDetectionDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public Builder setImageObjectDetectionDatasetMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder
+            builderForValue) {
+      if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+        datasetMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageObjectDetectionDatasetMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      datasetMetadataCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public Builder mergeImageObjectDetectionDatasetMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata value) {
+      if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 26
+            && datasetMetadata_
+                != com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+                    .getDefaultInstance()) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+                          datasetMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasetMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasetMetadataCase_ == 26) {
+          imageObjectDetectionDatasetMetadataBuilder_.mergeFrom(value);
+        }
+        imageObjectDetectionDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public Builder clearImageObjectDetectionDatasetMetadata() {
+      if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 26) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasetMetadataCase_ == 26) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+        }
+        imageObjectDetectionDatasetMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder
+        getImageObjectDetectionDatasetMetadataBuilder() {
+      return getImageObjectDetectionDatasetMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder
+        getImageObjectDetectionDatasetMetadataOrBuilder() {
+      if ((datasetMetadataCase_ == 26) && (imageObjectDetectionDatasetMetadataBuilder_ != null)) {
+        return imageObjectDetectionDatasetMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasetMetadataCase_ == 26) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+              datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder>
+        getImageObjectDetectionDatasetMetadataFieldBuilder() {
+      if (imageObjectDetectionDatasetMetadataBuilder_ == null) {
+        if (!(datasetMetadataCase_ == 26)) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+                  .getDefaultInstance();
+        }
+        imageObjectDetectionDatasetMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
+                    datasetMetadata_,
+                getParentForChildren(),
+                isClean());
+        datasetMetadata_ = null;
+      }
+      datasetMetadataCase_ = 26;
+      onChanged();
+      ;
+      return imageObjectDetectionDatasetMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata,
+            com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder>
+        videoClassificationDatasetMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public boolean hasVideoClassificationDatasetMetadata() {
+      return datasetMetadataCase_ == 31;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+        getVideoClassificationDatasetMetadata() {
+      if (videoClassificationDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 31) {
+          return (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+              datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+            .getDefaultInstance();
+      } else {
+        if (datasetMetadataCase_ == 31) {
+          return videoClassificationDatasetMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public Builder setVideoClassificationDatasetMetadata(
+        com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata value) {
+      if (videoClassificationDatasetMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetMetadata_ = value;
+        onChanged();
+      } else {
+        videoClassificationDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public Builder setVideoClassificationDatasetMetadata(
+        com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder
+            builderForValue) {
+      if (videoClassificationDatasetMetadataBuilder_ == null) {
+        datasetMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoClassificationDatasetMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      datasetMetadataCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public Builder mergeVideoClassificationDatasetMetadata(
+        com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata value) {
+      if (videoClassificationDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 31
+            && datasetMetadata_
+                != com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+                    .getDefaultInstance()) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+                          datasetMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasetMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasetMetadataCase_ == 31) {
+          videoClassificationDatasetMetadataBuilder_.mergeFrom(value);
+        }
+        videoClassificationDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 31;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public Builder clearVideoClassificationDatasetMetadata() {
+      if (videoClassificationDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 31) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasetMetadataCase_ == 31) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+        }
+        videoClassificationDatasetMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder
+        getVideoClassificationDatasetMetadataBuilder() {
+      return getVideoClassificationDatasetMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder
+        getVideoClassificationDatasetMetadataOrBuilder() {
+      if ((datasetMetadataCase_ == 31) && (videoClassificationDatasetMetadataBuilder_ != null)) {
+        return videoClassificationDatasetMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasetMetadataCase_ == 31) {
+          return (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+              datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for video classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata,
+            com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder>
+        getVideoClassificationDatasetMetadataFieldBuilder() {
+      if (videoClassificationDatasetMetadataBuilder_ == null) {
+        if (!(datasetMetadataCase_ == 31)) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+                  .getDefaultInstance();
+        }
+        videoClassificationDatasetMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata,
+                com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata.Builder,
+                com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata)
+                    datasetMetadata_,
+                getParentForChildren(),
+                isClean());
+        datasetMetadata_ = null;
+      }
+      datasetMetadataCase_ = 31;
+      onChanged();
+      ;
+      return videoClassificationDatasetMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata,
+            com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder>
+        textExtractionDatasetMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public boolean hasTextExtractionDatasetMetadata() {
+      return datasetMetadataCase_ == 28;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata
+        getTextExtractionDatasetMetadata() {
+      if (textExtractionDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 28) {
+          return (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
+      } else {
+        if (datasetMetadataCase_ == 28) {
+          return textExtractionDatasetMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public Builder setTextExtractionDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata value) {
+      if (textExtractionDatasetMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetMetadata_ = value;
+        onChanged();
+      } else {
+        textExtractionDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public Builder setTextExtractionDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder builderForValue) {
+      if (textExtractionDatasetMetadataBuilder_ == null) {
+        datasetMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textExtractionDatasetMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      datasetMetadataCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public Builder mergeTextExtractionDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata value) {
+      if (textExtractionDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 28
+            && datasetMetadata_
+                != com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata
+                    .getDefaultInstance()) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata)
+                          datasetMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasetMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasetMetadataCase_ == 28) {
+          textExtractionDatasetMetadataBuilder_.mergeFrom(value);
+        }
+        textExtractionDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public Builder clearTextExtractionDatasetMetadata() {
+      if (textExtractionDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 28) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasetMetadataCase_ == 28) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+        }
+        textExtractionDatasetMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder
+        getTextExtractionDatasetMetadataBuilder() {
+      return getTextExtractionDatasetMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder
+        getTextExtractionDatasetMetadataOrBuilder() {
+      if ((datasetMetadataCase_ == 28) && (textExtractionDatasetMetadataBuilder_ != null)) {
+        return textExtractionDatasetMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasetMetadataCase_ == 28) {
+          return (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text extraction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata,
+            com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder>
+        getTextExtractionDatasetMetadataFieldBuilder() {
+      if (textExtractionDatasetMetadataBuilder_ == null) {
+        if (!(datasetMetadataCase_ == 28)) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.getDefaultInstance();
+        }
+        textExtractionDatasetMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata,
+                com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata) datasetMetadata_,
+                getParentForChildren(),
+                isClean());
+        datasetMetadata_ = null;
+      }
+      datasetMetadataCase_ = 28;
+      onChanged();
+      ;
+      return textExtractionDatasetMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata,
+            com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder>
+        textSentimentDatasetMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public boolean hasTextSentimentDatasetMetadata() {
+      return datasetMetadataCase_ == 30;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata
+        getTextSentimentDatasetMetadata() {
+      if (textSentimentDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 30) {
+          return (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
+      } else {
+        if (datasetMetadataCase_ == 30) {
+          return textSentimentDatasetMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public Builder setTextSentimentDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata value) {
+      if (textSentimentDatasetMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetMetadata_ = value;
+        onChanged();
+      } else {
+        textSentimentDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public Builder setTextSentimentDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder builderForValue) {
+      if (textSentimentDatasetMetadataBuilder_ == null) {
+        datasetMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSentimentDatasetMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      datasetMetadataCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public Builder mergeTextSentimentDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata value) {
+      if (textSentimentDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 30
+            && datasetMetadata_
+                != com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata
+                    .getDefaultInstance()) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata)
+                          datasetMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasetMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasetMetadataCase_ == 30) {
+          textSentimentDatasetMetadataBuilder_.mergeFrom(value);
+        }
+        textSentimentDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 30;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public Builder clearTextSentimentDatasetMetadata() {
+      if (textSentimentDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 30) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasetMetadataCase_ == 30) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+        }
+        textSentimentDatasetMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder
+        getTextSentimentDatasetMetadataBuilder() {
+      return getTextSentimentDatasetMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder
+        getTextSentimentDatasetMetadataOrBuilder() {
+      if ((datasetMetadataCase_ == 30) && (textSentimentDatasetMetadataBuilder_ != null)) {
+        return textSentimentDatasetMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasetMetadataCase_ == 30) {
+          return (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for text sentiment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata,
+            com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder>
+        getTextSentimentDatasetMetadataFieldBuilder() {
+      if (textSentimentDatasetMetadataBuilder_ == null) {
+        if (!(datasetMetadataCase_ == 30)) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.getDefaultInstance();
+        }
+        textSentimentDatasetMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata,
+                com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata) datasetMetadata_,
+                getParentForChildren(),
+                isClean());
+        datasetMetadata_ = null;
+      }
+      datasetMetadataCase_ = 30;
+      onChanged();
+      ;
+      return textSentimentDatasetMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TablesDatasetMetadata,
+            com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder>
+        tablesDatasetMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public boolean hasTablesDatasetMetadata() {
+      return datasetMetadataCase_ == 33;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesDatasetMetadata getTablesDatasetMetadata() {
+      if (tablesDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 33) {
+          return (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
+      } else {
+        if (datasetMetadataCase_ == 33) {
+          return tablesDatasetMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public Builder setTablesDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TablesDatasetMetadata value) {
+      if (tablesDatasetMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetMetadata_ = value;
+        onChanged();
+      } else {
+        tablesDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public Builder setTablesDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder builderForValue) {
+      if (tablesDatasetMetadataBuilder_ == null) {
+        datasetMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        tablesDatasetMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      datasetMetadataCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public Builder mergeTablesDatasetMetadata(
+        com.google.cloud.automl.v1beta1.TablesDatasetMetadata value) {
+      if (tablesDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 33
+            && datasetMetadata_
+                != com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance()) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.TablesDatasetMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasetMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasetMetadataCase_ == 33) {
+          tablesDatasetMetadataBuilder_.mergeFrom(value);
+        }
+        tablesDatasetMetadataBuilder_.setMessage(value);
+      }
+      datasetMetadataCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public Builder clearTablesDatasetMetadata() {
+      if (tablesDatasetMetadataBuilder_ == null) {
+        if (datasetMetadataCase_ == 33) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasetMetadataCase_ == 33) {
+          datasetMetadataCase_ = 0;
+          datasetMetadata_ = null;
+        }
+        tablesDatasetMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder
+        getTablesDatasetMetadataBuilder() {
+      return getTablesDatasetMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder
+        getTablesDatasetMetadataOrBuilder() {
+      if ((datasetMetadataCase_ == 33) && (tablesDatasetMetadataBuilder_ != null)) {
+        return tablesDatasetMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasetMetadataCase_ == 33) {
+          return (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for a dataset used for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TablesDatasetMetadata,
+            com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder>
+        getTablesDatasetMetadataFieldBuilder() {
+      if (tablesDatasetMetadataBuilder_ == null) {
+        if (!(datasetMetadataCase_ == 33)) {
+          datasetMetadata_ =
+              com.google.cloud.automl.v1beta1.TablesDatasetMetadata.getDefaultInstance();
+        }
+        tablesDatasetMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TablesDatasetMetadata,
+                com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TablesDatasetMetadata) datasetMetadata_,
+                getParentForChildren(),
+                isClean());
+        datasetMetadata_ = null;
+      }
+      datasetMetadataCase_ = 33;
+      onChanged();
+      ;
+      return tablesDatasetMetadataBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -1837,8 +3646,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the dataset to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
      * (_), and ASCII digits 0-9.
      * </pre>
      *
@@ -1860,8 +3669,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the dataset to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
      * (_), and ASCII digits 0-9.
      * </pre>
      *
@@ -1883,8 +3692,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the dataset to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
      * (_), and ASCII digits 0-9.
      * </pre>
      *
@@ -1904,8 +3713,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the dataset to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
      * (_), and ASCII digits 0-9.
      * </pre>
      *
@@ -1922,8 +3731,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the dataset to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
      * (_), and ASCII digits 0-9.
      * </pre>
      *
@@ -1936,6 +3745,105 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * User-provided description of the dataset. The description can be up to
+     * 25000 characters long.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-provided description of the dataset. The description can be up to
+     * 25000 characters long.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-provided description of the dataset. The description can be up to
+     * 25000 characters long.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-provided description of the dataset. The description can be up to
+     * 25000 characters long.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-provided description of the dataset. The description can be up to
+     * 25000 characters long.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }
@@ -2161,6 +4069,105 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 17;</code>
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 17;</code>
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 17;</code>
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 17;</code>
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 17;</code>
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

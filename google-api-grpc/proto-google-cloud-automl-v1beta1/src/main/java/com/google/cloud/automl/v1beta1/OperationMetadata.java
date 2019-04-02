@@ -52,9 +52,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             break;
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000400;
               }
               partialFailures_.add(
                   input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
@@ -90,6 +90,26 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
               break;
             }
+          case 66:
+            {
+              com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder subBuilder = null;
+              if (detailsCase_ == 8) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.DeleteOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 8;
+              break;
+            }
           case 82:
             {
               com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder subBuilder =
@@ -116,6 +136,154 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
               progressPercent_ = input.readInt32();
               break;
             }
+          case 122:
+            {
+              com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder subBuilder = null;
+              if (detailsCase_ == 15) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 15;
+              break;
+            }
+          case 130:
+            {
+              com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder subBuilder =
+                  null;
+              if (detailsCase_ == 16) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 16;
+              break;
+            }
+          case 170:
+            {
+              com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder subBuilder = null;
+              if (detailsCase_ == 21) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 21;
+              break;
+            }
+          case 178:
+            {
+              com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder subBuilder =
+                  null;
+              if (detailsCase_ == 22) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 22;
+              break;
+            }
+          case 194:
+            {
+              com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder subBuilder =
+                  null;
+              if (detailsCase_ == 24) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 24;
+              break;
+            }
+          case 202:
+            {
+              com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder subBuilder =
+                  null;
+              if (detailsCase_ == 25) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 25;
+              break;
+            }
+          case 210:
+            {
+              com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder
+                  subBuilder = null;
+              if (detailsCase_ == 26) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
+                            details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
+                        details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 26;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -130,7 +298,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
       }
       this.unknownFields = unknownFields.build();
@@ -158,7 +326,15 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   private java.lang.Object details_;
 
   public enum DetailsCase implements com.google.protobuf.Internal.EnumLite {
+    DELETE_DETAILS(8),
+    DEPLOY_MODEL_DETAILS(24),
+    UNDEPLOY_MODEL_DETAILS(25),
     CREATE_MODEL_DETAILS(10),
+    IMPORT_DATA_DETAILS(15),
+    BATCH_PREDICT_DETAILS(16),
+    EXPORT_DATA_DETAILS(21),
+    EXPORT_MODEL_DETAILS(22),
+    EXPORT_EVALUATED_EXAMPLES_DETAILS(26),
     DETAILS_NOT_SET(0);
     private final int value;
 
@@ -173,8 +349,24 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     public static DetailsCase forNumber(int value) {
       switch (value) {
+        case 8:
+          return DELETE_DETAILS;
+        case 24:
+          return DEPLOY_MODEL_DETAILS;
+        case 25:
+          return UNDEPLOY_MODEL_DETAILS;
         case 10:
           return CREATE_MODEL_DETAILS;
+        case 15:
+          return IMPORT_DATA_DETAILS;
+        case 16:
+          return BATCH_PREDICT_DETAILS;
+        case 21:
+          return EXPORT_DATA_DETAILS;
+        case 22:
+          return EXPORT_MODEL_DETAILS;
+        case 26:
+          return EXPORT_EVALUATED_EXAMPLES_DETAILS;
         case 0:
           return DETAILS_NOT_SET;
         default:
@@ -189,6 +381,147 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public DetailsCase getDetailsCase() {
     return DetailsCase.forNumber(detailsCase_);
+  }
+
+  public static final int DELETE_DETAILS_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Details of a Delete operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+   */
+  public boolean hasDeleteDetails() {
+    return detailsCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of a Delete operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+   */
+  public com.google.cloud.automl.v1beta1.DeleteOperationMetadata getDeleteDetails() {
+    if (detailsCase_ == 8) {
+      return (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of a Delete operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+   */
+  public com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder
+      getDeleteDetailsOrBuilder() {
+    if (detailsCase_ == 8) {
+      return (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int DEPLOY_MODEL_DETAILS_FIELD_NUMBER = 24;
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+   * </code>
+   */
+  public boolean hasDeployModelDetails() {
+    return detailsCase_ == 24;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.DeployModelOperationMetadata getDeployModelDetails() {
+    if (detailsCase_ == 24) {
+      return (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder
+      getDeployModelDetailsOrBuilder() {
+    if (detailsCase_ == 24) {
+      return (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int UNDEPLOY_MODEL_DETAILS_FIELD_NUMBER = 25;
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  public boolean hasUndeployModelDetails() {
+    return detailsCase_ == 25;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata getUndeployModelDetails() {
+    if (detailsCase_ == 25) {
+      return (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder
+      getUndeployModelDetailsOrBuilder() {
+    if (detailsCase_ == 25) {
+      return (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.getDefaultInstance();
   }
 
   public static final int CREATE_MODEL_DETAILS_FIELD_NUMBER = 10;
@@ -239,6 +572,246 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.getDefaultInstance();
   }
 
+  public static final int IMPORT_DATA_DETAILS_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  public boolean hasImportDataDetails() {
+    return detailsCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  public com.google.cloud.automl.v1beta1.ImportDataOperationMetadata getImportDataDetails() {
+    if (detailsCase_ == 15) {
+      return (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  public com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder
+      getImportDataDetailsOrBuilder() {
+    if (detailsCase_ == 15) {
+      return (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int BATCH_PREDICT_DETAILS_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+   * </code>
+   */
+  public boolean hasBatchPredictDetails() {
+    return detailsCase_ == 16;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata getBatchPredictDetails() {
+    if (detailsCase_ == 16) {
+      return (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder
+      getBatchPredictDetailsOrBuilder() {
+    if (detailsCase_ == 16) {
+      return (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int EXPORT_DATA_DETAILS_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  public boolean hasExportDataDetails() {
+    return detailsCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata getExportDataDetails() {
+    if (detailsCase_ == 21) {
+      return (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  public com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder
+      getExportDataDetailsOrBuilder() {
+    if (detailsCase_ == 21) {
+      return (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int EXPORT_MODEL_DETAILS_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+   * </code>
+   */
+  public boolean hasExportModelDetails() {
+    return detailsCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata getExportModelDetails() {
+    if (detailsCase_ == 22) {
+      return (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder
+      getExportModelDetailsOrBuilder() {
+    if (detailsCase_ == 22) {
+      return (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int EXPORT_EVALUATED_EXAMPLES_DETAILS_FIELD_NUMBER = 26;
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportEvaluatedExamples operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+   * </code>
+   */
+  public boolean hasExportEvaluatedExamplesDetails() {
+    return detailsCase_ == 26;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportEvaluatedExamples operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+      getExportEvaluatedExamplesDetails() {
+    if (detailsCase_ == 26) {
+      return (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportEvaluatedExamples operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder
+      getExportEvaluatedExamplesDetailsOrBuilder() {
+    if (detailsCase_ == 26) {
+      return (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_;
+    }
+    return com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+        .getDefaultInstance();
+  }
+
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 13;
   private int progressPercent_;
   /**
@@ -246,6 +819,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Output only. Progress of operation. Range: [0, 100].
+   * Not used currently.
    * </pre>
    *
    * <code>int32 progress_percent = 13;</code>
@@ -434,12 +1008,43 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
+    if (detailsCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_);
+    }
     if (detailsCase_ == 10) {
       output.writeMessage(
           10, (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
     }
     if (progressPercent_ != 0) {
       output.writeInt32(13, progressPercent_);
+    }
+    if (detailsCase_ == 15) {
+      output.writeMessage(
+          15, (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_);
+    }
+    if (detailsCase_ == 16) {
+      output.writeMessage(
+          16, (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_);
+    }
+    if (detailsCase_ == 21) {
+      output.writeMessage(
+          21, (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_);
+    }
+    if (detailsCase_ == 22) {
+      output.writeMessage(
+          22, (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_);
+    }
+    if (detailsCase_ == 24) {
+      output.writeMessage(
+          24, (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_);
+    }
+    if (detailsCase_ == 25) {
+      output.writeMessage(
+          25, (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_);
+    }
+    if (detailsCase_ == 26) {
+      output.writeMessage(
+          26, (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_);
     }
     unknownFields.writeTo(output);
   }
@@ -459,6 +1064,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
+    if (detailsCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_);
+    }
     if (detailsCase_ == 10) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -466,6 +1076,42 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (progressPercent_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, progressPercent_);
+    }
+    if (detailsCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_);
+    }
+    if (detailsCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_);
+    }
+    if (detailsCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_);
+    }
+    if (detailsCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_);
+    }
+    if (detailsCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_);
+    }
+    if (detailsCase_ == 25) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_);
+    }
+    if (detailsCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26,
+              (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -495,8 +1141,33 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
+      case 8:
+        if (!getDeleteDetails().equals(other.getDeleteDetails())) return false;
+        break;
+      case 24:
+        if (!getDeployModelDetails().equals(other.getDeployModelDetails())) return false;
+        break;
+      case 25:
+        if (!getUndeployModelDetails().equals(other.getUndeployModelDetails())) return false;
+        break;
       case 10:
         if (!getCreateModelDetails().equals(other.getCreateModelDetails())) return false;
+        break;
+      case 15:
+        if (!getImportDataDetails().equals(other.getImportDataDetails())) return false;
+        break;
+      case 16:
+        if (!getBatchPredictDetails().equals(other.getBatchPredictDetails())) return false;
+        break;
+      case 21:
+        if (!getExportDataDetails().equals(other.getExportDataDetails())) return false;
+        break;
+      case 22:
+        if (!getExportModelDetails().equals(other.getExportModelDetails())) return false;
+        break;
+      case 26:
+        if (!getExportEvaluatedExamplesDetails().equals(other.getExportEvaluatedExamplesDetails()))
+          return false;
         break;
       case 0:
       default:
@@ -527,9 +1198,41 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
     switch (detailsCase_) {
+      case 8:
+        hash = (37 * hash) + DELETE_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteDetails().hashCode();
+        break;
+      case 24:
+        hash = (37 * hash) + DEPLOY_MODEL_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDeployModelDetails().hashCode();
+        break;
+      case 25:
+        hash = (37 * hash) + UNDEPLOY_MODEL_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getUndeployModelDetails().hashCode();
+        break;
       case 10:
         hash = (37 * hash) + CREATE_MODEL_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getCreateModelDetails().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + IMPORT_DATA_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getImportDataDetails().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + BATCH_PREDICT_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchPredictDetails().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + EXPORT_DATA_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getExportDataDetails().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + EXPORT_MODEL_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getExportModelDetails().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + EXPORT_EVALUATED_EXAMPLES_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getExportEvaluatedExamplesDetails().hashCode();
         break;
       case 0:
       default:
@@ -685,7 +1388,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         partialFailuresBuilder_.clear();
       }
@@ -732,6 +1435,27 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           new com.google.cloud.automl.v1beta1.OperationMetadata(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
+      if (detailsCase_ == 8) {
+        if (deleteDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = deleteDetailsBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 24) {
+        if (deployModelDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = deployModelDetailsBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 25) {
+        if (undeployModelDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = undeployModelDetailsBuilder_.build();
+        }
+      }
       if (detailsCase_ == 10) {
         if (createModelDetailsBuilder_ == null) {
           result.details_ = details_;
@@ -739,11 +1463,46 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           result.details_ = createModelDetailsBuilder_.build();
         }
       }
+      if (detailsCase_ == 15) {
+        if (importDataDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = importDataDetailsBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 16) {
+        if (batchPredictDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = batchPredictDetailsBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 21) {
+        if (exportDataDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = exportDataDetailsBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 22) {
+        if (exportModelDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = exportModelDetailsBuilder_.build();
+        }
+      }
+      if (detailsCase_ == 26) {
+        if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = exportEvaluatedExamplesDetailsBuilder_.build();
+        }
+      }
       result.progressPercent_ = progressPercent_;
       if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.partialFailures_ = partialFailures_;
       } else {
@@ -818,7 +1577,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -831,7 +1590,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000400);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -848,9 +1607,49 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         mergeUpdateTime(other.getUpdateTime());
       }
       switch (other.getDetailsCase()) {
+        case DELETE_DETAILS:
+          {
+            mergeDeleteDetails(other.getDeleteDetails());
+            break;
+          }
+        case DEPLOY_MODEL_DETAILS:
+          {
+            mergeDeployModelDetails(other.getDeployModelDetails());
+            break;
+          }
+        case UNDEPLOY_MODEL_DETAILS:
+          {
+            mergeUndeployModelDetails(other.getUndeployModelDetails());
+            break;
+          }
         case CREATE_MODEL_DETAILS:
           {
             mergeCreateModelDetails(other.getCreateModelDetails());
+            break;
+          }
+        case IMPORT_DATA_DETAILS:
+          {
+            mergeImportDataDetails(other.getImportDataDetails());
+            break;
+          }
+        case BATCH_PREDICT_DETAILS:
+          {
+            mergeBatchPredictDetails(other.getBatchPredictDetails());
+            break;
+          }
+        case EXPORT_DATA_DETAILS:
+          {
+            mergeExportDataDetails(other.getExportDataDetails());
+            break;
+          }
+        case EXPORT_MODEL_DETAILS:
+          {
+            mergeExportModelDetails(other.getExportModelDetails());
+            break;
+          }
+        case EXPORT_EVALUATED_EXAMPLES_DETAILS:
+          {
+            mergeExportEvaluatedExamplesDetails(other.getExportEvaluatedExamplesDetails());
             break;
           }
         case DETAILS_NOT_SET:
@@ -903,6 +1702,658 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.DeleteOperationMetadata,
+            com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder>
+        deleteDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public boolean hasDeleteDetails() {
+      return detailsCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public com.google.cloud.automl.v1beta1.DeleteOperationMetadata getDeleteDetails() {
+      if (deleteDetailsBuilder_ == null) {
+        if (detailsCase_ == 8) {
+          return (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 8) {
+          return deleteDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public Builder setDeleteDetails(com.google.cloud.automl.v1beta1.DeleteOperationMetadata value) {
+      if (deleteDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        deleteDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public Builder setDeleteDetails(
+        com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder builderForValue) {
+      if (deleteDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        deleteDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public Builder mergeDeleteDetails(
+        com.google.cloud.automl.v1beta1.DeleteOperationMetadata value) {
+      if (deleteDetailsBuilder_ == null) {
+        if (detailsCase_ == 8
+            && details_
+                != com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.DeleteOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 8) {
+          deleteDetailsBuilder_.mergeFrom(value);
+        }
+        deleteDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public Builder clearDeleteDetails() {
+      if (deleteDetailsBuilder_ == null) {
+        if (detailsCase_ == 8) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 8) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        deleteDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder
+        getDeleteDetailsBuilder() {
+      return getDeleteDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    public com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder
+        getDeleteDetailsOrBuilder() {
+      if ((detailsCase_ == 8) && (deleteDetailsBuilder_ != null)) {
+        return deleteDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 8) {
+          return (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a Delete operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.DeleteOperationMetadata,
+            com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder>
+        getDeleteDetailsFieldBuilder() {
+      if (deleteDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 8)) {
+          details_ = com.google.cloud.automl.v1beta1.DeleteOperationMetadata.getDefaultInstance();
+        }
+        deleteDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.DeleteOperationMetadata,
+                com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 8;
+      onChanged();
+      ;
+      return deleteDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.DeployModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder>
+        deployModelDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public boolean hasDeployModelDetails() {
+      return detailsCase_ == 24;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.DeployModelOperationMetadata getDeployModelDetails() {
+      if (deployModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 24) {
+          return (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 24) {
+          return deployModelDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public Builder setDeployModelDetails(
+        com.google.cloud.automl.v1beta1.DeployModelOperationMetadata value) {
+      if (deployModelDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        deployModelDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public Builder setDeployModelDetails(
+        com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder builderForValue) {
+      if (deployModelDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        deployModelDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public Builder mergeDeployModelDetails(
+        com.google.cloud.automl.v1beta1.DeployModelOperationMetadata value) {
+      if (deployModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 24
+            && details_
+                != com.google.cloud.automl.v1beta1.DeployModelOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 24) {
+          deployModelDetailsBuilder_.mergeFrom(value);
+        }
+        deployModelDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public Builder clearDeployModelDetails() {
+      if (deployModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 24) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 24) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        deployModelDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder
+        getDeployModelDetailsBuilder() {
+      return getDeployModelDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder
+        getDeployModelDetailsOrBuilder() {
+      if ((detailsCase_ == 24) && (deployModelDetailsBuilder_ != null)) {
+        return deployModelDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 24) {
+          return (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of a DeployModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.DeployModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder>
+        getDeployModelDetailsFieldBuilder() {
+      if (deployModelDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 24)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.getDefaultInstance();
+        }
+        deployModelDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.DeployModelOperationMetadata,
+                com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 24;
+      onChanged();
+      ;
+      return deployModelDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder>
+        undeployModelDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public boolean hasUndeployModelDetails() {
+      return detailsCase_ == 25;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata
+        getUndeployModelDetails() {
+      if (undeployModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 25) {
+          return (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 25) {
+          return undeployModelDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public Builder setUndeployModelDetails(
+        com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata value) {
+      if (undeployModelDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        undeployModelDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 25;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public Builder setUndeployModelDetails(
+        com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder builderForValue) {
+      if (undeployModelDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        undeployModelDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 25;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public Builder mergeUndeployModelDetails(
+        com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata value) {
+      if (undeployModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 25
+            && details_
+                != com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 25) {
+          undeployModelDetailsBuilder_.mergeFrom(value);
+        }
+        undeployModelDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 25;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public Builder clearUndeployModelDetails() {
+      if (undeployModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 25) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 25) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        undeployModelDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder
+        getUndeployModelDetailsBuilder() {
+      return getUndeployModelDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder
+        getUndeployModelDetailsOrBuilder() {
+      if ((detailsCase_ == 25) && (undeployModelDetailsBuilder_ != null)) {
+        return undeployModelDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 25) {
+          return (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of an UndeployModel operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder>
+        getUndeployModelDetailsFieldBuilder() {
+      if (undeployModelDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 25)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.getDefaultInstance();
+        }
+        undeployModelDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata,
+                com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 25;
+      onChanged();
+      ;
+      return undeployModelDetailsBuilder_;
+    }
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.CreateModelOperationMetadata,
@@ -1122,12 +2573,1121 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return createModelDetailsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImportDataOperationMetadata,
+            com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder>
+        importDataDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public boolean hasImportDataDetails() {
+      return detailsCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImportDataOperationMetadata getImportDataDetails() {
+      if (importDataDetailsBuilder_ == null) {
+        if (detailsCase_ == 15) {
+          return (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 15) {
+          return importDataDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public Builder setImportDataDetails(
+        com.google.cloud.automl.v1beta1.ImportDataOperationMetadata value) {
+      if (importDataDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        importDataDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public Builder setImportDataDetails(
+        com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder builderForValue) {
+      if (importDataDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        importDataDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public Builder mergeImportDataDetails(
+        com.google.cloud.automl.v1beta1.ImportDataOperationMetadata value) {
+      if (importDataDetailsBuilder_ == null) {
+        if (detailsCase_ == 15
+            && details_
+                != com.google.cloud.automl.v1beta1.ImportDataOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 15) {
+          importDataDetailsBuilder_.mergeFrom(value);
+        }
+        importDataDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public Builder clearImportDataDetails() {
+      if (importDataDetailsBuilder_ == null) {
+        if (detailsCase_ == 15) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 15) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        importDataDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder
+        getImportDataDetailsBuilder() {
+      return getImportDataDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder
+        getImportDataDetailsOrBuilder() {
+      if ((detailsCase_ == 15) && (importDataDetailsBuilder_ != null)) {
+        return importDataDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 15) {
+          return (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ImportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImportDataOperationMetadata,
+            com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder>
+        getImportDataDetailsFieldBuilder() {
+      if (importDataDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 15)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.getDefaultInstance();
+        }
+        importDataDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ImportDataOperationMetadata,
+                com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 15;
+      onChanged();
+      ;
+      return importDataDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata,
+            com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder>
+        batchPredictDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public boolean hasBatchPredictDetails() {
+      return detailsCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata getBatchPredictDetails() {
+      if (batchPredictDetailsBuilder_ == null) {
+        if (detailsCase_ == 16) {
+          return (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 16) {
+          return batchPredictDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public Builder setBatchPredictDetails(
+        com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata value) {
+      if (batchPredictDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        batchPredictDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public Builder setBatchPredictDetails(
+        com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder builderForValue) {
+      if (batchPredictDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchPredictDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public Builder mergeBatchPredictDetails(
+        com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata value) {
+      if (batchPredictDetailsBuilder_ == null) {
+        if (detailsCase_ == 16
+            && details_
+                != com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 16) {
+          batchPredictDetailsBuilder_.mergeFrom(value);
+        }
+        batchPredictDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public Builder clearBatchPredictDetails() {
+      if (batchPredictDetailsBuilder_ == null) {
+        if (detailsCase_ == 16) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 16) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        batchPredictDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder
+        getBatchPredictDetailsBuilder() {
+      return getBatchPredictDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder
+        getBatchPredictDetailsOrBuilder() {
+      if ((detailsCase_ == 16) && (batchPredictDetailsBuilder_ != null)) {
+        return batchPredictDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 16) {
+          return (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of BatchPredict operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata,
+            com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder>
+        getBatchPredictDetailsFieldBuilder() {
+      if (batchPredictDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 16)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.getDefaultInstance();
+        }
+        batchPredictDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata,
+                com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 16;
+      onChanged();
+      ;
+      return batchPredictDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ExportDataOperationMetadata,
+            com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder>
+        exportDataDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public boolean hasExportDataDetails() {
+      return detailsCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata getExportDataDetails() {
+      if (exportDataDetailsBuilder_ == null) {
+        if (detailsCase_ == 21) {
+          return (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 21) {
+          return exportDataDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public Builder setExportDataDetails(
+        com.google.cloud.automl.v1beta1.ExportDataOperationMetadata value) {
+      if (exportDataDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        exportDataDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public Builder setExportDataDetails(
+        com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder builderForValue) {
+      if (exportDataDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        exportDataDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public Builder mergeExportDataDetails(
+        com.google.cloud.automl.v1beta1.ExportDataOperationMetadata value) {
+      if (exportDataDetailsBuilder_ == null) {
+        if (detailsCase_ == 21
+            && details_
+                != com.google.cloud.automl.v1beta1.ExportDataOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 21) {
+          exportDataDetailsBuilder_.mergeFrom(value);
+        }
+        exportDataDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public Builder clearExportDataDetails() {
+      if (exportDataDetailsBuilder_ == null) {
+        if (detailsCase_ == 21) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 21) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        exportDataDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder
+        getExportDataDetailsBuilder() {
+      return getExportDataDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder
+        getExportDataDetailsOrBuilder() {
+      if ((detailsCase_ == 21) && (exportDataDetailsBuilder_ != null)) {
+        return exportDataDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 21) {
+          return (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportData operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ExportDataOperationMetadata,
+            com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder>
+        getExportDataDetailsFieldBuilder() {
+      if (exportDataDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 21)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.getDefaultInstance();
+        }
+        exportDataDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ExportDataOperationMetadata,
+                com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 21;
+      onChanged();
+      ;
+      return exportDataDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ExportModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder>
+        exportModelDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public boolean hasExportModelDetails() {
+      return detailsCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata getExportModelDetails() {
+      if (exportModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 22) {
+          return (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 22) {
+          return exportModelDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public Builder setExportModelDetails(
+        com.google.cloud.automl.v1beta1.ExportModelOperationMetadata value) {
+      if (exportModelDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        exportModelDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public Builder setExportModelDetails(
+        com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder builderForValue) {
+      if (exportModelDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        exportModelDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public Builder mergeExportModelDetails(
+        com.google.cloud.automl.v1beta1.ExportModelOperationMetadata value) {
+      if (exportModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 22
+            && details_
+                != com.google.cloud.automl.v1beta1.ExportModelOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 22) {
+          exportModelDetailsBuilder_.mergeFrom(value);
+        }
+        exportModelDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public Builder clearExportModelDetails() {
+      if (exportModelDetailsBuilder_ == null) {
+        if (detailsCase_ == 22) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 22) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        exportModelDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder
+        getExportModelDetailsBuilder() {
+      return getExportModelDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder
+        getExportModelDetailsOrBuilder() {
+      if ((detailsCase_ == 22) && (exportModelDetailsBuilder_ != null)) {
+        return exportModelDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 22) {
+          return (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_;
+        }
+        return com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportModel operation.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ExportModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder>
+        getExportModelDetailsFieldBuilder() {
+      if (exportModelDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 22)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.getDefaultInstance();
+        }
+        exportModelDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ExportModelOperationMetadata,
+                com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 22;
+      onChanged();
+      ;
+      return exportModelDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata,
+            com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder>
+        exportEvaluatedExamplesDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public boolean hasExportEvaluatedExamplesDetails() {
+      return detailsCase_ == 26;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+        getExportEvaluatedExamplesDetails() {
+      if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+        if (detailsCase_ == 26) {
+          return (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (detailsCase_ == 26) {
+          return exportEvaluatedExamplesDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public Builder setExportEvaluatedExamplesDetails(
+        com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata value) {
+      if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        exportEvaluatedExamplesDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public Builder setExportEvaluatedExamplesDetails(
+        com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder
+            builderForValue) {
+      if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        exportEvaluatedExamplesDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public Builder mergeExportEvaluatedExamplesDetails(
+        com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata value) {
+      if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+        if (detailsCase_ == 26
+            && details_
+                != com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
+                          details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 26) {
+          exportEvaluatedExamplesDetailsBuilder_.mergeFrom(value);
+        }
+        exportEvaluatedExamplesDetailsBuilder_.setMessage(value);
+      }
+      detailsCase_ = 26;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public Builder clearExportEvaluatedExamplesDetails() {
+      if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+        if (detailsCase_ == 26) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 26) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        exportEvaluatedExamplesDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder
+        getExportEvaluatedExamplesDetailsBuilder() {
+      return getExportEvaluatedExamplesDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder
+        getExportEvaluatedExamplesDetailsOrBuilder() {
+      if ((detailsCase_ == 26) && (exportEvaluatedExamplesDetailsBuilder_ != null)) {
+        return exportEvaluatedExamplesDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 26) {
+          return (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
+              details_;
+        }
+        return com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details of ExportEvaluatedExamples operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata,
+            com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder>
+        getExportEvaluatedExamplesDetailsFieldBuilder() {
+      if (exportEvaluatedExamplesDetailsBuilder_ == null) {
+        if (!(detailsCase_ == 26)) {
+          details_ =
+              com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+                  .getDefaultInstance();
+        }
+        exportEvaluatedExamplesDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata,
+                com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 26;
+      onChanged();
+      ;
+      return exportEvaluatedExamplesDetailsBuilder_;
+    }
+
     private int progressPercent_;
     /**
      *
      *
      * <pre>
      * Output only. Progress of operation. Range: [0, 100].
+     * Not used currently.
      * </pre>
      *
      * <code>int32 progress_percent = 13;</code>
@@ -1140,6 +3700,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. Progress of operation. Range: [0, 100].
+     * Not used currently.
      * </pre>
      *
      * <code>int32 progress_percent = 13;</code>
@@ -1155,6 +3716,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. Progress of operation. Range: [0, 100].
+     * Not used currently.
      * </pre>
      *
      * <code>int32 progress_percent = 13;</code>
@@ -1170,9 +3732,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -1416,7 +3978,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -1557,7 +4119,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;

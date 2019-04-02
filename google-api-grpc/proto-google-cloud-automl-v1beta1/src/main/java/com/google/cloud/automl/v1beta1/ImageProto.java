@@ -17,9 +17,21 @@ public final class ImageProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ImageClassificationDatasetMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionDatasetMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionDatasetMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -36,14 +48,19 @@ public final class ImageProto {
           + "rotobuf/timestamp.proto\"r\n\"ImageClassifi"
           + "cationDatasetMetadata\022L\n\023classification_"
           + "type\030\001 \001(\0162/.google.cloud.automl.v1beta1"
-          + ".ClassificationType\"x\n ImageClassificati"
+          + ".ClassificationType\"%\n#ImageObjectDetect"
+          + "ionDatasetMetadata\"\214\001\n ImageClassificati"
           + "onModelMetadata\022\025\n\rbase_model_id\030\001 \001(\t\022\024"
           + "\n\014train_budget\030\002 \001(\003\022\022\n\ntrain_cost\030\003 \001(\003"
-          + "\022\023\n\013stop_reason\030\005 \001(\tB\220\001\n\037com.google.clo"
-          + "ud.automl.v1beta1B\nImageProtoP\001ZAgoogle."
-          + "golang.org/genproto/googleapis/cloud/aut"
-          + "oml/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl"
-          + "\\V1beta1b\006proto3"
+          + "\022\023\n\013stop_reason\030\005 \001(\t\022\022\n\nmodel_type\030\007 \001("
+          + "\t\"]\n!ImageObjectDetectionModelMetadata\022\022"
+          + "\n\nmodel_type\030\001 \001(\t\022\022\n\nnode_count\030\003 \001(\003\022\020"
+          + "\n\010node_qps\030\004 \001(\001\"A\n+ImageObjectDetection"
+          + "ModelDeploymentMetadata\022\022\n\nnode_count\030\001 "
+          + "\001(\003B\220\001\n\037com.google.cloud.automl.v1beta1B"
+          + "\nImageProtoP\001ZAgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/automl/v1beta1;automl"
+          + "\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -69,13 +86,35 @@ public final class ImageProto {
             new java.lang.String[] {
               "ClassificationType",
             });
-    internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor =
+    internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionDatasetMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionDatasetMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor,
             new java.lang.String[] {
-              "BaseModelId", "TrainBudget", "TrainCost", "StopReason",
+              "BaseModelId", "TrainBudget", "TrainCost", "StopReason", "ModelType",
+            });
+    internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelMetadata_descriptor,
+            new java.lang.String[] {
+              "ModelType", "NodeCount", "NodeQps",
+            });
+    internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionModelDeploymentMetadata_descriptor,
+            new java.lang.String[] {
+              "NodeCount",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();

@@ -158,10 +158,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The format of the source text. For example, "text/html" or
-   * "text/plain". If left blank the format is automatically determined from
-   * the type of the uploaded content. The default is "text/html". Up to 25000
-   * characters long.
+   * The format of the source text. Currently the only two allowed values are
+   * "text/html" and "text/plain". If left blank the format is automatically
+   * determined from the type of the uploaded content.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -181,10 +180,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The format of the source text. For example, "text/html" or
-   * "text/plain". If left blank the format is automatically determined from
-   * the type of the uploaded content. The default is "text/html". Up to 25000
-   * characters long.
+   * The format of the source text. Currently the only two allowed values are
+   * "text/html" and "text/plain". If left blank the format is automatically
+   * determined from the type of the uploaded content.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -696,10 +694,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of the source text. For example, "text/html" or
-     * "text/plain". If left blank the format is automatically determined from
-     * the type of the uploaded content. The default is "text/html". Up to 25000
-     * characters long.
+     * The format of the source text. Currently the only two allowed values are
+     * "text/html" and "text/plain". If left blank the format is automatically
+     * determined from the type of the uploaded content.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -719,10 +716,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of the source text. For example, "text/html" or
-     * "text/plain". If left blank the format is automatically determined from
-     * the type of the uploaded content. The default is "text/html". Up to 25000
-     * characters long.
+     * The format of the source text. Currently the only two allowed values are
+     * "text/html" and "text/plain". If left blank the format is automatically
+     * determined from the type of the uploaded content.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -742,10 +738,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of the source text. For example, "text/html" or
-     * "text/plain". If left blank the format is automatically determined from
-     * the type of the uploaded content. The default is "text/html". Up to 25000
-     * characters long.
+     * The format of the source text. Currently the only two allowed values are
+     * "text/html" and "text/plain". If left blank the format is automatically
+     * determined from the type of the uploaded content.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -763,10 +758,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of the source text. For example, "text/html" or
-     * "text/plain". If left blank the format is automatically determined from
-     * the type of the uploaded content. The default is "text/html". Up to 25000
-     * characters long.
+     * The format of the source text. Currently the only two allowed values are
+     * "text/html" and "text/plain". If left blank the format is automatically
+     * determined from the type of the uploaded content.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -781,10 +775,9 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of the source text. For example, "text/html" or
-     * "text/plain". If left blank the format is automatically determined from
-     * the type of the uploaded content. The default is "text/html". Up to 25000
-     * characters long.
+     * The format of the source text. Currently the only two allowed values are
+     * "text/html" and "text/plain". If left blank the format is automatically
+     * determined from the type of the uploaded content.
      * </pre>
      *
      * <code>string mime_type = 2;</code>

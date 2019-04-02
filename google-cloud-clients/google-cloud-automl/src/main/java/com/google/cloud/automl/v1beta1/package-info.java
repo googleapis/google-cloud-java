@@ -30,6 +30,11 @@
  * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then the id for the item
  * is `{dataset_id}`.
  *
+ * <p>Currently the only supported `location_id` is "us-central1".
+ *
+ * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * either of those cases is accepted.
+ *
  * <p>Sample for AutoMlClient:
  *
  * <pre>
@@ -45,6 +50,9 @@
  * ======================= PredictionServiceClient =======================
  *
  * <p>Service Description: AutoML Prediction API.
+ *
+ * <p>On any input that is documented to expect a string parameter in snake_case or kebab-case,
+ * either of those cases is accepted.
  *
  * <p>Sample for PredictionServiceClient:
  *

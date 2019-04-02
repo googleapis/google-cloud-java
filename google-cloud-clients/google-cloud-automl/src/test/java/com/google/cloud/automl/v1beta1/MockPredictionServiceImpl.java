@@ -17,6 +17,7 @@ package com.google.cloud.automl.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.automl.v1beta1.PredictionServiceGrpc.PredictionServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockPredictionServiceImpl extends PredictionServiceImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockPredictionServiceImpl() {
@@ -62,6 +63,21 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
     if (response instanceof PredictResponse) {
       requests.add(request);
       responseObserver.onNext((PredictResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void batchPredict(
+      BatchPredictRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

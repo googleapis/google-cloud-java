@@ -177,6 +177,112 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               modelMetadataCase_ = 15;
               break;
             }
+          case 154:
+            {
+              com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 19) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 19;
+              break;
+            }
+          case 162:
+            {
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.Builder subBuilder =
+                  null;
+              if (modelMetadataCase_ == 20) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata)
+                            modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata)
+                        modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 20;
+              break;
+            }
+          case 178:
+            {
+              com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 22) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 22;
+              break;
+            }
+          case 186:
+            {
+              com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.Builder subBuilder =
+                  null;
+              if (modelMetadataCase_ == 23) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata)
+                            modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata)
+                        modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 23;
+              break;
+            }
+          case 194:
+            {
+              com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 24) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TablesModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 24;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -362,9 +468,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   private java.lang.Object modelMetadata_;
 
   public enum ModelMetadataCase implements com.google.protobuf.Internal.EnumLite {
+    TRANSLATION_MODEL_METADATA(15),
     IMAGE_CLASSIFICATION_MODEL_METADATA(13),
     TEXT_CLASSIFICATION_MODEL_METADATA(14),
-    TRANSLATION_MODEL_METADATA(15),
+    IMAGE_OBJECT_DETECTION_MODEL_METADATA(20),
+    VIDEO_CLASSIFICATION_MODEL_METADATA(23),
+    TEXT_EXTRACTION_MODEL_METADATA(19),
+    TABLES_MODEL_METADATA(24),
+    TEXT_SENTIMENT_MODEL_METADATA(22),
     MODELMETADATA_NOT_SET(0);
     private final int value;
 
@@ -379,12 +490,22 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
     public static ModelMetadataCase forNumber(int value) {
       switch (value) {
+        case 15:
+          return TRANSLATION_MODEL_METADATA;
         case 13:
           return IMAGE_CLASSIFICATION_MODEL_METADATA;
         case 14:
           return TEXT_CLASSIFICATION_MODEL_METADATA;
-        case 15:
-          return TRANSLATION_MODEL_METADATA;
+        case 20:
+          return IMAGE_OBJECT_DETECTION_MODEL_METADATA;
+        case 23:
+          return VIDEO_CLASSIFICATION_MODEL_METADATA;
+        case 19:
+          return TEXT_EXTRACTION_MODEL_METADATA;
+        case 24:
+          return TABLES_MODEL_METADATA;
+        case 22:
+          return TEXT_SENTIMENT_MODEL_METADATA;
         case 0:
           return MODELMETADATA_NOT_SET;
         default:
@@ -399,6 +520,54 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
   public ModelMetadataCase getModelMetadataCase() {
     return ModelMetadataCase.forNumber(modelMetadataCase_);
+  }
+
+  public static final int TRANSLATION_MODEL_METADATA_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for translation models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
+   */
+  public boolean hasTranslationModelMetadata() {
+    return modelMetadataCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for translation models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
+    if (modelMetadataCase_ == 15) {
+      return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for translation models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
+      getTranslationModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 15) {
+      return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
   }
 
   public static final int IMAGE_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER = 13;
@@ -505,52 +674,257 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance();
   }
 
-  public static final int TRANSLATION_MODEL_METADATA_FIELD_NUMBER = 15;
+  public static final int IMAGE_OBJECT_DETECTION_MODEL_METADATA_FIELD_NUMBER = 20;
   /**
    *
    *
    * <pre>
-   * Metadata for translation models.
+   * Metadata for image object detection models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
-  public boolean hasTranslationModelMetadata() {
-    return modelMetadataCase_ == 15;
+  public boolean hasImageObjectDetectionModelMetadata() {
+    return modelMetadataCase_ == 20;
   }
   /**
    *
    *
    * <pre>
-   * Metadata for translation models.
+   * Metadata for image object detection models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
-  public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
-    if (modelMetadataCase_ == 15) {
-      return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+      getImageObjectDetectionModelMetadata() {
+    if (modelMetadataCase_ == 20) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_;
     }
-    return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Metadata for translation models.
+   * Metadata for image object detection models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
-  public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
-      getTranslationModelMetadataOrBuilder() {
-    if (modelMetadataCase_ == 15) {
-      return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadataOrBuilder
+      getImageObjectDetectionModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 20) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_;
     }
-    return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+  }
+
+  public static final int VIDEO_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+   * </code>
+   */
+  public boolean hasVideoClassificationModelMetadata() {
+    return modelMetadataCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+      getVideoClassificationModelMetadata() {
+    if (modelMetadataCase_ == 23) {
+      return (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadataOrBuilder
+      getVideoClassificationModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 23) {
+      return (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_EXTRACTION_MODEL_METADATA_FIELD_NUMBER = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  public boolean hasTextExtractionModelMetadata() {
+    return modelMetadataCase_ == 19;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata
+      getTextExtractionModelMetadata() {
+    if (modelMetadataCase_ == 19) {
+      return (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder
+      getTextExtractionModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 19) {
+      return (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance();
+  }
+
+  public static final int TABLES_MODEL_METADATA_FIELD_NUMBER = 24;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for Tables models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   */
+  public boolean hasTablesModelMetadata() {
+    return modelMetadataCase_ == 24;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for Tables models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TablesModelMetadata getTablesModelMetadata() {
+    if (modelMetadataCase_ == 24) {
+      return (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for Tables models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TablesModelMetadataOrBuilder
+      getTablesModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 24) {
+      return (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_SENTIMENT_MODEL_METADATA_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  public boolean hasTextSentimentModelMetadata() {
+    return modelMetadataCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSentimentModelMetadata
+      getTextSentimentModelMetadata() {
+    if (modelMetadataCase_ == 22) {
+      return (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSentimentModelMetadataOrBuilder
+      getTextSentimentModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 22) {
+      return (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -607,9 +981,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-   * (_), and ASCII digits 0-9.
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
+   * (_), and ASCII digits 0-9. It must start with a letter.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -630,9 +1004,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-   * (_), and ASCII digits 0-9.
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
+   * (_), and ASCII digits 0-9. It must start with a letter.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -657,8 +1031,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
-   * come from the
-   * same ancestor project and location.
+   * come from the same ancestor project and location.
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
@@ -680,8 +1053,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
-   * come from the
-   * same ancestor project and location.
+   * come from the same ancestor project and location.
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
@@ -788,7 +1160,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deployment state of the model.
+   * Output only. Deployment state of the model. A model can only serve
+   * prediction requests after it gets deployed.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -800,7 +1173,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deployment state of the model.
+   * Output only. Deployment state of the model. A model can only serve
+   * prediction requests after it gets deployed.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -860,6 +1234,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           15, (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
     }
+    if (modelMetadataCase_ == 19) {
+      output.writeMessage(
+          19, (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 20) {
+      output.writeMessage(
+          20, (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 22) {
+      output.writeMessage(
+          22, (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 23) {
+      output.writeMessage(
+          23, (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 24) {
+      output.writeMessage(24, (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -905,6 +1298,33 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
     }
+    if (modelMetadataCase_ == 19) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20,
+              (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23,
+              (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -934,6 +1354,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (deploymentState_ != other.deploymentState_) return false;
     if (!getModelMetadataCase().equals(other.getModelMetadataCase())) return false;
     switch (modelMetadataCase_) {
+      case 15:
+        if (!getTranslationModelMetadata().equals(other.getTranslationModelMetadata()))
+          return false;
+        break;
       case 13:
         if (!getImageClassificationModelMetadata()
             .equals(other.getImageClassificationModelMetadata())) return false;
@@ -942,8 +1366,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         if (!getTextClassificationModelMetadata()
             .equals(other.getTextClassificationModelMetadata())) return false;
         break;
-      case 15:
-        if (!getTranslationModelMetadata().equals(other.getTranslationModelMetadata()))
+      case 20:
+        if (!getImageObjectDetectionModelMetadata()
+            .equals(other.getImageObjectDetectionModelMetadata())) return false;
+        break;
+      case 23:
+        if (!getVideoClassificationModelMetadata()
+            .equals(other.getVideoClassificationModelMetadata())) return false;
+        break;
+      case 19:
+        if (!getTextExtractionModelMetadata().equals(other.getTextExtractionModelMetadata()))
+          return false;
+        break;
+      case 24:
+        if (!getTablesModelMetadata().equals(other.getTablesModelMetadata())) return false;
+        break;
+      case 22:
+        if (!getTextSentimentModelMetadata().equals(other.getTextSentimentModelMetadata()))
           return false;
         break;
       case 0:
@@ -977,6 +1416,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     hash = (37 * hash) + DEPLOYMENT_STATE_FIELD_NUMBER;
     hash = (53 * hash) + deploymentState_;
     switch (modelMetadataCase_) {
+      case 15:
+        hash = (37 * hash) + TRANSLATION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTranslationModelMetadata().hashCode();
+        break;
       case 13:
         hash = (37 * hash) + IMAGE_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getImageClassificationModelMetadata().hashCode();
@@ -985,9 +1428,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + TEXT_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getTextClassificationModelMetadata().hashCode();
         break;
-      case 15:
-        hash = (37 * hash) + TRANSLATION_MODEL_METADATA_FIELD_NUMBER;
-        hash = (53 * hash) + getTranslationModelMetadata().hashCode();
+      case 20:
+        hash = (37 * hash) + IMAGE_OBJECT_DETECTION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getImageObjectDetectionModelMetadata().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + VIDEO_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoClassificationModelMetadata().hashCode();
+        break;
+      case 19:
+        hash = (37 * hash) + TEXT_EXTRACTION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextExtractionModelMetadata().hashCode();
+        break;
+      case 24:
+        hash = (37 * hash) + TABLES_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTablesModelMetadata().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + TEXT_SENTIMENT_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSentimentModelMetadata().hashCode();
         break;
       case 0:
       default:
@@ -1185,6 +1644,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.Model buildPartial() {
       com.google.cloud.automl.v1beta1.Model result =
           new com.google.cloud.automl.v1beta1.Model(this);
+      if (modelMetadataCase_ == 15) {
+        if (translationModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = translationModelMetadataBuilder_.build();
+        }
+      }
       if (modelMetadataCase_ == 13) {
         if (imageClassificationModelMetadataBuilder_ == null) {
           result.modelMetadata_ = modelMetadata_;
@@ -1199,11 +1665,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           result.modelMetadata_ = textClassificationModelMetadataBuilder_.build();
         }
       }
-      if (modelMetadataCase_ == 15) {
-        if (translationModelMetadataBuilder_ == null) {
+      if (modelMetadataCase_ == 20) {
+        if (imageObjectDetectionModelMetadataBuilder_ == null) {
           result.modelMetadata_ = modelMetadata_;
         } else {
-          result.modelMetadata_ = translationModelMetadataBuilder_.build();
+          result.modelMetadata_ = imageObjectDetectionModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 23) {
+        if (videoClassificationModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = videoClassificationModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 19) {
+        if (textExtractionModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = textExtractionModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 24) {
+        if (tablesModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = tablesModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 22) {
+        if (textSentimentModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = textSentimentModelMetadataBuilder_.build();
         }
       }
       result.name_ = name_;
@@ -1292,6 +1786,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         setDeploymentStateValue(other.getDeploymentStateValue());
       }
       switch (other.getModelMetadataCase()) {
+        case TRANSLATION_MODEL_METADATA:
+          {
+            mergeTranslationModelMetadata(other.getTranslationModelMetadata());
+            break;
+          }
         case IMAGE_CLASSIFICATION_MODEL_METADATA:
           {
             mergeImageClassificationModelMetadata(other.getImageClassificationModelMetadata());
@@ -1302,9 +1801,29 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             mergeTextClassificationModelMetadata(other.getTextClassificationModelMetadata());
             break;
           }
-        case TRANSLATION_MODEL_METADATA:
+        case IMAGE_OBJECT_DETECTION_MODEL_METADATA:
           {
-            mergeTranslationModelMetadata(other.getTranslationModelMetadata());
+            mergeImageObjectDetectionModelMetadata(other.getImageObjectDetectionModelMetadata());
+            break;
+          }
+        case VIDEO_CLASSIFICATION_MODEL_METADATA:
+          {
+            mergeVideoClassificationModelMetadata(other.getVideoClassificationModelMetadata());
+            break;
+          }
+        case TEXT_EXTRACTION_MODEL_METADATA:
+          {
+            mergeTextExtractionModelMetadata(other.getTextExtractionModelMetadata());
+            break;
+          }
+        case TABLES_MODEL_METADATA:
+          {
+            mergeTablesModelMetadata(other.getTablesModelMetadata());
+            break;
+          }
+        case TEXT_SENTIMENT_MODEL_METADATA:
+          {
+            mergeTextSentimentModelMetadata(other.getTextSentimentModelMetadata());
             break;
           }
         case MODELMETADATA_NOT_SET:
@@ -1353,6 +1872,223 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       modelMetadata_ = null;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>
+        translationModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public boolean hasTranslationModelMetadata() {
+      return modelMetadataCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
+      if (translationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 15) {
+          return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 15) {
+          return translationModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public Builder setTranslationModelMetadata(
+        com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
+      if (translationModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        translationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public Builder setTranslationModelMetadata(
+        com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder builderForValue) {
+      if (translationModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        translationModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public Builder mergeTranslationModelMetadata(
+        com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
+      if (translationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 15
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TranslationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 15) {
+          translationModelMetadataBuilder_.mergeFrom(value);
+        }
+        translationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public Builder clearTranslationModelMetadata() {
+      if (translationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 15) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 15) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        translationModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder
+        getTranslationModelMetadataBuilder() {
+      return getTranslationModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
+        getTranslationModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 15) && (translationModelMetadataBuilder_ != null)) {
+        return translationModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 15) {
+          return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for translation models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>
+        getTranslationModelMetadataFieldBuilder() {
+      if (translationModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 15)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+        }
+        translationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TranslationModelMetadata,
+                com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 15;
+      onChanged();
+      ;
+      return translationModelMetadataBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1817,110 +2553,120 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TranslationModelMetadata,
-            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
-            com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>
-        translationModelMetadataBuilder_;
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadataOrBuilder>
+        imageObjectDetectionModelMetadataBuilder_;
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public boolean hasTranslationModelMetadata() {
-      return modelMetadataCase_ == 15;
+    public boolean hasImageObjectDetectionModelMetadata() {
+      return modelMetadataCase_ == 20;
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
-      if (translationModelMetadataBuilder_ == null) {
-        if (modelMetadataCase_ == 15) {
-          return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+        getImageObjectDetectionModelMetadata() {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 20) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_;
         }
-        return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+            .getDefaultInstance();
       } else {
-        if (modelMetadataCase_ == 15) {
-          return translationModelMetadataBuilder_.getMessage();
+        if (modelMetadataCase_ == 20) {
+          return imageObjectDetectionModelMetadataBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public Builder setTranslationModelMetadata(
-        com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
-      if (translationModelMetadataBuilder_ == null) {
+    public Builder setImageObjectDetectionModelMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata value) {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         modelMetadata_ = value;
         onChanged();
       } else {
-        translationModelMetadataBuilder_.setMessage(value);
+        imageObjectDetectionModelMetadataBuilder_.setMessage(value);
       }
-      modelMetadataCase_ = 15;
+      modelMetadataCase_ = 20;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public Builder setTranslationModelMetadata(
-        com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder builderForValue) {
-      if (translationModelMetadataBuilder_ == null) {
+    public Builder setImageObjectDetectionModelMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.Builder builderForValue) {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
         modelMetadata_ = builderForValue.build();
         onChanged();
       } else {
-        translationModelMetadataBuilder_.setMessage(builderForValue.build());
+        imageObjectDetectionModelMetadataBuilder_.setMessage(builderForValue.build());
       }
-      modelMetadataCase_ = 15;
+      modelMetadataCase_ = 20;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public Builder mergeTranslationModelMetadata(
-        com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
-      if (translationModelMetadataBuilder_ == null) {
-        if (modelMetadataCase_ == 15
+    public Builder mergeImageObjectDetectionModelMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata value) {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 20
             && modelMetadata_
-                != com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance()) {
+                != com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+                    .getDefaultInstance()) {
           modelMetadata_ =
-              com.google.cloud.automl.v1beta1.TranslationModelMetadata.newBuilder(
-                      (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_)
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata)
+                          modelMetadata_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -1928,37 +2674,38 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       } else {
-        if (modelMetadataCase_ == 15) {
-          translationModelMetadataBuilder_.mergeFrom(value);
+        if (modelMetadataCase_ == 20) {
+          imageObjectDetectionModelMetadataBuilder_.mergeFrom(value);
         }
-        translationModelMetadataBuilder_.setMessage(value);
+        imageObjectDetectionModelMetadataBuilder_.setMessage(value);
       }
-      modelMetadataCase_ = 15;
+      modelMetadataCase_ = 20;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public Builder clearTranslationModelMetadata() {
-      if (translationModelMetadataBuilder_ == null) {
-        if (modelMetadataCase_ == 15) {
+    public Builder clearImageObjectDetectionModelMetadata() {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 20) {
           modelMetadataCase_ = 0;
           modelMetadata_ = null;
           onChanged();
         }
       } else {
-        if (modelMetadataCase_ == 15) {
+        if (modelMetadataCase_ == 20) {
           modelMetadataCase_ = 0;
           modelMetadata_ = null;
         }
-        translationModelMetadataBuilder_.clear();
+        imageObjectDetectionModelMetadataBuilder_.clear();
       }
       return this;
     }
@@ -1966,71 +2713,971 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder
-        getTranslationModelMetadataBuilder() {
-      return getTranslationModelMetadataFieldBuilder().getBuilder();
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.Builder
+        getImageObjectDetectionModelMetadataBuilder() {
+      return getImageObjectDetectionModelMetadataFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
-        getTranslationModelMetadataOrBuilder() {
-      if ((modelMetadataCase_ == 15) && (translationModelMetadataBuilder_ != null)) {
-        return translationModelMetadataBuilder_.getMessageOrBuilder();
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadataOrBuilder
+        getImageObjectDetectionModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 20) && (imageObjectDetectionModelMetadataBuilder_ != null)) {
+        return imageObjectDetectionModelMetadataBuilder_.getMessageOrBuilder();
       } else {
-        if (modelMetadataCase_ == 15) {
-          return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+        if (modelMetadataCase_ == 20) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_;
         }
-        return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Metadata for translation models.
+     * Metadata for image object detection models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TranslationModelMetadata,
-            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
-            com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>
-        getTranslationModelMetadataFieldBuilder() {
-      if (translationModelMetadataBuilder_ == null) {
-        if (!(modelMetadataCase_ == 15)) {
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadataOrBuilder>
+        getImageObjectDetectionModelMetadataFieldBuilder() {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 20)) {
           modelMetadata_ =
-              com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+                  .getDefaultInstance();
         }
-        translationModelMetadataBuilder_ =
+        imageObjectDetectionModelMetadataBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.automl.v1beta1.TranslationModelMetadata,
-                com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
-                com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>(
-                (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata) modelMetadata_,
                 getParentForChildren(),
                 isClean());
         modelMetadata_ = null;
       }
-      modelMetadataCase_ = 15;
+      modelMetadataCase_ = 20;
       onChanged();
       ;
-      return translationModelMetadataBuilder_;
+      return imageObjectDetectionModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata,
+            com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoClassificationModelMetadataOrBuilder>
+        videoClassificationModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public boolean hasVideoClassificationModelMetadata() {
+      return modelMetadataCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+        getVideoClassificationModelMetadata() {
+      if (videoClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 23) {
+          return (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+            .getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 23) {
+          return videoClassificationModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public Builder setVideoClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata value) {
+      if (videoClassificationModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        videoClassificationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public Builder setVideoClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.Builder builderForValue) {
+      if (videoClassificationModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoClassificationModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public Builder mergeVideoClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata value) {
+      if (videoClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 23
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata)
+                          modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 23) {
+          videoClassificationModelMetadataBuilder_.mergeFrom(value);
+        }
+        videoClassificationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public Builder clearVideoClassificationModelMetadata() {
+      if (videoClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 23) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 23) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        videoClassificationModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.Builder
+        getVideoClassificationModelMetadataBuilder() {
+      return getVideoClassificationModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoClassificationModelMetadataOrBuilder
+        getVideoClassificationModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 23) && (videoClassificationModelMetadataBuilder_ != null)) {
+        return videoClassificationModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 23) {
+          return (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for video classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata,
+            com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.VideoClassificationModelMetadataOrBuilder>
+        getVideoClassificationModelMetadataFieldBuilder() {
+      if (videoClassificationModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 23)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.getDefaultInstance();
+        }
+        videoClassificationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata,
+                com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.VideoClassificationModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 23;
+      onChanged();
+      ;
+      return videoClassificationModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextExtractionModelMetadata,
+            com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder>
+        textExtractionModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public boolean hasTextExtractionModelMetadata() {
+      return modelMetadataCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata
+        getTextExtractionModelMetadata() {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 19) {
+          return (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 19) {
+          return textExtractionModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder setTextExtractionModelMetadata(
+        com.google.cloud.automl.v1beta1.TextExtractionModelMetadata value) {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        textExtractionModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder setTextExtractionModelMetadata(
+        com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder builderForValue) {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textExtractionModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder mergeTextExtractionModelMetadata(
+        com.google.cloud.automl.v1beta1.TextExtractionModelMetadata value) {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 19
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.TextExtractionModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 19) {
+          textExtractionModelMetadataBuilder_.mergeFrom(value);
+        }
+        textExtractionModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder clearTextExtractionModelMetadata() {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 19) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 19) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        textExtractionModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder
+        getTextExtractionModelMetadataBuilder() {
+      return getTextExtractionModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder
+        getTextExtractionModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 19) && (textExtractionModelMetadataBuilder_ != null)) {
+        return textExtractionModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 19) {
+          return (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextExtractionModelMetadata,
+            com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder>
+        getTextExtractionModelMetadataFieldBuilder() {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 19)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance();
+        }
+        textExtractionModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextExtractionModelMetadata,
+                com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 19;
+      onChanged();
+      ;
+      return textExtractionModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TablesModelMetadata,
+            com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TablesModelMetadataOrBuilder>
+        tablesModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public boolean hasTablesModelMetadata() {
+      return modelMetadataCase_ == 24;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesModelMetadata getTablesModelMetadata() {
+      if (tablesModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 24) {
+          return (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 24) {
+          return tablesModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public Builder setTablesModelMetadata(
+        com.google.cloud.automl.v1beta1.TablesModelMetadata value) {
+      if (tablesModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        tablesModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public Builder setTablesModelMetadata(
+        com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder builderForValue) {
+      if (tablesModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        tablesModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public Builder mergeTablesModelMetadata(
+        com.google.cloud.automl.v1beta1.TablesModelMetadata value) {
+      if (tablesModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 24
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TablesModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 24) {
+          tablesModelMetadataBuilder_.mergeFrom(value);
+        }
+        tablesModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public Builder clearTablesModelMetadata() {
+      if (tablesModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 24) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 24) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        tablesModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder
+        getTablesModelMetadataBuilder() {
+      return getTablesModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesModelMetadataOrBuilder
+        getTablesModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 24) && (tablesModelMetadataBuilder_ != null)) {
+        return tablesModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 24) {
+          return (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for Tables models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TablesModelMetadata,
+            com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TablesModelMetadataOrBuilder>
+        getTablesModelMetadataFieldBuilder() {
+      if (tablesModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 24)) {
+          modelMetadata_ = com.google.cloud.automl.v1beta1.TablesModelMetadata.getDefaultInstance();
+        }
+        tablesModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TablesModelMetadata,
+                com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TablesModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TablesModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 24;
+      onChanged();
+      ;
+      return tablesModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSentimentModelMetadata,
+            com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextSentimentModelMetadataOrBuilder>
+        textSentimentModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public boolean hasTextSentimentModelMetadata() {
+      return modelMetadataCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentModelMetadata
+        getTextSentimentModelMetadata() {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 22) {
+          return (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 22) {
+          return textSentimentModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder setTextSentimentModelMetadata(
+        com.google.cloud.automl.v1beta1.TextSentimentModelMetadata value) {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        textSentimentModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder setTextSentimentModelMetadata(
+        com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder builderForValue) {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSentimentModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder mergeTextSentimentModelMetadata(
+        com.google.cloud.automl.v1beta1.TextSentimentModelMetadata value) {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 22
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.TextSentimentModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 22) {
+          textSentimentModelMetadataBuilder_.mergeFrom(value);
+        }
+        textSentimentModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder clearTextSentimentModelMetadata() {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 22) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 22) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        textSentimentModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder
+        getTextSentimentModelMetadataBuilder() {
+      return getTextSentimentModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentModelMetadataOrBuilder
+        getTextSentimentModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 22) && (textSentimentModelMetadataBuilder_ != null)) {
+        return textSentimentModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 22) {
+          return (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSentimentModelMetadata,
+            com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextSentimentModelMetadataOrBuilder>
+        getTextSentimentModelMetadataFieldBuilder() {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 22)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.getDefaultInstance();
+        }
+        textSentimentModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextSentimentModelMetadata,
+                com.google.cloud.automl.v1beta1.TextSentimentModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TextSentimentModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextSentimentModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 22;
+      onChanged();
+      ;
+      return textSentimentModelMetadataBuilder_;
     }
 
     private java.lang.Object name_ = "";
@@ -2143,9 +3790,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-     * (_), and ASCII digits 0-9.
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
+     * (_), and ASCII digits 0-9. It must start with a letter.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2166,9 +3813,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-     * (_), and ASCII digits 0-9.
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
+     * (_), and ASCII digits 0-9. It must start with a letter.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2189,9 +3836,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-     * (_), and ASCII digits 0-9.
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
+     * (_), and ASCII digits 0-9. It must start with a letter.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2210,9 +3857,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-     * (_), and ASCII digits 0-9.
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
+     * (_), and ASCII digits 0-9. It must start with a letter.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2228,9 +3875,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
-     * up to 32 characters
-     * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-     * (_), and ASCII digits 0-9.
+     * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+     * and a-z, underscores
+     * (_), and ASCII digits 0-9. It must start with a letter.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -2253,8 +3900,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
-     * come from the
-     * same ancestor project and location.
+     * come from the same ancestor project and location.
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
@@ -2276,8 +3922,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
-     * come from the
-     * same ancestor project and location.
+     * come from the same ancestor project and location.
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
@@ -2299,8 +3944,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
-     * come from the
-     * same ancestor project and location.
+     * come from the same ancestor project and location.
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
@@ -2320,8 +3964,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
-     * come from the
-     * same ancestor project and location.
+     * come from the same ancestor project and location.
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
@@ -2338,8 +3981,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
-     * come from the
-     * same ancestor project and location.
+     * come from the same ancestor project and location.
      * </pre>
      *
      * <code>string dataset_id = 3;</code>
@@ -2736,7 +4378,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deployment state of the model.
+     * Output only. Deployment state of the model. A model can only serve
+     * prediction requests after it gets deployed.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -2748,7 +4391,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deployment state of the model.
+     * Output only. Deployment state of the model. A model can only serve
+     * prediction requests after it gets deployed.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -2762,7 +4406,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deployment state of the model.
+     * Output only. Deployment state of the model. A model can only serve
+     * prediction requests after it gets deployed.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -2779,7 +4424,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deployment state of the model.
+     * Output only. Deployment state of the model. A model can only serve
+     * prediction requests after it gets deployed.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -2797,7 +4443,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deployment state of the model.
+     * Output only. Deployment state of the model. A model can only serve
+     * prediction requests after it gets deployed.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
