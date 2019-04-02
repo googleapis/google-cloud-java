@@ -47,11 +47,9 @@ import com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig;
 import com.google.cloud.translate.v3beta1.TranslateTextRequest;
 import com.google.cloud.translate.v3beta1.TranslateTextResponse;
 import com.google.cloud.translate.v3beta1.TranslationServiceClient;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import java.util.concurrent.TimeUnit;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -63,19 +61,18 @@ import org.junit.runners.MethodSorters;
  * ./google-cloud-clients/google-cloud-translate/src/main/java/com/google/cloud/translate/Translate.java}
  * to include the snippets in the Javadoc.
  */
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ITTranslateSnippetsbeta {
 
   private static final String projectId = System.getenv("PROJECT_ID");
 
   private static final String[] LANGUAGES = {
-      "af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "ny", "zh-TW", "hr",
-      "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr", "gl", "ka", "de", "el", "gu", "ht", "ha",
-      "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jw", "kn", "kk", "km", "ko", "lo",
-      "la", "lv", "lt", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl",
-      "pt", "ro", "ru", "sr", "st", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te",
-      "th", "tr", "uk", "ur", "uz", "vi", "cy", "yi", "yo", "zu"
+    "af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "ny", "zh-TW", "hr",
+    "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr", "gl", "ka", "de", "el", "gu", "ht", "ha",
+    "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jw", "kn", "kk", "km", "ko", "lo",
+    "la", "lv", "lt", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl",
+    "pt", "ro", "ru", "sr", "st", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te",
+    "th", "tr", "uk", "ur", "uz", "vi", "cy", "yi", "yo", "zu"
   };
 
   @Test
@@ -445,5 +442,4 @@ public class ITTranslateSnippetsbeta {
       e.printStackTrace();
     }
   }
-
 }
