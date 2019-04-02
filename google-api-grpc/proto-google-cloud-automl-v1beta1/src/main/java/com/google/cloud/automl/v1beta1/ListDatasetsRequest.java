@@ -7,8 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
+ * Request message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsRequest}
@@ -163,8 +162,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * An expression for filtering the results of the request.
-   *   * `dataset_metadata` - for existence of the case.
-   * An example of using the filter is:
+   *   * `dataset_metadata` - for existence of the case (e.g.
+   *             image_classification_dataset_metadata:*). Some examples of using the filter are:
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          translation_dataset_metadata.
    * </pre>
@@ -187,8 +186,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * An expression for filtering the results of the request.
-   *   * `dataset_metadata` - for existence of the case.
-   * An example of using the filter is:
+   *   * `dataset_metadata` - for existence of the case (e.g.
+   *             image_classification_dataset_metadata:*). Some examples of using the filter are:
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          translation_dataset_metadata.
    * </pre>
@@ -231,10 +230,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-   * of the previous
-   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-   * call.
+   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -256,10 +253,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-   * of the previous
-   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-   * call.
+   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -466,8 +461,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
+   * Request message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsRequest}
@@ -742,8 +736,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An expression for filtering the results of the request.
-     *   * `dataset_metadata` - for existence of the case.
-     * An example of using the filter is:
+     *   * `dataset_metadata` - for existence of the case (e.g.
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -766,8 +760,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An expression for filtering the results of the request.
-     *   * `dataset_metadata` - for existence of the case.
-     * An example of using the filter is:
+     *   * `dataset_metadata` - for existence of the case (e.g.
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -790,8 +784,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An expression for filtering the results of the request.
-     *   * `dataset_metadata` - for existence of the case.
-     * An example of using the filter is:
+     *   * `dataset_metadata` - for existence of the case (e.g.
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -812,8 +806,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An expression for filtering the results of the request.
-     *   * `dataset_metadata` - for existence of the case.
-     * An example of using the filter is:
+     *   * `dataset_metadata` - for existence of the case (e.g.
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -831,8 +825,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An expression for filtering the results of the request.
-     *   * `dataset_metadata` - for existence of the case.
-     * An example of using the filter is:
+     *   * `dataset_metadata` - for existence of the case (e.g.
+     *             image_classification_dataset_metadata:*). Some examples of using the filter are:
      *   * `translation_dataset_metadata:*` --&gt; The dataset has
      *                                          translation_dataset_metadata.
      * </pre>
@@ -904,10 +898,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-     * of the previous
-     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-     * call.
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -929,10 +921,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-     * of the previous
-     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-     * call.
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -954,10 +944,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-     * of the previous
-     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-     * call.
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -977,10 +965,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-     * of the previous
-     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-     * call.
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -997,10 +983,8 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token]
-     * of the previous
-     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets]
-     * call.
+     * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
+     * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
      * </pre>
      *
      * <code>string page_token = 6;</code>

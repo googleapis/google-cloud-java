@@ -7,8 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Response message for
- * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
+ * Response message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsResponse}
@@ -179,9 +178,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to
-   * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-   * to obtain that page.
+   * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -202,9 +199,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to
-   * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-   * to obtain that page.
+   * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -395,8 +390,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for
-   * [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
+   * Response message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsResponse}
@@ -955,9 +949,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -978,9 +970,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1001,9 +991,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1022,9 +1010,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1040,9 +1026,7 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to
-     * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-     * to obtain that page.
+     * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

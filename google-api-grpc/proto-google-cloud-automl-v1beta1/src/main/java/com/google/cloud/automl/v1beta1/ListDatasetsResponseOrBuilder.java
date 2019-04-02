@@ -65,9 +65,7 @@ public interface ListDatasetsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to
-   * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-   * to obtain that page.
+   * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -78,9 +76,7 @@ public interface ListDatasetsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to
-   * [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token]
-   * to obtain that page.
+   * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

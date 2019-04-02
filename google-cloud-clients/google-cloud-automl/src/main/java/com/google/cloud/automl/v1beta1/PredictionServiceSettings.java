@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.automl.v1beta1.stub.PredictionServiceStubSettings;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -62,6 +63,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   /** Returns the object with the settings used for calls to predict. */
   public UnaryCallSettings<PredictRequest, PredictResponse> predictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).predictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchPredict. */
+  public UnaryCallSettings<BatchPredictRequest, Operation> batchPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).batchPredictSettings();
   }
 
   public static final PredictionServiceSettings create(PredictionServiceStubSettings stub)
@@ -164,6 +170,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to predict. */
     public UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings() {
       return getStubSettingsBuilder().predictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchPredict. */
+    public UnaryCallSettings.Builder<BatchPredictRequest, Operation> batchPredictSettings() {
+      return getStubSettingsBuilder().batchPredictSettings();
     }
 
     @Override
