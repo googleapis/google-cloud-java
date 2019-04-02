@@ -73,10 +73,11 @@ public class MetadataConfig {
       connection.setConnectTimeout(TIMEOUT_MS);
       connection.setReadTimeout(TIMEOUT_MS);
       connection.setRequestProperty("Metadata-Flavor", "Google");
-      InputStream input = connection.getInputStream();
-      if (connection.getResponseCode() == 200) {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
-          return reader.readLine();
+      try (InputStream input = connection.getInputStream()) {
+        if (connection.getResponseCode() == 200) {
+          try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
+            return reader.readLine();
+          }
         }
       }
     } catch (IOException ignore) {
