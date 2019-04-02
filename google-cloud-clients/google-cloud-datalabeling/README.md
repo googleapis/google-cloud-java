@@ -1,7 +1,7 @@
 Google Cloud Java Client for Cloud Data Labeling
 ===================================================
 
-Java idiomatic client for [Cloud Data Labeling][cloud-datalabelindatalabeling].
+Java idiomatic client for [Cloud Data Labeling][cloud-datalabeling].
 
 [![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datalabeling.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datalabeling.svg)
@@ -93,6 +93,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-datalabeling]: https://cloud.google.com/resource-manager/docs/cloud-datalabeling-inventory/overview
-[datalabeling-product-docs]: https://cloud.google.com/resource-manager/docs/cloud-datalabeling-inventory/overview
+[cloud-datalabeling]: http://cloud.google.com/data-labeling/docs/
+[datalabeling-product-docs]: http://cloud.google.com/data-labeling/docs/
 [datalabeling-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/datalabeling/v1beta1/package-summary.html
