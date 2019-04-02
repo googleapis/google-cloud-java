@@ -143,14 +143,24 @@ public class ProductSearchClient implements BackgroundResource {
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}");
 
-  /** Formats a string containing the fully-qualified path to represent a location resource. */
+  /**
+   * Formats a string containing the fully-qualified path to represent a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
+   */
+  @Deprecated
   public static final String formatLocationName(String project, String location) {
     return LOCATION_PATH_TEMPLATE.instantiate(
         "project", project,
         "location", location);
   }
 
-  /** Formats a string containing the fully-qualified path to represent a product_set resource. */
+  /**
+   * Formats a string containing the fully-qualified path to represent a product_set resource.
+   *
+   * @deprecated Use the {@link ProductSetName} class instead.
+   */
+  @Deprecated
   public static final String formatProductSetName(
       String project, String location, String productSet) {
     return PRODUCT_SET_PATH_TEMPLATE.instantiate(
@@ -159,7 +169,12 @@ public class ProductSearchClient implements BackgroundResource {
         "product_set", productSet);
   }
 
-  /** Formats a string containing the fully-qualified path to represent a product resource. */
+  /**
+   * Formats a string containing the fully-qualified path to represent a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
   public static final String formatProductName(String project, String location, String product) {
     return PRODUCT_PATH_TEMPLATE.instantiate(
         "project", project,
@@ -169,7 +184,10 @@ public class ProductSearchClient implements BackgroundResource {
 
   /**
    * Formats a string containing the fully-qualified path to represent a reference_image resource.
+   *
+   * @deprecated Use the {@link ReferenceImageName} class instead.
    */
+  @Deprecated
   public static final String formatReferenceImageName(
       String project, String location, String product, String referenceImage) {
     return REFERENCE_IMAGE_PATH_TEMPLATE.instantiate(
@@ -181,21 +199,30 @@ public class ProductSearchClient implements BackgroundResource {
 
   /**
    * Parses the project from the given fully-qualified path which represents a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
    */
+  @Deprecated
   public static final String parseProjectFromLocationName(String locationName) {
     return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
   }
 
   /**
    * Parses the location from the given fully-qualified path which represents a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
    */
+  @Deprecated
   public static final String parseLocationFromLocationName(String locationName) {
     return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
   }
 
   /**
    * Parses the project from the given fully-qualified path which represents a product_set resource.
+   *
+   * @deprecated Use the {@link ProductSetName} class instead.
    */
+  @Deprecated
   public static final String parseProjectFromProductSetName(String productSetName) {
     return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("project");
   }
@@ -203,7 +230,10 @@ public class ProductSearchClient implements BackgroundResource {
   /**
    * Parses the location from the given fully-qualified path which represents a product_set
    * resource.
+   *
+   * @deprecated Use the {@link ProductSetName} class instead.
    */
+  @Deprecated
   public static final String parseLocationFromProductSetName(String productSetName) {
     return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("location");
   }
@@ -211,24 +241,40 @@ public class ProductSearchClient implements BackgroundResource {
   /**
    * Parses the product_set from the given fully-qualified path which represents a product_set
    * resource.
+   *
+   * @deprecated Use the {@link ProductSetName} class instead.
    */
+  @Deprecated
   public static final String parseProductSetFromProductSetName(String productSetName) {
     return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("product_set");
   }
 
-  /** Parses the project from the given fully-qualified path which represents a product resource. */
+  /**
+   * Parses the project from the given fully-qualified path which represents a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
   public static final String parseProjectFromProductName(String productName) {
     return PRODUCT_PATH_TEMPLATE.parse(productName).get("project");
   }
 
   /**
    * Parses the location from the given fully-qualified path which represents a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
    */
+  @Deprecated
   public static final String parseLocationFromProductName(String productName) {
     return PRODUCT_PATH_TEMPLATE.parse(productName).get("location");
   }
 
-  /** Parses the product from the given fully-qualified path which represents a product resource. */
+  /**
+   * Parses the product from the given fully-qualified path which represents a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
   public static final String parseProductFromProductName(String productName) {
     return PRODUCT_PATH_TEMPLATE.parse(productName).get("product");
   }
@@ -236,7 +282,10 @@ public class ProductSearchClient implements BackgroundResource {
   /**
    * Parses the project from the given fully-qualified path which represents a reference_image
    * resource.
+   *
+   * @deprecated Use the {@link ReferenceImageName} class instead.
    */
+  @Deprecated
   public static final String parseProjectFromReferenceImageName(String referenceImageName) {
     return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("project");
   }
@@ -244,7 +293,10 @@ public class ProductSearchClient implements BackgroundResource {
   /**
    * Parses the location from the given fully-qualified path which represents a reference_image
    * resource.
+   *
+   * @deprecated Use the {@link ReferenceImageName} class instead.
    */
+  @Deprecated
   public static final String parseLocationFromReferenceImageName(String referenceImageName) {
     return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("location");
   }
@@ -252,7 +304,10 @@ public class ProductSearchClient implements BackgroundResource {
   /**
    * Parses the product from the given fully-qualified path which represents a reference_image
    * resource.
+   *
+   * @deprecated Use the {@link ReferenceImageName} class instead.
    */
+  @Deprecated
   public static final String parseProductFromReferenceImageName(String referenceImageName) {
     return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("product");
   }
@@ -260,7 +315,10 @@ public class ProductSearchClient implements BackgroundResource {
   /**
    * Parses the reference_image from the given fully-qualified path which represents a
    * reference_image resource.
+   *
+   * @deprecated Use the {@link ReferenceImageName} class instead.
    */
+  @Deprecated
   public static final String parseReferenceImageFromReferenceImageName(String referenceImageName) {
     return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("reference_image");
   }
