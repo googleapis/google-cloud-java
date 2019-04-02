@@ -95,6 +95,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[product-overview]: FIXME
-[product-docs]: FIXME
+[product-overview]: https://cloud.google.com/web-risk/
+[product-docs]: https://cloud.google.com/web-risk/docs/
 [lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/webrisk/v1beta1/package-summary.html
