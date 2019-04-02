@@ -42,7 +42,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockConfigServiceV2Impl() {
