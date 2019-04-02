@@ -51,7 +51,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockGrafeasV1Beta1Impl extends GrafeasV1Beta1ImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockGrafeasV1Beta1Impl() {

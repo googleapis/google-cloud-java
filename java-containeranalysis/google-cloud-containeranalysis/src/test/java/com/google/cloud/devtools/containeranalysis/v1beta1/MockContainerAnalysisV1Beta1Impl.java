@@ -37,7 +37,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1ImplBase {
-  private ArrayList<AbstractMessage> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockContainerAnalysisV1Beta1Impl() {
