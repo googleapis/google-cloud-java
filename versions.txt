@@ -105,6 +105,7 @@ grpc-google-cloud-speech-v1:0.50.0:0.50.1-SNAPSHOT
 grpc-google-cloud-speech-v1beta1:0.50.0:0.50.1-SNAPSHOT
 grpc-google-cloud-speech-v1p1beta1:0.50.0:0.50.1-SNAPSHOT
 grpc-google-cloud-talent-v4beta1:0.2.0-beta:0.2.1-beta-SNAPSHOT
+grpc-google-cloud-tasks-v2:0.50.0:0.50.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta2:0.50.0:0.50.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta3:0.50.0:0.50.1-SNAPSHOT
 grpc-google-cloud-translate-v3beta1:0.50.0:0.50.1-SNAPSHOT
@@ -166,6 +167,7 @@ proto-google-cloud-speech-v1:0.50.0:0.50.1-SNAPSHOT
 proto-google-cloud-speech-v1beta1:0.50.0:0.50.1-SNAPSHOT
 proto-google-cloud-speech-v1p1beta1:0.50.0:0.50.1-SNAPSHOT
 proto-google-cloud-talent-v4beta1:0.2.0-beta:0.2.1-beta-SNAPSHOT
+proto-google-cloud-tasks-v2:0.50.0:0.50.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta2:0.50.0:0.50.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta3:0.50.0:0.50.1-SNAPSHOT
 proto-google-cloud-translate-v3beta1:0.50.0:0.50.1-SNAPSHOT
