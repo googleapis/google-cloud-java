@@ -128,6 +128,192 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  boolean hasImageObjectDetectionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata
+      getImageObjectDetectionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadataOrBuilder
+      getImageObjectDetectionDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+   * </code>
+   */
+  boolean hasVideoClassificationDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata
+      getVideoClassificationDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for video classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationDatasetMetadata video_classification_dataset_metadata = 31;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoClassificationDatasetMetadataOrBuilder
+      getVideoClassificationDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  boolean hasTextExtractionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadata getTextExtractionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionDatasetMetadataOrBuilder
+      getTextExtractionDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  boolean hasTextSentimentDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadata getTextSentimentDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentDatasetMetadataOrBuilder
+      getTextSentimentDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   */
+  boolean hasTablesDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   */
+  com.google.cloud.automl.v1beta1.TablesDatasetMetadata getTablesDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesDatasetMetadata tables_dataset_metadata = 33;</code>
+   */
+  com.google.cloud.automl.v1beta1.TablesDatasetMetadataOrBuilder
+      getTablesDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the dataset.
    * Form: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`
    * </pre>
@@ -152,8 +338,8 @@ public interface DatasetOrBuilder
    *
    * <pre>
    * Required. The name of the dataset to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
    * (_), and ASCII digits 0-9.
    * </pre>
    *
@@ -165,14 +351,37 @@ public interface DatasetOrBuilder
    *
    * <pre>
    * Required. The name of the dataset to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
    * (_), and ASCII digits 0-9.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided description of the dataset. The description can be up to
+   * 25000 characters long.
+   * </pre>
+   *
+   * <code>string description = 3;</code>
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * User-provided description of the dataset. The description can be up to
+   * 25000 characters long.
+   * </pre>
+   *
+   * <code>string description = 3;</code>
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
    *
@@ -215,6 +424,29 @@ public interface DatasetOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 14;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 17;</code>
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 17;</code>
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 
   public com.google.cloud.automl.v1beta1.Dataset.DatasetMetadataCase getDatasetMetadataCase();
 }

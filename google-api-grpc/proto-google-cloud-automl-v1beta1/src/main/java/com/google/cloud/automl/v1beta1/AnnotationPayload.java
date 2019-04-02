@@ -101,11 +101,120 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
               detailCase_ = 3;
               break;
             }
+          case 34:
+            {
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder subBuilder =
+                  null;
+              if (detailCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_)
+                        .toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 4;
+              break;
+            }
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               displayName_ = s;
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder subBuilder = null;
+              if (detailCase_ == 6) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_)
+                        .toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextExtractionAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 6;
+              break;
+            }
+          case 58:
+            {
+              com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder
+                  subBuilder = null;
+              if (detailCase_ == 7) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
+                            detail_)
+                        .toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
+                        detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 7;
+              break;
+            }
+          case 74:
+            {
+              com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                      .Builder
+                  subBuilder = null;
+              if (detailCase_ == 9) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ClassificationProto
+                                .VideoClassificationAnnotation)
+                            detail_)
+                        .toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ClassificationProto
+                          .VideoClassificationAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ClassificationProto
+                            .VideoClassificationAnnotation)
+                        detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 9;
+              break;
+            }
+          case 82:
+            {
+              com.google.cloud.automl.v1beta1.TablesAnnotation.Builder subBuilder = null;
+              if (detailCase_ == 10) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TablesAnnotation) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TablesAnnotation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TablesAnnotation) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 10;
               break;
             }
           default:
@@ -148,6 +257,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   public enum DetailCase implements com.google.protobuf.Internal.EnumLite {
     TRANSLATION(2),
     CLASSIFICATION(3),
+    IMAGE_OBJECT_DETECTION(4),
+    VIDEO_CLASSIFICATION(9),
+    TEXT_EXTRACTION(6),
+    TEXT_SENTIMENT(7),
+    TABLES(10),
     DETAIL_NOT_SET(0);
     private final int value;
 
@@ -166,6 +280,16 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
           return TRANSLATION;
         case 3:
           return CLASSIFICATION;
+        case 4:
+          return IMAGE_OBJECT_DETECTION;
+        case 9:
+          return VIDEO_CLASSIFICATION;
+        case 6:
+          return TEXT_EXTRACTION;
+        case 7:
+          return TEXT_SENTIMENT;
+        case 10:
+          return TABLES;
         case 0:
           return DETAIL_NOT_SET;
         default:
@@ -274,6 +398,247 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         .getDefaultInstance();
   }
 
+  public static final int IMAGE_OBJECT_DETECTION_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+   * </code>
+   */
+  public boolean hasImageObjectDetection() {
+    return detailCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation getImageObjectDetection() {
+    if (detailCase_ == 4) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder
+      getImageObjectDetectionOrBuilder() {
+    if (detailCase_ == 4) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.getDefaultInstance();
+  }
+
+  public static final int VIDEO_CLASSIFICATION_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video classification.
+   * Returned for Video Classification predictions.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+   * </code>
+   */
+  public boolean hasVideoClassification() {
+    return detailCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video classification.
+   * Returned for Video Classification predictions.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+      getVideoClassification() {
+    if (detailCase_ == 9) {
+      return (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+          detail_;
+    }
+    return com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video classification.
+   * Returned for Video Classification predictions.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotationOrBuilder
+      getVideoClassificationOrBuilder() {
+    if (detailCase_ == 9) {
+      return (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+          detail_;
+    }
+    return com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        .getDefaultInstance();
+  }
+
+  public static final int TEXT_EXTRACTION_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  public boolean hasTextExtraction() {
+    return detailCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TextExtractionAnnotation getTextExtraction() {
+    if (detailCase_ == 6) {
+      return (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder
+      getTextExtractionOrBuilder() {
+    if (detailCase_ == 6) {
+      return (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance();
+  }
+
+  public static final int TEXT_SENTIMENT_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  public boolean hasTextSentiment() {
+    return detailCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+      getTextSentiment() {
+    if (detailCase_ == 7) {
+      return (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder
+      getTextSentimentOrBuilder() {
+    if (detailCase_ == 7) {
+      return (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+        .getDefaultInstance();
+  }
+
+  public static final int TABLES_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+   */
+  public boolean hasTables() {
+    return detailCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TablesAnnotation getTables() {
+    if (detailCase_ == 10) {
+      return (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+   */
+  public com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder getTablesOrBuilder() {
+    if (detailCase_ == 10) {
+      return (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance();
+  }
+
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object annotationSpecId_;
   /**
@@ -327,12 +692,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The value of
-   * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-   * when the model was trained. Because this field returns a value at model
-   * training time, for different models trained using the same dataset, the
-   * returned value could be different as model owner could update the
-   * display_name between any two model training.
+   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+   * was trained. Because this field returns a value at model training time,
+   * for different models trained using the same dataset, the returned value
+   * could be different as model owner could update the display_name between
+   * any two model training.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -352,12 +716,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The value of
-   * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-   * when the model was trained. Because this field returns a value at model
-   * training time, for different models trained using the same dataset, the
-   * returned value could be different as model owner could update the
-   * display_name between any two model training.
+   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+   * was trained. Because this field returns a value at model training time,
+   * for different models trained using the same dataset, the returned value
+   * could be different as model owner could update the display_name between
+   * any two model training.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -399,8 +762,28 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
           3,
           (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_);
     }
+    if (detailCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_);
+    }
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
+    }
+    if (detailCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_);
+    }
+    if (detailCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) detail_);
+    }
+    if (detailCase_ == 9) {
+      output.writeMessage(
+          9,
+          (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+              detail_);
+    }
+    if (detailCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_);
     }
     unknownFields.writeTo(output);
   }
@@ -426,8 +809,36 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
               (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
                   detail_);
     }
+    if (detailCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_);
+    }
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
+    }
+    if (detailCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_);
+    }
+    if (detailCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7,
+              (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) detail_);
+    }
+    if (detailCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9,
+              (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+                  detail_);
+    }
+    if (detailCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -455,6 +866,21 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       case 3:
         if (!getClassification().equals(other.getClassification())) return false;
         break;
+      case 4:
+        if (!getImageObjectDetection().equals(other.getImageObjectDetection())) return false;
+        break;
+      case 9:
+        if (!getVideoClassification().equals(other.getVideoClassification())) return false;
+        break;
+      case 6:
+        if (!getTextExtraction().equals(other.getTextExtraction())) return false;
+        break;
+      case 7:
+        if (!getTextSentiment().equals(other.getTextSentiment())) return false;
+        break;
+      case 10:
+        if (!getTables().equals(other.getTables())) return false;
+        break;
       case 0:
       default:
     }
@@ -481,6 +907,26 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       case 3:
         hash = (37 * hash) + CLASSIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getClassification().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + IMAGE_OBJECT_DETECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getImageObjectDetection().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + VIDEO_CLASSIFICATION_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoClassification().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + TEXT_EXTRACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getTextExtraction().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + TEXT_SENTIMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSentiment().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + TABLES_FIELD_NUMBER;
+        hash = (53 * hash) + getTables().hashCode();
         break;
       case 0:
       default:
@@ -677,6 +1123,41 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
           result.detail_ = classificationBuilder_.build();
         }
       }
+      if (detailCase_ == 4) {
+        if (imageObjectDetectionBuilder_ == null) {
+          result.detail_ = detail_;
+        } else {
+          result.detail_ = imageObjectDetectionBuilder_.build();
+        }
+      }
+      if (detailCase_ == 9) {
+        if (videoClassificationBuilder_ == null) {
+          result.detail_ = detail_;
+        } else {
+          result.detail_ = videoClassificationBuilder_.build();
+        }
+      }
+      if (detailCase_ == 6) {
+        if (textExtractionBuilder_ == null) {
+          result.detail_ = detail_;
+        } else {
+          result.detail_ = textExtractionBuilder_.build();
+        }
+      }
+      if (detailCase_ == 7) {
+        if (textSentimentBuilder_ == null) {
+          result.detail_ = detail_;
+        } else {
+          result.detail_ = textSentimentBuilder_.build();
+        }
+      }
+      if (detailCase_ == 10) {
+        if (tablesBuilder_ == null) {
+          result.detail_ = detail_;
+        } else {
+          result.detail_ = tablesBuilder_.build();
+        }
+      }
       result.annotationSpecId_ = annotationSpecId_;
       result.displayName_ = displayName_;
       result.detailCase_ = detailCase_;
@@ -747,6 +1228,31 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         case CLASSIFICATION:
           {
             mergeClassification(other.getClassification());
+            break;
+          }
+        case IMAGE_OBJECT_DETECTION:
+          {
+            mergeImageObjectDetection(other.getImageObjectDetection());
+            break;
+          }
+        case VIDEO_CLASSIFICATION:
+          {
+            mergeVideoClassification(other.getVideoClassification());
+            break;
+          }
+        case TEXT_EXTRACTION:
+          {
+            mergeTextExtraction(other.getTextExtraction());
+            break;
+          }
+        case TEXT_SENTIMENT:
+          {
+            mergeTextSentiment(other.getTextSentiment());
+            break;
+          }
+        case TABLES:
+          {
+            mergeTables(other.getTables());
             break;
           }
         case DETAIL_NOT_SET:
@@ -1224,6 +1730,1100 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       return classificationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder>
+        imageObjectDetectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public boolean hasImageObjectDetection() {
+      return detailCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation
+        getImageObjectDetection() {
+      if (imageObjectDetectionBuilder_ == null) {
+        if (detailCase_ == 4) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.getDefaultInstance();
+      } else {
+        if (detailCase_ == 4) {
+          return imageObjectDetectionBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public Builder setImageObjectDetection(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation value) {
+      if (imageObjectDetectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail_ = value;
+        onChanged();
+      } else {
+        imageObjectDetectionBuilder_.setMessage(value);
+      }
+      detailCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public Builder setImageObjectDetection(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder builderForValue) {
+      if (imageObjectDetectionBuilder_ == null) {
+        detail_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageObjectDetectionBuilder_.setMessage(builderForValue.build());
+      }
+      detailCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public Builder mergeImageObjectDetection(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation value) {
+      if (imageObjectDetectionBuilder_ == null) {
+        if (detailCase_ == 4
+            && detail_
+                != com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation
+                    .getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          detail_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailCase_ == 4) {
+          imageObjectDetectionBuilder_.mergeFrom(value);
+        }
+        imageObjectDetectionBuilder_.setMessage(value);
+      }
+      detailCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public Builder clearImageObjectDetection() {
+      if (imageObjectDetectionBuilder_ == null) {
+        if (detailCase_ == 4) {
+          detailCase_ = 0;
+          detail_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailCase_ == 4) {
+          detailCase_ = 0;
+          detail_ = null;
+        }
+        imageObjectDetectionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder
+        getImageObjectDetectionBuilder() {
+      return getImageObjectDetectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder
+        getImageObjectDetectionOrBuilder() {
+      if ((detailCase_ == 4) && (imageObjectDetectionBuilder_ != null)) {
+        return imageObjectDetectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailCase_ == 4) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for image object detection.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder>
+        getImageObjectDetectionFieldBuilder() {
+      if (imageObjectDetectionBuilder_ == null) {
+        if (!(detailCase_ == 4)) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.getDefaultInstance();
+        }
+        imageObjectDetectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_,
+                getParentForChildren(),
+                isClean());
+        detail_ = null;
+      }
+      detailCase_ = 4;
+      onChanged();
+      ;
+      return imageObjectDetectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation,
+            com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                .Builder,
+            com.google.cloud.automl.v1beta1.ClassificationProto
+                .VideoClassificationAnnotationOrBuilder>
+        videoClassificationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public boolean hasVideoClassification() {
+      return detailCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+        getVideoClassification() {
+      if (videoClassificationBuilder_ == null) {
+        if (detailCase_ == 9) {
+          return (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+              detail_;
+        }
+        return com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+            .getDefaultInstance();
+      } else {
+        if (detailCase_ == 9) {
+          return videoClassificationBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public Builder setVideoClassification(
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation value) {
+      if (videoClassificationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail_ = value;
+        onChanged();
+      } else {
+        videoClassificationBuilder_.setMessage(value);
+      }
+      detailCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public Builder setVideoClassification(
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation.Builder
+            builderForValue) {
+      if (videoClassificationBuilder_ == null) {
+        detail_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoClassificationBuilder_.setMessage(builderForValue.build());
+      }
+      detailCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public Builder mergeVideoClassification(
+        com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation value) {
+      if (videoClassificationBuilder_ == null) {
+        if (detailCase_ == 9
+            && detail_
+                != com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                    .getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                  .newBuilder(
+                      (com.google.cloud.automl.v1beta1.ClassificationProto
+                              .VideoClassificationAnnotation)
+                          detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          detail_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailCase_ == 9) {
+          videoClassificationBuilder_.mergeFrom(value);
+        }
+        videoClassificationBuilder_.setMessage(value);
+      }
+      detailCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public Builder clearVideoClassification() {
+      if (videoClassificationBuilder_ == null) {
+        if (detailCase_ == 9) {
+          detailCase_ = 0;
+          detail_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailCase_ == 9) {
+          detailCase_ = 0;
+          detail_ = null;
+        }
+        videoClassificationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation.Builder
+        getVideoClassificationBuilder() {
+      return getVideoClassificationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ClassificationProto
+            .VideoClassificationAnnotationOrBuilder
+        getVideoClassificationOrBuilder() {
+      if ((detailCase_ == 9) && (videoClassificationBuilder_ != null)) {
+        return videoClassificationBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailCase_ == 9) {
+          return (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+              detail_;
+        }
+        return com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video classification.
+     * Returned for Video Classification predictions.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation,
+            com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                .Builder,
+            com.google.cloud.automl.v1beta1.ClassificationProto
+                .VideoClassificationAnnotationOrBuilder>
+        getVideoClassificationFieldBuilder() {
+      if (videoClassificationBuilder_ == null) {
+        if (!(detailCase_ == 9)) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                  .getDefaultInstance();
+        }
+        videoClassificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation,
+                com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+                    .Builder,
+                com.google.cloud.automl.v1beta1.ClassificationProto
+                    .VideoClassificationAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation)
+                    detail_,
+                getParentForChildren(),
+                isClean());
+        detail_ = null;
+      }
+      detailCase_ = 9;
+      onChanged();
+      ;
+      return videoClassificationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextExtractionAnnotation,
+            com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder>
+        textExtractionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public boolean hasTextExtraction() {
+      return detailCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionAnnotation getTextExtraction() {
+      if (textExtractionBuilder_ == null) {
+        if (detailCase_ == 6) {
+          return (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance();
+      } else {
+        if (detailCase_ == 6) {
+          return textExtractionBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public Builder setTextExtraction(
+        com.google.cloud.automl.v1beta1.TextExtractionAnnotation value) {
+      if (textExtractionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail_ = value;
+        onChanged();
+      } else {
+        textExtractionBuilder_.setMessage(value);
+      }
+      detailCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public Builder setTextExtraction(
+        com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder builderForValue) {
+      if (textExtractionBuilder_ == null) {
+        detail_ = builderForValue.build();
+        onChanged();
+      } else {
+        textExtractionBuilder_.setMessage(builderForValue.build());
+      }
+      detailCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public Builder mergeTextExtraction(
+        com.google.cloud.automl.v1beta1.TextExtractionAnnotation value) {
+      if (textExtractionBuilder_ == null) {
+        if (detailCase_ == 6
+            && detail_
+                != com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.TextExtractionAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          detail_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailCase_ == 6) {
+          textExtractionBuilder_.mergeFrom(value);
+        }
+        textExtractionBuilder_.setMessage(value);
+      }
+      detailCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public Builder clearTextExtraction() {
+      if (textExtractionBuilder_ == null) {
+        if (detailCase_ == 6) {
+          detailCase_ = 0;
+          detail_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailCase_ == 6) {
+          detailCase_ = 0;
+          detail_ = null;
+        }
+        textExtractionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder
+        getTextExtractionBuilder() {
+      return getTextExtractionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder
+        getTextExtractionOrBuilder() {
+      if ((detailCase_ == 6) && (textExtractionBuilder_ != null)) {
+        return textExtractionBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailCase_ == 6) {
+          return (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text extraction.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextExtractionAnnotation,
+            com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder>
+        getTextExtractionFieldBuilder() {
+      if (textExtractionBuilder_ == null) {
+        if (!(detailCase_ == 6)) {
+          detail_ = com.google.cloud.automl.v1beta1.TextExtractionAnnotation.getDefaultInstance();
+        }
+        textExtractionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextExtractionAnnotation,
+                com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder,
+                com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_,
+                getParentForChildren(),
+                isClean());
+        detail_ = null;
+      }
+      detailCase_ = 6;
+      onChanged();
+      ;
+      return textExtractionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation,
+            com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder>
+        textSentimentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public boolean hasTextSentiment() {
+      return detailCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+        getTextSentiment() {
+      if (textSentimentBuilder_ == null) {
+        if (detailCase_ == 7) {
+          return (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
+              detail_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+            .getDefaultInstance();
+      } else {
+        if (detailCase_ == 7) {
+          return textSentimentBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public Builder setTextSentiment(
+        com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation value) {
+      if (textSentimentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail_ = value;
+        onChanged();
+      } else {
+        textSentimentBuilder_.setMessage(value);
+      }
+      detailCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public Builder setTextSentiment(
+        com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder
+            builderForValue) {
+      if (textSentimentBuilder_ == null) {
+        detail_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSentimentBuilder_.setMessage(builderForValue.build());
+      }
+      detailCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public Builder mergeTextSentiment(
+        com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation value) {
+      if (textSentimentBuilder_ == null) {
+        if (detailCase_ == 7
+            && detail_
+                != com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+                    .getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
+                          detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          detail_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailCase_ == 7) {
+          textSentimentBuilder_.mergeFrom(value);
+        }
+        textSentimentBuilder_.setMessage(value);
+      }
+      detailCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public Builder clearTextSentiment() {
+      if (textSentimentBuilder_ == null) {
+        if (detailCase_ == 7) {
+          detailCase_ = 0;
+          detail_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailCase_ == 7) {
+          detailCase_ = 0;
+          detail_ = null;
+        }
+        textSentimentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder
+        getTextSentimentBuilder() {
+      return getTextSentimentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder
+        getTextSentimentOrBuilder() {
+      if ((detailCase_ == 7) && (textSentimentBuilder_ != null)) {
+        return textSentimentBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailCase_ == 7) {
+          return (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
+              detail_;
+        }
+        return com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for text sentiment.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation,
+            com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder>
+        getTextSentimentFieldBuilder() {
+      if (textSentimentBuilder_ == null) {
+        if (!(detailCase_ == 7)) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
+                  .getDefaultInstance();
+        }
+        textSentimentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation,
+                com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder,
+                com.google.cloud.automl.v1beta1.TextSentimentProto
+                    .TextSentimentAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
+                    detail_,
+                getParentForChildren(),
+                isClean());
+        detail_ = null;
+      }
+      detailCase_ = 7;
+      onChanged();
+      ;
+      return textSentimentBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TablesAnnotation,
+            com.google.cloud.automl.v1beta1.TablesAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder>
+        tablesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public boolean hasTables() {
+      return detailCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesAnnotation getTables() {
+      if (tablesBuilder_ == null) {
+        if (detailCase_ == 10) {
+          return (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance();
+      } else {
+        if (detailCase_ == 10) {
+          return tablesBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public Builder setTables(com.google.cloud.automl.v1beta1.TablesAnnotation value) {
+      if (tablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail_ = value;
+        onChanged();
+      } else {
+        tablesBuilder_.setMessage(value);
+      }
+      detailCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public Builder setTables(
+        com.google.cloud.automl.v1beta1.TablesAnnotation.Builder builderForValue) {
+      if (tablesBuilder_ == null) {
+        detail_ = builderForValue.build();
+        onChanged();
+      } else {
+        tablesBuilder_.setMessage(builderForValue.build());
+      }
+      detailCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public Builder mergeTables(com.google.cloud.automl.v1beta1.TablesAnnotation value) {
+      if (tablesBuilder_ == null) {
+        if (detailCase_ == 10
+            && detail_ != com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.TablesAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          detail_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailCase_ == 10) {
+          tablesBuilder_.mergeFrom(value);
+        }
+        tablesBuilder_.setMessage(value);
+      }
+      detailCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public Builder clearTables() {
+      if (tablesBuilder_ == null) {
+        if (detailCase_ == 10) {
+          detailCase_ = 0;
+          detail_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailCase_ == 10) {
+          detailCase_ = 0;
+          detail_ = null;
+        }
+        tablesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesAnnotation.Builder getTablesBuilder() {
+      return getTablesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    public com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder getTablesOrBuilder() {
+      if ((detailCase_ == 10) && (tablesBuilder_ != null)) {
+        return tablesBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailCase_ == 10) {
+          return (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for Tables.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.TablesAnnotation,
+            com.google.cloud.automl.v1beta1.TablesAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder>
+        getTablesFieldBuilder() {
+      if (tablesBuilder_ == null) {
+        if (!(detailCase_ == 10)) {
+          detail_ = com.google.cloud.automl.v1beta1.TablesAnnotation.getDefaultInstance();
+        }
+        tablesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TablesAnnotation,
+                com.google.cloud.automl.v1beta1.TablesAnnotation.Builder,
+                com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_,
+                getParentForChildren(),
+                isClean());
+        detail_ = null;
+      }
+      detailCase_ = 10;
+      onChanged();
+      ;
+      return tablesBuilder_;
+    }
+
     private java.lang.Object annotationSpecId_ = "";
     /**
      *
@@ -1333,12 +2933,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of
-     * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-     * when the model was trained. Because this field returns a value at model
-     * training time, for different models trained using the same dataset, the
-     * returned value could be different as model owner could update the
-     * display_name between any two model training.
+     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+     * was trained. Because this field returns a value at model training time,
+     * for different models trained using the same dataset, the returned value
+     * could be different as model owner could update the display_name between
+     * any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -1358,12 +2957,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of
-     * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-     * when the model was trained. Because this field returns a value at model
-     * training time, for different models trained using the same dataset, the
-     * returned value could be different as model owner could update the
-     * display_name between any two model training.
+     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+     * was trained. Because this field returns a value at model training time,
+     * for different models trained using the same dataset, the returned value
+     * could be different as model owner could update the display_name between
+     * any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -1383,12 +2981,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of
-     * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-     * when the model was trained. Because this field returns a value at model
-     * training time, for different models trained using the same dataset, the
-     * returned value could be different as model owner could update the
-     * display_name between any two model training.
+     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+     * was trained. Because this field returns a value at model training time,
+     * for different models trained using the same dataset, the returned value
+     * could be different as model owner could update the display_name between
+     * any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -1406,12 +3003,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of
-     * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-     * when the model was trained. Because this field returns a value at model
-     * training time, for different models trained using the same dataset, the
-     * returned value could be different as model owner could update the
-     * display_name between any two model training.
+     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+     * was trained. Because this field returns a value at model training time,
+     * for different models trained using the same dataset, the returned value
+     * could be different as model owner could update the display_name between
+     * any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -1426,12 +3022,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of
-     * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
-     * when the model was trained. Because this field returns a value at model
-     * training time, for different models trained using the same dataset, the
-     * returned value could be different as model owner could update the
-     * display_name between any two model training.
+     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+     * was trained. Because this field returns a value at model training time,
+     * for different models trained using the same dataset, the returned value
+     * could be different as model owner could update the display_name between
+     * any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>

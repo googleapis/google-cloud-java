@@ -7,8 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.DeleteDataset][google.cloud.automl.v1beta1.AutoMl.DeleteDataset].
+ * Request message for [AutoMl.DeleteDataset][google.cloud.automl.v1beta1.AutoMl.DeleteDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.DeleteDatasetRequest}
@@ -298,8 +297,7 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.DeleteDataset][google.cloud.automl.v1beta1.AutoMl.DeleteDataset].
+   * Request message for [AutoMl.DeleteDataset][google.cloud.automl.v1beta1.AutoMl.DeleteDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.DeleteDatasetRequest}

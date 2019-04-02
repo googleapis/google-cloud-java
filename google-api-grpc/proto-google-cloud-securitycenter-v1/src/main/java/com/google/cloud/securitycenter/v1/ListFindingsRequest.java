@@ -237,6 +237,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   * The following field and operator combinations are supported:
+   * name | `=`
+   * parent | '=', ':'
+   * resource_name | '=', ':'
+   * state | '=', ':'
+   * category | '=', ':'
+   * external_uri | '=', ':'
+   * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks | '=', ':'
+   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -274,6 +284,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   * The following field and operator combinations are supported:
+   * name | `=`
+   * parent | '=', ':'
+   * resource_name | '=', ':'
+   * state | '=', ':'
+   * category | '=', ':'
+   * external_uri | '=', ':'
+   * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * security_marks | '=', ':'
+   * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -305,6 +325,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * desc,source_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,source_properties.a_property" and "
    * name     desc  ,   source_properties.a_property  " are equivalent.
+   * The following fields are supported:
+   * name
+   * parent
+   * state
+   * category
+   * resource_name
+   * event_time
+   * source_properties
+   * security_marks
    * </pre>
    *
    * <code>string order_by = 3;</code>
@@ -332,6 +361,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * desc,source_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,source_properties.a_property" and "
    * name     desc  ,   source_properties.a_property  " are equivalent.
+   * The following fields are supported:
+   * name
+   * parent
+   * state
+   * category
+   * resource_name
+   * event_time
+   * source_properties
+   * security_marks
    * </pre>
    *
    * <code>string order_by = 3;</code>
@@ -1199,6 +1237,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1236,6 +1284,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1273,6 +1331,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1308,6 +1376,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1340,6 +1418,16 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     * The following field and operator combinations are supported:
+     * name | `=`
+     * parent | '=', ':'
+     * resource_name | '=', ':'
+     * state | '=', ':'
+     * category | '=', ':'
+     * external_uri | '=', ':'
+     * event_time | `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * security_marks | '=', ':'
+     * source_properties | '=', ':', `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1369,6 +1457,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * desc,source_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,source_properties.a_property" and "
      * name     desc  ,   source_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * parent
+     * state
+     * category
+     * resource_name
+     * event_time
+     * source_properties
+     * security_marks
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1396,6 +1493,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * desc,source_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,source_properties.a_property" and "
      * name     desc  ,   source_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * parent
+     * state
+     * category
+     * resource_name
+     * event_time
+     * source_properties
+     * security_marks
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1423,6 +1529,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * desc,source_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,source_properties.a_property" and "
      * name     desc  ,   source_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * parent
+     * state
+     * category
+     * resource_name
+     * event_time
+     * source_properties
+     * security_marks
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1448,6 +1563,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * desc,source_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,source_properties.a_property" and "
      * name     desc  ,   source_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * parent
+     * state
+     * category
+     * resource_name
+     * event_time
+     * source_properties
+     * security_marks
      * </pre>
      *
      * <code>string order_by = 3;</code>
@@ -1470,6 +1594,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * desc,source_properties.a_property". Redundant space characters in the
      * syntax are insignificant. "name desc,source_properties.a_property" and "
      * name     desc  ,   source_properties.a_property  " are equivalent.
+     * The following fields are supported:
+     * name
+     * parent
+     * state
+     * category
+     * resource_name
+     * event_time
+     * source_properties
+     * security_marks
      * </pre>
      *
      * <code>string order_by = 3;</code>

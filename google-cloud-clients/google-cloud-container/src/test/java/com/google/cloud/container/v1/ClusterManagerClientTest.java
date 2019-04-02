@@ -57,8 +57,8 @@ import com.google.container.v1.SetNetworkPolicyRequest;
 import com.google.container.v1.StartIPRotationRequest;
 import com.google.container.v1.UpdateClusterRequest;
 import com.google.container.v1.UpdateMasterRequest;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -121,7 +121,7 @@ public class ClusterManagerClientTest {
     ListClustersResponse actualResponse = client.listClusters(projectId, zone);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
 
@@ -211,7 +211,7 @@ public class ClusterManagerClientTest {
     Cluster actualResponse = client.getCluster(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetClusterRequest actualRequest = (GetClusterRequest) actualRequests.get(0);
 
@@ -275,7 +275,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.createCluster(projectId, zone, cluster);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateClusterRequest actualRequest = (CreateClusterRequest) actualRequests.get(0);
 
@@ -340,7 +340,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.updateCluster(projectId, zone, clusterId, update);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateClusterRequest actualRequest = (UpdateClusterRequest) actualRequests.get(0);
 
@@ -407,7 +407,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.setLoggingService(projectId, zone, clusterId, loggingService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetLoggingServiceRequest actualRequest = (SetLoggingServiceRequest) actualRequests.get(0);
 
@@ -475,7 +475,7 @@ public class ClusterManagerClientTest {
         client.setMonitoringService(projectId, zone, clusterId, monitoringService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetMonitoringServiceRequest actualRequest = (SetMonitoringServiceRequest) actualRequests.get(0);
 
@@ -542,7 +542,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.setAddonsConfig(projectId, zone, clusterId, addonsConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetAddonsConfigRequest actualRequest = (SetAddonsConfigRequest) actualRequests.get(0);
 
@@ -609,7 +609,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.setLocations(projectId, zone, clusterId, locations);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetLocationsRequest actualRequest = (SetLocationsRequest) actualRequests.get(0);
 
@@ -676,7 +676,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.updateMaster(projectId, zone, clusterId, masterVersion);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateMasterRequest actualRequest = (UpdateMasterRequest) actualRequests.get(0);
 
@@ -742,7 +742,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.deleteCluster(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteClusterRequest actualRequest = (DeleteClusterRequest) actualRequests.get(0);
 
@@ -785,7 +785,7 @@ public class ClusterManagerClientTest {
     ListOperationsResponse actualResponse = client.listOperations(projectId, zone);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListOperationsRequest actualRequest = (ListOperationsRequest) actualRequests.get(0);
 
@@ -847,7 +847,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.getOperation(projectId, zone, operationId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetOperationRequest actualRequest = (GetOperationRequest) actualRequests.get(0);
 
@@ -890,7 +890,7 @@ public class ClusterManagerClientTest {
 
     client.cancelOperation(projectId, zone, operationId);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CancelOperationRequest actualRequest = (CancelOperationRequest) actualRequests.get(0);
 
@@ -939,7 +939,7 @@ public class ClusterManagerClientTest {
     ServerConfig actualResponse = client.getServerConfig(projectId, zone);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetServerConfigRequest actualRequest = (GetServerConfigRequest) actualRequests.get(0);
 
@@ -981,7 +981,7 @@ public class ClusterManagerClientTest {
     ListNodePoolsResponse actualResponse = client.listNodePools(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListNodePoolsRequest actualRequest = (ListNodePoolsRequest) actualRequests.get(0);
 
@@ -1038,7 +1038,7 @@ public class ClusterManagerClientTest {
     NodePool actualResponse = client.getNodePool(projectId, zone, clusterId, nodePoolId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetNodePoolRequest actualRequest = (GetNodePoolRequest) actualRequests.get(0);
 
@@ -1105,7 +1105,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.createNodePool(projectId, zone, clusterId, nodePool);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateNodePoolRequest actualRequest = (CreateNodePoolRequest) actualRequests.get(0);
 
@@ -1172,7 +1172,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.deleteNodePool(projectId, zone, clusterId, nodePoolId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteNodePoolRequest actualRequest = (DeleteNodePoolRequest) actualRequests.get(0);
 
@@ -1240,7 +1240,7 @@ public class ClusterManagerClientTest {
         client.rollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RollbackNodePoolUpgradeRequest actualRequest =
         (RollbackNodePoolUpgradeRequest) actualRequests.get(0);
@@ -1308,7 +1308,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.setLegacyAbac(projectId, zone, clusterId, enabled);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetLegacyAbacRequest actualRequest = (SetLegacyAbacRequest) actualRequests.get(0);
 
@@ -1374,7 +1374,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.startIPRotation(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     StartIPRotationRequest actualRequest = (StartIPRotationRequest) actualRequests.get(0);
 
@@ -1438,7 +1438,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.completeIPRotation(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CompleteIPRotationRequest actualRequest = (CompleteIPRotationRequest) actualRequests.get(0);
 
@@ -1503,7 +1503,7 @@ public class ClusterManagerClientTest {
     Operation actualResponse = client.setNetworkPolicy(projectId, zone, clusterId, networkPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetNetworkPolicyRequest actualRequest = (SetNetworkPolicyRequest) actualRequests.get(0);
 
@@ -1571,7 +1571,7 @@ public class ClusterManagerClientTest {
         client.setMaintenancePolicy(projectId, zone, clusterId, maintenancePolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockClusterManager.getRequests();
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetMaintenancePolicyRequest actualRequest = (SetMaintenancePolicyRequest) actualRequests.get(0);
 

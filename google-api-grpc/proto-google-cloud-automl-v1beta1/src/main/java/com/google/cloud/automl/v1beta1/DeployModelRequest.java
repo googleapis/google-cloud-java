@@ -7,8 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
+ * Request message for [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.DeployModelRequest}
@@ -58,6 +57,30 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
               name_ = s;
               break;
             }
+          case 18:
+            {
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder
+                  subBuilder = null;
+              if (modelDeploymentMetadataCase_ == 2) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+                            modelDeploymentMetadata_)
+                        .toBuilder();
+              }
+              modelDeploymentMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+                        modelDeploymentMetadata_);
+                modelDeploymentMetadata_ = subBuilder.buildPartial();
+              }
+              modelDeploymentMetadataCase_ = 2;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -90,6 +113,99 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.automl.v1beta1.DeployModelRequest.class,
             com.google.cloud.automl.v1beta1.DeployModelRequest.Builder.class);
+  }
+
+  private int modelDeploymentMetadataCase_ = 0;
+  private java.lang.Object modelDeploymentMetadata_;
+
+  public enum ModelDeploymentMetadataCase implements com.google.protobuf.Internal.EnumLite {
+    IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA(2),
+    MODELDEPLOYMENTMETADATA_NOT_SET(0);
+    private final int value;
+
+    private ModelDeploymentMetadataCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static ModelDeploymentMetadataCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ModelDeploymentMetadataCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA;
+        case 0:
+          return MODELDEPLOYMENTMETADATA_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ModelDeploymentMetadataCase getModelDeploymentMetadataCase() {
+    return ModelDeploymentMetadataCase.forNumber(modelDeploymentMetadataCase_);
+  }
+
+  public static final int IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Object Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+   * </code>
+   */
+  public boolean hasImageObjectDetectionModelDeploymentMetadata() {
+    return modelDeploymentMetadataCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Object Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+      getImageObjectDetectionModelDeploymentMetadata() {
+    if (modelDeploymentMetadataCase_ == 2) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+          modelDeploymentMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model deployment metadata specific to Image Object Detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder
+      getImageObjectDetectionModelDeploymentMetadataOrBuilder() {
+    if (modelDeploymentMetadataCase_ == 2) {
+      return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+          modelDeploymentMetadata_;
+    }
+    return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+        .getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -152,6 +268,12 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (modelDeploymentMetadataCase_ == 2) {
+      output.writeMessage(
+          2,
+          (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+              modelDeploymentMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -163,6 +285,13 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (modelDeploymentMetadataCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2,
+              (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+                  modelDeploymentMetadata_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -181,6 +310,16 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.automl.v1beta1.DeployModelRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getModelDeploymentMetadataCase().equals(other.getModelDeploymentMetadataCase()))
+      return false;
+    switch (modelDeploymentMetadataCase_) {
+      case 2:
+        if (!getImageObjectDetectionModelDeploymentMetadata()
+            .equals(other.getImageObjectDetectionModelDeploymentMetadata())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -194,6 +333,14 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    switch (modelDeploymentMetadataCase_) {
+      case 2:
+        hash = (37 * hash) + IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getImageObjectDetectionModelDeploymentMetadata().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -298,8 +445,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
+   * Request message for [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.DeployModelRequest}
@@ -342,6 +488,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       name_ = "";
 
+      modelDeploymentMetadataCase_ = 0;
+      modelDeploymentMetadata_ = null;
       return this;
     }
 
@@ -369,7 +517,16 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.automl.v1beta1.DeployModelRequest buildPartial() {
       com.google.cloud.automl.v1beta1.DeployModelRequest result =
           new com.google.cloud.automl.v1beta1.DeployModelRequest(this);
+      if (modelDeploymentMetadataCase_ == 2) {
+        if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+          result.modelDeploymentMetadata_ = modelDeploymentMetadata_;
+        } else {
+          result.modelDeploymentMetadata_ =
+              imageObjectDetectionModelDeploymentMetadataBuilder_.build();
+        }
+      }
       result.name_ = name_;
+      result.modelDeploymentMetadataCase_ = modelDeploymentMetadataCase_;
       onBuilt();
       return result;
     }
@@ -424,6 +581,18 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         name_ = other.name_;
         onChanged();
       }
+      switch (other.getModelDeploymentMetadataCase()) {
+        case IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA:
+          {
+            mergeImageObjectDetectionModelDeploymentMetadata(
+                other.getImageObjectDetectionModelDeploymentMetadata());
+            break;
+          }
+        case MODELDEPLOYMENTMETADATA_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -452,6 +621,260 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         }
       }
       return this;
+    }
+
+    private int modelDeploymentMetadataCase_ = 0;
+    private java.lang.Object modelDeploymentMetadata_;
+
+    public ModelDeploymentMetadataCase getModelDeploymentMetadataCase() {
+      return ModelDeploymentMetadataCase.forNumber(modelDeploymentMetadataCase_);
+    }
+
+    public Builder clearModelDeploymentMetadata() {
+      modelDeploymentMetadataCase_ = 0;
+      modelDeploymentMetadata_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder>
+        imageObjectDetectionModelDeploymentMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public boolean hasImageObjectDetectionModelDeploymentMetadata() {
+      return modelDeploymentMetadataCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+        getImageObjectDetectionModelDeploymentMetadata() {
+      if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+        if (modelDeploymentMetadataCase_ == 2) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+              modelDeploymentMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+            .getDefaultInstance();
+      } else {
+        if (modelDeploymentMetadataCase_ == 2) {
+          return imageObjectDetectionModelDeploymentMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public Builder setImageObjectDetectionModelDeploymentMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata value) {
+      if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelDeploymentMetadata_ = value;
+        onChanged();
+      } else {
+        imageObjectDetectionModelDeploymentMetadataBuilder_.setMessage(value);
+      }
+      modelDeploymentMetadataCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public Builder setImageObjectDetectionModelDeploymentMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder
+            builderForValue) {
+      if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+        modelDeploymentMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageObjectDetectionModelDeploymentMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelDeploymentMetadataCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public Builder mergeImageObjectDetectionModelDeploymentMetadata(
+        com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata value) {
+      if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+        if (modelDeploymentMetadataCase_ == 2
+            && modelDeploymentMetadata_
+                != com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+                    .getDefaultInstance()) {
+          modelDeploymentMetadata_ =
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+                  .newBuilder(
+                      (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+                          modelDeploymentMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelDeploymentMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelDeploymentMetadataCase_ == 2) {
+          imageObjectDetectionModelDeploymentMetadataBuilder_.mergeFrom(value);
+        }
+        imageObjectDetectionModelDeploymentMetadataBuilder_.setMessage(value);
+      }
+      modelDeploymentMetadataCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public Builder clearImageObjectDetectionModelDeploymentMetadata() {
+      if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+        if (modelDeploymentMetadataCase_ == 2) {
+          modelDeploymentMetadataCase_ = 0;
+          modelDeploymentMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelDeploymentMetadataCase_ == 2) {
+          modelDeploymentMetadataCase_ = 0;
+          modelDeploymentMetadata_ = null;
+        }
+        imageObjectDetectionModelDeploymentMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder
+        getImageObjectDetectionModelDeploymentMetadataBuilder() {
+      return getImageObjectDetectionModelDeploymentMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder
+        getImageObjectDetectionModelDeploymentMetadataOrBuilder() {
+      if ((modelDeploymentMetadataCase_ == 2)
+          && (imageObjectDetectionModelDeploymentMetadataBuilder_ != null)) {
+        return imageObjectDetectionModelDeploymentMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelDeploymentMetadataCase_ == 2) {
+          return (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+              modelDeploymentMetadata_;
+        }
+        return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model deployment metadata specific to Image Object Detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder>
+        getImageObjectDetectionModelDeploymentMetadataFieldBuilder() {
+      if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
+        if (!(modelDeploymentMetadataCase_ == 2)) {
+          modelDeploymentMetadata_ =
+              com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
+                  .getDefaultInstance();
+        }
+        imageObjectDetectionModelDeploymentMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata,
+                com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder,
+                com.google.cloud.automl.v1beta1
+                    .ImageObjectDetectionModelDeploymentMetadataOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata)
+                    modelDeploymentMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelDeploymentMetadata_ = null;
+      }
+      modelDeploymentMetadataCase_ = 2;
+      onChanged();
+      ;
+      return imageObjectDetectionModelDeploymentMetadataBuilder_;
     }
 
     private java.lang.Object name_ = "";

@@ -27,9 +27,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -126,7 +126,7 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListEntityTypesRequest actualRequest = (ListEntityTypesRequest) actualRequests.get(0);
 
@@ -175,7 +175,7 @@ public class EntityTypesClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListEntityTypesRequest actualRequest = (ListEntityTypesRequest) actualRequests.get(0);
 
@@ -218,7 +218,7 @@ public class EntityTypesClientTest {
     EntityType actualResponse = client.getEntityType(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetEntityTypeRequest actualRequest = (GetEntityTypeRequest) actualRequests.get(0);
 
@@ -260,7 +260,7 @@ public class EntityTypesClientTest {
     EntityType actualResponse = client.getEntityType(name, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetEntityTypeRequest actualRequest = (GetEntityTypeRequest) actualRequests.get(0);
 
@@ -304,7 +304,7 @@ public class EntityTypesClientTest {
     EntityType actualResponse = client.createEntityType(parent, entityType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateEntityTypeRequest actualRequest = (CreateEntityTypeRequest) actualRequests.get(0);
 
@@ -349,7 +349,7 @@ public class EntityTypesClientTest {
     EntityType actualResponse = client.createEntityType(parent, entityType, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateEntityTypeRequest actualRequest = (CreateEntityTypeRequest) actualRequests.get(0);
 
@@ -394,7 +394,7 @@ public class EntityTypesClientTest {
     EntityType actualResponse = client.updateEntityType(entityType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateEntityTypeRequest actualRequest = (UpdateEntityTypeRequest) actualRequests.get(0);
 
@@ -436,7 +436,7 @@ public class EntityTypesClientTest {
     EntityType actualResponse = client.updateEntityType(entityType, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateEntityTypeRequest actualRequest = (UpdateEntityTypeRequest) actualRequests.get(0);
 
@@ -475,7 +475,7 @@ public class EntityTypesClientTest {
 
     client.deleteEntityType(name);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteEntityTypeRequest actualRequest = (DeleteEntityTypeRequest) actualRequests.get(0);
 
@@ -520,7 +520,7 @@ public class EntityTypesClientTest {
     Empty actualResponse = client.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteEntityTypesRequest actualRequest =
         (BatchDeleteEntityTypesRequest) actualRequests.get(0);
@@ -570,7 +570,7 @@ public class EntityTypesClientTest {
     Empty actualResponse = client.batchCreateEntitiesAsync(parent, entities).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateEntitiesRequest actualRequest = (BatchCreateEntitiesRequest) actualRequests.get(0);
 
@@ -620,7 +620,7 @@ public class EntityTypesClientTest {
     Empty actualResponse = client.batchCreateEntitiesAsync(parent, entities, languageCode).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateEntitiesRequest actualRequest = (BatchCreateEntitiesRequest) actualRequests.get(0);
 
@@ -671,7 +671,7 @@ public class EntityTypesClientTest {
     Empty actualResponse = client.batchUpdateEntitiesAsync(parent, entities).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchUpdateEntitiesRequest actualRequest = (BatchUpdateEntitiesRequest) actualRequests.get(0);
 
@@ -721,7 +721,7 @@ public class EntityTypesClientTest {
     Empty actualResponse = client.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchUpdateEntitiesRequest actualRequest = (BatchUpdateEntitiesRequest) actualRequests.get(0);
 
@@ -772,7 +772,7 @@ public class EntityTypesClientTest {
     Empty actualResponse = client.batchDeleteEntitiesAsync(parent, entityValues).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteEntitiesRequest actualRequest = (BatchDeleteEntitiesRequest) actualRequests.get(0);
 
@@ -823,7 +823,7 @@ public class EntityTypesClientTest {
         client.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockEntityTypes.getRequests();
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteEntitiesRequest actualRequest = (BatchDeleteEntitiesRequest) actualRequests.get(0);
 

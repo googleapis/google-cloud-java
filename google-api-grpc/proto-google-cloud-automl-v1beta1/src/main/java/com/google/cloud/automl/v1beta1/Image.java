@@ -8,6 +8,7 @@ package com.google.cloud.automl.v1beta1;
  *
  * <pre>
  * A representation of an image.
+ * Only images up to 30MB in size are supported.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.Image}
@@ -460,6 +461,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A representation of an image.
+   * Only images up to 30MB in size are supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.Image}

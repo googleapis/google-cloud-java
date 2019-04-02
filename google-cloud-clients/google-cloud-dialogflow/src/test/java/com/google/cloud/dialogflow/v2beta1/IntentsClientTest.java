@@ -27,10 +27,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -127,7 +127,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getIntentsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
 
@@ -176,7 +176,7 @@ public class IntentsClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getIntentsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
 
@@ -240,7 +240,7 @@ public class IntentsClientTest {
     Intent actualResponse = client.getIntent(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
 
@@ -303,7 +303,7 @@ public class IntentsClientTest {
     Intent actualResponse = client.getIntent(name, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
 
@@ -368,7 +368,7 @@ public class IntentsClientTest {
     Intent actualResponse = client.createIntent(parent, intent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateIntentRequest actualRequest = (CreateIntentRequest) actualRequests.get(0);
 
@@ -434,7 +434,7 @@ public class IntentsClientTest {
     Intent actualResponse = client.createIntent(parent, intent, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateIntentRequest actualRequest = (CreateIntentRequest) actualRequests.get(0);
 
@@ -501,7 +501,7 @@ public class IntentsClientTest {
     Intent actualResponse = client.updateIntent(intent, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateIntentRequest actualRequest = (UpdateIntentRequest) actualRequests.get(0);
 
@@ -567,7 +567,7 @@ public class IntentsClientTest {
     Intent actualResponse = client.updateIntent(intent, languageCode, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateIntentRequest actualRequest = (UpdateIntentRequest) actualRequests.get(0);
 
@@ -608,7 +608,7 @@ public class IntentsClientTest {
 
     client.deleteIntent(name);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteIntentRequest actualRequest = (DeleteIntentRequest) actualRequests.get(0);
 
@@ -653,7 +653,7 @@ public class IntentsClientTest {
     Empty actualResponse = client.batchDeleteIntentsAsync(parent, intents).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIntents.getRequests();
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteIntentsRequest actualRequest = (BatchDeleteIntentsRequest) actualRequests.get(0);
 

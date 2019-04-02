@@ -28,9 +28,9 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -97,7 +97,7 @@ public class WebSecurityScannerClientTest {
     ScanConfig actualResponse = client.createScanConfig(parent, scanConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateScanConfigRequest actualRequest = (CreateScanConfigRequest) actualRequests.get(0);
 
@@ -136,7 +136,7 @@ public class WebSecurityScannerClientTest {
 
     client.deleteScanConfig(name);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteScanConfigRequest actualRequest = (DeleteScanConfigRequest) actualRequests.get(0);
 
@@ -182,7 +182,7 @@ public class WebSecurityScannerClientTest {
     ScanConfig actualResponse = client.getScanConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetScanConfigRequest actualRequest = (GetScanConfigRequest) actualRequests.get(0);
 
@@ -230,7 +230,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getScanConfigsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListScanConfigsRequest actualRequest = (ListScanConfigsRequest) actualRequests.get(0);
 
@@ -273,7 +273,7 @@ public class WebSecurityScannerClientTest {
     ScanConfig actualResponse = client.updateScanConfig(scanConfig, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateScanConfigRequest actualRequest = (UpdateScanConfigRequest) actualRequests.get(0);
 
@@ -325,7 +325,7 @@ public class WebSecurityScannerClientTest {
     ScanRun actualResponse = client.startScanRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     StartScanRunRequest actualRequest = (StartScanRunRequest) actualRequests.get(0);
 
@@ -375,7 +375,7 @@ public class WebSecurityScannerClientTest {
     ScanRun actualResponse = client.getScanRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetScanRunRequest actualRequest = (GetScanRunRequest) actualRequests.get(0);
 
@@ -423,7 +423,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getScanRunsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListScanRunsRequest actualRequest = (ListScanRunsRequest) actualRequests.get(0);
 
@@ -473,7 +473,7 @@ public class WebSecurityScannerClientTest {
     ScanRun actualResponse = client.stopScanRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     StopScanRunRequest actualRequest = (StopScanRunRequest) actualRequests.get(0);
 
@@ -521,7 +521,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCrawledUrlsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListCrawledUrlsRequest actualRequest = (ListCrawledUrlsRequest) actualRequests.get(0);
 
@@ -579,7 +579,7 @@ public class WebSecurityScannerClientTest {
     Finding actualResponse = client.getFinding(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetFindingRequest actualRequest = (GetFindingRequest) actualRequests.get(0);
 
@@ -628,7 +628,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getFindingsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListFindingsRequest actualRequest = (ListFindingsRequest) actualRequests.get(0);
 
@@ -669,7 +669,7 @@ public class WebSecurityScannerClientTest {
     ListFindingTypeStatsResponse actualResponse = client.listFindingTypeStats(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockWebSecurityScanner.getRequests();
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListFindingTypeStatsRequest actualRequest = (ListFindingTypeStatsRequest) actualRequests.get(0);
 
