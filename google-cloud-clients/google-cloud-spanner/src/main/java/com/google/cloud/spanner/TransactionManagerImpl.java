@@ -32,7 +32,7 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
   private final SessionImpl session;
   private final Span span;
 
-  private SpannerImpl.TransactionContextImpl txn;
+  private TransactionRunnerImpl.TransactionContextImpl txn;
   private TransactionState txnState;
 
   TransactionManagerImpl(SessionImpl session) {
