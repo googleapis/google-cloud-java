@@ -43,6 +43,11 @@ public class IntParserTest {
     parseInvalidArgument("1234", 0, 5);
     parseInvalidArgument("1234", -1, 4);
     parseInvalidArgument("1234", 3, 2);
+    // Roman literal 50 is a valid numeric character, but not a decimal digit.
+    char c = '\u216C';
+    int val = Character.getNumericValue(c);
+    assertThat(val).isEqualTo(50);
+    parseInvalidArgument(String.valueOf(c), 0, 1);
   }
 
   private void parseInvalidNumber(String input, int begin, int end) {
