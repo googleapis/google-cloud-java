@@ -16,17 +16,18 @@
 
 package com.google.cloud.storage;
 
-import static com.google.cloud.RetryHelper.runWithRetries;
-import static java.util.concurrent.Executors.callable;
-
 import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.v1.StorageRpc;
+
 import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.Callable;
+
+import static com.google.cloud.RetryHelper.runWithRetries;
+import static java.util.concurrent.Executors.callable;
 
 /** Write channel implementation to upload Google Cloud Storage blobs. */
 class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
@@ -36,7 +37,7 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
   }
 
   BlobWriteChannel(StorageOptions options, URL signURL) {
-    this(options, open(signURL.toString(), options));
+    this(options, open(signURL, options));
   }
 
   BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
@@ -92,13 +93,16 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     }
   }
 
-  private static String open(final String signURL, final StorageOptions options) {
+  private static String open(final URL signURL, final StorageOptions options) {
     try {
       return runWithRetries(
           new Callable<String>() {
             @Override
             public String call() {
-              return options.getStorageRpcV1().open(signURL);
+              if (!signURL.getQuery().contains("&Signature=")) {
+                throw new StorageException(2, "invalid signURL");
+              }
+              return options.getStorageRpcV1().open(signURL.toString());
             }
           },
           options.getRetrySettings(),
