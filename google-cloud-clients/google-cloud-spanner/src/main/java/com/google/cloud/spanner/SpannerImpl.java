@@ -1232,8 +1232,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return stream;
             }
           };
-      GrpcResultSet resultSet =
-          new GrpcResultSet(stream, this);
+      GrpcResultSet resultSet = new GrpcResultSet(stream, this);
       return resultSet;
     }
 

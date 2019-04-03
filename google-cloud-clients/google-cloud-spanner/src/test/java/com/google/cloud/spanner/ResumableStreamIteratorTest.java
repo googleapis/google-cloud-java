@@ -41,7 +41,8 @@ import org.mockito.Mockito;
 @RunWith(JUnit4.class)
 public class ResumableStreamIteratorTest {
   interface Starter {
-    AbstractResultSet.CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
+    AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+        @Nullable ByteString resumeToken);
   }
 
   interface ResultSetStream {
