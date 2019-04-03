@@ -52,12 +52,12 @@ public class DatabaseAdminClientImplTest {
       "projects/my-project/instances/my-instance/databases/my-db2";
 
   @Mock SpannerRpc rpc;
-  SpannerImpl.DatabaseAdminClientImpl client;
+  DatabaseAdminClientImpl client;
 
   @Before
   public void setUp() {
     initMocks(this);
-    client = new SpannerImpl.DatabaseAdminClientImpl(PROJECT_ID, rpc);
+    client = new DatabaseAdminClientImpl(PROJECT_ID, rpc);
   }
 
   private Database getDatabaseProto() {
