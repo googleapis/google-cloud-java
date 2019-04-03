@@ -16,18 +16,17 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.RetryHelper.runWithRetries;
+import static java.util.concurrent.Executors.callable;
+
 import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.v1.StorageRpc;
-
 import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.Callable;
-
-import static com.google.cloud.RetryHelper.runWithRetries;
-import static java.util.concurrent.Executors.callable;
 
 /** Write channel implementation to upload Google Cloud Storage blobs. */
 class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {

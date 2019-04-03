@@ -16,28 +16,6 @@
 
 package com.google.cloud.storage;
 
-import com.google.cloud.RestorableState;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.spi.StorageRpcFactory;
-import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.common.collect.ImmutableMap;
-import org.easymock.Capture;
-import org.easymock.CaptureType;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.SocketException;
-import java.net.URL;
-import java.nio.ByteBuffer;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Random;
-
 import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.captureLong;
@@ -51,6 +29,27 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import com.google.cloud.RestorableState;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.common.collect.ImmutableMap;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.SocketException;
+import java.net.URL;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Random;
+import org.easymock.Capture;
+import org.easymock.CaptureType;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class BlobWriteChannelTest {
 
@@ -67,8 +66,7 @@ public class BlobWriteChannelTest {
       "http://www.test.com/test-bucket/test1.txt?GoogleAccessId=testClient-test@test.com&Expires=1553839761&Signature=MJUBXAZ7";
 
   private static final String SIGN_URL_WITH_OUT_SIGNATURE =
-          "http://www.test.com/test-bucket/test1.txt?GoogleAccessId=testClient-test@test.com&Expires=1553839761";
-
+      "http://www.test.com/test-bucket/test1.txt?GoogleAccessId=testClient-test@test.com&Expires=1553839761";
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -393,7 +391,8 @@ public class BlobWriteChannelTest {
   @Test
   public void testRuntimeExceptionWithSignURL() throws MalformedURLException {
     String exceptionMessage = "invalid signURL";
-    expect(new BlobWriteChannel(options, new URL(SIGN_URL))).andThrow(new RuntimeException(exceptionMessage));
+    expect(new BlobWriteChannel(options, new URL(SIGN_URL)))
+        .andThrow(new RuntimeException(exceptionMessage));
     replay(storageRpcMock);
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
