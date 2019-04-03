@@ -41,7 +41,7 @@ import org.mockito.Mockito;
 @RunWith(JUnit4.class)
 public class ResumableStreamIteratorTest {
   interface Starter {
-    SpannerImpl.CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
+    AbstractResultSet.CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
   }
 
   interface ResultSetStream {
@@ -64,7 +64,7 @@ public class ResumableStreamIteratorTest {
   }
 
   static class ResultSetIterator extends AbstractIterator<PartialResultSet>
-      implements SpannerImpl.CloseableIterator<PartialResultSet> {
+      implements AbstractResultSet.CloseableIterator<PartialResultSet> {
     final ResultSetStream stream;
 
     ResultSetIterator(ResultSetStream stream) {
@@ -89,7 +89,7 @@ public class ResumableStreamIteratorTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   Starter starter = Mockito.mock(Starter.class);
-  SpannerImpl.ResumableStreamIterator iterator;
+  AbstractResultSet.ResumableStreamIterator iterator;
 
   @Before
   public void setUp() {
@@ -98,9 +98,9 @@ public class ResumableStreamIteratorTest {
 
   private void initWithLimit(int maxBufferSize) {
     iterator =
-        new SpannerImpl.ResumableStreamIterator(maxBufferSize, "", null) {
+        new AbstractResultSet.ResumableStreamIterator(maxBufferSize, "", null) {
           @Override
-          SpannerImpl.CloseableIterator<PartialResultSet> startStream(
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
               @Nullable ByteString resumeToken) {
             return starter.startStream(resumeToken);
           }
