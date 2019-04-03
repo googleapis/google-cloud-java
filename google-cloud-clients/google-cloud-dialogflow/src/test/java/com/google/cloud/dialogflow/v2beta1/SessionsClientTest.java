@@ -26,8 +26,8 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -120,7 +120,7 @@ public class SessionsClientTest {
     DetectIntentResponse actualResponse = client.detectIntent(session, queryInput);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSessions.getRequests();
+    List<AbstractMessage> actualRequests = mockSessions.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DetectIntentRequest actualRequest = (DetectIntentRequest) actualRequests.get(0);
 

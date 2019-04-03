@@ -34,9 +34,9 @@ import com.google.monitoring.v3.ListAlertPoliciesRequest;
 import com.google.monitoring.v3.ListAlertPoliciesResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateAlertPolicyRequest;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -122,7 +122,7 @@ public class AlertPolicyServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAlertPoliciesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListAlertPoliciesRequest actualRequest = (ListAlertPoliciesRequest) actualRequests.get(0);
 
@@ -163,7 +163,7 @@ public class AlertPolicyServiceClientTest {
     AlertPolicy actualResponse = client.getAlertPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAlertPolicyRequest actualRequest = (GetAlertPolicyRequest) actualRequests.get(0);
 
@@ -205,7 +205,7 @@ public class AlertPolicyServiceClientTest {
     AlertPolicy actualResponse = client.createAlertPolicy(name, alertPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateAlertPolicyRequest actualRequest = (CreateAlertPolicyRequest) actualRequests.get(0);
 
@@ -244,7 +244,7 @@ public class AlertPolicyServiceClientTest {
 
     client.deleteAlertPolicy(name);
 
-    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteAlertPolicyRequest actualRequest = (DeleteAlertPolicyRequest) actualRequests.get(0);
 
@@ -286,7 +286,7 @@ public class AlertPolicyServiceClientTest {
     AlertPolicy actualResponse = client.updateAlertPolicy(updateMask, alertPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateAlertPolicyRequest actualRequest = (UpdateAlertPolicyRequest) actualRequests.get(0);
 

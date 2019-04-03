@@ -7,7 +7,61 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Output configuration.
+ * Output configuration for ExportData.
+ * As destination the
+ * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
+ * must be set unless specified otherwise for a domain.
+ * Only ground truth annotations are exported (not approved annotations are
+ * not exported).
+ * The outputs correspond to how the data was imported, and may be used as
+ * input to import data. The output formats are represented as EBNF with literal
+ * commas and same non-terminal symbols definitions are these in import data's
+ * [InputConfig][google.cloud.automl.v1beta1.InputConfig]:
+ *  *  For Image Object Detection:
+ *         CSV file(s) `image_object_detection_1.csv`,
+ *         `image_object_detection_2.csv`,...,`image_object_detection_N.csv`
+ *         with each line in format:
+ *         ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
+ *         where GCS_FILE_PATHs point at the original, source locations of the
+ *         imported images.
+ *  *  For Video Classification:
+ *         CSV file `video_classification.csv`, with each line in format:
+ *         ML_USE,GCS_FILE_PATH
+ *         (may have muliple lines per a single ML_USE).
+ *         Each GCS_FILE_PATH leads to another .csv file which
+ *         describes examples that have given ML_USE, using the following
+ *         row format:
+ *         GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
+ *         Here GCS_FILE_PATHs point at the original, source locations of the
+ *         imported videos.
+ *  *  For Text Extraction:
+ *         CSV file `text_extraction.csv`, with each line in format:
+ *         ML_USE,GCS_FILE_PATH
+ *         GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which
+ *         contains, per line, a proto that wraps a TextSnippet proto (in json
+ *         representation) followed by AnnotationPayload protos (called
+ *         annotations). If initially documents had been imported, corresponding
+ *         OCR-ed representation is returned.
+ *   *  For Tables:
+ *         Output depends on whether the dataset was imported from GCS or
+ *         BigQuery.
+ *         GCS case:
+ * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
+ *           must be set. Exported are CSV file(s) `tables_1.csv`,
+ *           `tables_2.csv`,...,`tables_N.csv` with each having as header line
+ *           the table's column names, and all other lines contain values for
+ *           the header columns.
+ *         BigQuery case:
+ * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
+ *           pointing to a BigQuery project must be set. In the given project a
+ *           new dataset will be created with name
+ * `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
+ *           where &lt;automl-dataset-display-name&gt; will be made
+ *           BigQuery-dataset-name compatible (e.g. most special characters will
+ *           become underscores), and timestamp will be in
+ *           YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In that
+ *           dataset a new table called `primary_table` will be created, and
+ *           filled with precisely the same data as this obtained on import.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.OutputConfig}
@@ -65,6 +119,26 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
               destinationCase_ = 1;
               break;
             }
+          case 18:
+            {
+              com.google.cloud.automl.v1beta1.BigQueryDestination.Builder subBuilder = null;
+              if (destinationCase_ == 2) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.BigQueryDestination) destination_)
+                        .toBuilder();
+              }
+              destination_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.BigQueryDestination.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_);
+                destination_ = subBuilder.buildPartial();
+              }
+              destinationCase_ = 2;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -104,6 +178,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public enum DestinationCase implements com.google.protobuf.Internal.EnumLite {
     GCS_DESTINATION(1),
+    BIGQUERY_DESTINATION(2),
     DESTINATION_NOT_SET(0);
     private final int value;
 
@@ -120,6 +195,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return GCS_DESTINATION;
+        case 2:
+          return BIGQUERY_DESTINATION;
         case 0:
           return DESTINATION_NOT_SET;
         default:
@@ -141,7 +218,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location where the output must be written to.
+   * The Google Cloud Storage location where the output is to be written to.
+   * For Image Object Detection, Text Extraction, Video Classification and
+   * Tables, in the given directory a new directory will be created with name:
+   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+   * export output will be written into that directory.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -153,7 +235,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location where the output must be written to.
+   * The Google Cloud Storage location where the output is to be written to.
+   * For Image Object Detection, Text Extraction, Video Classification and
+   * Tables, in the given directory a new directory will be created with name:
+   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+   * export output will be written into that directory.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -168,7 +255,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location where the output must be written to.
+   * The Google Cloud Storage location where the output is to be written to.
+   * For Image Object Detection, Text Extraction, Video Classification and
+   * Tables, in the given directory a new directory will be created with name:
+   * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+   * export output will be written into that directory.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -178,6 +270,51 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.automl.v1beta1.GcsDestination) destination_;
     }
     return com.google.cloud.automl.v1beta1.GcsDestination.getDefaultInstance();
+  }
+
+  public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location where the output is to be written to.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   */
+  public boolean hasBigqueryDestination() {
+    return destinationCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location where the output is to be written to.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   */
+  public com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination() {
+    if (destinationCase_ == 2) {
+      return (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_;
+    }
+    return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location where the output is to be written to.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+   */
+  public com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder
+      getBigqueryDestinationOrBuilder() {
+    if (destinationCase_ == 2) {
+      return (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_;
+    }
+    return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -197,6 +334,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     if (destinationCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.automl.v1beta1.GcsDestination) destination_);
     }
+    if (destinationCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +350,11 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.automl.v1beta1.GcsDestination) destination_);
+    }
+    if (destinationCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,6 +377,9 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getGcsDestination().equals(other.getGcsDestination())) return false;
         break;
+      case 2:
+        if (!getBigqueryDestination().equals(other.getBigqueryDestination())) return false;
+        break;
       case 0:
       default:
     }
@@ -250,6 +398,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + GCS_DESTINATION_FIELD_NUMBER;
         hash = (53 * hash) + getGcsDestination().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + BIGQUERY_DESTINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryDestination().hashCode();
         break;
       case 0:
       default:
@@ -358,7 +510,61 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output configuration.
+   * Output configuration for ExportData.
+   * As destination the
+   * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
+   * must be set unless specified otherwise for a domain.
+   * Only ground truth annotations are exported (not approved annotations are
+   * not exported).
+   * The outputs correspond to how the data was imported, and may be used as
+   * input to import data. The output formats are represented as EBNF with literal
+   * commas and same non-terminal symbols definitions are these in import data's
+   * [InputConfig][google.cloud.automl.v1beta1.InputConfig]:
+   *  *  For Image Object Detection:
+   *         CSV file(s) `image_object_detection_1.csv`,
+   *         `image_object_detection_2.csv`,...,`image_object_detection_N.csv`
+   *         with each line in format:
+   *         ML_USE,GCS_FILE_PATH,LABEL,BOUNDING_BOX
+   *         where GCS_FILE_PATHs point at the original, source locations of the
+   *         imported images.
+   *  *  For Video Classification:
+   *         CSV file `video_classification.csv`, with each line in format:
+   *         ML_USE,GCS_FILE_PATH
+   *         (may have muliple lines per a single ML_USE).
+   *         Each GCS_FILE_PATH leads to another .csv file which
+   *         describes examples that have given ML_USE, using the following
+   *         row format:
+   *         GCS_FILE_PATH,LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END
+   *         Here GCS_FILE_PATHs point at the original, source locations of the
+   *         imported videos.
+   *  *  For Text Extraction:
+   *         CSV file `text_extraction.csv`, with each line in format:
+   *         ML_USE,GCS_FILE_PATH
+   *         GCS_FILE_PATH leads to a .JSONL (i.e. JSON Lines) file which
+   *         contains, per line, a proto that wraps a TextSnippet proto (in json
+   *         representation) followed by AnnotationPayload protos (called
+   *         annotations). If initially documents had been imported, corresponding
+   *         OCR-ed representation is returned.
+   *   *  For Tables:
+   *         Output depends on whether the dataset was imported from GCS or
+   *         BigQuery.
+   *         GCS case:
+   * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
+   *           must be set. Exported are CSV file(s) `tables_1.csv`,
+   *           `tables_2.csv`,...,`tables_N.csv` with each having as header line
+   *           the table's column names, and all other lines contain values for
+   *           the header columns.
+   *         BigQuery case:
+   * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
+   *           pointing to a BigQuery project must be set. In the given project a
+   *           new dataset will be created with name
+   * `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
+   *           where &lt;automl-dataset-display-name&gt; will be made
+   *           BigQuery-dataset-name compatible (e.g. most special characters will
+   *           become underscores), and timestamp will be in
+   *           YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In that
+   *           dataset a new table called `primary_table` will be created, and
+   *           filled with precisely the same data as this obtained on import.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.OutputConfig}
@@ -435,6 +641,13 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
           result.destination_ = gcsDestinationBuilder_.build();
         }
       }
+      if (destinationCase_ == 2) {
+        if (bigqueryDestinationBuilder_ == null) {
+          result.destination_ = destination_;
+        } else {
+          result.destination_ = bigqueryDestinationBuilder_.build();
+        }
+      }
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -489,6 +702,11 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
         case GCS_DESTINATION:
           {
             mergeGcsDestination(other.getGcsDestination());
+            break;
+          }
+        case BIGQUERY_DESTINATION:
+          {
+            mergeBigqueryDestination(other.getBigqueryDestination());
             break;
           }
         case DESTINATION_NOT_SET:
@@ -548,7 +766,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -560,7 +783,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -582,7 +810,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -604,7 +837,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -624,7 +862,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -656,7 +899,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -681,7 +929,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -693,7 +946,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -712,7 +970,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The GCS location where the output must be written to.
+     * The Google Cloud Storage location where the output is to be written to.
+     * For Image Object Detection, Text Extraction, Video Classification and
+     * Tables, in the given directory a new directory will be created with name:
+     * export_data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;
+     * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All
+     * export output will be written into that directory.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -740,6 +1003,213 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gcsDestinationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.BigQueryDestination,
+            com.google.cloud.automl.v1beta1.BigQueryDestination.Builder,
+            com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder>
+        bigqueryDestinationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public boolean hasBigqueryDestination() {
+      return destinationCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination() {
+      if (bigqueryDestinationBuilder_ == null) {
+        if (destinationCase_ == 2) {
+          return (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_;
+        }
+        return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
+      } else {
+        if (destinationCase_ == 2) {
+          return bigqueryDestinationBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public Builder setBigqueryDestination(
+        com.google.cloud.automl.v1beta1.BigQueryDestination value) {
+      if (bigqueryDestinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destination_ = value;
+        onChanged();
+      } else {
+        bigqueryDestinationBuilder_.setMessage(value);
+      }
+      destinationCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public Builder setBigqueryDestination(
+        com.google.cloud.automl.v1beta1.BigQueryDestination.Builder builderForValue) {
+      if (bigqueryDestinationBuilder_ == null) {
+        destination_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryDestinationBuilder_.setMessage(builderForValue.build());
+      }
+      destinationCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public Builder mergeBigqueryDestination(
+        com.google.cloud.automl.v1beta1.BigQueryDestination value) {
+      if (bigqueryDestinationBuilder_ == null) {
+        if (destinationCase_ == 2
+            && destination_
+                != com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.automl.v1beta1.BigQueryDestination.newBuilder(
+                      (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destination_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationCase_ == 2) {
+          bigqueryDestinationBuilder_.mergeFrom(value);
+        }
+        bigqueryDestinationBuilder_.setMessage(value);
+      }
+      destinationCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public Builder clearBigqueryDestination() {
+      if (bigqueryDestinationBuilder_ == null) {
+        if (destinationCase_ == 2) {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationCase_ == 2) {
+          destinationCase_ = 0;
+          destination_ = null;
+        }
+        bigqueryDestinationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public com.google.cloud.automl.v1beta1.BigQueryDestination.Builder
+        getBigqueryDestinationBuilder() {
+      return getBigqueryDestinationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    public com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder
+        getBigqueryDestinationOrBuilder() {
+      if ((destinationCase_ == 2) && (bigqueryDestinationBuilder_ != null)) {
+        return bigqueryDestinationBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationCase_ == 2) {
+          return (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_;
+        }
+        return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery location where the output is to be written to.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.BigQueryDestination,
+            com.google.cloud.automl.v1beta1.BigQueryDestination.Builder,
+            com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder>
+        getBigqueryDestinationFieldBuilder() {
+      if (bigqueryDestinationBuilder_ == null) {
+        if (!(destinationCase_ == 2)) {
+          destination_ = com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
+        }
+        bigqueryDestinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.BigQueryDestination,
+                com.google.cloud.automl.v1beta1.BigQueryDestination.Builder,
+                com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_,
+                getParentForChildren(),
+                isClean());
+        destination_ = null;
+      }
+      destinationCase_ = 2;
+      onChanged();
+      ;
+      return bigqueryDestinationBuilder_;
     }
 
     @java.lang.Override

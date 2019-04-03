@@ -7,8 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [AutoMl.ImportData][google.cloud.automl.v1beta1.AutoMl.ImportData].
+ * Request message for [AutoMl.ImportData][google.cloud.automl.v1beta1.AutoMl.ImportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ImportDataRequest}
@@ -159,7 +158,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The desired input location.
+   * Required. The desired input location and its domain specific semantics,
+   * if any.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -171,7 +171,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The desired input location.
+   * Required. The desired input location and its domain specific semantics,
+   * if any.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -185,7 +186,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The desired input location.
+   * Required. The desired input location and its domain specific semantics,
+   * if any.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -371,8 +373,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for
-   * [AutoMl.ImportData][google.cloud.automl.v1beta1.AutoMl.ImportData].
+   * Request message for [AutoMl.ImportData][google.cloud.automl.v1beta1.AutoMl.ImportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ImportDataRequest}
@@ -650,7 +651,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -662,7 +664,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -680,7 +683,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -702,7 +706,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -722,7 +727,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -748,7 +754,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -768,7 +775,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -782,7 +790,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -800,7 +809,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The desired input location.
+     * Required. The desired input location and its domain specific semantics,
+     * if any.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>

@@ -28,6 +28,8 @@ import com.google.cloud.dialogflow.v2beta1.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse;
+import com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest;
+import com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -79,6 +81,14 @@ public abstract class DocumentsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDocumentCallable()");
+  }
+
+  public UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDocumentCallable()");
+  }
+
+  public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: reloadDocumentCallable()");
   }
 
   @Override

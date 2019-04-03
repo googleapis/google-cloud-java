@@ -7,7 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * The GCS location for the input content.
+ * The Google Cloud Storage location for the input content.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.GcsSource}
@@ -105,7 +105,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -119,7 +119,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -133,7 +133,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -147,7 +147,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -326,7 +326,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.GcsSource}
@@ -507,7 +507,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -521,7 +521,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -535,7 +535,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -549,7 +549,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -563,7 +563,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -583,7 +583,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -603,7 +603,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -620,7 +620,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>
@@ -637,7 +637,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files, up to 2000 characters
      * long. Accepted forms:
-     * * Full object path: gs://bucket/directory/object.csv
+     * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
      * <code>repeated string input_uris = 1;</code>

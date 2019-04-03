@@ -15,9 +15,11 @@
  */
 package com.google.cloud.automl.v1beta1;
 
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListColumnSpecsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListDatasetsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
+import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -70,6 +72,11 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDataset. */
+  public UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).updateDatasetSettings();
   }
 
   /** Returns the object with the settings used for calls to getDataset. */
@@ -164,15 +171,58 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     return ((AutoMlStubSettings) getStubSettings()).deployModelSettings();
   }
 
+  /** Returns the object with the settings used for calls to deployModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deployModelOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to undeployModel. */
   public UnaryCallSettings<UndeployModelRequest, Operation> undeployModelSettings() {
     return ((AutoMlStubSettings) getStubSettings()).undeployModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).undeployModelOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getModelEvaluation. */
   public UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).getModelEvaluationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportModel. */
+  public UnaryCallSettings<ExportModelRequest, Operation> exportModelSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluatedExamples. */
+  public UnaryCallSettings<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportEvaluatedExamplesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluatedExamples. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
+      exportEvaluatedExamplesOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportEvaluatedExamplesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listModelEvaluations. */
@@ -182,6 +232,45 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings() {
     return ((AutoMlStubSettings) getStubSettings()).listModelEvaluationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAnnotationSpec. */
+  public UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getAnnotationSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTableSpec. */
+  public UnaryCallSettings<GetTableSpecRequest, TableSpec> getTableSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getTableSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTableSpecs. */
+  public PagedCallSettings<
+          ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+      listTableSpecsSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).listTableSpecsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTableSpec. */
+  public UnaryCallSettings<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).updateTableSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getColumnSpec. */
+  public UnaryCallSettings<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getColumnSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listColumnSpecs. */
+  public PagedCallSettings<
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+      listColumnSpecsSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).listColumnSpecsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateColumnSpec. */
+  public UnaryCallSettings<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).updateColumnSpecSettings();
   }
 
   public static final AutoMlSettings create(AutoMlStubSettings stub) throws IOException {
@@ -285,6 +374,11 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
       return getStubSettingsBuilder().createDatasetSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateDataset. */
+    public UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
+      return getStubSettingsBuilder().updateDatasetSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getDataset. */
     public UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings() {
       return getStubSettingsBuilder().getDatasetSettings();
@@ -378,15 +472,58 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
       return getStubSettingsBuilder().deployModelSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deployModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeployModelRequest, Empty, OperationMetadata>
+        deployModelOperationSettings() {
+      return getStubSettingsBuilder().deployModelOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to undeployModel. */
     public UnaryCallSettings.Builder<UndeployModelRequest, Operation> undeployModelSettings() {
       return getStubSettingsBuilder().undeployModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UndeployModelRequest, Empty, OperationMetadata>
+        undeployModelOperationSettings() {
+      return getStubSettingsBuilder().undeployModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getModelEvaluation. */
     public UnaryCallSettings.Builder<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationSettings() {
       return getStubSettingsBuilder().getModelEvaluationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportModel. */
+    public UnaryCallSettings.Builder<ExportModelRequest, Operation> exportModelSettings() {
+      return getStubSettingsBuilder().exportModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ExportModelRequest, Empty, OperationMetadata>
+        exportModelOperationSettings() {
+      return getStubSettingsBuilder().exportModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluatedExamples. */
+    public UnaryCallSettings.Builder<ExportEvaluatedExamplesRequest, Operation>
+        exportEvaluatedExamplesSettings() {
+      return getStubSettingsBuilder().exportEvaluatedExamplesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluatedExamples. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
+        exportEvaluatedExamplesOperationSettings() {
+      return getStubSettingsBuilder().exportEvaluatedExamplesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listModelEvaluations. */
@@ -396,6 +533,47 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return getStubSettingsBuilder().listModelEvaluationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAnnotationSpec. */
+    public UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
+        getAnnotationSpecSettings() {
+      return getStubSettingsBuilder().getAnnotationSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTableSpec. */
+    public UnaryCallSettings.Builder<GetTableSpecRequest, TableSpec> getTableSpecSettings() {
+      return getStubSettingsBuilder().getTableSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTableSpecs. */
+    public PagedCallSettings.Builder<
+            ListTableSpecsRequest, ListTableSpecsResponse, ListTableSpecsPagedResponse>
+        listTableSpecsSettings() {
+      return getStubSettingsBuilder().listTableSpecsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTableSpec. */
+    public UnaryCallSettings.Builder<UpdateTableSpecRequest, TableSpec> updateTableSpecSettings() {
+      return getStubSettingsBuilder().updateTableSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getColumnSpec. */
+    public UnaryCallSettings.Builder<GetColumnSpecRequest, ColumnSpec> getColumnSpecSettings() {
+      return getStubSettingsBuilder().getColumnSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listColumnSpecs. */
+    public PagedCallSettings.Builder<
+            ListColumnSpecsRequest, ListColumnSpecsResponse, ListColumnSpecsPagedResponse>
+        listColumnSpecsSettings() {
+      return getStubSettingsBuilder().listColumnSpecsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateColumnSpec. */
+    public UnaryCallSettings.Builder<UpdateColumnSpecRequest, ColumnSpec>
+        updateColumnSpecSettings() {
+      return getStubSettingsBuilder().updateColumnSpecSettings();
     }
 
     @Override

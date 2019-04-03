@@ -59,7 +59,7 @@ import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.Value;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Message;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -113,7 +113,7 @@ public class ConformanceTest {
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
 
-  @Captor private ArgumentCaptor<ApiStreamObserver<GeneratedMessageV3>> streamObserverCapture;
+  @Captor private ArgumentCaptor<ApiStreamObserver<AbstractMessage>> streamObserverCapture;
 
   @Captor private ArgumentCaptor<RunQueryRequest> runQueryCapture;
 

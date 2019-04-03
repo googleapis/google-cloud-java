@@ -24,8 +24,8 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -91,7 +91,7 @@ public class ImageAnnotatorClientTest {
     BatchAnnotateImagesResponse actualResponse = client.batchAnnotateImages(requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchAnnotateImagesRequest actualRequest = (BatchAnnotateImagesRequest) actualRequests.get(0);
 
@@ -129,7 +129,7 @@ public class ImageAnnotatorClientTest {
     BatchAnnotateFilesResponse actualResponse = client.batchAnnotateFiles(requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchAnnotateFilesRequest actualRequest = (BatchAnnotateFilesRequest) actualRequests.get(0);
 
@@ -176,7 +176,7 @@ public class ImageAnnotatorClientTest {
         client.asyncBatchAnnotateImagesAsync(requests, outputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AsyncBatchAnnotateImagesRequest actualRequest =
         (AsyncBatchAnnotateImagesRequest) actualRequests.get(0);
@@ -227,7 +227,7 @@ public class ImageAnnotatorClientTest {
         client.asyncBatchAnnotateFilesAsync(requests).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AsyncBatchAnnotateFilesRequest actualRequest =
         (AsyncBatchAnnotateFilesRequest) actualRequests.get(0);

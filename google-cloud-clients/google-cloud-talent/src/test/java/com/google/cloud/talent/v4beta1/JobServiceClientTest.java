@@ -25,8 +25,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -101,7 +101,7 @@ public class JobServiceClientTest {
   @SuppressWarnings("all")
   public void createJobTest() {
     JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
-    String company = "company950484093";
+    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -115,7 +115,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name.toString())
-            .setCompany(company)
+            .setCompany(company.toString())
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -135,7 +135,7 @@ public class JobServiceClientTest {
     Job actualResponse = client.createJob(parent, job);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockJobService.getRequests();
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateJobRequest actualRequest = (CreateJobRequest) actualRequests.get(0);
 
@@ -168,7 +168,7 @@ public class JobServiceClientTest {
   @SuppressWarnings("all")
   public void getJobTest() {
     JobName name2 = JobOldName.of("[PROJECT]", "[JOBS]");
-    String company = "company950484093";
+    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -182,7 +182,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name2.toString())
-            .setCompany(company)
+            .setCompany(company.toString())
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -201,7 +201,7 @@ public class JobServiceClientTest {
     Job actualResponse = client.getJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockJobService.getRequests();
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetJobRequest actualRequest = (GetJobRequest) actualRequests.get(0);
 
@@ -232,7 +232,7 @@ public class JobServiceClientTest {
   @SuppressWarnings("all")
   public void updateJobTest() {
     JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
-    String company = "company950484093";
+    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -246,7 +246,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name.toString())
-            .setCompany(company)
+            .setCompany(company.toString())
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -265,7 +265,7 @@ public class JobServiceClientTest {
     Job actualResponse = client.updateJob(job);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockJobService.getRequests();
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateJobRequest actualRequest = (UpdateJobRequest) actualRequests.get(0);
 
@@ -302,7 +302,7 @@ public class JobServiceClientTest {
 
     client.deleteJob(name);
 
-    List<GeneratedMessageV3> actualRequests = mockJobService.getRequests();
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
 
@@ -348,7 +348,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getJobsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockJobService.getRequests();
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListJobsRequest actualRequest = (ListJobsRequest) actualRequests.get(0);
 
@@ -388,7 +388,7 @@ public class JobServiceClientTest {
 
     client.batchDeleteJobs(parent, filter);
 
-    List<GeneratedMessageV3> actualRequests = mockJobService.getRequests();
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteJobsRequest actualRequest = (BatchDeleteJobsRequest) actualRequests.get(0);
 

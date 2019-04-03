@@ -27,8 +27,8 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -100,7 +100,7 @@ public class SpeechClientTest {
     RecognizeResponse actualResponse = client.recognize(config, audio);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpeech.getRequests();
+    List<AbstractMessage> actualRequests = mockSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RecognizeRequest actualRequest = (RecognizeRequest) actualRequests.get(0);
 
@@ -167,7 +167,7 @@ public class SpeechClientTest {
         client.longRunningRecognizeAsync(config, audio).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSpeech.getRequests();
+    List<AbstractMessage> actualRequests = mockSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     LongRunningRecognizeRequest actualRequest = (LongRunningRecognizeRequest) actualRequests.get(0);
 

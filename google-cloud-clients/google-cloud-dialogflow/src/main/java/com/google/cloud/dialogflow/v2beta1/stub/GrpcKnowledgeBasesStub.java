@@ -31,6 +31,7 @@ import com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse;
+import com.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -90,6 +91,16 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   ProtoUtils.marshaller(DeleteKnowledgeBaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<UpdateKnowledgeBaseRequest, KnowledgeBase>
+      updateKnowledgeBaseMethodDescriptor =
+          MethodDescriptor.<UpdateKnowledgeBaseRequest, KnowledgeBase>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.KnowledgeBases/UpdateKnowledgeBase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateKnowledgeBaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(KnowledgeBase.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -101,6 +112,8 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
   private final UnaryCallable<CreateKnowledgeBaseRequest, KnowledgeBase>
       createKnowledgeBaseCallable;
   private final UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable;
+  private final UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase>
+      updateKnowledgeBaseCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -197,6 +210,22 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
                   }
                 })
             .build();
+    GrpcCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
+        updateKnowledgeBaseTransportSettings =
+            GrpcCallSettings.<UpdateKnowledgeBaseRequest, KnowledgeBase>newBuilder()
+                .setMethodDescriptor(updateKnowledgeBaseMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateKnowledgeBaseRequest>() {
+                      @Override
+                      public Map<String, String> extract(UpdateKnowledgeBaseRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "knowledge_base.name",
+                            String.valueOf(request.getKnowledgeBase().getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listKnowledgeBasesCallable =
         callableFactory.createUnaryCallable(
@@ -220,6 +249,11 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
         callableFactory.createUnaryCallable(
             deleteKnowledgeBaseTransportSettings,
             settings.deleteKnowledgeBaseSettings(),
+            clientContext);
+    this.updateKnowledgeBaseCallable =
+        callableFactory.createUnaryCallable(
+            updateKnowledgeBaseTransportSettings,
+            settings.updateKnowledgeBaseSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -245,6 +279,10 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
 
   public UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable() {
     return deleteKnowledgeBaseCallable;
+  }
+
+  public UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase> updateKnowledgeBaseCallable() {
+    return updateKnowledgeBaseCallable;
   }
 
   @Override

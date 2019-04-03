@@ -358,28 +358,10 @@ public class GrpcFirestoreStub extends FirestoreStub {
     GrpcCallSettings<WriteRequest, WriteResponse> writeTransportSettings =
         GrpcCallSettings.<WriteRequest, WriteResponse>newBuilder()
             .setMethodDescriptor(writeMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<WriteRequest>() {
-                  @Override
-                  public Map<String, String> extract(WriteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("database", String.valueOf(request.getDatabase()));
-                    return params.build();
-                  }
-                })
             .build();
     GrpcCallSettings<ListenRequest, ListenResponse> listenTransportSettings =
         GrpcCallSettings.<ListenRequest, ListenResponse>newBuilder()
             .setMethodDescriptor(listenMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListenRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListenRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("database", String.valueOf(request.getDatabase()));
-                    return params.build();
-                  }
-                })
             .build();
     GrpcCallSettings<ListCollectionIdsRequest, ListCollectionIdsResponse>
         listCollectionIdsTransportSettings =

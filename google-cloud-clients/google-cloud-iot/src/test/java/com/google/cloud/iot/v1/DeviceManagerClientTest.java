@@ -31,10 +31,10 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -101,7 +101,7 @@ public class DeviceManagerClientTest {
     DeviceRegistry actualResponse = client.createDeviceRegistry(parent, deviceRegistry);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateDeviceRegistryRequest actualRequest = (CreateDeviceRegistryRequest) actualRequests.get(0);
 
@@ -144,7 +144,7 @@ public class DeviceManagerClientTest {
     DeviceRegistry actualResponse = client.getDeviceRegistry(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDeviceRegistryRequest actualRequest = (GetDeviceRegistryRequest) actualRequests.get(0);
 
@@ -186,7 +186,7 @@ public class DeviceManagerClientTest {
     DeviceRegistry actualResponse = client.updateDeviceRegistry(deviceRegistry, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateDeviceRegistryRequest actualRequest = (UpdateDeviceRegistryRequest) actualRequests.get(0);
 
@@ -225,7 +225,7 @@ public class DeviceManagerClientTest {
 
     client.deleteDeviceRegistry(name);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteDeviceRegistryRequest actualRequest = (DeleteDeviceRegistryRequest) actualRequests.get(0);
 
@@ -273,7 +273,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDeviceRegistriesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDeviceRegistriesRequest actualRequest = (ListDeviceRegistriesRequest) actualRequests.get(0);
 
@@ -322,7 +322,7 @@ public class DeviceManagerClientTest {
     Device actualResponse = client.createDevice(parent, device);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateDeviceRequest actualRequest = (CreateDeviceRequest) actualRequests.get(0);
 
@@ -372,7 +372,7 @@ public class DeviceManagerClientTest {
     Device actualResponse = client.getDevice(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDeviceRequest actualRequest = (GetDeviceRequest) actualRequests.get(0);
 
@@ -421,7 +421,7 @@ public class DeviceManagerClientTest {
     Device actualResponse = client.updateDevice(device, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateDeviceRequest actualRequest = (UpdateDeviceRequest) actualRequests.get(0);
 
@@ -460,7 +460,7 @@ public class DeviceManagerClientTest {
 
     client.deleteDevice(name);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteDeviceRequest actualRequest = (DeleteDeviceRequest) actualRequests.get(0);
 
@@ -508,7 +508,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDevicesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDevicesRequest actualRequest = (ListDevicesRequest) actualRequests.get(0);
 
@@ -550,7 +550,7 @@ public class DeviceManagerClientTest {
     DeviceConfig actualResponse = client.modifyCloudToDeviceConfig(name, binaryData);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ModifyCloudToDeviceConfigRequest actualRequest =
         (ModifyCloudToDeviceConfigRequest) actualRequests.get(0);
@@ -592,7 +592,7 @@ public class DeviceManagerClientTest {
     ListDeviceConfigVersionsResponse actualResponse = client.listDeviceConfigVersions(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDeviceConfigVersionsRequest actualRequest =
         (ListDeviceConfigVersionsRequest) actualRequests.get(0);
@@ -631,7 +631,7 @@ public class DeviceManagerClientTest {
     ListDeviceStatesResponse actualResponse = client.listDeviceStates(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDeviceStatesRequest actualRequest = (ListDeviceStatesRequest) actualRequests.get(0);
 
@@ -672,7 +672,7 @@ public class DeviceManagerClientTest {
     Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -714,7 +714,7 @@ public class DeviceManagerClientTest {
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -753,7 +753,7 @@ public class DeviceManagerClientTest {
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
@@ -796,7 +796,7 @@ public class DeviceManagerClientTest {
         client.sendCommandToDevice(name, binaryData, subfolder);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
 
@@ -841,7 +841,7 @@ public class DeviceManagerClientTest {
         client.bindDeviceToGateway(parent, gatewayId, deviceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BindDeviceToGatewayRequest actualRequest = (BindDeviceToGatewayRequest) actualRequests.get(0);
 
@@ -887,7 +887,7 @@ public class DeviceManagerClientTest {
         client.unbindDeviceFromGateway(parent, gatewayId, deviceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UnbindDeviceFromGatewayRequest actualRequest =
         (UnbindDeviceFromGatewayRequest) actualRequests.get(0);
