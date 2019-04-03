@@ -101,7 +101,7 @@ public class JobServiceClientTest {
   @SuppressWarnings("all")
   public void createJobTest() {
     JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
-    String company = "company950484093";
+    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -115,7 +115,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name.toString())
-            .setCompany(company)
+            .setCompany(company.toString())
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -168,7 +168,7 @@ public class JobServiceClientTest {
   @SuppressWarnings("all")
   public void getJobTest() {
     JobName name2 = JobOldName.of("[PROJECT]", "[JOBS]");
-    String company = "company950484093";
+    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -182,7 +182,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name2.toString())
-            .setCompany(company)
+            .setCompany(company.toString())
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -232,7 +232,7 @@ public class JobServiceClientTest {
   @SuppressWarnings("all")
   public void updateJobTest() {
     JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
-    String company = "company950484093";
+    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -246,7 +246,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name.toString())
-            .setCompany(company)
+            .setCompany(company.toString())
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
