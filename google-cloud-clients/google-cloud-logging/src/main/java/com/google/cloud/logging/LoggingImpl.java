@@ -582,8 +582,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   /* Write logs synchronously or asynchronously based on writeSynchronicity setting. */
   private void writeLogEntries(Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
-    if (closed)
-      return;
+    if (closed) return;
 
     switch (this.writeSynchronicity) {
       case SYNC:
