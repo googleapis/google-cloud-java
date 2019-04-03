@@ -52,13 +52,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private static final ExceptionHandler TRANSACTION_EXCEPTION_HANDLER =
       TransactionExceptionHandler.build();
 
-  DatastoreImpl(DatastoreRpc gapicRpc, DatastoreOptions options) {
-    super(options);
-    this.datastoreRpc = gapicRpc;
-    retrySettings =
-        MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
-  }
-
   DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.getDatastoreRpcV1();

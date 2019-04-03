@@ -107,7 +107,6 @@ public class GapicDatastoreRpc implements DatastoreRpc {
     this.projectId = options.getProjectId();
     this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
 
-
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
@@ -127,7 +126,7 @@ public class GapicDatastoreRpc implements DatastoreRpc {
         DatastoreMetadataProvider.create(
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
-    try{
+    try {
       if (options.getHost().contains("localhost")
           || NoCredentials.getInstance().equals(options.getCredentials())) {
         ManagedChannel managedChannel =
@@ -158,25 +157,34 @@ public class GapicDatastoreRpc implements DatastoreRpc {
             DatastoreStubSettings.newBuilder(clientContext)
                 .applyToAllUnaryMethods(retrySettingsSetter);
 
-        this.datastoreStub = GrpcDatastoreStub
+        datastoreStub = GrpcDatastoreStub
             .create(datastoreBuilder
                 .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
                     DatastoreSettings.defaultGrpcTransportProviderBuilder(), options))
                 .setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options))
                 .build());
       } else {
-        ManagedChannel managedChannel =
-            ManagedChannelBuilder.forTarget(options.getHost()).build();
-        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
-        clientContext =
-            ClientContext.newBuilder()
-                .setCredentials(options.getCredentials())
-                .setTransportChannel(transportChannel)
-                .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
-                .setBackgroundResources(
-                    Collections.<BackgroundResource>singletonList(transportChannel))
+        DatastoreSettingsBuilder settingsBuilder =
+            new DatastoreSettingsBuilder(DatastoreSettings.newBuilder().build());
+
+        settingsBuilder.setCredentialsProvider(
+            GrpcTransportOptions.setUpCredentialsProvider(options));
+        settingsBuilder.setTransportChannelProvider(
+            GrpcTransportOptions.setUpChannelProvider(
+                DatastoreSettings.defaultGrpcTransportProviderBuilder(), options));
+
+        HeaderProvider internalHeaderProvider1 =
+            DatastoreSettings.defaultApiClientHeaderProviderBuilder()
+                .setClientLibToken(
+                    ServiceOptions.getGoogApiClientLibName(),
+                    GaxProperties.getLibraryVersion(options.getClass()))
                 .build();
-        this.datastoreStub =
+        HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider1);
+        settingsBuilder.setInternalHeaderProvider(headerProvider);
+
+        clientContext = ClientContext.create(settingsBuilder.build());
+
+        datastoreStub =
             GrpcDatastoreStub.create(
                 DatastoreStubSettings.newBuilder(clientContext)
                     .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
