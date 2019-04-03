@@ -28,7 +28,7 @@ for version in versions:
     library = gapic.java_library(
         service=service,
         version=version,
-        config_path=f'/google/cloud/webrisk/artman_webrisk.yaml',
+        config_path=f'/google/cloud/webrisk/artman_webrisk_{version}.yaml',
         artman_output_name='')
 
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
