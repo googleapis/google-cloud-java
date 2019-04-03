@@ -975,6 +975,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
 
+    @Override
     public TransactionRunner allowNestedTransaction() {
       blockNestedTxn = false;
       return this;
