@@ -100,20 +100,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
 
-  static final ThreadLocal<Boolean> hasPendingTransaction =
-      new ThreadLocal<Boolean>() {
-        @Override
-        protected Boolean initialValue() {
-          return false;
-        }
-      };
-
-  static void throwIfTransactionsPending() {
-    if (hasPendingTransaction.get() == Boolean.TRUE) {
-      throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
-    }
-  }
-
   static {
     TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
   }
