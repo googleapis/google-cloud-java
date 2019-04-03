@@ -17,10 +17,13 @@ package com.google.cloud.automl.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1beta1.stub.PredictionServiceStub;
 import com.google.cloud.automl.v1beta1.stub.PredictionServiceStubSettings;
 import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -103,6 +106,7 @@ import javax.annotation.Generated;
 public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of PredictionServiceClient with default settings. */
   public static final PredictionServiceClient create() throws IOException {
@@ -135,12 +139,14 @@ public class PredictionServiceClient implements BackgroundResource {
   protected PredictionServiceClient(PredictionServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((PredictionServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PredictionServiceClient(PredictionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final PredictionServiceSettings getSettings() {
@@ -150,6 +156,16 @@ public class PredictionServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PredictionServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -330,16 +346,56 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder().build();
-   *   Operation response = predictionServiceClient.batchPredict(request);
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
+   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(name, inputConfig, outputConfig, params).get();
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param name Name of the model requested to serve the batch prediction.
+   * @param inputConfig Required. The input configuration for batch prediction.
+   * @param outputConfig Required. The Configuration specifying where output predictions should be
+   *     written.
+   * @param params Additional domain-specific parameters for the predictions, any string must be up
+   *     to 25000 characters long.
+   *     <p>&#42; For Video Classification : `score_threshold` - (float) A value from 0.0 to 1.0.
+   *     When the model makes predictions for a video, it will only produce results that have at
+   *     least this confidence score. The default is 0.5. `segment_classification` - (boolean) Set
+   *     to true to request segment-level classification. AutoML Video Intelligence returns labels
+   *     and their confidence scores for the entire segment of the video that user specified in the
+   *     request configuration. The default is "true". `shot_classification` - (boolean) Set to true
+   *     to request shot-level classification. AutoML Video Intelligence determines the boundaries
+   *     for each camera shot in the entire segment of the video that user specified in the request
+   *     configuration. AutoML Video Intelligence then returns labels and their confidence scores
+   *     for each detected shot, along with the start and end time of the shot. WARNING: Model
+   *     evaluation is not done for this classification type, the quality of it depends on training
+   *     data, but there are no metrics provided to describe that quality. The default is "false".
+   *     `1s_interval_classification` - (boolean) Set to true to request classification for a video
+   *     at one-second intervals. AutoML Video Intelligence returns labels and their confidence
+   *     scores for each second of the entire segment of the video that user specified in the
+   *     request configuration. WARNING: Model evaluation is not done for this classification type,
+   *     the quality of it depends on training data, but there are no metrics provided to describe
+   *     that quality. The default is "false".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation batchPredict(BatchPredictRequest request) {
-    return batchPredictCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
+      ModelName name,
+      BatchPredictInputConfig inputConfig,
+      BatchPredictOutputConfig outputConfig,
+      Map<String, String> params) {
+
+    BatchPredictRequest request =
+        BatchPredictRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setInputConfig(inputConfig)
+            .setOutputConfig(outputConfig)
+            .putAllParams(params)
+            .build();
+    return batchPredictAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -357,7 +413,153 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder().build();
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
+   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(name.toString(), inputConfig, outputConfig, params).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Name of the model requested to serve the batch prediction.
+   * @param inputConfig Required. The input configuration for batch prediction.
+   * @param outputConfig Required. The Configuration specifying where output predictions should be
+   *     written.
+   * @param params Additional domain-specific parameters for the predictions, any string must be up
+   *     to 25000 characters long.
+   *     <p>&#42; For Video Classification : `score_threshold` - (float) A value from 0.0 to 1.0.
+   *     When the model makes predictions for a video, it will only produce results that have at
+   *     least this confidence score. The default is 0.5. `segment_classification` - (boolean) Set
+   *     to true to request segment-level classification. AutoML Video Intelligence returns labels
+   *     and their confidence scores for the entire segment of the video that user specified in the
+   *     request configuration. The default is "true". `shot_classification` - (boolean) Set to true
+   *     to request shot-level classification. AutoML Video Intelligence determines the boundaries
+   *     for each camera shot in the entire segment of the video that user specified in the request
+   *     configuration. AutoML Video Intelligence then returns labels and their confidence scores
+   *     for each detected shot, along with the start and end time of the shot. WARNING: Model
+   *     evaluation is not done for this classification type, the quality of it depends on training
+   *     data, but there are no metrics provided to describe that quality. The default is "false".
+   *     `1s_interval_classification` - (boolean) Set to true to request classification for a video
+   *     at one-second intervals. AutoML Video Intelligence returns labels and their confidence
+   *     scores for each second of the entire segment of the video that user specified in the
+   *     request configuration. WARNING: Model evaluation is not done for this classification type,
+   *     the quality of it depends on training data, but there are no metrics provided to describe
+   *     that quality. The default is "false".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
+      String name,
+      BatchPredictInputConfig inputConfig,
+      BatchPredictOutputConfig outputConfig,
+      Map<String, String> params) {
+
+    BatchPredictRequest request =
+        BatchPredictRequest.newBuilder()
+            .setName(name)
+            .setInputConfig(inputConfig)
+            .setOutputConfig(outputConfig)
+            .putAllParams(params)
+            .build();
+    return batchPredictAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Perform a batch prediction. Unlike the online
+   * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
+   * be immediately available in the response. Instead, a long running operation object is returned.
+   * User can poll the operation result via
+   * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
+   * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
+   * [response][google.longrunning.Operation.response] field. Available for following ML problems:
+   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setInputConfig(inputConfig)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
+      BatchPredictRequest request) {
+    return batchPredictOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Perform a batch prediction. Unlike the online
+   * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
+   * be immediately available in the response. Instead, a long running operation object is returned.
+   * User can poll the operation result via
+   * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
+   * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
+   * [response][google.longrunning.Operation.response] field. Available for following ML problems:
+   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setInputConfig(inputConfig)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;BatchPredictResult, OperationMetadata&gt; future = predictionServiceClient.batchPredictOperationCallable().futureCall(request);
+   *   // Do something
+   *   BatchPredictResult response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationCallable() {
+    return stub.batchPredictOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Perform a batch prediction. Unlike the online
+   * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
+   * be immediately available in the response. Instead, a long running operation object is returned.
+   * User can poll the operation result via
+   * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
+   * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
+   * [response][google.longrunning.Operation.response] field. Available for following ML problems:
+   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setInputConfig(inputConfig)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
    *   ApiFuture&lt;Operation&gt; future = predictionServiceClient.batchPredictCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
