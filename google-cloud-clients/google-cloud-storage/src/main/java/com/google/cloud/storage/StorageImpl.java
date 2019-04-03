@@ -78,7 +78,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
