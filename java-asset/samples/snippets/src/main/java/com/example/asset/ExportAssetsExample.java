@@ -20,12 +20,12 @@ package com.example.asset;
 // Imports the Google Cloud client library
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.asset.v1beta1.AssetServiceClient;
-import com.google.cloud.asset.v1beta1.ExportAssetsRequest;
-import com.google.cloud.asset.v1beta1.ExportAssetsResponse;
-import com.google.cloud.asset.v1beta1.GcsDestination;
-import com.google.cloud.asset.v1beta1.OutputConfig;
-import com.google.cloud.asset.v1beta1.ProjectName;
+import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.ExportAssetsRequest;
+import com.google.cloud.asset.v1.ExportAssetsResponse;
+import com.google.cloud.asset.v1.GcsDestination;
+import com.google.cloud.asset.v1.OutputConfig;
+import com.google.cloud.asset.v1.ProjectName;
 
 public class ExportAssetsExample {
 

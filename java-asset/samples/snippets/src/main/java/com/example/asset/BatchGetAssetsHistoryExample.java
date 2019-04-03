@@ -20,12 +20,12 @@ package com.example.asset;
 // Imports the Google Cloud client library
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.asset.v1beta1.AssetServiceClient;
-import com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest;
-import com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse;
-import com.google.cloud.asset.v1beta1.ContentType;
-import com.google.cloud.asset.v1beta1.ProjectName;
-import com.google.cloud.asset.v1beta1.TimeWindow;
+import com.google.cloud.asset.v1.AssetServiceClient;
+import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
+import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
+import com.google.cloud.asset.v1.ContentType;
+import com.google.cloud.asset.v1.ProjectName;
+import com.google.cloud.asset.v1.TimeWindow;
 import java.util.Arrays;
 
 public class BatchGetAssetsHistoryExample {
