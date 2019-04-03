@@ -286,6 +286,73 @@ public class AutoMlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Updates a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   Dataset dataset = Dataset.newBuilder().build();
+   *   Dataset response = autoMlClient.updateDataset(dataset);
+   * }
+   * </code></pre>
+   *
+   * @param dataset The dataset which replaces the resource on the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Dataset updateDataset(Dataset dataset) {
+
+    UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder().setDataset(dataset).build();
+    return updateDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   Dataset dataset = Dataset.newBuilder().build();
+   *   UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder()
+   *     .setDataset(dataset)
+   *     .build();
+   *   Dataset response = autoMlClient.updateDataset(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Dataset updateDataset(UpdateDatasetRequest request) {
+    return updateDatasetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   Dataset dataset = Dataset.newBuilder().build();
+   *   UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder()
+   *     .setDataset(dataset)
+   *     .build();
+   *   ApiFuture&lt;Dataset&gt; future = autoMlClient.updateDatasetCallable().futureCall(request);
+   *   // Do something
+   *   Dataset response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
+    return stub.updateDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Gets a dataset.
    *
    * <p>Sample code:
@@ -1457,18 +1524,20 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Operation response = autoMlClient.deployModel(name);
+   *   autoMlClient.deployModelAsync(name).get();
    * }
    * </code></pre>
    *
    * @param name Resource name of the model to deploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deployModel(ModelName name) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(ModelName name) {
 
     DeployModelRequest request =
         DeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deployModel(request);
+    return deployModelAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1490,17 +1559,19 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Operation response = autoMlClient.deployModel(name.toString());
+   *   autoMlClient.deployModelAsync(name.toString()).get();
    * }
    * </code></pre>
    *
    * @param name Resource name of the model to deploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deployModel(String name) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(String name) {
 
     DeployModelRequest request = DeployModelRequest.newBuilder().setName(name).build();
-    return deployModel(request);
+    return deployModelAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1525,15 +1596,52 @@ public class AutoMlClient implements BackgroundResource {
    *   DeployModelRequest request = DeployModelRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Operation response = autoMlClient.deployModel(request);
+   *   autoMlClient.deployModelAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation deployModel(DeployModelRequest request) {
-    return deployModelCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(
+      DeployModelRequest request) {
+    return deployModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
+   * effect. Deploying with different parametrs (as e.g. changing
+   *
+   * <p>[node_number][google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.node_number]
+   * ) will update the deployment without pausing the model's availability.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
+   * domains manage deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeployModelRequest request = DeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deployModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationCallable() {
+    return stub.deployModelOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1560,7 +1668,7 @@ public class AutoMlClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = autoMlClient.deployModelCallable().futureCall(request);
    *   // Do something
-   *   Operation response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1583,18 +1691,20 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Operation response = autoMlClient.undeployModel(name);
+   *   autoMlClient.undeployModelAsync(name).get();
    * }
    * </code></pre>
    *
    * @param name Resource name of the model to undeploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation undeployModel(ModelName name) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(ModelName name) {
 
     UndeployModelRequest request =
         UndeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return undeployModel(request);
+    return undeployModelAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1612,17 +1722,19 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Operation response = autoMlClient.undeployModel(name.toString());
+   *   autoMlClient.undeployModelAsync(name.toString()).get();
    * }
    * </code></pre>
    *
    * @param name Resource name of the model to undeploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation undeployModel(String name) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(String name) {
 
     UndeployModelRequest request = UndeployModelRequest.newBuilder().setName(name).build();
-    return undeployModel(request);
+    return undeployModelAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1643,15 +1755,48 @@ public class AutoMlClient implements BackgroundResource {
    *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Operation response = autoMlClient.undeployModel(request);
+   *   autoMlClient.undeployModelAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation undeployModel(UndeployModelRequest request) {
-    return undeployModelCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(
+      UndeployModelRequest request) {
+    return undeployModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Undeploys a model. If the model is not deployed this method has no effect.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection and Tables; all other
+   * domains manage deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.undeployModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationCallable() {
+    return stub.undeployModelOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1674,7 +1819,7 @@ public class AutoMlClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = autoMlClient.undeployModelCallable().futureCall(request);
    *   // Do something
-   *   Operation response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1774,6 +1919,211 @@ public class AutoMlClient implements BackgroundResource {
   public final UnaryCallable<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationCallable() {
     return stub.getModelEvaluationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
+   * model is considered export-able if and only if it has an export format defined for it in
+   *
+   * <p>[ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+   *   ExportModelRequest request = ExportModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   autoMlClient.exportModelAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> exportModelAsync(
+      ExportModelRequest request) {
+    return exportModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
+   * model is considered export-able if and only if it has an export format defined for it in
+   *
+   * <p>[ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+   *   ExportModelRequest request = ExportModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.exportModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationCallable() {
+    return stub.exportModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
+   * model is considered export-able if and only if it has an export format defined for it in
+   *
+   * <p>[ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+   *   ExportModelRequest request = ExportModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.exportModelCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
+    return stub.exportModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports examples on which the model was evaluated (i.e. which were in the TEST set of the
+   * dataset the model was created from), together with their ground truth annotations and the
+   * annotations created (predicted) by the model. The examples, ground truth and predictions are
+   * exported in the state they were at the moment the model was evaluated.
+   *
+   * <p>This export is available only for 30 days since the model evaluation is created.
+   *
+   * <p>Currently only available for Tables.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ExportEvaluatedExamplesOutputConfig outputConfig = ExportEvaluatedExamplesOutputConfig.newBuilder().build();
+   *   ExportEvaluatedExamplesRequest request = ExportEvaluatedExamplesRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   autoMlClient.exportEvaluatedExamplesAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> exportEvaluatedExamplesAsync(
+      ExportEvaluatedExamplesRequest request) {
+    return exportEvaluatedExamplesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports examples on which the model was evaluated (i.e. which were in the TEST set of the
+   * dataset the model was created from), together with their ground truth annotations and the
+   * annotations created (predicted) by the model. The examples, ground truth and predictions are
+   * exported in the state they were at the moment the model was evaluated.
+   *
+   * <p>This export is available only for 30 days since the model evaluation is created.
+   *
+   * <p>Currently only available for Tables.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ExportEvaluatedExamplesOutputConfig outputConfig = ExportEvaluatedExamplesOutputConfig.newBuilder().build();
+   *   ExportEvaluatedExamplesRequest request = ExportEvaluatedExamplesRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.exportEvaluatedExamplesOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
+      exportEvaluatedExamplesOperationCallable() {
+    return stub.exportEvaluatedExamplesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports examples on which the model was evaluated (i.e. which were in the TEST set of the
+   * dataset the model was created from), together with their ground truth annotations and the
+   * annotations created (predicted) by the model. The examples, ground truth and predictions are
+   * exported in the state they were at the moment the model was evaluated.
+   *
+   * <p>This export is available only for 30 days since the model evaluation is created.
+   *
+   * <p>Currently only available for Tables.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ExportEvaluatedExamplesOutputConfig outputConfig = ExportEvaluatedExamplesOutputConfig.newBuilder().build();
+   *   ExportEvaluatedExamplesRequest request = ExportEvaluatedExamplesRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.exportEvaluatedExamplesCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesCallable() {
+    return stub.exportEvaluatedExamplesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1913,41 +2263,27 @@ public class AutoMlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a dataset.
+   * Gets an annotation spec.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder().build();
-   *   Dataset response = autoMlClient.updateDataset(request);
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   AnnotationSpec response = autoMlClient.getAnnotationSpec(name);
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param name The resource name of the annotation spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset updateDataset(UpdateDatasetRequest request) {
-    return updateDatasetCallable().call(request);
-  }
+  public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates a dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder().build();
-   *   ApiFuture&lt;Dataset&gt; future = autoMlClient.updateDatasetCallable().futureCall(request);
-   *   // Do something
-   *   Dataset response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
-    return stub.updateDatasetCallable();
+    GetAnnotationSpecRequest request =
+        GetAnnotationSpecRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAnnotationSpec(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1958,7 +2294,32 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder().build();
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   AnnotationSpec response = autoMlClient.getAnnotationSpec(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the annotation spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotationSpec getAnnotationSpec(String name) {
+
+    GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder().setName(name).build();
+    return getAnnotationSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an annotation spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   AnnotationSpec response = autoMlClient.getAnnotationSpec(request);
    * }
    * </code></pre>
@@ -1978,7 +2339,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder().build();
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;AnnotationSpec&gt; future = autoMlClient.getAnnotationSpecCallable().futureCall(request);
    *   // Do something
    *   AnnotationSpec response = future.get();
@@ -1997,7 +2361,55 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   GetTableSpecRequest request = GetTableSpecRequest.newBuilder().build();
+   *   TableSpecName name = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   TableSpec response = autoMlClient.getTableSpec(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the table spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TableSpec getTableSpec(TableSpecName name) {
+
+    GetTableSpecRequest request =
+        GetTableSpecRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTableSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a table spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   TableSpecName name = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   TableSpec response = autoMlClient.getTableSpec(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the table spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TableSpec getTableSpec(String name) {
+
+    GetTableSpecRequest request = GetTableSpecRequest.newBuilder().setName(name).build();
+    return getTableSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a table spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   TableSpecName name = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   GetTableSpecRequest request = GetTableSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   TableSpec response = autoMlClient.getTableSpec(request);
    * }
    * </code></pre>
@@ -2017,7 +2429,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   GetTableSpecRequest request = GetTableSpecRequest.newBuilder().build();
+   *   TableSpecName name = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   GetTableSpecRequest request = GetTableSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;TableSpec&gt; future = autoMlClient.getTableSpecCallable().futureCall(request);
    *   // Do something
    *   TableSpec response = future.get();
@@ -2036,7 +2451,59 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder().build();
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   for (TableSpec element : autoMlClient.listTableSpecs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent The resource name of the dataset to list table specs from.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTableSpecsPagedResponse listTableSpecs(DatasetName parent) {
+    ListTableSpecsRequest request =
+        ListTableSpecsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTableSpecs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists table specs in a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   for (TableSpec element : autoMlClient.listTableSpecs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent The resource name of the dataset to list table specs from.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTableSpecsPagedResponse listTableSpecs(String parent) {
+    ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder().setParent(parent).build();
+    return listTableSpecs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists table specs in a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   for (TableSpec element : autoMlClient.listTableSpecs(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2058,7 +2525,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder().build();
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ApiFuture&lt;ListTableSpecsPagedResponse&gt; future = autoMlClient.listTableSpecsPagedCallable().futureCall(request);
    *   // Do something
    *   for (TableSpec element : future.get().iterateAll()) {
@@ -2080,7 +2550,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder().build();
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   ListTableSpecsRequest request = ListTableSpecsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   while (true) {
    *     ListTableSpecsResponse response = autoMlClient.listTableSpecsCallable().call(request);
    *     for (TableSpec element : response.getTableSpecsList()) {
@@ -2109,7 +2582,33 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   UpdateTableSpecRequest request = UpdateTableSpecRequest.newBuilder().build();
+   *   TableSpec tableSpec = TableSpec.newBuilder().build();
+   *   TableSpec response = autoMlClient.updateTableSpec(tableSpec);
+   * }
+   * </code></pre>
+   *
+   * @param tableSpec The table spec which replaces the resource on the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TableSpec updateTableSpec(TableSpec tableSpec) {
+
+    UpdateTableSpecRequest request =
+        UpdateTableSpecRequest.newBuilder().setTableSpec(tableSpec).build();
+    return updateTableSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a table spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   TableSpec tableSpec = TableSpec.newBuilder().build();
+   *   UpdateTableSpecRequest request = UpdateTableSpecRequest.newBuilder()
+   *     .setTableSpec(tableSpec)
+   *     .build();
    *   TableSpec response = autoMlClient.updateTableSpec(request);
    * }
    * </code></pre>
@@ -2129,7 +2628,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   UpdateTableSpecRequest request = UpdateTableSpecRequest.newBuilder().build();
+   *   TableSpec tableSpec = TableSpec.newBuilder().build();
+   *   UpdateTableSpecRequest request = UpdateTableSpecRequest.newBuilder()
+   *     .setTableSpec(tableSpec)
+   *     .build();
    *   ApiFuture&lt;TableSpec&gt; future = autoMlClient.updateTableSpecCallable().futureCall(request);
    *   // Do something
    *   TableSpec response = future.get();
@@ -2148,7 +2650,55 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   GetColumnSpecRequest request = GetColumnSpecRequest.newBuilder().build();
+   *   ColumnSpecName name = ColumnSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]");
+   *   ColumnSpec response = autoMlClient.getColumnSpec(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the column spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ColumnSpec getColumnSpec(ColumnSpecName name) {
+
+    GetColumnSpecRequest request =
+        GetColumnSpecRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getColumnSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a column spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ColumnSpecName name = ColumnSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]");
+   *   ColumnSpec response = autoMlClient.getColumnSpec(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the column spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ColumnSpec getColumnSpec(String name) {
+
+    GetColumnSpecRequest request = GetColumnSpecRequest.newBuilder().setName(name).build();
+    return getColumnSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a column spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ColumnSpecName name = ColumnSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]");
+   *   GetColumnSpecRequest request = GetColumnSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ColumnSpec response = autoMlClient.getColumnSpec(request);
    * }
    * </code></pre>
@@ -2168,7 +2718,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   GetColumnSpecRequest request = GetColumnSpecRequest.newBuilder().build();
+   *   ColumnSpecName name = ColumnSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]");
+   *   GetColumnSpecRequest request = GetColumnSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;ColumnSpec&gt; future = autoMlClient.getColumnSpecCallable().futureCall(request);
    *   // Do something
    *   ColumnSpec response = future.get();
@@ -2187,7 +2740,59 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder().build();
+   *   TableSpecName parent = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   for (ColumnSpec element : autoMlClient.listColumnSpecs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent The resource name of the table spec to list column specs from.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListColumnSpecsPagedResponse listColumnSpecs(TableSpecName parent) {
+    ListColumnSpecsRequest request =
+        ListColumnSpecsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listColumnSpecs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists column specs in a table spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   TableSpecName parent = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   for (ColumnSpec element : autoMlClient.listColumnSpecs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent The resource name of the table spec to list column specs from.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListColumnSpecsPagedResponse listColumnSpecs(String parent) {
+    ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder().setParent(parent).build();
+    return listColumnSpecs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists column specs in a table spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   TableSpecName parent = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   for (ColumnSpec element : autoMlClient.listColumnSpecs(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2209,7 +2814,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder().build();
+   *   TableSpecName parent = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ApiFuture&lt;ListColumnSpecsPagedResponse&gt; future = autoMlClient.listColumnSpecsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ColumnSpec element : future.get().iterateAll()) {
@@ -2231,7 +2839,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder().build();
+   *   TableSpecName parent = TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
+   *   ListColumnSpecsRequest request = ListColumnSpecsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   while (true) {
    *     ListColumnSpecsResponse response = autoMlClient.listColumnSpecsCallable().call(request);
    *     for (ColumnSpec element : response.getColumnSpecsList()) {
@@ -2260,7 +2871,33 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   UpdateColumnSpecRequest request = UpdateColumnSpecRequest.newBuilder().build();
+   *   ColumnSpec columnSpec = ColumnSpec.newBuilder().build();
+   *   ColumnSpec response = autoMlClient.updateColumnSpec(columnSpec);
+   * }
+   * </code></pre>
+   *
+   * @param columnSpec The column spec which replaces the resource on the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ColumnSpec updateColumnSpec(ColumnSpec columnSpec) {
+
+    UpdateColumnSpecRequest request =
+        UpdateColumnSpecRequest.newBuilder().setColumnSpec(columnSpec).build();
+    return updateColumnSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a column spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ColumnSpec columnSpec = ColumnSpec.newBuilder().build();
+   *   UpdateColumnSpecRequest request = UpdateColumnSpecRequest.newBuilder()
+   *     .setColumnSpec(columnSpec)
+   *     .build();
    *   ColumnSpec response = autoMlClient.updateColumnSpec(request);
    * }
    * </code></pre>
@@ -2280,7 +2917,10 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   UpdateColumnSpecRequest request = UpdateColumnSpecRequest.newBuilder().build();
+   *   ColumnSpec columnSpec = ColumnSpec.newBuilder().build();
+   *   UpdateColumnSpecRequest request = UpdateColumnSpecRequest.newBuilder()
+   *     .setColumnSpec(columnSpec)
+   *     .build();
    *   ApiFuture&lt;ColumnSpec&gt; future = autoMlClient.updateColumnSpecCallable().futureCall(request);
    *   // Do something
    *   ColumnSpec response = future.get();
@@ -2289,117 +2929,6 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecCallable() {
     return stub.updateColumnSpecCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
-   * model is considered export-able if and only if it has an export format defined for it in
-   *
-   * <p>[ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
-   *
-   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
-   * when it completes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ExportModelRequest request = ExportModelRequest.newBuilder().build();
-   *   Operation response = autoMlClient.exportModel(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation exportModel(ExportModelRequest request) {
-    return exportModelCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
-   * model is considered export-able if and only if it has an export format defined for it in
-   *
-   * <p>[ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
-   *
-   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
-   * when it completes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ExportModelRequest request = ExportModelRequest.newBuilder().build();
-   *   ApiFuture&lt;Operation&gt; future = autoMlClient.exportModelCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
-    return stub.exportModelCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports examples on which the model was evaluated (i.e. which were in the TEST set of the
-   * dataset the model was created from), together with their ground truth annotations and the
-   * annotations created (predicted) by the model. The examples, ground truth and predictions are
-   * exported in the state they were at the moment the model was evaluated.
-   *
-   * <p>This export is available only for 30 days since the model evaluation is created.
-   *
-   * <p>Currently only available for Tables.
-   *
-   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
-   * when it completes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ExportEvaluatedExamplesRequest request = ExportEvaluatedExamplesRequest.newBuilder().build();
-   *   Operation response = autoMlClient.exportEvaluatedExamples(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation exportEvaluatedExamples(ExportEvaluatedExamplesRequest request) {
-    return exportEvaluatedExamplesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports examples on which the model was evaluated (i.e. which were in the TEST set of the
-   * dataset the model was created from), together with their ground truth annotations and the
-   * annotations created (predicted) by the model. The examples, ground truth and predictions are
-   * exported in the state they were at the moment the model was evaluated.
-   *
-   * <p>This export is available only for 30 days since the model evaluation is created.
-   *
-   * <p>Currently only available for Tables.
-   *
-   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
-   * when it completes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ExportEvaluatedExamplesRequest request = ExportEvaluatedExamplesRequest.newBuilder().build();
-   *   ApiFuture&lt;Operation&gt; future = autoMlClient.exportEvaluatedExamplesCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
-      exportEvaluatedExamplesCallable() {
-    return stub.exportEvaluatedExamplesCallable();
   }
 
   @Override

@@ -23,14 +23,20 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.automl.v1beta1.BatchPredictRequest;
+import com.google.cloud.automl.v1beta1.BatchPredictResult;
+import com.google.cloud.automl.v1beta1.OperationMetadata;
 import com.google.cloud.automl.v1beta1.PredictRequest;
 import com.google.cloud.automl.v1beta1.PredictResponse;
 import com.google.common.collect.ImmutableList;
@@ -78,6 +84,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<BatchPredictRequest, Operation> batchPredictSettings;
+  private final OperationCallSettings<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationSettings;
 
   /** Returns the object with the settings used for calls to predict. */
   public UnaryCallSettings<PredictRequest, PredictResponse> predictSettings() {
@@ -87,6 +95,13 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Returns the object with the settings used for calls to batchPredict. */
   public UnaryCallSettings<BatchPredictRequest, Operation> batchPredictSettings() {
     return batchPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchPredict. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationSettings() {
+    return batchPredictOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -159,6 +174,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     predictSettings = settingsBuilder.predictSettings().build();
     batchPredictSettings = settingsBuilder.batchPredictSettings().build();
+    batchPredictOperationSettings = settingsBuilder.batchPredictOperationSettings().build();
   }
 
   /** Builder for PredictionServiceStubSettings. */
@@ -167,6 +183,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<BatchPredictRequest, Operation> batchPredictSettings;
+    private final OperationCallSettings.Builder<
+            BatchPredictRequest, BatchPredictResult, OperationMetadata>
+        batchPredictOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -213,6 +232,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       batchPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      batchPredictOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings, batchPredictSettings);
 
@@ -239,6 +260,29 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           .batchPredictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .batchPredictOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchPredictRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BatchPredictResult.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -248,6 +292,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = settings.predictSettings.toBuilder();
       batchPredictSettings = settings.batchPredictSettings.toBuilder();
+      batchPredictOperationSettings = settings.batchPredictOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings, batchPredictSettings);
@@ -277,6 +322,14 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     /** Returns the builder for the settings used for calls to batchPredict. */
     public UnaryCallSettings.Builder<BatchPredictRequest, Operation> batchPredictSettings() {
       return batchPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchPredict. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+        batchPredictOperationSettings() {
+      return batchPredictOperationSettings;
     }
 
     @Override

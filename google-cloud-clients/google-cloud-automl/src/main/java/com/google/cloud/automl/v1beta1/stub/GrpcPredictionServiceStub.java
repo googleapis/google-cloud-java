@@ -21,13 +21,17 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1beta1.BatchPredictRequest;
+import com.google.cloud.automl.v1beta1.BatchPredictResult;
+import com.google.cloud.automl.v1beta1.OperationMetadata;
 import com.google.cloud.automl.v1beta1.PredictRequest;
 import com.google.cloud.automl.v1beta1.PredictResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -62,9 +66,12 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .build();
 
   private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable;
+  private final OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -106,6 +113,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<PredictRequest, PredictResponse> predictTransportSettings =
         GrpcCallSettings.<PredictRequest, PredictResponse>newBuilder()
@@ -140,12 +148,29 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.batchPredictCallable =
         callableFactory.createUnaryCallable(
             batchPredictTransportSettings, settings.batchPredictSettings(), clientContext);
+    this.batchPredictOperationCallable =
+        callableFactory.createOperationCallable(
+            batchPredictTransportSettings,
+            settings.batchPredictOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return predictCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationCallable() {
+    return batchPredictOperationCallable;
   }
 
   public UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {

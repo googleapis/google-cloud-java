@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.automl.v1beta1.stub.PredictionServiceStubSettings;
@@ -68,6 +69,14 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   /** Returns the object with the settings used for calls to batchPredict. */
   public UnaryCallSettings<BatchPredictRequest, Operation> batchPredictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).batchPredictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchPredict. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).batchPredictOperationSettings();
   }
 
   public static final PredictionServiceSettings create(PredictionServiceStubSettings stub)
@@ -175,6 +184,14 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to batchPredict. */
     public UnaryCallSettings.Builder<BatchPredictRequest, Operation> batchPredictSettings() {
       return getStubSettingsBuilder().batchPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchPredict. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+        batchPredictOperationSettings() {
+      return getStubSettingsBuilder().batchPredictOperationSettings();
     }
 
     @Override

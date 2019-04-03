@@ -19,10 +19,7 @@ public interface ModelExportOutputConfigOrBuilder
    *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
    *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
    *  will be created. Inside the model and any of its supporting files
-   *  will be written, as described
-   * [here](https:
-   * //cloud.google.com/vision/automl/alpha/d
-   * // ocs/predict#deployment_to_devices).
+   *  will be written.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -39,10 +36,7 @@ public interface ModelExportOutputConfigOrBuilder
    *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
    *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
    *  will be created. Inside the model and any of its supporting files
-   *  will be written, as described
-   * [here](https:
-   * //cloud.google.com/vision/automl/alpha/d
-   * // ocs/predict#deployment_to_devices).
+   *  will be written.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -59,10 +53,7 @@ public interface ModelExportOutputConfigOrBuilder
    *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
    *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
    *  will be created. Inside the model and any of its supporting files
-   *  will be written, as described
-   * [here](https:
-   * //cloud.google.com/vision/automl/alpha/d
-   * // ocs/predict#deployment_to_devices).
+   *  will be written.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsDestination gcs_destination = 1;</code>
