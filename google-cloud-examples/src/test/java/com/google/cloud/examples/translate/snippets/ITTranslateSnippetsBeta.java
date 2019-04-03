@@ -28,41 +28,22 @@ import com.google.cloud.translate.v3beta1.BatchTranslateResponse;
 import com.google.cloud.translate.v3beta1.DeleteGlossaryResponse;
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.TranslateTextResponse;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ITTranslateSnippetsbeta {
+public class ITTranslateSnippetsBeta {
 
   private static final String projectId = System.getenv("PROJECT_ID");
   private static final String glossaryName = "glossary-testing";
-
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
-
-  @Before
-  public void setUp() {
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-  }
 
   @Test
   public void test1_testListSupportedLanguages() {
 
     assertTrue(
         10
-            <= TranslateSnippetsbeta.listSupportedLanguages(projectId, "global")
+            <= TranslateSnippetsBeta.listSupportedLanguages(projectId, "global")
                 .getLanguagesList()
                 .size());
   }
@@ -72,7 +53,7 @@ public class ITTranslateSnippetsbeta {
 
     assertTrue(
         0
-            < TranslateSnippetsbeta.listSupportedLanguagesWithTarget(projectId, "global")
+            < TranslateSnippetsBeta.listSupportedLanguagesWithTarget(projectId, "global")
                 .getLanguagesList()
                 .size());
   }
@@ -82,7 +63,7 @@ public class ITTranslateSnippetsbeta {
 
     assertEquals(
         "is",
-        TranslateSnippetsbeta.detectLanguageOfText(projectId, "global", "Hæ sæta")
+        TranslateSnippetsBeta.detectLanguageOfText(projectId, "global", "Hæ sæta")
             .getLanguages(0)
             .getLanguageCode());
   }
@@ -92,7 +73,7 @@ public class ITTranslateSnippetsbeta {
 
     assertEquals(
         "Здраво Свете!",
-        TranslateSnippetsbeta.translateText(projectId, "global", "Hello World!", "en", "sr")
+        TranslateSnippetsBeta.translateText(projectId, "global", "Hello World!", "en", "sr")
             .getTranslationsList()
             .get(0)
             .getTranslatedText());
@@ -102,7 +83,7 @@ public class ITTranslateSnippetsbeta {
   public void test1_testBatchTranslateText() {
 
     BatchTranslateResponse response =
-        TranslateSnippetsbeta.batchTranslateText(
+        TranslateSnippetsBeta.batchTranslateText(
             projectId,
             "us-central1",
             "gs://cloud-samples-data/translation/text.txt",
@@ -138,7 +119,7 @@ public class ITTranslateSnippetsbeta {
   @Test
   public void test1_testCreateGlossary() {
     Glossary response =
-        TranslateSnippetsbeta.createGlossary(
+        TranslateSnippetsBeta.createGlossary(
             projectId,
             "us-central1",
             glossaryName,
@@ -150,7 +131,7 @@ public class ITTranslateSnippetsbeta {
   public void test2_testListGlossary() {
     assertEquals(
         "projects/" + projectId + "/locations/us-central1/glossaries/glossary-testing",
-        TranslateSnippetsbeta.listGlossary(projectId, "us-central1", "")
+        TranslateSnippetsBeta.listGlossary(projectId, "us-central1", "")
             .iterateAll()
             .iterator()
             .next()
@@ -161,7 +142,7 @@ public class ITTranslateSnippetsbeta {
   public void test2_testGetGlossary() {
 
     Glossary response =
-        TranslateSnippetsbeta.getGlossary(projectId, "us-central1", "glossary-testing");
+        TranslateSnippetsBeta.getGlossary(projectId, "us-central1", "glossary-testing");
     assertTrue(response.toString(), response.toString().contains("glossary-testing"));
   }
 
@@ -169,7 +150,7 @@ public class ITTranslateSnippetsbeta {
   public void test2_testTranslateTextWithGlossary() {
 
     TranslateTextResponse response =
-        TranslateSnippetsbeta.translateTextWithGlossary(
+        TranslateSnippetsBeta.translateTextWithGlossary(
             projectId, "us-central1", "glossary-testing", "directions", "en", "es");
     assertEquals("direcciones", response.getTranslationsList().get(0).getTranslatedText());
   }
@@ -178,7 +159,7 @@ public class ITTranslateSnippetsbeta {
   public void test3_testDeleteGlossary() {
 
     DeleteGlossaryResponse response =
-        TranslateSnippetsbeta.deleteGlossary(projectId, "us-central1", "glossary-testing");
+        TranslateSnippetsBeta.deleteGlossary(projectId, "us-central1", "glossary-testing");
     assertTrue(response.toString(), response.toString().contains("glossary-testing"));
   }
 }

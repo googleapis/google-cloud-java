@@ -44,8 +44,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /** Snippets for the beta features */
-public class TranslateSnippetsbeta {
-  private TranslateSnippetsbeta() {}
+public class TranslateSnippetsBeta {
+  private TranslateSnippetsBeta() {}
 
   /**
    * Lists all the supported language codes.
