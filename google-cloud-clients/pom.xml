@@ -461,6 +461,7 @@
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
+    <module>google-cloud-webrisk</module>
     <module>google-cloud-websecurityscanner</module>
   </modules>
   <pluginRepositories>
