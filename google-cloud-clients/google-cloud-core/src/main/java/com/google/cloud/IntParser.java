@@ -55,7 +55,7 @@ class IntParser {
   }
 
   private static int parseDigit(char c, String input) {
-    switch(c) {
+    switch (c) {
       case '0':
         return 0;
       case '1':
