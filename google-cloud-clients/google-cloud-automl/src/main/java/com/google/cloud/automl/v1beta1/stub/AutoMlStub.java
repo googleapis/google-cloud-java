@@ -85,6 +85,10 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createDatasetCallable()");
   }
 
+  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
+  }
+
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: getDatasetCallable()");
   }
@@ -159,8 +163,20 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployModelOperationCallable()");
+  }
+
   public UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
     throw new UnsupportedOperationException("Not implemented: deployModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: undeployModelOperationCallable()");
   }
 
   public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
@@ -171,6 +187,28 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getModelEvaluationCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelOperationCallable()");
+  }
+
+  public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
+      exportEvaluatedExamplesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportEvaluatedExamplesOperationCallable()");
+  }
+
+  public UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportEvaluatedExamplesCallable()");
+  }
+
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
       listModelEvaluationsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationsPagedCallable()");
@@ -179,10 +217,6 @@ public abstract class AutoMlStub implements BackgroundResource {
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationsCallable()");
-  }
-
-  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
   }
 
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
@@ -221,15 +255,6 @@ public abstract class AutoMlStub implements BackgroundResource {
 
   public UnaryCallable<UpdateColumnSpecRequest, ColumnSpec> updateColumnSpecCallable() {
     throw new UnsupportedOperationException("Not implemented: updateColumnSpecCallable()");
-  }
-
-  public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
-  }
-
-  public UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
-      exportEvaluatedExamplesCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportEvaluatedExamplesCallable()");
   }
 
   @Override

@@ -17,11 +17,15 @@ package com.google.cloud.automl.v1beta1.stub;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1beta1.BatchPredictRequest;
+import com.google.cloud.automl.v1beta1.BatchPredictResult;
+import com.google.cloud.automl.v1beta1.OperationMetadata;
 import com.google.cloud.automl.v1beta1.PredictRequest;
 import com.google.cloud.automl.v1beta1.PredictResponse;
 import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -34,8 +38,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class PredictionServiceStub implements BackgroundResource {
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     throw new UnsupportedOperationException("Not implemented: predictCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
+      batchPredictOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchPredictOperationCallable()");
   }
 
   public UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
