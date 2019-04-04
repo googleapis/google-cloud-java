@@ -31,6 +31,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.DateTimeException;
 
 /** Unit tests for {@link com.google.cloud.Timestamp}. */
 @RunWith(JUnit4.class)
@@ -212,22 +213,50 @@ public class TimestampTest {
         .isEqualTo(Timestamp.ofTimeMicroseconds(20L));
     assertThat(Timestamp.parseTimestamp("1970-01-01T00:00:00.00012340Z"))
         .isEqualTo(Timestamp.ofTimeSecondsAndNanos(0, 123400));
+    assertThat(Timestamp.parseTimestamp("2004-02-29T00:00:00Z")).isNotNull(); // normal leap year
+    assertThat(Timestamp.parseTimestamp("2000-02-29T00:00:00Z")).isNotNull(); // special leap year
 
     parseInvalidTimestamp("");
-    parseInvalidTimestamp("0001-01-01 00:00:00Z");
-    parseInvalidTimestamp("0001-1-1 00:00:00Z");
-    parseInvalidTimestamp("0001-01-01T00:00:00.Z");
+    parseInvalidTimestamp("TEST");
+    parseInvalidTimestamp("0001-01-01 00:00:00Z"); // missing 'T'
+    parseInvalidTimestamp("0001-1-1 00:00:00Z"); // missing 0
+    parseInvalidTimestamp("0001-01-01T00:00:00.Z"); // missing digits after .s
     parseInvalidTimestamp("0001-01-01T00:00:00.1234567890Z"); // too long
-    parseInvalidTimestamp("0001-01-01T00:00Z");
+    parseInvalidTimestamp("0001-01-01T00:00Z"); // missing seconds
+    parseInvalidTimestamp("10000-01-01T00:00Z"); // year too long
+    parseTimestampOutOfRange("0000-01-01T00:00:00.1Z");
+    parseValidFormatInvalidDate("0001-00-01T00:00:00.1Z"); // month is zero
+    parseValidFormatInvalidDate("0001-01-00T00:00:00.1Z"); // day is zero
+    parseValidFormatInvalidDate("0001-13-01T00:00:00.1Z"); // invalid month
+    parseValidFormatInvalidDate("0001-01-32T00:00:00.1Z"); // invalid day
+    parseValidFormatInvalidLeapYear("0001-02-29T00:00:00.1Z"); // not a leap year
+    parseValidFormatInvalidLeapYear("1900-02-29T00:00:00.1Z"); // not a leap year
   }
 
-  private void parseInvalidTimestamp(String input) {
+  private void parseInvalid(String input, Class<? extends Exception> exception, String msg) {
     try {
       Timestamp.parseTimestamp(input);
       fail("Expected exception");
-    } catch (IllegalArgumentException e) {
-      assertThat(e.getMessage()).contains("Invalid timestamp");
+    } catch (Exception e) {
+      assertThat(e.getClass()).isEqualTo(exception);
+      assertThat(e.getMessage()).contains(msg);
     }
+  }
+
+  private void parseInvalidTimestamp(String input) {
+    parseInvalid(input, IllegalArgumentException.class, "Invalid timestamp");
+  }
+
+  private void parseTimestampOutOfRange(String input) {
+    parseInvalid(input, IllegalArgumentException.class, "timestamp out of range");
+  }
+
+  private void parseValidFormatInvalidDate(String input) {
+    parseInvalid(input, DateTimeException.class, "Invalid value");
+  }
+
+  private void parseValidFormatInvalidLeapYear(String input) {
+    parseInvalid(input, DateTimeException.class, "not a leap year");
   }
 
   @Test
