@@ -116,7 +116,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasDocument() {
     return document_ != null;
@@ -128,7 +130,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1.Document getDocument() {
     return document_ == null
@@ -142,7 +146,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
@@ -536,7 +542,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
@@ -548,7 +556,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.Document getDocument() {
       if (documentBuilder_ == null) {
@@ -566,7 +576,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.language.v1.Document value) {
       if (documentBuilder_ == null) {
@@ -588,7 +600,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.language.v1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
@@ -607,7 +621,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDocument(com.google.cloud.language.v1.Document value) {
       if (documentBuilder_ == null) {
@@ -633,7 +649,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
@@ -653,7 +671,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.Document.Builder getDocumentBuilder() {
 
@@ -667,7 +687,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
@@ -685,7 +707,9 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.Document,
