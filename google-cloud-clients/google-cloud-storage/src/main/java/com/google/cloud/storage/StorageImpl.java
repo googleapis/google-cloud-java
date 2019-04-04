@@ -52,6 +52,7 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -609,6 +610,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (SignUrlOption option : options) {
       optionMap.put(option.getOption(), option.getValue());
     }
+
+    boolean isV4 =
+        SignUrlOption.SignatureVersion.V4.equals(
+            optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+
     ServiceAccountSigner credentials =
         (ServiceAccountSigner) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
     if (credentials == null) {
@@ -619,15 +625,19 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     long expiration =
-        TimeUnit.SECONDS.convert(
-            getOptions().getClock().millisTime() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
+        isV4
+            ? TimeUnit.SECONDS.convert(unit.toMillis(duration), TimeUnit.MILLISECONDS)
+            : TimeUnit.SECONDS.convert(
+                getOptions().getClock().millisTime() + unit.toMillis(duration),
+                TimeUnit.MILLISECONDS);
 
     StringBuilder stPath = new StringBuilder();
     if (!blobInfo.getBucket().startsWith(PATH_DELIMITER)) {
       stPath.append(PATH_DELIMITER);
     }
     stPath.append(blobInfo.getBucket());
-    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)) {
+    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)
+        && !Strings.isNullOrEmpty(blobInfo.getName())) {
       stPath.append(PATH_DELIMITER);
     }
     if (blobInfo.getName().startsWith(PATH_DELIMITER)) {
@@ -635,14 +645,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
-    stPath.append(escapedName.replace("?", "%3F"));
+    stPath.append(escapedName.replace("?", "%3F").replace(";", "%3B"));
 
     URI path = URI.create(stPath.toString());
 
     try {
-      SignatureInfo signatureInfo = buildSignatureInfo(optionMap, blobInfo, expiration, path);
-      byte[] signatureBytes =
-          credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
+      SignatureInfo signatureInfo =
+          buildSignatureInfo(optionMap, blobInfo, expiration, path, credentials.getAccount());
+      String unsignedPayload = signatureInfo.constructUnsignedPayload();
+      byte[] signatureBytes = credentials.sign(unsignedPayload.getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder();
       if (optionMap.get(SignUrlOption.Option.HOST_NAME) == null) {
         stBuilder.append(STORAGE_XML_HOST_NAME).append(path);
@@ -650,11 +661,20 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
       }
 
-      String signature =
-          URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
-      stBuilder.append("?GoogleAccessId=").append(credentials.getAccount());
-      stBuilder.append("&Expires=").append(expiration);
-      stBuilder.append("&Signature=").append(signature);
+      if (isV4) {
+        BaseEncoding encoding = BaseEncoding.base16().lowerCase();
+        String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
+        stBuilder.append("?");
+        stBuilder.append(signatureInfo.constructV4QueryString());
+        stBuilder.append("&X-Goog-Signature=").append(signature);
+      } else {
+        BaseEncoding encoding = BaseEncoding.base64();
+        String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
+        stBuilder.append("?");
+        stBuilder.append("GoogleAccessId=").append(credentials.getAccount());
+        stBuilder.append("&Expires=").append(expiration);
+        stBuilder.append("&Signature=").append(signature);
+      }
 
       return new URL(stBuilder.toString());
 
@@ -670,10 +690,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
    * @param blobInfo the blob info
    * @param expiration the expiration in seconds
    * @param path the resource URI
+   * @param accountEmail the account email
    * @return signature info
    */
   private SignatureInfo buildSignatureInfo(
-      Map<SignUrlOption.Option, Object> optionMap, BlobInfo blobInfo, long expiration, URI path) {
+      Map<SignUrlOption.Option, Object> optionMap,
+      BlobInfo blobInfo,
+      long expiration,
+      URI path,
+      String accountEmail) {
 
     HttpMethod httpVerb =
         optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)
@@ -692,6 +717,13 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
       signatureInfoBuilder.setContentType(blobInfo.getContentType());
     }
+
+    signatureInfoBuilder.setSignatureVersion(
+        (SignUrlOption.SignatureVersion) optionMap.get(SignUrlOption.Option.SIGNATURE_VERSION));
+
+    signatureInfoBuilder.setAccountEmail(accountEmail);
+
+    signatureInfoBuilder.setTimestamp(getOptions().getClock().millisTime());
 
     @SuppressWarnings("unchecked")
     Map<String, String> extHeaders =

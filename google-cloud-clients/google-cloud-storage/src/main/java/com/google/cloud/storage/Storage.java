@@ -886,7 +886,13 @@ public interface Storage extends Service<StorageOptions> {
       MD5,
       EXT_HEADERS,
       SERVICE_ACCOUNT_CRED,
+      SIGNATURE_VERSION,
       HOST_NAME
+    }
+
+    enum SignatureVersion {
+      V2,
+      V4
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -935,6 +941,23 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
+    }
+
+    /**
+     * Use if signature version should be V2. This is the default if neither this or {@code
+     * withV4Signature()} is called.
+     */
+    public static SignUrlOption withV2Signature() {
+      return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V2);
+    }
+
+    /**
+     * Use if signature version should be V4. Note that V4 Signed URLs can't have an expiration
+     * longer than 7 days. V2 will be the default if neither this or {@code withV2Signature()} is
+     * called.
+     */
+    public static SignUrlOption withV4Signature() {
+      return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V4);
     }
 
     /**
@@ -2099,6 +2122,16 @@ public interface Storage extends Service<StorageOptions> {
    * String blobName = "my_blob_name";
    * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
    *     TimeUnit.DAYS);
+   * }</pre>
+   *
+   * <p>Example of creating a signed URL passing the {@link SignUrlOption#withV4Signature()} option,
+   * which enables V4 signing.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     7, TimeUnit.DAYS, Storage.SignUrlOption.withV4Signature());
    * }</pre>
    *
    * <p>Example of creating a signed URL passing the {@link

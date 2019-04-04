@@ -162,6 +162,7 @@ public class ITStorageTest {
   public static void beforeClass() throws IOException {
     remoteStorageHelper = RemoteStorageHelper.create();
     storage = remoteStorageHelper.getOptions().getService();
+
     storage.create(
         BucketInfo.newBuilder(BUCKET)
             .setLocation("us")
@@ -1841,6 +1842,25 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
+  }
+
+  @Test
+  public void testV4SignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
+    String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature());
+    URLConnection connection = url.openConnection();
+    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    }
   }
 
   @Test
