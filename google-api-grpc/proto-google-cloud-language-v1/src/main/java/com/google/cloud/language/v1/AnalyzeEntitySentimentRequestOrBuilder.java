@@ -15,7 +15,9 @@ public interface AnalyzeEntitySentimentRequestOrBuilder
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasDocument();
   /**
@@ -25,7 +27,9 @@ public interface AnalyzeEntitySentimentRequestOrBuilder
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1.Document getDocument();
   /**
@@ -35,7 +39,9 @@ public interface AnalyzeEntitySentimentRequestOrBuilder
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder();
 
