@@ -228,6 +228,68 @@ public class BigQueryImplTest {
   private static final BigQuery.TableOption TABLE_OPTION_FIELDS =
       BigQuery.TableOption.fields(BigQuery.TableField.SCHEMA, BigQuery.TableField.ETAG);
 
+  // Table list partitions
+  private static final Field PROJECT_ID_FIELD =
+      Field.newBuilder("project_id", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build();
+  private static final Field DATASET_ID_FIELD =
+      Field.newBuilder("dataset_id", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build();
+  private static final Field TABLE_ID_FIELD =
+      Field.newBuilder("table_id", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build();
+  private static final Field PARTITION_ID_FIELD =
+      Field.newBuilder("partition_id", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field CREATION_TIME_FIELD =
+      Field.newBuilder("creation_time", LegacySQLTypeName.INTEGER)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field CREATION_TIMESTAMP_FIELD =
+      Field.newBuilder("creation_timestamp", LegacySQLTypeName.TIMESTAMP)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field LAST_MODIFIED_FIELD =
+      Field.newBuilder("last_modified_time", LegacySQLTypeName.INTEGER)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field LAST_MODIFIED_TIMESTAMP_FIELD =
+      Field.newBuilder("last_modified_timestamp", LegacySQLTypeName.TIMESTAMP)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Schema SCHEMA_PARTITIONS =
+      Schema.of(
+          PROJECT_ID_FIELD,
+          DATASET_ID_FIELD,
+          TABLE_ID_FIELD,
+          PARTITION_ID_FIELD,
+          CREATION_TIME_FIELD,
+          CREATION_TIMESTAMP_FIELD,
+          LAST_MODIFIED_FIELD,
+          LAST_MODIFIED_TIMESTAMP_FIELD);
+  private static final TableDefinition TABLE_DEFINITION_PARTITIONS =
+      StandardTableDefinition.newBuilder()
+          .setSchema(SCHEMA_PARTITIONS)
+          .setNumBytes(0L)
+          .setNumLongTermBytes(0L)
+          .setNumRows(3L)
+          .setLocation("unknown")
+          .build();
+  private static final TableInfo TABLE_INFO_PARTITIONS =
+      TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION_PARTITIONS)
+          .setEtag("ETAG")
+          .setCreationTime(1553689573240L)
+          .setLastModifiedTime(1553841163438L)
+          .setNumBytes(0L)
+          .setNumLongTermBytes(0L)
+          .setNumRows(BigInteger.valueOf(3L))
+          .build();
+  private static final FieldValue FIELD_VALUE1 =
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
+  private static final FieldValue FIELD_VALUE2 =
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
+  private static final List<FieldValueList> ROWS =
+      ImmutableList.of(
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
   // Table list options
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_SIZE =
       BigQuery.TableListOption.pageSize(42L);
@@ -637,6 +699,17 @@ public class BigQueryImplTest {
     bigquery = options.getService();
     Table table = bigquery.getTable(DATASET, TABLE);
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
+  }
+
+  @Test
+  public void testGetTableWithPartitionId() {
+    EasyMock.expect(bigqueryRpcMock.getTable(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .andReturn(TABLE_INFO_PARTITIONS.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    Table table = bigquery.getTable(DATASET, TABLE);
+    Schema schema = table.getDefinition().getSchema();
+    assertEquals("partition_id", schema.getFields().get("partition_id").getName());
   }
 
   @Test
