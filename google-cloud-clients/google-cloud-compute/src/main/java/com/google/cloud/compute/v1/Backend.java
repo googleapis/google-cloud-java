@@ -31,8 +31,10 @@ public final class Backend implements ApiMessage {
   private final String description;
   private final String group;
   private final Integer maxConnections;
+  private final Integer maxConnectionsPerEndpoint;
   private final Integer maxConnectionsPerInstance;
   private final Integer maxRate;
+  private final Float maxRatePerEndpoint;
   private final Float maxRatePerInstance;
   private final Float maxUtilization;
 
@@ -42,8 +44,10 @@ public final class Backend implements ApiMessage {
     this.description = null;
     this.group = null;
     this.maxConnections = null;
+    this.maxConnectionsPerEndpoint = null;
     this.maxConnectionsPerInstance = null;
     this.maxRate = null;
+    this.maxRatePerEndpoint = null;
     this.maxRatePerInstance = null;
     this.maxUtilization = null;
   }
@@ -54,8 +58,10 @@ public final class Backend implements ApiMessage {
       String description,
       String group,
       Integer maxConnections,
+      Integer maxConnectionsPerEndpoint,
       Integer maxConnectionsPerInstance,
       Integer maxRate,
+      Float maxRatePerEndpoint,
       Float maxRatePerInstance,
       Float maxUtilization) {
     this.balancingMode = balancingMode;
@@ -63,8 +69,10 @@ public final class Backend implements ApiMessage {
     this.description = description;
     this.group = group;
     this.maxConnections = maxConnections;
+    this.maxConnectionsPerEndpoint = maxConnectionsPerEndpoint;
     this.maxConnectionsPerInstance = maxConnectionsPerInstance;
     this.maxRate = maxRate;
+    this.maxRatePerEndpoint = maxRatePerEndpoint;
     this.maxRatePerInstance = maxRatePerInstance;
     this.maxUtilization = maxUtilization;
   }
@@ -86,11 +94,17 @@ public final class Backend implements ApiMessage {
     if ("maxConnections".equals(fieldName)) {
       return maxConnections;
     }
+    if ("maxConnectionsPerEndpoint".equals(fieldName)) {
+      return maxConnectionsPerEndpoint;
+    }
     if ("maxConnectionsPerInstance".equals(fieldName)) {
       return maxConnectionsPerInstance;
     }
     if ("maxRate".equals(fieldName)) {
       return maxRate;
+    }
+    if ("maxRatePerEndpoint".equals(fieldName)) {
+      return maxRatePerEndpoint;
     }
     if ("maxRatePerInstance".equals(fieldName)) {
       return maxRatePerInstance;
@@ -184,6 +198,18 @@ public final class Backend implements ApiMessage {
   }
 
   /**
+   * The max number of simultaneous connections that a single backend network endpoint can handle.
+   * This is used to calculate the capacity of the group. Can be used in either CONNECTION or
+   * UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or
+   * maxConnectionsPerEndpoint must be set.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
+  public Integer getMaxConnectionsPerEndpoint() {
+    return maxConnectionsPerEndpoint;
+  }
+
+  /**
    * The max number of simultaneous connections that a single backend instance can handle. This is
    * used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION
    * balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must
@@ -204,6 +230,17 @@ public final class Backend implements ApiMessage {
    */
   public Integer getMaxRate() {
     return maxRate;
+  }
+
+  /**
+   * The max requests per second (RPS) that a single backend network endpoint can handle. This is
+   * used to calculate the capacity of the group. Can be used in either balancing mode. For RATE
+   * mode, either maxRate or maxRatePerEndpoint must be set.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
+  public Float getMaxRatePerEndpoint() {
+    return maxRatePerEndpoint;
   }
 
   /**
@@ -255,8 +292,10 @@ public final class Backend implements ApiMessage {
     private String description;
     private String group;
     private Integer maxConnections;
+    private Integer maxConnectionsPerEndpoint;
     private Integer maxConnectionsPerInstance;
     private Integer maxRate;
+    private Float maxRatePerEndpoint;
     private Float maxRatePerInstance;
     private Float maxUtilization;
 
@@ -279,11 +318,17 @@ public final class Backend implements ApiMessage {
       if (other.getMaxConnections() != null) {
         this.maxConnections = other.maxConnections;
       }
+      if (other.getMaxConnectionsPerEndpoint() != null) {
+        this.maxConnectionsPerEndpoint = other.maxConnectionsPerEndpoint;
+      }
       if (other.getMaxConnectionsPerInstance() != null) {
         this.maxConnectionsPerInstance = other.maxConnectionsPerInstance;
       }
       if (other.getMaxRate() != null) {
         this.maxRate = other.maxRate;
+      }
+      if (other.getMaxRatePerEndpoint() != null) {
+        this.maxRatePerEndpoint = other.maxRatePerEndpoint;
       }
       if (other.getMaxRatePerInstance() != null) {
         this.maxRatePerInstance = other.maxRatePerInstance;
@@ -300,8 +345,10 @@ public final class Backend implements ApiMessage {
       this.description = source.description;
       this.group = source.group;
       this.maxConnections = source.maxConnections;
+      this.maxConnectionsPerEndpoint = source.maxConnectionsPerEndpoint;
       this.maxConnectionsPerInstance = source.maxConnectionsPerInstance;
       this.maxRate = source.maxRate;
+      this.maxRatePerEndpoint = source.maxRatePerEndpoint;
       this.maxRatePerInstance = source.maxRatePerInstance;
       this.maxUtilization = source.maxUtilization;
     }
@@ -440,6 +487,31 @@ public final class Backend implements ApiMessage {
     }
 
     /**
+     * The max number of simultaneous connections that a single backend network endpoint can handle.
+     * This is used to calculate the capacity of the group. Can be used in either CONNECTION or
+     * UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or
+     * maxConnectionsPerEndpoint must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
+    public Integer getMaxConnectionsPerEndpoint() {
+      return maxConnectionsPerEndpoint;
+    }
+
+    /**
+     * The max number of simultaneous connections that a single backend network endpoint can handle.
+     * This is used to calculate the capacity of the group. Can be used in either CONNECTION or
+     * UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or
+     * maxConnectionsPerEndpoint must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
+    public Builder setMaxConnectionsPerEndpoint(Integer maxConnectionsPerEndpoint) {
+      this.maxConnectionsPerEndpoint = maxConnectionsPerEndpoint;
+      return this;
+    }
+
+    /**
      * The max number of simultaneous connections that a single backend instance can handle. This is
      * used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION
      * balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must
@@ -484,6 +556,29 @@ public final class Backend implements ApiMessage {
      */
     public Builder setMaxRate(Integer maxRate) {
       this.maxRate = maxRate;
+      return this;
+    }
+
+    /**
+     * The max requests per second (RPS) that a single backend network endpoint can handle. This is
+     * used to calculate the capacity of the group. Can be used in either balancing mode. For RATE
+     * mode, either maxRate or maxRatePerEndpoint must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
+    public Float getMaxRatePerEndpoint() {
+      return maxRatePerEndpoint;
+    }
+
+    /**
+     * The max requests per second (RPS) that a single backend network endpoint can handle. This is
+     * used to calculate the capacity of the group. Can be used in either balancing mode. For RATE
+     * mode, either maxRate or maxRatePerEndpoint must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
+    public Builder setMaxRatePerEndpoint(Float maxRatePerEndpoint) {
+      this.maxRatePerEndpoint = maxRatePerEndpoint;
       return this;
     }
 
@@ -539,8 +634,10 @@ public final class Backend implements ApiMessage {
           description,
           group,
           maxConnections,
+          maxConnectionsPerEndpoint,
           maxConnectionsPerInstance,
           maxRate,
+          maxRatePerEndpoint,
           maxRatePerInstance,
           maxUtilization);
     }
@@ -552,8 +649,10 @@ public final class Backend implements ApiMessage {
       newBuilder.setDescription(this.description);
       newBuilder.setGroup(this.group);
       newBuilder.setMaxConnections(this.maxConnections);
+      newBuilder.setMaxConnectionsPerEndpoint(this.maxConnectionsPerEndpoint);
       newBuilder.setMaxConnectionsPerInstance(this.maxConnectionsPerInstance);
       newBuilder.setMaxRate(this.maxRate);
+      newBuilder.setMaxRatePerEndpoint(this.maxRatePerEndpoint);
       newBuilder.setMaxRatePerInstance(this.maxRatePerInstance);
       newBuilder.setMaxUtilization(this.maxUtilization);
       return newBuilder;
@@ -578,11 +677,17 @@ public final class Backend implements ApiMessage {
         + "maxConnections="
         + maxConnections
         + ", "
+        + "maxConnectionsPerEndpoint="
+        + maxConnectionsPerEndpoint
+        + ", "
         + "maxConnectionsPerInstance="
         + maxConnectionsPerInstance
         + ", "
         + "maxRate="
         + maxRate
+        + ", "
+        + "maxRatePerEndpoint="
+        + maxRatePerEndpoint
         + ", "
         + "maxRatePerInstance="
         + maxRatePerInstance
@@ -604,8 +709,10 @@ public final class Backend implements ApiMessage {
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.group, that.getGroup())
           && Objects.equals(this.maxConnections, that.getMaxConnections())
+          && Objects.equals(this.maxConnectionsPerEndpoint, that.getMaxConnectionsPerEndpoint())
           && Objects.equals(this.maxConnectionsPerInstance, that.getMaxConnectionsPerInstance())
           && Objects.equals(this.maxRate, that.getMaxRate())
+          && Objects.equals(this.maxRatePerEndpoint, that.getMaxRatePerEndpoint())
           && Objects.equals(this.maxRatePerInstance, that.getMaxRatePerInstance())
           && Objects.equals(this.maxUtilization, that.getMaxUtilization());
     }
@@ -620,8 +727,10 @@ public final class Backend implements ApiMessage {
         description,
         group,
         maxConnections,
+        maxConnectionsPerEndpoint,
         maxConnectionsPerInstance,
         maxRate,
+        maxRatePerEndpoint,
         maxRatePerInstance,
         maxUtilization);
   }

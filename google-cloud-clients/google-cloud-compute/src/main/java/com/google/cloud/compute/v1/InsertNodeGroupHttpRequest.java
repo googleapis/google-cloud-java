@@ -161,7 +161,9 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
     return key;
   }
 
-  /** A NodeGroup resource. */
+  /**
+   * A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+   */
   public NodeGroup getNodeGroupResource() {
     return nodeGroupResource;
   }
@@ -353,12 +355,16 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** A NodeGroup resource. */
+    /**
+     * A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+     */
     public NodeGroup getNodeGroupResource() {
       return nodeGroupResource;
     }
 
-    /** A NodeGroup resource. */
+    /**
+     * A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+     */
     public Builder setNodeGroupResource(NodeGroup nodeGroupResource) {
       this.nodeGroupResource = nodeGroupResource;
       return this;
