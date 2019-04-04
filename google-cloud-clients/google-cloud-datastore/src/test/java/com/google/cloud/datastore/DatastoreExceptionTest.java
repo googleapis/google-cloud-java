@@ -102,10 +102,10 @@ public class DatastoreExceptionTest {
     try {
       DatastoreException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(DatastoreException.UNKNOWN_CODE, ex.getCode());
-      assertEquals("message", ex.getMessage());
+      assertEquals(ErrorCode.UNKNOWN.getCode(), ex.getCode());
+      assertEquals("UNKNOWN: message", ex.getMessage());
       assertFalse(ex.isRetryable());
-      assertSame(cause, ex.getCause());
+      assertSame(cause, ex.getCause().getCause());
     } finally {
       verify(exceptionMock);
     }
@@ -117,8 +117,8 @@ public class DatastoreExceptionTest {
       DatastoreException.throwInvalidRequest("message %s %d", "a", 1);
       fail("Exception expected");
     } catch (DatastoreException ex) {
-      assertEquals("FAILED_PRECONDITION", ex.getReason());
-      assertEquals("message a 1", ex.getMessage());
+      assertEquals(ErrorCode.FAILED_PRECONDITION, ex.getErrorCode());
+      assertEquals("FAILED_PRECONDITION: message a 1", ex.getMessage());
     }
   }
 }

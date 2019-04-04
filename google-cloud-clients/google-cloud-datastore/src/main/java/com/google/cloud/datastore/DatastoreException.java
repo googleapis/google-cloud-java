@@ -20,12 +20,14 @@ import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Set;
 import javax.annotation.Nullable;
 
 /**
@@ -35,11 +37,20 @@ import javax.annotation.Nullable;
  *     Datastore error codes</a>
  */
 public class DatastoreException extends BaseGrpcServiceException {
+
+  // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes"
+  private static final Set<Error> RETRYABLE_ERRORS =
+      ImmutableSet.of(
+          new Error(10, "ABORTED", false),
+          new Error(4, "DEADLINE_EXCEEDED", false),
+          new Error(14, "UNAVAILABLE", true));
+
   private static final long serialVersionUID = 20190326L;
   private static final Metadata.Key<RetryInfo> KEY_RETRY_INFO =
       ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
 
   private ErrorCode code;
+  private String exceptionReason;
 
   /** Private constructor. Use {@link DatastoreExceptionFactory} to create instances. */
   DatastoreException(
@@ -85,19 +96,32 @@ public class DatastoreException extends BaseGrpcServiceException {
     return -1L;
   }
 
-  // TODO Added for backward compatibility
-  // Remove later
+  // Added for backward compatibility
+  // TODO(User) Remove later unused constructors
+  public DatastoreException(int code, String message) {
+    this(code, message, null, true, null);
+  }
   public DatastoreException(int code, String message, String reason) {
     this(code, message, reason, true, null);
   }
 
   public DatastoreException(int code, String message, String reason, Throwable cause) {
-    this(code, message, reason, true, null);
+    this(code, message, reason, true, cause);
   }
 
   public DatastoreException(
       int code, String message, String reason, boolean idempotent, Throwable cause) {
-    super(message, null, code, false);
+    super(message, cause, code,
+        BaseServiceException.isRetryable(code, reason, idempotent, RETRYABLE_ERRORS));
+    // Added for unit test compatibility
+    // TODO(User) remove when tests updated
+    this.exceptionReason = reason;
+  }
+
+  @Override
+  public String getReason() {
+    String reason = super.getReason();
+    return reason != null ? reason : exceptionReason;
   }
 
   public DatastoreException(IOException exception) {
@@ -112,10 +136,9 @@ public class DatastoreException extends BaseGrpcServiceException {
    */
   static DatastoreException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translate(ex);
-    throw DatastoreExceptionFactory.newDatastoreException(ErrorCode.INTERNAL, ex.getMessage(),
+    throw DatastoreExceptionFactory.newDatastoreException(ErrorCode.UNKNOWN, ex.getMessage(),
         ex);
   }
-
 
   /**
    * Throw a DatastoreException with {@code FAILED_PRECONDITION} reason and the {@code message} in a
@@ -125,7 +148,7 @@ public class DatastoreException extends BaseGrpcServiceException {
    */
   static DatastoreException throwInvalidRequest(String massage, Object... params) {
     throw DatastoreExceptionFactory.newDatastoreException(
-        ErrorCode.UNKNOWN, String.format(massage, params));
+        ErrorCode.FAILED_PRECONDITION, String.format(massage, params));
   }
 
   static DatastoreException propagateUserException(Exception ex) {
