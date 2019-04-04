@@ -25,9 +25,9 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -95,7 +95,7 @@ public class CloudSchedulerClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getJobsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListJobsRequest actualRequest = (ListJobsRequest) actualRequests.get(0);
 
@@ -143,7 +143,7 @@ public class CloudSchedulerClientTest {
     Job actualResponse = client.getJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetJobRequest actualRequest = (GetJobRequest) actualRequests.get(0);
 
@@ -192,7 +192,7 @@ public class CloudSchedulerClientTest {
     Job actualResponse = client.createJob(parent, job);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateJobRequest actualRequest = (CreateJobRequest) actualRequests.get(0);
 
@@ -243,7 +243,7 @@ public class CloudSchedulerClientTest {
     Job actualResponse = client.updateJob(job, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateJobRequest actualRequest = (UpdateJobRequest) actualRequests.get(0);
 
@@ -282,7 +282,7 @@ public class CloudSchedulerClientTest {
 
     client.deleteJob(name);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
 
@@ -330,7 +330,7 @@ public class CloudSchedulerClientTest {
     Job actualResponse = client.pauseJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PauseJobRequest actualRequest = (PauseJobRequest) actualRequests.get(0);
 
@@ -378,7 +378,7 @@ public class CloudSchedulerClientTest {
     Job actualResponse = client.resumeJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ResumeJobRequest actualRequest = (ResumeJobRequest) actualRequests.get(0);
 
@@ -426,7 +426,7 @@ public class CloudSchedulerClientTest {
     Job actualResponse = client.runJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RunJobRequest actualRequest = (RunJobRequest) actualRequests.get(0);
 

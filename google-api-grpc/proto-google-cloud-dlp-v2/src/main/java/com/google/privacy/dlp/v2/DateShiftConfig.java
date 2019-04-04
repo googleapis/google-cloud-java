@@ -24,10 +24,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     super(builder);
   }
 
-  private DateShiftConfig() {
-    upperBoundDays_ = 0;
-    lowerBoundDays_ = 0;
-  }
+  private DateShiftConfig() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -96,7 +93,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -357,24 +354,22 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     com.google.privacy.dlp.v2.DateShiftConfig other =
         (com.google.privacy.dlp.v2.DateShiftConfig) obj;
 
-    boolean result = true;
-    result = result && (getUpperBoundDays() == other.getUpperBoundDays());
-    result = result && (getLowerBoundDays() == other.getLowerBoundDays());
-    result = result && (hasContext() == other.hasContext());
+    if (getUpperBoundDays() != other.getUpperBoundDays()) return false;
+    if (getLowerBoundDays() != other.getLowerBoundDays()) return false;
+    if (hasContext() != other.hasContext()) return false;
     if (hasContext()) {
-      result = result && getContext().equals(other.getContext());
+      if (!getContext().equals(other.getContext())) return false;
     }
-    result = result && getMethodCase().equals(other.getMethodCase());
-    if (!result) return false;
+    if (!getMethodCase().equals(other.getMethodCase())) return false;
     switch (methodCase_) {
       case 4:
-        result = result && getCryptoKey().equals(other.getCryptoKey());
+        if (!getCryptoKey().equals(other.getCryptoKey())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -607,35 +602,35 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -816,7 +811,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.privacy.dlp.v2.FieldId context_ = null;
+    private com.google.privacy.dlp.v2.FieldId context_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,
             com.google.privacy.dlp.v2.FieldId.Builder,
@@ -1221,7 +1216,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -23,10 +23,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     super(builder);
   }
 
-  private StreamingRecognitionConfig() {
-    singleUtterance_ = false;
-    interimResults_ = false;
-  }
+  private StreamingRecognitionConfig() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -80,7 +77,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -255,15 +252,14 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     com.google.cloud.speech.v1.StreamingRecognitionConfig other =
         (com.google.cloud.speech.v1.StreamingRecognitionConfig) obj;
 
-    boolean result = true;
-    result = result && (hasConfig() == other.hasConfig());
+    if (hasConfig() != other.hasConfig()) return false;
     if (hasConfig()) {
-      result = result && getConfig().equals(other.getConfig());
+      if (!getConfig().equals(other.getConfig())) return false;
     }
-    result = result && (getSingleUtterance() == other.getSingleUtterance());
-    result = result && (getInterimResults() == other.getInterimResults());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getSingleUtterance() != other.getSingleUtterance()) return false;
+    if (getInterimResults() != other.getInterimResults()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -478,35 +474,35 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -561,7 +557,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.cloud.speech.v1.RecognitionConfig config_ = null;
+    private com.google.cloud.speech.v1.RecognitionConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v1.RecognitionConfig,
             com.google.cloud.speech.v1.RecognitionConfig.Builder,
@@ -877,7 +873,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

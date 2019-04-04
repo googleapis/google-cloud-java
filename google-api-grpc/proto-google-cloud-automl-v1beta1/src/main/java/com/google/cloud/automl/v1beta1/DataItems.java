@@ -21,6 +21,14 @@ public final class DataItems {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_TextSnippet_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_Document_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_Document_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1beta1_Row_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_Row_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1beta1_ExamplePayload_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ExamplePayload_fieldAccessorTable;
@@ -36,19 +44,28 @@ public final class DataItems {
       "\n,google/cloud/automl/v1beta1/data_items"
           + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
           + "gle/api/annotations.proto\032$google/cloud/"
-          + "automl/v1beta1/io.proto\"\177\n\005Image\022\025\n\013imag"
-          + "e_bytes\030\001 \001(\014H\000\022@\n\014input_config\030\006 \001(\0132(."
-          + "google.cloud.automl.v1beta1.InputConfigH"
-          + "\000\022\025\n\rthumbnail_uri\030\004 \001(\tB\006\n\004data\"F\n\013Text"
-          + "Snippet\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 "
-          + "\001(\t\022\023\n\013content_uri\030\004 \001(\t\"\222\001\n\016ExamplePayl"
-          + "oad\0223\n\005image\030\001 \001(\0132\".google.cloud.automl"
-          + ".v1beta1.ImageH\000\022@\n\014text_snippet\030\002 \001(\0132("
-          + ".google.cloud.automl.v1beta1.TextSnippet"
-          + "H\000B\t\n\007payloadB\204\001\n\037com.google.cloud.autom"
-          + "l.v1beta1P\001ZAgoogle.golang.org/genproto/"
-          + "googleapis/cloud/automl/v1beta1;automl\312\002"
-          + "\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
+          + "automl/v1beta1/io.proto\032\031google/protobuf"
+          + "/any.proto\032\036google/protobuf/duration.pro"
+          + "to\032\034google/protobuf/struct.proto\"\177\n\005Imag"
+          + "e\022\025\n\013image_bytes\030\001 \001(\014H\000\022@\n\014input_config"
+          + "\030\006 \001(\0132(.google.cloud.automl.v1beta1.Inp"
+          + "utConfigH\000\022\025\n\rthumbnail_uri\030\004 \001(\tB\006\n\004dat"
+          + "a\"F\n\013TextSnippet\022\017\n\007content\030\001 \001(\t\022\021\n\tmim"
+          + "e_type\030\002 \001(\t\022\023\n\013content_uri\030\004 \001(\t\"R\n\010Doc"
+          + "ument\022F\n\014input_config\030\001 \001(\01320.google.clo"
+          + "ud.automl.v1beta1.DocumentInputConfig\"F\n"
+          + "\003Row\022\027\n\017column_spec_ids\030\002 \003(\t\022&\n\006values\030"
+          + "\003 \003(\0132\026.google.protobuf.Value\"\376\001\n\016Exampl"
+          + "ePayload\0223\n\005image\030\001 \001(\0132\".google.cloud.a"
+          + "utoml.v1beta1.ImageH\000\022@\n\014text_snippet\030\002 "
+          + "\001(\0132(.google.cloud.automl.v1beta1.TextSn"
+          + "ippetH\000\0229\n\010document\030\004 \001(\0132%.google.cloud"
+          + ".automl.v1beta1.DocumentH\000\022/\n\003row\030\003 \001(\0132"
+          + " .google.cloud.automl.v1beta1.RowH\000B\t\n\007p"
+          + "ayloadB\204\001\n\037com.google.cloud.automl.v1bet"
+          + "a1P\001ZAgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
+          + "\\Cloud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -63,6 +80,9 @@ public final class DataItems {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.Io.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_Image_descriptor =
@@ -81,16 +101,35 @@ public final class DataItems {
             new java.lang.String[] {
               "Content", "MimeType", "ContentUri",
             });
-    internal_static_google_cloud_automl_v1beta1_ExamplePayload_descriptor =
+    internal_static_google_cloud_automl_v1beta1_Document_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_automl_v1beta1_Document_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_Document_descriptor,
+            new java.lang.String[] {
+              "InputConfig",
+            });
+    internal_static_google_cloud_automl_v1beta1_Row_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_automl_v1beta1_Row_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_Row_descriptor,
+            new java.lang.String[] {
+              "ColumnSpecIds", "Values",
+            });
+    internal_static_google_cloud_automl_v1beta1_ExamplePayload_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_automl_v1beta1_ExamplePayload_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_ExamplePayload_descriptor,
             new java.lang.String[] {
-              "Image", "TextSnippet", "Payload",
+              "Image", "TextSnippet", "Document", "Row", "Payload",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.Io.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

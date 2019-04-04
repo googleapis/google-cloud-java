@@ -65,7 +65,7 @@ import javax.annotation.Generated;
  * [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
  *
  * <p>For more information about entity types, see the [Dialogflow
- * documentation](https://dialogflow.com/docs/entities).
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -265,9 +265,9 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
-   *     agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(
@@ -299,9 +299,9 @@ public class EntityTypesClient implements BackgroundResource {
    * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
    *     ID&gt;/agent`.
    * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
-   *     agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(String parent, String languageCode) {
@@ -456,9 +456,9 @@ public class EntityTypesClient implements BackgroundResource {
    * @param name Required. The name of the entity type. Format: `projects/&lt;Project
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
-   *     the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name, String languageCode) {
@@ -488,9 +488,9 @@ public class EntityTypesClient implements BackgroundResource {
    * @param name Required. The name of the entity type. Format: `projects/&lt;Project
    *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
-   *     the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name, String languageCode) {
@@ -619,9 +619,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @param entityType Required. The entity type to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
@@ -655,9 +655,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     ID&gt;/agent`.
    * @param entityType Required. The entity type to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(
@@ -734,8 +734,7 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param entityType Required. The entity type to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param entityType Required. The entity type to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType) {
@@ -759,12 +758,11 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param entityType Required. The entity type to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param entityType Required. The entity type to update.
    * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, String languageCode) {
@@ -919,8 +917,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates/Creates multiple entity types in the specified agent.
    *
    * <p>Operation &lt;response:
-   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
-   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -949,8 +946,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates/Creates multiple entity types in the specified agent.
    *
    * <p>Operation &lt;response:
-   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
-   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -978,8 +974,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates/Creates multiple entity types in the specified agent.
    *
    * <p>Operation &lt;response:
-   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
-   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
    *
    * <p>Sample code:
    *
@@ -1004,8 +999,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1040,8 +1034,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1076,8 +1069,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1107,8 +1099,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1136,8 +1127,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1162,8 +1152,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1179,7 +1168,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The name of the entity type to create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of entities to create.
+   * @param entities Required. The entities to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1197,8 +1186,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1214,7 +1202,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The name of the entity type to create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of entities to create.
+   * @param entities Required. The entities to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1229,8 +1217,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1247,11 +1234,11 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The name of the entity type to create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of entities to create.
+   * @param entities Required. The entities to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1270,8 +1257,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1288,11 +1274,11 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The name of the entity type to create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of entities to create.
+   * @param entities Required. The entities to create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1311,8 +1297,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1342,8 +1327,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1371,8 +1355,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates multiple new entities in the specified entity type (extends the existing collection of
-   * entries).
+   * Creates multiple new entities in the specified entity type.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
@@ -1398,10 +1381,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1413,9 +1396,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update the entities in. Format:
+   * @param parent Required. The name of the entity type to update or create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of new entities to replace the existing entities.
+   * @param entities Required. The entities to update or create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1433,10 +1416,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1448,9 +1431,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update the entities in. Format:
+   * @param parent Required. The name of the entity type to update or create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of new entities to replace the existing entities.
+   * @param entities Required. The entities to update or create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1465,10 +1448,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1481,13 +1464,13 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update the entities in. Format:
+   * @param parent Required. The name of the entity type to update or create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of new entities to replace the existing entities.
+   * @param entities Required. The entities to update or create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1506,10 +1489,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1522,13 +1505,13 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update the entities in. Format:
+   * @param parent Required. The name of the entity type to update or create entities in. Format:
    *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entities Required. The collection of new entities to replace the existing entities.
+   * @param entities Required. The entities to update or create.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1547,10 +1530,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1578,10 +1561,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1607,10 +1590,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   * Updates or creates multiple entities in the specified entity type. This method does not affect
+   * entities in the entity type that aren't explicitly specified in the request.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1636,8 +1619,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1672,8 +1654,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1708,8 +1689,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1727,9 +1707,9 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityValues Required. The canonical `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1750,8 +1730,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1769,9 +1748,9 @@ public class EntityTypesClient implements BackgroundResource {
    * @param entityValues Required. The canonical `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
-   *     specified, the agent's default language is used. [More than a dozen
-   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
-   *     must be enabled in the agent, before they can be used.
+   *     specified, the agent's default language is used. [Many
+   *     languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language) are
+   *     supported. Note: languages must be enabled in the agent before they can be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -1792,8 +1771,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1823,8 +1801,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1852,8 +1829,7 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
-   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *

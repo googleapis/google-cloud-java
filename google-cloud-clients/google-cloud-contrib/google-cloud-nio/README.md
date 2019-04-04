@@ -26,16 +26,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-nio</artifactId>
-  <version>0.83.0-alpha</version>
+  <version>0.86.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-nio:0.83.0-alpha'
+compile 'com.google.cloud:google-cloud-nio:0.86.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.83.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.86.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -57,7 +57,8 @@ Authentication
 --------------
 
 See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
-section in the base directory's README.
+section in the base directory's README. This shows how to construct the `StorageOptions` object,
+which you can then pass to `CloudStorageFileSystem.forBucket`.
 
 About Google Cloud Storage
 --------------------------

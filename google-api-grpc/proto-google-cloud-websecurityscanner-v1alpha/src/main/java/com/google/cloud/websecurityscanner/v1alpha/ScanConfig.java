@@ -25,7 +25,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   private ScanConfig() {
     name_ = "";
     displayName_ = "";
-    maxQps_ = 0;
     startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     userAgent_ = 0;
     blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -78,7 +77,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 startingUrls_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -114,7 +113,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000040;
               }
@@ -142,7 +141,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 72:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -155,7 +154,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                   targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000100;
                 }
@@ -166,7 +165,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -178,13 +177,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
       }
       this.unknownFields = unknownFields.build();
@@ -712,7 +711,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -864,7 +863,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -1047,11 +1046,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
                 obj;
 
-        boolean result = true;
-        result = result && getUsername().equals(other.getUsername());
-        result = result && getPassword().equals(other.getPassword());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getUsername().equals(other.getUsername())) return false;
+        if (!getPassword().equals(other.getPassword())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -1285,23 +1283,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -1309,13 +1307,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -1591,7 +1589,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -1798,7 +1796,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -2032,12 +2030,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
                 obj;
 
-        boolean result = true;
-        result = result && getUsername().equals(other.getUsername());
-        result = result && getPassword().equals(other.getPassword());
-        result = result && getLoginUrl().equals(other.getLoginUrl());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getUsername().equals(other.getUsername())) return false;
+        if (!getPassword().equals(other.getPassword())) return false;
+        if (!getLoginUrl().equals(other.getLoginUrl())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -2276,23 +2273,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -2300,13 +2297,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -2685,7 +2682,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -2962,21 +2959,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication other =
           (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) obj;
 
-      boolean result = true;
-      result = result && getAuthenticationCase().equals(other.getAuthenticationCase());
-      if (!result) return false;
+      if (!getAuthenticationCase().equals(other.getAuthenticationCase())) return false;
       switch (authenticationCase_) {
         case 1:
-          result = result && getGoogleAccount().equals(other.getGoogleAccount());
+          if (!getGoogleAccount().equals(other.getGoogleAccount())) return false;
           break;
         case 2:
-          result = result && getCustomAccount().equals(other.getCustomAccount());
+          if (!getCustomAccount().equals(other.getCustomAccount())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3202,23 +3197,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -3226,13 +3221,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3824,7 +3819,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3953,9 +3948,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private Schedule() {
-      intervalDurationDays_ = 0;
-    }
+    private Schedule() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -4003,7 +3996,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -4152,14 +4145,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule other =
           (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule) obj;
 
-      boolean result = true;
-      result = result && (hasScheduleTime() == other.hasScheduleTime());
+      if (hasScheduleTime() != other.hasScheduleTime()) return false;
       if (hasScheduleTime()) {
-        result = result && getScheduleTime().equals(other.getScheduleTime());
+        if (!getScheduleTime().equals(other.getScheduleTime())) return false;
       }
-      result = result && (getIntervalDurationDays() == other.getIntervalDurationDays());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getIntervalDurationDays() != other.getIntervalDurationDays()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4373,23 +4365,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -4397,13 +4389,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -4458,7 +4450,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.Timestamp scheduleTime_ = null;
+      private com.google.protobuf.Timestamp scheduleTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
               com.google.protobuf.Timestamp.Builder,
@@ -4716,7 +4708,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -5335,24 +5327,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.websecurityscanner.v1alpha.ScanConfig other =
         (com.google.cloud.websecurityscanner.v1alpha.ScanConfig) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && (getMaxQps() == other.getMaxQps());
-    result = result && getStartingUrlsList().equals(other.getStartingUrlsList());
-    result = result && (hasAuthentication() == other.hasAuthentication());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (getMaxQps() != other.getMaxQps()) return false;
+    if (!getStartingUrlsList().equals(other.getStartingUrlsList())) return false;
+    if (hasAuthentication() != other.hasAuthentication()) return false;
     if (hasAuthentication()) {
-      result = result && getAuthentication().equals(other.getAuthentication());
+      if (!getAuthentication().equals(other.getAuthentication())) return false;
     }
-    result = result && userAgent_ == other.userAgent_;
-    result = result && getBlacklistPatternsList().equals(other.getBlacklistPatternsList());
-    result = result && (hasSchedule() == other.hasSchedule());
+    if (userAgent_ != other.userAgent_) return false;
+    if (!getBlacklistPatternsList().equals(other.getBlacklistPatternsList())) return false;
+    if (hasSchedule() != other.hasSchedule()) return false;
     if (hasSchedule()) {
-      result = result && getSchedule().equals(other.getSchedule());
+      if (!getSchedule().equals(other.getSchedule())) return false;
     }
-    result = result && targetPlatforms_.equals(other.targetPlatforms_);
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!targetPlatforms_.equals(other.targetPlatforms_)) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -5594,7 +5585,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.maxQps_ = maxQps_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
@@ -5605,7 +5596,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         result.authentication_ = authenticationBuilder_.build();
       }
       result.userAgent_ = userAgent_;
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000040);
       }
@@ -5615,7 +5606,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.schedule_ = scheduleBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
         bitField0_ = (bitField0_ & ~0x00000100);
       }
@@ -5627,35 +5618,35 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -6013,7 +6004,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStartingUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = new com.google.protobuf.LazyStringArrayList(startingUrls_);
         bitField0_ |= 0x00000008;
       }
@@ -6161,8 +6152,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication_ =
-        null;
+    private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication,
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder,
@@ -6454,7 +6444,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlacklistPatternsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList(blacklistPatterns_);
         bitField0_ |= 0x00000040;
       }
@@ -6602,7 +6592,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule_ = null;
+    private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule,
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder,
@@ -6791,7 +6781,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> targetPlatforms_ = java.util.Collections.emptyList();
 
     private void ensureTargetPlatformsIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>(targetPlatforms_);
         bitField0_ |= 0x00000100;
       }
@@ -7019,7 +7009,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

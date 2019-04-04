@@ -115,32 +115,6 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     return ((CloudRedisStubSettings) getStubSettings()).deleteInstanceOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to importInstance. */
-  public UnaryCallSettings<ImportInstanceRequest, Operation> importInstanceSettings() {
-    return ((CloudRedisStubSettings) getStubSettings()).importInstanceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<ImportInstanceRequest, Instance, OperationMetadata>
-      importInstanceOperationSettings() {
-    return ((CloudRedisStubSettings) getStubSettings()).importInstanceOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportInstance. */
-  public UnaryCallSettings<ExportInstanceRequest, Operation> exportInstanceSettings() {
-    return ((CloudRedisStubSettings) getStubSettings()).exportInstanceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<ExportInstanceRequest, Instance, OperationMetadata>
-      exportInstanceOperationSettings() {
-    return ((CloudRedisStubSettings) getStubSettings()).exportInstanceOperationSettings();
-  }
-
   /** Returns the object with the settings used for calls to failoverInstance. */
   public UnaryCallSettings<FailoverInstanceRequest, Operation> failoverInstanceSettings() {
     return ((CloudRedisStubSettings) getStubSettings()).failoverInstanceSettings();
@@ -299,32 +273,6 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importInstance. */
-    public UnaryCallSettings.Builder<ImportInstanceRequest, Operation> importInstanceSettings() {
-      return getStubSettingsBuilder().importInstanceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<ImportInstanceRequest, Instance, OperationMetadata>
-        importInstanceOperationSettings() {
-      return getStubSettingsBuilder().importInstanceOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportInstance. */
-    public UnaryCallSettings.Builder<ExportInstanceRequest, Operation> exportInstanceSettings() {
-      return getStubSettingsBuilder().exportInstanceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<ExportInstanceRequest, Instance, OperationMetadata>
-        exportInstanceOperationSettings() {
-      return getStubSettingsBuilder().exportInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to failoverInstance. */

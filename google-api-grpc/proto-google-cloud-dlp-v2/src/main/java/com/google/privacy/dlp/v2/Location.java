@@ -82,7 +82,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 contentLocations_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.ContentLocation>();
                 mutable_bitField0_ |= 0x00000004;
@@ -94,7 +94,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -106,7 +106,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
       }
       this.unknownFields = unknownFields.build();
@@ -354,18 +354,17 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.Location other = (com.google.privacy.dlp.v2.Location) obj;
 
-    boolean result = true;
-    result = result && (hasByteRange() == other.hasByteRange());
+    if (hasByteRange() != other.hasByteRange()) return false;
     if (hasByteRange()) {
-      result = result && getByteRange().equals(other.getByteRange());
+      if (!getByteRange().equals(other.getByteRange())) return false;
     }
-    result = result && (hasCodepointRange() == other.hasCodepointRange());
+    if (hasCodepointRange() != other.hasCodepointRange()) return false;
     if (hasCodepointRange()) {
-      result = result && getCodepointRange().equals(other.getCodepointRange());
+      if (!getCodepointRange().equals(other.getCodepointRange())) return false;
     }
-    result = result && getContentLocationsList().equals(other.getContentLocationsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getContentLocationsList().equals(other.getContentLocationsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -590,7 +589,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         result.codepointRange_ = codepointRangeBuilder_.build();
       }
       if (contentLocationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -605,35 +604,35 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -712,7 +711,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.privacy.dlp.v2.Range byteRange_ = null;
+    private com.google.privacy.dlp.v2.Range byteRange_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Range,
             com.google.privacy.dlp.v2.Range.Builder,
@@ -929,7 +928,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       return byteRangeBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.Range codepointRange_ = null;
+    private com.google.privacy.dlp.v2.Range codepointRange_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Range,
             com.google.privacy.dlp.v2.Range.Builder,
@@ -1132,7 +1131,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureContentLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         contentLocations_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.ContentLocation>(contentLocations_);
         bitField0_ |= 0x00000004;
@@ -1493,7 +1492,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.ContentLocation.Builder,
                 com.google.privacy.dlp.v2.ContentLocationOrBuilder>(
                 contentLocations_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         contentLocations_ = null;
@@ -1503,7 +1502,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

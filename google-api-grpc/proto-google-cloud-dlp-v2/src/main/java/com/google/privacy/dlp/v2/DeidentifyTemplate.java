@@ -122,7 +122,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -483,24 +483,23 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
     com.google.privacy.dlp.v2.DeidentifyTemplate other =
         (com.google.privacy.dlp.v2.DeidentifyTemplate) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasUpdateTime() == other.hasUpdateTime());
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      result = result && getUpdateTime().equals(other.getUpdateTime());
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    result = result && (hasDeidentifyConfig() == other.hasDeidentifyConfig());
+    if (hasDeidentifyConfig() != other.hasDeidentifyConfig()) return false;
     if (hasDeidentifyConfig()) {
-      result = result && getDeidentifyConfig().equals(other.getDeidentifyConfig());
+      if (!getDeidentifyConfig().equals(other.getDeidentifyConfig())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -749,35 +748,35 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1139,7 +1138,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1318,7 +1317,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp updateTime_ = null;
+    private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1497,7 +1496,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
       return updateTimeBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.DeidentifyConfig deidentifyConfig_ = null;
+    private com.google.privacy.dlp.v2.DeidentifyConfig deidentifyConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DeidentifyConfig,
             com.google.privacy.dlp.v2.DeidentifyConfig.Builder,
@@ -1681,7 +1680,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

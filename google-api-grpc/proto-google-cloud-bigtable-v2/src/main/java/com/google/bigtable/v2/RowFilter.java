@@ -251,7 +251,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -396,7 +396,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   filters_ = new java.util.ArrayList<com.google.bigtable.v2.RowFilter>();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -407,7 +407,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -419,7 +419,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           filters_ = java.util.Collections.unmodifiableList(filters_);
         }
         this.unknownFields = unknownFields.build();
@@ -560,10 +560,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.bigtable.v2.RowFilter.Chain other = (com.google.bigtable.v2.RowFilter.Chain) obj;
 
-      boolean result = true;
-      result = result && getFiltersList().equals(other.getFiltersList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFiltersList().equals(other.getFiltersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -761,7 +760,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             new com.google.bigtable.v2.RowFilter.Chain(this);
         int from_bitField0_ = bitField0_;
         if (filtersBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             filters_ = java.util.Collections.unmodifiableList(filters_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -775,23 +774,23 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -799,13 +798,13 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -882,7 +881,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureFiltersIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           filters_ = new java.util.ArrayList<com.google.bigtable.v2.RowFilter>(filters_);
           bitField0_ |= 0x00000001;
         }
@@ -1256,10 +1255,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
                   com.google.bigtable.v2.RowFilter,
                   com.google.bigtable.v2.RowFilter.Builder,
                   com.google.bigtable.v2.RowFilterOrBuilder>(
-                  filters_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  filters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           filters_ = null;
         }
         return filtersBuilder_;
@@ -1268,7 +1264,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1533,7 +1529,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   filters_ = new java.util.ArrayList<com.google.bigtable.v2.RowFilter>();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -1544,7 +1540,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1556,7 +1552,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           filters_ = java.util.Collections.unmodifiableList(filters_);
         }
         this.unknownFields = unknownFields.build();
@@ -1798,10 +1794,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.RowFilter.Interleave other =
           (com.google.bigtable.v2.RowFilter.Interleave) obj;
 
-      boolean result = true;
-      result = result && getFiltersList().equals(other.getFiltersList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFiltersList().equals(other.getFiltersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2000,7 +1995,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             new com.google.bigtable.v2.RowFilter.Interleave(this);
         int from_bitField0_ = bitField0_;
         if (filtersBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             filters_ = java.util.Collections.unmodifiableList(filters_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2014,23 +2009,23 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2038,13 +2033,13 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2121,7 +2116,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureFiltersIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           filters_ = new java.util.ArrayList<com.google.bigtable.v2.RowFilter>(filters_);
           bitField0_ |= 0x00000001;
         }
@@ -2855,10 +2850,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
                   com.google.bigtable.v2.RowFilter,
                   com.google.bigtable.v2.RowFilter.Builder,
                   com.google.bigtable.v2.RowFilterOrBuilder>(
-                  filters_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  filters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           filters_ = null;
         }
         return filtersBuilder_;
@@ -2867,7 +2859,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3123,7 +3115,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -3347,21 +3339,20 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.RowFilter.Condition other =
           (com.google.bigtable.v2.RowFilter.Condition) obj;
 
-      boolean result = true;
-      result = result && (hasPredicateFilter() == other.hasPredicateFilter());
+      if (hasPredicateFilter() != other.hasPredicateFilter()) return false;
       if (hasPredicateFilter()) {
-        result = result && getPredicateFilter().equals(other.getPredicateFilter());
+        if (!getPredicateFilter().equals(other.getPredicateFilter())) return false;
       }
-      result = result && (hasTrueFilter() == other.hasTrueFilter());
+      if (hasTrueFilter() != other.hasTrueFilter()) return false;
       if (hasTrueFilter()) {
-        result = result && getTrueFilter().equals(other.getTrueFilter());
+        if (!getTrueFilter().equals(other.getTrueFilter())) return false;
       }
-      result = result && (hasFalseFilter() == other.hasFalseFilter());
+      if (hasFalseFilter() != other.hasFalseFilter()) return false;
       if (hasFalseFilter()) {
-        result = result && getFalseFilter().equals(other.getFalseFilter());
+        if (!getFalseFilter().equals(other.getFalseFilter())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3601,23 +3592,23 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -3625,13 +3616,13 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3684,7 +3675,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.bigtable.v2.RowFilter predicateFilter_ = null;
+      private com.google.bigtable.v2.RowFilter predicateFilter_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.bigtable.v2.RowFilter,
               com.google.bigtable.v2.RowFilter.Builder,
@@ -3874,7 +3865,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         return predicateFilterBuilder_;
       }
 
-      private com.google.bigtable.v2.RowFilter trueFilter_ = null;
+      private com.google.bigtable.v2.RowFilter trueFilter_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.bigtable.v2.RowFilter,
               com.google.bigtable.v2.RowFilter.Builder,
@@ -4064,7 +4055,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         return trueFilterBuilder_;
       }
 
-      private com.google.bigtable.v2.RowFilter falseFilter_ = null;
+      private com.google.bigtable.v2.RowFilter falseFilter_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.bigtable.v2.RowFilter,
               com.google.bigtable.v2.RowFilter.Builder,
@@ -4266,7 +4257,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -5266,76 +5257,72 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.RowFilter other = (com.google.bigtable.v2.RowFilter) obj;
 
-    boolean result = true;
-    result = result && getFilterCase().equals(other.getFilterCase());
-    if (!result) return false;
+    if (!getFilterCase().equals(other.getFilterCase())) return false;
     switch (filterCase_) {
       case 1:
-        result = result && getChain().equals(other.getChain());
+        if (!getChain().equals(other.getChain())) return false;
         break;
       case 2:
-        result = result && getInterleave().equals(other.getInterleave());
+        if (!getInterleave().equals(other.getInterleave())) return false;
         break;
       case 3:
-        result = result && getCondition().equals(other.getCondition());
+        if (!getCondition().equals(other.getCondition())) return false;
         break;
       case 16:
-        result = result && (getSink() == other.getSink());
+        if (getSink() != other.getSink()) return false;
         break;
       case 17:
-        result = result && (getPassAllFilter() == other.getPassAllFilter());
+        if (getPassAllFilter() != other.getPassAllFilter()) return false;
         break;
       case 18:
-        result = result && (getBlockAllFilter() == other.getBlockAllFilter());
+        if (getBlockAllFilter() != other.getBlockAllFilter()) return false;
         break;
       case 4:
-        result = result && getRowKeyRegexFilter().equals(other.getRowKeyRegexFilter());
+        if (!getRowKeyRegexFilter().equals(other.getRowKeyRegexFilter())) return false;
         break;
       case 14:
-        result =
-            result
-                && (java.lang.Double.doubleToLongBits(getRowSampleFilter())
-                    == java.lang.Double.doubleToLongBits(other.getRowSampleFilter()));
+        if (java.lang.Double.doubleToLongBits(getRowSampleFilter())
+            != java.lang.Double.doubleToLongBits(other.getRowSampleFilter())) return false;
         break;
       case 5:
-        result = result && getFamilyNameRegexFilter().equals(other.getFamilyNameRegexFilter());
+        if (!getFamilyNameRegexFilter().equals(other.getFamilyNameRegexFilter())) return false;
         break;
       case 6:
-        result =
-            result && getColumnQualifierRegexFilter().equals(other.getColumnQualifierRegexFilter());
+        if (!getColumnQualifierRegexFilter().equals(other.getColumnQualifierRegexFilter()))
+          return false;
         break;
       case 7:
-        result = result && getColumnRangeFilter().equals(other.getColumnRangeFilter());
+        if (!getColumnRangeFilter().equals(other.getColumnRangeFilter())) return false;
         break;
       case 8:
-        result = result && getTimestampRangeFilter().equals(other.getTimestampRangeFilter());
+        if (!getTimestampRangeFilter().equals(other.getTimestampRangeFilter())) return false;
         break;
       case 9:
-        result = result && getValueRegexFilter().equals(other.getValueRegexFilter());
+        if (!getValueRegexFilter().equals(other.getValueRegexFilter())) return false;
         break;
       case 15:
-        result = result && getValueRangeFilter().equals(other.getValueRangeFilter());
+        if (!getValueRangeFilter().equals(other.getValueRangeFilter())) return false;
         break;
       case 10:
-        result = result && (getCellsPerRowOffsetFilter() == other.getCellsPerRowOffsetFilter());
+        if (getCellsPerRowOffsetFilter() != other.getCellsPerRowOffsetFilter()) return false;
         break;
       case 11:
-        result = result && (getCellsPerRowLimitFilter() == other.getCellsPerRowLimitFilter());
+        if (getCellsPerRowLimitFilter() != other.getCellsPerRowLimitFilter()) return false;
         break;
       case 12:
-        result = result && (getCellsPerColumnLimitFilter() == other.getCellsPerColumnLimitFilter());
+        if (getCellsPerColumnLimitFilter() != other.getCellsPerColumnLimitFilter()) return false;
         break;
       case 13:
-        result = result && (getStripValueTransformer() == other.getStripValueTransformer());
+        if (getStripValueTransformer() != other.getStripValueTransformer()) return false;
         break;
       case 19:
-        result = result && getApplyLabelTransformer().equals(other.getApplyLabelTransformer());
+        if (!getApplyLabelTransformer().equals(other.getApplyLabelTransformer())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -5715,35 +5702,35 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -8201,7 +8188,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

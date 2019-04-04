@@ -17,7 +17,8 @@ package com.google.cloud.automl.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.automl.v1beta1.PredictionServiceGrpc.PredictionServiceImplBase;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -27,7 +28,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockPredictionServiceImpl extends PredictionServiceImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockPredictionServiceImpl() {
@@ -35,15 +36,15 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 
@@ -62,6 +63,21 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
     if (response instanceof PredictResponse) {
       requests.add(request);
       responseObserver.onNext((PredictResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void batchPredict(
+      BatchPredictRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

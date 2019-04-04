@@ -14,7 +14,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -26,7 +26,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -38,7 +38,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>
@@ -50,7 +50,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
-   * * Full object path: gs://bucket/directory/object.csv
+   * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
    * <code>repeated string input_uris = 1;</code>

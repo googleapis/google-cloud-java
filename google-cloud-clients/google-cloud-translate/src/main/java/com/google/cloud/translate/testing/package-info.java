@@ -27,7 +27,7 @@
  * }</pre>
  *
  * @see <a
- *     href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">
+ *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.translate.testing;

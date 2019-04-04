@@ -70,11 +70,9 @@ import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -83,9 +81,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static final int FLUSH_WAIT_TIMEOUT_SECONDS = 6;
   private final LoggingRpc rpc;
-  private final Object writeLock = new Object();
-  private final Set<ApiFuture<Void>> pendingWrites =
-      Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
+  private final Map<Object, ApiFuture<Void>> pendingWrites = new ConcurrentHashMap<>();
 
   private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
   private volatile Severity flushSeverity = null;
@@ -575,9 +571,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
     // so the code below doesn't wait uselessly.
     ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
-    synchronized (writeLock) {
-      writesToFlush.addAll(pendingWrites);
-    }
+    writesToFlush.addAll(pendingWrites.values());
 
     try {
       ApiFutures.allAsList(writesToFlush).get(FLUSH_WAIT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
@@ -596,16 +590,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       case ASYNC:
       default:
         final ApiFuture<Void> writeFuture = writeAsync(logEntries, writeOptions);
-        synchronized (writeLock) {
-          pendingWrites.add(writeFuture);
-        }
+        final Object pendingKey = new Object();
+        pendingWrites.put(pendingKey, writeFuture);
         ApiFutures.addCallback(
             writeFuture,
             new ApiFutureCallback<Void>() {
               private void removeFromPending() {
-                synchronized (writeLock) {
-                  pendingWrites.remove(writeFuture);
-                }
+                pendingWrites.remove(pendingKey);
               }
 
               @Override
@@ -711,8 +702,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   @VisibleForTesting
   int getNumPendingWrites() {
-    synchronized (writeLock) {
-      return pendingWrites.size();
-    }
+    return pendingWrites.size();
   }
 }

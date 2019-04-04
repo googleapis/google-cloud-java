@@ -7,8 +7,7 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * The request for
- * [Firestore.ListDocuments][google.firestore.v1beta1.Firestore.ListDocuments].
+ * The request for [Firestore.ListDocuments][google.firestore.v1beta1.Firestore.ListDocuments].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.ListDocumentsRequest}
@@ -26,10 +25,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
   private ListDocumentsRequest() {
     parent_ = "";
     collectionId_ = "";
-    pageSize_ = 0;
     pageToken_ = "";
     orderBy_ = "";
-    showMissing_ = false;
   }
 
   @java.lang.Override
@@ -133,7 +130,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -521,9 +518,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * If the list should show missing documents. A missing document is a
    * document that does not exist but has sub-documents. These documents will
-   * be returned with a key but will not have fields,
-   * [Document.create_time][google.firestore.v1beta1.Document.create_time], or
-   * [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
+   * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1beta1.Document.create_time],
+   * or [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
    * Requests with `show_missing` may not specify `where` or
    * `order_by`.
    * </pre>
@@ -631,31 +627,29 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
     com.google.firestore.v1beta1.ListDocumentsRequest other =
         (com.google.firestore.v1beta1.ListDocumentsRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getCollectionId().equals(other.getCollectionId());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && getOrderBy().equals(other.getOrderBy());
-    result = result && (hasMask() == other.hasMask());
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getCollectionId().equals(other.getCollectionId())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (hasMask() != other.hasMask()) return false;
     if (hasMask()) {
-      result = result && getMask().equals(other.getMask());
+      if (!getMask().equals(other.getMask())) return false;
     }
-    result = result && (getShowMissing() == other.getShowMissing());
-    result = result && getConsistencySelectorCase().equals(other.getConsistencySelectorCase());
-    if (!result) return false;
+    if (getShowMissing() != other.getShowMissing()) return false;
+    if (!getConsistencySelectorCase().equals(other.getConsistencySelectorCase())) return false;
     switch (consistencySelectorCase_) {
       case 8:
-        result = result && getTransaction().equals(other.getTransaction());
+        if (!getTransaction().equals(other.getTransaction())) return false;
         break;
       case 10:
-        result = result && getReadTime().equals(other.getReadTime());
+        if (!getReadTime().equals(other.getReadTime())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -797,8 +791,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request for
-   * [Firestore.ListDocuments][google.firestore.v1beta1.Firestore.ListDocuments].
+   * The request for [Firestore.ListDocuments][google.firestore.v1beta1.Firestore.ListDocuments].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.ListDocumentsRequest}
@@ -914,35 +907,35 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1493,7 +1486,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.firestore.v1beta1.DocumentMask mask_ = null;
+    private com.google.firestore.v1beta1.DocumentMask mask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1beta1.DocumentMask,
             com.google.firestore.v1beta1.DocumentMask.Builder,
@@ -1960,9 +1953,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If the list should show missing documents. A missing document is a
      * document that does not exist but has sub-documents. These documents will
-     * be returned with a key but will not have fields,
-     * [Document.create_time][google.firestore.v1beta1.Document.create_time], or
-     * [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
+     * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1beta1.Document.create_time],
+     * or [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
      * Requests with `show_missing` may not specify `where` or
      * `order_by`.
      * </pre>
@@ -1978,9 +1970,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If the list should show missing documents. A missing document is a
      * document that does not exist but has sub-documents. These documents will
-     * be returned with a key but will not have fields,
-     * [Document.create_time][google.firestore.v1beta1.Document.create_time], or
-     * [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
+     * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1beta1.Document.create_time],
+     * or [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
      * Requests with `show_missing` may not specify `where` or
      * `order_by`.
      * </pre>
@@ -1999,9 +1990,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If the list should show missing documents. A missing document is a
      * document that does not exist but has sub-documents. These documents will
-     * be returned with a key but will not have fields,
-     * [Document.create_time][google.firestore.v1beta1.Document.create_time], or
-     * [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
+     * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1beta1.Document.create_time],
+     * or [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
      * Requests with `show_missing` may not specify `where` or
      * `order_by`.
      * </pre>
@@ -2017,7 +2007,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

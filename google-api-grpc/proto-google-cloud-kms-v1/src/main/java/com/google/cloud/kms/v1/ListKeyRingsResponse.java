@@ -26,7 +26,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
   private ListKeyRingsResponse() {
     keyRings_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    totalSize_ = 0;
   }
 
   @java.lang.Override
@@ -55,7 +54,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 keyRings_ = new java.util.ArrayList<com.google.cloud.kms.v1.KeyRing>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -77,7 +76,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -89,7 +88,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keyRings_ = java.util.Collections.unmodifiableList(keyRings_);
       }
       this.unknownFields = unknownFields.build();
@@ -297,12 +296,11 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
     com.google.cloud.kms.v1.ListKeyRingsResponse other =
         (com.google.cloud.kms.v1.ListKeyRingsResponse) obj;
 
-    boolean result = true;
-    result = result && getKeyRingsList().equals(other.getKeyRingsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && (getTotalSize() == other.getTotalSize());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getKeyRingsList().equals(other.getKeyRingsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (getTotalSize() != other.getTotalSize()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -508,7 +506,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (keyRingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           keyRings_ = java.util.Collections.unmodifiableList(keyRings_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -525,35 +523,35 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -637,7 +635,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureKeyRingsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keyRings_ = new java.util.ArrayList<com.google.cloud.kms.v1.KeyRing>(keyRings_);
         bitField0_ |= 0x00000001;
       }
@@ -973,10 +971,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.kms.v1.KeyRing,
                 com.google.cloud.kms.v1.KeyRing.Builder,
                 com.google.cloud.kms.v1.KeyRingOrBuilder>(
-                keyRings_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                keyRings_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         keyRings_ = null;
       }
       return keyRingsBuilder_;
@@ -1135,7 +1130,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

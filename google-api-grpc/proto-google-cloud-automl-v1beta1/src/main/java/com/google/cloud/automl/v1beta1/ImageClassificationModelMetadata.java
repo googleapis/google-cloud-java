@@ -25,9 +25,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
 
   private ImageClassificationModelMetadata() {
     baseModelId_ = "";
-    trainBudget_ = 0L;
-    trainCost_ = 0L;
     stopReason_ = "";
+    modelType_ = "";
   }
 
   @java.lang.Override
@@ -78,9 +77,16 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
               stopReason_ = s;
               break;
             }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -120,8 +126,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
-   * created from scratch. The `base` model is expected to be in the same
-   * `project` and `location` as the new model to create.
+   * created from scratch. The `base` model must be in the same
+   * `project` and `location` as the new model to create, and have the same
+   * `model_type`.
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
@@ -143,8 +150,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
-   * created from scratch. The `base` model is expected to be in the same
-   * `project` and `location` as the new model to create.
+   * created from scratch. The `base` model must be in the same
+   * `project` and `location` as the new model to create, and have the same
+   * `model_type`.
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
@@ -167,8 +175,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The train budget of creating this model. The actual
-   * `train_cost` will be equal or less than this value.
+   * Required. The train budget of creating this model, expressed in hours. The
+   * actual `train_cost` will be equal or less than this value.
    * </pre>
    *
    * <code>int64 train_budget = 2;</code>
@@ -183,9 +191,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. The actual train cost of creating this model. If this
-   * model is created from a `base` model, the train cost used to create the
-   * `base` model are not included.
+   * Output only. The actual train cost of creating this model, expressed in
+   * hours. If this model is created from a `base` model, the train cost used
+   * to create the `base` model are not included.
    * </pre>
    *
    * <code>int64 train_cost = 3;</code>
@@ -201,7 +209,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    *
    * <pre>
    * Output only. The reason that this create model operation stopped,
-   * e.g. BUDGET_REACHED, CONVERGED.
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
@@ -222,7 +230,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
    *
    * <pre>
    * Output only. The reason that this create model operation stopped,
-   * e.g. BUDGET_REACHED, CONVERGED.
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
@@ -233,6 +241,113 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       stopReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_TYPE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object modelType_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the model. The available values are:
+   * *   `cloud` - Model to be used via prediction calls to AutoML API.
+   *               This is the default value.
+   * *   `mobile-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards. Expected to have low latency, but
+   *               may have lower prediction quality than other models.
+   * *   `mobile-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.
+   * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.  Expected to have a higher
+   *               latency, but should also have a higher prediction quality
+   *               than other models.
+   * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards. Expected to have low latency, but may have
+   *               lower prediction quality than other models.
+   * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards.
+   * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+   *               providing prediction via AutoML API, can also be exported
+   *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+   *               Core ML afterwards.  Expected to have a higher latency, but
+   *               should also have a higher prediction quality than other
+   *               models.
+   * </pre>
+   *
+   * <code>string model_type = 7;</code>
+   */
+  public java.lang.String getModelType() {
+    java.lang.Object ref = modelType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the model. The available values are:
+   * *   `cloud` - Model to be used via prediction calls to AutoML API.
+   *               This is the default value.
+   * *   `mobile-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards. Expected to have low latency, but
+   *               may have lower prediction quality than other models.
+   * *   `mobile-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.
+   * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.  Expected to have a higher
+   *               latency, but should also have a higher prediction quality
+   *               than other models.
+   * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards. Expected to have low latency, but may have
+   *               lower prediction quality than other models.
+   * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards.
+   * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+   *               providing prediction via AutoML API, can also be exported
+   *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+   *               Core ML afterwards.  Expected to have a higher latency, but
+   *               should also have a higher prediction quality than other
+   *               models.
+   * </pre>
+   *
+   * <code>string model_type = 7;</code>
+   */
+  public com.google.protobuf.ByteString getModelTypeBytes() {
+    java.lang.Object ref = modelType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -265,6 +380,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (!getStopReasonBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stopReason_);
     }
+    if (!getModelTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, modelType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -286,6 +404,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (!getStopReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopReason_);
     }
+    if (!getModelTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, modelType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -302,13 +423,13 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata other =
         (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) obj;
 
-    boolean result = true;
-    result = result && getBaseModelId().equals(other.getBaseModelId());
-    result = result && (getTrainBudget() == other.getTrainBudget());
-    result = result && (getTrainCost() == other.getTrainCost());
-    result = result && getStopReason().equals(other.getStopReason());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getBaseModelId().equals(other.getBaseModelId())) return false;
+    if (getTrainBudget() != other.getTrainBudget()) return false;
+    if (getTrainCost() != other.getTrainCost()) return false;
+    if (!getStopReason().equals(other.getStopReason())) return false;
+    if (!getModelType().equals(other.getModelType())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -326,6 +447,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainCost());
     hash = (37 * hash) + STOP_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getStopReason().hashCode();
+    hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getModelType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -480,6 +603,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
 
       stopReason_ = "";
 
+      modelType_ = "";
+
       return this;
     }
 
@@ -512,41 +637,42 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       result.trainBudget_ = trainBudget_;
       result.trainCost_ = trainCost_;
       result.stopReason_ = stopReason_;
+      result.modelType_ = modelType_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -576,6 +702,10 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       }
       if (!other.getStopReason().isEmpty()) {
         stopReason_ = other.stopReason_;
+        onChanged();
+      }
+      if (!other.getModelType().isEmpty()) {
+        modelType_ = other.modelType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -616,8 +746,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
-     * created from scratch. The `base` model is expected to be in the same
-     * `project` and `location` as the new model to create.
+     * created from scratch. The `base` model must be in the same
+     * `project` and `location` as the new model to create, and have the same
+     * `model_type`.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
@@ -639,8 +770,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
-     * created from scratch. The `base` model is expected to be in the same
-     * `project` and `location` as the new model to create.
+     * created from scratch. The `base` model must be in the same
+     * `project` and `location` as the new model to create, and have the same
+     * `model_type`.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
@@ -662,8 +794,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
-     * created from scratch. The `base` model is expected to be in the same
-     * `project` and `location` as the new model to create.
+     * created from scratch. The `base` model must be in the same
+     * `project` and `location` as the new model to create, and have the same
+     * `model_type`.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
@@ -683,8 +816,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
-     * created from scratch. The `base` model is expected to be in the same
-     * `project` and `location` as the new model to create.
+     * created from scratch. The `base` model must be in the same
+     * `project` and `location` as the new model to create, and have the same
+     * `model_type`.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
@@ -701,8 +835,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
-     * created from scratch. The `base` model is expected to be in the same
-     * `project` and `location` as the new model to create.
+     * created from scratch. The `base` model must be in the same
+     * `project` and `location` as the new model to create, and have the same
+     * `model_type`.
      * </pre>
      *
      * <code>string base_model_id = 1;</code>
@@ -723,8 +858,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The train budget of creating this model. The actual
-     * `train_cost` will be equal or less than this value.
+     * Required. The train budget of creating this model, expressed in hours. The
+     * actual `train_cost` will be equal or less than this value.
      * </pre>
      *
      * <code>int64 train_budget = 2;</code>
@@ -736,8 +871,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The train budget of creating this model. The actual
-     * `train_cost` will be equal or less than this value.
+     * Required. The train budget of creating this model, expressed in hours. The
+     * actual `train_cost` will be equal or less than this value.
      * </pre>
      *
      * <code>int64 train_budget = 2;</code>
@@ -752,8 +887,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The train budget of creating this model. The actual
-     * `train_cost` will be equal or less than this value.
+     * Required. The train budget of creating this model, expressed in hours. The
+     * actual `train_cost` will be equal or less than this value.
      * </pre>
      *
      * <code>int64 train_budget = 2;</code>
@@ -770,9 +905,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. The actual train cost of creating this model. If this
-     * model is created from a `base` model, the train cost used to create the
-     * `base` model are not included.
+     * Output only. The actual train cost of creating this model, expressed in
+     * hours. If this model is created from a `base` model, the train cost used
+     * to create the `base` model are not included.
      * </pre>
      *
      * <code>int64 train_cost = 3;</code>
@@ -784,9 +919,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. The actual train cost of creating this model. If this
-     * model is created from a `base` model, the train cost used to create the
-     * `base` model are not included.
+     * Output only. The actual train cost of creating this model, expressed in
+     * hours. If this model is created from a `base` model, the train cost used
+     * to create the `base` model are not included.
      * </pre>
      *
      * <code>int64 train_cost = 3;</code>
@@ -801,9 +936,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. The actual train cost of creating this model. If this
-     * model is created from a `base` model, the train cost used to create the
-     * `base` model are not included.
+     * Output only. The actual train cost of creating this model, expressed in
+     * hours. If this model is created from a `base` model, the train cost used
+     * to create the `base` model are not included.
      * </pre>
      *
      * <code>int64 train_cost = 3;</code>
@@ -821,7 +956,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      * <pre>
      * Output only. The reason that this create model operation stopped,
-     * e.g. BUDGET_REACHED, CONVERGED.
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
@@ -842,7 +977,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      * <pre>
      * Output only. The reason that this create model operation stopped,
-     * e.g. BUDGET_REACHED, CONVERGED.
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
@@ -863,7 +998,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      * <pre>
      * Output only. The reason that this create model operation stopped,
-     * e.g. BUDGET_REACHED, CONVERGED.
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
@@ -882,7 +1017,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      * <pre>
      * Output only. The reason that this create model operation stopped,
-     * e.g. BUDGET_REACHED, CONVERGED.
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
@@ -898,7 +1033,7 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
      *
      * <pre>
      * Output only. The reason that this create model operation stopped,
-     * e.g. BUDGET_REACHED, CONVERGED.
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
      * </pre>
      *
      * <code>string stop_reason = 5;</code>
@@ -914,9 +1049,263 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       return this;
     }
 
+    private java.lang.Object modelType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the model. The available values are:
+     * *   `cloud` - Model to be used via prediction calls to AutoML API.
+     *               This is the default value.
+     * *   `mobile-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards. Expected to have low latency, but
+     *               may have lower prediction quality than other models.
+     * *   `mobile-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.
+     * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.  Expected to have a higher
+     *               latency, but should also have a higher prediction quality
+     *               than other models.
+     * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards. Expected to have low latency, but may have
+     *               lower prediction quality than other models.
+     * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards.
+     * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+     *               providing prediction via AutoML API, can also be exported
+     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+     *               Core ML afterwards.  Expected to have a higher latency, but
+     *               should also have a higher prediction quality than other
+     *               models.
+     * </pre>
+     *
+     * <code>string model_type = 7;</code>
+     */
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the model. The available values are:
+     * *   `cloud` - Model to be used via prediction calls to AutoML API.
+     *               This is the default value.
+     * *   `mobile-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards. Expected to have low latency, but
+     *               may have lower prediction quality than other models.
+     * *   `mobile-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.
+     * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.  Expected to have a higher
+     *               latency, but should also have a higher prediction quality
+     *               than other models.
+     * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards. Expected to have low latency, but may have
+     *               lower prediction quality than other models.
+     * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards.
+     * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+     *               providing prediction via AutoML API, can also be exported
+     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+     *               Core ML afterwards.  Expected to have a higher latency, but
+     *               should also have a higher prediction quality than other
+     *               models.
+     * </pre>
+     *
+     * <code>string model_type = 7;</code>
+     */
+    public com.google.protobuf.ByteString getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the model. The available values are:
+     * *   `cloud` - Model to be used via prediction calls to AutoML API.
+     *               This is the default value.
+     * *   `mobile-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards. Expected to have low latency, but
+     *               may have lower prediction quality than other models.
+     * *   `mobile-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.
+     * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.  Expected to have a higher
+     *               latency, but should also have a higher prediction quality
+     *               than other models.
+     * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards. Expected to have low latency, but may have
+     *               lower prediction quality than other models.
+     * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards.
+     * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+     *               providing prediction via AutoML API, can also be exported
+     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+     *               Core ML afterwards.  Expected to have a higher latency, but
+     *               should also have a higher prediction quality than other
+     *               models.
+     * </pre>
+     *
+     * <code>string model_type = 7;</code>
+     */
+    public Builder setModelType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the model. The available values are:
+     * *   `cloud` - Model to be used via prediction calls to AutoML API.
+     *               This is the default value.
+     * *   `mobile-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards. Expected to have low latency, but
+     *               may have lower prediction quality than other models.
+     * *   `mobile-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.
+     * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.  Expected to have a higher
+     *               latency, but should also have a higher prediction quality
+     *               than other models.
+     * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards. Expected to have low latency, but may have
+     *               lower prediction quality than other models.
+     * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards.
+     * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+     *               providing prediction via AutoML API, can also be exported
+     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+     *               Core ML afterwards.  Expected to have a higher latency, but
+     *               should also have a higher prediction quality than other
+     *               models.
+     * </pre>
+     *
+     * <code>string model_type = 7;</code>
+     */
+    public Builder clearModelType() {
+
+      modelType_ = getDefaultInstance().getModelType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the model. The available values are:
+     * *   `cloud` - Model to be used via prediction calls to AutoML API.
+     *               This is the default value.
+     * *   `mobile-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards. Expected to have low latency, but
+     *               may have lower prediction quality than other models.
+     * *   `mobile-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.
+     * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+     *               with TensorFlow afterwards.  Expected to have a higher
+     *               latency, but should also have a higher prediction quality
+     *               than other models.
+     * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards. Expected to have low latency, but may have
+     *               lower prediction quality than other models.
+     * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+     *               prediction via AutoML API, can also be exported (see
+     *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+     *               ML afterwards.
+     * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+     *               providing prediction via AutoML API, can also be exported
+     *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+     *               Core ML afterwards.  Expected to have a higher latency, but
+     *               should also have a higher prediction quality than other
+     *               models.
+     * </pre>
+     *
+     * <code>string model_type = 7;</code>
+     */
+    public Builder setModelTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelType_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

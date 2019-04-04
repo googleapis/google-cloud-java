@@ -25,7 +25,6 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
   private ReadRowsRequest() {
     tableName_ = "";
     appProfileId_ = "";
-    rowsLimit_ = 0L;
   }
 
   @java.lang.Override
@@ -102,7 +101,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -391,20 +390,19 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     }
     com.google.bigtable.v2.ReadRowsRequest other = (com.google.bigtable.v2.ReadRowsRequest) obj;
 
-    boolean result = true;
-    result = result && getTableName().equals(other.getTableName());
-    result = result && getAppProfileId().equals(other.getAppProfileId());
-    result = result && (hasRows() == other.hasRows());
+    if (!getTableName().equals(other.getTableName())) return false;
+    if (!getAppProfileId().equals(other.getAppProfileId())) return false;
+    if (hasRows() != other.hasRows()) return false;
     if (hasRows()) {
-      result = result && getRows().equals(other.getRows());
+      if (!getRows().equals(other.getRows())) return false;
     }
-    result = result && (hasFilter() == other.hasFilter());
+    if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
-      result = result && getFilter().equals(other.getFilter());
+      if (!getFilter().equals(other.getFilter())) return false;
     }
-    result = result && (getRowsLimit() == other.getRowsLimit());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getRowsLimit() != other.getRowsLimit()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -637,35 +635,35 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -929,7 +927,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.bigtable.v2.RowSet rows_ = null;
+    private com.google.bigtable.v2.RowSet rows_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.v2.RowSet,
             com.google.bigtable.v2.RowSet.Builder,
@@ -1103,7 +1101,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       return rowsBuilder_;
     }
 
-    private com.google.bigtable.v2.RowFilter filter_ = null;
+    private com.google.bigtable.v2.RowFilter filter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.v2.RowFilter,
             com.google.bigtable.v2.RowFilter.Builder,
@@ -1336,7 +1334,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

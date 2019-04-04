@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
+ * The request message for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateIntentRequest}
@@ -99,7 +98,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -138,7 +137,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The intent to update.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -151,7 +149,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The intent to update.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -166,7 +163,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The intent to update.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -183,9 +179,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
-   * used. [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * used. [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -207,9 +204,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
-   * used. [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * used. [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 2;</code>
@@ -360,19 +358,18 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest other =
         (com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest) obj;
 
-    boolean result = true;
-    result = result && (hasIntent() == other.hasIntent());
+    if (hasIntent() != other.hasIntent()) return false;
     if (hasIntent()) {
-      result = result && getIntent().equals(other.getIntent());
+      if (!getIntent().equals(other.getIntent())) return false;
     }
-    result = result && getLanguageCode().equals(other.getLanguageCode());
-    result = result && (hasUpdateMask() == other.hasUpdateMask());
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
-      result = result && getUpdateMask().equals(other.getUpdateMask());
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
-    result = result && intentView_ == other.intentView_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (intentView_ != other.intentView_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -499,8 +496,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for
-   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
+   * The request message for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateIntentRequest}
@@ -602,35 +598,35 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -689,7 +685,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2beta1.Intent intent_ = null;
+    private com.google.cloud.dialogflow.v2beta1.Intent intent_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Intent,
             com.google.cloud.dialogflow.v2beta1.Intent.Builder,
@@ -700,7 +696,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -713,7 +708,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -732,7 +726,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -755,7 +748,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -775,7 +767,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -802,7 +793,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -823,7 +813,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -838,7 +827,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -857,7 +845,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The intent to update.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
@@ -886,9 +873,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -910,9 +898,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -934,9 +923,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -956,9 +946,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -975,9 +966,10 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The language of training phrases, parameters and rich messages
      * defined in `intent`. If not specified, the agent's default language is
-     * used. [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * used. [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 2;</code>
@@ -993,7 +985,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.FieldMask updateMask_ = null;
+    private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
@@ -1250,7 +1242,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

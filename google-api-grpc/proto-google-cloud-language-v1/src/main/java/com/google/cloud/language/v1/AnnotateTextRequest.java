@@ -93,7 +93,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -205,13 +205,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       super(builder);
     }
 
-    private Features() {
-      extractSyntax_ = false;
-      extractEntities_ = false;
-      extractDocumentSentiment_ = false;
-      extractEntitySentiment_ = false;
-      classifyText_ = false;
-    }
+    private Features() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -264,7 +258,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -440,14 +434,13 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       com.google.cloud.language.v1.AnnotateTextRequest.Features other =
           (com.google.cloud.language.v1.AnnotateTextRequest.Features) obj;
 
-      boolean result = true;
-      result = result && (getExtractSyntax() == other.getExtractSyntax());
-      result = result && (getExtractEntities() == other.getExtractEntities());
-      result = result && (getExtractDocumentSentiment() == other.getExtractDocumentSentiment());
-      result = result && (getExtractEntitySentiment() == other.getExtractEntitySentiment());
-      result = result && (getClassifyText() == other.getClassifyText());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getExtractSyntax() != other.getExtractSyntax()) return false;
+      if (getExtractEntities() != other.getExtractEntities()) return false;
+      if (getExtractDocumentSentiment() != other.getExtractDocumentSentiment()) return false;
+      if (getExtractEntitySentiment() != other.getExtractEntitySentiment()) return false;
+      if (getClassifyText() != other.getClassifyText()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -664,23 +657,23 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -688,13 +681,13 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -978,7 +971,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1036,7 +1029,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasDocument() {
     return document_ != null;
@@ -1048,7 +1043,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1.Document getDocument() {
     return document_ == null
@@ -1062,7 +1059,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * Input document.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
@@ -1077,7 +1076,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasFeatures() {
     return features_ != null;
@@ -1089,7 +1090,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1.AnnotateTextRequest.Features getFeatures() {
     return features_ == null
@@ -1103,7 +1106,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * The enabled features.
    * </pre>
    *
-   * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+   * <code>
+   * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.language.v1.AnnotateTextRequest.FeaturesOrBuilder getFeaturesOrBuilder() {
     return getFeatures();
@@ -1196,18 +1201,17 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.language.v1.AnnotateTextRequest other =
         (com.google.cloud.language.v1.AnnotateTextRequest) obj;
 
-    boolean result = true;
-    result = result && (hasDocument() == other.hasDocument());
+    if (hasDocument() != other.hasDocument()) return false;
     if (hasDocument()) {
-      result = result && getDocument().equals(other.getDocument());
+      if (!getDocument().equals(other.getDocument())) return false;
     }
-    result = result && (hasFeatures() == other.hasFeatures());
+    if (hasFeatures() != other.hasFeatures()) return false;
     if (hasFeatures()) {
-      result = result && getFeatures().equals(other.getFeatures());
+      if (!getFeatures().equals(other.getFeatures())) return false;
     }
-    result = result && encodingType_ == other.encodingType_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (encodingType_ != other.encodingType_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1431,35 +1435,35 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1513,7 +1517,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.language.v1.Document document_ = null;
+    private com.google.cloud.language.v1.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.Document,
             com.google.cloud.language.v1.Document.Builder,
@@ -1526,7 +1530,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
@@ -1538,7 +1544,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.Document getDocument() {
       if (documentBuilder_ == null) {
@@ -1556,7 +1564,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.language.v1.Document value) {
       if (documentBuilder_ == null) {
@@ -1578,7 +1588,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.language.v1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
@@ -1597,7 +1609,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDocument(com.google.cloud.language.v1.Document value) {
       if (documentBuilder_ == null) {
@@ -1623,7 +1637,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
@@ -1643,7 +1659,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.Document.Builder getDocumentBuilder() {
 
@@ -1657,7 +1675,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
@@ -1675,7 +1695,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * Input document.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.Document,
@@ -1694,7 +1716,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       return documentBuilder_;
     }
 
-    private com.google.cloud.language.v1.AnnotateTextRequest.Features features_ = null;
+    private com.google.cloud.language.v1.AnnotateTextRequest.Features features_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.AnnotateTextRequest.Features,
             com.google.cloud.language.v1.AnnotateTextRequest.Features.Builder,
@@ -1707,7 +1729,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasFeatures() {
       return featuresBuilder_ != null || features_ != null;
@@ -1719,7 +1743,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.AnnotateTextRequest.Features getFeatures() {
       if (featuresBuilder_ == null) {
@@ -1737,7 +1763,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeatures(com.google.cloud.language.v1.AnnotateTextRequest.Features value) {
       if (featuresBuilder_ == null) {
@@ -1759,7 +1787,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeatures(
         com.google.cloud.language.v1.AnnotateTextRequest.Features.Builder builderForValue) {
@@ -1779,7 +1809,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeFeatures(com.google.cloud.language.v1.AnnotateTextRequest.Features value) {
       if (featuresBuilder_ == null) {
@@ -1805,7 +1837,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFeatures() {
       if (featuresBuilder_ == null) {
@@ -1825,7 +1859,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.AnnotateTextRequest.Features.Builder getFeaturesBuilder() {
 
@@ -1839,7 +1875,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.language.v1.AnnotateTextRequest.FeaturesOrBuilder
         getFeaturesOrBuilder() {
@@ -1858,7 +1896,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * The enabled features.
      * </pre>
      *
-     * <code>.google.cloud.language.v1.AnnotateTextRequest.Features features = 2;</code>
+     * <code>
+     * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.AnnotateTextRequest.Features,
@@ -1955,7 +1995,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

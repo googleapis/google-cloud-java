@@ -108,7 +108,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 initializationActions_ =
                     new java.util.ArrayList<
                         com.google.cloud.dataproc.v1.NodeInitializationAction>();
@@ -170,7 +170,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -182,7 +182,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
       }
       this.unknownFields = unknownFields.build();
@@ -735,35 +735,34 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dataproc.v1.ClusterConfig other =
         (com.google.cloud.dataproc.v1.ClusterConfig) obj;
 
-    boolean result = true;
-    result = result && getConfigBucket().equals(other.getConfigBucket());
-    result = result && (hasGceClusterConfig() == other.hasGceClusterConfig());
+    if (!getConfigBucket().equals(other.getConfigBucket())) return false;
+    if (hasGceClusterConfig() != other.hasGceClusterConfig()) return false;
     if (hasGceClusterConfig()) {
-      result = result && getGceClusterConfig().equals(other.getGceClusterConfig());
+      if (!getGceClusterConfig().equals(other.getGceClusterConfig())) return false;
     }
-    result = result && (hasMasterConfig() == other.hasMasterConfig());
+    if (hasMasterConfig() != other.hasMasterConfig()) return false;
     if (hasMasterConfig()) {
-      result = result && getMasterConfig().equals(other.getMasterConfig());
+      if (!getMasterConfig().equals(other.getMasterConfig())) return false;
     }
-    result = result && (hasWorkerConfig() == other.hasWorkerConfig());
+    if (hasWorkerConfig() != other.hasWorkerConfig()) return false;
     if (hasWorkerConfig()) {
-      result = result && getWorkerConfig().equals(other.getWorkerConfig());
+      if (!getWorkerConfig().equals(other.getWorkerConfig())) return false;
     }
-    result = result && (hasSecondaryWorkerConfig() == other.hasSecondaryWorkerConfig());
+    if (hasSecondaryWorkerConfig() != other.hasSecondaryWorkerConfig()) return false;
     if (hasSecondaryWorkerConfig()) {
-      result = result && getSecondaryWorkerConfig().equals(other.getSecondaryWorkerConfig());
+      if (!getSecondaryWorkerConfig().equals(other.getSecondaryWorkerConfig())) return false;
     }
-    result = result && (hasSoftwareConfig() == other.hasSoftwareConfig());
+    if (hasSoftwareConfig() != other.hasSoftwareConfig()) return false;
     if (hasSoftwareConfig()) {
-      result = result && getSoftwareConfig().equals(other.getSoftwareConfig());
+      if (!getSoftwareConfig().equals(other.getSoftwareConfig())) return false;
     }
-    result = result && getInitializationActionsList().equals(other.getInitializationActionsList());
-    result = result && (hasEncryptionConfig() == other.hasEncryptionConfig());
+    if (!getInitializationActionsList().equals(other.getInitializationActionsList())) return false;
+    if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
     if (hasEncryptionConfig()) {
-      result = result && getEncryptionConfig().equals(other.getEncryptionConfig());
+      if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1050,7 +1049,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         result.softwareConfig_ = softwareConfigBuilder_.build();
       }
       if (initializationActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -1070,35 +1069,35 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1312,7 +1311,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.dataproc.v1.GceClusterConfig gceClusterConfig_ = null;
+    private com.google.cloud.dataproc.v1.GceClusterConfig gceClusterConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.GceClusterConfig,
             com.google.cloud.dataproc.v1.GceClusterConfig.Builder,
@@ -1503,7 +1502,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       return gceClusterConfigBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.InstanceGroupConfig masterConfig_ = null;
+    private com.google.cloud.dataproc.v1.InstanceGroupConfig masterConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.InstanceGroupConfig,
             com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder,
@@ -1694,7 +1693,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       return masterConfigBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.InstanceGroupConfig workerConfig_ = null;
+    private com.google.cloud.dataproc.v1.InstanceGroupConfig workerConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.InstanceGroupConfig,
             com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder,
@@ -1885,7 +1884,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       return workerConfigBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.InstanceGroupConfig secondaryWorkerConfig_ = null;
+    private com.google.cloud.dataproc.v1.InstanceGroupConfig secondaryWorkerConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.InstanceGroupConfig,
             com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder,
@@ -2080,7 +2079,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       return secondaryWorkerConfigBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.SoftwareConfig softwareConfig_ = null;
+    private com.google.cloud.dataproc.v1.SoftwareConfig softwareConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.SoftwareConfig,
             com.google.cloud.dataproc.v1.SoftwareConfig.Builder,
@@ -2266,7 +2265,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         initializationActions_ = java.util.Collections.emptyList();
 
     private void ensureInitializationActionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         initializationActions_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.NodeInitializationAction>(
                 initializationActions_);
@@ -2854,7 +2853,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.NodeInitializationAction.Builder,
                 com.google.cloud.dataproc.v1.NodeInitializationActionOrBuilder>(
                 initializationActions_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         initializationActions_ = null;
@@ -2862,7 +2861,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       return initializationActionsBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1.EncryptionConfig encryptionConfig_ = null;
+    private com.google.cloud.dataproc.v1.EncryptionConfig encryptionConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.EncryptionConfig,
             com.google.cloud.dataproc.v1.EncryptionConfig.Builder,
@@ -3046,7 +3045,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

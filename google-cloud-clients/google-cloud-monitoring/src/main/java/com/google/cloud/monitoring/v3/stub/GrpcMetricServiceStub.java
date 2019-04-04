@@ -27,7 +27,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -43,6 +45,7 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -212,41 +215,115 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                 .<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
                     newBuilder()
                 .setMethodDescriptor(listMonitoredResourceDescriptorsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListMonitoredResourceDescriptorsRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          ListMonitoredResourceDescriptorsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorTransportSettings =
             GrpcCallSettings
                 .<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>newBuilder()
                 .setMethodDescriptor(getMonitoredResourceDescriptorMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetMonitoredResourceDescriptorRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          GetMonitoredResourceDescriptorRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
         listMetricDescriptorsTransportSettings =
             GrpcCallSettings
                 .<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>newBuilder()
                 .setMethodDescriptor(listMetricDescriptorsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListMetricDescriptorsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListMetricDescriptorsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorTransportSettings =
             GrpcCallSettings.<GetMetricDescriptorRequest, MetricDescriptor>newBuilder()
                 .setMethodDescriptor(getMetricDescriptorMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetMetricDescriptorRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetMetricDescriptorRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
         createMetricDescriptorTransportSettings =
             GrpcCallSettings.<CreateMetricDescriptorRequest, MetricDescriptor>newBuilder()
                 .setMethodDescriptor(createMetricDescriptorMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateMetricDescriptorRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateMetricDescriptorRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorTransportSettings =
         GrpcCallSettings.<DeleteMetricDescriptorRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteMetricDescriptorMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteMetricDescriptorRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteMetricDescriptorRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse>
         listTimeSeriesTransportSettings =
             GrpcCallSettings.<ListTimeSeriesRequest, ListTimeSeriesResponse>newBuilder()
                 .setMethodDescriptor(listTimeSeriesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListTimeSeriesRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListTimeSeriesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesTransportSettings =
         GrpcCallSettings.<CreateTimeSeriesRequest, Empty>newBuilder()
             .setMethodDescriptor(createTimeSeriesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateTimeSeriesRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateTimeSeriesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listMonitoredResourceDescriptorsCallable =

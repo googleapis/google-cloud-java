@@ -35,11 +35,11 @@
  * <pre>
  * <code>
  * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
- *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+ *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
  *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
  *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
  *   Duration lifetime = Duration.newBuilder().build();
- *   GenerateAccessTokenResponse response = iamCredentialsClient.generateAccessToken(formattedName, delegates, scope, lifetime);
+ *   GenerateAccessTokenResponse response = iamCredentialsClient.generateAccessToken(name, delegates, scope, lifetime);
  * }
  * </code>
  * </pre>

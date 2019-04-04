@@ -7,11 +7,7 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Response message for
- * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
- * Currently, this is only
- * used to return an image recognition prediction result. More prediction
- * output metadata might be introduced in the future.
+ * Response message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.PredictResponse}
@@ -56,7 +52,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 payload_ =
                     new java.util.ArrayList<com.google.cloud.automl.v1beta1.AnnotationPayload>();
                 mutable_bitField0_ |= 0x00000001;
@@ -69,7 +65,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
@@ -84,7 +80,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -96,7 +92,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         payload_ = java.util.Collections.unmodifiableList(payload_);
       }
       this.unknownFields = unknownFields.build();
@@ -137,6 +133,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
+   * Translation and Text Sentiment will return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -149,6 +146,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
+   * Translation and Text Sentiment will return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -162,6 +160,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
+   * Translation and Text Sentiment will return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -174,6 +173,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
+   * Translation and Text Sentiment will return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -186,6 +186,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Prediction result.
+   * Translation and Text Sentiment will return precisely one payload.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -224,6 +225,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -244,6 +257,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -256,6 +281,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -273,6 +310,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -345,11 +394,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.automl.v1beta1.PredictResponse other =
         (com.google.cloud.automl.v1beta1.PredictResponse) obj;
 
-    boolean result = true;
-    result = result && getPayloadList().equals(other.getPayloadList());
-    result = result && internalGetMetadata().equals(other.internalGetMetadata());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPayloadList().equals(other.getPayloadList())) return false;
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -471,11 +519,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for
-   * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
-   * Currently, this is only
-   * used to return an image recognition prediction result. More prediction
-   * output metadata might be introduced in the future.
+   * Response message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.PredictResponse}
@@ -574,7 +618,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           new com.google.cloud.automl.v1beta1.PredictResponse(this);
       int from_bitField0_ = bitField0_;
       if (payloadBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           payload_ = java.util.Collections.unmodifiableList(payload_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -590,35 +634,35 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -697,7 +741,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensurePayloadIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         payload_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.AnnotationPayload>(payload_);
         bitField0_ |= 0x00000001;
@@ -715,6 +759,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -731,6 +776,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -747,6 +793,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -763,6 +810,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -785,6 +833,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -805,6 +854,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -827,6 +877,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -849,6 +900,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -869,6 +921,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -889,6 +942,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -909,6 +963,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -928,6 +983,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -947,6 +1003,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -959,6 +1016,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -976,6 +1034,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -993,6 +1052,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -1006,6 +1066,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -1020,6 +1081,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Prediction result.
+     * Translation and Text Sentiment will return precisely one payload.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
@@ -1040,10 +1102,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.automl.v1beta1.AnnotationPayload,
                 com.google.cloud.automl.v1beta1.AnnotationPayload.Builder,
                 com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder>(
-                payload_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                payload_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         payload_ = null;
       }
       return payloadBuilder_;
@@ -1080,6 +1139,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1100,6 +1171,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1112,6 +1195,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1129,6 +1224,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1153,6 +1260,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1174,6 +1293,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1193,6 +1324,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1204,7 +1347,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

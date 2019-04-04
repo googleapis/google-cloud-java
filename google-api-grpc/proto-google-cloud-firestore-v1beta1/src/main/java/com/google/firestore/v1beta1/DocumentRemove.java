@@ -7,14 +7,12 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * A [Document][google.firestore.v1beta1.Document] has been removed from the
- * view of the targets.
+ * A [Document][google.firestore.v1beta1.Document] has been removed from the view of the targets.
  * Sent if the document is no longer relevant to a target and is out of view.
  * Can be sent instead of a DocumentDelete or a DocumentChange if the server
  * can not send the new value of the document.
- * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages
- * may be returned for the same logical write or delete, if multiple targets are
- * affected.
+ * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages may be returned for the same logical
+ * write or delete, if multiple targets are affected.
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.DocumentRemove}
@@ -31,7 +29,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
 
   private DocumentRemove() {
     document_ = "";
-    removedTargetIds_ = java.util.Collections.emptyList();
+    removedTargetIds_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -67,24 +65,23 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
             }
           case 16:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                removedTargetIds_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              removedTargetIds_.add(input.readInt32());
+              removedTargetIds_.addInt(input.readInt32());
               break;
             }
           case 18:
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
-                  && input.getBytesUntilLimit() > 0) {
-                removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                removedTargetIds_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                removedTargetIds_.add(input.readInt32());
+                removedTargetIds_.addInt(input.readInt32());
               }
               input.popLimit(limit);
               break;
@@ -106,7 +103,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -118,8 +115,8 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-        removedTargetIds_ = java.util.Collections.unmodifiableList(removedTargetIds_);
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        removedTargetIds_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -148,8 +145,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the [Document][google.firestore.v1beta1.Document] that
-   * has gone out of view.
+   * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
    * </pre>
    *
    * <code>string document = 1;</code>
@@ -169,8 +165,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the [Document][google.firestore.v1beta1.Document] that
-   * has gone out of view.
+   * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
    * </pre>
    *
    * <code>string document = 1;</code>
@@ -188,7 +183,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOVED_TARGET_IDS_FIELD_NUMBER = 2;
-  private java.util.List<java.lang.Integer> removedTargetIds_;
+  private com.google.protobuf.Internal.IntList removedTargetIds_;
   /**
    *
    *
@@ -223,7 +218,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 removed_target_ids = 2;</code>
    */
   public int getRemovedTargetIds(int index) {
-    return removedTargetIds_.get(index);
+    return removedTargetIds_.getInt(index);
   }
 
   private int removedTargetIdsMemoizedSerializedSize = -1;
@@ -293,7 +288,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       output.writeUInt32NoTag(removedTargetIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < removedTargetIds_.size(); i++) {
-      output.writeInt32NoTag(removedTargetIds_.get(i));
+      output.writeInt32NoTag(removedTargetIds_.getInt(i));
     }
     if (readTime_ != null) {
       output.writeMessage(4, getReadTime());
@@ -314,7 +309,8 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       int dataSize = 0;
       for (int i = 0; i < removedTargetIds_.size(); i++) {
         dataSize +=
-            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(removedTargetIds_.get(i));
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(
+                removedTargetIds_.getInt(i));
       }
       size += dataSize;
       if (!getRemovedTargetIdsList().isEmpty()) {
@@ -342,15 +338,14 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     com.google.firestore.v1beta1.DocumentRemove other =
         (com.google.firestore.v1beta1.DocumentRemove) obj;
 
-    boolean result = true;
-    result = result && getDocument().equals(other.getDocument());
-    result = result && getRemovedTargetIdsList().equals(other.getRemovedTargetIdsList());
-    result = result && (hasReadTime() == other.hasReadTime());
+    if (!getDocument().equals(other.getDocument())) return false;
+    if (!getRemovedTargetIdsList().equals(other.getRemovedTargetIdsList())) return false;
+    if (hasReadTime() != other.hasReadTime()) return false;
     if (hasReadTime()) {
-      result = result && getReadTime().equals(other.getReadTime());
+      if (!getReadTime().equals(other.getReadTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -474,14 +469,12 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1beta1.Document] has been removed from the
-   * view of the targets.
+   * A [Document][google.firestore.v1beta1.Document] has been removed from the view of the targets.
    * Sent if the document is no longer relevant to a target and is out of view.
    * Can be sent instead of a DocumentDelete or a DocumentChange if the server
    * can not send the new value of the document.
-   * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages
-   * may be returned for the same logical write or delete, if multiple targets are
-   * affected.
+   * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages may be returned for the same logical
+   * write or delete, if multiple targets are affected.
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.DocumentRemove}
@@ -524,7 +517,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       document_ = "";
 
-      removedTargetIds_ = java.util.Collections.emptyList();
+      removedTargetIds_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000002);
       if (readTimeBuilder_ == null) {
         readTime_ = null;
@@ -562,8 +555,8 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.document_ = document_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        removedTargetIds_ = java.util.Collections.unmodifiableList(removedTargetIds_);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        removedTargetIds_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.removedTargetIds_ = removedTargetIds_;
@@ -579,35 +572,35 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -675,8 +668,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -696,8 +688,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -717,8 +708,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -736,8 +726,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -752,8 +741,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -769,11 +757,11 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<java.lang.Integer> removedTargetIds_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.IntList removedTargetIds_ = emptyIntList();
 
     private void ensureRemovedTargetIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>(removedTargetIds_);
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        removedTargetIds_ = mutableCopy(removedTargetIds_);
         bitField0_ |= 0x00000002;
       }
     }
@@ -787,7 +775,9 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 removed_target_ids = 2;</code>
      */
     public java.util.List<java.lang.Integer> getRemovedTargetIdsList() {
-      return java.util.Collections.unmodifiableList(removedTargetIds_);
+      return ((bitField0_ & 0x00000002) != 0)
+          ? java.util.Collections.unmodifiableList(removedTargetIds_)
+          : removedTargetIds_;
     }
     /**
      *
@@ -811,7 +801,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 removed_target_ids = 2;</code>
      */
     public int getRemovedTargetIds(int index) {
-      return removedTargetIds_.get(index);
+      return removedTargetIds_.getInt(index);
     }
     /**
      *
@@ -824,7 +814,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setRemovedTargetIds(int index, int value) {
       ensureRemovedTargetIdsIsMutable();
-      removedTargetIds_.set(index, value);
+      removedTargetIds_.setInt(index, value);
       onChanged();
       return this;
     }
@@ -839,7 +829,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder addRemovedTargetIds(int value) {
       ensureRemovedTargetIdsIsMutable();
-      removedTargetIds_.add(value);
+      removedTargetIds_.addInt(value);
       onChanged();
       return this;
     }
@@ -868,13 +858,13 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 removed_target_ids = 2;</code>
      */
     public Builder clearRemovedTargetIds() {
-      removedTargetIds_ = java.util.Collections.emptyList();
+      removedTargetIds_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.Timestamp readTime_ = null;
+    private com.google.protobuf.Timestamp readTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1060,7 +1050,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

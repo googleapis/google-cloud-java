@@ -17,8 +17,8 @@ package com.google.cloud.dialogflow.v2beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesGrpc.KnowledgeBasesImplBase;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,7 +28,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockKnowledgeBasesImpl() {
@@ -36,15 +36,15 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 
@@ -110,6 +110,21 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateKnowledgeBase(
+      UpdateKnowledgeBaseRequest request, StreamObserver<KnowledgeBase> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof KnowledgeBase) {
+      requests.add(request);
+      responseObserver.onNext((KnowledgeBase) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

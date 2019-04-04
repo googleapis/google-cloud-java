@@ -45,7 +45,7 @@ import javax.annotation.Generated;
  * can redefine a session entity type at the session level.
  *
  * <p>For more information about entity types, see the [Dialogflow
- * documentation](https://dialogflow.com/docs/entities).
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -399,6 +399,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Creates a session entity type.
    *
+   * <p>If the specified session entity type already exists, overrides the session entity type.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -428,6 +430,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a session entity type.
+   *
+   * <p>If the specified session entity type already exists, overrides the session entity type.
    *
    * <p>Sample code:
    *
@@ -459,6 +463,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Creates a session entity type.
    *
+   * <p>If the specified session entity type already exists, overrides the session entity type.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -483,6 +489,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a session entity type.
+   *
+   * <p>If the specified session entity type already exists, overrides the session entity type.
    *
    * <p>Sample code:
    *

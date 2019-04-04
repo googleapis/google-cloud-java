@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for
- * [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.CreateKnowledgeBase].
+ * Request message for [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.CreateKnowledgeBase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest}
@@ -77,7 +76,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -115,8 +114,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The agent to create a knowledge base for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to create a knowledge base for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -136,8 +135,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The agent to create a knowledge base for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to create a knowledge base for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -246,14 +245,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
     com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest other =
         (com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasKnowledgeBase() == other.hasKnowledgeBase());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasKnowledgeBase() != other.hasKnowledgeBase()) return false;
     if (hasKnowledgeBase()) {
-      result = result && getKnowledgeBase().equals(other.getKnowledgeBase());
+      if (!getKnowledgeBase().equals(other.getKnowledgeBase())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -374,8 +372,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for
-   * [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.CreateKnowledgeBase].
+   * Request message for [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.CreateKnowledgeBase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest}
@@ -464,35 +461,35 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -552,8 +549,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The agent to create a knowledge base for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to create a knowledge base for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -573,8 +570,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The agent to create a knowledge base for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to create a knowledge base for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -594,8 +591,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The agent to create a knowledge base for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to create a knowledge base for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -613,8 +610,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The agent to create a knowledge base for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to create a knowledge base for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -629,8 +626,8 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The agent to create a knowledge base for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Required. The project to create a knowledge base for.
+     * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -646,7 +643,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledgeBase_ = null;
+    private com.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledgeBase_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase,
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder,
@@ -830,7 +827,7 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

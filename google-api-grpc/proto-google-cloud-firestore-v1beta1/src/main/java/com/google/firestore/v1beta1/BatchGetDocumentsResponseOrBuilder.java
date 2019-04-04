@@ -68,8 +68,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * <pre>
    * The transaction that was started as part of this request.
    * Will only be set in the first response, and only if
-   * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1beta1.BatchGetDocumentsRequest.new_transaction]
-   * was set in the request.
+   * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1beta1.BatchGetDocumentsRequest.new_transaction] was set in the request.
    * </pre>
    *
    * <code>bytes transaction = 3;</code>

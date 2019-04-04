@@ -24,7 +24,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
 
   private TargetChange() {
     targetChangeType_ = 0;
-    targetIds_ = java.util.Collections.emptyList();
+    targetIds_ = emptyIntList();
     resumeToken_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -61,24 +61,23 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
             }
           case 16:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                targetIds_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                targetIds_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              targetIds_.add(input.readInt32());
+              targetIds_.addInt(input.readInt32());
               break;
             }
           case 18:
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
-                  && input.getBytesUntilLimit() > 0) {
-                targetIds_ = new java.util.ArrayList<java.lang.Integer>();
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                targetIds_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                targetIds_.add(input.readInt32());
+                targetIds_.addInt(input.readInt32());
               }
               input.popLimit(limit);
               break;
@@ -119,7 +118,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -131,8 +130,8 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-        targetIds_ = java.util.Collections.unmodifiableList(targetIds_);
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        targetIds_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -395,7 +394,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_IDS_FIELD_NUMBER = 2;
-  private java.util.List<java.lang.Integer> targetIds_;
+  private com.google.protobuf.Internal.IntList targetIds_;
   /**
    *
    *
@@ -445,7 +444,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 target_ids = 2;</code>
    */
   public int getTargetIds(int index) {
-    return targetIds_.get(index);
+    return targetIds_.getInt(index);
   }
 
   private int targetIdsMemoizedSerializedSize = -1;
@@ -590,7 +589,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
       output.writeUInt32NoTag(targetIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < targetIds_.size(); i++) {
-      output.writeInt32NoTag(targetIds_.get(i));
+      output.writeInt32NoTag(targetIds_.getInt(i));
     }
     if (cause_ != null) {
       output.writeMessage(3, getCause());
@@ -617,7 +616,8 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
     {
       int dataSize = 0;
       for (int i = 0; i < targetIds_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(targetIds_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(targetIds_.getInt(i));
       }
       size += dataSize;
       if (!getTargetIdsList().isEmpty()) {
@@ -651,20 +651,19 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
     com.google.firestore.v1beta1.TargetChange other =
         (com.google.firestore.v1beta1.TargetChange) obj;
 
-    boolean result = true;
-    result = result && targetChangeType_ == other.targetChangeType_;
-    result = result && getTargetIdsList().equals(other.getTargetIdsList());
-    result = result && (hasCause() == other.hasCause());
+    if (targetChangeType_ != other.targetChangeType_) return false;
+    if (!getTargetIdsList().equals(other.getTargetIdsList())) return false;
+    if (hasCause() != other.hasCause()) return false;
     if (hasCause()) {
-      result = result && getCause().equals(other.getCause());
+      if (!getCause().equals(other.getCause())) return false;
     }
-    result = result && getResumeToken().equals(other.getResumeToken());
-    result = result && (hasReadTime() == other.hasReadTime());
+    if (!getResumeToken().equals(other.getResumeToken())) return false;
+    if (hasReadTime() != other.hasReadTime()) return false;
     if (hasReadTime()) {
-      result = result && getReadTime().equals(other.getReadTime());
+      if (!getReadTime().equals(other.getReadTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -837,7 +836,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       targetChangeType_ = 0;
 
-      targetIds_ = java.util.Collections.emptyList();
+      targetIds_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000002);
       if (causeBuilder_ == null) {
         cause_ = null;
@@ -883,8 +882,8 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.targetChangeType_ = targetChangeType_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        targetIds_ = java.util.Collections.unmodifiableList(targetIds_);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        targetIds_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.targetIds_ = targetIds_;
@@ -906,35 +905,35 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1081,11 +1080,11 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<java.lang.Integer> targetIds_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.IntList targetIds_ = emptyIntList();
 
     private void ensureTargetIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        targetIds_ = new java.util.ArrayList<java.lang.Integer>(targetIds_);
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        targetIds_ = mutableCopy(targetIds_);
         bitField0_ |= 0x00000002;
       }
     }
@@ -1104,7 +1103,9 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 target_ids = 2;</code>
      */
     public java.util.List<java.lang.Integer> getTargetIdsList() {
-      return java.util.Collections.unmodifiableList(targetIds_);
+      return ((bitField0_ & 0x00000002) != 0)
+          ? java.util.Collections.unmodifiableList(targetIds_)
+          : targetIds_;
     }
     /**
      *
@@ -1138,7 +1139,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 target_ids = 2;</code>
      */
     public int getTargetIds(int index) {
-      return targetIds_.get(index);
+      return targetIds_.getInt(index);
     }
     /**
      *
@@ -1156,7 +1157,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTargetIds(int index, int value) {
       ensureTargetIdsIsMutable();
-      targetIds_.set(index, value);
+      targetIds_.setInt(index, value);
       onChanged();
       return this;
     }
@@ -1176,7 +1177,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder addTargetIds(int value) {
       ensureTargetIdsIsMutable();
-      targetIds_.add(value);
+      targetIds_.addInt(value);
       onChanged();
       return this;
     }
@@ -1215,13 +1216,13 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 target_ids = 2;</code>
      */
     public Builder clearTargetIds() {
-      targetIds_ = java.util.Collections.emptyList();
+      targetIds_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
 
-    private com.google.rpc.Status cause_ = null;
+    private com.google.rpc.Status cause_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         causeBuilder_;
@@ -1443,7 +1444,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp readTime_ = null;
+    private com.google.protobuf.Timestamp readTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1683,7 +1684,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

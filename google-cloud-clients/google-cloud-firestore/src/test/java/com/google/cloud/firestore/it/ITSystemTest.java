@@ -150,6 +150,14 @@ public class ITSystemTest {
   }
 
   @Test
+  public void createDocumentWithValue() throws Exception {
+    assertEquals(20, randomDoc.getId().length());
+    randomDoc.create(LocalFirestoreHelper.SINGLE_FIELD_PROTO).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
+    assertEquals(SINGLE_FIELD_OBJECT, documentSnapshot.toObject(SingleField.class));
+  }
+
+  @Test
   public void setDocument() throws Exception {
     Map<String, Object> nanNullMap = new HashMap<>();
     nanNullMap.put("nan", Double.NaN);
@@ -158,6 +166,14 @@ public class ITSystemTest {
     DocumentSnapshot documentSnapshot = randomDoc.get().get();
     assertEquals((Double) Double.NaN, documentSnapshot.getDouble("nan"));
     assertEquals(null, documentSnapshot.get("null"));
+  }
+
+  @Test
+  public void setDocumentWithValue() throws Exception {
+    assertEquals(20, randomDoc.getId().length());
+    randomDoc.set(LocalFirestoreHelper.SINGLE_FIELD_PROTO).get();
+    DocumentSnapshot documentSnapshot = randomDoc.get().get();
+    assertEquals(SINGLE_FIELD_OBJECT, documentSnapshot.toObject(SingleField.class));
   }
 
   @Test

@@ -32,6 +32,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
   private PubsubMessage() {
     data_ = com.google.protobuf.ByteString.EMPTY;
     messageId_ = "";
+    orderingKey_ = "";
   }
 
   @java.lang.Override
@@ -65,7 +66,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
@@ -100,9 +101,16 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderingKey_ = s;
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -350,6 +358,61 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     return getPublishTime();
   }
 
+  public static final int ORDERING_KEY_FIELD_NUMBER = 5;
+  private volatile java.lang.Object orderingKey_;
+  /**
+   *
+   *
+   * <pre>
+   * Identifies related messages for which publish order should be respected.
+   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+   * published with the same `ordering_key` value will be delivered to
+   * subscribers in the order in which they are received by the Pub/Sub system.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string ordering_key = 5;</code>
+   */
+  public java.lang.String getOrderingKey() {
+    java.lang.Object ref = orderingKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderingKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifies related messages for which publish order should be respected.
+   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+   * published with the same `ordering_key` value will be delivered to
+   * subscribers in the order in which they are received by the Pub/Sub system.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string ordering_key = 5;</code>
+   */
+  public com.google.protobuf.ByteString getOrderingKeyBytes() {
+    java.lang.Object ref = orderingKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderingKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -374,6 +437,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     }
     if (publishTime_ != null) {
       output.writeMessage(4, getPublishTime());
+    }
+    if (!getOrderingKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderingKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -403,6 +469,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     if (publishTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPublishTime());
     }
+    if (!getOrderingKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderingKey_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -418,16 +487,16 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.pubsub.v1.PubsubMessage other = (com.google.pubsub.v1.PubsubMessage) obj;
 
-    boolean result = true;
-    result = result && getData().equals(other.getData());
-    result = result && internalGetAttributes().equals(other.internalGetAttributes());
-    result = result && getMessageId().equals(other.getMessageId());
-    result = result && (hasPublishTime() == other.hasPublishTime());
+    if (!getData().equals(other.getData())) return false;
+    if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
+    if (!getMessageId().equals(other.getMessageId())) return false;
+    if (hasPublishTime() != other.hasPublishTime()) return false;
     if (hasPublishTime()) {
-      result = result && getPublishTime().equals(other.getPublishTime());
+      if (!getPublishTime().equals(other.getPublishTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getOrderingKey().equals(other.getOrderingKey())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -449,6 +518,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PUBLISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getPublishTime().hashCode();
     }
+    hash = (37 * hash) + ORDERING_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderingKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,6 +702,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         publishTime_ = null;
         publishTimeBuilder_ = null;
       }
+      orderingKey_ = "";
+
       return this;
     }
 
@@ -668,6 +741,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.publishTime_ = publishTimeBuilder_.build();
       }
+      result.orderingKey_ = orderingKey_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -675,35 +749,35 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -728,6 +802,10 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPublishTime()) {
         mergePublishTime(other.getPublishTime());
+      }
+      if (!other.getOrderingKey().isEmpty()) {
+        orderingKey_ = other.orderingKey_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1074,7 +1152,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp publishTime_ = null;
+    private com.google.protobuf.Timestamp publishTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1273,9 +1351,133 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       return publishTimeBuilder_;
     }
 
+    private java.lang.Object orderingKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
+    public java.lang.String getOrderingKey() {
+      java.lang.Object ref = orderingKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderingKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
+    public com.google.protobuf.ByteString getOrderingKeyBytes() {
+      java.lang.Object ref = orderingKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderingKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
+    public Builder setOrderingKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderingKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
+    public Builder clearOrderingKey() {
+
+      orderingKey_ = getDefaultInstance().getOrderingKey();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
+    public Builder setOrderingKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderingKey_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

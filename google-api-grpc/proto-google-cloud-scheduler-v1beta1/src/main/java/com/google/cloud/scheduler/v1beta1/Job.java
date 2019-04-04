@@ -219,7 +219,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1241,49 +1241,47 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.scheduler.v1beta1.Job other = (com.google.cloud.scheduler.v1beta1.Job) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getSchedule().equals(other.getSchedule());
-    result = result && getTimeZone().equals(other.getTimeZone());
-    result = result && (hasUserUpdateTime() == other.hasUserUpdateTime());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getSchedule().equals(other.getSchedule())) return false;
+    if (!getTimeZone().equals(other.getTimeZone())) return false;
+    if (hasUserUpdateTime() != other.hasUserUpdateTime()) return false;
     if (hasUserUpdateTime()) {
-      result = result && getUserUpdateTime().equals(other.getUserUpdateTime());
+      if (!getUserUpdateTime().equals(other.getUserUpdateTime())) return false;
     }
-    result = result && state_ == other.state_;
-    result = result && (hasStatus() == other.hasStatus());
+    if (state_ != other.state_) return false;
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus().equals(other.getStatus());
+      if (!getStatus().equals(other.getStatus())) return false;
     }
-    result = result && (hasScheduleTime() == other.hasScheduleTime());
+    if (hasScheduleTime() != other.hasScheduleTime()) return false;
     if (hasScheduleTime()) {
-      result = result && getScheduleTime().equals(other.getScheduleTime());
+      if (!getScheduleTime().equals(other.getScheduleTime())) return false;
     }
-    result = result && (hasLastAttemptTime() == other.hasLastAttemptTime());
+    if (hasLastAttemptTime() != other.hasLastAttemptTime()) return false;
     if (hasLastAttemptTime()) {
-      result = result && getLastAttemptTime().equals(other.getLastAttemptTime());
+      if (!getLastAttemptTime().equals(other.getLastAttemptTime())) return false;
     }
-    result = result && (hasRetryConfig() == other.hasRetryConfig());
+    if (hasRetryConfig() != other.hasRetryConfig()) return false;
     if (hasRetryConfig()) {
-      result = result && getRetryConfig().equals(other.getRetryConfig());
+      if (!getRetryConfig().equals(other.getRetryConfig())) return false;
     }
-    result = result && getTargetCase().equals(other.getTargetCase());
-    if (!result) return false;
+    if (!getTargetCase().equals(other.getTargetCase())) return false;
     switch (targetCase_) {
       case 4:
-        result = result && getPubsubTarget().equals(other.getPubsubTarget());
+        if (!getPubsubTarget().equals(other.getPubsubTarget())) return false;
         break;
       case 5:
-        result = result && getAppEngineHttpTarget().equals(other.getAppEngineHttpTarget());
+        if (!getAppEngineHttpTarget().equals(other.getAppEngineHttpTarget())) return false;
         break;
       case 6:
-        result = result && getHttpTarget().equals(other.getHttpTarget());
+        if (!getHttpTarget().equals(other.getHttpTarget())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1612,35 +1610,35 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2935,7 +2933,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp userUpdateTime_ = null;
+    private com.google.protobuf.Timestamp userUpdateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3192,7 +3190,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.rpc.Status status_ = null;
+    private com.google.rpc.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
@@ -3361,7 +3359,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return statusBuilder_;
     }
 
-    private com.google.protobuf.Timestamp scheduleTime_ = null;
+    private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3560,7 +3558,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return scheduleTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp lastAttemptTime_ = null;
+    private com.google.protobuf.Timestamp lastAttemptTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3741,7 +3739,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return lastAttemptTimeBuilder_;
     }
 
-    private com.google.cloud.scheduler.v1beta1.RetryConfig retryConfig_ = null;
+    private com.google.cloud.scheduler.v1beta1.RetryConfig retryConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.scheduler.v1beta1.RetryConfig,
             com.google.cloud.scheduler.v1beta1.RetryConfig.Builder,
@@ -3925,7 +3923,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

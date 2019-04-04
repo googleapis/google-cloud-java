@@ -26,7 +26,6 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
   private PartialResultSet() {
     values_ = java.util.Collections.emptyList();
-    chunkedValue_ = false;
     resumeToken_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -72,7 +71,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 values_ = new java.util.ArrayList<com.google.protobuf.Value>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -107,7 +106,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -119,7 +118,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         values_ = java.util.Collections.unmodifiableList(values_);
       }
       this.unknownFields = unknownFields.build();
@@ -701,20 +700,19 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
     com.google.spanner.v1.PartialResultSet other = (com.google.spanner.v1.PartialResultSet) obj;
 
-    boolean result = true;
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && getValuesList().equals(other.getValuesList());
-    result = result && (getChunkedValue() == other.getChunkedValue());
-    result = result && getResumeToken().equals(other.getResumeToken());
-    result = result && (hasStats() == other.hasStats());
+    if (!getValuesList().equals(other.getValuesList())) return false;
+    if (getChunkedValue() != other.getChunkedValue()) return false;
+    if (!getResumeToken().equals(other.getResumeToken())) return false;
+    if (hasStats() != other.hasStats()) return false;
     if (hasStats()) {
-      result = result && getStats().equals(other.getStats());
+      if (!getStats().equals(other.getStats())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -946,7 +944,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
         result.metadata_ = metadataBuilder_.build();
       }
       if (valuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -968,35 +966,35 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1081,7 +1079,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.spanner.v1.ResultSetMetadata metadata_ = null;
+    private com.google.spanner.v1.ResultSetMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.ResultSetMetadata,
             com.google.spanner.v1.ResultSetMetadata.Builder,
@@ -1274,7 +1272,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     private java.util.List<com.google.protobuf.Value> values_ = java.util.Collections.emptyList();
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         values_ = new java.util.ArrayList<com.google.protobuf.Value>(values_);
         bitField0_ |= 0x00000002;
       }
@@ -2669,10 +2667,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
                 com.google.protobuf.Value,
                 com.google.protobuf.Value.Builder,
                 com.google.protobuf.ValueOrBuilder>(
-                values_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                values_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         values_ = null;
       }
       return valuesBuilder_;
@@ -2790,7 +2785,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.spanner.v1.ResultSetStats stats_ = null;
+    private com.google.spanner.v1.ResultSetStats stats_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.ResultSetStats,
             com.google.spanner.v1.ResultSetStats.Builder,
@@ -3005,7 +3000,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

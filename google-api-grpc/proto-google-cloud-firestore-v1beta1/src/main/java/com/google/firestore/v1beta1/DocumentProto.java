@@ -46,10 +46,10 @@ public final class DocumentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/firestore/v1beta1/document.prot"
-          + "o\022\030google.firestore.v1beta1\032\034google/api/"
-          + "annotations.proto\032\034google/protobuf/struc"
-          + "t.proto\032\037google/protobuf/timestamp.proto"
-          + "\032\030google/type/latlng.proto\"\212\002\n\010Document\022"
+          + "o\022\030google.firestore.v1beta1\032\034google/prot"
+          + "obuf/struct.proto\032\037google/protobuf/times"
+          + "tamp.proto\032\030google/type/latlng.proto\032\034go"
+          + "ogle/api/annotations.proto\"\212\002\n\010Document\022"
           + "\014\n\004name\030\001 \001(\t\022>\n\006fields\030\002 \003(\0132..google.f"
           + "irestore.v1beta1.Document.FieldsEntry\022/\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.Tim"
@@ -90,10 +90,10 @@ public final class DocumentProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.type.LatLngProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_firestore_v1beta1_Document_descriptor =
@@ -155,10 +155,10 @@ public final class DocumentProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -140,6 +140,36 @@ public class WriteBatchTest {
   }
 
   @Test
+  public void setDocumentWithValue() throws Exception {
+    doReturn(commitResponse(4, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    batch
+        .set(documentReference, LocalFirestoreHelper.SINGLE_FIELD_PROTO)
+        .set(documentReference, LocalFirestoreHelper.SINGLE_FIELD_OBJECT)
+        .set(documentReference, LocalFirestoreHelper.SINGLE_FIELD_PROTO, SetOptions.merge())
+        .set(documentReference, LocalFirestoreHelper.SINGLE_FIELD_OBJECT, SetOptions.merge());
+
+    List<Write> writes = new ArrayList<>();
+    writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO));
+    writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO));
+    writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Arrays.asList("foo")));
+    writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Arrays.asList("foo")));
+
+    assertEquals(4, batch.getMutationsSize());
+
+    List<WriteResult> writeResults = batch.commit().get();
+    for (int i = 0; i < writeResults.size(); ++i) {
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
+    }
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
   public void omitWriteResultForDocumentTransforms() throws Exception {
     doReturn(commitResponse(2, 0))
         .when(firestoreMock)
@@ -163,6 +193,31 @@ public class WriteBatchTest {
 
     batch
         .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP)
+        .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_OBJECT);
+
+    assertEquals(2, batch.getMutationsSize());
+
+    List<WriteResult> writeResults = batch.commit().get();
+    List<Write> writes = new ArrayList<>();
+
+    for (int i = 0; i < writeResults.size(); ++i) {
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
+      writes.add(create(LocalFirestoreHelper.SINGLE_FIELD_PROTO));
+    }
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
+  public void createDocumentWithValue() throws Exception {
+    doReturn(commitResponse(2, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    batch
+        .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_PROTO)
         .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_OBJECT);
 
     assertEquals(2, batch.getMutationsSize());

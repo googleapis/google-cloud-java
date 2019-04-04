@@ -97,7 +97,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -306,21 +306,20 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.RecordLocation other = (com.google.privacy.dlp.v2.RecordLocation) obj;
 
-    boolean result = true;
-    result = result && (hasRecordKey() == other.hasRecordKey());
+    if (hasRecordKey() != other.hasRecordKey()) return false;
     if (hasRecordKey()) {
-      result = result && getRecordKey().equals(other.getRecordKey());
+      if (!getRecordKey().equals(other.getRecordKey())) return false;
     }
-    result = result && (hasFieldId() == other.hasFieldId());
+    if (hasFieldId() != other.hasFieldId()) return false;
     if (hasFieldId()) {
-      result = result && getFieldId().equals(other.getFieldId());
+      if (!getFieldId().equals(other.getFieldId())) return false;
     }
-    result = result && (hasTableLocation() == other.hasTableLocation());
+    if (hasTableLocation() != other.hasTableLocation()) return false;
     if (hasTableLocation()) {
-      result = result && getTableLocation().equals(other.getTableLocation());
+      if (!getTableLocation().equals(other.getTableLocation())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -553,35 +552,35 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -634,7 +633,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.privacy.dlp.v2.RecordKey recordKey_ = null;
+    private com.google.privacy.dlp.v2.RecordKey recordKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RecordKey,
             com.google.privacy.dlp.v2.RecordKey.Builder,
@@ -815,7 +814,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
       return recordKeyBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.FieldId fieldId_ = null;
+    private com.google.privacy.dlp.v2.FieldId fieldId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,
             com.google.privacy.dlp.v2.FieldId.Builder,
@@ -992,7 +991,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
       return fieldIdBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.TableLocation tableLocation_ = null;
+    private com.google.privacy.dlp.v2.TableLocation tableLocation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.TableLocation,
             com.google.privacy.dlp.v2.TableLocation.Builder,
@@ -1176,7 +1175,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
