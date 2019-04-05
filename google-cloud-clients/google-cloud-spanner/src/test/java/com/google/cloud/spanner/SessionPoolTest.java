@@ -415,8 +415,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     pool = createPool();
     // One of the sessions would be pre prepared.
     Uninterruptibles.awaitUninterruptibly(prepareLatch);
-    PooledSession readSession = (PooledSession) pool.getReadSession();
-    PooledSession writeSession = (PooledSession) pool.getReadWriteSession();
+    PooledSession readSession = pool.getReadSession();
+    PooledSession writeSession = pool.getReadWriteSession();
     verify(writeSession.delegate, times(1)).prepareReadWriteTransaction();
     verify(readSession.delegate, never()).prepareReadWriteTransaction();
     readSession.close();
@@ -448,7 +448,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     pool.getReadWriteSession().close();
     prepareLatch.await();
     // This session should also be write prepared.
-    PooledSession readSession = (PooledSession) pool.getReadSession();
+    PooledSession readSession = pool.getReadSession();
     verify(readSession.delegate, times(2)).prepareReadWriteTransaction();
   }
 
@@ -481,7 +481,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         .prepareReadWriteTransaction();
     when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
-    assertThat(((PooledSession) pool.getReadWriteSession()).delegate).isEqualTo(mockSession2);
+    assertThat(pool.getReadWriteSession().delegate).isEqualTo(mockSession2);
   }
 
   @Test
@@ -779,7 +779,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    PooledSession session = (PooledSession) pool.getReadWriteSession();
+    PooledSession session = pool.getReadWriteSession();
     assertThat(session.delegate).isEqualTo(openSession);
   }
 
@@ -798,8 +798,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    Session session = pool.getReadWriteSession();
-    assertThat(session.write(mutations)).isNotNull();
+    DatabaseClientImpl impl = new DatabaseClientImpl(pool);
+    assertThat(impl.write(mutations)).isNotNull();
   }
 
   @Test
@@ -817,8 +817,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    Session session = pool.getReadWriteSession();
-    assertThat(session.writeAtLeastOnce(mutations)).isNotNull();
+    DatabaseClientImpl impl = new DatabaseClientImpl(pool);
+    assertThat(impl.writeAtLeastOnce(mutations)).isNotNull();
   }
 
   @Test
@@ -836,8 +836,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    Session session = pool.getReadWriteSession();
-    assertThat(session.executePartitionedUpdate(statement)).isEqualTo(1L);
+    DatabaseClientImpl impl = new DatabaseClientImpl(pool);
+    assertThat(impl.executePartitionedUpdate(statement)).isEqualTo(1L);
   }
 
   private void mockKeepAlive(Session session) {

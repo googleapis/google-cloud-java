@@ -73,8 +73,8 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
     }
 
     @Override
-    Session getReadSession() {
-      PooledSession session = (PooledSession) super.getReadSession();
+    PooledSession getReadSession() {
+      PooledSession session = super.getReadSession();
       if (invalidateNextSession) {
         session.delegate.close();
         session.setAllowDelegateRecreation(false);
@@ -87,8 +87,8 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
     }
 
     @Override
-    Session getReadWriteSession() {
-      PooledSession session = (PooledSession) super.getReadWriteSession();
+    PooledSession getReadWriteSession() {
+      PooledSession session = super.getReadWriteSession();
       if (invalidateNextSession) {
         session.delegate.close();
         session.setAllowDelegateRecreation(false);

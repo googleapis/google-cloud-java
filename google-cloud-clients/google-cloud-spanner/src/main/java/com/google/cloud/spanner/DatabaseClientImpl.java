@@ -17,6 +17,8 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.SessionPool.PooledSession;
+import com.google.common.base.Function;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
@@ -39,19 +41,26 @@ class DatabaseClientImpl implements DatabaseClient {
     this.pool = pool;
   }
 
-  Session getReadSession() {
+  PooledSession getReadSession() {
     return pool.getReadSession();
   }
 
-  Session getReadWriteSession() {
+  PooledSession getReadWriteSession() {
     return pool.getReadWriteSession();
   }
 
   @Override
-  public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
+  public Timestamp write(final Iterable<Mutation> mutations) throws SpannerException {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      return getReadWriteSession().write(mutations);
+      return runWithSessionRetry(
+          SessionMode.READ_WRITE,
+          new Function<Session, Timestamp>() {
+            @Override
+            public Timestamp apply(Session session) {
+              return session.write(mutations);
+            }
+          });
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
@@ -61,10 +70,17 @@ class DatabaseClientImpl implements DatabaseClient {
   }
 
   @Override
-  public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
+  public Timestamp writeAtLeastOnce(final Iterable<Mutation> mutations) throws SpannerException {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      return getReadWriteSession().writeAtLeastOnce(mutations);
+      return runWithSessionRetry(
+          SessionMode.READ_WRITE,
+          new Function<Session, Timestamp>() {
+            @Override
+            public Timestamp apply(Session session) {
+              return session.writeAtLeastOnce(mutations);
+            }
+          });
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
@@ -162,13 +178,37 @@ class DatabaseClientImpl implements DatabaseClient {
   }
 
   @Override
-  public long executePartitionedUpdate(Statement stmt) {
+  public long executePartitionedUpdate(final Statement stmt) {
     Span span = tracer.spanBuilder(PARTITION_DML_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      return getReadWriteSession().executePartitionedUpdate(stmt);
+      return runWithSessionRetry(
+          SessionMode.READ_WRITE,
+          new Function<Session, Long>() {
+            @Override
+            public Long apply(Session session) {
+              return session.executePartitionedUpdate(stmt);
+            }
+          });
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
+    }
+  }
+
+  private enum SessionMode {
+    READ,
+    READ_WRITE;
+  }
+
+  private <T> T runWithSessionRetry(SessionMode sessionMode, Function<Session, T> callable) {
+    PooledSession session =
+        sessionMode == SessionMode.READ ? getReadSession() : getReadWriteSession();
+    while (true) {
+      try {
+        return callable.apply(session);
+      } catch (SessionNotFoundException e) {
+        session = session.replaceReadWriteSession(e, pool);
+      }
     }
   }
 
