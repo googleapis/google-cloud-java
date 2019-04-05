@@ -688,7 +688,14 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         when(client.createSession(db)).thenReturn(closedSession, openSession);
         FakeClock clock = new FakeClock();
         clock.currentTimeMillis = System.currentTimeMillis();
-        pool = createPool(clock);
+        SessionPoolOptions options =
+            SessionPoolOptions.newBuilder()
+                .setMinSessions(0) // The pool should not auto-create any sessions
+                .setMaxSessions(2)
+                .setBlockIfPoolExhausted()
+                .build();
+        SessionPool pool =
+            SessionPool.createPool(options, new TestExecutorFactory(), db, client, clock);
         TransactionRunner runner = pool.getReadWriteSession().readWriteTransaction();
         try {
           runner.run(
@@ -700,21 +707,19 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                   callNumber++;
                   if (hasPreparedTransaction) {
                     // If the session had a prepared read/write transaction, that transaction will
-                    // be
-                    // given to the runner in the first place and the SessionNotFoundException will
-                    // occur on the first query / update statement.
+                    // be given to the runner in the first place and the SessionNotFoundException
+                    // will occur on the first query / update statement.
                     if (callNumber == 1) {
                       assertThat(transaction).isEqualTo(closedTransactionContext);
                     } else {
                       assertThat(transaction).isEqualTo(openTransactionContext);
                     }
                   } else {
-                    // If the session did not have a prepared read/write transaction, a the library
+                    // If the session did not have a prepared read/write transaction, the library
                     // tried to create a new transaction before handing it to the transaction
                     // runner.
                     // The creation of the new transaction failed with a SessionNotFoundException,
-                    // and
-                    // the session was re-created before the run method was called.
+                    // and the session was re-created before the run method was called.
                     assertThat(transaction).isEqualTo(openTransactionContext);
                   }
                   switch (executeStatementType) {
