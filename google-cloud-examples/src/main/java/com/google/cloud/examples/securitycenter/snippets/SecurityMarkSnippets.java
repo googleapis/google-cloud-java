@@ -34,16 +34,19 @@ public class SecurityMarkSnippets {
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
       // Add security marks and field mask for security marks.
-      SecurityMarks securityMarks = SecurityMarks.newBuilder()
-          .setName(asset.getName() + "/securityMarks")
-          .putAllMarks(markMap).build();
-      FieldMask updateMask = FieldMask.newBuilder()
-          .addPaths("marks.key_a")
-          .addPaths("marks.key_b").build();
+      SecurityMarks securityMarks =
+          SecurityMarks.newBuilder()
+              .setName(asset.getName() + "/securityMarks")
+              .putAllMarks(markMap)
+              .build();
+      FieldMask updateMask =
+          FieldMask.newBuilder().addPaths("marks.key_a").addPaths("marks.key_b").build();
 
-      UpdateSecurityMarksRequest request = UpdateSecurityMarksRequest.newBuilder()
-          .setSecurityMarks(securityMarks)
-          .setUpdateMask(updateMask).build();
+      UpdateSecurityMarksRequest request =
+          UpdateSecurityMarksRequest.newBuilder()
+              .setSecurityMarks(securityMarks)
+              .setUpdateMask(updateMask)
+              .build();
 
       // Call the API.
       SecurityMarks response = client.updateSecurityMarks(request);
@@ -67,14 +70,16 @@ public class SecurityMarkSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to clear security marks for an asset.
       // Create security mark and field mask for clearing security marks.
-      SecurityMarks securityMarks = SecurityMarks.newBuilder()
-          .setName(asset.getName() + "/securityMarks").build();
-      FieldMask updateMask = FieldMask.newBuilder()
-          .addPaths("marks.key_a").addPaths("marks.key_b").build();
+      SecurityMarks securityMarks =
+          SecurityMarks.newBuilder().setName(asset.getName() + "/securityMarks").build();
+      FieldMask updateMask =
+          FieldMask.newBuilder().addPaths("marks.key_a").addPaths("marks.key_b").build();
 
-      UpdateSecurityMarksRequest request = UpdateSecurityMarksRequest.newBuilder()
-          .setSecurityMarks(securityMarks)
-          .setUpdateMask(updateMask).build();
+      UpdateSecurityMarksRequest request =
+          UpdateSecurityMarksRequest.newBuilder()
+              .setSecurityMarks(securityMarks)
+              .setUpdateMask(updateMask)
+              .build();
 
       // Call the API.
       SecurityMarks response = client.updateSecurityMarks(request);
@@ -98,15 +103,19 @@ public class SecurityMarkSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to clear and update security marks for an asset.
       // Create security mark and field mask for clearing security marks.
-      SecurityMarks securityMarks = SecurityMarks.newBuilder()
-          .setName(asset.getName() + "/securityMarks")
-          .putMarks("key_a", "new_value_for_a").build();
-      FieldMask updateMask = FieldMask.newBuilder()
-          .addPaths("marks.key_a").addPaths("marks.key_b").build();
+      SecurityMarks securityMarks =
+          SecurityMarks.newBuilder()
+              .setName(asset.getName() + "/securityMarks")
+              .putMarks("key_a", "new_value_for_a")
+              .build();
+      FieldMask updateMask =
+          FieldMask.newBuilder().addPaths("marks.key_a").addPaths("marks.key_b").build();
 
-      UpdateSecurityMarksRequest request = UpdateSecurityMarksRequest.newBuilder()
-          .setSecurityMarks(securityMarks)
-          .setUpdateMask(updateMask).build();
+      UpdateSecurityMarksRequest request =
+          UpdateSecurityMarksRequest.newBuilder()
+              .setSecurityMarks(securityMarks)
+              .setUpdateMask(updateMask)
+              .build();
 
       // Call the API.
       SecurityMarks response = client.updateSecurityMarks(request);
@@ -129,18 +138,22 @@ public class SecurityMarkSnippets {
   static SecurityMarks addToFinding(Finding finding) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to add security marks for a finding.
-      ImmutableMap markMap =
-          ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
+      ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
       // Add security marks and field mask for security marks.
-      SecurityMarks securityMarks = SecurityMarks.newBuilder()
-          .setName(finding.getName() + "/securityMarks")
-          .putAllMarks(markMap).build();
-      FieldMask updateMask = FieldMask.newBuilder()
-          .addPaths("marks.key_a").addPaths("marks.key_b").build();
+      SecurityMarks securityMarks =
+          SecurityMarks.newBuilder()
+              .setName(finding.getName() + "/securityMarks")
+              .putAllMarks(markMap)
+              .build();
+      FieldMask updateMask =
+          FieldMask.newBuilder().addPaths("marks.key_a").addPaths("marks.key_b").build();
 
-      UpdateSecurityMarksRequest request = UpdateSecurityMarksRequest.newBuilder()
-          .setSecurityMarks(securityMarks).setUpdateMask(updateMask).build();
+      UpdateSecurityMarksRequest request =
+          UpdateSecurityMarksRequest.newBuilder()
+              .setSecurityMarks(securityMarks)
+              .setUpdateMask(updateMask)
+              .build();
 
       // Call the API.
       SecurityMarks response = client.updateSecurityMarks(request);
@@ -160,15 +173,15 @@ public class SecurityMarkSnippets {
    * @param organizationName The organization to list assets for.
    */
   // [START list_assets_with_filter]
-  static ImmutableList<ListAssetsResult> listAssetsWithQueryMarks(OrganizationName organizationName) {
+  static ImmutableList<ListAssetsResult> listAssetsWithQueryMarks(
+      OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to list all assets filtered by a specific security mark.
       // OrganizationName organizationName = OrganizationName.of("123234324");
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
               .setParent(organizationName.toString())
-              .setFilter(
-                  "security_marks.marks.key_a = \"value_a\"")
+              .setFilter("security_marks.marks.key_a = \"value_a\"")
               .build();
 
       // Call the API.
@@ -206,7 +219,8 @@ public class SecurityMarkSnippets {
       // Call the API.
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
-      // This creates one list for all findings in the filter.If your organization has a large number of
+      // This creates one list for all findings in the filter.If your organization has a large
+      // number of
       // findings this can cause out of memory issues.  You can process them batches by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());

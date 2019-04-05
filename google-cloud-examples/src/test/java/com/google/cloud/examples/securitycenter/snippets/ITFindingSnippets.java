@@ -20,7 +20,8 @@ public class ITFindingSnippets {
   @BeforeClass
   public static void setUp() throws IOException {
     SOURCE_NAME = SourceName.parse(SourceSnippets.createSource(getOrganizationId()).getName());
-    FINDING_NAME = FindingName.parse(FindingSnippets.createFinding(SOURCE_NAME, "testfindingid").getName());
+    FINDING_NAME =
+        FindingName.parse(FindingSnippets.createFinding(SOURCE_NAME, "testfindingid").getName());
   }
 
   @Test
@@ -36,7 +37,11 @@ public class ITFindingSnippets {
   @Test
   public void testUpdateFinding() throws IOException {
     Value stringValue = Value.newBuilder().setStringValue("value").build();
-    assertTrue(FindingSnippets.updateFinding(FINDING_NAME).getSourcePropertiesMap().get("stringKey").equals(stringValue));
+    assertTrue(
+        FindingSnippets.updateFinding(FINDING_NAME)
+            .getSourcePropertiesMap()
+            .get("stringKey")
+            .equals(stringValue));
   }
 
   @Test
@@ -56,11 +61,13 @@ public class ITFindingSnippets {
 
   @Test
   public void testTestIamPermissions() throws IOException {
-    assertTrue(FindingSnippets.testIamPermissions(SOURCE_NAME).getPermissions(0).equals("securitycenter.findings.update"));
+    assertTrue(
+        FindingSnippets.testIamPermissions(SOURCE_NAME)
+            .getPermissions(0)
+            .equals("securitycenter.findings.update"));
   }
 
   private static OrganizationName getOrganizationId() {
     return OrganizationName.of(System.getenv("GCLOUD_ORGANIZATION"));
   }
-
 }

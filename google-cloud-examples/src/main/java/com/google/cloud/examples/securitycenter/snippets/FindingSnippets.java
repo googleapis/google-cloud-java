@@ -44,13 +44,17 @@ public class FindingSnippets {
       String resourceName = "//cloudresourcemanager.googleapis.com/organizations/11232";
 
       // Start setting up a request to create a finding in a source.
-      Finding finding = Finding.newBuilder()
-          .setParent(sourceName.toString())
-          .setState(State.ACTIVE).setResourceName(resourceName)
-          .setEventTime(Timestamp.newBuilder()
-              .setSeconds(eventTime.getEpochSecond())
-              .setNanos(eventTime.getNano()))
-          .setCategory("MEDIUM_RISK_ONE").build();
+      Finding finding =
+          Finding.newBuilder()
+              .setParent(sourceName.toString())
+              .setState(State.ACTIVE)
+              .setResourceName(resourceName)
+              .setEventTime(
+                  Timestamp.newBuilder()
+                      .setSeconds(eventTime.getEpochSecond())
+                      .setNanos(eventTime.getNano()))
+              .setCategory("MEDIUM_RISK_ONE")
+              .build();
 
       // Call the API.
       Finding response = client.createFinding(sourceName, findingId, finding);
@@ -91,14 +95,17 @@ public class FindingSnippets {
           ImmutableMap.of("stringKey", stringValue, "numKey", numValue);
 
       // Start setting up a request to create a finding in a source.
-      Finding finding = Finding.newBuilder()
-          .setParent(sourceName.toString())
-          .setState(State.ACTIVE)
-          .setResourceName(resourceName)
-          .setEventTime(Timestamp.newBuilder()
-              .setSeconds(eventTime.getEpochSecond())
-              .setNanos(eventTime.getNano()))
-          .putAllSourceProperties(sourceProperties).build();
+      Finding finding =
+          Finding.newBuilder()
+              .setParent(sourceName.toString())
+              .setState(State.ACTIVE)
+              .setResourceName(resourceName)
+              .setEventTime(
+                  Timestamp.newBuilder()
+                      .setSeconds(eventTime.getEpochSecond())
+                      .setNanos(eventTime.getNano()))
+              .putAllSourceProperties(sourceProperties)
+              .build();
 
       // Call the API.
       Finding response = client.createFinding(sourceName, findingId, finding);
@@ -127,16 +134,21 @@ public class FindingSnippets {
       // Define source properties values as protobuf "Value" objects.
       Value stringValue = Value.newBuilder().setStringValue("value").build();
 
-      FieldMask updateMask = FieldMask.newBuilder()
-          .addPaths("event_time")
-          .addPaths("source_properties.stringKey").build();
+      FieldMask updateMask =
+          FieldMask.newBuilder()
+              .addPaths("event_time")
+              .addPaths("source_properties.stringKey")
+              .build();
 
-      Finding finding = Finding.newBuilder()
-          .setName(findingName.toString())
-          .setEventTime(Timestamp.newBuilder()
-              .setSeconds(eventTime.getEpochSecond())
-              .setNanos(eventTime.getNano()))
-          .putSourceProperties("stringKey", stringValue).build();
+      Finding finding =
+          Finding.newBuilder()
+              .setName(findingName.toString())
+              .setEventTime(
+                  Timestamp.newBuilder()
+                      .setSeconds(eventTime.getEpochSecond())
+                      .setNanos(eventTime.getNano()))
+              .putSourceProperties("stringKey", stringValue)
+              .build();
 
       UpdateFindingRequest.Builder request =
           UpdateFindingRequest.newBuilder().setFinding(finding).setUpdateMask(updateMask);
@@ -169,7 +181,8 @@ public class FindingSnippets {
       // Call the API.
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
-      // This creates one list for all findings.  If your organization has a large number of findings
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings
       // this can cause out of memory issues.  You can process them batches by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());
@@ -201,7 +214,8 @@ public class FindingSnippets {
       // Call the API.
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
-      // This creates one list for all findings in the filter.If your organization has a large number of
+      // This creates one list for all findings in the filter.If your organization has a large
+      // number of
       // findings this can cause out of memory issues.  You can process them batches by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());
@@ -225,19 +239,21 @@ public class FindingSnippets {
       // SourceName sourceName = SourceName.of("123234324", "423432321");
 
       // 5 days ago
-      Instant fiveDaysAgo = Instant.now().minusSeconds(60*60*24*5);
+      Instant fiveDaysAgo = Instant.now().minusSeconds(60 * 60 * 24 * 5);
 
       ListFindingsRequest.Builder request =
           ListFindingsRequest.newBuilder()
               .setParent(sourceName.toString())
-              .setReadTime(Timestamp.newBuilder()
-                  .setSeconds(fiveDaysAgo.getEpochSecond())
-                  .setNanos(fiveDaysAgo.getNano()));
+              .setReadTime(
+                  Timestamp.newBuilder()
+                      .setSeconds(fiveDaysAgo.getEpochSecond())
+                      .setNanos(fiveDaysAgo.getNano()));
 
       // Call the API.
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
-      // This creates one list for all findings in the filter.If your organization has a large number of
+      // This creates one list for all findings in the filter.If your organization has a large
+      // number of
       // findings this can cause out of memory issues.  You can process them batches by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());
@@ -261,7 +277,7 @@ public class FindingSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of("123234324", "423432321");
 
-      //Iam permission to test.
+      // Iam permission to test.
       ArrayList permissionsToTest = new ArrayList<>();
       permissionsToTest.add("securitycenter.findings.update");
 

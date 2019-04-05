@@ -49,9 +49,11 @@ public class OrganizationSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to update OrganizationSettings for.
       // OrganizationName organizationName = OrganizationName.of("123234324");
-      OrganizationSettings organizationSettings = OrganizationSettings.newBuilder()
-          .setName(organizationName.toString() + "/organizationSettings")
-          .setEnableAssetDiscovery(true).build();
+      OrganizationSettings organizationSettings =
+          OrganizationSettings.newBuilder()
+              .setName(organizationName.toString() + "/organizationSettings")
+              .setEnableAssetDiscovery(true)
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().addPaths("enable_asset_discovery").build();
 
       UpdateOrganizationSettingsRequest.Builder request =

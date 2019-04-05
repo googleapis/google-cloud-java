@@ -36,12 +36,16 @@ public class ITSecurityMarkSnippets {
 
   @Test
   public void testDeleteAndUpdateMarks() throws IOException {
-    assertTrue(SecurityMarkSnippets.deleteAndUpdateMarks(ASSET).getMarksOrThrow("key_a").equals("new_value_for_a"));
+    assertTrue(
+        SecurityMarkSnippets.deleteAndUpdateMarks(ASSET)
+            .getMarksOrThrow("key_a")
+            .equals("new_value_for_a"));
   }
 
   @Test
   public void testAddToFinding() throws IOException {
-    assertTrue(SecurityMarkSnippets.addToFinding(FINDING).getMarksOrThrow("key_a").equals("value_a"));
+    assertTrue(
+        SecurityMarkSnippets.addToFinding(FINDING).getMarksOrThrow("key_a").equals("value_a"));
   }
 
   @Test
@@ -57,5 +61,4 @@ public class ITSecurityMarkSnippets {
   private static OrganizationName getOrganizationId() {
     return OrganizationName.of(System.getenv("GCLOUD_ORGANIZATION"));
   }
-
 }

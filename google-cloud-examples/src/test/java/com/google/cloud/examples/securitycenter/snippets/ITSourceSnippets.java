@@ -1,7 +1,7 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
-import static junit.framework.TestCase.assertTrue;
 import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertTrue;
 
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SourceName;
@@ -31,7 +31,8 @@ public class ITSourceSnippets {
 
   @Test
   public void testUpdateSource() throws IOException {
-    assertTrue(SourceSnippets.updateSource(SOURCE_NAME).getDisplayName().equals("Updated Display Name"));
+    assertTrue(
+        SourceSnippets.updateSource(SOURCE_NAME).getDisplayName().equals("Updated Display Name"));
   }
 
   @Test
@@ -41,7 +42,11 @@ public class ITSourceSnippets {
 
   @Test
   public void testSetSourceIamPolicy() throws IOException {
-    assertTrue(SourceSnippets.setIamPolicySource(SOURCE_NAME).getBindings(0).getRole().equals("roles/securitycenter.findingsEditor"));
+    assertTrue(
+        SourceSnippets.setIamPolicySource(SOURCE_NAME)
+            .getBindings(0)
+            .getRole()
+            .equals("roles/securitycenter.findingsEditor"));
   }
 
   @Test
@@ -52,5 +57,4 @@ public class ITSourceSnippets {
   private static OrganizationName getOrganizationId() {
     return OrganizationName.of(System.getenv("GCLOUD_ORGANIZATION"));
   }
-
 }

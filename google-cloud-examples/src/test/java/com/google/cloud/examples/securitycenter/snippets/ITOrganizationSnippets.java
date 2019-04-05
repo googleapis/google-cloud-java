@@ -16,11 +16,13 @@ public class ITOrganizationSnippets {
 
   @Test
   public void testUpdateOrganizationSettings() throws IOException {
-    assertTrue(OrganizationSnippets.updateOrganizationSettings(getOrganizationId()).getAssetDiscoveryConfig().isInitialized());
+    assertTrue(
+        OrganizationSnippets.updateOrganizationSettings(getOrganizationId())
+            .getAssetDiscoveryConfig()
+            .isInitialized());
   }
 
   private static OrganizationName getOrganizationId() {
     return OrganizationName.of(System.getenv("GCLOUD_ORGANIZATION"));
   }
-
 }

@@ -31,8 +31,11 @@ public class SourceSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to create a source in an organization.
       // OrganizationName organizationName = OrganizationName.of("123234324");
-      Source source = Source.newBuilder().setDisplayName("Customized Display Name")
-          .setDescription("A new custom source that does X").build();
+      Source source =
+          Source.newBuilder()
+              .setDisplayName("Customized Display Name")
+              .setDescription("A new custom source that does X")
+              .build();
 
       CreateSourceRequest.Builder request =
           CreateSourceRequest.newBuilder().setParent(organizationName.toString()).setSource(source);
@@ -87,8 +90,11 @@ public class SourceSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to update a source.
       // SourceName sourceName = SourceName.of("123234324", "423432321");
-      Source source = Source.newBuilder().setDisplayName("Updated Display Name")
-          .setName(sourceName.toString()).build();
+      Source source =
+          Source.newBuilder()
+              .setDisplayName("Updated Display Name")
+              .setName(sourceName.toString())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().addPaths("display_name").build();
 
       UpdateSourceRequest.Builder request =
@@ -140,9 +146,11 @@ public class SourceSnippets {
       // Set up IAM Policy for the user csccclienttest@gmail.com to use the role findingsEditor.
       // The user must be a valid google account.
       Policy oldPolicy = client.getIamPolicy(sourceName.toString());
-      Binding bindings = Binding.newBuilder()
-          .setRole("roles/securitycenter.findingsEditor")
-          .addMembers("user:csccclienttest@gmail.com").build();
+      Binding bindings =
+          Binding.newBuilder()
+              .setRole("roles/securitycenter.findingsEditor")
+              .addMembers("user:csccclienttest@gmail.com")
+              .build();
       Policy policy = oldPolicy.toBuilder().addBindings(bindings).build();
 
       // Start setting up a request to set IAM policy for a source.
