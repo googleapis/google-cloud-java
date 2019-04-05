@@ -282,14 +282,6 @@ public class BigQueryImplTest {
           .setNumLongTermBytes(0L)
           .setNumRows(BigInteger.valueOf(3L))
           .build();
-  private static final FieldValue FIELD_VALUE1 =
-      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
-  private static final FieldValue FIELD_VALUE2 =
-      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
-  private static final List<FieldValueList> ROWS =
-      ImmutableList.of(
-          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
-          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
   // Table list options
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_SIZE =
       BigQuery.TableListOption.pageSize(42L);
