@@ -208,9 +208,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
+   *   String formattedImage = ProjectGlobalImageName.format("[PROJECT]", "[IMAGE]");
    *   DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder()
-   *     .setImage(image.toString())
+   *     .setImage(formattedImage)
    *     .build();
    *   Operation response = imageClient.deleteImage(request);
    * }
@@ -232,9 +232,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
+   *   String formattedImage = ProjectGlobalImageName.format("[PROJECT]", "[IMAGE]");
    *   DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder()
-   *     .setImage(image.toString())
+   *     .setImage(formattedImage)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = imageClient.deleteImageCallable().futureCall(request);
    *   // Do something
@@ -320,10 +320,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
+   *   String formattedImage = ProjectGlobalImageName.format("[PROJECT]", "[IMAGE]");
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   DeprecateImageHttpRequest request = DeprecateImageHttpRequest.newBuilder()
-   *     .setImage(image.toString())
+   *     .setImage(formattedImage)
    *     .setDeprecationStatusResource(deprecationStatusResource)
    *     .build();
    *   Operation response = imageClient.deprecateImage(request);
@@ -348,10 +348,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
+   *   String formattedImage = ProjectGlobalImageName.format("[PROJECT]", "[IMAGE]");
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   DeprecateImageHttpRequest request = DeprecateImageHttpRequest.newBuilder()
-   *     .setImage(image.toString())
+   *     .setImage(formattedImage)
    *     .setDeprecationStatusResource(deprecationStatusResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = imageClient.deprecateImageCallable().futureCall(request);
@@ -420,9 +420,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
+   *   String formattedImage = ProjectGlobalImageName.format("[PROJECT]", "[IMAGE]");
    *   GetImageHttpRequest request = GetImageHttpRequest.newBuilder()
-   *     .setImage(image.toString())
+   *     .setImage(formattedImage)
    *     .build();
    *   Image response = imageClient.getImage(request);
    * }
@@ -444,9 +444,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
+   *   String formattedImage = ProjectGlobalImageName.format("[PROJECT]", "[IMAGE]");
    *   GetImageHttpRequest request = GetImageHttpRequest.newBuilder()
-   *     .setImage(image.toString())
+   *     .setImage(formattedImage)
    *     .build();
    *   ApiFuture&lt;Image&gt; future = imageClient.getImageCallable().futureCall(request);
    *   // Do something
@@ -517,9 +517,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
+   *   String formattedFamily = ProjectGlobalImageFamilyName.format("[PROJECT]", "[FAMILY]");
    *   GetFromFamilyImageHttpRequest request = GetFromFamilyImageHttpRequest.newBuilder()
-   *     .setFamily(family.toString())
+   *     .setFamily(formattedFamily)
    *     .build();
    *   Image response = imageClient.getFromFamilyImage(request);
    * }
@@ -541,9 +541,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
+   *   String formattedFamily = ProjectGlobalImageFamilyName.format("[PROJECT]", "[FAMILY]");
    *   GetFromFamilyImageHttpRequest request = GetFromFamilyImageHttpRequest.newBuilder()
-   *     .setFamily(family.toString())
+   *     .setFamily(formattedFamily)
    *     .build();
    *   ApiFuture&lt;Image&gt; future = imageClient.getFromFamilyImageCallable().futureCall(request);
    *   // Do something
@@ -617,9 +617,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyImageHttpRequest request = GetIamPolicyImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = imageClient.getIamPolicyImage(request);
    * }
@@ -642,9 +642,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyImageHttpRequest request = GetIamPolicyImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = imageClient.getIamPolicyImageCallable().futureCall(request);
    *   // Do something
@@ -733,11 +733,11 @@ public class ImageClient implements BackgroundResource {
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   Boolean forceCreate = false;
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Image imageResource = Image.newBuilder().build();
    *   InsertImageHttpRequest request = InsertImageHttpRequest.newBuilder()
    *     .setForceCreate(forceCreate)
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setImageResource(imageResource)
    *     .build();
    *   Operation response = imageClient.insertImage(request);
@@ -761,11 +761,11 @@ public class ImageClient implements BackgroundResource {
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   Boolean forceCreate = false;
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Image imageResource = Image.newBuilder().build();
    *   InsertImageHttpRequest request = InsertImageHttpRequest.newBuilder()
    *     .setForceCreate(forceCreate)
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setImageResource(imageResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = imageClient.insertImageCallable().futureCall(request);
@@ -850,9 +850,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListImagesHttpRequest request = ListImagesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Image element : imageClient.listImages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -880,9 +880,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListImagesHttpRequest request = ListImagesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListImagesPagedResponse&gt; future = imageClient.listImagesPagedCallable().futureCall(request);
    *   // Do something
@@ -910,9 +910,9 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListImagesHttpRequest request = ListImagesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     ImageList response = imageClient.listImagesCallable().call(request);
@@ -1003,10 +1003,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyImageHttpRequest request = SetIamPolicyImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   Policy response = imageClient.setIamPolicyImage(request);
@@ -1029,10 +1029,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyImageHttpRequest request = SetIamPolicyImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = imageClient.setIamPolicyImageCallable().futureCall(request);
@@ -1118,10 +1118,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsImageHttpRequest request = SetLabelsImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .build();
    *   Operation response = imageClient.setLabelsImage(request);
@@ -1145,10 +1145,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsImageHttpRequest request = SetLabelsImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = imageClient.setLabelsImageCallable().futureCall(request);
@@ -1231,10 +1231,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsImageHttpRequest request = TestIamPermissionsImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = imageClient.testIamPermissionsImage(request);
@@ -1258,10 +1258,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsImageHttpRequest request = TestIamPermissionsImageHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = imageClient.testIamPermissionsImageCallable().futureCall(request);

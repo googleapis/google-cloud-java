@@ -41,6 +41,7 @@ import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
@@ -66,7 +67,9 @@ import com.google.cloud.compute.v1.SetMetadataInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
+import com.google.cloud.compute.v1.ShieldedInstanceIdentity;
 import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
@@ -75,6 +78,7 @@ import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -276,6 +280,31 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setResponseParser(
                   ApiMessageHttpResponseParser.<SerialPortOutput>newBuilder()
                       .setResponseInstance(SerialPortOutput.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+                  newBuilder()
+              .setFullMethodName("compute.instances.getShieldedInstanceIdentity")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<GetShieldedInstanceIdentityInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/getShieldedInstanceIdentity"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<ShieldedInstanceIdentity>newBuilder()
+                      .setResponseInstance(ShieldedInstanceIdentity.getDefaultInstance())
                       .build())
               .build();
 
@@ -575,6 +604,30 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<
+          SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceMethodDescriptor =
+          ApiMethodDescriptor
+              .<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.setShieldedInstanceIntegrityPolicy")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/setShieldedInstanceIntegrityPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetTagsInstanceHttpRequest, Operation>
       setTagsInstanceMethodDescriptor =
           ApiMethodDescriptor.<SetTagsInstanceHttpRequest, Operation>newBuilder()
@@ -745,6 +798,30 @@ public class HttpJsonInstanceStub extends InstanceStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instances.updateShieldedInstanceConfig")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<UpdateShieldedInstanceConfigInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{instance}/updateShieldedInstanceConfig"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                      .setResourceNameField("instance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AddAccessConfigInstanceHttpRequest, Operation>
@@ -763,6 +840,9 @@ public class HttpJsonInstanceStub extends InstanceStub {
   private final UnaryCallable<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceCallable;
   private final UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable;
+  private final UnaryCallable<
+          GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceCallable;
   private final UnaryCallable<InsertInstanceHttpRequest, Operation> insertInstanceCallable;
   private final UnaryCallable<ListInstancesHttpRequest, InstanceList> listInstancesCallable;
   private final UnaryCallable<ListInstancesHttpRequest, ListInstancesPagedResponse>
@@ -791,6 +871,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
       setSchedulingInstanceCallable;
   private final UnaryCallable<SetServiceAccountInstanceHttpRequest, Operation>
       setServiceAccountInstanceCallable;
+  private final UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceCallable;
   private final UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable;
   private final UnaryCallable<SimulateMaintenanceEventInstanceHttpRequest, Operation>
       simulateMaintenanceEventInstanceCallable;
@@ -804,6 +886,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
       updateAccessConfigInstanceCallable;
   private final UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceCallable;
+  private final UnaryCallable<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -889,6 +973,13 @@ public class HttpJsonInstanceStub extends InstanceStub {
                 .<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>newBuilder()
                 .setMethodDescriptor(getSerialPortOutputInstanceMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+        getShieldedInstanceIdentityInstanceTransportSettings =
+            HttpJsonCallSettings
+                .<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+                    newBuilder()
+                .setMethodDescriptor(getShieldedInstanceIdentityInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertInstanceHttpRequest, Operation> insertInstanceTransportSettings =
         HttpJsonCallSettings.<InsertInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(insertInstanceMethodDescriptor)
@@ -957,6 +1048,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
             HttpJsonCallSettings.<SetServiceAccountInstanceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(setServiceAccountInstanceMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+        setShieldedInstanceIntegrityPolicyInstanceTransportSettings =
+            HttpJsonCallSettings
+                .<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(setShieldedInstanceIntegrityPolicyInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetTagsInstanceHttpRequest, Operation> setTagsInstanceTransportSettings =
         HttpJsonCallSettings.<SetTagsInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(setTagsInstanceMethodDescriptor)
@@ -995,6 +1092,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
         updateNetworkInterfaceInstanceTransportSettings =
             HttpJsonCallSettings.<UpdateNetworkInterfaceInstanceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateNetworkInterfaceInstanceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+        updateShieldedInstanceConfigInstanceTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateShieldedInstanceConfigInstanceMethodDescriptor)
                 .build();
 
     this.addAccessConfigInstanceCallable =
@@ -1042,6 +1145,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         callableFactory.createUnaryCallable(
             getSerialPortOutputInstanceTransportSettings,
             settings.getSerialPortOutputInstanceSettings(),
+            clientContext);
+    this.getShieldedInstanceIdentityInstanceCallable =
+        callableFactory.createUnaryCallable(
+            getShieldedInstanceIdentityInstanceTransportSettings,
+            settings.getShieldedInstanceIdentityInstanceSettings(),
             clientContext);
     this.insertInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -1115,6 +1223,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
             setServiceAccountInstanceTransportSettings,
             settings.setServiceAccountInstanceSettings(),
             clientContext);
+    this.setShieldedInstanceIntegrityPolicyInstanceCallable =
+        callableFactory.createUnaryCallable(
+            setShieldedInstanceIntegrityPolicyInstanceTransportSettings,
+            settings.setShieldedInstanceIntegrityPolicyInstanceSettings(),
+            clientContext);
     this.setTagsInstanceCallable =
         callableFactory.createUnaryCallable(
             setTagsInstanceTransportSettings, settings.setTagsInstanceSettings(), clientContext);
@@ -1148,6 +1261,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         callableFactory.createUnaryCallable(
             updateNetworkInterfaceInstanceTransportSettings,
             settings.updateNetworkInterfaceInstanceSettings(),
+            clientContext);
+    this.updateShieldedInstanceConfigInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateShieldedInstanceConfigInstanceTransportSettings,
+            settings.updateShieldedInstanceConfigInstanceSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1206,6 +1324,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable() {
     return getSerialPortOutputInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceCallable() {
+    return getShieldedInstanceIdentityInstanceCallable;
   }
 
   @BetaApi
@@ -1299,6 +1423,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   }
 
   @BetaApi
+  public UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceCallable() {
+    return setShieldedInstanceIntegrityPolicyInstanceCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable() {
     return setTagsInstanceCallable;
   }
@@ -1341,6 +1471,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceCallable() {
     return updateNetworkInterfaceInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceCallable() {
+    return updateShieldedInstanceConfigInstanceCallable;
   }
 
   @Override

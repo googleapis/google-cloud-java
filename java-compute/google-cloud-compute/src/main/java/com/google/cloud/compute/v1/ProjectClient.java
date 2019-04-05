@@ -209,9 +209,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   DisableXpnHostProjectHttpRequest request = DisableXpnHostProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   Operation response = projectClient.disableXpnHostProject(request);
    * }
@@ -233,9 +233,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   DisableXpnHostProjectHttpRequest request = DisableXpnHostProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.disableXpnHostProjectCallable().futureCall(request);
    *   // Do something
@@ -318,10 +318,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
    *   DisableXpnResourceProjectHttpRequest request = DisableXpnResourceProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
    *     .build();
    *   Operation response = projectClient.disableXpnResourceProject(request);
@@ -344,10 +344,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
    *   DisableXpnResourceProjectHttpRequest request = DisableXpnResourceProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.disableXpnResourceProjectCallable().futureCall(request);
@@ -420,9 +420,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   EnableXpnHostProjectHttpRequest request = EnableXpnHostProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   Operation response = projectClient.enableXpnHostProject(request);
    * }
@@ -444,9 +444,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   EnableXpnHostProjectHttpRequest request = EnableXpnHostProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.enableXpnHostProjectCallable().futureCall(request);
    *   // Do something
@@ -532,10 +532,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
    *   EnableXpnResourceProjectHttpRequest request = EnableXpnResourceProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
    *     .build();
    *   Operation response = projectClient.enableXpnResourceProject(request);
@@ -559,10 +559,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
    *   EnableXpnResourceProjectHttpRequest request = EnableXpnResourceProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.enableXpnResourceProjectCallable().futureCall(request);
@@ -634,9 +634,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetProjectHttpRequest request = GetProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   Project response = projectClient.getProject(request);
    * }
@@ -658,9 +658,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetProjectHttpRequest request = GetProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;Project&gt; future = projectClient.getProjectCallable().futureCall(request);
    *   // Do something
@@ -731,9 +731,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetXpnHostProjectHttpRequest request = GetXpnHostProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   Project response = projectClient.getXpnHostProject(request);
    * }
@@ -755,9 +755,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetXpnHostProjectHttpRequest request = GetXpnHostProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;Project&gt; future = projectClient.getXpnHostProjectCallable().futureCall(request);
    *   // Do something
@@ -830,9 +830,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetXpnResourcesProjectsHttpRequest request = GetXpnResourcesProjectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (XpnResourceId element : projectClient.getXpnResourcesProjects(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -857,9 +857,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetXpnResourcesProjectsHttpRequest request = GetXpnResourcesProjectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;GetXpnResourcesProjectsPagedResponse&gt; future = projectClient.getXpnResourcesProjectsPagedCallable().futureCall(request);
    *   // Do something
@@ -884,9 +884,9 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   GetXpnResourcesProjectsHttpRequest request = GetXpnResourcesProjectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     ProjectsGetXpnResources response = projectClient.getXpnResourcesProjectsCallable().call(request);
@@ -979,10 +979,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
    *   ListXpnHostsProjectsHttpRequest request = ListXpnHostsProjectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
    *     .build();
    *   for (Project element : projectClient.listXpnHostsProjects(request).iterateAll()) {
@@ -1008,10 +1008,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
    *   ListXpnHostsProjectsHttpRequest request = ListXpnHostsProjectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
    *     .build();
    *   ApiFuture&lt;ListXpnHostsProjectsPagedResponse&gt; future = projectClient.listXpnHostsProjectsPagedCallable().futureCall(request);
@@ -1036,10 +1036,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
    *   ListXpnHostsProjectsHttpRequest request = ListXpnHostsProjectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
    *     .build();
    *   while (true) {
@@ -1130,10 +1130,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
    *   MoveDiskProjectHttpRequest request = MoveDiskProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setDiskMoveRequestResource(diskMoveRequestResource)
    *     .build();
    *   Operation response = projectClient.moveDiskProject(request);
@@ -1156,10 +1156,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
    *   MoveDiskProjectHttpRequest request = MoveDiskProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setDiskMoveRequestResource(diskMoveRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.moveDiskProjectCallable().futureCall(request);
@@ -1241,10 +1241,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
    *   MoveInstanceProjectHttpRequest request = MoveInstanceProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setInstanceMoveRequestResource(instanceMoveRequestResource)
    *     .build();
    *   Operation response = projectClient.moveInstanceProject(request);
@@ -1267,10 +1267,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
    *   MoveInstanceProjectHttpRequest request = MoveInstanceProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setInstanceMoveRequestResource(instanceMoveRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.moveInstanceProjectCallable().futureCall(request);
@@ -1356,10 +1356,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetCommonInstanceMetadataProjectHttpRequest request = SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setMetadataResource(metadataResource)
    *     .build();
    *   Operation response = projectClient.setCommonInstanceMetadataProject(request);
@@ -1384,10 +1384,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetCommonInstanceMetadataProjectHttpRequest request = SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setMetadataResource(metadataResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.setCommonInstanceMetadataProjectCallable().futureCall(request);
@@ -1477,10 +1477,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
    *   SetDefaultNetworkTierProjectHttpRequest request = SetDefaultNetworkTierProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsSetDefaultNetworkTierRequestResource(projectsSetDefaultNetworkTierRequestResource)
    *     .build();
    *   Operation response = projectClient.setDefaultNetworkTierProject(request);
@@ -1505,10 +1505,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
    *   SetDefaultNetworkTierProjectHttpRequest request = SetDefaultNetworkTierProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setProjectsSetDefaultNetworkTierRequestResource(projectsSetDefaultNetworkTierRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.setDefaultNetworkTierProjectCallable().futureCall(request);
@@ -1596,10 +1596,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   SetUsageExportBucketProjectHttpRequest request = SetUsageExportBucketProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setUsageExportLocationResource(usageExportLocationResource)
    *     .build();
    *   Operation response = projectClient.setUsageExportBucketProject(request);
@@ -1624,10 +1624,10 @@ public class ProjectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   SetUsageExportBucketProjectHttpRequest request = SetUsageExportBucketProjectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setUsageExportLocationResource(usageExportLocationResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectClient.setUsageExportBucketProjectCallable().futureCall(request);
