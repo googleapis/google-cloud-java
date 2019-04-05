@@ -176,13 +176,15 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
         timestamp.length() >= 19 && timestamp.length() <= 30, invalidTimestamp);
     Preconditions.checkArgument(timestamp.charAt(4) == '-', invalidTimestamp);
     Preconditions.checkArgument(timestamp.charAt(7) == '-', invalidTimestamp);
-    Preconditions.checkArgument(timestamp.charAt(10) == 'T', invalidTimestamp);
     Preconditions.checkArgument(
-        (timestamp.length() == 19 && timestamp.charAt(18) != 'Z')
-            || (timestamp.length() == 20 && timestamp.charAt(19) == 'Z')
+        timestamp.charAt(10) == 'T' || timestamp.charAt(10) == 't', invalidTimestamp);
+    Preconditions.checkArgument(
+        (timestamp.length() == 19 && (timestamp.charAt(18) != 'Z' || timestamp.charAt(18) == 'z'))
+            || (timestamp.length() == 20
+                && (timestamp.charAt(19) == 'Z' || timestamp.charAt(19) == 'z'))
             || (timestamp.charAt(19) == '.'
                 && timestamp.length() > 20
-                && timestamp.charAt(20) != 'Z'),
+                && (timestamp.charAt(20) != 'Z' || timestamp.charAt(20) == 'z')),
         invalidTimestamp);
     int year = IntParser.parseInt(timestamp, 0, 4);
     int month = IntParser.parseInt(timestamp, 5, 7);
@@ -194,7 +196,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
     if (timestamp.length() > 20) {
       if (timestamp.charAt(19) == '.') {
         int endIndex;
-        if (timestamp.charAt(timestamp.length() - 1) == 'Z') {
+        if (timestamp.charAt(timestamp.length() - 1) == 'Z'
+            || timestamp.charAt(timestamp.length() - 1) == 'z') {
           endIndex = timestamp.length() - 1;
         } else {
           endIndex = timestamp.length();
