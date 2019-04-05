@@ -43,7 +43,7 @@ public class ITSourceSnippets {
   @Test
   public void testSetSourceIamPolicy() throws IOException {
     assertTrue(
-        SourceSnippets.setIamPolicySource(SOURCE_NAME, " csccclienttest@gmail.com")
+        SourceSnippets.setIamPolicySource(SOURCE_NAME, "csccclienttest@gmail.com")
             .getBindings(0)
             .getRole()
             .equals("roles/securitycenter.findingsEditor"));
