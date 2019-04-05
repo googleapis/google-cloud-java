@@ -7,8 +7,7 @@ package com.google.cloud.scheduler.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [GetJob][google.cloud.scheduler.v1beta1.CloudScheduler.GetJob].
+ * Request message for [GetJob][google.cloud.scheduler.v1beta1.CloudScheduler.GetJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.GetJobRequest}
@@ -302,8 +301,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for
-   * [GetJob][google.cloud.scheduler.v1beta1.CloudScheduler.GetJob].
+   * Request message for [GetJob][google.cloud.scheduler.v1beta1.CloudScheduler.GetJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.GetJobRequest}

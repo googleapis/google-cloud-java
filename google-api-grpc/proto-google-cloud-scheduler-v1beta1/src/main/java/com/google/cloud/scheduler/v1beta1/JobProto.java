@@ -31,26 +31,28 @@ public final class JobProto {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/scheduler/v1beta1/job.pro"
           + "to\022\036google.cloud.scheduler.v1beta1\032\034goog"
-          + "le/api/annotations.proto\032+google/cloud/s"
-          + "cheduler/v1beta1/target.proto\032\036google/pr"
-          + "otobuf/duration.proto\032\037google/protobuf/t"
-          + "imestamp.proto\032\027google/rpc/status.proto\""
-          + "\323\005\n\003Job\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001"
-          + "(\t\022E\n\rpubsub_target\030\004 \001(\0132,.google.cloud"
-          + ".scheduler.v1beta1.PubsubTargetH\000\022U\n\026app"
-          + "_engine_http_target\030\005 \001(\01323.google.cloud"
-          + ".scheduler.v1beta1.AppEngineHttpTargetH\000"
-          + "\022A\n\013http_target\030\006 \001(\0132*.google.cloud.sch"
-          + "eduler.v1beta1.HttpTargetH\000\022\020\n\010schedule\030"
-          + "\024 \001(\t\022\021\n\ttime_zone\030\025 \001(\t\0224\n\020user_update_"
-          + "time\030\t \001(\0132\032.google.protobuf.Timestamp\0228"
-          + "\n\005state\030\n \001(\0162).google.cloud.scheduler.v"
-          + "1beta1.Job.State\022\"\n\006status\030\013 \001(\0132\022.googl"
-          + "e.rpc.Status\0221\n\rschedule_time\030\021 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\0225\n\021last_attempt_"
-          + "time\030\022 \001(\0132\032.google.protobuf.Timestamp\022A"
-          + "\n\014retry_config\030\023 \001(\0132+.google.cloud.sche"
-          + "duler.v1beta1.RetryConfig\"X\n\005State\022\025\n\021ST"
+          + "le/api/annotations.proto\032\031google/api/res"
+          + "ource.proto\032+google/cloud/scheduler/v1be"
+          + "ta1/target.proto\032\036google/protobuf/durati"
+          + "on.proto\032\037google/protobuf/timestamp.prot"
+          + "o\032\027google/rpc/status.proto\"\210\006\n\003Job\022\014\n\004na"
+          + "me\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022E\n\rpubsub_"
+          + "target\030\004 \001(\0132,.google.cloud.scheduler.v1"
+          + "beta1.PubsubTargetH\000\022U\n\026app_engine_http_"
+          + "target\030\005 \001(\01323.google.cloud.scheduler.v1"
+          + "beta1.AppEngineHttpTargetH\000\022A\n\013http_targ"
+          + "et\030\006 \001(\0132*.google.cloud.scheduler.v1beta"
+          + "1.HttpTargetH\000\022\020\n\010schedule\030\024 \001(\t\022\021\n\ttime"
+          + "_zone\030\025 \001(\t\0224\n\020user_update_time\030\t \001(\0132\032."
+          + "google.protobuf.Timestamp\0228\n\005state\030\n \001(\016"
+          + "2).google.cloud.scheduler.v1beta1.Job.St"
+          + "ate\022\"\n\006status\030\013 \001(\0132\022.google.rpc.Status\022"
+          + "1\n\rschedule_time\030\021 \001(\0132\032.google.protobuf"
+          + ".Timestamp\0225\n\021last_attempt_time\030\022 \001(\0132\032."
+          + "google.protobuf.Timestamp\022A\n\014retry_confi"
+          + "g\030\023 \001(\0132+.google.cloud.scheduler.v1beta1"
+          + ".RetryConfig\0223\n\020attempt_deadline\030\026 \001(\0132\031"
+          + ".google.protobuf.Duration\"X\n\005State\022\025\n\021ST"
           + "ATE_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\n\n\006PAUSED"
           + "\020\002\022\014\n\010DISABLED\020\003\022\021\n\rUPDATE_FAILED\020\004B\010\n\006t"
           + "arget\"\342\001\n\013RetryConfig\022\023\n\013retry_count\030\001 \001"
@@ -76,6 +78,7 @@ public final class JobProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.scheduler.v1beta1.TargetProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -101,6 +104,7 @@ public final class JobProto {
               "ScheduleTime",
               "LastAttemptTime",
               "RetryConfig",
+              "AttemptDeadline",
               "Target",
             });
     internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor =
@@ -116,6 +120,7 @@ public final class JobProto {
               "MaxDoublings",
             });
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.scheduler.v1beta1.TargetProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

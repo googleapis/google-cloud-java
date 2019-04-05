@@ -39,8 +39,7 @@ public interface CreateJobRequestOrBuilder
    * <pre>
    * Required.
    * The job to add. The user can optionally specify a name for the
-   * job in [name][google.cloud.scheduler.v1beta1.Job.name].
-   * [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
+   * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
    * existing job. If a name is not specified then the system will
    * generate a random unique name that will be returned
    * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
@@ -55,8 +54,7 @@ public interface CreateJobRequestOrBuilder
    * <pre>
    * Required.
    * The job to add. The user can optionally specify a name for the
-   * job in [name][google.cloud.scheduler.v1beta1.Job.name].
-   * [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
+   * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
    * existing job. If a name is not specified then the system will
    * generate a random unique name that will be returned
    * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
@@ -71,8 +69,7 @@ public interface CreateJobRequestOrBuilder
    * <pre>
    * Required.
    * The job to add. The user can optionally specify a name for the
-   * job in [name][google.cloud.scheduler.v1beta1.Job.name].
-   * [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
+   * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
    * existing job. If a name is not specified then the system will
    * generate a random unique name that will be returned
    * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
