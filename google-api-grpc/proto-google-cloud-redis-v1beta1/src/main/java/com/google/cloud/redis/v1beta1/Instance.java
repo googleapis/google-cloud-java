@@ -311,8 +311,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Redis instance is being repaired and may be unusable. Details can be
-     * found in the `status_message` field.
+     * Redis instance is being repaired and may be unusable.
      * </pre>
      *
      * <code>REPAIRING = 5;</code>
@@ -328,6 +327,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>MAINTENANCE = 6;</code>
      */
     MAINTENANCE(6),
+    /**
+     *
+     *
+     * <pre>
+     * Redis instance is importing data (availability may be affected).
+     * </pre>
+     *
+     * <code>IMPORTING = 8;</code>
+     */
+    IMPORTING(8),
+    /**
+     *
+     *
+     * <pre>
+     * Redis instance is failing over (availability may be affected).
+     * </pre>
+     *
+     * <code>FAILING_OVER = 10;</code>
+     */
+    FAILING_OVER(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -387,8 +406,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Redis instance is being repaired and may be unusable. Details can be
-     * found in the `status_message` field.
+     * Redis instance is being repaired and may be unusable.
      * </pre>
      *
      * <code>REPAIRING = 5;</code>
@@ -404,6 +422,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>MAINTENANCE = 6;</code>
      */
     public static final int MAINTENANCE_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Redis instance is importing data (availability may be affected).
+     * </pre>
+     *
+     * <code>IMPORTING = 8;</code>
+     */
+    public static final int IMPORTING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Redis instance is failing over (availability may be affected).
+     * </pre>
+     *
+     * <code>FAILING_OVER = 10;</code>
+     */
+    public static final int FAILING_OVER_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -435,6 +473,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return REPAIRING;
         case 6:
           return MAINTENANCE;
+        case 8:
+          return IMPORTING;
+        case 10:
+          return FAILING_OVER;
         default:
           return null;
       }
@@ -640,7 +682,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    * Note: Redis instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users get to choose which
+   * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
    * should be provisioned in. Refer to [location_id] and
    * [alternative_location_id] fields for more details.
@@ -667,7 +709,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    * Note: Redis instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users get to choose which
+   * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
    * should be provisioned in. Refer to [location_id] and
    * [alternative_location_id] fields for more details.
@@ -832,7 +874,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
    * instances will be created across two zones for protection against zonal
-   * failures. if [alternative_location_id] is also provided, it must be
+   * failures. If [alternative_location_id] is also provided, it must be
    * different from [location_id].
    * </pre>
    *
@@ -856,7 +898,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
    * instances will be created across two zones for protection against zonal
-   * failures. if [alternative_location_id] is also provided, it must be
+   * failures. If [alternative_location_id] is also provided, it must be
    * different from [location_id].
    * </pre>
    *
@@ -928,7 +970,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The version of Redis software.
-   * If not provided, latest supported version will be used.
+   * If not provided, latest supported version will be used. Updating the
+   * version will perform an upgrade/downgrade to the new version. Currently,
+   * the supported values are:
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility
+   *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -949,7 +995,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The version of Redis software.
-   * If not provided, latest supported version will be used.
+   * If not provided, latest supported version will be used. Updating the
+   * version will perform an upgrade/downgrade to the new version. Currently,
+   * the supported values are:
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility
+   *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -975,7 +1025,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The CIDR range of internal addresses that are reserved for this
    * instance. If not provided, the service will choose an unused /29 block,
    * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-   * and non-overlapping with existing subnets in a network.
+   * and non-overlapping with existing subnets in an authorized network.
    * </pre>
    *
    * <code>string reserved_ip_range = 9;</code>
@@ -998,7 +1048,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The CIDR range of internal addresses that are reserved for this
    * instance. If not provided, the service will choose an unused /29 block,
    * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-   * and non-overlapping with existing subnets in a network.
+   * and non-overlapping with existing subnets in an authorized network.
    * </pre>
    *
    * <code>string reserved_ip_range = 9;</code>
@@ -1021,7 +1071,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Hostname or IP address of the exposed redis endpoint used by
+   * Output only. Hostname or IP address of the exposed Redis endpoint used by
    * clients to connect to the service.
    * </pre>
    *
@@ -1042,7 +1092,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Hostname or IP address of the exposed redis endpoint used by
+   * Output only. Hostname or IP address of the exposed Redis endpoint used by
    * clients to connect to the service.
    * </pre>
    *
@@ -1066,7 +1116,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The port number of the exposed redis endpoint.
+   * Output only. The port number of the exposed Redis endpoint.
    * </pre>
    *
    * <code>int32 port = 11;</code>
@@ -1081,11 +1131,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The current zone where the Redis endpoint is placed. In
-   * single zone deployments, this will always be the same as [location_id]
-   * provided by the user at creation time. In cross-zone instances (only
-   * applicable in STANDARD_HA tier), this can be either [location_id] or
-   * [alternative_location_id] and can change on a failover event.
+   * Output only. The current zone where the Redis endpoint is placed. For Basic
+   * Tier instances, this will always be the same as the [location_id]
+   * provided by the user at creation time. For Standard Tier instances,
+   * this can be either [location_id] or [alternative_location_id] and can
+   * change after a failover event.
    * </pre>
    *
    * <code>string current_location_id = 12;</code>
@@ -1105,11 +1155,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The current zone where the Redis endpoint is placed. In
-   * single zone deployments, this will always be the same as [location_id]
-   * provided by the user at creation time. In cross-zone instances (only
-   * applicable in STANDARD_HA tier), this can be either [location_id] or
-   * [alternative_location_id] and can change on a failover event.
+   * Output only. The current zone where the Redis endpoint is placed. For Basic
+   * Tier instances, this will always be the same as the [location_id]
+   * provided by the user at creation time. For Standard Tier instances,
+   * this can be either [location_id] or [alternative_location_id] and can
+   * change after a failover event.
    * </pre>
    *
    * <code>string current_location_id = 12;</code>
@@ -1274,8 +1324,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
+   *  Redis 3.2 and above:
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
+   *  Redis 4.0 and above:
+   *  *   activedefrag
+   *  *   lfu-log-factor
+   *  *   lfu-decay-time
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1298,8 +1353,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
+   *  Redis 3.2 and above:
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
+   *  Redis 4.0 and above:
+   *  *   activedefrag
+   *  *   lfu-log-factor
+   *  *   lfu-decay-time
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1314,8 +1374,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
+   *  Redis 3.2 and above:
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
+   *  Redis 4.0 and above:
+   *  *   activedefrag
+   *  *   lfu-log-factor
+   *  *   lfu-decay-time
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1335,8 +1400,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
+   *  Redis 3.2 and above:
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
+   *  Redis 4.0 and above:
+   *  *   activedefrag
+   *  *   lfu-log-factor
+   *  *   lfu-decay-time
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1388,7 +1458,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Redis memory size in GB.
+   * Required. Redis memory size in GiB.
    * </pre>
    *
    * <code>int32 memory_size_gb = 18;</code>
@@ -2073,7 +2143,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * Note: Redis instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users get to choose which
+     * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
      * should be provisioned in. Refer to [location_id] and
      * [alternative_location_id] fields for more details.
@@ -2100,7 +2170,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * Note: Redis instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users get to choose which
+     * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
      * should be provisioned in. Refer to [location_id] and
      * [alternative_location_id] fields for more details.
@@ -2127,7 +2197,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * Note: Redis instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users get to choose which
+     * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
      * should be provisioned in. Refer to [location_id] and
      * [alternative_location_id] fields for more details.
@@ -2152,7 +2222,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * Note: Redis instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users get to choose which
+     * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
      * should be provisioned in. Refer to [location_id] and
      * [alternative_location_id] fields for more details.
@@ -2174,7 +2244,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * Note: Redis instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users get to choose which
+     * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
      * should be provisioned in. Refer to [location_id] and
      * [alternative_location_id] fields for more details.
@@ -2447,7 +2517,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. if [alternative_location_id] is also provided, it must be
+     * failures. If [alternative_location_id] is also provided, it must be
      * different from [location_id].
      * </pre>
      *
@@ -2471,7 +2541,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. if [alternative_location_id] is also provided, it must be
+     * failures. If [alternative_location_id] is also provided, it must be
      * different from [location_id].
      * </pre>
      *
@@ -2495,7 +2565,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. if [alternative_location_id] is also provided, it must be
+     * failures. If [alternative_location_id] is also provided, it must be
      * different from [location_id].
      * </pre>
      *
@@ -2517,7 +2587,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. if [alternative_location_id] is also provided, it must be
+     * failures. If [alternative_location_id] is also provided, it must be
      * different from [location_id].
      * </pre>
      *
@@ -2536,7 +2606,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
      * instances will be created across two zones for protection against zonal
-     * failures. if [alternative_location_id] is also provided, it must be
+     * failures. If [alternative_location_id] is also provided, it must be
      * different from [location_id].
      * </pre>
      *
@@ -2663,7 +2733,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used.
+     * If not provided, latest supported version will be used. Updating the
+     * version will perform an upgrade/downgrade to the new version. Currently,
+     * the supported values are:
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2684,7 +2758,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used.
+     * If not provided, latest supported version will be used. Updating the
+     * version will perform an upgrade/downgrade to the new version. Currently,
+     * the supported values are:
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2705,7 +2783,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used.
+     * If not provided, latest supported version will be used. Updating the
+     * version will perform an upgrade/downgrade to the new version. Currently,
+     * the supported values are:
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2724,7 +2806,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used.
+     * If not provided, latest supported version will be used. Updating the
+     * version will perform an upgrade/downgrade to the new version. Currently,
+     * the supported values are:
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2740,7 +2826,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The version of Redis software.
-     * If not provided, latest supported version will be used.
+     * If not provided, latest supported version will be used. Updating the
+     * version will perform an upgrade/downgrade to the new version. Currently,
+     * the supported values are:
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2764,7 +2854,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
      * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in a network.
+     * and non-overlapping with existing subnets in an authorized network.
      * </pre>
      *
      * <code>string reserved_ip_range = 9;</code>
@@ -2787,7 +2877,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
      * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in a network.
+     * and non-overlapping with existing subnets in an authorized network.
      * </pre>
      *
      * <code>string reserved_ip_range = 9;</code>
@@ -2810,7 +2900,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
      * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in a network.
+     * and non-overlapping with existing subnets in an authorized network.
      * </pre>
      *
      * <code>string reserved_ip_range = 9;</code>
@@ -2831,7 +2921,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
      * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in a network.
+     * and non-overlapping with existing subnets in an authorized network.
      * </pre>
      *
      * <code>string reserved_ip_range = 9;</code>
@@ -2849,7 +2939,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
      * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
-     * and non-overlapping with existing subnets in a network.
+     * and non-overlapping with existing subnets in an authorized network.
      * </pre>
      *
      * <code>string reserved_ip_range = 9;</code>
@@ -2870,7 +2960,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Hostname or IP address of the exposed redis endpoint used by
+     * Output only. Hostname or IP address of the exposed Redis endpoint used by
      * clients to connect to the service.
      * </pre>
      *
@@ -2891,7 +2981,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Hostname or IP address of the exposed redis endpoint used by
+     * Output only. Hostname or IP address of the exposed Redis endpoint used by
      * clients to connect to the service.
      * </pre>
      *
@@ -2912,7 +3002,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Hostname or IP address of the exposed redis endpoint used by
+     * Output only. Hostname or IP address of the exposed Redis endpoint used by
      * clients to connect to the service.
      * </pre>
      *
@@ -2931,7 +3021,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Hostname or IP address of the exposed redis endpoint used by
+     * Output only. Hostname or IP address of the exposed Redis endpoint used by
      * clients to connect to the service.
      * </pre>
      *
@@ -2947,7 +3037,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Hostname or IP address of the exposed redis endpoint used by
+     * Output only. Hostname or IP address of the exposed Redis endpoint used by
      * clients to connect to the service.
      * </pre>
      *
@@ -2969,7 +3059,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The port number of the exposed redis endpoint.
+     * Output only. The port number of the exposed Redis endpoint.
      * </pre>
      *
      * <code>int32 port = 11;</code>
@@ -2981,7 +3071,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The port number of the exposed redis endpoint.
+     * Output only. The port number of the exposed Redis endpoint.
      * </pre>
      *
      * <code>int32 port = 11;</code>
@@ -2996,7 +3086,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The port number of the exposed redis endpoint.
+     * Output only. The port number of the exposed Redis endpoint.
      * </pre>
      *
      * <code>int32 port = 11;</code>
@@ -3013,11 +3103,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. In
-     * single zone deployments, this will always be the same as [location_id]
-     * provided by the user at creation time. In cross-zone instances (only
-     * applicable in STANDARD_HA tier), this can be either [location_id] or
-     * [alternative_location_id] and can change on a failover event.
+     * Output only. The current zone where the Redis endpoint is placed. For Basic
+     * Tier instances, this will always be the same as the [location_id]
+     * provided by the user at creation time. For Standard Tier instances,
+     * this can be either [location_id] or [alternative_location_id] and can
+     * change after a failover event.
      * </pre>
      *
      * <code>string current_location_id = 12;</code>
@@ -3037,11 +3127,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. In
-     * single zone deployments, this will always be the same as [location_id]
-     * provided by the user at creation time. In cross-zone instances (only
-     * applicable in STANDARD_HA tier), this can be either [location_id] or
-     * [alternative_location_id] and can change on a failover event.
+     * Output only. The current zone where the Redis endpoint is placed. For Basic
+     * Tier instances, this will always be the same as the [location_id]
+     * provided by the user at creation time. For Standard Tier instances,
+     * this can be either [location_id] or [alternative_location_id] and can
+     * change after a failover event.
      * </pre>
      *
      * <code>string current_location_id = 12;</code>
@@ -3061,11 +3151,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. In
-     * single zone deployments, this will always be the same as [location_id]
-     * provided by the user at creation time. In cross-zone instances (only
-     * applicable in STANDARD_HA tier), this can be either [location_id] or
-     * [alternative_location_id] and can change on a failover event.
+     * Output only. The current zone where the Redis endpoint is placed. For Basic
+     * Tier instances, this will always be the same as the [location_id]
+     * provided by the user at creation time. For Standard Tier instances,
+     * this can be either [location_id] or [alternative_location_id] and can
+     * change after a failover event.
      * </pre>
      *
      * <code>string current_location_id = 12;</code>
@@ -3083,11 +3173,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. In
-     * single zone deployments, this will always be the same as [location_id]
-     * provided by the user at creation time. In cross-zone instances (only
-     * applicable in STANDARD_HA tier), this can be either [location_id] or
-     * [alternative_location_id] and can change on a failover event.
+     * Output only. The current zone where the Redis endpoint is placed. For Basic
+     * Tier instances, this will always be the same as the [location_id]
+     * provided by the user at creation time. For Standard Tier instances,
+     * this can be either [location_id] or [alternative_location_id] and can
+     * change after a failover event.
      * </pre>
      *
      * <code>string current_location_id = 12;</code>
@@ -3102,11 +3192,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current zone where the Redis endpoint is placed. In
-     * single zone deployments, this will always be the same as [location_id]
-     * provided by the user at creation time. In cross-zone instances (only
-     * applicable in STANDARD_HA tier), this can be either [location_id] or
-     * [alternative_location_id] and can change on a failover event.
+     * Output only. The current zone where the Redis endpoint is placed. For Basic
+     * Tier instances, this will always be the same as the [location_id]
+     * provided by the user at creation time. For Standard Tier instances,
+     * this can be either [location_id] or [alternative_location_id] and can
+     * change after a failover event.
      * </pre>
      *
      * <code>string current_location_id = 12;</code>
@@ -3511,8 +3601,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3535,8 +3630,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3551,8 +3651,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3572,8 +3677,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3600,8 +3710,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3625,8 +3740,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3648,8 +3768,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
+     *  Redis 3.2 and above:
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
+     *  Redis 4.0 and above:
+     *  *   activedefrag
+     *  *   lfu-log-factor
+     *  *   lfu-decay-time
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3740,7 +3865,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Redis memory size in GB.
+     * Required. Redis memory size in GiB.
      * </pre>
      *
      * <code>int32 memory_size_gb = 18;</code>
@@ -3752,7 +3877,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Redis memory size in GB.
+     * Required. Redis memory size in GiB.
      * </pre>
      *
      * <code>int32 memory_size_gb = 18;</code>
@@ -3767,7 +3892,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Redis memory size in GB.
+     * Required. Redis memory size in GiB.
      * </pre>
      *
      * <code>int32 memory_size_gb = 18;</code>

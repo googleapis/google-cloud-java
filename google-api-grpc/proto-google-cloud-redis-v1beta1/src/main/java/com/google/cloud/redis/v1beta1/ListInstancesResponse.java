@@ -26,6 +26,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   private ListInstancesResponse() {
     instances_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -70,6 +71,16 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
               nextPageToken_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                unreachable_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              unreachable_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -86,6 +97,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instances_ = java.util.Collections.unmodifiableList(instances_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        unreachable_ = unreachable_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -257,6 +271,57 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int UNREACHABLE_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList unreachable_;
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getUnreachableList() {
+    return unreachable_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  public int getUnreachableCount() {
+    return unreachable_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  public java.lang.String getUnreachable(int index) {
+    return unreachable_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+    return unreachable_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -277,6 +342,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
+    for (int i = 0; i < unreachable_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unreachable_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -291,6 +359,14 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < unreachable_.size(); i++) {
+        dataSize += computeStringSizeNoTag(unreachable_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUnreachableList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,6 +386,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
 
     if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getUnreachableList().equals(other.getUnreachableList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -327,6 +404,10 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    if (getUnreachableCount() > 0) {
+      hash = (37 * hash) + UNREACHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreachableList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,6 +564,8 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       nextPageToken_ = "";
 
+      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -522,6 +605,11 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         result.instances_ = instancesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        unreachable_ = unreachable_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.unreachable_ = unreachable_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -602,6 +690,16 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        onChanged();
+      }
+      if (!other.unreachable_.isEmpty()) {
+        if (unreachable_.isEmpty()) {
+          unreachable_ = other.unreachable_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureUnreachableIsMutable();
+          unreachable_.addAll(other.unreachable_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1224,6 +1322,149 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureUnreachableIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getUnreachableList() {
+      return unreachable_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public int getUnreachableCount() {
+      return unreachable_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public java.lang.String getUnreachable(int index) {
+      return unreachable_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+      return unreachable_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public Builder setUnreachable(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public Builder addUnreachable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
+      ensureUnreachableIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public Builder clearUnreachable() {
+      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     */
+    public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
       onChanged();
       return this;
     }

@@ -116,6 +116,19 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     return ((CloudRedisStubSettings) getStubSettings()).deleteInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to failoverInstance. */
+  public UnaryCallSettings<FailoverInstanceRequest, Operation> failoverInstanceSettings() {
+    return ((CloudRedisStubSettings) getStubSettings()).failoverInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to failoverInstance. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<FailoverInstanceRequest, Instance, Any>
+      failoverInstanceOperationSettings() {
+    return ((CloudRedisStubSettings) getStubSettings()).failoverInstanceOperationSettings();
+  }
+
   public static final CloudRedisSettings create(CloudRedisStubSettings stub) throws IOException {
     return new CloudRedisSettings.Builder(stub.toBuilder()).build();
   }
@@ -261,6 +274,20 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverInstance. */
+    public UnaryCallSettings.Builder<FailoverInstanceRequest, Operation>
+        failoverInstanceSettings() {
+      return getStubSettingsBuilder().failoverInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverInstance. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<FailoverInstanceRequest, Instance, Any>
+        failoverInstanceOperationSettings() {
+      return getStubSettingsBuilder().failoverInstanceOperationSettings();
     }
 
     @Override
