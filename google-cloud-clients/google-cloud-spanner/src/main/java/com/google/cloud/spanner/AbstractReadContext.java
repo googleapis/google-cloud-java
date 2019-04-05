@@ -22,13 +22,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
+import com.google.cloud.spanner.AbstractResultSet.GrpcResultSet;
+import com.google.cloud.spanner.AbstractResultSet.GrpcStreamIterator;
+import com.google.cloud.spanner.AbstractResultSet.ResumableStreamIterator;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.SpannerImpl.AbstractResultSet;
-import com.google.cloud.spanner.SpannerImpl.CloseableIterator;
-import com.google.cloud.spanner.SpannerImpl.GrpcResultSet;
-import com.google.cloud.spanner.SpannerImpl.GrpcStreamIterator;
-import com.google.cloud.spanner.SpannerImpl.ResumableStreamIterator;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -434,7 +433,7 @@ abstract class AbstractReadContext
             return stream;
           }
         };
-    return new GrpcResultSet(stream, this, QueryMode.NORMAL);
+    return new GrpcResultSet(stream, this);
   }
 
   /**
@@ -541,7 +540,7 @@ abstract class AbstractReadContext
             return stream;
           }
         };
-    GrpcResultSet resultSet = new GrpcResultSet(stream, this, QueryMode.NORMAL);
+    GrpcResultSet resultSet = new GrpcResultSet(stream, this);
     return resultSet;
   }
 
