@@ -141,15 +141,16 @@ public class SourceSnippets {
    * @param sourceName The source to set IAM Policy for.
    */
   // [START set_source_iam_policy]
-  static Policy setIamPolicySource(SourceName sourceName) {
+  static Policy setIamPolicySource(SourceName sourceName, String userEmail) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Set up IAM Policy for the user csccclienttest@gmail.com to use the role findingsEditor.
+      // userEmail = "someuser@domain.com"
+      // Set up IAM Policy for the user userMail to use the role findingsEditor.
       // The user must be a valid google account.
       Policy oldPolicy = client.getIamPolicy(sourceName.toString());
       Binding bindings =
           Binding.newBuilder()
               .setRole("roles/securitycenter.findingsEditor")
-              .addMembers("user:csccclienttest@gmail.com")
+              .addMembers("user:" + userEmail)
               .build();
       Policy policy = oldPolicy.toBuilder().addBindings(bindings).build();
 

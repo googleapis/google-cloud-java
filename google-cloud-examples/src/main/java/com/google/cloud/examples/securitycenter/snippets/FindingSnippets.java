@@ -18,6 +18,7 @@ import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.ArrayList;
+import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
 /** Snippets for how to work with Findings in Cloud Security Command Center. */
@@ -173,6 +174,7 @@ public class FindingSnippets {
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // OrganizationName organizationName = OrganizationName.of("123234324");
+      // "-" Indicates listing across all sources.
       SourceName sourceName = SourceName.of(organizationName.getOrganization(), "-");
 
       ListFindingsRequest.Builder request =
@@ -203,7 +205,7 @@ public class FindingSnippets {
   // [START list_filtered_findings]
   static ImmutableList<ListFindingsResult> listFilteredFindings(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*org_id=*/"123234324", /*source_id=*/"423432321");
 
       // Create filter to category of MEDIUM_RISK_ONE
       String filter = "category=\"MEDIUM_RISK_ONE\"";
@@ -236,10 +238,10 @@ public class FindingSnippets {
   // [START list_findings_at_time]
   static ImmutableList<ListFindingsResult> listFindingsAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*org_id=*/"123234324", /*source_id=*/"423432321");
 
       // 5 days ago
-      Instant fiveDaysAgo = Instant.now().minusSeconds(60 * 60 * 24 * 5);
+      Instant fiveDaysAgo = Instant.now().minus(Duration.ofDays(5));
 
       ListFindingsRequest.Builder request =
           ListFindingsRequest.newBuilder()
@@ -275,7 +277,7 @@ public class FindingSnippets {
   // [START test_iam_permissions]
   static TestIamPermissionsResponse testIamPermissions(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*org_id=*/"123234324", /*source_id=*/"423432321");
 
       // Iam permission to test.
       ArrayList permissionsToTest = new ArrayList<>();

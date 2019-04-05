@@ -1,7 +1,5 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
-import com.google.cloud.securitycenter.v1.Asset;
-import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
@@ -25,18 +23,19 @@ public class SecurityMarkSnippets {
   /**
    * Add security mark to an asset.
    *
-   * @param asset The asset to add the security mark for.
+   * @param assetName The asset resource to add the security mark for.
    */
   // [START add_to_asset]
-  static SecurityMarks addToAsset(Asset asset) {
+  static SecurityMarks addToAsset(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // asset_name = "organizations/123123342/assets/12312321";
       // Start setting up a request to add security marks for an asset.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
       // Add security marks and field mask for security marks.
       SecurityMarks securityMarks =
           SecurityMarks.newBuilder()
-              .setName(asset.getName() + "/securityMarks")
+              .setName(assetName + "/securityMarks")
               .putAllMarks(markMap)
               .build();
       FieldMask updateMask =
@@ -63,15 +62,16 @@ public class SecurityMarkSnippets {
   /**
    * Clear security marks for an asset.
    *
-   * @param asset The asset to clear the security marks for.
+   * @param assetName The asset resource to clear the security marks for.
    */
   // [START clear_from_asset]
-  static SecurityMarks clearFromAsset(Asset asset) {
+  static SecurityMarks clearFromAsset(String assetName) {
+    // asset_name = "organizations/123123342/assets/12312321";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to clear security marks for an asset.
       // Create security mark and field mask for clearing security marks.
       SecurityMarks securityMarks =
-          SecurityMarks.newBuilder().setName(asset.getName() + "/securityMarks").build();
+          SecurityMarks.newBuilder().setName(assetName + "/securityMarks").build();
       FieldMask updateMask =
           FieldMask.newBuilder().addPaths("marks.key_a").addPaths("marks.key_b").build();
 
@@ -96,16 +96,17 @@ public class SecurityMarkSnippets {
   /**
    * Deletes and updates a security mark for an asset.
    *
-   * @param asset The asset to update and remove the security marks for.
+   * @param assetName The asset resource path to update and remove the security marks for.
    */
   // [START delete_and_update_marks]
-  static SecurityMarks deleteAndUpdateMarks(Asset asset) {
+  static SecurityMarks deleteAndUpdateMarks(String assetName) {
+    // asset_name = "organizations/123123342/assets/12312321";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to clear and update security marks for an asset.
       // Create security mark and field mask for clearing security marks.
       SecurityMarks securityMarks =
           SecurityMarks.newBuilder()
-              .setName(asset.getName() + "/securityMarks")
+              .setName(assetName + "/securityMarks")
               .putMarks("key_a", "new_value_for_a")
               .build();
       FieldMask updateMask =
@@ -132,10 +133,11 @@ public class SecurityMarkSnippets {
   /**
    * Add security mark to a finding.
    *
-   * @param finding The finding to add the security mark for.
+   * @param findingName The finding resource path to add the security mark for.
    */
   // [START add_to_finding]
-  static SecurityMarks addToFinding(Finding finding) {
+  static SecurityMarks addToFinding(String findingName) {
+    // finding_name = "organizations/1112/sources/1234/findings/findingid";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to add security marks for a finding.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
@@ -143,7 +145,7 @@ public class SecurityMarkSnippets {
       // Add security marks and field mask for security marks.
       SecurityMarks securityMarks =
           SecurityMarks.newBuilder()
-              .setName(finding.getName() + "/securityMarks")
+              .setName(findingName + "/securityMarks")
               .putAllMarks(markMap)
               .build();
       FieldMask updateMask =

@@ -26,18 +26,21 @@ public class ITSecurityMarkSnippets {
 
   @Test
   public void testAddToAsset() throws IOException {
-    assertTrue(SecurityMarkSnippets.addToAsset(ASSET).getMarksOrThrow("key_a").equals("value_a"));
+    assertTrue(
+        SecurityMarkSnippets.addToAsset(ASSET.getName())
+            .getMarksOrThrow("key_a")
+            .equals("value_a"));
   }
 
   @Test
   public void testClearFromAsset() throws IOException {
-    assertFalse(SecurityMarkSnippets.clearFromAsset(ASSET).containsMarks("key_a"));
+    assertFalse(SecurityMarkSnippets.clearFromAsset(ASSET.getName()).containsMarks("key_a"));
   }
 
   @Test
   public void testDeleteAndUpdateMarks() throws IOException {
     assertTrue(
-        SecurityMarkSnippets.deleteAndUpdateMarks(ASSET)
+        SecurityMarkSnippets.deleteAndUpdateMarks(ASSET.getName())
             .getMarksOrThrow("key_a")
             .equals("new_value_for_a"));
   }
@@ -45,7 +48,9 @@ public class ITSecurityMarkSnippets {
   @Test
   public void testAddToFinding() throws IOException {
     assertTrue(
-        SecurityMarkSnippets.addToFinding(FINDING).getMarksOrThrow("key_a").equals("value_a"));
+        SecurityMarkSnippets.addToFinding(FINDING.getName())
+            .getMarksOrThrow("key_a")
+            .equals("value_a"));
   }
 
   @Test
