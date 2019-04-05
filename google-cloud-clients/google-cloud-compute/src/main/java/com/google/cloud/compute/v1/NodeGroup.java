@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A NodeGroup resource. */
+/** A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) */
 public final class NodeGroup implements ApiMessage {
   private final String creationTimestamp;
   private final String description;

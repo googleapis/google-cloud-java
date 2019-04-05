@@ -221,10 +221,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
    *   AddNodesNodeGroupHttpRequest request = AddNodesNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .setNodeGroupsAddNodesRequestResource(nodeGroupsAddNodesRequestResource)
    *     .build();
    *   Operation response = nodeGroupClient.addNodesNodeGroup(request);
@@ -247,10 +247,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
    *   AddNodesNodeGroupHttpRequest request = AddNodesNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .setNodeGroupsAddNodesRequestResource(nodeGroupsAddNodesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeGroupClient.addNodesNodeGroupCallable().futureCall(request);
@@ -327,9 +327,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeGroupsHttpRequest request = AggregatedListNodeGroupsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (NodeGroupsScopedList element : nodeGroupClient.aggregatedListNodeGroups(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -355,9 +355,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeGroupsHttpRequest request = AggregatedListNodeGroupsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListNodeGroupsPagedResponse&gt; future = nodeGroupClient.aggregatedListNodeGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -383,9 +383,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeGroupsHttpRequest request = AggregatedListNodeGroupsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     NodeGroupAggregatedList response = nodeGroupClient.aggregatedListNodeGroupsCallable().call(request);
@@ -466,9 +466,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   DeleteNodeGroupHttpRequest request = DeleteNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   Operation response = nodeGroupClient.deleteNodeGroup(request);
    * }
@@ -490,9 +490,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   DeleteNodeGroupHttpRequest request = DeleteNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeGroupClient.deleteNodeGroupCallable().futureCall(request);
    *   // Do something
@@ -574,10 +574,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
    *   DeleteNodesNodeGroupHttpRequest request = DeleteNodesNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .setNodeGroupsDeleteNodesRequestResource(nodeGroupsDeleteNodesRequestResource)
    *     .build();
    *   Operation response = nodeGroupClient.deleteNodesNodeGroup(request);
@@ -600,10 +600,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
    *   DeleteNodesNodeGroupHttpRequest request = DeleteNodesNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .setNodeGroupsDeleteNodesRequestResource(nodeGroupsDeleteNodesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeGroupClient.deleteNodesNodeGroupCallable().futureCall(request);
@@ -679,9 +679,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   GetNodeGroupHttpRequest request = GetNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   NodeGroup response = nodeGroupClient.getNodeGroup(request);
    * }
@@ -704,9 +704,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   GetNodeGroupHttpRequest request = GetNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   ApiFuture&lt;NodeGroup&gt; future = nodeGroupClient.getNodeGroupCallable().futureCall(request);
    *   // Do something
@@ -780,9 +780,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyNodeGroupHttpRequest request = GetIamPolicyNodeGroupHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(request);
    * }
@@ -805,9 +805,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyNodeGroupHttpRequest request = GetIamPolicyNodeGroupHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeGroupClient.getIamPolicyNodeGroupCallable().futureCall(request);
    *   // Do something
@@ -838,7 +838,8 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * @param initialNodeCount Initial count of nodes in the node group.
    * @param zone The name of the zone for this request.
-   * @param nodeGroupResource A NodeGroup resource.
+   * @param nodeGroupResource A NodeGroup resource. (== resource_for beta.nodeGroups ==) (==
+   *     resource_for v1.nodeGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -871,7 +872,8 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * @param initialNodeCount Initial count of nodes in the node group.
    * @param zone The name of the zone for this request.
-   * @param nodeGroupResource A NodeGroup resource.
+   * @param nodeGroupResource A NodeGroup resource. (== resource_for beta.nodeGroups ==) (==
+   *     resource_for v1.nodeGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -896,11 +898,11 @@ public class NodeGroupClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
    *   Integer initialNodeCount = 0;
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   InsertNodeGroupHttpRequest request = InsertNodeGroupHttpRequest.newBuilder()
    *     .setInitialNodeCount(initialNodeCount)
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setNodeGroupResource(nodeGroupResource)
    *     .build();
    *   Operation response = nodeGroupClient.insertNodeGroup(request);
@@ -924,11 +926,11 @@ public class NodeGroupClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
    *   Integer initialNodeCount = 0;
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   InsertNodeGroupHttpRequest request = InsertNodeGroupHttpRequest.newBuilder()
    *     .setInitialNodeCount(initialNodeCount)
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setNodeGroupResource(nodeGroupResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeGroupClient.insertNodeGroupCallable().futureCall(request);
@@ -1005,9 +1007,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListNodeGroupsHttpRequest request = ListNodeGroupsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (NodeGroup element : nodeGroupClient.listNodeGroups(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1032,9 +1034,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListNodeGroupsHttpRequest request = ListNodeGroupsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListNodeGroupsPagedResponse&gt; future = nodeGroupClient.listNodeGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -1059,9 +1061,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListNodeGroupsHttpRequest request = ListNodeGroupsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     NodeGroupList response = nodeGroupClient.listNodeGroupsCallable().call(request);
@@ -1144,9 +1146,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   ListNodesNodeGroupsHttpRequest request = ListNodesNodeGroupsHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   for (NodeGroupNode element : nodeGroupClient.listNodesNodeGroups(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1171,9 +1173,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   ListNodesNodeGroupsHttpRequest request = ListNodesNodeGroupsHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   ApiFuture&lt;ListNodesNodeGroupsPagedResponse&gt; future = nodeGroupClient.listNodesNodeGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -1197,9 +1199,9 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   ListNodesNodeGroupsHttpRequest request = ListNodesNodeGroupsHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .build();
    *   while (true) {
    *     NodeGroupsListNodes response = nodeGroupClient.listNodesNodeGroupsCallable().call(request);
@@ -1291,10 +1293,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyNodeGroupHttpRequest request = SetIamPolicyNodeGroupHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = nodeGroupClient.setIamPolicyNodeGroup(request);
@@ -1317,10 +1319,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyNodeGroupHttpRequest request = SetIamPolicyNodeGroupHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeGroupClient.setIamPolicyNodeGroupCallable().futureCall(request);
@@ -1404,10 +1406,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
    *   SetNodeTemplateNodeGroupHttpRequest request = SetNodeTemplateNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .setNodeGroupsSetNodeTemplateRequestResource(nodeGroupsSetNodeTemplateRequestResource)
    *     .build();
    *   Operation response = nodeGroupClient.setNodeTemplateNodeGroup(request);
@@ -1430,10 +1432,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupName nodeGroup = ProjectZoneNodeGroupName.of("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
+   *   String formattedNodeGroup = ProjectZoneNodeGroupName.format("[PROJECT]", "[ZONE]", "[NODE_GROUP]");
    *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
    *   SetNodeTemplateNodeGroupHttpRequest request = SetNodeTemplateNodeGroupHttpRequest.newBuilder()
-   *     .setNodeGroup(nodeGroup.toString())
+   *     .setNodeGroup(formattedNodeGroup)
    *     .setNodeGroupsSetNodeTemplateRequestResource(nodeGroupsSetNodeTemplateRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeGroupClient.setNodeTemplateNodeGroupCallable().futureCall(request);
@@ -1517,10 +1519,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsNodeGroupHttpRequest request = TestIamPermissionsNodeGroupHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = nodeGroupClient.testIamPermissionsNodeGroup(request);
@@ -1544,10 +1546,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
-   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsNodeGroupHttpRequest request = TestIamPermissionsNodeGroupHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeGroupClient.testIamPermissionsNodeGroupCallable().futureCall(request);

@@ -212,9 +212,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
+   *   String formattedOperation = ProjectRegionOperationName.format("[PROJECT]", "[REGION]", "[OPERATION]");
    *   DeleteRegionOperationHttpRequest request = DeleteRegionOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   regionOperationClient.deleteRegionOperation(request);
    * }
@@ -236,9 +236,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
+   *   String formattedOperation = ProjectRegionOperationName.format("[PROJECT]", "[REGION]", "[OPERATION]");
    *   DeleteRegionOperationHttpRequest request = DeleteRegionOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = regionOperationClient.deleteRegionOperationCallable().futureCall(request);
    *   // Do something
@@ -310,9 +310,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
+   *   String formattedOperation = ProjectRegionOperationName.format("[PROJECT]", "[REGION]", "[OPERATION]");
    *   GetRegionOperationHttpRequest request = GetRegionOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   Operation response = regionOperationClient.getRegionOperation(request);
    * }
@@ -334,9 +334,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
+   *   String formattedOperation = ProjectRegionOperationName.format("[PROJECT]", "[REGION]", "[OPERATION]");
    *   GetRegionOperationHttpRequest request = GetRegionOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionOperationClient.getRegionOperationCallable().futureCall(request);
    *   // Do something
@@ -410,9 +410,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionOperationsHttpRequest request = ListRegionOperationsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (Operation element : regionOperationClient.listRegionOperations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -437,9 +437,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionOperationsHttpRequest request = ListRegionOperationsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRegionOperationsPagedResponse&gt; future = regionOperationClient.listRegionOperationsPagedCallable().futureCall(request);
    *   // Do something
@@ -463,9 +463,9 @@ public class RegionOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionOperationsHttpRequest request = ListRegionOperationsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     OperationList response = regionOperationClient.listRegionOperationsCallable().call(request);

@@ -211,9 +211,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTypesHttpRequest request = AggregatedListNodeTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (NodeTypesScopedList element : nodeTypeClient.aggregatedListNodeTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -238,9 +238,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTypesHttpRequest request = AggregatedListNodeTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListNodeTypesPagedResponse&gt; future = nodeTypeClient.aggregatedListNodeTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -265,9 +265,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTypesHttpRequest request = AggregatedListNodeTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     NodeTypeAggregatedList response = nodeTypeClient.aggregatedListNodeTypesCallable().call(request);
@@ -351,9 +351,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectZoneNodeTypeName nodeType = ProjectZoneNodeTypeName.of("[PROJECT]", "[ZONE]", "[NODE_TYPE]");
+   *   String formattedNodeType = ProjectZoneNodeTypeName.format("[PROJECT]", "[ZONE]", "[NODE_TYPE]");
    *   GetNodeTypeHttpRequest request = GetNodeTypeHttpRequest.newBuilder()
-   *     .setNodeType(nodeType.toString())
+   *     .setNodeType(formattedNodeType)
    *     .build();
    *   NodeType response = nodeTypeClient.getNodeType(request);
    * }
@@ -376,9 +376,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectZoneNodeTypeName nodeType = ProjectZoneNodeTypeName.of("[PROJECT]", "[ZONE]", "[NODE_TYPE]");
+   *   String formattedNodeType = ProjectZoneNodeTypeName.format("[PROJECT]", "[ZONE]", "[NODE_TYPE]");
    *   GetNodeTypeHttpRequest request = GetNodeTypeHttpRequest.newBuilder()
-   *     .setNodeType(nodeType.toString())
+   *     .setNodeType(formattedNodeType)
    *     .build();
    *   ApiFuture&lt;NodeType&gt; future = nodeTypeClient.getNodeTypeCallable().futureCall(request);
    *   // Do something
@@ -450,9 +450,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListNodeTypesHttpRequest request = ListNodeTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (NodeType element : nodeTypeClient.listNodeTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -476,9 +476,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListNodeTypesHttpRequest request = ListNodeTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListNodeTypesPagedResponse&gt; future = nodeTypeClient.listNodeTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -502,9 +502,9 @@ public class NodeTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTypeClient nodeTypeClient = NodeTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListNodeTypesHttpRequest request = ListNodeTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     NodeTypeList response = nodeTypeClient.listNodeTypesCallable().call(request);

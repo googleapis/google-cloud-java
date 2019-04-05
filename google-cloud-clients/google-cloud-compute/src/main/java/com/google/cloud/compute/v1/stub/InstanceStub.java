@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
@@ -52,7 +53,9 @@ import com.google.cloud.compute.v1.SetMetadataInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
+import com.google.cloud.compute.v1.ShieldedInstanceIdentity;
 import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
@@ -61,6 +64,7 @@ import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -129,6 +133,13 @@ public abstract class InstanceStub implements BackgroundResource {
       getSerialPortOutputInstanceCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getSerialPortOutputInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getShieldedInstanceIdentityInstanceCallable()");
   }
 
   @BetaApi
@@ -225,6 +236,13 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setShieldedInstanceIntegrityPolicyInstanceCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setTagsInstanceCallable()");
   }
@@ -272,6 +290,13 @@ public abstract class InstanceStub implements BackgroundResource {
       updateNetworkInterfaceInstanceCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateNetworkInterfaceInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateShieldedInstanceConfigInstanceCallable()");
   }
 
   @Override

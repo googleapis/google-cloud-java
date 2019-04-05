@@ -209,9 +209,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   Operation response = firewallClient.deleteFirewall(request);
    * }
@@ -233,9 +233,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.deleteFirewallCallable().futureCall(request);
    *   // Do something
@@ -306,9 +306,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   GetFirewallHttpRequest request = GetFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   Firewall response = firewallClient.getFirewall(request);
    * }
@@ -330,9 +330,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   GetFirewallHttpRequest request = GetFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   ApiFuture&lt;Firewall&gt; future = firewallClient.getFirewallCallable().futureCall(request);
    *   // Do something
@@ -411,10 +411,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   InsertFirewallHttpRequest request = InsertFirewallHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   Operation response = firewallClient.insertFirewall(request);
@@ -437,10 +437,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   InsertFirewallHttpRequest request = InsertFirewallHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.insertFirewallCallable().futureCall(request);
@@ -514,9 +514,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListFirewallsHttpRequest request = ListFirewallsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Firewall element : firewallClient.listFirewalls(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -540,9 +540,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListFirewallsHttpRequest request = ListFirewallsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListFirewallsPagedResponse&gt; future = firewallClient.listFirewallsPagedCallable().futureCall(request);
    *   // Do something
@@ -566,9 +566,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListFirewallsHttpRequest request = ListFirewallsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     FirewallList response = firewallClient.listFirewallsCallable().call(request);
@@ -673,11 +673,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -702,11 +702,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -807,11 +807,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -837,11 +837,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
