@@ -222,12 +222,106 @@ public interface HttpRequestOrBuilder
    * <pre>
    * HTTP request body.
    * A request body is allowed only if the
-   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
-   * PUT, or PATCH. It is an error to set body on a task with an incompatible
-   * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
+   * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 4;</code>
    */
   com.google.protobuf.ByteString getBody();
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   */
+  boolean hasOauthToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   */
+  com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   */
+  com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder getOauthTokenOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   */
+  boolean hasOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   */
+  com.google.cloud.tasks.v2beta3.OidcToken getOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   */
+  com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder getOidcTokenOrBuilder();
+
+  public com.google.cloud.tasks.v2beta3.HttpRequest.AuthorizationHeaderCase
+      getAuthorizationHeaderCase();
 }
