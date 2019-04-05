@@ -13,12 +13,10 @@ public interface AppEngineHttpQueueOrBuilder
    *
    * <pre>
    * Overrides for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * If set, `app_engine_routing_override` is used for all tasks in
    * the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -29,12 +27,10 @@ public interface AppEngineHttpQueueOrBuilder
    *
    * <pre>
    * Overrides for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * If set, `app_engine_routing_override` is used for all tasks in
    * the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -45,12 +41,10 @@ public interface AppEngineHttpQueueOrBuilder
    *
    * <pre>
    * Overrides for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * If set, `app_engine_routing_override` is used for all tasks in
    * the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>

@@ -7,8 +7,7 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for
- * [GetQueue][google.cloud.tasks.v2beta3.CloudTasks.GetQueue].
+ * Request message for [GetQueue][google.cloud.tasks.v2beta3.CloudTasks.GetQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.GetQueueRequest}
@@ -302,8 +301,7 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for
-   * [GetQueue][google.cloud.tasks.v2beta3.CloudTasks.GetQueue].
+   * Request message for [GetQueue][google.cloud.tasks.v2beta3.CloudTasks.GetQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.GetQueueRequest}

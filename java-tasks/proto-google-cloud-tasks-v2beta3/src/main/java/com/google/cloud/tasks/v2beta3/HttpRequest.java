@@ -10,15 +10,14 @@ package com.google.cloud.tasks.v2beta3;
  * HTTP request.
  * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
  * feature. If you haven't already joined, you can [use this form to sign
- * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+ * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
  * The task will be pushed to the worker as an HTTP request. If the worker
  * or the redirected worker acknowledges the task by returning a successful HTTP
  * response code ([`200` - `299`]), the task will removed from the queue. If
  * any other HTTP response code is returned or no response is received, the
  * task will be retried according to the following:
  * * User-specified throttling: [retry configuration][Queue.RetryConfig],
- *   [rate limits][Queue.RateLimits], and the [queue's
- *   state][google.cloud.tasks.v2beta3.Queue.state].
+ *   [rate limits][Queue.RateLimits], and the [queue's state][google.cloud.tasks.v2beta3.Queue.state].
  * * System throttling: To prevent the worker from overloading, Cloud Tasks may
  *   temporarily reduce the queue's effective rate. User-specified settings
  *   will not be changed.
@@ -110,6 +109,42 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
               body_ = input.readBytes();
               break;
             }
+          case 42:
+            {
+              com.google.cloud.tasks.v2beta3.OAuthToken.Builder subBuilder = null;
+              if (authorizationHeaderCase_ == 5) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_).toBuilder();
+              }
+              authorizationHeader_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.OAuthToken.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_);
+                authorizationHeader_ = subBuilder.buildPartial();
+              }
+              authorizationHeaderCase_ = 5;
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.tasks.v2beta3.OidcToken.Builder subBuilder = null;
+              if (authorizationHeaderCase_ == 6) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_).toBuilder();
+              }
+              authorizationHeader_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.OidcToken.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_);
+                authorizationHeader_ = subBuilder.buildPartial();
+              }
+              authorizationHeaderCase_ = 6;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -156,6 +191,46 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int authorizationHeaderCase_ = 0;
+  private java.lang.Object authorizationHeader_;
+
+  public enum AuthorizationHeaderCase implements com.google.protobuf.Internal.EnumLite {
+    OAUTH_TOKEN(5),
+    OIDC_TOKEN(6),
+    AUTHORIZATIONHEADER_NOT_SET(0);
+    private final int value;
+
+    private AuthorizationHeaderCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static AuthorizationHeaderCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AuthorizationHeaderCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return OAUTH_TOKEN;
+        case 6:
+          return OIDC_TOKEN;
+        case 0:
+          return AUTHORIZATIONHEADER_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AuthorizationHeaderCase getAuthorizationHeaderCase() {
+    return AuthorizationHeaderCase.forNumber(authorizationHeaderCase_);
+  }
+
   public static final int URL_FIELD_NUMBER = 1;
   private volatile java.lang.Object url_;
   /**
@@ -422,15 +497,132 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * HTTP request body.
    * A request body is allowed only if the
-   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
-   * PUT, or PATCH. It is an error to set body on a task with an incompatible
-   * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
+   * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 4;</code>
    */
   public com.google.protobuf.ByteString getBody() {
     return body_;
+  }
+
+  public static final int OAUTH_TOKEN_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   */
+  public boolean hasOauthToken() {
+    return authorizationHeaderCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken() {
+    if (authorizationHeaderCase_ == 5) {
+      return (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_;
+    }
+    return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder getOauthTokenOrBuilder() {
+    if (authorizationHeaderCase_ == 5) {
+      return (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_;
+    }
+    return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
+  }
+
+  public static final int OIDC_TOKEN_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   */
+  public boolean hasOidcToken() {
+    return authorizationHeaderCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.OidcToken getOidcToken() {
+    if (authorizationHeaderCase_ == 6) {
+      return (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_;
+    }
+    return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder getOidcTokenOrBuilder() {
+    if (authorizationHeaderCase_ == 6) {
+      return (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_;
+    }
+    return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -458,6 +650,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
         output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 3);
     if (!body_.isEmpty()) {
       output.writeBytes(4, body_);
+    }
+    if (authorizationHeaderCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_);
+    }
+    if (authorizationHeaderCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_);
     }
     unknownFields.writeTo(output);
   }
@@ -488,6 +686,16 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (!body_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, body_);
     }
+    if (authorizationHeaderCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_);
+    }
+    if (authorizationHeaderCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -508,6 +716,17 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     if (httpMethod_ != other.httpMethod_) return false;
     if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
     if (!getBody().equals(other.getBody())) return false;
+    if (!getAuthorizationHeaderCase().equals(other.getAuthorizationHeaderCase())) return false;
+    switch (authorizationHeaderCase_) {
+      case 5:
+        if (!getOauthToken().equals(other.getOauthToken())) return false;
+        break;
+      case 6:
+        if (!getOidcToken().equals(other.getOidcToken())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -529,6 +748,18 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + BODY_FIELD_NUMBER;
     hash = (53 * hash) + getBody().hashCode();
+    switch (authorizationHeaderCase_) {
+      case 5:
+        hash = (37 * hash) + OAUTH_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthToken().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + OIDC_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getOidcToken().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -636,15 +867,14 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * HTTP request.
    * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
    * feature. If you haven't already joined, you can [use this form to sign
-   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
    * The task will be pushed to the worker as an HTTP request. If the worker
    * or the redirected worker acknowledges the task by returning a successful HTTP
    * response code ([`200` - `299`]), the task will removed from the queue. If
    * any other HTTP response code is returned or no response is received, the
    * task will be retried according to the following:
    * * User-specified throttling: [retry configuration][Queue.RetryConfig],
-   *   [rate limits][Queue.RateLimits], and the [queue's
-   *   state][google.cloud.tasks.v2beta3.Queue.state].
+   *   [rate limits][Queue.RateLimits], and the [queue's state][google.cloud.tasks.v2beta3.Queue.state].
    * * System throttling: To prevent the worker from overloading, Cloud Tasks may
    *   temporarily reduce the queue's effective rate. User-specified settings
    *   will not be changed.
@@ -726,6 +956,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().clear();
       body_ = com.google.protobuf.ByteString.EMPTY;
 
+      authorizationHeaderCase_ = 0;
+      authorizationHeader_ = null;
       return this;
     }
 
@@ -760,7 +992,22 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       result.headers_ = internalGetHeaders();
       result.headers_.makeImmutable();
       result.body_ = body_;
+      if (authorizationHeaderCase_ == 5) {
+        if (oauthTokenBuilder_ == null) {
+          result.authorizationHeader_ = authorizationHeader_;
+        } else {
+          result.authorizationHeader_ = oauthTokenBuilder_.build();
+        }
+      }
+      if (authorizationHeaderCase_ == 6) {
+        if (oidcTokenBuilder_ == null) {
+          result.authorizationHeader_ = authorizationHeader_;
+        } else {
+          result.authorizationHeader_ = oidcTokenBuilder_.build();
+        }
+      }
       result.bitField0_ = to_bitField0_;
+      result.authorizationHeaderCase_ = authorizationHeaderCase_;
       onBuilt();
       return result;
     }
@@ -821,6 +1068,22 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
         setBody(other.getBody());
       }
+      switch (other.getAuthorizationHeaderCase()) {
+        case OAUTH_TOKEN:
+          {
+            mergeOauthToken(other.getOauthToken());
+            break;
+          }
+        case OIDC_TOKEN:
+          {
+            mergeOidcToken(other.getOidcToken());
+            break;
+          }
+        case AUTHORIZATIONHEADER_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -847,6 +1110,20 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int authorizationHeaderCase_ = 0;
+    private java.lang.Object authorizationHeader_;
+
+    public AuthorizationHeaderCase getAuthorizationHeaderCase() {
+      return AuthorizationHeaderCase.forNumber(authorizationHeaderCase_);
+    }
+
+    public Builder clearAuthorizationHeader() {
+      authorizationHeaderCase_ = 0;
+      authorizationHeader_ = null;
+      onChanged();
       return this;
     }
 
@@ -1351,9 +1628,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the
-     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
-     * PUT, or PATCH. It is an error to set body on a task with an incompatible
-     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
+     * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 4;</code>
@@ -1367,9 +1643,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the
-     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
-     * PUT, or PATCH. It is an error to set body on a task with an incompatible
-     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
+     * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 4;</code>
@@ -1389,9 +1664,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the
-     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
-     * PUT, or PATCH. It is an error to set body on a task with an incompatible
-     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
+     * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 4;</code>
@@ -1401,6 +1675,501 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.OAuthToken,
+            com.google.cloud.tasks.v2beta3.OAuthToken.Builder,
+            com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder>
+        oauthTokenBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public boolean hasOauthToken() {
+      return authorizationHeaderCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken() {
+      if (oauthTokenBuilder_ == null) {
+        if (authorizationHeaderCase_ == 5) {
+          return (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_;
+        }
+        return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
+      } else {
+        if (authorizationHeaderCase_ == 5) {
+          return oauthTokenBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public Builder setOauthToken(com.google.cloud.tasks.v2beta3.OAuthToken value) {
+      if (oauthTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        authorizationHeader_ = value;
+        onChanged();
+      } else {
+        oauthTokenBuilder_.setMessage(value);
+      }
+      authorizationHeaderCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public Builder setOauthToken(
+        com.google.cloud.tasks.v2beta3.OAuthToken.Builder builderForValue) {
+      if (oauthTokenBuilder_ == null) {
+        authorizationHeader_ = builderForValue.build();
+        onChanged();
+      } else {
+        oauthTokenBuilder_.setMessage(builderForValue.build());
+      }
+      authorizationHeaderCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public Builder mergeOauthToken(com.google.cloud.tasks.v2beta3.OAuthToken value) {
+      if (oauthTokenBuilder_ == null) {
+        if (authorizationHeaderCase_ == 5
+            && authorizationHeader_
+                != com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance()) {
+          authorizationHeader_ =
+              com.google.cloud.tasks.v2beta3.OAuthToken.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          authorizationHeader_ = value;
+        }
+        onChanged();
+      } else {
+        if (authorizationHeaderCase_ == 5) {
+          oauthTokenBuilder_.mergeFrom(value);
+        }
+        oauthTokenBuilder_.setMessage(value);
+      }
+      authorizationHeaderCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public Builder clearOauthToken() {
+      if (oauthTokenBuilder_ == null) {
+        if (authorizationHeaderCase_ == 5) {
+          authorizationHeaderCase_ = 0;
+          authorizationHeader_ = null;
+          onChanged();
+        }
+      } else {
+        if (authorizationHeaderCase_ == 5) {
+          authorizationHeaderCase_ = 0;
+          authorizationHeader_ = null;
+        }
+        oauthTokenBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.OAuthToken.Builder getOauthTokenBuilder() {
+      return getOauthTokenFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder getOauthTokenOrBuilder() {
+      if ((authorizationHeaderCase_ == 5) && (oauthTokenBuilder_ != null)) {
+        return oauthTokenBuilder_.getMessageOrBuilder();
+      } else {
+        if (authorizationHeaderCase_ == 5) {
+          return (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_;
+        }
+        return com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+     * will be generated and attached as an `Authorization` header in the HTTP
+     * request.
+     * This type of authorization should be used when sending requests to a GCP
+     * endpoint.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OAuthToken oauth_token = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.OAuthToken,
+            com.google.cloud.tasks.v2beta3.OAuthToken.Builder,
+            com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder>
+        getOauthTokenFieldBuilder() {
+      if (oauthTokenBuilder_ == null) {
+        if (!(authorizationHeaderCase_ == 5)) {
+          authorizationHeader_ = com.google.cloud.tasks.v2beta3.OAuthToken.getDefaultInstance();
+        }
+        oauthTokenBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.OAuthToken,
+                com.google.cloud.tasks.v2beta3.OAuthToken.Builder,
+                com.google.cloud.tasks.v2beta3.OAuthTokenOrBuilder>(
+                (com.google.cloud.tasks.v2beta3.OAuthToken) authorizationHeader_,
+                getParentForChildren(),
+                isClean());
+        authorizationHeader_ = null;
+      }
+      authorizationHeaderCase_ = 5;
+      onChanged();
+      ;
+      return oauthTokenBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.OidcToken,
+            com.google.cloud.tasks.v2beta3.OidcToken.Builder,
+            com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder>
+        oidcTokenBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public boolean hasOidcToken() {
+      return authorizationHeaderCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.OidcToken getOidcToken() {
+      if (oidcTokenBuilder_ == null) {
+        if (authorizationHeaderCase_ == 6) {
+          return (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_;
+        }
+        return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
+      } else {
+        if (authorizationHeaderCase_ == 6) {
+          return oidcTokenBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public Builder setOidcToken(com.google.cloud.tasks.v2beta3.OidcToken value) {
+      if (oidcTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        authorizationHeader_ = value;
+        onChanged();
+      } else {
+        oidcTokenBuilder_.setMessage(value);
+      }
+      authorizationHeaderCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public Builder setOidcToken(com.google.cloud.tasks.v2beta3.OidcToken.Builder builderForValue) {
+      if (oidcTokenBuilder_ == null) {
+        authorizationHeader_ = builderForValue.build();
+        onChanged();
+      } else {
+        oidcTokenBuilder_.setMessage(builderForValue.build());
+      }
+      authorizationHeaderCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public Builder mergeOidcToken(com.google.cloud.tasks.v2beta3.OidcToken value) {
+      if (oidcTokenBuilder_ == null) {
+        if (authorizationHeaderCase_ == 6
+            && authorizationHeader_
+                != com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance()) {
+          authorizationHeader_ =
+              com.google.cloud.tasks.v2beta3.OidcToken.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          authorizationHeader_ = value;
+        }
+        onChanged();
+      } else {
+        if (authorizationHeaderCase_ == 6) {
+          oidcTokenBuilder_.mergeFrom(value);
+        }
+        oidcTokenBuilder_.setMessage(value);
+      }
+      authorizationHeaderCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public Builder clearOidcToken() {
+      if (oidcTokenBuilder_ == null) {
+        if (authorizationHeaderCase_ == 6) {
+          authorizationHeaderCase_ = 0;
+          authorizationHeader_ = null;
+          onChanged();
+        }
+      } else {
+        if (authorizationHeaderCase_ == 6) {
+          authorizationHeaderCase_ = 0;
+          authorizationHeader_ = null;
+        }
+        oidcTokenBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.OidcToken.Builder getOidcTokenBuilder() {
+      return getOidcTokenFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder getOidcTokenOrBuilder() {
+      if ((authorizationHeaderCase_ == 6) && (oidcTokenBuilder_ != null)) {
+        return oidcTokenBuilder_.getMessageOrBuilder();
+      } else {
+        if (authorizationHeaderCase_ == 6) {
+          return (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_;
+        }
+        return com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, an
+     * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+     * token will be generated and attached as an `Authorization` header in the
+     * HTTP request.
+     * This type of authorization should be used when sending requests to third
+     * party endpoints.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.OidcToken,
+            com.google.cloud.tasks.v2beta3.OidcToken.Builder,
+            com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder>
+        getOidcTokenFieldBuilder() {
+      if (oidcTokenBuilder_ == null) {
+        if (!(authorizationHeaderCase_ == 6)) {
+          authorizationHeader_ = com.google.cloud.tasks.v2beta3.OidcToken.getDefaultInstance();
+        }
+        oidcTokenBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.OidcToken,
+                com.google.cloud.tasks.v2beta3.OidcToken.Builder,
+                com.google.cloud.tasks.v2beta3.OidcTokenOrBuilder>(
+                (com.google.cloud.tasks.v2beta3.OidcToken) authorizationHeader_,
+                getParentForChildren(),
+                isClean());
+        authorizationHeader_ = null;
+      }
+      authorizationHeaderCase_ = 6;
+      onChanged();
+      ;
+      return oidcTokenBuilder_;
     }
 
     @java.lang.Override
