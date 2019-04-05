@@ -8,14 +8,14 @@ package com.google.cloud.scheduler.v1beta1;
  *
  * <pre>
  * App Engine target. The job will be pushed to a job handler by means
- * of an HTTP request via an
- * [http_method][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.http_method]
- * such as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
- * response code in the range [200 - 299]. Error 503 is considered an App Engine
- * system error instead of an application error. Requests returning error 503
- * will be retried regardless of retry configuration and not counted against
- * retry counts. Any other response code, or a failure to receive a response
- * before the deadline, constitutes a failed attempt.
+ * of an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.http_method] such
+ * as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an
+ * HTTP response code in the range [200 - 299]. Error 503 is
+ * considered an App Engine system error instead of an application
+ * error. Requests returning error 503 will be retried regardless of
+ * retry configuration and not counted against retry counts. Any other
+ * response code, or a failure to receive a response before the
+ * deadline, constitutes a failed attempt.
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.AppEngineHttpTarget}
@@ -319,9 +319,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   This header can be modified, but Cloud Scheduler will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the job has an
-   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-   * Scheduler sets the following headers:
+   * * `X-CloudScheduler`: This header will be set to true.
+   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+   * the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -331,13 +331,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   output only. It cannot be changed.
    * The headers below are output only. They cannot be set or overridden:
    * * `X-Google-*`: For Google internal use only.
-   * * `X-AppEngine-*`: For Google internal use only. See
-   *   [Reading request
-   *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * * `X-AppEngine-*`: For Google internal use only.
    * In addition, some App Engine headers, which contain
-   * job-specific information, are also be sent to the job handler; see
-   * [request
-   * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * job-specific information, are also be sent to the job handler.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -366,9 +362,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   This header can be modified, but Cloud Scheduler will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the job has an
-   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-   * Scheduler sets the following headers:
+   * * `X-CloudScheduler`: This header will be set to true.
+   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+   * the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -378,13 +374,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   output only. It cannot be changed.
    * The headers below are output only. They cannot be set or overridden:
    * * `X-Google-*`: For Google internal use only.
-   * * `X-AppEngine-*`: For Google internal use only. See
-   *   [Reading request
-   *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * * `X-AppEngine-*`: For Google internal use only.
    * In addition, some App Engine headers, which contain
-   * job-specific information, are also be sent to the job handler; see
-   * [request
-   * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * job-specific information, are also be sent to the job handler.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -405,9 +397,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   This header can be modified, but Cloud Scheduler will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the job has an
-   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-   * Scheduler sets the following headers:
+   * * `X-CloudScheduler`: This header will be set to true.
+   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+   * the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -417,13 +409,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   output only. It cannot be changed.
    * The headers below are output only. They cannot be set or overridden:
    * * `X-Google-*`: For Google internal use only.
-   * * `X-AppEngine-*`: For Google internal use only. See
-   *   [Reading request
-   *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * * `X-AppEngine-*`: For Google internal use only.
    * In addition, some App Engine headers, which contain
-   * job-specific information, are also be sent to the job handler; see
-   * [request
-   * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * job-specific information, are also be sent to the job handler.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -448,9 +436,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   This header can be modified, but Cloud Scheduler will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the job has an
-   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-   * Scheduler sets the following headers:
+   * * `X-CloudScheduler`: This header will be set to true.
+   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+   * the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -460,13 +448,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *   output only. It cannot be changed.
    * The headers below are output only. They cannot be set or overridden:
    * * `X-Google-*`: For Google internal use only.
-   * * `X-AppEngine-*`: For Google internal use only. See
-   *   [Reading request
-   *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * * `X-AppEngine-*`: For Google internal use only.
    * In addition, some App Engine headers, which contain
-   * job-specific information, are also be sent to the job handler; see
-   * [request
-   * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * job-specific information, are also be sent to the job handler.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -491,8 +475,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * Body.
    * HTTP request body. A request body is allowed only if the HTTP method is
    * POST or PUT. It will result in invalid argument error to set a body on a
-   * job with an incompatible
-   * [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
+   * job with an incompatible [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 5;</code>
@@ -717,14 +700,14 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * App Engine target. The job will be pushed to a job handler by means
-   * of an HTTP request via an
-   * [http_method][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.http_method]
-   * such as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
-   * response code in the range [200 - 299]. Error 503 is considered an App Engine
-   * system error instead of an application error. Requests returning error 503
-   * will be retried regardless of retry configuration and not counted against
-   * retry counts. Any other response code, or a failure to receive a response
-   * before the deadline, constitutes a failed attempt.
+   * of an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.http_method] such
+   * as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an
+   * HTTP response code in the range [200 - 299]. Error 503 is
+   * considered an App Engine system error instead of an application
+   * error. Requests returning error 503 will be retried regardless of
+   * retry configuration and not counted against retry counts. Any other
+   * response code, or a failure to receive a response before the
+   * deadline, constitutes a failed attempt.
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.AppEngineHttpTarget}
@@ -1352,9 +1335,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1364,13 +1347,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1399,9 +1378,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1411,13 +1390,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1438,9 +1413,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1450,13 +1425,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1482,9 +1453,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1494,13 +1465,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1533,9 +1500,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1545,13 +1512,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1581,9 +1544,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1593,13 +1556,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1627,9 +1586,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   This header can be modified, but Cloud Scheduler will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the job has an
-     * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
-     * Scheduler sets the following headers:
+     * * `X-CloudScheduler`: This header will be set to true.
+     * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+     * the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explictly
      *   setting `Content-Type` to a particular media type when the job is
@@ -1639,13 +1598,9 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *   output only. It cannot be changed.
      * The headers below are output only. They cannot be set or overridden:
      * * `X-Google-*`: For Google internal use only.
-     * * `X-AppEngine-*`: For Google internal use only. See
-     *   [Reading request
-     *   headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * * `X-AppEngine-*`: For Google internal use only.
      * In addition, some App Engine headers, which contain
-     * job-specific information, are also be sent to the job handler; see
-     * [request
-     * headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+     * job-specific information, are also be sent to the job handler.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1663,8 +1618,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * Body.
      * HTTP request body. A request body is allowed only if the HTTP method is
      * POST or PUT. It will result in invalid argument error to set a body on a
-     * job with an incompatible
-     * [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
+     * job with an incompatible [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
@@ -1679,8 +1633,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * Body.
      * HTTP request body. A request body is allowed only if the HTTP method is
      * POST or PUT. It will result in invalid argument error to set a body on a
-     * job with an incompatible
-     * [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
+     * job with an incompatible [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
@@ -1701,8 +1654,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * Body.
      * HTTP request body. A request body is allowed only if the HTTP method is
      * POST or PUT. It will result in invalid argument error to set a body on a
-     * job with an incompatible
-     * [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
+     * job with an incompatible [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>

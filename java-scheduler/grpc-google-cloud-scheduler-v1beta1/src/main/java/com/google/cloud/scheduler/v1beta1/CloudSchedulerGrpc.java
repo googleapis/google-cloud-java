@@ -541,13 +541,12 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Updates a job.
-     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is
-     * returned. If the job does not exist, `NOT_FOUND` is returned.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
      * If UpdateJob does not successfully return, it is possible for the
-     * job to be in an
-     * [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED]
-     * state. A job in this state may not be executed. If this happens, retry the
-     * UpdateJob request until a successful response is received.
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
      * </pre>
      */
     public void updateJob(
@@ -575,14 +574,10 @@ public final class CloudSchedulerGrpc {
      * <pre>
      * Pauses a job.
      * If a job is paused then the system will stop executing the job
-     * until it is re-enabled via
-     * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
-     * state of the job is stored in
-     * [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set
-     * to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A
-     * job must be in
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be
-     * paused.
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
      * </pre>
      */
     public void pauseJob(
@@ -596,15 +591,10 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Resume a job.
-     * This method reenables a job after it has been
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
-     * state of a job is stored in
-     * [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this
-     * method it will be set to
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A
-     * job must be in
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be
-     * resumed.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
      * </pre>
      */
     public void resumeJob(
@@ -761,13 +751,12 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Updates a job.
-     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is
-     * returned. If the job does not exist, `NOT_FOUND` is returned.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
      * If UpdateJob does not successfully return, it is possible for the
-     * job to be in an
-     * [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED]
-     * state. A job in this state may not be executed. If this happens, retry the
-     * UpdateJob request until a successful response is received.
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
      * </pre>
      */
     public void updateJob(
@@ -801,14 +790,10 @@ public final class CloudSchedulerGrpc {
      * <pre>
      * Pauses a job.
      * If a job is paused then the system will stop executing the job
-     * until it is re-enabled via
-     * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
-     * state of the job is stored in
-     * [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set
-     * to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A
-     * job must be in
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be
-     * paused.
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
      * </pre>
      */
     public void pauseJob(
@@ -825,15 +810,10 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Resume a job.
-     * This method reenables a job after it has been
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
-     * state of a job is stored in
-     * [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this
-     * method it will be set to
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A
-     * job must be in
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be
-     * resumed.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
      * </pre>
      */
     public void resumeJob(
@@ -929,13 +909,12 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Updates a job.
-     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is
-     * returned. If the job does not exist, `NOT_FOUND` is returned.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
      * If UpdateJob does not successfully return, it is possible for the
-     * job to be in an
-     * [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED]
-     * state. A job in this state may not be executed. If this happens, retry the
-     * UpdateJob request until a successful response is received.
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
      * </pre>
      */
     public com.google.cloud.scheduler.v1beta1.Job updateJob(
@@ -961,14 +940,10 @@ public final class CloudSchedulerGrpc {
      * <pre>
      * Pauses a job.
      * If a job is paused then the system will stop executing the job
-     * until it is re-enabled via
-     * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
-     * state of the job is stored in
-     * [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set
-     * to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A
-     * job must be in
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be
-     * paused.
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
      * </pre>
      */
     public com.google.cloud.scheduler.v1beta1.Job pauseJob(
@@ -981,15 +956,10 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Resume a job.
-     * This method reenables a job after it has been
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
-     * state of a job is stored in
-     * [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this
-     * method it will be set to
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A
-     * job must be in
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be
-     * resumed.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
      * </pre>
      */
     public com.google.cloud.scheduler.v1beta1.Job resumeJob(
@@ -1083,13 +1053,12 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Updates a job.
-     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is
-     * returned. If the job does not exist, `NOT_FOUND` is returned.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
      * If UpdateJob does not successfully return, it is possible for the
-     * job to be in an
-     * [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED]
-     * state. A job in this state may not be executed. If this happens, retry the
-     * UpdateJob request until a successful response is received.
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1118,14 +1087,10 @@ public final class CloudSchedulerGrpc {
      * <pre>
      * Pauses a job.
      * If a job is paused then the system will stop executing the job
-     * until it is re-enabled via
-     * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
-     * state of the job is stored in
-     * [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set
-     * to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A
-     * job must be in
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be
-     * paused.
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1140,15 +1105,10 @@ public final class CloudSchedulerGrpc {
      *
      * <pre>
      * Resume a job.
-     * This method reenables a job after it has been
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
-     * state of a job is stored in
-     * [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this
-     * method it will be set to
-     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A
-     * job must be in
-     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be
-     * resumed.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
