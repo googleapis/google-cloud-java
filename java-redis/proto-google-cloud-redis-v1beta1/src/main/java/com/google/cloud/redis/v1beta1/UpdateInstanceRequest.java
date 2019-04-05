@@ -122,11 +122,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
-   * fields from [Instance][CloudRedis.Instance]:
-   * * `display_name`
-   * * `labels`
-   * * `memory_size_gb`
-   * * `redis_config`
+   * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+   *  *   `displayName`
+   *  *   `labels`
+   *  *   `memorySizeGb`
+   *  *   `redisConfig`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -140,11 +140,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
-   * fields from [Instance][CloudRedis.Instance]:
-   * * `display_name`
-   * * `labels`
-   * * `memory_size_gb`
-   * * `redis_config`
+   * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+   *  *   `displayName`
+   *  *   `labels`
+   *  *   `memorySizeGb`
+   *  *   `redisConfig`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -158,11 +158,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
-   * fields from [Instance][CloudRedis.Instance]:
-   * * `display_name`
-   * * `labels`
-   * * `memory_size_gb`
-   * * `redis_config`
+   * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+   *  *   `displayName`
+   *  *   `labels`
+   *  *   `memorySizeGb`
+   *  *   `redisConfig`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -586,11 +586,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -604,11 +604,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -628,11 +628,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -656,11 +656,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -681,11 +681,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -711,11 +711,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -737,11 +737,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -757,11 +757,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -781,11 +781,11 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
-     * fields from [Instance][CloudRedis.Instance]:
-     * * `display_name`
-     * * `labels`
-     * * `memory_size_gb`
-     * * `redis_config`
+     * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *  *   `displayName`
+     *  *   `labels`
+     *  *   `memorySizeGb`
+     *  *   `redisConfig`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>

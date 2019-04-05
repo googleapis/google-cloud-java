@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1beta1.CreateInstanceRequest;
 import com.google.cloud.redis.v1beta1.DeleteInstanceRequest;
+import com.google.cloud.redis.v1beta1.FailoverInstanceRequest;
 import com.google.cloud.redis.v1beta1.GetInstanceRequest;
 import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.ListInstancesRequest;
@@ -99,6 +100,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<FailoverInstanceRequest, Operation>
+      failoverInstanceMethodDescriptor =
+          MethodDescriptor.<FailoverInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/FailoverInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FailoverInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -116,6 +126,9 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable;
+  private final OperationCallable<FailoverInstanceRequest, Instance, Any>
+      failoverInstanceOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -222,6 +235,19 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   }
                 })
             .build();
+    GrpcCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
+        GrpcCallSettings.<FailoverInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(failoverInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<FailoverInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(FailoverInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -257,6 +283,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
         callableFactory.createOperationCallable(
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.failoverInstanceCallable =
+        callableFactory.createUnaryCallable(
+            failoverInstanceTransportSettings, settings.failoverInstanceSettings(), clientContext);
+    this.failoverInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            failoverInstanceTransportSettings,
+            settings.failoverInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
 
@@ -306,6 +341,16 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<FailoverInstanceRequest, Instance, Any>
+      failoverInstanceOperationCallable() {
+    return failoverInstanceOperationCallable;
+  }
+
+  public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
+    return failoverInstanceCallable;
   }
 
   @Override
