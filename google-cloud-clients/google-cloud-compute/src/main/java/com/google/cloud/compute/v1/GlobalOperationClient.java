@@ -216,9 +216,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListGlobalOperationsHttpRequest request = AggregatedListGlobalOperationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (OperationsScopedList element : globalOperationClient.aggregatedListGlobalOperations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -243,9 +243,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListGlobalOperationsHttpRequest request = AggregatedListGlobalOperationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListGlobalOperationsPagedResponse&gt; future = globalOperationClient.aggregatedListGlobalOperationsPagedCallable().futureCall(request);
    *   // Do something
@@ -270,9 +270,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListGlobalOperationsHttpRequest request = AggregatedListGlobalOperationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     OperationAggregatedList response = globalOperationClient.aggregatedListGlobalOperationsCallable().call(request);
@@ -353,9 +353,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectGlobalOperationName operation = ProjectGlobalOperationName.of("[PROJECT]", "[OPERATION]");
+   *   String formattedOperation = ProjectGlobalOperationName.format("[PROJECT]", "[OPERATION]");
    *   DeleteGlobalOperationHttpRequest request = DeleteGlobalOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   globalOperationClient.deleteGlobalOperation(request);
    * }
@@ -377,9 +377,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectGlobalOperationName operation = ProjectGlobalOperationName.of("[PROJECT]", "[OPERATION]");
+   *   String formattedOperation = ProjectGlobalOperationName.format("[PROJECT]", "[OPERATION]");
    *   DeleteGlobalOperationHttpRequest request = DeleteGlobalOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = globalOperationClient.deleteGlobalOperationCallable().futureCall(request);
    *   // Do something
@@ -454,9 +454,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectGlobalOperationName operation = ProjectGlobalOperationName.of("[PROJECT]", "[OPERATION]");
+   *   String formattedOperation = ProjectGlobalOperationName.format("[PROJECT]", "[OPERATION]");
    *   GetGlobalOperationHttpRequest request = GetGlobalOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   Operation response = globalOperationClient.getGlobalOperation(request);
    * }
@@ -479,9 +479,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectGlobalOperationName operation = ProjectGlobalOperationName.of("[PROJECT]", "[OPERATION]");
+   *   String formattedOperation = ProjectGlobalOperationName.format("[PROJECT]", "[OPERATION]");
    *   GetGlobalOperationHttpRequest request = GetGlobalOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalOperationClient.getGlobalOperationCallable().futureCall(request);
    *   // Do something
@@ -555,9 +555,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListGlobalOperationsHttpRequest request = ListGlobalOperationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Operation element : globalOperationClient.listGlobalOperations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -582,9 +582,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListGlobalOperationsHttpRequest request = ListGlobalOperationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListGlobalOperationsPagedResponse&gt; future = globalOperationClient.listGlobalOperationsPagedCallable().futureCall(request);
    *   // Do something
@@ -608,9 +608,9 @@ public class GlobalOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListGlobalOperationsHttpRequest request = ListGlobalOperationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     OperationList response = globalOperationClient.listGlobalOperationsCallable().call(request);

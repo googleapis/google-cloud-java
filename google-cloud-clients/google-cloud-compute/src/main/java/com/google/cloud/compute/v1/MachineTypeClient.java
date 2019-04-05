@@ -213,9 +213,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListMachineTypesHttpRequest request = AggregatedListMachineTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (MachineTypesScopedList element : machineTypeClient.aggregatedListMachineTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -240,9 +240,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListMachineTypesHttpRequest request = AggregatedListMachineTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListMachineTypesPagedResponse&gt; future = machineTypeClient.aggregatedListMachineTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -267,9 +267,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListMachineTypesHttpRequest request = AggregatedListMachineTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     MachineTypeAggregatedList response = machineTypeClient.aggregatedListMachineTypesCallable().call(request);
@@ -353,9 +353,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+   *   String formattedMachineType = ProjectZoneMachineTypeName.format("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
    *   GetMachineTypeHttpRequest request = GetMachineTypeHttpRequest.newBuilder()
-   *     .setMachineType(machineType.toString())
+   *     .setMachineType(formattedMachineType)
    *     .build();
    *   MachineType response = machineTypeClient.getMachineType(request);
    * }
@@ -378,9 +378,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+   *   String formattedMachineType = ProjectZoneMachineTypeName.format("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
    *   GetMachineTypeHttpRequest request = GetMachineTypeHttpRequest.newBuilder()
-   *     .setMachineType(machineType.toString())
+   *     .setMachineType(formattedMachineType)
    *     .build();
    *   ApiFuture&lt;MachineType&gt; future = machineTypeClient.getMachineTypeCallable().futureCall(request);
    *   // Do something
@@ -453,9 +453,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListMachineTypesHttpRequest request = ListMachineTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (MachineType element : machineTypeClient.listMachineTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -479,9 +479,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListMachineTypesHttpRequest request = ListMachineTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListMachineTypesPagedResponse&gt; future = machineTypeClient.listMachineTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -505,9 +505,9 @@ public class MachineTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListMachineTypesHttpRequest request = ListMachineTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     MachineTypeList response = machineTypeClient.listMachineTypesCallable().call(request);

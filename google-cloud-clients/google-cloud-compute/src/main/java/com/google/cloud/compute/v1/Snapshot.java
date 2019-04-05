@@ -49,6 +49,7 @@ public final class Snapshot implements ApiMessage {
   private final String status;
   private final String storageBytes;
   private final String storageBytesStatus;
+  private final List<String> storageLocations;
 
   private Snapshot() {
     this.creationTimestamp = null;
@@ -69,6 +70,7 @@ public final class Snapshot implements ApiMessage {
     this.status = null;
     this.storageBytes = null;
     this.storageBytesStatus = null;
+    this.storageLocations = null;
   }
 
   private Snapshot(
@@ -89,7 +91,8 @@ public final class Snapshot implements ApiMessage {
       String sourceDiskId,
       String status,
       String storageBytes,
-      String storageBytesStatus) {
+      String storageBytesStatus,
+      List<String> storageLocations) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.diskSizeGb = diskSizeGb;
@@ -108,6 +111,7 @@ public final class Snapshot implements ApiMessage {
     this.status = status;
     this.storageBytes = storageBytes;
     this.storageBytesStatus = storageBytesStatus;
+    this.storageLocations = storageLocations;
   }
 
   @Override
@@ -165,6 +169,9 @@ public final class Snapshot implements ApiMessage {
     }
     if ("storageBytesStatus".equals(fieldName)) {
       return storageBytesStatus;
+    }
+    if ("storageLocations".equals(fieldName)) {
+      return storageLocations;
     }
     return null;
   }
@@ -333,6 +340,11 @@ public final class Snapshot implements ApiMessage {
     return storageBytesStatus;
   }
 
+  /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+  public List<String> getStorageLocationsList() {
+    return storageLocations;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -374,6 +386,7 @@ public final class Snapshot implements ApiMessage {
     private String status;
     private String storageBytes;
     private String storageBytesStatus;
+    private List<String> storageLocations;
 
     Builder() {}
 
@@ -433,6 +446,9 @@ public final class Snapshot implements ApiMessage {
       if (other.getStorageBytesStatus() != null) {
         this.storageBytesStatus = other.storageBytesStatus;
       }
+      if (other.getStorageLocationsList() != null) {
+        this.storageLocations = other.storageLocations;
+      }
       return this;
     }
 
@@ -455,6 +471,7 @@ public final class Snapshot implements ApiMessage {
       this.status = source.status;
       this.storageBytes = source.storageBytes;
       this.storageBytesStatus = source.storageBytesStatus;
+      this.storageLocations = source.storageLocations;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -798,6 +815,29 @@ public final class Snapshot implements ApiMessage {
       return this;
     }
 
+    /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+    public List<String> getStorageLocationsList() {
+      return storageLocations;
+    }
+
+    /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+    public Builder addAllStorageLocations(List<String> storageLocations) {
+      if (this.storageLocations == null) {
+        this.storageLocations = new LinkedList<>();
+      }
+      this.storageLocations.addAll(storageLocations);
+      return this;
+    }
+
+    /** GCS bucket storage location of the snapshot (regional or multi-regional). */
+    public Builder addStorageLocations(String storageLocations) {
+      if (this.storageLocations == null) {
+        this.storageLocations = new LinkedList<>();
+      }
+      this.storageLocations.add(storageLocations);
+      return this;
+    }
+
     public Snapshot build() {
 
       return new Snapshot(
@@ -818,7 +858,8 @@ public final class Snapshot implements ApiMessage {
           sourceDiskId,
           status,
           storageBytes,
-          storageBytesStatus);
+          storageBytesStatus,
+          storageLocations);
     }
 
     public Builder clone() {
@@ -841,6 +882,7 @@ public final class Snapshot implements ApiMessage {
       newBuilder.setStatus(this.status);
       newBuilder.setStorageBytes(this.storageBytes);
       newBuilder.setStorageBytesStatus(this.storageBytesStatus);
+      newBuilder.addAllStorageLocations(this.storageLocations);
       return newBuilder;
     }
   }
@@ -901,6 +943,9 @@ public final class Snapshot implements ApiMessage {
         + ", "
         + "storageBytesStatus="
         + storageBytesStatus
+        + ", "
+        + "storageLocations="
+        + storageLocations
         + "}";
   }
 
@@ -928,7 +973,8 @@ public final class Snapshot implements ApiMessage {
           && Objects.equals(this.sourceDiskId, that.getSourceDiskId())
           && Objects.equals(this.status, that.getStatus())
           && Objects.equals(this.storageBytes, that.getStorageBytes())
-          && Objects.equals(this.storageBytesStatus, that.getStorageBytesStatus());
+          && Objects.equals(this.storageBytesStatus, that.getStorageBytesStatus())
+          && Objects.equals(this.storageLocations, that.getStorageLocationsList());
     }
     return false;
   }
@@ -953,6 +999,7 @@ public final class Snapshot implements ApiMessage {
         sourceDiskId,
         status,
         storageBytes,
-        storageBytesStatus);
+        storageBytesStatus,
+        storageLocations);
   }
 }

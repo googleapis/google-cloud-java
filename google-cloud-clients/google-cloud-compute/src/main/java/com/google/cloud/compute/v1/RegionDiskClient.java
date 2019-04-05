@@ -221,10 +221,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotRegionDiskHttpRequest request = CreateSnapshotRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
    *   Operation response = regionDiskClient.createSnapshotRegionDisk(request);
@@ -247,10 +247,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotRegionDiskHttpRequest request = CreateSnapshotRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.createSnapshotRegionDiskCallable().futureCall(request);
@@ -329,9 +329,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   DeleteRegionDiskHttpRequest request = DeleteRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   Operation response = regionDiskClient.deleteRegionDisk(request);
    * }
@@ -355,9 +355,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   DeleteRegionDiskHttpRequest request = DeleteRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.deleteRegionDiskCallable().futureCall(request);
    *   // Do something
@@ -427,9 +427,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   GetRegionDiskHttpRequest request = GetRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   Disk response = regionDiskClient.getRegionDisk(request);
    * }
@@ -451,9 +451,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   GetRegionDiskHttpRequest request = GetRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   ApiFuture&lt;Disk&gt; future = regionDiskClient.getRegionDiskCallable().futureCall(request);
    *   // Do something
@@ -537,10 +537,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertRegionDiskHttpRequest request = InsertRegionDiskHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setDiskResource(diskResource)
    *     .build();
    *   Operation response = regionDiskClient.insertRegionDisk(request);
@@ -564,10 +564,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertRegionDiskHttpRequest request = InsertRegionDiskHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setDiskResource(diskResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.insertRegionDiskCallable().futureCall(request);
@@ -641,9 +641,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionDisksHttpRequest request = ListRegionDisksHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (Disk element : regionDiskClient.listRegionDisks(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -667,9 +667,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionDisksHttpRequest request = ListRegionDisksHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRegionDisksPagedResponse&gt; future = regionDiskClient.listRegionDisksPagedCallable().futureCall(request);
    *   // Do something
@@ -693,9 +693,9 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionDisksHttpRequest request = ListRegionDisksHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     DiskList response = regionDiskClient.listRegionDisksCallable().call(request);
@@ -785,10 +785,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
    *   ResizeRegionDiskHttpRequest request = ResizeRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
    *     .build();
    *   Operation response = regionDiskClient.resizeRegionDisk(request);
@@ -811,10 +811,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
+   *   String formattedDisk = ProjectRegionDiskName.format("[PROJECT]", "[REGION]", "[DISK]");
    *   RegionDisksResizeRequest regionDisksResizeRequestResource = RegionDisksResizeRequest.newBuilder().build();
    *   ResizeRegionDiskHttpRequest request = ResizeRegionDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setRegionDisksResizeRequestResource(regionDisksResizeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.resizeRegionDiskCallable().futureCall(request);
@@ -897,10 +897,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
    *   SetLabelsRegionDiskHttpRequest request = SetLabelsRegionDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
    *     .build();
    *   Operation response = regionDiskClient.setLabelsRegionDisk(request);
@@ -923,10 +923,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
    *   SetLabelsRegionDiskHttpRequest request = SetLabelsRegionDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionDiskClient.setLabelsRegionDiskCallable().futureCall(request);
@@ -1010,10 +1010,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsRegionDiskHttpRequest request = TestIamPermissionsRegionDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = regionDiskClient.testIamPermissionsRegionDisk(request);
@@ -1037,10 +1037,10 @@ public class RegionDiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
-   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsRegionDiskHttpRequest request = TestIamPermissionsRegionDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = regionDiskClient.testIamPermissionsRegionDiskCallable().futureCall(request);

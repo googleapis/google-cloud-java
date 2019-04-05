@@ -76,9 +76,9 @@ public final class Binding implements ApiMessage {
   }
 
   /**
-   * Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied
-   * condition will not allow user access via current binding. Different bindings, including their
-   * conditions, are examined independently.
+   * The condition that is associated with this binding. NOTE: an unsatisfied condition will not
+   * allow user access via current binding. Different bindings, including their conditions, are
+   * examined independently.
    */
   public Expr getCondition() {
     return condition;
@@ -168,18 +168,18 @@ public final class Binding implements ApiMessage {
     }
 
     /**
-     * Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied
-     * condition will not allow user access via current binding. Different bindings, including their
-     * conditions, are examined independently.
+     * The condition that is associated with this binding. NOTE: an unsatisfied condition will not
+     * allow user access via current binding. Different bindings, including their conditions, are
+     * examined independently.
      */
     public Expr getCondition() {
       return condition;
     }
 
     /**
-     * Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied
-     * condition will not allow user access via current binding. Different bindings, including their
-     * conditions, are examined independently.
+     * The condition that is associated with this binding. NOTE: an unsatisfied condition will not
+     * allow user access via current binding. Different bindings, including their conditions, are
+     * examined independently.
      */
     public Builder setCondition(Expr condition) {
       this.condition = condition;

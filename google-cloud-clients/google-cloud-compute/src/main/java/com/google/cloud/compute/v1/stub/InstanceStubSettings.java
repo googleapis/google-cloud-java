@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
@@ -73,7 +74,9 @@ import com.google.cloud.compute.v1.SetMetadataInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
+import com.google.cloud.compute.v1.ShieldedInstanceIdentity;
 import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
@@ -82,6 +85,7 @@ import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -151,6 +155,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       getIamPolicyInstanceSettings;
   private final UnaryCallSettings<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceSettings;
+  private final UnaryCallSettings<
+          GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceSettings;
   private final UnaryCallSettings<InsertInstanceHttpRequest, Operation> insertInstanceSettings;
   private final PagedCallSettings<
           ListInstancesHttpRequest, InstanceList, ListInstancesPagedResponse>
@@ -181,6 +188,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       setSchedulingInstanceSettings;
   private final UnaryCallSettings<SetServiceAccountInstanceHttpRequest, Operation>
       setServiceAccountInstanceSettings;
+  private final UnaryCallSettings<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceSettings;
   private final UnaryCallSettings<SetTagsInstanceHttpRequest, Operation> setTagsInstanceSettings;
   private final UnaryCallSettings<SimulateMaintenanceEventInstanceHttpRequest, Operation>
       simulateMaintenanceEventInstanceSettings;
@@ -194,6 +203,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       updateAccessConfigInstanceSettings;
   private final UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceSettings;
+  private final UnaryCallSettings<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceSettings;
 
   /** Returns the object with the settings used for calls to addAccessConfigInstance. */
   public UnaryCallSettings<AddAccessConfigInstanceHttpRequest, Operation>
@@ -245,6 +256,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   public UnaryCallSettings<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceSettings() {
     return getSerialPortOutputInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getShieldedInstanceIdentityInstance. */
+  public UnaryCallSettings<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceSettings() {
+    return getShieldedInstanceIdentityInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to insertInstance. */
@@ -330,6 +347,15 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     return setServiceAccountInstanceSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * setShieldedInstanceIntegrityPolicyInstance.
+   */
+  public UnaryCallSettings<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceSettings() {
+    return setShieldedInstanceIntegrityPolicyInstanceSettings;
+  }
+
   /** Returns the object with the settings used for calls to setTagsInstance. */
   public UnaryCallSettings<SetTagsInstanceHttpRequest, Operation> setTagsInstanceSettings() {
     return setTagsInstanceSettings;
@@ -373,6 +399,14 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   public UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceSettings() {
     return updateNetworkInterfaceInstanceSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateShieldedInstanceConfigInstance.
+   */
+  public UnaryCallSettings<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceSettings() {
+    return updateShieldedInstanceConfigInstanceSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -460,6 +494,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     getIamPolicyInstanceSettings = settingsBuilder.getIamPolicyInstanceSettings().build();
     getSerialPortOutputInstanceSettings =
         settingsBuilder.getSerialPortOutputInstanceSettings().build();
+    getShieldedInstanceIdentityInstanceSettings =
+        settingsBuilder.getShieldedInstanceIdentityInstanceSettings().build();
     insertInstanceSettings = settingsBuilder.insertInstanceSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     listReferrersInstancesSettings = settingsBuilder.listReferrersInstancesSettings().build();
@@ -476,6 +512,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     setMinCpuPlatformInstanceSettings = settingsBuilder.setMinCpuPlatformInstanceSettings().build();
     setSchedulingInstanceSettings = settingsBuilder.setSchedulingInstanceSettings().build();
     setServiceAccountInstanceSettings = settingsBuilder.setServiceAccountInstanceSettings().build();
+    setShieldedInstanceIntegrityPolicyInstanceSettings =
+        settingsBuilder.setShieldedInstanceIntegrityPolicyInstanceSettings().build();
     setTagsInstanceSettings = settingsBuilder.setTagsInstanceSettings().build();
     simulateMaintenanceEventInstanceSettings =
         settingsBuilder.simulateMaintenanceEventInstanceSettings().build();
@@ -489,6 +527,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         settingsBuilder.updateAccessConfigInstanceSettings().build();
     updateNetworkInterfaceInstanceSettings =
         settingsBuilder.updateNetworkInterfaceInstanceSettings().build();
+    updateShieldedInstanceConfigInstanceSettings =
+        settingsBuilder.updateShieldedInstanceConfigInstanceSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -708,6 +748,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     private final UnaryCallSettings.Builder<
             GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
         getSerialPortOutputInstanceSettings;
+    private final UnaryCallSettings.Builder<
+            GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+        getShieldedInstanceIdentityInstanceSettings;
     private final UnaryCallSettings.Builder<InsertInstanceHttpRequest, Operation>
         insertInstanceSettings;
     private final PagedCallSettings.Builder<
@@ -740,6 +783,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         setSchedulingInstanceSettings;
     private final UnaryCallSettings.Builder<SetServiceAccountInstanceHttpRequest, Operation>
         setServiceAccountInstanceSettings;
+    private final UnaryCallSettings.Builder<
+            SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+        setShieldedInstanceIntegrityPolicyInstanceSettings;
     private final UnaryCallSettings.Builder<SetTagsInstanceHttpRequest, Operation>
         setTagsInstanceSettings;
     private final UnaryCallSettings.Builder<SimulateMaintenanceEventInstanceHttpRequest, Operation>
@@ -757,6 +803,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         updateAccessConfigInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
         updateNetworkInterfaceInstanceSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+        updateShieldedInstanceConfigInstanceSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -818,6 +867,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       getSerialPortOutputInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getShieldedInstanceIdentityInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
@@ -847,6 +898,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       setServiceAccountInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setShieldedInstanceIntegrityPolicyInstanceSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setTagsInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       simulateMaintenanceEventInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -863,6 +917,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       updateNetworkInterfaceInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateShieldedInstanceConfigInstanceSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigInstanceSettings,
@@ -874,6 +931,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               getInstanceSettings,
               getIamPolicyInstanceSettings,
               getSerialPortOutputInstanceSettings,
+              getShieldedInstanceIdentityInstanceSettings,
               insertInstanceSettings,
               listInstancesSettings,
               listReferrersInstancesSettings,
@@ -888,6 +946,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               setMinCpuPlatformInstanceSettings,
               setSchedulingInstanceSettings,
               setServiceAccountInstanceSettings,
+              setShieldedInstanceIntegrityPolicyInstanceSettings,
               setTagsInstanceSettings,
               simulateMaintenanceEventInstanceSettings,
               startInstanceSettings,
@@ -895,7 +954,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               stopInstanceSettings,
               testIamPermissionsInstanceSettings,
               updateAccessConfigInstanceSettings,
-              updateNetworkInterfaceInstanceSettings);
+              updateNetworkInterfaceInstanceSettings,
+              updateShieldedInstanceConfigInstanceSettings);
 
       initDefaults(this);
     }
@@ -953,6 +1013,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       builder
           .getSerialPortOutputInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getShieldedInstanceIdentityInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -1027,6 +1092,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setShieldedInstanceIntegrityPolicyInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setTagsInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -1066,6 +1136,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .updateShieldedInstanceConfigInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -1082,6 +1157,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       getIamPolicyInstanceSettings = settings.getIamPolicyInstanceSettings.toBuilder();
       getSerialPortOutputInstanceSettings =
           settings.getSerialPortOutputInstanceSettings.toBuilder();
+      getShieldedInstanceIdentityInstanceSettings =
+          settings.getShieldedInstanceIdentityInstanceSettings.toBuilder();
       insertInstanceSettings = settings.insertInstanceSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       listReferrersInstancesSettings = settings.listReferrersInstancesSettings.toBuilder();
@@ -1098,6 +1175,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       setMinCpuPlatformInstanceSettings = settings.setMinCpuPlatformInstanceSettings.toBuilder();
       setSchedulingInstanceSettings = settings.setSchedulingInstanceSettings.toBuilder();
       setServiceAccountInstanceSettings = settings.setServiceAccountInstanceSettings.toBuilder();
+      setShieldedInstanceIntegrityPolicyInstanceSettings =
+          settings.setShieldedInstanceIntegrityPolicyInstanceSettings.toBuilder();
       setTagsInstanceSettings = settings.setTagsInstanceSettings.toBuilder();
       simulateMaintenanceEventInstanceSettings =
           settings.simulateMaintenanceEventInstanceSettings.toBuilder();
@@ -1109,6 +1188,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       updateAccessConfigInstanceSettings = settings.updateAccessConfigInstanceSettings.toBuilder();
       updateNetworkInterfaceInstanceSettings =
           settings.updateNetworkInterfaceInstanceSettings.toBuilder();
+      updateShieldedInstanceConfigInstanceSettings =
+          settings.updateShieldedInstanceConfigInstanceSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1121,6 +1202,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               getInstanceSettings,
               getIamPolicyInstanceSettings,
               getSerialPortOutputInstanceSettings,
+              getShieldedInstanceIdentityInstanceSettings,
               insertInstanceSettings,
               listInstancesSettings,
               listReferrersInstancesSettings,
@@ -1135,6 +1217,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               setMinCpuPlatformInstanceSettings,
               setSchedulingInstanceSettings,
               setServiceAccountInstanceSettings,
+              setShieldedInstanceIntegrityPolicyInstanceSettings,
               setTagsInstanceSettings,
               simulateMaintenanceEventInstanceSettings,
               startInstanceSettings,
@@ -1142,7 +1225,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               stopInstanceSettings,
               testIamPermissionsInstanceSettings,
               updateAccessConfigInstanceSettings,
-              updateNetworkInterfaceInstanceSettings);
+              updateNetworkInterfaceInstanceSettings,
+              updateShieldedInstanceConfigInstanceSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1215,6 +1299,15 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
         getSerialPortOutputInstanceSettings() {
       return getSerialPortOutputInstanceSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getShieldedInstanceIdentityInstance.
+     */
+    public UnaryCallSettings.Builder<
+            GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+        getShieldedInstanceIdentityInstanceSettings() {
+      return getShieldedInstanceIdentityInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to insertInstance. */
@@ -1304,6 +1397,16 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       return setServiceAccountInstanceSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * setShieldedInstanceIntegrityPolicyInstance.
+     */
+    public UnaryCallSettings.Builder<
+            SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+        setShieldedInstanceIntegrityPolicyInstanceSettings() {
+      return setShieldedInstanceIntegrityPolicyInstanceSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setTagsInstance. */
     public UnaryCallSettings.Builder<SetTagsInstanceHttpRequest, Operation>
         setTagsInstanceSettings() {
@@ -1348,6 +1451,14 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
         updateNetworkInterfaceInstanceSettings() {
       return updateNetworkInterfaceInstanceSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateShieldedInstanceConfigInstance.
+     */
+    public UnaryCallSettings.Builder<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+        updateShieldedInstanceConfigInstanceSettings() {
+      return updateShieldedInstanceConfigInstanceSettings;
     }
 
     @Override

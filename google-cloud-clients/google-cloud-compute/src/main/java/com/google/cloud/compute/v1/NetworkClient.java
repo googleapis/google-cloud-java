@@ -221,10 +221,10 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   AddPeeringNetworkHttpRequest request = AddPeeringNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
    *     .build();
    *   Operation response = networkClient.addPeeringNetwork(request);
@@ -247,10 +247,10 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   AddPeeringNetworkHttpRequest request = AddPeeringNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networkClient.addPeeringNetworkCallable().futureCall(request);
@@ -322,9 +322,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   DeleteNetworkHttpRequest request = DeleteNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .build();
    *   Operation response = networkClient.deleteNetwork(request);
    * }
@@ -346,9 +346,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   DeleteNetworkHttpRequest request = DeleteNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networkClient.deleteNetworkCallable().futureCall(request);
    *   // Do something
@@ -418,9 +418,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .build();
    *   Network response = networkClient.getNetwork(request);
    * }
@@ -442,9 +442,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .build();
    *   ApiFuture&lt;Network&gt; future = networkClient.getNetworkCallable().futureCall(request);
    *   // Do something
@@ -527,10 +527,10 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Network networkResource = Network.newBuilder().build();
    *   InsertNetworkHttpRequest request = InsertNetworkHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setNetworkResource(networkResource)
    *     .build();
    *   Operation response = networkClient.insertNetwork(request);
@@ -553,10 +553,10 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Network networkResource = Network.newBuilder().build();
    *   InsertNetworkHttpRequest request = InsertNetworkHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setNetworkResource(networkResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networkClient.insertNetworkCallable().futureCall(request);
@@ -630,9 +630,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListNetworksHttpRequest request = ListNetworksHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Network element : networkClient.listNetworks(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -656,9 +656,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListNetworksHttpRequest request = ListNetworksHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListNetworksPagedResponse&gt; future = networkClient.listNetworksPagedCallable().futureCall(request);
    *   // Do something
@@ -682,9 +682,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListNetworksHttpRequest request = ListNetworksHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     NetworkList response = networkClient.listNetworksCallable().call(request);
@@ -793,11 +793,11 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .setNetworkResource(networkResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -822,11 +822,11 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .setNetworkResource(networkResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -910,10 +910,10 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   RemovePeeringNetworkHttpRequest request = RemovePeeringNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
    *     .build();
    *   Operation response = networkClient.removePeeringNetwork(request);
@@ -936,10 +936,10 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   RemovePeeringNetworkHttpRequest request = RemovePeeringNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networkClient.removePeeringNetworkCallable().futureCall(request);
@@ -1012,9 +1012,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   SwitchToCustomModeNetworkHttpRequest request = SwitchToCustomModeNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .build();
    *   Operation response = networkClient.switchToCustomModeNetwork(request);
    * }
@@ -1036,9 +1036,9 @@ public class NetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
    *   SwitchToCustomModeNetworkHttpRequest request = SwitchToCustomModeNetworkHttpRequest.newBuilder()
-   *     .setNetwork(network.toString())
+   *     .setNetwork(formattedNetwork)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networkClient.switchToCustomModeNetworkCallable().futureCall(request);
    *   // Do something

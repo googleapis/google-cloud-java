@@ -212,9 +212,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   DeleteRegionAutoscalerHttpRequest request = DeleteRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(request);
    * }
@@ -236,9 +236,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   DeleteRegionAutoscalerHttpRequest request = DeleteRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionAutoscalerClient.deleteRegionAutoscalerCallable().futureCall(request);
    *   // Do something
@@ -310,9 +310,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   GetRegionAutoscalerHttpRequest request = GetRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   Autoscaler response = regionAutoscalerClient.getRegionAutoscaler(request);
    * }
@@ -334,9 +334,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   GetRegionAutoscalerHttpRequest request = GetRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   ApiFuture&lt;Autoscaler&gt; future = regionAutoscalerClient.getRegionAutoscalerCallable().futureCall(request);
    *   // Do something
@@ -425,10 +425,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertRegionAutoscalerHttpRequest request = InsertRegionAutoscalerHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
    *   Operation response = regionAutoscalerClient.insertRegionAutoscaler(request);
@@ -451,10 +451,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertRegionAutoscalerHttpRequest request = InsertRegionAutoscalerHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionAutoscalerClient.insertRegionAutoscalerCallable().futureCall(request);
@@ -529,9 +529,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionAutoscalersHttpRequest request = ListRegionAutoscalersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (Autoscaler element : regionAutoscalerClient.listRegionAutoscalers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -556,9 +556,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionAutoscalersHttpRequest request = ListRegionAutoscalersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRegionAutoscalersPagedResponse&gt; future = regionAutoscalerClient.listRegionAutoscalersPagedCallable().futureCall(request);
    *   // Do something
@@ -582,9 +582,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionAutoscalersHttpRequest request = ListRegionAutoscalersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     RegionAutoscalerList response = regionAutoscalerClient.listRegionAutoscalersCallable().call(request);
@@ -708,12 +708,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRegionAutoscalerHttpRequest request = PatchRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -739,12 +739,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRegionAutoscalerHttpRequest request = PatchRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -858,12 +858,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRegionAutoscalerHttpRequest request = UpdateRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -888,12 +888,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRegionAutoscalerHttpRequest request = UpdateRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();

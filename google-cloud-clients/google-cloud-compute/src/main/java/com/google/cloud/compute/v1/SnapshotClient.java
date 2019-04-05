@@ -224,9 +224,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   String formattedSnapshot = ProjectGlobalSnapshotName.format("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
-   *     .setSnapshot(snapshot.toString())
+   *     .setSnapshot(formattedSnapshot)
    *     .build();
    *   Operation response = snapshotClient.deleteSnapshot(request);
    * }
@@ -253,9 +253,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   String formattedSnapshot = ProjectGlobalSnapshotName.format("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
-   *     .setSnapshot(snapshot.toString())
+   *     .setSnapshot(formattedSnapshot)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = snapshotClient.deleteSnapshotCallable().futureCall(request);
    *   // Do something
@@ -329,9 +329,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   String formattedSnapshot = ProjectGlobalSnapshotName.format("[PROJECT]", "[SNAPSHOT]");
    *   GetSnapshotHttpRequest request = GetSnapshotHttpRequest.newBuilder()
-   *     .setSnapshot(snapshot.toString())
+   *     .setSnapshot(formattedSnapshot)
    *     .build();
    *   Snapshot response = snapshotClient.getSnapshot(request);
    * }
@@ -354,9 +354,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   String formattedSnapshot = ProjectGlobalSnapshotName.format("[PROJECT]", "[SNAPSHOT]");
    *   GetSnapshotHttpRequest request = GetSnapshotHttpRequest.newBuilder()
-   *     .setSnapshot(snapshot.toString())
+   *     .setSnapshot(formattedSnapshot)
    *     .build();
    *   ApiFuture&lt;Snapshot&gt; future = snapshotClient.getSnapshotCallable().futureCall(request);
    *   // Do something
@@ -430,9 +430,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicySnapshotHttpRequest request = GetIamPolicySnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = snapshotClient.getIamPolicySnapshot(request);
    * }
@@ -455,9 +455,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicySnapshotHttpRequest request = GetIamPolicySnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = snapshotClient.getIamPolicySnapshotCallable().futureCall(request);
    *   // Do something
@@ -531,9 +531,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSnapshotsHttpRequest request = ListSnapshotsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Snapshot element : snapshotClient.listSnapshots(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -557,9 +557,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSnapshotsHttpRequest request = ListSnapshotsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListSnapshotsPagedResponse&gt; future = snapshotClient.listSnapshotsPagedCallable().futureCall(request);
    *   // Do something
@@ -583,9 +583,9 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSnapshotsHttpRequest request = ListSnapshotsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     SnapshotList response = snapshotClient.listSnapshotsCallable().call(request);
@@ -676,10 +676,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicySnapshotHttpRequest request = SetIamPolicySnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   Policy response = snapshotClient.setIamPolicySnapshot(request);
@@ -702,10 +702,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicySnapshotHttpRequest request = SetIamPolicySnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = snapshotClient.setIamPolicySnapshotCallable().futureCall(request);
@@ -792,10 +792,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .build();
    *   Operation response = snapshotClient.setLabelsSnapshot(request);
@@ -819,10 +819,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = snapshotClient.setLabelsSnapshotCallable().futureCall(request);
@@ -905,10 +905,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsSnapshotHttpRequest request = TestIamPermissionsSnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = snapshotClient.testIamPermissionsSnapshot(request);
@@ -932,10 +932,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsSnapshotHttpRequest request = TestIamPermissionsSnapshotHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = snapshotClient.testIamPermissionsSnapshotCallable().futureCall(request);

@@ -214,9 +214,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTemplatesHttpRequest request = AggregatedListNodeTemplatesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (NodeTemplatesScopedList element : nodeTemplateClient.aggregatedListNodeTemplates(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -241,9 +241,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTemplatesHttpRequest request = AggregatedListNodeTemplatesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListNodeTemplatesPagedResponse&gt; future = nodeTemplateClient.aggregatedListNodeTemplatesPagedCallable().futureCall(request);
    *   // Do something
@@ -268,9 +268,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListNodeTemplatesHttpRequest request = AggregatedListNodeTemplatesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     NodeTemplateAggregatedList response = nodeTemplateClient.aggregatedListNodeTemplatesCallable().call(request);
@@ -351,9 +351,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateName nodeTemplate = ProjectRegionNodeTemplateName.of("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
+   *   String formattedNodeTemplate = ProjectRegionNodeTemplateName.format("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
    *   DeleteNodeTemplateHttpRequest request = DeleteNodeTemplateHttpRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate.toString())
+   *     .setNodeTemplate(formattedNodeTemplate)
    *     .build();
    *   Operation response = nodeTemplateClient.deleteNodeTemplate(request);
    * }
@@ -375,9 +375,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateName nodeTemplate = ProjectRegionNodeTemplateName.of("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
+   *   String formattedNodeTemplate = ProjectRegionNodeTemplateName.format("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
    *   DeleteNodeTemplateHttpRequest request = DeleteNodeTemplateHttpRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate.toString())
+   *     .setNodeTemplate(formattedNodeTemplate)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeTemplateClient.deleteNodeTemplateCallable().futureCall(request);
    *   // Do something
@@ -452,9 +452,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateName nodeTemplate = ProjectRegionNodeTemplateName.of("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
+   *   String formattedNodeTemplate = ProjectRegionNodeTemplateName.format("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
    *   GetNodeTemplateHttpRequest request = GetNodeTemplateHttpRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate.toString())
+   *     .setNodeTemplate(formattedNodeTemplate)
    *     .build();
    *   NodeTemplate response = nodeTemplateClient.getNodeTemplate(request);
    * }
@@ -477,9 +477,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateName nodeTemplate = ProjectRegionNodeTemplateName.of("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
+   *   String formattedNodeTemplate = ProjectRegionNodeTemplateName.format("[PROJECT]", "[REGION]", "[NODE_TEMPLATE]");
    *   GetNodeTemplateHttpRequest request = GetNodeTemplateHttpRequest.newBuilder()
-   *     .setNodeTemplate(nodeTemplate.toString())
+   *     .setNodeTemplate(formattedNodeTemplate)
    *     .build();
    *   ApiFuture&lt;NodeTemplate&gt; future = nodeTemplateClient.getNodeTemplateCallable().futureCall(request);
    *   // Do something
@@ -553,9 +553,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicyNodeTemplateHttpRequest request = GetIamPolicyNodeTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = nodeTemplateClient.getIamPolicyNodeTemplate(request);
    * }
@@ -578,9 +578,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicyNodeTemplateHttpRequest request = GetIamPolicyNodeTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeTemplateClient.getIamPolicyNodeTemplateCallable().futureCall(request);
    *   // Do something
@@ -664,10 +664,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
    *   InsertNodeTemplateHttpRequest request = InsertNodeTemplateHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setNodeTemplateResource(nodeTemplateResource)
    *     .build();
    *   Operation response = nodeTemplateClient.insertNodeTemplate(request);
@@ -691,10 +691,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
    *   InsertNodeTemplateHttpRequest request = InsertNodeTemplateHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setNodeTemplateResource(nodeTemplateResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = nodeTemplateClient.insertNodeTemplateCallable().futureCall(request);
@@ -769,9 +769,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListNodeTemplatesHttpRequest request = ListNodeTemplatesHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (NodeTemplate element : nodeTemplateClient.listNodeTemplates(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -796,9 +796,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListNodeTemplatesHttpRequest request = ListNodeTemplatesHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListNodeTemplatesPagedResponse&gt; future = nodeTemplateClient.listNodeTemplatesPagedCallable().futureCall(request);
    *   // Do something
@@ -822,9 +822,9 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListNodeTemplatesHttpRequest request = ListNodeTemplatesHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     NodeTemplateList response = nodeTemplateClient.listNodeTemplatesCallable().call(request);
@@ -916,10 +916,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyNodeTemplateHttpRequest request = SetIamPolicyNodeTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .build();
    *   Policy response = nodeTemplateClient.setIamPolicyNodeTemplate(request);
@@ -942,10 +942,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyNodeTemplateHttpRequest request = SetIamPolicyNodeTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeTemplateClient.setIamPolicyNodeTemplateCallable().futureCall(request);
@@ -1029,10 +1029,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsNodeTemplateHttpRequest request = TestIamPermissionsNodeTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = nodeTemplateClient.testIamPermissionsNodeTemplate(request);
@@ -1056,10 +1056,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
-   *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsNodeTemplateHttpRequest request = TestIamPermissionsNodeTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeTemplateClient.testIamPermissionsNodeTemplateCallable().futureCall(request);
