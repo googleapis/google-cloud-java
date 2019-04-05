@@ -7,8 +7,7 @@ package com.google.cloud.scheduler.v1beta1;
  *
  *
  * <pre>
- * Response message for listing jobs using
- * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+ * Response message for listing jobs using [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.ListJobsResponse}
@@ -179,11 +178,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in the
-   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-   * field in the subsequent call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-   * retrieve the next page of results. If this is empty it indicates that there
-   * are no more results through which to paginate.
+   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+   * If this is empty it indicates that there are no more results
+   * through which to paginate.
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -205,11 +203,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in the
-   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-   * field in the subsequent call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-   * retrieve the next page of results. If this is empty it indicates that there
-   * are no more results through which to paginate.
+   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+   * If this is empty it indicates that there are no more results
+   * through which to paginate.
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -401,8 +398,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Response message for listing jobs using
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+   * Response message for listing jobs using [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.ListJobsResponse}
@@ -960,11 +956,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in the
-     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-     * field in the subsequent call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-     * retrieve the next page of results. If this is empty it indicates that there
-     * are no more results through which to paginate.
+     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+     * If this is empty it indicates that there are no more results
+     * through which to paginate.
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -986,11 +981,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in the
-     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-     * field in the subsequent call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-     * retrieve the next page of results. If this is empty it indicates that there
-     * are no more results through which to paginate.
+     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+     * If this is empty it indicates that there are no more results
+     * through which to paginate.
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1012,11 +1006,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in the
-     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-     * field in the subsequent call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-     * retrieve the next page of results. If this is empty it indicates that there
-     * are no more results through which to paginate.
+     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+     * If this is empty it indicates that there are no more results
+     * through which to paginate.
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1036,11 +1029,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in the
-     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-     * field in the subsequent call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-     * retrieve the next page of results. If this is empty it indicates that there
-     * are no more results through which to paginate.
+     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+     * If this is empty it indicates that there are no more results
+     * through which to paginate.
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1057,11 +1049,10 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in the
-     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
-     * field in the subsequent call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
-     * retrieve the next page of results. If this is empty it indicates that there
-     * are no more results through which to paginate.
+     * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
+     * If this is empty it indicates that there are no more results
+     * through which to paginate.
      * The page token is valid for only 2 hours.
      * </pre>
      *
