@@ -19,9 +19,9 @@ package com.google.cloud.examples.securitycenter.snippets;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State;
-import com.google.cloud.securitycenter.v1beta1.OrganizationName;
+import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
+import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange;
+import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import org.junit.Test;
@@ -67,7 +67,7 @@ public class ITAssetSnippets {
             getOrganizationId(), Duration.ofDays(3), SOMETHING_INSTANCE);
     assertTrue("Result: " + result.toString(), result.toString().contains("ADDED"));
     assertTrue(3 >= result.size());
-    assertEquals(result.get(0).getState(), State.ADDED);
+    assertEquals(result.get(0).getStateChange(), StateChange.ADDED);
   }
 
   private static OrganizationName getOrganizationId() {

@@ -15,11 +15,11 @@
  */
 package com.google.cloud.examples.securitycenter.snippets;
 
-import com.google.cloud.securitycenter.v1beta1.ListAssetsRequest;
-import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-import com.google.cloud.securitycenter.v1beta1.OrganizationName;
-import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
-import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient.ListAssetsPagedResponse;
+import com.google.cloud.securitycenter.v1.ListAssetsRequest;
+import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
+import com.google.cloud.securitycenter.v1.OrganizationName;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -84,7 +84,7 @@ public class AssetSnippets {
       // this can cause out of memory issues.  You can process them batches by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListAssetsResult> results = ImmutableList.copyOf(response.iterateAll());
-      System.out.println("Projects:");
+      System.out.println("Project assets:");
       System.out.println(results);
       return results;
     } catch (IOException e) {
