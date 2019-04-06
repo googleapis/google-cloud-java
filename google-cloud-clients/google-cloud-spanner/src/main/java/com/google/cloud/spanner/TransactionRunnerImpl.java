@@ -23,7 +23,6 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.BackOff;
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.SpannerImpl.AbstractReadContext;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
