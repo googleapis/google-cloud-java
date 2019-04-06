@@ -3,6 +3,7 @@ package com.google.cloud.examples.securitycenter.snippets;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
 
+import com.google.cloud.securitycenter.v1.Finding.State;
 import com.google.cloud.securitycenter.v1.FindingName;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SourceName;
@@ -42,6 +43,12 @@ public class ITFindingSnippets {
             .getSourcePropertiesMap()
             .get("stringKey")
             .equals(stringValue));
+  }
+
+  @Test
+  public void testUpdateFindingState() throws IOException {
+    Value stringValue = Value.newBuilder().setStringValue("value").build();
+    assertTrue(FindingSnippets.setFindingState(FINDING_NAME).getState().equals(State.INACTIVE));
   }
 
   @Test
