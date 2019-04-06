@@ -20,9 +20,10 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.SpannerImpl.MultiUseReadOnlyTransaction;
+import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
+import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
+import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
 import com.google.cloud.spanner.SpannerImpl.PartitionedDMLTransaction;
-import com.google.cloud.spanner.SpannerImpl.SingleReadContext;
 import com.google.cloud.spanner.SpannerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.collect.Lists;
@@ -176,8 +177,7 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
     return setActive(
-        spanner
-        .new SingleUseReadOnlyTransaction(
+        new SingleUseReadOnlyTransaction(
             this, bound, spanner.getRpc(), spanner.getDefaultPrefetchChunks()));
   }
 
