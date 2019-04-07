@@ -165,6 +165,10 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
     return com.google.protobuf.Timestamp.newBuilder().setSeconds(seconds).setNanos(nanos).build();
   }
 
+  private static final int[] POWERS_OF_10 = {
+    1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000
+  };
+
   /**
    * Creates a Timestamp instance from the given string. String is in the RFC 3339 format without
    * the timezone offset (always ends in "Z").
@@ -186,12 +190,12 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
                 && timestamp.length() > 20
                 && (timestamp.charAt(20) != 'Z' || timestamp.charAt(20) == 'z')),
         invalidTimestamp);
-    int year = IntParser.parseInt(timestamp, 0, 4);
-    int month = IntParser.parseInt(timestamp, 5, 7);
-    int day = IntParser.parseInt(timestamp, 8, 10);
-    int hour = IntParser.parseInt(timestamp, 11, 13);
-    int minute = IntParser.parseInt(timestamp, 14, 16);
-    int second = IntParser.parseInt(timestamp, 17, 19);
+    int year = Integer.parseInt(timestamp.substring(0, 4));
+    int month = Integer.parseInt(timestamp.substring(5, 7));
+    int day = Integer.parseInt(timestamp.substring(8, 10));
+    int hour = Integer.parseInt(timestamp.substring(11, 13));
+    int minute = Integer.parseInt(timestamp.substring(14, 16));
+    int second = Integer.parseInt(timestamp.substring(17, 19));
     int fraction = 0;
     if (timestamp.length() > 20) {
       if (timestamp.charAt(19) == '.') {
@@ -205,9 +209,10 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
         if (endIndex - 20 > 9) {
           throw new IllegalArgumentException(invalidTimestamp);
         }
+        fraction = Integer.parseInt(timestamp.substring(20, endIndex));
         // Adjust the result to nanoseconds if the input length is less than 9 digits (9 - (endIndex
         // - 20)).
-        fraction = IntParser.parseInt(timestamp, 20, endIndex, 9 - (endIndex - 20));
+        fraction *= POWERS_OF_10[9 - (endIndex - 20)];
       } else {
       }
     }
