@@ -59,9 +59,9 @@ public final class Date implements Comparable<Date>, Serializable {
     Preconditions.checkArgument(date.length() == 10, invalidDate);
     Preconditions.checkArgument(date.charAt(4) == '-', invalidDate);
     Preconditions.checkArgument(date.charAt(7) == '-', invalidDate);
-    int year = IntParser.parseInt(date, 0, 4);
-    int month = IntParser.parseInt(date, 5, 7);
-    int dayOfMonth = IntParser.parseInt(date, 8, 10);
+    int year = Integer.parseInt(date.substring(0, 4));
+    int month = Integer.parseInt(date.substring(5, 7));
+    int dayOfMonth = Integer.parseInt(date.substring(8, 10));
     return new Date(year, month, dayOfMonth);
   }
 

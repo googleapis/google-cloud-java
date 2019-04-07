@@ -60,10 +60,17 @@ public class DateTest {
     parseInvalidDate("2016-09-18T10:00");
     parseInvalidDate("");
     parseInvalidDate("test");
+    parseInvalidDate("aaaa-bb-cc");
+    parseInvalidDate("aaaa-01-01");
+    parseInvalidDate("2019-bb-01");
+    parseInvalidDate("2019-01-cc");
     parseInvalidDate("2000-13-01");
     parseInvalidDate("2000-12-32");
     parseInvalidDate("10000-01-01");
     parseInvalidDate("0000-01-01");
+    parseInvalidDate("-001-01-01");
+    parseInvalidDate("0001--1-01");
+    parseInvalidDate("0001-01--1");
   }
 
   private void parseInvalidDate(String input) {
@@ -71,7 +78,7 @@ public class DateTest {
       Date.parseDate(input);
       fail("Expected exception");
     } catch (IllegalArgumentException e) {
-      assertThat(e.getMessage()).contains("Invalid");
+      // Ignore, this is the expected exception.
     }
   }
 
