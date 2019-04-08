@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Date;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -92,6 +93,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -636,6 +638,36 @@ public class ITBigQueryTest {
         }
       }
       assertTrue(found);
+    } finally {
+      createdPartitioningTable.delete();
+    }
+  }
+
+  @Test
+  public void testListPartitions() {
+    String tableName = "test_table_partitions";
+    Date date = Date.fromJavaUtilDate(new java.util.Date());
+    String partitionDate = date.toString().replaceAll("-", "");
+    TableId tableId = TableId.of(DATASET, tableName + "$" + partitionDate);
+    TimePartitioning timePartitioning = TimePartitioning.of(Type.DAY, EXPIRATION_MS);
+    Schema schema = Schema.of(Field.of("StringField", LegacySQLTypeName.STRING));
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(schema)
+            .setTimePartitioning(timePartitioning)
+            .build();
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    Table createdPartitioningTable = bigquery.create(tableInfo);
+    assertNotNull(createdPartitioningTable);
+    try {
+      Map<String, Object> row = new HashMap<String, Object>();
+      row.put("StringField", "StringValue");
+      InsertAllRequest request = InsertAllRequest.newBuilder(tableId).addRow(row).build();
+      InsertAllResponse response = bigquery.insertAll(request);
+      assertFalse(response.hasErrors());
+      assertEquals(0, response.getInsertErrors().size());
+      List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
+      assertEquals(1, partitions.size());
     } finally {
       createdPartitioningTable.delete();
     }
