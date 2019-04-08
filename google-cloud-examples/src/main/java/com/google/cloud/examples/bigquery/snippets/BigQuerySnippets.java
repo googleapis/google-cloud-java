@@ -379,12 +379,11 @@ public class BigQuerySnippets {
         WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
     // The location must be specified; other fields can be auto-detected.
     JobId jobId = JobId.newBuilder().setLocation(location).build();
-    TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+
     // Write data to writer
-    try (OutputStream stream = Channels.newOutputStream(writer)) {
+    try (TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+         OutputStream stream = Channels.newOutputStream(writer)) {
       Files.copy(csvPath, stream);
-    } finally {
-      writer.close();
     }
     // Get load job
     Job job = writer.getJob();
