@@ -282,6 +282,74 @@ public class BigQueryImplTest {
           .setNumLongTermBytes(0L)
           .setNumRows(BigInteger.valueOf(3L))
           .build();
+  private static final TableCell TABLE_CELL1_PROJECT_ID = new TableCell().setV(PROJECT);
+  private static final TableCell TABLE_CELL1_DATASET_ID = new TableCell().setV(DATASET);
+  private static final TableCell TABLE_CELL1_TABLE_ID = new TableCell().setV(TABLE);
+  private static final TableCell TABLE_CELL1_PARTITION_ID = new TableCell().setV("20190327");
+  private static final TableCell TABLE_CELL1_CREATION_TIME = new TableCell().setV("1553694932498");
+  private static final TableCell TABLE_CELL1_CREATION_TIMESTAMP =
+      new TableCell().setV("1553694932.498");
+  private static final TableCell TABLE_CELL1_LAST_MODIFIED_TIME =
+      new TableCell().setV("1553694932989");
+  private static final TableCell TABLE_CELL1_LAST_MODIFIED_TIMESTAMP =
+      new TableCell().setV("1553694932.989");
+
+  private static final TableCell TABLE_CELL2_PARTITION_ID = new TableCell().setV("20190328");
+  private static final TableCell TABLE_CELL2_CREATION_TIME = new TableCell().setV("1553754224760");
+  private static final TableCell TABLE_CELL2_CREATION_TIMESTAMP =
+      new TableCell().setV("1553754224.76");
+  private static final TableCell TABLE_CELL2_LAST_MODIFIED_TIME =
+      new TableCell().setV("1553754225587");
+  private static final TableCell TABLE_CELL2_LAST_MODIFIED_TIMESTAMP =
+      new TableCell().setV("1553754225.587");
+
+  private static final TableCell TABLE_CELL3_PARTITION_ID = new TableCell().setV("20190329");
+  private static final TableCell TABLE_CELL3_CREATION_TIME = new TableCell().setV("1553841162879");
+  private static final TableCell TABLE_CELL3_CREATION_TIMESTAMP =
+      new TableCell().setV("1553841162.879");
+  private static final TableCell TABLE_CELL3_LAST_MODIFIED_TIME =
+      new TableCell().setV("1553841163438");
+  private static final TableCell TABLE_CELL3_LAST_MODIFIED_TIMESTAMP =
+      new TableCell().setV("1553841163.438");
+
+  private static final TableDataList TABLE_DATA_WITH_PARTITIONS =
+      new TableDataList()
+          .setTotalRows(3L)
+          .setRows(
+              ImmutableList.of(
+                  new TableRow()
+                      .setF(
+                          ImmutableList.of(
+                              TABLE_CELL1_PROJECT_ID,
+                              TABLE_CELL1_DATASET_ID,
+                              TABLE_CELL1_TABLE_ID,
+                              TABLE_CELL1_PARTITION_ID,
+                              TABLE_CELL1_CREATION_TIME,
+                              TABLE_CELL1_CREATION_TIMESTAMP,
+                              TABLE_CELL1_LAST_MODIFIED_TIME,
+                              TABLE_CELL1_LAST_MODIFIED_TIMESTAMP)),
+                  new TableRow()
+                      .setF(
+                          ImmutableList.of(
+                              TABLE_CELL1_PROJECT_ID,
+                              TABLE_CELL1_DATASET_ID,
+                              TABLE_CELL1_TABLE_ID,
+                              TABLE_CELL2_PARTITION_ID,
+                              TABLE_CELL2_CREATION_TIME,
+                              TABLE_CELL2_CREATION_TIMESTAMP,
+                              TABLE_CELL2_LAST_MODIFIED_TIME,
+                              TABLE_CELL2_LAST_MODIFIED_TIMESTAMP)),
+                  new TableRow()
+                      .setF(
+                          ImmutableList.of(
+                              TABLE_CELL1_PROJECT_ID,
+                              TABLE_CELL1_DATASET_ID,
+                              TABLE_CELL1_TABLE_ID,
+                              TABLE_CELL3_PARTITION_ID,
+                              TABLE_CELL3_CREATION_TIME,
+                              TABLE_CELL3_CREATION_TIMESTAMP,
+                              TABLE_CELL3_LAST_MODIFIED_TIME,
+                              TABLE_CELL3_LAST_MODIFIED_TIMESTAMP))));
   // Table list options
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_SIZE =
       BigQuery.TableListOption.pageSize(42L);
@@ -694,14 +762,17 @@ public class BigQueryImplTest {
   }
 
   @Test
-  public void testGetTableWithPartitionId() {
-    EasyMock.expect(bigqueryRpcMock.getTable(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+  public void testListPartition() {
+    EasyMock.expect(
+            bigqueryRpcMock.getTable(
+                PROJECT, DATASET, "table$__PARTITIONS_SUMMARY__", EMPTY_RPC_OPTIONS))
         .andReturn(TABLE_INFO_PARTITIONS.toPb());
+    EasyMock.expect(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .andReturn(TABLE_DATA_WITH_PARTITIONS);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    Table table = bigquery.getTable(DATASET, TABLE);
-    Schema schema = table.getDefinition().getSchema();
-    assertEquals("partition_id", schema.getFields().get("partition_id").getName());
+    List<String> partition = bigquery.listPartitions(TABLE_ID_WITH_PROJECT);
+    assertEquals(3, partition.size());
   }
 
   @Test
