@@ -657,8 +657,8 @@ public class ITBigQueryTest {
             .setTimePartitioning(timePartitioning)
             .build();
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
-    Table createdPartitioningTable = bigquery.create(tableInfo);
-    assertNotNull(createdPartitioningTable);
+    Table partitionedTable = bigquery.create(tableInfo);
+    assertNotNull(partitionedTable);
     try {
       Map<String, Object> row = new HashMap<String, Object>();
       row.put("StringField", "StringValue");
@@ -669,7 +669,7 @@ public class ITBigQueryTest {
       List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
       assertEquals(1, partitions.size());
     } finally {
-      createdPartitioningTable.delete();
+      partitionedTable.delete();
     }
   }
 
