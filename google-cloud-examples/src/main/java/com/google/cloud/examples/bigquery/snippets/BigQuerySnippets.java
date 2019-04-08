@@ -383,6 +383,8 @@ public class BigQuerySnippets {
     // Write data to writer
     try (OutputStream stream = Channels.newOutputStream(writer)) {
       Files.copy(csvPath, stream);
+    } finally {
+      writer.close();
     }
     // Get load job
     Job job = writer.getJob();
