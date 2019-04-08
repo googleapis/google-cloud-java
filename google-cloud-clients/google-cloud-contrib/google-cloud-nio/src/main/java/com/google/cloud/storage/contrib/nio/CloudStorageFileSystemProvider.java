@@ -337,12 +337,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         || options.contains(StandardOpenOption.CREATE)
         || options.contains(StandardOpenOption.CREATE_NEW)
         || options.contains(StandardOpenOption.TRUNCATE_EXISTING)) {
-      CloudStorageWriteChannel writeChannel =
-          (CloudStorageWriteChannel) newWriteChannel(path, options);
-      return new CloudStorageWriteFileChannel(writeChannel);
+      return new CloudStorageWriteFileChannel(newWriteChannel(path, options));
     } else {
-      CloudStorageReadChannel readChannel = (CloudStorageReadChannel) newReadChannel(path, options);
-      return new CloudStorageReadFileChannel(readChannel);
+      return new CloudStorageReadFileChannel(newReadChannel(path, options));
     }
   }
 
