@@ -313,7 +313,7 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public String open(String signURL) {
+  public String open(String signedURL) {
     return null;
   }
 

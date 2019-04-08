@@ -2073,7 +2073,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  WriteChannel writer(URL signURL);
+  WriteChannel writer(URL signedURL);
 
   /**
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a

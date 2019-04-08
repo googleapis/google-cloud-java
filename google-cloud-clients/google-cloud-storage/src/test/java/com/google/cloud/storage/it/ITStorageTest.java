@@ -2544,7 +2544,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testUploadUsingSignURL() throws Exception {
+  public void testUploadUsingSignedURL() throws Exception {
     String blobName = "test-signed-url-upload";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));

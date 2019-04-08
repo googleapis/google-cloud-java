@@ -35,8 +35,8 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     this(options, blob, open(options, blob, optionsMap));
   }
 
-  BlobWriteChannel(StorageOptions options, URL signURL) {
-    this(options, open(signURL, options));
+  BlobWriteChannel(StorageOptions options, URL signedURL) {
+    this(options, open(signedURL, options));
   }
 
   BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
@@ -92,16 +92,20 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     }
   }
 
-  private static String open(final URL signURL, final StorageOptions options) {
+  private static String open(final URL signedURL, final StorageOptions options) {
     try {
       return runWithRetries(
           new Callable<String>() {
             @Override
             public String call() {
-              if (!signURL.getQuery().contains("&Signature=")) {
-                throw new StorageException(2, "invalid signURL");
+              String signedURLQuery = signedURL.getQuery();
+              if (null != signedURLQuery
+                  && signedURLQuery.startsWith("GoogleAccessId=")
+                  && signedURLQuery.contains("&Expires=")
+                  && !signedURL.getQuery().contains("&Signature=")) {
+                throw new StorageException(2, "invalid signedURL");
               }
-              return options.getStorageRpcV1().open(signURL.toString());
+              return options.getStorageRpcV1().open(signedURL.toString());
             }
           },
           options.getRetrySettings(),

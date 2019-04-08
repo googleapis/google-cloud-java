@@ -599,8 +599,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobWriteChannel writer(URL signURL) {
-    return new BlobWriteChannel(getOptions(), signURL);
+  public BlobWriteChannel writer(URL signedURL) {
+    return new BlobWriteChannel(getOptions(), signedURL);
   }
 
   private BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {

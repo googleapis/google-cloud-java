@@ -823,11 +823,11 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public String open(String signURL) {
+  public String open(String signedURL) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_OPEN);
     Scope scope = tracer.withSpan(span);
     try {
-      GenericUrl url = new GenericUrl(signURL);
+      GenericUrl url = new GenericUrl(signedURL);
       url.set("uploadType", "resumable");
       String bytesArrayParameters = "";
       byte[] bytesArray = new byte[bytesArrayParameters.length()];
@@ -836,7 +836,7 @@ public class HttpStorageRpc implements StorageRpc {
           requestFactory.buildPostRequest(
               url, new ByteArrayContent("", bytesArray, 0, bytesArray.length));
       HttpHeaders requestHeaders = httpRequest.getHeaders();
-      requestHeaders.set("X-Upload-Content-Type", firstNonNull("", "application/octet-stream"));
+      requestHeaders.set("X-Upload-Content-Type", "");
       requestHeaders.set("x-goog-resumable", "start");
       HttpResponse response = httpRequest.execute();
       if (response.getStatusCode() != 201) {

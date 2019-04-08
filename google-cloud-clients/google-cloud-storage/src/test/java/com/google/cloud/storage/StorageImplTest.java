@@ -320,7 +320,7 @@ public class StorageImplTest {
           + "EkPPhszldvQTY486uPxyD/D7HdfnGW/Nbw5JUhfvecAdudDEhNAQ3PNabyDMI+TpiHy4NTWOrgdcWrzj6VXcdc"
           + "+uuABnPwRCdcyJ1xl2kOrPksRnp1auNGMLOe4IpEBjGY7baX9UG8+A45MbG0aHmkR59Op/aR9XowIDAQAB";
 
-  private static final String SIGN_URL =
+  private static final String SIGNED_URL =
       "http://www.test.com/test-bucket/test1.txt?GoogleAccessId=testClient-test@test.com&Expires=1553839761&Signature=MJUBXAZ7";
 
   private static final ApiClock TIME_SOURCE =
@@ -2841,11 +2841,11 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testWriterWithSignURL() throws MalformedURLException {
-    EasyMock.expect(storageRpcMock.open(SIGN_URL)).andReturn("upload-id");
+  public void testWriterWithSignedURL() throws MalformedURLException {
+    EasyMock.expect(storageRpcMock.open(SIGNED_URL)).andReturn("upload-id");
     EasyMock.replay(storageRpcMock);
     initializeService();
-    WriteChannel writer = new BlobWriteChannel(options, new URL(SIGN_URL));
+    WriteChannel writer = new BlobWriteChannel(options, new URL(SIGNED_URL));
     assertNotNull(writer);
     assertTrue(writer.isOpen());
   }
