@@ -380,14 +380,12 @@ public class BigQuerySnippets {
     // The location must be specified; other fields can be auto-detected.
     JobId jobId = JobId.newBuilder().setLocation(location).build();
     TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
-
     // Write data to writer
     try (OutputStream stream = Channels.newOutputStream(writer)) {
       Files.copy(csvPath, stream);
     } finally {
       writer.close();
     }
-
     // Get load job
     Job job = writer.getJob();
     job = job.waitFor();
