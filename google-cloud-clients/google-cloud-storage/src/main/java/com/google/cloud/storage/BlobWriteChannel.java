@@ -99,10 +99,9 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
             @Override
             public String call() {
               String signedURLQuery = signedURL.getQuery();
-              if (null != signedURLQuery
-                  && signedURLQuery.startsWith("GoogleAccessId=")
-                  && signedURLQuery.contains("&Expires=")
-                  && !signedURL.getQuery().contains("&Signature=")) {
+              if (!signedURLQuery.startsWith("GoogleAccessId=")
+                  || !signedURLQuery.contains("&Expires=")
+                  || !signedURL.getQuery().contains("&Signature=")) {
                 throw new StorageException(2, "invalid signedURL");
               }
               return options.getStorageRpcV1().open(signedURL.toString());
