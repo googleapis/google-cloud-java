@@ -64,13 +64,15 @@ public class DateTest {
     parseInvalidDate("aaaa-01-01");
     parseInvalidDate("2019-bb-01");
     parseInvalidDate("2019-01-cc");
-    parseInvalidDate("2000-13-01");
-    parseInvalidDate("2000-12-32");
+    parseInvalidMonth("2000-13-01");
+    parseInvalidMonth("2000-00-01");
+    parseInvalidDay("2000-12-32");
+    parseInvalidDay("2000-12-00");
     parseInvalidDate("10000-01-01");
-    parseInvalidDate("0000-01-01");
-    parseInvalidDate("-001-01-01");
-    parseInvalidDate("0001--1-01");
-    parseInvalidDate("0001-01--1");
+    parseInvalidYear("0000-01-01");
+    parseInvalidYear("-001-01-01");
+    parseInvalidMonth("0001--1-01");
+    parseInvalidDay("0001-01--1");
   }
 
   private void parseInvalidDate(String input) {
@@ -78,7 +80,34 @@ public class DateTest {
       Date.parseDate(input);
       fail("Expected exception");
     } catch (IllegalArgumentException e) {
-      // Ignore, this is the expected exception.
+      assertThat(e.getMessage()).contains("Invalid date");
+    }
+  }
+
+  private void parseInvalidYear(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid year");
+    }
+  }
+
+  private void parseInvalidMonth(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid month");
+    }
+  }
+
+  private void parseInvalidDay(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid day");
     }
   }
 
