@@ -218,7 +218,14 @@ public class TimestampTest {
 
     parseInvalidTimestamp("");
     parseInvalidTimestamp("TEST");
-    parseInvalidTimestamp("0001-01-01 00:00:00Z"); // missing 'T'
+    parseInvalidTimestamp("aaaa-01-01T00:00:00Z");
+    parseInvalidTimestamp("0001-bb-01T00:00:00Z");
+    parseInvalidTimestamp("0001-01-ccT00:00:00Z");
+    parseInvalidTimestamp("0001-01-01Tdd:00:00Z");
+    parseInvalidTimestamp("0001-01-01T00:ee:00Z");
+    parseInvalidTimestamp("0001-01-01T00:ee:00Z");
+    parseInvalidTimestamp("0001-01-01T00:00:ffZ");
+    parseInvalidTimestamp("0001-01-01T00:00:00.123aZ");
     parseInvalidTimestamp("0001-1-1 00:00:00Z"); // missing 0
     parseInvalidTimestamp("0001-01-01T00:00:00.Z"); // missing digits after .s
     parseInvalidTimestamp("0001-01-01T00:00:00.1234567890Z"); // too long

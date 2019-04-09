@@ -190,34 +190,39 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
                 && timestamp.length() > 20
                 && (timestamp.charAt(20) != 'Z' || timestamp.charAt(20) == 'z')),
         invalidTimestamp);
-    int year = Integer.parseInt(timestamp.substring(0, 4));
-    int month = Integer.parseInt(timestamp.substring(5, 7));
-    int day = Integer.parseInt(timestamp.substring(8, 10));
-    int hour = Integer.parseInt(timestamp.substring(11, 13));
-    int minute = Integer.parseInt(timestamp.substring(14, 16));
-    int second = Integer.parseInt(timestamp.substring(17, 19));
-    int fraction = 0;
-    if (timestamp.length() > 20) {
-      if (timestamp.charAt(19) == '.') {
-        int endIndex;
-        if (timestamp.charAt(timestamp.length() - 1) == 'Z'
-            || timestamp.charAt(timestamp.length() - 1) == 'z') {
-          endIndex = timestamp.length() - 1;
+    try {
+      int year = Integer.parseInt(timestamp.substring(0, 4));
+      int month = Integer.parseInt(timestamp.substring(5, 7));
+      int day = Integer.parseInt(timestamp.substring(8, 10));
+      int hour = Integer.parseInt(timestamp.substring(11, 13));
+      int minute = Integer.parseInt(timestamp.substring(14, 16));
+      int second = Integer.parseInt(timestamp.substring(17, 19));
+      int fraction = 0;
+      if (timestamp.length() > 20) {
+        if (timestamp.charAt(19) == '.') {
+          int endIndex;
+          if (timestamp.charAt(timestamp.length() - 1) == 'Z'
+              || timestamp.charAt(timestamp.length() - 1) == 'z') {
+            endIndex = timestamp.length() - 1;
+          } else {
+            endIndex = timestamp.length();
+          }
+          if (endIndex - 20 > 9) {
+            throw new IllegalArgumentException(invalidTimestamp);
+          }
+          fraction = Integer.parseInt(timestamp.substring(20, endIndex));
+          // Adjust the result to nanoseconds if the input length is less than 9 digits (9 -
+          // (endIndex
+          // - 20)).
+          fraction *= POWERS_OF_10[9 - (endIndex - 20)];
         } else {
-          endIndex = timestamp.length();
         }
-        if (endIndex - 20 > 9) {
-          throw new IllegalArgumentException(invalidTimestamp);
-        }
-        fraction = Integer.parseInt(timestamp.substring(20, endIndex));
-        // Adjust the result to nanoseconds if the input length is less than 9 digits (9 - (endIndex
-        // - 20)).
-        fraction *= POWERS_OF_10[9 - (endIndex - 20)];
-      } else {
       }
+      LocalDateTime ldt = LocalDateTime.of(year, month, day, hour, minute, second, fraction);
+      return ofTimeSecondsAndNanos(ldt.toEpochSecond(ZoneOffset.UTC), ldt.getNano());
+    } catch (NumberFormatException e) {
+      throw new IllegalArgumentException(invalidTimestamp, e);
     }
-    LocalDateTime ldt = LocalDateTime.of(year, month, day, hour, minute, second, fraction);
-    return ofTimeSecondsAndNanos(ldt.toEpochSecond(ZoneOffset.UTC), ldt.getNano());
   }
 
   private StringBuilder toString(StringBuilder b) {
