@@ -38,7 +38,7 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Commute time is calculated based on public transit including bus, metro,
-   * subway, etc.
+   * subway, and so on.
    * </pre>
    *
    * <code>TRANSIT = 2;</code>
@@ -92,7 +92,7 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Commute time is calculated based on public transit including bus, metro,
-   * subway, etc.
+   * subway, and so on.
    * </pre>
    *
    * <code>TRANSIT = 2;</code>
