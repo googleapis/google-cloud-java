@@ -98,10 +98,7 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
           new Callable<String>() {
             @Override
             public String call() {
-              String signedURLQuery = signedURL.getQuery();
-              if (!signedURLQuery.startsWith("GoogleAccessId=")
-                  || !signedURLQuery.contains("&Expires=")
-                  || !signedURL.getQuery().contains("&Signature=")) {
+              if (!isValidSignedURL(signedURL.getQuery())) {
                 throw new StorageException(2, "invalid signedURL");
               }
               return options.getStorageRpcV1().open(signedURL.toString());
@@ -113,6 +110,26 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
+  }
+
+  private static boolean isValidSignedURL(String signedURLQuery) {
+    boolean isValid = true;
+    if (signedURLQuery.startsWith("X-Goog-Algorithm=")) {
+      if (!signedURLQuery.contains("&X-Goog-Credential=")
+          || !signedURLQuery.contains("&X-Goog-Date=")
+          || !signedURLQuery.contains("&X-Goog-Expires=")
+          || !signedURLQuery.contains("&X-Goog-SignedHeaders=")
+          || !signedURLQuery.contains("&X-Goog-Signature=")) {
+        isValid = false;
+      }
+    } else if (signedURLQuery.startsWith("GoogleAccessId=")) {
+      if (!signedURLQuery.contains("&Expires=") || !signedURLQuery.contains("&Signature=")) {
+        isValid = false;
+      }
+    } else {
+      isValid = false;
+    }
+    return isValid;
   }
 
   static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, BlobInfo> {
