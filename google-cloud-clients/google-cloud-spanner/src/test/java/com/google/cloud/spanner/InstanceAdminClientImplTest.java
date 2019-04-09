@@ -50,12 +50,12 @@ public class InstanceAdminClientImplTest {
 
   @Mock SpannerRpc rpc;
   @Mock DatabaseAdminClient dbClient;
-  SpannerImpl.InstanceAdminClientImpl client;
+  InstanceAdminClientImpl client;
 
   @Before
   public void setUp() {
     initMocks(this);
-    client = new SpannerImpl.InstanceAdminClientImpl(PROJECT_ID, rpc, dbClient);
+    client = new InstanceAdminClientImpl(PROJECT_ID, rpc, dbClient);
   }
 
   @Test
