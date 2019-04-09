@@ -40,7 +40,7 @@ public class AssetSnippets {
   static ImmutableList<ListAssetsResult> listAssets(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to search for all assets in an organization.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       ListAssetsRequest.Builder request =
           ListAssetsRequest.newBuilder().setParent(organizationName.toString());
 
@@ -48,7 +48,7 @@ public class AssetSnippets {
       ListAssetsPagedResponse response = client.listAssets(request.build());
 
       // This creates one list for all assets.  If your organization has a large number of assets
-      // this can cause out of memory issues.  You can process them batches by returning
+      // this can cause out of memory issues.  You can process them incrementally by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListAssetsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("All assets:");
@@ -69,19 +69,18 @@ public class AssetSnippets {
   static ImmutableList<ListAssetsResult> listAssetsWithFilter(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to search for all assets in an organization.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
-      ListAssetsRequest request =
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
+      ListAssetsRequest.Builder request =
           ListAssetsRequest.newBuilder()
               .setParent(organizationName.toString())
               .setFilter(
-                  "security_center_properties.resource_type=\"google.cloud.resourcemanager.Project\"")
-              .build();
+                  "security_center_properties.resource_type=\"google.cloud.resourcemanager.Project\"");
 
       // Call the API.
-      ListAssetsPagedResponse response = client.listAssets(request);
+      ListAssetsPagedResponse response = client.listAssets(request.build());
 
       // This creates one list for all assets.  If your organization has a large number of assets
-      // this can cause out of memory issues.  You can process them batches by returning
+      // this can cause out of memory issues.  You can process them incrementally by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListAssetsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("Project assets:");
@@ -104,7 +103,7 @@ public class AssetSnippets {
       OrganizationName organizationName, Instant asOf) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to search for all assets in an organization.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
 
       // Initialize the builder with the organization and filter
       ListAssetsRequest.Builder request =
@@ -121,7 +120,7 @@ public class AssetSnippets {
       ListAssetsPagedResponse response = client.listAssets(request.build());
 
       // This creates one list for all assets.  If your organization has a large number of assets
-      // this can cause out of memory issues.  You can process them batches by returning
+      // this can cause out of memory issues.  You can process them incrementally by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListAssetsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("Projects:");
@@ -146,7 +145,7 @@ public class AssetSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
 
       // Start setting up a request for to search for all assets in an organization.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       ListAssetsRequest.Builder request =
           ListAssetsRequest.newBuilder()
               .setParent(organizationName.toString())
@@ -165,7 +164,7 @@ public class AssetSnippets {
       ListAssetsPagedResponse response = client.listAssets(request.build());
 
       // This creates one list for all assets.  If your organization has a large number of assets
-      // this can cause out of memory issues.  You can process them batches by returning
+      // this can cause out of memory issues.  You can process them incrementally by returning
       // the Iterable returned response.iterateAll() directly.
       ImmutableList<ListAssetsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("Projects:");

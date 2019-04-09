@@ -37,7 +37,7 @@ public class OrganizationSnippets {
   static OrganizationSettings getOrganizationSettings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to get OrganizationSettings for.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       GetOrganizationSettingsRequest.Builder request =
           GetOrganizationSettingsRequest.newBuilder()
               .setName(organizationName.toString() + "/organizationSettings");
@@ -63,7 +63,7 @@ public class OrganizationSnippets {
   static OrganizationSettings updateOrganizationSettings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to update OrganizationSettings for.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       OrganizationSettings organizationSettings =
           OrganizationSettings.newBuilder()
               .setName(organizationName.toString() + "/organizationSettings")

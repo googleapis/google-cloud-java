@@ -48,7 +48,8 @@ public class FindingSnippets {
   // [START create_finding]
   static Finding createFinding(SourceName sourceName, String findingId) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
       // String findingId = "samplefindingid";
 
       // Use the current time as the finding "event time".
@@ -91,7 +92,8 @@ public class FindingSnippets {
   // [START create_finding_with_source_properties]
   static Finding createFindingWithSourceProperties(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
 
       // Use the current time as the finding "event time".
       Instant eventTime = Instant.now();
@@ -142,7 +144,8 @@ public class FindingSnippets {
   // [START update_finding]
   static Finding updateFinding(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // FindingName findingName = FindingName.of("123234324", "423432321", "samplefindingid2");
+      // FindingName findingName = FindingName.of(/*organization=*/"123234324",
+      // /*source=*/"423432321", /*findingId=*/"samplefindingid2");
 
       // Use the current time as the finding "event time".
       Instant eventTime = Instant.now();
@@ -188,7 +191,8 @@ public class FindingSnippets {
   // [START update_finding_state]
   static Finding setFindingState(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // FindingName findingName = FindingName.of("123234324", "423432321", "samplefindingid2");
+      // FindingName findingName = FindingName.of(/*organization=*/"123234324",
+      // /*source=*/"423432321", /*findingId=*/"samplefindingid2");
 
       // Use the current time as the finding "event time".
       Instant eventTime = Instant.now();
@@ -218,7 +222,7 @@ public class FindingSnippets {
   // [START list_all_findings]
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       // "-" Indicates listing across all sources.
       SourceName sourceName = SourceName.of(organizationName.getOrganization(), "-");
 
@@ -229,9 +233,8 @@ public class FindingSnippets {
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
       // This creates one list for all findings.  If your organization has a large number of
-      // findings
-      // this can cause out of memory issues.  You can process them batches by returning
-      // the Iterable returned response.iterateAll() directly.
+      // findings this can cause out of memory issues.  You can process them in incrementally
+      // by returning the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("Findings:");
       System.out.println(results);
@@ -250,7 +253,8 @@ public class FindingSnippets {
   // [START list_filtered_findings]
   static ImmutableList<ListFindingsResult> listFilteredFindings(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*org_id=*/"123234324", /*source_id=*/"423432321");
+      // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
+      // /*sourceId=*/"423432321");
 
       // Create filter to category of MEDIUM_RISK_ONE
       String filter = "category=\"MEDIUM_RISK_ONE\"";
@@ -261,10 +265,9 @@ public class FindingSnippets {
       // Call the API.
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
-      // This creates one list for all findings in the filter.If your organization has a large
-      // number of
-      // findings this can cause out of memory issues.  You can process them batches by returning
-      // the Iterable returned response.iterateAll() directly.
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings this can cause out of memory issues.  You can process them in incrementally
+      // by returning the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("Findings:");
       System.out.println(results);
@@ -283,7 +286,8 @@ public class FindingSnippets {
   // [START list_findings_at_time]
   static ImmutableList<ListFindingsResult> listFindingsAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*org_id=*/"123234324", /*source_id=*/"423432321");
+      // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
+      // /*sourceId=*/"423432321");
 
       // 5 days ago
       Instant fiveDaysAgo = Instant.now().minus(Duration.ofDays(5));
@@ -299,10 +303,9 @@ public class FindingSnippets {
       // Call the API.
       ListFindingsPagedResponse response = client.listFindings(request.build());
 
-      // This creates one list for all findings in the filter.If your organization has a large
-      // number of
-      // findings this can cause out of memory issues.  You can process them batches by returning
-      // the Iterable returned response.iterateAll() directly.
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings this can cause out of memory issues.  You can process them in incrementally
+      // by returning the Iterable returned response.iterateAll() directly.
       ImmutableList<ListFindingsResult> results = ImmutableList.copyOf(response.iterateAll());
       System.out.println("Findings:");
       System.out.println(results);
@@ -322,7 +325,8 @@ public class FindingSnippets {
   // [START test_iam_permissions]
   static TestIamPermissionsResponse testIamPermissions(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // SourceName sourceName = SourceName.of(/*org_id=*/"123234324", /*source_id=*/"423432321");
+      // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
+      // /*sourceId=*/"423432321");
 
       // Iam permission to test.
       ArrayList permissionsToTest = new ArrayList<>();

@@ -51,7 +51,7 @@ public class ITAssetSnippets {
 
   @Test
   public void testListAssetsNoFilterOrDate() {
-    assertTrue(59 >= AssetSnippets.listAssets(getOrganizationId()).size());
+    assertTrue(59 <= AssetSnippets.listAssets(getOrganizationId()).size());
   }
 
   @Test

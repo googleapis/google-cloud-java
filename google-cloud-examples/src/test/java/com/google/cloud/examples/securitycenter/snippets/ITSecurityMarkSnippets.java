@@ -20,6 +20,7 @@ import static junit.framework.TestCase.assertTrue;
 
 import com.google.cloud.securitycenter.v1.Asset;
 import com.google.cloud.securitycenter.v1.Finding;
+import com.google.cloud.securitycenter.v1.FindingName;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SourceName;
 import java.io.IOException;
@@ -63,7 +64,7 @@ public class ITSecurityMarkSnippets {
   @Test
   public void testAddToFinding() throws IOException {
     assertTrue(
-        SecurityMarkSnippets.addToFinding(FINDING.getName())
+        SecurityMarkSnippets.addToFinding(FindingName.parse(FINDING.getName()))
             .getMarksOrThrow("key_a")
             .equals("value_a"));
   }

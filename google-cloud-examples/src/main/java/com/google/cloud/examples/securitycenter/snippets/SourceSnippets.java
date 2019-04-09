@@ -45,7 +45,7 @@ public class SourceSnippets {
   static Source createSource(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to create a source in an organization.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       Source source =
           Source.newBuilder()
               .setDisplayName("Customized Display Name")
@@ -75,7 +75,7 @@ public class SourceSnippets {
   static ImmutableList<Source> listSources(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to list sources in an organization.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       ListSourcesRequest.Builder request =
           ListSourcesRequest.newBuilder().setParent(organizationName.toString());
 
@@ -104,7 +104,8 @@ public class SourceSnippets {
   static Source updateSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to update a source.
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
       Source source =
           Source.newBuilder()
               .setDisplayName("Updated Display Name")
@@ -135,7 +136,8 @@ public class SourceSnippets {
   static Source getSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to get a source.
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
       GetSourceRequest.Builder request =
           GetSourceRequest.newBuilder().setName(sourceName.toString());
 
@@ -194,7 +196,8 @@ public class SourceSnippets {
   static Policy getIamPolicySource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to get IAM policy for a source.
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder().setResource(sourceName.toString()).build();
 

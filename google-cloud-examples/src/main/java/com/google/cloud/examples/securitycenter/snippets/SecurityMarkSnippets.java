@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.securitycenter.snippets;
 
+import com.google.cloud.securitycenter.v1.FindingName;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
@@ -43,7 +44,7 @@ public class SecurityMarkSnippets {
   // [START add_to_asset]
   static SecurityMarks addToAsset(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // asset_name = "organizations/123123342/assets/12312321";
+      // String assetName = "organizations/123123342/assets/12312321";
       // Start setting up a request to add security marks for an asset.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
 
@@ -81,7 +82,7 @@ public class SecurityMarkSnippets {
    */
   // [START clear_from_asset]
   static SecurityMarks clearFromAsset(String assetName) {
-    // asset_name = "organizations/123123342/assets/12312321";
+    // String assetName = "organizations/123123342/assets/12312321";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to clear security marks for an asset.
       // Create security mark and field mask for clearing security marks.
@@ -115,7 +116,7 @@ public class SecurityMarkSnippets {
    */
   // [START delete_and_update_marks]
   static SecurityMarks deleteAndUpdateMarks(String assetName) {
-    // asset_name = "organizations/123123342/assets/12312321";
+    // String assetName = "organizations/123123342/assets/12312321";
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to clear and update security marks for an asset.
       // Create security mark and field mask for clearing security marks.
@@ -151,8 +152,9 @@ public class SecurityMarkSnippets {
    * @param findingName The finding resource path to add the security mark for.
    */
   // [START add_to_finding]
-  static SecurityMarks addToFinding(String findingName) {
-    // finding_name = "organizations/1112/sources/1234/findings/findingid";
+  static SecurityMarks addToFinding(FindingName findingName) {
+    // FindingName findingName = FindingName.of(/*organization=*/"123234324",
+    // /*source=*/"423432321", /*findingId=*/"samplefindingid2");
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to add security marks for a finding.
       ImmutableMap markMap = ImmutableMap.of("key_a", "value_a", "key_b", "value_b");
@@ -194,7 +196,7 @@ public class SecurityMarkSnippets {
       OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to list all assets filtered by a specific security mark.
-      // OrganizationName organizationName = OrganizationName.of("123234324");
+      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
               .setParent(organizationName.toString())
@@ -226,8 +228,9 @@ public class SecurityMarkSnippets {
   static ImmutableList<ListFindingsResult> listFindingsWithQueryMarks(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to list all findings filtered by a specific security mark.
-      // SourceName sourceName = SourceName.of("123234324", "423432321");
-      // Create filter for NOT security_mark key_a=value_a
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
+
       String filter = "NOT security_marks.marks.key_a=\"value_a\"";
 
       ListFindingsRequest.Builder request =
