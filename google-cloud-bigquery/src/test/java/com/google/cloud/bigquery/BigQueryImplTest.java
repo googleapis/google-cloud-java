@@ -228,6 +228,128 @@ public class BigQueryImplTest {
   private static final BigQuery.TableOption TABLE_OPTION_FIELDS =
       BigQuery.TableOption.fields(BigQuery.TableField.SCHEMA, BigQuery.TableField.ETAG);
 
+  // Table list partitions
+  private static final Field PROJECT_ID_FIELD =
+      Field.newBuilder("project_id", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build();
+  private static final Field DATASET_ID_FIELD =
+      Field.newBuilder("dataset_id", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build();
+  private static final Field TABLE_ID_FIELD =
+      Field.newBuilder("table_id", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build();
+  private static final Field PARTITION_ID_FIELD =
+      Field.newBuilder("partition_id", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field CREATION_TIME_FIELD =
+      Field.newBuilder("creation_time", LegacySQLTypeName.INTEGER)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field CREATION_TIMESTAMP_FIELD =
+      Field.newBuilder("creation_timestamp", LegacySQLTypeName.TIMESTAMP)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field LAST_MODIFIED_FIELD =
+      Field.newBuilder("last_modified_time", LegacySQLTypeName.INTEGER)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Field LAST_MODIFIED_TIMESTAMP_FIELD =
+      Field.newBuilder("last_modified_timestamp", LegacySQLTypeName.TIMESTAMP)
+          .setMode(Field.Mode.NULLABLE)
+          .build();
+  private static final Schema SCHEMA_PARTITIONS =
+      Schema.of(
+          PROJECT_ID_FIELD,
+          DATASET_ID_FIELD,
+          TABLE_ID_FIELD,
+          PARTITION_ID_FIELD,
+          CREATION_TIME_FIELD,
+          CREATION_TIMESTAMP_FIELD,
+          LAST_MODIFIED_FIELD,
+          LAST_MODIFIED_TIMESTAMP_FIELD);
+  private static final TableDefinition TABLE_DEFINITION_PARTITIONS =
+      StandardTableDefinition.newBuilder()
+          .setSchema(SCHEMA_PARTITIONS)
+          .setNumBytes(0L)
+          .setNumLongTermBytes(0L)
+          .setNumRows(3L)
+          .setLocation("unknown")
+          .build();
+  private static final TableInfo TABLE_INFO_PARTITIONS =
+      TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION_PARTITIONS)
+          .setEtag("ETAG")
+          .setCreationTime(1553689573240L)
+          .setLastModifiedTime(1553841163438L)
+          .setNumBytes(0L)
+          .setNumLongTermBytes(0L)
+          .setNumRows(BigInteger.valueOf(3L))
+          .build();
+  private static final TableCell TABLE_CELL1_PROJECT_ID = new TableCell().setV(PROJECT);
+  private static final TableCell TABLE_CELL1_DATASET_ID = new TableCell().setV(DATASET);
+  private static final TableCell TABLE_CELL1_TABLE_ID = new TableCell().setV(TABLE);
+  private static final TableCell TABLE_CELL1_PARTITION_ID = new TableCell().setV("20190327");
+  private static final TableCell TABLE_CELL1_CREATION_TIME = new TableCell().setV("1553694932498");
+  private static final TableCell TABLE_CELL1_CREATION_TIMESTAMP =
+      new TableCell().setV("1553694932.498");
+  private static final TableCell TABLE_CELL1_LAST_MODIFIED_TIME =
+      new TableCell().setV("1553694932989");
+  private static final TableCell TABLE_CELL1_LAST_MODIFIED_TIMESTAMP =
+      new TableCell().setV("1553694932.989");
+
+  private static final TableCell TABLE_CELL2_PARTITION_ID = new TableCell().setV("20190328");
+  private static final TableCell TABLE_CELL2_CREATION_TIME = new TableCell().setV("1553754224760");
+  private static final TableCell TABLE_CELL2_CREATION_TIMESTAMP =
+      new TableCell().setV("1553754224.76");
+  private static final TableCell TABLE_CELL2_LAST_MODIFIED_TIME =
+      new TableCell().setV("1553754225587");
+  private static final TableCell TABLE_CELL2_LAST_MODIFIED_TIMESTAMP =
+      new TableCell().setV("1553754225.587");
+
+  private static final TableCell TABLE_CELL3_PARTITION_ID = new TableCell().setV("20190329");
+  private static final TableCell TABLE_CELL3_CREATION_TIME = new TableCell().setV("1553841162879");
+  private static final TableCell TABLE_CELL3_CREATION_TIMESTAMP =
+      new TableCell().setV("1553841162.879");
+  private static final TableCell TABLE_CELL3_LAST_MODIFIED_TIME =
+      new TableCell().setV("1553841163438");
+  private static final TableCell TABLE_CELL3_LAST_MODIFIED_TIMESTAMP =
+      new TableCell().setV("1553841163.438");
+
+  private static final TableDataList TABLE_DATA_WITH_PARTITIONS =
+      new TableDataList()
+          .setTotalRows(3L)
+          .setRows(
+              ImmutableList.of(
+                  new TableRow()
+                      .setF(
+                          ImmutableList.of(
+                              TABLE_CELL1_PROJECT_ID,
+                              TABLE_CELL1_DATASET_ID,
+                              TABLE_CELL1_TABLE_ID,
+                              TABLE_CELL1_PARTITION_ID,
+                              TABLE_CELL1_CREATION_TIME,
+                              TABLE_CELL1_CREATION_TIMESTAMP,
+                              TABLE_CELL1_LAST_MODIFIED_TIME,
+                              TABLE_CELL1_LAST_MODIFIED_TIMESTAMP)),
+                  new TableRow()
+                      .setF(
+                          ImmutableList.of(
+                              TABLE_CELL1_PROJECT_ID,
+                              TABLE_CELL1_DATASET_ID,
+                              TABLE_CELL1_TABLE_ID,
+                              TABLE_CELL2_PARTITION_ID,
+                              TABLE_CELL2_CREATION_TIME,
+                              TABLE_CELL2_CREATION_TIMESTAMP,
+                              TABLE_CELL2_LAST_MODIFIED_TIME,
+                              TABLE_CELL2_LAST_MODIFIED_TIMESTAMP)),
+                  new TableRow()
+                      .setF(
+                          ImmutableList.of(
+                              TABLE_CELL1_PROJECT_ID,
+                              TABLE_CELL1_DATASET_ID,
+                              TABLE_CELL1_TABLE_ID,
+                              TABLE_CELL3_PARTITION_ID,
+                              TABLE_CELL3_CREATION_TIME,
+                              TABLE_CELL3_CREATION_TIMESTAMP,
+                              TABLE_CELL3_LAST_MODIFIED_TIME,
+                              TABLE_CELL3_LAST_MODIFIED_TIMESTAMP))));
   // Table list options
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_SIZE =
       BigQuery.TableListOption.pageSize(42L);
@@ -637,6 +759,20 @@ public class BigQueryImplTest {
     bigquery = options.getService();
     Table table = bigquery.getTable(DATASET, TABLE);
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
+  }
+
+  @Test
+  public void testListPartition() {
+    EasyMock.expect(
+            bigqueryRpcMock.getTable(
+                PROJECT, DATASET, "table$__PARTITIONS_SUMMARY__", EMPTY_RPC_OPTIONS))
+        .andReturn(TABLE_INFO_PARTITIONS.toPb());
+    EasyMock.expect(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .andReturn(TABLE_DATA_WITH_PARTITIONS);
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    List<String> partition = bigquery.listPartitions(TABLE_ID_WITH_PROJECT);
+    assertEquals(3, partition.size());
   }
 
   @Test

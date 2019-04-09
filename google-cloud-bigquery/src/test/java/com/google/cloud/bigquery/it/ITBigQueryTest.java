@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Date;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -92,6 +93,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -638,6 +640,35 @@ public class ITBigQueryTest {
       assertTrue(found);
     } finally {
       createdPartitioningTable.delete();
+    }
+  }
+
+  @Test
+  public void testListPartitions() throws InterruptedException {
+    String tableName = "test_table_partitions";
+    Date date = Date.fromJavaUtilDate(new java.util.Date());
+    String partitionDate = date.toString().replaceAll("-", "");
+    TableId tableId = TableId.of(DATASET, tableName + "$" + partitionDate);
+    String query =
+        String.format(
+            "CREATE OR REPLACE TABLE  %s.%s ( StringField STRING )"
+                + " PARTITION BY DATE(_PARTITIONTIME) "
+                + "OPTIONS( partition_expiration_days=1)",
+            DATASET, tableName);
+    Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(query).build()));
+    job.waitFor();
+    assertTrue(job.isDone());
+    try {
+      Map<String, Object> row = new HashMap<String, Object>();
+      row.put("StringField", "StringValue");
+      InsertAllRequest request = InsertAllRequest.newBuilder(tableId).addRow(row).build();
+      InsertAllResponse response = bigquery.insertAll(request);
+      assertFalse(response.hasErrors());
+      assertEquals(0, response.getInsertErrors().size());
+      List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
+      assertEquals(1, partitions.size());
+    } finally {
+      bigquery.delete(DATASET, tableName);
     }
   }
 
