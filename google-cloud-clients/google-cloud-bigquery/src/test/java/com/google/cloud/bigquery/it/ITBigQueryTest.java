@@ -644,21 +644,20 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testListPartitions() {
+  public void testListPartitions() throws InterruptedException {
     String tableName = "test_table_partitions";
     Date date = Date.fromJavaUtilDate(new java.util.Date());
     String partitionDate = date.toString().replaceAll("-", "");
     TableId tableId = TableId.of(DATASET, tableName + "$" + partitionDate);
-    TimePartitioning timePartitioning = TimePartitioning.of(Type.DAY, EXPIRATION_MS);
-    Schema schema = Schema.of(Field.of("StringField", LegacySQLTypeName.STRING));
-    StandardTableDefinition tableDefinition =
-        StandardTableDefinition.newBuilder()
-            .setSchema(schema)
-            .setTimePartitioning(timePartitioning)
-            .build();
-    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
-    Table partitionedTable = bigquery.create(tableInfo);
-    assertNotNull(partitionedTable);
+    String query =
+        String.format(
+            "CREATE OR REPLACE TABLE  %s.%s ( StringField STRING )"
+                + " PARTITION BY DATE(_PARTITIONTIME) "
+                + "OPTIONS( partition_expiration_days=1)",
+            DATASET, tableName);
+    Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(query).build()));
+    job.waitFor();
+    assertTrue(job.isDone());
     try {
       Map<String, Object> row = new HashMap<String, Object>();
       row.put("StringField", "StringValue");
@@ -669,7 +668,7 @@ public class ITBigQueryTest {
       List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
       assertEquals(1, partitions.size());
     } finally {
-      partitionedTable.delete();
+      bigquery.delete(DATASET, tableName);
     }
   }
 
