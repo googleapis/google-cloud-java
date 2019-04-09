@@ -25,13 +25,17 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.gax.paging.Page;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
+import com.google.cloud.PageImpl;
+import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
 import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
@@ -372,6 +376,36 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INTERNAL, "Error unpacking response", e);
     }
+  }
+
+  abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
+    private String nextPageToken;
+
+    @Override
+    public Page<S> getNextPage() {
+      Paginated<T> nextPage =
+          runWithRetries(
+              new Callable<Paginated<T>>() {
+                @Override
+                public Paginated<T> call() {
+                  return getNextPage(nextPageToken);
+                }
+              });
+      this.nextPageToken = nextPage.getNextPageToken();
+      List<S> results = new ArrayList<>();
+      for (T proto : nextPage.getResults()) {
+        results.add(fromProto(proto));
+      }
+      return new PageImpl<S>(this, nextPageToken, results);
+    }
+
+    void setNextPageToken(String nextPageToken) {
+      this.nextPageToken = nextPageToken;
+    }
+
+    abstract Paginated<T> getNextPage(@Nullable String nextPageToken);
+
+    abstract S fromProto(T proto);
   }
 
   class SessionImpl implements Session {
