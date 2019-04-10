@@ -136,8 +136,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void poolClosureClosesLeakedSessions() throws Exception {
-    Session mockSession1 = mockSession();
-    Session mockSession2 = mockSession();
+    SessionImpl mockSession1 = mockSession();
+    SessionImpl mockSession2 = mockSession();
     when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
     Session session1 = pool.getReadSession();
@@ -175,7 +175,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void poolClosureFailsPendingReadWaiters() throws Exception {
     final CountDownLatch insideCreation = new CountDownLatch(1);
     final CountDownLatch releaseCreation = new CountDownLatch(1);
-    Session session1 = mockSession();
+    SessionImpl session1 = mockSession();
     final Session session2 = mockSession();
     when(client.createSession(db))
         .thenReturn(session1)
@@ -204,7 +204,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void poolClosureFailsPendingWriteWaiters() throws Exception {
     final CountDownLatch insideCreation = new CountDownLatch(1);
     final CountDownLatch releaseCreation = new CountDownLatch(1);
-    Session session1 = mockSession();
+    SessionImpl session1 = mockSession();
     final Session session2 = mockSession();
     when(client.createSession(db))
         .thenReturn(session1)
@@ -256,7 +256,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void poolClosesEvenIfPreparationFails() throws Exception {
-    Session session = mockSession();
+    SessionImpl session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     final CountDownLatch insidePrepare = new CountDownLatch(1);
     final CountDownLatch releasePrepare = new CountDownLatch(1);
@@ -284,7 +284,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void poolClosureFailsNewRequests() throws Exception {
-    Session session = mockSession();
+    SessionImpl session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     pool.getReadSession();
@@ -328,7 +328,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void prepareExceptionPropagatesToReadWriteSession() {
-    Session session = mockSession();
+    SessionImpl session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""))
         .when(session)
@@ -340,7 +340,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void getReadWriteSession() {
-    Session mockSession = mockSession();
+    SessionImpl mockSession = mockSession();
     when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
     try (Session session = pool.getReadWriteSession()) {
@@ -351,8 +351,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void getMultipleReadWriteSessions() {
-    Session mockSession1 = mockSession();
-    Session mockSession2 = mockSession();
+    SessionImpl mockSession1 = mockSession();
+    SessionImpl mockSession2 = mockSession();
     when(client.createSession(db)).thenReturn(mockSession1).thenReturn(mockSession2);
     pool = createPool();
     Session session1 = pool.getReadWriteSession();
@@ -366,7 +366,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void getMultipleConcurrentReadWriteSessions() {
     AtomicBoolean failed = new AtomicBoolean(false);
-    Session session = mockSession();
+    SessionImpl session = mockSession();
     when(client.createSession(db)).thenReturn(session);
     pool = createPool();
     int numSessions = 5;
@@ -379,8 +379,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void sessionIsPrePrepared() {
-    Session mockSession1 = mockSession();
-    Session mockSession2 = mockSession();
+    SessionImpl mockSession1 = mockSession();
+    SessionImpl mockSession2 = mockSession();
     final CountDownLatch prepareLatch = new CountDownLatch(1);
     doAnswer(
             new Answer<Void>() {
@@ -425,7 +425,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void getReadSessionFallsBackToWritePreparedSession() throws Exception {
-    Session mockSession1 = mockSession();
+    SessionImpl mockSession1 = mockSession();
     final CountDownLatch prepareLatch = new CountDownLatch(2);
     doAnswer(
             new Answer<Void>() {
@@ -460,7 +460,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
             .setMaxSessions(1)
             .setFailIfPoolExhausted()
             .build();
-    Session mockSession = mockSession();
+    SessionImpl mockSession = mockSession();
     when(client.createSession(db)).thenReturn(mockSession);
     pool = createPool();
     Session session1 = pool.getReadSession();
@@ -474,8 +474,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
 
   @Test
   public void poolWorksWhenSessionNotFound() {
-    Session mockSession1 = mockSession();
-    Session mockSession2 = mockSession();
+    SessionImpl mockSession1 = mockSession();
+    SessionImpl mockSession2 = mockSession();
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found"))
         .when(mockSession1)
         .prepareReadWriteTransaction();
@@ -492,9 +492,9 @@ public class SessionPoolTest extends BaseSessionPoolTest {
             .setMaxSessions(3)
             .setMaxIdleSessions(0)
             .build();
-    Session session1 = mockSession();
-    Session session2 = mockSession();
-    Session session3 = mockSession();
+    SessionImpl session1 = mockSession();
+    SessionImpl session2 = mockSession();
+    SessionImpl session3 = mockSession();
     final AtomicInteger numSessionClosed = new AtomicInteger();
     when(client.createSession(db)).thenReturn(session1).thenReturn(session2).thenReturn(session3);
     for (Session session : new Session[] {session1, session2, session3}) {
@@ -541,7 +541,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void keepAlive() throws Exception {
     options = SessionPoolOptions.newBuilder().setMinSessions(2).setMaxSessions(3).build();
-    Session session = mockSession();
+    SessionImpl session = mockSession();
     mockKeepAlive(session);
     // This is cheating as we are returning the same session each but it makes the verification
     // easier.
@@ -569,7 +569,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void testSessionNotFoundSingleUse() {
     Statement statement = Statement.of("SELECT 1");
-    Session closedSession = mockSession();
+    SessionImpl closedSession = mockSession();
     ReadContext closedContext = mock(ReadContext.class);
     ResultSet closedResultSet = mock(ResultSet.class);
     when(closedResultSet.next())
@@ -578,7 +578,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     when(closedContext.executeQuery(statement)).thenReturn(closedResultSet);
     when(closedSession.singleUse()).thenReturn(closedContext);
 
-    Session openSession = mockSession();
+    SessionImpl openSession = mockSession();
     ReadContext openContext = mock(ReadContext.class);
     ResultSet openResultSet = mock(ResultSet.class);
     when(openResultSet.next()).thenReturn(true, false);
@@ -597,12 +597,12 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Test
   public void testSessionNotFoundReadOnlyTransaction() {
     Statement statement = Statement.of("SELECT 1");
-    Session closedSession = mockSession();
+    SessionImpl closedSession = mockSession();
     when(closedSession.readOnlyTransaction())
         .thenThrow(
             SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found"));
 
-    Session openSession = mockSession();
+    SessionImpl openSession = mockSession();
     ReadOnlyTransaction openTransaction = mock(ReadOnlyTransaction.class);
     ResultSet openResultSet = mock(ResultSet.class);
     when(openResultSet.next()).thenReturn(true, false);
@@ -793,10 +793,10 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SpannerException sessionNotFound =
         SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
     List<Mutation> mutations = Arrays.asList(Mutation.newInsertBuilder("FOO").build());
-    Session closedSession = mockSession();
+    SessionImpl closedSession = mockSession();
     when(closedSession.write(mutations)).thenThrow(sessionNotFound);
 
-    Session openSession = mockSession();
+    SessionImpl openSession = mockSession();
     when(openSession.write(mutations)).thenReturn(Timestamp.now());
 
     when(client.createSession(db)).thenReturn(closedSession, openSession);
@@ -812,10 +812,10 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SpannerException sessionNotFound =
         SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
     List<Mutation> mutations = Arrays.asList(Mutation.newInsertBuilder("FOO").build());
-    Session closedSession = mockSession();
+    SessionImpl closedSession = mockSession();
     when(closedSession.writeAtLeastOnce(mutations)).thenThrow(sessionNotFound);
 
-    Session openSession = mockSession();
+    SessionImpl openSession = mockSession();
     when(openSession.writeAtLeastOnce(mutations)).thenReturn(Timestamp.now());
 
     when(client.createSession(db)).thenReturn(closedSession, openSession);
@@ -831,10 +831,10 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     SpannerException sessionNotFound =
         SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
     Statement statement = Statement.of("UPDATE FOO SET BAR=1 WHERE 1=1");
-    Session closedSession = mockSession();
+    SessionImpl closedSession = mockSession();
     when(closedSession.executePartitionedUpdate(statement)).thenThrow(sessionNotFound);
 
-    Session openSession = mockSession();
+    SessionImpl openSession = mockSession();
     when(openSession.executePartitionedUpdate(statement)).thenReturn(1L);
 
     when(client.createSession(db)).thenReturn(closedSession, openSession);

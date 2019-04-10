@@ -1248,7 +1248,6 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                 .asRuntimeException());
         return;
       }
-
       if (transaction == null) {
         setTransactionNotFound(request.getTransactionId(), responseObserver);
         return;

@@ -203,8 +203,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return defaultPrefetchChunks;
   }
 
-  // TODO(user): change this to return SessionImpl and modify all corresponding references.
-  Session createSession(final DatabaseId db) throws SpannerException {
+  SessionImpl createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
         optionMap(SessionOption.channelHint(random.nextLong()));
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();

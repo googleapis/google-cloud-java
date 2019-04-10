@@ -56,7 +56,7 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
    */
   public static class DatabaseClientWithClosedSessionImpl extends DatabaseClientImpl {
     private boolean invalidateNextSession = false;
-    private boolean allowSessionDelegateRecreation = true;
+    private boolean allowReplacing = true;
 
     DatabaseClientWithClosedSessionImpl(SessionPool pool) {
       super(pool);
@@ -67,9 +67,9 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
       invalidateNextSession = true;
     }
 
-    /** Sets whether invalidated sessions should be re-created or not. */
-    public void setAllowSessionDelegateRecreation(boolean allow) {
-      this.allowSessionDelegateRecreation = allow;
+    /** Sets whether invalidated sessions should be replaced or not. */
+    public void setAllowSessionReplacing(boolean allow) {
+      this.allowReplacing = allow;
     }
 
     @Override
@@ -77,12 +77,12 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
       PooledSession session = super.getReadSession();
       if (invalidateNextSession) {
         session.delegate.close();
-        session.setAllowDelegateRecreation(false);
+        session.setAllowReplacing(false);
         awaitDeleted(session.delegate);
-        session.setAllowDelegateRecreation(allowSessionDelegateRecreation);
+        session.setAllowReplacing(allowReplacing);
         invalidateNextSession = false;
       }
-      session.setAllowDelegateRecreation(allowSessionDelegateRecreation);
+      session.setAllowReplacing(allowReplacing);
       return session;
     }
 
@@ -91,12 +91,12 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
       PooledSession session = super.getReadWriteSession();
       if (invalidateNextSession) {
         session.delegate.close();
-        session.setAllowDelegateRecreation(false);
+        session.setAllowReplacing(false);
         awaitDeleted(session.delegate);
-        session.setAllowDelegateRecreation(allowSessionDelegateRecreation);
+        session.setAllowReplacing(allowReplacing);
         invalidateNextSession = false;
       }
-      session.setAllowDelegateRecreation(allowSessionDelegateRecreation);
+      session.setAllowReplacing(allowReplacing);
       return session;
     }
 

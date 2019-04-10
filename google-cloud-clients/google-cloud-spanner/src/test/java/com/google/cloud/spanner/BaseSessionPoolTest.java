@@ -25,6 +25,7 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionPool.Clock;
+import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -56,8 +57,8 @@ abstract class BaseSessionPoolTest {
     }
   }
 
-  Session mockSession() {
-    Session session = mock(Session.class);
+  SessionImpl mockSession() {
+    SessionImpl session = mock(SessionImpl.class);
     when(session.getName())
         .thenReturn(
             "projects/dummy/instances/dummy/database/dummy/sessions/session" + sessionIndex);

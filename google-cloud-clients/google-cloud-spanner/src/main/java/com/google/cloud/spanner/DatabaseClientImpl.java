@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.SessionPool.PooledSession;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.opencensus.common.Scope;
@@ -47,6 +48,16 @@ class DatabaseClientImpl implements DatabaseClient {
 
   PooledSession getReadWriteSession() {
     return pool.getReadWriteSession();
+  }
+
+  @VisibleForTesting
+  int getNumberOfAvailableReadSessions() {
+    return pool.getNumberOfAvailableReadSessions();
+  }
+
+  @VisibleForTesting
+  int getNumberOfAvailableWritePreparedSessions() {
+    return pool.getNumberOfAvailableWritePreparedSessions();
   }
 
   @Override
@@ -207,7 +218,7 @@ class DatabaseClientImpl implements DatabaseClient {
       try {
         return callable.apply(session);
       } catch (SessionNotFoundException e) {
-        session = session.replaceReadWriteSession(e, pool);
+        session = pool.replaceReadWriteSession(e, session);
       }
     }
   }

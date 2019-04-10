@@ -68,7 +68,7 @@ public class ITClosedSessionTest {
 
   @Before
   public void setup() {
-    client.setAllowSessionDelegateRecreation(true);
+    client.setAllowSessionReplacing(true);
   }
 
   @Test
@@ -87,7 +87,7 @@ public class ITClosedSessionTest {
   @Test
   public void testSingleUseNoRecreation() {
     // This should trigger an exception with code NOT_FOUND and the text 'Session not found'.
-    client.setAllowSessionDelegateRecreation(false);
+    client.setAllowSessionReplacing(false);
     client.invalidateNextSession();
     expectedException.expect(SessionNotFoundException.class);
     try (ResultSet rs = Statement.of("SELECT 1").executeQuery(client.singleUse())) {
@@ -162,7 +162,7 @@ public class ITClosedSessionTest {
 
   @Test
   public void testReadOnlyTransactionNoRecreation() {
-    client.setAllowSessionDelegateRecreation(false);
+    client.setAllowSessionReplacing(false);
     client.invalidateNextSession();
     expectedException.expect(SessionNotFoundException.class);
     try (ReadOnlyTransaction txn = client.readOnlyTransaction()) {
@@ -214,7 +214,7 @@ public class ITClosedSessionTest {
 
   @Test
   public void testReadWriteTransactionNoRecreation() {
-    client.setAllowSessionDelegateRecreation(false);
+    client.setAllowSessionReplacing(false);
     client.invalidateNextSession();
     expectedException.expect(SessionNotFoundException.class);
     TransactionRunner txn = client.readWriteTransaction();
@@ -258,7 +258,7 @@ public class ITClosedSessionTest {
 
   @Test
   public void testTransactionManagerNoRecreation() throws InterruptedException {
-    client.setAllowSessionDelegateRecreation(false);
+    client.setAllowSessionReplacing(false);
     client.invalidateNextSession();
     expectedException.expect(SessionNotFoundException.class);
     try (TransactionManager manager = client.transactionManager()) {
