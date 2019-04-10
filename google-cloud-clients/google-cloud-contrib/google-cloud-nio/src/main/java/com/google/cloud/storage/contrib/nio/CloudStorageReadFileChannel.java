@@ -85,7 +85,8 @@ class CloudStorageReadFileChannel extends FileChannel {
   }
 
   @Override
-  public synchronized long transferTo(long transferFromPosition, long count, WritableByteChannel target) throws IOException {
+  public synchronized long transferTo(
+      long transferFromPosition, long count, WritableByteChannel target) throws IOException {
     long res = 0L;
     long originalPosition = position();
     position(transferFromPosition);

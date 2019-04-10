@@ -112,7 +112,8 @@ class CloudStorageWriteFileChannel extends FileChannel {
   }
 
   @Override
-  public synchronized long transferFrom(ReadableByteChannel src, long position, long count) throws IOException {
+  public synchronized long transferFrom(ReadableByteChannel src, long position, long count)
+      throws IOException {
     if (position != position()) {
       throw new UnsupportedOperationException(
           "This FileChannel only supports transferFrom at the current position");
