@@ -41,9 +41,8 @@ public interface ListProfilesRequestOrBuilder
    * <pre>
    * Optional.
    * The token that specifies the current offset (that is, starting result).
-   * Please set the value to
-   * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
-   * to continue the list.
+   * Please set the value to [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token] to
+   * continue the list.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -55,9 +54,8 @@ public interface ListProfilesRequestOrBuilder
    * <pre>
    * Optional.
    * The token that specifies the current offset (that is, starting result).
-   * Please set the value to
-   * [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token]
-   * to continue the list.
+   * Please set the value to [ListProfilesResponse.next_page_token][google.cloud.talent.v4beta1.ListProfilesResponse.next_page_token] to
+   * continue the list.
    * </pre>
    *
    * <code>string page_token = 2;</code>

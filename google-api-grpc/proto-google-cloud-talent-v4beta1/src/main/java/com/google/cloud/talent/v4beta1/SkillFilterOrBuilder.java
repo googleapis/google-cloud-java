@@ -13,7 +13,7 @@ public interface SkillFilterOrBuilder
    *
    * <pre>
    * Required.
-   * The skill name. For example, "java", "j2ee", etc.
+   * The skill name. For example, "java", "j2ee", and so on.
    * </pre>
    *
    * <code>string skill = 1;</code>
@@ -24,7 +24,7 @@ public interface SkillFilterOrBuilder
    *
    * <pre>
    * Required.
-   * The skill name. For example, "java", "j2ee", etc.
+   * The skill name. For example, "java", "j2ee", and so on.
    * </pre>
    *
    * <code>string skill = 1;</code>

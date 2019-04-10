@@ -200,8 +200,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -211,8 +210,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -222,8 +220,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -282,12 +279,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -297,12 +292,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -349,8 +342,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only.
-   * Job entry with metadata inside
-   * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
+   * Job entry with metadata inside [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob}
@@ -490,8 +482,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -503,8 +494,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -516,8 +506,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -624,12 +613,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -649,12 +636,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-     * similar fields that most closely match a search query's keywords, if
-     * available. All HTML tags in the original fields are stripped when
-     * returned in this field, and matching query keywords are enclosed in HTML
-     * bold tags.
+     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+     * fields that most closely match a search query's keywords, if available.
+     * All HTML tags in the original fields are stripped when returned in this
+     * field, and matching query keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -928,8 +913,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only.
-     * Job entry with metadata inside
-     * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
+     * Job entry with metadata inside [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
      * </pre>
      *
      * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob}
@@ -1143,8 +1127,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1156,8 +1139,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1173,8 +1155,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1196,8 +1177,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1216,8 +1196,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1243,8 +1222,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1264,8 +1242,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1279,8 +1256,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1296,8 +1272,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified
-       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1527,12 +1502,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1552,12 +1525,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1577,12 +1548,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1600,12 +1569,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1620,12 +1587,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the
-       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
-       * similar fields that most closely match a search query's keywords, if
-       * available. All HTML tags in the original fields are stripped when
-       * returned in this field, and matching query keywords are enclosed in HTML
-       * bold tags.
+       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
+       * fields that most closely match a search query's keywords, if available.
+       * All HTML tags in the original fields are stripped when returned in this
+       * field, and matching query keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -2991,8 +2956,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -3006,8 +2970,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -3022,8 +2985,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -3036,8 +2998,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -3050,8 +3011,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4010,8 +3970,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4029,8 +3988,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4047,8 +4005,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4066,8 +4023,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4091,8 +4047,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4114,8 +4069,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4139,8 +4093,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4164,8 +4117,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4186,8 +4138,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4209,8 +4160,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4232,8 +4182,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4253,8 +4202,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4274,8 +4222,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4289,8 +4236,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4308,8 +4254,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4328,8 +4273,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4345,8 +4289,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4363,8 +4306,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;

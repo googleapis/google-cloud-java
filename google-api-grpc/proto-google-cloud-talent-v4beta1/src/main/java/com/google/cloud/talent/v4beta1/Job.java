@@ -8,9 +8,8 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * A Job resource represents a job posting (also referred to as a "job listing"
- * or "job requisition"). A job belongs to a
- * [Company][google.cloud.talent.v4beta1.Company], which is the hiring entity
- * responsible for the job.
+ * or "job requisition"). A job belongs to a [Company][google.cloud.talent.v4beta1.Company], which is the hiring
+ * entity responsible for the job.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.Job}
@@ -499,11 +498,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -516,11 +511,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -533,11 +524,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -550,11 +537,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -568,11 +551,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to provide instructions, such as "Mail your application
      * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -587,11 +566,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to provide instructions, such as "Mail your application
      * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -607,11 +582,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -624,11 +595,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -641,11 +608,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -658,11 +621,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -795,11 +754,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -814,11 +769,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -833,11 +784,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -852,11 +799,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
@@ -874,11 +817,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to provide instructions, such as "Mail your application
      * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -903,11 +842,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this field to provide instructions, such as "Mail your application
      * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -935,11 +870,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -954,11 +885,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -973,11 +900,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -992,11 +915,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but at least one of
-     * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-     * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-     * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-     * must be specified.
+     * Optional.
      * Use this URI field to direct an applicant to a website, for example to
      * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
@@ -1415,11 +1334,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1434,11 +1349,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1453,11 +1364,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1472,11 +1379,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1491,11 +1394,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1516,11 +1415,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1541,11 +1436,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1563,11 +1454,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1585,11 +1472,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
@@ -1613,11 +1496,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to provide instructions, such as "Mail your application
        * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
@@ -1642,11 +1521,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to provide instructions, such as "Mail your application
        * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
@@ -1671,11 +1546,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to provide instructions, such as "Mail your application
        * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
@@ -1698,11 +1569,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to provide instructions, such as "Mail your application
        * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
@@ -1722,11 +1589,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this field to provide instructions, such as "Mail your application
        * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
@@ -1760,11 +1623,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1779,11 +1638,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1798,11 +1653,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1817,11 +1668,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1836,11 +1683,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1861,11 +1704,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1886,11 +1725,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1908,11 +1743,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -1930,11 +1761,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional but at least one of
-       * [uris][google.cloud.talent.v4beta1.Job.ApplicationInfo.uris],
-       * [emails][google.cloud.talent.v4beta1.Job.ApplicationInfo.emails] or
-       * [instruction][google.cloud.talent.v4beta1.Job.ApplicationInfo.instruction]
-       * must be specified.
+       * Optional.
        * Use this URI field to direct an applicant to a website, for example to
        * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
@@ -2014,11 +1841,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2029,11 +1853,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2044,11 +1865,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2059,11 +1877,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2075,11 +1890,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2091,9 +1903,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2103,9 +1913,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2115,9 +1923,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2127,9 +1933,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2139,9 +1943,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2279,11 +2081,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2296,11 +2095,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2314,11 +2110,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2331,11 +2124,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2348,11 +2138,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-     * exactly matched to
-     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -2382,9 +2169,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2398,9 +2183,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2412,9 +2195,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2426,9 +2207,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2440,9 +2219,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from
-     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2882,11 +2659,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2903,11 +2677,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2924,11 +2695,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2945,11 +2713,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2972,11 +2737,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2997,11 +2759,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3024,11 +2783,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3051,11 +2807,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3076,11 +2829,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3101,11 +2851,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3126,11 +2873,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3150,11 +2894,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3174,11 +2915,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3191,11 +2929,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3212,11 +2947,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3234,11 +2966,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3252,11 +2981,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3270,11 +2996,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
-       * exactly matched to
-       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -3314,9 +3037,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3330,9 +3051,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3344,9 +3063,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3358,9 +3075,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3379,9 +3094,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3399,9 +3112,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3419,9 +3130,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3436,9 +3145,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3450,9 +3157,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3464,9 +3169,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3481,9 +3184,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3498,9 +3199,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from
-       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
-       * [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -3597,8 +3296,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3617,8 +3315,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3751,8 +3448,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3773,8 +3469,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to
-     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -4199,8 +3894,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -4221,8 +3915,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -4245,8 +3938,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -4272,8 +3964,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -4300,8 +3991,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to
-       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -4381,8 +4071,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Tenant id is optional and the default tenant is used if unspecified, for
    * example, "projects/api-test-project/jobs/1234".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-   * value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -4411,8 +4100,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Tenant id is optional and the default tenant is used if unspecified, for
    * example, "projects/api-test-project/jobs/1234".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-   * value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -4494,10 +4182,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The requisition ID, also referred to as the posting ID, is assigned by the
    * client to identify a job. This field is intended to be used by clients
    * for client identification and tracking of postings. A job isn't allowed
-   * to be created if there is another job with the same
-   * [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -4522,10 +4208,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The requisition ID, also referred to as the posting ID, is assigned by the
    * client to identify a job. This field is intended to be used by clients
    * for client identification and tracking of postings. A job isn't allowed
-   * to be created if there is another job with the same
-   * [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -4599,10 +4283,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Required.
    * The description of the job, which typically includes a multi-paragraph
    * description of the company and related information. Separate fields are
-   * provided on the job object for
-   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-   * job characteristics. Use of these separate job fields is recommended.
+   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+   * these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
@@ -4628,10 +4311,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Required.
    * The description of the job, which typically includes a multi-paragraph
    * description of the company and related information. Separate fields are
-   * provided on the job object for
-   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-   * job characteristics. Use of these separate job fields is recommended.
+   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+   * these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
@@ -4663,15 +4345,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4690,15 +4369,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4717,15 +4393,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4744,15 +4417,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-   * allowed. If the original
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-   * preserved, a custom field should be used for storage. It is also suggested
-   * to group the locations that close to each other in the same job for better
-   * search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+   * be preserved, a custom field should be used for storage. It is also
+   * suggested to group the locations that close to each other in the same job
+   * for better search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4768,9 +4438,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. At least one field within
-   * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-   * specified.
+   * Optional.
    * Job application information.
    * </pre>
    *
@@ -4783,9 +4451,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. At least one field within
-   * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-   * specified.
+   * Optional.
    * Job application information.
    * </pre>
    *
@@ -4800,9 +4466,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. At least one field within
-   * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-   * specified.
+   * Optional.
    * Job application information.
    * </pre>
    *
@@ -5391,11 +5055,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-   * detected language code based on
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-   * otherwise defaults to 'en_US'.
+   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+   * defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
@@ -5422,11 +5084,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-   * detected language code based on
-   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-   * otherwise defaults to 'en_US'.
+   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+   * defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
@@ -5505,8 +5165,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5532,8 +5191,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5561,8 +5219,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+   * field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5587,8 +5245,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general
-   * [description][google.cloud.talent.v4beta1.Job.description] field.
+   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+   * field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5615,16 +5273,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-   * the same location level as this field is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+   * in a search query within the job region finds this job posting if an
+   * exact location match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+   * is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -5637,16 +5292,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-   * example, state, country) throughout which the job is available. If this
-   * field is set, a
-   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-   * query within the job region finds this job posting if an exact location
-   * match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-   * the same location level as this field is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+   * in a search query within the job region finds this job posting if an
+   * exact location match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+   * is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -5666,9 +5318,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * The visibility of the job.
-   * Defaults to
-   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-   * if not specified.
+   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -5682,9 +5332,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * The visibility of the job.
-   * Defaults to
-   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-   * if not specified.
+   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -5853,8 +5501,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * updated with the [UpdateJob][] API. An expired job can be updated and
    * opened again by using a future expiration timestamp. Updating an expired
    * job fails if there is another existing open job with same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum of open jobs
    * count over the past week, otherwise jobs with earlier expire time are
@@ -5868,11 +5515,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include [expiry_time][], or the masks are empty meaning
-   * that every field is updated, the job posting expires after 30 days from the
-   * job's last update time. Otherwise the expiration date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [expiry_time][], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -5893,8 +5539,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * updated with the [UpdateJob][] API. An expired job can be updated and
    * opened again by using a future expiration timestamp. Updating an expired
    * job fails if there is another existing open job with same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum of open jobs
    * count over the past week, otherwise jobs with earlier expire time are
@@ -5908,11 +5553,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include [expiry_time][], or the masks are empty meaning
-   * that every field is updated, the job posting expires after 30 days from the
-   * job's last update time. Otherwise the expiration date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [expiry_time][], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -5935,8 +5579,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * updated with the [UpdateJob][] API. An expired job can be updated and
    * opened again by using a future expiration timestamp. Updating an expired
    * job fails if there is another existing open job with same
-   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum of open jobs
    * count over the past week, otherwise jobs with earlier expire time are
@@ -5950,11 +5593,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by
-   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-   * If the field masks include [expiry_time][], or the masks are empty meaning
-   * that every field is updated, the job posting expires after 30 days from the
-   * job's last update time. Otherwise the expiration date isn't updated.
+   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+   * [expiry_time][], or the masks are empty meaning that every field is
+   * updated, the job posting expires after 30 days from the job's last
+   * update time. Otherwise the expiration date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -6715,9 +6357,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Job resource represents a job posting (also referred to as a "job listing"
-   * or "job requisition"). A job belongs to a
-   * [Company][google.cloud.talent.v4beta1.Company], which is the hiring entity
-   * responsible for the job.
+   * or "job requisition"). A job belongs to a [Company][google.cloud.talent.v4beta1.Company], which is the hiring
+   * entity responsible for the job.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.Job}
@@ -7214,8 +6855,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Tenant id is optional and the default tenant is used if unspecified, for
      * example, "projects/api-test-project/jobs/1234".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7244,8 +6884,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Tenant id is optional and the default tenant is used if unspecified, for
      * example, "projects/api-test-project/jobs/1234".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7274,8 +6913,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Tenant id is optional and the default tenant is used if unspecified, for
      * example, "projects/api-test-project/jobs/1234".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7302,8 +6940,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Tenant id is optional and the default tenant is used if unspecified, for
      * example, "projects/api-test-project/jobs/1234".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7327,8 +6964,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Tenant id is optional and the default tenant is used if unspecified, for
      * example, "projects/api-test-project/jobs/1234".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
-     * value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7477,10 +7113,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The requisition ID, also referred to as the posting ID, is assigned by the
      * client to identify a job. This field is intended to be used by clients
      * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7505,10 +7139,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The requisition ID, also referred to as the posting ID, is assigned by the
      * client to identify a job. This field is intended to be used by clients
      * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7533,10 +7165,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The requisition ID, also referred to as the posting ID, is assigned by the
      * client to identify a job. This field is intended to be used by clients
      * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7559,10 +7189,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The requisition ID, also referred to as the posting ID, is assigned by the
      * client to identify a job. This field is intended to be used by clients
      * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7582,10 +7210,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The requisition ID, also referred to as the posting ID, is assigned by the
      * client to identify a job. This field is intended to be used by clients
      * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same
-     * [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7714,10 +7340,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Required.
      * The description of the job, which typically includes a multi-paragraph
      * description of the company and related information. Separate fields are
-     * provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7743,10 +7368,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Required.
      * The description of the job, which typically includes a multi-paragraph
      * description of the company and related information. Separate fields are
-     * provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7772,10 +7396,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Required.
      * The description of the job, which typically includes a multi-paragraph
      * description of the company and related information. Separate fields are
-     * provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7799,10 +7422,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Required.
      * The description of the job, which typically includes a multi-paragraph
      * description of the company and related information. Separate fields are
-     * provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7823,10 +7445,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Required.
      * The description of the job, which typically includes a multi-paragraph
      * description of the company and related information. Separate fields are
-     * provided on the job object for
-     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
-     * job characteristics. Use of these separate job fields is recommended.
+     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
+     * these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7864,15 +7485,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7891,15 +7509,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7918,15 +7533,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7945,15 +7557,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7972,15 +7581,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -8005,15 +7611,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -8038,15 +7641,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -8068,15 +7668,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -8098,15 +7695,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
-     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
-     * allowed. If the original
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
-     * preserved, a custom field should be used for storage. It is also suggested
-     * to group the locations that close to each other in the same job for better
-     * search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
+     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
+     * be preserved, a custom field should be used for storage. It is also
+     * suggested to group the locations that close to each other in the same job
+     * for better search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -8133,9 +7727,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8148,9 +7740,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8169,9 +7759,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8194,9 +7782,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8217,9 +7803,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8246,9 +7830,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8269,9 +7851,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8286,9 +7866,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -8308,9 +7886,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. At least one field within
-     * [ApplicationInfo][google.cloud.talent.v4beta1.Job.ApplicationInfo] must be
-     * specified.
+     * Optional.
      * Job application information.
      * </pre>
      *
@@ -9631,11 +9207,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9662,11 +9236,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9693,11 +9265,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9722,11 +9292,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9748,11 +9316,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
-     * detected language code based on
-     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
-     * otherwise defaults to 'en_US'.
+     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
+     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
+     * defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9919,8 +9485,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9946,8 +9511,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9973,8 +9537,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9998,8 +9561,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10020,8 +9582,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10047,8 +9608,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10073,8 +9634,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10099,8 +9660,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10123,8 +9684,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10144,8 +9705,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general
-     * [description][google.cloud.talent.v4beta1.Job.description] field.
+     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
+     * field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10170,16 +9731,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10192,16 +9750,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10216,16 +9771,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10241,16 +9793,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10269,16 +9818,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
-     * example, state, country) throughout which the job is available. If this
-     * field is set, a
-     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
-     * query within the job region finds this job posting if an exact location
-     * match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
-     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
-     * the same location level as this field is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
+     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
+     * in a search query within the job region finds this job posting if an
+     * exact location match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
+     * is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10297,9 +9843,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -10313,9 +9857,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -10331,9 +9873,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -10350,9 +9890,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -10372,9 +9910,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * The visibility of the job.
-     * Defaults to
-     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
-     * if not specified.
+     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
@@ -11009,8 +10545,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11024,11 +10559,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11049,8 +10583,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11064,11 +10597,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11095,8 +10627,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11110,11 +10641,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11145,8 +10675,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11160,11 +10689,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11192,8 +10720,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11207,11 +10734,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11246,8 +10772,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11261,11 +10786,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11294,8 +10818,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11309,11 +10832,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11336,8 +10858,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11351,11 +10872,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11382,8 +10902,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * updated with the [UpdateJob][] API. An expired job can be updated and
      * opened again by using a future expiration timestamp. Updating an expired
      * job fails if there is another existing open job with same
-     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * [company][google.cloud.talent.v4beta1.Job.name][], [language_code][] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum of open jobs
      * count over the past week, otherwise jobs with earlier expire time are
@@ -11397,11 +10916,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by
-     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
-     * If the field masks include [expiry_time][], or the masks are empty meaning
-     * that every field is updated, the job posting expires after 30 days from the
-     * job's last update time. Otherwise the expiration date isn't updated.
+     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
+     * [expiry_time][], or the masks are empty meaning that every field is
+     * updated, the job posting expires after 30 days from the job's last
+     * update time. Otherwise the expiration date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
