@@ -20,23 +20,7 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExceptionForCancellation;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
+
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.paging.Page;
@@ -48,6 +32,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
 import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
+import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.base.Preconditions;
@@ -72,6 +57,23 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
