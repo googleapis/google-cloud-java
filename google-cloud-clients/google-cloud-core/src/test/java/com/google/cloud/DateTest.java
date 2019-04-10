@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
 
 import com.google.common.testing.EqualsTester;
 import java.text.ParseException;
@@ -34,10 +35,80 @@ public class DateTest {
 
   @Test
   public void parseDate() {
-    Date date = Date.parseDate("2016-09-18");
-    assertThat(date.getYear()).isEqualTo(2016);
-    assertThat(date.getMonth()).isEqualTo(9);
-    assertThat(date.getDayOfMonth()).isEqualTo(18);
+    verifyDate("2016-09-18", 2016, 9, 18);
+    verifyDate("2000-01-01", 2000, 1, 1);
+    verifyDate("9999-12-31", 9999, 12, 31);
+    verifyDate("0001-01-01", 1, 1, 1);
+    verifyDate("2000-02-29", 2000, 2, 29); // This is a valid leap year.
+    verifyDate("1900-02-29", 1900, 2, 29); // This is NOT a valid leap year.
+    verifyDate("2001-02-29", 2001, 2, 29); // Also not a valid leap year.
+    verifyDate("2000-04-31", 2000, 4, 31); // Not a valid date.
+  }
+
+  private void verifyDate(String input, int year, int month, int day) {
+    Date date = Date.parseDate(input);
+    assertThat(date.getYear()).isEqualTo(year);
+    assertThat(date.getMonth()).isEqualTo(month);
+    assertThat(date.getDayOfMonth()).isEqualTo(day);
+  }
+
+  @Test
+  public void parseInvalidDates() {
+    parseInvalidDate("2016/09/18");
+    parseInvalidDate("2016 09 18");
+    parseInvalidDate("2016-9-18");
+    parseInvalidDate("2016-09-18T10:00");
+    parseInvalidDate("");
+    parseInvalidDate("test");
+    parseInvalidDate("aaaa-bb-cc");
+    parseInvalidDate("aaaa-01-01");
+    parseInvalidDate("2019-bb-01");
+    parseInvalidDate("2019-01-cc");
+    parseInvalidMonth("2000-13-01");
+    parseInvalidMonth("2000-00-01");
+    parseInvalidDay("2000-12-32");
+    parseInvalidDay("2000-12-00");
+    parseInvalidDate("10000-01-01");
+    parseInvalidYear("0000-01-01");
+    parseInvalidYear("-001-01-01");
+    parseInvalidMonth("0001--1-01");
+    parseInvalidDay("0001-01--1");
+  }
+
+  private void parseInvalidDate(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid date");
+    }
+  }
+
+  private void parseInvalidYear(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid year");
+    }
+  }
+
+  private void parseInvalidMonth(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid month");
+    }
+  }
+
+  private void parseInvalidDay(String input) {
+    try {
+      Date.parseDate(input);
+      fail("Expected exception");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage()).contains("Invalid day");
+    }
   }
 
   @Test
