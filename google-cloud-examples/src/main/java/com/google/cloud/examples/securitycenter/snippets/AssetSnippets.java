@@ -15,15 +15,24 @@
  */
 package com.google.cloud.examples.securitycenter.snippets;
 
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.ResourceExhaustedException;
+import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
+import com.google.cloud.securitycenter.v1.GroupResult;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
@@ -174,7 +183,134 @@ public class AssetSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END list_asset_changes_status_changes]
+  // [END list_asset_changes_status_changes]\
+
+
+  /**
+   * Groups all assets by their specified properties (e.g. type) for an organization.
+   *
+   * @param organizationName The organization to group assets for.
+   */
+  // [START group_all_assets]
+  static ImmutableList<GroupResult> groupAssets(OrganizationName organizationName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // Start setting up a request for to group all assets by type in an organization.
+      // OrganizationName organizationName = OrganizationName.of("123234324");
+      GroupAssetsRequest.Builder request =
+          GroupAssetsRequest.newBuilder()
+              .setGroupBy("security_center_properties.resource_type")
+              .setParent(organizationName.toString());
+
+      // Call the API.
+      GroupAssetsPagedResponse response = client.groupAssets(request.build());
+
+      // This creates one list for all assets.  If your organization has a large number of assets
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("All assets:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_all_assets]
+
+  /**
+   * Filters all assets by their specified properties and groups them by specified properties for an
+   * organization.
+   *
+   * @param organizationName The organization to group assets for.
+   */
+  // [START group_all_assets_with_filter]
+  static ImmutableList<GroupResult> groupAssetsWithFilter(OrganizationName organizationName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // Start setting up a request for to filter all assets by type and group them by project in an
+      // organization.
+      // OrganizationName organizationName = OrganizationName.of("123234324");
+      GroupAssetsRequest.Builder request =
+          GroupAssetsRequest.newBuilder()
+              .setFilter(
+                  "security_center_properties.resource_type=\"google.cloud.resourcemanager.Project\"")
+              .setGroupBy("security_center_properties.resource_project")
+              .setParent(organizationName.toString());
+
+      // Call the API.
+      GroupAssetsPagedResponse response = client.groupAssets(request.build());
+
+      // This creates one list for all assets.  If your organization has a large number of assets
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("All assets:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_all_assets_with_filter]
+
+  /**
+   * Groups all assets by their state_changes (ADDED/DELETED/ACTIVE) during a period of time for an
+   * organization.
+   *
+   * @param organizationName The organization to group assets for.
+   */
+  // [START group_all_assets_with_compare_duration]
+  static ImmutableList<GroupResult> groupAssetsWithCompareDuration(
+      OrganizationName organizationName, Duration duration) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // Start setting up a request for to group all assets during a period of time in an
+      // organization.
+      // OrganizationName organizationName = OrganizationName.of("123234324");
+      GroupAssetsRequest.Builder request =
+          GroupAssetsRequest.newBuilder()
+              .setGroupBy("state_change")
+              .setParent(organizationName.toString());
+      request
+          .getCompareDurationBuilder()
+          .setSeconds(duration.getSeconds())
+          .setNanos(duration.getNano());
+
+      // Call the API.
+      GroupAssetsPagedResponse response = client.groupAssets(request.build());
+
+      // This creates one list for all assets.  If your organization has a large number of assets
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("All assets:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_all_assets_with_compare_duration]
+
+  // [START run_asset_discovery]
+  static void runAssetDiscovery(OrganizationName organizationName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // Call the API.  Note calls to runAssetDiscovery are throttled if too many requests
+      // are made.
+      OperationFuture<Empty, Empty> result = client
+          .runAssetDiscoveryAsync(organizationName);
+
+
+      // Uncomment this line to wait for a certain amount of time for the asset discovery run
+      // to complete.
+      // result.get(130, TimeUnit.SECONDS);
+      System.out.println("Asset discovery runs asynchronously.");
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    } catch (ResourceExhaustedException e) {
+      System.out.println("Asset discovery run already in progress.");
+    }
+  }
+  // [END run_asset_discovery]
+
 
   public static void main(String... args) {
     String org_id = System.getenv("ORGANIZATION_ID");

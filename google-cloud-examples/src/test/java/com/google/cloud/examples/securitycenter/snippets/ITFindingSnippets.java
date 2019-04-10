@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.securitycenter.snippets;
 
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
 
@@ -26,6 +27,7 @@ import com.google.protobuf.Value;
 import java.io.IOException;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 /** Smoke tests for {@link com.google.cloud.examples.securitycenter.snippets.FindingSnippets} */
 public class ITFindingSnippets {
@@ -87,6 +89,35 @@ public class ITFindingSnippets {
         FindingSnippets.testIamPermissions(SOURCE_NAME)
             .getPermissions(0)
             .equals("securitycenter.findings.update"));
+  }
+
+  @Test
+  public void testGroupFindings() throws IOException {
+    assertTrue(FindingSnippets.groupFindings(getOrganizationId()).size() > 0);
+  }
+
+  @Test
+  public void testGroupFindingsWithSource() throws IOException {
+    assertTrue(FindingSnippets.groupFindingsWithSource(SOURCE_NAME).size() > 0);
+  }
+
+  @Test
+  public void testGroupActiveFindingsWithSource() throws IOException {
+    assertTrue(FindingSnippets.groupActiveFindingsWithSource(SOURCE_NAME).size() > 0);
+  }
+
+  @Test
+  public void testGroupActiveFindingsWithSourceAtTime() throws IOException {
+    assertEquals(0, FindingSnippets.groupActiveFindingsWithSourceAtTime(SOURCE_NAME).size());
+  }
+
+  @Test
+  public void testGroupActiveFindingsWithSourceAndCompareDuration() throws IOException {
+    assertTrue(
+        FindingSnippets.groupActiveFindingsWithSourceAndCompareDuration(
+            SOURCE_NAME, Duration.ofDays(1))
+            .size()
+            > 0);
   }
 
   private static OrganizationName getOrganizationId() {

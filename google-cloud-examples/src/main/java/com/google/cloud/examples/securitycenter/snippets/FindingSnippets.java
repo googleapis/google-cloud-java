@@ -18,10 +18,13 @@ package com.google.cloud.examples.securitycenter.snippets;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.Finding.State;
 import com.google.cloud.securitycenter.v1.FindingName;
+import com.google.cloud.securitycenter.v1.GroupFindingsRequest;
+import com.google.cloud.securitycenter.v1.GroupResult;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import com.google.cloud.securitycenter.v1.SourceName;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
@@ -33,6 +36,7 @@ import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
@@ -329,7 +333,7 @@ public class FindingSnippets {
       // /*sourceId=*/"423432321");
 
       // Iam permission to test.
-      ArrayList permissionsToTest = new ArrayList<>();
+      List<String> permissionsToTest = new ArrayList<>();
       permissionsToTest.add("securitycenter.findings.update");
 
       // Call the API.
@@ -344,4 +348,187 @@ public class FindingSnippets {
     }
   }
   // [END test_iam_permissions]
+
+  /**
+   * Group all findings under an organization across all sources by their specified properties (e.g.
+   * category).
+   *
+   * @param organizationName The organizatoin to group all findings for.
+   */
+  // [START group_all_findings]
+  static ImmutableList<GroupResult> groupFindings(OrganizationName organizationName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // OrganizationName organizationName = OrganizationName.of("123234324");
+      SourceName sourceName = SourceName.of(organizationName.getOrganization(), "-");
+
+      GroupFindingsRequest.Builder request =
+          GroupFindingsRequest.newBuilder().setParent(sourceName.toString()).setGroupBy("category");
+
+      // Call the API.
+      GroupFindingsPagedResponse response = client.groupFindings(request.build());
+
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("Findings:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_all_findings]
+
+  /**
+   * Group findings under an organization and a source by their specified properties (e.g.
+   * category).
+   *
+   * @param sourceName The source to limit the findings to.
+   */
+  // [START group_findings_with_source]
+  static ImmutableList<GroupResult> groupFindingsWithSource(SourceName sourceName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
+
+      GroupFindingsRequest.Builder request =
+          GroupFindingsRequest.newBuilder().setParent(sourceName.toString()).setGroupBy("category");
+
+      // Call the API.
+      GroupFindingsPagedResponse response = client.groupFindings(request.build());
+
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("Findings:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_findings_with_source]
+
+  /**
+   * Group active findings under an organization and a source by their specified properties (e.g.
+   * category).
+   *
+   * @param sourceName The source to limit the findings to.
+   */
+  // [START group_active_findings_with_source]
+  static ImmutableList<GroupResult> groupActiveFindingsWithSource(
+      SourceName sourceName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
+
+      GroupFindingsRequest.Builder request =
+          GroupFindingsRequest.newBuilder()
+              .setParent(sourceName.toString())
+              .setGroupBy("category")
+              .setFilter("state=\"ACTIVE\"");
+
+      // Call the API.
+      GroupFindingsPagedResponse response = client.groupFindings(request.build());
+
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("Findings:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_active_findings_with_source]
+
+  /**
+   * Group active findings under an organization and a source by their specified properties (e.g.
+   * category) at a specified time.
+   *
+   * @param sourceName The source to limit the findings to.
+   */
+  // [START group_active_findings_with_source_at_time]
+  static ImmutableList<GroupResult> groupActiveFindingsWithSourceAtTime(
+      SourceName sourceName) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
+
+      // 1 day ago
+      Instant oneDayAgo = Instant.now().minusSeconds(60 * 60 * 24);
+
+      GroupFindingsRequest.Builder request =
+          GroupFindingsRequest.newBuilder()
+              .setParent(sourceName.toString())
+              .setGroupBy("category")
+              .setFilter("state=\"ACTIVE\"")
+              .setReadTime(
+                  Timestamp.newBuilder()
+                      .setSeconds(oneDayAgo.getEpochSecond())
+                      .setNanos(oneDayAgo.getNano()));
+
+      // Call the API.
+      GroupFindingsPagedResponse response = client.groupFindings(request.build());
+
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("Findings:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_active_findings_with_source_at_time]
+
+  /**
+   * Group active findings under an organization and a source by their state_changes
+   * (ADDED/CHANGED/UNCHANGED) during a period.
+   *
+   * @param sourceName The source to limit the findings to.
+   */
+  // [START group_active_findings_with_source_and_compare_duration]
+  static ImmutableList<GroupResult> groupActiveFindingsWithSourceAndCompareDuration(
+      SourceName sourceName, Duration duration) {
+    try (SecurityCenterClient client = SecurityCenterClient.create()) {
+      // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
+      // "423432321");
+
+      GroupFindingsRequest.Builder request =
+          GroupFindingsRequest.newBuilder()
+              .setParent(sourceName.toString())
+              .setGroupBy("state_change")
+              .setFilter("state=\"ACTIVE\"");
+      request
+          .getCompareDurationBuilder()
+          .setSeconds(duration.getSeconds())
+          .setNanos(duration.getNano());
+
+      // Call the API.
+      GroupFindingsPagedResponse response = client.groupFindings(request.build());
+
+      // This creates one list for all findings.  If your organization has a large number of
+      // findings
+      // this can cause out of memory issues.  You can process them batches by returning
+      // the Iterable returned response.iterateAll() directly.
+      ImmutableList<GroupResult> results = ImmutableList.copyOf(response.iterateAll());
+      System.out.println("Findings:");
+      System.out.println(results);
+      return results;
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create client.", e);
+    }
+  }
+  // [END group_active_findings_with_source_and_compare_duration]
 }
