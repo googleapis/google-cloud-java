@@ -40,12 +40,10 @@ class CloudStorageReadFileChannel extends FileChannel {
   }
 
   @Override
-  public long read(ByteBuffer[] dsts, int offset, int length) throws IOException {
+  public synchronized long read(ByteBuffer[] dsts, int offset, int length) throws IOException {
     long res = 0L;
-    synchronized (this) {
-      for (int i = offset; i < offset + length; i++) {
-        res += readChannel.read(dsts[i]);
-      }
+    for (int i = offset; i < offset + length; i++) {
+      res += readChannel.read(dsts[i]);
     }
     return res;
   }
@@ -87,26 +85,24 @@ class CloudStorageReadFileChannel extends FileChannel {
   }
 
   @Override
-  public long transferTo(long position, long count, WritableByteChannel target) throws IOException {
+  public synchronized long transferTo(long transferFromPosition, long count, WritableByteChannel target) throws IOException {
     long res = 0L;
-    synchronized (this) {
-      long originalPosition = position();
-      position(position);
-      int blockSize = (int) Math.min(count, 0xfffffL);
-      int bytesRead = 0;
-      ByteBuffer buffer = ByteBuffer.allocate(blockSize);
-      while (res < count && bytesRead >= 0) {
+    long originalPosition = position();
+    position(transferFromPosition);
+    int blockSize = (int) Math.min(count, 0xfffffL);
+    int bytesRead = 0;
+    ByteBuffer buffer = ByteBuffer.allocate(blockSize);
+    while (res < count && bytesRead >= 0) {
+      buffer.position(0);
+      bytesRead = read(buffer);
+      if (bytesRead > 0) {
         buffer.position(0);
-        bytesRead = read(buffer);
-        if (bytesRead > 0) {
-          buffer.position(0);
-          buffer.limit(bytesRead);
-          target.write(buffer);
-          res += bytesRead;
-        }
+        buffer.limit(bytesRead);
+        target.write(buffer);
+        res += bytesRead;
       }
-      position(originalPosition);
     }
+    position(originalPosition);
     return res;
   }
 
@@ -116,14 +112,12 @@ class CloudStorageReadFileChannel extends FileChannel {
   }
 
   @Override
-  public int read(ByteBuffer dst, long position) throws IOException {
-    synchronized (this) {
-      long originalPosition = position();
-      position(position);
-      int res = readChannel.read(dst);
-      position(originalPosition);
-      return res;
-    }
+  public synchronized int read(ByteBuffer dst, long readFromPosition) throws IOException {
+    long originalPosition = position();
+    position(readFromPosition);
+    int res = readChannel.read(dst);
+    position(originalPosition);
+    return res;
   }
 
   @Override
