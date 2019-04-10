@@ -120,7 +120,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITStorageTest {
@@ -1293,7 +1292,6 @@ public class ITStorageTest {
   }
 
   @Test
-  @Ignore
   public void testRotateFromCustomerEncryptionToKmsKeyWithCustomerEncryption() {
     String sourceBlobName = "test-copy-blob-encryption-key-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
