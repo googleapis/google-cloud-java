@@ -2069,7 +2069,21 @@ public interface Storage extends Service<StorageOptions> {
   WriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
-   * accept signURL and return a channel for writing content.
+   * Accepts signed URL and return a channel for writing content.
+   *
+   * <p>Example of writing content through a writer using signed URL.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * byte[] content = "Hello, World!".getBytes(UTF_8);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+   * URL signedURL = storage.signUrl(blobInfo, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+   * try (WriteChannel writer = storage.writer(signedURL)) {
+   *    writer.write(ByteBuffer.wrap(content, 0, content.length));
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
