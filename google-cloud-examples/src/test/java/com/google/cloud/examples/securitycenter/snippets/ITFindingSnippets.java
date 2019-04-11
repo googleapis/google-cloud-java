@@ -115,8 +115,8 @@ public class ITFindingSnippets {
   public void testGroupActiveFindingsWithSourceAndCompareDuration() throws IOException {
     assertTrue(
         FindingSnippets.groupActiveFindingsWithSourceAndCompareDuration(
-            SOURCE_NAME, Duration.ofDays(1))
-            .size()
+                    SOURCE_NAME, Duration.ofDays(1))
+                .size()
             > 0);
   }
 

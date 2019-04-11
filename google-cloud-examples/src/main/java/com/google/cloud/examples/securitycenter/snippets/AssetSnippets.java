@@ -30,9 +30,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
@@ -185,7 +182,6 @@ public class AssetSnippets {
   }
   // [END list_asset_changes_status_changes]\
 
-
   /**
    * Groups all assets by their specified properties (e.g. type) for an organization.
    *
@@ -295,9 +291,7 @@ public class AssetSnippets {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Call the API.  Note calls to runAssetDiscovery are throttled if too many requests
       // are made.
-      OperationFuture<Empty, Empty> result = client
-          .runAssetDiscoveryAsync(organizationName);
-
+      OperationFuture<Empty, Empty> result = client.runAssetDiscoveryAsync(organizationName);
 
       // Uncomment this line to wait for a certain amount of time for the asset discovery run
       // to complete.
@@ -310,7 +304,6 @@ public class AssetSnippets {
     }
   }
   // [END run_asset_discovery]
-
 
   public static void main(String... args) {
     String org_id = System.getenv("ORGANIZATION_ID");

@@ -24,12 +24,9 @@ import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.common.collect.ImmutableList;
-import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintStream;
-import org.apache.commons.lang3.CharSet;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
@@ -105,10 +102,12 @@ public class ITAssetSnippets {
       PrintStream out = new PrintStream(capture);
       System.setOut(out);
       AssetSnippets.runAssetDiscovery(getOrganizationId());
-      
+
       out.flush();
-      assertTrue(capture.toString(), capture.toString().equals("Asset discovery runs asynchronously.\n") ||
-          capture.toString().equals("Asset discovery run already in progress.\n"));
+      assertTrue(
+          capture.toString(),
+          capture.toString().equals("Asset discovery runs asynchronously.\n")
+              || capture.toString().equals("Asset discovery run already in progress.\n"));
     } finally {
       System.setOut(oldStream);
     }

@@ -420,8 +420,7 @@ public class FindingSnippets {
    * @param sourceName The source to limit the findings to.
    */
   // [START group_active_findings_with_source]
-  static ImmutableList<GroupResult> groupActiveFindingsWithSource(
-      SourceName sourceName) {
+  static ImmutableList<GroupResult> groupActiveFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
       // "423432321");
@@ -456,8 +455,7 @@ public class FindingSnippets {
    * @param sourceName The source to limit the findings to.
    */
   // [START group_active_findings_with_source_at_time]
-  static ImmutableList<GroupResult> groupActiveFindingsWithSourceAtTime(
-      SourceName sourceName) {
+  static ImmutableList<GroupResult> groupActiveFindingsWithSourceAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
       // "423432321");
