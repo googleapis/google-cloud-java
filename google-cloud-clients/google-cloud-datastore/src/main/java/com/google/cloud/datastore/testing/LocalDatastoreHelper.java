@@ -78,10 +78,10 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     }
   }
 
-  private LocalDatastoreHelper(double consistency) {
+  private LocalDatastoreHelper(double consistency, int port) {
     super(
         "datastore",
-        BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
+        port > 0 ? port : BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
         PROJECT_ID_PREFIX + UUID.randomUUID().toString());
     Path tmpDirectory = null;
     try {
@@ -162,7 +162,32 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    *     consistency of non-ancestor queries; non-ancestor queries are eventually consistent.
    */
   public static LocalDatastoreHelper create(double consistency) {
-    return new LocalDatastoreHelper(consistency);
+    return create(consistency, 0);
+  }
+
+  /**
+   * Creates a local Datastore helper with the specified settings for project ID and consistency.
+   *
+   * @param consistency the fraction of Datastore writes that are immediately visible to global
+   *     queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning all writes are
+   *     immediately visible. Note that setting this to 1.0 may mask incorrect assumptions about the
+   *     consistency of non-ancestor queries; non-ancestor queries are eventually consistent.
+   * @param port the port to be used to start the emulator service. Note that setting this to 0 the
+   *     emulator will search for a free random port.
+   */
+  public static LocalDatastoreHelper create(double consistency, int port) {
+    return new LocalDatastoreHelper(consistency, port);
+  }
+
+  /**
+   * Creates a local Datastore helper with a placeholder project ID and the default consistency
+   * setting of 0.9.
+   *
+   * @param port the port to be used to start the emulator service. Note that setting this to 0 the
+   *     emulator will search for a free random port.
+   */
+  public static LocalDatastoreHelper create(int port) {
+    return new LocalDatastoreHelper(DEFAULT_CONSISTENCY, port);
   }
 
   /**
