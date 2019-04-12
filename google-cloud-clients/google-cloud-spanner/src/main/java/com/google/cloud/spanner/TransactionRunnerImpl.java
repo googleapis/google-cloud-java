@@ -23,8 +23,7 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.BackOff;
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
-import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
+import com.google.cloud.spanner.SessionImpl.SessionTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
@@ -322,7 +321,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
   public <T> T run(TransactionCallable<T> callable) {
     try (Scope s = tracer.withSpan(span)) {
       if (blockNestedTxn) {
-        SpannerImpl.hasPendingTransaction.set(Boolean.TRUE);
+        SessionImpl.hasPendingTransaction.set(Boolean.TRUE);
       }
 
       return runInternal(callable);
@@ -333,7 +332,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       // Remove threadLocal rather than set to FALSE to avoid a possible memory leak.
       // We also do this unconditionally in case a user has modified the flag when the transaction
       // was running.
-      SpannerImpl.hasPendingTransaction.remove();
+      SessionImpl.hasPendingTransaction.remove();
     }
   }
 

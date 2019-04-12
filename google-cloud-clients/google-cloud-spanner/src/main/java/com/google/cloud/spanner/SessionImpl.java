@@ -23,8 +23,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
 import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
-import com.google.cloud.spanner.SpannerImpl.PartitionedDMLTransaction;
-import com.google.cloud.spanner.SpannerImpl.TransactionContextImpl;
+import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
@@ -196,8 +195,7 @@ class SessionImpl implements Session {
   @Override
   public TransactionRunner readWriteTransaction() {
     return setActive(
-        new SpannerImpl.TransactionRunnerImpl(
-            this, spanner.getRpc(), spanner.getDefaultPrefetchChunks()));
+        new TransactionRunnerImpl(this, spanner.getRpc(), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
