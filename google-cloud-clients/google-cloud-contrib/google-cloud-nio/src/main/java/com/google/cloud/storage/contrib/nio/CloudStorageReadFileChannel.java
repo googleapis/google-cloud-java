@@ -89,22 +89,25 @@ class CloudStorageReadFileChannel extends FileChannel {
       long transferFromPosition, long count, WritableByteChannel target) throws IOException {
     long res = 0L;
     long originalPosition = position();
-    position(transferFromPosition);
-    int blockSize = (int) Math.min(count, 0xfffffL);
-    int bytesRead = 0;
-    ByteBuffer buffer = ByteBuffer.allocate(blockSize);
-    while (res < count && bytesRead >= 0) {
-      buffer.position(0);
-      bytesRead = read(buffer);
-      if (bytesRead > 0) {
+    try {
+      position(transferFromPosition);
+      int blockSize = (int) Math.min(count, 0xfffffL);
+      int bytesRead = 0;
+      ByteBuffer buffer = ByteBuffer.allocate(blockSize);
+      while (res < count && bytesRead >= 0) {
         buffer.position(0);
-        buffer.limit(bytesRead);
-        target.write(buffer);
-        res += bytesRead;
+        bytesRead = read(buffer);
+        if (bytesRead > 0) {
+          buffer.position(0);
+          buffer.limit(bytesRead);
+          target.write(buffer);
+          res += bytesRead;
+        }
       }
+      return res;
+    } finally {
+      position(originalPosition);
     }
-    position(originalPosition);
-    return res;
   }
 
   @Override
@@ -115,10 +118,13 @@ class CloudStorageReadFileChannel extends FileChannel {
   @Override
   public synchronized int read(ByteBuffer dst, long readFromPosition) throws IOException {
     long originalPosition = position();
-    position(readFromPosition);
-    int res = readChannel.read(dst);
-    position(originalPosition);
-    return res;
+    try {
+      position(readFromPosition);
+      int res = readChannel.read(dst);
+      return res;
+    } finally {
+      position(originalPosition);
+    }
   }
 
   @Override
