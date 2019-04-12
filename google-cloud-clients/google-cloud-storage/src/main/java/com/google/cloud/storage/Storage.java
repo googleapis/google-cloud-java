@@ -2092,6 +2092,27 @@ public interface Storage extends Service<StorageOptions> {
   WriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
+   * Accepts signed URL and return a channel for writing content.
+   *
+   * <p>Example of writing content through a writer using signed URL.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * byte[] content = "Hello, World!".getBytes(UTF_8);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+   * URL signedURL = storage.signUrl(blobInfo, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+   * try (WriteChannel writer = storage.writer(signedURL)) {
+   *    writer.write(ByteBuffer.wrap(content, 0, content.length));
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  WriteChannel writer(URL signedURL);
+
+  /**
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,

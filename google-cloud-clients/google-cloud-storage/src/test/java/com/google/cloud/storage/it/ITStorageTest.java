@@ -2560,4 +2560,28 @@ public class ITStorageTest {
       RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
     }
   }
+
+  @Test
+  public void testUploadUsingSignedURL() throws Exception {
+    String blobName = "test-signed-url-upload";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    assertNotNull(storage.create(blob));
+    URL signUrl =
+        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+    byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
+    try (WriteChannel writer = storage.writer(signUrl)) {
+      writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
+    }
+
+    int lengthOfDownLoadBytes = -1;
+    BlobId blobId = BlobId.of(BUCKET, blobName);
+    Blob blobToRead = storage.get(blobId);
+    try (ReadChannel reader = blobToRead.reader()) {
+      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+      lengthOfDownLoadBytes = reader.read(bytes);
+    }
+
+    assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
 }
