@@ -25,6 +25,7 @@ import static org.junit.Assert.fail;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.cloud.spanner.v1.SpannerClient;
@@ -1372,5 +1373,37 @@ public class RetryOnInvalidatedSessionTest {
       }
     }
     assertThat(attempts, is(equalTo(2)));
+  }
+
+  @Test
+  public void partitionedDml() throws InterruptedException {
+    if (failOnInvalidatedSession) {
+      expected.expect(SessionNotFoundException.class);
+    }
+    initReadWriteSessionPool();
+    invalidateSessionPool();
+    assertThat(client.executePartitionedUpdate(UPDATE_STATEMENT), is(equalTo(UPDATE_COUNT)));
+  }
+
+  @Test
+  public void write() throws InterruptedException {
+    if (failOnInvalidatedSession) {
+      expected.expect(SessionNotFoundException.class);
+    }
+    initReadWriteSessionPool();
+    invalidateSessionPool();
+    Timestamp timestamp = client.write(Arrays.asList(Mutation.delete("FOO", KeySet.all())));
+    assertThat(timestamp, is(notNullValue()));
+  }
+
+  @Test
+  public void writeAtLeastOnce() throws InterruptedException {
+    if (failOnInvalidatedSession) {
+      expected.expect(SessionNotFoundException.class);
+    }
+    initReadWriteSessionPool();
+    invalidateSessionPool();
+    Timestamp timestamp = client.writeAtLeastOnce(Arrays.asList(Mutation.delete("FOO", KeySet.all())));
+    assertThat(timestamp, is(notNullValue()));
   }
 }
