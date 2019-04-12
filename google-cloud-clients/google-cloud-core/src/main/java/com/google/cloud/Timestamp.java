@@ -200,6 +200,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
       int fraction = 0;
       if (timestamp.length() > 20) {
         if (timestamp.charAt(19) == '.') {
+          // The timestamp contains a fraction.
           int endIndex;
           if (timestamp.charAt(timestamp.length() - 1) == 'Z'
               || timestamp.charAt(timestamp.length() - 1) == 'z') {
@@ -211,11 +212,9 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
             throw new IllegalArgumentException(invalidTimestamp);
           }
           fraction = Integer.parseInt(timestamp.substring(20, endIndex));
-          // Adjust the result to nanoseconds if the input length is less than 9 digits (9 -
-          // (endIndex
-          // - 20)).
+          // Adjust the result to nanoseconds if the input length is less than 9 digits
+          // (9 - (endIndex - 20)).
           fraction *= POWERS_OF_10[9 - (endIndex - 20)];
-        } else {
         }
       }
       LocalDateTime ldt = LocalDateTime.of(year, month, day, hour, minute, second, fraction);
