@@ -294,7 +294,7 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  String open(String signURL);
+  String open(String signedURL);
 
   /**
    * Writes the provided bytes to a storage object at the provided location.
