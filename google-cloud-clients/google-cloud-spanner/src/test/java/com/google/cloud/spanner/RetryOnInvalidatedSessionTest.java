@@ -196,6 +196,7 @@ public class RetryOnInvalidatedSessionTest {
     }
     spanner =
         SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
             .setChannelProvider(channelProvider)
             .setSessionPoolOption(builder.build())
             .setCredentials(NoCredentials.getInstance())
@@ -1403,7 +1404,8 @@ public class RetryOnInvalidatedSessionTest {
     }
     initReadWriteSessionPool();
     invalidateSessionPool();
-    Timestamp timestamp = client.writeAtLeastOnce(Arrays.asList(Mutation.delete("FOO", KeySet.all())));
+    Timestamp timestamp =
+        client.writeAtLeastOnce(Arrays.asList(Mutation.delete("FOO", KeySet.all())));
     assertThat(timestamp, is(notNullValue()));
   }
 }
