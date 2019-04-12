@@ -290,7 +290,7 @@ public interface StorageRpc extends ServiceRpc {
   String open(StorageObject object, Map<Option, ?> options);
 
   /**
-   * Opens a resumable upload channel for a given signUrl.
+   * Opens a resumable upload channel for a given signedURL.
    *
    * @throws StorageException upon failure
    */
