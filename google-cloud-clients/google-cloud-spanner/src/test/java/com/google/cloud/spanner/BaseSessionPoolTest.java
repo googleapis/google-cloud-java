@@ -25,7 +25,6 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionPool.Clock;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
