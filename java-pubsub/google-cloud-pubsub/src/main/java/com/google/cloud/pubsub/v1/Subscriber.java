@@ -130,7 +130,7 @@ public class Subscriber extends AbstractApiService {
             builder
                 .flowControlSettings
                 .toBuilder()
-                .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                .setLimitExceededBehavior(LimitExceededBehavior.Block)
                 .build());
 
     this.numPullers = builder.parallelPullCount;
