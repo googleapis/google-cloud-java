@@ -389,7 +389,7 @@ public class Publisher {
    * should be invoked prior to deleting the {@link Publisher} object in order to ensure that no
    * pending messages are lost.
    */
-  public void shutdown() throws Exception {
+  public void shutdown() {
     if (shutdown.getAndSet(true)) {
       throw new IllegalStateException("Cannot shut down a publisher already shut-down.");
     }
@@ -399,7 +399,9 @@ public class Publisher {
     publishAllOutstanding();
     messagesWaiter.waitNoMessages();
     for (AutoCloseable closeable : closeables) {
-      closeable.close();
+      ExecutorAsBackgroundResource executorAsBackgroundResource =
+          (ExecutorAsBackgroundResource) closeable;
+      executorAsBackgroundResource.shutdown();
     }
     publisherStub.shutdown();
   }
@@ -411,7 +413,20 @@ public class Publisher {
    * <p>Call this method to make sure all resources are freed properly.
    */
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
-    return publisherStub.awaitTermination(duration, unit);
+    boolean isAwaited = publisherStub.awaitTermination(duration, unit);
+    if (isAwaited) {
+      for (AutoCloseable closeable : closeables) {
+        ExecutorAsBackgroundResource executorAsBackgroundResource =
+            (ExecutorAsBackgroundResource) closeable;
+        isAwaited = executorAsBackgroundResource.awaitTermination(duration, unit);
+        if (!isAwaited) {
+          return false;
+        }
+      }
+    } else {
+      return false;
+    }
+    return true;
   }
 
   private boolean hasBatchingBytes() {
