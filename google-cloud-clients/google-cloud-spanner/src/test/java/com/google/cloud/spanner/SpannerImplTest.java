@@ -20,9 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
-
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import static org.mockito.Mockito.when;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -36,6 +34,10 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)
@@ -49,7 +51,10 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    impl = new SpannerImpl(rpc, 1, spannerOptions);
+    when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    impl = new SpannerImpl(rpc, spannerOptions);
   }
 
   @Test
@@ -99,7 +104,7 @@ public class SpannerImplTest {
 
   @Test
   public void getDbclientAfterCloseThrows() {
-    SpannerImpl imp = new SpannerImpl(rpc, 1, spannerOptions);
+    SpannerImpl imp = new SpannerImpl(rpc, spannerOptions);
     Map<String, String> labels = new HashMap<>();
     labels.put("env", "dev");
     Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
@@ -124,13 +129,13 @@ public class SpannerImplTest {
   @Test
   public void exceptionIsTranslated() {
     try {
-      SpannerImpl.runWithRetries(
+      impl.runWithRetries(
           new Callable<Object>() {
             @Override
             public Void call() throws Exception {
               throw new Exception("Should be translated to SpannerException");
             }
-          });
+          }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
@@ -143,7 +148,7 @@ public class SpannerImplTest {
     // retryable.
     boolean gotExpectedException = false;
     try {
-      SpannerImpl.runWithRetries(
+      impl.runWithRetries(
           new Callable<Object>() {
             @Override
             public Void call() throws Exception {
@@ -152,7 +157,7 @@ public class SpannerImplTest {
                   "This exception should not be retryable",
                   new SSLHandshakeException("some SSL handshake exception"));
             }
-          });
+          }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
     } catch (SpannerException e) {
       gotExpectedException = true;
       assertThat(e.isRetryable(), is(false));
@@ -162,7 +167,7 @@ public class SpannerImplTest {
     assertThat(gotExpectedException, is(true));
 
     // Verify that any other SpannerException with code UNAVAILABLE is retryable.
-    SpannerImpl.runWithRetries(
+    impl.runWithRetries(
         new Callable<Object>() {
           private boolean firstTime = true;
 
@@ -179,6 +184,6 @@ public class SpannerImplTest {
             }
             return null;
           }
-        });
+        }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 }

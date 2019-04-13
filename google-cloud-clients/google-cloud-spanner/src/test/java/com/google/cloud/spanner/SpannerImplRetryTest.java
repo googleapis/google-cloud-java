@@ -18,7 +18,11 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import io.grpc.Context;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
@@ -32,10 +36,13 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.threeten.bp.Duration;
 
 /** Unit tests for {@link SpannerImpl#runWithRetries}. */
 @RunWith(JUnit4.class)
 public class SpannerImplRetryTest {
+  private static final String PROJECT_ID = "Test-Project";
+
   interface StringCallable extends Callable<String> {
     @Override
     String call();
@@ -55,18 +62,26 @@ public class SpannerImplRetryTest {
   }
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
-
+  SpannerImpl spanner;
   StringCallable callable;
 
   @Before
   public void setUp() {
     callable = Mockito.mock(StringCallable.class);
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setCredentials(NoCredentials.getInstance())
+            .setProjectId(PROJECT_ID)
+            .build();
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    spanner = new SpannerImpl(rpc, options);
   }
 
   @Test
   public void ok() {
     Mockito.when(callable.call()).thenReturn("r");
-    assertThat(SpannerImpl.runWithRetries(callable)).isEqualTo("r");
+    assertThat(spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES))
+        .isEqualTo("r");
   }
 
   @Test
@@ -74,7 +89,7 @@ public class SpannerImplRetryTest {
     Mockito.when(callable.call())
         .thenThrow(new NonRetryableException(ErrorCode.FAILED_PRECONDITION, "Failed by test"));
     expectedException.expect(isSpannerException(ErrorCode.FAILED_PRECONDITION));
-    SpannerImpl.runWithRetries(callable);
+    spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Test
@@ -84,7 +99,8 @@ public class SpannerImplRetryTest {
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #2"))
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #3"))
         .thenReturn("r");
-    assertThat(SpannerImpl.runWithRetries(callable)).isEqualTo("r");
+    assertThat(spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES))
+        .isEqualTo("r");
   }
 
   @Test
@@ -95,43 +111,63 @@ public class SpannerImplRetryTest {
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #3"))
         .thenThrow(new NonRetryableException(ErrorCode.FAILED_PRECONDITION, "Failed by test"));
     expectedException.expect(isSpannerException(ErrorCode.FAILED_PRECONDITION));
-    SpannerImpl.runWithRetries(callable);
+    spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Test
   public void contextCancelled() {
-    Mockito.when(callable.call())
-        .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #1"));
-    Context.CancellableContext context = Context.current().withCancellation();
-    Runnable work =
-        context.wrap(
-            new Runnable() {
-              @Override
-              public void run() {
-                SpannerImpl.runWithRetries(callable);
-              }
-            });
-    context.cancel(new RuntimeException("Cancelled by test"));
-    expectedException.expect(isSpannerException(ErrorCode.CANCELLED));
-    work.run();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setCredentials(NoCredentials.getInstance())
+            .setProjectId(PROJECT_ID)
+            .setRetrySettings(
+                RetrySettings.newBuilder().setTotalTimeout(Duration.ofMillis(5L)).build())
+            .build();
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    try (SpannerImpl contextSpanner = new SpannerImpl(rpc, options)) {
+      Mockito.when(callable.call())
+          .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #1"));
+      Context.CancellableContext context = Context.current().withCancellation();
+      Runnable work =
+          context.wrap(
+              new Runnable() {
+                @Override
+                public void run() {
+                  contextSpanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+                }
+              });
+      context.cancel(new RuntimeException("Cancelled by test"));
+      expectedException.expect(isSpannerException(ErrorCode.CANCELLED));
+      work.run();
+    }
   }
 
   @Test
   public void contextDeadlineExceeded() {
-    ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-    Context.CancellableContext context =
-        Context.current().withDeadlineAfter(10, TimeUnit.NANOSECONDS, executor);
-    Mockito.when(callable.call())
-        .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #1"));
-    Runnable work =
-        context.wrap(
-            new Runnable() {
-              @Override
-              public void run() {
-                SpannerImpl.runWithRetries(callable);
-              }
-            });
-    expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    work.run();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setCredentials(NoCredentials.getInstance())
+            .setProjectId(PROJECT_ID)
+            .setRetrySettings(
+                RetrySettings.newBuilder().setTotalTimeout(Duration.ofMillis(5L)).build())
+            .build();
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    try (SpannerImpl contextSpanner = new SpannerImpl(rpc, options)) {
+      ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+      Context.CancellableContext context =
+          Context.current().withDeadlineAfter(10, TimeUnit.MILLISECONDS, executor);
+      Mockito.when(callable.call())
+          .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #1"));
+      Runnable work =
+          context.wrap(
+              new Runnable() {
+                @Override
+                public void run() {
+                  contextSpanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+                }
+              });
+      expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
+      work.run();
+    }
   }
 }

@@ -24,7 +24,6 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.SpannerImpl.PageFetcher;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Empty;
@@ -38,11 +37,11 @@ import javax.annotation.Nullable;
 /** Default implementation of {@link DatabaseAdminClient}. */
 class DatabaseAdminClientImpl implements DatabaseAdminClient {
   private final String projectId;
-  private final SpannerRpc rpc;
+  private final SpannerImpl spanner;
 
-  DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
+  DatabaseAdminClientImpl(String projectId, SpannerImpl spanner) {
     this.projectId = projectId;
-    this.rpc = rpc;
+    this.spanner = spanner;
   }
 
   /** Generates a random operation id for long-running database operations. */
@@ -58,7 +57,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
     String instanceName = getInstanceName(instanceId);
     String createStatement = "CREATE DATABASE `" + databaseId + "`";
     OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
-        rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
+        rawOperationFuture = spanner.getRpc().createDatabase(instanceName, createStatement, statements);
     return new OperationFutureImpl<Database, CreateDatabaseMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),
@@ -88,10 +87,10 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
         new Callable<Database>() {
           @Override
           public Database call() throws Exception {
-            return Database.fromProto(rpc.getDatabase(dbName), DatabaseAdminClientImpl.this);
+            return Database.fromProto(spanner.getRpc().getDatabase(dbName), DatabaseAdminClientImpl.this);
           }
         };
-    return SpannerImpl.runWithRetries(callable);
+    return spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Override
@@ -104,7 +103,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
     final String dbName = getDatabaseName(instanceId, databaseId);
     final String opId = operationId != null ? operationId : randomOperationId();
     OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
-        rpc.updateDatabaseDdl(dbName, statements, opId);
+        spanner.getRpc().updateDatabaseDdl(dbName, statements, opId);
     return new OperationFutureImpl<Void, UpdateDatabaseDdlMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),
@@ -131,11 +130,11 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
         new Callable<Void>() {
           @Override
           public Void call() throws Exception {
-            rpc.dropDatabase(dbName);
+            spanner.getRpc().dropDatabase(dbName);
             return null;
           }
         };
-    SpannerImpl.runWithRetries(callable);
+    spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Override
@@ -145,10 +144,10 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
         new Callable<List<String>>() {
           @Override
           public List<String> call() throws Exception {
-            return rpc.getDatabaseDdl(dbName);
+            return spanner.getRpc().getDatabaseDdl(dbName);
           }
         };
-    return SpannerImpl.runWithRetries(callable);
+    return spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Override
@@ -159,11 +158,11 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
         !listOptions.hasFilter(), "Filter option is not support by" + "listDatabases");
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     PageFetcher<Database, com.google.spanner.admin.database.v1.Database> pageFetcher =
-        new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>() {
+        new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>(spanner, SpannerImpl.DEFAULT_RETRY_ERROR_CODES) {
           @Override
           public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
               String nextPageToken) {
-            return rpc.listDatabases(instanceName, pageSize, nextPageToken);
+            return spanner.getRpc().listDatabases(instanceName, pageSize, nextPageToken);
           }
 
           @Override

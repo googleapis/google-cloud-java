@@ -17,18 +17,10 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.anyMap;
-import static org.mockito.Mockito.eq;
+import static org.mockito.Matchers.anyMap;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
-
-import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.protobuf.ByteString;
-import com.google.protobuf.util.Timestamps;
-import com.google.spanner.v1.BeginTransactionRequest;
-import com.google.spanner.v1.Session;
-import com.google.spanner.v1.Transaction;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,6 +30,15 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.util.Timestamps;
+import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.Session;
+import com.google.spanner.v1.Transaction;
 
 /** Unit tests for {@link com.google.cloud.spanner.BatchClientImpl}. */
 @RunWith(JUnit4.class)
@@ -59,8 +60,10 @@ public final class BatchClientImplTest {
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = new SpannerImpl(gapicRpc, 1, spannerOptions);
-    client = new BatchClientImpl(db, spanner);
+    when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);    client = new BatchClientImpl(db, spanner);
   }
 
   @Test
