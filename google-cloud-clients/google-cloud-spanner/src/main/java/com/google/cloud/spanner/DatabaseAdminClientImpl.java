@@ -90,7 +90,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
             return Database.fromProto(spanner.getRpc().getDatabase(dbName), DatabaseAdminClientImpl.this);
           }
         };
-    return spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+    return spanner.runWithRetries(callable);
   }
 
   @Override
@@ -134,7 +134,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
             return null;
           }
         };
-    spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+    spanner.runWithRetries(callable);
   }
 
   @Override
@@ -147,7 +147,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
             return spanner.getRpc().getDatabaseDdl(dbName);
           }
         };
-    return spanner.runWithRetries(callable, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+    return spanner.runWithRetries(callable);
   }
 
   @Override
@@ -158,7 +158,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
         !listOptions.hasFilter(), "Filter option is not support by" + "listDatabases");
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     PageFetcher<Database, com.google.spanner.admin.database.v1.Database> pageFetcher =
-        new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>(spanner, SpannerImpl.DEFAULT_RETRY_ERROR_CODES) {
+        new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>(spanner) {
           @Override
           public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
               String nextPageToken) {

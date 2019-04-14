@@ -135,55 +135,10 @@ public class SpannerImplTest {
             public Void call() throws Exception {
               throw new Exception("Should be translated to SpannerException");
             }
-          }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+          });
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
     }
-  }
-
-  @Test
-  public void sslHandshakeExceptionIsNotRetryable() {
-    // Verify that a SpannerException with code UNAVAILABLE and cause SSLHandshakeException is not
-    // retryable.
-    boolean gotExpectedException = false;
-    try {
-      impl.runWithRetries(
-          new Callable<Object>() {
-            @Override
-            public Void call() throws Exception {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.UNAVAILABLE,
-                  "This exception should not be retryable",
-                  new SSLHandshakeException("some SSL handshake exception"));
-            }
-          }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
-    } catch (SpannerException e) {
-      gotExpectedException = true;
-      assertThat(e.isRetryable(), is(false));
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNAVAILABLE);
-      assertThat(e.getMessage().contains("This exception should not be retryable"));
-    }
-    assertThat(gotExpectedException, is(true));
-
-    // Verify that any other SpannerException with code UNAVAILABLE is retryable.
-    impl.runWithRetries(
-        new Callable<Object>() {
-          private boolean firstTime = true;
-
-          @Override
-          public Void call() throws Exception {
-            // Keep track of whethr this is the first call or a subsequent call to avoid an infinite
-            // loop.
-            if (firstTime) {
-              firstTime = false;
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.UNAVAILABLE,
-                  "This exception should be retryable",
-                  new Exception("some other exception"));
-            }
-            return null;
-          }
-        }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 }

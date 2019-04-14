@@ -122,7 +122,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         mutations = null;
       }
       final CommitRequest commitRequest = builder.build();
-      Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT.method, span).startSpan();
+      Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
             spanner.runWithRetries(
@@ -131,7 +131,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                   public CommitResponse call() throws Exception {
                     return spanner.getRpc().commit(commitRequest, session.getOptions());
                   }
-                }, SpannerImpl.COMMIT.retryOnErrorCodes);
+                });
 
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
@@ -245,7 +245,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return spanner.getRpc().executeQuery(builder.build(), session.getOptions());
                 }
-              }, SpannerImpl.QUERY.retryOnErrorCodes);
+              });
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -265,7 +265,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 public com.google.spanner.v1.ExecuteBatchDmlResponse call() throws Exception {
                   return spanner.getRpc().executeBatchDml(builder.build(), session.getOptions());
                 }
-              }, SpannerImpl.QUERY.retryOnErrorCodes);
+              });
       long[] results = new long[response.getResultSetsCount()];
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();

@@ -56,7 +56,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
             return InstanceConfig.fromProto(
                 spanner.getRpc().getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
           }
-        }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+        });
   }
 
   @Override
@@ -66,7 +66,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
         !listOptions.hasFilter(), "Filter option is not supported by listInstanceConfigs");
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig> pageFetcher =
-        new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>(spanner, SpannerImpl.DEFAULT_RETRY_ERROR_CODES) {
+        new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>(spanner) {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
               String nextPageToken) {
@@ -126,7 +126,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
             return Instance.fromProto(
                 spanner.getRpc().getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
           }
-        }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+        });
   }
 
   @Override
@@ -135,7 +135,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     final String filter = listOptions.filter();
     PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance> pageFetcher =
-        new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>(spanner, SpannerImpl.DEFAULT_RETRY_ERROR_CODES) {
+        new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>(spanner) {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
               String nextPageToken) {
@@ -162,7 +162,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
             spanner.getRpc().deleteInstance(new InstanceId(projectId, instanceId).getName());
             return null;
           }
-        }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+        });
   }
 
   @Override

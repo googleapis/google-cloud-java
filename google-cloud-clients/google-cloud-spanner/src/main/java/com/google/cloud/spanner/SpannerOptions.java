@@ -17,7 +17,13 @@
 package com.google.cloud.spanner;
 
 import com.google.api.core.ApiFunction;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
+import java.util.Set;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
@@ -27,6 +33,7 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -57,6 +64,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int prefetchChunks;
   private final int numChannels;
   private final ImmutableMap<String, String> sessionLabels;
+  private final SpannerStubSettings stubSettings;
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -96,6 +104,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
     sessionLabels = builder.sessionLabels;
+    try {
+      stubSettings = builder.stubSettingsBuilder.build();
+    } catch (IOException e) {
+      throw SpannerExceptionFactory.newSpannerException(e);
+    }
   }
 
   /** Builder for {@link SpannerOptions} instances. */
@@ -115,6 +128,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private ImmutableMap<String, String> sessionLabels;
+    private SpannerStubSettings.Builder stubSettingsBuilder = SpannerStubSettings.newBuilder();
 
     private Builder() {}
 
@@ -124,6 +138,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
       this.sessionLabels = options.sessionLabels;
+      this.stubSettingsBuilder = options.stubSettings.toBuilder();
       this.channelProvider = options.channelProvider;
       this.channelConfigurator = options.channelConfigurator;
       this.interceptorProvider = options.interceptorProvider;
@@ -202,6 +217,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    @Override
+    public Builder setRetrySettings(RetrySettings retrySettings) {
+      throw new UnsupportedOperationException("SpannerOptions does not support setting global retry settings. "
+          + "Call stubSettingsBuilder().<method-name>Settings().setRetrySettings(RetrySettings) instead.");
+    }
+
+    public SpannerStubSettings.Builder stubSettingsBuilder() {
+      return stubSettingsBuilder;
+    }
+
     /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
@@ -256,6 +281,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Map<String, String> getSessionLabels() {
     return sessionLabels;
+  }
+
+  public SpannerStubSettings getStubSettings() {
+    return stubSettings;
   }
 
   public int getPrefetchChunks() {

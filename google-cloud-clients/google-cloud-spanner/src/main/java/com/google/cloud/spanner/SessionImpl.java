@@ -135,7 +135,7 @@ class SessionImpl implements Session {
                 TransactionOptions.newBuilder()
                     .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
             .build();
-    Span span = tracer.spanBuilder(SpannerImpl.COMMIT.method).startSpan();
+    Span span = tracer.spanBuilder(SpannerImpl.COMMIT).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       CommitResponse response =
           spanner.runWithRetries(
@@ -144,7 +144,7 @@ class SessionImpl implements Session {
                 public CommitResponse call() throws Exception {
                   return spanner.getRpc().commit(request, options);
                 }
-              }, SpannerImpl.COMMIT.retryOnErrorCodes);
+              });
       Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
       span.end();
       return t;
@@ -206,7 +206,7 @@ class SessionImpl implements Session {
 
   @Override
   public void close() {
-    Span span = tracer.spanBuilder(SpannerImpl.DELETE_SESSION.method).startSpan();
+    Span span = tracer.spanBuilder(SpannerImpl.DELETE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       spanner.runWithRetries(
           new Callable<Void>() {
@@ -215,7 +215,7 @@ class SessionImpl implements Session {
               spanner.getRpc().deleteSession(name, options);
               return null;
             }
-          }, SpannerImpl.DELETE_SESSION.retryOnErrorCodes);
+          });
       span.end();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
@@ -224,7 +224,7 @@ class SessionImpl implements Session {
   }
 
   ByteString beginTransaction() {
-    Span span = tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION.method).startSpan();
+    Span span = tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       final BeginTransactionRequest request =
           BeginTransactionRequest.newBuilder()
@@ -240,7 +240,7 @@ class SessionImpl implements Session {
                 public Transaction call() throws Exception {
                   return spanner.getRpc().beginTransaction(request, options);
                 }
-              }, SpannerImpl.BEGIN_TRANSACTION.retryOnErrorCodes);
+              });
       if (txn.getId().isEmpty()) {
         throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
       }

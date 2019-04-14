@@ -33,27 +33,19 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
-import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
-import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
-import com.google.api.gax.retrying.DirectRetryingExecutor;
-import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
-import com.google.api.gax.retrying.ResultRetryAlgorithm;
-import com.google.api.gax.retrying.RetryAlgorithm;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.retrying.RetryingExecutor;
-import com.google.api.gax.retrying.RetryingFuture;
-import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
+import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
@@ -61,7 +53,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.Context;
@@ -79,47 +70,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Tracer tracer = Tracing.getTracer();
 
-  static final class RpcCall {
-    final String method;
-    final Set<ErrorCode> retryOnErrorCodes;
-
-    private RpcCall(String method, Set<ErrorCode> retryOnErrorCodes) {
-      this.method = method;
-      this.retryOnErrorCodes = retryOnErrorCodes;
-    }
-  }
-
-  static final Set<ErrorCode> DEFAULT_RETRY_ERROR_CODES =
-      Sets.newHashSet(ErrorCode.UNAVAILABLE, ErrorCode.DEADLINE_EXCEEDED);
-  static final Set<ErrorCode> NON_IDEMPOTENT_RETRY_ERROR_CODES =
-      Sets.newHashSet(ErrorCode.UNAVAILABLE);
-  static final RpcCall CREATE_SESSION =
-      new RpcCall("CloudSpannerOperation.CreateSession", DEFAULT_RETRY_ERROR_CODES);
-  static final RpcCall DELETE_SESSION =
-      new RpcCall("CloudSpannerOperation.DeleteSession", DEFAULT_RETRY_ERROR_CODES);
-  static final RpcCall BEGIN_TRANSACTION =
-      new RpcCall("CloudSpannerOperation.BeginTransaction", DEFAULT_RETRY_ERROR_CODES);
-  static final RpcCall COMMIT =
-      new RpcCall("CloudSpannerOperation.Commit", NON_IDEMPOTENT_RETRY_ERROR_CODES);
-  static final RpcCall QUERY =
-      new RpcCall("CloudSpannerOperation.ExecuteStreamingQuery", DEFAULT_RETRY_ERROR_CODES);
-  static final RpcCall READ =
-      new RpcCall("CloudSpannerOperation.ExecuteStreamingRead", DEFAULT_RETRY_ERROR_CODES);
+  private static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
+  static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
+  static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
+  static final String COMMIT = "CloudSpannerOperation.Commit";
+  static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
+  static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
 
   static {
-    TraceUtil.exportSpans(
-        CREATE_SESSION.method,
-        DELETE_SESSION.method,
-        BEGIN_TRANSACTION.method,
-        COMMIT.method,
-        QUERY.method,
-        READ.method);
+    TraceUtil.exportSpans(CREATE_SESSION, DELETE_SESSION, BEGIN_TRANSACTION, COMMIT, QUERY, READ);
   }
 
   private final Random random = new Random();
   private final SpannerRpc gapicRpc;
-  private final RetrySettings retrySettings;
-  private final ApiClock clock;
 
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
@@ -134,8 +97,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SpannerImpl(SpannerRpc gapicRpc, SpannerOptions options) {
     super(options);
     this.gapicRpc = gapicRpc;
-    this.retrySettings = options.getRetrySettings();
-    this.clock = options.getClock();
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), this);
     this.instanceClient = new InstanceAdminClientImpl(options.getProjectId(), this, dbAdminClient);
   }
@@ -197,24 +158,27 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private static class SpannerRetryAlgorithm<T> extends BasicResultRetryAlgorithm<T> {
-    private final Set<ErrorCode> retryOnErrorCodes;
-
-    private SpannerRetryAlgorithm(Set<ErrorCode> retryOnErrorCodes) {
-      this.retryOnErrorCodes = retryOnErrorCodes;
-    }
-
-    @Override
-    public boolean shouldRetry(Throwable prevThrowable, T prevResponse) {
-      if (prevThrowable != null) {
-        if (prevThrowable instanceof SpannerException) {
-          SpannerException spannerException = (SpannerException) prevThrowable;
-          if (retryOnErrorCodes.contains(spannerException.getErrorCode())) {
-            return spannerException.isRetryable();
-          }
-        }
+  <T> T runWithRetries(final Callable<T> callable) {
+    try {
+      return callable.call();
+    } catch (SpannerException e) {
+      throw e;
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, e.getMessage(), e);
+    } catch (RetryHelperException e) {
+      if(e.getCause() != null) {
+        Throwables.throwIfUnchecked(e.getCause());
       }
-      return false;
+      throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
+    } catch (Exception e) {
+      if(e.getCause() != null) {
+        Throwable cause = e.getCause();
+        if(cause instanceof RetryHelperException) {
+          cause = cause.getCause();
+        }
+        Throwables.throwIfUnchecked(cause);
+      }
+      throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
     }
   }
 
@@ -223,7 +187,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    *
    * <p>TODO: Consider replacing with RetryHelper from gcloud-core.
    */
-  <T> T runWithRetries(Callable<T> callable, Set<ErrorCode> retryOnErrorCodes) {
+  <T> T runWithRetries_WithContext(Callable<T> callable, Set<ErrorCode> retryOnErrorCodes) {
     // Use same backoff setting as abort, somewhat arbitrarily.
     Span span = tracer.getCurrentSpan();
     ExponentialBackOff backOff = newBackOff();
@@ -235,8 +199,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         span.addAnnotation(
             "Starting operation",
             ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-        return runWithRetries(
-            callable, retrySettings, new SpannerRetryAlgorithm<>(retryOnErrorCodes), clock);
+        return null;
+//        return runWithRetries(
+//            callable, retrySettings, new SpannerRetryAlgorithm<>(retryOnErrorCodes), clock);
       } catch (SpannerException e) {
         if (!e.isRetryable()) {
           throw e;
@@ -255,36 +220,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private static <V> V runWithRetries(
-      Callable<V> callable,
-      RetrySettings retrySettings,
-      ResultRetryAlgorithm<?> resultRetryAlgorithm,
-      ApiClock clock) {
-    try {
-      @SuppressWarnings("unchecked")
-      ResultRetryAlgorithm<V> algorithm = (ResultRetryAlgorithm<V>) resultRetryAlgorithm;
-      return run(callable, new ExponentialRetryAlgorithm(retrySettings, clock), algorithm);
-    } catch (ExecutionException e) {
-      Throwables.throwIfUnchecked(e.getCause());
-      throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e.getCause());
-    } catch (InterruptedException e) {
-      throw newSpannerException(ErrorCode.CANCELLED, "Operation cancelled.", e);
-    }
-  }
-
-  private static <V> V run(
-      Callable<V> callable,
-      TimedRetryAlgorithm timedAlgorithm,
-      ResultRetryAlgorithm<V> resultAlgorithm)
-      throws ExecutionException, InterruptedException {
-    RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
-    RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
-
-    RetryingFuture<V> retryingFuture = executor.createFuture(callable);
-    executor.submit(retryingFuture);
-    return retryingFuture.get();
-  }
-
   /** Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance. */
   SpannerRpc getRpc() {
     return gapicRpc;
@@ -298,7 +233,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SessionImpl createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
         optionMap(SessionOption.channelHint(random.nextLong()));
-    Span span = tracer.spanBuilder(CREATE_SESSION.method).startSpan();
+    Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
           runWithRetries(
@@ -308,7 +243,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   return gapicRpc.createSession(
                       db.getName(), getOptions().getSessionLabels(), options);
                 }
-              }, CREATE_SESSION.retryOnErrorCodes);
+              });
       span.end();
       return new SessionImpl(this, session.getName(), options);
     } catch (RuntimeException e) {
@@ -434,12 +369,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   /** Helper class for gRPC calls that can return paginated results. */
   abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private final SpannerImpl spanner;
-    private final Set<ErrorCode> retryOnErrorCodes;
     private String nextPageToken;
 
-    PageFetcher(SpannerImpl spanner, Set<ErrorCode> retryOnErrorCodes) {
+    PageFetcher(SpannerImpl spanner) {
       this.spanner = spanner;
-      this.retryOnErrorCodes = retryOnErrorCodes;
     }
 
     @Override
@@ -451,7 +384,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Paginated<T> call() {
                   return getNextPage(nextPageToken);
                 }
-              }, retryOnErrorCodes);
+              });
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {

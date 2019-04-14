@@ -142,7 +142,7 @@ public class BatchClientImpl implements BatchClient {
                 public PartitionResponse call() throws Exception {
                   return spanner.getRpc().partitionRead(request, options);
                 }
-              }, SpannerImpl.READ.retryOnErrorCodes);
+              });
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =
@@ -187,7 +187,7 @@ public class BatchClientImpl implements BatchClient {
                 public PartitionResponse call() throws Exception {
                   return spanner.getRpc().partitionQuery(request, options);
                 }
-              }, SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
+              });
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =

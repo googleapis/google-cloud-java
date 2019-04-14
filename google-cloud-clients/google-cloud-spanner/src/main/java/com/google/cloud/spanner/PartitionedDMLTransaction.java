@@ -57,7 +57,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
               public Transaction call() throws Exception {
                 return spanner.getRpc().beginTransaction(request, session.getOptions());
               }
-            }, SpannerImpl.BEGIN_TRANSACTION.retryOnErrorCodes);
+            });
     if (txn.getId().isEmpty()) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INTERNAL,
@@ -89,7 +89,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
               public com.google.spanner.v1.ResultSet call() throws Exception {
                 return spanner.getRpc().executeQuery(builder.build(), session.getOptions());
               }
-            }, SpannerImpl.QUERY.retryOnErrorCodes);
+            });
     if (!resultSet.hasStats()) {
       throw new IllegalArgumentException(
           "Partitioned DML response missing stats possibly due to non-DML statement as input");
