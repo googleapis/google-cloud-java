@@ -105,10 +105,6 @@ class MessageDispatcher {
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
     }
 
-    public void addAckId(String ackId) {
-      ackIds.add(ackId);
-    }
-
     @Override
     public String toString() {
       return String.format(
@@ -130,7 +126,7 @@ class MessageDispatcher {
     private final long receivedTimeMillis;
     private final Instant totalExpiration;
 
-    AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
+    private AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       this.receivedTimeMillis = clock.millisTime();
@@ -183,7 +179,7 @@ class MessageDispatcher {
     }
   }
 
-  public interface AckProcessor {
+  interface AckProcessor {
     void sendAckOperations(
         List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
@@ -213,7 +209,7 @@ class MessageDispatcher {
     this.sequentialExecutor = new SequentialExecutorService(executor);
   }
 
-  public void start() {
+  void start() {
     final Runnable setExtendDeadline =
         new Runnable() {
           @Override
@@ -266,7 +262,7 @@ class MessageDispatcher {
     }
   }
 
-  public void stop() {
+  void stop() {
     messagesWaiter.waitNoMessages();
     jobLock.lock();
     try {
@@ -290,17 +286,17 @@ class MessageDispatcher {
     return messageDeadlineSeconds.get();
   }
 
-  static class OutstandingMessage {
+  private static class OutstandingMessage {
     private final ReceivedMessage receivedMessage;
     private final AckHandler ackHandler;
 
-    public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
+    private OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
       this.receivedMessage = receivedMessage;
       this.ackHandler = ackHandler;
     }
   }
 
-  public void processReceivedMessages(List<ReceivedMessage> messages) {
+  void processReceivedMessages(List<ReceivedMessage> messages) {
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
     List<OutstandingMessage> outstandingBatch = new ArrayList<>(messages.size());
     for (ReceivedMessage message : messages) {

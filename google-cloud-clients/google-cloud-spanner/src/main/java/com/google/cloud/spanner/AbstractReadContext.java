@@ -28,8 +28,7 @@ import com.google.cloud.spanner.AbstractResultSet.GrpcStreamIterator;
 import com.google.cloud.spanner.AbstractResultSet.ResumableStreamIterator;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
-import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
+import com.google.cloud.spanner.SessionImpl.SessionTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.BeginTransactionRequest;
@@ -205,7 +204,7 @@ abstract class AbstractReadContext
     }
 
     void initTransaction() {
-      SpannerImpl.throwIfTransactionsPending();
+      SessionImpl.throwIfTransactionsPending();
 
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
       // flight. Note that we use the strategy of sending an explicit BeginTransaction() RPC,

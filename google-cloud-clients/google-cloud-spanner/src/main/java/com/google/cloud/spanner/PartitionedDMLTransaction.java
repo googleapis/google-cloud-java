@@ -18,8 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkState;
 
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
-import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
+import com.google.cloud.spanner.SessionImpl.SessionTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.BeginTransactionRequest;
