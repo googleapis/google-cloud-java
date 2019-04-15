@@ -376,7 +376,8 @@ class MessageDispatcher {
   /** Compute the ideal deadline, set subsequent modacks to this deadline, and return it. */
   @InternalApi
   int computeDeadlineSeconds() {
-    int sec = ackLatencyDistribution.getPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
+    long secLong = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
+    int sec = Ints.saturatedCast(secLong);
 
     // Use Ints.constrainToRange when we get guava 21.
     if (sec < Subscriber.MIN_ACK_DEADLINE_SECONDS) {
