@@ -59,6 +59,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
  * associated with a specific topic at creation.
@@ -317,8 +319,7 @@ public class Publisher {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    ApiFutures.addCallback(
-        publisherStub.publishCallable().futureCall(publishRequest.build()),
+    ApiFutures.addCallback(publisherStub.publishCallable().futureCall(publishRequest.build()),
         new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -357,7 +358,7 @@ public class Publisher {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
-        });
+        }, directExecutor());
   }
 
   private static final class OutstandingBatch {

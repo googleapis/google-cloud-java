@@ -53,6 +53,8 @@ import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 /** Implementation of {@link AckProcessor} based on Cloud Pub/Sub streaming pull. */
 final class StreamingSubscriberConnection extends AbstractApiService implements AckProcessor {
   private static final Logger logger =
@@ -291,7 +293,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .addAllAckIds(idChunk)
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
                         .build());
-        ApiFutures.addCallback(future, loggingCallback);
+        ApiFutures.addCallback(future, loggingCallback, directExecutor());
       }
     }
 
@@ -303,7 +305,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       .setSubscription(subscription)
                       .addAllAckIds(idChunk)
                       .build());
-      ApiFutures.addCallback(future, loggingCallback);
+      ApiFutures.addCallback(future, loggingCallback, directExecutor());
     }
   }
 }
