@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-02-02T08:46:39.989912Z",
+  "updateTime": "2019-04-11T07:54:10.660740Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.16.8",
-        "dockerImage": "googleapis/artman@sha256:75bc07ef34a1de9895c18af54dc503ed3b3f3b52e85062e3360a979d2a0741e7"
+        "version": "0.16.25",
+        "dockerImage": "googleapis/artman@sha256:d9597f983d1d4e61272c63cb97b7d8f8234da9999526c35d357de3d781f0ec1b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "bce093dab3e65c40eb9a37efbdc960f34df6037a",
-        "internalRef": "231974277"
+        "sha": "fecf169b1b202e7acd8c0bd3b1d1f5e52747fd63",
+        "internalRef": "242946317"
       }
     }
   ],
@@ -26,6 +26,16 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/securitycenter/artman_securitycenter_v1beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "securitycenter",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/securitycenter/artman_securitycenter_v1.yaml"
       }
     }
   ]

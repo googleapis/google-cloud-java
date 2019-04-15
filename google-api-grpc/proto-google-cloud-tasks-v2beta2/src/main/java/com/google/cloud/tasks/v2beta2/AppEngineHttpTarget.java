@@ -9,10 +9,14 @@ package com.google.cloud.tasks.v2beta2;
  * <pre>
  * App Engine HTTP target.
  * The task will be delivered to the App Engine application hostname
- * specified by its [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] and [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest].
- * The documentation for [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] explains how the
- * task's host URL is constructed.
- * Using [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] requires
+ * specified by its
+ * [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] and
+ * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]. The
+ * documentation for
+ * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+ * explains how the task's host URL is constructed.
+ * Using [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget]
+ * requires
  * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
  * Google IAM permission for the project
  * and the following scope:
@@ -75,7 +79,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -114,10 +118,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Overrides for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * If set, `app_engine_routing_override` is used for all tasks in
    * the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -130,10 +136,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Overrides for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * If set, `app_engine_routing_override` is used for all tasks in
    * the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -148,10 +156,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Overrides for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * If set, `app_engine_routing_override` is used for all tasks in
    * the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -208,13 +218,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
     com.google.cloud.tasks.v2beta2.AppEngineHttpTarget other =
         (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) obj;
 
-    boolean result = true;
-    result = result && (hasAppEngineRoutingOverride() == other.hasAppEngineRoutingOverride());
+    if (hasAppEngineRoutingOverride() != other.hasAppEngineRoutingOverride()) return false;
     if (hasAppEngineRoutingOverride()) {
-      result = result && getAppEngineRoutingOverride().equals(other.getAppEngineRoutingOverride());
+      if (!getAppEngineRoutingOverride().equals(other.getAppEngineRoutingOverride())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -334,10 +343,14 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * <pre>
    * App Engine HTTP target.
    * The task will be delivered to the App Engine application hostname
-   * specified by its [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] and [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest].
-   * The documentation for [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] explains how the
-   * task's host URL is constructed.
-   * Using [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] requires
+   * specified by its
+   * [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget] and
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]. The
+   * documentation for
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+   * explains how the task's host URL is constructed.
+   * Using [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget]
+   * requires
    * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
    * Google IAM permission for the project
    * and the following scope:
@@ -426,35 +439,35 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -503,7 +516,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta2.AppEngineRouting appEngineRoutingOverride_ = null;
+    private com.google.cloud.tasks.v2beta2.AppEngineRouting appEngineRoutingOverride_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta2.AppEngineRouting,
             com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder,
@@ -514,10 +527,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -530,10 +545,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -552,10 +569,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -579,10 +598,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -603,10 +624,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -634,10 +657,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -658,10 +683,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -677,10 +704,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -700,10 +729,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Overrides for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * If set, `app_engine_routing_override` is used for all tasks in
      * the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
@@ -727,7 +758,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

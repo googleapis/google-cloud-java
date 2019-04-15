@@ -112,7 +112,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 conditions_ =
                     new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Condition>();
                 mutable_bitField0_ |= 0x00000010;
@@ -142,7 +142,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case 114:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 notificationChannels_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000080;
               }
@@ -151,7 +151,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 userLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         UserLabelsDefaultEntryHolder.defaultEntry);
@@ -181,7 +181,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -193,10 +193,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -534,7 +534,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -713,11 +713,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.monitoring.v3.AlertPolicy.Documentation other =
           (com.google.monitoring.v3.AlertPolicy.Documentation) obj;
 
-      boolean result = true;
-      result = result && getContent().equals(other.getContent());
-      result = result && getMimeType().equals(other.getMimeType());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getContent().equals(other.getContent())) return false;
+      if (!getMimeType().equals(other.getMimeType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -918,23 +917,23 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -942,13 +941,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1218,7 +1217,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1536,7 +1535,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1659,7 +1658,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -1823,24 +1822,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.monitoring.v3.AlertPolicy.Condition.Trigger other =
             (com.google.monitoring.v3.AlertPolicy.Condition.Trigger) obj;
 
-        boolean result = true;
-        result = result && getTypeCase().equals(other.getTypeCase());
-        if (!result) return false;
+        if (!getTypeCase().equals(other.getTypeCase())) return false;
         switch (typeCase_) {
           case 1:
-            result = result && (getCount() == other.getCount());
+            if (getCount() != other.getCount()) return false;
             break;
           case 2:
-            result =
-                result
-                    && (java.lang.Double.doubleToLongBits(getPercent())
-                        == java.lang.Double.doubleToLongBits(other.getPercent()));
+            if (java.lang.Double.doubleToLongBits(getPercent())
+                != java.lang.Double.doubleToLongBits(other.getPercent())) return false;
             break;
           case 0:
           default:
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -2056,23 +2051,23 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -2080,13 +2075,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -2267,7 +2262,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -2369,8 +2364,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -2387,8 +2384,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -2405,8 +2404,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -2423,8 +2424,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -2442,8 +2445,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -2780,7 +2785,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         denominatorFilter_ = "";
         denominatorAggregations_ = java.util.Collections.emptyList();
         comparison_ = 0;
-        thresholdValue_ = 0D;
       }
 
       @java.lang.Override
@@ -2860,7 +2864,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 66:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     aggregations_ = new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
                     mutable_bitField0_ |= 0x00000002;
                   }
@@ -2878,7 +2882,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 82:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                     denominatorAggregations_ =
                         new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
                     mutable_bitField0_ |= 0x00000008;
@@ -2890,7 +2894,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -2903,10 +2907,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
           }
-          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((mutable_bitField0_ & 0x00000008) != 0)) {
             denominatorAggregations_ =
                 java.util.Collections.unmodifiableList(denominatorAggregations_);
           }
@@ -3003,8 +3007,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -3023,8 +3029,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -3044,8 +3052,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -3064,8 +3074,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -3084,8 +3096,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -3555,28 +3569,24 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold other =
             (com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold) obj;
 
-        boolean result = true;
-        result = result && getFilter().equals(other.getFilter());
-        result = result && getAggregationsList().equals(other.getAggregationsList());
-        result = result && getDenominatorFilter().equals(other.getDenominatorFilter());
-        result =
-            result
-                && getDenominatorAggregationsList().equals(other.getDenominatorAggregationsList());
-        result = result && comparison_ == other.comparison_;
-        result =
-            result
-                && (java.lang.Double.doubleToLongBits(getThresholdValue())
-                    == java.lang.Double.doubleToLongBits(other.getThresholdValue()));
-        result = result && (hasDuration() == other.hasDuration());
+        if (!getFilter().equals(other.getFilter())) return false;
+        if (!getAggregationsList().equals(other.getAggregationsList())) return false;
+        if (!getDenominatorFilter().equals(other.getDenominatorFilter())) return false;
+        if (!getDenominatorAggregationsList().equals(other.getDenominatorAggregationsList()))
+          return false;
+        if (comparison_ != other.comparison_) return false;
+        if (java.lang.Double.doubleToLongBits(getThresholdValue())
+            != java.lang.Double.doubleToLongBits(other.getThresholdValue())) return false;
+        if (hasDuration() != other.hasDuration()) return false;
         if (hasDuration()) {
-          result = result && getDuration().equals(other.getDuration());
+          if (!getDuration().equals(other.getDuration())) return false;
         }
-        result = result && (hasTrigger() == other.hasTrigger());
+        if (hasTrigger() != other.hasTrigger()) return false;
         if (hasTrigger()) {
-          result = result && getTrigger().equals(other.getTrigger());
+          if (!getTrigger().equals(other.getTrigger())) return false;
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -3833,7 +3843,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           int to_bitField0_ = 0;
           result.filter_ = filter_;
           if (aggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
               bitField0_ = (bitField0_ & ~0x00000002);
             }
@@ -3843,7 +3853,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           result.denominatorFilter_ = denominatorFilter_;
           if (denominatorAggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               denominatorAggregations_ =
                   java.util.Collections.unmodifiableList(denominatorAggregations_);
               bitField0_ = (bitField0_ & ~0x00000008);
@@ -3871,23 +3881,23 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -3895,13 +3905,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -4165,7 +4175,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             aggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(aggregations_);
             bitField0_ |= 0x00000002;
@@ -4189,8 +4199,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4213,8 +4225,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4237,8 +4251,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4261,8 +4277,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4291,8 +4309,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4319,8 +4339,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4349,8 +4371,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4379,8 +4403,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4407,8 +4433,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4435,8 +4463,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4463,8 +4493,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4490,8 +4522,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4517,8 +4551,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4537,8 +4573,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4561,8 +4599,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4586,8 +4626,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4607,8 +4649,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4628,8 +4672,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 8;</code>
@@ -4651,7 +4697,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     aggregations_,
-                    ((bitField0_ & 0x00000002) == 0x00000002),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             aggregations_ = null;
@@ -4812,7 +4858,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureDenominatorAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             denominatorAggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(
                     denominatorAggregations_);
@@ -5396,7 +5442,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     denominatorAggregations_,
-                    ((bitField0_ & 0x00000008) == 0x00000008),
+                    ((bitField0_ & 0x00000008) != 0),
                     getParentForChildren(),
                     isClean());
             denominatorAggregations_ = null;
@@ -5544,7 +5590,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.Duration duration_ = null;
+        private com.google.protobuf.Duration duration_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.Duration,
                 com.google.protobuf.Duration.Builder,
@@ -5806,7 +5852,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           return durationBuilder_;
         }
 
-        private com.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger_ = null;
+        private com.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.monitoring.v3.AlertPolicy.Condition.Trigger,
                 com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder,
@@ -6037,7 +6083,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -6142,8 +6188,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6160,8 +6208,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6178,8 +6228,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6196,8 +6248,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6215,8 +6269,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6402,7 +6458,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 42:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     aggregations_ = new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
                     mutable_bitField0_ |= 0x00000002;
                   }
@@ -6413,7 +6469,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -6426,7 +6482,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
           }
           this.unknownFields = unknownFields.build();
@@ -6522,8 +6578,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6542,8 +6600,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6563,8 +6623,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6583,8 +6645,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6603,8 +6667,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * members of a group of resrouces). Multiple aggregations
        * are applied in the order specified.
        * This field is similar to the
-       * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-       * It is advisable to use the `ListTimeSeries` method when debugging this field.
+       * one in the [`MetricService.ListTimeSeries`
+       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+       * is advisable to use the `ListTimeSeries` method when debugging this
+       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -6780,19 +6846,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence other =
             (com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence) obj;
 
-        boolean result = true;
-        result = result && getFilter().equals(other.getFilter());
-        result = result && getAggregationsList().equals(other.getAggregationsList());
-        result = result && (hasDuration() == other.hasDuration());
+        if (!getFilter().equals(other.getFilter())) return false;
+        if (!getAggregationsList().equals(other.getAggregationsList())) return false;
+        if (hasDuration() != other.hasDuration()) return false;
         if (hasDuration()) {
-          result = result && getDuration().equals(other.getDuration());
+          if (!getDuration().equals(other.getDuration())) return false;
         }
-        result = result && (hasTrigger() == other.hasTrigger());
+        if (hasTrigger() != other.hasTrigger()) return false;
         if (hasTrigger()) {
-          result = result && getTrigger().equals(other.getTrigger());
+          if (!getTrigger().equals(other.getTrigger())) return false;
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -7022,7 +7087,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           int to_bitField0_ = 0;
           result.filter_ = filter_;
           if (aggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
               bitField0_ = (bitField0_ & ~0x00000002);
             }
@@ -7047,23 +7112,23 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -7071,13 +7136,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -7303,7 +7368,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             aggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(aggregations_);
             bitField0_ |= 0x00000002;
@@ -7327,8 +7392,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7351,8 +7418,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7375,8 +7444,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7399,8 +7470,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7429,8 +7502,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7457,8 +7532,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7487,8 +7564,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7517,8 +7596,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7545,8 +7626,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7573,8 +7656,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7601,8 +7686,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7628,8 +7715,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7655,8 +7744,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7675,8 +7766,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7699,8 +7792,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7724,8 +7819,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7745,8 +7842,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7766,8 +7865,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * members of a group of resrouces). Multiple aggregations
          * are applied in the order specified.
          * This field is similar to the
-         * one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-         * It is advisable to use the `ListTimeSeries` method when debugging this field.
+         * one in the [`MetricService.ListTimeSeries`
+         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+         * is advisable to use the `ListTimeSeries` method when debugging this
+         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation aggregations = 5;</code>
@@ -7789,7 +7890,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     aggregations_,
-                    ((bitField0_ & 0x00000002) == 0x00000002),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             aggregations_ = null;
@@ -7797,7 +7898,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           return aggregationsBuilder_;
         }
 
-        private com.google.protobuf.Duration duration_ = null;
+        private com.google.protobuf.Duration duration_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.Duration,
                 com.google.protobuf.Duration.Builder,
@@ -8023,7 +8124,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           return durationBuilder_;
         }
 
-        private com.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger_ = null;
+        private com.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.monitoring.v3.AlertPolicy.Condition.Trigger,
                 com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder,
@@ -8236,7 +8337,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -8621,23 +8722,21 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.monitoring.v3.AlertPolicy.Condition other =
           (com.google.monitoring.v3.AlertPolicy.Condition) obj;
 
-      boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && getDisplayName().equals(other.getDisplayName());
-      result = result && getConditionCase().equals(other.getConditionCase());
-      if (!result) return false;
+      if (!getName().equals(other.getName())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getConditionCase().equals(other.getConditionCase())) return false;
       switch (conditionCase_) {
         case 1:
-          result = result && getConditionThreshold().equals(other.getConditionThreshold());
+          if (!getConditionThreshold().equals(other.getConditionThreshold())) return false;
           break;
         case 2:
-          result = result && getConditionAbsent().equals(other.getConditionAbsent());
+          if (!getConditionAbsent().equals(other.getConditionAbsent())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8868,23 +8967,23 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -8892,13 +8991,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -9726,7 +9825,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -10498,31 +10597,30 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.monitoring.v3.AlertPolicy other = (com.google.monitoring.v3.AlertPolicy) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && (hasDocumentation() == other.hasDocumentation());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (hasDocumentation() != other.hasDocumentation()) return false;
     if (hasDocumentation()) {
-      result = result && getDocumentation().equals(other.getDocumentation());
+      if (!getDocumentation().equals(other.getDocumentation())) return false;
     }
-    result = result && internalGetUserLabels().equals(other.internalGetUserLabels());
-    result = result && getConditionsList().equals(other.getConditionsList());
-    result = result && combiner_ == other.combiner_;
-    result = result && (hasEnabled() == other.hasEnabled());
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
+    if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (combiner_ != other.combiner_) return false;
+    if (hasEnabled() != other.hasEnabled()) return false;
     if (hasEnabled()) {
-      result = result && getEnabled().equals(other.getEnabled());
+      if (!getEnabled().equals(other.getEnabled())) return false;
     }
-    result = result && getNotificationChannelsList().equals(other.getNotificationChannelsList());
-    result = result && (hasCreationRecord() == other.hasCreationRecord());
+    if (!getNotificationChannelsList().equals(other.getNotificationChannelsList())) return false;
+    if (hasCreationRecord() != other.hasCreationRecord()) return false;
     if (hasCreationRecord()) {
-      result = result && getCreationRecord().equals(other.getCreationRecord());
+      if (!getCreationRecord().equals(other.getCreationRecord())) return false;
     }
-    result = result && (hasMutationRecord() == other.hasMutationRecord());
+    if (hasMutationRecord() != other.hasMutationRecord()) return false;
     if (hasMutationRecord()) {
-      result = result && getMutationRecord().equals(other.getMutationRecord());
+      if (!getMutationRecord().equals(other.getMutationRecord())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -10812,7 +10910,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       result.userLabels_ = internalGetUserLabels();
       result.userLabels_.makeImmutable();
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -10826,7 +10924,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.enabled_ = enabledBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000080);
       }
@@ -10848,35 +10946,35 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -11221,7 +11319,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.monitoring.v3.AlertPolicy.Documentation documentation_ = null;
+    private com.google.monitoring.v3.AlertPolicy.Documentation documentation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.AlertPolicy.Documentation,
             com.google.monitoring.v3.AlertPolicy.Documentation.Builder,
@@ -11633,7 +11731,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         conditions_ =
             new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Condition>(conditions_);
         bitField0_ |= 0x00000010;
@@ -12029,10 +12127,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition,
                 com.google.monitoring.v3.AlertPolicy.Condition.Builder,
                 com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder>(
-                conditions_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
-                getParentForChildren(),
-                isClean());
+                conditions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -12121,7 +12216,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.BoolValue enabled_ = null;
+    private com.google.protobuf.BoolValue enabled_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -12336,7 +12431,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotificationChannelsIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         notificationChannels_ = new com.google.protobuf.LazyStringArrayList(notificationChannels_);
         bitField0_ |= 0x00000080;
       }
@@ -12547,7 +12642,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.monitoring.v3.MutationRecord creationRecord_ = null;
+    private com.google.monitoring.v3.MutationRecord creationRecord_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.MutationRecord,
             com.google.monitoring.v3.MutationRecord.Builder,
@@ -12738,7 +12833,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return creationRecordBuilder_;
     }
 
-    private com.google.monitoring.v3.MutationRecord mutationRecord_ = null;
+    private com.google.monitoring.v3.MutationRecord mutationRecord_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.MutationRecord,
             com.google.monitoring.v3.MutationRecord.Builder,
@@ -12931,7 +13026,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

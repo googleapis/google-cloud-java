@@ -31,15 +31,18 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
+import com.google.cloud.storage.contrib.nio.CloudStorageFileSystemProvider;
 import com.google.cloud.storage.contrib.nio.CloudStoragePath;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.FileSystem;
@@ -730,6 +733,240 @@ public class ITGcsNio {
       for (Path path : paths) {
         Files.delete(path);
       }
+    }
+  }
+
+  @Test
+  public void testFileChannelRead() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(SML_FILE);
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    FileChannel chan = provider.newFileChannel(path, Sets.newHashSet(StandardOpenOption.READ));
+    long size = Files.size(path);
+    assertThat(chan.size()).isEqualTo(size);
+    ByteBuffer buf = ByteBuffer.allocate(SML_SIZE);
+    int read = 0;
+    while (chan.isOpen()) {
+      int rc = chan.read(buf);
+      assertThat(chan.size()).isEqualTo(size);
+      if (rc < 0) {
+        // EOF
+        break;
+      }
+      assertThat(rc).isGreaterThan(0);
+      read += rc;
+      assertThat(chan.position()).isEqualTo(read);
+    }
+    chan.close();
+    assertThat(read).isEqualTo(size);
+    byte[] expected = new byte[SML_SIZE];
+    new Random(SML_SIZE).nextBytes(expected);
+    assertThat(Arrays.equals(buf.array(), expected)).isTrue();
+  }
+
+  @Test
+  public void testFileChannelCreate() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(PREFIX + randomSuffix());
+    assertThat(Files.exists(path)).isFalse();
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    try {
+      FileChannel channel =
+          provider.newFileChannel(path, Sets.newHashSet(StandardOpenOption.CREATE));
+      channel.close();
+      assertThat(Files.exists(path)).isTrue();
+      long size = Files.size(path);
+      assertThat(size).isEqualTo(0);
+    } finally {
+      Files.deleteIfExists(path);
+    }
+  }
+
+  @Test
+  public void testFileChannelWrite() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(PREFIX + randomSuffix());
+    assertThat(Files.exists(path)).isFalse();
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    try {
+      FileChannel channel =
+          provider.newFileChannel(
+              path, Sets.newHashSet(StandardOpenOption.CREATE, StandardOpenOption.WRITE));
+      ByteBuffer src = ByteBuffer.allocate(5000);
+      int written = 0;
+      for (String s : FILE_CONTENTS) {
+        byte[] bytes = (s + "\n").getBytes(UTF_8);
+        written += bytes.length;
+        src.put(bytes);
+      }
+      src.limit(written);
+      src.position(0);
+      channel.write(src);
+      channel.close();
+      assertThat(Files.exists(path)).isTrue();
+
+      ByteArrayOutputStream wantBytes = new ByteArrayOutputStream();
+      PrintWriter writer = new PrintWriter(new OutputStreamWriter(wantBytes, UTF_8));
+      for (String content : FILE_CONTENTS) {
+        writer.println(content);
+      }
+      writer.close();
+      SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.READ);
+      byte[] gotBytes = new byte[(int) chan.size()];
+      readFully(chan, gotBytes);
+      assertThat(gotBytes).isEqualTo(wantBytes.toByteArray());
+    } finally {
+      Files.deleteIfExists(path);
+    }
+  }
+
+  @Test
+  public void testFileChannelWriteOnClose() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(PREFIX + randomSuffix());
+    assertThat(Files.exists(path)).isFalse();
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    try {
+      long expectedSize = 0;
+      try (FileChannel chan =
+          provider.newFileChannel(path, Sets.newHashSet(StandardOpenOption.WRITE))) {
+        for (String s : FILE_CONTENTS) {
+          byte[] sBytes = s.getBytes(UTF_8);
+          expectedSize += sBytes.length * 9999;
+          for (int i = 0; i < 9999; i++) {
+            chan.write(ByteBuffer.wrap(sBytes));
+          }
+        }
+        try {
+          Files.size(path);
+          // we shouldn't make it to this line. Not using thrown.expect because
+          // I still want to run a few lines after the exception.
+          Assert.fail("Files.size should have thrown an exception");
+        } catch (NoSuchFileException nsf) {
+          // that's what we wanted, we're good.
+        }
+      }
+      // channel now closed, the file should be there and with the new contents.
+      assertThat(Files.exists(path)).isTrue();
+      assertThat(Files.size(path)).isEqualTo(expectedSize);
+    } finally {
+      Files.deleteIfExists(path);
+    }
+  }
+
+  @Test
+  public void testFileChannelSeek() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(BIG_FILE);
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    int size = BIG_SIZE;
+    byte[] contents = randomContents(size);
+    byte[] sample = new byte[100];
+    byte[] wanted;
+    byte[] wanted2;
+    FileChannel chan = provider.newFileChannel(path, Sets.newHashSet(StandardOpenOption.READ));
+    assertThat(chan.size()).isEqualTo(size);
+
+    // check seek
+    int dest = size / 2;
+    chan.position(dest);
+    readFully(chan, sample);
+    wanted = Arrays.copyOfRange(contents, dest, dest + 100);
+    assertThat(wanted).isEqualTo(sample);
+    // now go back and check the beginning
+    // (we do 2 locations because 0 is sometimes a special case).
+    chan.position(0);
+    readFully(chan, sample);
+    wanted2 = Arrays.copyOf(contents, 100);
+    assertThat(wanted2).isEqualTo(sample);
+    // if the two spots in the file have the same contents, then this isn't a good file for this
+    // test.
+    assertThat(wanted).isNotEqualTo(wanted2);
+  }
+
+  @Test
+  public void testFileChannelTransferFrom() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(SML_FILE);
+    Path destPath = testBucket.getPath(PREFIX + randomSuffix());
+    assertThat(Files.exists(destPath)).isFalse();
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    try {
+      try (FileChannel source =
+              provider.newFileChannel(path, Sets.newHashSet(StandardOpenOption.READ));
+          FileChannel dest =
+              provider.newFileChannel(
+                  destPath, Sets.newHashSet(StandardOpenOption.CREATE, StandardOpenOption.WRITE))) {
+        dest.transferFrom(source, 0L, SML_SIZE);
+      }
+
+      FileChannel source =
+          provider.newFileChannel(destPath, Sets.newHashSet(StandardOpenOption.READ));
+      long size = Files.size(destPath);
+      assertThat(source.size()).isEqualTo(size);
+      ByteBuffer buf = ByteBuffer.allocate(SML_SIZE);
+      int read = 0;
+      while (source.isOpen()) {
+        int rc = source.read(buf);
+        assertThat(source.size()).isEqualTo(size);
+        if (rc < 0) {
+          // EOF
+          break;
+        }
+        assertThat(rc).isGreaterThan(0);
+        read += rc;
+        assertThat(source.position()).isEqualTo(read);
+      }
+      source.close();
+      assertThat(read).isEqualTo(size);
+      byte[] expected = new byte[SML_SIZE];
+      new Random(SML_SIZE).nextBytes(expected);
+      assertThat(Arrays.equals(buf.array(), expected)).isTrue();
+    } finally {
+      Files.deleteIfExists(destPath);
+    }
+  }
+
+  @Test
+  public void testFileChannelTransferTo() throws IOException {
+    CloudStorageFileSystem testBucket = getTestBucket();
+    Path path = testBucket.getPath(SML_FILE);
+    Path destPath = testBucket.getPath(PREFIX + randomSuffix());
+    assertThat(Files.exists(destPath)).isFalse();
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
+    try {
+      try (FileChannel source =
+              provider.newFileChannel(path, Sets.newHashSet(StandardOpenOption.READ));
+          FileChannel dest =
+              provider.newFileChannel(
+                  destPath, Sets.newHashSet(StandardOpenOption.CREATE, StandardOpenOption.WRITE))) {
+        source.transferTo(0L, SML_SIZE, dest);
+      }
+
+      FileChannel source =
+          provider.newFileChannel(destPath, Sets.newHashSet(StandardOpenOption.READ));
+      long size = Files.size(destPath);
+      assertThat(source.size()).isEqualTo(size);
+      ByteBuffer buf = ByteBuffer.allocate(SML_SIZE);
+      int read = 0;
+      while (source.isOpen()) {
+        int rc = source.read(buf);
+        assertThat(source.size()).isEqualTo(size);
+        if (rc < 0) {
+          // EOF
+          break;
+        }
+        assertThat(rc).isGreaterThan(0);
+        read += rc;
+        assertThat(source.position()).isEqualTo(read);
+      }
+      source.close();
+      assertThat(read).isEqualTo(size);
+      byte[] expected = new byte[SML_SIZE];
+      new Random(SML_SIZE).nextBytes(expected);
+      assertThat(Arrays.equals(buf.array(), expected)).isTrue();
+    } finally {
+      Files.deleteIfExists(destPath);
     }
   }
 

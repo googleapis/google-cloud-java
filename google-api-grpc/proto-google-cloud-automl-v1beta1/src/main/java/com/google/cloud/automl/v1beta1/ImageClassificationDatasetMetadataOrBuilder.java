@@ -12,8 +12,7 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Type of the classification problem.
+   * Required. Type of the classification problem.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 1;</code>
@@ -23,8 +22,7 @@ public interface ImageClassificationDatasetMetadataOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Type of the classification problem.
+   * Required. Type of the classification problem.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 1;</code>

@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC.
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ option go_package = "google.golang.org/genproto/googleapis/cloud/scheduler/v1bet
 option java_multiple_files = true;
 option java_outer_classname = "TargetProto";
 option java_package = "com.google.cloud.scheduler.v1beta1";
-
 
 // Http target. The job will be pushed to the job handler by means of
 // an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.HttpTarget.http_method] such as HTTP
@@ -67,6 +66,30 @@ message HttpTarget {
   // method is POST, PUT, or PATCH. It is an error to set body on a job with an
   // incompatible [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
   bytes body = 4;
+
+  // The mode for generating an `Authorization` header for HTTP requests.
+  //
+  // If specified, all `Authorization` headers in the [HttpTarget.headers][google.cloud.scheduler.v1beta1.HttpTarget.headers]
+  // field will be overridden.
+  oneof authorization_header {
+    // If specified, an
+    // [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+    // will be generated and attached as an `Authorization` header in the HTTP
+    // request.
+    //
+    // This type of authorization should be used when sending requests to a GCP
+    // endpoint.
+    OAuthToken oauth_token = 5;
+
+    // If specified, an
+    // [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+    // token will be generated and attached as an `Authorization` header in the
+    // HTTP request.
+    //
+    // This type of authorization should be used when sending requests to third
+    // party endpoints.
+    OidcToken oidc_token = 6;
+  }
 }
 
 // App Engine target. The job will be pushed to a job handler by means
@@ -106,9 +129,10 @@ message AppEngineHttpTarget {
   //   This header can be modified, but Cloud Scheduler will append
   //   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
   //   modified `User-Agent`.
+  // * `X-CloudScheduler`: This header will be set to true.
   //
-  // If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets the
-  // following headers:
+  // If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
+  // the following headers:
   //
   // * `Content-Type`: By default, the `Content-Type` header is set to
   //   `"application/octet-stream"`. The default can be overridden by explictly
@@ -121,12 +145,10 @@ message AppEngineHttpTarget {
   // The headers below are output only. They cannot be set or overridden:
   //
   // * `X-Google-*`: For Google internal use only.
-  // * `X-AppEngine-*`: For Google internal use only. See
-  //   [Reading request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+  // * `X-AppEngine-*`: For Google internal use only.
   //
   // In addition, some App Engine headers, which contain
-  // job-specific information, are also be sent to the job handler; see
-  // [request headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
+  // job-specific information, are also be sent to the job handler.
   map<string, string> headers = 4;
 
   // Body.
@@ -167,10 +189,14 @@ message PubsubTarget {
 // App Engine Routing.
 //
 // For more information about services, versions, and instances see
-// [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
-// [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
-// [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed), and
-// [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+// [An Overview of App
+// Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
+// [Microservices Architecture on Google App
+// Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
+// [App Engine Standard request
+// routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
+// and [App Engine Flex request
+// routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
 message AppEngineRouting {
   // App service.
   //
@@ -190,10 +216,13 @@ message AppEngineRouting {
   // the job is attempted.
   //
   // Requests can only be sent to a specific instance if
-  // [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+  // [manual scaling is used in App Engine
+  // Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
   // App Engine Flex does not support instances. For more information, see
-  // [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-  // [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+  // [App Engine Standard request
+  // routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+  // and [App Engine Flex request
+  // routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
   string instance = 3;
 
   // Output only. The host that the job is sent to.
@@ -282,4 +311,38 @@ enum HttpMethod {
 
   // HTTP OPTIONS
   OPTIONS = 7;
+}
+
+// Contains information needed for generating an
+// [OAuth token](https://developers.google.com/identity/protocols/OAuth2).
+// This type of authorization should be used when sending requests to a GCP
+// endpoint.
+message OAuthToken {
+  // [Service account email](https://cloud.google.com/iam/docs/service-accounts)
+  // to be used for generating OAuth token.
+  // The service account must be within the same project as the job. The caller
+  // must have iam.serviceAccounts.actAs permission for the service account.
+  string service_account_email = 1;
+
+  // OAuth scope to be used for generating OAuth access token.
+  // If not specified, "https://www.googleapis.com/auth/cloud-platform"
+  // will be used.
+  string scope = 2;
+}
+
+// Contains information needed for generating an
+// [OpenID Connect
+// token](https://developers.google.com/identity/protocols/OpenIDConnect). This
+// type of authorization should be used when sending requests to third party
+// endpoints.
+message OidcToken {
+  // [Service account email](https://cloud.google.com/iam/docs/service-accounts)
+  // to be used for generating OIDC token.
+  // The service account must be within the same project as the job. The caller
+  // must have iam.serviceAccounts.actAs permission for the service account.
+  string service_account_email = 1;
+
+  // Audience to be used when generating OIDC token. If not specified, the URI
+  // specified in target will be used.
+  string audience = 2;
 }

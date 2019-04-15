@@ -85,7 +85,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -234,7 +234,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -381,17 +381,16 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions other =
           (com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions) obj;
 
-      boolean result = true;
-      result = result && (hasSnapshotInspectTemplate() == other.hasSnapshotInspectTemplate());
+      if (hasSnapshotInspectTemplate() != other.hasSnapshotInspectTemplate()) return false;
       if (hasSnapshotInspectTemplate()) {
-        result = result && getSnapshotInspectTemplate().equals(other.getSnapshotInspectTemplate());
+        if (!getSnapshotInspectTemplate().equals(other.getSnapshotInspectTemplate())) return false;
       }
-      result = result && (hasJobConfig() == other.hasJobConfig());
+      if (hasJobConfig() != other.hasJobConfig()) return false;
       if (hasJobConfig()) {
-        result = result && getJobConfig().equals(other.getJobConfig());
+        if (!getJobConfig().equals(other.getJobConfig())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -608,23 +607,23 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -632,13 +631,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -694,7 +693,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return this;
       }
 
-      private com.google.privacy.dlp.v2.InspectTemplate snapshotInspectTemplate_ = null;
+      private com.google.privacy.dlp.v2.InspectTemplate snapshotInspectTemplate_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.InspectTemplate,
               com.google.privacy.dlp.v2.InspectTemplate.Builder,
@@ -886,7 +885,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         return snapshotInspectTemplateBuilder_;
       }
 
-      private com.google.privacy.dlp.v2.InspectJobConfig jobConfig_ = null;
+      private com.google.privacy.dlp.v2.InspectJobConfig jobConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.InspectJobConfig,
               com.google.privacy.dlp.v2.InspectJobConfig.Builder,
@@ -999,7 +998,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1135,7 +1134,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      */
     com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder getInfoTypeStatsOrBuilder(int index);
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.Result} */
+  /**
+   *
+   *
+   * <pre>
+   * All result fields mentioned below are updated while the job is processing.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.Result}
+   */
   public static final class Result extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectDataSourceDetails.Result)
@@ -1147,8 +1154,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     }
 
     private Result() {
-      processedBytes_ = 0L;
-      totalEstimatedBytes_ = 0L;
       infoTypeStats_ = java.util.Collections.emptyList();
     }
 
@@ -1188,7 +1193,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   infoTypeStats_ =
                       new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeStats>();
                   mutable_bitField0_ |= 0x00000004;
@@ -1200,7 +1205,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1212,7 +1217,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           infoTypeStats_ = java.util.Collections.unmodifiableList(infoTypeStats_);
         }
         this.unknownFields = unknownFields.build();
@@ -1392,12 +1397,11 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       com.google.privacy.dlp.v2.InspectDataSourceDetails.Result other =
           (com.google.privacy.dlp.v2.InspectDataSourceDetails.Result) obj;
 
-      boolean result = true;
-      result = result && (getProcessedBytes() == other.getProcessedBytes());
-      result = result && (getTotalEstimatedBytes() == other.getTotalEstimatedBytes());
-      result = result && getInfoTypeStatsList().equals(other.getInfoTypeStatsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getProcessedBytes() != other.getProcessedBytes()) return false;
+      if (getTotalEstimatedBytes() != other.getTotalEstimatedBytes()) return false;
+      if (!getInfoTypeStatsList().equals(other.getInfoTypeStatsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1517,7 +1521,15 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.Result} */
+    /**
+     *
+     *
+     * <pre>
+     * All result fields mentioned below are updated while the job is processing.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.Result}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -1599,7 +1611,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         result.processedBytes_ = processedBytes_;
         result.totalEstimatedBytes_ = totalEstimatedBytes_;
         if (infoTypeStatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             infoTypeStats_ = java.util.Collections.unmodifiableList(infoTypeStats_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -1614,23 +1626,23 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1638,13 +1650,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1817,7 +1829,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           java.util.Collections.emptyList();
 
       private void ensureInfoTypeStatsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           infoTypeStats_ =
               new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeStats>(infoTypeStats_);
           bitField0_ |= 0x00000004;
@@ -2177,7 +2189,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
                   com.google.privacy.dlp.v2.InfoTypeStats.Builder,
                   com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder>(
                   infoTypeStats_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           infoTypeStats_ = null;
@@ -2188,7 +2200,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2374,17 +2386,16 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     com.google.privacy.dlp.v2.InspectDataSourceDetails other =
         (com.google.privacy.dlp.v2.InspectDataSourceDetails) obj;
 
-    boolean result = true;
-    result = result && (hasRequestedOptions() == other.hasRequestedOptions());
+    if (hasRequestedOptions() != other.hasRequestedOptions()) return false;
     if (hasRequestedOptions()) {
-      result = result && getRequestedOptions().equals(other.getRequestedOptions());
+      if (!getRequestedOptions().equals(other.getRequestedOptions())) return false;
     }
-    result = result && (hasResult() == other.hasResult());
+    if (hasResult() != other.hasResult()) return false;
     if (hasResult()) {
-      result = result && getResult().equals(other.getResult());
+      if (!getResult().equals(other.getResult())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2602,35 +2613,35 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2682,8 +2693,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requestedOptions_ =
-        null;
+    private com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requestedOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions,
             com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions.Builder,
@@ -2883,7 +2893,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       return requestedOptionsBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.InspectDataSourceDetails.Result result_ = null;
+    private com.google.privacy.dlp.v2.InspectDataSourceDetails.Result result_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectDataSourceDetails.Result,
             com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder,
@@ -3067,7 +3077,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

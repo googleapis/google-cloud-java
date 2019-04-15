@@ -32,10 +32,10 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.DatabaseName;
@@ -119,7 +119,7 @@ public class DatabaseAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListDatabasesRequest actualRequest = (ListDatabasesRequest) actualRequests.get(0);
 
@@ -165,7 +165,7 @@ public class DatabaseAdminClientTest {
     Database actualResponse = client.createDatabaseAsync(parent, createStatement).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateDatabaseRequest actualRequest = (CreateDatabaseRequest) actualRequests.get(0);
 
@@ -208,7 +208,7 @@ public class DatabaseAdminClientTest {
     Database actualResponse = client.getDatabase(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDatabaseRequest actualRequest = (GetDatabaseRequest) actualRequests.get(0);
 
@@ -253,7 +253,7 @@ public class DatabaseAdminClientTest {
     Empty actualResponse = client.updateDatabaseDdlAsync(database, statements).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateDatabaseDdlRequest actualRequest = (UpdateDatabaseDdlRequest) actualRequests.get(0);
 
@@ -294,7 +294,7 @@ public class DatabaseAdminClientTest {
 
     client.dropDatabase(database);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DropDatabaseRequest actualRequest = (DropDatabaseRequest) actualRequests.get(0);
 
@@ -332,7 +332,7 @@ public class DatabaseAdminClientTest {
     GetDatabaseDdlResponse actualResponse = client.getDatabaseDdl(database);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetDatabaseDdlRequest actualRequest = (GetDatabaseDdlRequest) actualRequests.get(0);
 
@@ -373,7 +373,7 @@ public class DatabaseAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -415,7 +415,7 @@ public class DatabaseAdminClientTest {
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -455,7 +455,7 @@ public class DatabaseAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockDatabaseAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 

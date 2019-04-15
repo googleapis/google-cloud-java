@@ -33,10 +33,10 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -109,7 +109,7 @@ public class SecurityCenterClientTest {
     Source actualResponse = client.createSource(parent, source);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateSourceRequest actualRequest = (CreateSourceRequest) actualRequests.get(0);
 
@@ -163,7 +163,7 @@ public class SecurityCenterClientTest {
     Finding actualResponse = client.createFinding(parent, findingId, finding);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateFindingRequest actualRequest = (CreateFindingRequest) actualRequests.get(0);
 
@@ -207,7 +207,7 @@ public class SecurityCenterClientTest {
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -251,7 +251,7 @@ public class SecurityCenterClientTest {
     OrganizationSettings actualResponse = client.getOrganizationSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetOrganizationSettingsRequest actualRequest =
         (GetOrganizationSettingsRequest) actualRequests.get(0);
@@ -298,7 +298,7 @@ public class SecurityCenterClientTest {
     Source actualResponse = client.getSource(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSourceRequest actualRequest = (GetSourceRequest) actualRequests.get(0);
 
@@ -347,7 +347,7 @@ public class SecurityCenterClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getGroupByResultsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GroupFindingsRequest actualRequest = (GroupFindingsRequest) actualRequests.get(0);
 
@@ -397,7 +397,7 @@ public class SecurityCenterClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSourcesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSourcesRequest actualRequest = (ListSourcesRequest) actualRequests.get(0);
 
@@ -441,7 +441,7 @@ public class SecurityCenterClientTest {
     Empty actualResponse = client.runAssetDiscoveryAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RunAssetDiscoveryRequest actualRequest = (RunAssetDiscoveryRequest) actualRequests.get(0);
 
@@ -495,7 +495,7 @@ public class SecurityCenterClientTest {
     Finding actualResponse = client.setFindingState(name, state, startTime);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetFindingStateRequest actualRequest = (SetFindingStateRequest) actualRequests.get(0);
 
@@ -540,7 +540,7 @@ public class SecurityCenterClientTest {
     Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -581,7 +581,7 @@ public class SecurityCenterClientTest {
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
@@ -633,7 +633,7 @@ public class SecurityCenterClientTest {
     Finding actualResponse = client.updateFinding(finding);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateFindingRequest actualRequest = (UpdateFindingRequest) actualRequests.get(0);
 
@@ -677,7 +677,7 @@ public class SecurityCenterClientTest {
     OrganizationSettings actualResponse = client.updateOrganizationSettings(organizationSettings);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateOrganizationSettingsRequest actualRequest =
         (UpdateOrganizationSettingsRequest) actualRequests.get(0);
@@ -724,7 +724,7 @@ public class SecurityCenterClientTest {
     Source actualResponse = client.updateSource(source);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateSourceRequest actualRequest = (UpdateSourceRequest) actualRequests.get(0);
 
@@ -763,7 +763,7 @@ public class SecurityCenterClientTest {
     SecurityMarks actualResponse = client.updateSecurityMarks(securityMarks);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockSecurityCenter.getRequests();
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateSecurityMarksRequest actualRequest = (UpdateSecurityMarksRequest) actualRequests.get(0);
 

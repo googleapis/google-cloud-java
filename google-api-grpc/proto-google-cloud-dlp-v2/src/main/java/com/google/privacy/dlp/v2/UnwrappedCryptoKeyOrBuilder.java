@@ -12,7 +12,7 @@ public interface UnwrappedCryptoKeyOrBuilder
    *
    *
    * <pre>
-   * The AES 128/192/256 bit key. [required]
+   * A 128/192/256 bit key. [required]
    * </pre>
    *
    * <code>bytes key = 1;</code>

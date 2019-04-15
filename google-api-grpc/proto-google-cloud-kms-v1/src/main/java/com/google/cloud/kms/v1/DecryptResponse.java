@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+ * Response message for
+ * [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.DecryptResponse}
@@ -57,7 +58,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -95,7 +96,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The decrypted data originally supplied in [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
+   * The decrypted data originally supplied in
+   * [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
    * </pre>
    *
    * <code>bytes plaintext = 1;</code>
@@ -148,10 +150,9 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     }
     com.google.cloud.kms.v1.DecryptResponse other = (com.google.cloud.kms.v1.DecryptResponse) obj;
 
-    boolean result = true;
-    result = result && getPlaintext().equals(other.getPlaintext());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPlaintext().equals(other.getPlaintext())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -267,7 +268,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
+   * Response message for
+   * [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.DecryptResponse}
@@ -344,35 +346,35 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -424,7 +426,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The decrypted data originally supplied in [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
+     * The decrypted data originally supplied in
+     * [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
      * </pre>
      *
      * <code>bytes plaintext = 1;</code>
@@ -436,7 +439,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The decrypted data originally supplied in [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
+     * The decrypted data originally supplied in
+     * [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
      * </pre>
      *
      * <code>bytes plaintext = 1;</code>
@@ -454,7 +458,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The decrypted data originally supplied in [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
+     * The decrypted data originally supplied in
+     * [EncryptRequest.plaintext][google.cloud.kms.v1.EncryptRequest.plaintext].
      * </pre>
      *
      * <code>bytes plaintext = 1;</code>
@@ -468,7 +473,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

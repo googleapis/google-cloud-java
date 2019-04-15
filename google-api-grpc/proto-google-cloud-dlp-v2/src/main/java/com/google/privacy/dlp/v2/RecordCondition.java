@@ -68,7 +68,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -194,6 +194,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The field type of `value` and `field` do not need to match to be
    * considered equal, but not all comparisons are possible.
+   * EQUAL_TO and NOT_EQUAL_TO attempt to compare even with incompatible types,
+   * but all other comparisons are invalid with incompatible types.
    * A `value` of type:
    * - `string` can be compared against all other types
    * - `boolean` can only be compared against other booleans
@@ -289,7 +291,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -490,18 +492,17 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       com.google.privacy.dlp.v2.RecordCondition.Condition other =
           (com.google.privacy.dlp.v2.RecordCondition.Condition) obj;
 
-      boolean result = true;
-      result = result && (hasField() == other.hasField());
+      if (hasField() != other.hasField()) return false;
       if (hasField()) {
-        result = result && getField().equals(other.getField());
+        if (!getField().equals(other.getField())) return false;
       }
-      result = result && operator_ == other.operator_;
-      result = result && (hasValue() == other.hasValue());
+      if (operator_ != other.operator_) return false;
+      if (hasValue() != other.hasValue()) return false;
       if (hasValue()) {
-        result = result && getValue().equals(other.getValue());
+        if (!getValue().equals(other.getValue())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -629,6 +630,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The field type of `value` and `field` do not need to match to be
      * considered equal, but not all comparisons are possible.
+     * EQUAL_TO and NOT_EQUAL_TO attempt to compare even with incompatible types,
+     * but all other comparisons are invalid with incompatible types.
      * A `value` of type:
      * - `string` can be compared against all other types
      * - `boolean` can only be compared against other booleans
@@ -741,23 +744,23 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -765,13 +768,13 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -826,7 +829,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.privacy.dlp.v2.FieldId field_ = null;
+      private com.google.privacy.dlp.v2.FieldId field_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.FieldId,
               com.google.privacy.dlp.v2.FieldId.Builder,
@@ -1079,7 +1082,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.privacy.dlp.v2.Value value_ = null;
+      private com.google.privacy.dlp.v2.Value value_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Value,
               com.google.privacy.dlp.v2.Value.Builder,
@@ -1257,7 +1260,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1372,7 +1375,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   conditions_ =
                       new java.util.ArrayList<
                           com.google.privacy.dlp.v2.RecordCondition.Condition>();
@@ -1386,7 +1389,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1398,7 +1401,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
         }
         this.unknownFields = unknownFields.build();
@@ -1491,10 +1494,9 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       com.google.privacy.dlp.v2.RecordCondition.Conditions other =
           (com.google.privacy.dlp.v2.RecordCondition.Conditions) obj;
 
-      boolean result = true;
-      result = result && getConditionsList().equals(other.getConditionsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getConditionsList().equals(other.getConditionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1693,7 +1695,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
             new com.google.privacy.dlp.v2.RecordCondition.Conditions(this);
         int from_bitField0_ = bitField0_;
         if (conditionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             conditions_ = java.util.Collections.unmodifiableList(conditions_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -1707,23 +1709,23 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1731,13 +1733,13 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1816,7 +1818,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           java.util.Collections.emptyList();
 
       private void ensureConditionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           conditions_ =
               new java.util.ArrayList<com.google.privacy.dlp.v2.RecordCondition.Condition>(
                   conditions_);
@@ -2022,10 +2024,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
                   com.google.privacy.dlp.v2.RecordCondition.Condition,
                   com.google.privacy.dlp.v2.RecordCondition.Condition.Builder,
                   com.google.privacy.dlp.v2.RecordCondition.ConditionOrBuilder>(
-                  conditions_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  conditions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           conditions_ = null;
         }
         return conditionsBuilder_;
@@ -2034,7 +2033,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2199,7 +2198,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2475,19 +2474,17 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       com.google.privacy.dlp.v2.RecordCondition.Expressions other =
           (com.google.privacy.dlp.v2.RecordCondition.Expressions) obj;
 
-      boolean result = true;
-      result = result && logicalOperator_ == other.logicalOperator_;
-      result = result && getTypeCase().equals(other.getTypeCase());
-      if (!result) return false;
+      if (logicalOperator_ != other.logicalOperator_) return false;
+      if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 3:
-          result = result && getConditions().equals(other.getConditions());
+          if (!getConditions().equals(other.getConditions())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2701,23 +2698,23 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2725,13 +2722,13 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3036,7 +3033,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3171,13 +3168,12 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     com.google.privacy.dlp.v2.RecordCondition other =
         (com.google.privacy.dlp.v2.RecordCondition) obj;
 
-    boolean result = true;
-    result = result && (hasExpressions() == other.hasExpressions());
+    if (hasExpressions() != other.hasExpressions()) return false;
     if (hasExpressions()) {
-      result = result && getExpressions().equals(other.getExpressions());
+      if (!getExpressions().equals(other.getExpressions())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3381,35 +3377,35 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3456,7 +3452,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.privacy.dlp.v2.RecordCondition.Expressions expressions_ = null;
+    private com.google.privacy.dlp.v2.RecordCondition.Expressions expressions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RecordCondition.Expressions,
             com.google.privacy.dlp.v2.RecordCondition.Expressions.Builder,
@@ -3641,7 +3637,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

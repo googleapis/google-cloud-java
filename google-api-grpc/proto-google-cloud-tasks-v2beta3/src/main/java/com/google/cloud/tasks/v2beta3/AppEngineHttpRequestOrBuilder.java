@@ -16,10 +16,12 @@ public interface AppEngineHttpRequestOrBuilder
    * The app's request handler for the task's target URL must be able to handle
    * HTTP requests with this http_method, otherwise the task attempt will fail
    * with error code 405 (Method Not Allowed). See
-   * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+   * [Writing a push task request
+   * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
    * and the documentation for the request handlers in the language your app is
    * written in e.g.
-   * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+   * [Python Request
+   * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
@@ -33,10 +35,12 @@ public interface AppEngineHttpRequestOrBuilder
    * The app's request handler for the task's target URL must be able to handle
    * HTTP requests with this http_method, otherwise the task attempt will fail
    * with error code 405 (Method Not Allowed). See
-   * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+   * [Writing a push task request
+   * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
    * and the documentation for the request handlers in the language your app is
    * written in e.g.
-   * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+   * [Python Request
+   * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
@@ -145,7 +149,8 @@ public interface AppEngineHttpRequestOrBuilder
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -186,7 +191,8 @@ public interface AppEngineHttpRequestOrBuilder
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -230,7 +236,8 @@ public interface AppEngineHttpRequestOrBuilder
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -271,7 +278,8 @@ public interface AppEngineHttpRequestOrBuilder
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
@@ -312,7 +320,8 @@ public interface AppEngineHttpRequestOrBuilder
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or

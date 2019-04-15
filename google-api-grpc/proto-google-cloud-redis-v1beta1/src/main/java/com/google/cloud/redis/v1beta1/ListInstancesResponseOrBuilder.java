@@ -122,4 +122,45 @@ public interface ListInstancesResponseOrBuilder
    * <code>string next_page_token = 2;</code>
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  int getUnreachableCount();
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  java.lang.String getUnreachable(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

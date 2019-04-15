@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.tasks.v2beta2.stub.CloudTasksStub;
 import com.google.cloud.tasks.v2beta2.stub.CloudTasksStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -2850,7 +2851,8 @@ public class CloudTasksClient implements BackgroundResource {
             public ListQueuesPagedResponse apply(ListQueuesPage input) {
               return new ListQueuesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListQueuesPagedResponse(ListQueuesPage page) {
@@ -2925,7 +2927,8 @@ public class CloudTasksClient implements BackgroundResource {
             public ListTasksPagedResponse apply(ListTasksPage input) {
               return new ListTasksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTasksPagedResponse(ListTasksPage page) {

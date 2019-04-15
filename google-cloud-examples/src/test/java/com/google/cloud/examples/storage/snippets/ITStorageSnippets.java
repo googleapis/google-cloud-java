@@ -44,6 +44,7 @@ import com.google.common.collect.Sets;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -58,6 +59,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.HttpsURLConnection;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -476,11 +478,13 @@ public class ITStorageSnippets {
     assertTrue(snippetOutput.contains("ContentLanguage: " + remoteBlob.getContentLanguage()));
     assertTrue(snippetOutput.contains("ContentType: " + remoteBlob.getContentType()));
     assertTrue(snippetOutput.contains("Crc32c: " + remoteBlob.getCrc32c()));
+    assertTrue(snippetOutput.contains("Crc32cHexString: " + remoteBlob.getCrc32cToHexString()));
     assertTrue(snippetOutput.contains("ETag: " + remoteBlob.getEtag()));
     assertTrue(snippetOutput.contains("Generation: " + remoteBlob.getGeneration()));
     assertTrue(snippetOutput.contains("Id: " + remoteBlob.getBlobId()));
     assertTrue(snippetOutput.contains("KmsKeyName: " + remoteBlob.getKmsKeyName()));
     assertTrue(snippetOutput.contains("Md5Hash: " + remoteBlob.getMd5()));
+    assertTrue(snippetOutput.contains("Md5HexString: " + remoteBlob.getMd5ToHexString()));
     assertTrue(snippetOutput.contains("MediaLink: " + remoteBlob.getMediaLink()));
     assertTrue(snippetOutput.contains("Metageneration: " + remoteBlob.getMetageneration()));
     assertTrue(snippetOutput.contains("Name: " + remoteBlob.getName()));
@@ -578,5 +582,30 @@ public class ITStorageSnippets {
     assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
     bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
     assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+  }
+
+  @Test
+  public void testV4SignedURLs() throws IOException {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storageSnippets.createBucket(tempBucket);
+    assertNotNull(bucket);
+    String tempObject = "test-upload-signed-url-object";
+    URL uploadUrl = storageSnippets.generateV4GPutbjectSignedUrl(tempBucket, tempObject);
+    HttpsURLConnection connection = (HttpsURLConnection) uploadUrl.openConnection();
+    connection.setRequestMethod("PUT");
+    connection.setDoOutput(true);
+    connection.setRequestProperty("Content-Type", "application/octet-stream");
+    byte[] write = new byte[BLOB_BYTE_CONTENT.length];
+    try (OutputStream out = connection.getOutputStream()) {
+      out.write(BLOB_BYTE_CONTENT);
+      assertEquals(connection.getResponseCode(), 200);
+    }
+    URL downloadUrl = storageSnippets.generateV4GetObjectSignedUrl(tempBucket, tempObject);
+    connection = (HttpsURLConnection) downloadUrl.openConnection();
+    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    }
   }
 }

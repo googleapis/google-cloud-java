@@ -44,11 +44,9 @@ import com.google.common.base.Preconditions;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -94,17 +92,17 @@ public class Subscriber extends AbstractApiService {
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
   private static final Duration UNARY_TIMEOUT = Duration.ofSeconds(60);
-
-  private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
-      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
+  private static final Duration ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
-  private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
-  private final ScheduledExecutorService executor;
+  // The ExecutorProvider used to generate executors for processing messages.
+  private final ExecutorProvider executorProvider;
+  // An instantiation of the SystemExecutorProvider used for processing acks
+  // and other system actions.
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
@@ -116,24 +114,14 @@ public class Subscriber extends AbstractApiService {
 
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
-      new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
 
-    Preconditions.checkArgument(
-        builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
-    Preconditions.checkArgument(
-        builder.ackExpirationPadding.compareTo(Duration.ofSeconds(MIN_ACK_DEADLINE_SECONDS)) < 0,
-        "padding must be less than %s seconds",
-        MIN_ACK_DEADLINE_SECONDS);
-    ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
@@ -142,21 +130,22 @@ public class Subscriber extends AbstractApiService {
             builder
                 .flowControlSettings
                 .toBuilder()
-                .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                .setLimitExceededBehavior(LimitExceededBehavior.Block)
                 .build());
 
-    executor = builder.executorProvider.getExecutor();
-    if (builder.executorProvider.shouldAutoClose()) {
-      closeables.add(
-          new AutoCloseable() {
-            @Override
-            public void close() throws IOException {
-              executor.shutdown();
-            }
-          });
+    this.numPullers = builder.parallelPullCount;
+
+    executorProvider = builder.executorProvider;
+
+    ExecutorProvider systemExecutorProvider = builder.systemExecutorProvider;
+    if (systemExecutorProvider == null) {
+      systemExecutorProvider =
+          FixedExecutorProvider.create(
+              Executors.newScheduledThreadPool(Math.max(6, 2 * numPullers)));
     }
-    alarmsExecutor = builder.systemExecutorProvider.getExecutor();
-    if (builder.systemExecutorProvider.shouldAutoClose()) {
+
+    alarmsExecutor = systemExecutorProvider.getExecutor();
+    if (systemExecutorProvider.shouldAutoClose()) {
       closeables.add(
           new AutoCloseable() {
             @Override
@@ -166,7 +155,6 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
-    this.numPullers = builder.parallelPullCount;
     TransportChannelProvider channelProvider = builder.channelProvider;
     if (channelProvider.acceptsPoolSize()) {
       channelProvider = channelProvider.withPoolSize(numPullers);
@@ -175,7 +163,7 @@ public class Subscriber extends AbstractApiService {
     try {
       this.subStubSettings =
           SubscriberStubSettings.newBuilder()
-              .setExecutorProvider(FixedExecutorProvider.create(alarmsExecutor))
+              .setExecutorProvider(systemExecutorProvider)
               .setCredentialsProvider(builder.credentialsProvider)
               .setTransportChannelProvider(channelProvider)
               .setHeaderProvider(builder.headerProvider)
@@ -226,12 +214,6 @@ public class Subscriber extends AbstractApiService {
   /** Subscription which the subscriber is subscribed to. */
   public String getSubscriptionNameString() {
     return subscriptionName;
-  }
-
-  /** Acknowledgement expiration padding. See {@link Builder#setAckExpirationPadding}. */
-  @InternalApi
-  Duration getAckExpirationPadding() {
-    return ackExpirationPadding;
   }
 
   /** The flow control settings the Subscriber is configured with. */
@@ -331,20 +313,30 @@ public class Subscriber extends AbstractApiService {
         .start();
   }
 
-  private void startStreamingConnections() throws IOException {
+  private void startStreamingConnections() {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
+        final ScheduledExecutorService executor = executorProvider.getExecutor();
+        if (executorProvider.shouldAutoClose()) {
+          closeables.add(
+              new AutoCloseable() {
+                @Override
+                public void close() {
+                  executor.shutdown();
+                }
+              });
+        }
+
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
                 receiver,
-                ackExpirationPadding,
+                ACK_EXPIRATION_PADDING,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
                 subStub,
                 i,
                 flowController,
-                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));
@@ -372,15 +364,12 @@ public class Subscriber extends AbstractApiService {
 
   private void stopAllStreamingConnections() {
     stopConnections(streamingSubscriberConnections);
-    if (ackDeadlineUpdater != null) {
-      ackDeadlineUpdater.cancel(true);
-    }
   }
 
   private void startConnections(
       List<? extends ApiService> connections, final ApiService.Listener connectionsListener) {
     for (ApiService subscriber : connections) {
-      subscriber.addListener(connectionsListener, executor);
+      subscriber.addListener(connectionsListener, alarmsExecutor);
       subscriber.startAsync();
     }
     for (ApiService subscriber : connections) {
@@ -410,35 +399,29 @@ public class Subscriber extends AbstractApiService {
 
   /** Builder of {@link Subscriber Subscribers}. */
   public static final class Builder {
-    private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
-    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
-            .setExecutorThreadCount(
-                THREADS_PER_CHANNEL * Runtime.getRuntime().availableProcessors())
+            .setExecutorThreadCount(THREADS_PER_CHANNEL)
             .build();
 
     String subscriptionName;
     MessageReceiver receiver;
 
-    Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
     Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
     FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
+    ExecutorProvider systemExecutorProvider = null;
     TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     HeaderProvider headerProvider = new NoHeaderProvider();
-    HeaderProvider internalHeaderProvider =
-        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
@@ -479,21 +462,6 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Sets the static header provider for getting internal (library-defined) headers. The header
-     * provider will be called during client construction only once. The headers returned by the
-     * provider will be cached and supplied as is for each request issued by the constructed client.
-     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
-     * (e.g. User-Agent) by the underlying transport layer.
-     *
-     * @param internalHeaderProvider the internal header provider
-     * @return the builder
-     */
-    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
-      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
-      return this;
-    }
-
-    /**
      * Sets the flow control settings.
      *
      * <p>In the example below, the {@link Subscriber} will make sure that
@@ -524,25 +492,6 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Set acknowledgement expiration padding.
-     *
-     * <p>This is the time accounted before a message expiration is to happen, so the {@link
-     * Subscriber} is able to send an ack extension beforehand.
-     *
-     * <p>This padding duration is configurable so you can account for network latency. A reasonable
-     * number must be provided so messages don't expire because of network latency between when the
-     * ack extension is required and when it reaches the Pub/Sub service.
-     *
-     * @param ackExpirationPadding must be greater or equal to {@link #MIN_ACK_EXPIRATION_PADDING}
-     */
-    @InternalApi
-    Builder setAckExpirationPadding(Duration ackExpirationPadding) {
-      Preconditions.checkArgument(ackExpirationPadding.compareTo(MIN_ACK_EXPIRATION_PADDING) >= 0);
-      this.ackExpirationPadding = ackExpirationPadding;
-      return this;
-    }
-
-    /**
      * Set the maximum period a message ack deadline will be extended. Defaults to one hour.
      *
      * <p>It is recommended to set this value to a reasonable upper bound of the subscriber time to
@@ -557,7 +506,10 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
-    /** Gives the ability to set a custom executor. */
+    /**
+     * Gives the ability to set a custom executor. {@link ExecutorProvider#getExecutor()} will be
+     * called {@link Builder#parallelPullCount} times.
+     */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
       return this;

@@ -12,12 +12,15 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+   * which it becomes output only.
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the job's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -33,12 +36,15 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+   * which it becomes output only.
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the job's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -55,6 +61,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+   * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
    * </pre>
@@ -66,6 +74,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+   * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
    * </pre>
@@ -171,8 +181,12 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
+   * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * Describes the schedule on which the job will be executed.
+   * The schedule can be either of the following types:
+   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+   * * English-like
+   * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * As a general rule, execution `n + 1` of a job will not begin
    * until execution `n` has finished. Cloud Scheduler will never
    * allow two simultaneously outstanding executions. For example,
@@ -185,9 +199,6 @@ public interface JobOrBuilder
    * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
    * times, with exponential backoff, until the next scheduled start
    * time.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * </pre>
    *
    * <code>string schedule = 20;</code>
@@ -197,8 +208,12 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Required.
+   * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * Describes the schedule on which the job will be executed.
+   * The schedule can be either of the following types:
+   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+   * * English-like
+   * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * As a general rule, execution `n + 1` of a job will not begin
    * until execution `n` has finished. Cloud Scheduler will never
    * allow two simultaneously outstanding executions. For example,
@@ -211,9 +226,6 @@ public interface JobOrBuilder
    * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
    * times, with exponential backoff, until the next scheduled start
    * time.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * </pre>
    *
    * <code>string schedule = 20;</code>
@@ -436,6 +448,64 @@ public interface JobOrBuilder
    * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
    */
   com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder getRetryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  boolean hasAttemptDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  com.google.protobuf.Duration getAttemptDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getAttemptDeadlineOrBuilder();
 
   public com.google.cloud.scheduler.v1beta1.Job.TargetCase getTargetCase();
 }

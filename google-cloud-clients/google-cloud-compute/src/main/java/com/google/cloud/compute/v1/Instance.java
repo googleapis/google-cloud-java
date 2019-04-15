@@ -48,6 +48,8 @@ public final class Instance implements ApiMessage {
   private final Scheduling scheduling;
   private final String selfLink;
   private final List<ServiceAccount> serviceAccounts;
+  private final ShieldedInstanceConfig shieldedInstanceConfig;
+  private final ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicy;
   private final Boolean startRestricted;
   private final String status;
   private final String statusMessage;
@@ -75,6 +77,8 @@ public final class Instance implements ApiMessage {
     this.scheduling = null;
     this.selfLink = null;
     this.serviceAccounts = null;
+    this.shieldedInstanceConfig = null;
+    this.shieldedInstanceIntegrityPolicy = null;
     this.startRestricted = null;
     this.status = null;
     this.statusMessage = null;
@@ -103,6 +107,8 @@ public final class Instance implements ApiMessage {
       Scheduling scheduling,
       String selfLink,
       List<ServiceAccount> serviceAccounts,
+      ShieldedInstanceConfig shieldedInstanceConfig,
+      ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicy,
       Boolean startRestricted,
       String status,
       String statusMessage,
@@ -128,6 +134,8 @@ public final class Instance implements ApiMessage {
     this.scheduling = scheduling;
     this.selfLink = selfLink;
     this.serviceAccounts = serviceAccounts;
+    this.shieldedInstanceConfig = shieldedInstanceConfig;
+    this.shieldedInstanceIntegrityPolicy = shieldedInstanceIntegrityPolicy;
     this.startRestricted = startRestricted;
     this.status = status;
     this.statusMessage = statusMessage;
@@ -197,6 +205,12 @@ public final class Instance implements ApiMessage {
     if ("serviceAccounts".equals(fieldName)) {
       return serviceAccounts;
     }
+    if ("shieldedInstanceConfig".equals(fieldName)) {
+      return shieldedInstanceConfig;
+    }
+    if ("shieldedInstanceIntegrityPolicy".equals(fieldName)) {
+      return shieldedInstanceIntegrityPolicy;
+    }
     if ("startRestricted".equals(fieldName)) {
       return startRestricted;
     }
@@ -223,6 +237,12 @@ public final class Instance implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -381,6 +401,14 @@ public final class Instance implements ApiMessage {
     return serviceAccounts;
   }
 
+  public ShieldedInstanceConfig getShieldedInstanceConfig() {
+    return shieldedInstanceConfig;
+  }
+
+  public ShieldedInstanceIntegrityPolicy getShieldedInstanceIntegrityPolicy() {
+    return shieldedInstanceIntegrityPolicy;
+  }
+
   /**
    * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected
    * suspicious activity.
@@ -463,6 +491,8 @@ public final class Instance implements ApiMessage {
     private Scheduling scheduling;
     private String selfLink;
     private List<ServiceAccount> serviceAccounts;
+    private ShieldedInstanceConfig shieldedInstanceConfig;
+    private ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicy;
     private Boolean startRestricted;
     private String status;
     private String statusMessage;
@@ -533,6 +563,12 @@ public final class Instance implements ApiMessage {
       if (other.getServiceAccountsList() != null) {
         this.serviceAccounts = other.serviceAccounts;
       }
+      if (other.getShieldedInstanceConfig() != null) {
+        this.shieldedInstanceConfig = other.shieldedInstanceConfig;
+      }
+      if (other.getShieldedInstanceIntegrityPolicy() != null) {
+        this.shieldedInstanceIntegrityPolicy = other.shieldedInstanceIntegrityPolicy;
+      }
       if (other.getStartRestricted() != null) {
         this.startRestricted = other.startRestricted;
       }
@@ -572,6 +608,8 @@ public final class Instance implements ApiMessage {
       this.scheduling = source.scheduling;
       this.selfLink = source.selfLink;
       this.serviceAccounts = source.serviceAccounts;
+      this.shieldedInstanceConfig = source.shieldedInstanceConfig;
+      this.shieldedInstanceIntegrityPolicy = source.shieldedInstanceIntegrityPolicy;
       this.startRestricted = source.startRestricted;
       this.status = source.status;
       this.statusMessage = source.statusMessage;
@@ -975,6 +1013,25 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    public ShieldedInstanceConfig getShieldedInstanceConfig() {
+      return shieldedInstanceConfig;
+    }
+
+    public Builder setShieldedInstanceConfig(ShieldedInstanceConfig shieldedInstanceConfig) {
+      this.shieldedInstanceConfig = shieldedInstanceConfig;
+      return this;
+    }
+
+    public ShieldedInstanceIntegrityPolicy getShieldedInstanceIntegrityPolicy() {
+      return shieldedInstanceIntegrityPolicy;
+    }
+
+    public Builder setShieldedInstanceIntegrityPolicy(
+        ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicy) {
+      this.shieldedInstanceIntegrityPolicy = shieldedInstanceIntegrityPolicy;
+      return this;
+    }
+
     /**
      * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected
      * suspicious activity.
@@ -1081,6 +1138,8 @@ public final class Instance implements ApiMessage {
           scheduling,
           selfLink,
           serviceAccounts,
+          shieldedInstanceConfig,
+          shieldedInstanceIntegrityPolicy,
           startRestricted,
           status,
           statusMessage,
@@ -1110,6 +1169,8 @@ public final class Instance implements ApiMessage {
       newBuilder.setScheduling(this.scheduling);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
+      newBuilder.setShieldedInstanceConfig(this.shieldedInstanceConfig);
+      newBuilder.setShieldedInstanceIntegrityPolicy(this.shieldedInstanceIntegrityPolicy);
       newBuilder.setStartRestricted(this.startRestricted);
       newBuilder.setStatus(this.status);
       newBuilder.setStatusMessage(this.statusMessage);
@@ -1182,6 +1243,12 @@ public final class Instance implements ApiMessage {
         + "serviceAccounts="
         + serviceAccounts
         + ", "
+        + "shieldedInstanceConfig="
+        + shieldedInstanceConfig
+        + ", "
+        + "shieldedInstanceIntegrityPolicy="
+        + shieldedInstanceIntegrityPolicy
+        + ", "
         + "startRestricted="
         + startRestricted
         + ", "
@@ -1226,6 +1293,9 @@ public final class Instance implements ApiMessage {
           && Objects.equals(this.scheduling, that.getScheduling())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
+          && Objects.equals(this.shieldedInstanceConfig, that.getShieldedInstanceConfig())
+          && Objects.equals(
+              this.shieldedInstanceIntegrityPolicy, that.getShieldedInstanceIntegrityPolicy())
           && Objects.equals(this.startRestricted, that.getStartRestricted())
           && Objects.equals(this.status, that.getStatus())
           && Objects.equals(this.statusMessage, that.getStatusMessage())
@@ -1258,6 +1328,8 @@ public final class Instance implements ApiMessage {
         scheduling,
         selfLink,
         serviceAccounts,
+        shieldedInstanceConfig,
+        shieldedInstanceIntegrityPolicy,
         startRestricted,
         status,
         statusMessage,

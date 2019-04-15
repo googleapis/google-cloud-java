@@ -54,7 +54,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 found_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -65,7 +65,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 missing_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -76,7 +76,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 deferred_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -86,7 +86,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -98,13 +98,13 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         found_ = java.util.Collections.unmodifiableList(found_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         missing_ = java.util.Collections.unmodifiableList(missing_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         deferred_ = java.util.Collections.unmodifiableList(deferred_);
       }
       this.unknownFields = unknownFields.build();
@@ -404,12 +404,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.datastore.v1.LookupResponse other = (com.google.datastore.v1.LookupResponse) obj;
 
-    boolean result = true;
-    result = result && getFoundList().equals(other.getFoundList());
-    result = result && getMissingList().equals(other.getMissingList());
-    result = result && getDeferredList().equals(other.getDeferredList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getFoundList().equals(other.getFoundList())) return false;
+    if (!getMissingList().equals(other.getMissingList())) return false;
+    if (!getDeferredList().equals(other.getDeferredList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -627,7 +626,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
           new com.google.datastore.v1.LookupResponse(this);
       int from_bitField0_ = bitField0_;
       if (foundBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           found_ = java.util.Collections.unmodifiableList(found_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -636,7 +635,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         result.found_ = foundBuilder_.build();
       }
       if (missingBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           missing_ = java.util.Collections.unmodifiableList(missing_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -645,7 +644,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         result.missing_ = missingBuilder_.build();
       }
       if (deferredBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           deferred_ = java.util.Collections.unmodifiableList(deferred_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -659,35 +658,35 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -818,7 +817,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFoundIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         found_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>(found_);
         bitField0_ |= 0x00000001;
       }
@@ -1192,10 +1191,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.EntityResult,
                 com.google.datastore.v1.EntityResult.Builder,
                 com.google.datastore.v1.EntityResultOrBuilder>(
-                found_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                found_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         found_ = null;
       }
       return foundBuilder_;
@@ -1205,7 +1201,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMissingIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         missing_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>(missing_);
         bitField0_ |= 0x00000002;
       }
@@ -1579,10 +1575,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.EntityResult,
                 com.google.datastore.v1.EntityResult.Builder,
                 com.google.datastore.v1.EntityResultOrBuilder>(
-                missing_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                missing_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         missing_ = null;
       }
       return missingBuilder_;
@@ -1592,7 +1585,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDeferredIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         deferred_ = new java.util.ArrayList<com.google.datastore.v1.Key>(deferred_);
         bitField0_ |= 0x00000004;
       }
@@ -1963,10 +1956,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Key,
                 com.google.datastore.v1.Key.Builder,
                 com.google.datastore.v1.KeyOrBuilder>(
-                deferred_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                deferred_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         deferred_ = null;
       }
       return deferredBuilder_;
@@ -1974,7 +1964,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

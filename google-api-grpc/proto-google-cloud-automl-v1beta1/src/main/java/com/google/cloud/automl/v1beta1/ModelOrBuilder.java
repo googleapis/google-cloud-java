@@ -12,6 +12,41 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * Metadata for translation models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
+   */
+  boolean hasTranslationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for translation models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for translation models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
+      getTranslationModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata for image classification models.
    * </pre>
    *
@@ -90,36 +125,186 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Metadata for translation models.
+   * Metadata for image object detection models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
-  boolean hasTranslationModelMetadata();
+  boolean hasImageObjectDetectionModelMetadata();
   /**
    *
    *
    * <pre>
-   * Metadata for translation models.
+   * Metadata for image object detection models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
-  com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata();
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata
+      getImageObjectDetectionModelMetadata();
   /**
    *
    *
    * <pre>
-   * Metadata for translation models.
+   * Metadata for image object detection models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
-  com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
-      getTranslationModelMetadataOrBuilder();
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadataOrBuilder
+      getImageObjectDetectionModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+   * </code>
+   */
+  boolean hasVideoClassificationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoClassificationModelMetadata
+      getVideoClassificationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for video classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoClassificationModelMetadata video_classification_model_metadata = 23;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoClassificationModelMetadataOrBuilder
+      getVideoClassificationModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  boolean hasTextExtractionModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionModelMetadata getTextExtractionModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionModelMetadataOrBuilder
+      getTextExtractionModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for Tables models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   */
+  boolean hasTablesModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for Tables models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   */
+  com.google.cloud.automl.v1beta1.TablesModelMetadata getTablesModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for Tables models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesModelMetadata tables_model_metadata = 24;</code>
+   */
+  com.google.cloud.automl.v1beta1.TablesModelMetadataOrBuilder getTablesModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  boolean hasTextSentimentModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentModelMetadata getTextSentimentModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentModelMetadataOrBuilder
+      getTextSentimentModelMetadataOrBuilder();
 
   /**
    *
@@ -151,9 +336,9 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-   * (_), and ASCII digits 0-9.
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
+   * (_), and ASCII digits 0-9. It must start with a letter.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -164,9 +349,9 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
-   * up to 32 characters
-   * long and can consist only of ASCII Latin letters A-Z and a-z, underscores
-   * (_), and ASCII digits 0-9.
+   * up to 32 characters long and can consist only of ASCII Latin letters A-Z
+   * and a-z, underscores
+   * (_), and ASCII digits 0-9. It must start with a letter.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -179,8 +364,7 @@ public interface ModelOrBuilder
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
-   * come from the
-   * same ancestor project and location.
+   * come from the same ancestor project and location.
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
@@ -192,8 +376,7 @@ public interface ModelOrBuilder
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
-   * come from the
-   * same ancestor project and location.
+   * come from the same ancestor project and location.
    * </pre>
    *
    * <code>string dataset_id = 3;</code>
@@ -272,7 +455,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Deployment state of the model.
+   * Output only. Deployment state of the model. A model can only serve
+   * prediction requests after it gets deployed.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
@@ -282,7 +466,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Deployment state of the model.
+   * Output only. Deployment state of the model. A model can only serve
+   * prediction requests after it gets deployed.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>

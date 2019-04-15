@@ -31,8 +31,8 @@ import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.Traces;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -93,7 +93,7 @@ public class TraceServiceClientTest {
 
     client.patchTraces(projectId, traces);
 
-    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
 
@@ -137,7 +137,7 @@ public class TraceServiceClientTest {
     Trace actualResponse = client.getTrace(projectId, traceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTraceRequest actualRequest = (GetTraceRequest) actualRequests.get(0);
 
@@ -187,7 +187,7 @@ public class TraceServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
 

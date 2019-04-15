@@ -25,9 +25,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   private Subscription() {
     name_ = "";
     topic_ = "";
-    ackDeadlineSeconds_ = 0;
-    retainAckedMessages_ = false;
-    enableMessageOrdering_ = false;
   }
 
   @java.lang.Override
@@ -110,7 +107,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000040;
@@ -144,7 +141,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -376,7 +373,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
    * window. This must be true if you would like to
-   * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+   * &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
    * Seek to a timestamp&lt;/a&gt;.
    * &lt;br&gt;&lt;br&gt;
    * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
@@ -558,12 +556,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * WARNING: `enable_message_ordering` is an experimental field not yet
-   * supported by the service.
    * If true, messages published with the same `ordering_key` in `PubsubMessage`
    * will be delivered to the subscribers in the order in which they
    * are received by the Pub/Sub system. Otherwise, they may be delivered in
    * any order.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>bool enable_message_ordering = 10;</code>
@@ -737,27 +736,26 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.pubsub.v1.Subscription other = (com.google.pubsub.v1.Subscription) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getTopic().equals(other.getTopic());
-    result = result && (hasPushConfig() == other.hasPushConfig());
+    if (!getName().equals(other.getName())) return false;
+    if (!getTopic().equals(other.getTopic())) return false;
+    if (hasPushConfig() != other.hasPushConfig()) return false;
     if (hasPushConfig()) {
-      result = result && getPushConfig().equals(other.getPushConfig());
+      if (!getPushConfig().equals(other.getPushConfig())) return false;
     }
-    result = result && (getAckDeadlineSeconds() == other.getAckDeadlineSeconds());
-    result = result && (getRetainAckedMessages() == other.getRetainAckedMessages());
-    result = result && (hasMessageRetentionDuration() == other.hasMessageRetentionDuration());
+    if (getAckDeadlineSeconds() != other.getAckDeadlineSeconds()) return false;
+    if (getRetainAckedMessages() != other.getRetainAckedMessages()) return false;
+    if (hasMessageRetentionDuration() != other.hasMessageRetentionDuration()) return false;
     if (hasMessageRetentionDuration()) {
-      result = result && getMessageRetentionDuration().equals(other.getMessageRetentionDuration());
+      if (!getMessageRetentionDuration().equals(other.getMessageRetentionDuration())) return false;
     }
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && (getEnableMessageOrdering() == other.getEnableMessageOrdering());
-    result = result && (hasExpirationPolicy() == other.hasExpirationPolicy());
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getEnableMessageOrdering() != other.getEnableMessageOrdering()) return false;
+    if (hasExpirationPolicy() != other.hasExpirationPolicy()) return false;
     if (hasExpirationPolicy()) {
-      result = result && getExpirationPolicy().equals(other.getExpirationPolicy());
+      if (!getExpirationPolicy().equals(other.getExpirationPolicy())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1043,35 +1041,35 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1372,7 +1370,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.pubsub.v1.PushConfig pushConfig_ = null;
+    private com.google.pubsub.v1.PushConfig pushConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PushConfig,
             com.google.pubsub.v1.PushConfig.Builder,
@@ -1672,7 +1670,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
      * window. This must be true if you would like to
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+     * &lt;a
+     * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
      * Seek to a timestamp&lt;/a&gt;.
      * &lt;br&gt;&lt;br&gt;
      * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
@@ -1693,7 +1692,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
      * window. This must be true if you would like to
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+     * &lt;a
+     * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
      * Seek to a timestamp&lt;/a&gt;.
      * &lt;br&gt;&lt;br&gt;
      * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
@@ -1717,7 +1717,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
      * window. This must be true if you would like to
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+     * &lt;a
+     * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
      * Seek to a timestamp&lt;/a&gt;.
      * &lt;br&gt;&lt;br&gt;
      * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
@@ -1734,7 +1735,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Duration messageRetentionDuration_ = null;
+    private com.google.protobuf.Duration messageRetentionDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -2152,12 +2153,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `enable_message_ordering` is an experimental field not yet
-     * supported by the service.
      * If true, messages published with the same `ordering_key` in `PubsubMessage`
      * will be delivered to the subscribers in the order in which they
      * are received by the Pub/Sub system. Otherwise, they may be delivered in
      * any order.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
@@ -2169,12 +2171,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `enable_message_ordering` is an experimental field not yet
-     * supported by the service.
      * If true, messages published with the same `ordering_key` in `PubsubMessage`
      * will be delivered to the subscribers in the order in which they
      * are received by the Pub/Sub system. Otherwise, they may be delivered in
      * any order.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
@@ -2189,12 +2192,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `enable_message_ordering` is an experimental field not yet
-     * supported by the service.
      * If true, messages published with the same `ordering_key` in `PubsubMessage`
      * will be delivered to the subscribers in the order in which they
      * are received by the Pub/Sub system. Otherwise, they may be delivered in
      * any order.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
@@ -2206,7 +2210,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_ = null;
+    private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.ExpirationPolicy,
             com.google.pubsub.v1.ExpirationPolicy.Builder,
@@ -2462,7 +2466,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

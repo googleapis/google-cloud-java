@@ -77,7 +77,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 pendingVersions_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoTypeVersion>();
                 mutable_bitField0_ |= 0x00000004;
@@ -89,7 +89,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -101,7 +101,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         pendingVersions_ = java.util.Collections.unmodifiableList(pendingVersions_);
       }
       this.unknownFields = unknownFields.build();
@@ -335,15 +335,14 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.StoredInfoType other = (com.google.privacy.dlp.v2.StoredInfoType) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasCurrentVersion() == other.hasCurrentVersion());
+    if (!getName().equals(other.getName())) return false;
+    if (hasCurrentVersion() != other.hasCurrentVersion()) return false;
     if (hasCurrentVersion()) {
-      result = result && getCurrentVersion().equals(other.getCurrentVersion());
+      if (!getCurrentVersion().equals(other.getCurrentVersion())) return false;
     }
-    result = result && getPendingVersionsList().equals(other.getPendingVersionsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPendingVersionsList().equals(other.getPendingVersionsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -561,7 +560,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         result.currentVersion_ = currentVersionBuilder_.build();
       }
       if (pendingVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           pendingVersions_ = java.util.Collections.unmodifiableList(pendingVersions_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -576,35 +575,35 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -778,7 +777,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.privacy.dlp.v2.StoredInfoTypeVersion currentVersion_ = null;
+    private com.google.privacy.dlp.v2.StoredInfoTypeVersion currentVersion_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.StoredInfoTypeVersion,
             com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder,
@@ -964,7 +963,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePendingVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         pendingVersions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.StoredInfoTypeVersion>(
                 pendingVersions_);
@@ -1331,7 +1330,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder,
                 com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder>(
                 pendingVersions_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         pendingVersions_ = null;
@@ -1341,7 +1340,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

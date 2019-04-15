@@ -20,7 +20,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * favorites, preferences, playlists, and so on. You can redefine a session
  * entity type at the session level.
  * For more information about entity types, see the
- * [Dialogflow documentation](https://dialogflow.com/docs/entities).
+ * [Dialogflow
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -372,7 +373,8 @@ public final class SessionEntityTypesGrpc {
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
    * For more information about entity types, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/entities).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
    * </pre>
    */
   public abstract static class SessionEntityTypesImplBase implements io.grpc.BindableService {
@@ -410,6 +412,8 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
+     * If the specified session entity type already exists, overrides the session
+     * entity type.
      * </pre>
      */
     public void createSessionEntityType(
@@ -500,7 +504,8 @@ public final class SessionEntityTypesGrpc {
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
    * For more information about entity types, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/entities).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
    * </pre>
    */
   public static final class SessionEntityTypesStub
@@ -558,6 +563,8 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
+     * If the specified session entity type already exists, overrides the session
+     * entity type.
      * </pre>
      */
     public void createSessionEntityType(
@@ -617,7 +624,8 @@ public final class SessionEntityTypesGrpc {
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
    * For more information about entity types, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/entities).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
    * </pre>
    */
   public static final class SessionEntityTypesBlockingStub
@@ -668,6 +676,8 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
+     * If the specified session entity type already exists, overrides the session
+     * entity type.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.SessionEntityType createSessionEntityType(
@@ -716,7 +726,8 @@ public final class SessionEntityTypesGrpc {
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
    * For more information about entity types, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/entities).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
    * </pre>
    */
   public static final class SessionEntityTypesFutureStub
@@ -769,6 +780,8 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
+     * If the specified session entity type already exists, overrides the session
+     * entity type.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

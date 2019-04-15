@@ -35,8 +35,8 @@ import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -124,7 +124,7 @@ public class GroupServiceClientTest {
     Group actualResponse = client.getGroup(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
@@ -175,7 +175,7 @@ public class GroupServiceClientTest {
     Group actualResponse = client.createGroup(name, group);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateGroupRequest actualRequest = (CreateGroupRequest) actualRequests.get(0);
 
@@ -227,7 +227,7 @@ public class GroupServiceClientTest {
     Group actualResponse = client.updateGroup(group);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
 
@@ -264,7 +264,7 @@ public class GroupServiceClientTest {
 
     client.deleteGroup(name);
 
-    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteGroupRequest actualRequest = (DeleteGroupRequest) actualRequests.get(0);
 
@@ -314,7 +314,7 @@ public class GroupServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMembersList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListGroupMembersRequest actualRequest = (ListGroupMembersRequest) actualRequests.get(0);
 

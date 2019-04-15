@@ -138,6 +138,12 @@ public final class Network implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -174,8 +180,9 @@ public final class Network implements ApiMessage {
   }
 
   /**
-   * The range of internal addresses that are legal on this network. This range is a CIDR
-   * specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on
+   * this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the
+   * client when the network is created.
    */
   public String getIPv4Range() {
     return iPv4Range;
@@ -388,18 +395,18 @@ public final class Network implements ApiMessage {
     }
 
     /**
-     * The range of internal addresses that are legal on this network. This range is a CIDR
-     * specification, for example: 192.168.0.0/16. Provided by the client when the network is
-     * created.
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal
+     * on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by
+     * the client when the network is created.
      */
     public String getIPv4Range() {
       return iPv4Range;
     }
 
     /**
-     * The range of internal addresses that are legal on this network. This range is a CIDR
-     * specification, for example: 192.168.0.0/16. Provided by the client when the network is
-     * created.
+     * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal
+     * on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by
+     * the client when the network is created.
      */
     public Builder setIPv4Range(String iPv4Range) {
       this.iPv4Range = iPv4Range;

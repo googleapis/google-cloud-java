@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+ * Request message for
+ * [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.EncryptRequest}
@@ -71,7 +72,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -109,10 +110,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-   * to use for encryption.
-   * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-   * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+   * Required. The resource name of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * encryption.
+   * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+   * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -132,10 +135,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-   * to use for encryption.
-   * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-   * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+   * Required. The resource name of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * encryption.
+   * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+   * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -160,11 +165,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The data to encrypt. Must be no larger than 64KiB.
    * The maximum size depends on the key version's
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no larger
-   * than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-   * plaintext and additional_authenticated_data fields must be no larger than
-   * 8KiB.
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+   * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the
+   * plaintext must be no larger than 64KiB. For
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+   * the plaintext and additional_authenticated_data fields must be no larger
+   * than 8KiB.
    * </pre>
    *
    * <code>bytes plaintext = 2;</code>
@@ -180,13 +186,15 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional data that, if specified, must also be provided during decryption
-   * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+   * through
+   * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
    * The maximum size depends on the key version's
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD must be no larger than
-   * 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-   * plaintext and additional_authenticated_data fields must be no larger than
-   * 8KiB.
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+   * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD
+   * must be no larger than 64KiB. For
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+   * the plaintext and additional_authenticated_data fields must be no larger
+   * than 8KiB.
    * </pre>
    *
    * <code>bytes additional_authenticated_data = 3;</code>
@@ -252,13 +260,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.kms.v1.EncryptRequest other = (com.google.cloud.kms.v1.EncryptRequest) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getPlaintext().equals(other.getPlaintext());
-    result =
-        result && getAdditionalAuthenticatedData().equals(other.getAdditionalAuthenticatedData());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (!getPlaintext().equals(other.getPlaintext())) return false;
+    if (!getAdditionalAuthenticatedData().equals(other.getAdditionalAuthenticatedData()))
+      return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -378,7 +385,8 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   * Request message for
+   * [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.EncryptRequest}
@@ -461,35 +469,35 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -548,10 +556,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * to use for encryption.
-     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-     * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+     * Required. The resource name of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * encryption.
+     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+     * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -571,10 +581,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * to use for encryption.
-     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-     * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+     * Required. The resource name of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * encryption.
+     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+     * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -594,10 +606,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * to use for encryption.
-     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-     * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+     * Required. The resource name of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * encryption.
+     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+     * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -615,10 +629,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * to use for encryption.
-     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-     * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+     * Required. The resource name of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * encryption.
+     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+     * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -633,10 +649,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] or [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-     * to use for encryption.
-     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server will use its
-     * [primary version][google.cloud.kms.v1.CryptoKey.primary].
+     * Required. The resource name of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * encryption.
+     * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
+     * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -659,11 +677,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The data to encrypt. Must be no larger than 64KiB.
      * The maximum size depends on the key version's
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no larger
-     * than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-     * plaintext and additional_authenticated_data fields must be no larger than
-     * 8KiB.
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+     * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the
+     * plaintext must be no larger than 64KiB. For
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+     * the plaintext and additional_authenticated_data fields must be no larger
+     * than 8KiB.
      * </pre>
      *
      * <code>bytes plaintext = 2;</code>
@@ -677,11 +696,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The data to encrypt. Must be no larger than 64KiB.
      * The maximum size depends on the key version's
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no larger
-     * than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-     * plaintext and additional_authenticated_data fields must be no larger than
-     * 8KiB.
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+     * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the
+     * plaintext must be no larger than 64KiB. For
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+     * the plaintext and additional_authenticated_data fields must be no larger
+     * than 8KiB.
      * </pre>
      *
      * <code>bytes plaintext = 2;</code>
@@ -701,11 +721,12 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The data to encrypt. Must be no larger than 64KiB.
      * The maximum size depends on the key version's
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no larger
-     * than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-     * plaintext and additional_authenticated_data fields must be no larger than
-     * 8KiB.
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+     * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the
+     * plaintext must be no larger than 64KiB. For
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+     * the plaintext and additional_authenticated_data fields must be no larger
+     * than 8KiB.
      * </pre>
      *
      * <code>bytes plaintext = 2;</code>
@@ -724,13 +745,15 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional data that, if specified, must also be provided during decryption
-     * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+     * through
+     * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
      * The maximum size depends on the key version's
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD must be no larger than
-     * 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-     * plaintext and additional_authenticated_data fields must be no larger than
-     * 8KiB.
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+     * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD
+     * must be no larger than 64KiB. For
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+     * the plaintext and additional_authenticated_data fields must be no larger
+     * than 8KiB.
      * </pre>
      *
      * <code>bytes additional_authenticated_data = 3;</code>
@@ -743,13 +766,15 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional data that, if specified, must also be provided during decryption
-     * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+     * through
+     * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
      * The maximum size depends on the key version's
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD must be no larger than
-     * 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-     * plaintext and additional_authenticated_data fields must be no larger than
-     * 8KiB.
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+     * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD
+     * must be no larger than 64KiB. For
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+     * the plaintext and additional_authenticated_data fields must be no larger
+     * than 8KiB.
      * </pre>
      *
      * <code>bytes additional_authenticated_data = 3;</code>
@@ -768,13 +793,15 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional data that, if specified, must also be provided during decryption
-     * through [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+     * through
+     * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
      * The maximum size depends on the key version's
-     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD must be no larger than
-     * 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of the
-     * plaintext and additional_authenticated_data fields must be no larger than
-     * 8KiB.
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
+     * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the AAD
+     * must be no larger than 64KiB. For
+     * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined length of
+     * the plaintext and additional_authenticated_data fields must be no larger
+     * than 8KiB.
      * </pre>
      *
      * <code>bytes additional_authenticated_data = 3;</code>
@@ -788,7 +815,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

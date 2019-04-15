@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.SslPolicyStub;
 import com.google.cloud.compute.v1.stub.SslPolicyStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -213,9 +214,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+   *   String formattedSslPolicy = ProjectGlobalSslPolicyName.format("[PROJECT]", "[SSL_POLICY]");
    *   DeleteSslPolicyHttpRequest request = DeleteSslPolicyHttpRequest.newBuilder()
-   *     .setSslPolicy(sslPolicy.toString())
+   *     .setSslPolicy(formattedSslPolicy)
    *     .build();
    *   Operation response = sslPolicyClient.deleteSslPolicy(request);
    * }
@@ -238,9 +239,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+   *   String formattedSslPolicy = ProjectGlobalSslPolicyName.format("[PROJECT]", "[SSL_POLICY]");
    *   DeleteSslPolicyHttpRequest request = DeleteSslPolicyHttpRequest.newBuilder()
-   *     .setSslPolicy(sslPolicy.toString())
+   *     .setSslPolicy(formattedSslPolicy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslPolicyClient.deleteSslPolicyCallable().futureCall(request);
    *   // Do something
@@ -313,9 +314,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+   *   String formattedSslPolicy = ProjectGlobalSslPolicyName.format("[PROJECT]", "[SSL_POLICY]");
    *   GetSslPolicyHttpRequest request = GetSslPolicyHttpRequest.newBuilder()
-   *     .setSslPolicy(sslPolicy.toString())
+   *     .setSslPolicy(formattedSslPolicy)
    *     .build();
    *   SslPolicy response = sslPolicyClient.getSslPolicy(request);
    * }
@@ -337,9 +338,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+   *   String formattedSslPolicy = ProjectGlobalSslPolicyName.format("[PROJECT]", "[SSL_POLICY]");
    *   GetSslPolicyHttpRequest request = GetSslPolicyHttpRequest.newBuilder()
-   *     .setSslPolicy(sslPolicy.toString())
+   *     .setSslPolicy(formattedSslPolicy)
    *     .build();
    *   ApiFuture&lt;SslPolicy&gt; future = sslPolicyClient.getSslPolicyCallable().futureCall(request);
    *   // Do something
@@ -427,10 +428,10 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   InsertSslPolicyHttpRequest request = InsertSslPolicyHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
    *   Operation response = sslPolicyClient.insertSslPolicy(request);
@@ -454,10 +455,10 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   InsertSslPolicyHttpRequest request = InsertSslPolicyHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslPolicyClient.insertSslPolicyCallable().futureCall(request);
@@ -531,9 +532,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSslPoliciesHttpRequest request = ListSslPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (SslPolicy element : sslPolicyClient.listSslPolicies(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -557,9 +558,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSslPoliciesHttpRequest request = ListSslPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListSslPoliciesPagedResponse&gt; future = sslPolicyClient.listSslPoliciesPagedCallable().futureCall(request);
    *   // Do something
@@ -583,9 +584,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSslPoliciesHttpRequest request = ListSslPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     SslPoliciesList response = sslPolicyClient.listSslPoliciesCallable().call(request);
@@ -668,9 +669,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListAvailableFeaturesSslPoliciesHttpRequest request = ListAvailableFeaturesSslPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   SslPoliciesListAvailableFeaturesResponse response = sslPolicyClient.listAvailableFeaturesSslPolicies(request);
    * }
@@ -693,9 +694,9 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListAvailableFeaturesSslPoliciesHttpRequest request = ListAvailableFeaturesSslPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;SslPoliciesListAvailableFeaturesResponse&gt; future = sslPolicyClient.listAvailableFeaturesSslPoliciesCallable().futureCall(request);
    *   // Do something
@@ -731,7 +732,10 @@ public class SslPolicyClient implements BackgroundResource {
    *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
    *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
    *     the load balancers and the backends.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -768,7 +772,10 @@ public class SslPolicyClient implements BackgroundResource {
    *     can be attached to a TargetHttpsProxy or a TargetSslProxy. This affects connections between
    *     clients and the HTTPS or SSL proxy load balancer. They do not affect the connection between
    *     the load balancers and the backends.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -792,11 +799,11 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+   *   String formattedSslPolicy = ProjectGlobalSslPolicyName.format("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSslPolicyHttpRequest request = PatchSslPolicyHttpRequest.newBuilder()
-   *     .setSslPolicy(sslPolicy.toString())
+   *     .setSslPolicy(formattedSslPolicy)
    *     .setSslPolicyResource(sslPolicyResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -820,11 +827,11 @@ public class SslPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
-   *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+   *   String formattedSslPolicy = ProjectGlobalSslPolicyName.format("[PROJECT]", "[SSL_POLICY]");
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSslPolicyHttpRequest request = PatchSslPolicyHttpRequest.newBuilder()
-   *     .setSslPolicy(sslPolicy.toString())
+   *     .setSslPolicy(formattedSslPolicy)
    *     .setSslPolicyResource(sslPolicyResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -889,7 +896,8 @@ public class SslPolicyClient implements BackgroundResource {
             public ListSslPoliciesPagedResponse apply(ListSslPoliciesPage input) {
               return new ListSslPoliciesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSslPoliciesPagedResponse(ListSslPoliciesPage page) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -389,7 +389,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
-              return payload.getProductSetsList();
+              return payload.getProductSetsList() != null
+                  ? payload.getProductSetsList()
+                  : ImmutableList.<ProductSet>of();
             }
           };
 
@@ -423,7 +425,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<Product> extractResources(ListProductsResponse payload) {
-              return payload.getProductsList();
+              return payload.getProductsList() != null
+                  ? payload.getProductsList()
+                  : ImmutableList.<Product>of();
             }
           };
 
@@ -461,7 +465,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<ReferenceImage> extractResources(ListReferenceImagesResponse payload) {
-              return payload.getReferenceImagesList();
+              return payload.getReferenceImagesList() != null
+                  ? payload.getReferenceImagesList()
+                  : ImmutableList.<ReferenceImage>of();
             }
           };
 
@@ -503,7 +509,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<Product> extractResources(ListProductsInProductSetResponse payload) {
-              return payload.getProductsList();
+              return payload.getProductsList() != null
+                  ? payload.getProductsList()
+                  : ImmutableList.<Product>of();
             }
           };
 

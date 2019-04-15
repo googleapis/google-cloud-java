@@ -44,9 +44,9 @@ import org.mockito.MockitoAnnotations;
 public class TransactionRunnerImplTest {
   @Mock private SpannerRpc rpc;
   @Mock private SpannerImpl.SessionImpl session;
-  @Mock private SpannerImpl.TransactionRunnerImpl.Sleeper sleeper;
-  @Mock private SpannerImpl.TransactionContextImpl txn;
-  private SpannerImpl.TransactionRunnerImpl transactionRunner;
+  @Mock private TransactionRunnerImpl.Sleeper sleeper;
+  @Mock private TransactionRunnerImpl.TransactionContextImpl txn;
+  private TransactionRunnerImpl transactionRunner;
   private boolean firstRun;
 
   @Before
@@ -54,7 +54,7 @@ public class TransactionRunnerImplTest {
     MockitoAnnotations.initMocks(this);
     firstRun = true;
     when(session.newTransaction()).thenReturn(txn);
-    transactionRunner = new SpannerImpl.TransactionRunnerImpl(session, rpc, sleeper, 1);
+    transactionRunner = new TransactionRunnerImpl(session, rpc, sleeper, 1);
   }
 
   @Test

@@ -70,7 +70,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fields_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -102,7 +102,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -114,7 +114,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         fields_ = fields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -202,10 +202,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -249,10 +249,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -296,10 +296,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -343,10 +343,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
-   * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * For example, a field path that references the zone field of a workflow
-   * template's cluster selector would be specified as
-   * `placement.clusterSelector.zone`.
+   * A field path is similar in syntax to a
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+   * field path that references the zone field of a workflow template's cluster
+   * selector would be specified as `placement.clusterSelector.zone`.
    * Also, field paths can reference fields using the following syntax:
    * * Values in maps can be referenced by key:
    *     * labels['key']
@@ -538,16 +538,15 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     com.google.cloud.dataproc.v1.TemplateParameter other =
         (com.google.cloud.dataproc.v1.TemplateParameter) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getFieldsList().equals(other.getFieldsList());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && (hasValidation() == other.hasValidation());
+    if (!getName().equals(other.getName())) return false;
+    if (!getFieldsList().equals(other.getFieldsList())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasValidation() != other.hasValidation()) return false;
     if (hasValidation()) {
-      result = result && getValidation().equals(other.getValidation());
+      if (!getValidation().equals(other.getValidation())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -764,7 +763,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         fields_ = fields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -782,35 +781,35 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1005,7 +1004,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
         bitField0_ |= 0x00000002;
       }
@@ -1017,10 +1016,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1064,10 +1063,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1111,10 +1110,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1158,10 +1157,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1205,10 +1204,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1258,10 +1257,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1311,10 +1310,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1361,10 +1360,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1411,10 +1410,10 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
-     * A field path is similar in syntax to a [google.protobuf.FieldMask][google.protobuf.FieldMask].
-     * For example, a field path that references the zone field of a workflow
-     * template's cluster selector would be specified as
-     * `placement.clusterSelector.zone`.
+     * A field path is similar in syntax to a
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
+     * field path that references the zone field of a workflow template's cluster
+     * selector would be specified as `placement.clusterSelector.zone`.
      * Also, field paths can reference fields using the following syntax:
      * * Values in maps can be referenced by key:
      *     * labels['key']
@@ -1558,7 +1557,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.dataproc.v1.ParameterValidation validation_ = null;
+    private com.google.cloud.dataproc.v1.ParameterValidation validation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ParameterValidation,
             com.google.cloud.dataproc.v1.ParameterValidation.Builder,
@@ -1742,7 +1741,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

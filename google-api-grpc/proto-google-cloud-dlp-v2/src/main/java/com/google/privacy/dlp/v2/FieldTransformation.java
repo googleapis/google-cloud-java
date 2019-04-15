@@ -52,7 +52,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -118,7 +118,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -130,7 +130,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
       }
       this.unknownFields = unknownFields.build();
@@ -477,26 +477,24 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     com.google.privacy.dlp.v2.FieldTransformation other =
         (com.google.privacy.dlp.v2.FieldTransformation) obj;
 
-    boolean result = true;
-    result = result && getFieldsList().equals(other.getFieldsList());
-    result = result && (hasCondition() == other.hasCondition());
+    if (!getFieldsList().equals(other.getFieldsList())) return false;
+    if (hasCondition() != other.hasCondition()) return false;
     if (hasCondition()) {
-      result = result && getCondition().equals(other.getCondition());
+      if (!getCondition().equals(other.getCondition())) return false;
     }
-    result = result && getTransformationCase().equals(other.getTransformationCase());
-    if (!result) return false;
+    if (!getTransformationCase().equals(other.getTransformationCase())) return false;
     switch (transformationCase_) {
       case 4:
-        result = result && getPrimitiveTransformation().equals(other.getPrimitiveTransformation());
+        if (!getPrimitiveTransformation().equals(other.getPrimitiveTransformation())) return false;
         break;
       case 5:
-        result = result && getInfoTypeTransformations().equals(other.getInfoTypeTransformations());
+        if (!getInfoTypeTransformations().equals(other.getInfoTypeTransformations())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -717,7 +715,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -752,35 +750,35 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -890,7 +888,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(fields_);
         bitField0_ |= 0x00000001;
       }
@@ -1226,16 +1224,13 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.FieldId,
                 com.google.privacy.dlp.v2.FieldId.Builder,
                 com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                fields_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         fields_ = null;
       }
       return fieldsBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.RecordCondition condition_ = null;
+    private com.google.privacy.dlp.v2.RecordCondition condition_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RecordCondition,
             com.google.privacy.dlp.v2.RecordCondition.Builder,
@@ -1895,7 +1890,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

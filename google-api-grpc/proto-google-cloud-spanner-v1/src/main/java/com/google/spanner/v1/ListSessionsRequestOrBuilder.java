@@ -46,7 +46,8 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.spanner.v1.ListSessionsResponse.next_page_token] from a previous
+   * [next_page_token][google.spanner.v1.ListSessionsResponse.next_page_token]
+   * from a previous
    * [ListSessionsResponse][google.spanner.v1.ListSessionsResponse].
    * </pre>
    *
@@ -58,7 +59,8 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.spanner.v1.ListSessionsResponse.next_page_token] from a previous
+   * [next_page_token][google.spanner.v1.ListSessionsResponse.next_page_token]
+   * from a previous
    * [ListSessionsResponse][google.spanner.v1.ListSessionsResponse].
    * </pre>
    *

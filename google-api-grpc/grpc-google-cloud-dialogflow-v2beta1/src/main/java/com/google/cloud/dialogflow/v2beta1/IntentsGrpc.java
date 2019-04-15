@@ -23,7 +23,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * *   **Contexts** - provide additional context for intent analysis. For
  *     example, if an intent is related to an object in your application that
  *     plays music, you can provide a context to determine when to match the
- *     intent if the user input is “turn it off”.  You can include a context
+ *     intent if the user input is "turn it off". You can include a context
  *     that matches the intent when there is previous user input of
  *     "play music", and not when there is previous user input of
  *     "turn on the light".
@@ -36,7 +36,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * *   **Training phrases** - provide examples of user input to train the
  *     Dialogflow API agent to better match intents.
  * For more information about intents, see the
- * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+ * [Dialogflow
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -479,7 +480,7 @@ public final class IntentsGrpc {
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -492,7 +493,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public abstract static class IntentsImplBase implements io.grpc.BindableService {
@@ -554,7 +556,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public void deleteIntent(
@@ -657,7 +659,7 @@ public final class IntentsGrpc {
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -670,7 +672,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsStub extends io.grpc.stub.AbstractStub<IntentsStub> {
@@ -756,7 +759,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public void deleteIntent(
@@ -819,7 +822,7 @@ public final class IntentsGrpc {
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -832,7 +835,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsBlockingStub
@@ -905,7 +909,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public com.google.protobuf.Empty deleteIntent(
@@ -959,7 +963,7 @@ public final class IntentsGrpc {
    * *   **Contexts** - provide additional context for intent analysis. For
    *     example, if an intent is related to an object in your application that
    *     plays music, you can provide a context to determine when to match the
-   *     intent if the user input is “turn it off”.  You can include a context
+   *     intent if the user input is "turn it off". You can include a context
    *     that matches the intent when there is previous user input of
    *     "play music", and not when there is previous user input of
    *     "turn on the light".
@@ -972,7 +976,8 @@ public final class IntentsGrpc {
    * *   **Training phrases** - provide examples of user input to train the
    *     Dialogflow API agent to better match intents.
    * For more information about intents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/intents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/intents-overview).
    * </pre>
    */
   public static final class IntentsFutureStub extends io.grpc.stub.AbstractStub<IntentsFutureStub> {
@@ -1049,7 +1054,7 @@ public final class IntentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified intent.
+     * Deletes the specified intent and its direct or indirect followup intents.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

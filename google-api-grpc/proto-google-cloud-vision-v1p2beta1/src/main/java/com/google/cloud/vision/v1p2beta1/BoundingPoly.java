@@ -53,7 +53,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 vertices_ = new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Vertex>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -64,7 +64,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 normalizedVertices_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.NormalizedVertex>();
                 mutable_bitField0_ |= 0x00000002;
@@ -77,7 +77,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -89,10 +89,10 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         vertices_ = java.util.Collections.unmodifiableList(vertices_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         normalizedVertices_ = java.util.Collections.unmodifiableList(normalizedVertices_);
       }
       this.unknownFields = unknownFields.build();
@@ -297,11 +297,10 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vision.v1p2beta1.BoundingPoly other =
         (com.google.cloud.vision.v1p2beta1.BoundingPoly) obj;
 
-    boolean result = true;
-    result = result && getVerticesList().equals(other.getVerticesList());
-    result = result && getNormalizedVerticesList().equals(other.getNormalizedVerticesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getVerticesList().equals(other.getVerticesList())) return false;
+    if (!getNormalizedVerticesList().equals(other.getNormalizedVerticesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -508,7 +507,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.vision.v1p2beta1.BoundingPoly(this);
       int from_bitField0_ = bitField0_;
       if (verticesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           vertices_ = java.util.Collections.unmodifiableList(vertices_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -517,7 +516,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         result.vertices_ = verticesBuilder_.build();
       }
       if (normalizedVerticesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           normalizedVertices_ = java.util.Collections.unmodifiableList(normalizedVertices_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -531,35 +530,35 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -663,7 +662,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVerticesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         vertices_ = new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Vertex>(vertices_);
         bitField0_ |= 0x00000001;
       }
@@ -1002,10 +1001,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p2beta1.Vertex,
                 com.google.cloud.vision.v1p2beta1.Vertex.Builder,
                 com.google.cloud.vision.v1p2beta1.VertexOrBuilder>(
-                vertices_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                vertices_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         vertices_ = null;
       }
       return verticesBuilder_;
@@ -1015,7 +1011,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNormalizedVerticesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         normalizedVertices_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.NormalizedVertex>(
                 normalizedVertices_);
@@ -1384,7 +1380,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p2beta1.NormalizedVertex.Builder,
                 com.google.cloud.vision.v1p2beta1.NormalizedVertexOrBuilder>(
                 normalizedVertices_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         normalizedVertices_ = null;
@@ -1394,7 +1390,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

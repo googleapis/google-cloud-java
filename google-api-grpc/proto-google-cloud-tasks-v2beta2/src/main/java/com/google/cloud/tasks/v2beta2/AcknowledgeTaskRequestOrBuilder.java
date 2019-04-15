@@ -41,8 +41,8 @@ public interface AcknowledgeTaskRequestOrBuilder
    * The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-   * to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+   * This restriction is to ensure that your worker currently holds the lease.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
@@ -56,8 +56,8 @@ public interface AcknowledgeTaskRequestOrBuilder
    * The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-   * to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+   * This restriction is to ensure that your worker currently holds the lease.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
@@ -71,8 +71,8 @@ public interface AcknowledgeTaskRequestOrBuilder
    * The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-   * to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+   * This restriction is to ensure that your worker currently holds the lease.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2;</code>

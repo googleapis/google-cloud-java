@@ -31,6 +31,7 @@ import javax.annotation.Nullable;
  */
 public final class NetworkPeering implements ApiMessage {
   private final Boolean autoCreateRoutes;
+  private final Boolean exchangeSubnetRoutes;
   private final String name;
   private final String network;
   private final String state;
@@ -38,6 +39,7 @@ public final class NetworkPeering implements ApiMessage {
 
   private NetworkPeering() {
     this.autoCreateRoutes = null;
+    this.exchangeSubnetRoutes = null;
     this.name = null;
     this.network = null;
     this.state = null;
@@ -45,8 +47,14 @@ public final class NetworkPeering implements ApiMessage {
   }
 
   private NetworkPeering(
-      Boolean autoCreateRoutes, String name, String network, String state, String stateDetails) {
+      Boolean autoCreateRoutes,
+      Boolean exchangeSubnetRoutes,
+      String name,
+      String network,
+      String state,
+      String stateDetails) {
     this.autoCreateRoutes = autoCreateRoutes;
+    this.exchangeSubnetRoutes = exchangeSubnetRoutes;
     this.name = name;
     this.network = network;
     this.state = state;
@@ -57,6 +65,9 @@ public final class NetworkPeering implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("autoCreateRoutes".equals(fieldName)) {
       return autoCreateRoutes;
+    }
+    if ("exchangeSubnetRoutes".equals(fieldName)) {
+      return exchangeSubnetRoutes;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -81,18 +92,35 @@ public final class NetworkPeering implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
   /**
-   * Indicates whether full mesh connectivity is created and managed automatically. When it is set
-   * to true, Google Compute Engine will automatically create and manage the routes between two
-   * networks when the state is ACTIVE. Otherwise, user needs to create routes manually to route
-   * packets to peer network.
+   * This field will be deprecated soon. Prefer using exchange_subnet_routes instead. Indicates
+   * whether full mesh connectivity is created and managed automatically. When it is set to true,
+   * Google Compute Engine will automatically create and manage the routes between two networks when
+   * the state is ACTIVE. Otherwise, user needs to create routes manually to route packets to peer
+   * network.
    */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
+  }
+
+  /**
+   * Whether full mesh connectivity is created and managed automatically. When it is set to true,
+   * Google Compute Engine will automatically create and manage the routes between two networks when
+   * the peering state is ACTIVE. Otherwise, user needs to create routes manually to route packets
+   * to peer network.
+   */
+  public Boolean getExchangeSubnetRoutes() {
+    return exchangeSubnetRoutes;
   }
 
   /**
@@ -149,6 +177,7 @@ public final class NetworkPeering implements ApiMessage {
 
   public static class Builder {
     private Boolean autoCreateRoutes;
+    private Boolean exchangeSubnetRoutes;
     private String name;
     private String network;
     private String state;
@@ -160,6 +189,9 @@ public final class NetworkPeering implements ApiMessage {
       if (other == NetworkPeering.getDefaultInstance()) return this;
       if (other.getAutoCreateRoutes() != null) {
         this.autoCreateRoutes = other.autoCreateRoutes;
+      }
+      if (other.getExchangeSubnetRoutes() != null) {
+        this.exchangeSubnetRoutes = other.exchangeSubnetRoutes;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -178,6 +210,7 @@ public final class NetworkPeering implements ApiMessage {
 
     Builder(NetworkPeering source) {
       this.autoCreateRoutes = source.autoCreateRoutes;
+      this.exchangeSubnetRoutes = source.exchangeSubnetRoutes;
       this.name = source.name;
       this.network = source.network;
       this.state = source.state;
@@ -185,23 +218,46 @@ public final class NetworkPeering implements ApiMessage {
     }
 
     /**
-     * Indicates whether full mesh connectivity is created and managed automatically. When it is set
-     * to true, Google Compute Engine will automatically create and manage the routes between two
-     * networks when the state is ACTIVE. Otherwise, user needs to create routes manually to route
-     * packets to peer network.
+     * This field will be deprecated soon. Prefer using exchange_subnet_routes instead. Indicates
+     * whether full mesh connectivity is created and managed automatically. When it is set to true,
+     * Google Compute Engine will automatically create and manage the routes between two networks
+     * when the state is ACTIVE. Otherwise, user needs to create routes manually to route packets to
+     * peer network.
      */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
     /**
-     * Indicates whether full mesh connectivity is created and managed automatically. When it is set
-     * to true, Google Compute Engine will automatically create and manage the routes between two
-     * networks when the state is ACTIVE. Otherwise, user needs to create routes manually to route
-     * packets to peer network.
+     * This field will be deprecated soon. Prefer using exchange_subnet_routes instead. Indicates
+     * whether full mesh connectivity is created and managed automatically. When it is set to true,
+     * Google Compute Engine will automatically create and manage the routes between two networks
+     * when the state is ACTIVE. Otherwise, user needs to create routes manually to route packets to
+     * peer network.
      */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
+      return this;
+    }
+
+    /**
+     * Whether full mesh connectivity is created and managed automatically. When it is set to true,
+     * Google Compute Engine will automatically create and manage the routes between two networks
+     * when the peering state is ACTIVE. Otherwise, user needs to create routes manually to route
+     * packets to peer network.
+     */
+    public Boolean getExchangeSubnetRoutes() {
+      return exchangeSubnetRoutes;
+    }
+
+    /**
+     * Whether full mesh connectivity is created and managed automatically. When it is set to true,
+     * Google Compute Engine will automatically create and manage the routes between two networks
+     * when the peering state is ACTIVE. Otherwise, user needs to create routes manually to route
+     * packets to peer network.
+     */
+    public Builder setExchangeSubnetRoutes(Boolean exchangeSubnetRoutes) {
+      this.exchangeSubnetRoutes = exchangeSubnetRoutes;
       return this;
     }
 
@@ -271,12 +327,14 @@ public final class NetworkPeering implements ApiMessage {
 
     public NetworkPeering build() {
 
-      return new NetworkPeering(autoCreateRoutes, name, network, state, stateDetails);
+      return new NetworkPeering(
+          autoCreateRoutes, exchangeSubnetRoutes, name, network, state, stateDetails);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAutoCreateRoutes(this.autoCreateRoutes);
+      newBuilder.setExchangeSubnetRoutes(this.exchangeSubnetRoutes);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setState(this.state);
@@ -290,6 +348,9 @@ public final class NetworkPeering implements ApiMessage {
     return "NetworkPeering{"
         + "autoCreateRoutes="
         + autoCreateRoutes
+        + ", "
+        + "exchangeSubnetRoutes="
+        + exchangeSubnetRoutes
         + ", "
         + "name="
         + name
@@ -313,6 +374,7 @@ public final class NetworkPeering implements ApiMessage {
     if (o instanceof NetworkPeering) {
       NetworkPeering that = (NetworkPeering) o;
       return Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes())
+          && Objects.equals(this.exchangeSubnetRoutes, that.getExchangeSubnetRoutes())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.state, that.getState())
@@ -323,6 +385,6 @@ public final class NetworkPeering implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoCreateRoutes, name, network, state, stateDetails);
+    return Objects.hash(autoCreateRoutes, exchangeSubnetRoutes, name, network, state, stateDetails);
   }
 }

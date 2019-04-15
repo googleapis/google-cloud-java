@@ -26,11 +26,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private RateLimits() {
-    maxDispatchesPerSecond_ = 0D;
-    maxBurstSize_ = 0;
-    maxConcurrentDispatches_ = 0;
-  }
+  private RateLimits() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -73,7 +69,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -117,7 +113,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
    *   is 500.
    * This field has the same meaning as
-   * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+   * [rate in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
    * </pre>
    *
    * <code>double max_dispatches_per_second = 1;</code>
@@ -182,7 +179,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * default.
    * The maximum allowed value is 5,000.
    * This field has the same meaning as
-   * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+   * [max_concurrent_requests in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
    * </pre>
    *
    * <code>int32 max_concurrent_dispatches = 3;</code>
@@ -248,15 +246,12 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tasks.v2beta3.RateLimits other =
         (com.google.cloud.tasks.v2beta3.RateLimits) obj;
 
-    boolean result = true;
-    result =
-        result
-            && (java.lang.Double.doubleToLongBits(getMaxDispatchesPerSecond())
-                == java.lang.Double.doubleToLongBits(other.getMaxDispatchesPerSecond()));
-    result = result && (getMaxBurstSize() == other.getMaxBurstSize());
-    result = result && (getMaxConcurrentDispatches() == other.getMaxConcurrentDispatches());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Double.doubleToLongBits(getMaxDispatchesPerSecond())
+        != java.lang.Double.doubleToLongBits(other.getMaxDispatchesPerSecond())) return false;
+    if (getMaxBurstSize() != other.getMaxBurstSize()) return false;
+    if (getMaxConcurrentDispatches() != other.getMaxConcurrentDispatches()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -466,35 +461,35 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -558,7 +553,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
      *   is 500.
      * This field has the same meaning as
-     * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+     * [rate in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
      * </pre>
      *
      * <code>double max_dispatches_per_second = 1;</code>
@@ -576,7 +572,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
      *   is 500.
      * This field has the same meaning as
-     * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+     * [rate in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
      * </pre>
      *
      * <code>double max_dispatches_per_second = 1;</code>
@@ -597,7 +594,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
      *   is 500.
      * This field has the same meaning as
-     * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+     * [rate in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
      * </pre>
      *
      * <code>double max_dispatches_per_second = 1;</code>
@@ -747,7 +745,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * default.
      * The maximum allowed value is 5,000.
      * This field has the same meaning as
-     * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+     * [max_concurrent_requests in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
      * </pre>
      *
      * <code>int32 max_concurrent_dispatches = 3;</code>
@@ -767,7 +766,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * default.
      * The maximum allowed value is 5,000.
      * This field has the same meaning as
-     * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+     * [max_concurrent_requests in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
      * </pre>
      *
      * <code>int32 max_concurrent_dispatches = 3;</code>
@@ -790,7 +790,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * default.
      * The maximum allowed value is 5,000.
      * This field has the same meaning as
-     * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+     * [max_concurrent_requests in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
      * </pre>
      *
      * <code>int32 max_concurrent_dispatches = 3;</code>
@@ -804,7 +805,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

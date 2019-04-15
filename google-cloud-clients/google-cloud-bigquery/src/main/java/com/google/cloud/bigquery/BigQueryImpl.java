@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
@@ -45,6 +46,7 @@ import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -293,6 +295,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               EXCEPTION_HANDLER,
               getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(HTTP_NOT_FOUND, "Dataset not found");
+      }
       return answer == null ? null : Dataset.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -482,6 +487,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               EXCEPTION_HANDLER,
               getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(HTTP_NOT_FOUND, "Table not found");
+      }
       return answer == null ? null : Table.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -498,6 +506,26 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public Page<Table> listTables(DatasetId datasetId, TableListOption... options) {
     DatasetId completeDatasetId = datasetId.setProjectId(getOptions().getProjectId());
     return listTables(completeDatasetId, getOptions(), optionMap(options));
+  }
+
+  @Override
+  public List<String> listPartitions(TableId tableId) {
+    List<String> partitions = new ArrayList<String>();
+    Table metaTable =
+        getTable(TableId.of(tableId.getDataset(), tableId.getTable() + "$__PARTITIONS_SUMMARY__"));
+    Schema metaSchema = metaTable.getDefinition().getSchema();
+    String partition_id = null;
+    for (Field field : metaSchema.getFields()) {
+      if (field.getName().equals("partition_id")) {
+        partition_id = field.getName();
+        break;
+      }
+    }
+    TableResult result = metaTable.list(metaSchema);
+    for (FieldValueList list : result.iterateAll()) {
+      partitions.add(list.get(partition_id).getStringValue());
+    }
+    return partitions;
   }
 
   private static Page<Table> listTables(
@@ -702,6 +730,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               EXCEPTION_HANDLER,
               getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(HTTP_NOT_FOUND, "Job not found");
+      }
       return answer == null ? null : Job.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);

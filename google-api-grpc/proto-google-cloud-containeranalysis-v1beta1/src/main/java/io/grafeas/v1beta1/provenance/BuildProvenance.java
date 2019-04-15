@@ -74,7 +74,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 commands_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Command>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -85,7 +85,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 builtArtifacts_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Artifact>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -178,7 +178,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 buildOptions_ =
                     com.google.protobuf.MapField.newMapField(
                         BuildOptionsDefaultEntryHolder.defaultEntry);
@@ -200,7 +200,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -212,10 +212,10 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         commands_ = java.util.Collections.unmodifiableList(commands_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         builtArtifacts_ = java.util.Collections.unmodifiableList(builtArtifacts_);
       }
       this.unknownFields = unknownFields.build();
@@ -1021,34 +1021,33 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     io.grafeas.v1beta1.provenance.BuildProvenance other =
         (io.grafeas.v1beta1.provenance.BuildProvenance) obj;
 
-    boolean result = true;
-    result = result && getId().equals(other.getId());
-    result = result && getProjectId().equals(other.getProjectId());
-    result = result && getCommandsList().equals(other.getCommandsList());
-    result = result && getBuiltArtifactsList().equals(other.getBuiltArtifactsList());
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (!getId().equals(other.getId())) return false;
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getCommandsList().equals(other.getCommandsList())) return false;
+    if (!getBuiltArtifactsList().equals(other.getBuiltArtifactsList())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && getCreator().equals(other.getCreator());
-    result = result && getLogsUri().equals(other.getLogsUri());
-    result = result && (hasSourceProvenance() == other.hasSourceProvenance());
+    if (!getCreator().equals(other.getCreator())) return false;
+    if (!getLogsUri().equals(other.getLogsUri())) return false;
+    if (hasSourceProvenance() != other.hasSourceProvenance()) return false;
     if (hasSourceProvenance()) {
-      result = result && getSourceProvenance().equals(other.getSourceProvenance());
+      if (!getSourceProvenance().equals(other.getSourceProvenance())) return false;
     }
-    result = result && getTriggerId().equals(other.getTriggerId());
-    result = result && internalGetBuildOptions().equals(other.internalGetBuildOptions());
-    result = result && getBuilderVersion().equals(other.getBuilderVersion());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTriggerId().equals(other.getTriggerId())) return false;
+    if (!internalGetBuildOptions().equals(other.internalGetBuildOptions())) return false;
+    if (!getBuilderVersion().equals(other.getBuilderVersion())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1348,7 +1347,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       result.id_ = id_;
       result.projectId_ = projectId_;
       if (commandsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           commands_ = java.util.Collections.unmodifiableList(commands_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -1357,7 +1356,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         result.commands_ = commandsBuilder_.build();
       }
       if (builtArtifactsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           builtArtifacts_ = java.util.Collections.unmodifiableList(builtArtifacts_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -1398,35 +1397,35 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1755,7 +1754,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureCommandsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         commands_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Command>(commands_);
         bitField0_ |= 0x00000004;
       }
@@ -2093,10 +2092,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1beta1.provenance.Command,
                 io.grafeas.v1beta1.provenance.Command.Builder,
                 io.grafeas.v1beta1.provenance.CommandOrBuilder>(
-                commands_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                commands_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         commands_ = null;
       }
       return commandsBuilder_;
@@ -2106,7 +2102,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureBuiltArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         builtArtifacts_ =
             new java.util.ArrayList<io.grafeas.v1beta1.provenance.Artifact>(builtArtifacts_);
         bitField0_ |= 0x00000008;
@@ -2448,7 +2444,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1beta1.provenance.Artifact.Builder,
                 io.grafeas.v1beta1.provenance.ArtifactOrBuilder>(
                 builtArtifacts_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         builtArtifacts_ = null;
@@ -2456,7 +2452,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return builtArtifactsBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2635,7 +2631,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2810,7 +2806,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3183,7 +3179,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private io.grafeas.v1beta1.provenance.Source sourceProvenance_ = null;
+    private io.grafeas.v1beta1.provenance.Source sourceProvenance_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1beta1.provenance.Source,
             io.grafeas.v1beta1.provenance.Source.Builder,
@@ -3717,7 +3713,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

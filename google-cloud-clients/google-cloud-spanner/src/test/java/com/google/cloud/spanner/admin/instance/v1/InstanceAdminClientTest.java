@@ -33,11 +33,11 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import com.google.spanner.admin.instance.v1.CreateInstanceRequest;
 import com.google.spanner.admin.instance.v1.DeleteInstanceRequest;
 import com.google.spanner.admin.instance.v1.GetInstanceConfigRequest;
@@ -124,7 +124,7 @@ public class InstanceAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getInstanceConfigsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListInstanceConfigsRequest actualRequest = (ListInstanceConfigsRequest) actualRequests.get(0);
 
@@ -165,7 +165,7 @@ public class InstanceAdminClientTest {
     InstanceConfig actualResponse = client.getInstanceConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceConfigRequest actualRequest = (GetInstanceConfigRequest) actualRequests.get(0);
 
@@ -213,7 +213,7 @@ public class InstanceAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getInstancesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
 
@@ -261,7 +261,7 @@ public class InstanceAdminClientTest {
     Instance actualResponse = client.getInstance(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
 
@@ -317,7 +317,7 @@ public class InstanceAdminClientTest {
     Instance actualResponse = client.createInstanceAsync(parent, instanceId, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
@@ -378,7 +378,7 @@ public class InstanceAdminClientTest {
     Instance actualResponse = client.updateInstanceAsync(instance, fieldMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateInstanceRequest actualRequest = (UpdateInstanceRequest) actualRequests.get(0);
 
@@ -419,7 +419,7 @@ public class InstanceAdminClientTest {
 
     client.deleteInstance(name);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
 
@@ -460,7 +460,7 @@ public class InstanceAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -502,7 +502,7 @@ public class InstanceAdminClientTest {
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -542,7 +542,7 @@ public class InstanceAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockInstanceAdmin.getRequests();
+    List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 

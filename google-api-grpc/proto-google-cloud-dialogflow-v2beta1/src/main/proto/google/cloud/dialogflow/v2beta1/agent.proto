@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,12 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
 package google.cloud.dialogflow.v2beta1;
 
 import "google/api/annotations.proto";
+import "google/api/resource.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
@@ -29,7 +31,6 @@ option java_multiple_files = true;
 option java_outer_classname = "AgentProto";
 option java_package = "com.google.cloud.dialogflow.v2beta1";
 option objc_class_prefix = "DF";
-
 
 // Agents are best described as Natural Language Understanding (NLU) modules
 // that transform user requests into actionable data. You can include agents
@@ -51,12 +52,14 @@ option objc_class_prefix = "DF";
 // agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
 //
 // Dialogflow provides several
-// [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for common
-// conversation scenarios such as determining a date and time, converting
-// currency, and so on.
+// [prebuilt
+// agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+// for common conversation scenarios such as determining a date and time,
+// converting currency, and so on.
 //
 // For more information about agents, see the
-// [Dialogflow documentation](https://dialogflow.com/docs/agents).
+// [Dialogflow
+// documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
 service Agents {
   // Retrieves the specified agent.
   rpc GetAgent(GetAgentRequest) returns (Agent) {
@@ -81,8 +84,7 @@ service Agents {
   // Trains the specified agent.
   //
   //
-  // Operation <response: [google.protobuf.Empty][google.protobuf.Empty],
-  //            metadata: [google.protobuf.Struct][google.protobuf.Struct]>
+  // Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
   rpc TrainAgent(TrainAgentRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:train"
@@ -93,8 +95,7 @@ service Agents {
   // Exports the specified agent to a ZIP file.
   //
   //
-  // Operation <response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse],
-  //            metadata: [google.protobuf.Struct][google.protobuf.Struct]>
+  // Operation <response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]>
   rpc ExportAgent(ExportAgentRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:export"
@@ -109,8 +110,7 @@ service Agents {
   // versions from ImportAgentRequest.
   //
   //
-  // Operation <response: [google.protobuf.Empty][google.protobuf.Empty],
-  //            metadata: [google.protobuf.Struct][google.protobuf.Struct]>
+  // Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
   rpc ImportAgent(ImportAgentRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:import"
@@ -124,8 +124,7 @@ service Agents {
   // entity types in the older version are deleted.
   //
   //
-  // Operation <response: [google.protobuf.Empty][google.protobuf.Empty],
-  //            metadata: [google.protobuf.Struct][google.protobuf.Struct]>
+  // Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
   rpc RestoreAgent(RestoreAgentRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:restore"
@@ -158,9 +157,10 @@ message Agent {
   string display_name = 2;
 
   // Required. The default language of the agent as a language tag. See
-  // [Language Support](https://dialogflow.com/docs/reference/language) for a
-  // list of the currently supported language codes.
-  // This field cannot be set by the `Update` method.
+  // [Language
+  // Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+  // for a list of the currently supported language codes. This field cannot be
+  // set by the `Update` method.
   string default_language_code = 3;
 
   // Optional. The list of all languages supported by this agent (except for the
@@ -178,7 +178,9 @@ message Agent {
 
   // Optional. The URI of the agent's avatar.
   // Avatars are used throughout the Dialogflow console and in the self-hosted
-  // [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+  // [Web
+  // Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+  // integration.
   string avatar_uri = 7;
 
   // Optional. Determines whether this agent should log conversation queries.
@@ -190,7 +192,7 @@ message Agent {
   // Optional. To filter out false positive results and still get variety in
   // matched natural language inputs for your agent, you can tune the machine
   // learning classification threshold. If the returned score value is less than
-  // the threshold value, then a fallback intent is be triggered or, if there
+  // the threshold value, then a fallback intent will be triggered or, if there
   // are no fallback intents defined, no intent will be triggered. The score
   // values range from 0.0 (completely uncertain) to 1.0 (completely certain).
   // If set to 0.0, the default of 0.3 is used.

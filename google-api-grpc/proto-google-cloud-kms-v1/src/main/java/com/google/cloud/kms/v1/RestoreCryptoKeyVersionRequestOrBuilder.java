@@ -12,7 +12,8 @@ public interface RestoreCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -22,7 +23,8 @@ public interface RestoreCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to restore.
    * </pre>
    *
    * <code>string name = 1;</code>

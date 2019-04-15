@@ -10,9 +10,10 @@ package com.google.privacy.dlp.v2;
  * Pseudonymization method that generates surrogates via cryptographic hashing.
  * Uses SHA-256.
  * The key size must be either 32 or 64 bytes.
- * Outputs a 32 byte digest as an uppercase hex string
- * (for example, 41D1567F7F99F1DC2A5FAB886DEE5BEE).
+ * Outputs a base64 encoded representation of the hashed output
+ * (for example, L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=).
  * Currently, only string and integer values can be hashed.
+ * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoHashConfig}
@@ -71,7 +72,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -189,13 +190,12 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
     com.google.privacy.dlp.v2.CryptoHashConfig other =
         (com.google.privacy.dlp.v2.CryptoHashConfig) obj;
 
-    boolean result = true;
-    result = result && (hasCryptoKey() == other.hasCryptoKey());
+    if (hasCryptoKey() != other.hasCryptoKey()) return false;
     if (hasCryptoKey()) {
-      result = result && getCryptoKey().equals(other.getCryptoKey());
+      if (!getCryptoKey().equals(other.getCryptoKey())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -316,9 +316,10 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    * Pseudonymization method that generates surrogates via cryptographic hashing.
    * Uses SHA-256.
    * The key size must be either 32 or 64 bytes.
-   * Outputs a 32 byte digest as an uppercase hex string
-   * (for example, 41D1567F7F99F1DC2A5FAB886DEE5BEE).
+   * Outputs a base64 encoded representation of the hashed output
+   * (for example, L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=).
    * Currently, only string and integer values can be hashed.
+   * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoHashConfig}
@@ -403,35 +404,35 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -478,7 +479,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.privacy.dlp.v2.CryptoKey cryptoKey_ = null;
+    private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CryptoKey,
             com.google.privacy.dlp.v2.CryptoKey.Builder,
@@ -661,7 +662,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

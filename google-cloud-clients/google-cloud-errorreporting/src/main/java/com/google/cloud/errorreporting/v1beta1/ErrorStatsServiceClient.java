@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.errorreporting.v1beta1.stub.ErrorStatsServiceStub;
 import com.google.cloud.errorreporting.v1beta1.stub.ErrorStatsServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
@@ -622,7 +623,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
             public ListGroupStatsPagedResponse apply(ListGroupStatsPage input) {
               return new ListGroupStatsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGroupStatsPagedResponse(ListGroupStatsPage page) {
@@ -702,7 +704,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
             public ListEventsPagedResponse apply(ListEventsPage input) {
               return new ListEventsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListEventsPagedResponse(ListEventsPage page) {

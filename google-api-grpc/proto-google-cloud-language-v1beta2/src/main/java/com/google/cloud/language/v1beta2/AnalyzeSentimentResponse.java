@@ -76,7 +76,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 sentences_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -87,7 +87,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -99,7 +99,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         sentences_ = java.util.Collections.unmodifiableList(sentences_);
       }
       this.unknownFields = unknownFields.build();
@@ -172,7 +172,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language]
+   * field for more details.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -194,7 +195,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language]
+   * field for more details.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -332,15 +334,14 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     com.google.cloud.language.v1beta2.AnalyzeSentimentResponse other =
         (com.google.cloud.language.v1beta2.AnalyzeSentimentResponse) obj;
 
-    boolean result = true;
-    result = result && (hasDocumentSentiment() == other.hasDocumentSentiment());
+    if (hasDocumentSentiment() != other.hasDocumentSentiment()) return false;
     if (hasDocumentSentiment()) {
-      result = result && getDocumentSentiment().equals(other.getDocumentSentiment());
+      if (!getDocumentSentiment().equals(other.getDocumentSentiment())) return false;
     }
-    result = result && getLanguage().equals(other.getLanguage());
-    result = result && getSentencesList().equals(other.getSentencesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getLanguage().equals(other.getLanguage())) return false;
+    if (!getSentencesList().equals(other.getSentencesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -558,7 +559,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       result.language_ = language_;
       if (sentencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -573,35 +574,35 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -683,7 +684,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
 
     private int bitField0_;
 
-    private com.google.cloud.language.v1beta2.Sentiment documentSentiment_ = null;
+    private com.google.cloud.language.v1beta2.Sentiment documentSentiment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1beta2.Sentiment,
             com.google.cloud.language.v1beta2.Sentiment.Builder,
@@ -872,7 +873,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -894,7 +896,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -916,7 +919,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -936,7 +940,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -953,7 +958,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -973,7 +979,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureSentencesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         sentences_ =
             new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>(sentences_);
         bitField0_ |= 0x00000004;
@@ -1314,10 +1320,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
                 com.google.cloud.language.v1beta2.Sentence,
                 com.google.cloud.language.v1beta2.Sentence.Builder,
                 com.google.cloud.language.v1beta2.SentenceOrBuilder>(
-                sentences_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                sentences_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         sentences_ = null;
       }
       return sentencesBuilder_;
@@ -1325,7 +1328,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

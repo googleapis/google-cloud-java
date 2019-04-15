@@ -65,7 +65,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -120,6 +120,17 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>
      */
     CAVIUM_V1_COMPRESSED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Cavium HSM attestation V2 compressed with gzip. This is a new format
+     * Introduced in Cavium's version 3.2-08
+     * </pre>
+     *
+     * <code>CAVIUM_V2_COMPRESSED = 4;</code>
+     */
+    CAVIUM_V2_COMPRESSED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -136,6 +147,17 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>
      */
     public static final int CAVIUM_V1_COMPRESSED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Cavium HSM attestation V2 compressed with gzip. This is a new format
+     * Introduced in Cavium's version 3.2-08
+     * </pre>
+     *
+     * <code>CAVIUM_V2_COMPRESSED = 4;</code>
+     */
+    public static final int CAVIUM_V2_COMPRESSED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -157,6 +179,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           return ATTESTATION_FORMAT_UNSPECIFIED;
         case 3:
           return CAVIUM_V1_COMPRESSED;
+        case 4:
+          return CAVIUM_V2_COMPRESSED;
         default:
           return null;
       }
@@ -314,11 +338,10 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     com.google.cloud.kms.v1.KeyOperationAttestation other =
         (com.google.cloud.kms.v1.KeyOperationAttestation) obj;
 
-    boolean result = true;
-    result = result && format_ == other.format_;
-    result = result && getContent().equals(other.getContent());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (format_ != other.format_) return false;
+    if (!getContent().equals(other.getContent())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -516,35 +539,35 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -726,7 +749,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

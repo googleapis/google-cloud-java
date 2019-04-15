@@ -31,7 +31,6 @@ public final class Condition implements ApiMessage {
   private final String op;
   private final String svc;
   private final String sys;
-  private final String value;
   private final List<String> values;
 
   private Condition() {
@@ -39,17 +38,14 @@ public final class Condition implements ApiMessage {
     this.op = null;
     this.svc = null;
     this.sys = null;
-    this.value = null;
     this.values = null;
   }
 
-  private Condition(
-      String iam, String op, String svc, String sys, String value, List<String> values) {
+  private Condition(String iam, String op, String svc, String sys, List<String> values) {
     this.iam = iam;
     this.op = op;
     this.svc = svc;
     this.sys = sys;
-    this.value = value;
     this.values = values;
   }
 
@@ -67,9 +63,6 @@ public final class Condition implements ApiMessage {
     if ("sys".equals(fieldName)) {
       return sys;
     }
-    if ("value".equals(fieldName)) {
-      return value;
-    }
     if ("values".equals(fieldName)) {
       return values;
     }
@@ -84,6 +77,12 @@ public final class Condition implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -111,12 +110,7 @@ public final class Condition implements ApiMessage {
     return sys;
   }
 
-  /** DEPRECATED. Use 'values' instead. */
-  public String getValue() {
-    return value;
-  }
-
-  /** The objects of the condition. This is mutually exclusive with 'value'. */
+  /** The objects of the condition. */
   public List<String> getValuesList() {
     return values;
   }
@@ -148,7 +142,6 @@ public final class Condition implements ApiMessage {
     private String op;
     private String svc;
     private String sys;
-    private String value;
     private List<String> values;
 
     Builder() {}
@@ -167,9 +160,6 @@ public final class Condition implements ApiMessage {
       if (other.getSys() != null) {
         this.sys = other.sys;
       }
-      if (other.getValue() != null) {
-        this.value = other.value;
-      }
       if (other.getValuesList() != null) {
         this.values = other.values;
       }
@@ -181,7 +171,6 @@ public final class Condition implements ApiMessage {
       this.op = source.op;
       this.svc = source.svc;
       this.sys = source.sys;
-      this.value = source.value;
       this.values = source.values;
     }
 
@@ -235,23 +224,12 @@ public final class Condition implements ApiMessage {
       return this;
     }
 
-    /** DEPRECATED. Use 'values' instead. */
-    public String getValue() {
-      return value;
-    }
-
-    /** DEPRECATED. Use 'values' instead. */
-    public Builder setValue(String value) {
-      this.value = value;
-      return this;
-    }
-
-    /** The objects of the condition. This is mutually exclusive with 'value'. */
+    /** The objects of the condition. */
     public List<String> getValuesList() {
       return values;
     }
 
-    /** The objects of the condition. This is mutually exclusive with 'value'. */
+    /** The objects of the condition. */
     public Builder addAllValues(List<String> values) {
       if (this.values == null) {
         this.values = new LinkedList<>();
@@ -260,7 +238,7 @@ public final class Condition implements ApiMessage {
       return this;
     }
 
-    /** The objects of the condition. This is mutually exclusive with 'value'. */
+    /** The objects of the condition. */
     public Builder addValues(String values) {
       if (this.values == null) {
         this.values = new LinkedList<>();
@@ -271,7 +249,7 @@ public final class Condition implements ApiMessage {
 
     public Condition build() {
 
-      return new Condition(iam, op, svc, sys, value, values);
+      return new Condition(iam, op, svc, sys, values);
     }
 
     public Builder clone() {
@@ -280,7 +258,6 @@ public final class Condition implements ApiMessage {
       newBuilder.setOp(this.op);
       newBuilder.setSvc(this.svc);
       newBuilder.setSys(this.sys);
-      newBuilder.setValue(this.value);
       newBuilder.addAllValues(this.values);
       return newBuilder;
     }
@@ -301,9 +278,6 @@ public final class Condition implements ApiMessage {
         + "sys="
         + sys
         + ", "
-        + "value="
-        + value
-        + ", "
         + "values="
         + values
         + "}";
@@ -320,7 +294,6 @@ public final class Condition implements ApiMessage {
           && Objects.equals(this.op, that.getOp())
           && Objects.equals(this.svc, that.getSvc())
           && Objects.equals(this.sys, that.getSys())
-          && Objects.equals(this.value, that.getValue())
           && Objects.equals(this.values, that.getValuesList());
     }
     return false;
@@ -328,6 +301,6 @@ public final class Condition implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(iam, op, svc, sys, value, values);
+    return Objects.hash(iam, op, svc, sys, values);
   }
 }

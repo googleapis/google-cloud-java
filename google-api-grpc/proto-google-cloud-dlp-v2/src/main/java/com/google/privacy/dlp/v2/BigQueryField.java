@@ -81,7 +81,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -241,17 +241,16 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.BigQueryField other = (com.google.privacy.dlp.v2.BigQueryField) obj;
 
-    boolean result = true;
-    result = result && (hasTable() == other.hasTable());
+    if (hasTable() != other.hasTable()) return false;
     if (hasTable()) {
-      result = result && getTable().equals(other.getTable());
+      if (!getTable().equals(other.getTable())) return false;
     }
-    result = result && (hasField() == other.hasField());
+    if (hasField() != other.hasField()) return false;
     if (hasField()) {
-      result = result && getField().equals(other.getField());
+      if (!getField().equals(other.getField())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -469,35 +468,35 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -547,7 +546,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.privacy.dlp.v2.BigQueryTable table_ = null;
+    private com.google.privacy.dlp.v2.BigQueryTable table_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable,
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
@@ -728,7 +727,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       return tableBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.FieldId field_ = null;
+    private com.google.privacy.dlp.v2.FieldId field_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,
             com.google.privacy.dlp.v2.FieldId.Builder,
@@ -905,7 +904,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

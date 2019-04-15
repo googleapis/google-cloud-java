@@ -217,9 +217,24 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               timeZone_ = s;
               break;
             }
+          case 178:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (attemptDeadline_ != null) {
+                subBuilder = attemptDeadline_.toBuilder();
+              }
+              attemptDeadline_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(attemptDeadline_);
+                attemptDeadline_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -499,12 +514,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+   * which it becomes output only.
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the job's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -530,12 +548,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+   * which it becomes output only.
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the job's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -564,6 +585,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+   * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
    * </pre>
@@ -585,6 +608,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+   * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
    * </pre>
@@ -742,8 +767,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
+   * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * Describes the schedule on which the job will be executed.
+   * The schedule can be either of the following types:
+   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+   * * English-like
+   * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * As a general rule, execution `n + 1` of a job will not begin
    * until execution `n` has finished. Cloud Scheduler will never
    * allow two simultaneously outstanding executions. For example,
@@ -756,9 +785,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
    * times, with exponential backoff, until the next scheduled start
    * time.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * </pre>
    *
    * <code>string schedule = 20;</code>
@@ -778,8 +804,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
+   * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
    * Describes the schedule on which the job will be executed.
+   * The schedule can be either of the following types:
+   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+   * * English-like
+   * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * As a general rule, execution `n + 1` of a job will not begin
    * until execution `n` has finished. Cloud Scheduler will never
    * allow two simultaneously outstanding executions. For example,
@@ -792,9 +822,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
    * times, with exponential backoff, until the next scheduled start
    * time.
-   * The schedule can be either of the following types:
-   * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * </pre>
    *
    * <code>string schedule = 20;</code>
@@ -1107,6 +1134,74 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return getRetryConfig();
   }
 
+  public static final int ATTEMPT_DEADLINE_FIELD_NUMBER = 22;
+  private com.google.protobuf.Duration attemptDeadline_;
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  public boolean hasAttemptDeadline() {
+    return attemptDeadline_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  public com.google.protobuf.Duration getAttemptDeadline() {
+    return attemptDeadline_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : attemptDeadline_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  public com.google.protobuf.DurationOrBuilder getAttemptDeadlineOrBuilder() {
+    return getAttemptDeadline();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1159,6 +1254,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTimeZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, timeZone_);
+    }
+    if (attemptDeadline_ != null) {
+      output.writeMessage(22, getAttemptDeadline());
     }
     unknownFields.writeTo(output);
   }
@@ -1214,6 +1312,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (!getTimeZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, timeZone_);
     }
+    if (attemptDeadline_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getAttemptDeadline());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1229,49 +1330,51 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.scheduler.v1beta1.Job other = (com.google.cloud.scheduler.v1beta1.Job) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getSchedule().equals(other.getSchedule());
-    result = result && getTimeZone().equals(other.getTimeZone());
-    result = result && (hasUserUpdateTime() == other.hasUserUpdateTime());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getSchedule().equals(other.getSchedule())) return false;
+    if (!getTimeZone().equals(other.getTimeZone())) return false;
+    if (hasUserUpdateTime() != other.hasUserUpdateTime()) return false;
     if (hasUserUpdateTime()) {
-      result = result && getUserUpdateTime().equals(other.getUserUpdateTime());
+      if (!getUserUpdateTime().equals(other.getUserUpdateTime())) return false;
     }
-    result = result && state_ == other.state_;
-    result = result && (hasStatus() == other.hasStatus());
+    if (state_ != other.state_) return false;
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus().equals(other.getStatus());
+      if (!getStatus().equals(other.getStatus())) return false;
     }
-    result = result && (hasScheduleTime() == other.hasScheduleTime());
+    if (hasScheduleTime() != other.hasScheduleTime()) return false;
     if (hasScheduleTime()) {
-      result = result && getScheduleTime().equals(other.getScheduleTime());
+      if (!getScheduleTime().equals(other.getScheduleTime())) return false;
     }
-    result = result && (hasLastAttemptTime() == other.hasLastAttemptTime());
+    if (hasLastAttemptTime() != other.hasLastAttemptTime()) return false;
     if (hasLastAttemptTime()) {
-      result = result && getLastAttemptTime().equals(other.getLastAttemptTime());
+      if (!getLastAttemptTime().equals(other.getLastAttemptTime())) return false;
     }
-    result = result && (hasRetryConfig() == other.hasRetryConfig());
+    if (hasRetryConfig() != other.hasRetryConfig()) return false;
     if (hasRetryConfig()) {
-      result = result && getRetryConfig().equals(other.getRetryConfig());
+      if (!getRetryConfig().equals(other.getRetryConfig())) return false;
     }
-    result = result && getTargetCase().equals(other.getTargetCase());
-    if (!result) return false;
+    if (hasAttemptDeadline() != other.hasAttemptDeadline()) return false;
+    if (hasAttemptDeadline()) {
+      if (!getAttemptDeadline().equals(other.getAttemptDeadline())) return false;
+    }
+    if (!getTargetCase().equals(other.getTargetCase())) return false;
     switch (targetCase_) {
       case 4:
-        result = result && getPubsubTarget().equals(other.getPubsubTarget());
+        if (!getPubsubTarget().equals(other.getPubsubTarget())) return false;
         break;
       case 5:
-        result = result && getAppEngineHttpTarget().equals(other.getAppEngineHttpTarget());
+        if (!getAppEngineHttpTarget().equals(other.getAppEngineHttpTarget())) return false;
         break;
       case 6:
-        result = result && getHttpTarget().equals(other.getHttpTarget());
+        if (!getHttpTarget().equals(other.getHttpTarget())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1310,6 +1413,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (hasRetryConfig()) {
       hash = (37 * hash) + RETRY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRetryConfig().hashCode();
+    }
+    if (hasAttemptDeadline()) {
+      hash = (37 * hash) + ATTEMPT_DEADLINE_FIELD_NUMBER;
+      hash = (53 * hash) + getAttemptDeadline().hashCode();
     }
     switch (targetCase_) {
       case 4:
@@ -1513,6 +1620,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         retryConfig_ = null;
         retryConfigBuilder_ = null;
       }
+      if (attemptDeadlineBuilder_ == null) {
+        attemptDeadline_ = null;
+      } else {
+        attemptDeadline_ = null;
+        attemptDeadlineBuilder_ = null;
+      }
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -1593,6 +1706,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.retryConfig_ = retryConfigBuilder_.build();
       }
+      if (attemptDeadlineBuilder_ == null) {
+        result.attemptDeadline_ = attemptDeadline_;
+      } else {
+        result.attemptDeadline_ = attemptDeadlineBuilder_.build();
+      }
       result.targetCase_ = targetCase_;
       onBuilt();
       return result;
@@ -1600,35 +1718,35 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1676,6 +1794,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRetryConfig()) {
         mergeRetryConfig(other.getRetryConfig());
+      }
+      if (other.hasAttemptDeadline()) {
+        mergeAttemptDeadline(other.getAttemptDeadline());
       }
       switch (other.getTargetCase()) {
         case PUBSUB_TARGET:
@@ -1746,12 +1867,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+     * which it becomes output only.
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the job's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1777,12 +1901,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+     * which it becomes output only.
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the job's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1808,12 +1935,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+     * which it becomes output only.
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the job's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1837,12 +1967,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+     * which it becomes output only.
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the job's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1863,12 +1996,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob], after
+     * which it becomes output only.
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the job's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1895,6 +2031,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+     * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
      * </pre>
@@ -1916,6 +2054,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+     * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
      * </pre>
@@ -1937,6 +2077,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+     * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
      * </pre>
@@ -1956,6 +2098,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+     * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
      * </pre>
@@ -1972,6 +2116,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optionally caller-specified in [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob] or
+     * [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
      * </pre>
@@ -2605,8 +2751,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * Describes the schedule on which the job will be executed.
+     * The schedule can be either of the following types:
+     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+     * * English-like
+     * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * As a general rule, execution `n + 1` of a job will not begin
      * until execution `n` has finished. Cloud Scheduler will never
      * allow two simultaneously outstanding executions. For example,
@@ -2619,9 +2769,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
      * times, with exponential backoff, until the next scheduled start
      * time.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * </pre>
      *
      * <code>string schedule = 20;</code>
@@ -2641,8 +2788,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * Describes the schedule on which the job will be executed.
+     * The schedule can be either of the following types:
+     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+     * * English-like
+     * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * As a general rule, execution `n + 1` of a job will not begin
      * until execution `n` has finished. Cloud Scheduler will never
      * allow two simultaneously outstanding executions. For example,
@@ -2655,9 +2806,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
      * times, with exponential backoff, until the next scheduled start
      * time.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * </pre>
      *
      * <code>string schedule = 20;</code>
@@ -2677,8 +2825,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * Describes the schedule on which the job will be executed.
+     * The schedule can be either of the following types:
+     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+     * * English-like
+     * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * As a general rule, execution `n + 1` of a job will not begin
      * until execution `n` has finished. Cloud Scheduler will never
      * allow two simultaneously outstanding executions. For example,
@@ -2691,9 +2843,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
      * times, with exponential backoff, until the next scheduled start
      * time.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * </pre>
      *
      * <code>string schedule = 20;</code>
@@ -2711,8 +2860,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * Describes the schedule on which the job will be executed.
+     * The schedule can be either of the following types:
+     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+     * * English-like
+     * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * As a general rule, execution `n + 1` of a job will not begin
      * until execution `n` has finished. Cloud Scheduler will never
      * allow two simultaneously outstanding executions. For example,
@@ -2725,9 +2878,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
      * times, with exponential backoff, until the next scheduled start
      * time.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * </pre>
      *
      * <code>string schedule = 20;</code>
@@ -2742,8 +2892,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Required, except when used with [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
      * Describes the schedule on which the job will be executed.
+     * The schedule can be either of the following types:
+     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
+     * * English-like
+     * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * As a general rule, execution `n + 1` of a job will not begin
      * until execution `n` has finished. Cloud Scheduler will never
      * allow two simultaneously outstanding executions. For example,
@@ -2756,9 +2910,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
      * times, with exponential backoff, until the next scheduled start
      * time.
-     * The schedule can be either of the following types:
-     * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-     * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
      * </pre>
      *
      * <code>string schedule = 20;</code>
@@ -2903,7 +3054,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp userUpdateTime_ = null;
+    private com.google.protobuf.Timestamp userUpdateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3160,7 +3311,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.rpc.Status status_ = null;
+    private com.google.rpc.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
@@ -3329,7 +3480,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return statusBuilder_;
     }
 
-    private com.google.protobuf.Timestamp scheduleTime_ = null;
+    private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3528,7 +3679,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return scheduleTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp lastAttemptTime_ = null;
+    private com.google.protobuf.Timestamp lastAttemptTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3709,7 +3860,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return lastAttemptTimeBuilder_;
     }
 
-    private com.google.cloud.scheduler.v1beta1.RetryConfig retryConfig_ = null;
+    private com.google.cloud.scheduler.v1beta1.RetryConfig retryConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.scheduler.v1beta1.RetryConfig,
             com.google.cloud.scheduler.v1beta1.RetryConfig.Builder,
@@ -3891,9 +4042,271 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return retryConfigBuilder_;
     }
 
+    private com.google.protobuf.Duration attemptDeadline_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        attemptDeadlineBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public boolean hasAttemptDeadline() {
+      return attemptDeadlineBuilder_ != null || attemptDeadline_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public com.google.protobuf.Duration getAttemptDeadline() {
+      if (attemptDeadlineBuilder_ == null) {
+        return attemptDeadline_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : attemptDeadline_;
+      } else {
+        return attemptDeadlineBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public Builder setAttemptDeadline(com.google.protobuf.Duration value) {
+      if (attemptDeadlineBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        attemptDeadline_ = value;
+        onChanged();
+      } else {
+        attemptDeadlineBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public Builder setAttemptDeadline(com.google.protobuf.Duration.Builder builderForValue) {
+      if (attemptDeadlineBuilder_ == null) {
+        attemptDeadline_ = builderForValue.build();
+        onChanged();
+      } else {
+        attemptDeadlineBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public Builder mergeAttemptDeadline(com.google.protobuf.Duration value) {
+      if (attemptDeadlineBuilder_ == null) {
+        if (attemptDeadline_ != null) {
+          attemptDeadline_ =
+              com.google.protobuf.Duration.newBuilder(attemptDeadline_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          attemptDeadline_ = value;
+        }
+        onChanged();
+      } else {
+        attemptDeadlineBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public Builder clearAttemptDeadline() {
+      if (attemptDeadlineBuilder_ == null) {
+        attemptDeadline_ = null;
+        onChanged();
+      } else {
+        attemptDeadline_ = null;
+        attemptDeadlineBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public com.google.protobuf.Duration.Builder getAttemptDeadlineBuilder() {
+
+      onChanged();
+      return getAttemptDeadlineFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getAttemptDeadlineOrBuilder() {
+      if (attemptDeadlineBuilder_ != null) {
+        return attemptDeadlineBuilder_.getMessageOrBuilder();
+      } else {
+        return attemptDeadline_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : attemptDeadline_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for job attempts. If the request handler does not respond by
+     * this deadline then the request is cancelled and the attempt is marked as a
+     * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+     * execution logs. Cloud Scheduler will retry the job according
+     * to the [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+     * The allowed duration for this deadline is:
+     * * For [HTTP targets][google.cloud.scheduler.v1beta1.Job.http_target], between 15 seconds and 30 minutes.
+     * * For [App Engine HTTP targets][google.cloud.scheduler.v1beta1.Job.app_engine_http_target], between 15
+     *   seconds and 24 hours.
+     * * For [PubSub targets][google.cloud.scheduler.v1beta1.Job.pubsub_target], this field is ignored.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getAttemptDeadlineFieldBuilder() {
+      if (attemptDeadlineBuilder_ == null) {
+        attemptDeadlineBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getAttemptDeadline(), getParentForChildren(), isClean());
+        attemptDeadline_ = null;
+      }
+      return attemptDeadlineBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

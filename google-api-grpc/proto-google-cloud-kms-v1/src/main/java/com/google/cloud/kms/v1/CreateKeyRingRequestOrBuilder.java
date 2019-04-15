@@ -13,7 +13,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -24,7 +25,8 @@ public interface CreateKeyRingRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>

@@ -12,8 +12,9 @@ public interface DecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
-   * The server will choose the appropriate version.
+   * Required. The resource name of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
+   * server will choose the appropriate version.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -23,8 +24,9 @@ public interface DecryptRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
-   * The server will choose the appropriate version.
+   * Required. The resource name of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption. The
+   * server will choose the appropriate version.
    * </pre>
    *
    * <code>string name = 1;</code>

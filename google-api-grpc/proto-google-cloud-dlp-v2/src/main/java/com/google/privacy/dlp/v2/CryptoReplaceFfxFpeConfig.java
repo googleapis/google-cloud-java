@@ -7,16 +7,18 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Replaces an identifier with a surrogate using FPE with the FFX
- * mode of operation; however when used in the `ReidentifyContent` API method,
- * it serves the opposite function by reversing the surrogate back into
- * the original identifier.
- * The identifier must be encoded as ASCII.
- * For a given crypto key and context, the same identifier will be
- * replaced with the same surrogate.
- * Identifiers must be at least two characters long.
- * In the case that the identifier is the empty string, it will be skipped.
- * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
+ * Replaces an identifier with a surrogate using Format Preserving Encryption
+ * (FPE) with the FFX mode of operation; however when used in the
+ * `ReidentifyContent` API method, it serves the opposite function by reversing
+ * the surrogate back into the original identifier. The identifier must be
+ * encoded as ASCII. For a given crypto key and context, the same identifier
+ * will be replaced with the same surrogate. Identifiers must be at least two
+ * characters long. In the case that the identifier is the empty string, it will
+ * be skipped. See https://cloud.google.com/dlp/docs/pseudonymization to learn
+ * more.
+ * Note: We recommend using  CryptoDeterministicConfig for all use cases which
+ * do not require preserving the input alphabet space and size, plus warrant
+ * referential integrity.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
@@ -125,7 +127,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -794,36 +796,34 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
     com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig other =
         (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) obj;
 
-    boolean result = true;
-    result = result && (hasCryptoKey() == other.hasCryptoKey());
+    if (hasCryptoKey() != other.hasCryptoKey()) return false;
     if (hasCryptoKey()) {
-      result = result && getCryptoKey().equals(other.getCryptoKey());
+      if (!getCryptoKey().equals(other.getCryptoKey())) return false;
     }
-    result = result && (hasContext() == other.hasContext());
+    if (hasContext() != other.hasContext()) return false;
     if (hasContext()) {
-      result = result && getContext().equals(other.getContext());
+      if (!getContext().equals(other.getContext())) return false;
     }
-    result = result && (hasSurrogateInfoType() == other.hasSurrogateInfoType());
+    if (hasSurrogateInfoType() != other.hasSurrogateInfoType()) return false;
     if (hasSurrogateInfoType()) {
-      result = result && getSurrogateInfoType().equals(other.getSurrogateInfoType());
+      if (!getSurrogateInfoType().equals(other.getSurrogateInfoType())) return false;
     }
-    result = result && getAlphabetCase().equals(other.getAlphabetCase());
-    if (!result) return false;
+    if (!getAlphabetCase().equals(other.getAlphabetCase())) return false;
     switch (alphabetCase_) {
       case 4:
-        result = result && getCommonAlphabetValue() == other.getCommonAlphabetValue();
+        if (getCommonAlphabetValue() != other.getCommonAlphabetValue()) return false;
         break;
       case 5:
-        result = result && getCustomAlphabet().equals(other.getCustomAlphabet());
+        if (!getCustomAlphabet().equals(other.getCustomAlphabet())) return false;
         break;
       case 6:
-        result = result && (getRadix() == other.getRadix());
+        if (getRadix() != other.getRadix()) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -965,16 +965,18 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Replaces an identifier with a surrogate using FPE with the FFX
-   * mode of operation; however when used in the `ReidentifyContent` API method,
-   * it serves the opposite function by reversing the surrogate back into
-   * the original identifier.
-   * The identifier must be encoded as ASCII.
-   * For a given crypto key and context, the same identifier will be
-   * replaced with the same surrogate.
-   * Identifiers must be at least two characters long.
-   * In the case that the identifier is the empty string, it will be skipped.
-   * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
+   * Replaces an identifier with a surrogate using Format Preserving Encryption
+   * (FPE) with the FFX mode of operation; however when used in the
+   * `ReidentifyContent` API method, it serves the opposite function by reversing
+   * the surrogate back into the original identifier. The identifier must be
+   * encoded as ASCII. For a given crypto key and context, the same identifier
+   * will be replaced with the same surrogate. Identifiers must be at least two
+   * characters long. In the case that the identifier is the empty string, it will
+   * be skipped. See https://cloud.google.com/dlp/docs/pseudonymization to learn
+   * more.
+   * Note: We recommend using  CryptoDeterministicConfig for all use cases which
+   * do not require preserving the input alphabet space and size, plus warrant
+   * referential integrity.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
@@ -1093,35 +1095,35 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1213,7 +1215,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.privacy.dlp.v2.CryptoKey cryptoKey_ = null;
+    private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CryptoKey,
             com.google.privacy.dlp.v2.CryptoKey.Builder,
@@ -1394,7 +1396,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return cryptoKeyBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.FieldId context_ = null;
+    private com.google.privacy.dlp.v2.FieldId context_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,
             com.google.privacy.dlp.v2.FieldId.Builder,
@@ -1942,7 +1944,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.privacy.dlp.v2.InfoType surrogateInfoType_ = null;
+    private com.google.privacy.dlp.v2.InfoType surrogateInfoType_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InfoType,
             com.google.privacy.dlp.v2.InfoType.Builder,
@@ -2315,7 +2317,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -49,6 +49,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Boolean autodetect;
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
+  private final Boolean useAvroLogicalTypes;
 
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
@@ -68,6 +69,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Boolean autodetect;
     private TimePartitioning timePartitioning;
     private Clustering clustering;
+    private Boolean useAvroLogicalTypes;
 
     private Builder() {
       super(Type.LOAD);
@@ -90,6 +92,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           loadConfiguration.destinationEncryptionConfiguration;
       this.timePartitioning = loadConfiguration.timePartitioning;
       this.clustering = loadConfiguration.clustering;
+      this.useAvroLogicalTypes = loadConfiguration.useAvroLogicalTypes;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -156,6 +159,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         this.clustering = Clustering.fromPb(loadConfigurationPb.getClustering());
       }
       this.autodetect = loadConfigurationPb.getAutodetect();
+      this.useAvroLogicalTypes = loadConfigurationPb.getUseAvroLogicalTypes();
       if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
         this.destinationEncryptionConfiguration =
             new EncryptionConfiguration.Builder(
@@ -231,6 +235,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    @Override
+    public Builder setUseAvroLogicalTypes(Boolean useAvroLogicalTypes) {
+      this.useAvroLogicalTypes = useAvroLogicalTypes;
+      return this;
+    }
+
     /**
      * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
      * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
@@ -275,6 +285,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
+    this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
   }
 
   @Override
@@ -358,6 +369,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
+  public Boolean getUseAvroLogicalTypes() {
+    return useAvroLogicalTypes;
+  }
+
+  @Override
   public List<JobInfo.SchemaUpdateOption> getSchemaUpdateOptions() {
     return schemaUpdateOptions;
   }
@@ -383,7 +399,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("autodetect", autodetect)
         .add("timePartitioning", timePartitioning)
-        .add("clustering", clustering);
+        .add("clustering", clustering)
+        .add("useAvroLogicalTypes", useAvroLogicalTypes);
   }
 
   @Override
@@ -464,6 +481,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     if (clustering != null) {
       loadConfigurationPb.setClustering(clustering.toPb());
     }
+    loadConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }

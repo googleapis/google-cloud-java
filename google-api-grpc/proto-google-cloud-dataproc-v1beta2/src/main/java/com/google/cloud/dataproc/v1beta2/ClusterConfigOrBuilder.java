@@ -245,8 +245,10 @@ public interface ClusterConfigOrBuilder
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -267,8 +269,10 @@ public interface ClusterConfigOrBuilder
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -288,8 +292,10 @@ public interface ClusterConfigOrBuilder
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -309,8 +315,10 @@ public interface ClusterConfigOrBuilder
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -331,8 +339,10 @@ public interface ClusterConfigOrBuilder
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else

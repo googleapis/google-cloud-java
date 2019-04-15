@@ -10,9 +10,6 @@ Java idiomatic client for [Cloud KMS][cloud-kms].
 - [Product Documentation][kms-product-docs]
 - [Client Library Documentation][kms-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
@@ -22,23 +19,23 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>0.80.0-beta</version>
+  <version>1.5.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-kms:0.80.0-beta'
+compile 'com.google.cloud:google-cloud-kms:1.5.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "0.80.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.5.0"
 ```
 [//]: # ({x-version-update-end})
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Cloud KMS
 ----------------------------
@@ -54,6 +51,9 @@ You will need a [Google Developers Console](https://console.developers.google.co
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-kms` library.  See the [Quickstart](#quickstart) section to add `google-cloud-kms` as a dependency in your code.
+
+#### Examples
+More information including Java getting started examples can be found in the [KMS documentation](https://cloud.google.com/kms/docs/reference/libraries).
 
 Troubleshooting
 ---------------
@@ -74,7 +74,7 @@ Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time and the public API should not be considered stable.
+It is currently in major version one (``1.y.z``), which means that the public API is considered stable.
 
 Contributing
 ------------
@@ -91,9 +91,9 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-kms]: https://cloud.google.com/kms
 [kms-product-docs]: https://cloud.google.com/kms/docs

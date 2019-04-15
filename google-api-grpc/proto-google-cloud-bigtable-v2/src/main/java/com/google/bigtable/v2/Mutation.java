@@ -117,7 +117,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -235,7 +235,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     private SetCell() {
       familyName_ = "";
       columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
-      timestampMicros_ = 0L;
       value_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -287,7 +286,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -476,13 +475,12 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.bigtable.v2.Mutation.SetCell other = (com.google.bigtable.v2.Mutation.SetCell) obj;
 
-      boolean result = true;
-      result = result && getFamilyName().equals(other.getFamilyName());
-      result = result && getColumnQualifier().equals(other.getColumnQualifier());
-      result = result && (getTimestampMicros() == other.getTimestampMicros());
-      result = result && getValue().equals(other.getValue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFamilyName().equals(other.getFamilyName())) return false;
+      if (!getColumnQualifier().equals(other.getColumnQualifier())) return false;
+      if (getTimestampMicros() != other.getTimestampMicros()) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -692,23 +690,23 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -716,13 +714,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1035,7 +1033,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1234,7 +1232,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1425,15 +1423,14 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.Mutation.DeleteFromColumn other =
           (com.google.bigtable.v2.Mutation.DeleteFromColumn) obj;
 
-      boolean result = true;
-      result = result && getFamilyName().equals(other.getFamilyName());
-      result = result && getColumnQualifier().equals(other.getColumnQualifier());
-      result = result && (hasTimeRange() == other.hasTimeRange());
+      if (!getFamilyName().equals(other.getFamilyName())) return false;
+      if (!getColumnQualifier().equals(other.getColumnQualifier())) return false;
+      if (hasTimeRange() != other.hasTimeRange()) return false;
       if (hasTimeRange()) {
-        result = result && getTimeRange().equals(other.getTimeRange());
+        if (!getTimeRange().equals(other.getTimeRange())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1649,23 +1646,23 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1673,13 +1670,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1885,7 +1882,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.bigtable.v2.TimestampRange timeRange_ = null;
+      private com.google.bigtable.v2.TimestampRange timeRange_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.bigtable.v2.TimestampRange,
               com.google.bigtable.v2.TimestampRange.Builder,
@@ -2069,7 +2066,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2202,7 +2199,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2324,10 +2321,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.Mutation.DeleteFromFamily other =
           (com.google.bigtable.v2.Mutation.DeleteFromFamily) obj;
 
-      boolean result = true;
-      result = result && getFamilyName().equals(other.getFamilyName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFamilyName().equals(other.getFamilyName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2522,23 +2518,23 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2546,13 +2542,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2704,7 +2700,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2803,7 +2799,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
               break;
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2874,9 +2870,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.Mutation.DeleteFromRow other =
           (com.google.bigtable.v2.Mutation.DeleteFromRow) obj;
 
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3066,23 +3061,23 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -3090,13 +3085,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3144,7 +3139,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3485,27 +3480,25 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.Mutation other = (com.google.bigtable.v2.Mutation) obj;
 
-    boolean result = true;
-    result = result && getMutationCase().equals(other.getMutationCase());
-    if (!result) return false;
+    if (!getMutationCase().equals(other.getMutationCase())) return false;
     switch (mutationCase_) {
       case 1:
-        result = result && getSetCell().equals(other.getSetCell());
+        if (!getSetCell().equals(other.getSetCell())) return false;
         break;
       case 2:
-        result = result && getDeleteFromColumn().equals(other.getDeleteFromColumn());
+        if (!getDeleteFromColumn().equals(other.getDeleteFromColumn())) return false;
         break;
       case 3:
-        result = result && getDeleteFromFamily().equals(other.getDeleteFromFamily());
+        if (!getDeleteFromFamily().equals(other.getDeleteFromFamily())) return false;
         break;
       case 4:
-        result = result && getDeleteFromRow().equals(other.getDeleteFromRow());
+        if (!getDeleteFromRow().equals(other.getDeleteFromRow())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3741,35 +3734,35 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -4664,7 +4657,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

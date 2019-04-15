@@ -37,8 +37,8 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
 import com.google.cloud.bigquery.storage.v1beta1.Storage.Stream;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition;
 import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -102,7 +102,7 @@ public class BigQueryStorageClientTest {
     ReadSession actualResponse = client.createReadSession(tableReference, parent, requestedStreams);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigQueryStorage.getRequests();
+    List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateReadSessionRequest actualRequest = (CreateReadSessionRequest) actualRequests.get(0);
 
@@ -188,7 +188,7 @@ public class BigQueryStorageClientTest {
         client.batchCreateReadSessionStreams(session, requestedStreams);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigQueryStorage.getRequests();
+    List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateReadSessionStreamsRequest actualRequest =
         (BatchCreateReadSessionStreamsRequest) actualRequests.get(0);
@@ -228,7 +228,7 @@ public class BigQueryStorageClientTest {
 
     client.finalizeStream(stream);
 
-    List<GeneratedMessageV3> actualRequests = mockBigQueryStorage.getRequests();
+    List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     FinalizeStreamRequest actualRequest = (FinalizeStreamRequest) actualRequests.get(0);
 
@@ -266,7 +266,7 @@ public class BigQueryStorageClientTest {
     SplitReadStreamResponse actualResponse = client.splitReadStream(originalStream);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockBigQueryStorage.getRequests();
+    List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SplitReadStreamRequest actualRequest = (SplitReadStreamRequest) actualRequests.get(0);
 

@@ -12,7 +12,8 @@ public interface GetKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -22,7 +23,8 @@ public interface GetKeyRingRequestOrBuilder
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * The [name][google.cloud.kms.v1.KeyRing.name] of the
+   * [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>string name = 1;</code>

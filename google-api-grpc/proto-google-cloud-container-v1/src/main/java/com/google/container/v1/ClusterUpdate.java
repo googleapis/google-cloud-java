@@ -120,7 +120,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 desiredLocations_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000040;
               }
@@ -153,7 +153,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -165,7 +165,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         desiredLocations_ = desiredLocations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -763,34 +763,29 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.ClusterUpdate other = (com.google.container.v1.ClusterUpdate) obj;
 
-    boolean result = true;
-    result = result && getDesiredNodeVersion().equals(other.getDesiredNodeVersion());
-    result = result && getDesiredMonitoringService().equals(other.getDesiredMonitoringService());
-    result = result && (hasDesiredAddonsConfig() == other.hasDesiredAddonsConfig());
+    if (!getDesiredNodeVersion().equals(other.getDesiredNodeVersion())) return false;
+    if (!getDesiredMonitoringService().equals(other.getDesiredMonitoringService())) return false;
+    if (hasDesiredAddonsConfig() != other.hasDesiredAddonsConfig()) return false;
     if (hasDesiredAddonsConfig()) {
-      result = result && getDesiredAddonsConfig().equals(other.getDesiredAddonsConfig());
+      if (!getDesiredAddonsConfig().equals(other.getDesiredAddonsConfig())) return false;
     }
-    result = result && getDesiredNodePoolId().equals(other.getDesiredNodePoolId());
-    result = result && getDesiredImageType().equals(other.getDesiredImageType());
-    result = result && (hasDesiredNodePoolAutoscaling() == other.hasDesiredNodePoolAutoscaling());
+    if (!getDesiredNodePoolId().equals(other.getDesiredNodePoolId())) return false;
+    if (!getDesiredImageType().equals(other.getDesiredImageType())) return false;
+    if (hasDesiredNodePoolAutoscaling() != other.hasDesiredNodePoolAutoscaling()) return false;
     if (hasDesiredNodePoolAutoscaling()) {
-      result =
-          result && getDesiredNodePoolAutoscaling().equals(other.getDesiredNodePoolAutoscaling());
+      if (!getDesiredNodePoolAutoscaling().equals(other.getDesiredNodePoolAutoscaling()))
+        return false;
     }
-    result = result && getDesiredLocationsList().equals(other.getDesiredLocationsList());
-    result =
-        result
-            && (hasDesiredMasterAuthorizedNetworksConfig()
-                == other.hasDesiredMasterAuthorizedNetworksConfig());
+    if (!getDesiredLocationsList().equals(other.getDesiredLocationsList())) return false;
+    if (hasDesiredMasterAuthorizedNetworksConfig()
+        != other.hasDesiredMasterAuthorizedNetworksConfig()) return false;
     if (hasDesiredMasterAuthorizedNetworksConfig()) {
-      result =
-          result
-              && getDesiredMasterAuthorizedNetworksConfig()
-                  .equals(other.getDesiredMasterAuthorizedNetworksConfig());
+      if (!getDesiredMasterAuthorizedNetworksConfig()
+          .equals(other.getDesiredMasterAuthorizedNetworksConfig())) return false;
     }
-    result = result && getDesiredMasterVersion().equals(other.getDesiredMasterVersion());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getDesiredMasterVersion().equals(other.getDesiredMasterVersion())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1045,7 +1040,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredNodePoolAutoscaling_ = desiredNodePoolAutoscalingBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         desiredLocations_ = desiredLocations_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000040);
       }
@@ -1064,35 +1059,35 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1421,7 +1416,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.AddonsConfig desiredAddonsConfig_ = null;
+    private com.google.container.v1.AddonsConfig desiredAddonsConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.AddonsConfig,
             com.google.container.v1.AddonsConfig.Builder,
@@ -1811,7 +1806,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_ = null;
+    private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePoolAutoscaling,
             com.google.container.v1.NodePoolAutoscaling.Builder,
@@ -2028,7 +2023,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDesiredLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         desiredLocations_ = new com.google.protobuf.LazyStringArrayList(desiredLocations_);
         bitField0_ |= 0x00000040;
       }
@@ -2213,7 +2208,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.container.v1.MasterAuthorizedNetworksConfig
-        desiredMasterAuthorizedNetworksConfig_ = null;
+        desiredMasterAuthorizedNetworksConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.MasterAuthorizedNetworksConfig,
             com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
@@ -2551,7 +2546,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -19,7 +19,8 @@ public interface TaskOrBuilder
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -44,7 +45,8 @@ public interface TaskOrBuilder
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -92,6 +94,49 @@ public interface TaskOrBuilder
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
    */
   com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder getAppEngineHttpRequestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  boolean hasHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder();
 
   /**
    *
@@ -177,9 +222,12 @@ public interface TaskOrBuilder
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
-   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
    *   of the service: 10 minutes for standard apps with automatic scaling, 24
    *   hours for standard apps with manual and basic scaling, and 60 minutes for
    *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -209,9 +257,12 @@ public interface TaskOrBuilder
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
-   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
    *   of the service: 10 minutes for standard apps with automatic scaling, 24
    *   hours for standard apps with manual and basic scaling, and 60 minutes for
    *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -241,9 +292,12 @@ public interface TaskOrBuilder
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
-   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
    *   of the service: 10 minutes for standard apps with automatic scaling, 24
    *   hours for standard apps with manual and basic scaling, and 60 minutes for
    *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -266,7 +320,7 @@ public interface TaskOrBuilder
    *
    * <pre>
    * Output only. The number of attempts dispatched.
-   * This count includes tasks which have been dispatched but haven't
+   * This count includes attempts which have been dispatched but haven't
    * received a response.
    * </pre>
    *

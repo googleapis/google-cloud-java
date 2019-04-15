@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagerStub;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -265,10 +266,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesInstanceGroupManagerHttpRequest request = AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersAbandonInstancesRequestResource(instanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(request);
@@ -304,10 +305,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesInstanceGroupManagerHttpRequest request = AbandonInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersAbandonInstancesRequestResource(instanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.abandonInstancesInstanceGroupManagerCallable().futureCall(request);
@@ -384,9 +385,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstanceGroupManagersHttpRequest request = AggregatedListInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (InstanceGroupManagersScopedList element : instanceGroupManagerClient.aggregatedListInstanceGroupManagers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -411,9 +412,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstanceGroupManagersHttpRequest request = AggregatedListInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListInstanceGroupManagersPagedResponse&gt; future = instanceGroupManagerClient.aggregatedListInstanceGroupManagersPagedCallable().futureCall(request);
    *   // Do something
@@ -439,9 +440,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstanceGroupManagersHttpRequest request = AggregatedListInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InstanceGroupManagerAggregatedList response = instanceGroupManagerClient.aggregatedListInstanceGroupManagersCallable().call(request);
@@ -533,9 +534,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   DeleteInstanceGroupManagerHttpRequest request = DeleteInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   Operation response = instanceGroupManagerClient.deleteInstanceGroupManager(request);
    * }
@@ -559,9 +560,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   DeleteInstanceGroupManagerHttpRequest request = DeleteInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.deleteInstanceGroupManagerCallable().futureCall(request);
    *   // Do something
@@ -683,10 +684,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesInstanceGroupManagerHttpRequest request = DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersDeleteInstancesRequestResource(instanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.deleteInstancesInstanceGroupManager(request);
@@ -721,10 +722,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesInstanceGroupManagerHttpRequest request = DeleteInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersDeleteInstancesRequestResource(instanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.deleteInstancesInstanceGroupManagerCallable().futureCall(request);
@@ -804,9 +805,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   GetInstanceGroupManagerHttpRequest request = GetInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   InstanceGroupManager response = instanceGroupManagerClient.getInstanceGroupManager(request);
    * }
@@ -830,9 +831,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   GetInstanceGroupManagerHttpRequest request = GetInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   ApiFuture&lt;InstanceGroupManager&gt; future = instanceGroupManagerClient.getInstanceGroupManagerCallable().futureCall(request);
    *   // Do something
@@ -941,10 +942,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertInstanceGroupManagerHttpRequest request = InsertInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.insertInstanceGroupManager(request);
@@ -974,10 +975,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertInstanceGroupManagerHttpRequest request = InsertInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.insertInstanceGroupManagerCallable().futureCall(request);
@@ -1056,9 +1057,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstanceGroupManagersHttpRequest request = ListInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (InstanceGroupManager element : instanceGroupManagerClient.listInstanceGroupManagers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1084,9 +1085,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstanceGroupManagersHttpRequest request = ListInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListInstanceGroupManagersPagedResponse&gt; future = instanceGroupManagerClient.listInstanceGroupManagersPagedCallable().futureCall(request);
    *   // Do something
@@ -1112,9 +1113,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstanceGroupManagersHttpRequest request = ListInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     InstanceGroupManagerList response = instanceGroupManagerClient.listInstanceGroupManagersCallable().call(request);
@@ -1210,9 +1211,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   ListManagedInstancesInstanceGroupManagersHttpRequest request = ListManagedInstancesInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   InstanceGroupManagersListManagedInstancesResponse response = instanceGroupManagerClient.listManagedInstancesInstanceGroupManagers(request);
    * }
@@ -1239,9 +1240,9 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   ListManagedInstancesInstanceGroupManagersHttpRequest request = ListManagedInstancesInstanceGroupManagersHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   ApiFuture&lt;InstanceGroupManagersListManagedInstancesResponse&gt; future = instanceGroupManagerClient.listManagedInstancesInstanceGroupManagersCallable().futureCall(request);
    *   // Do something
@@ -1281,7 +1282,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
    *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
    *     v1.regionInstanceGroupManagers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1324,7 +1328,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
    *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
    *     v1.regionInstanceGroupManagers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1354,11 +1361,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInstanceGroupManagerHttpRequest request = PatchInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1386,11 +1393,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInstanceGroupManagerHttpRequest request = PatchInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1511,10 +1518,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   RecreateInstancesInstanceGroupManagerHttpRequest request = RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersRecreateInstancesRequestResource(instanceGroupManagersRecreateInstancesRequestResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.recreateInstancesInstanceGroupManager(request);
@@ -1548,10 +1555,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   RecreateInstancesInstanceGroupManagerHttpRequest request = RecreateInstancesInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersRecreateInstancesRequestResource(instanceGroupManagersRecreateInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.recreateInstancesInstanceGroupManagerCallable().futureCall(request);
@@ -1690,10 +1697,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   ResizeInstanceGroupManagerHttpRequest request = ResizeInstanceGroupManagerHttpRequest.newBuilder()
    *     .setSize(size)
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   Operation response = instanceGroupManagerClient.resizeInstanceGroupManager(request);
    * }
@@ -1733,10 +1740,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
    *   Integer size = 0;
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   ResizeInstanceGroupManagerHttpRequest request = ResizeInstanceGroupManagerHttpRequest.newBuilder()
    *     .setSize(size)
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.resizeInstanceGroupManagerCallable().futureCall(request);
    *   // Do something
@@ -1828,10 +1835,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateInstanceGroupManagerHttpRequest request = SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersSetInstanceTemplateRequestResource(instanceGroupManagersSetInstanceTemplateRequestResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.setInstanceTemplateInstanceGroupManager(request);
@@ -1856,10 +1863,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateInstanceGroupManagerHttpRequest request = SetInstanceTemplateInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersSetInstanceTemplateRequestResource(instanceGroupManagersSetInstanceTemplateRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.setInstanceTemplateInstanceGroupManagerCallable().futureCall(request);
@@ -1961,10 +1968,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsInstanceGroupManagerHttpRequest request = SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersSetTargetPoolsRequestResource(instanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();
    *   Operation response = instanceGroupManagerClient.setTargetPoolsInstanceGroupManager(request);
@@ -1992,10 +1999,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
-   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   String formattedInstanceGroupManager = ProjectZoneInstanceGroupManagerName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
    *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsInstanceGroupManagerHttpRequest request = SetTargetPoolsInstanceGroupManagerHttpRequest.newBuilder()
-   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
    *     .setInstanceGroupManagersSetTargetPoolsRequestResource(instanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.setTargetPoolsInstanceGroupManagerCallable().futureCall(request);
@@ -2068,7 +2075,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 AggregatedListInstanceGroupManagersPage input) {
               return new AggregatedListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstanceGroupManagersPagedResponse(
@@ -2170,7 +2178,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 ListInstanceGroupManagersPage input) {
               return new ListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceGroupManagersPagedResponse(ListInstanceGroupManagersPage page) {

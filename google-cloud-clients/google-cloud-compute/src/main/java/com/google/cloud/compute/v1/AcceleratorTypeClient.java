@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStub;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -215,9 +216,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAcceleratorTypesHttpRequest request = AggregatedListAcceleratorTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (AcceleratorTypesScopedList element : acceleratorTypeClient.aggregatedListAcceleratorTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -242,9 +243,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAcceleratorTypesHttpRequest request = AggregatedListAcceleratorTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListAcceleratorTypesPagedResponse&gt; future = acceleratorTypeClient.aggregatedListAcceleratorTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -269,9 +270,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListAcceleratorTypesHttpRequest request = AggregatedListAcceleratorTypesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     AcceleratorTypeAggregatedList response = acceleratorTypeClient.aggregatedListAcceleratorTypesCallable().call(request);
@@ -353,9 +354,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+   *   String formattedAcceleratorType = ProjectZoneAcceleratorTypeName.format("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
    *   GetAcceleratorTypeHttpRequest request = GetAcceleratorTypeHttpRequest.newBuilder()
-   *     .setAcceleratorType(acceleratorType.toString())
+   *     .setAcceleratorType(formattedAcceleratorType)
    *     .build();
    *   AcceleratorType response = acceleratorTypeClient.getAcceleratorType(request);
    * }
@@ -377,9 +378,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+   *   String formattedAcceleratorType = ProjectZoneAcceleratorTypeName.format("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
    *   GetAcceleratorTypeHttpRequest request = GetAcceleratorTypeHttpRequest.newBuilder()
-   *     .setAcceleratorType(acceleratorType.toString())
+   *     .setAcceleratorType(formattedAcceleratorType)
    *     .build();
    *   ApiFuture&lt;AcceleratorType&gt; future = acceleratorTypeClient.getAcceleratorTypeCallable().futureCall(request);
    *   // Do something
@@ -453,9 +454,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListAcceleratorTypesHttpRequest request = ListAcceleratorTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (AcceleratorType element : acceleratorTypeClient.listAcceleratorTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -480,9 +481,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListAcceleratorTypesHttpRequest request = ListAcceleratorTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListAcceleratorTypesPagedResponse&gt; future = acceleratorTypeClient.listAcceleratorTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -506,9 +507,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListAcceleratorTypesHttpRequest request = ListAcceleratorTypesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     AcceleratorTypeList response = acceleratorTypeClient.listAcceleratorTypesCallable().call(request);
@@ -588,7 +589,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
                 AggregatedListAcceleratorTypesPage input) {
               return new AggregatedListAcceleratorTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListAcceleratorTypesPagedResponse(AggregatedListAcceleratorTypesPage page) {
@@ -684,7 +686,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
             public ListAcceleratorTypesPagedResponse apply(ListAcceleratorTypesPage input) {
               return new ListAcceleratorTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAcceleratorTypesPagedResponse(ListAcceleratorTypesPage page) {

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.scheduler.v1beta1.stub.CloudSchedulerStub;
 import com.google.cloud.scheduler.v1beta1.stub.CloudSchedulerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -1061,7 +1062,8 @@ public class CloudSchedulerClient implements BackgroundResource {
             public ListJobsPagedResponse apply(ListJobsPage input) {
               return new ListJobsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {

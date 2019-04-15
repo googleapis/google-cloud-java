@@ -51,11 +51,11 @@ import org.junit.runners.JUnit4;
 public class GrpcResultSetTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
-  private SpannerImpl.GrpcResultSet resultSet;
+  private AbstractResultSet.GrpcResultSet resultSet;
   private SpannerRpc.ResultStreamConsumer consumer;
-  private SpannerImpl.GrpcStreamIterator stream;
+  private AbstractResultSet.GrpcStreamIterator stream;
 
-  private static class NoOpListener implements SpannerImpl.AbstractResultSet.Listener {
+  private static class NoOpListener implements AbstractResultSet.Listener {
     @Override
     public void onTransactionMetadata(Transaction transaction) throws SpannerException {}
 
@@ -68,7 +68,7 @@ public class GrpcResultSetTest {
 
   @Before
   public void setUp() {
-    stream = new SpannerImpl.GrpcStreamIterator(10);
+    stream = new AbstractResultSet.GrpcStreamIterator(10);
     stream.setCall(
         new SpannerRpc.StreamingCall() {
           @Override
@@ -78,11 +78,11 @@ public class GrpcResultSetTest {
           public void request(int numMessages) {}
         });
     consumer = stream.consumer();
-    resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
+    resultSet = new AbstractResultSet.GrpcResultSet(stream, new NoOpListener());
   }
 
-  public SpannerImpl.GrpcResultSet resultSetWithMode(QueryMode queryMode) {
-    return new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), queryMode);
+  public AbstractResultSet.GrpcResultSet resultSetWithMode(QueryMode queryMode) {
+    return new AbstractResultSet.GrpcResultSet(stream, new NoOpListener());
   }
 
   @Test
@@ -631,7 +631,7 @@ public class GrpcResultSetTest {
 
   private void verifySerialization(
       Function<Value, com.google.protobuf.Value> protoFn, Value... values) {
-    resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
+    resultSet = new AbstractResultSet.GrpcResultSet(stream, new NoOpListener());
     PartialResultSet.Builder builder = PartialResultSet.newBuilder();
     List<Type.StructField> types = new ArrayList<>();
     for (Value value : values) {
@@ -762,7 +762,10 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
 
     assertThat(resultSet.next()).isTrue();
-    assertThat(resultSet.getDoubleArray(0)).isEqualTo(doubleArray, 0.0);
+    assertThat(resultSet.getDoubleArray(0))
+        .usingTolerance(0.0)
+        .containsExactly(doubleArray)
+        .inOrder();
   }
 
   @Test

@@ -326,6 +326,61 @@ public final class SpannerGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getExecuteBatchDmlMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      METHOD_EXECUTE_BATCH_DML = getExecuteBatchDmlMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      getExecuteBatchDmlMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      getExecuteBatchDmlMethod() {
+    return getExecuteBatchDmlMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      getExecuteBatchDmlMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.v1.ExecuteBatchDmlRequest,
+            com.google.spanner.v1.ExecuteBatchDmlResponse>
+        getExecuteBatchDmlMethod;
+    if ((getExecuteBatchDmlMethod = SpannerGrpc.getExecuteBatchDmlMethod) == null) {
+      synchronized (SpannerGrpc.class) {
+        if ((getExecuteBatchDmlMethod = SpannerGrpc.getExecuteBatchDmlMethod) == null) {
+          SpannerGrpc.getExecuteBatchDmlMethod =
+              getExecuteBatchDmlMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.v1.ExecuteBatchDmlRequest,
+                          com.google.spanner.v1.ExecuteBatchDmlResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.spanner.v1.Spanner", "ExecuteBatchDml"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.ExecuteBatchDmlRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.ExecuteBatchDmlResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new SpannerMethodDescriptorSupplier("ExecuteBatchDml"))
+                      .build();
+        }
+      }
+    }
+    return getExecuteBatchDmlMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getReadMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.spanner.v1.ReadRequest, com.google.spanner.v1.ResultSet>
@@ -757,7 +812,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Ends a session, releasing server resources associated with it.
+     * Ends a session, releasing server resources associated with it. This will
+     * asynchronously trigger cancellation of any operations that are running with
+     * this session.
      * </pre>
      */
     public void deleteSession(
@@ -776,9 +833,11 @@ public final class SpannerGrpc {
      * a `FAILED_PRECONDITION` error.
      * Operations inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be fetched in streaming fashion by calling
-     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] instead.
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql]
+     * instead.
      * </pre>
      */
     public void executeSql(
@@ -791,11 +850,11 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except returns the result
-     * set as a stream. Unlike [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], there
-     * is no limit on the size of the returned result set. However, no
-     * individual row in the result set can exceed 100 MiB, and no
-     * column value can exceed 10 MiB.
+     * Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except returns the
+     * result set as a stream. Unlike
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], there is no limit on
+     * the size of the returned result set. However, no individual row in the
+     * result set can exceed 100 MiB, and no column value can exceed 10 MiB.
      * </pre>
      */
     public void executeStreamingSql(
@@ -808,15 +867,45 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public void executeBatchDml(
+        com.google.spanner.v1.ExecuteBatchDmlRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.ExecuteBatchDmlResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getExecuteBatchDmlMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
-     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
-     * return a result set larger than 10 MiB; if the read matches more
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be
+     * used to return a result set larger than 10 MiB; if the read matches more
      * data than that, the read fails with a `FAILED_PRECONDITION`
      * error.
      * Reads inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be yielded in streaming fashion by calling
      * [StreamingRead][google.spanner.v1.Spanner.StreamingRead] instead.
      * </pre>
@@ -831,9 +920,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Like [Read][google.spanner.v1.Spanner.Read], except returns the result set as a
-     * stream. Unlike [Read][google.spanner.v1.Spanner.Read], there is no limit on the
-     * size of the returned result set. However, no individual row in
+     * Like [Read][google.spanner.v1.Spanner.Read], except returns the result set
+     * as a stream. Unlike [Read][google.spanner.v1.Spanner.Read], there is no
+     * limit on the size of the returned result set. However, no individual row in
      * the result set can exceed 100 MiB, and no column value can exceed
      * 10 MiB.
      * </pre>
@@ -849,7 +938,8 @@ public final class SpannerGrpc {
      *
      * <pre>
      * Begins a new transaction. This step can often be skipped:
-     * [Read][google.spanner.v1.Spanner.Read], [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
+     * [Read][google.spanner.v1.Spanner.Read],
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
      * [Commit][google.spanner.v1.Spanner.Commit] can begin a new transaction as a
      * side-effect.
      * </pre>
@@ -885,8 +975,9 @@ public final class SpannerGrpc {
      * <pre>
      * Rolls back a transaction, releasing any locks it holds. It is a good
      * idea to call this for any transaction that includes one or more
-     * [Read][google.spanner.v1.Spanner.Read] or [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and
-     * ultimately decides not to commit.
+     * [Read][google.spanner.v1.Spanner.Read] or
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and ultimately
+     * decides not to commit.
      * `Rollback` returns `OK` if it successfully aborts the transaction, the
      * transaction was already aborted, or the transaction is not
      * found. `Rollback` never returns `ABORTED`.
@@ -904,10 +995,11 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a query
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to specify a subset
-     * of the query result to read.  The same session and read-only transaction
-     * must be used by the PartitionQueryRequest used to create the
-     * partition tokens and the ExecuteSqlRequests that use the partition tokens.
+     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to
+     * specify a subset of the query result to read.  The same session and
+     * read-only transaction must be used by the PartitionQueryRequest used to
+     * create the partition tokens and the ExecuteSqlRequests that use the
+     * partition tokens.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the query, and
@@ -926,12 +1018,13 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a read
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a subset of the read
-     * result to read.  The same session and read-only transaction must be used by
-     * the PartitionReadRequest used to create the partition tokens and the
-     * ReadRequests that use the partition tokens.  There are no ordering
-     * guarantees on rows returned among the returned partition tokens, or even
-     * within each individual StreamingRead call issued with a partition_token.
+     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a
+     * subset of the read result to read.  The same session and read-only
+     * transaction must be used by the PartitionReadRequest used to create the
+     * partition tokens and the ReadRequests that use the partition tokens.  There
+     * are no ordering guarantees on rows returned among the returned partition
+     * tokens, or even within each individual StreamingRead call issued with a
+     * partition_token.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the read, and
@@ -984,6 +1077,13 @@ public final class SpannerGrpc {
                       com.google.spanner.v1.ExecuteSqlRequest,
                       com.google.spanner.v1.PartialResultSet>(
                       this, METHODID_EXECUTE_STREAMING_SQL)))
+          .addMethod(
+              getExecuteBatchDmlMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.v1.ExecuteBatchDmlRequest,
+                      com.google.spanner.v1.ExecuteBatchDmlResponse>(
+                      this, METHODID_EXECUTE_BATCH_DML)))
           .addMethod(
               getReadMethodHelper(),
               asyncUnaryCall(
@@ -1122,7 +1222,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Ends a session, releasing server resources associated with it.
+     * Ends a session, releasing server resources associated with it. This will
+     * asynchronously trigger cancellation of any operations that are running with
+     * this session.
      * </pre>
      */
     public void deleteSession(
@@ -1144,9 +1246,11 @@ public final class SpannerGrpc {
      * a `FAILED_PRECONDITION` error.
      * Operations inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be fetched in streaming fashion by calling
-     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] instead.
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql]
+     * instead.
      * </pre>
      */
     public void executeSql(
@@ -1162,11 +1266,11 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except returns the result
-     * set as a stream. Unlike [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], there
-     * is no limit on the size of the returned result set. However, no
-     * individual row in the result set can exceed 100 MiB, and no
-     * column value can exceed 10 MiB.
+     * Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except returns the
+     * result set as a stream. Unlike
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], there is no limit on
+     * the size of the returned result set. However, no individual row in the
+     * result set can exceed 100 MiB, and no column value can exceed 10 MiB.
      * </pre>
      */
     public void executeStreamingSql(
@@ -1182,15 +1286,48 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public void executeBatchDml(
+        com.google.spanner.v1.ExecuteBatchDmlRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.ExecuteBatchDmlResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getExecuteBatchDmlMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
-     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
-     * return a result set larger than 10 MiB; if the read matches more
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be
+     * used to return a result set larger than 10 MiB; if the read matches more
      * data than that, the read fails with a `FAILED_PRECONDITION`
      * error.
      * Reads inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be yielded in streaming fashion by calling
      * [StreamingRead][google.spanner.v1.Spanner.StreamingRead] instead.
      * </pre>
@@ -1206,9 +1343,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Like [Read][google.spanner.v1.Spanner.Read], except returns the result set as a
-     * stream. Unlike [Read][google.spanner.v1.Spanner.Read], there is no limit on the
-     * size of the returned result set. However, no individual row in
+     * Like [Read][google.spanner.v1.Spanner.Read], except returns the result set
+     * as a stream. Unlike [Read][google.spanner.v1.Spanner.Read], there is no
+     * limit on the size of the returned result set. However, no individual row in
      * the result set can exceed 100 MiB, and no column value can exceed
      * 10 MiB.
      * </pre>
@@ -1227,7 +1364,8 @@ public final class SpannerGrpc {
      *
      * <pre>
      * Begins a new transaction. This step can often be skipped:
-     * [Read][google.spanner.v1.Spanner.Read], [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
+     * [Read][google.spanner.v1.Spanner.Read],
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
      * [Commit][google.spanner.v1.Spanner.Commit] can begin a new transaction as a
      * side-effect.
      * </pre>
@@ -1269,8 +1407,9 @@ public final class SpannerGrpc {
      * <pre>
      * Rolls back a transaction, releasing any locks it holds. It is a good
      * idea to call this for any transaction that includes one or more
-     * [Read][google.spanner.v1.Spanner.Read] or [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and
-     * ultimately decides not to commit.
+     * [Read][google.spanner.v1.Spanner.Read] or
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and ultimately
+     * decides not to commit.
      * `Rollback` returns `OK` if it successfully aborts the transaction, the
      * transaction was already aborted, or the transaction is not
      * found. `Rollback` never returns `ABORTED`.
@@ -1291,10 +1430,11 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a query
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to specify a subset
-     * of the query result to read.  The same session and read-only transaction
-     * must be used by the PartitionQueryRequest used to create the
-     * partition tokens and the ExecuteSqlRequests that use the partition tokens.
+     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to
+     * specify a subset of the query result to read.  The same session and
+     * read-only transaction must be used by the PartitionQueryRequest used to
+     * create the partition tokens and the ExecuteSqlRequests that use the
+     * partition tokens.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the query, and
@@ -1316,12 +1456,13 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a read
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a subset of the read
-     * result to read.  The same session and read-only transaction must be used by
-     * the PartitionReadRequest used to create the partition tokens and the
-     * ReadRequests that use the partition tokens.  There are no ordering
-     * guarantees on rows returned among the returned partition tokens, or even
-     * within each individual StreamingRead call issued with a partition_token.
+     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a
+     * subset of the read result to read.  The same session and read-only
+     * transaction must be used by the PartitionReadRequest used to create the
+     * partition tokens and the ReadRequests that use the partition tokens.  There
+     * are no ordering guarantees on rows returned among the returned partition
+     * tokens, or even within each individual StreamingRead call issued with a
+     * partition_token.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the read, and
@@ -1422,7 +1563,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Ends a session, releasing server resources associated with it.
+     * Ends a session, releasing server resources associated with it. This will
+     * asynchronously trigger cancellation of any operations that are running with
+     * this session.
      * </pre>
      */
     public com.google.protobuf.Empty deleteSession(
@@ -1441,9 +1584,11 @@ public final class SpannerGrpc {
      * a `FAILED_PRECONDITION` error.
      * Operations inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be fetched in streaming fashion by calling
-     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] instead.
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql]
+     * instead.
      * </pre>
      */
     public com.google.spanner.v1.ResultSet executeSql(
@@ -1456,11 +1601,11 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except returns the result
-     * set as a stream. Unlike [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], there
-     * is no limit on the size of the returned result set. However, no
-     * individual row in the result set can exceed 100 MiB, and no
-     * column value can exceed 10 MiB.
+     * Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except returns the
+     * result set as a stream. Unlike
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], there is no limit on
+     * the size of the returned result set. However, no individual row in the
+     * result set can exceed 100 MiB, and no column value can exceed 10 MiB.
      * </pre>
      */
     public java.util.Iterator<com.google.spanner.v1.PartialResultSet> executeStreamingSql(
@@ -1473,15 +1618,44 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public com.google.spanner.v1.ExecuteBatchDmlResponse executeBatchDml(
+        com.google.spanner.v1.ExecuteBatchDmlRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getExecuteBatchDmlMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
-     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
-     * return a result set larger than 10 MiB; if the read matches more
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be
+     * used to return a result set larger than 10 MiB; if the read matches more
      * data than that, the read fails with a `FAILED_PRECONDITION`
      * error.
      * Reads inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be yielded in streaming fashion by calling
      * [StreamingRead][google.spanner.v1.Spanner.StreamingRead] instead.
      * </pre>
@@ -1494,9 +1668,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Like [Read][google.spanner.v1.Spanner.Read], except returns the result set as a
-     * stream. Unlike [Read][google.spanner.v1.Spanner.Read], there is no limit on the
-     * size of the returned result set. However, no individual row in
+     * Like [Read][google.spanner.v1.Spanner.Read], except returns the result set
+     * as a stream. Unlike [Read][google.spanner.v1.Spanner.Read], there is no
+     * limit on the size of the returned result set. However, no individual row in
      * the result set can exceed 100 MiB, and no column value can exceed
      * 10 MiB.
      * </pre>
@@ -1512,7 +1686,8 @@ public final class SpannerGrpc {
      *
      * <pre>
      * Begins a new transaction. This step can often be skipped:
-     * [Read][google.spanner.v1.Spanner.Read], [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
+     * [Read][google.spanner.v1.Spanner.Read],
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
      * [Commit][google.spanner.v1.Spanner.Commit] can begin a new transaction as a
      * side-effect.
      * </pre>
@@ -1547,8 +1722,9 @@ public final class SpannerGrpc {
      * <pre>
      * Rolls back a transaction, releasing any locks it holds. It is a good
      * idea to call this for any transaction that includes one or more
-     * [Read][google.spanner.v1.Spanner.Read] or [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and
-     * ultimately decides not to commit.
+     * [Read][google.spanner.v1.Spanner.Read] or
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and ultimately
+     * decides not to commit.
      * `Rollback` returns `OK` if it successfully aborts the transaction, the
      * transaction was already aborted, or the transaction is not
      * found. `Rollback` never returns `ABORTED`.
@@ -1564,10 +1740,11 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a query
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to specify a subset
-     * of the query result to read.  The same session and read-only transaction
-     * must be used by the PartitionQueryRequest used to create the
-     * partition tokens and the ExecuteSqlRequests that use the partition tokens.
+     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to
+     * specify a subset of the query result to read.  The same session and
+     * read-only transaction must be used by the PartitionQueryRequest used to
+     * create the partition tokens and the ExecuteSqlRequests that use the
+     * partition tokens.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the query, and
@@ -1586,12 +1763,13 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a read
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a subset of the read
-     * result to read.  The same session and read-only transaction must be used by
-     * the PartitionReadRequest used to create the partition tokens and the
-     * ReadRequests that use the partition tokens.  There are no ordering
-     * guarantees on rows returned among the returned partition tokens, or even
-     * within each individual StreamingRead call issued with a partition_token.
+     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a
+     * subset of the read result to read.  The same session and read-only
+     * transaction must be used by the PartitionReadRequest used to create the
+     * partition tokens and the ReadRequests that use the partition tokens.  There
+     * are no ordering guarantees on rows returned among the returned partition
+     * tokens, or even within each individual StreamingRead call issued with a
+     * partition_token.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the read, and
@@ -1689,7 +1867,9 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
-     * Ends a session, releasing server resources associated with it.
+     * Ends a session, releasing server resources associated with it. This will
+     * asynchronously trigger cancellation of any operations that are running with
+     * this session.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1708,9 +1888,11 @@ public final class SpannerGrpc {
      * a `FAILED_PRECONDITION` error.
      * Operations inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be fetched in streaming fashion by calling
-     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] instead.
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql]
+     * instead.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.spanner.v1.ResultSet>
@@ -1723,15 +1905,45 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.v1.ExecuteBatchDmlResponse>
+        executeBatchDml(com.google.spanner.v1.ExecuteBatchDmlRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getExecuteBatchDmlMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
-     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
-     * return a result set larger than 10 MiB; if the read matches more
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be
+     * used to return a result set larger than 10 MiB; if the read matches more
      * data than that, the read fails with a `FAILED_PRECONDITION`
      * error.
      * Reads inside read-write transactions might return `ABORTED`. If
      * this occurs, the application should restart the transaction from
-     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more details.
+     * the beginning. See [Transaction][google.spanner.v1.Transaction] for more
+     * details.
      * Larger result sets can be yielded in streaming fashion by calling
      * [StreamingRead][google.spanner.v1.Spanner.StreamingRead] instead.
      * </pre>
@@ -1747,7 +1959,8 @@ public final class SpannerGrpc {
      *
      * <pre>
      * Begins a new transaction. This step can often be skipped:
-     * [Read][google.spanner.v1.Spanner.Read], [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
+     * [Read][google.spanner.v1.Spanner.Read],
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
      * [Commit][google.spanner.v1.Spanner.Commit] can begin a new transaction as a
      * side-effect.
      * </pre>
@@ -1783,8 +1996,9 @@ public final class SpannerGrpc {
      * <pre>
      * Rolls back a transaction, releasing any locks it holds. It is a good
      * idea to call this for any transaction that includes one or more
-     * [Read][google.spanner.v1.Spanner.Read] or [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and
-     * ultimately decides not to commit.
+     * [Read][google.spanner.v1.Spanner.Read] or
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] requests and ultimately
+     * decides not to commit.
      * `Rollback` returns `OK` if it successfully aborts the transaction, the
      * transaction was already aborted, or the transaction is not
      * found. `Rollback` never returns `ABORTED`.
@@ -1802,10 +2016,11 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a query
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to specify a subset
-     * of the query result to read.  The same session and read-only transaction
-     * must be used by the PartitionQueryRequest used to create the
-     * partition tokens and the ExecuteSqlRequests that use the partition tokens.
+     * by [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] to
+     * specify a subset of the query result to read.  The same session and
+     * read-only transaction must be used by the PartitionQueryRequest used to
+     * create the partition tokens and the ExecuteSqlRequests that use the
+     * partition tokens.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the query, and
@@ -1825,12 +2040,13 @@ public final class SpannerGrpc {
      * <pre>
      * Creates a set of partition tokens that can be used to execute a read
      * operation in parallel.  Each of the returned partition tokens can be used
-     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a subset of the read
-     * result to read.  The same session and read-only transaction must be used by
-     * the PartitionReadRequest used to create the partition tokens and the
-     * ReadRequests that use the partition tokens.  There are no ordering
-     * guarantees on rows returned among the returned partition tokens, or even
-     * within each individual StreamingRead call issued with a partition_token.
+     * by [StreamingRead][google.spanner.v1.Spanner.StreamingRead] to specify a
+     * subset of the read result to read.  The same session and read-only
+     * transaction must be used by the PartitionReadRequest used to create the
+     * partition tokens and the ReadRequests that use the partition tokens.  There
+     * are no ordering guarantees on rows returned among the returned partition
+     * tokens, or even within each individual StreamingRead call issued with a
+     * partition_token.
      * Partition tokens become invalid when the session used to create them
      * is deleted, is idle for too long, begins a new transaction, or becomes too
      * old.  When any of these happen, it is not possible to resume the read, and
@@ -1851,13 +2067,14 @@ public final class SpannerGrpc {
   private static final int METHODID_DELETE_SESSION = 3;
   private static final int METHODID_EXECUTE_SQL = 4;
   private static final int METHODID_EXECUTE_STREAMING_SQL = 5;
-  private static final int METHODID_READ = 6;
-  private static final int METHODID_STREAMING_READ = 7;
-  private static final int METHODID_BEGIN_TRANSACTION = 8;
-  private static final int METHODID_COMMIT = 9;
-  private static final int METHODID_ROLLBACK = 10;
-  private static final int METHODID_PARTITION_QUERY = 11;
-  private static final int METHODID_PARTITION_READ = 12;
+  private static final int METHODID_EXECUTE_BATCH_DML = 6;
+  private static final int METHODID_READ = 7;
+  private static final int METHODID_STREAMING_READ = 8;
+  private static final int METHODID_BEGIN_TRANSACTION = 9;
+  private static final int METHODID_COMMIT = 10;
+  private static final int METHODID_ROLLBACK = 11;
+  private static final int METHODID_PARTITION_QUERY = 12;
+  private static final int METHODID_PARTITION_READ = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1906,6 +2123,12 @@ public final class SpannerGrpc {
           serviceImpl.executeStreamingSql(
               (com.google.spanner.v1.ExecuteSqlRequest) request,
               (io.grpc.stub.StreamObserver<com.google.spanner.v1.PartialResultSet>)
+                  responseObserver);
+          break;
+        case METHODID_EXECUTE_BATCH_DML:
+          serviceImpl.executeBatchDml(
+              (com.google.spanner.v1.ExecuteBatchDmlRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.spanner.v1.ExecuteBatchDmlResponse>)
                   responseObserver);
           break;
         case METHODID_READ:
@@ -2014,6 +2237,7 @@ public final class SpannerGrpc {
                       .addMethod(getDeleteSessionMethodHelper())
                       .addMethod(getExecuteSqlMethodHelper())
                       .addMethod(getExecuteStreamingSqlMethodHelper())
+                      .addMethod(getExecuteBatchDmlMethodHelper())
                       .addMethod(getReadMethodHelper())
                       .addMethod(getStreamingReadMethodHelper())
                       .addMethod(getBeginTransactionMethodHelper())

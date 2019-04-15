@@ -12,7 +12,10 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Evaluation metrics for models on classification problems models.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * has either CATEGORY or ARRAY(CATEGORY) DataType.
    * </pre>
    *
    * <code>
@@ -24,7 +27,10 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Evaluation metrics for models on classification problems models.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * has either CATEGORY or ARRAY(CATEGORY) DataType.
    * </pre>
    *
    * <code>
@@ -37,7 +43,10 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Evaluation metrics for models on classification problems models.
+   * Model evaluation metrics for image, text, video and tables
+   * classification.
+   * Tables problem is considered a classification when the target column
+   * has either CATEGORY or ARRAY(CATEGORY) DataType.
    * </pre>
    *
    * <code>
@@ -51,7 +60,52 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Evaluation metrics for models on translation models.
+   * Model evaluation metrics for Tables regression.
+   * Tables problem is considered a regression when the target column
+   * has FLOAT64 DataType.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.RegressionEvaluationMetrics regression_evaluation_metrics = 24;
+   * </code>
+   */
+  boolean hasRegressionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for Tables regression.
+   * Tables problem is considered a regression when the target column
+   * has FLOAT64 DataType.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.RegressionEvaluationMetrics regression_evaluation_metrics = 24;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetrics
+      getRegressionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for Tables regression.
+   * Tables problem is considered a regression when the target column
+   * has FLOAT64 DataType.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.RegressionEvaluationMetrics regression_evaluation_metrics = 24;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetricsOrBuilder
+      getRegressionEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for translation.
    * </pre>
    *
    * <code>
@@ -63,7 +117,7 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Evaluation metrics for models on translation models.
+   * Model evaluation metrics for translation.
    * </pre>
    *
    * <code>
@@ -75,7 +129,7 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Evaluation metrics for models on translation models.
+   * Model evaluation metrics for translation.
    * </pre>
    *
    * <code>
@@ -84,6 +138,123 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder
       getTranslationEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  boolean hasImageObjectDetectionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics
+      getImageObjectDetectionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetricsOrBuilder
+      getImageObjectDetectionEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  boolean hasTextSentimentEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
+      getTextSentimentEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetricsOrBuilder
+      getTextSentimentEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  boolean hasTextExtractionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics
+      getTextExtractionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetricsOrBuilder
+      getTextExtractionEvaluationMetricsOrBuilder();
 
   /**
    *
@@ -118,7 +289,10 @@ public interface ModelEvaluationOrBuilder
    * <pre>
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
-   * ID is empty for overall model evaluation.
+   * The ID is empty for the overall model evaluation.
+   * For Tables classification these are the distinct values of the target
+   * column at the moment of the evaluation; for this problem annotation specs
+   * in the dataset do not exist.
    * NOTE: Currently there is no way to obtain the display_name of the
    * annotation spec from its ID. To see the display_names, review the model
    * evaluations in the UI.
@@ -133,7 +307,10 @@ public interface ModelEvaluationOrBuilder
    * <pre>
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
-   * ID is empty for overall model evaluation.
+   * The ID is empty for the overall model evaluation.
+   * For Tables classification these are the distinct values of the target
+   * column at the moment of the evaluation; for this problem annotation specs
+   * in the dataset do not exist.
    * NOTE: Currently there is no way to obtain the display_name of the
    * annotation spec from its ID. To see the display_names, review the model
    * evaluations in the UI.
@@ -142,6 +319,37 @@ public interface ModelEvaluationOrBuilder
    * <code>string annotation_spec_id = 2;</code>
    */
   com.google.protobuf.ByteString getAnnotationSpecIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+   * was trained. Because this field returns a value at model training time,
+   * for different models trained using the same dataset, the returned value
+   * could be different as model owner could update the display_name between
+   * any two model training.
+   * The display_name is empty for the overall model evaluation.
+   * </pre>
+   *
+   * <code>string display_name = 15;</code>
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
+   * was trained. Because this field returns a value at model training time,
+   * for different models trained using the same dataset, the returned value
+   * could be different as model owner could update the display_name between
+   * any two model training.
+   * The display_name is empty for the overall model evaluation.
+   * </pre>
+   *
+   * <code>string display_name = 15;</code>
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
    *
@@ -181,7 +389,15 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The number of examples used for model evaluation.
+   * Output only.
+   * The number of examples used for model evaluation, i.e. for
+   * which ground truth from time of model creation is compared against the
+   * predicted annotations created by the model.
+   * For overall ModelEvaluation (i.e. with annotation_spec_id not set) this is
+   * the total number of all examples used for evaluation.
+   * Otherwise, this is the count of examples that according to the ground
+   * truth were annotated by the
+   * [annotation_spec_id][google.cloud.automl.v1beta1.ModelEvaluation.annotation_spec_id].
    * </pre>
    *
    * <code>int32 evaluated_example_count = 6;</code>

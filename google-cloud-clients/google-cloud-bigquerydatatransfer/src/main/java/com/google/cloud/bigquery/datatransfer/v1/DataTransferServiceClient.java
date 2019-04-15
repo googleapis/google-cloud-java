@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.datatransfer.v1.stub.DataTransferServiceStub;
 import com.google.cloud.bigquery.datatransfer.v1.stub.DataTransferServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -1639,7 +1640,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListDataSourcesPagedResponse apply(ListDataSourcesPage input) {
               return new ListDataSourcesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDataSourcesPagedResponse(ListDataSourcesPage page) {
@@ -1721,7 +1723,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListTransferConfigsPagedResponse apply(ListTransferConfigsPage input) {
               return new ListTransferConfigsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTransferConfigsPagedResponse(ListTransferConfigsPage page) {
@@ -1808,7 +1811,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListTransferRunsPagedResponse apply(ListTransferRunsPage input) {
               return new ListTransferRunsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTransferRunsPagedResponse(ListTransferRunsPage page) {
@@ -1889,7 +1893,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListTransferLogsPagedResponse apply(ListTransferLogsPage input) {
               return new ListTransferLogsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTransferLogsPagedResponse(ListTransferLogsPage page) {

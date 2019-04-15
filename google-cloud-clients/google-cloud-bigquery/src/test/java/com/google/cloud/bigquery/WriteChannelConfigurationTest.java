@@ -49,6 +49,7 @@ public class WriteChannelConfigurationTest {
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final Boolean AUTODETECT = true;
+  private static final Boolean USERAVROLOGICALTYPES = true;
   private static final List<JobInfo.SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
       ImmutableList.of(JobInfo.SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
@@ -84,6 +85,21 @@ public class WriteChannelConfigurationTest {
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
           .build();
+  private static final WriteChannelConfiguration LOAD_CONFIGURATION_AVRO =
+      WriteChannelConfiguration.newBuilder(TABLE_ID)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setNullMarker(NULL_MARKER)
+          .setFormatOptions(FormatOptions.avro())
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
+          .setSchema(TABLE_SCHEMA)
+          .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setAutodetect(AUTODETECT)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .setClustering(CLUSTERING)
+          .setUseAvroLogicalTypes(USERAVROLOGICALTYPES)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -96,6 +112,16 @@ public class WriteChannelConfigurationTest {
     assertEquals("newTable", configuration.getDestinationTable().getTable());
     configuration = configuration.toBuilder().setDestinationTable(TABLE_ID).build();
     compareLoadConfiguration(LOAD_CONFIGURATION_CSV, configuration);
+
+    compareLoadConfiguration(LOAD_CONFIGURATION_AVRO, LOAD_CONFIGURATION_AVRO.toBuilder().build());
+    WriteChannelConfiguration configurationAvro =
+        LOAD_CONFIGURATION_AVRO
+            .toBuilder()
+            .setDestinationTable(TableId.of("dataset", "newTable"))
+            .build();
+    assertEquals("newTable", configurationAvro.getDestinationTable().getTable());
+    configurationAvro = configurationAvro.toBuilder().setDestinationTable(TABLE_ID).build();
+    compareLoadConfiguration(LOAD_CONFIGURATION_AVRO, configurationAvro);
   }
 
   @Test
@@ -191,5 +217,6 @@ public class WriteChannelConfigurationTest {
     assertEquals(expected.getAutodetect(), value.getAutodetect());
     assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
     assertEquals(expected.getClustering(), value.getClustering());
+    assertEquals(expected.getUseAvroLogicalTypes(), value.getUseAvroLogicalTypes());
   }
 }

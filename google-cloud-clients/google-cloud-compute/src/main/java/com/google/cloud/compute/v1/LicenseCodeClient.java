@@ -204,9 +204,9 @@ public class LicenseCodeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseCodeClient licenseCodeClient = LicenseCodeClient.create()) {
-   *   ProjectGlobalLicenseCodeName licenseCode = ProjectGlobalLicenseCodeName.of("[PROJECT]", "[LICENSE_CODE]");
+   *   String formattedLicenseCode = ProjectGlobalLicenseCodeName.format("[PROJECT]", "[LICENSE_CODE]");
    *   GetLicenseCodeHttpRequest request = GetLicenseCodeHttpRequest.newBuilder()
-   *     .setLicenseCode(licenseCode.toString())
+   *     .setLicenseCode(formattedLicenseCode)
    *     .build();
    *   LicenseCode response = licenseCodeClient.getLicenseCode(request);
    * }
@@ -229,9 +229,9 @@ public class LicenseCodeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseCodeClient licenseCodeClient = LicenseCodeClient.create()) {
-   *   ProjectGlobalLicenseCodeName licenseCode = ProjectGlobalLicenseCodeName.of("[PROJECT]", "[LICENSE_CODE]");
+   *   String formattedLicenseCode = ProjectGlobalLicenseCodeName.format("[PROJECT]", "[LICENSE_CODE]");
    *   GetLicenseCodeHttpRequest request = GetLicenseCodeHttpRequest.newBuilder()
-   *     .setLicenseCode(licenseCode.toString())
+   *     .setLicenseCode(formattedLicenseCode)
    *     .build();
    *   ApiFuture&lt;LicenseCode&gt; future = licenseCodeClient.getLicenseCodeCallable().futureCall(request);
    *   // Do something
@@ -313,10 +313,10 @@ public class LicenseCodeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseCodeClient licenseCodeClient = LicenseCodeClient.create()) {
-   *   ProjectGlobalLicenseCodeResourceName resource = ProjectGlobalLicenseCodeResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseCodeResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsLicenseCodeHttpRequest request = TestIamPermissionsLicenseCodeHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = licenseCodeClient.testIamPermissionsLicenseCode(request);
@@ -340,10 +340,10 @@ public class LicenseCodeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseCodeClient licenseCodeClient = LicenseCodeClient.create()) {
-   *   ProjectGlobalLicenseCodeResourceName resource = ProjectGlobalLicenseCodeResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseCodeResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsLicenseCodeHttpRequest request = TestIamPermissionsLicenseCodeHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = licenseCodeClient.testIamPermissionsLicenseCodeCallable().futureCall(request);

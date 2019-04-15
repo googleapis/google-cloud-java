@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceStub;
 import com.google.cloud.compute.v1.stub.InstanceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -230,11 +231,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   AddAccessConfigInstanceHttpRequest request = AddAccessConfigInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setAccessConfigResource(accessConfigResource)
    *     .build();
@@ -258,11 +259,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   AddAccessConfigInstanceHttpRequest request = AddAccessConfigInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setAccessConfigResource(accessConfigResource)
    *     .build();
@@ -338,9 +339,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstancesHttpRequest request = AggregatedListInstancesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (InstancesScopedList element : instanceClient.aggregatedListInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -365,9 +366,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstancesHttpRequest request = AggregatedListInstancesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListInstancesPagedResponse&gt; future = instanceClient.aggregatedListInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -392,9 +393,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstancesHttpRequest request = AggregatedListInstancesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InstanceAggregatedList response = instanceClient.aggregatedListInstancesCallable().call(request);
@@ -436,7 +437,7 @@ public class InstanceClient implements BackgroundResource {
    *
    * @param instance The instance name for this request.
    * @param forceAttach Whether to force attach the disk even if it's currently attached to another
-   *     instance. This is only available for regional disks.
+   *     instance.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -472,7 +473,7 @@ public class InstanceClient implements BackgroundResource {
    *
    * @param instance The instance name for this request.
    * @param forceAttach Whether to force attach the disk even if it's currently attached to another
-   *     instance. This is only available for regional disks.
+   *     instance.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -499,11 +500,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Boolean forceAttach = false;
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   AttachDiskInstanceHttpRequest request = AttachDiskInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setForceAttach(forceAttach)
    *     .setAttachedDiskResource(attachedDiskResource)
    *     .build();
@@ -529,11 +530,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Boolean forceAttach = false;
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   AttachDiskInstanceHttpRequest request = AttachDiskInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setForceAttach(forceAttach)
    *     .setAttachedDiskResource(attachedDiskResource)
    *     .build();
@@ -610,9 +611,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   DeleteInstanceHttpRequest request = DeleteInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   Operation response = instanceClient.deleteInstance(request);
    * }
@@ -635,9 +636,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   DeleteInstanceHttpRequest request = DeleteInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.deleteInstanceCallable().futureCall(request);
    *   // Do something
@@ -724,11 +725,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   String accessConfig = "";
    *   DeleteAccessConfigInstanceHttpRequest request = DeleteAccessConfigInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setAccessConfig(accessConfig)
    *     .build();
@@ -752,11 +753,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   String accessConfig = "";
    *   DeleteAccessConfigInstanceHttpRequest request = DeleteAccessConfigInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setAccessConfig(accessConfig)
    *     .build();
@@ -840,10 +841,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String deviceName = "";
    *   DetachDiskInstanceHttpRequest request = DetachDiskInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setDeviceName(deviceName)
    *     .build();
    *   Operation response = instanceClient.detachDiskInstance(request);
@@ -866,10 +867,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String deviceName = "";
    *   DetachDiskInstanceHttpRequest request = DetachDiskInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setDeviceName(deviceName)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.detachDiskInstanceCallable().futureCall(request);
@@ -945,9 +946,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   GetInstanceHttpRequest request = GetInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   Instance response = instanceClient.getInstance(request);
    * }
@@ -970,9 +971,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   GetInstanceHttpRequest request = GetInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;Instance&gt; future = instanceClient.getInstanceCallable().futureCall(request);
    *   // Do something
@@ -1046,9 +1047,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyInstanceHttpRequest request = GetIamPolicyInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = instanceClient.getIamPolicyInstance(request);
    * }
@@ -1071,9 +1072,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyInstanceHttpRequest request = GetIamPolicyInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceClient.getIamPolicyInstanceCallable().futureCall(request);
    *   // Do something
@@ -1167,11 +1168,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Integer port = 0;
    *   String start = "";
    *   GetSerialPortOutputInstanceHttpRequest request = GetSerialPortOutputInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setPort(port)
    *     .setStart(start)
    *     .build();
@@ -1196,11 +1197,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Integer port = 0;
    *   String start = "";
    *   GetSerialPortOutputInstanceHttpRequest request = GetSerialPortOutputInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setPort(port)
    *     .setStart(start)
    *     .build();
@@ -1214,6 +1215,107 @@ public class InstanceClient implements BackgroundResource {
   public final UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable() {
     return stub.getSerialPortOutputInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the Shielded Instance Identity of an instance
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceIdentity response = instanceClient.getShieldedInstanceIdentityInstance(instance);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name or id of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ShieldedInstanceIdentity getShieldedInstanceIdentityInstance(
+      ProjectZoneInstanceName instance) {
+
+    GetShieldedInstanceIdentityInstanceHttpRequest request =
+        GetShieldedInstanceIdentityInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .build();
+    return getShieldedInstanceIdentityInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the Shielded Instance Identity of an instance
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceIdentity response = instanceClient.getShieldedInstanceIdentityInstance(instance.toString());
+   * }
+   * </code></pre>
+   *
+   * @param instance Name or id of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ShieldedInstanceIdentity getShieldedInstanceIdentityInstance(String instance) {
+
+    GetShieldedInstanceIdentityInstanceHttpRequest request =
+        GetShieldedInstanceIdentityInstanceHttpRequest.newBuilder().setInstance(instance).build();
+    return getShieldedInstanceIdentityInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the Shielded Instance Identity of an instance
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   GetShieldedInstanceIdentityInstanceHttpRequest request = GetShieldedInstanceIdentityInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .build();
+   *   ShieldedInstanceIdentity response = instanceClient.getShieldedInstanceIdentityInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ShieldedInstanceIdentity getShieldedInstanceIdentityInstance(
+      GetShieldedInstanceIdentityInstanceHttpRequest request) {
+    return getShieldedInstanceIdentityInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the Shielded Instance Identity of an instance
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   GetShieldedInstanceIdentityInstanceHttpRequest request = GetShieldedInstanceIdentityInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .build();
+   *   ApiFuture&lt;ShieldedInstanceIdentity&gt; future = instanceClient.getShieldedInstanceIdentityInstanceCallable().futureCall(request);
+   *   // Do something
+   *   ShieldedInstanceIdentity response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceCallable() {
+    return stub.getShieldedInstanceIdentityInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1284,10 +1386,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   Instance instanceResource = Instance.newBuilder().build();
    *   InsertInstanceHttpRequest request = InsertInstanceHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setInstanceResource(instanceResource)
    *     .build();
    *   Operation response = instanceClient.insertInstance(request);
@@ -1310,10 +1412,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   Instance instanceResource = Instance.newBuilder().build();
    *   InsertInstanceHttpRequest request = InsertInstanceHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setInstanceResource(instanceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.insertInstanceCallable().futureCall(request);
@@ -1386,9 +1488,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstancesHttpRequest request = ListInstancesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (Instance element : instanceClient.listInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1412,9 +1514,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstancesHttpRequest request = ListInstancesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = instanceClient.listInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -1438,9 +1540,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstancesHttpRequest request = ListInstancesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     InstanceList response = instanceClient.listInstancesCallable().call(request);
@@ -1528,9 +1630,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   ListReferrersInstancesHttpRequest request = ListReferrersInstancesHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   for (Reference element : instanceClient.listReferrersInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1556,9 +1658,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   ListReferrersInstancesHttpRequest request = ListReferrersInstancesHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;ListReferrersInstancesPagedResponse&gt; future = instanceClient.listReferrersInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -1583,9 +1685,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   ListReferrersInstancesHttpRequest request = ListReferrersInstancesHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   while (true) {
    *     InstanceListReferrers response = instanceClient.listReferrersInstancesCallable().call(request);
@@ -1610,7 +1712,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
@@ -1637,7 +1739,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
@@ -1662,16 +1764,16 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   ResetInstanceHttpRequest request = ResetInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   Operation response = instanceClient.resetInstance(request);
    * }
@@ -1687,16 +1789,16 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   ResetInstanceHttpRequest request = ResetInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.resetInstanceCallable().futureCall(request);
    *   // Do something
@@ -1777,10 +1879,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   Boolean deletionProtection = false;
    *   SetDeletionProtectionInstanceHttpRequest request = SetDeletionProtectionInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setDeletionProtection(deletionProtection)
    *     .build();
    *   Operation response = instanceClient.setDeletionProtectionInstance(request);
@@ -1804,10 +1906,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   Boolean deletionProtection = false;
    *   SetDeletionProtectionInstanceHttpRequest request = SetDeletionProtectionInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setDeletionProtection(deletionProtection)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setDeletionProtectionInstanceCallable().futureCall(request);
@@ -1898,11 +2000,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Boolean autoDelete = false;
    *   String deviceName = "";
    *   SetDiskAutoDeleteInstanceHttpRequest request = SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setAutoDelete(autoDelete)
    *     .setDeviceName(deviceName)
    *     .build();
@@ -1926,11 +2028,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Boolean autoDelete = false;
    *   String deviceName = "";
    *   SetDiskAutoDeleteInstanceHttpRequest request = SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setAutoDelete(autoDelete)
    *     .setDeviceName(deviceName)
    *     .build();
@@ -2014,10 +2116,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyInstanceHttpRequest request = SetIamPolicyInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = instanceClient.setIamPolicyInstance(request);
@@ -2040,10 +2142,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyInstanceHttpRequest request = SetIamPolicyInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceClient.setIamPolicyInstanceCallable().futureCall(request);
@@ -2130,10 +2232,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
    *   SetLabelsInstanceHttpRequest request = SetLabelsInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
    *     .build();
    *   Operation response = instanceClient.setLabelsInstance(request);
@@ -2157,10 +2259,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
    *   SetLabelsInstanceHttpRequest request = SetLabelsInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setLabelsInstanceCallable().futureCall(request);
@@ -2249,10 +2351,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
    *   SetMachineResourcesInstanceHttpRequest request = SetMachineResourcesInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
    *     .build();
    *   Operation response = instanceClient.setMachineResourcesInstance(request);
@@ -2277,10 +2379,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
    *   SetMachineResourcesInstanceHttpRequest request = SetMachineResourcesInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setMachineResourcesInstanceCallable().futureCall(request);
@@ -2364,10 +2466,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
    *   SetMachineTypeInstanceHttpRequest request = SetMachineTypeInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
    *     .build();
    *   Operation response = instanceClient.setMachineTypeInstance(request);
@@ -2390,10 +2492,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
    *   SetMachineTypeInstanceHttpRequest request = SetMachineTypeInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setMachineTypeInstanceCallable().futureCall(request);
@@ -2475,10 +2577,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetMetadataInstanceHttpRequest request = SetMetadataInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setMetadataResource(metadataResource)
    *     .build();
    *   Operation response = instanceClient.setMetadataInstance(request);
@@ -2501,10 +2603,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetMetadataInstanceHttpRequest request = SetMetadataInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setMetadataResource(metadataResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setMetadataInstanceCallable().futureCall(request);
@@ -2592,10 +2694,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
    *   SetMinCpuPlatformInstanceHttpRequest request = SetMinCpuPlatformInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
    *     .build();
    *   Operation response = instanceClient.setMinCpuPlatformInstance(request);
@@ -2619,10 +2721,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
    *   SetMinCpuPlatformInstanceHttpRequest request = SetMinCpuPlatformInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setMinCpuPlatformInstanceCallable().futureCall(request);
@@ -2704,10 +2806,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   SetSchedulingInstanceHttpRequest request = SetSchedulingInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setSchedulingResource(schedulingResource)
    *     .build();
    *   Operation response = instanceClient.setSchedulingInstance(request);
@@ -2730,10 +2832,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   SetSchedulingInstanceHttpRequest request = SetSchedulingInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setSchedulingResource(schedulingResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setSchedulingInstanceCallable().futureCall(request);
@@ -2821,10 +2923,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
    *   SetServiceAccountInstanceHttpRequest request = SetServiceAccountInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
    *     .build();
    *   Operation response = instanceClient.setServiceAccountInstance(request);
@@ -2848,10 +2950,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
    *   SetServiceAccountInstanceHttpRequest request = SetServiceAccountInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setServiceAccountInstanceCallable().futureCall(request);
@@ -2864,6 +2966,149 @@ public class InstanceClient implements BackgroundResource {
   public final UnaryCallable<SetServiceAccountInstanceHttpRequest, Operation>
       setServiceAccountInstanceCallable() {
     return stub.setServiceAccountInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
+   * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.setShieldedInstanceIntegrityPolicyInstance(instance, shieldedInstanceIntegrityPolicyResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name or id of the instance scoping this request.
+   * @param shieldedInstanceIntegrityPolicyResource The policy describes the baseline against which
+   *     Instance boot integrity is measured.
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setShieldedInstanceIntegrityPolicyInstance(
+      ProjectZoneInstanceName instance,
+      ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource,
+      List<String> fieldMask) {
+
+    SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request =
+        SetShieldedInstanceIntegrityPolicyInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return setShieldedInstanceIntegrityPolicyInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
+   * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.setShieldedInstanceIntegrityPolicyInstance(instance.toString(), shieldedInstanceIntegrityPolicyResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name or id of the instance scoping this request.
+   * @param shieldedInstanceIntegrityPolicyResource The policy describes the baseline against which
+   *     Instance boot integrity is measured.
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setShieldedInstanceIntegrityPolicyInstance(
+      String instance,
+      ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource,
+      List<String> fieldMask) {
+
+    SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request =
+        SetShieldedInstanceIntegrityPolicyInstanceHttpRequest.newBuilder()
+            .setInstance(instance)
+            .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return setShieldedInstanceIntegrityPolicyInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
+   * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request = SetShieldedInstanceIntegrityPolicyInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = instanceClient.setShieldedInstanceIntegrityPolicyInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setShieldedInstanceIntegrityPolicyInstance(
+      SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request) {
+    return setShieldedInstanceIntegrityPolicyInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the Shielded Instance integrity policy for an instance. You can only use this method on a
+   * running instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   SetShieldedInstanceIntegrityPolicyInstanceHttpRequest request = SetShieldedInstanceIntegrityPolicyInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.setShieldedInstanceIntegrityPolicyInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceCallable() {
+    return stub.setShieldedInstanceIntegrityPolicyInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2932,10 +3177,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Tags tagsResource = Tags.newBuilder().build();
    *   SetTagsInstanceHttpRequest request = SetTagsInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setTagsResource(tagsResource)
    *     .build();
    *   Operation response = instanceClient.setTagsInstance(request);
@@ -2958,10 +3203,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   Tags tagsResource = Tags.newBuilder().build();
    *   SetTagsInstanceHttpRequest request = SetTagsInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setTagsResource(tagsResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setTagsInstanceCallable().futureCall(request);
@@ -3033,9 +3278,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   SimulateMaintenanceEventInstanceHttpRequest request = SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   Operation response = instanceClient.simulateMaintenanceEventInstance(request);
    * }
@@ -3058,9 +3303,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   SimulateMaintenanceEventInstanceHttpRequest request = SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.simulateMaintenanceEventInstanceCallable().futureCall(request);
    *   // Do something
@@ -3135,9 +3380,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   StartInstanceHttpRequest request = StartInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   Operation response = instanceClient.startInstance(request);
    * }
@@ -3160,9 +3405,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   StartInstanceHttpRequest request = StartInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.startInstanceCallable().futureCall(request);
    *   // Do something
@@ -3250,10 +3495,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   StartWithEncryptionKeyInstanceHttpRequest request = StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
    *     .build();
    *   Operation response = instanceClient.startWithEncryptionKeyInstance(request);
@@ -3278,10 +3523,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   StartWithEncryptionKeyInstanceHttpRequest request = StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.startWithEncryptionKeyInstanceCallable().futureCall(request);
@@ -3363,9 +3608,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   StopInstanceHttpRequest request = StopInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   Operation response = instanceClient.stopInstance(request);
    * }
@@ -3390,9 +3635,9 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   StopInstanceHttpRequest request = StopInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.stopInstanceCallable().futureCall(request);
    *   // Do something
@@ -3474,10 +3719,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsInstanceHttpRequest request = TestIamPermissionsInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = instanceClient.testIamPermissionsInstance(request);
@@ -3501,10 +3746,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsInstanceHttpRequest request = TestIamPermissionsInstanceHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = instanceClient.testIamPermissionsInstanceCallable().futureCall(request);
@@ -3603,11 +3848,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   UpdateAccessConfigInstanceHttpRequest request = UpdateAccessConfigInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setAccessConfigResource(accessConfigResource)
    *     .build();
@@ -3633,11 +3878,11 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   UpdateAccessConfigInstanceHttpRequest request = UpdateAccessConfigInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setAccessConfigResource(accessConfigResource)
    *     .build();
@@ -3672,7 +3917,10 @@ public class InstanceClient implements BackgroundResource {
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
    * @param networkInterfaceResource A network interface resource attached to an instance.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -3711,7 +3959,10 @@ public class InstanceClient implements BackgroundResource {
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
    * @param networkInterfaceResource A network interface resource attached to an instance.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -3739,12 +3990,12 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateNetworkInterfaceInstanceHttpRequest request = UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setNetworkInterfaceResource(networkInterfaceResource)
    *     .addAllFieldMask(fieldMask)
@@ -3770,12 +4021,12 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
-   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
    *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateNetworkInterfaceInstanceHttpRequest request = UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
-   *     .setInstance(instance.toString())
+   *     .setInstance(formattedInstance)
    *     .setNetworkInterface(networkInterface)
    *     .setNetworkInterfaceResource(networkInterfaceResource)
    *     .addAllFieldMask(fieldMask)
@@ -3790,6 +4041,147 @@ public class InstanceClient implements BackgroundResource {
   public final UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceCallable() {
     return stub.updateNetworkInterfaceInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateShieldedInstanceConfigInstance(instance, shieldedInstanceConfigResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name or id of the instance scoping this request.
+   * @param shieldedInstanceConfigResource A set of Shielded Instance options.
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateShieldedInstanceConfigInstance(
+      ProjectZoneInstanceName instance,
+      ShieldedInstanceConfig shieldedInstanceConfigResource,
+      List<String> fieldMask) {
+
+    UpdateShieldedInstanceConfigInstanceHttpRequest request =
+        UpdateShieldedInstanceConfigInstanceHttpRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updateShieldedInstanceConfigInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceClient.updateShieldedInstanceConfigInstance(instance.toString(), shieldedInstanceConfigResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name or id of the instance scoping this request.
+   * @param shieldedInstanceConfigResource A set of Shielded Instance options.
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateShieldedInstanceConfigInstance(
+      String instance,
+      ShieldedInstanceConfig shieldedInstanceConfigResource,
+      List<String> fieldMask) {
+
+    UpdateShieldedInstanceConfigInstanceHttpRequest request =
+        UpdateShieldedInstanceConfigInstanceHttpRequest.newBuilder()
+            .setInstance(instance)
+            .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updateShieldedInstanceConfigInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdateShieldedInstanceConfigInstanceHttpRequest request = UpdateShieldedInstanceConfigInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = instanceClient.updateShieldedInstanceConfigInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateShieldedInstanceConfigInstance(
+      UpdateShieldedInstanceConfigInstanceHttpRequest request) {
+    return updateShieldedInstanceConfigInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the Shielded Instance config for an instance. You can only use this method on a stopped
+   * instance. This method supports PATCH semantics and uses the JSON merge patch format and
+   * processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   String formattedInstance = ProjectZoneInstanceName.format("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdateShieldedInstanceConfigInstanceHttpRequest request = UpdateShieldedInstanceConfigInstanceHttpRequest.newBuilder()
+   *     .setInstance(formattedInstance)
+   *     .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.updateShieldedInstanceConfigInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceCallable() {
+    return stub.updateShieldedInstanceConfigInstanceCallable();
   }
 
   @Override
@@ -3843,7 +4235,8 @@ public class InstanceClient implements BackgroundResource {
             public AggregatedListInstancesPagedResponse apply(AggregatedListInstancesPage input) {
               return new AggregatedListInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstancesPagedResponse(AggregatedListInstancesPage page) {
@@ -3930,7 +4323,8 @@ public class InstanceClient implements BackgroundResource {
             public ListInstancesPagedResponse apply(ListInstancesPage input) {
               return new ListInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesPagedResponse(ListInstancesPage page) {
@@ -4009,7 +4403,8 @@ public class InstanceClient implements BackgroundResource {
             public ListReferrersInstancesPagedResponse apply(ListReferrersInstancesPage input) {
               return new ListReferrersInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListReferrersInstancesPagedResponse(ListReferrersInstancesPage page) {

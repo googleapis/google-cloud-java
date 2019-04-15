@@ -34,13 +34,12 @@ public interface ListModelsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
-   *   * `model_metadata` - for existence of the case.
-   *   * `dataset_id` - for = or !=.
-   * Some examples of using the filter are:
+   *   * `model_metadata` - for existence of the case (e.g.
+   *             video_classification_model_metadata:*).
+   *   * `dataset_id` - for = or !=. Some examples of using the filter are:
    *   * `image_classification_model_metadata:*` --&gt; The model has
    *                                        image_classification_model_metadata.
-   *   * `dataset_id=5` --&gt; The model was created from a sibling dataset with
-   *                    ID 5.
+   *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -51,13 +50,12 @@ public interface ListModelsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
-   *   * `model_metadata` - for existence of the case.
-   *   * `dataset_id` - for = or !=.
-   * Some examples of using the filter are:
+   *   * `model_metadata` - for existence of the case (e.g.
+   *             video_classification_model_metadata:*).
+   *   * `dataset_id` - for = or !=. Some examples of using the filter are:
    *   * `image_classification_model_metadata:*` --&gt; The model has
    *                                        image_classification_model_metadata.
-   *   * `dataset_id=5` --&gt; The model was created from a sibling dataset with
-   *                    ID 5.
+   *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
    * </pre>
    *
    * <code>string filter = 3;</code>

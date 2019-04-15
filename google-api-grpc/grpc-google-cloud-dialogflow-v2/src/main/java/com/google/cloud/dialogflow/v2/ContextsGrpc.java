@@ -22,10 +22,11 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) request,
  * or as output contexts included in the returned intent.
  * Contexts expire when an intent is matched, after the number of `DetectIntent`
- * requests specified by the `lifespan_count` parameter, or after 10 minutes
+ * requests specified by the `lifespan_count` parameter, or after 20 minutes
  * if no intents are matched for a `DetectIntent` request.
  * For more information about contexts, see the
- * [Dialogflow documentation](https://dialogflow.com/docs/contexts).
+ * [Dialogflow
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -400,10 +401,11 @@ public final class ContextsGrpc {
    * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) request,
    * or as output contexts included in the returned intent.
    * Contexts expire when an intent is matched, after the number of `DetectIntent`
-   * requests specified by the `lifespan_count` parameter, or after 10 minutes
+   * requests specified by the `lifespan_count` parameter, or after 20 minutes
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/contexts).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
    * </pre>
    */
   public abstract static class ContextsImplBase implements io.grpc.BindableService {
@@ -440,6 +442,7 @@ public final class ContextsGrpc {
      *
      * <pre>
      * Creates a context.
+     * If the specified context already exists, overrides the context.
      * </pre>
      */
     public void createContext(
@@ -546,10 +549,11 @@ public final class ContextsGrpc {
    * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) request,
    * or as output contexts included in the returned intent.
    * Contexts expire when an intent is matched, after the number of `DetectIntent`
-   * requests specified by the `lifespan_count` parameter, or after 10 minutes
+   * requests specified by the `lifespan_count` parameter, or after 20 minutes
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/contexts).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
    * </pre>
    */
   public static final class ContextsStub extends io.grpc.stub.AbstractStub<ContextsStub> {
@@ -604,6 +608,7 @@ public final class ContextsGrpc {
      *
      * <pre>
      * Creates a context.
+     * If the specified context already exists, overrides the context.
      * </pre>
      */
     public void createContext(
@@ -679,10 +684,11 @@ public final class ContextsGrpc {
    * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) request,
    * or as output contexts included in the returned intent.
    * Contexts expire when an intent is matched, after the number of `DetectIntent`
-   * requests specified by the `lifespan_count` parameter, or after 10 minutes
+   * requests specified by the `lifespan_count` parameter, or after 20 minutes
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/contexts).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
    * </pre>
    */
   public static final class ContextsBlockingStub
@@ -731,6 +737,7 @@ public final class ContextsGrpc {
      *
      * <pre>
      * Creates a context.
+     * If the specified context already exists, overrides the context.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Context createContext(
@@ -794,10 +801,11 @@ public final class ContextsGrpc {
    * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) request,
    * or as output contexts included in the returned intent.
    * Contexts expire when an intent is matched, after the number of `DetectIntent`
-   * requests specified by the `lifespan_count` parameter, or after 10 minutes
+   * requests specified by the `lifespan_count` parameter, or after 20 minutes
    * if no intents are matched for a `DetectIntent` request.
    * For more information about contexts, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/contexts).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/contexts-overview).
    * </pre>
    */
   public static final class ContextsFutureStub
@@ -848,6 +856,7 @@ public final class ContextsGrpc {
      *
      * <pre>
      * Creates a context.
+     * If the specified context already exists, overrides the context.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

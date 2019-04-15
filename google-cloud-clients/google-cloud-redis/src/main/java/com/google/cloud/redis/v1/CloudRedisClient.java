@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1.stub.CloudRedisStub;
 import com.google.cloud.redis.v1.stub.CloudRedisStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -51,7 +52,7 @@ import javax.annotation.Generated;
  * instances, named: `/instances/&#42;` &#42; As such, Redis instances are resources of the form:
  * `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  *
- * <p>Note that location_id must be refering to a GCP `region`; for example: &#42;
+ * <p>Note that location_id must be referring to a GCP `region`; for example: &#42;
  * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -974,6 +975,157 @@ public class CloudRedisClient implements BackgroundResource {
     return stub.deleteInstanceCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Failover the master role to current replica node against a specific STANDARD tier redis
+   * instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name, dataProtectionMode).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region
+   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
+   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+
+    FailoverInstanceRequest request =
+        FailoverInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDataProtectionMode(dataProtectionMode)
+            .build();
+    return failoverInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Failover the master role to current replica node against a specific STANDARD tier redis
+   * instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name.toString(), dataProtectionMode).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region
+   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
+   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      String name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+
+    FailoverInstanceRequest request =
+        FailoverInstanceRequest.newBuilder()
+            .setName(name)
+            .setDataProtectionMode(dataProtectionMode)
+            .build();
+    return failoverInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Failover the master role to current replica node against a specific STANDARD tier redis
+   * instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDataProtectionMode(dataProtectionMode)
+   *     .build();
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      FailoverInstanceRequest request) {
+    return failoverInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Failover the master role to current replica node against a specific STANDARD tier redis
+   * instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDataProtectionMode(dataProtectionMode)
+   *     .build();
+   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.failoverInstanceOperationCallable().futureCall(request);
+   *   // Do something
+   *   Instance response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<FailoverInstanceRequest, Instance, OperationMetadata>
+      failoverInstanceOperationCallable() {
+    return stub.failoverInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Failover the master role to current replica node against a specific STANDARD tier redis
+   * instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDataProtectionMode(dataProtectionMode)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.failoverInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
+    return stub.failoverInstanceCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1024,7 +1176,8 @@ public class CloudRedisClient implements BackgroundResource {
             public ListInstancesPagedResponse apply(ListInstancesPage input) {
               return new ListInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesPagedResponse(ListInstancesPage page) {

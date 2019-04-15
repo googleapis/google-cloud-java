@@ -27,8 +27,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine Image. An image contains a boot loader, an operating system and a root
@@ -59,7 +60,8 @@ public class ImageInfo implements Serializable {
       };
 
   private static final long serialVersionUID = -1061916352807358977L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final ImageId imageId;
@@ -149,7 +151,8 @@ public class ImageInfo implements Serializable {
         this.generatedId = imagePb.getId().toString();
       }
       if (imagePb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(imagePb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER.parse(imagePb.getCreationTimestamp(), Instant.FROM).toEpochMilli();
       }
       this.imageId = ImageId.fromUrl(imagePb.getSelfLink());
       this.description = imagePb.getDescription();
@@ -350,7 +353,8 @@ public class ImageInfo implements Serializable {
       imagePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      imagePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      imagePb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     imagePb.setName(imageId.getImage());
     imagePb.setDescription(description);

@@ -26,7 +26,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -95,7 +95,7 @@ public class ReportErrorsServiceClientTest {
     ReportErrorEventResponse actualResponse = client.reportErrorEvent(projectName, event);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockReportErrorsService.getRequests();
+    List<AbstractMessage> actualRequests = mockReportErrorsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ReportErrorEventRequest actualRequest = (ReportErrorEventRequest) actualRequests.get(0);
 

@@ -147,8 +147,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Name of the stream. In the form
-     * `/projects/{project_id}/stream/{stream_id}`
+     * Name of the stream, in the form
+     * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -158,8 +158,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Name of the stream. In the form
-     * `/projects/{project_id}/stream/{stream_id}`
+     * Name of the stream, in the form
+     * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -198,7 +198,6 @@ public final class Storage {
 
     private Stream() {
       name_ = "";
-      rowCount_ = 0L;
     }
 
     @java.lang.Override
@@ -239,7 +238,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -277,8 +276,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Name of the stream. In the form
-     * `/projects/{project_id}/stream/{stream_id}`
+     * Name of the stream, in the form
+     * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -298,8 +297,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Name of the stream. In the form
-     * `/projects/{project_id}/stream/{stream_id}`
+     * Name of the stream, in the form
+     * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -382,11 +381,10 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.Stream other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.Stream) obj;
 
-      boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && (getRowCount() == other.getRowCount());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName().equals(other.getName())) return false;
+      if (getRowCount() != other.getRowCount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -587,23 +585,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -611,13 +609,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -675,8 +673,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Name of the stream. In the form
-       * `/projects/{project_id}/stream/{stream_id}`
+       * Name of the stream, in the form
+       * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -696,8 +694,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Name of the stream. In the form
-       * `/projects/{project_id}/stream/{stream_id}`
+       * Name of the stream, in the form
+       * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -717,8 +715,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Name of the stream. In the form
-       * `/projects/{project_id}/stream/{stream_id}`
+       * Name of the stream, in the form
+       * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -736,8 +734,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Name of the stream. In the form
-       * `/projects/{project_id}/stream/{stream_id}`
+       * Name of the stream, in the form
+       * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -752,8 +750,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Name of the stream. In the form
-       * `/projects/{project_id}/stream/{stream_id}`
+       * Name of the stream, in the form
+       * `projects/{project_id}/locations/{location}/streams/{stream_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -816,7 +814,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -931,9 +929,7 @@ public final class Storage {
       super(builder);
     }
 
-    private StreamPosition() {
-      offset_ = 0L;
-    }
+    private StreamPosition() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -983,7 +979,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1122,14 +1118,13 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition) obj;
 
-      boolean result = true;
-      result = result && (hasStream() == other.hasStream());
+      if (hasStream() != other.hasStream()) return false;
       if (hasStream()) {
-        result = result && getStream().equals(other.getStream());
+        if (!getStream().equals(other.getStream())) return false;
       }
-      result = result && (getOffset() == other.getOffset());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getOffset() != other.getOffset()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1344,23 +1339,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1368,13 +1363,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1430,7 +1425,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
@@ -1660,7 +1655,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1721,8 +1716,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Unique identifier for the session. In the form
-     * `projects/{project_id}/sessions/{session_id}`
+     * Unique identifier for the session, in the form
+     * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1732,8 +1727,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Unique identifier for the session. In the form
-     * `projects/{project_id}/sessions/{session_id}`
+     * Unique identifier for the session, in the form
+     * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1999,7 +1994,7 @@ public final class Storage {
               }
             case 34:
               {
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                   streams_ =
                       new java.util.ArrayList<
                           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>();
@@ -2072,7 +2067,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2084,7 +2079,7 @@ public final class Storage {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           streams_ = java.util.Collections.unmodifiableList(streams_);
         }
         this.unknownFields = unknownFields.build();
@@ -2151,8 +2146,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Unique identifier for the session. In the form
-     * `projects/{project_id}/sessions/{session_id}`
+     * Unique identifier for the session, in the form
+     * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2172,8 +2167,8 @@ public final class Storage {
      *
      *
      * <pre>
-     * Unique identifier for the session. In the form
-     * `projects/{project_id}/sessions/{session_id}`
+     * Unique identifier for the session, in the form
+     * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2512,32 +2507,30 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession) obj;
 
-      boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && (hasExpireTime() == other.hasExpireTime());
+      if (!getName().equals(other.getName())) return false;
+      if (hasExpireTime() != other.hasExpireTime()) return false;
       if (hasExpireTime()) {
-        result = result && getExpireTime().equals(other.getExpireTime());
+        if (!getExpireTime().equals(other.getExpireTime())) return false;
       }
-      result = result && getStreamsList().equals(other.getStreamsList());
-      result = result && (hasTableReference() == other.hasTableReference());
+      if (!getStreamsList().equals(other.getStreamsList())) return false;
+      if (hasTableReference() != other.hasTableReference()) return false;
       if (hasTableReference()) {
-        result = result && getTableReference().equals(other.getTableReference());
+        if (!getTableReference().equals(other.getTableReference())) return false;
       }
-      result = result && (hasTableModifiers() == other.hasTableModifiers());
+      if (hasTableModifiers() != other.hasTableModifiers()) return false;
       if (hasTableModifiers()) {
-        result = result && getTableModifiers().equals(other.getTableModifiers());
+        if (!getTableModifiers().equals(other.getTableModifiers())) return false;
       }
-      result = result && getSchemaCase().equals(other.getSchemaCase());
-      if (!result) return false;
+      if (!getSchemaCase().equals(other.getSchemaCase())) return false;
       switch (schemaCase_) {
         case 5:
-          result = result && getAvroSchema().equals(other.getAvroSchema());
+          if (!getAvroSchema().equals(other.getAvroSchema())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2795,7 +2788,7 @@ public final class Storage {
           }
         }
         if (streamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
             bitField0_ = (bitField0_ & ~0x00000008);
           }
@@ -2821,23 +2814,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2845,13 +2838,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2972,8 +2965,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Unique identifier for the session. In the form
-       * `projects/{project_id}/sessions/{session_id}`
+       * Unique identifier for the session, in the form
+       * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2993,8 +2986,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Unique identifier for the session. In the form
-       * `projects/{project_id}/sessions/{session_id}`
+       * Unique identifier for the session, in the form
+       * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3014,8 +3007,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Unique identifier for the session. In the form
-       * `projects/{project_id}/sessions/{session_id}`
+       * Unique identifier for the session, in the form
+       * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3033,8 +3026,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Unique identifier for the session. In the form
-       * `projects/{project_id}/sessions/{session_id}`
+       * Unique identifier for the session, in the form
+       * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3049,8 +3042,8 @@ public final class Storage {
        *
        *
        * <pre>
-       * Unique identifier for the session. In the form
-       * `projects/{project_id}/sessions/{session_id}`
+       * Unique identifier for the session, in the form
+       * `projects/{project_id}/locations/{location}/sessions/{session_id}`.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3066,7 +3059,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.protobuf.Timestamp expireTime_ = null;
+      private com.google.protobuf.Timestamp expireTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
               com.google.protobuf.Timestamp.Builder,
@@ -3472,7 +3465,7 @@ public final class Storage {
           java.util.Collections.emptyList();
 
       private void ensureStreamsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           streams_ =
               new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>(
                   streams_);
@@ -3827,17 +3820,14 @@ public final class Storage {
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>(
-                  streams_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
+                  streams_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
           streams_ = null;
         }
         return streamsBuilder_;
       }
 
       private com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
-          tableReference_ = null;
+          tableReference_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference,
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder,
@@ -4031,7 +4021,7 @@ public final class Storage {
       }
 
       private com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
-          tableModifiers_ = null;
+          tableModifiers_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers,
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder,
@@ -4227,7 +4217,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4321,7 +4311,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Required. String of the form "projects/your-project-id" indicating the
+     * Required. String of the form `projects/{project_id}` indicating the
      * project this ReadSession is associated with. This is the project that will
      * be billed for usage.
      * </pre>
@@ -4333,7 +4323,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Required. String of the form "projects/your-project-id" indicating the
+     * Required. String of the form `projects/{project_id}` indicating the
      * project this ReadSession is associated with. This is the project that will
      * be billed for usage.
      * </pre>
@@ -4466,7 +4456,6 @@ public final class Storage {
 
     private CreateReadSessionRequest() {
       parent_ = "";
-      requestedStreams_ = 0;
       format_ = 0;
     }
 
@@ -4572,7 +4561,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -4656,7 +4645,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Required. String of the form "projects/your-project-id" indicating the
+     * Required. String of the form `projects/{project_id}` indicating the
      * project this ReadSession is associated with. This is the project that will
      * be billed for usage.
      * </pre>
@@ -4678,7 +4667,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Required. String of the form "projects/your-project-id" indicating the
+     * Required. String of the form `projects/{project_id}` indicating the
      * project this ReadSession is associated with. This is the project that will
      * be billed for usage.
      * </pre>
@@ -4917,24 +4906,23 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest) obj;
 
-      boolean result = true;
-      result = result && (hasTableReference() == other.hasTableReference());
+      if (hasTableReference() != other.hasTableReference()) return false;
       if (hasTableReference()) {
-        result = result && getTableReference().equals(other.getTableReference());
+        if (!getTableReference().equals(other.getTableReference())) return false;
       }
-      result = result && getParent().equals(other.getParent());
-      result = result && (hasTableModifiers() == other.hasTableModifiers());
+      if (!getParent().equals(other.getParent())) return false;
+      if (hasTableModifiers() != other.hasTableModifiers()) return false;
       if (hasTableModifiers()) {
-        result = result && getTableModifiers().equals(other.getTableModifiers());
+        if (!getTableModifiers().equals(other.getTableModifiers())) return false;
       }
-      result = result && (getRequestedStreams() == other.getRequestedStreams());
-      result = result && (hasReadOptions() == other.hasReadOptions());
+      if (getRequestedStreams() != other.getRequestedStreams()) return false;
+      if (hasReadOptions() != other.hasReadOptions()) return false;
       if (hasReadOptions()) {
-        result = result && getReadOptions().equals(other.getReadOptions());
+        if (!getReadOptions().equals(other.getReadOptions())) return false;
       }
-      result = result && format_ == other.format_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (format_ != other.format_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -5198,23 +5186,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -5222,13 +5210,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -5300,7 +5288,7 @@ public final class Storage {
       }
 
       private com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
-          tableReference_ = null;
+          tableReference_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference,
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder,
@@ -5498,7 +5486,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Required. String of the form "projects/your-project-id" indicating the
+       * Required. String of the form `projects/{project_id}` indicating the
        * project this ReadSession is associated with. This is the project that will
        * be billed for usage.
        * </pre>
@@ -5520,7 +5508,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Required. String of the form "projects/your-project-id" indicating the
+       * Required. String of the form `projects/{project_id}` indicating the
        * project this ReadSession is associated with. This is the project that will
        * be billed for usage.
        * </pre>
@@ -5542,7 +5530,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Required. String of the form "projects/your-project-id" indicating the
+       * Required. String of the form `projects/{project_id}` indicating the
        * project this ReadSession is associated with. This is the project that will
        * be billed for usage.
        * </pre>
@@ -5562,7 +5550,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Required. String of the form "projects/your-project-id" indicating the
+       * Required. String of the form `projects/{project_id}` indicating the
        * project this ReadSession is associated with. This is the project that will
        * be billed for usage.
        * </pre>
@@ -5579,7 +5567,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Required. String of the form "projects/your-project-id" indicating the
+       * Required. String of the form `projects/{project_id}` indicating the
        * project this ReadSession is associated with. This is the project that will
        * be billed for usage.
        * </pre>
@@ -5598,7 +5586,7 @@ public final class Storage {
       }
 
       private com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
-          tableModifiers_ = null;
+          tableModifiers_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers,
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder,
@@ -5850,8 +5838,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions readOptions_ =
-          null;
+      private com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions readOptions_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions,
               com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder,
@@ -6123,7 +6110,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -6284,7 +6271,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -6409,13 +6396,12 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest) obj;
 
-      boolean result = true;
-      result = result && (hasReadPosition() == other.hasReadPosition());
+      if (hasReadPosition() != other.hasReadPosition()) return false;
       if (hasReadPosition()) {
-        result = result && getReadPosition().equals(other.getReadPosition());
+        if (!getReadPosition().equals(other.getReadPosition())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6625,23 +6611,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -6649,13 +6635,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -6708,7 +6694,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition readPosition_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition readPosition_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition,
               com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.Builder,
@@ -6919,7 +6905,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -7008,9 +6994,7 @@ public final class Storage {
       super(builder);
     }
 
-    private StreamStatus() {
-      estimatedRowCount_ = 0L;
-    }
+    private StreamStatus() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -7043,7 +7027,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -7137,10 +7121,9 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus) obj;
 
-      boolean result = true;
-      result = result && (getEstimatedRowCount() == other.getEstimatedRowCount());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getEstimatedRowCount() != other.getEstimatedRowCount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7337,23 +7320,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -7361,13 +7344,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -7472,7 +7455,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -7560,9 +7543,7 @@ public final class Storage {
       super(builder);
     }
 
-    private ThrottleStatus() {
-      throttlePercent_ = 0;
-    }
+    private ThrottleStatus() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -7595,7 +7576,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -7688,10 +7669,9 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus) obj;
 
-      boolean result = true;
-      result = result && (getThrottlePercent() == other.getThrottlePercent());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getThrottlePercent() != other.getThrottlePercent()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7891,23 +7871,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -7915,13 +7895,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -8024,7 +8004,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8286,7 +8266,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -8547,26 +8527,24 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse) obj;
 
-      boolean result = true;
-      result = result && (hasStatus() == other.hasStatus());
+      if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
-        result = result && getStatus().equals(other.getStatus());
+        if (!getStatus().equals(other.getStatus())) return false;
       }
-      result = result && (hasThrottleStatus() == other.hasThrottleStatus());
+      if (hasThrottleStatus() != other.hasThrottleStatus()) return false;
       if (hasThrottleStatus()) {
-        result = result && getThrottleStatus().equals(other.getThrottleStatus());
+        if (!getThrottleStatus().equals(other.getThrottleStatus())) return false;
       }
-      result = result && getRowsCase().equals(other.getRowsCase());
-      if (!result) return false;
+      if (!getRowsCase().equals(other.getRowsCase())) return false;
       switch (rowsCase_) {
         case 3:
-          result = result && getAvroRows().equals(other.getAvroRows());
+          if (!getAvroRows().equals(other.getAvroRows())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8810,23 +8788,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -8834,13 +8812,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -9130,7 +9108,7 @@ public final class Storage {
         return avroRowsBuilder_;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus status_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus status_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus,
               com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus.Builder,
@@ -9316,8 +9294,7 @@ public final class Storage {
         return statusBuilder_;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus throttleStatus_ =
-          null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus throttleStatus_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus,
               com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.Builder,
@@ -9519,7 +9496,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -9646,9 +9623,7 @@ public final class Storage {
       super(builder);
     }
 
-    private BatchCreateReadSessionStreamsRequest() {
-      requestedStreams_ = 0;
-    }
+    private BatchCreateReadSessionStreamsRequest() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -9699,7 +9674,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -9849,14 +9824,13 @@ public final class Storage {
           (com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest)
               obj;
 
-      boolean result = true;
-      result = result && (hasSession() == other.hasSession());
+      if (hasSession() != other.hasSession()) return false;
       if (hasSession()) {
-        result = result && getSession().equals(other.getSession());
+        if (!getSession().equals(other.getSession())) return false;
       }
-      result = result && (getRequestedStreams() == other.getRequestedStreams());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRequestedStreams() != other.getRequestedStreams()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -10099,23 +10073,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -10123,13 +10097,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -10193,7 +10167,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession session_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession session_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession,
               com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder,
@@ -10441,7 +10415,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -10608,7 +10582,7 @@ public final class Storage {
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   streams_ =
                       new java.util.ArrayList<
                           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>();
@@ -10622,7 +10596,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -10634,7 +10608,7 @@ public final class Storage {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           streams_ = java.util.Collections.unmodifiableList(streams_);
         }
         this.unknownFields = unknownFields.build();
@@ -10777,10 +10751,9 @@ public final class Storage {
                       .BatchCreateReadSessionStreamsResponse)
                   obj;
 
-      boolean result = true;
-      result = result && getStreamsList().equals(other.getStreamsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getStreamsList().equals(other.getStreamsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -11011,7 +10984,7 @@ public final class Storage {
                     .BatchCreateReadSessionStreamsResponse(this);
         int from_bitField0_ = bitField0_;
         if (streamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -11025,23 +10998,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -11049,13 +11022,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -11146,7 +11119,7 @@ public final class Storage {
           java.util.Collections.emptyList();
 
       private void ensureStreamsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           streams_ =
               new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>(
                   streams_);
@@ -11501,10 +11474,7 @@ public final class Storage {
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>(
-                  streams_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  streams_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           streams_ = null;
         }
         return streamsBuilder_;
@@ -11513,7 +11483,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -11669,7 +11639,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -11789,13 +11759,12 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest) obj;
 
-      boolean result = true;
-      result = result && (hasStream() == other.hasStream());
+      if (hasStream() != other.hasStream()) return false;
       if (hasStream()) {
-        result = result && getStream().equals(other.getStream());
+        if (!getStream().equals(other.getStream())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -12008,23 +11977,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -12032,13 +12001,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -12093,7 +12062,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
@@ -12279,7 +12248,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -12432,7 +12401,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -12553,13 +12522,12 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest) obj;
 
-      boolean result = true;
-      result = result && (hasOriginalStream() == other.hasOriginalStream());
+      if (hasOriginalStream() != other.hasOriginalStream()) return false;
       if (hasOriginalStream()) {
-        result = result && getOriginalStream().equals(other.getOriginalStream());
+        if (!getOriginalStream().equals(other.getOriginalStream())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -12777,23 +12745,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -12801,13 +12769,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -12862,7 +12830,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream originalStream_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream originalStream_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
@@ -13051,7 +13019,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -13255,7 +13223,7 @@ public final class Storage {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -13427,17 +13395,16 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse other =
           (com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse) obj;
 
-      boolean result = true;
-      result = result && (hasPrimaryStream() == other.hasPrimaryStream());
+      if (hasPrimaryStream() != other.hasPrimaryStream()) return false;
       if (hasPrimaryStream()) {
-        result = result && getPrimaryStream().equals(other.getPrimaryStream());
+        if (!getPrimaryStream().equals(other.getPrimaryStream())) return false;
       }
-      result = result && (hasRemainderStream() == other.hasRemainderStream());
+      if (hasRemainderStream() != other.hasRemainderStream()) return false;
       if (hasRemainderStream()) {
-        result = result && getRemainderStream().equals(other.getRemainderStream());
+        if (!getRemainderStream().equals(other.getRemainderStream())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -13670,23 +13637,23 @@ public final class Storage {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -13694,13 +13661,13 @@ public final class Storage {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -13758,7 +13725,7 @@ public final class Storage {
         return this;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream primaryStream_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream primaryStream_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
@@ -13953,7 +13920,7 @@ public final class Storage {
         return primaryStreamBuilder_;
       }
 
-      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream remainderStream_ = null;
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream remainderStream_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
@@ -14143,7 +14110,7 @@ public final class Storage {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -14259,84 +14226,95 @@ public final class Storage {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/bigquery/storage/v1beta1/"
           + "storage.proto\022%google.cloud.bigquery.sto"
-          + "rage.v1beta1\0320google/cloud/bigquery/stor"
-          + "age/v1beta1/avro.proto\0328google/cloud/big"
-          + "query/storage/v1beta1/read_options.proto"
-          + "\032;google/cloud/bigquery/storage/v1beta1/"
-          + "table_reference.proto\032\033google/protobuf/e"
-          + "mpty.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\")\n\006Stream\022\014\n\004name\030\001 \001(\t\022\021\n\trow_count"
-          + "\030\002 \001(\003\"_\n\016StreamPosition\022=\n\006stream\030\001 \001(\013"
-          + "2-.google.cloud.bigquery.storage.v1beta1"
-          + ".Stream\022\016\n\006offset\030\002 \001(\003\"\200\003\n\013ReadSession\022"
-          + "\014\n\004name\030\001 \001(\t\022/\n\013expire_time\030\002 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022H\n\013avro_schema\030\005 "
-          + "\001(\01321.google.cloud.bigquery.storage.v1be"
-          + "ta1.AvroSchemaH\000\022>\n\007streams\030\004 \003(\0132-.goog"
-          + "le.cloud.bigquery.storage.v1beta1.Stream"
-          + "\022N\n\017table_reference\030\007 \001(\01325.google.cloud"
-          + ".bigquery.storage.v1beta1.TableReference"
-          + "\022N\n\017table_modifiers\030\010 \001(\01325.google.cloud"
-          + ".bigquery.storage.v1beta1.TableModifiers"
-          + "B\010\n\006schema\"\367\002\n\030CreateReadSessionRequest\022"
-          + "N\n\017table_reference\030\001 \001(\01325.google.cloud."
-          + "bigquery.storage.v1beta1.TableReference\022"
-          + "\016\n\006parent\030\006 \001(\t\022N\n\017table_modifiers\030\002 \001(\013"
-          + "25.google.cloud.bigquery.storage.v1beta1"
-          + ".TableModifiers\022\031\n\021requested_streams\030\003 \001"
-          + "(\005\022M\n\014read_options\030\004 \001(\01327.google.cloud."
-          + "bigquery.storage.v1beta1.TableReadOption"
-          + "s\022A\n\006format\030\005 \001(\01621.google.cloud.bigquer"
-          + "y.storage.v1beta1.DataFormat\"_\n\017ReadRows"
-          + "Request\022L\n\rread_position\030\001 \001(\01325.google."
-          + "cloud.bigquery.storage.v1beta1.StreamPos"
-          + "ition\"+\n\014StreamStatus\022\033\n\023estimated_row_c"
-          + "ount\030\001 \001(\003\"*\n\016ThrottleStatus\022\030\n\020throttle"
-          + "_percent\030\001 \001(\005\"\365\001\n\020ReadRowsResponse\022D\n\ta"
-          + "vro_rows\030\003 \001(\0132/.google.cloud.bigquery.s"
-          + "torage.v1beta1.AvroRowsH\000\022C\n\006status\030\002 \001("
-          + "\01323.google.cloud.bigquery.storage.v1beta"
-          + "1.StreamStatus\022N\n\017throttle_status\030\005 \001(\0132"
-          + "5.google.cloud.bigquery.storage.v1beta1."
-          + "ThrottleStatusB\006\n\004rows\"\206\001\n$BatchCreateRe"
-          + "adSessionStreamsRequest\022C\n\007session\030\001 \001(\013"
-          + "22.google.cloud.bigquery.storage.v1beta1"
-          + ".ReadSession\022\031\n\021requested_streams\030\002 \001(\005\""
-          + "g\n%BatchCreateReadSessionStreamsResponse"
-          + "\022>\n\007streams\030\001 \003(\0132-.google.cloud.bigquer"
-          + "y.storage.v1beta1.Stream\"V\n\025FinalizeStre"
-          + "amRequest\022=\n\006stream\030\002 \001(\0132-.google.cloud"
-          + ".bigquery.storage.v1beta1.Stream\"`\n\026Spli"
-          + "tReadStreamRequest\022F\n\017original_stream\030\001 "
-          + "\001(\0132-.google.cloud.bigquery.storage.v1be"
-          + "ta1.Stream\"\251\001\n\027SplitReadStreamResponse\022E"
-          + "\n\016primary_stream\030\001 \001(\0132-.google.cloud.bi"
-          + "gquery.storage.v1beta1.Stream\022G\n\020remaind"
-          + "er_stream\030\002 \001(\0132-.google.cloud.bigquery."
-          + "storage.v1beta1.Stream*3\n\nDataFormat\022\033\n\027"
-          + "DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\0012\335\005\n\017"
-          + "BigQueryStorage\022\212\001\n\021CreateReadSession\022?."
-          + "google.cloud.bigquery.storage.v1beta1.Cr"
-          + "eateReadSessionRequest\0322.google.cloud.bi"
-          + "gquery.storage.v1beta1.ReadSession\"\000\022\177\n\010"
-          + "ReadRows\0226.google.cloud.bigquery.storage"
-          + ".v1beta1.ReadRowsRequest\0327.google.cloud."
-          + "bigquery.storage.v1beta1.ReadRowsRespons"
-          + "e\"\0000\001\022\274\001\n\035BatchCreateReadSessionStreams\022"
-          + "K.google.cloud.bigquery.storage.v1beta1."
-          + "BatchCreateReadSessionStreamsRequest\032L.g"
-          + "oogle.cloud.bigquery.storage.v1beta1.Bat"
-          + "chCreateReadSessionStreamsResponse\"\000\022h\n\016"
-          + "FinalizeStream\022<.google.cloud.bigquery.s"
-          + "torage.v1beta1.FinalizeStreamRequest\032\026.g"
-          + "oogle.protobuf.Empty\"\000\022\222\001\n\017SplitReadStre"
-          + "am\022=.google.cloud.bigquery.storage.v1bet"
-          + "a1.SplitReadStreamRequest\032>.google.cloud"
-          + ".bigquery.storage.v1beta1.SplitReadStrea"
-          + "mResponse\"\000By\n)com.google.cloud.bigquery"
-          + ".storage.v1beta1ZLgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/bigquery/storage/v"
-          + "1beta1;storageb\006proto3"
+          + "rage.v1beta1\032\034google/api/annotations.pro"
+          + "to\032\031google/api/resource.proto\0320google/cl"
+          + "oud/bigquery/storage/v1beta1/avro.proto\032"
+          + "8google/cloud/bigquery/storage/v1beta1/r"
+          + "ead_options.proto\032;google/cloud/bigquery"
+          + "/storage/v1beta1/table_reference.proto\032\033"
+          + "google/protobuf/empty.proto\032\037google/prot"
+          + "obuf/timestamp.proto\")\n\006Stream\022\014\n\004name\030\001"
+          + " \001(\t\022\021\n\trow_count\030\002 \001(\003\"_\n\016StreamPositio"
+          + "n\022=\n\006stream\030\001 \001(\0132-.google.cloud.bigquer"
+          + "y.storage.v1beta1.Stream\022\016\n\006offset\030\002 \001(\003"
+          + "\"\200\003\n\013ReadSession\022\014\n\004name\030\001 \001(\t\022/\n\013expire"
+          + "_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "H\n\013avro_schema\030\005 \001(\01321.google.cloud.bigq"
+          + "uery.storage.v1beta1.AvroSchemaH\000\022>\n\007str"
+          + "eams\030\004 \003(\0132-.google.cloud.bigquery.stora"
+          + "ge.v1beta1.Stream\022N\n\017table_reference\030\007 \001"
+          + "(\01325.google.cloud.bigquery.storage.v1bet"
+          + "a1.TableReference\022N\n\017table_modifiers\030\010 \001"
+          + "(\01325.google.cloud.bigquery.storage.v1bet"
+          + "a1.TableModifiersB\010\n\006schema\"\367\002\n\030CreateRe"
+          + "adSessionRequest\022N\n\017table_reference\030\001 \001("
+          + "\01325.google.cloud.bigquery.storage.v1beta"
+          + "1.TableReference\022\016\n\006parent\030\006 \001(\t\022N\n\017tabl"
+          + "e_modifiers\030\002 \001(\01325.google.cloud.bigquer"
+          + "y.storage.v1beta1.TableModifiers\022\031\n\021requ"
+          + "ested_streams\030\003 \001(\005\022M\n\014read_options\030\004 \001("
+          + "\01327.google.cloud.bigquery.storage.v1beta"
+          + "1.TableReadOptions\022A\n\006format\030\005 \001(\01621.goo"
+          + "gle.cloud.bigquery.storage.v1beta1.DataF"
+          + "ormat\"_\n\017ReadRowsRequest\022L\n\rread_positio"
+          + "n\030\001 \001(\01325.google.cloud.bigquery.storage."
+          + "v1beta1.StreamPosition\"+\n\014StreamStatus\022\033"
+          + "\n\023estimated_row_count\030\001 \001(\003\"*\n\016ThrottleS"
+          + "tatus\022\030\n\020throttle_percent\030\001 \001(\005\"\365\001\n\020Read"
+          + "RowsResponse\022D\n\tavro_rows\030\003 \001(\0132/.google"
+          + ".cloud.bigquery.storage.v1beta1.AvroRows"
+          + "H\000\022C\n\006status\030\002 \001(\01323.google.cloud.bigque"
+          + "ry.storage.v1beta1.StreamStatus\022N\n\017throt"
+          + "tle_status\030\005 \001(\01325.google.cloud.bigquery"
+          + ".storage.v1beta1.ThrottleStatusB\006\n\004rows\""
+          + "\206\001\n$BatchCreateReadSessionStreamsRequest"
+          + "\022C\n\007session\030\001 \001(\01322.google.cloud.bigquer"
+          + "y.storage.v1beta1.ReadSession\022\031\n\021request"
+          + "ed_streams\030\002 \001(\005\"g\n%BatchCreateReadSessi"
+          + "onStreamsResponse\022>\n\007streams\030\001 \003(\0132-.goo"
+          + "gle.cloud.bigquery.storage.v1beta1.Strea"
+          + "m\"V\n\025FinalizeStreamRequest\022=\n\006stream\030\002 \001"
+          + "(\0132-.google.cloud.bigquery.storage.v1bet"
+          + "a1.Stream\"`\n\026SplitReadStreamRequest\022F\n\017o"
+          + "riginal_stream\030\001 \001(\0132-.google.cloud.bigq"
+          + "uery.storage.v1beta1.Stream\"\251\001\n\027SplitRea"
+          + "dStreamResponse\022E\n\016primary_stream\030\001 \001(\0132"
+          + "-.google.cloud.bigquery.storage.v1beta1."
+          + "Stream\022G\n\020remainder_stream\030\002 \001(\0132-.googl"
+          + "e.cloud.bigquery.storage.v1beta1.Stream*"
+          + "3\n\nDataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED"
+          + "\020\000\022\010\n\004AVRO\020\0012\307\010\n\017BigQueryStorage\022\207\002\n\021Cre"
+          + "ateReadSession\022?.google.cloud.bigquery.s"
+          + "torage.v1beta1.CreateReadSessionRequest\032"
+          + "2.google.cloud.bigquery.storage.v1beta1."
+          + "ReadSession\"}\202\323\344\223\002w\"0/v1beta1/{table_ref"
+          + "erence.project_id=projects/*}:\001*Z@\";/v1b"
+          + "eta1/{table_reference.dataset_id=project"
+          + "s/*/datasets/*}:\001*\022\300\001\n\010ReadRows\0226.google"
+          + ".cloud.bigquery.storage.v1beta1.ReadRows"
+          + "Request\0327.google.cloud.bigquery.storage."
+          + "v1beta1.ReadRowsResponse\"A\202\323\344\223\002;\0229/v1bet"
+          + "a1/{read_position.stream.name=projects/*"
+          + "/streams/*}0\001\022\364\001\n\035BatchCreateReadSession"
+          + "Streams\022K.google.cloud.bigquery.storage."
+          + "v1beta1.BatchCreateReadSessionStreamsReq"
+          + "uest\032L.google.cloud.bigquery.storage.v1b"
+          + "eta1.BatchCreateReadSessionStreamsRespon"
+          + "se\"8\202\323\344\223\0022\"-/v1beta1/{session.name=proje"
+          + "cts/*/sessions/*}:\001*\022\236\001\n\016FinalizeStream\022"
+          + "<.google.cloud.bigquery.storage.v1beta1."
+          + "FinalizeStreamRequest\032\026.google.protobuf."
+          + "Empty\"6\202\323\344\223\0020\"+/v1beta1/{stream.name=pro"
+          + "jects/*/streams/*}:\001*\022\316\001\n\017SplitReadStrea"
+          + "m\022=.google.cloud.bigquery.storage.v1beta"
+          + "1.SplitReadStreamRequest\032>.google.cloud."
+          + "bigquery.storage.v1beta1.SplitReadStream"
+          + "Response\"<\202\323\344\223\0026\0224/v1beta1/{original_str"
+          + "eam.name=projects/*/streams/*}By\n)com.go"
+          + "ogle.cloud.bigquery.storage.v1beta1ZLgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/bigquery/storage/v1beta1;storageb\006proto"
+          + "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -14349,6 +14327,8 @@ public final class Storage {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
@@ -14471,6 +14451,13 @@ public final class Storage {
             new java.lang.String[] {
               "PrimaryStream", "RemainderStream",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.AnnotationsProto.http);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor();

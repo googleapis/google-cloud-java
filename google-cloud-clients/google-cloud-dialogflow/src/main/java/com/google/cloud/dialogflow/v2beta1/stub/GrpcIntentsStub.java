@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest;
 import com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest;
@@ -35,6 +36,7 @@ import com.google.cloud.dialogflow.v2beta1.Intent;
 import com.google.cloud.dialogflow.v2beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListIntentsResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -42,6 +44,7 @@ import com.google.protobuf.Struct;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -168,30 +171,93 @@ public class GrpcIntentsStub extends IntentsStub {
     GrpcCallSettings<ListIntentsRequest, ListIntentsResponse> listIntentsTransportSettings =
         GrpcCallSettings.<ListIntentsRequest, ListIntentsResponse>newBuilder()
             .setMethodDescriptor(listIntentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListIntentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListIntentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetIntentRequest, Intent> getIntentTransportSettings =
         GrpcCallSettings.<GetIntentRequest, Intent>newBuilder()
             .setMethodDescriptor(getIntentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIntentRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIntentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateIntentRequest, Intent> createIntentTransportSettings =
         GrpcCallSettings.<CreateIntentRequest, Intent>newBuilder()
             .setMethodDescriptor(createIntentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateIntentRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateIntentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateIntentRequest, Intent> updateIntentTransportSettings =
         GrpcCallSettings.<UpdateIntentRequest, Intent>newBuilder()
             .setMethodDescriptor(updateIntentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateIntentRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateIntentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("intent.name", String.valueOf(request.getIntent().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteIntentRequest, Empty> deleteIntentTransportSettings =
         GrpcCallSettings.<DeleteIntentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteIntentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteIntentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteIntentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsTransportSettings =
         GrpcCallSettings.<BatchUpdateIntentsRequest, Operation>newBuilder()
             .setMethodDescriptor(batchUpdateIntentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchUpdateIntentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchUpdateIntentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsTransportSettings =
         GrpcCallSettings.<BatchDeleteIntentsRequest, Operation>newBuilder()
             .setMethodDescriptor(batchDeleteIntentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchDeleteIntentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchDeleteIntentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listIntentsCallable =

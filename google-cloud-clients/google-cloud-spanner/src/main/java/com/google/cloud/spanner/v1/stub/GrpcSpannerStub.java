@@ -23,14 +23,18 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -47,6 +51,7 @@ import com.google.spanner.v1.Transaction;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -106,6 +111,16 @@ public class GrpcSpannerStub extends SpannerStub {
               .setFullMethodName("google.spanner.v1.Spanner/ExecuteStreamingSql")
               .setRequestMarshaller(ProtoUtils.marshaller(ExecuteSqlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PartialResultSet.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlMethodDescriptor =
+          MethodDescriptor.<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.spanner.v1.Spanner/ExecuteBatchDml")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecuteBatchDmlRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecuteBatchDmlResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<ReadRequest, ResultSet> readMethodDescriptor =
       MethodDescriptor.<ReadRequest, ResultSet>newBuilder()
@@ -175,6 +190,8 @@ public class GrpcSpannerStub extends SpannerStub {
   private final UnaryCallable<ExecuteSqlRequest, ResultSet> executeSqlCallable;
   private final ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlCallable;
+  private final UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlCallable;
   private final UnaryCallable<ReadRequest, ResultSet> readCallable;
   private final ServerStreamingCallable<ReadRequest, PartialResultSet> streamingReadCallable;
   private final UnaryCallable<BeginTransactionRequest, Transaction> beginTransactionCallable;
@@ -222,54 +239,185 @@ public class GrpcSpannerStub extends SpannerStub {
     GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
             .setMethodDescriptor(createSessionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateSessionRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateSessionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("database", String.valueOf(request.getDatabase()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
         GrpcCallSettings.<GetSessionRequest, Session>newBuilder()
             .setMethodDescriptor(getSessionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetSessionRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetSessionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
             .setMethodDescriptor(listSessionsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListSessionsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListSessionsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("database", String.valueOf(request.getDatabase()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSessionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteSessionRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteSessionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ExecuteSqlRequest, ResultSet> executeSqlTransportSettings =
         GrpcCallSettings.<ExecuteSqlRequest, ResultSet>newBuilder()
             .setMethodDescriptor(executeSqlMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExecuteSqlRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExecuteSqlRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ExecuteSqlRequest, PartialResultSet> executeStreamingSqlTransportSettings =
         GrpcCallSettings.<ExecuteSqlRequest, PartialResultSet>newBuilder()
             .setMethodDescriptor(executeStreamingSqlMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExecuteSqlRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExecuteSqlRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
+    GrpcCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlTransportSettings =
+            GrpcCallSettings.<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>newBuilder()
+                .setMethodDescriptor(executeBatchDmlMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ExecuteBatchDmlRequest>() {
+                      @Override
+                      public Map<String, String> extract(ExecuteBatchDmlRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("session", String.valueOf(request.getSession()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<ReadRequest, ResultSet> readTransportSettings =
         GrpcCallSettings.<ReadRequest, ResultSet>newBuilder()
             .setMethodDescriptor(readMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ReadRequest>() {
+                  @Override
+                  public Map<String, String> extract(ReadRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ReadRequest, PartialResultSet> streamingReadTransportSettings =
         GrpcCallSettings.<ReadRequest, PartialResultSet>newBuilder()
             .setMethodDescriptor(streamingReadMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ReadRequest>() {
+                  @Override
+                  public Map<String, String> extract(ReadRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<BeginTransactionRequest, Transaction> beginTransactionTransportSettings =
         GrpcCallSettings.<BeginTransactionRequest, Transaction>newBuilder()
             .setMethodDescriptor(beginTransactionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BeginTransactionRequest>() {
+                  @Override
+                  public Map<String, String> extract(BeginTransactionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CommitRequest, CommitResponse> commitTransportSettings =
         GrpcCallSettings.<CommitRequest, CommitResponse>newBuilder()
             .setMethodDescriptor(commitMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CommitRequest>() {
+                  @Override
+                  public Map<String, String> extract(CommitRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<RollbackRequest, Empty> rollbackTransportSettings =
         GrpcCallSettings.<RollbackRequest, Empty>newBuilder()
             .setMethodDescriptor(rollbackMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RollbackRequest>() {
+                  @Override
+                  public Map<String, String> extract(RollbackRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<PartitionQueryRequest, PartitionResponse> partitionQueryTransportSettings =
         GrpcCallSettings.<PartitionQueryRequest, PartitionResponse>newBuilder()
             .setMethodDescriptor(partitionQueryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PartitionQueryRequest>() {
+                  @Override
+                  public Map<String, String> extract(PartitionQueryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<PartitionReadRequest, PartitionResponse> partitionReadTransportSettings =
         GrpcCallSettings.<PartitionReadRequest, PartitionResponse>newBuilder()
             .setMethodDescriptor(partitionReadMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PartitionReadRequest>() {
+                  @Override
+                  public Map<String, String> extract(PartitionReadRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("session", String.valueOf(request.getSession()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.createSessionCallable =
@@ -295,6 +443,9 @@ public class GrpcSpannerStub extends SpannerStub {
             executeStreamingSqlTransportSettings,
             settings.executeStreamingSqlSettings(),
             clientContext);
+    this.executeBatchDmlCallable =
+        callableFactory.createUnaryCallable(
+            executeBatchDmlTransportSettings, settings.executeBatchDmlSettings(), clientContext);
     this.readCallable =
         callableFactory.createUnaryCallable(
             readTransportSettings, settings.readSettings(), clientContext);
@@ -347,6 +498,10 @@ public class GrpcSpannerStub extends SpannerStub {
   public ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlCallable() {
     return executeStreamingSqlCallable;
+  }
+
+  public UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> executeBatchDmlCallable() {
+    return executeBatchDmlCallable;
   }
 
   public UnaryCallable<ReadRequest, ResultSet> readCallable() {

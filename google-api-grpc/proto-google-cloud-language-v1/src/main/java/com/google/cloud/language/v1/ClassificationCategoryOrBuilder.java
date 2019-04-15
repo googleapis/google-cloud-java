@@ -12,7 +12,8 @@ public interface ClassificationCategoryOrBuilder
    *
    *
    * <pre>
-   * The name of the category representing the document.
+   * The name of the category representing the document, from the [predefined
+   * taxonomy](/natural-language/docs/categories).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -22,7 +23,8 @@ public interface ClassificationCategoryOrBuilder
    *
    *
    * <pre>
-   * The name of the category representing the document.
+   * The name of the category representing the document, from the [predefined
+   * taxonomy](/natural-language/docs/categories).
    * </pre>
    *
    * <code>string name = 1;</code>

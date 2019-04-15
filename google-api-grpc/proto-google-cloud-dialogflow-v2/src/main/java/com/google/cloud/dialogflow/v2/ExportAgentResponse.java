@@ -63,7 +63,7 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -196,16 +196,17 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    * <pre>
    * The exported agent.
    * Example for how to export an agent to a zip file via a command line:
-   * curl &#92;
-   *   'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:export'&#92;
+   * &lt;pre&gt;curl &#92;
+   *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
    *   -X POST &#92;
-   *   -H 'Authorization: Bearer '$(gcloud auth print-access-token) &#92;
+   *   -H 'Authorization: Bearer '$(gcloud auth application-default
+   *   print-access-token) &#92;
    *   -H 'Accept: application/json' &#92;
    *   -H 'Content-Type: application/json' &#92;
    *   --compressed &#92;
    *   --data-binary '{}' &#92;
    * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-   * | base64 --decode &gt; &lt;agent zip file&gt;
+   * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -270,21 +271,19 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
     com.google.cloud.dialogflow.v2.ExportAgentResponse other =
         (com.google.cloud.dialogflow.v2.ExportAgentResponse) obj;
 
-    boolean result = true;
-    result = result && getAgentCase().equals(other.getAgentCase());
-    if (!result) return false;
+    if (!getAgentCase().equals(other.getAgentCase())) return false;
     switch (agentCase_) {
       case 1:
-        result = result && getAgentUri().equals(other.getAgentUri());
+        if (!getAgentUri().equals(other.getAgentUri())) return false;
         break;
       case 2:
-        result = result && getAgentContent().equals(other.getAgentContent());
+        if (!getAgentContent().equals(other.getAgentContent())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -493,35 +492,35 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -715,16 +714,17 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * The exported agent.
      * Example for how to export an agent to a zip file via a command line:
-     * curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:export'&#92;
+     * &lt;pre&gt;curl &#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
      *   -X POST &#92;
-     *   -H 'Authorization: Bearer '$(gcloud auth print-access-token) &#92;
+     *   -H 'Authorization: Bearer '$(gcloud auth application-default
+     *   print-access-token) &#92;
      *   -H 'Accept: application/json' &#92;
      *   -H 'Content-Type: application/json' &#92;
      *   --compressed &#92;
      *   --data-binary '{}' &#92;
      * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-     * | base64 --decode &gt; &lt;agent zip file&gt;
+     * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -741,16 +741,17 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * The exported agent.
      * Example for how to export an agent to a zip file via a command line:
-     * curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:export'&#92;
+     * &lt;pre&gt;curl &#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
      *   -X POST &#92;
-     *   -H 'Authorization: Bearer '$(gcloud auth print-access-token) &#92;
+     *   -H 'Authorization: Bearer '$(gcloud auth application-default
+     *   print-access-token) &#92;
      *   -H 'Accept: application/json' &#92;
      *   -H 'Content-Type: application/json' &#92;
      *   --compressed &#92;
      *   --data-binary '{}' &#92;
      * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-     * | base64 --decode &gt; &lt;agent zip file&gt;
+     * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -770,16 +771,17 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * <pre>
      * The exported agent.
      * Example for how to export an agent to a zip file via a command line:
-     * curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&lt;project_name&gt;/agent:export'&#92;
+     * &lt;pre&gt;curl &#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
      *   -X POST &#92;
-     *   -H 'Authorization: Bearer '$(gcloud auth print-access-token) &#92;
+     *   -H 'Authorization: Bearer '$(gcloud auth application-default
+     *   print-access-token) &#92;
      *   -H 'Accept: application/json' &#92;
      *   -H 'Content-Type: application/json' &#92;
      *   --compressed &#92;
      *   --data-binary '{}' &#92;
      * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-     * | base64 --decode &gt; &lt;agent zip file&gt;
+     * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -795,7 +797,7 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

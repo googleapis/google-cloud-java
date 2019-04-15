@@ -17,16 +17,18 @@ package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.StatusCode.Code;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder;
 import java.io.IOException;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class BigtableInstanceAdminSettingsTest {
   @Test
   public void testProjectName() throws Exception {
     String projectId = "my-project";
-    Builder builder = BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId);
+    BigtableInstanceAdminSettings.Builder builder =
+        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId);
 
     assertThat(builder.getProjectId()).isEqualTo(projectId);
     assertThat(builder.build().getProjectId()).isEqualTo(projectId);
@@ -37,7 +39,8 @@ public class BigtableInstanceAdminSettingsTest {
   public void testMissingProjectName() {
     Exception actualException = null;
 
-    Builder settingsBuilder = BigtableInstanceAdminSettings.newBuilder();
+    BigtableInstanceAdminSettings.Builder settingsBuilder =
+        BigtableInstanceAdminSettings.newBuilder();
     assertThat(settingsBuilder.getProjectId()).isNull();
 
     try {
@@ -47,6 +50,22 @@ public class BigtableInstanceAdminSettingsTest {
     }
 
     assertThat(actualException).isInstanceOf(NullPointerException.class);
+  }
+
+  @Test
+  public void testCredentials() throws IOException {
+    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+
+    BigtableInstanceAdminSettings settings =
+        BigtableInstanceAdminSettings.newBuilder()
+            .setProjectId("my-project")
+            .setCredentialsProvider(credentialsProvider)
+            .build();
+
+    assertThat(settings.getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.getStubSettings().getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.toBuilder().getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.toBuilder().build().getCredentialsProvider()).isSameAs(credentialsProvider);
   }
 
   @Test

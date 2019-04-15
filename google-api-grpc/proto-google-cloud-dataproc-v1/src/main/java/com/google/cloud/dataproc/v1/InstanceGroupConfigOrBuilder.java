@@ -100,7 +100,8 @@ public interface InstanceGroupConfigOrBuilder
    * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `n1-standard-2`
    * **Auto Zone Exception**: If you are using the Cloud Dataproc
-   * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * [Auto Zone
+   * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the machine type
    * resource, for example, `n1-standard-2`.
    * </pre>
@@ -118,7 +119,8 @@ public interface InstanceGroupConfigOrBuilder
    * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `n1-standard-2`
    * **Auto Zone Exception**: If you are using the Cloud Dataproc
-   * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * [Auto Zone
+   * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the machine type
    * resource, for example, `n1-standard-2`.
    * </pre>
@@ -162,7 +164,8 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies that this instance group contains preemptible instances.
+   * Optional. Specifies that this instance group contains preemptible
+   * instances.
    * </pre>
    *
    * <code>bool is_preemptible = 6;</code>

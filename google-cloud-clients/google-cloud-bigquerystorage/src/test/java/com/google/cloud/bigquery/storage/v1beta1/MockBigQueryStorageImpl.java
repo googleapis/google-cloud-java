@@ -26,8 +26,8 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,7 +37,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockBigQueryStorageImpl() {
@@ -45,15 +45,15 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

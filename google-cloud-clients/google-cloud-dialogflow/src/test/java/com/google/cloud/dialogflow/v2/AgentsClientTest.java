@@ -27,9 +27,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -127,7 +127,7 @@ public class AgentsClientTest {
     Agent actualResponse = client.getAgent(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAgents.getRequests();
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAgentRequest actualRequest = (GetAgentRequest) actualRequests.get(0);
 
@@ -175,7 +175,7 @@ public class AgentsClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAgentsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockAgents.getRequests();
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SearchAgentsRequest actualRequest = (SearchAgentsRequest) actualRequests.get(0);
 
@@ -219,7 +219,7 @@ public class AgentsClientTest {
     Empty actualResponse = client.trainAgentAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAgents.getRequests();
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TrainAgentRequest actualRequest = (TrainAgentRequest) actualRequests.get(0);
 
@@ -267,7 +267,7 @@ public class AgentsClientTest {
     ExportAgentResponse actualResponse = client.exportAgentAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockAgents.getRequests();
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportAgentRequest actualRequest = (ExportAgentRequest) actualRequests.get(0);
 

@@ -124,4 +124,52 @@ public interface StreamingDetectIntentResponseOrBuilder
    * <code>.google.rpc.Status webhook_status = 4;</code>
    */
   com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The audio data bytes encoded as specified in the request.
+   * </pre>
+   *
+   * <code>bytes output_audio = 5;</code>
+   */
+  com.google.protobuf.ByteString getOutputAudio();
+
+  /**
+   *
+   *
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  boolean hasOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Instructs the speech synthesizer how to generate the output audio. This
+   * field is populated from the agent-level speech synthesizer configuration,
+   * if enabled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 }

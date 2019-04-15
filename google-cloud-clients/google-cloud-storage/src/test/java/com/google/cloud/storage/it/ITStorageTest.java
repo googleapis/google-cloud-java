@@ -120,7 +120,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITStorageTest {
@@ -162,6 +161,7 @@ public class ITStorageTest {
   public static void beforeClass() throws IOException {
     remoteStorageHelper = RemoteStorageHelper.create();
     storage = remoteStorageHelper.getOptions().getService();
+
     storage.create(
         BucketInfo.newBuilder(BUCKET)
             .setLocation("us")
@@ -455,6 +455,26 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testCreateBlobMd5Crc32cFromHexString() {
+    String blobName = "test-create-blob-md5-crc32c-from-hex-string";
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMd5FromHexString("3b54781b51c94835084898e821899585")
+            .setCrc32cFromHexString("f4ddc43d")
+            .build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    assertEquals(blob.getBucket(), remoteBlob.getBucket());
+    assertEquals(blob.getName(), remoteBlob.getName());
+    assertEquals(blob.getMd5ToHexString(), remoteBlob.getMd5ToHexString());
+    assertEquals(blob.getCrc32cToHexString(), remoteBlob.getCrc32cToHexString());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
@@ -1272,7 +1292,6 @@ public class ITStorageTest {
   }
 
   @Test
-  @Ignore
   public void testRotateFromCustomerEncryptionToKmsKeyWithCustomerEncryption() {
     String sourceBlobName = "test-copy-blob-encryption-key-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
@@ -1821,6 +1840,25 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
+  }
+
+  @Test
+  public void testV4SignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
+    String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature());
+    URLConnection connection = url.openConnection();
+    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    }
   }
 
   @Test
@@ -2521,5 +2559,29 @@ public class ITStorageTest {
     } finally {
       RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
     }
+  }
+
+  @Test
+  public void testUploadUsingSignedURL() throws Exception {
+    String blobName = "test-signed-url-upload";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    assertNotNull(storage.create(blob));
+    URL signUrl =
+        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+    byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
+    try (WriteChannel writer = storage.writer(signUrl)) {
+      writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
+    }
+
+    int lengthOfDownLoadBytes = -1;
+    BlobId blobId = BlobId.of(BUCKET, blobName);
+    Blob blobToRead = storage.get(blobId);
+    try (ReadChannel reader = blobToRead.reader()) {
+      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+      lengthOfDownLoadBytes = reader.read(bytes);
+    }
+
+    assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
+    assertTrue(storage.delete(BUCKET, blobName));
   }
 }

@@ -8,7 +8,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  * <pre>
  * The pull message contains data that can be used by the caller of
- * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task.
+ * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the
+ * task.
  * This proto can only be used for tasks in a queue which has
  * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] set.
  * </pre>
@@ -68,7 +69,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -124,15 +125,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    * The task's tag.
    * Tags allow similar tasks to be processed in a batch. If you label
    * tasks with a tag, your worker can
-   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-   * aggregate the events associated with a specific user once a day,
-   * you could tag tasks with the user ID.
+   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+   * same tag using
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+   * if you want to aggregate the events associated with a specific user once a
+   * day, you could tag tasks with the user ID.
    * The task's tag can only be set when the
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The tag must be less than 500 characters.
    * SDK compatibility: Although the SDK allows tags to be either
-   * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+   * string or
+   * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
    * encoded, the tag will be empty when the task is returned by Cloud Tasks.
    * </pre>
@@ -157,15 +160,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    * The task's tag.
    * Tags allow similar tasks to be processed in a batch. If you label
    * tasks with a tag, your worker can
-   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-   * aggregate the events associated with a specific user once a day,
-   * you could tag tasks with the user ID.
+   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+   * same tag using
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+   * if you want to aggregate the events associated with a specific user once a
+   * day, you could tag tasks with the user ID.
    * The task's tag can only be set when the
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The tag must be less than 500 characters.
    * SDK compatibility: Although the SDK allows tags to be either
-   * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+   * string or
+   * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
    * encoded, the tag will be empty when the task is returned by Cloud Tasks.
    * </pre>
@@ -235,11 +240,10 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tasks.v2beta2.PullMessage other =
         (com.google.cloud.tasks.v2beta2.PullMessage) obj;
 
-    boolean result = true;
-    result = result && getPayload().equals(other.getPayload());
-    result = result && getTag().equals(other.getTag());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPayload().equals(other.getPayload())) return false;
+    if (!getTag().equals(other.getTag())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -358,7 +362,8 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The pull message contains data that can be used by the caller of
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the
+   * task.
    * This proto can only be used for tasks in a queue which has
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] set.
    * </pre>
@@ -440,35 +445,35 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -574,15 +579,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * The task's tag.
      * Tags allow similar tasks to be processed in a batch. If you label
      * tasks with a tag, your worker can
-     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-     * aggregate the events associated with a specific user once a day,
-     * you could tag tasks with the user ID.
+     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+     * same tag using
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+     * if you want to aggregate the events associated with a specific user once a
+     * day, you could tag tasks with the user ID.
      * The task's tag can only be set when the
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -607,15 +614,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * The task's tag.
      * Tags allow similar tasks to be processed in a batch. If you label
      * tasks with a tag, your worker can
-     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-     * aggregate the events associated with a specific user once a day,
-     * you could tag tasks with the user ID.
+     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+     * same tag using
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+     * if you want to aggregate the events associated with a specific user once a
+     * day, you could tag tasks with the user ID.
      * The task's tag can only be set when the
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -640,15 +649,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * The task's tag.
      * Tags allow similar tasks to be processed in a batch. If you label
      * tasks with a tag, your worker can
-     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-     * aggregate the events associated with a specific user once a day,
-     * you could tag tasks with the user ID.
+     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+     * same tag using
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+     * if you want to aggregate the events associated with a specific user once a
+     * day, you could tag tasks with the user ID.
      * The task's tag can only be set when the
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -671,15 +682,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * The task's tag.
      * Tags allow similar tasks to be processed in a batch. If you label
      * tasks with a tag, your worker can
-     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-     * aggregate the events associated with a specific user once a day,
-     * you could tag tasks with the user ID.
+     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+     * same tag using
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+     * if you want to aggregate the events associated with a specific user once a
+     * day, you could tag tasks with the user ID.
      * The task's tag can only be set when the
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -699,15 +712,17 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      * The task's tag.
      * Tags allow similar tasks to be processed in a batch. If you label
      * tasks with a tag, your worker can
-     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
-     * aggregate the events associated with a specific user once a day,
-     * you could tag tasks with the user ID.
+     * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
+     * same tag using
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
+     * if you want to aggregate the events associated with a specific user once a
+     * day, you could tag tasks with the user ID.
      * The task's tag can only be set when the
      * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The tag must be less than 500 characters.
      * SDK compatibility: Although the SDK allows tags to be either
-     * string or [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
+     * string or
+     * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. If a tag isn't UTF-8
      * encoded, the tag will be empty when the task is returned by Cloud Tasks.
      * </pre>
@@ -727,7 +742,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

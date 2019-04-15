@@ -20,7 +20,8 @@ public interface RetryConfigOrBuilder
    * default.
    * -1 indicates unlimited attempts.
    * This field has the same meaning as
-   * [task_retry_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_retry_limit in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>int32 max_attempts = 1;</code>
@@ -42,7 +43,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `max_retry_duration` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_age_limit in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
@@ -63,7 +65,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `max_retry_duration` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_age_limit in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
@@ -84,7 +87,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `max_retry_duration` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [task_age_limit in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [task_age_limit in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
@@ -104,7 +108,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `min_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [min_backoff_seconds in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
@@ -123,7 +128,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `min_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [min_backoff_seconds in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
@@ -142,7 +148,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `min_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [min_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [min_backoff_seconds in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_backoff = 3;</code>
@@ -162,7 +169,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `max_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_backoff_seconds in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
@@ -181,7 +189,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `max_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_backoff_seconds in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
@@ -200,7 +209,8 @@ public interface RetryConfigOrBuilder
    * default.
    * `max_backoff` will be truncated to the nearest second.
    * This field has the same meaning as
-   * [max_backoff_seconds in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_backoff_seconds in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_backoff = 4;</code>
@@ -230,7 +240,8 @@ public interface RetryConfigOrBuilder
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
    * This field has the same meaning as
-   * [max_doublings in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
+   * [max_doublings in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
    * </pre>
    *
    * <code>int32 max_doublings = 5;</code>

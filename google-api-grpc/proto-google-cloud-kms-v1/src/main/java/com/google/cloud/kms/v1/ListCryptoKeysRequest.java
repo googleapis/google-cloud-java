@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
+ * Request message for
+ * [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeysRequest}
@@ -24,7 +25,6 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
 
   private ListCryptoKeysRequest() {
     parent_ = "";
-    pageSize_ = 0;
     pageToken_ = "";
     versionView_ = 0;
   }
@@ -81,7 +81,7 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -119,8 +119,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -140,8 +140,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+   * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+   * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -164,10 +164,13 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
-   * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-   * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
-   * request.  If unspecified, the server will pick an appropriate default.
+   * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
+   * to include in the response.  Further
+   * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+   * including the
+   * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
+   * in a subsequent request.  If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -322,13 +325,12 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     com.google.cloud.kms.v1.ListCryptoKeysRequest other =
         (com.google.cloud.kms.v1.ListCryptoKeysRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && versionView_ == other.versionView_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (versionView_ != other.versionView_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -450,7 +452,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
+   * Request message for
+   * [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeysRequest}
@@ -536,35 +539,35 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -627,8 +630,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -648,8 +651,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -669,8 +672,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -688,8 +691,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -704,8 +707,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to list, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
+     * Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing]
+     * to list, in the format `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -726,10 +729,13 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
-     * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-     * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
+     * to include in the response.  Further
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+     * including the
+     * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -741,10 +747,13 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
-     * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-     * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
+     * to include in the response.  Further
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+     * including the
+     * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -759,10 +768,13 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] to include in the
-     * response.  Further [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
-     * including the [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [CryptoKeys][google.cloud.kms.v1.CryptoKey]
+     * to include in the response.  Further
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] can subsequently be obtained by
+     * including the
+     * [ListCryptoKeysResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeysResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -954,7 +966,7 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

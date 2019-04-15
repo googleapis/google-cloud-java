@@ -35,7 +35,8 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -45,7 +46,8 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -55,7 +57,8 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * The results of the conversational query or event processing.
+   * The selected results of the conversational query or event processing.
+   * See `alternative_query_results` for additional potential results.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
@@ -66,8 +69,7 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -77,8 +79,7 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
@@ -88,11 +89,57 @@ public interface DetectIntentResponseOrBuilder
    *
    *
    * <pre>
-   * Specifies the status of the webhook request. `webhook_status`
-   * is never populated in webhook requests.
+   * Specifies the status of the webhook request.
    * </pre>
    *
    * <code>.google.rpc.Status webhook_status = 3;</code>
    */
   com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The audio data bytes encoded as specified in the request.
+   * Note: The output audio is generated based on the values of default platform
+   * text responses found in the `query_result.fulfillment_messages` field. If
+   * multiple default text responses exist, they will be concatenated when
+   * generating audio. If no default platform text responses exist, the
+   * generated audio content will be empty.
+   * </pre>
+   *
+   * <code>bytes output_audio = 4;</code>
+   */
+  com.google.protobuf.ByteString getOutputAudio();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config used by the speech synthesizer to generate the output audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  boolean hasOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The config used by the speech synthesizer to generate the output audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The config used by the speech synthesizer to generate the output audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 6;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 }

@@ -25,7 +25,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
   private AcceleratorConfig() {
     acceleratorTypeUri_ = "";
-    acceleratorCount_ = 0;
   }
 
   @java.lang.Override
@@ -66,7 +65,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -112,7 +111,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
    * **Auto Zone Exception**: If you are using the Cloud Dataproc
-   * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * [Auto Zone
+   * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
    * resource, for example, `nvidia-tesla-k80`.
    * </pre>
@@ -142,7 +142,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
    * **Auto Zone Exception**: If you are using the Cloud Dataproc
-   * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * [Auto Zone
+   * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the accelerator type
    * resource, for example, `nvidia-tesla-k80`.
    * </pre>
@@ -227,11 +228,10 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.dataproc.v1beta2.AcceleratorConfig other =
         (com.google.cloud.dataproc.v1beta2.AcceleratorConfig) obj;
 
-    boolean result = true;
-    result = result && getAcceleratorTypeUri().equals(other.getAcceleratorTypeUri());
-    result = result && (getAcceleratorCount() == other.getAcceleratorCount());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAcceleratorTypeUri().equals(other.getAcceleratorTypeUri())) return false;
+    if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -430,35 +430,35 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -524,7 +524,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
      * **Auto Zone Exception**: If you are using the Cloud Dataproc
-     * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+     * [Auto Zone
+     * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
      * resource, for example, `nvidia-tesla-k80`.
      * </pre>
@@ -554,7 +555,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
      * **Auto Zone Exception**: If you are using the Cloud Dataproc
-     * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+     * [Auto Zone
+     * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
      * resource, for example, `nvidia-tesla-k80`.
      * </pre>
@@ -584,7 +586,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
      * **Auto Zone Exception**: If you are using the Cloud Dataproc
-     * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+     * [Auto Zone
+     * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
      * resource, for example, `nvidia-tesla-k80`.
      * </pre>
@@ -612,7 +615,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
      * **Auto Zone Exception**: If you are using the Cloud Dataproc
-     * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+     * [Auto Zone
+     * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
      * resource, for example, `nvidia-tesla-k80`.
      * </pre>
@@ -637,7 +641,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
      * **Auto Zone Exception**: If you are using the Cloud Dataproc
-     * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+     * [Auto Zone
+     * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the accelerator type
      * resource, for example, `nvidia-tesla-k80`.
      * </pre>
@@ -701,7 +706,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

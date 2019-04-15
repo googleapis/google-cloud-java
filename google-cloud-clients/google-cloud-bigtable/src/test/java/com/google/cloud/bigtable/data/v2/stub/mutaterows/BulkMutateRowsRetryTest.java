@@ -76,16 +76,20 @@ public class BulkMutateRowsRetryTest {
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                FixedTransportChannelProvider.create(
-                    GrpcTransportChannel.create(serverRule.getChannel())));
+            .setCredentialsProvider(NoCredentialsProvider.create());
+    settings
+        .stubSettings()
+        .setTransportChannelProvider(
+            FixedTransportChannelProvider.create(
+                GrpcTransportChannel.create(serverRule.getChannel())));
 
     settings
-        .bulkMutationsSettings()
+        .stubSettings()
+        .bulkMutateRowsSettings()
         .setRetrySettings(
             settings
-                .bulkMutationsSettings()
+                .stubSettings()
+                .bulkMutateRowsSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setMaxAttempts(MAX_ATTEMPTS)
@@ -95,7 +99,8 @@ public class BulkMutateRowsRetryTest {
                 .build())
         .setBatchingSettings(
             settings
-                .bulkMutationsSettings()
+                .stubSettings()
+                .bulkMutateRowsSettings()
                 .getBatchingSettings()
                 .toBuilder()
                 .setDelayThreshold(FLUSH_PERIOD)

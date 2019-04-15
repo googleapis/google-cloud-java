@@ -90,7 +90,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -413,23 +413,21 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
     io.grafeas.v1beta1.source.GerritSourceContext other =
         (io.grafeas.v1beta1.source.GerritSourceContext) obj;
 
-    boolean result = true;
-    result = result && getHostUri().equals(other.getHostUri());
-    result = result && getGerritProject().equals(other.getGerritProject());
-    result = result && getRevisionCase().equals(other.getRevisionCase());
-    if (!result) return false;
+    if (!getHostUri().equals(other.getHostUri())) return false;
+    if (!getGerritProject().equals(other.getGerritProject())) return false;
+    if (!getRevisionCase().equals(other.getRevisionCase())) return false;
     switch (revisionCase_) {
       case 3:
-        result = result && getRevisionId().equals(other.getRevisionId());
+        if (!getRevisionId().equals(other.getRevisionId())) return false;
         break;
       case 4:
-        result = result && getAliasContext().equals(other.getAliasContext());
+        if (!getAliasContext().equals(other.getAliasContext())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -652,35 +650,35 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1270,7 +1268,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

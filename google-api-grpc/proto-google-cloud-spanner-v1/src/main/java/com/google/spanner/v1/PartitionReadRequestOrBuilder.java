@@ -88,9 +88,12 @@ public interface PartitionReadRequestOrBuilder
    *
    *
    * <pre>
-   * If non-empty, the name of an index on [table][google.spanner.v1.PartitionReadRequest.table]. This index is
-   * used instead of the table primary key when interpreting [key_set][google.spanner.v1.PartitionReadRequest.key_set]
-   * and sorting result rows. See [key_set][google.spanner.v1.PartitionReadRequest.key_set] for further information.
+   * If non-empty, the name of an index on
+   * [table][google.spanner.v1.PartitionReadRequest.table]. This index is used
+   * instead of the table primary key when interpreting
+   * [key_set][google.spanner.v1.PartitionReadRequest.key_set] and sorting
+   * result rows. See [key_set][google.spanner.v1.PartitionReadRequest.key_set]
+   * for further information.
    * </pre>
    *
    * <code>string index = 4;</code>
@@ -100,9 +103,12 @@ public interface PartitionReadRequestOrBuilder
    *
    *
    * <pre>
-   * If non-empty, the name of an index on [table][google.spanner.v1.PartitionReadRequest.table]. This index is
-   * used instead of the table primary key when interpreting [key_set][google.spanner.v1.PartitionReadRequest.key_set]
-   * and sorting result rows. See [key_set][google.spanner.v1.PartitionReadRequest.key_set] for further information.
+   * If non-empty, the name of an index on
+   * [table][google.spanner.v1.PartitionReadRequest.table]. This index is used
+   * instead of the table primary key when interpreting
+   * [key_set][google.spanner.v1.PartitionReadRequest.key_set] and sorting
+   * result rows. See [key_set][google.spanner.v1.PartitionReadRequest.key_set]
+   * for further information.
    * </pre>
    *
    * <code>string index = 4;</code>
@@ -113,8 +119,8 @@ public interface PartitionReadRequestOrBuilder
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
@@ -124,8 +130,8 @@ public interface PartitionReadRequestOrBuilder
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
@@ -135,8 +141,8 @@ public interface PartitionReadRequestOrBuilder
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
@@ -146,8 +152,8 @@ public interface PartitionReadRequestOrBuilder
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.PartitionReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
@@ -159,8 +165,11 @@ public interface PartitionReadRequestOrBuilder
    *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-   * primary keys of the rows in [table][google.spanner.v1.PartitionReadRequest.table] to be yielded, unless [index][google.spanner.v1.PartitionReadRequest.index]
-   * is present. If [index][google.spanner.v1.PartitionReadRequest.index] is present, then [key_set][google.spanner.v1.PartitionReadRequest.key_set] instead names
+   * primary keys of the rows in
+   * [table][google.spanner.v1.PartitionReadRequest.table] to be yielded, unless
+   * [index][google.spanner.v1.PartitionReadRequest.index] is present. If
+   * [index][google.spanner.v1.PartitionReadRequest.index] is present, then
+   * [key_set][google.spanner.v1.PartitionReadRequest.key_set] instead names
    * index keys in [index][google.spanner.v1.PartitionReadRequest.index].
    * It is not an error for the `key_set` to name rows that do not
    * exist in the database. Read yields nothing for nonexistent rows.
@@ -174,8 +183,11 @@ public interface PartitionReadRequestOrBuilder
    *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-   * primary keys of the rows in [table][google.spanner.v1.PartitionReadRequest.table] to be yielded, unless [index][google.spanner.v1.PartitionReadRequest.index]
-   * is present. If [index][google.spanner.v1.PartitionReadRequest.index] is present, then [key_set][google.spanner.v1.PartitionReadRequest.key_set] instead names
+   * primary keys of the rows in
+   * [table][google.spanner.v1.PartitionReadRequest.table] to be yielded, unless
+   * [index][google.spanner.v1.PartitionReadRequest.index] is present. If
+   * [index][google.spanner.v1.PartitionReadRequest.index] is present, then
+   * [key_set][google.spanner.v1.PartitionReadRequest.key_set] instead names
    * index keys in [index][google.spanner.v1.PartitionReadRequest.index].
    * It is not an error for the `key_set` to name rows that do not
    * exist in the database. Read yields nothing for nonexistent rows.
@@ -189,8 +201,11 @@ public interface PartitionReadRequestOrBuilder
    *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-   * primary keys of the rows in [table][google.spanner.v1.PartitionReadRequest.table] to be yielded, unless [index][google.spanner.v1.PartitionReadRequest.index]
-   * is present. If [index][google.spanner.v1.PartitionReadRequest.index] is present, then [key_set][google.spanner.v1.PartitionReadRequest.key_set] instead names
+   * primary keys of the rows in
+   * [table][google.spanner.v1.PartitionReadRequest.table] to be yielded, unless
+   * [index][google.spanner.v1.PartitionReadRequest.index] is present. If
+   * [index][google.spanner.v1.PartitionReadRequest.index] is present, then
+   * [key_set][google.spanner.v1.PartitionReadRequest.key_set] instead names
    * index keys in [index][google.spanner.v1.PartitionReadRequest.index].
    * It is not an error for the `key_set` to name rows that do not
    * exist in the database. Read yields nothing for nonexistent rows.

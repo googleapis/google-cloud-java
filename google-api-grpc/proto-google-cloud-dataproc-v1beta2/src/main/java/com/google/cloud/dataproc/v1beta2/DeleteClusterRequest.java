@@ -91,7 +91,7 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -306,10 +306,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -334,10 +335,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -427,14 +429,13 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.dataproc.v1beta2.DeleteClusterRequest other =
         (com.google.cloud.dataproc.v1beta2.DeleteClusterRequest) obj;
 
-    boolean result = true;
-    result = result && getProjectId().equals(other.getProjectId());
-    result = result && getRegion().equals(other.getRegion());
-    result = result && getClusterName().equals(other.getClusterName());
-    result = result && getClusterUuid().equals(other.getClusterUuid());
-    result = result && getRequestId().equals(other.getRequestId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getRegion().equals(other.getRegion())) return false;
+    if (!getClusterName().equals(other.getClusterName())) return false;
+    if (!getClusterUuid().equals(other.getClusterUuid())) return false;
+    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -648,35 +649,35 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1134,10 +1135,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1162,10 +1164,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1190,10 +1193,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1216,10 +1220,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1239,10 +1244,11 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1264,7 +1270,7 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

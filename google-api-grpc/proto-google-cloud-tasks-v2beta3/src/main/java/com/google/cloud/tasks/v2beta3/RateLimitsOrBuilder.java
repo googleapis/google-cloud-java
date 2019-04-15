@@ -18,7 +18,8 @@ public interface RateLimitsOrBuilder
    * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
    *   is 500.
    * This field has the same meaning as
-   * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+   * [rate in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
    * </pre>
    *
    * <code>double max_dispatches_per_second = 1;</code>
@@ -75,7 +76,8 @@ public interface RateLimitsOrBuilder
    * default.
    * The maximum allowed value is 5,000.
    * This field has the same meaning as
-   * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+   * [max_concurrent_requests in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
    * </pre>
    *
    * <code>int32 max_concurrent_dispatches = 3;</code>

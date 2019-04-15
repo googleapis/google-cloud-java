@@ -97,7 +97,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -715,19 +715,18 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     }
     io.grafeas.v1beta1.discovery.Discovered other = (io.grafeas.v1beta1.discovery.Discovered) obj;
 
-    boolean result = true;
-    result = result && continuousAnalysis_ == other.continuousAnalysis_;
-    result = result && (hasLastAnalysisTime() == other.hasLastAnalysisTime());
+    if (continuousAnalysis_ != other.continuousAnalysis_) return false;
+    if (hasLastAnalysisTime() != other.hasLastAnalysisTime()) return false;
     if (hasLastAnalysisTime()) {
-      result = result && getLastAnalysisTime().equals(other.getLastAnalysisTime());
+      if (!getLastAnalysisTime().equals(other.getLastAnalysisTime())) return false;
     }
-    result = result && analysisStatus_ == other.analysisStatus_;
-    result = result && (hasAnalysisStatusError() == other.hasAnalysisStatusError());
+    if (analysisStatus_ != other.analysisStatus_) return false;
+    if (hasAnalysisStatusError() != other.hasAnalysisStatusError()) return false;
     if (hasAnalysisStatusError()) {
-      result = result && getAnalysisStatusError().equals(other.getAnalysisStatusError());
+      if (!getAnalysisStatusError().equals(other.getAnalysisStatusError())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -955,35 +954,35 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1123,7 +1122,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp lastAnalysisTime_ = null;
+    private com.google.protobuf.Timestamp lastAnalysisTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1382,7 +1381,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.rpc.Status analysisStatusError_ = null;
+    private com.google.rpc.Status analysisStatusError_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         analysisStatusErrorBuilder_;
@@ -1579,7 +1578,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

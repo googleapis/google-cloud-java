@@ -52,7 +52,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 alternatives_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p1beta1
@@ -68,7 +68,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -80,7 +80,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
       }
       this.unknownFields = unknownFields.build();
@@ -243,10 +243,9 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
     com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription other =
         (com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription) obj;
 
-    boolean result = true;
-    result = result && getAlternativesList().equals(other.getAlternativesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAlternativesList().equals(other.getAlternativesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -444,7 +443,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
           new com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription(this);
       int from_bitField0_ = bitField0_;
       if (alternativesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -458,35 +457,35 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -569,7 +568,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
         alternatives_ = java.util.Collections.emptyList();
 
     private void ensureAlternativesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         alternatives_ =
             new java.util.ArrayList<
                 com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative>(
@@ -1028,10 +1027,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
                 com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative,
                 com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.Builder,
                 com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>(
-                alternatives_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                alternatives_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         alternatives_ = null;
       }
       return alternativesBuilder_;
@@ -1039,7 +1035,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

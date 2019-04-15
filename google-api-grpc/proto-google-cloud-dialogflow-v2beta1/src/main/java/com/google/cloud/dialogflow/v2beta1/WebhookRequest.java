@@ -102,7 +102,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 alternativeQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
                 mutable_bitField0_ |= 0x00000008;
@@ -114,7 +114,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -126,7 +126,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -158,7 +158,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
    * <code>string session = 4;</code>
@@ -180,7 +182,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   * ID&gt;/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
    * <code>string session = 4;</code>
@@ -483,22 +487,21 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.v2beta1.WebhookRequest other =
         (com.google.cloud.dialogflow.v2beta1.WebhookRequest) obj;
 
-    boolean result = true;
-    result = result && getSession().equals(other.getSession());
-    result = result && getResponseId().equals(other.getResponseId());
-    result = result && (hasQueryResult() == other.hasQueryResult());
+    if (!getSession().equals(other.getSession())) return false;
+    if (!getResponseId().equals(other.getResponseId())) return false;
+    if (hasQueryResult() != other.hasQueryResult()) return false;
     if (hasQueryResult()) {
-      result = result && getQueryResult().equals(other.getQueryResult());
+      if (!getQueryResult().equals(other.getQueryResult())) return false;
     }
-    result =
-        result && getAlternativeQueryResultsList().equals(other.getAlternativeQueryResultsList());
-    result = result && (hasOriginalDetectIntentRequest() == other.hasOriginalDetectIntentRequest());
+    if (!getAlternativeQueryResultsList().equals(other.getAlternativeQueryResultsList()))
+      return false;
+    if (hasOriginalDetectIntentRequest() != other.hasOriginalDetectIntentRequest()) return false;
     if (hasOriginalDetectIntentRequest()) {
-      result =
-          result && getOriginalDetectIntentRequest().equals(other.getOriginalDetectIntentRequest());
+      if (!getOriginalDetectIntentRequest().equals(other.getOriginalDetectIntentRequest()))
+        return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -730,7 +733,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         result.queryResult_ = queryResultBuilder_.build();
       }
       if (alternativeQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           alternativeQueryResults_ =
               java.util.Collections.unmodifiableList(alternativeQueryResults_);
           bitField0_ = (bitField0_ & ~0x00000008);
@@ -751,35 +754,35 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -875,7 +878,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -897,7 +902,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -919,7 +926,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -939,7 +948,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -956,7 +967,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
+     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     * ID&gt;/sessions/&lt;Session ID&gt;`.
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -1071,7 +1084,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_ = null;
+    private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.QueryResult,
             com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
@@ -1266,7 +1279,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         alternativeQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureAlternativeQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         alternativeQueryResults_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(
                 alternativeQueryResults_);
@@ -1635,7 +1648,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
                 com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
                 alternativeQueryResults_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         alternativeQueryResults_ = null;
@@ -1644,7 +1657,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest
-        originalDetectIntentRequest_ = null;
+        originalDetectIntentRequest_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest,
             com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest.Builder,
@@ -1861,7 +1874,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -23,9 +23,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private TemporalAsset() {
-    deleted_ = false;
-  }
+  private TemporalAsset() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -90,7 +88,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -274,18 +272,17 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.asset.v1beta1.TemporalAsset other =
         (com.google.cloud.asset.v1beta1.TemporalAsset) obj;
 
-    boolean result = true;
-    result = result && (hasWindow() == other.hasWindow());
+    if (hasWindow() != other.hasWindow()) return false;
     if (hasWindow()) {
-      result = result && getWindow().equals(other.getWindow());
+      if (!getWindow().equals(other.getWindow())) return false;
     }
-    result = result && (getDeleted() == other.getDeleted());
-    result = result && (hasAsset() == other.hasAsset());
+    if (getDeleted() != other.getDeleted()) return false;
+    if (hasAsset() != other.hasAsset()) return false;
     if (hasAsset()) {
-      result = result && getAsset().equals(other.getAsset());
+      if (!getAsset().equals(other.getAsset())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -509,35 +506,35 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -590,7 +587,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.asset.v1beta1.TimeWindow window_ = null;
+    private com.google.cloud.asset.v1beta1.TimeWindow window_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1beta1.TimeWindow,
             com.google.cloud.asset.v1beta1.TimeWindow.Builder,
@@ -815,7 +812,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.asset.v1beta1.Asset asset_ = null;
+    private com.google.cloud.asset.v1beta1.Asset asset_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1beta1.Asset,
             com.google.cloud.asset.v1beta1.Asset.Builder,
@@ -994,7 +991,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

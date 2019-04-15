@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.KnowledgeBasesStub;
 import com.google.cloud.dialogflow.v2beta1.stub.KnowledgeBasesStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -170,8 +171,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list of knowledge bases for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to list of knowledge bases for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(ProjectName parent) {
@@ -197,8 +198,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list of knowledge bases for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to list of knowledge bases for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKnowledgeBasesPagedResponse listKnowledgeBases(String parent) {
@@ -396,8 +397,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a knowledge base for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to create a knowledge base for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @param knowledgeBase Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -425,8 +426,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a knowledge base for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The project to create a knowledge base for. Format:
+   *     `projects/&lt;Project ID&gt;`.
    * @param knowledgeBase Required. The knowledge base to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -585,6 +586,46 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return stub.deleteKnowledgeBaseCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified knowledge base.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder().build();
+   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KnowledgeBase updateKnowledgeBase(UpdateKnowledgeBaseRequest request) {
+    return updateKnowledgeBaseCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified knowledge base.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder().build();
+   *   ApiFuture&lt;KnowledgeBase&gt; future = knowledgeBasesClient.updateKnowledgeBaseCallable().futureCall(request);
+   *   // Do something
+   *   KnowledgeBase response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase>
+      updateKnowledgeBaseCallable() {
+    return stub.updateKnowledgeBaseCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -635,7 +676,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
             public ListKnowledgeBasesPagedResponse apply(ListKnowledgeBasesPage input) {
               return new ListKnowledgeBasesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListKnowledgeBasesPagedResponse(ListKnowledgeBasesPage page) {

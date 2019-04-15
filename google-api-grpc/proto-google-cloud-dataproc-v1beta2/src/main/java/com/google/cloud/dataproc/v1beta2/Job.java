@@ -185,7 +185,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 yarnApplications_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>();
                 mutable_bitField0_ |= 0x00000400;
@@ -221,7 +221,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 statusHistory_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>();
                 mutable_bitField0_ |= 0x00000200;
@@ -247,7 +247,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00004000;
@@ -283,7 +283,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -295,10 +295,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -861,8 +861,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
-   * **Beta** Feature: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta** Feature: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -876,8 +876,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
-   * **Beta** Feature: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta** Feature: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -891,8 +891,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
-   * **Beta** Feature: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta** Feature: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -905,8 +905,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
-   * **Beta** Feature: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta** Feature: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -919,8 +919,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
-   * **Beta** Feature: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta** Feature: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -1100,8 +1100,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a job.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -1125,8 +1126,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a job.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -1142,8 +1144,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a job.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -1163,8 +1166,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a job.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a job.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -1427,56 +1431,54 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.dataproc.v1beta2.Job other = (com.google.cloud.dataproc.v1beta2.Job) obj;
 
-    boolean result = true;
-    result = result && (hasReference() == other.hasReference());
+    if (hasReference() != other.hasReference()) return false;
     if (hasReference()) {
-      result = result && getReference().equals(other.getReference());
+      if (!getReference().equals(other.getReference())) return false;
     }
-    result = result && (hasPlacement() == other.hasPlacement());
+    if (hasPlacement() != other.hasPlacement()) return false;
     if (hasPlacement()) {
-      result = result && getPlacement().equals(other.getPlacement());
+      if (!getPlacement().equals(other.getPlacement())) return false;
     }
-    result = result && (hasStatus() == other.hasStatus());
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus().equals(other.getStatus());
+      if (!getStatus().equals(other.getStatus())) return false;
     }
-    result = result && getStatusHistoryList().equals(other.getStatusHistoryList());
-    result = result && getYarnApplicationsList().equals(other.getYarnApplicationsList());
-    result = result && getSubmittedBy().equals(other.getSubmittedBy());
-    result = result && getDriverOutputResourceUri().equals(other.getDriverOutputResourceUri());
-    result = result && getDriverControlFilesUri().equals(other.getDriverControlFilesUri());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && (hasScheduling() == other.hasScheduling());
+    if (!getStatusHistoryList().equals(other.getStatusHistoryList())) return false;
+    if (!getYarnApplicationsList().equals(other.getYarnApplicationsList())) return false;
+    if (!getSubmittedBy().equals(other.getSubmittedBy())) return false;
+    if (!getDriverOutputResourceUri().equals(other.getDriverOutputResourceUri())) return false;
+    if (!getDriverControlFilesUri().equals(other.getDriverControlFilesUri())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasScheduling() != other.hasScheduling()) return false;
     if (hasScheduling()) {
-      result = result && getScheduling().equals(other.getScheduling());
+      if (!getScheduling().equals(other.getScheduling())) return false;
     }
-    result = result && getJobUuid().equals(other.getJobUuid());
-    result = result && getTypeJobCase().equals(other.getTypeJobCase());
-    if (!result) return false;
+    if (!getJobUuid().equals(other.getJobUuid())) return false;
+    if (!getTypeJobCase().equals(other.getTypeJobCase())) return false;
     switch (typeJobCase_) {
       case 3:
-        result = result && getHadoopJob().equals(other.getHadoopJob());
+        if (!getHadoopJob().equals(other.getHadoopJob())) return false;
         break;
       case 4:
-        result = result && getSparkJob().equals(other.getSparkJob());
+        if (!getSparkJob().equals(other.getSparkJob())) return false;
         break;
       case 5:
-        result = result && getPysparkJob().equals(other.getPysparkJob());
+        if (!getPysparkJob().equals(other.getPysparkJob())) return false;
         break;
       case 6:
-        result = result && getHiveJob().equals(other.getHiveJob());
+        if (!getHiveJob().equals(other.getHiveJob())) return false;
         break;
       case 7:
-        result = result && getPigJob().equals(other.getPigJob());
+        if (!getPigJob().equals(other.getPigJob())) return false;
         break;
       case 12:
-        result = result && getSparkSqlJob().equals(other.getSparkSqlJob());
+        if (!getSparkSqlJob().equals(other.getSparkSqlJob())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1851,7 +1853,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
           bitField0_ = (bitField0_ & ~0x00000200);
         }
@@ -1860,7 +1862,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
       if (yarnApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
@@ -1887,35 +1889,35 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2094,7 +2096,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.cloud.dataproc.v1beta2.JobReference reference_ = null;
+    private com.google.cloud.dataproc.v1beta2.JobReference reference_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.JobReference,
             com.google.cloud.dataproc.v1beta2.JobReference.Builder,
@@ -2303,7 +2305,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return referenceBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1beta2.JobPlacement placement_ = null;
+    private com.google.cloud.dataproc.v1beta2.JobPlacement placement_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.JobPlacement,
             com.google.cloud.dataproc.v1beta2.JobPlacement.Builder,
@@ -3703,7 +3705,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return sparkSqlJobBuilder_;
     }
 
-    private com.google.cloud.dataproc.v1beta2.JobStatus status_ = null;
+    private com.google.cloud.dataproc.v1beta2.JobStatus status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.JobStatus,
             com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
@@ -3906,7 +3908,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>(statusHistory_);
         bitField0_ |= 0x00000200;
@@ -4249,7 +4251,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
                 com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -4261,7 +4263,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureYarnApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         yarnApplications_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>(
                 yarnApplications_);
@@ -4280,8 +4282,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4299,8 +4301,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4317,8 +4319,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4335,8 +4337,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4360,8 +4362,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4382,8 +4384,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4406,8 +4408,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4431,8 +4433,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4453,8 +4455,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4475,8 +4477,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4497,8 +4499,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4518,8 +4520,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4539,8 +4541,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4554,8 +4556,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4573,8 +4575,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4592,8 +4594,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4607,8 +4609,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4624,8 +4626,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
-     * **Beta** Feature: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta** Feature: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
@@ -4647,7 +4649,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1beta2.YarnApplication.Builder,
                 com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>(
                 yarnApplications_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         yarnApplications_ = null;
@@ -4990,8 +4992,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5015,8 +5018,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5032,8 +5036,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5054,8 +5059,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5083,8 +5089,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5109,8 +5116,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5133,8 +5141,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a job.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a job.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
@@ -5144,7 +5153,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.dataproc.v1beta2.JobScheduling scheduling_ = null;
+    private com.google.cloud.dataproc.v1beta2.JobScheduling scheduling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.JobScheduling,
             com.google.cloud.dataproc.v1beta2.JobScheduling.Builder,
@@ -5432,7 +5441,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

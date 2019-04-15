@@ -109,8 +109,8 @@
  * <pre>
  * <code>
  * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
- *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
- *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(formattedName);
+ *   UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+ *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(name);
  * }
  * </code>
  * </pre>

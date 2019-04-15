@@ -7,7 +7,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The request for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
+ * The request for
+ * [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.ReserveIdsRequest}
@@ -54,7 +55,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -77,7 +78,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -89,7 +90,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         keys_ = java.util.Collections.unmodifiableList(keys_);
       }
       this.unknownFields = unknownFields.build();
@@ -324,12 +325,11 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     com.google.datastore.v1.ReserveIdsRequest other =
         (com.google.datastore.v1.ReserveIdsRequest) obj;
 
-    boolean result = true;
-    result = result && getProjectId().equals(other.getProjectId());
-    result = result && getDatabaseId().equals(other.getDatabaseId());
-    result = result && getKeysList().equals(other.getKeysList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getDatabaseId().equals(other.getDatabaseId())) return false;
+    if (!getKeysList().equals(other.getKeysList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -451,7 +451,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
+   * The request for
+   * [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.ReserveIdsRequest}
@@ -536,7 +537,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       result.projectId_ = projectId_;
       result.databaseId_ = databaseId_;
       if (keysBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -551,35 +552,35 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -851,7 +852,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     private java.util.List<com.google.datastore.v1.Key> keys_ = java.util.Collections.emptyList();
 
     private void ensureKeysIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>(keys_);
         bitField0_ |= 0x00000004;
       }
@@ -1202,10 +1203,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
                 com.google.datastore.v1.Key,
                 com.google.datastore.v1.Key.Builder,
                 com.google.datastore.v1.KeyOrBuilder>(
-                keys_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                keys_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         keys_ = null;
       }
       return keysBuilder_;
@@ -1213,7 +1211,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

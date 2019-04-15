@@ -22,7 +22,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -81,11 +81,54 @@ public class LanguageServiceClientTest {
     mockLanguageService.addResponse(expectedResponse);
 
     Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
+
+    AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document, encodingType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeSentimentRequest actualRequest = (AnalyzeSentimentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeSentimentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
+
+      client.analyzeSentiment(document, encodingType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeSentimentTest2() {
+    String language = "language-1613589672";
+    AnalyzeSentimentResponse expectedResponse =
+        AnalyzeSentimentResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
 
     AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeSentimentRequest actualRequest = (AnalyzeSentimentRequest) actualRequests.get(0);
 
@@ -98,7 +141,7 @@ public class LanguageServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void analyzeSentimentExceptionTest() throws Exception {
+  public void analyzeSentimentExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockLanguageService.addException(exception);
 
@@ -126,7 +169,7 @@ public class LanguageServiceClientTest {
     AnalyzeEntitiesResponse actualResponse = client.analyzeEntities(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeEntitiesRequest actualRequest = (AnalyzeEntitiesRequest) actualRequests.get(0);
 
@@ -157,6 +200,46 @@ public class LanguageServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void analyzeEntitiesTest2() {
+    String language = "language-1613589672";
+    AnalyzeEntitiesResponse expectedResponse =
+        AnalyzeEntitiesResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+
+    AnalyzeEntitiesResponse actualResponse = client.analyzeEntities(document);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeEntitiesRequest actualRequest = (AnalyzeEntitiesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeEntitiesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+
+      client.analyzeEntities(document);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void analyzeEntitySentimentTest() {
     String language = "language-1613589672";
     AnalyzeEntitySentimentResponse expectedResponse =
@@ -170,7 +253,7 @@ public class LanguageServiceClientTest {
         client.analyzeEntitySentiment(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeEntitySentimentRequest actualRequest =
         (AnalyzeEntitySentimentRequest) actualRequests.get(0);
@@ -202,6 +285,47 @@ public class LanguageServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void analyzeEntitySentimentTest2() {
+    String language = "language-1613589672";
+    AnalyzeEntitySentimentResponse expectedResponse =
+        AnalyzeEntitySentimentResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+
+    AnalyzeEntitySentimentResponse actualResponse = client.analyzeEntitySentiment(document);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeEntitySentimentRequest actualRequest =
+        (AnalyzeEntitySentimentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeEntitySentimentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+
+      client.analyzeEntitySentiment(document);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void analyzeSyntaxTest() {
     String language = "language-1613589672";
     AnalyzeSyntaxResponse expectedResponse =
@@ -214,7 +338,7 @@ public class LanguageServiceClientTest {
     AnalyzeSyntaxResponse actualResponse = client.analyzeSyntax(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeSyntaxRequest actualRequest = (AnalyzeSyntaxRequest) actualRequests.get(0);
 
@@ -245,6 +369,46 @@ public class LanguageServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void analyzeSyntaxTest2() {
+    String language = "language-1613589672";
+    AnalyzeSyntaxResponse expectedResponse =
+        AnalyzeSyntaxResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+
+    AnalyzeSyntaxResponse actualResponse = client.analyzeSyntax(document);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeSyntaxRequest actualRequest = (AnalyzeSyntaxRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeSyntaxExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+
+      client.analyzeSyntax(document);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void classifyTextTest() {
     ClassifyTextResponse expectedResponse = ClassifyTextResponse.newBuilder().build();
     mockLanguageService.addResponse(expectedResponse);
@@ -254,7 +418,7 @@ public class LanguageServiceClientTest {
     ClassifyTextResponse actualResponse = client.classifyText(document);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ClassifyTextRequest actualRequest = (ClassifyTextRequest) actualRequests.get(0);
 
@@ -296,7 +460,7 @@ public class LanguageServiceClientTest {
     AnnotateTextResponse actualResponse = client.annotateText(document, features, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnnotateTextRequest actualRequest = (AnnotateTextRequest) actualRequests.get(0);
 
@@ -321,6 +485,49 @@ public class LanguageServiceClientTest {
       EncodingType encodingType = EncodingType.NONE;
 
       client.annotateText(document, features, encodingType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void annotateTextTest2() {
+    String language = "language-1613589672";
+    AnnotateTextResponse expectedResponse =
+        AnnotateTextResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+    AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
+
+    AnnotateTextResponse actualResponse = client.annotateText(document, features);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnnotateTextRequest actualRequest = (AnnotateTextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(features, actualRequest.getFeatures());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void annotateTextExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+      AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
+
+      client.annotateText(document, features);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

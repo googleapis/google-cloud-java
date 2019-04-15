@@ -39,6 +39,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.CopyWriter;
+import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
@@ -1150,11 +1151,13 @@ public class StorageSnippets {
     System.out.println("ContentLanguage: " + blob.getContentLanguage());
     System.out.println("ContentType: " + blob.getContentType());
     System.out.println("Crc32c: " + blob.getCrc32c());
+    System.out.println("Crc32cHexString: " + blob.getCrc32cToHexString());
     System.out.println("ETag: " + blob.getEtag());
     System.out.println("Generation: " + blob.getGeneration());
     System.out.println("Id: " + blob.getBlobId());
     System.out.println("KmsKeyName: " + blob.getKmsKeyName());
     System.out.println("Md5Hash: " + blob.getMd5());
+    System.out.println("Md5HexString: " + blob.getMd5ToHexString());
     System.out.println("MediaLink: " + blob.getMediaLink());
     System.out.println("Metageneration: " + blob.getMetageneration());
     System.out.println("Name: " + blob.getName());
@@ -1471,5 +1474,73 @@ public class StorageSnippets {
     }
     // [END storage_get_bucket_policy_only]
     return bucket;
+  }
+
+  /** Example of how to generate a GET V4 Signed URL */
+  public URL generateV4GetObjectSignedUrl(String bucketName, String objectName)
+      throws StorageException {
+    // [START storage_generate_signed_url_v4]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of an object, e.g. "my-object"
+    // String objectName = "my-object";
+
+    // Define resource
+    BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
+
+    // Generate Signed URL
+    URL url =
+        storage.signUrl(blobinfo, 15, TimeUnit.MINUTES, Storage.SignUrlOption.withV4Signature());
+
+    System.out.println("Generated GET signed URL:");
+    System.out.println(url);
+    System.out.println("You can use this URL with any user agent, for example:");
+    System.out.println("curl '" + url + "'");
+    // [END storage_generate_signed_url_v4]
+    return url;
+  }
+
+  /** Example of how to generate a PUT V4 Signed URL */
+  public URL generateV4GPutbjectSignedUrl(String bucketName, String objectName)
+      throws StorageException {
+    // [START storage_generate_upload_signed_url_v4]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a new object to upload, e.g. "my-object"
+    // String objectName = "my-object";
+
+    // Define Resource
+    BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
+
+    // Generate Signed URL
+    Map<String, String> extensionHeaders = new HashMap<>();
+    extensionHeaders.put("Content-Type", "application/octet-stream");
+
+    URL url =
+        storage.signUrl(
+            blobinfo,
+            15,
+            TimeUnit.MINUTES,
+            Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+            Storage.SignUrlOption.withExtHeaders(extensionHeaders),
+            Storage.SignUrlOption.withV4Signature());
+
+    System.out.println("Generated PUT signed URL:");
+    System.out.println(url);
+    System.out.println("You can use this URL with any user agent, for example:");
+    System.out.println(
+        "curl -X PUT -H 'Content-Type: application/octet-stream'--upload-file my-file '"
+            + url
+            + "'");
+    // [END storage_generate_upload_signed_url_v4]
+    return url;
   }
 }

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ZoneOperationStub;
 import com.google.cloud.compute.v1.stub.ZoneOperationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -210,9 +211,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
+   *   String formattedOperation = ProjectZoneOperationName.format("[PROJECT]", "[ZONE]", "[OPERATION]");
    *   DeleteZoneOperationHttpRequest request = DeleteZoneOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   zoneOperationClient.deleteZoneOperation(request);
    * }
@@ -234,9 +235,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
+   *   String formattedOperation = ProjectZoneOperationName.format("[PROJECT]", "[ZONE]", "[OPERATION]");
    *   DeleteZoneOperationHttpRequest request = DeleteZoneOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = zoneOperationClient.deleteZoneOperationCallable().futureCall(request);
    *   // Do something
@@ -307,9 +308,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
+   *   String formattedOperation = ProjectZoneOperationName.format("[PROJECT]", "[ZONE]", "[OPERATION]");
    *   GetZoneOperationHttpRequest request = GetZoneOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   Operation response = zoneOperationClient.getZoneOperation(request);
    * }
@@ -331,9 +332,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
+   *   String formattedOperation = ProjectZoneOperationName.format("[PROJECT]", "[ZONE]", "[OPERATION]");
    *   GetZoneOperationHttpRequest request = GetZoneOperationHttpRequest.newBuilder()
-   *     .setOperation(operation.toString())
+   *     .setOperation(formattedOperation)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = zoneOperationClient.getZoneOperationCallable().futureCall(request);
    *   // Do something
@@ -406,9 +407,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListZoneOperationsHttpRequest request = ListZoneOperationsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (Operation element : zoneOperationClient.listZoneOperations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -433,9 +434,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListZoneOperationsHttpRequest request = ListZoneOperationsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListZoneOperationsPagedResponse&gt; future = zoneOperationClient.listZoneOperationsPagedCallable().futureCall(request);
    *   // Do something
@@ -459,9 +460,9 @@ public class ZoneOperationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListZoneOperationsHttpRequest request = ListZoneOperationsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     OperationList response = zoneOperationClient.listZoneOperationsCallable().call(request);
@@ -534,7 +535,8 @@ public class ZoneOperationClient implements BackgroundResource {
             public ListZoneOperationsPagedResponse apply(ListZoneOperationsPage input) {
               return new ListZoneOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListZoneOperationsPagedResponse(ListZoneOperationsPage page) {

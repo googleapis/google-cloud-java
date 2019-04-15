@@ -237,7 +237,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1051,52 +1051,50 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     io.grafeas.v1beta1.Occurrence other = (io.grafeas.v1beta1.Occurrence) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasResource() == other.hasResource());
+    if (!getName().equals(other.getName())) return false;
+    if (hasResource() != other.hasResource()) return false;
     if (hasResource()) {
-      result = result && getResource().equals(other.getResource());
+      if (!getResource().equals(other.getResource())) return false;
     }
-    result = result && getNoteName().equals(other.getNoteName());
-    result = result && kind_ == other.kind_;
-    result = result && getRemediation().equals(other.getRemediation());
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (!getNoteName().equals(other.getNoteName())) return false;
+    if (kind_ != other.kind_) return false;
+    if (!getRemediation().equals(other.getRemediation())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasUpdateTime() == other.hasUpdateTime());
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      result = result && getUpdateTime().equals(other.getUpdateTime());
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    result = result && getDetailsCase().equals(other.getDetailsCase());
-    if (!result) return false;
+    if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
       case 8:
-        result = result && getVulnerability().equals(other.getVulnerability());
+        if (!getVulnerability().equals(other.getVulnerability())) return false;
         break;
       case 9:
-        result = result && getBuild().equals(other.getBuild());
+        if (!getBuild().equals(other.getBuild())) return false;
         break;
       case 10:
-        result = result && getDerivedImage().equals(other.getDerivedImage());
+        if (!getDerivedImage().equals(other.getDerivedImage())) return false;
         break;
       case 11:
-        result = result && getInstallation().equals(other.getInstallation());
+        if (!getInstallation().equals(other.getInstallation())) return false;
         break;
       case 12:
-        result = result && getDeployment().equals(other.getDeployment());
+        if (!getDeployment().equals(other.getDeployment())) return false;
         break;
       case 13:
-        result = result && getDiscovered().equals(other.getDiscovered());
+        if (!getDiscovered().equals(other.getDiscovered())) return false;
         break;
       case 14:
-        result = result && getAttestation().equals(other.getAttestation());
+        if (!getAttestation().equals(other.getAttestation())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1428,35 +1426,35 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1678,7 +1676,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private io.grafeas.v1beta1.Resource resource_ = null;
+    private io.grafeas.v1beta1.Resource resource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1beta1.Resource,
             io.grafeas.v1beta1.Resource.Builder,
@@ -2131,7 +2129,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2310,7 +2308,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp updateTime_ = null;
+    private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3898,7 +3896,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
