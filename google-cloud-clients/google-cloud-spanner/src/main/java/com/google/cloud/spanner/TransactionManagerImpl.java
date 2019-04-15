@@ -17,8 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
-import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
+import com.google.cloud.spanner.SessionImpl.SessionTransaction;
 import com.google.common.base.Preconditions;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;

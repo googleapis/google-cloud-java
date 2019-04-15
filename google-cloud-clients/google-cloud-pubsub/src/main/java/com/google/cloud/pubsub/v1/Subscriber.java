@@ -401,31 +401,31 @@ public class Subscriber extends AbstractApiService {
   public static final class Builder {
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
-    static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
+    private static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
             .setExecutorThreadCount(THREADS_PER_CHANNEL)
             .build();
 
-    String subscriptionName;
-    MessageReceiver receiver;
+    private String subscriptionName;
+    private MessageReceiver receiver;
 
-    Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
+    private Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
-    FlowControlSettings flowControlSettings =
+    private FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
 
-    ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    ExecutorProvider systemExecutorProvider = null;
-    TransportChannelProvider channelProvider =
+    private ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
+    private ExecutorProvider systemExecutorProvider = null;
+    private TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
-    HeaderProvider headerProvider = new NoHeaderProvider();
-    CredentialsProvider credentialsProvider =
+    private HeaderProvider headerProvider = new NoHeaderProvider();
+    private CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
-    Optional<ApiClock> clock = Optional.absent();
-    int parallelPullCount = 1;
+    private Optional<ApiClock> clock = Optional.absent();
+    private int parallelPullCount = 1;
 
     Builder(String subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
