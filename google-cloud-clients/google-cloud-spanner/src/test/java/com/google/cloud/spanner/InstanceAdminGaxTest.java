@@ -233,10 +233,10 @@ public class InstanceAdminGaxTest {
     mockInstanceAdmin.reset();
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(50L))
-            .setMaxRpcTimeout(Duration.ofMillis(50L))
+            .setInitialRpcTimeout(Duration.ofMillis(200L))
+            .setMaxRpcTimeout(Duration.ofMillis(200L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(250L))
+            .setTotalTimeout(Duration.ofMillis(500L))
             .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
