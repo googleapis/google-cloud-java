@@ -1006,6 +1006,7 @@
           <show>protected</show>
           <nohelp>true</nohelp>
           <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+          <splitindex>true</splitindex>
         </configuration>
       </plugin>
     </plugins>
