@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
@@ -52,8 +54,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
-
-import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 /** Implementation of {@link AckProcessor} based on Cloud Pub/Sub streaming pull. */
 final class StreamingSubscriberConnection extends AbstractApiService implements AckProcessor {

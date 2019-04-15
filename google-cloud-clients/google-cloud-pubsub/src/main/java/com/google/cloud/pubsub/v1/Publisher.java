@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -58,8 +60,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
-
-import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -319,7 +319,8 @@ public class Publisher {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    ApiFutures.addCallback(publisherStub.publishCallable().futureCall(publishRequest.build()),
+    ApiFutures.addCallback(
+        publisherStub.publishCallable().futureCall(publishRequest.build()),
         new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -358,7 +359,8 @@ public class Publisher {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
-        }, directExecutor());
+        },
+        directExecutor());
   }
 
   private static final class OutstandingBatch {
