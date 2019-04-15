@@ -24,7 +24,6 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
 import org.junit.Before;
 import org.junit.Rule;
