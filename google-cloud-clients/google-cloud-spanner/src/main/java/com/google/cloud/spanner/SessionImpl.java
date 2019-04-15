@@ -40,7 +40,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
 import javax.annotation.Nullable;
 
 /**
@@ -137,14 +136,7 @@ class SessionImpl implements Session {
             .build();
     Span span = tracer.spanBuilder(SpannerImpl.COMMIT).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      CommitResponse response =
-          spanner.runWithRetries(
-              new Callable<CommitResponse>() {
-                @Override
-                public CommitResponse call() throws Exception {
-                  return spanner.getRpc().commit(request, options);
-                }
-              });
+      CommitResponse response = spanner.getRpc().commit(request, options);
       Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
       span.end();
       return t;
@@ -176,8 +168,7 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
     return setActive(
-        new SingleUseReadOnlyTransaction(
-            this, bound, spanner, spanner.getDefaultPrefetchChunks()));
+        new SingleUseReadOnlyTransaction(this, bound, spanner, spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -188,8 +179,7 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
     return setActive(
-        new MultiUseReadOnlyTransaction(
-            this, bound, spanner, spanner.getDefaultPrefetchChunks()));
+        new MultiUseReadOnlyTransaction(this, bound, spanner, spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -208,14 +198,7 @@ class SessionImpl implements Session {
   public void close() {
     Span span = tracer.spanBuilder(SpannerImpl.DELETE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      spanner.runWithRetries(
-          new Callable<Void>() {
-            @Override
-            public Void call() throws Exception {
-              spanner.getRpc().deleteSession(name, options);
-              return null;
-            }
-          });
+      spanner.getRpc().deleteSession(name, options);
       span.end();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
@@ -233,14 +216,7 @@ class SessionImpl implements Session {
                   TransactionOptions.newBuilder()
                       .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
               .build();
-      Transaction txn =
-          spanner.runWithRetries(
-              new Callable<Transaction>() {
-                @Override
-                public Transaction call() throws Exception {
-                  return spanner.getRpc().beginTransaction(request, options);
-                }
-              });
+      Transaction txn = spanner.getRpc().beginTransaction(request, options);
       if (txn.getId().isEmpty()) {
         throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
       }

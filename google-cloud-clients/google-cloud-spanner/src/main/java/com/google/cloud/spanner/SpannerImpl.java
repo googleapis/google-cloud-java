@@ -20,24 +20,7 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExceptionForCancellation;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
+
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.paging.Page;
@@ -45,12 +28,10 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
-import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
@@ -61,6 +42,21 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
@@ -158,68 +154,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  <T> T runWithRetries(final Callable<T> callable) {
-    try {
-      return callable.call();
-    } catch (SpannerException e) {
-      throw e;
-    } catch (TimeoutException e) {
-      throw SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, e.getMessage(), e);
-    } catch (RetryHelperException e) {
-      if(e.getCause() != null) {
-        Throwables.throwIfUnchecked(e.getCause());
-      }
-      throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
-    } catch (Exception e) {
-      if(e.getCause() != null) {
-        Throwable cause = e.getCause();
-        if(cause instanceof RetryHelperException) {
-          cause = cause.getCause();
-        }
-        Throwables.throwIfUnchecked(cause);
-      }
-      throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
-    }
-  }
-
-  /**
-   * Helper to execute some work, retrying with backoff on retryable errors.
-   *
-   * <p>TODO: Consider replacing with RetryHelper from gcloud-core.
-   */
-  <T> T runWithRetries_WithContext(Callable<T> callable, Set<ErrorCode> retryOnErrorCodes) {
-    // Use same backoff setting as abort, somewhat arbitrarily.
-    Span span = tracer.getCurrentSpan();
-    ExponentialBackOff backOff = newBackOff();
-    Context context = Context.current();
-    int attempt = 0;
-    while (true) {
-      attempt++;
-      try {
-        span.addAnnotation(
-            "Starting operation",
-            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-        return null;
-//        return runWithRetries(
-//            callable, retrySettings, new SpannerRetryAlgorithm<>(retryOnErrorCodes), clock);
-      } catch (SpannerException e) {
-        if (!e.isRetryable()) {
-          throw e;
-        }
-        logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
-        long delay = e.getRetryDelayInMillis();
-        if (delay != -1) {
-          backoffSleep(context, delay);
-        } else {
-          backoffSleep(context, backOff);
-        }
-      } catch (Exception e) {
-        Throwables.throwIfUnchecked(e);
-        throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
-      }
-    }
-  }
-
   /** Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance. */
   SpannerRpc getRpc() {
     return gapicRpc;
@@ -236,14 +170,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
-          runWithRetries(
-              new Callable<com.google.spanner.v1.Session>() {
-                @Override
-                public com.google.spanner.v1.Session call() throws Exception {
-                  return gapicRpc.createSession(
-                      db.getName(), getOptions().getSessionLabels(), options);
-                }
-              });
+          gapicRpc.createSession(db.getName(), getOptions().getSessionLabels(), options);
       span.end();
       return new SessionImpl(this, session.getName(), options);
     } catch (RuntimeException e) {
@@ -368,23 +295,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   /** Helper class for gRPC calls that can return paginated results. */
   abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
-    private final SpannerImpl spanner;
     private String nextPageToken;
-
-    PageFetcher(SpannerImpl spanner) {
-      this.spanner = spanner;
-    }
 
     @Override
     public Page<S> getNextPage() {
-      Paginated<T> nextPage =
-          spanner.runWithRetries(
-              new Callable<Paginated<T>>() {
-                @Override
-                public Paginated<T> call() {
-                  return getNextPage(nextPageToken);
-                }
-              });
+      Paginated<T> nextPage = getNextPage(nextPageToken);
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {

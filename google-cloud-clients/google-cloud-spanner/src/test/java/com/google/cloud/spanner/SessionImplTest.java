@@ -19,6 +19,24 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
+
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.ListValue;
+import com.google.protobuf.util.Timestamps;
+import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CommitRequest;
+import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.Mutation.Write;
+import com.google.spanner.v1.PartialResultSet;
+import com.google.spanner.v1.ReadRequest;
+import com.google.spanner.v1.ResultSetMetadata;
+import com.google.spanner.v1.Session;
+import com.google.spanner.v1.Transaction;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -40,23 +58,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import com.google.api.core.NanoClock;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.protobuf.ByteString;
-import com.google.protobuf.ListValue;
-import com.google.protobuf.util.Timestamps;
-import com.google.spanner.v1.BeginTransactionRequest;
-import com.google.spanner.v1.CommitRequest;
-import com.google.spanner.v1.CommitResponse;
-import com.google.spanner.v1.Mutation.Write;
-import com.google.spanner.v1.PartialResultSet;
-import com.google.spanner.v1.ReadRequest;
-import com.google.spanner.v1.ResultSetMetadata;
-import com.google.spanner.v1.Session;
-import com.google.spanner.v1.Transaction;
 
 /** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.SessionImpl}. */
 @RunWith(JUnit4.class)
@@ -77,7 +78,8 @@ public class SessionImplTest {
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     @SuppressWarnings("resource")
-    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);    String dbName = "projects/p1/instances/i1/databases/d1";
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
     DatabaseId db = DatabaseId.of(dbName);
 

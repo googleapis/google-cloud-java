@@ -32,7 +32,6 @@ import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 /** Default implementation for Batch Client interface. */
 public class BatchClientImpl implements BatchClient {
@@ -135,14 +134,7 @@ public class BatchClientImpl implements BatchClient {
       builder.setPartitionOptions(pbuilder.build());
 
       final PartitionReadRequest request = builder.build();
-      PartitionResponse response =
-          spanner.runWithRetries(
-              new Callable<PartitionResponse>() {
-                @Override
-                public PartitionResponse call() throws Exception {
-                  return spanner.getRpc().partitionRead(request, options);
-                }
-              });
+      PartitionResponse response = spanner.getRpc().partitionRead(request, options);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =
@@ -180,14 +172,7 @@ public class BatchClientImpl implements BatchClient {
       builder.setPartitionOptions(pbuilder.build());
 
       final PartitionQueryRequest request = builder.build();
-      PartitionResponse response =
-          spanner.runWithRetries(
-              new Callable<PartitionResponse>() {
-                @Override
-                public PartitionResponse call() throws Exception {
-                  return spanner.getRpc().partitionQuery(request, options);
-                }
-              });
+      PartitionResponse response = spanner.getRpc().partitionQuery(request, options);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =

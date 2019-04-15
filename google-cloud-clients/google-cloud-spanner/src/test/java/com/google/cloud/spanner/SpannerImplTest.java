@@ -17,14 +17,15 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
+
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
-import javax.net.ssl.SSLHandshakeException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,10 +35,6 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import com.google.api.core.NanoClock;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)
@@ -123,22 +120,6 @@ public class SpannerImplTest {
       fail("Expected exception");
     } catch (IllegalStateException e) {
       assertThat(e.getMessage()).contains("Cloud Spanner client has been closed");
-    }
-  }
-
-  @Test
-  public void exceptionIsTranslated() {
-    try {
-      impl.runWithRetries(
-          new Callable<Object>() {
-            @Override
-            public Void call() throws Exception {
-              throw new Exception("Should be translated to SpannerException");
-            }
-          });
-    } catch (SpannerException e) {
-      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
-      assertThat(e.getMessage().contains("Unexpected exception thrown"));
     }
   }
 }

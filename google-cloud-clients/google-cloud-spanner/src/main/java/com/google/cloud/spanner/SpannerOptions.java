@@ -30,6 +30,8 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
+import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -38,6 +40,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
@@ -64,7 +67,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int prefetchChunks;
   private final int numChannels;
   private final ImmutableMap<String, String> sessionLabels;
-  private final SpannerStubSettings stubSettings;
+  private final SpannerStubSettings spannerStubSettings;
+  private final InstanceAdminStubSettings instanceAdminStubSettings;
+  private final DatabaseAdminStubSettings databaseAdminStubSettings;
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -105,7 +110,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     prefetchChunks = builder.prefetchChunks;
     sessionLabels = builder.sessionLabels;
     try {
-      stubSettings = builder.stubSettingsBuilder.build();
+      spannerStubSettings = builder.spannerStubSettingsBuilder.build();
+      instanceAdminStubSettings = builder.instanceAdminStubSettingsBuilder.build();
+      databaseAdminStubSettings = builder.databaseAdminStubSettingsBuilder.build();
     } catch (IOException e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
@@ -128,7 +135,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private ImmutableMap<String, String> sessionLabels;
-    private SpannerStubSettings.Builder stubSettingsBuilder = SpannerStubSettings.newBuilder();
+    private SpannerStubSettings.Builder spannerStubSettingsBuilder =
+        SpannerStubSettings.newBuilder();
+    private InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder =
+        InstanceAdminStubSettings.newBuilder();
+    private DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder =
+        DatabaseAdminStubSettings.newBuilder();
 
     private Builder() {}
 
@@ -138,7 +150,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
       this.sessionLabels = options.sessionLabels;
-      this.stubSettingsBuilder = options.stubSettings.toBuilder();
+      this.spannerStubSettingsBuilder = options.spannerStubSettings.toBuilder();
+      this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
+      this.databaseAdminStubSettingsBuilder = options.databaseAdminStubSettings.toBuilder();
       this.channelProvider = options.channelProvider;
       this.channelConfigurator = options.channelConfigurator;
       this.interceptorProvider = options.interceptorProvider;
@@ -219,12 +233,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public Builder setRetrySettings(RetrySettings retrySettings) {
-      throw new UnsupportedOperationException("SpannerOptions does not support setting global retry settings. "
-          + "Call stubSettingsBuilder().<method-name>Settings().setRetrySettings(RetrySettings) instead.");
+      throw new UnsupportedOperationException(
+          "SpannerOptions does not support setting global retry settings. "
+              + "Call stubSettingsBuilder().<method-name>Settings().setRetrySettings(RetrySettings) instead.");
     }
 
-    public SpannerStubSettings.Builder stubSettingsBuilder() {
-      return stubSettingsBuilder;
+    /**
+     * Returns the {@link SpannerStubSettings.Builder} that will be used to build the {@link
+     * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     */
+    public SpannerStubSettings.Builder spannerStubSettingsBuilder() {
+      return spannerStubSettingsBuilder;
+    }
+
+    /**
+     * Returns the {@link InstanceAdminStubSettings.Builder} that will be used to build the {@link
+     * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     */
+    public InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder() {
+      return instanceAdminStubSettingsBuilder;
+    }
+
+    /**
+     * Returns the {@link DatabaseAdminStubSettings.Builder} that will be used to build the {@link
+     * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     */
+    public DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder() {
+      return databaseAdminStubSettingsBuilder;
     }
 
     /**
@@ -283,8 +318,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return sessionLabels;
   }
 
-  public SpannerStubSettings getStubSettings() {
-    return stubSettings;
+  public SpannerStubSettings getSpannerStubSettings() {
+    return spannerStubSettings;
+  }
+
+  public InstanceAdminStubSettings getInstanceAdminStubSettings() {
+    return instanceAdminStubSettings;
+  }
+
+  public DatabaseAdminStubSettings getDatabaseAdminStubSettings() {
+    return databaseAdminStubSettings;
   }
 
   public int getPrefetchChunks() {

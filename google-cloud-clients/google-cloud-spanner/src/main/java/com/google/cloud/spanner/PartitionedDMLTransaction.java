@@ -27,7 +27,6 @@ import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 /** Partitioned DML transaction for bulk updates and deletes. */
 class PartitionedDMLTransaction implements SessionTransaction {
@@ -50,14 +49,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
                 TransactionOptions.newBuilder()
                     .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
             .build();
-    Transaction txn =
-        spanner.runWithRetries(
-            new Callable<Transaction>() {
-              @Override
-              public Transaction call() throws Exception {
-                return spanner.getRpc().beginTransaction(request, session.getOptions());
-              }
-            });
+    Transaction txn = spanner.getRpc().beginTransaction(request, session.getOptions());
     if (txn.getId().isEmpty()) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INTERNAL,
@@ -83,13 +75,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
       }
     }
     com.google.spanner.v1.ResultSet resultSet =
-        spanner.runWithRetries(
-            new Callable<com.google.spanner.v1.ResultSet>() {
-              @Override
-              public com.google.spanner.v1.ResultSet call() throws Exception {
-                return spanner.getRpc().executeQuery(builder.build(), session.getOptions());
-              }
-            });
+        spanner.getRpc().executeQuery(builder.build(), session.getOptions());
     if (!resultSet.hasStats()) {
       throw new IllegalArgumentException(
           "Partitioned DML response missing stats possibly due to non-DML statement as input");

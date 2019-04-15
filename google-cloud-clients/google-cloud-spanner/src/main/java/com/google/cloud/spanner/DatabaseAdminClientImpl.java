@@ -31,7 +31,6 @@ import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.Callable;
 import javax.annotation.Nullable;
 
 /** Default implementation of {@link DatabaseAdminClient}. */
@@ -57,7 +56,8 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
     String instanceName = getInstanceName(instanceId);
     String createStatement = "CREATE DATABASE `" + databaseId + "`";
     OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
-        rawOperationFuture = spanner.getRpc().createDatabase(instanceName, createStatement, statements);
+        rawOperationFuture =
+            spanner.getRpc().createDatabase(instanceName, createStatement, statements);
     return new OperationFutureImpl<Database, CreateDatabaseMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),
@@ -82,15 +82,8 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
 
   @Override
   public Database getDatabase(String instanceId, String databaseId) throws SpannerException {
-    final String dbName = getDatabaseName(instanceId, databaseId);
-    Callable<Database> callable =
-        new Callable<Database>() {
-          @Override
-          public Database call() throws Exception {
-            return Database.fromProto(spanner.getRpc().getDatabase(dbName), DatabaseAdminClientImpl.this);
-          }
-        };
-    return spanner.runWithRetries(callable);
+    String dbName = getDatabaseName(instanceId, databaseId);
+    return Database.fromProto(spanner.getRpc().getDatabase(dbName), DatabaseAdminClientImpl.this);
   }
 
   @Override
@@ -125,29 +118,14 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
 
   @Override
   public void dropDatabase(String instanceId, String databaseId) throws SpannerException {
-    final String dbName = getDatabaseName(instanceId, databaseId);
-    Callable<Void> callable =
-        new Callable<Void>() {
-          @Override
-          public Void call() throws Exception {
-            spanner.getRpc().dropDatabase(dbName);
-            return null;
-          }
-        };
-    spanner.runWithRetries(callable);
+    String dbName = getDatabaseName(instanceId, databaseId);
+    spanner.getRpc().dropDatabase(dbName);
   }
 
   @Override
   public List<String> getDatabaseDdl(String instanceId, String databaseId) {
-    final String dbName = getDatabaseName(instanceId, databaseId);
-    Callable<List<String>> callable =
-        new Callable<List<String>>() {
-          @Override
-          public List<String> call() throws Exception {
-            return spanner.getRpc().getDatabaseDdl(dbName);
-          }
-        };
-    return spanner.runWithRetries(callable);
+    String dbName = getDatabaseName(instanceId, databaseId);
+    return spanner.getRpc().getDatabaseDdl(dbName);
   }
 
   @Override
@@ -158,7 +136,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
         !listOptions.hasFilter(), "Filter option is not support by" + "listDatabases");
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     PageFetcher<Database, com.google.spanner.admin.database.v1.Database> pageFetcher =
-        new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>(spanner) {
+        new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>() {
           @Override
           public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
               String nextPageToken) {

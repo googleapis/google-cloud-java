@@ -30,7 +30,6 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
-import java.util.concurrent.Callable;
 
 /** Default implementation of {@link InstanceAdminClient} */
 class InstanceAdminClientImpl implements InstanceAdminClient {
@@ -48,15 +47,9 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
-    final String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
-    return spanner.runWithRetries(
-        new Callable<InstanceConfig>() {
-          @Override
-          public InstanceConfig call() {
-            return InstanceConfig.fromProto(
-                spanner.getRpc().getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
-          }
-        });
+    String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
+    return InstanceConfig.fromProto(
+        spanner.getRpc().getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
   }
 
   @Override
@@ -66,7 +59,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
         !listOptions.hasFilter(), "Filter option is not supported by listInstanceConfigs");
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig> pageFetcher =
-        new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>(spanner) {
+        new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>() {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
               String nextPageToken) {
@@ -91,7 +84,9 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
     String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
         rawOperationFuture =
-            spanner.getRpc().createInstance(projectName, instance.getId().getInstance(), instance.toProto());
+            spanner
+                .getRpc()
+                .createInstance(projectName, instance.getId().getInstance(), instance.toProto());
 
     return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
         rawOperationFuture.getPollingFuture(),
@@ -118,15 +113,9 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public Instance getInstance(String instanceId) throws SpannerException {
-    final String instanceName = new InstanceId(projectId, instanceId).getName();
-    return spanner.runWithRetries(
-        new Callable<Instance>() {
-          @Override
-          public Instance call() {
-            return Instance.fromProto(
-                spanner.getRpc().getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
-          }
-        });
+    String instanceName = new InstanceId(projectId, instanceId).getName();
+    return Instance.fromProto(
+        spanner.getRpc().getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
   }
 
   @Override
@@ -135,7 +124,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     final String filter = listOptions.filter();
     PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance> pageFetcher =
-        new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>(spanner) {
+        new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>() {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
               String nextPageToken) {
@@ -155,14 +144,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public void deleteInstance(final String instanceId) throws SpannerException {
-    spanner.runWithRetries(
-        new Callable<Void>() {
-          @Override
-          public Void call() {
-            spanner.getRpc().deleteInstance(new InstanceId(projectId, instanceId).getName());
-            return null;
-          }
-        });
+    spanner.getRpc().deleteInstance(new InstanceId(projectId, instanceId).getName());
   }
 
   @Override

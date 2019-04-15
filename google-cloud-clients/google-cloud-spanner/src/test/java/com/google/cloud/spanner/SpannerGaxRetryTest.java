@@ -19,26 +19,7 @@ package com.google.cloud.spanner;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import javax.net.ssl.SSLHandshakeException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
-import org.threeten.bp.Duration;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -61,48 +42,102 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Server;
 import io.grpc.StatusRuntimeException;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import javax.net.ssl.SSLHandshakeException;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+import org.threeten.bp.Duration;
 
 @RunWith(Parameterized.class)
-public class SpannerImplGaxRetryTest {
-  private static final ResultSetMetadata READ_METADATA = ResultSetMetadata.newBuilder()
-      .setRowType(StructType.newBuilder().addFields(Field.newBuilder().setName("BAR")
-          .setType(com.google.spanner.v1.Type.newBuilder().setCode(TypeCode.INT64).build()).build())
-          .build())
-      .build();
+public class SpannerGaxRetryTest {
+  private static final ResultSetMetadata READ_METADATA =
+      ResultSetMetadata.newBuilder()
+          .setRowType(
+              StructType.newBuilder()
+                  .addFields(
+                      Field.newBuilder()
+                          .setName("BAR")
+                          .setType(
+                              com.google.spanner.v1.Type.newBuilder()
+                                  .setCode(TypeCode.INT64)
+                                  .build())
+                          .build())
+                  .build())
+          .build();
   private static final com.google.spanner.v1.ResultSet READ_RESULTSET =
-      com.google.spanner.v1.ResultSet.newBuilder().addRows(ListValue.newBuilder()
-          .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build()).build())
-          .addRows(ListValue.newBuilder()
-              .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
-              .build())
-          .setMetadata(READ_METADATA).build();
+      com.google.spanner.v1.ResultSet.newBuilder()
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                  .build())
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
+                  .build())
+          .setMetadata(READ_METADATA)
+          .build();
   private static final com.google.spanner.v1.ResultSet READ_ROW_RESULTSET =
       com.google.spanner.v1.ResultSet.newBuilder()
-          .addRows(ListValue.newBuilder()
-              .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
-              .build())
-          .setMetadata(READ_METADATA).build();
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                  .build())
+          .setMetadata(READ_METADATA)
+          .build();
   private static final Statement SELECT1AND2 =
       Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
-  private static final ResultSetMetadata SELECT1AND2_METADATA = ResultSetMetadata.newBuilder()
-      .setRowType(StructType.newBuilder().addFields(Field.newBuilder().setName("COL1")
-          .setType(com.google.spanner.v1.Type.newBuilder().setCode(TypeCode.INT64).build()).build())
-          .build())
-      .build();
+  private static final ResultSetMetadata SELECT1AND2_METADATA =
+      ResultSetMetadata.newBuilder()
+          .setRowType(
+              StructType.newBuilder()
+                  .addFields(
+                      Field.newBuilder()
+                          .setName("COL1")
+                          .setType(
+                              com.google.spanner.v1.Type.newBuilder()
+                                  .setCode(TypeCode.INT64)
+                                  .build())
+                          .build())
+                  .build())
+          .build();
   private static final com.google.spanner.v1.ResultSet SELECT1_RESULTSET =
-      com.google.spanner.v1.ResultSet.newBuilder().addRows(ListValue.newBuilder()
-          .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build()).build())
-          .addRows(ListValue.newBuilder()
-              .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
-              .build())
-          .setMetadata(SELECT1AND2_METADATA).build();
+      com.google.spanner.v1.ResultSet.newBuilder()
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                  .build())
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
+                  .build())
+          .setMetadata(SELECT1AND2_METADATA)
+          .build();
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final long UPDATE_COUNT = 1L;
   private static final SimulatedExecutionTime ONE_SECOND =
       SimulatedExecutionTime.ofMinimumAndRandomTime(1000, 0);
   private static final StatusRuntimeException UNAVAILABLE =
-      io.grpc.Status.UNAVAILABLE.withDescription("TEST").asRuntimeException();
+      io.grpc.Status.UNAVAILABLE.withDescription("Retryable test exception.").asRuntimeException();
+  private static final StatusRuntimeException FAILED_PRECONDITION =
+      io.grpc.Status.FAILED_PRECONDITION
+          .withDescription("Non-retryable test exception.")
+          .asRuntimeException();
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
   private static LocalChannelProvider channelProvider;
@@ -121,8 +156,7 @@ public class SpannerImplGaxRetryTest {
     return params;
   }
 
-  @Rule
-  public ExpectedException expectedException = ExpectedException.none();
+  @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @BeforeClass
   public static void startStaticServer() throws IOException {
@@ -130,21 +164,27 @@ public class SpannerImplGaxRetryTest {
     mockSpanner.setAbortProbability(0.0D); // We don't want any unpredictable aborted transactions.
     mockSpanner.putStatementResult(
         StatementResult.read("FOO", KeySet.all(), Arrays.asList("BAR"), READ_RESULTSET));
-    mockSpanner.putStatementResult(StatementResult.read("FOO", KeySet.singleKey(Key.of()),
-        Arrays.asList("BAR"), READ_ROW_RESULTSET));
+    mockSpanner.putStatementResult(
+        StatementResult.read(
+            "FOO", KeySet.singleKey(Key.of()), Arrays.asList("BAR"), READ_ROW_RESULTSET));
     mockSpanner.putStatementResult(StatementResult.query(SELECT1AND2, SELECT1_RESULTSET));
     mockSpanner.putStatementResult(StatementResult.update(UPDATE_STATEMENT, UPDATE_COUNT));
 
     String uniqueName = InProcessServerBuilder.generateName();
-    server = InProcessServerBuilder.forName(uniqueName)
-        // We need to use a real executor for timeouts to occur.
-        .scheduledExecutorService(new ScheduledThreadPoolExecutor(4)).addService(mockSpanner)
-        .build().start();
+    server =
+        InProcessServerBuilder.forName(uniqueName)
+            // We need to use a real executor for timeouts to occur.
+            .scheduledExecutorService(new ScheduledThreadPoolExecutor(1))
+            .addService(mockSpanner)
+            .build()
+            .start();
     channelProvider = LocalChannelProvider.create(uniqueName);
 
     SpannerSettings settings =
-        SpannerSettings.newBuilder().setTransportChannelProvider(channelProvider)
-            .setCredentialsProvider(NoCredentialsProvider.create()).build();
+        SpannerSettings.newBuilder()
+            .setTransportChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
     spannerClient = SpannerClient.create(settings);
   }
 
@@ -158,34 +198,52 @@ public class SpannerImplGaxRetryTest {
   public void setUp() throws Exception {
     mockSpanner.reset();
     mockSpanner.removeAllExecutionTimes();
-    final RetrySettings retrySettings = RetrySettings.newBuilder()
-        .setInitialRpcTimeout(Duration.ofMillis(100L)).setMaxRpcTimeout(Duration.ofMillis(100L))
-        .setMaxAttempts(3).setTotalTimeout(Duration.ofMillis(500L)).build();
-    SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("[PROJECT]")
-        .setChannelProvider(channelProvider).setCredentials(NoCredentials.getInstance());
-    builder.stubSettingsBuilder()
-        .applyToAllUnaryMethods(new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-          @Override
-          public Void apply(Builder<?, ?> input) {
-            input.setRetrySettings(retrySettings);
-            return null;
-          }
-        });
-    builder.stubSettingsBuilder().executeStreamingSqlSettings().setRetrySettings(retrySettings);
-    builder.stubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
+    final RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(Duration.ofMillis(100L))
+            .setMaxRpcTimeout(Duration.ofMillis(100L))
+            .setMaxAttempts(3)
+            .setTotalTimeout(Duration.ofMillis(500L))
+            .build();
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance());
+    builder
+        .spannerStubSettingsBuilder()
+        .applyToAllUnaryMethods(
+            new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+              @Override
+              public Void apply(Builder<?, ?> input) {
+                input.setRetrySettings(retrySettings);
+                return null;
+              }
+            });
+    builder
+        .spannerStubSettingsBuilder()
+        .executeStreamingSqlSettings()
+        .setRetrySettings(retrySettings);
+    builder.spannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
     if (!enableGaxRetries) {
       // Disable retries by removing all retryable codes.
-      builder.stubSettingsBuilder()
-          .applyToAllUnaryMethods(new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-            @Override
-            public Void apply(Builder<?, ?> input) {
-              input.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-              return null;
-            }
-          });
-      builder.stubSettingsBuilder().executeStreamingSqlSettings()
+      builder
+          .spannerStubSettingsBuilder()
+          .applyToAllUnaryMethods(
+              new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                @Override
+                public Void apply(Builder<?, ?> input) {
+                  input.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
+                  return null;
+                }
+              });
+      builder
+          .spannerStubSettingsBuilder()
+          .executeStreamingSqlSettings()
           .setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-      builder.stubSettingsBuilder().streamingReadSettings()
+      builder
+          .spannerStubSettingsBuilder()
+          .streamingReadSettings()
           .setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
     }
     spanner = builder.build().getService();
@@ -198,14 +256,13 @@ public class SpannerImplGaxRetryTest {
   }
 
   @Test
-  public void singleUse() {
+  public void singleUseTimeout() {
     if (enableGaxRetries) {
       expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     }
     mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
-      while (rs.next()) {
-      }
+      while (rs.next()) {}
     }
   }
 
@@ -216,20 +273,45 @@ public class SpannerImplGaxRetryTest {
     }
     mockSpanner.addException(UNAVAILABLE);
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
-      while (rs.next()) {
-      }
+      while (rs.next()) {}
     }
   }
 
   @Test
-  public void singleUseReadOnlyTransaction() {
+  public void singleUseNonRetryableError() {
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.FAILED_PRECONDITION));
+    mockSpanner.addException(FAILED_PRECONDITION);
+    try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+      while (rs.next()) {}
+    }
+  }
+
+  @Test
+  public void singleUseNonRetryableErrorOnNext() {
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.FAILED_PRECONDITION));
+    try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+      mockSpanner.addException(FAILED_PRECONDITION);
+      while (rs.next()) {}
+    }
+  }
+
+  @Test
+  public void singleUseInternal() {
+    expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.INTERNAL));
+    mockSpanner.addException(new IllegalArgumentException());
+    try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+      while (rs.next()) {}
+    }
+  }
+
+  @Test
+  public void singleUseReadOnlyTransactionTimeout() {
     if (enableGaxRetries) {
       expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     }
     mockSpanner.setCreateSessionExecutionTime(ONE_SECOND);
     try (ResultSet rs = client.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
-      while (rs.next()) {
-      }
+      while (rs.next()) {}
     }
   }
 
@@ -240,8 +322,7 @@ public class SpannerImplGaxRetryTest {
     }
     mockSpanner.addException(UNAVAILABLE);
     try (ResultSet rs = client.singleUseReadOnlyTransaction().executeQuery(SELECT1AND2)) {
-      while (rs.next()) {
-      }
+      while (rs.next()) {}
     }
   }
 
@@ -250,8 +331,7 @@ public class SpannerImplGaxRetryTest {
     // Streaming calls do not timeout.
     mockSpanner.setExecuteStreamingSqlExecutionTime(ONE_SECOND);
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
-      while (rs.next()) {
-      }
+      while (rs.next()) {}
     }
   }
 
@@ -260,8 +340,7 @@ public class SpannerImplGaxRetryTest {
     // executeStreamingSql is always retried.
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
       mockSpanner.addException(UNAVAILABLE);
-      while (rs.next()) {
-      }
+      while (rs.next()) {}
     }
   }
 
@@ -272,12 +351,14 @@ public class SpannerImplGaxRetryTest {
     }
     mockSpanner.setBeginTransactionExecutionTime(ONE_SECOND);
     TransactionRunner runner = client.readWriteTransaction();
-    long updateCount = runner.run(new TransactionCallable<Long>() {
-      @Override
-      public Long run(TransactionContext transaction) throws Exception {
-        return transaction.executeUpdate(UPDATE_STATEMENT);
-      }
-    });
+    long updateCount =
+        runner.run(
+            new TransactionCallable<Long>() {
+              @Override
+              public Long run(TransactionContext transaction) throws Exception {
+                return transaction.executeUpdate(UPDATE_STATEMENT);
+              }
+            });
     assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
   }
 
@@ -288,12 +369,14 @@ public class SpannerImplGaxRetryTest {
     }
     mockSpanner.addException(UNAVAILABLE);
     TransactionRunner runner = client.readWriteTransaction();
-    long updateCount = runner.run(new TransactionCallable<Long>() {
-      @Override
-      public Long run(TransactionContext transaction) throws Exception {
-        return transaction.executeUpdate(UPDATE_STATEMENT);
-      }
-    });
+    long updateCount =
+        runner.run(
+            new TransactionCallable<Long>() {
+              @Override
+              public Long run(TransactionContext transaction) throws Exception {
+                return transaction.executeUpdate(UPDATE_STATEMENT);
+              }
+            });
     assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
   }
 
@@ -339,7 +422,7 @@ public class SpannerImplGaxRetryTest {
     }
   }
 
-  //TODO(loite): Check what happens when an SSLHandshakeException is thrown when using GAX.
+  // TODO(loite): Check what happens when an SSLHandshakeException is thrown when using GAX.
   @Test
   @Ignore
   public void singleUseSslHandshakeException() {
