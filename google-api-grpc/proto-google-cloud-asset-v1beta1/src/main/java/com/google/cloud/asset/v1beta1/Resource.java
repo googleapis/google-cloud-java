@@ -105,7 +105,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -336,11 +336,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The full name of the immediate parent of this resource. See
-   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * [Resource
+   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   * For example:
+   * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -362,11 +364,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The full name of the immediate parent of this resource. See
-   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * [Resource
+   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   * For example:
+   * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -500,18 +504,17 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.asset.v1beta1.Resource other = (com.google.cloud.asset.v1beta1.Resource) obj;
 
-    boolean result = true;
-    result = result && getVersion().equals(other.getVersion());
-    result = result && getDiscoveryDocumentUri().equals(other.getDiscoveryDocumentUri());
-    result = result && getDiscoveryName().equals(other.getDiscoveryName());
-    result = result && getResourceUrl().equals(other.getResourceUrl());
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasData() == other.hasData());
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getDiscoveryDocumentUri().equals(other.getDiscoveryDocumentUri())) return false;
+    if (!getDiscoveryName().equals(other.getDiscoveryName())) return false;
+    if (!getResourceUrl().equals(other.getResourceUrl())) return false;
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasData() != other.hasData()) return false;
     if (hasData()) {
-      result = result && getData().equals(other.getData());
+      if (!getData().equals(other.getData())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -739,35 +742,35 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1266,11 +1269,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the immediate parent of this resource. See
-     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     * For example:
+     * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1292,11 +1297,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the immediate parent of this resource. See
-     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     * For example:
+     * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1318,11 +1325,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the immediate parent of this resource. See
-     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     * For example:
+     * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1342,11 +1351,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the immediate parent of this resource. See
-     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     * For example:
+     * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1363,11 +1374,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The full name of the immediate parent of this resource. See
-     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     * For example:
+     * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1384,7 +1397,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Struct data_ = null;
+    private com.google.protobuf.Struct data_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -1568,7 +1581,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

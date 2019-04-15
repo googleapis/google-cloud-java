@@ -12,7 +12,7 @@ public interface ExamplePayloadOrBuilder
    *
    *
    * <pre>
-   * An example image.
+   * Example image.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -22,7 +22,7 @@ public interface ExamplePayloadOrBuilder
    *
    *
    * <pre>
-   * An example image.
+   * Example image.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -32,7 +32,7 @@ public interface ExamplePayloadOrBuilder
    *
    *
    * <pre>
-   * An example image.
+   * Example image.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
@@ -69,6 +69,68 @@ public interface ExamplePayloadOrBuilder
    * <code>.google.cloud.automl.v1beta1.TextSnippet text_snippet = 2;</code>
    */
   com.google.cloud.automl.v1beta1.TextSnippetOrBuilder getTextSnippetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+   */
+  boolean hasDocument();
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+   */
+  com.google.cloud.automl.v1beta1.Document getDocument();
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
+   */
+  com.google.cloud.automl.v1beta1.DocumentOrBuilder getDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Example relational table row.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+   */
+  boolean hasRow();
+  /**
+   *
+   *
+   * <pre>
+   * Example relational table row.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.Row getRow();
+  /**
+   *
+   *
+   * <pre>
+   * Example relational table row.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.RowOrBuilder getRowOrBuilder();
 
   public com.google.cloud.automl.v1beta1.ExamplePayload.PayloadCase getPayloadCase();
 }

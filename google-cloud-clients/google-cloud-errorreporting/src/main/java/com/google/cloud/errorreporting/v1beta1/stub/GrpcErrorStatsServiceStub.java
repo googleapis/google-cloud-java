@@ -24,7 +24,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -34,6 +36,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -132,14 +135,41 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
         listGroupStatsTransportSettings =
             GrpcCallSettings.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
                 .setMethodDescriptor(listGroupStatsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListGroupStatsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListGroupStatsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("project_name", String.valueOf(request.getProjectName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         GrpcCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
             .setMethodDescriptor(listEventsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListEventsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListEventsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_name", String.valueOf(request.getProjectName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
         GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
             .setMethodDescriptor(deleteEventsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEventsRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEventsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_name", String.valueOf(request.getProjectName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listGroupStatsCallable =

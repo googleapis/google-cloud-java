@@ -19,6 +19,8 @@ package com.google.cloud.bigquery;
 import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A type used in legacy SQL contexts. NOTE: some contexts use a mix of types; for example, for
@@ -68,6 +70,9 @@ public final class LegacySQLTypeName extends StringEnumValue {
   /** Represents a logical calendar date. Note, support for this type is limited in legacy SQL. */
   public static final LegacySQLTypeName DATE =
       type.createAndRegister("DATE").setStandardType(StandardSQLTypeName.DATE);
+  /** Represents a set of geographic points, represented as a Well Known Text (WKT) string. */
+  public static final LegacySQLTypeName GEOGRAPHY =
+      type.createAndRegister("GEOGRAPHY").setStandardType(StandardSQLTypeName.GEOGRAPHY);
   /**
    * Represents a time, independent of a specific date, to microsecond precision. Note, support for
    * this type is limited in legacy SQL.
@@ -84,6 +89,14 @@ public final class LegacySQLTypeName extends StringEnumValue {
   public static final LegacySQLTypeName RECORD =
       type.createAndRegister("RECORD").setStandardType(StandardSQLTypeName.STRUCT);
 
+  private static Map<StandardSQLTypeName, LegacySQLTypeName> standardToLegacyMap = new HashMap<>();
+
+  static {
+    for (LegacySQLTypeName legacySqlTypeName : LegacySQLTypeName.values()) {
+      standardToLegacyMap.put(legacySqlTypeName.equivalent, legacySqlTypeName);
+    }
+  }
+
   private StandardSQLTypeName equivalent;
 
   private LegacySQLTypeName setStandardType(StandardSQLTypeName equivalent) {
@@ -94,6 +107,11 @@ public final class LegacySQLTypeName extends StringEnumValue {
   /** Provides the standard SQL type name equivalent to this type name. */
   public StandardSQLTypeName getStandardType() {
     return equivalent;
+  }
+
+  /** Converts StandardSQLTypeName to LegacySQLTypeName */
+  public static LegacySQLTypeName legacySQLTypeName(StandardSQLTypeName type) {
+    return standardToLegacyMap.get(type);
   }
 
   private LegacySQLTypeName(String constant) {

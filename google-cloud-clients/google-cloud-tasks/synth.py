@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'tasks'
-versions = ['v2beta2', 'v2beta3']
+versions = ['v2beta2', 'v2beta3', 'v2']
 config_pattern = '/google/cloud/tasks/artman_cloudtasks_{version}.yaml'
 
 for version in versions:

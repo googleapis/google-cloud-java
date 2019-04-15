@@ -24,7 +24,6 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
-import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
@@ -33,8 +32,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -90,8 +87,6 @@ class MessageDispatcher {
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
-
-  private final Deque<OutstandingMessageBatch> outstandingMessageBatches;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -154,7 +149,6 @@ class MessageDispatcher {
       }
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
-      processOutstandingBatches();
     }
 
     @Override
@@ -201,7 +195,6 @@ class MessageDispatcher {
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       FlowController flowController,
-      Deque<OutstandingMessageBatch> outstandingMessageBatches,
       Executor executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -212,7 +205,6 @@ class MessageDispatcher {
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
-    this.outstandingMessageBatches = outstandingMessageBatches;
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     jobLock = new ReentrantLock();
@@ -298,50 +290,19 @@ class MessageDispatcher {
     return messageDeadlineSeconds.get();
   }
 
-  static class OutstandingMessageBatch {
-    private final Deque<OutstandingMessage> messages;
-    private final Runnable doneCallback;
+  static class OutstandingMessage {
+    private final ReceivedMessage receivedMessage;
+    private final AckHandler ackHandler;
 
-    static class OutstandingMessage {
-      private final ReceivedMessage receivedMessage;
-      private final AckHandler ackHandler;
-
-      public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
-        this.receivedMessage = receivedMessage;
-        this.ackHandler = ackHandler;
-      }
-
-      public ReceivedMessage receivedMessage() {
-        return receivedMessage;
-      }
-
-      public AckHandler ackHandler() {
-        return ackHandler;
-      }
-    }
-
-    public OutstandingMessageBatch(Runnable doneCallback) {
-      this.messages = new LinkedList<>();
-      this.doneCallback = doneCallback;
-    }
-
-    public void addMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
-      this.messages.add(new OutstandingMessage(receivedMessage, ackHandler));
-    }
-
-    public Deque<OutstandingMessage> messages() {
-      return messages;
+    public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
+      this.receivedMessage = receivedMessage;
+      this.ackHandler = ackHandler;
     }
   }
 
-  public void processReceivedMessages(List<ReceivedMessage> messages, Runnable doneCallback) {
-    if (messages.isEmpty()) {
-      doneCallback.run();
-      return;
-    }
-
+  public void processReceivedMessages(List<ReceivedMessage> messages) {
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
-    OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
+    List<OutstandingMessage> outstandingBatch = new ArrayList<>(messages.size());
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
           new AckHandler(
@@ -357,100 +318,69 @@ class MessageDispatcher {
         // totally expire so that pubsub service sends us the message again.
         continue;
       }
-      outstandingBatch.addMessage(message, ackHandler);
+      outstandingBatch.add(new OutstandingMessage(message, ackHandler));
       pendingReceipts.add(message.getAckId());
     }
 
-    if (outstandingBatch.messages.isEmpty()) {
-      doneCallback.run();
-      return;
-    }
-
-    messagesWaiter.incrementPendingMessages(outstandingBatch.messages.size());
-    synchronized (outstandingMessageBatches) {
-      outstandingMessageBatches.add(outstandingBatch);
-    }
-    processOutstandingBatches();
+    processBatch(outstandingBatch);
   }
 
-  public void processOutstandingBatches() {
-    while (true) {
-      boolean batchDone = false;
-      Runnable batchCallback = null;
-      OutstandingMessage outstandingMessage;
-      synchronized (outstandingMessageBatches) {
-        OutstandingMessageBatch nextBatch = outstandingMessageBatches.peek();
-        if (nextBatch == null) {
-          return;
-        }
-        outstandingMessage = nextBatch.messages.peek();
-        if (outstandingMessage == null) {
-          return;
-        }
-        try {
-          // This is a non-blocking flow controller.
-          flowController.reserve(
-              1, outstandingMessage.receivedMessage().getMessage().getSerializedSize());
-        } catch (FlowController.MaxOutstandingElementCountReachedException
-            | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
-          return;
-        } catch (FlowControlException unexpectedException) {
-          throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
-        }
-        nextBatch.messages.poll(); // We got a hold to the message already.
-        batchDone = nextBatch.messages.isEmpty();
-        if (batchDone) {
-          outstandingMessageBatches.poll();
-          batchCallback = nextBatch.doneCallback;
-        }
-
-        final PubsubMessage message = outstandingMessage.receivedMessage().getMessage();
-        final AckHandler ackHandler = outstandingMessage.ackHandler();
-        final SettableApiFuture<AckReply> response = SettableApiFuture.create();
-        final AckReplyConsumer consumer =
-            new AckReplyConsumer() {
-              @Override
-              public void ack() {
-                response.set(AckReply.ACK);
-              }
-
-              @Override
-              public void nack() {
-                response.set(AckReply.NACK);
-              }
-            };
-        ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
-        Runnable deliverMessageTask =
-            new Runnable() {
-              @Override
-              public void run() {
-                try {
-                  if (ackHandler
-                      .totalExpiration
-                      .plusSeconds(messageDeadlineSeconds.get())
-                      .isBefore(now())) {
-                    // Message expired while waiting. We don't extend these messages anymore,
-                    // so it was probably sent to someone else. Don't work on it.
-                    // Don't nack it either, because we'd be nacking someone else's message.
-                    ackHandler.forget();
-                    return;
-                  }
-
-                  receiver.receiveMessage(message, consumer);
-                } catch (Exception e) {
-                  response.setException(e);
-                }
-              }
-            };
-        if (message.getOrderingKey().isEmpty()) {
-          executor.execute(deliverMessageTask);
-        } else {
-          sequentialExecutor.submit(message.getOrderingKey(), deliverMessageTask);
-        }
+  private void processBatch(List<OutstandingMessage> batch) {
+    messagesWaiter.incrementPendingMessages(batch.size());
+    for (OutstandingMessage message : batch) {
+      // This is a blocking flow controller.  We have already incremented MessageWaiter, so
+      // shutdown will block on processing of all these messages anyway.
+      try {
+        flowController.reserve(1, message.receivedMessage.getMessage().getSerializedSize());
+      } catch (FlowControlException unexpectedException) {
+        // This should be a blocking flow controller and never throw an exception.
+        throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
       }
-      if (batchDone) {
-        batchCallback.run();
-      }
+      processOutstandingMessage(message.receivedMessage.getMessage(), message.ackHandler);
+    }
+  }
+
+  private void processOutstandingMessage(final PubsubMessage message, final AckHandler ackHandler) {
+    final SettableApiFuture<AckReply> response = SettableApiFuture.create();
+    final AckReplyConsumer consumer =
+        new AckReplyConsumer() {
+          @Override
+          public void ack() {
+            response.set(AckReply.ACK);
+          }
+
+          @Override
+          public void nack() {
+            response.set(AckReply.NACK);
+          }
+        };
+    ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
+    Runnable deliverMessageTask =
+        new Runnable() {
+          @Override
+          public void run() {
+            try {
+              if (ackHandler
+                  .totalExpiration
+                  .plusSeconds(messageDeadlineSeconds.get())
+                  .isBefore(now())) {
+                // Message expired while waiting. We don't extend these messages anymore,
+                // so it was probably sent to someone else. Don't work on it.
+                // Don't nack it either, because we'd be nacking someone else's message.
+                ackHandler.forget();
+                return;
+              }
+
+              receiver.receiveMessage(message, consumer);
+            } catch (Exception e) {
+              response.setException(e);
+            }
+          }
+        };
+    if (message.getOrderingKey().isEmpty()) {
+      executor.execute(deliverMessageTask);
+    } else {
+      sequentialExecutor.submit(message.getOrderingKey(), deliverMessageTask);
     }
   }
 

@@ -19,6 +19,8 @@ public interface SessionEntityTypeOrBuilder
    * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
    * If `Environment ID` is not specified, we assume default 'draft'
    * environment. If `User ID` is not specified, we assume default '-' user.
+   * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+   * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -35,6 +37,8 @@ public interface SessionEntityTypeOrBuilder
    * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
    * If `Environment ID` is not specified, we assume default 'draft'
    * environment. If `User ID` is not specified, we assume default '-' user.
+   * `&lt;Entity Type Display Name&gt;` must be the display name of an existing entity
+   * type in the same agent that will be overridden or supplemented.
    * </pre>
    *
    * <code>string name = 1;</code>

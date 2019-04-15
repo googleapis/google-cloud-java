@@ -77,6 +77,12 @@ public final class DeprecationStatus implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -117,10 +123,11 @@ public final class DeprecationStatus implements ApiMessage {
   }
 
   /**
-   * The deprecation state of this resource. This can be DEPRECATED, OBSOLETE, or DELETED.
-   * Operations which create a new resource using a DEPRECATED resource will return successfully,
-   * but with a warning indicating the deprecated resource and recommending its replacement.
-   * Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED.
+   * Operations which communicate the end of life date for an image, can use ACTIVE. Operations
+   * which create a new resource using a DEPRECATED resource will return successfully, but with a
+   * warning indicating the deprecated resource and recommending its replacement. Operations which
+   * use OBSOLETE or DELETED resources will be rejected and result in an error.
    */
   public String getState() {
     return state;
@@ -260,20 +267,22 @@ public final class DeprecationStatus implements ApiMessage {
     }
 
     /**
-     * The deprecation state of this resource. This can be DEPRECATED, OBSOLETE, or DELETED.
-     * Operations which create a new resource using a DEPRECATED resource will return successfully,
-     * but with a warning indicating the deprecated resource and recommending its replacement.
-     * Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+     * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED.
+     * Operations which communicate the end of life date for an image, can use ACTIVE. Operations
+     * which create a new resource using a DEPRECATED resource will return successfully, but with a
+     * warning indicating the deprecated resource and recommending its replacement. Operations which
+     * use OBSOLETE or DELETED resources will be rejected and result in an error.
      */
     public String getState() {
       return state;
     }
 
     /**
-     * The deprecation state of this resource. This can be DEPRECATED, OBSOLETE, or DELETED.
-     * Operations which create a new resource using a DEPRECATED resource will return successfully,
-     * but with a warning indicating the deprecated resource and recommending its replacement.
-     * Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+     * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED.
+     * Operations which communicate the end of life date for an image, can use ACTIVE. Operations
+     * which create a new resource using a DEPRECATED resource will return successfully, but with a
+     * warning indicating the deprecated resource and recommending its replacement. Operations which
+     * use OBSOLETE or DELETED resources will be rejected and result in an error.
      */
     public Builder setState(String state) {
       this.state = state;

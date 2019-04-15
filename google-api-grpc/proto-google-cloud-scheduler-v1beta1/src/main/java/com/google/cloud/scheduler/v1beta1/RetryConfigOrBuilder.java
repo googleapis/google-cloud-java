@@ -36,8 +36,8 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
-   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count], the job will be retried until both limits are
-   * reached.
+   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count], the job will be retried until both
+   * limits are reached.
    * The default value for max_retry_duration is zero, which means retry
    * duration is unlimited.
    * </pre>
@@ -51,8 +51,8 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
-   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count], the job will be retried until both limits are
-   * reached.
+   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count], the job will be retried until both
+   * limits are reached.
    * The default value for max_retry_duration is zero, which means retry
    * duration is unlimited.
    * </pre>
@@ -66,8 +66,8 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
-   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count], the job will be retried until both limits are
-   * reached.
+   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count], the job will be retried until both
+   * limits are reached.
    * The default value for max_retry_duration is zero, which means retry
    * duration is unlimited.
    * </pre>

@@ -52,7 +52,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 planNodes_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -62,7 +62,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -74,7 +74,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         planNodes_ = java.util.Collections.unmodifiableList(planNodes_);
       }
       this.unknownFields = unknownFields.build();
@@ -103,8 +103,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
-   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-   * `plan_nodes`.
+   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+   * corresponds to its index in `plan_nodes`.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -117,8 +117,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
-   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-   * `plan_nodes`.
+   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+   * corresponds to its index in `plan_nodes`.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -132,8 +132,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
-   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-   * `plan_nodes`.
+   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+   * corresponds to its index in `plan_nodes`.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -146,8 +146,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
-   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-   * `plan_nodes`.
+   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+   * corresponds to its index in `plan_nodes`.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -160,8 +160,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
-   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-   * `plan_nodes`.
+   * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+   * corresponds to its index in `plan_nodes`.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -214,10 +214,9 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.spanner.v1.QueryPlan other = (com.google.spanner.v1.QueryPlan) obj;
 
-    boolean result = true;
-    result = result && getPlanNodesList().equals(other.getPlanNodesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPlanNodesList().equals(other.getPlanNodesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -410,7 +409,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
       com.google.spanner.v1.QueryPlan result = new com.google.spanner.v1.QueryPlan(this);
       int from_bitField0_ = bitField0_;
       if (planNodesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           planNodes_ = java.util.Collections.unmodifiableList(planNodes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -424,35 +423,35 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -529,7 +528,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePlanNodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         planNodes_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode>(planNodes_);
         bitField0_ |= 0x00000001;
       }
@@ -546,8 +545,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -564,8 +563,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -582,8 +581,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -600,8 +599,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -624,8 +623,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -645,8 +644,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -669,8 +668,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -693,8 +692,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -714,8 +713,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -735,8 +734,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -757,8 +756,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -778,8 +777,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -799,8 +798,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -813,8 +812,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -831,8 +830,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -850,8 +849,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -865,8 +864,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -880,8 +879,8 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
-     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
-     * `plan_nodes`.
+     * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id`
+     * corresponds to its index in `plan_nodes`.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
@@ -901,10 +900,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.PlanNode,
                 com.google.spanner.v1.PlanNode.Builder,
                 com.google.spanner.v1.PlanNodeOrBuilder>(
-                planNodes_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                planNodes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         planNodes_ = null;
       }
       return planNodesBuilder_;
@@ -912,7 +908,7 @@ public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

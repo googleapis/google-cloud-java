@@ -140,7 +140,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1383,20 +1383,19 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.Operation other = (com.google.container.v1.Operation) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getZone().equals(other.getZone());
-    result = result && operationType_ == other.operationType_;
-    result = result && status_ == other.status_;
-    result = result && getDetail().equals(other.getDetail());
-    result = result && getStatusMessage().equals(other.getStatusMessage());
-    result = result && getSelfLink().equals(other.getSelfLink());
-    result = result && getTargetLink().equals(other.getTargetLink());
-    result = result && getLocation().equals(other.getLocation());
-    result = result && getStartTime().equals(other.getStartTime());
-    result = result && getEndTime().equals(other.getEndTime());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (!getZone().equals(other.getZone())) return false;
+    if (operationType_ != other.operationType_) return false;
+    if (status_ != other.status_) return false;
+    if (!getDetail().equals(other.getDetail())) return false;
+    if (!getStatusMessage().equals(other.getStatusMessage())) return false;
+    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (!getTargetLink().equals(other.getTargetLink())) return false;
+    if (!getLocation().equals(other.getLocation())) return false;
+    if (!getStartTime().equals(other.getStartTime())) return false;
+    if (!getEndTime().equals(other.getEndTime())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1638,35 +1637,35 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2797,7 +2796,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

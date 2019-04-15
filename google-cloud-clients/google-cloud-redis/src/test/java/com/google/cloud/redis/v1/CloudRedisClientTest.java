@@ -27,10 +27,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -102,7 +102,7 @@ public class CloudRedisClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getInstancesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
 
@@ -166,7 +166,7 @@ public class CloudRedisClientTest {
     Instance actualResponse = client.getInstance(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
 
@@ -240,7 +240,7 @@ public class CloudRedisClientTest {
     Instance actualResponse = client.createInstanceAsync(parent, instanceId, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
@@ -325,7 +325,7 @@ public class CloudRedisClientTest {
     Instance actualResponse = client.updateInstanceAsync(updateMask, instance).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateInstanceRequest actualRequest = (UpdateInstanceRequest) actualRequests.get(0);
 
@@ -379,7 +379,7 @@ public class CloudRedisClientTest {
     Empty actualResponse = client.deleteInstanceAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
 
@@ -400,6 +400,83 @@ public class CloudRedisClientTest {
       InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
       client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void failoverInstanceTest() throws Exception {
+    String name2 = "name2-1052831874";
+    String displayName = "displayName1615086568";
+    String locationId = "locationId552319461";
+    String alternativeLocationId = "alternativeLocationId-718920621";
+    String redisVersion = "redisVersion-685310444";
+    String reservedIpRange = "reservedIpRange-1082940580";
+    String host = "host3208616";
+    int port = 3446913;
+    String currentLocationId = "currentLocationId1312712735";
+    String statusMessage = "statusMessage-239442758";
+    int memorySizeGb = 34199707;
+    String authorizedNetwork = "authorizedNetwork-1733809270";
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(name2)
+            .setDisplayName(displayName)
+            .setLocationId(locationId)
+            .setAlternativeLocationId(alternativeLocationId)
+            .setRedisVersion(redisVersion)
+            .setReservedIpRange(reservedIpRange)
+            .setHost(host)
+            .setPort(port)
+            .setCurrentLocationId(currentLocationId)
+            .setStatusMessage(statusMessage)
+            .setMemorySizeGb(memorySizeGb)
+            .setAuthorizedNetwork(authorizedNetwork)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("failoverInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedis.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    FailoverInstanceRequest.DataProtectionMode dataProtectionMode =
+        FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+
+    Instance actualResponse = client.failoverInstanceAsync(name, dataProtectionMode).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FailoverInstanceRequest actualRequest = (FailoverInstanceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
+    Assert.assertEquals(dataProtectionMode, actualRequest.getDataProtectionMode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void failoverInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      FailoverInstanceRequest.DataProtectionMode dataProtectionMode =
+          FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+
+      client.failoverInstanceAsync(name, dataProtectionMode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

@@ -159,4 +159,40 @@ public interface PushConfigOrBuilder
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
   java.lang.String getAttributesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  boolean hasOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  com.google.pubsub.v1.PushConfig.OidcToken getOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder();
+
+  public com.google.pubsub.v1.PushConfig.AuthenticationMethodCase getAuthenticationMethodCase();
 }

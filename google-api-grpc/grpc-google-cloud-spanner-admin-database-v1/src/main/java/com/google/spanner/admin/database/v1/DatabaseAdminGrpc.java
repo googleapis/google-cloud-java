@@ -576,8 +576,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
-     * [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -611,7 +611,8 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
+     * The operation has no response.
      * </pre>
      */
     public void updateDatabaseDdl(
@@ -813,8 +814,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
-     * [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -854,7 +855,8 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
+     * The operation has no response.
      * </pre>
      */
     public void updateDatabaseDdl(
@@ -1009,8 +1011,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
-     * [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -1043,7 +1045,8 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
+     * The operation has no response.
      * </pre>
      */
     public com.google.longrunning.Operation updateDatabaseDdl(
@@ -1177,8 +1180,8 @@ public final class DatabaseAdminGrpc {
      * have a name of the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and
      * can be used to track preparation of the database. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
-     * [response][google.longrunning.Operation.response] field type is
+     * [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] field type is
      * [Database][google.spanner.admin.database.v1.Database], if successful.
      * </pre>
      */
@@ -1212,7 +1215,8 @@ public final class DatabaseAdminGrpc {
      * the format `&lt;database_name&gt;/operations/&lt;operation_id&gt;` and can be used to
      * track execution of the schema change(s). The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
+     * [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
+     * The operation has no response.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

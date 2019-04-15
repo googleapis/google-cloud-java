@@ -53,7 +53,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 occurrences_ = new java.util.ArrayList<io.grafeas.v1beta1.Occurrence>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -63,7 +63,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -75,7 +75,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
       }
       this.unknownFields = unknownFields.build();
@@ -207,10 +207,9 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
     io.grafeas.v1beta1.BatchCreateOccurrencesResponse other =
         (io.grafeas.v1beta1.BatchCreateOccurrencesResponse) obj;
 
-    boolean result = true;
-    result = result && getOccurrencesList().equals(other.getOccurrencesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getOccurrencesList().equals(other.getOccurrencesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -406,7 +405,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
           new io.grafeas.v1beta1.BatchCreateOccurrencesResponse(this);
       int from_bitField0_ = bitField0_;
       if (occurrencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -420,35 +419,35 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -527,7 +526,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
         java.util.Collections.emptyList();
 
     private void ensureOccurrencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         occurrences_ = new java.util.ArrayList<io.grafeas.v1beta1.Occurrence>(occurrences_);
         bitField0_ |= 0x00000001;
       }
@@ -865,10 +864,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
                 io.grafeas.v1beta1.Occurrence,
                 io.grafeas.v1beta1.Occurrence.Builder,
                 io.grafeas.v1beta1.OccurrenceOrBuilder>(
-                occurrences_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                occurrences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         occurrences_ = null;
       }
       return occurrencesBuilder_;
@@ -876,7 +872,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -30,7 +30,6 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
   private KeySet() {
     keys_ = java.util.Collections.emptyList();
     ranges_ = java.util.Collections.emptyList();
-    all_ = false;
   }
 
   @java.lang.Override
@@ -59,7 +58,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 keys_ = new java.util.ArrayList<com.google.protobuf.ListValue>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -69,7 +68,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 ranges_ = new java.util.ArrayList<com.google.spanner.v1.KeyRange>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -84,7 +83,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -96,10 +95,10 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keys_ = java.util.Collections.unmodifiableList(keys_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         ranges_ = java.util.Collections.unmodifiableList(ranges_);
       }
       this.unknownFields = unknownFields.build();
@@ -205,8 +204,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-   * key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+   * information about key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -218,8 +217,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-   * key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+   * information about key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -232,8 +231,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-   * key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+   * information about key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -245,8 +244,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-   * key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+   * information about key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -258,8 +257,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-   * key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+   * information about key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -341,12 +340,11 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.spanner.v1.KeySet other = (com.google.spanner.v1.KeySet) obj;
 
-    boolean result = true;
-    result = result && getKeysList().equals(other.getKeysList());
-    result = result && getRangesList().equals(other.getRangesList());
-    result = result && (getAll() == other.getAll());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getKeysList().equals(other.getKeysList())) return false;
+    if (!getRangesList().equals(other.getRangesList())) return false;
+    if (getAll() != other.getAll()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -558,7 +556,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (keysBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -567,7 +565,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
         result.keys_ = keysBuilder_.build();
       }
       if (rangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           ranges_ = java.util.Collections.unmodifiableList(ranges_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -583,35 +581,35 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -717,7 +715,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.protobuf.ListValue> keys_ = java.util.Collections.emptyList();
 
     private void ensureKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keys_ = new java.util.ArrayList<com.google.protobuf.ListValue>(keys_);
         bitField0_ |= 0x00000001;
       }
@@ -1104,10 +1102,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.ListValue,
                 com.google.protobuf.ListValue.Builder,
                 com.google.protobuf.ListValueOrBuilder>(
-                keys_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                keys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         keys_ = null;
       }
       return keysBuilder_;
@@ -1117,7 +1112,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         ranges_ = new java.util.ArrayList<com.google.spanner.v1.KeyRange>(ranges_);
         bitField0_ |= 0x00000002;
       }
@@ -1133,8 +1128,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1150,8 +1145,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1167,8 +1162,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1184,8 +1179,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1207,8 +1202,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1227,8 +1222,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1250,8 +1245,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1273,8 +1268,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1293,8 +1288,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1313,8 +1308,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1334,8 +1329,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1354,8 +1349,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1374,8 +1369,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1387,8 +1382,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1404,8 +1399,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1422,8 +1417,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1436,8 +1431,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1450,8 +1445,8 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
-     * key range specifications.
+     * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
+     * information about key range specifications.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -1471,10 +1466,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.KeyRange,
                 com.google.spanner.v1.KeyRange.Builder,
                 com.google.spanner.v1.KeyRangeOrBuilder>(
-                ranges_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                ranges_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         ranges_ = null;
       }
       return rangesBuilder_;
@@ -1532,7 +1524,7 @@ public final class KeySet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

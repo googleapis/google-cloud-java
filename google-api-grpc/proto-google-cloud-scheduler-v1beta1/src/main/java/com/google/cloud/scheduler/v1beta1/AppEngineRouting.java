@@ -9,10 +9,14 @@ package com.google.cloud.scheduler.v1beta1;
  * <pre>
  * App Engine Routing.
  * For more information about services, versions, and instances see
- * [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
- * [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
- * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed), and
- * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+ * [An Overview of App
+ * Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
+ * [Microservices Architecture on Google App
+ * Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
+ * [App Engine Standard request
+ * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
+ * and [App Engine Flex request
+ * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.AppEngineRouting}
@@ -88,7 +92,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -224,10 +228,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * By default, the job is sent to an instance which is available when
    * the job is attempted.
    * Requests can only be sent to a specific instance if
-   * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+   * [manual scaling is used in App Engine
+   * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
    * App Engine Flex does not support instances. For more information, see
-   * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-   * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+   * [App Engine Standard request
+   * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+   * and [App Engine Flex request
+   * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
    * </pre>
    *
    * <code>string instance = 3;</code>
@@ -251,10 +258,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * By default, the job is sent to an instance which is available when
    * the job is attempted.
    * Requests can only be sent to a specific instance if
-   * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+   * [manual scaling is used in App Engine
+   * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
    * App Engine Flex does not support instances. For more information, see
-   * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-   * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+   * [App Engine Standard request
+   * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+   * and [App Engine Flex request
+   * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
    * </pre>
    *
    * <code>string instance = 3;</code>
@@ -457,13 +467,12 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
     com.google.cloud.scheduler.v1beta1.AppEngineRouting other =
         (com.google.cloud.scheduler.v1beta1.AppEngineRouting) obj;
 
-    boolean result = true;
-    result = result && getService().equals(other.getService());
-    result = result && getVersion().equals(other.getVersion());
-    result = result && getInstance().equals(other.getInstance());
-    result = result && getHost().equals(other.getHost());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getService().equals(other.getService())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getInstance().equals(other.getInstance())) return false;
+    if (!getHost().equals(other.getHost())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -587,10 +596,14 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * <pre>
    * App Engine Routing.
    * For more information about services, versions, and instances see
-   * [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
-   * [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
-   * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed), and
-   * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+   * [An Overview of App
+   * Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
+   * [Microservices Architecture on Google App
+   * Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
+   * [App Engine Standard request
+   * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed),
+   * and [App Engine Flex request
+   * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.AppEngineRouting}
@@ -676,35 +689,35 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -983,10 +996,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the job is sent to an instance which is available when
      * the job is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-     * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request
+     * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request
+     * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1010,10 +1026,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the job is sent to an instance which is available when
      * the job is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-     * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request
+     * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request
+     * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1037,10 +1056,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the job is sent to an instance which is available when
      * the job is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-     * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request
+     * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request
+     * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1062,10 +1084,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the job is sent to an instance which is available when
      * the job is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-     * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request
+     * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request
+     * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1084,10 +1109,13 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the job is sent to an instance which is available when
      * the job is attempted.
      * Requests can only be sent to a specific instance if
-     * [manual scaling is used in App Engine Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * [manual scaling is used in App Engine
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
-     * [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and
-     * [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
+     * [App Engine Standard request
+     * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+     * and [App Engine Flex request
+     * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
      * </pre>
      *
      * <code>string instance = 3;</code>
@@ -1399,7 +1427,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

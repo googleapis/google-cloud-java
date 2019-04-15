@@ -30,9 +30,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     timeZone_ = "";
     description_ = "";
     avatarUri_ = "";
-    enableLogging_ = false;
     matchMode_ = 0;
-    classificationThreshold_ = 0F;
   }
 
   @java.lang.Override
@@ -83,7 +81,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -130,7 +128,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -142,7 +140,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -410,9 +408,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The default language of the agent as a language tag. See
-   * [Language Support](https://dialogflow.com/docs/reference/language) for a
-   * list of the currently supported language codes.
-   * This field cannot be set by the `Update` method.
+   * [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. This field cannot be
+   * set by the `Update` method.
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
@@ -433,9 +432,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The default language of the agent as a language tag. See
-   * [Language Support](https://dialogflow.com/docs/reference/language) for a
-   * list of the currently supported language codes.
-   * This field cannot be set by the `Update` method.
+   * [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * for a list of the currently supported language codes. This field cannot be
+   * set by the `Update` method.
    * </pre>
    *
    * <code>string default_language_code = 3;</code>
@@ -607,7 +607,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
-   * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+   * [Web
+   * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+   * integration.
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
@@ -629,7 +631,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
-   * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+   * [Web
+   * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+   * integration.
    * </pre>
    *
    * <code>string avatar_uri = 7;</code>
@@ -700,7 +704,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. To filter out false positive results and still get variety in
    * matched natural language inputs for your agent, you can tune the machine
    * learning classification threshold. If the returned score value is less than
-   * the threshold value, then a fallback intent is be triggered or, if there
+   * the threshold value, then a fallback intent will be triggered or, if there
    * are no fallback intents defined, no intent will be triggered. The score
    * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
    * If set to 0.0, the default of 0.3 is used.
@@ -818,23 +822,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.dialogflow.v2.Agent other = (com.google.cloud.dialogflow.v2.Agent) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getDefaultLanguageCode().equals(other.getDefaultLanguageCode());
-    result =
-        result && getSupportedLanguageCodesList().equals(other.getSupportedLanguageCodesList());
-    result = result && getTimeZone().equals(other.getTimeZone());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getAvatarUri().equals(other.getAvatarUri());
-    result = result && (getEnableLogging() == other.getEnableLogging());
-    result = result && matchMode_ == other.matchMode_;
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getClassificationThreshold())
-                == java.lang.Float.floatToIntBits(other.getClassificationThreshold()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDefaultLanguageCode().equals(other.getDefaultLanguageCode())) return false;
+    if (!getSupportedLanguageCodesList().equals(other.getSupportedLanguageCodesList()))
+      return false;
+    if (!getTimeZone().equals(other.getTimeZone())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getAvatarUri().equals(other.getAvatarUri())) return false;
+    if (getEnableLogging() != other.getEnableLogging()) return false;
+    if (matchMode_ != other.matchMode_) return false;
+    if (java.lang.Float.floatToIntBits(getClassificationThreshold())
+        != java.lang.Float.floatToIntBits(other.getClassificationThreshold())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1061,7 +1062,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       result.parent_ = parent_;
       result.displayName_ = displayName_;
       result.defaultLanguageCode_ = defaultLanguageCode_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
@@ -1079,35 +1080,35 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1395,9 +1396,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1418,9 +1420,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1441,9 +1444,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1462,9 +1466,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1480,9 +1485,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The default language of the agent as a language tag. See
-     * [Language Support](https://dialogflow.com/docs/reference/language) for a
-     * list of the currently supported language codes.
-     * This field cannot be set by the `Update` method.
+     * [Language
+     * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * for a list of the currently supported language codes. This field cannot be
+     * set by the `Update` method.
      * </pre>
      *
      * <code>string default_language_code = 3;</code>
@@ -1502,7 +1508,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         supportedLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
         bitField0_ |= 0x00000008;
@@ -1861,7 +1867,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1883,7 +1891,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1905,7 +1915,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1925,7 +1937,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -1942,7 +1956,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
-     * [Web Demo](https://dialogflow.com/docs/integrations/web-demo) integration.
+     * [Web
+     * Demo](https://cloud.google.com/dialogflow-enterprise/docs/integrations/web-demo)
+     * integration.
      * </pre>
      *
      * <code>string avatar_uri = 7;</code>
@@ -2086,7 +2102,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
      * learning classification threshold. If the returned score value is less than
-     * the threshold value, then a fallback intent is be triggered or, if there
+     * the threshold value, then a fallback intent will be triggered or, if there
      * are no fallback intents defined, no intent will be triggered. The score
      * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
      * If set to 0.0, the default of 0.3 is used.
@@ -2104,7 +2120,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
      * learning classification threshold. If the returned score value is less than
-     * the threshold value, then a fallback intent is be triggered or, if there
+     * the threshold value, then a fallback intent will be triggered or, if there
      * are no fallback intents defined, no intent will be triggered. The score
      * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
      * If set to 0.0, the default of 0.3 is used.
@@ -2125,7 +2141,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
      * learning classification threshold. If the returned score value is less than
-     * the threshold value, then a fallback intent is be triggered or, if there
+     * the threshold value, then a fallback intent will be triggered or, if there
      * are no fallback intents defined, no intent will be triggered. The score
      * values range from 0.0 (completely uncertain) to 1.0 (completely certain).
      * If set to 0.0, the default of 0.3 is used.
@@ -2142,7 +2158,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

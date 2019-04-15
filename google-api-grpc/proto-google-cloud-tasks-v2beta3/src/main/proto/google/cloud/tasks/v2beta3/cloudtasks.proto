@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC.
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,12 +18,13 @@ syntax = "proto3";
 package google.cloud.tasks.v2beta3;
 
 import "google/api/annotations.proto";
-import "google/cloud/tasks/v2beta3/queue.proto";
-import "google/cloud/tasks/v2beta3/task.proto";
-import "google/iam/v1/iam_policy.proto";
-import "google/iam/v1/policy.proto";
+import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
+import "google/cloud/tasks/v2beta3/task.proto";
+import "google/cloud/tasks/v2beta3/queue.proto";
+import "google/iam/v1/iam_policy.proto";
+import "google/iam/v1/policy.proto";
 import "google/rpc/code.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/cloud/tasks/v2beta3;tasks";
@@ -31,7 +32,6 @@ option java_multiple_files = true;
 option java_outer_classname = "CloudTasksProto";
 option java_package = "com.google.cloud.tasks.v2beta3";
 option objc_class_prefix = "TASKS";
-
 
 // Cloud Tasks allows developers to manage the execution of background
 // work in their applications.

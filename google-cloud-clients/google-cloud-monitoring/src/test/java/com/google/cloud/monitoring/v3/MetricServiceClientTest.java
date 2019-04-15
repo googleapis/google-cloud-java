@@ -45,8 +45,8 @@ import com.google.monitoring.v3.MonitoredResourceDescriptorName;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -137,7 +137,7 @@ public class MetricServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getResourceDescriptorsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListMonitoredResourceDescriptorsRequest actualRequest =
         (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
@@ -187,7 +187,7 @@ public class MetricServiceClientTest {
     MonitoredResourceDescriptor actualResponse = client.getMonitoredResourceDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetMonitoredResourceDescriptorRequest actualRequest =
         (GetMonitoredResourceDescriptorRequest) actualRequests.get(0);
@@ -237,7 +237,7 @@ public class MetricServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMetricDescriptorsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListMetricDescriptorsRequest actualRequest =
         (ListMetricDescriptorsRequest) actualRequests.get(0);
@@ -288,7 +288,7 @@ public class MetricServiceClientTest {
     MetricDescriptor actualResponse = client.getMetricDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetMetricDescriptorRequest actualRequest = (GetMetricDescriptorRequest) actualRequests.get(0);
 
@@ -339,7 +339,7 @@ public class MetricServiceClientTest {
     MetricDescriptor actualResponse = client.createMetricDescriptor(name, metricDescriptor);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateMetricDescriptorRequest actualRequest =
         (CreateMetricDescriptorRequest) actualRequests.get(0);
@@ -379,7 +379,7 @@ public class MetricServiceClientTest {
 
     client.deleteMetricDescriptor(name);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteMetricDescriptorRequest actualRequest =
         (DeleteMetricDescriptorRequest) actualRequests.get(0);
@@ -432,7 +432,7 @@ public class MetricServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTimeSeriesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTimeSeriesRequest actualRequest = (ListTimeSeriesRequest) actualRequests.get(0);
 
@@ -476,7 +476,7 @@ public class MetricServiceClientTest {
 
     client.createTimeSeries(name, timeSeries);
 
-    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTimeSeriesRequest actualRequest = (CreateTimeSeriesRequest) actualRequests.get(0);
 

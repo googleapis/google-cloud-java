@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] specifies how cryptographic operations are performed.
+ * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] specifies how
+ * cryptographic operations are performed.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.kms.v1.ProtectionLevel}

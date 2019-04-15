@@ -81,7 +81,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000010;
@@ -101,7 +101,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 userLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         UserLabelsDefaultEntryHolder.defaultEntry);
@@ -138,7 +138,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -358,7 +358,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The type of the notification channel. This field matches the
-   * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+   * value of the
+   * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+   * field.
    * </pre>
    *
    * <code>string type = 1;</code>
@@ -379,7 +381,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The type of the notification channel. This field matches the
-   * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+   * value of the
+   * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+   * field.
    * </pre>
    *
    * <code>string type = 1;</code>
@@ -570,8 +574,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -593,8 +597,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -608,8 +612,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -627,8 +631,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -990,20 +994,19 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     com.google.monitoring.v3.NotificationChannel other =
         (com.google.monitoring.v3.NotificationChannel) obj;
 
-    boolean result = true;
-    result = result && getType().equals(other.getType());
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && internalGetUserLabels().equals(other.internalGetUserLabels());
-    result = result && verificationStatus_ == other.verificationStatus_;
-    result = result && (hasEnabled() == other.hasEnabled());
+    if (!getType().equals(other.getType())) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
+    if (verificationStatus_ != other.verificationStatus_) return false;
+    if (hasEnabled() != other.hasEnabled()) return false;
     if (hasEnabled()) {
-      result = result && getEnabled().equals(other.getEnabled());
+      if (!getEnabled().equals(other.getEnabled())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1276,35 +1279,35 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1380,7 +1383,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The type of the notification channel. This field matches the
-     * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+     * value of the
+     * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+     * field.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1401,7 +1406,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The type of the notification channel. This field matches the
-     * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+     * value of the
+     * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+     * field.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1422,7 +1429,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The type of the notification channel. This field matches the
-     * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+     * value of the
+     * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+     * field.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1441,7 +1450,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The type of the notification channel. This field matches the
-     * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+     * value of the
+     * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+     * field.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1457,7 +1468,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The type of the notification channel. This field matches the
-     * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+     * value of the
+     * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+     * field.
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1821,8 +1834,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1844,8 +1857,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1859,8 +1872,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1879,8 +1892,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1906,8 +1919,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1930,8 +1943,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1952,8 +1965,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
-     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-     * `NotificationChannelDescriptor` corresponding to the `type` field.
+     * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+     * of the `NotificationChannelDescriptor` corresponding to the `type` field.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2327,7 +2340,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.BoolValue enabled_ = null;
+    private com.google.protobuf.BoolValue enabled_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
@@ -2549,7 +2562,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

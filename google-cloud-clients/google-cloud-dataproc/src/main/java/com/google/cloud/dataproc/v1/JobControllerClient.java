@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.stub.JobControllerStub;
 import com.google.cloud.dataproc.v1.stub.JobControllerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -755,7 +756,8 @@ public class JobControllerClient implements BackgroundResource {
             public ListJobsPagedResponse apply(ListJobsPage input) {
               return new ListJobsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListJobsPagedResponse(ListJobsPage page) {

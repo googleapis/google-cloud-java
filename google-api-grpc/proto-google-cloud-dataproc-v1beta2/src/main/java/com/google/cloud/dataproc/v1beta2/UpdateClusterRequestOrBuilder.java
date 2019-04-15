@@ -169,9 +169,10 @@ public interface UpdateClusterRequestOrBuilder
    *         }
    *       }
    *     }
-   * Similarly, to change the number of preemptible workers in a cluster to 5, the
-   * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-   * and the `PATCH` request body would be set as follows:
+   * Similarly, to change the number of preemptible workers in a cluster to 5,
+   * the `update_mask` parameter would be
+   * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+   * body would be set as follows:
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -188,19 +189,24 @@ public interface UpdateClusterRequestOrBuilder
    * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   * group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   * worker group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   * deletion timestamp&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -224,9 +230,10 @@ public interface UpdateClusterRequestOrBuilder
    *         }
    *       }
    *     }
-   * Similarly, to change the number of preemptible workers in a cluster to 5, the
-   * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-   * and the `PATCH` request body would be set as follows:
+   * Similarly, to change the number of preemptible workers in a cluster to 5,
+   * the `update_mask` parameter would be
+   * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+   * body would be set as follows:
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -243,19 +250,24 @@ public interface UpdateClusterRequestOrBuilder
    * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   * group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   * worker group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   * deletion timestamp&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -279,9 +291,10 @@ public interface UpdateClusterRequestOrBuilder
    *         }
    *       }
    *     }
-   * Similarly, to change the number of preemptible workers in a cluster to 5, the
-   * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-   * and the `PATCH` request body would be set as follows:
+   * Similarly, to change the number of preemptible workers in a cluster to 5,
+   * the `update_mask` parameter would be
+   * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+   * body would be set as follows:
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -298,19 +311,24 @@ public interface UpdateClusterRequestOrBuilder
    * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   * group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   * worker group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   * deletion timestamp&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -324,10 +342,11 @@ public interface UpdateClusterRequestOrBuilder
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -342,10 +361,11 @@ public interface UpdateClusterRequestOrBuilder
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),

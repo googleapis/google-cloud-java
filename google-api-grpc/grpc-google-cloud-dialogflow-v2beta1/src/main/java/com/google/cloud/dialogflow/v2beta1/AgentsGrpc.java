@@ -27,11 +27,13 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
  * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
  * Dialogflow provides several
- * [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for common
- * conversation scenarios such as determining a date and time, converting
- * currency, and so on.
+ * [prebuilt
+ * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+ * for common conversation scenarios such as determining a date and time,
+ * converting currency, and so on.
  * For more information about agents, see the
- * [Dialogflow documentation](https://dialogflow.com/docs/agents).
+ * [Dialogflow
+ * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -407,11 +409,13 @@ public final class AgentsGrpc {
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
    * Dialogflow provides several
-   * [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for common
-   * conversation scenarios such as determining a date and time, converting
-   * currency, and so on.
+   * [prebuilt
+   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * for common conversation scenarios such as determining a date and time,
+   * converting currency, and so on.
    * For more information about agents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/agents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
    * </pre>
    */
   public abstract static class AgentsImplBase implements io.grpc.BindableService {
@@ -453,8 +457,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public void trainAgent(
@@ -468,8 +471,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
      * </pre>
      */
     public void exportAgent(
@@ -486,8 +488,7 @@ public final class AgentsGrpc {
      * Uploads new intents and entity types without deleting the existing ones.
      * Intents and entity types with the same name are replaced with the new
      * versions from ImportAgentRequest.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public void importAgent(
@@ -503,8 +504,7 @@ public final class AgentsGrpc {
      * Restores the specified agent from a ZIP file.
      * Replaces the current agent version with a new one. All the intents and
      * entity types in the older version are deleted.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public void restoreAgent(
@@ -577,11 +577,13 @@ public final class AgentsGrpc {
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
    * Dialogflow provides several
-   * [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for common
-   * conversation scenarios such as determining a date and time, converting
-   * currency, and so on.
+   * [prebuilt
+   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * for common conversation scenarios such as determining a date and time,
+   * converting currency, and so on.
    * For more information about agents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/agents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
    * </pre>
    */
   public static final class AgentsStub extends io.grpc.stub.AbstractStub<AgentsStub> {
@@ -641,8 +643,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public void trainAgent(
@@ -659,8 +660,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
      * </pre>
      */
     public void exportAgent(
@@ -680,8 +680,7 @@ public final class AgentsGrpc {
      * Uploads new intents and entity types without deleting the existing ones.
      * Intents and entity types with the same name are replaced with the new
      * versions from ImportAgentRequest.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public void importAgent(
@@ -700,8 +699,7 @@ public final class AgentsGrpc {
      * Restores the specified agent from a ZIP file.
      * Replaces the current agent version with a new one. All the intents and
      * entity types in the older version are deleted.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public void restoreAgent(
@@ -734,11 +732,13 @@ public final class AgentsGrpc {
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
    * Dialogflow provides several
-   * [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for common
-   * conversation scenarios such as determining a date and time, converting
-   * currency, and so on.
+   * [prebuilt
+   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * for common conversation scenarios such as determining a date and time,
+   * converting currency, and so on.
    * For more information about agents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/agents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
    * </pre>
    */
   public static final class AgentsBlockingStub
@@ -791,8 +791,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation trainAgent(
@@ -806,8 +805,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation exportAgent(
@@ -824,8 +822,7 @@ public final class AgentsGrpc {
      * Uploads new intents and entity types without deleting the existing ones.
      * Intents and entity types with the same name are replaced with the new
      * versions from ImportAgentRequest.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation importAgent(
@@ -841,8 +838,7 @@ public final class AgentsGrpc {
      * Restores the specified agent from a ZIP file.
      * Replaces the current agent version with a new one. All the intents and
      * entity types in the older version are deleted.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation restoreAgent(
@@ -872,11 +868,13 @@ public final class AgentsGrpc {
    * using the [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
    * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
    * Dialogflow provides several
-   * [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for common
-   * conversation scenarios such as determining a date and time, converting
-   * currency, and so on.
+   * [prebuilt
+   * agents](https://cloud.google.com/dialogflow-enterprise/docs/agents-prebuilt)
+   * for common conversation scenarios such as determining a date and time,
+   * converting currency, and so on.
    * For more information about agents, see the
-   * [Dialogflow documentation](https://dialogflow.com/docs/agents).
+   * [Dialogflow
+   * documentation](https://cloud.google.com/dialogflow-enterprise/docs/agents-overview).
    * </pre>
    */
   public static final class AgentsFutureStub extends io.grpc.stub.AbstractStub<AgentsFutureStub> {
@@ -931,8 +929,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Trains the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -946,8 +943,7 @@ public final class AgentsGrpc {
      *
      * <pre>
      * Exports the specified agent to a ZIP file.
-     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -964,8 +960,7 @@ public final class AgentsGrpc {
      * Uploads new intents and entity types without deleting the existing ones.
      * Intents and entity types with the same name are replaced with the new
      * versions from ImportAgentRequest.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -981,8 +976,7 @@ public final class AgentsGrpc {
      * Restores the specified agent from a ZIP file.
      * Replaces the current agent version with a new one. All the intents and
      * entity types in the older version are deleted.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
+     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

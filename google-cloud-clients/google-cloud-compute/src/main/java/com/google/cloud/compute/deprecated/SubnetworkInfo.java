@@ -24,8 +24,9 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine subnetwork. Compute Engine subnetworks allow you to segment your Compute
@@ -52,7 +53,8 @@ public class SubnetworkInfo implements Serializable {
       };
 
   private static final long serialVersionUID = 7491176262675441579L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final SubnetworkId subnetworkId;
@@ -128,7 +130,9 @@ public class SubnetworkInfo implements Serializable {
       }
       if (subnetworkPb.getCreationTimestamp() != null) {
         this.creationTimestamp =
-            TIMESTAMP_FORMATTER.parseMillis(subnetworkPb.getCreationTimestamp());
+            TIMESTAMP_FORMATTER
+                .parse(subnetworkPb.getCreationTimestamp(), Instant.FROM)
+                .toEpochMilli();
       }
       this.subnetworkId = SubnetworkId.fromUrl(subnetworkPb.getSelfLink());
       this.description = subnetworkPb.getDescription();
@@ -292,7 +296,8 @@ public class SubnetworkInfo implements Serializable {
       subnetworkPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      subnetworkPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      subnetworkPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     subnetworkPb.setName(subnetworkId.getSubnetwork());
     subnetworkPb.setDescription(description);

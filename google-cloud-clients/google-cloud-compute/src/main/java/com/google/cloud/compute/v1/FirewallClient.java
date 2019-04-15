@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.FirewallStub;
 import com.google.cloud.compute.v1.stub.FirewallStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -208,9 +209,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   Operation response = firewallClient.deleteFirewall(request);
    * }
@@ -232,9 +233,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.deleteFirewallCallable().futureCall(request);
    *   // Do something
@@ -305,9 +306,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   GetFirewallHttpRequest request = GetFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   Firewall response = firewallClient.getFirewall(request);
    * }
@@ -329,9 +330,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   GetFirewallHttpRequest request = GetFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .build();
    *   ApiFuture&lt;Firewall&gt; future = firewallClient.getFirewallCallable().futureCall(request);
    *   // Do something
@@ -410,10 +411,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   InsertFirewallHttpRequest request = InsertFirewallHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   Operation response = firewallClient.insertFirewall(request);
@@ -436,10 +437,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   InsertFirewallHttpRequest request = InsertFirewallHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setFirewallResource(firewallResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firewallClient.insertFirewallCallable().futureCall(request);
@@ -513,9 +514,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListFirewallsHttpRequest request = ListFirewallsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Firewall element : firewallClient.listFirewalls(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -539,9 +540,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListFirewallsHttpRequest request = ListFirewallsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListFirewallsPagedResponse&gt; future = firewallClient.listFirewallsPagedCallable().futureCall(request);
    *   // Do something
@@ -565,9 +566,9 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListFirewallsHttpRequest request = ListFirewallsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     FirewallList response = firewallClient.listFirewallsCallable().call(request);
@@ -607,7 +608,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * @param firewall Name of the firewall rule to patch.
    * @param firewallResource Represents a Firewall resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -641,7 +645,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * @param firewall Name of the firewall rule to patch.
    * @param firewallResource Represents a Firewall resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -666,11 +673,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -695,11 +702,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -733,7 +740,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * @param firewall Name of the firewall rule to update.
    * @param firewallResource Represents a Firewall resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -768,7 +778,10 @@ public class FirewallClient implements BackgroundResource {
    *
    * @param firewall Name of the firewall rule to update.
    * @param firewallResource Represents a Firewall resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -794,11 +807,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -824,11 +837,11 @@ public class FirewallClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   String formattedFirewall = ProjectGlobalFirewallName.format("[PROJECT]", "[FIREWALL]");
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
-   *     .setFirewall(firewall.toString())
+   *     .setFirewall(formattedFirewall)
    *     .setFirewallResource(firewallResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -893,7 +906,8 @@ public class FirewallClient implements BackgroundResource {
             public ListFirewallsPagedResponse apply(ListFirewallsPage input) {
               return new ListFirewallsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListFirewallsPagedResponse(ListFirewallsPage page) {

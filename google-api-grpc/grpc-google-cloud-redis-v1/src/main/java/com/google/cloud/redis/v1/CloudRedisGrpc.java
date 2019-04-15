@@ -21,7 +21,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * * Each location has a collection of Redis instances, named: `/instances/&#42;`
  * * As such, Redis instances are resources of the form:
  *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
- * Note that location_id must be refering to a GCP `region`; for example:
+ * Note that location_id must be referring to a GCP `region`; for example:
  * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
  * </pre>
  */
@@ -244,6 +244,59 @@ public final class CloudRedisGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getFailoverInstanceMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
+      METHOD_FAILOVER_INSTANCE = getFailoverInstanceMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
+      getFailoverInstanceMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
+      getFailoverInstanceMethod() {
+    return getFailoverInstanceMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
+      getFailoverInstanceMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
+        getFailoverInstanceMethod;
+    if ((getFailoverInstanceMethod = CloudRedisGrpc.getFailoverInstanceMethod) == null) {
+      synchronized (CloudRedisGrpc.class) {
+        if ((getFailoverInstanceMethod = CloudRedisGrpc.getFailoverInstanceMethod) == null) {
+          CloudRedisGrpc.getFailoverInstanceMethod =
+              getFailoverInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.v1.FailoverInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.redis.v1.CloudRedis", "FailoverInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.v1.FailoverInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisMethodDescriptorSupplier("FailoverInstance"))
+                      .build();
+        }
+      }
+    }
+    return getFailoverInstanceMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getDeleteInstanceMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
@@ -325,7 +378,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -404,6 +457,20 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Failover the master role to current replica node against a specific
+     * STANDARD tier redis instance.
+     * </pre>
+     */
+    public void failoverInstance(
+        com.google.cloud.redis.v1.FailoverInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getFailoverInstanceMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis instance.  Instance stops serving and data is
      * deleted.
      * </pre>
@@ -443,6 +510,12 @@ public final class CloudRedisGrpc {
                       com.google.cloud.redis.v1.UpdateInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
           .addMethod(
+              getFailoverInstanceMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.redis.v1.FailoverInstanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_FAILOVER_INSTANCE)))
+          .addMethod(
               getDeleteInstanceMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -466,7 +539,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -569,6 +642,23 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Failover the master role to current replica node against a specific
+     * STANDARD tier redis instance.
+     * </pre>
+     */
+    public void failoverInstance(
+        com.google.cloud.redis.v1.FailoverInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getFailoverInstanceMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis instance.  Instance stops serving and data is
      * deleted.
      * </pre>
@@ -597,7 +687,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -689,6 +779,20 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Failover the master role to current replica node against a specific
+     * STANDARD tier redis instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation failoverInstance(
+        com.google.cloud.redis.v1.FailoverInstanceRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getFailoverInstanceMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis instance.  Instance stops serving and data is
      * deleted.
      * </pre>
@@ -714,7 +818,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -806,6 +910,20 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Failover the master role to current replica node against a specific
+     * STANDARD tier redis instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        failoverInstance(com.google.cloud.redis.v1.FailoverInstanceRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getFailoverInstanceMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis instance.  Instance stops serving and data is
      * deleted.
      * </pre>
@@ -821,7 +939,8 @@ public final class CloudRedisGrpc {
   private static final int METHODID_GET_INSTANCE = 1;
   private static final int METHODID_CREATE_INSTANCE = 2;
   private static final int METHODID_UPDATE_INSTANCE = 3;
-  private static final int METHODID_DELETE_INSTANCE = 4;
+  private static final int METHODID_FAILOVER_INSTANCE = 4;
+  private static final int METHODID_DELETE_INSTANCE = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -859,6 +978,11 @@ public final class CloudRedisGrpc {
         case METHODID_UPDATE_INSTANCE:
           serviceImpl.updateInstance(
               (com.google.cloud.redis.v1.UpdateInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FAILOVER_INSTANCE:
+          serviceImpl.failoverInstance(
+              (com.google.cloud.redis.v1.FailoverInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_INSTANCE:
@@ -934,6 +1058,7 @@ public final class CloudRedisGrpc {
                       .addMethod(getGetInstanceMethodHelper())
                       .addMethod(getCreateInstanceMethodHelper())
                       .addMethod(getUpdateInstanceMethodHelper())
+                      .addMethod(getFailoverInstanceMethodHelper())
                       .addMethod(getDeleteInstanceMethodHelper())
                       .build();
         }

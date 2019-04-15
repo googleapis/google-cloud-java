@@ -54,6 +54,7 @@ Coding Style
 Maintain the coding style in the project and in particular the modified files.
 Follow the Google Java [style](https://google.github.io/styleguide/javaguide.html).
 
+In pull requests, please run `mvn com.coveo:fmt-maven-plugin:format` to format your code diff.
 
 ## Contributor License Agreements
 

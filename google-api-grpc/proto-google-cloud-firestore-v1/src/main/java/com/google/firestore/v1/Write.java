@@ -120,7 +120,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -296,7 +296,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applies a tranformation to a document.
+   * Applies a transformation to a document.
    * At most one `transform` per document is allowed in a given request.
    * An `update` cannot follow a `transform` on the same document in a given
    * request.
@@ -311,7 +311,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applies a tranformation to a document.
+   * Applies a transformation to a document.
    * At most one `transform` per document is allowed in a given request.
    * An `update` cannot follow a `transform` on the same document in a given
    * request.
@@ -329,7 +329,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applies a tranformation to a document.
+   * Applies a transformation to a document.
    * At most one `transform` per document is allowed in a given request.
    * An `update` cannot follow a `transform` on the same document in a given
    * request.
@@ -525,32 +525,30 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.firestore.v1.Write other = (com.google.firestore.v1.Write) obj;
 
-    boolean result = true;
-    result = result && (hasUpdateMask() == other.hasUpdateMask());
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
-      result = result && getUpdateMask().equals(other.getUpdateMask());
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
-    result = result && (hasCurrentDocument() == other.hasCurrentDocument());
+    if (hasCurrentDocument() != other.hasCurrentDocument()) return false;
     if (hasCurrentDocument()) {
-      result = result && getCurrentDocument().equals(other.getCurrentDocument());
+      if (!getCurrentDocument().equals(other.getCurrentDocument())) return false;
     }
-    result = result && getOperationCase().equals(other.getOperationCase());
-    if (!result) return false;
+    if (!getOperationCase().equals(other.getOperationCase())) return false;
     switch (operationCase_) {
       case 1:
-        result = result && getUpdate().equals(other.getUpdate());
+        if (!getUpdate().equals(other.getUpdate())) return false;
         break;
       case 2:
-        result = result && getDelete().equals(other.getDelete());
+        if (!getDelete().equals(other.getDelete())) return false;
         break;
       case 6:
-        result = result && getTransform().equals(other.getTransform());
+        if (!getTransform().equals(other.getTransform())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -801,35 +799,35 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1234,7 +1232,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1249,7 +1247,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1274,7 +1272,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1299,7 +1297,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1321,7 +1319,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1355,7 +1353,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1383,7 +1381,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1398,7 +1396,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1420,7 +1418,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1453,7 +1451,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       return transformBuilder_;
     }
 
-    private com.google.firestore.v1.DocumentMask updateMask_ = null;
+    private com.google.firestore.v1.DocumentMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1.DocumentMask,
             com.google.firestore.v1.DocumentMask.Builder,
@@ -1706,7 +1704,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       return updateMaskBuilder_;
     }
 
-    private com.google.firestore.v1.Precondition currentDocument_ = null;
+    private com.google.firestore.v1.Precondition currentDocument_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1.Precondition,
             com.google.firestore.v1.Precondition.Builder,
@@ -1899,7 +1897,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

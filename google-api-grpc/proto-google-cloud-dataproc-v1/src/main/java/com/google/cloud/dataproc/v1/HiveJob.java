@@ -24,7 +24,6 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private HiveJob() {
-    continueOnFailure_ = false;
     jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -82,7 +81,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 scriptVariables_ =
                     com.google.protobuf.MapField.newMapField(
                         ScriptVariablesDefaultEntryHolder.defaultEntry);
@@ -99,7 +98,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
@@ -115,7 +114,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -124,7 +123,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -136,7 +135,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -316,8 +315,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Whether to continue executing queries if a query fails.
-   * The default value is `false`. Setting to `true` can be useful when executing
-   * independent parallel queries.
+   * The default value is `false`. Setting to `true` can be useful when
+   * executing independent parallel queries.
    * </pre>
    *
    * <code>bool continue_on_failure = 3;</code>
@@ -684,25 +683,23 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.dataproc.v1.HiveJob other = (com.google.cloud.dataproc.v1.HiveJob) obj;
 
-    boolean result = true;
-    result = result && (getContinueOnFailure() == other.getContinueOnFailure());
-    result = result && internalGetScriptVariables().equals(other.internalGetScriptVariables());
-    result = result && internalGetProperties().equals(other.internalGetProperties());
-    result = result && getJarFileUrisList().equals(other.getJarFileUrisList());
-    result = result && getQueriesCase().equals(other.getQueriesCase());
-    if (!result) return false;
+    if (getContinueOnFailure() != other.getContinueOnFailure()) return false;
+    if (!internalGetScriptVariables().equals(other.internalGetScriptVariables())) return false;
+    if (!internalGetProperties().equals(other.internalGetProperties())) return false;
+    if (!getJarFileUrisList().equals(other.getJarFileUrisList())) return false;
+    if (!getQueriesCase().equals(other.getQueriesCase())) return false;
     switch (queriesCase_) {
       case 1:
-        result = result && getQueryFileUri().equals(other.getQueryFileUri());
+        if (!getQueryFileUri().equals(other.getQueryFileUri())) return false;
         break;
       case 2:
-        result = result && getQueryList().equals(other.getQueryList());
+        if (!getQueryList().equals(other.getQueryList())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -958,7 +955,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       result.scriptVariables_.makeImmutable();
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
@@ -971,35 +968,35 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1404,8 +1401,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Whether to continue executing queries if a query fails.
-     * The default value is `false`. Setting to `true` can be useful when executing
-     * independent parallel queries.
+     * The default value is `false`. Setting to `true` can be useful when
+     * executing independent parallel queries.
      * </pre>
      *
      * <code>bool continue_on_failure = 3;</code>
@@ -1418,8 +1415,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Whether to continue executing queries if a query fails.
-     * The default value is `false`. Setting to `true` can be useful when executing
-     * independent parallel queries.
+     * The default value is `false`. Setting to `true` can be useful when
+     * executing independent parallel queries.
      * </pre>
      *
      * <code>bool continue_on_failure = 3;</code>
@@ -1435,8 +1432,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Whether to continue executing queries if a query fails.
-     * The default value is `false`. Setting to `true` can be useful when executing
-     * independent parallel queries.
+     * The default value is `false`. Setting to `true` can be useful when
+     * executing independent parallel queries.
      * </pre>
      *
      * <code>bool continue_on_failure = 3;</code>
@@ -1791,7 +1788,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
         bitField0_ |= 0x00000020;
       }
@@ -1950,7 +1947,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

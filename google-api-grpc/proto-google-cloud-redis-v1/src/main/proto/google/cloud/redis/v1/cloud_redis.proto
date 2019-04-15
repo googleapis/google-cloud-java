@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,12 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
 package google.cloud.redis.v1;
 
 import "google/api/annotations.proto";
+import "google/api/resource.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
@@ -40,7 +42,7 @@ option java_package = "com.google.cloud.redis.v1";
 // * As such, Redis instances are resources of the form:
 //   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
 //
-// Note that location_id must be refering to a GCP `region`; for example:
+// Note that location_id must be referring to a GCP `region`; for example:
 // * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
 service CloudRedis {
   // Lists all Redis instances owned by a project in either the specified
@@ -95,6 +97,15 @@ service CloudRedis {
     };
   }
 
+  // Failover the master role to current replica node against a specific
+  // STANDARD tier redis instance.
+  rpc FailoverInstance(FailoverInstanceRequest) returns (google.longrunning.Operation) {
+    option (google.api.http) = {
+      post: "/v1/{name=projects/*/locations/*/instances/*}:failover"
+      body: "*"
+    };
+  }
+
   // Deletes a specific Redis instance.  Instance stops serving and data is
   // deleted.
   rpc DeleteInstance(DeleteInstanceRequest) returns (google.longrunning.Operation) {
@@ -125,12 +136,14 @@ message Instance {
     // Redis instance is being deleted.
     DELETING = 4;
 
-    // Redis instance is being repaired and may be unusable. Details can be
-    // found in the `status_message` field.
+    // Redis instance is being repaired and may be unusable.
     REPAIRING = 5;
 
     // Maintenance is being performed on this Redis instance.
     MAINTENANCE = 6;
+
+    // Redis instance is failing over (availability may be affected).
+    FAILING_OVER = 9;
   }
 
   // Available service tiers to choose from
@@ -269,6 +282,9 @@ message ListInstancesResponse {
   // Token to retrieve the next page of results, or empty if there are no more
   // results in the list.
   string next_page_token = 2;
+
+  // Locations that could not be reached.
+  repeated string unreachable = 3;
 }
 
 // Request for [GetInstance][google.cloud.redis.v1.CloudRedis.GetInstance].
@@ -323,6 +339,31 @@ message DeleteInstanceRequest {
   //     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
   // where `location_id` refers to a GCP region
   string name = 1;
+}
+
+// Request for [Failover][google.cloud.redis.v1.CloudRedis.FailoverInstance].
+message FailoverInstanceRequest {
+  enum DataProtectionMode {
+    DATA_PROTECTION_MODE_UNSPECIFIED = 0;
+
+    // Instance failover will be protected with data loss control. More
+    // specifically, the failover will only be performed if the current
+    // replication offset diff between master and replica is under a certain
+    // threshold.
+    LIMITED_DATA_LOSS = 1;
+
+    // Instance failover will be performed without data loss control.
+    FORCE_DATA_LOSS = 2;
+  }
+
+  // Required. Redis instance resource name using the form:
+  //     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+  // where `location_id` refers to a GCP region
+  string name = 1;
+
+  // Optional. Available data protection modes that the user can choose. If it's
+  // unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+  DataProtectionMode data_protection_mode = 2;
 }
 
 // Represents the v1 metadata of the long-running operation.

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.DiskStub;
 import com.google.cloud.compute.v1.stub.DiskStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -212,9 +213,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListDisksHttpRequest request = AggregatedListDisksHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (DisksScopedList element : diskClient.aggregatedListDisks(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -239,9 +240,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListDisksHttpRequest request = AggregatedListDisksHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListDisksPagedResponse&gt; future = diskClient.aggregatedListDisksPagedCallable().futureCall(request);
    *   // Do something
@@ -265,9 +266,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListDisksHttpRequest request = AggregatedListDisksHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     DiskAggregatedList response = diskClient.aggregatedListDisksCallable().call(request);
@@ -366,11 +367,11 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotDiskHttpRequest request = CreateSnapshotDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setGuestFlush(guestFlush)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
@@ -394,11 +395,11 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotDiskHttpRequest request = CreateSnapshotDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setGuestFlush(guestFlush)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
@@ -475,9 +476,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   Operation response = diskClient.deleteDisk(request);
    * }
@@ -501,9 +502,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.deleteDiskCallable().futureCall(request);
    *   // Do something
@@ -574,9 +575,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   GetDiskHttpRequest request = GetDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   Disk response = diskClient.getDisk(request);
    * }
@@ -599,9 +600,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   GetDiskHttpRequest request = GetDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .build();
    *   ApiFuture&lt;Disk&gt; future = diskClient.getDiskCallable().futureCall(request);
    *   // Do something
@@ -675,9 +676,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyDiskHttpRequest request = GetIamPolicyDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = diskClient.getIamPolicyDisk(request);
    * }
@@ -700,9 +701,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyDiskHttpRequest request = GetIamPolicyDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = diskClient.getIamPolicyDiskCallable().futureCall(request);
    *   // Do something
@@ -789,10 +790,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertDiskHttpRequest request = InsertDiskHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setDiskResource(diskResource)
    *     .build();
    *   Operation response = diskClient.insertDisk(request);
@@ -818,10 +819,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertDiskHttpRequest request = InsertDiskHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setDiskResource(diskResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.insertDiskCallable().futureCall(request);
@@ -892,9 +893,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListDisksHttpRequest request = ListDisksHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (Disk element : diskClient.listDisks(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -918,9 +919,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListDisksHttpRequest request = ListDisksHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListDisksPagedResponse&gt; future = diskClient.listDisksPagedCallable().futureCall(request);
    *   // Do something
@@ -944,9 +945,9 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListDisksHttpRequest request = ListDisksHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     DiskList response = diskClient.listDisksCallable().call(request);
@@ -1035,10 +1036,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   ResizeDiskHttpRequest request = ResizeDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setDisksResizeRequestResource(disksResizeRequestResource)
    *     .build();
    *   Operation response = diskClient.resizeDisk(request);
@@ -1061,10 +1062,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String formattedDisk = ProjectZoneDiskName.format("[PROJECT]", "[ZONE]", "[DISK]");
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   ResizeDiskHttpRequest request = ResizeDiskHttpRequest.newBuilder()
-   *     .setDisk(disk.toString())
+   *     .setDisk(formattedDisk)
    *     .setDisksResizeRequestResource(disksResizeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.resizeDiskCallable().futureCall(request);
@@ -1146,10 +1147,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyDiskHttpRequest request = SetIamPolicyDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = diskClient.setIamPolicyDisk(request);
@@ -1172,10 +1173,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyDiskHttpRequest request = SetIamPolicyDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = diskClient.setIamPolicyDiskCallable().futureCall(request);
@@ -1260,10 +1261,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   SetLabelsDiskHttpRequest request = SetLabelsDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
    *     .build();
    *   Operation response = diskClient.setLabelsDisk(request);
@@ -1287,10 +1288,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   SetLabelsDiskHttpRequest request = SetLabelsDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.setLabelsDiskCallable().futureCall(request);
@@ -1372,10 +1373,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsDiskHttpRequest request = TestIamPermissionsDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = diskClient.testIamPermissionsDisk(request);
@@ -1399,10 +1400,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsDiskHttpRequest request = TestIamPermissionsDiskHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = diskClient.testIamPermissionsDiskCallable().futureCall(request);
@@ -1467,7 +1468,8 @@ public class DiskClient implements BackgroundResource {
             public AggregatedListDisksPagedResponse apply(AggregatedListDisksPage input) {
               return new AggregatedListDisksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListDisksPagedResponse(AggregatedListDisksPage page) {
@@ -1547,7 +1549,8 @@ public class DiskClient implements BackgroundResource {
             public ListDisksPagedResponse apply(ListDisksPage input) {
               return new ListDisksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDisksPagedResponse(ListDisksPage page) {

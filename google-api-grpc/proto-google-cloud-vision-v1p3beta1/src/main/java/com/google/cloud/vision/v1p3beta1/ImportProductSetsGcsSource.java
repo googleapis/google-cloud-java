@@ -60,7 +60,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -122,9 +122,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    * If the Product with product_id already exists, the fields
    * product_display_name, product_category and labels are ignored.
    * If a Product doesn't exist and needs to be created on the fly, the
-   * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-   * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-   * labels field refers to [Product.labels][].
+   * product_display_name field refers to
+   * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+   * the product_category field refers to
+   * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+   * and the labels field refers to [Product.labels][].
    * Labels (optional) should be a line containing a list of comma-separated
    * key-value pairs, with the format
    *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -184,9 +186,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    * If the Product with product_id already exists, the fields
    * product_display_name, product_category and labels are ignored.
    * If a Product doesn't exist and needs to be created on the fly, the
-   * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-   * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-   * labels field refers to [Product.labels][].
+   * product_display_name field refers to
+   * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+   * the product_category field refers to
+   * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+   * and the labels field refers to [Product.labels][].
    * Labels (optional) should be a line containing a list of comma-separated
    * key-value pairs, with the format
    *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -264,10 +268,9 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
     com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource other =
         (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) obj;
 
-    boolean result = true;
-    result = result && getCsvFileUri().equals(other.getCsvFileUri());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getCsvFileUri().equals(other.getCsvFileUri())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -463,35 +466,35 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -571,9 +574,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * If the Product with product_id already exists, the fields
      * product_display_name, product_category and labels are ignored.
      * If a Product doesn't exist and needs to be created on the fly, the
-     * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-     * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-     * labels field refers to [Product.labels][].
+     * product_display_name field refers to
+     * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+     * the product_category field refers to
+     * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+     * and the labels field refers to [Product.labels][].
      * Labels (optional) should be a line containing a list of comma-separated
      * key-value pairs, with the format
      *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -633,9 +638,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * If the Product with product_id already exists, the fields
      * product_display_name, product_category and labels are ignored.
      * If a Product doesn't exist and needs to be created on the fly, the
-     * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-     * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-     * labels field refers to [Product.labels][].
+     * product_display_name field refers to
+     * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+     * the product_category field refers to
+     * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+     * and the labels field refers to [Product.labels][].
      * Labels (optional) should be a line containing a list of comma-separated
      * key-value pairs, with the format
      *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -695,9 +702,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * If the Product with product_id already exists, the fields
      * product_display_name, product_category and labels are ignored.
      * If a Product doesn't exist and needs to be created on the fly, the
-     * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-     * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-     * labels field refers to [Product.labels][].
+     * product_display_name field refers to
+     * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+     * the product_category field refers to
+     * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+     * and the labels field refers to [Product.labels][].
      * Labels (optional) should be a line containing a list of comma-separated
      * key-value pairs, with the format
      *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -755,9 +764,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * If the Product with product_id already exists, the fields
      * product_display_name, product_category and labels are ignored.
      * If a Product doesn't exist and needs to be created on the fly, the
-     * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-     * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-     * labels field refers to [Product.labels][].
+     * product_display_name field refers to
+     * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+     * the product_category field refers to
+     * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+     * and the labels field refers to [Product.labels][].
      * Labels (optional) should be a line containing a list of comma-separated
      * key-value pairs, with the format
      *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -812,9 +823,11 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * If the Product with product_id already exists, the fields
      * product_display_name, product_category and labels are ignored.
      * If a Product doesn't exist and needs to be created on the fly, the
-     * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-     * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-     * labels field refers to [Product.labels][].
+     * product_display_name field refers to
+     * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+     * the product_category field refers to
+     * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+     * and the labels field refers to [Product.labels][].
      * Labels (optional) should be a line containing a list of comma-separated
      * key-value pairs, with the format
      *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -848,7 +861,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

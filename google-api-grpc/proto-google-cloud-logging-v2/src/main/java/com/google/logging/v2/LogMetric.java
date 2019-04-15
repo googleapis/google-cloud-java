@@ -111,7 +111,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 labelExtractors_ =
                     com.google.protobuf.MapField.newMapField(
                         LabelExtractorsDefaultEntryHolder.defaultEntry);
@@ -144,7 +144,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -948,23 +948,22 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.logging.v2.LogMetric other = (com.google.logging.v2.LogMetric) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getFilter().equals(other.getFilter());
-    result = result && (hasMetricDescriptor() == other.hasMetricDescriptor());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (hasMetricDescriptor() != other.hasMetricDescriptor()) return false;
     if (hasMetricDescriptor()) {
-      result = result && getMetricDescriptor().equals(other.getMetricDescriptor());
+      if (!getMetricDescriptor().equals(other.getMetricDescriptor())) return false;
     }
-    result = result && getValueExtractor().equals(other.getValueExtractor());
-    result = result && internalGetLabelExtractors().equals(other.internalGetLabelExtractors());
-    result = result && (hasBucketOptions() == other.hasBucketOptions());
+    if (!getValueExtractor().equals(other.getValueExtractor())) return false;
+    if (!internalGetLabelExtractors().equals(other.internalGetLabelExtractors())) return false;
+    if (hasBucketOptions() != other.hasBucketOptions()) return false;
     if (hasBucketOptions()) {
-      result = result && getBucketOptions().equals(other.getBucketOptions());
+      if (!getBucketOptions().equals(other.getBucketOptions())) return false;
     }
-    result = result && version_ == other.version_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (version_ != other.version_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1239,35 +1238,35 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1701,7 +1700,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.api.MetricDescriptor metricDescriptor_ = null;
+    private com.google.api.MetricDescriptor metricDescriptor_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.MetricDescriptor,
             com.google.api.MetricDescriptor.Builder,
@@ -2433,7 +2432,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.api.Distribution.BucketOptions bucketOptions_ = null;
+    private com.google.api.Distribution.BucketOptions bucketOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.Distribution.BucketOptions,
             com.google.api.Distribution.BucketOptions.Builder,
@@ -2721,7 +2720,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

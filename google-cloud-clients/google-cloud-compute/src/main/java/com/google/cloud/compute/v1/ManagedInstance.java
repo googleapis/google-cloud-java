@@ -31,6 +31,7 @@ public final class ManagedInstance implements ApiMessage {
   private final String instance;
   private final String instanceStatus;
   private final ManagedInstanceLastAttempt lastAttempt;
+  private final ManagedInstanceVersion version;
 
   private ManagedInstance() {
     this.currentAction = null;
@@ -38,6 +39,7 @@ public final class ManagedInstance implements ApiMessage {
     this.instance = null;
     this.instanceStatus = null;
     this.lastAttempt = null;
+    this.version = null;
   }
 
   private ManagedInstance(
@@ -45,12 +47,14 @@ public final class ManagedInstance implements ApiMessage {
       String id,
       String instance,
       String instanceStatus,
-      ManagedInstanceLastAttempt lastAttempt) {
+      ManagedInstanceLastAttempt lastAttempt,
+      ManagedInstanceVersion version) {
     this.currentAction = currentAction;
     this.id = id;
     this.instance = instance;
     this.instanceStatus = instanceStatus;
     this.lastAttempt = lastAttempt;
+    this.version = version;
   }
 
   @Override
@@ -70,6 +74,9 @@ public final class ManagedInstance implements ApiMessage {
     if ("lastAttempt".equals(fieldName)) {
       return lastAttempt;
     }
+    if ("version".equals(fieldName)) {
+      return version;
+    }
     return null;
   }
 
@@ -81,6 +88,12 @@ public final class ManagedInstance implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -134,6 +147,11 @@ public final class ManagedInstance implements ApiMessage {
     return lastAttempt;
   }
 
+  /** [Output Only] Intended version of this instance. */
+  public ManagedInstanceVersion getVersion() {
+    return version;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -162,6 +180,7 @@ public final class ManagedInstance implements ApiMessage {
     private String instance;
     private String instanceStatus;
     private ManagedInstanceLastAttempt lastAttempt;
+    private ManagedInstanceVersion version;
 
     Builder() {}
 
@@ -182,6 +201,9 @@ public final class ManagedInstance implements ApiMessage {
       if (other.getLastAttempt() != null) {
         this.lastAttempt = other.lastAttempt;
       }
+      if (other.getVersion() != null) {
+        this.version = other.version;
+      }
       return this;
     }
 
@@ -191,6 +213,7 @@ public final class ManagedInstance implements ApiMessage {
       this.instance = source.instance;
       this.instanceStatus = source.instanceStatus;
       this.lastAttempt = source.lastAttempt;
+      this.version = source.version;
     }
 
     /**
@@ -298,9 +321,20 @@ public final class ManagedInstance implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Intended version of this instance. */
+    public ManagedInstanceVersion getVersion() {
+      return version;
+    }
+
+    /** [Output Only] Intended version of this instance. */
+    public Builder setVersion(ManagedInstanceVersion version) {
+      this.version = version;
+      return this;
+    }
+
     public ManagedInstance build() {
 
-      return new ManagedInstance(currentAction, id, instance, instanceStatus, lastAttempt);
+      return new ManagedInstance(currentAction, id, instance, instanceStatus, lastAttempt, version);
     }
 
     public Builder clone() {
@@ -310,6 +344,7 @@ public final class ManagedInstance implements ApiMessage {
       newBuilder.setInstance(this.instance);
       newBuilder.setInstanceStatus(this.instanceStatus);
       newBuilder.setLastAttempt(this.lastAttempt);
+      newBuilder.setVersion(this.version);
       return newBuilder;
     }
   }
@@ -331,6 +366,9 @@ public final class ManagedInstance implements ApiMessage {
         + ", "
         + "lastAttempt="
         + lastAttempt
+        + ", "
+        + "version="
+        + version
         + "}";
   }
 
@@ -345,13 +383,14 @@ public final class ManagedInstance implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.instanceStatus, that.getInstanceStatus())
-          && Objects.equals(this.lastAttempt, that.getLastAttempt());
+          && Objects.equals(this.lastAttempt, that.getLastAttempt())
+          && Objects.equals(this.version, that.getVersion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currentAction, id, instance, instanceStatus, lastAttempt);
+    return Objects.hash(currentAction, id, instance, instanceStatus, lastAttempt, version);
   }
 }

@@ -150,7 +150,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -186,7 +186,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The view specifies a subset of [Task][google.cloud.tasks.v2beta2.Task] data.
+   * The view specifies a subset of [Task][google.cloud.tasks.v2beta2.Task]
+   * data.
    * When a task is returned in a response, not all
    * information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
@@ -214,11 +215,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * The basic view omits fields which can be large or can contain
      * sensitive data.
      * This view does not include the
-     * ([payload in AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] and
-     * [payload in PullMessage][google.cloud.tasks.v2beta2.PullMessage.payload]). These payloads are
-     * desirable to return only when needed, because they can be large
-     * and because of the sensitivity of the data that you choose to
-     * store in it.
+     * ([payload in
+     * AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * and [payload in
+     * PullMessage][google.cloud.tasks.v2beta2.PullMessage.payload]). These
+     * payloads are desirable to return only when needed, because they can be
+     * large and because of the sensitivity of the data that you choose to store
+     * in it.
      * </pre>
      *
      * <code>BASIC = 1;</code>
@@ -229,9 +232,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * All information is returned.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Queue][google.cloud.tasks.v2beta2.Queue] resource.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Queue][google.cloud.tasks.v2beta2.Queue] resource.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -257,11 +261,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * The basic view omits fields which can be large or can contain
      * sensitive data.
      * This view does not include the
-     * ([payload in AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] and
-     * [payload in PullMessage][google.cloud.tasks.v2beta2.PullMessage.payload]). These payloads are
-     * desirable to return only when needed, because they can be large
-     * and because of the sensitivity of the data that you choose to
-     * store in it.
+     * ([payload in
+     * AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * and [payload in
+     * PullMessage][google.cloud.tasks.v2beta2.PullMessage.payload]). These
+     * payloads are desirable to return only when needed, because they can be
+     * large and because of the sensitivity of the data that you choose to store
+     * in it.
      * </pre>
      *
      * <code>BASIC = 1;</code>
@@ -272,9 +278,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * All information is returned.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Queue][google.cloud.tasks.v2beta2.Queue] resource.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Queue][google.cloud.tasks.v2beta2.Queue] resource.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -398,14 +405,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   * Optionally caller-specified in
+   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -433,14 +442,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   * Optionally caller-specified in
+   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -472,9 +483,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
-   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+   * is set on the queue.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -488,9 +501,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
-   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+   * is set on the queue.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -507,9 +522,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
-   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+   * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+   * is set on the queue.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -527,9 +544,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-   * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-   * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+   * the task. Can be set only if
+   * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+   * queue.
+   * A pull task is a task that has
+   * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -541,9 +561,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-   * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-   * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+   * the task. Can be set only if
+   * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+   * queue.
+   * A pull task is a task that has
+   * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -558,9 +581,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-   * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-   * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+   * the task. Can be set only if
+   * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+   * queue.
+   * A pull task is a task that has
+   * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -583,7 +609,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
-   * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   * leased plus the
+   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -601,7 +628,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
-   * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   * leased plus the
+   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -621,7 +649,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
-   * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   * leased plus the
+   * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -720,8 +749,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-   * been returned.
+   * Output only. The view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -733,8 +762,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-   * been returned.
+   * Output only. The view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -830,35 +859,33 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.tasks.v2beta2.Task other = (com.google.cloud.tasks.v2beta2.Task) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasScheduleTime() == other.hasScheduleTime());
+    if (!getName().equals(other.getName())) return false;
+    if (hasScheduleTime() != other.hasScheduleTime()) return false;
     if (hasScheduleTime()) {
-      result = result && getScheduleTime().equals(other.getScheduleTime());
+      if (!getScheduleTime().equals(other.getScheduleTime())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasStatus() == other.hasStatus());
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus().equals(other.getStatus());
+      if (!getStatus().equals(other.getStatus())) return false;
     }
-    result = result && view_ == other.view_;
-    result = result && getPayloadTypeCase().equals(other.getPayloadTypeCase());
-    if (!result) return false;
+    if (view_ != other.view_) return false;
+    if (!getPayloadTypeCase().equals(other.getPayloadTypeCase())) return false;
     switch (payloadTypeCase_) {
       case 3:
-        result = result && getAppEngineHttpRequest().equals(other.getAppEngineHttpRequest());
+        if (!getAppEngineHttpRequest().equals(other.getAppEngineHttpRequest())) return false;
         break;
       case 4:
-        result = result && getPullMessage().equals(other.getPullMessage());
+        if (!getPullMessage().equals(other.getPullMessage())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1128,35 +1155,35 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1251,14 +1278,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1286,14 +1315,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1321,14 +1352,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1354,14 +1387,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1384,14 +1419,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1426,9 +1463,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1442,9 +1481,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1468,9 +1509,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1495,9 +1538,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1519,9 +1564,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1556,9 +1603,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1585,9 +1634,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1602,9 +1653,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1626,9 +1679,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * App Engine HTTP request that is sent to the task's target. Can
      * be set only if
-     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest] set.
+     * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
+     * is set on the queue.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1667,9 +1722,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1681,9 +1739,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1705,9 +1766,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1729,9 +1793,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1751,9 +1818,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1784,9 +1854,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1811,9 +1884,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1825,9 +1901,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1846,9 +1925,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
-     * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
-     * A pull task is a task that has [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process
+     * the task. Can be set only if
+     * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
+     * queue.
+     * A pull task is a task that has
+     * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.PullMessage pull_message = 4;</code>
@@ -1878,7 +1960,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return pullMessageBuilder_;
     }
 
-    private com.google.protobuf.Timestamp scheduleTime_ = null;
+    private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1893,7 +1975,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1911,7 +1994,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1935,7 +2019,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1963,7 +2048,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1988,7 +2074,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2020,7 +2107,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2046,7 +2134,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2066,7 +2155,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2090,7 +2180,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
-     * leased plus the [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     * leased plus the
+     * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2113,7 +2204,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return scheduleTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2301,7 +2392,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.cloud.tasks.v2beta2.TaskStatus status_ = null;
+    private com.google.cloud.tasks.v2beta2.TaskStatus status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta2.TaskStatus,
             com.google.cloud.tasks.v2beta2.TaskStatus.Builder,
@@ -2487,8 +2578,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -2500,8 +2591,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -2515,8 +2606,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -2531,8 +2622,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -2550,8 +2641,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View view = 8;</code>
@@ -2565,7 +2656,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

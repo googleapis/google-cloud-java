@@ -66,7 +66,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
@@ -110,7 +110,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -364,12 +364,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * WARNING: `ordering_key` is an experimental field not yet
-   * supported by the service.
    * Identifies related messages for which publish order should be respected.
    * If a `Subscription` has `enable_message_ordering` set to `true`, messages
    * published with the same `ordering_key` value will be delivered to
    * subscribers in the order in which they are received by the Pub/Sub system.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -389,12 +390,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * WARNING: `ordering_key` is an experimental field not yet
-   * supported by the service.
    * Identifies related messages for which publish order should be respected.
    * If a `Subscription` has `enable_message_ordering` set to `true`, messages
    * published with the same `ordering_key` value will be delivered to
    * subscribers in the order in which they are received by the Pub/Sub system.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -485,17 +487,16 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.pubsub.v1.PubsubMessage other = (com.google.pubsub.v1.PubsubMessage) obj;
 
-    boolean result = true;
-    result = result && getData().equals(other.getData());
-    result = result && internalGetAttributes().equals(other.internalGetAttributes());
-    result = result && getMessageId().equals(other.getMessageId());
-    result = result && (hasPublishTime() == other.hasPublishTime());
+    if (!getData().equals(other.getData())) return false;
+    if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
+    if (!getMessageId().equals(other.getMessageId())) return false;
+    if (hasPublishTime() != other.hasPublishTime()) return false;
     if (hasPublishTime()) {
-      result = result && getPublishTime().equals(other.getPublishTime());
+      if (!getPublishTime().equals(other.getPublishTime())) return false;
     }
-    result = result && getOrderingKey().equals(other.getOrderingKey());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getOrderingKey().equals(other.getOrderingKey())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -748,35 +749,35 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1151,7 +1152,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp publishTime_ = null;
+    private com.google.protobuf.Timestamp publishTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1361,6 +1362,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * If a `Subscription` has `enable_message_ordering` set to `true`, messages
      * published with the same `ordering_key` value will be delivered to
      * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1380,12 +1384,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `ordering_key` is an experimental field not yet
-     * supported by the service.
      * Identifies related messages for which publish order should be respected.
      * If a `Subscription` has `enable_message_ordering` set to `true`, messages
      * published with the same `ordering_key` value will be delivered to
      * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1405,12 +1410,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `ordering_key` is an experimental field not yet
-     * supported by the service.
      * Identifies related messages for which publish order should be respected.
      * If a `Subscription` has `enable_message_ordering` set to `true`, messages
      * published with the same `ordering_key` value will be delivered to
      * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1428,12 +1434,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `ordering_key` is an experimental field not yet
-     * supported by the service.
      * Identifies related messages for which publish order should be respected.
      * If a `Subscription` has `enable_message_ordering` set to `true`, messages
      * published with the same `ordering_key` value will be delivered to
      * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1448,12 +1455,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `ordering_key` is an experimental field not yet
-     * supported by the service.
      * Identifies related messages for which publish order should be respected.
      * If a `Subscription` has `enable_message_ordering` set to `true`, messages
      * published with the same `ordering_key` value will be delivered to
      * subscribers in the order in which they are received by the Pub/Sub system.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1471,7 +1479,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

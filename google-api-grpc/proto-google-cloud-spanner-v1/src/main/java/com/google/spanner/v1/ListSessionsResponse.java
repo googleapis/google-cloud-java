@@ -53,7 +53,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sessions_ = new java.util.ArrayList<com.google.spanner.v1.Session>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -70,7 +70,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -82,7 +82,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         sessions_ = java.util.Collections.unmodifiableList(sessions_);
       }
       this.unknownFields = unknownFields.build();
@@ -177,8 +177,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-   * sessions.
+   * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+   * of the matching sessions.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -199,8 +199,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-   * sessions.
+   * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+   * of the matching sessions.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -268,11 +268,10 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
     com.google.spanner.v1.ListSessionsResponse other =
         (com.google.spanner.v1.ListSessionsResponse) obj;
 
-    boolean result = true;
-    result = result && getSessionsList().equals(other.getSessionsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getSessionsList().equals(other.getSessionsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -473,7 +472,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (sessionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           sessions_ = java.util.Collections.unmodifiableList(sessions_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -489,35 +488,35 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -598,7 +597,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureSessionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         sessions_ = new java.util.ArrayList<com.google.spanner.v1.Session>(sessions_);
         bitField0_ |= 0x00000001;
       }
@@ -934,10 +933,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
                 com.google.spanner.v1.Session,
                 com.google.spanner.v1.Session.Builder,
                 com.google.spanner.v1.SessionOrBuilder>(
-                sessions_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                sessions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         sessions_ = null;
       }
       return sessionsBuilder_;
@@ -949,8 +945,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-     * sessions.
+     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+     * of the matching sessions.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -971,8 +967,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-     * sessions.
+     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+     * of the matching sessions.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -993,8 +989,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-     * sessions.
+     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+     * of the matching sessions.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1013,8 +1009,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-     * sessions.
+     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+     * of the matching sessions.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1030,8 +1026,8 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more of the matching
-     * sessions.
+     * [ListSessions][google.spanner.v1.Spanner.ListSessions] call to fetch more
+     * of the matching sessions.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1049,7 +1045,7 @@ public final class ListSessionsResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -38,9 +38,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * Google Compute Engine operations. Operation identity can be obtained via {@link
@@ -52,7 +53,8 @@ import org.threeten.bp.Duration;
 public class Operation implements Serializable {
 
   private static final long serialVersionUID = -8979001444590023899L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final RetrySettings DEFAULT_OPERATION_WAIT_SETTINGS =
       RetrySettings.newBuilder()
@@ -350,13 +352,15 @@ public class Operation implements Serializable {
       user = operationPb.getUser();
       progress = operationPb.getProgress();
       if (operationPb.getInsertTime() != null) {
-        insertTime = TIMESTAMP_FORMATTER.parseMillis(operationPb.getInsertTime());
+        insertTime =
+            TIMESTAMP_FORMATTER.parse(operationPb.getInsertTime(), Instant.FROM).toEpochMilli();
       }
       if (operationPb.getStartTime() != null) {
-        startTime = TIMESTAMP_FORMATTER.parseMillis(operationPb.getStartTime());
+        startTime =
+            TIMESTAMP_FORMATTER.parse(operationPb.getStartTime(), Instant.FROM).toEpochMilli();
       }
       if (operationPb.getEndTime() != null) {
-        endTime = TIMESTAMP_FORMATTER.parseMillis(operationPb.getEndTime());
+        endTime = TIMESTAMP_FORMATTER.parse(operationPb.getEndTime(), Instant.FROM).toEpochMilli();
       }
       if (operationPb.getError() != null && operationPb.getError().getErrors() != null) {
         errors =
@@ -810,13 +814,13 @@ public class Operation implements Serializable {
     operationPb.setUser(user);
     operationPb.setProgress(progress);
     if (insertTime != null) {
-      operationPb.setInsertTime(TIMESTAMP_FORMATTER.print(insertTime));
+      operationPb.setInsertTime(TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(insertTime)));
     }
     if (startTime != null) {
-      operationPb.setStartTime(TIMESTAMP_FORMATTER.print(startTime));
+      operationPb.setStartTime(TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(startTime)));
     }
     if (endTime != null) {
-      operationPb.setEndTime(TIMESTAMP_FORMATTER.print(endTime));
+      operationPb.setEndTime(TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(endTime)));
     }
     if (errors != null) {
       operationPb.setError(

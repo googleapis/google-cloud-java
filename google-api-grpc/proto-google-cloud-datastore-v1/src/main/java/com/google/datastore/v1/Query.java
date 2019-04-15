@@ -29,7 +29,6 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     distinctOn_ = java.util.Collections.emptyList();
     startCursor_ = com.google.protobuf.ByteString.EMPTY;
     endCursor_ = com.google.protobuf.ByteString.EMPTY;
-    offset_ = 0;
   }
 
   @java.lang.Override
@@ -58,7 +57,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             break;
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 projection_ = new java.util.ArrayList<com.google.datastore.v1.Projection>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -69,7 +68,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 kind_ = new java.util.ArrayList<com.google.datastore.v1.KindExpression>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -95,7 +94,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -106,7 +105,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 distinctOn_ = new java.util.ArrayList<com.google.datastore.v1.PropertyReference>();
                 mutable_bitField0_ |= 0x00000010;
               }
@@ -147,7 +146,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -159,16 +158,16 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         projection_ = java.util.Collections.unmodifiableList(projection_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         kind_ = java.util.Collections.unmodifiableList(kind_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         order_ = java.util.Collections.unmodifiableList(order_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         distinctOn_ = java.util.Collections.unmodifiableList(distinctOn_);
       }
       this.unknownFields = unknownFields.build();
@@ -508,7 +507,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A starting point for the query results. Query cursors are
    * returned in query result batches and
-   * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+   * [can only be used to continue the same
+   * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
    * </pre>
    *
    * <code>bytes start_cursor = 7;</code>
@@ -525,7 +525,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An ending point for the query results. Query cursors are
    * returned in query result batches and
-   * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+   * [can only be used to limit the same
+   * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
    * </pre>
    *
    * <code>bytes end_cursor = 8;</code>
@@ -690,24 +691,23 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.datastore.v1.Query other = (com.google.datastore.v1.Query) obj;
 
-    boolean result = true;
-    result = result && getProjectionList().equals(other.getProjectionList());
-    result = result && getKindList().equals(other.getKindList());
-    result = result && (hasFilter() == other.hasFilter());
+    if (!getProjectionList().equals(other.getProjectionList())) return false;
+    if (!getKindList().equals(other.getKindList())) return false;
+    if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
-      result = result && getFilter().equals(other.getFilter());
+      if (!getFilter().equals(other.getFilter())) return false;
     }
-    result = result && getOrderList().equals(other.getOrderList());
-    result = result && getDistinctOnList().equals(other.getDistinctOnList());
-    result = result && getStartCursor().equals(other.getStartCursor());
-    result = result && getEndCursor().equals(other.getEndCursor());
-    result = result && (getOffset() == other.getOffset());
-    result = result && (hasLimit() == other.hasLimit());
+    if (!getOrderList().equals(other.getOrderList())) return false;
+    if (!getDistinctOnList().equals(other.getDistinctOnList())) return false;
+    if (!getStartCursor().equals(other.getStartCursor())) return false;
+    if (!getEndCursor().equals(other.getEndCursor())) return false;
+    if (getOffset() != other.getOffset()) return false;
+    if (hasLimit() != other.hasLimit()) return false;
     if (hasLimit()) {
-      result = result && getLimit().equals(other.getLimit());
+      if (!getLimit().equals(other.getLimit())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -966,7 +966,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (projectionBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           projection_ = java.util.Collections.unmodifiableList(projection_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -975,7 +975,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         result.projection_ = projectionBuilder_.build();
       }
       if (kindBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           kind_ = java.util.Collections.unmodifiableList(kind_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -989,7 +989,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         result.filter_ = filterBuilder_.build();
       }
       if (orderBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           order_ = java.util.Collections.unmodifiableList(order_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -998,7 +998,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         result.order_ = orderBuilder_.build();
       }
       if (distinctOnBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           distinctOn_ = java.util.Collections.unmodifiableList(distinctOn_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -1021,35 +1021,35 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1222,7 +1222,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureProjectionIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         projection_ = new java.util.ArrayList<com.google.datastore.v1.Projection>(projection_);
         bitField0_ |= 0x00000001;
       }
@@ -1560,10 +1560,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Projection,
                 com.google.datastore.v1.Projection.Builder,
                 com.google.datastore.v1.ProjectionOrBuilder>(
-                projection_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                projection_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         projection_ = null;
       }
       return projectionBuilder_;
@@ -1573,7 +1570,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureKindIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         kind_ = new java.util.ArrayList<com.google.datastore.v1.KindExpression>(kind_);
         bitField0_ |= 0x00000002;
       }
@@ -1929,16 +1926,13 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.KindExpression,
                 com.google.datastore.v1.KindExpression.Builder,
                 com.google.datastore.v1.KindExpressionOrBuilder>(
-                kind_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                kind_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         kind_ = null;
       }
       return kindBuilder_;
     }
 
-    private com.google.datastore.v1.Filter filter_ = null;
+    private com.google.datastore.v1.Filter filter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.Filter,
             com.google.datastore.v1.Filter.Builder,
@@ -2117,7 +2111,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOrderIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>(order_);
         bitField0_ |= 0x00000008;
       }
@@ -2455,10 +2449,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.PropertyOrder,
                 com.google.datastore.v1.PropertyOrder.Builder,
                 com.google.datastore.v1.PropertyOrderOrBuilder>(
-                order_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
-                getParentForChildren(),
-                isClean());
+                order_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         order_ = null;
       }
       return orderBuilder_;
@@ -2468,7 +2459,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDistinctOnIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         distinctOn_ =
             new java.util.ArrayList<com.google.datastore.v1.PropertyReference>(distinctOn_);
         bitField0_ |= 0x00000010;
@@ -2845,10 +2836,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.PropertyReference,
                 com.google.datastore.v1.PropertyReference.Builder,
                 com.google.datastore.v1.PropertyReferenceOrBuilder>(
-                distinctOn_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
-                getParentForChildren(),
-                isClean());
+                distinctOn_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         distinctOn_ = null;
       }
       return distinctOnBuilder_;
@@ -2861,7 +2849,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to continue the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
@@ -2875,7 +2864,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to continue the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
@@ -2895,7 +2885,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to continue the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
@@ -2914,7 +2905,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to limit the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
@@ -2928,7 +2920,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to limit the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
@@ -2948,7 +2941,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to limit the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
@@ -3007,7 +3001,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Int32Value limit_ = null;
+    private com.google.protobuf.Int32Value limit_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Int32Value,
             com.google.protobuf.Int32Value.Builder,
@@ -3211,7 +3205,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

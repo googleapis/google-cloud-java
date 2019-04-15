@@ -179,6 +179,10 @@ class MutateRowsAttemptCallable implements Callable<Void> {
         return null;
       }
 
+      callContext
+          .getTracer()
+          .attemptStarted(externalFuture.getAttemptSettings().getOverallAttemptCount());
+
       // Make the actual call
       ApiFuture<List<MutateRowsResponse>> innerFuture =
           innerCallable.futureCall(currentRequest, currentCallContext);

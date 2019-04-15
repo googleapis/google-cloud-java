@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1.CreateInstanceRequest;
 import com.google.cloud.redis.v1.DeleteInstanceRequest;
+import com.google.cloud.redis.v1.FailoverInstanceRequest;
 import com.google.cloud.redis.v1.GetInstanceRequest;
 import com.google.cloud.redis.v1.Instance;
 import com.google.cloud.redis.v1.ListInstancesRequest;
@@ -90,6 +91,16 @@ public abstract class CloudRedisStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<FailoverInstanceRequest, Instance, OperationMetadata>
+      failoverInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: failoverInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: failoverInstanceCallable()");
   }
 
   @Override

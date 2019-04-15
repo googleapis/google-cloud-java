@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package com.google.cloud.vision.v1p2beta1;
 import com.google.api.core.BetaApi;
 import com.google.cloud.vision.v1p2beta1.ImageAnnotatorGrpc.ImageAnnotatorImplBase;
 import com.google.longrunning.Operation;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,7 +28,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
 public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
-  private ArrayList<GeneratedMessageV3> requests;
+  private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
   public MockImageAnnotatorImpl() {
@@ -36,15 +36,15 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessageV3> getRequests() {
+  public List<AbstractMessage> getRequests() {
     return requests;
   }
 
-  public void addResponse(GeneratedMessageV3 response) {
+  public void addResponse(AbstractMessage response) {
     responses.add(response);
   }
 
-  public void setResponses(List<GeneratedMessageV3> responses) {
+  public void setResponses(List<AbstractMessage> responses) {
     this.responses = new LinkedList<Object>(responses);
   }
 

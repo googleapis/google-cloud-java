@@ -46,7 +46,8 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The language that was triggered during intent detection.
-   * See [Language Support](https://dialogflow.com/docs/reference/language)
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -58,7 +59,8 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The language that was triggered during intent detection.
-   * See [Language Support](https://dialogflow.com/docs/reference/language)
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -74,10 +76,10 @@ public interface QueryResultOrBuilder
    * indicates an estimated greater likelihood that the recognized words are
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
-   * You should not rely on this field as it isn't guaranteed to be accurate, or
-   * even set. In particular this field isn't set in Webhook calls and for
-   * StreamingDetectIntent since the streaming endpoint has separate confidence
-   * estimates per portion of the audio in StreamingRecognitionResult.
+   * This field is not guaranteed to be accurate or set. In particular this
+   * field isn't set for StreamingDetectIntent since the streaming endpoint has
+   * separate confidence estimates per portion of the audio in
+   * StreamingRecognitionResult.
    * </pre>
    *
    * <code>float speech_recognition_confidence = 2;</code>
@@ -156,6 +158,7 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
+   * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
@@ -166,6 +169,7 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
+   * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
@@ -391,6 +395,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * The intent detection confidence. Values range from 0.0
    * (completely uncertain) to 1.0 (completely certain).
+   * If there are `multiple knowledge_answers` messages, this value is set to
+   * the greatest `knowledgeAnswers.match_confidence` value in the list.
    * </pre>
    *
    * <code>float intent_detection_confidence = 12;</code>
@@ -401,8 +407,9 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -412,8 +419,9 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -423,11 +431,50 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
    */
   com.google.protobuf.StructOrBuilder getDiagnosticInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  boolean hasSentimentAnalysisResult();
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SentimentAnalysisResult getSentimentAnalysisResult();
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result, which depends on the
+   * `sentiment_analysis_request_config` specified in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SentimentAnalysisResultOrBuilder
+      getSentimentAnalysisResultOrBuilder();
 }

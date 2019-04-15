@@ -80,9 +80,9 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, then its column values are overwritten with the ones
+   * provided. Any column values not explicitly written are preserved.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -92,9 +92,9 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, then its column values are overwritten with the ones
+   * provided. Any column values not explicitly written are preserved.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -104,9 +104,9 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, then its column values are overwritten with the ones
+   * provided. Any column values not explicitly written are preserved.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -117,10 +117,11 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, it is deleted, and the column values provided are
+   * inserted instead. Unlike
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+   * means any values not explicitly written become `NULL`.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -130,10 +131,11 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, it is deleted, and the column values provided are
+   * inserted instead. Unlike
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+   * means any values not explicitly written become `NULL`.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -143,10 +145,11 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, it is deleted, and the column values provided are
+   * inserted instead. Unlike
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+   * means any values not explicitly written become `NULL`.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>

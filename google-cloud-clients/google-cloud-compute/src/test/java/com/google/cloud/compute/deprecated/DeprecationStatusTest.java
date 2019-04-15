@@ -20,19 +20,24 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Test;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 public class DeprecationStatusTest {
 
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_INSTANT.withZone(ZoneOffset.UTC);
   private static final Long DELETED_MILLIS = 1453293540000L;
   private static final Long DEPRECATED_MILLIS = 1453293420000L;
   private static final Long OBSOLETE_MILLIS = 1453293480000L;
-  private static final String DELETED = TIMESTAMP_FORMATTER.print(DELETED_MILLIS);
-  private static final String DEPRECATED = TIMESTAMP_FORMATTER.print(DEPRECATED_MILLIS);
-  private static final String OBSOLETE = TIMESTAMP_FORMATTER.print(OBSOLETE_MILLIS);
+  private static final String DELETED =
+      TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(DELETED_MILLIS));
+  private static final String DEPRECATED =
+      TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(DEPRECATED_MILLIS));
+  private static final String OBSOLETE =
+      TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(OBSOLETE_MILLIS));
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final MachineTypeId MACHINE_TYPE_ID =
       MachineTypeId.of("project", "zone", "machineType");

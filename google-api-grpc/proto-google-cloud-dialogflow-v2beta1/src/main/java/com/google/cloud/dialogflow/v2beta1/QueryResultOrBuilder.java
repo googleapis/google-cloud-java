@@ -46,7 +46,8 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The language that was triggered during intent detection.
-   * See [Language Support](https://dialogflow.com/docs/reference/language)
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -58,7 +59,8 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The language that was triggered during intent detection.
-   * See [Language Support](https://dialogflow.com/docs/reference/language)
+   * See [Language
+   * Support](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -156,6 +158,7 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
+   * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
@@ -166,6 +169,7 @@ public interface QueryResultOrBuilder
    *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
+   * Note: This is a legacy field, `fulfillment_messages` should be preferred.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
@@ -404,8 +408,9 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -415,8 +420,9 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
@@ -426,8 +432,9 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The free-form diagnostic info. For example, this field
-   * could contain webhook call latency.
+   * The free-form diagnostic info. For example, this field could contain
+   * webhook call latency. The string keys of the Struct's fields map can change
+   * without notice.
    * </pre>
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>

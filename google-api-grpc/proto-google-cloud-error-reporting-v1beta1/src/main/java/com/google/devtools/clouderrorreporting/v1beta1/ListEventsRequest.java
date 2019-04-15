@@ -25,7 +25,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
   private ListEventsRequest() {
     projectName_ = "";
     groupId_ = "";
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -117,7 +116,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -475,21 +474,20 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest other =
         (com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest) obj;
 
-    boolean result = true;
-    result = result && getProjectName().equals(other.getProjectName());
-    result = result && getGroupId().equals(other.getGroupId());
-    result = result && (hasServiceFilter() == other.hasServiceFilter());
+    if (!getProjectName().equals(other.getProjectName())) return false;
+    if (!getGroupId().equals(other.getGroupId())) return false;
+    if (hasServiceFilter() != other.hasServiceFilter()) return false;
     if (hasServiceFilter()) {
-      result = result && getServiceFilter().equals(other.getServiceFilter());
+      if (!getServiceFilter().equals(other.getServiceFilter())) return false;
     }
-    result = result && (hasTimeRange() == other.hasTimeRange());
+    if (hasTimeRange() != other.hasTimeRange()) return false;
     if (hasTimeRange()) {
-      result = result && getTimeRange().equals(other.getTimeRange());
+      if (!getTimeRange().equals(other.getTimeRange())) return false;
     }
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -731,35 +729,35 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1037,8 +1035,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter serviceFilter_ =
-        null;
+    private com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter serviceFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter,
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.Builder,
@@ -1255,7 +1252,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
       return serviceFilterBuilder_;
     }
 
-    private com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange timeRange_ = null;
+    private com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange timeRange_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange,
             com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Builder,
@@ -1599,7 +1596,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

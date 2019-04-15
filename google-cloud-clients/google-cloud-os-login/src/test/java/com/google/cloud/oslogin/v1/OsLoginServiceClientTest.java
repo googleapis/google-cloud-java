@@ -23,9 +23,9 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -85,7 +85,7 @@ public class OsLoginServiceClientTest {
 
     client.deletePosixAccount(name);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeletePosixAccountRequest actualRequest = (DeletePosixAccountRequest) actualRequests.get(0);
 
@@ -122,7 +122,7 @@ public class OsLoginServiceClientTest {
 
     client.deleteSshPublicKey(name);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSshPublicKeyRequest actualRequest = (DeleteSshPublicKeyRequest) actualRequests.get(0);
 
@@ -163,7 +163,7 @@ public class OsLoginServiceClientTest {
     LoginProfile actualResponse = client.getLoginProfile(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetLoginProfileRequest actualRequest = (GetLoginProfileRequest) actualRequests.get(0);
 
@@ -209,7 +209,7 @@ public class OsLoginServiceClientTest {
     SshPublicKey actualResponse = client.getSshPublicKey(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSshPublicKeyRequest actualRequest = (GetSshPublicKeyRequest) actualRequests.get(0);
 
@@ -248,7 +248,7 @@ public class OsLoginServiceClientTest {
     ImportSshPublicKeyResponse actualResponse = client.importSshPublicKey(parent, sshPublicKey);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportSshPublicKeyRequest actualRequest = (ImportSshPublicKeyRequest) actualRequests.get(0);
 
@@ -291,7 +291,7 @@ public class OsLoginServiceClientTest {
         client.importSshPublicKey(parent, sshPublicKey, projectId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportSshPublicKeyRequest actualRequest = (ImportSshPublicKeyRequest) actualRequests.get(0);
 
@@ -342,7 +342,7 @@ public class OsLoginServiceClientTest {
     SshPublicKey actualResponse = client.updateSshPublicKey(name, sshPublicKey);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateSshPublicKeyRequest actualRequest = (UpdateSshPublicKeyRequest) actualRequests.get(0);
 
@@ -392,7 +392,7 @@ public class OsLoginServiceClientTest {
     SshPublicKey actualResponse = client.updateSshPublicKey(name, sshPublicKey, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockOsLoginService.getRequests();
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateSshPublicKeyRequest actualRequest = (UpdateSshPublicKeyRequest) actualRequests.get(0);
 

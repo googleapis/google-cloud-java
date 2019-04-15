@@ -28,6 +28,7 @@ public final class HttpHealthCheck implements ApiMessage {
   private final String host;
   private final Integer port;
   private final String portName;
+  private final String portSpecification;
   private final String proxyHeader;
   private final String requestPath;
   private final String response;
@@ -36,6 +37,7 @@ public final class HttpHealthCheck implements ApiMessage {
     this.host = null;
     this.port = null;
     this.portName = null;
+    this.portSpecification = null;
     this.proxyHeader = null;
     this.requestPath = null;
     this.response = null;
@@ -45,12 +47,14 @@ public final class HttpHealthCheck implements ApiMessage {
       String host,
       Integer port,
       String portName,
+      String portSpecification,
       String proxyHeader,
       String requestPath,
       String response) {
     this.host = host;
     this.port = port;
     this.portName = portName;
+    this.portSpecification = portSpecification;
     this.proxyHeader = proxyHeader;
     this.requestPath = requestPath;
     this.response = response;
@@ -66,6 +70,9 @@ public final class HttpHealthCheck implements ApiMessage {
     }
     if ("portName".equals(fieldName)) {
       return portName;
+    }
+    if ("portSpecification".equals(fieldName)) {
+      return portSpecification;
     }
     if ("proxyHeader".equals(fieldName)) {
       return proxyHeader;
@@ -87,6 +94,12 @@ public final class HttpHealthCheck implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -113,6 +126,19 @@ public final class HttpHealthCheck implements ApiMessage {
    */
   public String getPortName() {
     return portName;
+  }
+
+  /**
+   * Specifies how port is selected for health checking, can be one of following values:
+   * USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The
+   * portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port
+   * specified for each network endpoint is used for health checking. For other backends, the port
+   * or named port specified in the Backend Service is used for health checking.
+   *
+   * <p>If not specified, HTTP health check follows behavior specified in port and portName fields.
+   */
+  public String getPortSpecification() {
+    return portSpecification;
   }
 
   /**
@@ -162,6 +188,7 @@ public final class HttpHealthCheck implements ApiMessage {
     private String host;
     private Integer port;
     private String portName;
+    private String portSpecification;
     private String proxyHeader;
     private String requestPath;
     private String response;
@@ -179,6 +206,9 @@ public final class HttpHealthCheck implements ApiMessage {
       if (other.getPortName() != null) {
         this.portName = other.portName;
       }
+      if (other.getPortSpecification() != null) {
+        this.portSpecification = other.portSpecification;
+      }
       if (other.getProxyHeader() != null) {
         this.proxyHeader = other.proxyHeader;
       }
@@ -195,6 +225,7 @@ public final class HttpHealthCheck implements ApiMessage {
       this.host = source.host;
       this.port = source.port;
       this.portName = source.portName;
+      this.portSpecification = source.portSpecification;
       this.proxyHeader = source.proxyHeader;
       this.requestPath = source.requestPath;
       this.response = source.response;
@@ -252,6 +283,35 @@ public final class HttpHealthCheck implements ApiMessage {
     }
 
     /**
+     * Specifies how port is selected for health checking, can be one of following values:
+     * USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The
+     * portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port
+     * specified for each network endpoint is used for health checking. For other backends, the port
+     * or named port specified in the Backend Service is used for health checking.
+     *
+     * <p>If not specified, HTTP health check follows behavior specified in port and portName
+     * fields.
+     */
+    public String getPortSpecification() {
+      return portSpecification;
+    }
+
+    /**
+     * Specifies how port is selected for health checking, can be one of following values:
+     * USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The
+     * portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port
+     * specified for each network endpoint is used for health checking. For other backends, the port
+     * or named port specified in the Backend Service is used for health checking.
+     *
+     * <p>If not specified, HTTP health check follows behavior specified in port and portName
+     * fields.
+     */
+    public Builder setPortSpecification(String portSpecification) {
+      this.portSpecification = portSpecification;
+      return this;
+    }
+
+    /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE
      * or PROXY_V1. The default is NONE.
      */
@@ -298,7 +358,8 @@ public final class HttpHealthCheck implements ApiMessage {
 
     public HttpHealthCheck build() {
 
-      return new HttpHealthCheck(host, port, portName, proxyHeader, requestPath, response);
+      return new HttpHealthCheck(
+          host, port, portName, portSpecification, proxyHeader, requestPath, response);
     }
 
     public Builder clone() {
@@ -306,6 +367,7 @@ public final class HttpHealthCheck implements ApiMessage {
       newBuilder.setHost(this.host);
       newBuilder.setPort(this.port);
       newBuilder.setPortName(this.portName);
+      newBuilder.setPortSpecification(this.portSpecification);
       newBuilder.setProxyHeader(this.proxyHeader);
       newBuilder.setRequestPath(this.requestPath);
       newBuilder.setResponse(this.response);
@@ -324,6 +386,9 @@ public final class HttpHealthCheck implements ApiMessage {
         + ", "
         + "portName="
         + portName
+        + ", "
+        + "portSpecification="
+        + portSpecification
         + ", "
         + "proxyHeader="
         + proxyHeader
@@ -346,6 +411,7 @@ public final class HttpHealthCheck implements ApiMessage {
       return Objects.equals(this.host, that.getHost())
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
+          && Objects.equals(this.portSpecification, that.getPortSpecification())
           && Objects.equals(this.proxyHeader, that.getProxyHeader())
           && Objects.equals(this.requestPath, that.getRequestPath())
           && Objects.equals(this.response, that.getResponse());
@@ -355,6 +421,7 @@ public final class HttpHealthCheck implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(host, port, portName, proxyHeader, requestPath, response);
+    return Objects.hash(
+        host, port, portName, portSpecification, proxyHeader, requestPath, response);
   }
 }

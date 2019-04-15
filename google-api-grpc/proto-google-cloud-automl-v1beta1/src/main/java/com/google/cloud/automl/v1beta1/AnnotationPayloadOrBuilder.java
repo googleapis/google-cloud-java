@@ -75,6 +75,174 @@ public interface AnnotationPayloadOrBuilder
    *
    *
    * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+   * </code>
+   */
+  boolean hasImageObjectDetection();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation getImageObjectDetection();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder
+      getImageObjectDetectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video classification.
+   * Returned for Video Classification predictions.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+   * </code>
+   */
+  boolean hasVideoClassification();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video classification.
+   * Returned for Video Classification predictions.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+      getVideoClassification();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video classification.
+   * Returned for Video Classification predictions.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotationOrBuilder
+      getVideoClassificationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  boolean hasTextExtraction();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionAnnotation getTextExtraction();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder getTextExtractionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  boolean hasTextSentiment();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation getTextSentiment();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder
+      getTextSentimentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+   */
+  boolean hasTables();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+   */
+  com.google.cloud.automl.v1beta1.TablesAnnotation getTables();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for Tables.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
+   */
+  com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder getTablesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only . The resource ID of the annotation spec that
    * this annotation pertains to. The annotation spec comes from either an
    * ancestor dataset, or the dataset that was used to train the model in use.

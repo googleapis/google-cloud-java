@@ -88,6 +88,12 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -114,10 +120,18 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
     return lacpStatus;
   }
 
+  /**
+   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of
+   * the received light level.
+   */
   public InterconnectDiagnosticsLinkOpticalPower getReceivingOpticalPower() {
     return receivingOpticalPower;
   }
 
+  /**
+   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of
+   * the transmitted light level.
+   */
   public InterconnectDiagnosticsLinkOpticalPower getTransmittingOpticalPower() {
     return transmittingOpticalPower;
   }
@@ -249,20 +263,36 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
       return this;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the received light level.
+     */
     public InterconnectDiagnosticsLinkOpticalPower getReceivingOpticalPower() {
       return receivingOpticalPower;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the received light level.
+     */
     public Builder setReceivingOpticalPower(
         InterconnectDiagnosticsLinkOpticalPower receivingOpticalPower) {
       this.receivingOpticalPower = receivingOpticalPower;
       return this;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the transmitted light level.
+     */
     public InterconnectDiagnosticsLinkOpticalPower getTransmittingOpticalPower() {
       return transmittingOpticalPower;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the transmitted light level.
+     */
     public Builder setTransmittingOpticalPower(
         InterconnectDiagnosticsLinkOpticalPower transmittingOpticalPower) {
       this.transmittingOpticalPower = transmittingOpticalPower;

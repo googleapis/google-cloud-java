@@ -22,6 +22,7 @@ import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.fail;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.filter.ThresholdFilter;
@@ -31,6 +32,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
@@ -179,6 +181,62 @@ public class LoggingAppenderTest {
     assertThat(logNameArg.getValue()).isEqualTo(defaultWriteOptions[0]);
     // TODO(chingor): Fix this test to work on GCE and locally
     // assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
+  }
+
+  @Test
+  public void testMdcValuesAreConvertedToLabels() {
+    LogEntry logEntry =
+        LogEntry.newBuilder(StringPayload.of("this is a test"))
+            .setTimestamp(100000L)
+            .setSeverity(Severity.INFO)
+            .setLabels(
+                new ImmutableMap.Builder<String, String>()
+                    .put("levelName", "INFO")
+                    .put("levelValue", String.valueOf(20000L))
+                    .put("mdc1", "value1")
+                    .put("mdc2", "value2")
+                    .build())
+            .build();
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().once();
+    replay(logging);
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
+    loggingEvent.setMDCPropertyMap(ImmutableMap.of("mdc1", "value1", "mdc2", "value2"));
+    loggingAppender.start();
+    // info event does not get logged
+    loggingAppender.doAppend(loggingEvent);
+    verify(logging);
+    assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
+    assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
+  }
+
+  @Test
+  public void testCreateLoggingOptions() {
+    // Try to build LoggingOptions with custom credentials.
+    final String nonExistentFile = "/path/to/non/existent/file";
+    LoggingAppender appender = new LoggingAppender();
+    appender.setCredentialsFile(nonExistentFile);
+    try {
+      appender.getLoggingOptions();
+      fail("Expected exception");
+    } catch (Exception e) {
+      assertThat(e.getMessage().contains(nonExistentFile));
+    }
+    // Try to build LoggingOptions with default credentials.
+    LoggingOptions defaultOptions = null;
+    try {
+      defaultOptions = LoggingOptions.getDefaultInstance();
+    } catch (Exception e) {
+      // Could not build a default LoggingOptions instance.
+    }
+    if (defaultOptions != null) {
+      appender = new LoggingAppender();
+      LoggingOptions options = appender.getLoggingOptions();
+      assertThat(options).isEqualTo(defaultOptions);
+    }
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {

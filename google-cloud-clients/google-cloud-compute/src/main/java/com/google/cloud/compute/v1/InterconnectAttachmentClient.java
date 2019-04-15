@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectAttachmentStub;
 import com.google.cloud.compute.v1.stub.InterconnectAttachmentStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -216,9 +217,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInterconnectAttachmentsHttpRequest request = AggregatedListInterconnectAttachmentsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (InterconnectAttachmentsScopedList element : interconnectAttachmentClient.aggregatedListInterconnectAttachments(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -244,9 +245,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInterconnectAttachmentsHttpRequest request = AggregatedListInterconnectAttachmentsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListInterconnectAttachmentsPagedResponse&gt; future = interconnectAttachmentClient.aggregatedListInterconnectAttachmentsPagedCallable().futureCall(request);
    *   // Do something
@@ -272,9 +273,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInterconnectAttachmentsHttpRequest request = AggregatedListInterconnectAttachmentsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InterconnectAttachmentAggregatedList response = interconnectAttachmentClient.aggregatedListInterconnectAttachmentsCallable().call(request);
@@ -360,9 +361,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   String formattedInterconnectAttachment = ProjectRegionInterconnectAttachmentName.format("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   DeleteInterconnectAttachmentHttpRequest request = DeleteInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachment(formattedInterconnectAttachment)
    *     .build();
    *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(request);
    * }
@@ -385,9 +386,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   String formattedInterconnectAttachment = ProjectRegionInterconnectAttachmentName.format("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   DeleteInterconnectAttachmentHttpRequest request = DeleteInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachment(formattedInterconnectAttachment)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentClient.deleteInterconnectAttachmentCallable().futureCall(request);
    *   // Do something
@@ -463,9 +464,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   String formattedInterconnectAttachment = ProjectRegionInterconnectAttachmentName.format("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   GetInterconnectAttachmentHttpRequest request = GetInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachment(formattedInterconnectAttachment)
    *     .build();
    *   InterconnectAttachment response = interconnectAttachmentClient.getInterconnectAttachment(request);
    * }
@@ -488,9 +489,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   String formattedInterconnectAttachment = ProjectRegionInterconnectAttachmentName.format("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   GetInterconnectAttachmentHttpRequest request = GetInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachment(formattedInterconnectAttachment)
    *     .build();
    *   ApiFuture&lt;InterconnectAttachment&gt; future = interconnectAttachmentClient.getInterconnectAttachmentCallable().futureCall(request);
    *   // Do something
@@ -579,10 +580,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .build();
    *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(request);
@@ -607,10 +608,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectAttachmentClient.insertInterconnectAttachmentCallable().futureCall(request);
@@ -686,9 +687,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListInterconnectAttachmentsHttpRequest request = ListInterconnectAttachmentsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (InterconnectAttachment element : interconnectAttachmentClient.listInterconnectAttachments(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -713,9 +714,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListInterconnectAttachmentsHttpRequest request = ListInterconnectAttachmentsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListInterconnectAttachmentsPagedResponse&gt; future = interconnectAttachmentClient.listInterconnectAttachmentsPagedCallable().futureCall(request);
    *   // Do something
@@ -740,9 +741,9 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListInterconnectAttachmentsHttpRequest request = ListInterconnectAttachmentsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     InterconnectAttachmentList response = interconnectAttachmentClient.listInterconnectAttachmentsCallable().call(request);
@@ -785,7 +786,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
    *     resource. For more information, see Creating VLAN Attachments. (== resource_for
    *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -824,7 +828,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
    *     resource. For more information, see Creating VLAN Attachments. (== resource_for
    *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -851,11 +858,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   String formattedInterconnectAttachment = ProjectRegionInterconnectAttachmentName.format("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInterconnectAttachmentHttpRequest request = PatchInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachment(formattedInterconnectAttachment)
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -881,11 +888,11 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   String formattedInterconnectAttachment = ProjectRegionInterconnectAttachmentName.format("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInterconnectAttachmentHttpRequest request = PatchInterconnectAttachmentHttpRequest.newBuilder()
-   *     .setInterconnectAttachment(interconnectAttachment.toString())
+   *     .setInterconnectAttachment(formattedInterconnectAttachment)
    *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -959,7 +966,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
                 AggregatedListInterconnectAttachmentsPage input) {
               return new AggregatedListInterconnectAttachmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInterconnectAttachmentsPagedResponse(
@@ -1064,7 +1072,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
                 ListInterconnectAttachmentsPage input) {
               return new ListInterconnectAttachmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectAttachmentsPagedResponse(ListInterconnectAttachmentsPage page) {

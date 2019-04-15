@@ -1186,6 +1186,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.getService();
     logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+    assertEquals(0, ((LoggingImpl) logging).getNumPendingWrites());
   }
 
   @Test

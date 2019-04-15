@@ -22,16 +22,19 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1beta1.ExportAssetsRequest;
 import com.google.cloud.asset.v1beta1.ExportAssetsResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -116,12 +119,30 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     GrpcCallSettings<ExportAssetsRequest, Operation> exportAssetsTransportSettings =
         GrpcCallSettings.<ExportAssetsRequest, Operation>newBuilder()
             .setMethodDescriptor(exportAssetsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExportAssetsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExportAssetsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
         batchGetAssetsHistoryTransportSettings =
             GrpcCallSettings
                 .<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>newBuilder()
                 .setMethodDescriptor(batchGetAssetsHistoryMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BatchGetAssetsHistoryRequest>() {
+                      @Override
+                      public Map<String, String> extract(BatchGetAssetsHistoryRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.exportAssetsCallable =

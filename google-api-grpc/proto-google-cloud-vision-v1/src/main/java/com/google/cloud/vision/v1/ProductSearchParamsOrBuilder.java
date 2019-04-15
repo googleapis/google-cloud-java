@@ -46,7 +46,8 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to
+   * be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -58,7 +59,8 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to
+   * be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>

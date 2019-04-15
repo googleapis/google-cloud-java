@@ -90,6 +90,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.PartitionQueryRequest;
@@ -512,6 +514,14 @@ public class GapicSpannerRpc implements SpannerRpc {
         controller.cancel();
       }
     };
+  }
+
+  @Override
+  public ExecuteBatchDmlResponse executeBatchDml(
+      ExecuteBatchDmlRequest request, @Nullable Map<Option, ?> options) {
+
+    GrpcCallContext context = newCallContext(options, request.getSession());
+    return get(spannerStub.executeBatchDmlCallable().futureCall(request, context));
   }
 
   @Override

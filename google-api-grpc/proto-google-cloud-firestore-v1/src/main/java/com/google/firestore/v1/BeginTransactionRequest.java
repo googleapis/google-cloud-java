@@ -75,7 +75,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -247,14 +247,13 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     com.google.firestore.v1.BeginTransactionRequest other =
         (com.google.firestore.v1.BeginTransactionRequest) obj;
 
-    boolean result = true;
-    result = result && getDatabase().equals(other.getDatabase());
-    result = result && (hasOptions() == other.hasOptions());
+    if (!getDatabase().equals(other.getDatabase())) return false;
+    if (hasOptions() != other.hasOptions()) return false;
     if (hasOptions()) {
-      result = result && getOptions().equals(other.getOptions());
+      if (!getOptions().equals(other.getOptions())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -462,35 +461,35 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -641,7 +640,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.firestore.v1.TransactionOptions options_ = null;
+    private com.google.firestore.v1.TransactionOptions options_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1.TransactionOptions,
             com.google.firestore.v1.TransactionOptions.Builder,
@@ -833,7 +832,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

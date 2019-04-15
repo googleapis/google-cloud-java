@@ -12,8 +12,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
+   * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -23,8 +23,8 @@ public interface CreateCryptoKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
-   * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing
+   * associated with the [CryptoKeys][google.cloud.kms.v1.CryptoKey].
    * </pre>
    *
    * <code>string parent = 1;</code>

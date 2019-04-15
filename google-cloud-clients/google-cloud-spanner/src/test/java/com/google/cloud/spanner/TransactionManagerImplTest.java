@@ -41,7 +41,7 @@ public class TransactionManagerImplTest {
   @Rule public ExpectedException exception = ExpectedException.none();
 
   @Mock private SessionImpl session;
-  @Mock SpannerImpl.TransactionContextImpl txn;
+  @Mock TransactionRunnerImpl.TransactionContextImpl txn;
   private TransactionManagerImpl manager;
 
   @Before
@@ -117,7 +117,7 @@ public class TransactionManagerImplTest {
     } catch (AbortedException e) {
       assertThat(manager.getState()).isEqualTo(TransactionState.ABORTED);
     }
-    txn = Mockito.mock(SpannerImpl.TransactionContextImpl.class);
+    txn = Mockito.mock(TransactionRunnerImpl.TransactionContextImpl.class);
     when(session.newTransaction()).thenReturn(txn);
     assertThat(manager.resetForRetry()).isEqualTo(txn);
     assertThat(manager.getState()).isEqualTo(TransactionState.STARTED);

@@ -35,7 +35,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input location.
+   * Required. The desired input location and its domain specific semantics,
+   * if any.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -45,7 +46,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input location.
+   * Required. The desired input location and its domain specific semantics,
+   * if any.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>
@@ -55,7 +57,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input location.
+   * Required. The desired input location and its domain specific semantics,
+   * if any.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 3;</code>

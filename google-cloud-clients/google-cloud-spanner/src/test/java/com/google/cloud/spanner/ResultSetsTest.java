@@ -192,8 +192,11 @@ public class ResultSetsTest {
     assertThat(rs.getLongArray("longArray")).isEqualTo(longArray);
     assertThat(rs.getLongList(9)).isEqualTo(Longs.asList(longArray));
     assertThat(rs.getLongList("longArray")).isEqualTo(Longs.asList(longArray));
-    assertThat(rs.getDoubleArray(10)).isEqualTo(doubleArray, 0.0);
-    assertThat(rs.getDoubleArray("doubleArray")).isEqualTo(doubleArray, 0.0);
+    assertThat(rs.getDoubleArray(10)).usingTolerance(0.0).containsAllOf(doubleArray);
+    assertThat(rs.getDoubleArray("doubleArray"))
+        .usingTolerance(0.0)
+        .containsExactly(doubleArray)
+        .inOrder();
     assertThat(rs.getDoubleList(10)).isEqualTo(Doubles.asList(doubleArray));
     assertThat(rs.getDoubleList("doubleArray")).isEqualTo(Doubles.asList(doubleArray));
     assertThat(rs.getBytesList(11)).isEqualTo(Arrays.asList(byteArray));

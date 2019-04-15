@@ -120,7 +120,7 @@ public class HttpStorageRpc implements StorageRpc {
 
     // Batch size is limited as, due to some current service implementation details, the service
     // performs better if the batches are split for better distribution. See
-    // https://github.com/GoogleCloudPlatform/google-cloud-java/pull/952#issuecomment-213466772 for
+    // https://github.com/googleapis/google-cloud-java/pull/952#issuecomment-213466772 for
     // background.
     private static final int MAX_BATCH_SIZE = 100;
 
@@ -667,7 +667,7 @@ public class HttpStorageRpc implements StorageRpc {
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
       HttpResponse httpResponse = req.executeMedia();
       // todo(mziccard) remove when
-      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/982 is fixed
+      // https://github.com/googleapis/google-cloud-java/issues/982 is fixed
       String contentEncoding = httpResponse.getContentEncoding();
       if (contentEncoding != null && contentEncoding.contains("gzip")) {
         try {
@@ -807,6 +807,39 @@ public class HttpStorageRpc implements StorageRpc {
       }
       HttpResponse response = httpRequest.execute();
       if (response.getStatusCode() != 200) {
+        GoogleJsonError error = new GoogleJsonError();
+        error.setCode(response.getStatusCode());
+        error.setMessage(response.getStatusMessage());
+        throw translate(error);
+      }
+      return response.getHeaders().getLocation();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public String open(String signedURL) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_OPEN);
+    Scope scope = tracer.withSpan(span);
+    try {
+      GenericUrl url = new GenericUrl(signedURL);
+      url.set("uploadType", "resumable");
+      String bytesArrayParameters = "";
+      byte[] bytesArray = new byte[bytesArrayParameters.length()];
+      HttpRequestFactory requestFactory = storage.getRequestFactory();
+      HttpRequest httpRequest =
+          requestFactory.buildPostRequest(
+              url, new ByteArrayContent("", bytesArray, 0, bytesArray.length));
+      HttpHeaders requestHeaders = httpRequest.getHeaders();
+      requestHeaders.set("X-Upload-Content-Type", "");
+      requestHeaders.set("x-goog-resumable", "start");
+      HttpResponse response = httpRequest.execute();
+      if (response.getStatusCode() != 201) {
         GoogleJsonError error = new GoogleJsonError();
         error.setCode(response.getStatusCode());
         error.setMessage(response.getStatusMessage());

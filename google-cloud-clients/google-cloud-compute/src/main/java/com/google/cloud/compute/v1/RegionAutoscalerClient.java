@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionAutoscalerStub;
 import com.google.cloud.compute.v1.stub.RegionAutoscalerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -211,9 +212,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   DeleteRegionAutoscalerHttpRequest request = DeleteRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(request);
    * }
@@ -235,9 +236,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   DeleteRegionAutoscalerHttpRequest request = DeleteRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionAutoscalerClient.deleteRegionAutoscalerCallable().futureCall(request);
    *   // Do something
@@ -309,9 +310,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   GetRegionAutoscalerHttpRequest request = GetRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   Autoscaler response = regionAutoscalerClient.getRegionAutoscaler(request);
    * }
@@ -333,9 +334,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
+   *   String formattedAutoscaler = ProjectRegionAutoscalerName.format("[PROJECT]", "[REGION]", "[AUTOSCALER]");
    *   GetRegionAutoscalerHttpRequest request = GetRegionAutoscalerHttpRequest.newBuilder()
-   *     .setAutoscaler(autoscaler.toString())
+   *     .setAutoscaler(formattedAutoscaler)
    *     .build();
    *   ApiFuture&lt;Autoscaler&gt; future = regionAutoscalerClient.getRegionAutoscalerCallable().futureCall(request);
    *   // Do something
@@ -424,10 +425,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertRegionAutoscalerHttpRequest request = InsertRegionAutoscalerHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
    *   Operation response = regionAutoscalerClient.insertRegionAutoscaler(request);
@@ -450,10 +451,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertRegionAutoscalerHttpRequest request = InsertRegionAutoscalerHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionAutoscalerClient.insertRegionAutoscalerCallable().futureCall(request);
@@ -528,9 +529,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionAutoscalersHttpRequest request = ListRegionAutoscalersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (Autoscaler element : regionAutoscalerClient.listRegionAutoscalers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -555,9 +556,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionAutoscalersHttpRequest request = ListRegionAutoscalersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRegionAutoscalersPagedResponse&gt; future = regionAutoscalerClient.listRegionAutoscalersPagedCallable().futureCall(request);
    *   // Do something
@@ -581,9 +582,9 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionAutoscalersHttpRequest request = ListRegionAutoscalersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     RegionAutoscalerList response = regionAutoscalerClient.listRegionAutoscalersCallable().call(request);
@@ -630,7 +631,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -674,7 +678,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -701,12 +708,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRegionAutoscalerHttpRequest request = PatchRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -732,12 +739,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRegionAutoscalerHttpRequest request = PatchRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -776,7 +783,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -819,7 +829,10 @@ public class RegionAutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -845,12 +858,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRegionAutoscalerHttpRequest request = UpdateRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -875,12 +888,12 @@ public class RegionAutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRegionAutoscalerHttpRequest request = UpdateRegionAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler)
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setAutoscalerResource(autoscalerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -946,7 +959,8 @@ public class RegionAutoscalerClient implements BackgroundResource {
             public ListRegionAutoscalersPagedResponse apply(ListRegionAutoscalersPage input) {
               return new ListRegionAutoscalersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionAutoscalersPagedResponse(ListRegionAutoscalersPage page) {

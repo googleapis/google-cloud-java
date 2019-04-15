@@ -417,6 +417,22 @@
  * </code>
  * </pre>
  *
+ * ========================== NetworkEndpointGroupClient ==========================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for NetworkEndpointGroupClient:
+ *
+ * <pre>
+ * <code>
+ * try (NetworkEndpointGroupClient networkEndpointGroupClient = NetworkEndpointGroupClient.create()) {
+ *   ProjectZoneNetworkEndpointGroupName networkEndpointGroup = ProjectZoneNetworkEndpointGroupName.of("[PROJECT]", "[ZONE]", "[NETWORK_ENDPOINT_GROUP]");
+ *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
+ *   Operation response = networkEndpointGroupClient.attachNetworkEndpointsNetworkEndpointGroup(networkEndpointGroup, networkEndpointGroupsAttachEndpointsRequestResource);
+ * }
+ * </code>
+ * </pre>
+ *
  * ============= NetworkClient =============
  *
  * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.

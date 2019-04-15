@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.MetricsServiceV2Stub;
 import com.google.cloud.logging.v2.stub.MetricsServiceV2StubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
@@ -749,7 +750,8 @@ public class MetricsClient implements BackgroundResource {
             public ListLogMetricsPagedResponse apply(ListLogMetricsPage input) {
               return new ListLogMetricsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListLogMetricsPagedResponse(ListLogMetricsPage page) {

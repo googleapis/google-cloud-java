@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.reset. Performs a reset on the instance. This is a
- * hard reset; the VM does not do a graceful shutdown. For more information, see Resetting an
+ * hard reset the VM does not do a graceful shutdown. For more information, see Resetting an
  * instance.
  */
 public final class ResetInstanceHttpRequest implements ApiMessage {
@@ -113,6 +113,12 @@ public final class ResetInstanceHttpRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }

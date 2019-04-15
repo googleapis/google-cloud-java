@@ -129,7 +129,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -410,9 +410,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *         }
    *       }
    *     }
-   * Similarly, to change the number of preemptible workers in a cluster to 5, the
-   * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-   * and the `PATCH` request body would be set as follows:
+   * Similarly, to change the number of preemptible workers in a cluster to 5,
+   * the `update_mask` parameter would be
+   * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+   * body would be set as follows:
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -429,19 +430,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   * group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   * worker group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   * deletion timestamp&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -467,9 +473,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *         }
    *       }
    *     }
-   * Similarly, to change the number of preemptible workers in a cluster to 5, the
-   * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-   * and the `PATCH` request body would be set as follows:
+   * Similarly, to change the number of preemptible workers in a cluster to 5,
+   * the `update_mask` parameter would be
+   * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+   * body would be set as follows:
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -486,19 +493,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   * group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   * worker group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   * deletion timestamp&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -524,9 +536,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *         }
    *       }
    *     }
-   * Similarly, to change the number of preemptible workers in a cluster to 5, the
-   * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-   * and the `PATCH` request body would be set as follows:
+   * Similarly, to change the number of preemptible workers in a cluster to 5,
+   * the `update_mask` parameter would be
+   * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+   * body would be set as follows:
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -543,19 +556,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+   * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   * group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+   * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   * worker group&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   * deletion timestamp&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;tr&gt;
-   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+   * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   * duration&lt;/td&gt;
    * &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -573,10 +591,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -601,10 +620,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -708,26 +728,25 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.dataproc.v1beta2.UpdateClusterRequest other =
         (com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) obj;
 
-    boolean result = true;
-    result = result && getProjectId().equals(other.getProjectId());
-    result = result && getRegion().equals(other.getRegion());
-    result = result && getClusterName().equals(other.getClusterName());
-    result = result && (hasCluster() == other.hasCluster());
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getRegion().equals(other.getRegion())) return false;
+    if (!getClusterName().equals(other.getClusterName())) return false;
+    if (hasCluster() != other.hasCluster()) return false;
     if (hasCluster()) {
-      result = result && getCluster().equals(other.getCluster());
+      if (!getCluster().equals(other.getCluster())) return false;
     }
-    result = result && (hasGracefulDecommissionTimeout() == other.hasGracefulDecommissionTimeout());
+    if (hasGracefulDecommissionTimeout() != other.hasGracefulDecommissionTimeout()) return false;
     if (hasGracefulDecommissionTimeout()) {
-      result =
-          result && getGracefulDecommissionTimeout().equals(other.getGracefulDecommissionTimeout());
+      if (!getGracefulDecommissionTimeout().equals(other.getGracefulDecommissionTimeout()))
+        return false;
     }
-    result = result && (hasUpdateMask() == other.hasUpdateMask());
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
-      result = result && getUpdateMask().equals(other.getUpdateMask());
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
-    result = result && getRequestId().equals(other.getRequestId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -981,35 +1000,35 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1367,7 +1386,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.dataproc.v1beta2.Cluster cluster_ = null;
+    private com.google.cloud.dataproc.v1beta2.Cluster cluster_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.Cluster,
             com.google.cloud.dataproc.v1beta2.Cluster.Builder,
@@ -1548,7 +1567,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       return clusterBuilder_;
     }
 
-    private com.google.protobuf.Duration gracefulDecommissionTimeout_ = null;
+    private com.google.protobuf.Duration gracefulDecommissionTimeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -1784,7 +1803,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       return gracefulDecommissionTimeoutBuilder_;
     }
 
-    private com.google.protobuf.FieldMask updateMask_ = null;
+    private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
@@ -1806,9 +1825,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -1825,19 +1845,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -1863,9 +1888,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -1882,19 +1908,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -1926,9 +1957,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -1945,19 +1977,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -1993,9 +2030,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2012,19 +2050,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -2057,9 +2100,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2076,19 +2120,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -2126,9 +2175,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2145,19 +2195,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -2191,9 +2246,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2210,19 +2266,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -2250,9 +2311,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2269,19 +2331,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -2313,9 +2380,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *         }
      *       }
      *     }
-     * Similarly, to change the number of preemptible workers in a cluster to 5, the
-     * `update_mask` parameter would be `config.secondary_worker_config.num_instances`,
-     * and the `PATCH` request body would be set as follows:
+     * Similarly, to change the number of preemptible workers in a cluster to 5,
+     * the `update_mask` parameter would be
+     * `config.secondary_worker_config.num_instances`, and the `PATCH` request
+     * body would be set as follows:
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2332,19 +2400,24 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker group&lt;/td&gt;
+     * &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+     * group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary worker group&lt;/td&gt;
+     * &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+     * worker group&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL deletion timestamp&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+     * deletion timestamp&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;tr&gt;
-     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL duration&lt;/td&gt;
+     * &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+     * duration&lt;/td&gt;
      * &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -2374,10 +2447,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2402,10 +2476,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2430,10 +2505,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2456,10 +2532,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2479,10 +2556,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
-     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
-     * id, then the second request will be ignored and the
-     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-     * backend is returned.
+     * receives two
+     * [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest]
+     * requests  with the same id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created
+     * and stored in the backend is returned.
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2504,7 +2582,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

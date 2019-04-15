@@ -89,7 +89,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -355,25 +355,23 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     io.grafeas.v1beta1.source.CloudRepoSourceContext other =
         (io.grafeas.v1beta1.source.CloudRepoSourceContext) obj;
 
-    boolean result = true;
-    result = result && (hasRepoId() == other.hasRepoId());
+    if (hasRepoId() != other.hasRepoId()) return false;
     if (hasRepoId()) {
-      result = result && getRepoId().equals(other.getRepoId());
+      if (!getRepoId().equals(other.getRepoId())) return false;
     }
-    result = result && getRevisionCase().equals(other.getRevisionCase());
-    if (!result) return false;
+    if (!getRevisionCase().equals(other.getRevisionCase())) return false;
     switch (revisionCase_) {
       case 2:
-        result = result && getRevisionId().equals(other.getRevisionId());
+        if (!getRevisionId().equals(other.getRevisionId())) return false;
         break;
       case 3:
-        result = result && getAliasContext().equals(other.getAliasContext());
+        if (!getAliasContext().equals(other.getAliasContext())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -602,35 +600,35 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -710,7 +708,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private io.grafeas.v1beta1.source.RepoId repoId_ = null;
+    private io.grafeas.v1beta1.source.RepoId repoId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1beta1.source.RepoId,
             io.grafeas.v1beta1.source.RepoId.Builder,
@@ -1193,7 +1191,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

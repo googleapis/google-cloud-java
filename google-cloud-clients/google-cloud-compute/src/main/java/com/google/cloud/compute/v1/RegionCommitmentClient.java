@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionCommitmentStub;
 import com.google.cloud.compute.v1.stub.RegionCommitmentStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -215,9 +216,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRegionCommitmentsHttpRequest request = AggregatedListRegionCommitmentsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (CommitmentsScopedList element : regionCommitmentClient.aggregatedListRegionCommitments(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -242,9 +243,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRegionCommitmentsHttpRequest request = AggregatedListRegionCommitmentsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListRegionCommitmentsPagedResponse&gt; future = regionCommitmentClient.aggregatedListRegionCommitmentsPagedCallable().futureCall(request);
    *   // Do something
@@ -269,9 +270,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRegionCommitmentsHttpRequest request = AggregatedListRegionCommitmentsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     CommitmentAggregatedList response = regionCommitmentClient.aggregatedListRegionCommitmentsCallable().call(request);
@@ -355,9 +356,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+   *   String formattedCommitment = ProjectRegionCommitmentName.format("[PROJECT]", "[REGION]", "[COMMITMENT]");
    *   GetRegionCommitmentHttpRequest request = GetRegionCommitmentHttpRequest.newBuilder()
-   *     .setCommitment(commitment.toString())
+   *     .setCommitment(formattedCommitment)
    *     .build();
    *   Commitment response = regionCommitmentClient.getRegionCommitment(request);
    * }
@@ -380,9 +381,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+   *   String formattedCommitment = ProjectRegionCommitmentName.format("[PROJECT]", "[REGION]", "[COMMITMENT]");
    *   GetRegionCommitmentHttpRequest request = GetRegionCommitmentHttpRequest.newBuilder()
-   *     .setCommitment(commitment.toString())
+   *     .setCommitment(formattedCommitment)
    *     .build();
    *   ApiFuture&lt;Commitment&gt; future = regionCommitmentClient.getRegionCommitmentCallable().futureCall(request);
    *   // Do something
@@ -477,10 +478,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   InsertRegionCommitmentHttpRequest request = InsertRegionCommitmentHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setCommitmentResource(commitmentResource)
    *     .build();
    *   Operation response = regionCommitmentClient.insertRegionCommitment(request);
@@ -503,10 +504,10 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   InsertRegionCommitmentHttpRequest request = InsertRegionCommitmentHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setCommitmentResource(commitmentResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionCommitmentClient.insertRegionCommitmentCallable().futureCall(request);
@@ -581,9 +582,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionCommitmentsHttpRequest request = ListRegionCommitmentsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (Commitment element : regionCommitmentClient.listRegionCommitments(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -608,9 +609,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionCommitmentsHttpRequest request = ListRegionCommitmentsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRegionCommitmentsPagedResponse&gt; future = regionCommitmentClient.listRegionCommitmentsPagedCallable().futureCall(request);
    *   // Do something
@@ -634,9 +635,9 @@ public class RegionCommitmentClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionCommitmentsHttpRequest request = ListRegionCommitmentsHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     CommitmentList response = regionCommitmentClient.listRegionCommitmentsCallable().call(request);
@@ -716,7 +717,8 @@ public class RegionCommitmentClient implements BackgroundResource {
                 AggregatedListRegionCommitmentsPage input) {
               return new AggregatedListRegionCommitmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListRegionCommitmentsPagedResponse(AggregatedListRegionCommitmentsPage page) {
@@ -812,7 +814,8 @@ public class RegionCommitmentClient implements BackgroundResource {
             public ListRegionCommitmentsPagedResponse apply(ListRegionCommitmentsPage input) {
               return new ListRegionCommitmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionCommitmentsPagedResponse(ListRegionCommitmentsPage page) {

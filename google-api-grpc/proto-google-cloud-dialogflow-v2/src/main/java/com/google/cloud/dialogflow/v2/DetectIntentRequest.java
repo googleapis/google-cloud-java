@@ -90,6 +90,22 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 34:
+            {
+              com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder subBuilder = null;
+              if (outputAudioConfig_ != null) {
+                subBuilder = outputAudioConfig_.toBuilder();
+              }
+              outputAudioConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.OutputAudioConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputAudioConfig_);
+                outputAudioConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 42:
             {
               inputAudio_ = input.readBytes();
@@ -97,7 +113,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -274,6 +290,53 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     return getQueryInput();
   }
 
+  public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.v2.OutputAudioConfig outputAudioConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   */
+  public boolean hasOutputAudioConfig() {
+    return outputAudioConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   */
+  public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
+    return outputAudioConfig_ == null
+        ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
+        : outputAudioConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   */
+  public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+    return getOutputAudioConfig();
+  }
+
   public static final int INPUT_AUDIO_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString inputAudio_;
   /**
@@ -314,6 +377,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     if (queryInput_ != null) {
       output.writeMessage(3, getQueryInput());
     }
+    if (outputAudioConfig_ != null) {
+      output.writeMessage(4, getOutputAudioConfig());
+    }
     if (!inputAudio_.isEmpty()) {
       output.writeBytes(5, inputAudio_);
     }
@@ -335,6 +401,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     if (queryInput_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getQueryInput());
     }
+    if (outputAudioConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getOutputAudioConfig());
+    }
     if (!inputAudio_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, inputAudio_);
     }
@@ -354,19 +423,22 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.dialogflow.v2.DetectIntentRequest other =
         (com.google.cloud.dialogflow.v2.DetectIntentRequest) obj;
 
-    boolean result = true;
-    result = result && getSession().equals(other.getSession());
-    result = result && (hasQueryParams() == other.hasQueryParams());
+    if (!getSession().equals(other.getSession())) return false;
+    if (hasQueryParams() != other.hasQueryParams()) return false;
     if (hasQueryParams()) {
-      result = result && getQueryParams().equals(other.getQueryParams());
+      if (!getQueryParams().equals(other.getQueryParams())) return false;
     }
-    result = result && (hasQueryInput() == other.hasQueryInput());
+    if (hasQueryInput() != other.hasQueryInput()) return false;
     if (hasQueryInput()) {
-      result = result && getQueryInput().equals(other.getQueryInput());
+      if (!getQueryInput().equals(other.getQueryInput())) return false;
     }
-    result = result && getInputAudio().equals(other.getInputAudio());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (hasOutputAudioConfig() != other.hasOutputAudioConfig()) return false;
+    if (hasOutputAudioConfig()) {
+      if (!getOutputAudioConfig().equals(other.getOutputAudioConfig())) return false;
+    }
+    if (!getInputAudio().equals(other.getInputAudio())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -385,6 +457,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
     if (hasQueryInput()) {
       hash = (37 * hash) + QUERY_INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryInput().hashCode();
+    }
+    if (hasOutputAudioConfig()) {
+      hash = (37 * hash) + OUTPUT_AUDIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputAudioConfig().hashCode();
     }
     hash = (37 * hash) + INPUT_AUDIO_FIELD_NUMBER;
     hash = (53 * hash) + getInputAudio().hashCode();
@@ -547,6 +623,12 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
         queryInput_ = null;
         queryInputBuilder_ = null;
       }
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
       inputAudio_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -587,6 +669,11 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.queryInput_ = queryInputBuilder_.build();
       }
+      if (outputAudioConfigBuilder_ == null) {
+        result.outputAudioConfig_ = outputAudioConfig_;
+      } else {
+        result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
+      }
       result.inputAudio_ = inputAudio_;
       onBuilt();
       return result;
@@ -594,35 +681,35 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -647,6 +734,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasQueryInput()) {
         mergeQueryInput(other.getQueryInput());
+      }
+      if (other.hasOutputAudioConfig()) {
+        mergeOutputAudioConfig(other.getOutputAudioConfig());
       }
       if (other.getInputAudio() != com.google.protobuf.ByteString.EMPTY) {
         setInputAudio(other.getInputAudio());
@@ -795,7 +885,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2.QueryParameters queryParams_ = null;
+    private com.google.cloud.dialogflow.v2.QueryParameters queryParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.QueryParameters,
             com.google.cloud.dialogflow.v2.QueryParameters.Builder,
@@ -977,7 +1067,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       return queryParamsBuilder_;
     }
 
-    private com.google.cloud.dialogflow.v2.QueryInput queryInput_ = null;
+    private com.google.cloud.dialogflow.v2.QueryInput queryInput_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.QueryInput,
             com.google.cloud.dialogflow.v2.QueryInput.Builder,
@@ -1195,6 +1285,207 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
       return queryInputBuilder_;
     }
 
+    private com.google.cloud.dialogflow.v2.OutputAudioConfig outputAudioConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.OutputAudioConfig,
+            com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>
+        outputAudioConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public boolean hasOutputAudioConfig() {
+      return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        return outputAudioConfig_ == null
+            ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
+            : outputAudioConfig_;
+      } else {
+        return outputAudioConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public Builder setOutputAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputAudioConfig_ = value;
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public Builder setOutputAudioConfig(
+        com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder builderForValue) {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public Builder mergeOutputAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
+      if (outputAudioConfigBuilder_ == null) {
+        if (outputAudioConfig_ != null) {
+          outputAudioConfig_ =
+              com.google.cloud.dialogflow.v2.OutputAudioConfig.newBuilder(outputAudioConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputAudioConfig_ = value;
+        }
+        onChanged();
+      } else {
+        outputAudioConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public Builder clearOutputAudioConfig() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfig_ = null;
+        onChanged();
+      } else {
+        outputAudioConfig_ = null;
+        outputAudioConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
+
+      onChanged();
+      return getOutputAudioConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder
+        getOutputAudioConfigOrBuilder() {
+      if (outputAudioConfigBuilder_ != null) {
+        return outputAudioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputAudioConfig_ == null
+            ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
+            : outputAudioConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs the speech synthesizer how to generate the output
+     * audio. If this field is not set and agent-level speech synthesizer is not
+     * configured, no output audio is generated.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.OutputAudioConfig,
+            com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>
+        getOutputAudioConfigFieldBuilder() {
+      if (outputAudioConfigBuilder_ == null) {
+        outputAudioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.OutputAudioConfig,
+                com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder,
+                com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder>(
+                getOutputAudioConfig(), getParentForChildren(), isClean());
+        outputAudioConfig_ = null;
+      }
+      return outputAudioConfigBuilder_;
+    }
+
     private com.google.protobuf.ByteString inputAudio_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
@@ -1250,7 +1541,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

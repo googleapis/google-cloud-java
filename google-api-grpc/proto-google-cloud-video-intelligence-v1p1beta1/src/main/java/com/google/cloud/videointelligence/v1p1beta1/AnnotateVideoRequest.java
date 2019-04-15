@@ -64,7 +64,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 features_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -77,7 +77,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   features_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000004;
                 }
@@ -124,7 +124,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -136,7 +136,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
       }
       this.unknownFields = unknownFields.build();
@@ -170,10 +170,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](/storage/docs/reference-uris).
-   * A video URI may include wildcards in `object-id`, and thus identify
-   * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request URIs](/storage/docs/reference-uris). A video
+   * URI may include wildcards in `object-id`, and thus identify multiple
+   * videos. Supported wildcards: '*' to match 0 or more characters;
    * '?' to match 1 character. If unset, the input video should be embedded
    * in the request as `input_content`. If set, `input_content` should be unset.
    * </pre>
@@ -199,10 +199,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](/storage/docs/reference-uris).
-   * A video URI may include wildcards in `object-id`, and thus identify
-   * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request URIs](/storage/docs/reference-uris). A video
+   * URI may include wildcards in `object-id`, and thus identify multiple
+   * videos. Supported wildcards: '*' to match 0 or more characters;
    * '?' to match 1 character. If unset, the input video should be embedded
    * in the request as `input_content`. If set, `input_content` should be unset.
    * </pre>
@@ -372,8 +372,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string output_uri = 4;</code>
@@ -397,8 +397,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string output_uri = 4;</code>
@@ -551,18 +551,17 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest other =
         (com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest) obj;
 
-    boolean result = true;
-    result = result && getInputUri().equals(other.getInputUri());
-    result = result && getInputContent().equals(other.getInputContent());
-    result = result && features_.equals(other.features_);
-    result = result && (hasVideoContext() == other.hasVideoContext());
+    if (!getInputUri().equals(other.getInputUri())) return false;
+    if (!getInputContent().equals(other.getInputContent())) return false;
+    if (!features_.equals(other.features_)) return false;
+    if (hasVideoContext() != other.hasVideoContext()) return false;
     if (hasVideoContext()) {
-      result = result && getVideoContext().equals(other.getVideoContext());
+      if (!getVideoContext().equals(other.getVideoContext())) return false;
     }
-    result = result && getOutputUri().equals(other.getOutputUri());
-    result = result && getLocationId().equals(other.getLocationId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getOutputUri().equals(other.getOutputUri())) return false;
+    if (!getLocationId().equals(other.getLocationId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -784,7 +783,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       int to_bitField0_ = 0;
       result.inputUri_ = inputUri_;
       result.inputContent_ = inputContent_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -803,35 +802,35 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -919,10 +918,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris). A video
+     * URI may include wildcards in `object-id`, and thus identify multiple
+     * videos. Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      * </pre>
@@ -948,10 +947,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris). A video
+     * URI may include wildcards in `object-id`, and thus identify multiple
+     * videos. Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      * </pre>
@@ -977,10 +976,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris). A video
+     * URI may include wildcards in `object-id`, and thus identify multiple
+     * videos. Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      * </pre>
@@ -1004,10 +1003,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris). A video
+     * URI may include wildcards in `object-id`, and thus identify multiple
+     * videos. Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      * </pre>
@@ -1028,10 +1027,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris). A video
+     * URI may include wildcards in `object-id`, and thus identify multiple
+     * videos. Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      * </pre>
@@ -1105,7 +1104,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     private java.util.List<java.lang.Integer> features_ = java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         features_ = new java.util.ArrayList<java.lang.Integer>(features_);
         bitField0_ |= 0x00000004;
       }
@@ -1290,7 +1289,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.videointelligence.v1p1beta1.VideoContext videoContext_ = null;
+    private com.google.cloud.videointelligence.v1p1beta1.VideoContext videoContext_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p1beta1.VideoContext,
             com.google.cloud.videointelligence.v1p1beta1.VideoContext.Builder,
@@ -1485,8 +1484,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string output_uri = 4;</code>
@@ -1510,8 +1509,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string output_uri = 4;</code>
@@ -1535,8 +1534,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string output_uri = 4;</code>
@@ -1558,8 +1557,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string output_uri = 4;</code>
@@ -1578,8 +1577,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string output_uri = 4;</code>
@@ -1701,7 +1700,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -585,6 +585,26 @@ public class DatastoreTest {
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 
+  @Test
+  public void testStructuredQueryPaginationWithMoreResults() throws DatastoreException {
+    List<RunQueryResponse> responses = buildResponsesForQueryPagination();
+    for (int i = 0; i < responses.size(); i++) {
+      EasyMock.expect(rpcMock.runQuery(EasyMock.anyObject(RunQueryRequest.class)))
+          .andReturn(responses.get(i));
+    }
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore datastore = rpcMockOptions.getService();
+    QueryResults<Key> results = datastore.run(Query.newKeyQueryBuilder().build());
+    int count = 0;
+    while (results.hasNext()) {
+      count += 1;
+      results.next();
+    }
+    assertEquals(count, 5);
+    assertEquals(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS, results.getMoreResults());
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
   private List<RunQueryResponse> buildResponsesForQueryPagination() {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();

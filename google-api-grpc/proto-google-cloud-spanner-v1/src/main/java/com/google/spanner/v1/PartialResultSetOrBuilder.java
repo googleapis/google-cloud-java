@@ -55,9 +55,10 @@ public interface PartialResultSetOrBuilder
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -123,9 +124,10 @@ public interface PartialResultSetOrBuilder
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -191,9 +193,10 @@ public interface PartialResultSetOrBuilder
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -259,9 +262,10 @@ public interface PartialResultSetOrBuilder
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -327,9 +331,10 @@ public interface PartialResultSetOrBuilder
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -387,9 +392,10 @@ public interface PartialResultSetOrBuilder
    *
    *
    * <pre>
-   * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
-   * be combined with more values from subsequent `PartialResultSet`s
-   * to obtain a complete field value.
+   * If true, then the final value in
+   * [values][google.spanner.v1.PartialResultSet.values] is chunked, and must be
+   * combined with more values from subsequent `PartialResultSet`s to obtain a
+   * complete field value.
    * </pre>
    *
    * <code>bool chunked_value = 3;</code>
@@ -417,10 +423,9 @@ public interface PartialResultSetOrBuilder
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -432,10 +437,9 @@ public interface PartialResultSetOrBuilder
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -447,10 +451,9 @@ public interface PartialResultSetOrBuilder
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>

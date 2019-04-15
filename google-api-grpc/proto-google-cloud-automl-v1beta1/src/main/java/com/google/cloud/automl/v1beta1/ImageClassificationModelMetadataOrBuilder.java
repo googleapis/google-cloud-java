@@ -14,8 +14,9 @@ public interface ImageClassificationModelMetadataOrBuilder
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
-   * created from scratch. The `base` model is expected to be in the same
-   * `project` and `location` as the new model to create.
+   * created from scratch. The `base` model must be in the same
+   * `project` and `location` as the new model to create, and have the same
+   * `model_type`.
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
@@ -27,8 +28,9 @@ public interface ImageClassificationModelMetadataOrBuilder
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
-   * created from scratch. The `base` model is expected to be in the same
-   * `project` and `location` as the new model to create.
+   * created from scratch. The `base` model must be in the same
+   * `project` and `location` as the new model to create, and have the same
+   * `model_type`.
    * </pre>
    *
    * <code>string base_model_id = 1;</code>
@@ -39,8 +41,8 @@ public interface ImageClassificationModelMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. The train budget of creating this model. The actual
-   * `train_cost` will be equal or less than this value.
+   * Required. The train budget of creating this model, expressed in hours. The
+   * actual `train_cost` will be equal or less than this value.
    * </pre>
    *
    * <code>int64 train_budget = 2;</code>
@@ -51,9 +53,9 @@ public interface ImageClassificationModelMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The actual train cost of creating this model. If this
-   * model is created from a `base` model, the train cost used to create the
-   * `base` model are not included.
+   * Output only. The actual train cost of creating this model, expressed in
+   * hours. If this model is created from a `base` model, the train cost used
+   * to create the `base` model are not included.
    * </pre>
    *
    * <code>int64 train_cost = 3;</code>
@@ -65,7 +67,7 @@ public interface ImageClassificationModelMetadataOrBuilder
    *
    * <pre>
    * Output only. The reason that this create model operation stopped,
-   * e.g. BUDGET_REACHED, CONVERGED.
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
@@ -76,10 +78,95 @@ public interface ImageClassificationModelMetadataOrBuilder
    *
    * <pre>
    * Output only. The reason that this create model operation stopped,
-   * e.g. BUDGET_REACHED, CONVERGED.
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
    * </pre>
    *
    * <code>string stop_reason = 5;</code>
    */
   com.google.protobuf.ByteString getStopReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the model. The available values are:
+   * *   `cloud` - Model to be used via prediction calls to AutoML API.
+   *               This is the default value.
+   * *   `mobile-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards. Expected to have low latency, but
+   *               may have lower prediction quality than other models.
+   * *   `mobile-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.
+   * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.  Expected to have a higher
+   *               latency, but should also have a higher prediction quality
+   *               than other models.
+   * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards. Expected to have low latency, but may have
+   *               lower prediction quality than other models.
+   * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards.
+   * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+   *               providing prediction via AutoML API, can also be exported
+   *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+   *               Core ML afterwards.  Expected to have a higher latency, but
+   *               should also have a higher prediction quality than other
+   *               models.
+   * </pre>
+   *
+   * <code>string model_type = 7;</code>
+   */
+  java.lang.String getModelType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the model. The available values are:
+   * *   `cloud` - Model to be used via prediction calls to AutoML API.
+   *               This is the default value.
+   * *   `mobile-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards. Expected to have low latency, but
+   *               may have lower prediction quality than other models.
+   * *   `mobile-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.
+   * *   `mobile-high-accuracy-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile or edge device
+   *               with TensorFlow afterwards.  Expected to have a higher
+   *               latency, but should also have a higher prediction quality
+   *               than other models.
+   * *   `mobile-core-ml-low-latency-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards. Expected to have low latency, but may have
+   *               lower prediction quality than other models.
+   * *   `mobile-core-ml-versatile-1` - A model that, in addition to providing
+   *               prediction via AutoML API, can also be exported (see
+   *               [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with Core
+   *               ML afterwards.
+   * *   `mobile-core-ml-high-accuracy-1` - A model that, in addition to
+   *               providing prediction via AutoML API, can also be exported
+   *               (see [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel]) and used on a mobile device with
+   *               Core ML afterwards.  Expected to have a higher latency, but
+   *               should also have a higher prediction quality than other
+   *               models.
+   * </pre>
+   *
+   * <code>string model_type = 7;</code>
+   */
+  com.google.protobuf.ByteString getModelTypeBytes();
 }

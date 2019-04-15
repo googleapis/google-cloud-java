@@ -101,9 +101,28 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               actionCase_ = 3;
               break;
             }
+          case 66:
+            {
+              com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder subBuilder = null;
+              if (actionCase_ == 8) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.Action.JobNotificationEmails.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 8;
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -212,7 +231,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -306,13 +325,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.Action.SaveFindings other =
           (com.google.privacy.dlp.v2.Action.SaveFindings) obj;
 
-      boolean result = true;
-      result = result && (hasOutputConfig() == other.hasOutputConfig());
+      if (hasOutputConfig() != other.hasOutputConfig()) return false;
       if (hasOutputConfig()) {
-        result = result && getOutputConfig().equals(other.getOutputConfig());
+        if (!getOutputConfig().equals(other.getOutputConfig())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -520,23 +538,23 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -544,13 +562,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -598,7 +616,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_ = null;
+      private com.google.privacy.dlp.v2.OutputStorageConfig outputConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.OutputStorageConfig,
               com.google.privacy.dlp.v2.OutputStorageConfig.Builder,
@@ -711,7 +729,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -849,7 +867,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -975,10 +993,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.Action.PublishToPubSub other =
           (com.google.privacy.dlp.v2.Action.PublishToPubSub) obj;
 
-      boolean result = true;
-      result = result && getTopic().equals(other.getTopic());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getTopic().equals(other.getTopic())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1174,23 +1191,23 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1198,13 +1215,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1366,7 +1383,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1474,7 +1491,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               break;
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1545,9 +1562,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.Action.PublishSummaryToCscc other =
           (com.google.privacy.dlp.v2.Action.PublishSummaryToCscc) obj;
 
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1747,23 +1763,23 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1771,13 +1787,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1826,7 +1842,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1875,6 +1891,449 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface JobNotificationEmailsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.JobNotificationEmails)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on jobs's
+   * completion/failure.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.Action.JobNotificationEmails}
+   */
+  public static final class JobNotificationEmails extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.JobNotificationEmails)
+      JobNotificationEmailsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use JobNotificationEmails.newBuilder() to construct.
+    private JobNotificationEmails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private JobNotificationEmails() {}
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private JobNotificationEmails(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_JobNotificationEmails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_JobNotificationEmails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.Action.JobNotificationEmails.class,
+              com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.Action.JobNotificationEmails)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.Action.JobNotificationEmails other =
+          (com.google.privacy.dlp.v2.Action.JobNotificationEmails) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on jobs's
+     * completion/failure.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.Action.JobNotificationEmails}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.Action.JobNotificationEmails)
+        com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_JobNotificationEmails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_JobNotificationEmails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.Action.JobNotificationEmails.class,
+                com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.Action.JobNotificationEmails.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_JobNotificationEmails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.JobNotificationEmails getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.JobNotificationEmails build() {
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.JobNotificationEmails buildPartial() {
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails result =
+            new com.google.privacy.dlp.v2.Action.JobNotificationEmails(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.Action.JobNotificationEmails) {
+          return mergeFrom((com.google.privacy.dlp.v2.Action.JobNotificationEmails) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.Action.JobNotificationEmails other) {
+        if (other == com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.privacy.dlp.v2.Action.JobNotificationEmails) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.Action.JobNotificationEmails)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.Action.JobNotificationEmails)
+    private static final com.google.privacy.dlp.v2.Action.JobNotificationEmails DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.Action.JobNotificationEmails();
+    }
+
+    public static com.google.privacy.dlp.v2.Action.JobNotificationEmails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<JobNotificationEmails> PARSER =
+        new com.google.protobuf.AbstractParser<JobNotificationEmails>() {
+          @java.lang.Override
+          public JobNotificationEmails parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new JobNotificationEmails(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<JobNotificationEmails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<JobNotificationEmails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.JobNotificationEmails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int actionCase_ = 0;
   private java.lang.Object action_;
 
@@ -1882,6 +2341,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     SAVE_FINDINGS(1),
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
+    JOB_NOTIFICATION_EMAILS(8),
     ACTION_NOT_SET(0);
     private final int value;
 
@@ -1902,6 +2362,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return PUB_SUB;
         case 3:
           return PUBLISH_SUMMARY_TO_CSCC;
+        case 8:
+          return JOB_NOTIFICATION_EMAILS;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -2051,6 +2513,54 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.Action.PublishSummaryToCscc.getDefaultInstance();
   }
 
+  public static final int JOB_NOTIFICATION_EMAILS_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on job's
+   * completion/failure.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   */
+  public boolean hasJobNotificationEmails() {
+    return actionCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on job's
+   * completion/failure.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   */
+  public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
+    if (actionCase_ == 8) {
+      return (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on job's
+   * completion/failure.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   */
+  public com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder
+      getJobNotificationEmailsOrBuilder() {
+    if (actionCase_ == 8) {
+      return (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2073,6 +2583,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     if (actionCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.Action.PublishSummaryToCscc) action_);
+    }
+    if (actionCase_ == 8) {
+      output.writeMessage(8, (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
     }
     unknownFields.writeTo(output);
   }
@@ -2098,6 +2611,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.privacy.dlp.v2.Action.PublishSummaryToCscc) action_);
     }
+    if (actionCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2113,24 +2631,25 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.Action other = (com.google.privacy.dlp.v2.Action) obj;
 
-    boolean result = true;
-    result = result && getActionCase().equals(other.getActionCase());
-    if (!result) return false;
+    if (!getActionCase().equals(other.getActionCase())) return false;
     switch (actionCase_) {
       case 1:
-        result = result && getSaveFindings().equals(other.getSaveFindings());
+        if (!getSaveFindings().equals(other.getSaveFindings())) return false;
         break;
       case 2:
-        result = result && getPubSub().equals(other.getPubSub());
+        if (!getPubSub().equals(other.getPubSub())) return false;
         break;
       case 3:
-        result = result && getPublishSummaryToCscc().equals(other.getPublishSummaryToCscc());
+        if (!getPublishSummaryToCscc().equals(other.getPublishSummaryToCscc())) return false;
+        break;
+      case 8:
+        if (!getJobNotificationEmails().equals(other.getJobNotificationEmails())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2152,6 +2671,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + PUBLISH_SUMMARY_TO_CSCC_FIELD_NUMBER;
         hash = (53 * hash) + getPublishSummaryToCscc().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + JOB_NOTIFICATION_EMAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getJobNotificationEmails().hashCode();
         break;
       case 0:
       default:
@@ -2350,6 +2873,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           result.action_ = publishSummaryToCsccBuilder_.build();
         }
       }
+      if (actionCase_ == 8) {
+        if (jobNotificationEmailsBuilder_ == null) {
+          result.action_ = action_;
+        } else {
+          result.action_ = jobNotificationEmailsBuilder_.build();
+        }
+      }
       result.actionCase_ = actionCase_;
       onBuilt();
       return result;
@@ -2357,35 +2887,35 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2414,6 +2944,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         case PUBLISH_SUMMARY_TO_CSCC:
           {
             mergePublishSummaryToCscc(other.getPublishSummaryToCscc());
+            break;
+          }
+        case JOB_NOTIFICATION_EMAILS:
+          {
+            mergeJobNotificationEmails(other.getJobNotificationEmails());
             break;
           }
         case ACTION_NOT_SET:
@@ -3075,9 +3610,225 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return publishSummaryToCsccBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.JobNotificationEmails,
+            com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder,
+            com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder>
+        jobNotificationEmailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public boolean hasJobNotificationEmails() {
+      return actionCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
+      if (jobNotificationEmailsBuilder_ == null) {
+        if (actionCase_ == 8) {
+          return (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+      } else {
+        if (actionCase_ == 8) {
+          return jobNotificationEmailsBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public Builder setJobNotificationEmails(
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails value) {
+      if (jobNotificationEmailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        jobNotificationEmailsBuilder_.setMessage(value);
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public Builder setJobNotificationEmails(
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder builderForValue) {
+      if (jobNotificationEmailsBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        jobNotificationEmailsBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public Builder mergeJobNotificationEmails(
+        com.google.privacy.dlp.v2.Action.JobNotificationEmails value) {
+      if (jobNotificationEmailsBuilder_ == null) {
+        if (actionCase_ == 8
+            && action_
+                != com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.JobNotificationEmails.newBuilder(
+                      (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 8) {
+          jobNotificationEmailsBuilder_.mergeFrom(value);
+        }
+        jobNotificationEmailsBuilder_.setMessage(value);
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public Builder clearJobNotificationEmails() {
+      if (jobNotificationEmailsBuilder_ == null) {
+        if (actionCase_ == 8) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 8) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        jobNotificationEmailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder
+        getJobNotificationEmailsBuilder() {
+      return getJobNotificationEmailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder
+        getJobNotificationEmailsOrBuilder() {
+      if ((actionCase_ == 8) && (jobNotificationEmailsBuilder_ != null)) {
+        return jobNotificationEmailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 8) {
+          return (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable email notification to project owners and editors on job's
+     * completion/failure.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.JobNotificationEmails,
+            com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder,
+            com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder>
+        getJobNotificationEmailsFieldBuilder() {
+      if (jobNotificationEmailsBuilder_ == null) {
+        if (!(actionCase_ == 8)) {
+          action_ = com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
+        }
+        jobNotificationEmailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.Action.JobNotificationEmails,
+                com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder,
+                com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder>(
+                (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 8;
+      onChanged();
+      ;
+      return jobNotificationEmailsBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

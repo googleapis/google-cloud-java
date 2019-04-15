@@ -69,7 +69,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 rows_ = new java.util.ArrayList<com.google.protobuf.ListValue>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -95,7 +95,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -107,7 +107,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         rows_ = java.util.Collections.unmodifiableList(rows_);
       }
       this.unknownFields = unknownFields.build();
@@ -178,11 +178,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-   * in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-   * encoded based on type as described
-   * [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+   * element in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -195,11 +194,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-   * in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-   * encoded based on type as described
-   * [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+   * element in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -212,11 +210,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-   * in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-   * encoded based on type as described
-   * [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+   * element in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -229,11 +226,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-   * in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-   * encoded based on type as described
-   * [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+   * element in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -246,11 +242,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-   * in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-   * encoded based on type as described
-   * [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+   * element in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -270,7 +265,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * DML statements always produce stats containing the number of rows
    * modified, unless executed using the
-   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
@@ -289,7 +285,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * DML statements always produce stats containing the number of rows
    * modified, unless executed using the
-   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
@@ -308,7 +305,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * DML statements always produce stats containing the number of rows
    * modified, unless executed using the
-   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
@@ -375,18 +373,17 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.spanner.v1.ResultSet other = (com.google.spanner.v1.ResultSet) obj;
 
-    boolean result = true;
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && getRowsList().equals(other.getRowsList());
-    result = result && (hasStats() == other.hasStats());
+    if (!getRowsList().equals(other.getRowsList())) return false;
+    if (hasStats() != other.hasStats()) return false;
     if (hasStats()) {
-      result = result && getStats().equals(other.getStats());
+      if (!getStats().equals(other.getStats())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -606,7 +603,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
         result.metadata_ = metadataBuilder_.build();
       }
       if (rowsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           rows_ = java.util.Collections.unmodifiableList(rows_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -626,35 +623,35 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -733,7 +730,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.spanner.v1.ResultSetMetadata metadata_ = null;
+    private com.google.spanner.v1.ResultSetMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.ResultSetMetadata,
             com.google.spanner.v1.ResultSetMetadata.Builder,
@@ -917,7 +914,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.protobuf.ListValue> rows_ = java.util.Collections.emptyList();
 
     private void ensureRowsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         rows_ = new java.util.ArrayList<com.google.protobuf.ListValue>(rows_);
         bitField0_ |= 0x00000002;
       }
@@ -934,11 +931,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -955,11 +951,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -976,11 +971,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -997,11 +991,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1024,11 +1017,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1048,11 +1040,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1075,11 +1066,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1102,11 +1092,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1126,11 +1115,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1150,11 +1138,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1174,11 +1161,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1198,11 +1184,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1222,11 +1207,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1239,11 +1223,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1260,11 +1243,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1281,11 +1263,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1298,11 +1279,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1316,11 +1296,10 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Each element in `rows` is a row whose format is defined by
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
-     * in each row matches the ith field in
-     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
-     * encoded based on type as described
-     * [here][google.spanner.v1.TypeCode].
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
+     * element in each row matches the ith field in
+     * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
+     * are encoded based on type as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -1340,16 +1319,13 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.ListValue,
                 com.google.protobuf.ListValue.Builder,
                 com.google.protobuf.ListValueOrBuilder>(
-                rows_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                rows_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         rows_ = null;
       }
       return rowsBuilder_;
     }
 
-    private com.google.spanner.v1.ResultSetStats stats_ = null;
+    private com.google.spanner.v1.ResultSetStats stats_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.ResultSetStats,
             com.google.spanner.v1.ResultSetStats.Builder,
@@ -1364,7 +1340,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1383,7 +1360,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1406,7 +1384,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1435,7 +1414,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1461,7 +1441,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1494,7 +1475,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1521,7 +1503,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1542,7 +1525,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1565,7 +1549,8 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * DML statements always produce stats containing the number of rows
      * modified, unless executed using the
-     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+     * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * Other fields may or may not be populated, based on the
      * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
      * </pre>
@@ -1591,7 +1576,7 @@ public final class ResultSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

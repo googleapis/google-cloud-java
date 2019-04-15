@@ -200,14 +200,12 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
 
             @Override
             public ListTracesRequest injectPageSize(ListTracesRequest payload, int pageSize) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
+              return ListTracesRequest.newBuilder(payload).setPageSize(pageSize).build();
             }
 
             @Override
             public Integer extractPageSize(ListTracesRequest payload) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
+              return payload.getPageSize();
             }
 
             @Override

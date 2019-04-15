@@ -7,7 +7,8 @@ package com.google.spanner.v1;
  *
  *
  * <pre>
- * `StructType` defines the fields of a [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
+ * `StructType` defines the fields of a
+ * [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.StructType}
@@ -52,7 +53,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fields_ = new java.util.ArrayList<com.google.spanner.v1.StructType.Field>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -63,7 +64,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -75,7 +76,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
       }
       this.unknownFields = unknownFields.build();
@@ -235,7 +236,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -411,14 +412,13 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.spanner.v1.StructType.Field other = (com.google.spanner.v1.StructType.Field) obj;
 
-      boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && (hasType() == other.hasType());
+      if (!getName().equals(other.getName())) return false;
+      if (hasType() != other.hasType()) return false;
       if (hasType()) {
-        result = result && getType().equals(other.getType());
+        if (!getType().equals(other.getType())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -628,23 +628,23 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -652,13 +652,13 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -833,7 +833,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.spanner.v1.Type type_ = null;
+      private com.google.spanner.v1.Type type_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.spanner.v1.Type,
               com.google.spanner.v1.Type.Builder,
@@ -1010,7 +1010,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1068,9 +1068,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1085,9 +1085,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1103,9 +1103,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1120,9 +1120,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1137,9 +1137,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1192,10 +1192,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.spanner.v1.StructType other = (com.google.spanner.v1.StructType) obj;
 
-    boolean result = true;
-    result = result && getFieldsList().equals(other.getFieldsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getFieldsList().equals(other.getFieldsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1312,7 +1311,8 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * `StructType` defines the fields of a [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
+   * `StructType` defines the fields of a
+   * [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.StructType}
@@ -1389,7 +1389,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
       com.google.spanner.v1.StructType result = new com.google.spanner.v1.StructType(this);
       int from_bitField0_ = bitField0_;
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1403,35 +1403,35 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1508,7 +1508,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fields_ = new java.util.ArrayList<com.google.spanner.v1.StructType.Field>(fields_);
         bitField0_ |= 0x00000001;
       }
@@ -1527,9 +1527,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1548,9 +1548,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1569,9 +1569,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1590,9 +1590,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1617,9 +1617,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1642,9 +1642,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1669,9 +1669,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1696,9 +1696,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1720,9 +1720,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1745,9 +1745,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1770,9 +1770,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1794,9 +1794,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1818,9 +1818,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1835,9 +1835,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1856,9 +1856,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1878,9 +1878,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1896,9 +1896,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1914,9 +1914,9 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1936,10 +1936,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.StructType.Field,
                 com.google.spanner.v1.StructType.Field.Builder,
                 com.google.spanner.v1.StructType.FieldOrBuilder>(
-                fields_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         fields_ = null;
       }
       return fieldsBuilder_;
@@ -1947,7 +1944,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

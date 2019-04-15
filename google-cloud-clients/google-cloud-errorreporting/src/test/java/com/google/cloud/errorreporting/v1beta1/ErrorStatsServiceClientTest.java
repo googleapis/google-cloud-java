@@ -36,7 +36,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -115,7 +115,7 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListGroupStatsRequest actualRequest = (ListGroupStatsRequest) actualRequests.get(0);
 
@@ -166,7 +166,7 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListEventsRequest actualRequest = (ListEventsRequest) actualRequests.get(0);
 
@@ -206,7 +206,7 @@ public class ErrorStatsServiceClientTest {
     DeleteEventsResponse actualResponse = client.deleteEvents(projectName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
 

@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
+ * Response message for
+ * [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeyVersionsResponse}
@@ -25,7 +26,6 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
   private ListCryptoKeyVersionsResponse() {
     cryptoKeyVersions_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    totalSize_ = 0;
   }
 
   @java.lang.Override
@@ -54,7 +54,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cryptoKeyVersions_ =
                     new java.util.ArrayList<com.google.cloud.kms.v1.CryptoKeyVersion>();
                 mutable_bitField0_ |= 0x00000001;
@@ -78,7 +78,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -90,7 +90,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         cryptoKeyVersions_ = java.util.Collections.unmodifiableList(cryptoKeyVersions_);
       }
       this.unknownFields = unknownFields.build();
@@ -186,8 +186,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-   * results.
+   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -208,8 +208,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-   * results.
+   * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -232,7 +232,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
+   * The total number of
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
    * query.
    * </pre>
    *
@@ -300,12 +301,11 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
     com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse other =
         (com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse) obj;
 
-    boolean result = true;
-    result = result && getCryptoKeyVersionsList().equals(other.getCryptoKeyVersionsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && (getTotalSize() == other.getTotalSize());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getCryptoKeyVersionsList().equals(other.getCryptoKeyVersionsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (getTotalSize() != other.getTotalSize()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -428,7 +428,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
+   * Response message for
+   * [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListCryptoKeyVersionsResponse}
@@ -511,7 +512,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (cryptoKeyVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           cryptoKeyVersions_ = java.util.Collections.unmodifiableList(cryptoKeyVersions_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -528,35 +529,35 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -642,7 +643,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureCryptoKeyVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         cryptoKeyVersions_ =
             new java.util.ArrayList<com.google.cloud.kms.v1.CryptoKeyVersion>(cryptoKeyVersions_);
         bitField0_ |= 0x00000001;
@@ -985,7 +986,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
                 com.google.cloud.kms.v1.CryptoKeyVersion.Builder,
                 com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder>(
                 cryptoKeyVersions_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         cryptoKeyVersions_ = null;
@@ -999,8 +1000,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-     * results.
+     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1021,8 +1022,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-     * results.
+     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1043,8 +1044,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-     * results.
+     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1063,8 +1064,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-     * results.
+     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1080,8 +1081,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      * <pre>
      * A token to retrieve next page of results. Pass this value in
-     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
-     * results.
+     * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1102,7 +1103,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
+     * The total number of
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
      * query.
      * </pre>
      *
@@ -1115,7 +1117,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
+     * The total number of
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
      * query.
      * </pre>
      *
@@ -1131,7 +1134,8 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
+     * The total number of
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
      * query.
      * </pre>
      *
@@ -1146,7 +1150,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

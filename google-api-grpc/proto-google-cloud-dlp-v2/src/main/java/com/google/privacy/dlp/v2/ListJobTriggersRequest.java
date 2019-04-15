@@ -25,8 +25,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
   private ListJobTriggersRequest() {
     parent_ = "";
     pageToken_ = "";
-    pageSize_ = 0;
     orderBy_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -79,9 +79,16 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
               orderBy_ = s;
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -232,6 +239,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    * Supported fields are:
    * - `create_time`: corresponds to time the JobTrigger was created.
    * - `update_time`: corresponds to time the JobTrigger was last updated.
+   * - `last_run_time`: corresponds to the last time the JobTrigger ran.
    * - `name`: corresponds to JobTrigger's name.
    * - `display_name`: corresponds to JobTrigger's display name.
    * - `status`: corresponds to JobTrigger's status.
@@ -262,6 +270,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    * Supported fields are:
    * - `create_time`: corresponds to time the JobTrigger was created.
    * - `update_time`: corresponds to time the JobTrigger was last updated.
+   * - `last_run_time`: corresponds to the last time the JobTrigger ran.
    * - `name`: corresponds to JobTrigger's name.
    * - `display_name`: corresponds to JobTrigger's display name.
    * - `status`: corresponds to JobTrigger's status.
@@ -275,6 +284,85 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 5;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows filtering.
+   * Supported syntax:
+   * * Filter expressions are made up of one or more restrictions.
+   * * Restrictions can be combined by `AND` or `OR` logical operators. A
+   * sequence of restrictions implicitly uses `AND`.
+   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * Supported fields/values for inspect jobs:
+   *     - `status` - HEALTHY|PAUSED|CANCELLED
+   *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+   *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+   *     quotation marks. Nanoseconds are ignored.
+   *     - 'error_count' - Number of errors that have occurred while running.
+   * * The operator must be `=` or `!=` for status and inspected_storage.
+   * Examples:
+   * * inspected_storage = cloud_storage AND status = HEALTHY
+   * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+   * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+   * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+   * The length of this field should be no more than 500 characters.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows filtering.
+   * Supported syntax:
+   * * Filter expressions are made up of one or more restrictions.
+   * * Restrictions can be combined by `AND` or `OR` logical operators. A
+   * sequence of restrictions implicitly uses `AND`.
+   * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+   * * Supported fields/values for inspect jobs:
+   *     - `status` - HEALTHY|PAUSED|CANCELLED
+   *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+   *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+   *     quotation marks. Nanoseconds are ignored.
+   *     - 'error_count' - Number of errors that have occurred while running.
+   * * The operator must be `=` or `!=` for status and inspected_storage.
+   * Examples:
+   * * inspected_storage = cloud_storage AND status = HEALTHY
+   * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+   * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+   * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+   * The length of this field should be no more than 500 characters.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   */
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -307,6 +395,9 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     if (!getOrderByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -328,6 +419,9 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     if (!getOrderByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -344,13 +438,13 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     com.google.privacy.dlp.v2.ListJobTriggersRequest other =
         (com.google.privacy.dlp.v2.ListJobTriggersRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getOrderBy().equals(other.getOrderBy());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -368,6 +462,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -521,6 +617,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
 
       orderBy_ = "";
 
+      filter_ = "";
+
       return this;
     }
 
@@ -552,41 +650,42 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
       result.orderBy_ = orderBy_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -615,6 +714,10 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -901,6 +1004,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * Supported fields are:
      * - `create_time`: corresponds to time the JobTrigger was created.
      * - `update_time`: corresponds to time the JobTrigger was last updated.
+     * - `last_run_time`: corresponds to the last time the JobTrigger ran.
      * - `name`: corresponds to JobTrigger's name.
      * - `display_name`: corresponds to JobTrigger's display name.
      * - `status`: corresponds to JobTrigger's status.
@@ -931,6 +1035,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * Supported fields are:
      * - `create_time`: corresponds to time the JobTrigger was created.
      * - `update_time`: corresponds to time the JobTrigger was last updated.
+     * - `last_run_time`: corresponds to the last time the JobTrigger ran.
      * - `name`: corresponds to JobTrigger's name.
      * - `display_name`: corresponds to JobTrigger's display name.
      * - `status`: corresponds to JobTrigger's status.
@@ -961,6 +1066,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * Supported fields are:
      * - `create_time`: corresponds to time the JobTrigger was created.
      * - `update_time`: corresponds to time the JobTrigger was last updated.
+     * - `last_run_time`: corresponds to the last time the JobTrigger ran.
      * - `name`: corresponds to JobTrigger's name.
      * - `display_name`: corresponds to JobTrigger's display name.
      * - `status`: corresponds to JobTrigger's status.
@@ -989,6 +1095,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * Supported fields are:
      * - `create_time`: corresponds to time the JobTrigger was created.
      * - `update_time`: corresponds to time the JobTrigger was last updated.
+     * - `last_run_time`: corresponds to the last time the JobTrigger ran.
      * - `name`: corresponds to JobTrigger's name.
      * - `display_name`: corresponds to JobTrigger's display name.
      * - `status`: corresponds to JobTrigger's status.
@@ -1014,6 +1121,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      * Supported fields are:
      * - `create_time`: corresponds to time the JobTrigger was created.
      * - `update_time`: corresponds to time the JobTrigger was last updated.
+     * - `last_run_time`: corresponds to the last time the JobTrigger ran.
      * - `name`: corresponds to JobTrigger's name.
      * - `display_name`: corresponds to JobTrigger's display name.
      * - `status`: corresponds to JobTrigger's status.
@@ -1032,9 +1140,193 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows filtering.
+     * Supported syntax:
+     * * Filter expressions are made up of one or more restrictions.
+     * * Restrictions can be combined by `AND` or `OR` logical operators. A
+     * sequence of restrictions implicitly uses `AND`.
+     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * Supported fields/values for inspect jobs:
+     *     - `status` - HEALTHY|PAUSED|CANCELLED
+     *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+     *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+     *     quotation marks. Nanoseconds are ignored.
+     *     - 'error_count' - Number of errors that have occurred while running.
+     * * The operator must be `=` or `!=` for status and inspected_storage.
+     * Examples:
+     * * inspected_storage = cloud_storage AND status = HEALTHY
+     * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+     * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+     * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     * The length of this field should be no more than 500 characters.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows filtering.
+     * Supported syntax:
+     * * Filter expressions are made up of one or more restrictions.
+     * * Restrictions can be combined by `AND` or `OR` logical operators. A
+     * sequence of restrictions implicitly uses `AND`.
+     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * Supported fields/values for inspect jobs:
+     *     - `status` - HEALTHY|PAUSED|CANCELLED
+     *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+     *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+     *     quotation marks. Nanoseconds are ignored.
+     *     - 'error_count' - Number of errors that have occurred while running.
+     * * The operator must be `=` or `!=` for status and inspected_storage.
+     * Examples:
+     * * inspected_storage = cloud_storage AND status = HEALTHY
+     * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+     * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+     * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     * The length of this field should be no more than 500 characters.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows filtering.
+     * Supported syntax:
+     * * Filter expressions are made up of one or more restrictions.
+     * * Restrictions can be combined by `AND` or `OR` logical operators. A
+     * sequence of restrictions implicitly uses `AND`.
+     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * Supported fields/values for inspect jobs:
+     *     - `status` - HEALTHY|PAUSED|CANCELLED
+     *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+     *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+     *     quotation marks. Nanoseconds are ignored.
+     *     - 'error_count' - Number of errors that have occurred while running.
+     * * The operator must be `=` or `!=` for status and inspected_storage.
+     * Examples:
+     * * inspected_storage = cloud_storage AND status = HEALTHY
+     * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+     * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+     * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     * The length of this field should be no more than 500 characters.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows filtering.
+     * Supported syntax:
+     * * Filter expressions are made up of one or more restrictions.
+     * * Restrictions can be combined by `AND` or `OR` logical operators. A
+     * sequence of restrictions implicitly uses `AND`.
+     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * Supported fields/values for inspect jobs:
+     *     - `status` - HEALTHY|PAUSED|CANCELLED
+     *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+     *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+     *     quotation marks. Nanoseconds are ignored.
+     *     - 'error_count' - Number of errors that have occurred while running.
+     * * The operator must be `=` or `!=` for status and inspected_storage.
+     * Examples:
+     * * inspected_storage = cloud_storage AND status = HEALTHY
+     * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+     * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+     * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     * The length of this field should be no more than 500 characters.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows filtering.
+     * Supported syntax:
+     * * Filter expressions are made up of one or more restrictions.
+     * * Restrictions can be combined by `AND` or `OR` logical operators. A
+     * sequence of restrictions implicitly uses `AND`.
+     * * A restriction has the form of `&lt;field&gt; &lt;operator&gt; &lt;value&gt;`.
+     * * Supported fields/values for inspect jobs:
+     *     - `status` - HEALTHY|PAUSED|CANCELLED
+     *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
+     *     - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
+     *     quotation marks. Nanoseconds are ignored.
+     *     - 'error_count' - Number of errors that have occurred while running.
+     * * The operator must be `=` or `!=` for status and inspected_storage.
+     * Examples:
+     * * inspected_storage = cloud_storage AND status = HEALTHY
+     * * inspected_storage = cloud_storage OR inspected_storage = bigquery
+     * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
+     * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     * The length of this field should be no more than 500 characters.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -20,6 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 
@@ -189,6 +191,25 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayValues()).isNull();
   }
 
+  @Test
+  public void testTimestampWithDateTimeFormatterBuilder() {
+    QueryParameterValue value = QueryParameterValue.timestamp("2019-02-14 12:34:45.938993Z");
+    assertThat(value.getValue()).isEqualTo("2019-02-14 12:34:45.938993Z");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+    QueryParameterValue value1 = QueryParameterValue.timestamp("2019-02-14 12:34:45.938993+0000");
+    assertThat(value1.getValue()).isEqualTo("2019-02-14 12:34:45.938993+0000");
+    assertThat(value1.getType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
+    assertThat(value1.getArrayType()).isNull();
+    assertThat(value1.getArrayValues()).isNull();
+    QueryParameterValue value2 = QueryParameterValue.timestamp("2019-02-14 12:34:45.102+00:00");
+    assertThat(value2.getValue()).isEqualTo("2019-02-14 12:34:45.102+00:00");
+    assertThat(value2.getType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
+    assertThat(value2.getArrayType()).isNull();
+    assertThat(value2.getArrayValues()).isNull();
+  }
+
   @Test(expected = IllegalArgumentException.class)
   public void testInvalidTimestamp() {
     // missing the time
@@ -199,6 +220,17 @@ public class QueryParameterValueTest {
   public void testDate() {
     QueryParameterValue value = QueryParameterValue.date("2014-08-19");
     assertThat(value.getValue()).isEqualTo("2014-08-19");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATE);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
+  public void testStandardDate() throws ParseException {
+    com.google.cloud.Date gcDate = com.google.cloud.Date.parseDate("2016-09-18");
+    Date date = com.google.cloud.Date.toJavaUtilDate(gcDate);
+    QueryParameterValue value = QueryParameterValue.of(date, Date.class);
+    assertThat(value.getValue()).isEqualTo("2016-09-18");
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATE);
     assertThat(value.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
@@ -265,6 +297,29 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
     assertArrayDataEquals(
         new String[] {"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
+        StandardSQLTypeName.TIMESTAMP,
+        value.getArrayValues());
+  }
+
+  @Test
+  public void testTimestampArrayWithDateTimeFormatterBuilder() {
+    QueryParameterValue value =
+        QueryParameterValue.array(
+            new String[] {
+              "2019-02-14 12:34:45.938993Z",
+              "2019-02-14 12:34:45.938993+0000",
+              "2019-02-14 12:34:45.102+00:00"
+            },
+            StandardSQLTypeName.TIMESTAMP);
+    assertThat(value.getValue()).isNull();
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
+    assertArrayDataEquals(
+        new String[] {
+          "2019-02-14 12:34:45.938993Z",
+          "2019-02-14 12:34:45.938993+0000",
+          "2019-02-14 12:34:45.102+00:00"
+        },
         StandardSQLTypeName.TIMESTAMP,
         value.getArrayValues());
   }

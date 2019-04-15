@@ -75,10 +75,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -89,10 +92,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -150,7 +156,7 @@ public final class ReadOptions {
             case 10:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   selectedFields_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -166,7 +172,7 @@ public final class ReadOptions {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -178,7 +184,7 @@ public final class ReadOptions {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -272,10 +278,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -296,10 +305,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -373,11 +385,10 @@ public final class ReadOptions {
       com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions other =
           (com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) obj;
 
-      boolean result = true;
-      result = result && getSelectedFieldsList().equals(other.getSelectedFieldsList());
-      result = result && getRowRestriction().equals(other.getRowRestriction());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getSelectedFieldsList().equals(other.getSelectedFieldsList())) return false;
+      if (!getRowRestriction().equals(other.getRowRestriction())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -580,7 +591,7 @@ public final class ReadOptions {
             new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -593,23 +604,23 @@ public final class ReadOptions {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -617,13 +628,13 @@ public final class ReadOptions {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -694,7 +705,7 @@ public final class ReadOptions {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSelectedFieldsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = new com.google.protobuf.LazyStringArrayList(selectedFields_);
           bitField0_ |= 0x00000001;
         }
@@ -866,10 +877,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -890,10 +904,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -914,10 +931,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -936,10 +956,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -955,10 +978,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -977,7 +1003,7 @@ public final class ReadOptions {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override

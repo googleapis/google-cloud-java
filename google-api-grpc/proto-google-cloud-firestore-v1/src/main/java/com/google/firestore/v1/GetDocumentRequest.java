@@ -96,7 +96,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -389,26 +389,24 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     com.google.firestore.v1.GetDocumentRequest other =
         (com.google.firestore.v1.GetDocumentRequest) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasMask() == other.hasMask());
+    if (!getName().equals(other.getName())) return false;
+    if (hasMask() != other.hasMask()) return false;
     if (hasMask()) {
-      result = result && getMask().equals(other.getMask());
+      if (!getMask().equals(other.getMask())) return false;
     }
-    result = result && getConsistencySelectorCase().equals(other.getConsistencySelectorCase());
-    if (!result) return false;
+    if (!getConsistencySelectorCase().equals(other.getConsistencySelectorCase())) return false;
     switch (consistencySelectorCase_) {
       case 3:
-        result = result && getTransaction().equals(other.getTransaction());
+        if (!getTransaction().equals(other.getTransaction())) return false;
         break;
       case 5:
-        result = result && getReadTime().equals(other.getReadTime());
+        if (!getReadTime().equals(other.getReadTime())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -641,35 +639,35 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -849,7 +847,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.firestore.v1.DocumentMask mask_ = null;
+    private com.google.firestore.v1.DocumentMask mask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1.DocumentMask,
             com.google.firestore.v1.DocumentMask.Builder,
@@ -1307,7 +1305,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

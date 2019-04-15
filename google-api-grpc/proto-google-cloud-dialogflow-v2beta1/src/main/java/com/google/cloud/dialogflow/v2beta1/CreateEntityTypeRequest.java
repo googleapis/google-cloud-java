@@ -83,7 +83,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -209,9 +209,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_type`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -233,9 +234,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_type`. If not
    * specified, the agent's default language is used.
-   * [More than a dozen
-   * languages](https://dialogflow.com/docs/reference/language) are supported.
-   * Note: languages must be enabled in the agent, before they can be used.
+   * [Many
+   * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * </pre>
    *
    * <code>string language_code = 3;</code>
@@ -309,15 +311,14 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
     com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest other =
         (com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasEntityType() == other.hasEntityType());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasEntityType() != other.hasEntityType()) return false;
     if (hasEntityType()) {
-      result = result && getEntityType().equals(other.getEntityType());
+      if (!getEntityType().equals(other.getEntityType())) return false;
     }
-    result = result && getLanguageCode().equals(other.getLanguageCode());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -531,35 +532,35 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -715,7 +716,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2beta1.EntityType entityType_ = null;
+    private com.google.cloud.dialogflow.v2beta1.EntityType entityType_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.EntityType,
             com.google.cloud.dialogflow.v2beta1.EntityType.Builder,
@@ -904,9 +905,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_type`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -928,9 +930,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_type`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -952,9 +955,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_type`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -974,9 +978,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_type`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -993,9 +998,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_type`. If not
      * specified, the agent's default language is used.
-     * [More than a dozen
-     * languages](https://dialogflow.com/docs/reference/language) are supported.
-     * Note: languages must be enabled in the agent, before they can be used.
+     * [Many
+     * languages](https://cloud.google.com/dialogflow-enterprise/docs/reference/language)
+     * are supported. Note: languages must be enabled in the agent before they can
+     * be used.
      * </pre>
      *
      * <code>string language_code = 3;</code>
@@ -1013,7 +1019,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

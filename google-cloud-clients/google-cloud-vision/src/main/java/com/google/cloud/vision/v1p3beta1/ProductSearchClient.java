@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1p3beta1.stub.ProductSearchStub;
 import com.google.cloud.vision.v1p3beta1.stub.ProductSearchStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -2612,7 +2613,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ImportProductSetsResponse, BatchOperationMetadata&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
    *   // Do something
    *   ImportProductSetsResponse response = future.get();
    * }
@@ -2709,7 +2710,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductSetsPagedResponse apply(ListProductSetsPage input) {
               return new ListProductSetsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListProductSetsPagedResponse(ListProductSetsPage page) {
@@ -2790,7 +2792,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductsPagedResponse apply(ListProductsPage input) {
               return new ListProductsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListProductsPagedResponse(ListProductsPage page) {
@@ -2870,7 +2873,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListReferenceImagesPagedResponse apply(ListReferenceImagesPage input) {
               return new ListReferenceImagesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListReferenceImagesPagedResponse(ListReferenceImagesPage page) {
@@ -2958,7 +2962,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductsInProductSetPagedResponse apply(ListProductsInProductSetPage input) {
               return new ListProductsInProductSetPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListProductsInProductSetPagedResponse(ListProductsInProductSetPage page) {

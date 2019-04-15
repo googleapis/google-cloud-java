@@ -24,8 +24,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   private Task() {
     name_ = "";
-    dispatchCount_ = 0;
-    responseCount_ = 0;
     view_ = 0;
   }
 
@@ -159,6 +157,23 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               view_ = rawValue;
               break;
             }
+          case 90:
+            {
+              com.google.cloud.tasks.v2beta3.HttpRequest.Builder subBuilder = null;
+              if (payloadTypeCase_ == 11) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_).toBuilder();
+              }
+              payloadType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.HttpRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_);
+                payloadType_ = subBuilder.buildPartial();
+              }
+              payloadTypeCase_ = 11;
+              break;
+            }
           case 98:
             {
               com.google.protobuf.Duration.Builder subBuilder = null;
@@ -176,7 +191,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -381,6 +396,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public enum PayloadTypeCase implements com.google.protobuf.Internal.EnumLite {
     APP_ENGINE_HTTP_REQUEST(3),
+    HTTP_REQUEST(11),
     PAYLOADTYPE_NOT_SET(0);
     private final int value;
 
@@ -397,6 +413,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 3:
           return APP_ENGINE_HTTP_REQUEST;
+        case 11:
+          return HTTP_REQUEST;
         case 0:
           return PAYLOADTYPE_NOT_SET;
         default:
@@ -426,7 +444,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -461,7 +480,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -532,6 +552,62 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_;
     }
     return com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance();
+  }
+
+  public static final int HTTP_REQUEST_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  public boolean hasHttpRequest() {
+    return payloadTypeCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest() {
+    if (payloadTypeCase_ == 11) {
+      return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+    if (payloadTypeCase_ == 11) {
+      return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
   }
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 4;
@@ -638,9 +714,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
-   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
    *   of the service: 10 minutes for standard apps with automatic scaling, 24
    *   hours for standard apps with manual and basic scaling, and 60 minutes for
    *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -672,9 +751,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
-   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
    *   of the service: 10 minutes for standard apps with automatic scaling, 24
    *   hours for standard apps with manual and basic scaling, and 60 minutes for
    *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -708,9 +790,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
-   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
    *   of the service: 10 minutes for standard apps with automatic scaling, 24
    *   hours for standard apps with manual and basic scaling, and 60 minutes for
    *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -737,7 +822,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The number of attempts dispatched.
-   * This count includes tasks which have been dispatched but haven't
+   * This count includes attempts which have been dispatched but haven't
    * received a response.
    * </pre>
    *
@@ -923,6 +1008,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (view_ != com.google.cloud.tasks.v2beta3.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, view_);
     }
+    if (payloadTypeCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_);
+    }
     if (dispatchDeadline_ != null) {
       output.writeMessage(12, getDispatchDeadline());
     }
@@ -964,6 +1052,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (view_ != com.google.cloud.tasks.v2beta3.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, view_);
     }
+    if (payloadTypeCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_);
+    }
     if (dispatchDeadline_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDispatchDeadline());
     }
@@ -982,42 +1075,43 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.tasks.v2beta3.Task other = (com.google.cloud.tasks.v2beta3.Task) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasScheduleTime() == other.hasScheduleTime());
+    if (!getName().equals(other.getName())) return false;
+    if (hasScheduleTime() != other.hasScheduleTime()) return false;
     if (hasScheduleTime()) {
-      result = result && getScheduleTime().equals(other.getScheduleTime());
+      if (!getScheduleTime().equals(other.getScheduleTime())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasDispatchDeadline() == other.hasDispatchDeadline());
+    if (hasDispatchDeadline() != other.hasDispatchDeadline()) return false;
     if (hasDispatchDeadline()) {
-      result = result && getDispatchDeadline().equals(other.getDispatchDeadline());
+      if (!getDispatchDeadline().equals(other.getDispatchDeadline())) return false;
     }
-    result = result && (getDispatchCount() == other.getDispatchCount());
-    result = result && (getResponseCount() == other.getResponseCount());
-    result = result && (hasFirstAttempt() == other.hasFirstAttempt());
+    if (getDispatchCount() != other.getDispatchCount()) return false;
+    if (getResponseCount() != other.getResponseCount()) return false;
+    if (hasFirstAttempt() != other.hasFirstAttempt()) return false;
     if (hasFirstAttempt()) {
-      result = result && getFirstAttempt().equals(other.getFirstAttempt());
+      if (!getFirstAttempt().equals(other.getFirstAttempt())) return false;
     }
-    result = result && (hasLastAttempt() == other.hasLastAttempt());
+    if (hasLastAttempt() != other.hasLastAttempt()) return false;
     if (hasLastAttempt()) {
-      result = result && getLastAttempt().equals(other.getLastAttempt());
+      if (!getLastAttempt().equals(other.getLastAttempt())) return false;
     }
-    result = result && view_ == other.view_;
-    result = result && getPayloadTypeCase().equals(other.getPayloadTypeCase());
-    if (!result) return false;
+    if (view_ != other.view_) return false;
+    if (!getPayloadTypeCase().equals(other.getPayloadTypeCase())) return false;
     switch (payloadTypeCase_) {
       case 3:
-        result = result && getAppEngineHttpRequest().equals(other.getAppEngineHttpRequest());
+        if (!getAppEngineHttpRequest().equals(other.getAppEngineHttpRequest())) return false;
+        break;
+      case 11:
+        if (!getHttpRequest().equals(other.getHttpRequest())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1059,6 +1153,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + APP_ENGINE_HTTP_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getAppEngineHttpRequest().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + HTTP_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpRequest().hashCode();
         break;
       case 0:
       default:
@@ -1281,6 +1379,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           result.payloadType_ = appEngineHttpRequestBuilder_.build();
         }
       }
+      if (payloadTypeCase_ == 11) {
+        if (httpRequestBuilder_ == null) {
+          result.payloadType_ = payloadType_;
+        } else {
+          result.payloadType_ = httpRequestBuilder_.build();
+        }
+      }
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
       } else {
@@ -1316,35 +1421,35 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1391,6 +1496,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case APP_ENGINE_HTTP_REQUEST:
           {
             mergeAppEngineHttpRequest(other.getAppEngineHttpRequest());
+            break;
+          }
+        case HTTP_REQUEST:
+          {
+            mergeHttpRequest(other.getHttpRequest());
             break;
           }
         case PAYLOADTYPE_NOT_SET:
@@ -1453,7 +1563,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1488,7 +1599,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1523,7 +1635,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1556,7 +1669,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1586,7 +1700,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1826,7 +1941,245 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return appEngineHttpRequestBuilder_;
     }
 
-    private com.google.protobuf.Timestamp scheduleTime_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.HttpRequest,
+            com.google.cloud.tasks.v2beta3.HttpRequest.Builder,
+            com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder>
+        httpRequestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public boolean hasHttpRequest() {
+      return payloadTypeCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 11) {
+          return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+      } else {
+        if (payloadTypeCase_ == 11) {
+          return httpRequestBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder setHttpRequest(com.google.cloud.tasks.v2beta3.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payloadType_ = value;
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder setHttpRequest(
+        com.google.cloud.tasks.v2beta3.HttpRequest.Builder builderForValue) {
+      if (httpRequestBuilder_ == null) {
+        payloadType_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(builderForValue.build());
+      }
+      payloadTypeCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder mergeHttpRequest(com.google.cloud.tasks.v2beta3.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 11
+            && payloadType_ != com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance()) {
+          payloadType_ =
+              com.google.cloud.tasks.v2beta3.HttpRequest.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payloadType_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadTypeCase_ == 11) {
+          httpRequestBuilder_.mergeFrom(value);
+        }
+        httpRequestBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder clearHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 11) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadTypeCase_ == 11) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+        }
+        httpRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpRequest.Builder getHttpRequestBuilder() {
+      return getHttpRequestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+      if ((payloadTypeCase_ == 11) && (httpRequestBuilder_ != null)) {
+        return httpRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadTypeCase_ == 11) {
+          return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.HttpRequest,
+            com.google.cloud.tasks.v2beta3.HttpRequest.Builder,
+            com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder>
+        getHttpRequestFieldBuilder() {
+      if (httpRequestBuilder_ == null) {
+        if (!(payloadTypeCase_ == 11)) {
+          payloadType_ = com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+        }
+        httpRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.HttpRequest,
+                com.google.cloud.tasks.v2beta3.HttpRequest.Builder,
+                com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder>(
+                (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_,
+                getParentForChildren(),
+                isClean());
+        payloadType_ = null;
+      }
+      payloadTypeCase_ = 11;
+      onChanged();
+      ;
+      return httpRequestBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2025,7 +2378,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return scheduleTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2213,7 +2566,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Duration dispatchDeadline_ = null;
+    private com.google.protobuf.Duration dispatchDeadline_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -2232,9 +2585,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2266,9 +2622,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2306,9 +2665,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2350,9 +2712,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2391,9 +2756,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2439,9 +2807,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2481,9 +2852,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2517,9 +2891,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2557,9 +2934,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
-     *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
      *   of the service: 10 minutes for standard apps with automatic scaling, 24
      *   hours for standard apps with manual and basic scaling, and 60 minutes for
      *   flex apps. If the request deadline is set, it must be in the interval [15
@@ -2598,7 +2978,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The number of attempts dispatched.
-     * This count includes tasks which have been dispatched but haven't
+     * This count includes attempts which have been dispatched but haven't
      * received a response.
      * </pre>
      *
@@ -2612,7 +2992,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The number of attempts dispatched.
-     * This count includes tasks which have been dispatched but haven't
+     * This count includes attempts which have been dispatched but haven't
      * received a response.
      * </pre>
      *
@@ -2629,7 +3009,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The number of attempts dispatched.
-     * This count includes tasks which have been dispatched but haven't
+     * This count includes attempts which have been dispatched but haven't
      * received a response.
      * </pre>
      *
@@ -2686,7 +3066,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta3.Attempt firstAttempt_ = null;
+    private com.google.cloud.tasks.v2beta3.Attempt firstAttempt_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.Attempt,
             com.google.cloud.tasks.v2beta3.Attempt.Builder,
@@ -2885,7 +3265,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return firstAttemptBuilder_;
     }
 
-    private com.google.cloud.tasks.v2beta3.Attempt lastAttempt_ = null;
+    private com.google.cloud.tasks.v2beta3.Attempt lastAttempt_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.Attempt,
             com.google.cloud.tasks.v2beta3.Attempt.Builder,
@@ -3149,7 +3529,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

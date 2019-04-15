@@ -29,7 +29,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
     resumeToken_ = com.google.protobuf.ByteString.EMPTY;
     queryMode_ = 0;
     partitionToken_ = com.google.protobuf.ByteString.EMPTY;
-    seqno_ = 0L;
   }
 
   @java.lang.Override
@@ -102,7 +101,7 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 paramTypes_ =
                     com.google.protobuf.MapField.newMapField(
                         ParamTypesDefaultEntryHolder.defaultEntry);
@@ -140,7 +139,7 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -587,7 +586,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -613,7 +613,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -631,7 +632,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -655,7 +657,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -684,10 +687,10 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * If this request is resuming a previously interrupted SQL statement
    * execution, `resume_token` should be copied from the last
-   * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-   * enables the new SQL statement execution to resume where the last one left
-   * off. The rest of the request parameters must exactly match the
-   * request that yielded this token.
+   * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+   * interruption. Doing this enables the new SQL statement execution to resume
+   * where the last one left off. The rest of the request parameters must
+   * exactly match the request that yielded this token.
    * </pre>
    *
    * <code>bytes resume_token = 6;</code>
@@ -703,8 +706,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Used to control the amount of debugging information returned in
-   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-   * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+   * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+   * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+   * be set to
+   * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -717,8 +723,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Used to control the amount of debugging information returned in
-   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-   * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+   * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+   * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+   * be set to
+   * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -868,24 +877,23 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
     }
     com.google.spanner.v1.ExecuteSqlRequest other = (com.google.spanner.v1.ExecuteSqlRequest) obj;
 
-    boolean result = true;
-    result = result && getSession().equals(other.getSession());
-    result = result && (hasTransaction() == other.hasTransaction());
+    if (!getSession().equals(other.getSession())) return false;
+    if (hasTransaction() != other.hasTransaction()) return false;
     if (hasTransaction()) {
-      result = result && getTransaction().equals(other.getTransaction());
+      if (!getTransaction().equals(other.getTransaction())) return false;
     }
-    result = result && getSql().equals(other.getSql());
-    result = result && (hasParams() == other.hasParams());
+    if (!getSql().equals(other.getSql())) return false;
+    if (hasParams() != other.hasParams()) return false;
     if (hasParams()) {
-      result = result && getParams().equals(other.getParams());
+      if (!getParams().equals(other.getParams())) return false;
     }
-    result = result && internalGetParamTypes().equals(other.internalGetParamTypes());
-    result = result && getResumeToken().equals(other.getResumeToken());
-    result = result && queryMode_ == other.queryMode_;
-    result = result && getPartitionToken().equals(other.getPartitionToken());
-    result = result && (getSeqno() == other.getSeqno());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!internalGetParamTypes().equals(other.internalGetParamTypes())) return false;
+    if (!getResumeToken().equals(other.getResumeToken())) return false;
+    if (queryMode_ != other.queryMode_) return false;
+    if (!getPartitionToken().equals(other.getPartitionToken())) return false;
+    if (getSeqno() != other.getSeqno()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1164,35 +1172,35 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1359,7 +1367,7 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.spanner.v1.TransactionSelector transaction_ = null;
+    private com.google.spanner.v1.TransactionSelector transaction_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.TransactionSelector,
             com.google.spanner.v1.TransactionSelector.Builder,
@@ -1707,7 +1715,7 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.Struct params_ = null;
+    private com.google.protobuf.Struct params_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -2005,7 +2013,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2031,7 +2040,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2049,7 +2059,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2073,7 +2084,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2104,7 +2116,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2131,7 +2144,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2156,7 +2170,8 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -2178,10 +2193,10 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * If this request is resuming a previously interrupted SQL statement
      * execution, `resume_token` should be copied from the last
-     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new SQL statement execution to resume where the last one left
-     * off. The rest of the request parameters must exactly match the
-     * request that yielded this token.
+     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+     * interruption. Doing this enables the new SQL statement execution to resume
+     * where the last one left off. The rest of the request parameters must
+     * exactly match the request that yielded this token.
      * </pre>
      *
      * <code>bytes resume_token = 6;</code>
@@ -2195,10 +2210,10 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * If this request is resuming a previously interrupted SQL statement
      * execution, `resume_token` should be copied from the last
-     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new SQL statement execution to resume where the last one left
-     * off. The rest of the request parameters must exactly match the
-     * request that yielded this token.
+     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+     * interruption. Doing this enables the new SQL statement execution to resume
+     * where the last one left off. The rest of the request parameters must
+     * exactly match the request that yielded this token.
      * </pre>
      *
      * <code>bytes resume_token = 6;</code>
@@ -2218,10 +2233,10 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * If this request is resuming a previously interrupted SQL statement
      * execution, `resume_token` should be copied from the last
-     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new SQL statement execution to resume where the last one left
-     * off. The rest of the request parameters must exactly match the
-     * request that yielded this token.
+     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+     * interruption. Doing this enables the new SQL statement execution to resume
+     * where the last one left off. The rest of the request parameters must
+     * exactly match the request that yielded this token.
      * </pre>
      *
      * <code>bytes resume_token = 6;</code>
@@ -2239,8 +2254,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Used to control the amount of debugging information returned in
-     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-     * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+     * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+     * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+     * be set to
+     * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -2253,8 +2271,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Used to control the amount of debugging information returned in
-     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-     * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+     * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+     * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+     * be set to
+     * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -2269,8 +2290,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Used to control the amount of debugging information returned in
-     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-     * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+     * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+     * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+     * be set to
+     * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -2288,8 +2312,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Used to control the amount of debugging information returned in
-     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-     * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+     * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+     * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+     * be set to
+     * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -2308,8 +2335,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Used to control the amount of debugging information returned in
-     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-     * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+     * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+     * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+     * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+     * be set to
+     * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
      * </pre>
      *
      * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -2444,7 +2474,7 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

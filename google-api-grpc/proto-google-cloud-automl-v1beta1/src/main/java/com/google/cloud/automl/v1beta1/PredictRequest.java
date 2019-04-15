@@ -75,7 +75,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000004;
@@ -88,7 +88,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -255,9 +255,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * characters long.
    * *  For Image Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-   *     makes predictions for an
-   *     image, it will only produce results that have at least this confidence
-   *     score threshold. The default is 0.5.
+   *     makes predictions for an image, it will only produce results that have
+   *     at least this confidence score. The default is 0.5.
+   *  *  For Image Object Detection:
+   *    `score_threshold` - (float) When Model detects objects on the image,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned in the response. Default is 100, the
+   *        requested value may be limited by server.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -281,9 +287,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * characters long.
    * *  For Image Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-   *     makes predictions for an
-   *     image, it will only produce results that have at least this confidence
-   *     score threshold. The default is 0.5.
+   *     makes predictions for an image, it will only produce results that have
+   *     at least this confidence score. The default is 0.5.
+   *  *  For Image Object Detection:
+   *    `score_threshold` - (float) When Model detects objects on the image,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned in the response. Default is 100, the
+   *        requested value may be limited by server.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -299,9 +311,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * characters long.
    * *  For Image Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-   *     makes predictions for an
-   *     image, it will only produce results that have at least this confidence
-   *     score threshold. The default is 0.5.
+   *     makes predictions for an image, it will only produce results that have
+   *     at least this confidence score. The default is 0.5.
+   *  *  For Image Object Detection:
+   *    `score_threshold` - (float) When Model detects objects on the image,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned in the response. Default is 100, the
+   *        requested value may be limited by server.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -321,9 +339,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * characters long.
    * *  For Image Classification:
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-   *     makes predictions for an
-   *     image, it will only produce results that have at least this confidence
-   *     score threshold. The default is 0.5.
+   *     makes predictions for an image, it will only produce results that have
+   *     at least this confidence score. The default is 0.5.
+   *  *  For Image Object Detection:
+   *    `score_threshold` - (float) When Model detects objects on the image,
+   *        it will only produce bounding boxes which have at least this
+   *        confidence score. Value in 0 to 1 range, default is 0.5.
+   *    `max_bounding_box_count` - (int64) No more than this number of bounding
+   *        boxes will be returned in the response. Default is 100, the
+   *        requested value may be limited by server.
    * </pre>
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
@@ -402,15 +426,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.automl.v1beta1.PredictRequest other =
         (com.google.cloud.automl.v1beta1.PredictRequest) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasPayload() == other.hasPayload());
+    if (!getName().equals(other.getName())) return false;
+    if (hasPayload() != other.hasPayload()) return false;
     if (hasPayload()) {
-      result = result && getPayload().equals(other.getPayload());
+      if (!getPayload().equals(other.getPayload())) return false;
     }
-    result = result && internalGetParams().equals(other.internalGetParams());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!internalGetParams().equals(other.internalGetParams())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -648,35 +671,35 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -824,7 +847,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.automl.v1beta1.ExamplePayload payload_ = null;
+    private com.google.cloud.automl.v1beta1.ExamplePayload payload_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.ExamplePayload,
             com.google.cloud.automl.v1beta1.ExamplePayload.Builder,
@@ -1057,9 +1080,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1083,9 +1112,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1101,9 +1136,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1124,9 +1165,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1154,9 +1201,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1181,9 +1234,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1206,9 +1265,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * characters long.
      * *  For Image Classification:
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
-     *     makes predictions for an
-     *     image, it will only produce results that have at least this confidence
-     *     score threshold. The default is 0.5.
+     *     makes predictions for an image, it will only produce results that have
+     *     at least this confidence score. The default is 0.5.
+     *  *  For Image Object Detection:
+     *    `score_threshold` - (float) When Model detects objects on the image,
+     *        it will only produce bounding boxes which have at least this
+     *        confidence score. Value in 0 to 1 range, default is 0.5.
+     *    `max_bounding_box_count` - (int64) No more than this number of bounding
+     *        boxes will be returned in the response. Default is 100, the
+     *        requested value may be limited by server.
      * </pre>
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
@@ -1220,7 +1285,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

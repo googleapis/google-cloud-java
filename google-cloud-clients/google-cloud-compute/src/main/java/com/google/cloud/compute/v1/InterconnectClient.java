@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectStub;
 import com.google.cloud.compute.v1.stub.InterconnectStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -209,9 +210,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   DeleteInterconnectHttpRequest request = DeleteInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .build();
    *   Operation response = interconnectClient.deleteInterconnect(request);
    * }
@@ -233,9 +234,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   DeleteInterconnectHttpRequest request = DeleteInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectClient.deleteInterconnectCallable().futureCall(request);
    *   // Do something
@@ -310,9 +311,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   GetInterconnectHttpRequest request = GetInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .build();
    *   Interconnect response = interconnectClient.getInterconnect(request);
    * }
@@ -335,9 +336,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   GetInterconnectHttpRequest request = GetInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .build();
    *   ApiFuture&lt;Interconnect&gt; future = interconnectClient.getInterconnectCallable().futureCall(request);
    *   // Do something
@@ -409,9 +410,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   GetDiagnosticsInterconnectHttpRequest request = GetDiagnosticsInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .build();
    *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(request);
    * }
@@ -434,9 +435,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   GetDiagnosticsInterconnectHttpRequest request = GetDiagnosticsInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .build();
    *   ApiFuture&lt;InterconnectsGetDiagnosticsResponse&gt; future = interconnectClient.getDiagnosticsInterconnectCallable().futureCall(request);
    *   // Do something
@@ -524,10 +525,10 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   InsertInterconnectHttpRequest request = InsertInterconnectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setInterconnectResource(interconnectResource)
    *     .build();
    *   Operation response = interconnectClient.insertInterconnect(request);
@@ -550,10 +551,10 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   InsertInterconnectHttpRequest request = InsertInterconnectHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setInterconnectResource(interconnectResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectClient.insertInterconnectCallable().futureCall(request);
@@ -628,9 +629,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInterconnectsHttpRequest request = ListInterconnectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (Interconnect element : interconnectClient.listInterconnects(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -655,9 +656,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInterconnectsHttpRequest request = ListInterconnectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListInterconnectsPagedResponse&gt; future = interconnectClient.listInterconnectsPagedCallable().futureCall(request);
    *   // Do something
@@ -681,9 +682,9 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInterconnectsHttpRequest request = ListInterconnectsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InterconnectList response = interconnectClient.listInterconnectsCallable().call(request);
@@ -727,7 +728,10 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -766,7 +770,10 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -791,11 +798,11 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .setInterconnectResource(interconnectResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -820,11 +827,11 @@ public class InterconnectClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   String formattedInterconnect = ProjectGlobalInterconnectName.format("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
-   *     .setInterconnect(interconnect.toString())
+   *     .setInterconnect(formattedInterconnect)
    *     .setInterconnectResource(interconnectResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -889,7 +896,8 @@ public class InterconnectClient implements BackgroundResource {
             public ListInterconnectsPagedResponse apply(ListInterconnectsPage input) {
               return new ListInterconnectsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectsPagedResponse(ListInterconnectsPage page) {

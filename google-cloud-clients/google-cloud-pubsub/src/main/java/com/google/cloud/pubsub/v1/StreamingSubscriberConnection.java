@@ -21,7 +21,6 @@ import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
@@ -43,8 +42,6 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
-import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -86,7 +83,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       SubscriberStub stub,
       int channelAffinity,
       FlowController flowController,
-      Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -102,7 +98,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
-            outstandingMessageBatches,
             executor,
             systemExecutor,
             clock);
@@ -156,26 +151,20 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     @Override
     public void onResponse(StreamingPullResponse response) {
       channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
-      messageDispatcher.processReceivedMessages(
-          response.getReceivedMessagesList(),
-          new Runnable() {
-            @Override
-            public void run() {
-              // Only request more if we're not shutdown.
-              // If errorFuture is done, the stream has either failed or hung up,
-              // and we don't need to request.
-              if (isAlive() && !errorFuture.isDone()) {
-                lock.lock();
-                try {
-                  thisController.request(1);
-                } catch (Exception e) {
-                  logger.log(Level.WARNING, "cannot request more messages", e);
-                } finally {
-                  lock.unlock();
-                }
-              }
-            }
-          });
+      messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
+      // Only request more if we're not shutdown.
+      // If errorFuture is done, the stream has either failed or hung up,
+      // and we don't need to request.
+      if (isAlive() && !errorFuture.isDone()) {
+        lock.lock();
+        try {
+          thisController.request(1);
+        } catch (Exception e) {
+          logger.log(Level.WARNING, "cannot request more messages", e);
+        } finally {
+          lock.unlock();
+        }
+      }
     }
 
     @Override
@@ -316,49 +305,5 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       .build());
       ApiFutures.addCallback(future, loggingCallback);
     }
-  }
-
-  @InternalApi
-  static List<StreamingPullRequest> partitionAckOperations(
-      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
-    int numExtensions = 0;
-    for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
-      numExtensions += modify.ackIds.size();
-    }
-    int numChanges = Math.max(numExtensions, acksToSend.size());
-    int numRequests = numChanges / size + (numChanges % size == 0 ? 0 : 1);
-
-    List<StreamingPullRequest.Builder> requests = new ArrayList<>(numRequests);
-    for (int i = 0; i < numRequests; i++) {
-      requests.add(StreamingPullRequest.newBuilder());
-    }
-
-    int reqCount = 0;
-    for (List<String> acksChunk : Lists.partition(acksToSend, size)) {
-      requests.get(reqCount).addAllAckIds(acksChunk);
-      reqCount++;
-    }
-
-    reqCount = 0;
-    int ackCount = 0;
-    for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
-      for (String ackId : modify.ackIds) {
-        requests
-            .get(reqCount)
-            .addModifyDeadlineSeconds(modify.deadlineExtensionSeconds)
-            .addModifyDeadlineAckIds(ackId);
-        ackCount++;
-        if (ackCount == size) {
-          reqCount++;
-          ackCount = 0;
-        }
-      }
-    }
-
-    List<StreamingPullRequest> ret = new ArrayList<>(requests.size());
-    for (StreamingPullRequest.Builder builder : requests) {
-      ret.add(builder.build());
-    }
-    return ret;
   }
 }

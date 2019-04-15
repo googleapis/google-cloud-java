@@ -7,7 +7,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
+ * Request message for
+ * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.ListQueuesRequest}
@@ -25,7 +26,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
   private ListQueuesRequest() {
     parent_ = "";
     filter_ = "";
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -81,7 +81,7 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -166,11 +166,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-   * field can be used as a filter and several operators as supported.
-   * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-   * described in
-   * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   * `filter` can be used to specify a subset of queues. Any
+   * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+   * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+   * filter syntax is the same as described in [Stackdriver's Advanced Logs
+   * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
    * requested_page size to be returned.
@@ -193,11 +193,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-   * field can be used as a filter and several operators as supported.
-   * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-   * described in
-   * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   * `filter` can be used to specify a subset of queues. Any
+   * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+   * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+   * filter syntax is the same as described in [Stackdriver's Advanced Logs
+   * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
    * requested_page size to be returned.
@@ -227,8 +227,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * The maximum page size is 9800. If unspecified, the page size will
    * be the maximum. Fewer queues than requested might be returned,
    * even if more queues exist; use the
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-   * response to determine if more queues exist.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+   * in the response to determine if more queues exist.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -246,10 +246,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-   * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-   * method. It is an error to switch the value of the
-   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+   * returned from the previous call to
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+   * is an error to switch the value of the
+   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -272,10 +274,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-   * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-   * method. It is an error to switch the value of the
-   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+   * returned from the previous call to
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+   * is an error to switch the value of the
+   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -355,13 +359,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     com.google.cloud.tasks.v2beta2.ListQueuesRequest other =
         (com.google.cloud.tasks.v2beta2.ListQueuesRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && getFilter().equals(other.getFilter());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -483,7 +486,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
+   * Request message for
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.ListQueuesRequest}
@@ -569,35 +573,35 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -766,11 +770,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
      * requested_page size to be returned.
@@ -793,11 +797,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
      * requested_page size to be returned.
@@ -820,11 +824,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
      * requested_page size to be returned.
@@ -845,11 +849,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
      * requested_page size to be returned.
@@ -867,11 +871,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
      * requested_page size to be returned.
@@ -899,8 +903,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * The maximum page size is 9800. If unspecified, the page size will
      * be the maximum. Fewer queues than requested might be returned,
      * even if more queues exist; use the
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-     * response to determine if more queues exist.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * in the response to determine if more queues exist.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -916,8 +920,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * The maximum page size is 9800. If unspecified, the page size will
      * be the maximum. Fewer queues than requested might be returned,
      * even if more queues exist; use the
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-     * response to determine if more queues exist.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * in the response to determine if more queues exist.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -936,8 +940,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * The maximum page size is 9800. If unspecified, the page size will
      * be the maximum. Fewer queues than requested might be returned,
      * even if more queues exist; use the
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-     * response to determine if more queues exist.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * in the response to determine if more queues exist.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -957,10 +961,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -983,10 +989,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1009,10 +1017,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1033,10 +1043,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1054,10 +1066,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1075,7 +1089,7 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

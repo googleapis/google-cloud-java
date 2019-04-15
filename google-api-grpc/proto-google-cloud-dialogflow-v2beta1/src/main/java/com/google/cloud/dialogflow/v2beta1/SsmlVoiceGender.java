@@ -151,7 +151,7 @@ public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final SsmlVoiceGender[] VALUES = values();

@@ -22,10 +22,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private TaskStatus() {
-    attemptDispatchCount_ = 0;
-    attemptResponseCount_ = 0;
-  }
+  private TaskStatus() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -95,7 +92,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -151,7 +148,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The number of attempts which have received a response.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>int32 attempt_response_count = 2;</code>
@@ -167,9 +165,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-   * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * Only
+   * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+   * will be set. The other
+   * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+   * not retained by Cloud Tasks.
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -182,9 +184,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-   * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * Only
+   * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+   * will be set. The other
+   * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+   * not retained by Cloud Tasks.
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -199,9 +205,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-   * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * Only
+   * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+   * will be set. The other
+   * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+   * not retained by Cloud Tasks.
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -217,7 +227,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The status of the task's last attempt.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -230,7 +241,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The status of the task's last attempt.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -245,7 +257,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The status of the task's last attempt.
-   * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+   * This field is not calculated for [pull
+   * tasks][google.cloud.tasks.v2beta2.PullMessage].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -317,19 +330,18 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tasks.v2beta2.TaskStatus other =
         (com.google.cloud.tasks.v2beta2.TaskStatus) obj;
 
-    boolean result = true;
-    result = result && (getAttemptDispatchCount() == other.getAttemptDispatchCount());
-    result = result && (getAttemptResponseCount() == other.getAttemptResponseCount());
-    result = result && (hasFirstAttemptStatus() == other.hasFirstAttemptStatus());
+    if (getAttemptDispatchCount() != other.getAttemptDispatchCount()) return false;
+    if (getAttemptResponseCount() != other.getAttemptResponseCount()) return false;
+    if (hasFirstAttemptStatus() != other.hasFirstAttemptStatus()) return false;
     if (hasFirstAttemptStatus()) {
-      result = result && getFirstAttemptStatus().equals(other.getFirstAttemptStatus());
+      if (!getFirstAttemptStatus().equals(other.getFirstAttemptStatus())) return false;
     }
-    result = result && (hasLastAttemptStatus() == other.hasLastAttemptStatus());
+    if (hasLastAttemptStatus() != other.hasLastAttemptStatus()) return false;
     if (hasLastAttemptStatus()) {
-      result = result && getLastAttemptStatus().equals(other.getLastAttemptStatus());
+      if (!getLastAttemptStatus().equals(other.getLastAttemptStatus())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -557,35 +569,35 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -697,7 +709,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The number of attempts which have received a response.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>int32 attempt_response_count = 2;</code>
@@ -710,7 +723,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The number of attempts which have received a response.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>int32 attempt_response_count = 2;</code>
@@ -726,7 +740,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The number of attempts which have received a response.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>int32 attempt_response_count = 2;</code>
@@ -738,7 +753,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta2.AttemptStatus firstAttemptStatus_ = null;
+    private com.google.cloud.tasks.v2beta2.AttemptStatus firstAttemptStatus_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta2.AttemptStatus,
             com.google.cloud.tasks.v2beta2.AttemptStatus.Builder,
@@ -749,9 +764,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -764,9 +783,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -785,9 +808,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -810,9 +837,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -833,9 +864,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -862,9 +897,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -885,9 +924,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -902,9 +945,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -923,9 +970,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
-     * The other [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is not retained by Cloud Tasks.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * Only
+     * [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time]
+     * will be set. The other
+     * [AttemptStatus][google.cloud.tasks.v2beta2.AttemptStatus] information is
+     * not retained by Cloud Tasks.
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
@@ -947,7 +998,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       return firstAttemptStatusBuilder_;
     }
 
-    private com.google.cloud.tasks.v2beta2.AttemptStatus lastAttemptStatus_ = null;
+    private com.google.cloud.tasks.v2beta2.AttemptStatus lastAttemptStatus_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta2.AttemptStatus,
             com.google.cloud.tasks.v2beta2.AttemptStatus.Builder,
@@ -958,7 +1009,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -971,7 +1023,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -990,7 +1043,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1013,7 +1067,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1034,7 +1089,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1061,7 +1117,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1082,7 +1139,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1097,7 +1155,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1116,7 +1175,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The status of the task's last attempt.
-     * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
+     * This field is not calculated for [pull
+     * tasks][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
@@ -1140,7 +1200,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

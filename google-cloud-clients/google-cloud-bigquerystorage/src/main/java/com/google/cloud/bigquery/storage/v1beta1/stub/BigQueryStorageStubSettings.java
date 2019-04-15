@@ -246,6 +246,17 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(120000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(120000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("create_read_session", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -290,7 +301,7 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
       builder
           .createReadSessionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("create_read_session"));
 
       builder
           .readRowsSettings()

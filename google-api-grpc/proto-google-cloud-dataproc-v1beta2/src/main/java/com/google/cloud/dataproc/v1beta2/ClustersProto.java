@@ -127,9 +127,9 @@ public final class ClustersProto {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/dataproc/v1beta2/clusters"
           + ".proto\022\035google.cloud.dataproc.v1beta2\032\034g"
-          + "oogle/api/annotations.proto\032*google/clou"
-          + "d/dataproc/v1beta2/shared.proto\032.google/"
-          + "cloud/dataproc/v1beta2/operations.proto\032"
+          + "oogle/api/annotations.proto\032.google/clou"
+          + "d/dataproc/v1beta2/operations.proto\032*goo"
+          + "gle/cloud/dataproc/v1beta2/shared.proto\032"
           + "#google/longrunning/operations.proto\032\036go"
           + "ogle/protobuf/duration.proto\032 google/pro"
           + "tobuf/field_mask.proto\032\037google/protobuf/"
@@ -285,8 +285,8 @@ public final class ClustersProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.dataproc.v1beta2.SharedProto.getDescriptor(),
           com.google.cloud.dataproc.v1beta2.OperationsProto.getDescriptor(),
+          com.google.cloud.dataproc.v1beta2.SharedProto.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -551,8 +551,8 @@ public final class ClustersProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.cloud.dataproc.v1beta2.SharedProto.getDescriptor();
     com.google.cloud.dataproc.v1beta2.OperationsProto.getDescriptor();
+    com.google.cloud.dataproc.v1beta2.SharedProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

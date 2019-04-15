@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RouterStub;
 import com.google.cloud.compute.v1.stub.RouterStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -210,9 +211,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRoutersHttpRequest request = AggregatedListRoutersHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (RoutersScopedList element : routerClient.aggregatedListRouters(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -237,9 +238,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRoutersHttpRequest request = AggregatedListRoutersHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListRoutersPagedResponse&gt; future = routerClient.aggregatedListRoutersPagedCallable().futureCall(request);
    *   // Do something
@@ -263,9 +264,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListRoutersHttpRequest request = AggregatedListRoutersHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     RouterAggregatedList response = routerClient.aggregatedListRoutersCallable().call(request);
@@ -346,9 +347,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   DeleteRouterHttpRequest request = DeleteRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   Operation response = routerClient.deleteRouter(request);
    * }
@@ -370,9 +371,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   DeleteRouterHttpRequest request = DeleteRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.deleteRouterCallable().futureCall(request);
    *   // Do something
@@ -445,9 +446,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterHttpRequest request = GetRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   Router response = routerClient.getRouter(request);
    * }
@@ -470,9 +471,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterHttpRequest request = GetRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   ApiFuture&lt;Router&gt; future = routerClient.getRouterCallable().futureCall(request);
    *   // Do something
@@ -546,9 +547,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetNatMappingInfoRoutersHttpRequest request = GetNatMappingInfoRoutersHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   for (VmEndpointNatMappings element : routerClient.getNatMappingInfoRouters(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -573,9 +574,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetNatMappingInfoRoutersHttpRequest request = GetNatMappingInfoRoutersHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   ApiFuture&lt;GetNatMappingInfoRoutersPagedResponse&gt; future = routerClient.getNatMappingInfoRoutersPagedCallable().futureCall(request);
    *   // Do something
@@ -600,9 +601,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetNatMappingInfoRoutersHttpRequest request = GetNatMappingInfoRoutersHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   while (true) {
    *     VmEndpointNatMappingsList response = routerClient.getNatMappingInfoRoutersCallable().call(request);
@@ -683,9 +684,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterStatusRouterHttpRequest request = GetRouterStatusRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   RouterStatusResponse response = routerClient.getRouterStatusRouter(request);
    * }
@@ -708,9 +709,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterStatusRouterHttpRequest request = GetRouterStatusRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .build();
    *   ApiFuture&lt;RouterStatusResponse&gt; future = routerClient.getRouterStatusRouterCallable().futureCall(request);
    *   // Do something
@@ -793,10 +794,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterHttpRequest request = InsertRouterHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setRouterResource(routerResource)
    *     .build();
    *   Operation response = routerClient.insertRouter(request);
@@ -820,10 +821,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterHttpRequest request = InsertRouterHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.insertRouterCallable().futureCall(request);
@@ -896,9 +897,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (Router element : routerClient.listRouters(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -922,9 +923,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRoutersPagedResponse&gt; future = routerClient.listRoutersPagedCallable().futureCall(request);
    *   // Do something
@@ -948,9 +949,9 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     RouterList response = routerClient.listRoutersCallable().call(request);
@@ -990,7 +991,10 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to patch.
    * @param routerResource Router resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1024,7 +1028,10 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to patch.
    * @param routerResource Router resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1048,11 +1055,11 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .setRouterResource(routerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1077,11 +1084,11 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .setRouterResource(routerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1166,10 +1173,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   PreviewRouterHttpRequest request = PreviewRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .setRouterResource(routerResource)
    *     .build();
    *   RoutersPreviewResponse response = routerClient.previewRouter(request);
@@ -1193,10 +1200,10 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   PreviewRouterHttpRequest request = PreviewRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;RoutersPreviewResponse&gt; future = routerClient.previewRouterCallable().futureCall(request);
@@ -1228,7 +1235,10 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to update.
    * @param routerResource Router resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1261,7 +1271,10 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to update.
    * @param routerResource Router resource.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1285,11 +1298,11 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .setRouterResource(routerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1313,11 +1326,11 @@ public class RouterClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String formattedRouter = ProjectRegionRouterName.format("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
-   *     .setRouter(router.toString())
+   *     .setRouter(formattedRouter)
    *     .setRouterResource(routerResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1383,7 +1396,8 @@ public class RouterClient implements BackgroundResource {
             public AggregatedListRoutersPagedResponse apply(AggregatedListRoutersPage input) {
               return new AggregatedListRoutersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListRoutersPagedResponse(AggregatedListRoutersPage page) {
@@ -1474,7 +1488,8 @@ public class RouterClient implements BackgroundResource {
             public GetNatMappingInfoRoutersPagedResponse apply(GetNatMappingInfoRoutersPage input) {
               return new GetNatMappingInfoRoutersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private GetNatMappingInfoRoutersPagedResponse(GetNatMappingInfoRoutersPage page) {
@@ -1570,7 +1585,8 @@ public class RouterClient implements BackgroundResource {
             public ListRoutersPagedResponse apply(ListRoutersPage input) {
               return new ListRoutersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRoutersPagedResponse(ListRoutersPage page) {

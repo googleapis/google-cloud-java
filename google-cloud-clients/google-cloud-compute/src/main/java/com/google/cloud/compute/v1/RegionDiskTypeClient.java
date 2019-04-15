@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionDiskTypeStub;
 import com.google.cloud.compute.v1.stub.RegionDiskTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -213,9 +214,9 @@ public class RegionDiskTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskTypeClient regionDiskTypeClient = RegionDiskTypeClient.create()) {
-   *   ProjectRegionDiskTypeName diskType = ProjectRegionDiskTypeName.of("[PROJECT]", "[REGION]", "[DISK_TYPE]");
+   *   String formattedDiskType = ProjectRegionDiskTypeName.format("[PROJECT]", "[REGION]", "[DISK_TYPE]");
    *   GetRegionDiskTypeHttpRequest request = GetRegionDiskTypeHttpRequest.newBuilder()
-   *     .setDiskType(diskType.toString())
+   *     .setDiskType(formattedDiskType)
    *     .build();
    *   DiskType response = regionDiskTypeClient.getRegionDiskType(request);
    * }
@@ -238,9 +239,9 @@ public class RegionDiskTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskTypeClient regionDiskTypeClient = RegionDiskTypeClient.create()) {
-   *   ProjectRegionDiskTypeName diskType = ProjectRegionDiskTypeName.of("[PROJECT]", "[REGION]", "[DISK_TYPE]");
+   *   String formattedDiskType = ProjectRegionDiskTypeName.format("[PROJECT]", "[REGION]", "[DISK_TYPE]");
    *   GetRegionDiskTypeHttpRequest request = GetRegionDiskTypeHttpRequest.newBuilder()
-   *     .setDiskType(diskType.toString())
+   *     .setDiskType(formattedDiskType)
    *     .build();
    *   ApiFuture&lt;DiskType&gt; future = regionDiskTypeClient.getRegionDiskTypeCallable().futureCall(request);
    *   // Do something
@@ -313,9 +314,9 @@ public class RegionDiskTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskTypeClient regionDiskTypeClient = RegionDiskTypeClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionDiskTypesHttpRequest request = ListRegionDiskTypesHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   for (DiskType element : regionDiskTypeClient.listRegionDiskTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -340,9 +341,9 @@ public class RegionDiskTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskTypeClient regionDiskTypeClient = RegionDiskTypeClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionDiskTypesHttpRequest request = ListRegionDiskTypesHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   ApiFuture&lt;ListRegionDiskTypesPagedResponse&gt; future = regionDiskTypeClient.listRegionDiskTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -366,9 +367,9 @@ public class RegionDiskTypeClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionDiskTypeClient regionDiskTypeClient = RegionDiskTypeClient.create()) {
-   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+   *   String formattedRegion = ProjectRegionName.format("[PROJECT]", "[REGION]");
    *   ListRegionDiskTypesHttpRequest request = ListRegionDiskTypesHttpRequest.newBuilder()
-   *     .setRegion(region.toString())
+   *     .setRegion(formattedRegion)
    *     .build();
    *   while (true) {
    *     RegionDiskTypeList response = regionDiskTypeClient.listRegionDiskTypesCallable().call(request);
@@ -441,7 +442,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
             public ListRegionDiskTypesPagedResponse apply(ListRegionDiskTypesPage input) {
               return new ListRegionDiskTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionDiskTypesPagedResponse(ListRegionDiskTypesPage page) {

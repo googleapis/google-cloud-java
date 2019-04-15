@@ -15,7 +15,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * Required. The name of the session the query is sent to.
    * Format of the session name:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
-   * caller to choose an appropriate &lt;Session ID&gt;. It can be a random number or
+   * caller to choose an appropriate `Session ID`. It can be a random number or
    * some type of user identifier (preferably hashed). The length of the session
    * ID must not exceed 36 characters.
    * </pre>
@@ -30,7 +30,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * Required. The name of the session the query is sent to.
    * Format of the session name:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It’s up to the API
-   * caller to choose an appropriate &lt;Session ID&gt;. It can be a random number or
+   * caller to choose an appropriate `Session ID`. It can be a random number or
    * some type of user identifier (preferably hashed). The length of the session
    * ID must not exceed 36 characters.
    * </pre>
@@ -130,6 +130,43 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>bool single_utterance = 4;</code>
    */
   boolean getSingleUtterance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  boolean hasOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instructs the speech synthesizer how to generate the output
+   * audio. If this field is not set and agent-level speech synthesizer is not
+   * configured, no output audio is generated.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 
   /**
    *

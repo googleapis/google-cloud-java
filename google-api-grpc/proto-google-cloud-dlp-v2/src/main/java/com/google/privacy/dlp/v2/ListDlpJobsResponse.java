@@ -53,7 +53,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 jobs_ = new java.util.ArrayList<com.google.privacy.dlp.v2.DlpJob>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -70,7 +70,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -82,7 +82,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
       }
       this.unknownFields = unknownFields.build();
@@ -264,11 +264,10 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     com.google.privacy.dlp.v2.ListDlpJobsResponse other =
         (com.google.privacy.dlp.v2.ListDlpJobsResponse) obj;
 
-    boolean result = true;
-    result = result && getJobsList().equals(other.getJobsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getJobsList().equals(other.getJobsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -469,7 +468,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (jobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -485,35 +484,35 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -594,7 +593,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         jobs_ = new java.util.ArrayList<com.google.privacy.dlp.v2.DlpJob>(jobs_);
         bitField0_ |= 0x00000001;
       }
@@ -930,10 +929,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.DlpJob,
                 com.google.privacy.dlp.v2.DlpJob.Builder,
                 com.google.privacy.dlp.v2.DlpJobOrBuilder>(
-                jobs_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                jobs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         jobs_ = null;
       }
       return jobsBuilder_;
@@ -1035,7 +1031,7 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

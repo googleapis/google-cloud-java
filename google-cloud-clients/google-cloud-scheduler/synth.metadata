@@ -1,19 +1,19 @@
 {
-  "updateTime": "2019-01-19T08:47:20.100947Z",
+  "updateTime": "2019-04-05T07:53:40.544143Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.16.7",
-        "dockerImage": "googleapis/artman@sha256:d6c8ced606eb49973ca95d2af7c55a681acc042db0f87d135968349e7bf6dd80"
+        "version": "0.16.25",
+        "dockerImage": "googleapis/artman@sha256:d9597f983d1d4e61272c63cb97b7d8f8234da9999526c35d357de3d781f0ec1b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "96adaf6de4fa2cabbdd5de560a367bb488e0639b",
-        "internalRef": "229998977"
+        "sha": "327ff9c09f4b2bcc9633f035a58ad348e45fb2a0",
+        "internalRef": "242045478"
       }
     }
   ],
@@ -26,6 +26,16 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/scheduler/artman_cloudscheduler_v1beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "scheduler",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/scheduler/artman_cloudscheduler_v1.yaml"
       }
     }
   ]

@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
+ * Request message for
+ * [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListKeyRingsRequest}
@@ -24,7 +25,6 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
 
   private ListKeyRingsRequest() {
     parent_ = "";
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -73,7 +73,7 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -112,7 +112,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -133,7 +134,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -156,10 +158,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-   * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-   * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-   * request.  If unspecified, the server will pick an appropriate default.
+   * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to
+   * include in the response.  Further [KeyRings][google.cloud.kms.v1.KeyRing]
+   * can subsequently be obtained by including the
+   * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+   * in a subsequent request.  If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -270,12 +274,11 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.kms.v1.ListKeyRingsRequest other =
         (com.google.cloud.kms.v1.ListKeyRingsRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -395,7 +398,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
+   * Request message for
+   * [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListKeyRingsRequest}
@@ -478,35 +482,35 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -567,7 +571,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -588,7 +593,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -609,7 +615,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -628,7 +635,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -644,7 +652,8 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the location associated with the
-     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+     * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+     * `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -665,10 +674,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-     * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-     * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to
+     * include in the response.  Further [KeyRings][google.cloud.kms.v1.KeyRing]
+     * can subsequently be obtained by including the
+     * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -680,10 +691,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-     * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-     * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to
+     * include in the response.  Further [KeyRings][google.cloud.kms.v1.KeyRing]
+     * can subsequently be obtained by including the
+     * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -698,10 +711,12 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-     * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-     * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-     * request.  If unspecified, the server will pick an appropriate default.
+     * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to
+     * include in the response.  Further [KeyRings][google.cloud.kms.v1.KeyRing]
+     * can subsequently be obtained by including the
+     * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+     * in a subsequent request.  If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -814,7 +829,7 @@ public final class ListKeyRingsRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
