@@ -17,7 +17,6 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.InternalApi;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /** A barrier kind of object that helps to keep track and synchronously wait on pending messages. */
 class MessageWaiter {
