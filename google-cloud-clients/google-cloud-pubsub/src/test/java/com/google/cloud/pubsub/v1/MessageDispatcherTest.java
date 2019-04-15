@@ -28,9 +28,7 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -44,10 +42,16 @@ public class MessageDispatcherTest {
           .setAckId("ackid")
           .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
           .build();
+  private static final Runnable NOOP_RUNNABLE =
+      new Runnable() {
+        @Override
+        public void run() {
+          // No-op; don't do anything.
+        }
+      };
 
   private MessageDispatcher dispatcher;
   private LinkedBlockingQueue<AckReplyConsumer> consumers;
-  private Map<String, List<ByteString>> messagesByOrderingKey;
   private List<String> sentAcks;
   private List<ModAckItem> sentModAcks;
   private FakeClock clock;
@@ -67,7 +71,6 @@ public class MessageDispatcherTest {
   @Before
   public void setUp() {
     consumers = new LinkedBlockingQueue<>();
-    messagesByOrderingKey = new HashMap<>();
     sentAcks = new ArrayList<>();
     sentModAcks = new ArrayList<>();
 
@@ -75,12 +78,6 @@ public class MessageDispatcherTest {
         new MessageReceiver() {
           @Override
           public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
-            List<ByteString> messages = messagesByOrderingKey.get(message.getOrderingKey());
-            if (messages == null) {
-              messages = new ArrayList<>();
-              messagesByOrderingKey.put(message.getOrderingKey(), messages);
-            }
-            messages.add(message.getData());
             consumers.add(consumer);
           }
         };
@@ -205,48 +202,5 @@ public class MessageDispatcherTest {
     consumers.take().ack();
 
     assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(42);
-  }
-
-  private ReceivedMessage newReceivedMessage(String ackId, String orderingKey, String data) {
-    return ReceivedMessage.newBuilder()
-        .setAckId(ackId)
-        .setMessage(
-            PubsubMessage.newBuilder()
-                .setOrderingKey(orderingKey)
-                .setData(ByteString.copyFromUtf8(data))
-                .build())
-        .build();
-  }
-
-  @Test
-  public void testOrderingKey() throws Exception {
-    // Create messages with "orderA".
-    ReceivedMessage message1 = newReceivedMessage("ackId1", "orderA", "m1");
-    ReceivedMessage message2 = newReceivedMessage("ackId2", "orderA", "m2");
-    // Create messages with "orderB".
-    ReceivedMessage message3 = newReceivedMessage("ackId3", "orderB", "m3");
-    ReceivedMessage message4 = newReceivedMessage("ackId4", "orderB", "m4");
-    ReceivedMessage message5 = newReceivedMessage("ackId5", "orderB", "m5");
-
-    dispatcher.processReceivedMessages(Collections.singletonList(message1));
-    consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message2));
-    consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message3));
-    consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message4));
-    consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message5));
-    consumers.take().ack();
-
-    assertThat(messagesByOrderingKey.get("orderA"))
-        .containsExactly(ByteString.copyFromUtf8("m1"), ByteString.copyFromUtf8("m2"))
-        .inOrder();
-    assertThat(messagesByOrderingKey.get("orderB"))
-        .containsExactly(
-            ByteString.copyFromUtf8("m3"),
-            ByteString.copyFromUtf8("m4"),
-            ByteString.copyFromUtf8("m5"))
-        .inOrder();
   }
 }

@@ -1356,8 +1356,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * WARNING: `ordering_key` is an experimental field not yet
-     * supported by the service.
      * Identifies related messages for which publish order should be respected.
      * If a `Subscription` has `enable_message_ordering` set to `true`, messages
      * published with the same `ordering_key` value will be delivered to

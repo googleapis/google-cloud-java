@@ -220,7 +220,7 @@ public class Publisher {
     final String orderingKey = message.getOrderingKey();
     if (orderingKey != null && !orderingKey.isEmpty() && !enableMessageOrdering) {
       throw new IllegalStateException(
-          "Cannot publish a message with an ordering key when message ordeirng is not enabled.");
+          "Cannot publish a message with an ordering key when message ordering is not enabled.");
     }
 
     message = messageTransform.apply(message);
