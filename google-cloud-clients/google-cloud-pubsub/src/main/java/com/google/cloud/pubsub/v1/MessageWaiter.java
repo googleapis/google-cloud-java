@@ -35,16 +35,10 @@ class MessageWaiter {
   }
 
   public synchronized void waitNoMessages() {
-    waitNoMessages(new AtomicBoolean());
-  }
-
-  @InternalApi
-  synchronized void waitNoMessages(AtomicBoolean waitReached) {
     boolean interrupted = false;
     try {
       while (pendingMessages > 0) {
         try {
-          waitReached.set(true);
           wait();
         } catch (InterruptedException e) {
           // Ignored, uninterruptibly.
