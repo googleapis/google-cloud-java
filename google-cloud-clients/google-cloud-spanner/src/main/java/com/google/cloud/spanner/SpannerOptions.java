@@ -30,11 +30,13 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.v1.SpannerSettings;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -241,6 +243,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     /**
      * Returns the {@link SpannerStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     *
+     * <p>The library will automatically use sensible defaults if no custom settings are set. The
+     * defaults are the same as the defaults that are used by {@link SpannerSettings}. Retries are
+     * configured for idempotent methods but not for non-idempotent methods.
      */
     public SpannerStubSettings.Builder spannerStubSettingsBuilder() {
       return spannerStubSettingsBuilder;
@@ -249,6 +255,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     /**
      * Returns the {@link InstanceAdminStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     *
+     * <p>The library will automatically use sensible defaults if no custom settings are set. The
+     * defaults are the same as the defaults that are used by {@link InstanceAdminSettings}. Retries
+     * are configured for idempotent methods but not for non-idempotent methods.
      */
     public InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder() {
       return instanceAdminStubSettingsBuilder;
@@ -257,6 +267,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     /**
      * Returns the {@link DatabaseAdminStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     *
+     * <p>The library will automatically use sensible defaults if no custom settings are set. The
+     * defaults are the same as the defaults that are used by {@link DatabaseAdminSettings}. Retries
+     * are configured for idempotent methods but not for non-idempotent methods.
      */
     public DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder() {
       return databaseAdminStubSettingsBuilder;
