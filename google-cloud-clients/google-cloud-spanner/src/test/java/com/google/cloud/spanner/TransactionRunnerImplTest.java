@@ -43,7 +43,7 @@ import org.mockito.MockitoAnnotations;
 @RunWith(JUnit4.class)
 public class TransactionRunnerImplTest {
   @Mock private SpannerRpc rpc;
-  @Mock private SpannerImpl.SessionImpl session;
+  @Mock private SessionImpl session;
   @Mock private TransactionRunnerImpl.Sleeper sleeper;
   @Mock private TransactionRunnerImpl.TransactionContextImpl txn;
   private TransactionRunnerImpl transactionRunner;
