@@ -44,13 +44,6 @@ public class MessageDispatcherTest {
           .setAckId("ackid")
           .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
           .build();
-  private static final Runnable NOOP_RUNNABLE =
-      new Runnable() {
-        @Override
-        public void run() {
-          // No-op; don't do anything.
-        }
-      };
 
   private MessageDispatcher dispatcher;
   private LinkedBlockingQueue<AckReplyConsumer> consumers;
@@ -235,15 +228,15 @@ public class MessageDispatcherTest {
     ReceivedMessage message4 = newReceivedMessage("ackId4", "orderB", "m4");
     ReceivedMessage message5 = newReceivedMessage("ackId5", "orderB", "m5");
 
-    dispatcher.processReceivedMessages(Collections.singletonList(message1), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(message1));
     consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message2), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(message2));
     consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message3), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(message3));
     consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message4), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(message4));
     consumers.take().ack();
-    dispatcher.processReceivedMessages(Collections.singletonList(message5), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(message5));
     consumers.take().ack();
 
     assertThat(messagesByOrderingKey.get("orderA"))

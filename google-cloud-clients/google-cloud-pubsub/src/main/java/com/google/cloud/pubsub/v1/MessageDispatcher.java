@@ -355,7 +355,7 @@ class MessageDispatcher {
           }
         };
     ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
-    Runnable deliverMessageTask = 
+    Runnable deliverMessageTask =
         new Runnable() {
           @Override
           public void run() {
