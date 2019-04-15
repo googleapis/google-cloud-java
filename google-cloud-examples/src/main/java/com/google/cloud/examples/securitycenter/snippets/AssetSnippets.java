@@ -180,7 +180,7 @@ public class AssetSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END list_asset_changes_status_changes]\
+  // [END list_asset_changes_status_changes]
 
   /**
    * Groups all assets by their specified properties (e.g. type) for an organization.
