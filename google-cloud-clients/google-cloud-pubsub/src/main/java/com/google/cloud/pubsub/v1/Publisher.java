@@ -391,7 +391,8 @@ public class Publisher {
       Runnable task =
           new Runnable() {
             public void run() {
-              ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
+              ApiFutures.addCallback(
+                  publishCall(outstandingBatch), futureCallback, directExecutor());
             }
           };
       executor.execute(task);
