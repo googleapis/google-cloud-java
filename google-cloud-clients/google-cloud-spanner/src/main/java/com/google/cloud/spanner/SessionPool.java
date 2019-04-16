@@ -100,7 +100,7 @@ final class SessionPool {
           this.readContextDelegate = readContextDelegateSupplier.apply(this.session);
           break;
         } catch (SessionNotFoundException e) {
-          recreateSessionIfPossible(e);
+          replaceSessionIfPossible(e);
         }
       }
     }
@@ -116,7 +116,7 @@ final class SessionPool {
           res = resultSetSupplier.get();
           break;
         } catch (SessionNotFoundException e) {
-          recreateSessionIfPossible(e);
+          replaceSessionIfPossible(e);
         }
       }
       return new ForwardingResultSet(res) {
@@ -128,7 +128,7 @@ final class SessionPool {
             try {
               return internalNext();
             } catch (SessionNotFoundException e) {
-              recreateSessionIfPossible(e);
+              replaceSessionIfPossible(e);
               replaceDelegate(resultSetSupplier.get());
             }
           }
@@ -167,8 +167,9 @@ final class SessionPool {
       };
     }
 
-    private void recreateSessionIfPossible(SessionNotFoundException e) {
+    private void replaceSessionIfPossible(SessionNotFoundException e) {
       if (isSingleUse || !sessionUsedForQuery) {
+        // This class is only used by read-only transactions, so we know that we only need a read-only session.
         session = sessionPool.replaceReadSession(e, session);
         readContextDelegate = readContextDelegateSupplier.apply(session);
       } else {
@@ -216,7 +217,7 @@ final class SessionPool {
             session.markUsed();
             return readContextDelegate.readRow(table, key, columns);
           } catch (SessionNotFoundException e) {
-            recreateSessionIfPossible(e);
+            replaceSessionIfPossible(e);
           }
         }
       } finally {
@@ -236,7 +237,7 @@ final class SessionPool {
             session.markUsed();
             return readContextDelegate.readRowUsingIndex(table, index, key, columns);
           } catch (SessionNotFoundException e) {
-            recreateSessionIfPossible(e);
+            replaceSessionIfPossible(e);
           }
         }
       } finally {
@@ -313,6 +314,7 @@ final class SessionPool {
       }
     }
 
+    /** {@link TransactionContext} that is used in combination with an {@link AutoClosingTransactionManager}. This {@link TransactionContext} handles {@link SessionNotFoundException}s by replacing the underlying session with a fresh one, and then throws an {@link AbortedException} to trigger the retry-loop that has been created by the caller. */
     private class SessionPoolTransactionContext implements TransactionContext {
       private final TransactionContext delegate;
 
@@ -506,6 +508,7 @@ final class SessionPool {
     }
   }
 
+  /** {@link TransactionRunner} that automatically handles {@link SessionNotFoundException}s by replacing the underlying read/write session and then restarts the transaction. */
   private static final class SessionPoolTransactionRunner implements TransactionRunner {
     private final SessionPool sessionPool;
     private PooledSession session;
@@ -1062,11 +1065,6 @@ final class SessionPool {
     this.spanner = spanner;
     this.clock = clock;
     this.poolMaintainer = new PoolMaintainer();
-  }
-
-  @VisibleForTesting
-  int getNumberOfAvailableReadSessions() {
-    return readSessions.size();
   }
 
   @VisibleForTesting

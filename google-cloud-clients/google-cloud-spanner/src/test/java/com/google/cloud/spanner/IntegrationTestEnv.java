@@ -22,6 +22,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.testing.RemoteSpannerHelper;
 import com.google.common.collect.Iterators;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.rules.ExternalResource;
@@ -120,7 +121,7 @@ public class IntegrationTestEnv extends ExternalResource {
         instanceAdminClient.createInstance(instance);
     Instance createdInstance;
     try {
-      createdInstance = op.get();
+      createdInstance = op.get(500L, TimeUnit.MILLISECONDS);
     } catch (Exception e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }

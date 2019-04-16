@@ -51,11 +51,6 @@ class DatabaseClientImpl implements DatabaseClient {
   }
 
   @VisibleForTesting
-  int getNumberOfAvailableReadSessions() {
-    return pool.getNumberOfAvailableReadSessions();
-  }
-
-  @VisibleForTesting
   int getNumberOfAvailableWritePreparedSessions() {
     return pool.getNumberOfAvailableWritePreparedSessions();
   }
