@@ -27,52 +27,52 @@ abstract class SubscriberStats {
 
   @AutoValue
   // TODO: Finish implementation.
-  public abstract static class Stats {}
+  abstract static class Stats {}
 
   /** Number of successfully published messages. */
-  public abstract long getReceivedMessages();
+  abstract long getReceivedMessages();
 
   /** Number of successfully published messages. */
-  public abstract long getAckedMessages();
+  abstract long getAckedMessages();
 
   /** Number of received messages. */
-  public abstract long getTotalReceivedMessages();
+  abstract long getTotalReceivedMessages();
 
   /** Number messages acked. */
-  public abstract long getTotalAckedMessages();
+  abstract long getTotalAckedMessages();
 
   /** End to end latency. */
-  public abstract Stats getEndToEndLatency();
+  abstract Stats getEndToEndLatency();
 
   /**
    * Acknowledgement latency; time in between the message has been received and then acknowledged or
    * rejected.
    */
-  public abstract Stats getAckLatency();
+  abstract Stats getAckLatency();
 
   /** Number of messages for which we have auto extended its acknowledgement deadline. */
-  public abstract long getNumberOfAutoExtendedAckDeadlines();
+  abstract long getNumberOfAutoExtendedAckDeadlines();
 
-  public static Builder newBuilder() {
+  static Builder newBuilder() {
     return new AutoValue_SubscriberStats.Builder();
   }
 
   @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder setReceivedMessages(long value);
+  abstract static class Builder {
+    abstract Builder setReceivedMessages(long value);
 
-    public abstract Builder setAckedMessages(long value);
+    abstract Builder setAckedMessages(long value);
 
-    public abstract Builder setTotalReceivedMessages(long value);
+    abstract Builder setTotalReceivedMessages(long value);
 
-    public abstract Builder setTotalAckedMessages(long value);
+    abstract Builder setTotalAckedMessages(long value);
 
-    public abstract Builder setEndToEndLatency(Stats value);
+    abstract Builder setEndToEndLatency(Stats value);
 
-    public abstract Builder setAckLatency(Stats value);
+    abstract Builder setAckLatency(Stats value);
 
-    public abstract Builder setNumberOfAutoExtendedAckDeadlines(long value);
+    abstract Builder setNumberOfAutoExtendedAckDeadlines(long value);
 
-    public abstract SubscriberStats build();
+    abstract SubscriberStats build();
   }
 }
