@@ -19,7 +19,6 @@ package com.google.cloud.pubsub.v1;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -587,7 +586,7 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     publisher.shutdown();
     assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
-    assertNotNull(publishFuture1.isDone());
+    assertTrue(publishFuture1.isDone());
   }
 
   @Test
