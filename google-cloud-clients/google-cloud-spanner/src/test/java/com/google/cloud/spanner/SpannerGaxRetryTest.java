@@ -200,10 +200,10 @@ public class SpannerGaxRetryTest {
     mockSpanner.removeAllExecutionTimes();
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(100L))
-            .setMaxRpcTimeout(Duration.ofMillis(200L))
+            .setInitialRpcTimeout(Duration.ofMillis(200L))
+            .setMaxRpcTimeout(Duration.ofMillis(250L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(500L))
+            .setTotalTimeout(Duration.ofMillis(1000L))
             .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
@@ -256,7 +256,7 @@ public class SpannerGaxRetryTest {
   }
 
   private void warmUpSessionPool() {
-    for(int i=0; i<10; i++) {
+    for (int i = 0; i < 10; i++) {
       TransactionRunner runner = client.readWriteTransaction();
       long updateCount =
           runner.run(
