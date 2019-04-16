@@ -200,8 +200,8 @@ public class SpannerGaxRetryTest {
     mockSpanner.removeAllExecutionTimes();
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(200L))
-            .setMaxRpcTimeout(Duration.ofMillis(250L))
+            .setInitialRpcTimeout(Duration.ofMillis(500L))
+            .setMaxRpcTimeout(Duration.ofMillis(500L))
             .setMaxAttempts(3)
             .setTotalTimeout(Duration.ofMillis(1000L))
             .build();
