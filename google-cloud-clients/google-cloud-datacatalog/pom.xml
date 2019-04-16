@@ -4,15 +4,15 @@
   <artifactId>google-cloud-datacatalog</artifactId>
   <version>0.0.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   <packaging>jar</packaging>
-  <name>FIXME</name>
+  <name>Google Cloud Datacatalog</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-datacatalog</url>
   <description>
-    FIXME
+    Java idiomatic client for Google Cloud Data Labeling
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.0.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.87.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datacatalog</site.installationModule>

@@ -231,6 +231,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
         <version>0.52.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
       </dependency>
@@ -764,7 +774,7 @@
         <artifactId>grpc-google-cloud-webrisk-v1beta1</artifactId>
         <version>0.2.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-webrisk-v1beta1:current}-->
       </dependency>
-    <dependency><groupId>com.google.api.grpc</groupId><artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId><version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-datacatalog-v1beta1:current}--></dependency><dependency><groupId>com.google.api.grpc</groupId><artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId><version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-datacatalog-v1beta1:current}--></dependency></dependencies>
+    </dependencies>
   </dependencyManagement>
 
   <modules>
@@ -777,7 +787,8 @@
     <module>grpc-google-cloud-bigtable-v2</module>
     <module>grpc-google-cloud-container-v1</module>
     <module>grpc-google-cloud-containeranalysis-v1beta1</module>
-    <module>grpc-google-cloud-datacatalog-v1beta1</module><module>grpc-google-cloud-datalabeling-v1beta1</module>
+    <module>grpc-google-cloud-datacatalog-v1beta1</module>
+    <module>grpc-google-cloud-datalabeling-v1beta1</module>
     <module>grpc-google-cloud-dataproc-v1</module>
     <module>grpc-google-cloud-dataproc-v1beta2</module>
     <module>grpc-google-cloud-dialogflow-v2</module>
@@ -840,7 +851,8 @@
     <module>proto-google-cloud-bigtable-v2</module>
     <module>proto-google-cloud-container-v1</module>
     <module>proto-google-cloud-containeranalysis-v1beta1</module>
-    <module>proto-google-cloud-datacatalog-v1beta1</module><module>proto-google-cloud-datalabeling-v1beta1</module>
+    <module>proto-google-cloud-datacatalog-v1beta1</module>
+    <module>proto-google-cloud-datalabeling-v1beta1</module>
     <module>proto-google-cloud-dataproc-v1</module>
     <module>proto-google-cloud-dataproc-v1beta2</module>
     <module>proto-google-cloud-datastore-v1</module>
