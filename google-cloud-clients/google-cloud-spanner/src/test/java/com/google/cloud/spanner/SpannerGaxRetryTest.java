@@ -205,6 +205,13 @@ public class SpannerGaxRetryTest {
             .setMaxAttempts(3)
             .setTotalTimeout(Duration.ofMillis(1000L))
             .build();
+    RetrySettings commitRetrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(Duration.ofMillis(10000L))
+            .setMaxAttempts(1)
+            .setTotalTimeout(Duration.ofMillis(20000L))
+            .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
@@ -220,6 +227,7 @@ public class SpannerGaxRetryTest {
                 return null;
               }
             });
+    builder.spannerStubSettingsBuilder().commitSettings().setRetrySettings(commitRetrySettings);
     builder
         .spannerStubSettingsBuilder()
         .executeStreamingSqlSettings()
