@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
@@ -291,7 +293,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .addAllAckIds(idChunk)
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
                         .build());
-        ApiFutures.addCallback(future, loggingCallback);
+        ApiFutures.addCallback(future, loggingCallback, directExecutor());
       }
     }
 
@@ -303,7 +305,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       .setSubscription(subscription)
                       .addAllAckIds(idChunk)
                       .build());
-      ApiFutures.addCallback(future, loggingCallback);
+      ApiFutures.addCallback(future, loggingCallback, directExecutor());
     }
   }
 }

@@ -19,11 +19,14 @@ package com.google.cloud.examples.securitycenter.snippets;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
-import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State;
-import com.google.cloud.securitycenter.v1beta1.OrganizationName;
+import com.google.cloud.securitycenter.v1.GroupResult;
+import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult;
+import com.google.cloud.securitycenter.v1.ListAssetsResponse.ListAssetsResult.StateChange;
+import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.common.collect.ImmutableList;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
@@ -51,7 +54,7 @@ public class ITAssetSnippets {
 
   @Test
   public void testListAssetsNoFilterOrDate() {
-    assertTrue(59 >= AssetSnippets.listAssets(getOrganizationId()).size());
+    assertTrue(59 <= AssetSnippets.listAssets(getOrganizationId()).size());
   }
 
   @Test
@@ -67,7 +70,47 @@ public class ITAssetSnippets {
             getOrganizationId(), Duration.ofDays(3), SOMETHING_INSTANCE);
     assertTrue("Result: " + result.toString(), result.toString().contains("ADDED"));
     assertTrue(3 >= result.size());
-    assertEquals(result.get(0).getState(), State.ADDED);
+    assertEquals(result.get(0).getStateChange(), StateChange.ADDED);
+  }
+
+  @Test
+  public void testGroupAssets() {
+    ImmutableList<GroupResult> results = AssetSnippets.groupAssets(getOrganizationId());
+    assertTrue(results.size() > 0);
+  }
+
+  @Test
+  public void testGroupAssetsWithFilter() {
+    ImmutableList<GroupResult> results = AssetSnippets.groupAssetsWithFilter(getOrganizationId());
+    assertTrue(results.size() > 0);
+  }
+
+  @Test
+  public void testGroupAssetsWithCompareDuration() {
+    ImmutableList<GroupResult> results =
+        AssetSnippets.groupAssetsWithCompareDuration(
+            getOrganizationId(), Duration.ofSeconds(86400));
+    assertTrue(results.size() > 0);
+  }
+
+  @Test
+  public void testRunAssetDiscovery() throws IOException {
+    PrintStream oldStream = System.out;
+    try {
+
+      ByteArrayOutputStream capture = new ByteArrayOutputStream();
+      PrintStream out = new PrintStream(capture);
+      System.setOut(out);
+      AssetSnippets.runAssetDiscovery(getOrganizationId());
+
+      out.flush();
+      assertTrue(
+          capture.toString(),
+          capture.toString().equals("Asset discovery runs asynchronously.\n")
+              || capture.toString().equals("Asset discovery run already in progress.\n"));
+    } finally {
+      System.setOut(oldStream);
+    }
   }
 
   private static OrganizationName getOrganizationId() {

@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
@@ -91,6 +93,7 @@ public class Publisher {
 
   private final Lock messagesBatchLock;
   private final Map<String, MessagesBatch> messagesBatches;
+
   private final AtomicBoolean activeAlarm;
 
   private final PublisherStub publisherStub;
@@ -388,7 +391,7 @@ public class Publisher {
       Runnable task =
           new Runnable() {
             public void run() {
-              ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback);
+              ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
             }
           };
       executor.execute(task);
@@ -714,21 +717,21 @@ public class Publisher {
       batchedBytes = 0;
     }
 
-    public boolean isEmpty() {
+    private boolean isEmpty() {
       return messages.isEmpty();
     }
 
-    public int getBatchedBytes() {
+    private int getBatchedBytes() {
       return batchedBytes;
     }
 
-    public void addMessage(OutstandingPublish message, int messageSize) {
+    private void addMessage(OutstandingPublish message, int messageSize) {
       messages.add(message);
       batchedBytes += messageSize;
     }
 
-    public int getMessagesCount() {
+    private int getMessagesCount() {
       return messages.size();
     }
-  };
+  }
 }
