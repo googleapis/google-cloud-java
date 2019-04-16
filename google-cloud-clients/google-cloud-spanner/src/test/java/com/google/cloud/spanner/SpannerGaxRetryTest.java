@@ -200,10 +200,10 @@ public class SpannerGaxRetryTest {
     mockSpanner.removeAllExecutionTimes();
     final RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(300L))
-            .setMaxRpcTimeout(Duration.ofMillis(500L))
+            .setInitialRpcTimeout(Duration.ofMillis(50L))
+            .setMaxRpcTimeout(Duration.ofMillis(100L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(500L))
+            .setTotalTimeout(Duration.ofMillis(200L))
             .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
@@ -253,6 +253,26 @@ public class SpannerGaxRetryTest {
   @After
   public void tearDown() throws Exception {
     spanner.close();
+  }
+
+  private void warmUpSessionPool() {
+    for(int i=0; i<10; i++) {
+      TransactionRunner runner = client.readWriteTransaction();
+      long updateCount =
+          runner.run(
+              new TransactionCallable<Long>() {
+                @Override
+                public Long run(TransactionContext transaction) throws Exception {
+                  return transaction.executeUpdate(UPDATE_STATEMENT);
+                }
+              });
+      assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+    }
+    // Wait a little to allow the session pool to prepare read/write sessions.
+    try {
+      Thread.sleep(500L);
+    } catch (InterruptedException e) {
+    }
   }
 
   @Test
@@ -346,6 +366,7 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void readWriteTransactionTimeout() {
+    warmUpSessionPool();
     if (enableGaxRetries) {
       expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     }
@@ -364,6 +385,7 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void readWriteTransactionUnavailable() {
+    warmUpSessionPool();
     if (!enableGaxRetries) {
       expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
     }
@@ -383,6 +405,7 @@ public class SpannerGaxRetryTest {
   @SuppressWarnings("resource")
   @Test
   public void transactionManagerTimeout() {
+    warmUpSessionPool();
     if (enableGaxRetries) {
       expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     }
@@ -404,6 +427,7 @@ public class SpannerGaxRetryTest {
   @SuppressWarnings("resource")
   @Test
   public void transactionManagerUnavailable() {
+    warmUpSessionPool();
     if (!enableGaxRetries) {
       expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
     }
