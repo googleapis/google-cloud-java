@@ -27,16 +27,29 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.client.util.BackOff;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.common.base.Preconditions;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Timestamp;
+import com.google.rpc.Code;
+import com.google.spanner.v1.CommitRequest;
+import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
+import com.google.spanner.v1.ResultSet;
+import com.google.spanner.v1.ResultSetStats;
 import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 /** Unit test for {@link com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl} */
@@ -139,6 +152,82 @@ public class TransactionRunnerImplTest {
       // expected.
     }
     verify(txn).rollback();
+  }
+
+  @Test
+  public void batchDmlAborted() {
+    batchDmlException(Code.ABORTED_VALUE);
+  }
+
+  @Test
+  public void batchDmlFailedPrecondition() {
+    batchDmlException(Code.FAILED_PRECONDITION_VALUE);
+  }
+
+  @SuppressWarnings("unchecked")
+  private void batchDmlException(int status) {
+    Preconditions.checkArgument(status != Code.OK_VALUE);
+    TransactionContextImpl transaction =
+        new TransactionContextImpl(session, ByteString.copyFromUtf8("test"), rpc, 10);
+    when(session.newTransaction()).thenReturn(transaction);
+    when(session.getName()).thenReturn("test");
+    TransactionRunnerImpl runner = new TransactionRunnerImpl(session, rpc, 10);
+    ExecuteBatchDmlResponse response1 =
+        ExecuteBatchDmlResponse.newBuilder()
+            .addResultSets(
+                ResultSet.newBuilder()
+                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
+                    .build())
+            .setStatus(com.google.rpc.Status.newBuilder().setCode(status).build())
+            .build();
+    ExecuteBatchDmlResponse response2 =
+        ExecuteBatchDmlResponse.newBuilder()
+            .addResultSets(
+                ResultSet.newBuilder()
+                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
+                    .build())
+            .addResultSets(
+                ResultSet.newBuilder()
+                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
+                    .build())
+            .setStatus(com.google.rpc.Status.newBuilder().setCode(Code.OK_VALUE).build())
+            .build();
+    when(rpc.executeBatchDml(Mockito.any(ExecuteBatchDmlRequest.class), Mockito.anyMap()))
+        .thenReturn(response1, response2);
+    CommitResponse commitResponse =
+        CommitResponse.newBuilder().setCommitTimestamp(Timestamp.getDefaultInstance()).build();
+    when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.anyMap())).thenReturn(commitResponse);
+    final Statement statement = Statement.of("UPDATE FOO SET BAR=1");
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    SpannerBatchUpdateException exception = null;
+    long updateCount[];
+    try {
+      updateCount =
+          runner.run(
+              new TransactionCallable<long[]>() {
+                @Override
+                public long[] run(TransactionContext transaction) throws Exception {
+                  numCalls.incrementAndGet();
+                  return transaction.batchUpdate(Arrays.asList(statement, statement));
+                }
+              });
+    } catch (SpannerBatchUpdateException e) {
+      exception = e;
+      updateCount = e.getUpdateCounts();
+    }
+    if (status == Code.ABORTED_VALUE) {
+      // Assert that the method ran twice because the first response aborted.
+      assertThat(numCalls.get()).isEqualTo(2);
+      assertThat(updateCount.length).isEqualTo(2);
+      assertThat(updateCount[0]).isEqualTo(1L);
+      assertThat(updateCount[1]).isEqualTo(1L);
+    } else {
+      // Assert that the method ran once because the first response threw an exception.
+      assertThat(numCalls.get()).isEqualTo(1);
+      assertThat(updateCount.length).isEqualTo(1);
+      assertThat(updateCount[0]).isEqualTo(1L);
+      assertThat(exception.getCode() == status);
+    }
   }
 
   private void runTransaction(final Exception exception) {
