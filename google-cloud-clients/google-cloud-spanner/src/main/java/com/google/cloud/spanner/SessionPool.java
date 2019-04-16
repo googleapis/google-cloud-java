@@ -169,7 +169,8 @@ final class SessionPool {
 
     private void replaceSessionIfPossible(SessionNotFoundException e) {
       if (isSingleUse || !sessionUsedForQuery) {
-        // This class is only used by read-only transactions, so we know that we only need a read-only session.
+        // This class is only used by read-only transactions, so we know that we only need a
+        // read-only session.
         session = sessionPool.replaceReadSession(e, session);
         readContextDelegate = readContextDelegateSupplier.apply(session);
       } else {
@@ -314,7 +315,13 @@ final class SessionPool {
       }
     }
 
-    /** {@link TransactionContext} that is used in combination with an {@link AutoClosingTransactionManager}. This {@link TransactionContext} handles {@link SessionNotFoundException}s by replacing the underlying session with a fresh one, and then throws an {@link AbortedException} to trigger the retry-loop that has been created by the caller. */
+    /**
+     * {@link TransactionContext} that is used in combination with an {@link
+     * AutoClosingTransactionManager}. This {@link TransactionContext} handles {@link
+     * SessionNotFoundException}s by replacing the underlying session with a fresh one, and then
+     * throws an {@link AbortedException} to trigger the retry-loop that has been created by the
+     * caller.
+     */
     private class SessionPoolTransactionContext implements TransactionContext {
       private final TransactionContext delegate;
 
@@ -508,7 +515,10 @@ final class SessionPool {
     }
   }
 
-  /** {@link TransactionRunner} that automatically handles {@link SessionNotFoundException}s by replacing the underlying read/write session and then restarts the transaction. */
+  /**
+   * {@link TransactionRunner} that automatically handles {@link SessionNotFoundException}s by
+   * replacing the underlying read/write session and then restarts the transaction.
+   */
   private static final class SessionPoolTransactionRunner implements TransactionRunner {
     private final SessionPool sessionPool;
     private PooledSession session;
