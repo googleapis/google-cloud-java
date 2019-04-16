@@ -33,7 +33,7 @@ google-cloud-dlp:0.87.0-beta:0.87.1-beta-SNAPSHOT
 google-cloud-dns:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-errorreporting:0.87.0-beta:0.87.1-beta-SNAPSHOT
 google-cloud-examples:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
-google-cloud-firestore:0.87.0-beta:0.87.1-beta-SNAPSHOT
+google-cloud-firestore:1.0.0:1.0.1-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-iamcredentials:0.14.0-alpha:0.14.1-alpha-SNAPSHOT
 google-cloud-iot:0.87.0-beta:0.87.1-beta-SNAPSHOT
