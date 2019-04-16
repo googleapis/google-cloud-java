@@ -703,11 +703,11 @@ public class Publisher {
     private int batchedBytes;
     private String orderingKey;
 
-    public MessagesBatch(String orderingKey) {
+    private MessagesBatch(String orderingKey) {
       this.orderingKey = orderingKey;
     }
 
-    public OutstandingBatch popOutstandingBatch() {
+    private OutstandingBatch popOutstandingBatch() {
       OutstandingBatch batch = new OutstandingBatch(messages, batchedBytes, orderingKey);
       reset();
       return batch;
