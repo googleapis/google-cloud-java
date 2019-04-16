@@ -661,5 +661,5 @@ public class Publisher {
     private int getMessagesCount() {
       return messages.size();
     }
-  };
+  }
 }
