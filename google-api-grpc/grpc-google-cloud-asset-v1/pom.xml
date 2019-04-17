@@ -42,6 +42,12 @@
                     <links>
                         <link>https://grpc.io/grpc-java/javadoc/</link>
                     </links>
+                    <offlineLinks>
+                        <offlineLink>
+                            <url>https://googleapis.dev/java/proto-google-cloud-asset-v1/0.52.1-SNAPSHOT/</url><!-- {x-version-update:google-api-grpc:current} -->
+                            <location>../../../../proto-google-cloud-asset-v1/target/site/apidocs/</location>
+                        </offlineLink>
+                    </offlineLinks>
                 </configuration>
             </plugin>
         </plugins>
