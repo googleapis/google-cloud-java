@@ -142,24 +142,22 @@ final class SequentialExecutorService<T> {
           new Runnable() {
             @Override
             public void run() {
-              invokeCallbackAndExecuteNext(key, tasks);
+              invokeCallback(tasks);
+              synchronized (tasksByKey) {
+                if (tasks.isEmpty()) {
+                  // Note that there can be a race if a task is added to `tasks` at this point.
+                  // However,
+                  // tasks.add() is called only inside the block synchronized by `tasksByKey` object
+                  // in the execute() function. Therefore, we are safe to remove `tasks` here. This
+                  // is not
+                  // optimal, but correct.
+                  tasksByKey.remove(key);
+                  return;
+                }
+              }
+              execute(key, tasks);
             }
           });
-    }
-
-    private void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
-      invokeCallback(tasks);
-      synchronized (tasksByKey) {
-        if (tasks.isEmpty()) {
-          // Note that there can be a race if a task is added to `tasks` at this point. However,
-          // tasks.add() is called only inside the block synchronized by `tasksByKey` object
-          // in the execute() function. Therefore, we are safe to remove `tasks` here. This is not
-          // optimal, but correct.
-          tasksByKey.remove(key);
-          return;
-        }
-      }
-      execute(key, tasks);
     }
   }
 
@@ -238,15 +236,7 @@ final class SequentialExecutorService<T> {
           return;
         }
       }
-      final Deque<Runnable> finalTasks = tasks;
-      // Run the next task.
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallback(finalTasks);
-            }
-          });
+      execute(key, tasks);
     }
   }
 }
