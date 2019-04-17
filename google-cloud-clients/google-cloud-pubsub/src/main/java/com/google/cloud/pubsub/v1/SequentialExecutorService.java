@@ -101,29 +101,6 @@ final class SequentialExecutorService<T> {
 
     protected abstract void execute(String key, Deque<Runnable> finalTasks);
 
-    /** Cancels every task in the queue associated with {@code key}. */
-    void cancelQueuedTasks(final String key, Throwable e) {
-      // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
-      // so that no more tasks are scheduled.
-      synchronized (tasksByKey) {
-        final Deque<Runnable> tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          tasksByKey.remove(key);
-          return;
-        }
-        while (!tasks.isEmpty()) {
-          Runnable task = tasks.poll();
-          if (task instanceof CancellableRunnable) {
-            ((CancellableRunnable) task).cancel(e);
-          } else {
-            logger.log(
-                Level.WARNING,
-                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
-          }
-        }
-      }
-    }
-
     protected void invokeCallback(final Deque<Runnable> tasks) {
       // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
       Runnable task = tasks.poll();
@@ -227,7 +204,7 @@ final class SequentialExecutorService<T> {
     }
 
     /** Executes the next queued task associated with {@code key}. */
-    void resume(final String key) {
+    private void resume(final String key) {
       Deque<Runnable> tasks;
       synchronized (tasksByKey) {
         tasks = tasksByKey.get(key);
@@ -240,6 +217,30 @@ final class SequentialExecutorService<T> {
         }
       }
       execute(key, tasks);
+    }
+
+
+    /** Cancels every task in the queue associated with {@code key}. */
+    private void cancelQueuedTasks(final String key, Throwable e) {
+      // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
+      // so that no more tasks are scheduled.
+      synchronized (tasksByKey) {
+        final Deque<Runnable> tasks = tasksByKey.get(key);
+        if (tasks == null) {
+          tasksByKey.remove(key);
+          return;
+        }
+        while (!tasks.isEmpty()) {
+          Runnable task = tasks.poll();
+          if (task instanceof CancellableRunnable) {
+            ((CancellableRunnable) task).cancel(e);
+          } else {
+            logger.log(
+                Level.WARNING,
+                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+          }
+        }
+      }
     }
   }
 }
