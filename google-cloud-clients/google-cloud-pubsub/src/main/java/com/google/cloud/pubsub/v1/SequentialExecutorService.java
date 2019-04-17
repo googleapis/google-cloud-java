@@ -130,8 +130,22 @@ final class SequentialExecutorService<T> {
         task.run();
       }
     }
+  }
 
-    protected void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
+  private static class AutoExecutor extends SequentialExecutor {
+    AutoExecutor(Executor executor) {
+      super(executor);
+    }
+
+    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+      executor.execute(new Runnable() {
+        @Override public void run() {
+          invokeCallbackAndExecuteNext(key, finalTasks);
+        }
+      });
+    }
+
+    private void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
       invokeCallback(tasks);
       synchronized (tasksByKey) {
         if (tasks.isEmpty()) {
@@ -150,20 +164,6 @@ final class SequentialExecutorService<T> {
               invokeCallbackAndExecuteNext(key, tasks);
             }
           });
-    }
-  }
-
-  private static class AutoExecutor extends SequentialExecutor {
-    AutoExecutor(Executor executor) {
-      super(executor);
-    }
-
-    protected void execute(final String key, final Deque<Runnable> finalTasks) {
-      executor.execute(new Runnable() {
-        @Override public void run() {
-          invokeCallbackAndExecuteNext(key, finalTasks);
-        }
-      });
     }
   }
 
