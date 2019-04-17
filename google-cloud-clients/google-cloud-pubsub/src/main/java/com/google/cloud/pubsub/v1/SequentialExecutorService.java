@@ -76,16 +76,8 @@ final class SequentialExecutorService<T> {
     protected final Map<String, Deque<Runnable>> tasksByKey;
     protected final Executor executor;
 
-    enum TaskCompleteAction {
-      EXECUTE_NEXT_TASK,
-      WAIT_UNTIL_RESUME,
-    }
-
-    private TaskCompleteAction taskCompleteAction;
-
-    private SequentialExecutor(Executor executor, TaskCompleteAction taskCompleteAction) {
+    private SequentialExecutor(Executor executor) {
       this.executor = executor;
-      this.taskCompleteAction = taskCompleteAction;
       this.tasksByKey = new HashMap<>();
     }
 
@@ -104,24 +96,10 @@ final class SequentialExecutorService<T> {
         tasksByKey.put(key, newTasks);
       }
 
-      final Deque<Runnable> finalTasks = newTasks;
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              switch (taskCompleteAction) {
-                case EXECUTE_NEXT_TASK:
-                  invokeCallbackAndExecuteNext(key, finalTasks);
-                  break;
-                case WAIT_UNTIL_RESUME:
-                  invokeCallback(finalTasks);
-                  break;
-                default:
-                  // Nothing to do.
-              }
-            }
-          });
+      execute(key, newTasks);
     }
+
+    protected abstract void execute(String key, Deque<Runnable> finalTasks);
 
     /** Cancels every task in the queue assoicated with {@code key}. */
     void cancelQueuedTasks(final String key, Throwable e) {
@@ -153,7 +131,7 @@ final class SequentialExecutorService<T> {
       }
     }
 
-    private void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
+    protected void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
       invokeCallback(tasks);
       synchronized (tasksByKey) {
         if (tasks.isEmpty()) {
@@ -177,13 +155,21 @@ final class SequentialExecutorService<T> {
 
   private static class AutoExecutor extends SequentialExecutor {
     AutoExecutor(Executor executor) {
-      super(executor, TaskCompleteAction.EXECUTE_NEXT_TASK);
+      super(executor);
+    }
+
+    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+      executor.execute(new Runnable() {
+        @Override public void run() {
+          invokeCallbackAndExecuteNext(key, finalTasks);
+        }
+      });
     }
   }
 
   private static class CallbackExecutor extends SequentialExecutor {
     CallbackExecutor(Executor executor) {
-      super(executor, TaskCompleteAction.WAIT_UNTIL_RESUME);
+      super(executor);
     }
 
     <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
@@ -228,6 +214,14 @@ final class SequentialExecutorService<T> {
             }
           });
       return future;
+    }
+
+    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+      executor.execute(new Runnable() {
+        @Override public void run() {
+          invokeCallback(finalTasks);
+        }
+      });
     }
 
     /** Executes the next queued task associated with {@code key}. */
