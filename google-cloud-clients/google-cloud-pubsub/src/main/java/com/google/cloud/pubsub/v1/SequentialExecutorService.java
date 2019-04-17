@@ -31,7 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 interface CancellableRunnable extends Runnable {
-  public void cancel(Throwable e);
+  void cancel(Throwable e);
 }
 
 /**
@@ -42,13 +42,12 @@ interface CancellableRunnable extends Runnable {
 final class SequentialExecutorService<T> {
   private static final Logger logger = Logger.getLogger(SequentialExecutorService.class.getName());
 
-  private final SequentialExecutor manageableSequentialExecutor;
-  private final SequentialExecutor autoSequentialExecutor;
+  private final SequentialExecutor callbackExecutor;
+  private final SequentialExecutor autoExecutor;
 
   SequentialExecutorService(Executor executor) {
-    this.manageableSequentialExecutor =
-        SequentialExecutor.newManageableSequentialExecutor(executor);
-    this.autoSequentialExecutor = SequentialExecutor.newAutoSequentialExecutor(executor);
+    this.callbackExecutor = new CallbackExecutor(executor);
+    this.autoExecutor = new AutoExecutor(executor);
   }
 
   /**
@@ -57,7 +56,7 @@ final class SequentialExecutorService<T> {
    */
   ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
     final SettableApiFuture<T> future = SettableApiFuture.<T>create();
-    manageableSequentialExecutor.execute(
+    callbackExecutor.execute(
         key,
         new CancellableRunnable() {
           private boolean cancelled = false;
@@ -75,13 +74,13 @@ final class SequentialExecutorService<T> {
                     @Override
                     public void onSuccess(T msg) {
                       future.set(msg);
-                      manageableSequentialExecutor.resume(key);
+                      callbackExecutor.resume(key);
                     }
 
                     @Override
                     public void onFailure(Throwable e) {
                       future.setException(e);
-                      manageableSequentialExecutor.cancelQueuedTasks(
+                      callbackExecutor.cancelQueuedTasks(
                           key,
                           new CancellationException(
                               "Execution cancelled because executing previous runnable failed."));
@@ -103,7 +102,7 @@ final class SequentialExecutorService<T> {
 
   /** Runs synchronous {@code Runnable} tasks sequentially. */
   void submit(final String key, final Runnable runnable) {
-    autoSequentialExecutor.execute(key, runnable);
+    autoExecutor.execute(key, runnable);
   }
 
   /**
@@ -112,7 +111,7 @@ final class SequentialExecutorService<T> {
    * key will be run only when its predecessor has been completed while tasks with different keys
    * can be run in parallel.
    */
-  static class SequentialExecutor {
+  static abstract class SequentialExecutor {
     // Maps keys to tasks.
     private final Map<String, Deque<Runnable>> tasksByKey;
     private final Executor executor;
@@ -123,23 +122,6 @@ final class SequentialExecutorService<T> {
     }
 
     private TaskCompleteAction taskCompleteAction;
-
-    /**
-     * Creates a AutoSequentialExecutor which executes the next queued task automatically when the
-     * previous task has completed.
-     */
-    static SequentialExecutor newAutoSequentialExecutor(Executor executor) {
-      return new SequentialExecutor(executor, TaskCompleteAction.EXECUTE_NEXT_TASK);
-    }
-
-    /**
-     * Creates a ManageableSequentialExecutor which allows users to decide when to execute the next
-     * queued task. The first queued task is executed immediately, but the following tasks will be
-     * executed only when {@link #resume(String)} is called explicitly.
-     */
-    static SequentialExecutor newManageableSequentialExecutor(Executor executor) {
-      return new SequentialExecutor(executor, TaskCompleteAction.WAIT_UNTIL_RESUME);
-    }
 
     private SequentialExecutor(Executor executor, TaskCompleteAction taskCompleteAction) {
       this.executor = executor;
@@ -258,6 +240,18 @@ final class SequentialExecutorService<T> {
               invokeCallbackAndExecuteNext(key, tasks);
             }
           });
+    }
+  }
+
+  private static class AutoExecutor extends SequentialExecutor {
+    AutoExecutor(Executor executor) {
+      super(executor, TaskCompleteAction.EXECUTE_NEXT_TASK);
+    }
+  }
+
+  private static class CallbackExecutor extends SequentialExecutor {
+    CallbackExecutor(Executor executor) {
+      super(executor, TaskCompleteAction.WAIT_UNTIL_RESUME);
     }
   }
 }
