@@ -53,7 +53,7 @@ google-cloud-resourcemanager:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-scheduler:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-securitycenter:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-spanner:1.14.0:1.14.1-SNAPSHOT
-google-cloud-speech:0.87.0-beta:0.87.1-beta-SNAPSHOT
+google-cloud-speech:1.0.0:1.0.1-SNAPSHOT
 google-cloud-storage:1.69.0:1.69.1-SNAPSHOT
 google-cloud-talent:0.4.0-beta:0.4.1-beta-SNAPSHOT
 google-cloud-tasks:0.87.0-beta:0.87.1-beta-SNAPSHOT
@@ -104,7 +104,7 @@ grpc-google-cloud-securitycenter-v1beta1:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:1.14.0:1.14.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:1.14.0:1.14.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:1.14.0:1.14.1-SNAPSHOT
-grpc-google-cloud-speech-v1:0.52.0:0.52.1-SNAPSHOT
+grpc-google-cloud-speech-v1:1.0.0:1.0.1-SNAPSHOT
 grpc-google-cloud-speech-v1beta1:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-speech-v1p1beta1:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-talent-v4beta1:0.4.0-beta:0.4.1-beta-SNAPSHOT
@@ -168,7 +168,7 @@ proto-google-cloud-securitycenter-v1beta1:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:1.14.0:1.14.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:1.14.0:1.14.1-SNAPSHOT
 proto-google-cloud-spanner-v1:1.14.0:1.14.1-SNAPSHOT
-proto-google-cloud-speech-v1:0.52.0:0.52.1-SNAPSHOT
+proto-google-cloud-speech-v1:1.0.0:1.0.1-SNAPSHOT
 proto-google-cloud-speech-v1beta1:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-speech-v1p1beta1:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-talent-v4beta1:0.4.0-beta:0.4.1-beta-SNAPSHOT

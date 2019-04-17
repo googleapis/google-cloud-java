@@ -738,7 +738,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
-        <version>0.87.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -763,12 +763,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
-        <version>0.52.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
+        <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>0.52.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
+        <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
