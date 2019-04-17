@@ -1,4 +1,6 @@
 com.google.cloud
+com.google.cloud.asset.v1
+com.google.cloud.asset.v1.stub
 com.google.cloud.asset.v1beta1
 com.google.cloud.asset.v1beta1.stub
 com.google.cloud.automl.v1beta1
@@ -37,6 +39,10 @@ com.google.cloud.compute.v1
 com.google.cloud.compute.v1.stub
 com.google.cloud.container.v1
 com.google.cloud.container.v1.stub
+com.google.cloud.datacatalog.v1beta1
+com.google.cloud.datacatalog.v1beta1.stub
+com.google.cloud.datalabeling.v1beta1
+com.google.cloud.datalabeling.v1beta1.stub
 com.google.cloud.dataproc.v1
 com.google.cloud.dataproc.v1.stub
 com.google.cloud.dataproc.v1beta2
@@ -132,6 +138,8 @@ com.google.cloud.storage.spi.v1
 com.google.cloud.storage.testing
 com.google.cloud.talent.v4beta1
 com.google.cloud.talent.v4beta1.stub
+com.google.cloud.tasks.v2
+com.google.cloud.tasks.v2.stub
 com.google.cloud.tasks.v2beta2
 com.google.cloud.tasks.v2beta2.stub
 com.google.cloud.tasks.v2beta3
@@ -149,6 +157,8 @@ com.google.cloud.translate
 com.google.cloud.translate.spi
 com.google.cloud.translate.spi.v2
 com.google.cloud.translate.testing
+com.google.cloud.translate.v3beta1
+com.google.cloud.translate.v3beta1.stub
 com.google.cloud.videointelligence.v1
 com.google.cloud.videointelligence.v1.stub
 com.google.cloud.videointelligence.v1beta1
@@ -171,5 +181,7 @@ com.google.cloud.vision.v1p3beta1
 com.google.cloud.vision.v1p3beta1.stub
 com.google.cloud.vision.v1p4beta1
 com.google.cloud.vision.v1p4beta1.stub
+com.google.cloud.webrisk.v1beta1
+com.google.cloud.webrisk.v1beta1.stub
 com.google.cloud.websecurityscanner.v1alpha
 com.google.cloud.websecurityscanner.v1alpha.stub
