@@ -40,9 +40,7 @@ interface CancellableRunnable extends Runnable {
  * key will be run only when its predecessor has been completed while tasks with different keys can
  * be run in parallel.
  */
-final class SequentialExecutorService<T> {
-  private static final Logger logger = Logger.getLogger(SequentialExecutorService.class.getName());
-
+final class SequentialExecutorService {
   private final CallbackExecutor callbackExecutor;
   private final AutoExecutor autoExecutor;
 
@@ -55,7 +53,7 @@ final class SequentialExecutorService<T> {
    * Runs asynchronous {@code Callable} tasks sequentially. If one of the tasks fails, other tasks
    * with the same key that have not been executed will be cancelled.
    */
-  ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+  <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture<T>> callable) {
     return callbackExecutor.submit(key, callable);
   }
 
@@ -144,7 +142,7 @@ final class SequentialExecutorService<T> {
       super(executor);
     }
 
-    <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+    <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture<T>> callable) {
       final SettableApiFuture<T> future = SettableApiFuture.create();
       execute(
           key,
