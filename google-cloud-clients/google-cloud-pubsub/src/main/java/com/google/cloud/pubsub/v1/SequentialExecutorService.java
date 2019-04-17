@@ -137,10 +137,10 @@ final class SequentialExecutorService<T> {
       super(executor);
     }
 
-    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+    protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(new Runnable() {
         @Override public void run() {
-          invokeCallbackAndExecuteNext(key, finalTasks);
+          invokeCallbackAndExecuteNext(key, tasks);
         }
       });
     }
@@ -157,13 +157,7 @@ final class SequentialExecutorService<T> {
           return;
         }
       }
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallbackAndExecuteNext(key, tasks);
-            }
-          });
+      execute(key, tasks);
     }
   }
 
@@ -216,10 +210,10 @@ final class SequentialExecutorService<T> {
       return future;
     }
 
-    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+    protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(new Runnable() {
         @Override public void run() {
-          invokeCallback(finalTasks);
+          invokeCallback(tasks);
         }
       });
     }
