@@ -39,10 +39,6 @@
                     <nohelp>true</nohelp>
                     <doclint>none</doclint>
                     <splitindex>true</splitindex>
-                    <links>
-                        <link>https://grpc.io/grpc-java/javadoc/</link>
-                        <link>https://googleapis.github.io/common-protos-java/1.14.0/apidocs/</link>
-                    </links>
                     <offlineLinks>
                         <offlineLink>
                             <url>https://googleapis.dev/java/proto-google-cloud-asset-v1/0.52.1-SNAPSHOT/</url><!-- {x-version-update:google-api-grpc:current} -->

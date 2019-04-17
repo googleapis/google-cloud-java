@@ -1018,6 +1018,10 @@
           <doclint>none</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
+          <links>
+            <link>https://grpc.io/grpc-java/javadoc/</link>
+            <link>https://googleapis.github.io/common-protos-java/1.14.0/apidocs/</link>
+          </links>
         </configuration>
       </plugin>
     </plugins>
