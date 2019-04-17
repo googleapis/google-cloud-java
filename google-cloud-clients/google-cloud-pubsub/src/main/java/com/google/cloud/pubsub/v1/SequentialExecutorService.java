@@ -101,13 +101,14 @@ final class SequentialExecutorService<T> {
 
     protected abstract void execute(String key, Deque<Runnable> finalTasks);
 
-    /** Cancels every task in the queue assoicated with {@code key}. */
+    /** Cancels every task in the queue associated with {@code key}. */
     void cancelQueuedTasks(final String key, Throwable e) {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
         final Deque<Runnable> tasks = tasksByKey.get(key);
         if (tasks == null) {
+          tasksByKey.remove(key);
           return;
         }
         while (!tasks.isEmpty()) {
@@ -137,6 +138,7 @@ final class SequentialExecutorService<T> {
       super(executor);
     }
 
+    @Override
     protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(
           new Runnable() {
@@ -213,6 +215,7 @@ final class SequentialExecutorService<T> {
       return future;
     }
 
+    @Override
     protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(
           new Runnable() {
