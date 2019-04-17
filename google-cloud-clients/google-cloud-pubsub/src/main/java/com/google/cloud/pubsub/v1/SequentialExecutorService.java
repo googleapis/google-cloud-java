@@ -29,7 +29,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executor;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 interface CancellableRunnable extends Runnable {
@@ -71,9 +70,9 @@ final class SequentialExecutorService<T> {
    * key will be run only when its predecessor has been completed while tasks with different keys
    * can be run in parallel.
    */
-  abstract static class SequentialExecutor {
+  private abstract static class SequentialExecutor<RunnableType extends Runnable> {
     // Maps keys to tasks.
-    protected final Map<String, Deque<Runnable>> tasksByKey;
+    protected final Map<String, Deque<RunnableType>> tasksByKey;
     protected final Executor executor;
 
     private SequentialExecutor(Executor executor) {
@@ -81,8 +80,8 @@ final class SequentialExecutorService<T> {
       this.tasksByKey = new HashMap<>();
     }
 
-    void execute(final String key, Runnable task) {
-      Deque<Runnable> newTasks;
+    void execute(final String key, RunnableType task) {
+      Deque<RunnableType> newTasks;
       synchronized (tasksByKey) {
         newTasks = tasksByKey.get(key);
         // If this key is already being handled, add it to the queue and return.
@@ -99,18 +98,18 @@ final class SequentialExecutorService<T> {
       execute(key, newTasks);
     }
 
-    protected abstract void execute(String key, Deque<Runnable> finalTasks);
+    protected abstract void execute(String key, Deque<RunnableType> finalTasks);
 
-    protected void invokeCallback(final Deque<Runnable> tasks) {
+    protected void invokeCallback(final Deque<RunnableType> tasks) {
       // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
-      Runnable task = tasks.poll();
+      RunnableType task = tasks.poll();
       if (task != null) {
         task.run();
       }
     }
   }
 
-  private static class AutoExecutor extends SequentialExecutor {
+  private static class AutoExecutor extends SequentialExecutor<Runnable> {
     AutoExecutor(Executor executor) {
       super(executor);
     }
@@ -140,7 +139,7 @@ final class SequentialExecutorService<T> {
     }
   }
 
-  private static class CallbackExecutor extends SequentialExecutor {
+  private static class CallbackExecutor extends SequentialExecutor<CancellableRunnable> {
     CallbackExecutor(Executor executor) {
       super(executor);
     }
@@ -193,7 +192,7 @@ final class SequentialExecutorService<T> {
     }
 
     @Override
-    protected void execute(final String key, final Deque<Runnable> tasks) {
+    protected void execute(final String key, final Deque<CancellableRunnable> tasks) {
       executor.execute(
           new Runnable() {
             @Override
@@ -205,7 +204,7 @@ final class SequentialExecutorService<T> {
 
     /** Executes the next queued task associated with {@code key}. */
     private void resume(final String key) {
-      Deque<Runnable> tasks;
+      Deque<CancellableRunnable> tasks;
       synchronized (tasksByKey) {
         tasks = tasksByKey.get(key);
         if (tasks == null) {
@@ -219,27 +218,18 @@ final class SequentialExecutorService<T> {
       execute(key, tasks);
     }
 
-
     /** Cancels every task in the queue associated with {@code key}. */
     private void cancelQueuedTasks(final String key, Throwable e) {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
-        final Deque<Runnable> tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          tasksByKey.remove(key);
-          return;
-        }
-        while (!tasks.isEmpty()) {
-          Runnable task = tasks.poll();
-          if (task instanceof CancellableRunnable) {
-            ((CancellableRunnable) task).cancel(e);
-          } else {
-            logger.log(
-                Level.WARNING,
-                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+        Deque<CancellableRunnable> tasks = tasksByKey.get(key);
+        if (tasks != null) {
+          while (!tasks.isEmpty()) {
+            tasks.poll().cancel(e);
           }
         }
+        tasksByKey.remove(key);
       }
     }
   }
