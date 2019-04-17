@@ -33,7 +33,7 @@ google-cloud-dlp:0.88.0-beta:0.88.0-beta
 google-cloud-dns:0.88.0-alpha:0.88.0-alpha
 google-cloud-errorreporting:0.88.0-beta:0.88.0-beta
 google-cloud-examples:0.88.0-alpha:0.88.0-alpha
-google-cloud-firestore:1.1.0:1.1.0
+google-cloud-firestore:1.0.0:1.0.0
 google-cloud-gcloud-maven-plugin:0.88.0-alpha:0.88.0-alpha
 google-cloud-iamcredentials:0.15.0-alpha:0.15.0-alpha
 google-cloud-iot:0.88.0-beta:0.88.0-beta
@@ -53,7 +53,7 @@ google-cloud-resourcemanager:0.88.0-alpha:0.88.0-alpha
 google-cloud-scheduler:0.88.0-alpha:0.88.0-alpha
 google-cloud-securitycenter:0.88.0-alpha:0.88.0-alpha
 google-cloud-spanner:1.15.0:1.15.0
-google-cloud-speech:1.1.0:1.1.0
+google-cloud-speech:1.0.0:1.0.0
 google-cloud-storage:1.70.0:1.70.0
 google-cloud-talent:0.5.0-beta:0.5.0-beta
 google-cloud-tasks:0.88.0-beta:0.88.0-beta
@@ -83,8 +83,8 @@ grpc-google-cloud-dialogflow-v2:0.53.0:0.53.0
 grpc-google-cloud-dialogflow-v2beta1:0.53.0:0.53.0
 grpc-google-cloud-dlp-v2:0.53.0:0.53.0
 grpc-google-cloud-error-reporting-v1beta1:0.53.0:0.53.0
-grpc-google-cloud-firestore-admin-v1:1.1.0:1.1.0
-grpc-google-cloud-firestore-v1:1.1.0:1.1.0
+grpc-google-cloud-firestore-admin-v1:1.0.0:1.0.0
+grpc-google-cloud-firestore-v1:1.0.0:1.0.0
 grpc-google-cloud-firestore-v1beta1:0.53.0:0.53.0
 grpc-google-cloud-iamcredentials-v1:0.15.0-alpha:0.15.0-alpha
 grpc-google-cloud-iot-v1:0.53.0:0.53.0
@@ -104,7 +104,7 @@ grpc-google-cloud-securitycenter-v1beta1:0.53.0:0.53.0
 grpc-google-cloud-spanner-admin-database-v1:1.15.0:1.15.0
 grpc-google-cloud-spanner-admin-instance-v1:1.15.0:1.15.0
 grpc-google-cloud-spanner-v1:1.15.0:1.15.0
-grpc-google-cloud-speech-v1:1.1.0:1.1.0
+grpc-google-cloud-speech-v1:1.0.0:1.0.0
 grpc-google-cloud-speech-v1beta1:0.53.0:0.53.0
 grpc-google-cloud-speech-v1p1beta1:0.53.0:0.53.0
 grpc-google-cloud-talent-v4beta1:0.5.0-beta:0.5.0-beta
@@ -147,8 +147,8 @@ proto-google-cloud-dialogflow-v2:0.53.0:0.53.0
 proto-google-cloud-dialogflow-v2beta1:0.53.0:0.53.0
 proto-google-cloud-dlp-v2:0.53.0:0.53.0
 proto-google-cloud-error-reporting-v1beta1:0.53.0:0.53.0
-proto-google-cloud-firestore-admin-v1:1.1.0:1.1.0
-proto-google-cloud-firestore-v1:1.1.0:1.1.0
+proto-google-cloud-firestore-admin-v1:1.0.0:1.0.0
+proto-google-cloud-firestore-v1:1.0.0:1.0.0
 proto-google-cloud-firestore-v1beta1:0.53.0:0.53.0
 proto-google-cloud-iamcredentials-v1:0.15.0-alpha:0.15.0-alpha
 proto-google-cloud-iot-v1:0.53.0:0.53.0
@@ -168,7 +168,7 @@ proto-google-cloud-securitycenter-v1beta1:0.53.0:0.53.0
 proto-google-cloud-spanner-admin-database-v1:1.15.0:1.15.0
 proto-google-cloud-spanner-admin-instance-v1:1.15.0:1.15.0
 proto-google-cloud-spanner-v1:1.15.0:1.15.0
-proto-google-cloud-speech-v1:1.1.0:1.1.0
+proto-google-cloud-speech-v1:1.0.0:1.0.0
 proto-google-cloud-speech-v1beta1:0.53.0:0.53.0
 proto-google-cloud-speech-v1p1beta1:0.53.0:0.53.0
 proto-google-cloud-talent-v4beta1:0.5.0-beta:0.5.0-beta

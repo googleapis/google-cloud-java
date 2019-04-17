@@ -482,17 +482,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-firestore</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:google-cloud-firestore:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-cloud-firestore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-admin-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:proto-google-cloud-firestore-admin-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-firestore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -502,12 +502,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-firestore-admin-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:grpc-google-cloud-firestore-admin-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-firestore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-firestore-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -738,7 +738,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-cloud-speech:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -763,12 +763,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
