@@ -1004,7 +1004,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.0</version>
         <reportSets>
           <reportSet>
             <id>html</id>
@@ -1015,10 +1015,9 @@
           </reportSet>
         </reportSets>
         <configuration>
+          <doclint>none</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
-          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-          <splitindex>true</splitindex>
         </configuration>
       </plugin>
     </plugins>
@@ -1038,19 +1037,6 @@
                 <id>attach-sources</id>
                 <goals>
                   <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.0.1</version>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
                 </goals>
               </execution>
             </executions>
