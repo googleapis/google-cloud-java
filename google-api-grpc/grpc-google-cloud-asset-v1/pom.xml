@@ -41,6 +41,7 @@
                     <splitindex>true</splitindex>
                     <links>
                         <link>https://grpc.io/grpc-java/javadoc/</link>
+                        <link>https://googleapis.github.io/common-protos-java/1.14.0/apidocs/</link>
                     </links>
                     <offlineLinks>
                         <offlineLink>
