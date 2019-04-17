@@ -233,20 +233,43 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    /**
+     * {@link SpannerOptions.Builder} does not support global retry settings, as it creates three
+     * different gRPC clients: {@link Spanner}, {@link DatabaseAdminClient} and {@link
+     * InstanceAdminClient}. Instead of calling this method, you should set specific {@link
+     * RetrySettings} for each of the underlying gRPC clients by calling respectively {@link
+     * #spannerStubSettingsBuilder()}, {@link #databaseAdminStubSettingsBuilder()} or {@link
+     * #instanceAdminStubSettingsBuilder()}.
+     */
     @Override
     public Builder setRetrySettings(RetrySettings retrySettings) {
       throw new UnsupportedOperationException(
           "SpannerOptions does not support setting global retry settings. "
-              + "Call stubSettingsBuilder().<method-name>Settings().setRetrySettings(RetrySettings) instead.");
+              + "Call spannerStubSettingsBuilder().<method-name>Settings().setRetrySettings(RetrySettings) instead.");
     }
 
     /**
      * Returns the {@link SpannerStubSettings.Builder} that will be used to build the {@link
-     * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
      *
      * <p>The library will automatically use sensible defaults if no custom settings are set. The
      * defaults are the same as the defaults that are used by {@link SpannerSettings}. Retries are
      * configured for idempotent methods but not for non-idempotent methods.
+     *
+     * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
+     *
+     * <pre>{@code
+     * builder
+     *     .spannerStubSettingsBuilder()
+     *     .applyToAllUnaryMethods(
+     *         new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+     *           @Override
+     *           public Void apply(Builder<?, ?> input) {
+     *             input.setRetrySettings(retrySettings);
+     *             return null;
+     *           }
+     *         });
+     * }</pre>
      */
     public SpannerStubSettings.Builder spannerStubSettingsBuilder() {
       return spannerStubSettingsBuilder;
@@ -254,11 +277,26 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Returns the {@link InstanceAdminStubSettings.Builder} that will be used to build the {@link
-     * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
      *
      * <p>The library will automatically use sensible defaults if no custom settings are set. The
      * defaults are the same as the defaults that are used by {@link InstanceAdminSettings}. Retries
      * are configured for idempotent methods but not for non-idempotent methods.
+     *
+     * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
+     *
+     * <pre>{@code
+     * builder
+     *     .instanceAdminStubSettingsBuilder()
+     *     .applyToAllUnaryMethods(
+     *         new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+     *           @Override
+     *           public Void apply(Builder<?, ?> input) {
+     *             input.setRetrySettings(retrySettings);
+     *             return null;
+     *           }
+     *         });
+     * }</pre>
      */
     public InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder() {
       return instanceAdminStubSettingsBuilder;
@@ -266,11 +304,26 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Returns the {@link DatabaseAdminStubSettings.Builder} that will be used to build the {@link
-     * SpannerRpc}. Use this to set custom {@link RetrySettings} for gRPC calls.
+     * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
      *
      * <p>The library will automatically use sensible defaults if no custom settings are set. The
      * defaults are the same as the defaults that are used by {@link DatabaseAdminSettings}. Retries
      * are configured for idempotent methods but not for non-idempotent methods.
+     *
+     * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
+     *
+     * <pre>{@code
+     * builder
+     *     .databaseAdminStubSettingsBuilder()
+     *     .applyToAllUnaryMethods(
+     *         new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+     *           @Override
+     *           public Void apply(Builder<?, ?> input) {
+     *             input.setRetrySettings(retrySettings);
+     *             return null;
+     *           }
+     *         });
+     * }</pre>
      */
     public DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder() {
       return databaseAdminStubSettingsBuilder;

@@ -265,6 +265,7 @@ public class SpannerGaxRetryTest {
 
   private void warmUpSessionPool() {
     for (int i = 0; i < 10; i++) {
+      int retryCount = 0;
       while (true) {
         try {
           TransactionRunner runner = client.readWriteTransaction();
@@ -281,7 +282,8 @@ public class SpannerGaxRetryTest {
         } catch (SpannerException e) {
           // On slow systems there is a chance of DEADLINE_EXCEEDED errors.
           // These should be retried.
-          if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
+          retryCount++;
+          if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED || retryCount > 10) {
             throw e;
           }
         }
@@ -376,7 +378,8 @@ public class SpannerGaxRetryTest {
 
   @Test
   public void singleUseExecuteStreamingSqlUnavailable() {
-    // executeStreamingSql is always retried.
+    // executeStreamingSql is always retried by the Spanner library, even if gax retries have been
+    // disabled.
     try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
       mockSpanner.addException(UNAVAILABLE);
       while (rs.next()) {}
