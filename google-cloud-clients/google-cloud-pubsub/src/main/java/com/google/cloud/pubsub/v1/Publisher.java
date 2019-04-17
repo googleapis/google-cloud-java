@@ -234,30 +234,30 @@ public class Publisher {
     messagesBatchLock.lock();
     try {
       // Check if the next message makes the current batch exceed the max batch byte size.
-      MessagesBatch batch = messagesBatches.get(orderingKey);
-      if (batch == null) {
-        batch = new MessagesBatch(orderingKey);
-        messagesBatches.put(orderingKey, batch);
+      MessagesBatch messageBatch = messagesBatches.get(orderingKey);
+      if (messageBatch == null) {
+        messageBatch = new MessagesBatch(orderingKey);
+        messagesBatches.put(orderingKey, messageBatch);
       }
-      if (!batch.isEmpty()
+      if (!messageBatch.isEmpty()
           && hasBatchingBytes()
-          && batch.getBatchedBytes() + messageSize >= getMaxBatchBytes()) {
-        batchToSend = batch.popOutstandingBatch();
+          && messageBatch.getBatchedBytes() + messageSize >= getMaxBatchBytes()) {
+        batchToSend = messageBatch.popOutstandingBatch();
       }
 
       // Border case if the message to send is greater or equals to the max batch size then can't
       // be included in the current batch and instead sent immediately.
       if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
-        batch.addMessage(outstandingPublish, messageSize);
+        messageBatch.addMessage(outstandingPublish, messageSize);
         // If after adding the message we have reached the batch max messages then we have a batch
         // to send.
-        if (batch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
-          batchToSend = batch.popOutstandingBatch();
+        if (messageBatch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
+          batchToSend = messageBatch.popOutstandingBatch();
         }
       }
 
       // Setup the next duration based delivery alarm if there are messages batched.
-      if (!batch.isEmpty()) {
+      if (!messageBatch.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else {
         messagesBatches.remove(orderingKey);
@@ -405,7 +405,9 @@ public class Publisher {
             }
           };
       ApiFutures.addCallback(
-          sequentialExecutor.submit(outstandingBatch.orderingKey, func), futureCallback);
+          sequentialExecutor.submit(outstandingBatch.orderingKey, func),
+          futureCallback,
+          directExecutor());
     }
   }
 
