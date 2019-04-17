@@ -73,8 +73,8 @@ final class SequentialExecutorService<T> {
    */
   static abstract class SequentialExecutor {
     // Maps keys to tasks.
-    private final Map<String, Deque<Runnable>> tasksByKey;
-    private final Executor executor;
+    protected final Map<String, Deque<Runnable>> tasksByKey;
+    protected final Executor executor;
 
     enum TaskCompleteAction {
       EXECUTE_NEXT_TASK,
@@ -145,35 +145,7 @@ final class SequentialExecutorService<T> {
       }
     }
 
-    /** Executes the next queued task associated with {@code key}. */
-    void resume(final String key) {
-      if (taskCompleteAction.equals(TaskCompleteAction.EXECUTE_NEXT_TASK)) {
-        // resume() is no-op since tasks are executed automatically.
-        return;
-      }
-      Deque<Runnable> tasks;
-      synchronized (tasksByKey) {
-        tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          return;
-        }
-        if (tasks.isEmpty()) {
-          tasksByKey.remove(key);
-          return;
-        }
-      }
-      final Deque<Runnable> finalTasks = tasks;
-      // Run the next task.
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallback(finalTasks);
-            }
-          });
-    }
-
-    private void invokeCallback(final Deque<Runnable> tasks) {
+    protected void invokeCallback(final Deque<Runnable> tasks) {
       // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
       Runnable task = tasks.poll();
       if (task != null) {
@@ -256,6 +228,30 @@ final class SequentialExecutorService<T> {
             }
           });
       return future;
+    }
+
+    /** Executes the next queued task associated with {@code key}. */
+    void resume(final String key) {
+      Deque<Runnable> tasks;
+      synchronized (tasksByKey) {
+        tasks = tasksByKey.get(key);
+        if (tasks == null) {
+          return;
+        }
+        if (tasks.isEmpty()) {
+          tasksByKey.remove(key);
+          return;
+        }
+      }
+      final Deque<Runnable> finalTasks = tasks;
+      // Run the next task.
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              invokeCallback(finalTasks);
+            }
+          });
     }
   }
 }
