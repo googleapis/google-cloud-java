@@ -30,6 +30,8 @@ import java.util.concurrent.Executor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 interface CancellableRunnable extends Runnable {
   void cancel(Throwable e);
 }
@@ -42,8 +44,8 @@ interface CancellableRunnable extends Runnable {
 final class SequentialExecutorService<T> {
   private static final Logger logger = Logger.getLogger(SequentialExecutorService.class.getName());
 
-  private final SequentialExecutor callbackExecutor;
-  private final SequentialExecutor autoExecutor;
+  private final CallbackExecutor callbackExecutor;
+  private final AutoExecutor autoExecutor;
 
   SequentialExecutorService(Executor executor) {
     this.callbackExecutor = new CallbackExecutor(executor);
@@ -55,58 +57,16 @@ final class SequentialExecutorService<T> {
    * with the same key that have not been executed will be cancelled.
    */
   ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
-    final SettableApiFuture<T> future = SettableApiFuture.<T>create();
-    callbackExecutor.execute(
-        key,
-        new CancellableRunnable() {
-          private boolean cancelled = false;
-
-          @Override
-          public void run() {
-            if (cancelled) {
-              return;
-            }
-            try {
-              ApiFuture<T> callResult = callable.call();
-              ApiFutures.addCallback(
-                  callResult,
-                  new ApiFutureCallback<T>() {
-                    @Override
-                    public void onSuccess(T msg) {
-                      future.set(msg);
-                      callbackExecutor.resume(key);
-                    }
-
-                    @Override
-                    public void onFailure(Throwable e) {
-                      future.setException(e);
-                      callbackExecutor.cancelQueuedTasks(
-                          key,
-                          new CancellationException(
-                              "Execution cancelled because executing previous runnable failed."));
-                    }
-                  });
-            } catch (Exception e) {
-              future.setException(e);
-            }
-          }
-
-          @Override
-          public void cancel(Throwable e) {
-            this.cancelled = true;
-            future.setException(e);
-          }
-        });
-    return future;
+    return callbackExecutor.submit(key, callable);
   }
 
   /** Runs synchronous {@code Runnable} tasks sequentially. */
-  void submit(final String key, final Runnable runnable) {
+  void submit( String key, Runnable runnable) {
     autoExecutor.execute(key, runnable);
   }
 
   /**
-   * Internal implemenation of SequentialExecutorService. Takes a serial stream of string keys and
+   * Internal implementation of SequentialExecutorService. Takes a serial stream of string keys and
    * {@code Runnable} tasks, and runs the tasks with the same key sequentially. Tasks with the same
    * key will be run only when its predecessor has been completed while tasks with different keys
    * can be run in parallel.
@@ -252,6 +212,50 @@ final class SequentialExecutorService<T> {
   private static class CallbackExecutor extends SequentialExecutor {
     CallbackExecutor(Executor executor) {
       super(executor, TaskCompleteAction.WAIT_UNTIL_RESUME);
+    }
+
+    <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+      final SettableApiFuture<T> future = SettableApiFuture.create();
+      execute(
+          key,
+          new CancellableRunnable() {
+            private boolean cancelled = false;
+
+            @Override
+            public void run() {
+              if (cancelled) {
+                return;
+              }
+              try {
+                ApiFuture<T> callResult = callable.call();
+                ApiFutures.addCallback(callResult, new ApiFutureCallback<T>() {
+                  @Override
+                  public void onSuccess(T msg) {
+                    future.set(msg);
+                    resume(key);
+                  }
+
+                  @Override
+                  public void onFailure(Throwable e) {
+                    future.setException(e);
+                    cancelQueuedTasks(
+                        key,
+                        new CancellationException(
+                            "Execution cancelled because executing previous runnable failed."));
+                  }
+                }, directExecutor());
+              } catch (Exception e) {
+                future.setException(e);
+              }
+            }
+
+            @Override
+            public void cancel(Throwable e) {
+              this.cancelled = true;
+              future.setException(e);
+            }
+          });
+      return future;
     }
   }
 }
