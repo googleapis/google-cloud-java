@@ -127,7 +127,7 @@ public final class SequentialExecutorServiceTest {
   @Test
   public void testExecutorCancelsAllTasksWhenOneFailed() throws Exception {
     SequentialExecutorService sequentialExecutorService =
-        new SequentialExecutorService (executorProvider.getExecutor());
+        new SequentialExecutorService(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();

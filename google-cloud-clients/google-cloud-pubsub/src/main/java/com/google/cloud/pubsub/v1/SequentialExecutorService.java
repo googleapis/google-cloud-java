@@ -29,7 +29,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executor;
-import java.util.logging.Logger;
 
 interface CancellableRunnable extends Runnable {
   void cancel(Throwable e);
