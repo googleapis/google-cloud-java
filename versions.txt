@@ -33,7 +33,7 @@ google-cloud-dlp:0.87.0-beta:0.87.1-beta-SNAPSHOT
 google-cloud-dns:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-errorreporting:0.87.0-beta:0.87.1-beta-SNAPSHOT
 google-cloud-examples:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
-google-cloud-firestore:0.87.0-beta:0.87.1-beta-SNAPSHOT
+google-cloud-firestore:1.0.0:1.0.1-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.87.0-alpha:0.87.1-alpha-SNAPSHOT
 google-cloud-iamcredentials:0.14.0-alpha:0.14.1-alpha-SNAPSHOT
 google-cloud-iot:0.87.0-beta:0.87.1-beta-SNAPSHOT
@@ -83,8 +83,8 @@ grpc-google-cloud-dialogflow-v2:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2beta1:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-error-reporting-v1beta1:0.52.0:0.52.1-SNAPSHOT
-grpc-google-cloud-firestore-admin-v1:0.52.0:0.52.1-SNAPSHOT
-grpc-google-cloud-firestore-v1:0.52.0:0.52.1-SNAPSHOT
+grpc-google-cloud-firestore-admin-v1:1.0.0:1.0.1-SNAPSHOT
+grpc-google-cloud-firestore-v1:1.0.0:1.0.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.52.0:0.52.1-SNAPSHOT
 grpc-google-cloud-iamcredentials-v1:0.14.0-alpha:0.14.1-alpha-SNAPSHOT
 grpc-google-cloud-iot-v1:0.52.0:0.52.1-SNAPSHOT
@@ -147,8 +147,8 @@ proto-google-cloud-dialogflow-v2:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-dialogflow-v2beta1:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-dlp-v2:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-error-reporting-v1beta1:0.52.0:0.52.1-SNAPSHOT
-proto-google-cloud-firestore-admin-v1:0.52.0:0.52.1-SNAPSHOT
-proto-google-cloud-firestore-v1:0.52.0:0.52.1-SNAPSHOT
+proto-google-cloud-firestore-admin-v1:1.0.0:1.0.1-SNAPSHOT
+proto-google-cloud-firestore-v1:1.0.0:1.0.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.52.0:0.52.1-SNAPSHOT
 proto-google-cloud-iamcredentials-v1:0.14.0-alpha:0.14.1-alpha-SNAPSHOT
 proto-google-cloud-iot-v1:0.52.0:0.52.1-SNAPSHOT
