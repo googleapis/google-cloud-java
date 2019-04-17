@@ -25,7 +25,8 @@ if [[ -z "${STAGING_BUCKET}" ]]; then
 fi
 
 # work from the git root directory
-pushd $(dirname "$0")/../../
+ROOT_DIR=$(realpath $(dirname "$0")/../../)
+pushd ${ROOT_DIR}
 
 # install docuploader package
 python3 -m pip install gcp-docuploader
@@ -36,15 +37,14 @@ mvn clean install -B -DskipTests=true
 build_and_publish_site() {
   DIRECTORY=$1
   NAME=$1
-  VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
+  VERSION=$(grep ${NAME}: ${ROOT_DIR}/versions.txt | cut -d: -f3)
 
   pushd ${DIRECTORY}
 
   # build the docs
   mvn site
-  mvn site:stage -DtopSiteURL=https://googleapis.dev/java/${NAME}/${VERSION}
 
-  pushd target/staging/site/${NAME}/apidocs
+  pushd target/site/apidocs
 
   # create metadata
   python3 -m docuploader create-metadata \
@@ -61,6 +61,15 @@ build_and_publish_site() {
   popd
 }
 
-# TODO (chingor): split all the artifacts
-build_and_publish_site google-api-grpc
-build_and_publish_site google-cloud-clients
+# build javadocs for all artifacts
+for folder in google-api-grpc google-cloud-clients
+do
+  for directory in `ls -d ${folder}/*/ | grep -v target | grep -v src`
+  do
+    artifact=$(echo ${directory} | cut -d'/' -f2)
+
+    build_and_publish_site artifact
+  done
+done
+
+popd
