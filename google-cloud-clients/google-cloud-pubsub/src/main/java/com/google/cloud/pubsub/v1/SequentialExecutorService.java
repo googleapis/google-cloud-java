@@ -102,7 +102,7 @@ final class SequentialExecutorService<T> {
   }
 
   /** Runs synchronous {@code Runnable} tasks sequentially. */
-  public void submit(final String key, final Runnable runnable) {
+  void submit(final String key, final Runnable runnable) {
     autoSequentialExecutor.execute(key, runnable);
   }
 
@@ -128,7 +128,7 @@ final class SequentialExecutorService<T> {
      * Creates a AutoSequentialExecutor which executes the next queued task automatically when the
      * previous task has completed.
      */
-    public static SequentialExecutor newAutoSequentialExecutor(Executor executor) {
+    static SequentialExecutor newAutoSequentialExecutor(Executor executor) {
       return new SequentialExecutor(executor, TaskCompleteAction.EXECUTE_NEXT_TASK);
     }
 
@@ -147,7 +147,7 @@ final class SequentialExecutorService<T> {
       this.tasksByKey = new HashMap<>();
     }
 
-    public void execute(final String key, Runnable task) {
+    void execute(final String key, Runnable task) {
       Deque<Runnable> newTasks;
       synchronized (tasksByKey) {
         newTasks = tasksByKey.get(key);
@@ -182,7 +182,7 @@ final class SequentialExecutorService<T> {
     }
 
     /** Cancels every task in the queue assoicated with {@code key}. */
-    public void cancelQueuedTasks(final String key, Throwable e) {
+    void cancelQueuedTasks(final String key, Throwable e) {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
@@ -204,7 +204,7 @@ final class SequentialExecutorService<T> {
     }
 
     /** Executes the next queued task associated with {@code key}. */
-    public void resume(final String key) {
+    void resume(final String key) {
       if (taskCompleteAction.equals(TaskCompleteAction.EXECUTE_NEXT_TASK)) {
         // resume() is no-op since tasks are executed automatically.
         return;
