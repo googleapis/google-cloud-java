@@ -99,7 +99,7 @@ class SessionImpl implements Session {
   @Override
   public long executePartitionedUpdate(Statement stmt) {
     setActive(null);
-    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, spanner);
+    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, spanner.getRpc());
     return txn.executePartitionedUpdate(stmt);
   }
 
@@ -157,7 +157,7 @@ class SessionImpl implements Session {
   @Override
   public ReadContext singleUse(TimestampBound bound) {
     return setActive(
-        new SingleReadContext(this, bound, spanner, spanner.getDefaultPrefetchChunks()));
+        new SingleReadContext(this, bound, spanner.getRpc(), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -168,7 +168,8 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
     return setActive(
-        new SingleUseReadOnlyTransaction(this, bound, spanner, spanner.getDefaultPrefetchChunks()));
+        new SingleUseReadOnlyTransaction(
+            this, bound, spanner.getRpc(), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -179,7 +180,8 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
     return setActive(
-        new MultiUseReadOnlyTransaction(this, bound, spanner, spanner.getDefaultPrefetchChunks()));
+        new MultiUseReadOnlyTransaction(
+            this, bound, spanner.getRpc(), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -231,7 +233,7 @@ class SessionImpl implements Session {
   TransactionContextImpl newTransaction() {
     TransactionContextImpl txn =
         new TransactionContextImpl(
-            this, readyTransactionId, spanner, spanner.getDefaultPrefetchChunks());
+            this, readyTransactionId, spanner.getRpc(), spanner.getDefaultPrefetchChunks());
     return txn;
   }
 

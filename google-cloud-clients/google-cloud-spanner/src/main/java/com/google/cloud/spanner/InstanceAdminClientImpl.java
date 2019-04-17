@@ -25,6 +25,7 @@ import com.google.api.gax.paging.Page;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.SpannerImpl.PageFetcher;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.FieldMask;
@@ -37,11 +38,11 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
       PathTemplate.create("projects/{project}");
   private final DatabaseAdminClient dbClient;
   private final String projectId;
-  private final SpannerImpl spanner;
+  private final SpannerRpc rpc;
 
-  InstanceAdminClientImpl(String projectId, SpannerImpl spanner, DatabaseAdminClient dbClient) {
+  InstanceAdminClientImpl(String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient) {
     this.projectId = projectId;
-    this.spanner = spanner;
+    this.rpc = rpc;
     this.dbClient = dbClient;
   }
 
@@ -49,7 +50,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
   public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
     String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
     return InstanceConfig.fromProto(
-        spanner.getRpc().getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
+        rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
   }
 
   @Override
@@ -63,7 +64,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
               String nextPageToken) {
-            return spanner.getRpc().listInstanceConfigs(pageSize, nextPageToken);
+            return rpc.listInstanceConfigs(pageSize, nextPageToken);
           }
 
           @Override
@@ -84,9 +85,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
     String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
         rawOperationFuture =
-            spanner
-                .getRpc()
-                .createInstance(projectName, instance.getId().getInstance(), instance.toProto());
+            rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
 
     return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
         rawOperationFuture.getPollingFuture(),
@@ -115,7 +114,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
   public Instance getInstance(String instanceId) throws SpannerException {
     String instanceName = new InstanceId(projectId, instanceId).getName();
     return Instance.fromProto(
-        spanner.getRpc().getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
+        rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
   }
 
   @Override
@@ -128,7 +127,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
               String nextPageToken) {
-            return spanner.getRpc().listInstances(pageSize, nextPageToken, filter);
+            return rpc.listInstances(pageSize, nextPageToken, filter);
           }
 
           @Override
@@ -144,7 +143,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public void deleteInstance(final String instanceId) throws SpannerException {
-    spanner.getRpc().deleteInstance(new InstanceId(projectId, instanceId).getName());
+    rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
   }
 
   @Override
@@ -156,7 +155,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
             : InstanceInfo.InstanceField.toFieldMask(fieldsToUpdate);
 
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
-        rawOperationFuture = spanner.getRpc().updateInstance(instance.toProto(), fieldMask);
+        rawOperationFuture = rpc.updateInstance(instance.toProto(), fieldMask);
     return new OperationFutureImpl<Instance, UpdateInstanceMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),

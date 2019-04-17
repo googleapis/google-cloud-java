@@ -64,7 +64,7 @@ public class BatchClientImpl implements BatchClient {
       super(
           checkNotNull(session),
           checkNotNull(bound),
-          checkNotNull(spanner),
+          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -77,7 +77,7 @@ public class BatchClientImpl implements BatchClient {
           checkNotNull(session),
           checkNotNull(batchTransactionId).getTransactionId(),
           batchTransactionId.getTimestamp(),
-          checkNotNull(spanner),
+          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -134,7 +134,7 @@ public class BatchClientImpl implements BatchClient {
       builder.setPartitionOptions(pbuilder.build());
 
       final PartitionReadRequest request = builder.build();
-      PartitionResponse response = spanner.getRpc().partitionRead(request, options);
+      PartitionResponse response = rpc.partitionRead(request, options);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =
@@ -172,7 +172,7 @@ public class BatchClientImpl implements BatchClient {
       builder.setPartitionOptions(pbuilder.build());
 
       final PartitionQueryRequest request = builder.build();
-      PartitionResponse response = spanner.getRpc().partitionQuery(request, options);
+      PartitionResponse response = rpc.partitionQuery(request, options);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =

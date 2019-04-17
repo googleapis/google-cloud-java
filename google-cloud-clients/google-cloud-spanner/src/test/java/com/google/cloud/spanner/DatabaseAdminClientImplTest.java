@@ -21,9 +21,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import com.google.api.core.NanoClock;
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
@@ -41,7 +39,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 
 /** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.DatabaseAdminClientImpl}. */
 @RunWith(JUnit4.class)
@@ -60,11 +57,7 @@ public class DatabaseAdminClientImplTest {
   @Before
   public void setUp() {
     initMocks(this);
-    SpannerOptions spannerOptions = Mockito.mock(SpannerOptions.class);
-    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
-    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
-    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
-    client = new DatabaseAdminClientImpl(PROJECT_ID, spanner);
+    client = new DatabaseAdminClientImpl(PROJECT_ID, rpc);
   }
 
   private Database getDatabaseProto() {

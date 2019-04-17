@@ -72,9 +72,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     TransactionContextImpl(
         SessionImpl session,
         @Nullable ByteString transactionId,
-        SpannerImpl spanner,
+        SpannerRpc rpc,
         int defaultPrefetchChunks) {
-      super(session, spanner, defaultPrefetchChunks);
+      super(session, rpc, defaultPrefetchChunks);
       this.transactionId = transactionId;
     }
 
@@ -123,8 +123,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final CommitRequest commitRequest = builder.build();
       Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
-        CommitResponse commitResponse =
-            spanner.getRpc().commit(commitRequest, session.getOptions());
+        CommitResponse commitResponse = rpc.commit(commitRequest, session.getOptions());
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
               ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
@@ -170,14 +169,12 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         // response.  Normally, the next thing that will happen is that we will make a fresh
         // transaction attempt, which should implicitly abort this one.
         span.addAnnotation("Starting Rollback");
-        spanner
-            .getRpc()
-            .rollback(
-                RollbackRequest.newBuilder()
-                    .setSession(session.getName())
-                    .setTransactionId(transactionId)
-                    .build(),
-                session.getOptions());
+        rpc.rollback(
+            RollbackRequest.newBuilder()
+                .setSession(session.getName())
+                .setTransactionId(transactionId)
+                .build(),
+            session.getOptions());
         span.addAnnotation("Rollback Done");
       } catch (SpannerException e) {
         txnLogger.log(Level.FINE, "Exception during rollback", e);
@@ -233,7 +230,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final ExecuteSqlRequest.Builder builder =
           getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
       com.google.spanner.v1.ResultSet resultSet =
-          spanner.getRpc().executeQuery(builder.build(), session.getOptions());
+          rpc.executeQuery(builder.build(), session.getOptions());
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -247,7 +244,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       beforeReadOrQuery();
       final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
       com.google.spanner.v1.ExecuteBatchDmlResponse response =
-          spanner.getRpc().executeBatchDml(builder.build(), session.getOptions());
+          rpc.executeBatchDml(builder.build(), session.getOptions());
       long[] results = new long[response.getResultSetsCount()];
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();

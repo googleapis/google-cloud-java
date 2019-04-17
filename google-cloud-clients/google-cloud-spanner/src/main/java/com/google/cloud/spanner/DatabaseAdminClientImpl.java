@@ -24,6 +24,7 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.SpannerImpl.PageFetcher;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Empty;
@@ -36,11 +37,11 @@ import javax.annotation.Nullable;
 /** Default implementation of {@link DatabaseAdminClient}. */
 class DatabaseAdminClientImpl implements DatabaseAdminClient {
   private final String projectId;
-  private final SpannerImpl spanner;
+  private final SpannerRpc rpc;
 
-  DatabaseAdminClientImpl(String projectId, SpannerImpl spanner) {
+  DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
     this.projectId = projectId;
-    this.spanner = spanner;
+    this.rpc = rpc;
   }
 
   /** Generates a random operation id for long-running database operations. */
@@ -56,8 +57,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
     String instanceName = getInstanceName(instanceId);
     String createStatement = "CREATE DATABASE `" + databaseId + "`";
     OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
-        rawOperationFuture =
-            spanner.getRpc().createDatabase(instanceName, createStatement, statements);
+        rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
     return new OperationFutureImpl<Database, CreateDatabaseMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),
@@ -83,7 +83,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
   @Override
   public Database getDatabase(String instanceId, String databaseId) throws SpannerException {
     String dbName = getDatabaseName(instanceId, databaseId);
-    return Database.fromProto(spanner.getRpc().getDatabase(dbName), DatabaseAdminClientImpl.this);
+    return Database.fromProto(rpc.getDatabase(dbName), DatabaseAdminClientImpl.this);
   }
 
   @Override
@@ -96,7 +96,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
     final String dbName = getDatabaseName(instanceId, databaseId);
     final String opId = operationId != null ? operationId : randomOperationId();
     OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
-        spanner.getRpc().updateDatabaseDdl(dbName, statements, opId);
+        rpc.updateDatabaseDdl(dbName, statements, opId);
     return new OperationFutureImpl<Void, UpdateDatabaseDdlMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),
@@ -119,13 +119,13 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
   @Override
   public void dropDatabase(String instanceId, String databaseId) throws SpannerException {
     String dbName = getDatabaseName(instanceId, databaseId);
-    spanner.getRpc().dropDatabase(dbName);
+    rpc.dropDatabase(dbName);
   }
 
   @Override
   public List<String> getDatabaseDdl(String instanceId, String databaseId) {
     String dbName = getDatabaseName(instanceId, databaseId);
-    return spanner.getRpc().getDatabaseDdl(dbName);
+    return rpc.getDatabaseDdl(dbName);
   }
 
   @Override
@@ -140,7 +140,7 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
           @Override
           public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
               String nextPageToken) {
-            return spanner.getRpc().listDatabases(instanceName, pageSize, nextPageToken);
+            return rpc.listDatabases(instanceName, pageSize, nextPageToken);
           }
 
           @Override

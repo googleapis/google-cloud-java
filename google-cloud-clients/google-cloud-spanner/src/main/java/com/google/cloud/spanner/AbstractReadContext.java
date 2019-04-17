@@ -64,8 +64,8 @@ abstract class AbstractReadContext
     private boolean used;
 
     SingleReadContext(
-        SessionImpl session, TimestampBound bound, SpannerImpl spanner, int defaultPrefetchChunks) {
-      super(session, spanner, defaultPrefetchChunks);
+        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
+      super(session, rpc, defaultPrefetchChunks);
       this.bound = bound;
     }
 
@@ -100,8 +100,8 @@ abstract class AbstractReadContext
     private Timestamp timestamp;
 
     SingleUseReadOnlyTransaction(
-        SessionImpl session, TimestampBound bound, SpannerImpl spanner, int defaultPrefetchChunks) {
-      super(session, bound, spanner, defaultPrefetchChunks);
+        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
+      super(session, bound, rpc, defaultPrefetchChunks);
     }
 
     @Override
@@ -149,8 +149,8 @@ abstract class AbstractReadContext
     private ByteString transactionId;
 
     MultiUseReadOnlyTransaction(
-        SessionImpl session, TimestampBound bound, SpannerImpl spanner, int defaultPrefetchChunks) {
-      super(session, spanner, defaultPrefetchChunks);
+        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
+      super(session, rpc, defaultPrefetchChunks);
       checkArgument(
           bound.getMode() != TimestampBound.Mode.MAX_STALENESS
               && bound.getMode() != TimestampBound.Mode.MIN_READ_TIMESTAMP,
@@ -164,9 +164,9 @@ abstract class AbstractReadContext
         SessionImpl session,
         ByteString transactionId,
         Timestamp timestamp,
-        SpannerImpl spanner,
+        SpannerRpc rpc,
         int defaultPrefetchChunks) {
-      super(session, spanner, defaultPrefetchChunks);
+      super(session, rpc, defaultPrefetchChunks);
       this.transactionId = transactionId;
       this.timestamp = timestamp;
     }
@@ -225,8 +225,7 @@ abstract class AbstractReadContext
                   .setSession(session.getName())
                   .setOptions(options)
                   .build();
-          Transaction transaction =
-              spanner.getRpc().beginTransaction(request, session.getOptions());
+          Transaction transaction = rpc.beginTransaction(request, session.getOptions());
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
@@ -254,7 +253,7 @@ abstract class AbstractReadContext
 
   final Object lock = new Object();
   final SessionImpl session;
-  final SpannerImpl spanner;
+  final SpannerRpc rpc;
   final Span span;
   private final int defaultPrefetchChunks;
 
@@ -272,14 +271,14 @@ abstract class AbstractReadContext
   // much more frequently.
   private static final int MAX_BUFFERED_CHUNKS = 512;
 
-  AbstractReadContext(SessionImpl session, SpannerImpl spanner, int defaultPrefetchChunks) {
-    this(session, spanner, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
+  AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
+    this(session, rpc, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
   }
 
   private AbstractReadContext(
-      SessionImpl session, SpannerImpl spanner, int defaultPrefetchChunks, Span span) {
+      SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks, Span span) {
     this.session = session;
-    this.spanner = spanner;
+    this.rpc = rpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.span = span;
   }
@@ -419,9 +418,7 @@ abstract class AbstractReadContext
               request.setResumeToken(resumeToken);
             }
             SpannerRpc.StreamingCall call =
-                spanner
-                    .getRpc()
-                    .executeQuery(request.build(), stream.consumer(), session.getOptions());
+                rpc.executeQuery(request.build(), stream.consumer(), session.getOptions());
             call.request(prefetchChunks);
             stream.setCall(call);
             return stream;
@@ -528,7 +525,7 @@ abstract class AbstractReadContext
               builder.setResumeToken(resumeToken);
             }
             SpannerRpc.StreamingCall call =
-                spanner.getRpc().read(builder.build(), stream.consumer(), session.getOptions());
+                rpc.read(builder.build(), stream.consumer(), session.getOptions());
             call.request(prefetchChunks);
             stream.setCall(call);
             return stream;
