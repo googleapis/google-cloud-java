@@ -265,16 +265,27 @@ public class SpannerGaxRetryTest {
 
   private void warmUpSessionPool() {
     for (int i = 0; i < 10; i++) {
-      TransactionRunner runner = client.readWriteTransaction();
-      long updateCount =
-          runner.run(
-              new TransactionCallable<Long>() {
-                @Override
-                public Long run(TransactionContext transaction) throws Exception {
-                  return transaction.executeUpdate(UPDATE_STATEMENT);
-                }
-              });
-      assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+      while (true) {
+        try {
+          TransactionRunner runner = client.readWriteTransaction();
+          long updateCount =
+              runner.run(
+                  new TransactionCallable<Long>() {
+                    @Override
+                    public Long run(TransactionContext transaction) throws Exception {
+                      return transaction.executeUpdate(UPDATE_STATEMENT);
+                    }
+                  });
+          assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
+          break;
+        } catch (SpannerException e) {
+          // On slow systems there is a chance of DEADLINE_EXCEEDED errors.
+          // These should be retried.
+          if (e.getErrorCode() != ErrorCode.DEADLINE_EXCEEDED) {
+            throw e;
+          }
+        }
+      }
     }
     // Wait a little to allow the session pool to prepare read/write sessions.
     try {
