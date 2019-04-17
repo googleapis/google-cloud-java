@@ -32,6 +32,7 @@ import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
+import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -258,18 +259,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
-     * <pre>{@code
+     * <pre><code>
      * builder
      *     .spannerStubSettingsBuilder()
      *     .applyToAllUnaryMethods(
-     *         new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-     *           @Override
-     *           public Void apply(Builder<?, ?> input) {
+     *         new ApiFunction&lt;UnaryCallSettings.Builder&lt;?, ?&gt;, Void&gt;() {
+     *           public Void apply(Builder&lt;?, ?&gt; input) {
      *             input.setRetrySettings(retrySettings);
      *             return null;
      *           }
      *         });
-     * }</pre>
+     * </code></pre>
      */
     public SpannerStubSettings.Builder spannerStubSettingsBuilder() {
       return spannerStubSettingsBuilder;
@@ -285,18 +285,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
-     * <pre>{@code
+     * <pre><code>
      * builder
      *     .instanceAdminStubSettingsBuilder()
      *     .applyToAllUnaryMethods(
-     *         new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-     *           @Override
-     *           public Void apply(Builder<?, ?> input) {
+     *         new ApiFunction&lt;UnaryCallSettings.Builder&lt;?, ?&gt;, Void&gt;() {
+     *           public Void apply(Builder&lt;?, ?&gt; input) {
      *             input.setRetrySettings(retrySettings);
      *             return null;
      *           }
      *         });
-     * }</pre>
+     * </code></pre>
      */
     public InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder() {
       return instanceAdminStubSettingsBuilder;
@@ -312,18 +311,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
-     * <pre>{@code
+     * <pre><code>
      * builder
      *     .databaseAdminStubSettingsBuilder()
      *     .applyToAllUnaryMethods(
-     *         new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-     *           @Override
-     *           public Void apply(Builder<?, ?> input) {
+     *         new ApiFunction&lt;UnaryCallSettings.Builder&lt;?, ?&gt;, Void&gt;() {
+     *           public Void apply(Builder&lt;?, ?&gt; input) {
      *             input.setRetrySettings(retrySettings);
      *             return null;
      *           }
      *         });
-     * }</pre>
+     * </code></pre>
      */
     public DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder() {
       return databaseAdminStubSettingsBuilder;
