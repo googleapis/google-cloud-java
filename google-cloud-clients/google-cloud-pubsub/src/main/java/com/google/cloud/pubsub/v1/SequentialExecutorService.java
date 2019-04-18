@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -29,8 +31,6 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 interface CancellableRunnable extends Runnable {
   void cancel(Throwable e);
@@ -61,7 +61,7 @@ final class SequentialExecutorService<T> {
   }
 
   /** Runs synchronous {@code Runnable} tasks sequentially. */
-  void submit( String key, Runnable runnable) {
+  void submit(String key, Runnable runnable) {
     autoExecutor.execute(key, runnable);
   }
 
@@ -71,7 +71,7 @@ final class SequentialExecutorService<T> {
    * key will be run only when its predecessor has been completed while tasks with different keys
    * can be run in parallel.
    */
-  static abstract class SequentialExecutor {
+  abstract static class SequentialExecutor {
     // Maps keys to tasks.
     protected final Map<String, Deque<Runnable>> tasksByKey;
     protected final Executor executor;
@@ -159,11 +159,13 @@ final class SequentialExecutorService<T> {
     }
 
     protected void execute(final String key, final Deque<Runnable> finalTasks) {
-      executor.execute(new Runnable() {
-        @Override public void run() {
-          invokeCallbackAndExecuteNext(key, finalTasks);
-        }
-      });
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              invokeCallbackAndExecuteNext(key, finalTasks);
+            }
+          });
     }
   }
 
@@ -186,22 +188,25 @@ final class SequentialExecutorService<T> {
               }
               try {
                 ApiFuture<T> callResult = callable.call();
-                ApiFutures.addCallback(callResult, new ApiFutureCallback<T>() {
-                  @Override
-                  public void onSuccess(T msg) {
-                    future.set(msg);
-                    resume(key);
-                  }
+                ApiFutures.addCallback(
+                    callResult,
+                    new ApiFutureCallback<T>() {
+                      @Override
+                      public void onSuccess(T msg) {
+                        future.set(msg);
+                        resume(key);
+                      }
 
-                  @Override
-                  public void onFailure(Throwable e) {
-                    future.setException(e);
-                    cancelQueuedTasks(
-                        key,
-                        new CancellationException(
-                            "Execution cancelled because executing previous runnable failed."));
-                  }
-                }, directExecutor());
+                      @Override
+                      public void onFailure(Throwable e) {
+                        future.setException(e);
+                        cancelQueuedTasks(
+                            key,
+                            new CancellationException(
+                                "Execution cancelled because executing previous runnable failed."));
+                      }
+                    },
+                    directExecutor());
               } catch (Exception e) {
                 future.setException(e);
               }
@@ -217,11 +222,13 @@ final class SequentialExecutorService<T> {
     }
 
     protected void execute(final String key, final Deque<Runnable> finalTasks) {
-      executor.execute(new Runnable() {
-        @Override public void run() {
-          invokeCallback(finalTasks);
-        }
-      });
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              invokeCallback(finalTasks);
+            }
+          });
     }
 
     /** Executes the next queued task associated with {@code key}. */
