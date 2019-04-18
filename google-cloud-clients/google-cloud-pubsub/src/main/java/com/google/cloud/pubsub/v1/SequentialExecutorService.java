@@ -115,6 +115,7 @@ final class SequentialExecutorService<T> {
       super(executor);
     }
 
+    @Override
     protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(
           new Runnable() {
@@ -146,8 +147,40 @@ final class SequentialExecutorService<T> {
       super(executor);
     }
 
+    /**
+     * This method does the following in a chain:
+     *
+     * <ol>
+     *   <li>Creates an `ApiFuture` that can be used for tracking progress.
+     *   <li>Creates a `CancellableRunnable` out of the `Callable`
+     *   <li>Adds the `CancellableRunnable` to the task queue
+     *   <li>Once the task is ready to be run, it will execute the `Callable`
+     *   <li>When the callable completes one of two things happens:
+     *       <ol>
+     *         <li>On success:
+     *             <ol>
+     *               <li>Complete the `ApiFuture` by setting the return value.
+     *               <li>Call the next task.
+     *             </ol>
+     *         <li>On Failure:
+     *             <ol>
+     *               <li>Fail the `ApiFuture` by setting the exception.
+     *               <li>Cancel all tasks in the queue.
+     *             </ol>
+     *       </ol>
+     * </ol>
+     *
+     * @param key The key for the task queue
+     * @param callable The thing to run
+     * @param <T> The Type of
+     * @return
+     */
     <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+      // Step 1: create a future for the user
       final SettableApiFuture<T> future = SettableApiFuture.create();
+
+      // Step 2: create the CancellableRunnable
+      // Step 3: add the task to queue via `execute`
       execute(
           key,
           new CancellableRunnable() {
@@ -155,20 +188,25 @@ final class SequentialExecutorService<T> {
 
             @Override
             public void run() {
+              // the task was cancelled
               if (cancelled) {
                 return;
               }
+
               try {
-                ApiFuture<T> callResult = callable.call();
+                // Step 4: call the `Callable`
+                ApiFuture callResult = callable.call();
                 ApiFutures.addCallback(
                     callResult,
                     new ApiFutureCallback<T>() {
+                      // Step 5.1: on success
                       @Override
                       public void onSuccess(T msg) {
                         future.set(msg);
                         resume(key);
                       }
 
+                      // Step 5.2: on failure
                       @Override
                       public void onFailure(Throwable e) {
                         future.setException(e);
@@ -193,6 +231,7 @@ final class SequentialExecutorService<T> {
       return future;
     }
 
+    @Override
     protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(
           new Runnable() {
