@@ -21,6 +21,7 @@ import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
 import java.util.Deque;
 import java.util.HashMap;
@@ -44,14 +45,12 @@ interface CancellableRunnable extends Runnable {
 final class SequentialExecutorService {
 
   // This class is not directly usable.
-  private SequentialExecutorService() {
-  }
+  private SequentialExecutorService() {}
 
   /**
-   * This Executor takes a serial stream of string keys and
-   * {@code Runnable} tasks, and runs the tasks with the same key sequentially. Tasks with the same
-   * key will be run only when its predecessor has been completed while tasks with different keys
-   * can be run in parallel.
+   * This Executor takes a serial stream of string keys and {@code Runnable} tasks, and runs the
+   * tasks with the same key sequentially. Tasks with the same key will be run only when its
+   * predecessor has been completed while tasks with different keys can be run in parallel.
    */
   private abstract static class SequentialExecutor {
     // Maps keys to tasks.
@@ -78,43 +77,44 @@ final class SequentialExecutorService {
         tasksByKey.put(key, newTasks);
       }
 
-      execute(key, newTasks);
+      callNextTaskAsync(key, newTasks);
     }
 
-    protected abstract void execute(String key, Deque<Runnable> finalTasks);
+    protected void callNextTaskAsync(final String key, final Deque<Runnable> tasks) {
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
+              Runnable task = tasks.poll();
+              if (task != null) {
+                task.run();
+                postTaskExecution(key, tasks);
+              }
+            }
+          });
+    }
 
-    protected void invokeCallback(final Deque<Runnable> tasks) {
-      // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
-      Runnable task = tasks.poll();
-      if (task != null) {
-        task.run();
-      }
+    protected void postTaskExecution(String key, Deque<Runnable> tasks) {
+      // Do nothing in this class, but provide an opportunity for a subclass to do something
+      // interesting.
     }
   }
 
+  @BetaApi
   static class AutoExecutor extends SequentialExecutor {
     AutoExecutor(Executor executor) {
       super(executor);
     }
 
     /** Runs synchronous {@code Runnable} tasks sequentially. */
-    void submit(String key, Runnable task)  {
+    void submit(String key, Runnable task) {
       super.execute(key, task);
     }
 
     @Override
-    protected void execute(final String key, final Deque<Runnable> tasks) {
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallbackAndExecuteNext(key, tasks);
-            }
-          });
-    }
-
-    private void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
-      invokeCallback(tasks);
+    /** Once a task is done, automatically run the next task in the queue. */
+    protected void postTaskExecution(final String key, final Deque<Runnable> tasks) {
       synchronized (tasksByKey) {
         if (tasks.isEmpty()) {
           // Note that there can be a race if a task is added to `tasks` at this point. However,
@@ -125,16 +125,19 @@ final class SequentialExecutorService {
           return;
         }
       }
-      execute(key, tasks);
+
+      callNextTaskAsync(key, tasks);
     }
   }
 
   /**
-   * Runs asynchronous {@code Callable} tasks sequentially for the same key. If one of the tasks fails, other tasks
-   * with the same key that have not been executed will be cancelled.
+   * Runs asynchronous {@code Callable} tasks sequentially for the same key. If one of the tasks
+   * fails, other tasks with the same key that have not been executed will be cancelled.
    */
+  @BetaApi
   static class CallbackExecutor extends SequentialExecutor {
-    private static final Logger logger = Logger.getLogger(SequentialExecutorService.SequentialExecutor.class.getName());
+    private static final Logger logger =
+        Logger.getLogger(SequentialExecutorService.SequentialExecutor.class.getName());
 
     CallbackExecutor(Executor executor) {
       super(executor);
@@ -143,8 +146,8 @@ final class SequentialExecutorService {
     /**
      * Runs asynchronous {@code Callable} tasks sequentially. If one of the tasks fails, other tasks
      * with the same key that have not been executed will be cancelled.
-     * <p>
-     * This method does the following in a chain:
+     *
+     * <p>This method does the following in a chain:
      *
      * <ol>
      *   <li>Creates an `ApiFuture` that can be used for tracking progress.
@@ -227,17 +230,6 @@ final class SequentialExecutorService {
       return future;
     }
 
-    @Override
-    protected void execute(final String key, final Deque<Runnable> tasks) {
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallback(tasks);
-            }
-          });
-    }
-
     /** Executes the next queued task associated with {@code key}. */
     private void resume(String key) {
       Deque<Runnable> tasks;
@@ -251,7 +243,7 @@ final class SequentialExecutorService {
           return;
         }
       }
-      execute(key, tasks);
+      callNextTaskAsync(key, tasks);
     }
 
     /** Cancels every task in the queue assoicated with {@code key}. */
