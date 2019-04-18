@@ -42,36 +42,18 @@ interface CancellableRunnable extends Runnable {
  * be run in parallel.
  */
 final class SequentialExecutorService {
-  private static final Logger logger = Logger.getLogger(SequentialExecutorService.class.getName());
 
-  private final CallbackExecutor callbackExecutor;
-  private final AutoExecutor autoExecutor;
-
-  SequentialExecutorService(Executor executor) {
-    this.callbackExecutor = new CallbackExecutor(executor);
-    this.autoExecutor = new AutoExecutor(executor);
+  // This class is not directly usable.
+  private SequentialExecutorService() {
   }
 
   /**
-   * Runs asynchronous {@code Callable} tasks sequentially. If one of the tasks fails, other tasks
-   * with the same key that have not been executed will be cancelled.
-   */
-  <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture<T>> callable) {
-    return callbackExecutor.submit(key, callable);
-  }
-
-  /** Runs synchronous {@code Runnable} tasks sequentially. */
-  void submit(String key, Runnable runnable) {
-    autoExecutor.execute(key, runnable);
-  }
-
-  /**
-   * Internal implementation of SequentialExecutorService. Takes a serial stream of string keys and
+   * This Executor takes a serial stream of string keys and
    * {@code Runnable} tasks, and runs the tasks with the same key sequentially. Tasks with the same
    * key will be run only when its predecessor has been completed while tasks with different keys
    * can be run in parallel.
    */
-  abstract static class SequentialExecutor {
+  private abstract static class SequentialExecutor {
     // Maps keys to tasks.
     protected final Map<String, Deque<Runnable>> tasksByKey;
     protected final Executor executor;
@@ -81,7 +63,7 @@ final class SequentialExecutorService {
       this.tasksByKey = new HashMap<>();
     }
 
-    void execute(final String key, Runnable task) {
+    protected void execute(final String key, Runnable task) {
       Deque<Runnable> newTasks;
       synchronized (tasksByKey) {
         newTasks = tasksByKey.get(key);
@@ -110,9 +92,14 @@ final class SequentialExecutorService {
     }
   }
 
-  private static class AutoExecutor extends SequentialExecutor {
+  static class AutoExecutor extends SequentialExecutor {
     AutoExecutor(Executor executor) {
       super(executor);
+    }
+
+    /** Runs synchronous {@code Runnable} tasks sequentially. */
+    void submit(String key, Runnable task)  {
+      super.execute(key, task);
     }
 
     @Override
@@ -142,12 +129,21 @@ final class SequentialExecutorService {
     }
   }
 
-  private static class CallbackExecutor extends SequentialExecutor {
+  /**
+   * Runs asynchronous {@code Callable} tasks sequentially for the same key. If one of the tasks fails, other tasks
+   * with the same key that have not been executed will be cancelled.
+   */
+  static class CallbackExecutor extends SequentialExecutor {
+    private static final Logger logger = Logger.getLogger(SequentialExecutorService.SequentialExecutor.class.getName());
+
     CallbackExecutor(Executor executor) {
       super(executor);
     }
 
     /**
+     * Runs asynchronous {@code Callable} tasks sequentially. If one of the tasks fails, other tasks
+     * with the same key that have not been executed will be cancelled.
+     * <p>
      * This method does the following in a chain:
      *
      * <ol>

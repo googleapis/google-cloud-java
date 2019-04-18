@@ -62,7 +62,7 @@ class MessageDispatcher {
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
 
   private final Executor executor;
-  private final SequentialExecutorService sequentialExecutor;
+  private final SequentialExecutorService.AutoExecutor sequentialExecutor;
   private final ScheduledExecutorService systemExecutor;
   private final ApiClock clock;
 
@@ -206,7 +206,7 @@ class MessageDispatcher {
     jobLock = new ReentrantLock();
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
-    this.sequentialExecutor = new SequentialExecutorService(executor);
+    this.sequentialExecutor = new SequentialExecutorService.AutoExecutor(executor);
   }
 
   void start() {
