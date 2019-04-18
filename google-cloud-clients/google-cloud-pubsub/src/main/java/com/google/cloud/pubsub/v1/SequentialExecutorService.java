@@ -41,7 +41,7 @@ interface CancellableRunnable extends Runnable {
  * key will be run only when its predecessor has been completed while tasks with different keys can
  * be run in parallel.
  */
-final class SequentialExecutorService<T> {
+final class SequentialExecutorService {
   private static final Logger logger = Logger.getLogger(SequentialExecutorService.class.getName());
 
   private final CallbackExecutor callbackExecutor;
@@ -56,7 +56,7 @@ final class SequentialExecutorService<T> {
    * Runs asynchronous {@code Callable} tasks sequentially. If one of the tasks fails, other tasks
    * with the same key that have not been executed will be cancelled.
    */
-  ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+  <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture<T>> callable) {
     return callbackExecutor.submit(key, callable);
   }
 
@@ -155,7 +155,7 @@ final class SequentialExecutorService<T> {
      *   <li>Creates a `CancellableRunnable` out of the `Callable`
      *   <li>Adds the `CancellableRunnable` to the task queue
      *   <li>Once the task is ready to be run, it will execute the `Callable`
-     *   <li>When the callable completes one of two things happens:
+     *   <li>When the `Callable` completes one of two things happens:
      *       <ol>
      *         <li>On success:
      *             <ol>
@@ -172,10 +172,10 @@ final class SequentialExecutorService<T> {
      *
      * @param key The key for the task queue
      * @param callable The thing to run
-     * @param <T> The Type of
-     * @return
+     * @param <T> The return type for the `Callable`'s `ApiFuture`.
+     * @return an `ApiFuture` for tracking.
      */
-    <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+    <T> ApiFuture<T> submit(final String key, final Callable<ApiFuture<T>> callable) {
       // Step 1: create a future for the user
       final SettableApiFuture<T> future = SettableApiFuture.create();
 
