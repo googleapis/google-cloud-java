@@ -29,12 +29,13 @@ public final class SourceOuterClass {
           + "proto\022\036google.cloud.securitycenter.v1\032\034g"
           + "oogle/api/annotations.proto\"G\n\006Source\022\014\n"
           + "\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013des"
-          + "cription\030\003 \001(\tJ\004\010\004\020\005B\266\001\n\"com.google.clou"
+          + "cription\030\003 \001(\tJ\004\010\004\020\005B\332\001\n\"com.google.clou"
           + "d.securitycenter.v1P\001ZLgoogle.golang.org"
           + "/genproto/googleapis/cloud/securitycente"
           + "r/v1;securitycenter\252\002\036Google.Cloud.Secur"
           + "ityCenter.V1\312\002\036Google\\Cloud\\SecurityCent"
-          + "er\\V1b\006proto3"
+          + "er\\V1\352\002!Google::Cloud::SecurityCenter::V"
+          + "1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
