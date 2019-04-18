@@ -115,17 +115,17 @@ final class SequentialExecutorService<T> {
       super(executor);
     }
 
-    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+    protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              invokeCallbackAndExecuteNext(key, finalTasks);
+              invokeCallbackAndExecuteNext(key, tasks);
             }
           });
     }
 
-    protected void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
+    private void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
       invokeCallback(tasks);
       synchronized (tasksByKey) {
         if (tasks.isEmpty()) {
@@ -137,13 +137,7 @@ final class SequentialExecutorService<T> {
           return;
         }
       }
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallbackAndExecuteNext(key, tasks);
-            }
-          });
+      execute(key, tasks);
     }
   }
 
@@ -199,18 +193,18 @@ final class SequentialExecutorService<T> {
       return future;
     }
 
-    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+    protected void execute(final String key, final Deque<Runnable> tasks) {
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              invokeCallback(finalTasks);
+              invokeCallback(tasks);
             }
           });
     }
 
     /** Executes the next queued task associated with {@code key}. */
-    void resume(final String key) {
+    private void resume(String key) {
       Deque<Runnable> tasks;
       synchronized (tasksByKey) {
         tasks = tasksByKey.get(key);
@@ -222,19 +216,11 @@ final class SequentialExecutorService<T> {
           return;
         }
       }
-      final Deque<Runnable> finalTasks = tasks;
-      // Run the next task.
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallback(finalTasks);
-            }
-          });
+      execute(key, tasks);
     }
 
     /** Cancels every task in the queue assoicated with {@code key}. */
-    void cancelQueuedTasks(final String key, Throwable e) {
+    private void cancelQueuedTasks(final String key, Throwable e) {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
