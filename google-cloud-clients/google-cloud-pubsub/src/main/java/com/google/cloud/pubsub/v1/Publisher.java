@@ -344,7 +344,6 @@ public class Publisher {
     return publisherStub.publishCallable().futureCall(publishRequest.build());
   }
 
-
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
     final ApiFutureCallback<PublishResponse> futureCallback =
         new ApiFutureCallback<PublishResponse>() {

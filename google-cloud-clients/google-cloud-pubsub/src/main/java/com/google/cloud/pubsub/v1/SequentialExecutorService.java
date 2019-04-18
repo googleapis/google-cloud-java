@@ -232,25 +232,25 @@ final class SequentialExecutorService<T> {
             }
           });
     }
-  }
 
-  /** Cancels every task in the queue assoicated with {@code key}. */
-  void cancelQueuedTasks(final String key, Throwable e) {
-    // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
-    // so that no more tasks are scheduled.
-    synchronized (tasksByKey) {
-      final Deque<Runnable> tasks = tasksByKey.get(key);
-      if (tasks == null) {
-        return;
-      }
-      while (!tasks.isEmpty()) {
-        Runnable task = tasks.poll();
-        if (task instanceof CancellableRunnable) {
-          ((CancellableRunnable) task).cancel(e);
-        } else {
-          logger.log(
-              Level.WARNING,
-              "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+    /** Cancels every task in the queue assoicated with {@code key}. */
+    void cancelQueuedTasks(final String key, Throwable e) {
+      // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
+      // so that no more tasks are scheduled.
+      synchronized (tasksByKey) {
+        final Deque<Runnable> tasks = tasksByKey.get(key);
+        if (tasks == null) {
+          return;
+        }
+        while (!tasks.isEmpty()) {
+          Runnable task = tasks.poll();
+          if (task instanceof CancellableRunnable) {
+            ((CancellableRunnable) task).cancel(e);
+          } else {
+            logger.log(
+                Level.WARNING,
+                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+          }
         }
       }
     }
