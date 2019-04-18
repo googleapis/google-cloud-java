@@ -304,15 +304,18 @@ public class Publisher {
     publishOutstandingBatch(batchToSend);
   }
 
-  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
+  private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
     publishRequest.setTopic(topicName);
     for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    ApiFutures.addCallback(
-        publisherStub.publishCallable().futureCall(publishRequest.build()),
+    return publisherStub.publishCallable().futureCall(publishRequest.build());
+  }
+
+  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
+    ApiFutureCallback<PublishResponse> futureCallback =
         new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -351,8 +354,9 @@ public class Publisher {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
-        },
-        directExecutor());
+        };
+
+    ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
   }
 
   private static final class OutstandingBatch {
