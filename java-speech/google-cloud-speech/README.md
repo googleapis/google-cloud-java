@@ -10,9 +10,6 @@ Java idiomatic client for [Google Cloud Speech][cloud-speech].
 - [Product Documentation][speech-product-docs]
 - [Client Library Documentation][speech-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
