@@ -35,12 +35,13 @@ public final class SecurityMarksOuterClass {
           + "SecurityMarks\022\014\n\004name\030\001 \001(\t\022G\n\005marks\030\002 \003"
           + "(\01328.google.cloud.securitycenter.v1.Secu"
           + "rityMarks.MarksEntry\032,\n\nMarksEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\266\001\n\"com.googl"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\332\001\n\"com.googl"
           + "e.cloud.securitycenter.v1P\001ZLgoogle.gola"
           + "ng.org/genproto/googleapis/cloud/securit"
           + "ycenter/v1;securitycenter\252\002\036Google.Cloud"
           + ".SecurityCenter.V1\312\002\036Google\\Cloud\\Securi"
-          + "tyCenter\\V1b\006proto3"
+          + "tyCenter\\V1\352\002!Google::Cloud::SecurityCen"
+          + "ter::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
