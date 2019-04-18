@@ -99,7 +99,7 @@ public class Publisher {
   private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
-  private final SequentialExecutorService<PublishResponse> sequentialExecutor;
+  private final SequentialExecutorService sequentialExecutor;
   private final AtomicBoolean shutdown;
   private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
@@ -127,7 +127,7 @@ public class Publisher {
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
-    sequentialExecutor = new SequentialExecutorService<>(executor);
+    sequentialExecutor = new SequentialExecutorService(executor);
     if (builder.executorProvider.shouldAutoClose()) {
       closeables =
           Collections.<AutoCloseable>singletonList(new ExecutorAsBackgroundResource(executor));
@@ -398,9 +398,9 @@ public class Publisher {
       executor.execute(task);
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
-      Callable<ApiFuture> func =
-          new Callable<ApiFuture>() {
-            public ApiFuture call() {
+      Callable<ApiFuture<PublishResponse>> func =
+          new Callable<ApiFuture<PublishResponse>>() {
+            public ApiFuture<PublishResponse> call() {
               return publishCall(outstandingBatch);
             }
           };
