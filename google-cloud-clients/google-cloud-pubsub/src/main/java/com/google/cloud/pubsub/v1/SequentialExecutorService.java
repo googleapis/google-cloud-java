@@ -195,7 +195,7 @@ final class SequentialExecutorService {
 
               try {
                 // Step 4: call the `Callable`
-                ApiFuture callResult = callable.call();
+                ApiFuture<T> callResult = callable.call();
                 ApiFutures.addCallback(
                     callResult,
                     new ApiFutureCallback<T>() {
