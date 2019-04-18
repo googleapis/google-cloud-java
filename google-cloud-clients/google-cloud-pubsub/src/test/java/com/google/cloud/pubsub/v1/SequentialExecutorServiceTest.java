@@ -71,8 +71,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void testExecutorRunsNextTaskWhenPrevResponseReceived() throws Exception {
-    SequentialExecutorService sequentialExecutorService =
-        new SequentialExecutorService(executorProvider.getExecutor());
+    SequentialExecutorService.CallbackExecutor sequentialExecutorService =
+        new SequentialExecutorService.CallbackExecutor(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();
@@ -97,8 +97,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void testExecutorRunsDifferentKeySimultaneously() throws Exception {
-    SequentialExecutorService sequentialExecutorService =
-        new SequentialExecutorService(executorProvider.getExecutor());
+    SequentialExecutorService.CallbackExecutor sequentialExecutorService =
+        new SequentialExecutorService.CallbackExecutor(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();
@@ -126,8 +126,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void testExecutorCancelsAllTasksWhenOneFailed() throws Exception {
-    SequentialExecutorService sequentialExecutorService =
-        new SequentialExecutorService(executorProvider.getExecutor());
+    SequentialExecutorService.CallbackExecutor sequentialExecutorService =
+        new SequentialExecutorService.CallbackExecutor(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();
@@ -207,8 +207,8 @@ public final class SequentialExecutorServiceTest {
   public void SequentialExecutorRunsTasksAutomatically() throws Exception {
     int numKeys = 100;
     int numTasks = 100;
-    SequentialExecutorService sequentialExecutor =
-        new SequentialExecutorService(executorProvider.getExecutor());
+    SequentialExecutorService.AutoExecutor sequentialExecutor =
+        new SequentialExecutorService.AutoExecutor(executorProvider.getExecutor());
     CountDownLatch remainingTasksCount = new CountDownLatch(numKeys * numTasks);
     // Maps keys to lists of started and completed tasks.
     Map<String, LinkedHashSet<Integer>> startedTasks = new HashMap<>();

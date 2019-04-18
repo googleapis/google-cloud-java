@@ -99,7 +99,7 @@ public class Publisher {
   private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
-  private final SequentialExecutorService sequentialExecutor;
+  private final SequentialExecutorService.CallbackExecutor sequentialExecutor;
   private final AtomicBoolean shutdown;
   private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
@@ -127,7 +127,7 @@ public class Publisher {
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
-    sequentialExecutor = new SequentialExecutorService(executor);
+    sequentialExecutor = new SequentialExecutorService.CallbackExecutor(executor);
     if (builder.executorProvider.shouldAutoClose()) {
       closeables =
           Collections.<AutoCloseable>singletonList(new ExecutorAsBackgroundResource(executor));
