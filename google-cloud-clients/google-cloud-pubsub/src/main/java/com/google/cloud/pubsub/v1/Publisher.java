@@ -304,55 +304,54 @@ public class Publisher {
     publishOutstandingBatch(batchToSend);
   }
 
-  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
+  private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
     publishRequest.setTopic(topicName);
     for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    ApiFutures.addCallback(
-        publisherStub.publishCallable().futureCall(publishRequest.build()),
-        new ApiFutureCallback<PublishResponse>() {
-          @Override
-          public void onSuccess(PublishResponse result) {
-            try {
-              if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                Throwable t =
-                    new IllegalStateException(
-                        String.format(
-                            "The publish result count %s does not match "
-                                + "the expected %s results. Please contact Cloud Pub/Sub support "
-                                + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
-                  oustandingMessage.publishResult.setException(t);
-                }
-                return;
-              }
+    return publisherStub.publishCallable().futureCall(publishRequest.build());
+  }
 
-              Iterator<OutstandingPublish> messagesResultsIt =
-                  outstandingBatch.outstandingPublishes.iterator();
-              for (String messageId : result.getMessageIdsList()) {
-                messagesResultsIt.next().publishResult.set(messageId);
-              }
-            } finally {
-              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
+    ApiFutureCallback<PublishResponse> futureCallback = new ApiFutureCallback<PublishResponse>() {
+      @Override public void onSuccess(PublishResponse result) {
+        try {
+          if (result.getMessageIdsCount() != outstandingBatch.size()) {
+            Throwable t = new IllegalStateException(String.format(
+                "The publish result count %s does not match "
+                    + "the expected %s results. Please contact Cloud Pub/Sub support "
+                    + "if this frequently occurs", result.getMessageIdsCount(),
+                outstandingBatch.size()));
+            for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
+              oustandingMessage.publishResult.setException(t);
             }
+            return;
           }
 
-          @Override
-          public void onFailure(Throwable t) {
-            try {
-              for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
-                outstandingPublish.publishResult.setException(t);
-              }
-            } finally {
-              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
-            }
+          Iterator<OutstandingPublish> messagesResultsIt =
+              outstandingBatch.outstandingPublishes.iterator();
+          for (String messageId : result.getMessageIdsList()) {
+            messagesResultsIt.next().publishResult.set(messageId);
           }
-        },
-        directExecutor());
+        } finally {
+          messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+        }
+      }
+
+      @Override public void onFailure(Throwable t) {
+        try {
+          for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
+            outstandingPublish.publishResult.setException(t);
+          }
+        } finally {
+          messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+        }
+      }
+    };
+
+    ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
   }
 
   private static final class OutstandingBatch {
