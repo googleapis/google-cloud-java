@@ -46,9 +46,9 @@ public final class SequentialExecutorServiceTest {
           .setExecutorThreadCount(5 * Runtime.getRuntime().availableProcessors())
           .build();
 
-  static class AsyncTaskCallable implements Callable<ApiFuture> {
+  static class AsyncTaskCallable implements Callable<ApiFuture<String>> {
     boolean isCalled = false;
-    SettableApiFuture<String> result = SettableApiFuture.<String>create();
+    SettableApiFuture<String> result = SettableApiFuture.create();
 
     @Override
     public ApiFuture<String> call() {
@@ -71,8 +71,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void testExecutorRunsNextTaskWhenPrevResponseReceived() throws Exception {
-    SequentialExecutorService<String> sequentialExecutorService =
-        new SequentialExecutorService<>(executorProvider.getExecutor());
+    SequentialExecutorService sequentialExecutorService =
+        new SequentialExecutorService(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();
@@ -97,8 +97,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void testExecutorRunsDifferentKeySimultaneously() throws Exception {
-    SequentialExecutorService<String> sequentialExecutorService =
-        new SequentialExecutorService<>(executorProvider.getExecutor());
+    SequentialExecutorService sequentialExecutorService =
+        new SequentialExecutorService(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();
@@ -126,8 +126,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void testExecutorCancelsAllTasksWhenOneFailed() throws Exception {
-    SequentialExecutorService<String> sequentialExecutorService =
-        new SequentialExecutorService<>(executorProvider.getExecutor());
+    SequentialExecutorService sequentialExecutorService =
+        new SequentialExecutorService(executorProvider.getExecutor());
     AsyncTaskCallable callable1 = new AsyncTaskCallable();
     AsyncTaskCallable callable2 = new AsyncTaskCallable();
     AsyncTaskCallable callable3 = new AsyncTaskCallable();
