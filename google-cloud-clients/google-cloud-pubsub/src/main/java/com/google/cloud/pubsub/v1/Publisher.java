@@ -335,7 +335,7 @@ public class Publisher {
     }
   }
 
-  private ApiFuture publishCall(final OutstandingBatch outstandingBatch) {
+  private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
     publishRequest.setTopic(topicName);
     for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
@@ -343,6 +343,7 @@ public class Publisher {
     }
     return publisherStub.publishCallable().futureCall(publishRequest.build());
   }
+
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
     final ApiFutureCallback<PublishResponse> futureCallback =

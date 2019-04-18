@@ -60,12 +60,13 @@ public final class AssetOuterClass {
           + "(\t\022\027\n\017resource_owners\030\005 \003(\t\032 \n\tIamPolicy"
           + "\022\023\n\013policy_blob\030\001 \001(\t\032Q\n\027ResourcePropert"
           + "iesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.g"
-          + "oogle.protobuf.Value:\0028\001B\266\001\n\"com.google."
+          + "oogle.protobuf.Value:\0028\001B\332\001\n\"com.google."
           + "cloud.securitycenter.v1P\001ZLgoogle.golang"
           + ".org/genproto/googleapis/cloud/securityc"
           + "enter/v1;securitycenter\252\002\036Google.Cloud.S"
           + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
-          + "Center\\V1b\006proto3"
+          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
+          + "r::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

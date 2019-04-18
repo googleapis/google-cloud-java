@@ -141,7 +141,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class FirestoreClient implements BackgroundResource {
   private final FirestoreSettings settings;
   private final FirestoreStub stub;
