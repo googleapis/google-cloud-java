@@ -389,7 +389,7 @@ public class Publisher {
    * should be invoked prior to deleting the {@link Publisher} object in order to ensure that no
    * pending messages are lost.
    */
-  public void shutdown() {
+  public void shutdown() throws Exception {
     if (shutdown.getAndSet(true)) {
       throw new IllegalStateException("Cannot shut down a publisher already shut-down.");
     }
@@ -398,9 +398,7 @@ public class Publisher {
     }
     publishAllOutstanding();
     for (AutoCloseable closeable : closeables) {
-      ExecutorAsBackgroundResource executorAsBackgroundResource =
-          (ExecutorAsBackgroundResource) closeable;
-      executorAsBackgroundResource.shutdown();
+      closeable.close();
     }
     publisherStub.shutdown();
   }
@@ -412,13 +410,20 @@ public class Publisher {
    * <p>Call this method to make sure all resources are freed properly.
    */
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    long startDuration = System.currentTimeMillis();
+    long remainingDuration = TimeUnit.MILLISECONDS.convert(duration, unit);
     messagesWaiter.waitNoMessages();
-    boolean isAwaited = publisherStub.awaitTermination(duration, unit);
+    remainingDuration = getRemainingDuration(remainingDuration, startDuration);
+    startDuration = System.currentTimeMillis();
+    boolean isAwaited = publisherStub.awaitTermination(remainingDuration, TimeUnit.MILLISECONDS);
     if (isAwaited) {
       for (AutoCloseable closeable : closeables) {
         ExecutorAsBackgroundResource executorAsBackgroundResource =
             (ExecutorAsBackgroundResource) closeable;
-        isAwaited = executorAsBackgroundResource.awaitTermination(duration, unit);
+        remainingDuration = getRemainingDuration(remainingDuration, startDuration);
+        startDuration = System.currentTimeMillis();
+        isAwaited =
+            executorAsBackgroundResource.awaitTermination(remainingDuration, TimeUnit.MILLISECONDS);
         if (!isAwaited) {
           return false;
         }
@@ -427,6 +432,10 @@ public class Publisher {
       return false;
     }
     return true;
+  }
+
+  private long getRemainingDuration(long remainingDuration, long startDuration) {
+    return remainingDuration - (System.currentTimeMillis() - startDuration);
   }
 
   private boolean hasBatchingBytes() {
