@@ -101,34 +101,28 @@ final class SequentialExecutorService<T> {
 
     protected abstract void execute(String key, Deque<Runnable> finalTasks);
 
-    /** Cancels every task in the queue assoicated with {@code key}. */
-    void cancelQueuedTasks(final String key, Throwable e) {
-      // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
-      // so that no more tasks are scheduled.
-      synchronized (tasksByKey) {
-        final Deque<Runnable> tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          return;
-        }
-        while (!tasks.isEmpty()) {
-          Runnable task = tasks.poll();
-          if (task instanceof CancellableRunnable) {
-            ((CancellableRunnable) task).cancel(e);
-          } else {
-            logger.log(
-                Level.WARNING,
-                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
-          }
-        }
-      }
-    }
-
     protected void invokeCallback(final Deque<Runnable> tasks) {
       // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
       Runnable task = tasks.poll();
       if (task != null) {
         task.run();
       }
+    }
+  }
+
+  private static class AutoExecutor extends SequentialExecutor {
+    AutoExecutor(Executor executor) {
+      super(executor);
+    }
+
+    protected void execute(final String key, final Deque<Runnable> finalTasks) {
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              invokeCallbackAndExecuteNext(key, finalTasks);
+            }
+          });
     }
 
     protected void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
@@ -148,22 +142,6 @@ final class SequentialExecutorService<T> {
             @Override
             public void run() {
               invokeCallbackAndExecuteNext(key, tasks);
-            }
-          });
-    }
-  }
-
-  private static class AutoExecutor extends SequentialExecutor {
-    AutoExecutor(Executor executor) {
-      super(executor);
-    }
-
-    protected void execute(final String key, final Deque<Runnable> finalTasks) {
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              invokeCallbackAndExecuteNext(key, finalTasks);
             }
           });
     }
@@ -253,6 +231,28 @@ final class SequentialExecutorService<T> {
               invokeCallback(finalTasks);
             }
           });
+    }
+  }
+
+  /** Cancels every task in the queue assoicated with {@code key}. */
+  void cancelQueuedTasks(final String key, Throwable e) {
+    // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
+    // so that no more tasks are scheduled.
+    synchronized (tasksByKey) {
+      final Deque<Runnable> tasks = tasksByKey.get(key);
+      if (tasks == null) {
+        return;
+      }
+      while (!tasks.isEmpty()) {
+        Runnable task = tasks.poll();
+        if (task instanceof CancellableRunnable) {
+          ((CancellableRunnable) task).cancel(e);
+        } else {
+          logger.log(
+              Level.WARNING,
+              "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+        }
+      }
     }
   }
 }
