@@ -45,6 +45,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1beta1.CreateInstanceRequest;
 import com.google.cloud.redis.v1beta1.DeleteInstanceRequest;
+import com.google.cloud.redis.v1beta1.FailoverInstanceRequest;
 import com.google.cloud.redis.v1beta1.GetInstanceRequest;
 import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.ListInstancesRequest;
@@ -108,6 +109,9 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings;
+  private final UnaryCallSettings<FailoverInstanceRequest, Operation> failoverInstanceSettings;
+  private final OperationCallSettings<FailoverInstanceRequest, Instance, Any>
+      failoverInstanceOperationSettings;
 
   /** Returns the object with the settings used for calls to listInstances. */
   public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
@@ -154,6 +158,18 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   public OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings() {
     return deleteInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to failoverInstance. */
+  public UnaryCallSettings<FailoverInstanceRequest, Operation> failoverInstanceSettings() {
+    return failoverInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to failoverInstance. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<FailoverInstanceRequest, Instance, Any>
+      failoverInstanceOperationSettings() {
+    return failoverInstanceOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -232,6 +248,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
+    failoverInstanceSettings = settingsBuilder.failoverInstanceSettings().build();
+    failoverInstanceOperationSettings = settingsBuilder.failoverInstanceOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
@@ -307,6 +325,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<FailoverInstanceRequest, Operation>
+        failoverInstanceSettings;
+    private final OperationCallSettings.Builder<FailoverInstanceRequest, Instance, Any>
+        failoverInstanceOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -365,13 +387,18 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
 
+      failoverInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      failoverInstanceOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listInstancesSettings,
               getInstanceSettings,
               createInstanceSettings,
               updateInstanceSettings,
-              deleteInstanceSettings);
+              deleteInstanceSettings,
+              failoverInstanceSettings);
 
       initDefaults(this);
     }
@@ -409,6 +436,11 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       builder
           .deleteInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .failoverInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
@@ -453,7 +485,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(1200000L))
+                      .setTotalTimeout(Duration.ofMillis(7200000L))
                       .build()));
       builder
           .deleteInstanceOperationSettings()
@@ -465,6 +497,28 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(1200000L))
+                      .build()));
+      builder
+          .failoverInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<FailoverInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
           .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
@@ -492,6 +546,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
+      failoverInstanceSettings = settings.failoverInstanceSettings.toBuilder();
+      failoverInstanceOperationSettings = settings.failoverInstanceOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -499,7 +555,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
               getInstanceSettings,
               createInstanceSettings,
               updateInstanceSettings,
-              deleteInstanceSettings);
+              deleteInstanceSettings,
+              failoverInstanceSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -567,6 +624,20 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to failoverInstance. */
+    public UnaryCallSettings.Builder<FailoverInstanceRequest, Operation>
+        failoverInstanceSettings() {
+      return failoverInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to failoverInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<FailoverInstanceRequest, Instance, Any>
+        failoverInstanceOperationSettings() {
+      return failoverInstanceOperationSettings;
     }
 
     @Override

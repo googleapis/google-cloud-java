@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceTemplateStub;
 import com.google.cloud.compute.v1.stub.InstanceTemplateStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -220,9 +221,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   String formattedInstanceTemplate = ProjectGlobalInstanceTemplateName.format("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate.toString())
+   *     .setInstanceTemplate(formattedInstanceTemplate)
    *     .build();
    *   Operation response = instanceTemplateClient.deleteInstanceTemplate(request);
    * }
@@ -246,9 +247,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   String formattedInstanceTemplate = ProjectGlobalInstanceTemplateName.format("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate.toString())
+   *     .setInstanceTemplate(formattedInstanceTemplate)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceTemplateClient.deleteInstanceTemplateCallable().futureCall(request);
    *   // Do something
@@ -324,9 +325,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   String formattedInstanceTemplate = ProjectGlobalInstanceTemplateName.format("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   GetInstanceTemplateHttpRequest request = GetInstanceTemplateHttpRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate.toString())
+   *     .setInstanceTemplate(formattedInstanceTemplate)
    *     .build();
    *   InstanceTemplate response = instanceTemplateClient.getInstanceTemplate(request);
    * }
@@ -349,9 +350,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   String formattedInstanceTemplate = ProjectGlobalInstanceTemplateName.format("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   GetInstanceTemplateHttpRequest request = GetInstanceTemplateHttpRequest.newBuilder()
-   *     .setInstanceTemplate(instanceTemplate.toString())
+   *     .setInstanceTemplate(formattedInstanceTemplate)
    *     .build();
    *   ApiFuture&lt;InstanceTemplate&gt; future = instanceTemplateClient.getInstanceTemplateCallable().futureCall(request);
    *   // Do something
@@ -427,9 +428,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyInstanceTemplateHttpRequest request = GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(request);
    * }
@@ -453,9 +454,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyInstanceTemplateHttpRequest request = GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceTemplateClient.getIamPolicyInstanceTemplateCallable().futureCall(request);
    *   // Do something
@@ -548,10 +549,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   InsertInstanceTemplateHttpRequest request = InsertInstanceTemplateHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setInstanceTemplateResource(instanceTemplateResource)
    *     .build();
    *   Operation response = instanceTemplateClient.insertInstanceTemplate(request);
@@ -577,10 +578,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   InsertInstanceTemplateHttpRequest request = InsertInstanceTemplateHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setInstanceTemplateResource(instanceTemplateResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceTemplateClient.insertInstanceTemplateCallable().futureCall(request);
@@ -655,9 +656,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInstanceTemplatesHttpRequest request = ListInstanceTemplatesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (InstanceTemplate element : instanceTemplateClient.listInstanceTemplates(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -682,9 +683,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInstanceTemplatesHttpRequest request = ListInstanceTemplatesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListInstanceTemplatesPagedResponse&gt; future = instanceTemplateClient.listInstanceTemplatesPagedCallable().futureCall(request);
    *   // Do something
@@ -708,9 +709,9 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInstanceTemplatesHttpRequest request = ListInstanceTemplatesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InstanceTemplateList response = instanceTemplateClient.listInstanceTemplatesCallable().call(request);
@@ -802,10 +803,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyInstanceTemplateHttpRequest request = SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   Policy response = instanceTemplateClient.setIamPolicyInstanceTemplate(request);
@@ -829,10 +830,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyInstanceTemplateHttpRequest request = SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceTemplateClient.setIamPolicyInstanceTemplateCallable().futureCall(request);
@@ -916,10 +917,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsInstanceTemplateHttpRequest request = TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = instanceTemplateClient.testIamPermissionsInstanceTemplate(request);
@@ -943,10 +944,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsInstanceTemplateHttpRequest request = TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = instanceTemplateClient.testIamPermissionsInstanceTemplateCallable().futureCall(request);
@@ -1012,7 +1013,8 @@ public class InstanceTemplateClient implements BackgroundResource {
             public ListInstanceTemplatesPagedResponse apply(ListInstanceTemplatesPage input) {
               return new ListInstanceTemplatesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceTemplatesPagedResponse(ListInstanceTemplatesPage page) {

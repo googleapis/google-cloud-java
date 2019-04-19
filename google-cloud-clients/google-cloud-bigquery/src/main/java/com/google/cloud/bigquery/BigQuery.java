@@ -849,6 +849,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Table> listTables(DatasetId datasetId, TableListOption... options);
 
   /**
+   * @param tableId
+   * @return A list of the partition ids present in the partitioned table
+   */
+  List<String> listPartitions(TableId tableId);
+
+  /**
    * Sends an insert all request.
    *
    * <p>Example of inserting rows into a table without running a load job.

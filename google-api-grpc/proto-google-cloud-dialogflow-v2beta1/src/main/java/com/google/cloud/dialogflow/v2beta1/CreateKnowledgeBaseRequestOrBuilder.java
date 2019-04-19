@@ -12,8 +12,8 @@ public interface CreateKnowledgeBaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The agent to create a knowledge base for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to create a knowledge base for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -23,8 +23,8 @@ public interface CreateKnowledgeBaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The agent to create a knowledge base for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Required. The project to create a knowledge base for.
+   * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
    * <code>string parent = 1;</code>

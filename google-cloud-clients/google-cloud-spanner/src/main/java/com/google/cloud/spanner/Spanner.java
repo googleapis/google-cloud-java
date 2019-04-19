@@ -24,7 +24,7 @@ import com.google.cloud.Service;
  * longer needed. Failure to do so may result in leaking session resources and exhausting session
  * quota.
  */
-public interface Spanner extends Service<SpannerOptions> {
+public interface Spanner extends Service<SpannerOptions>, AutoCloseable {
   /** Returns a {@code DatabaseAdminClient} to do admin operations on Cloud Spanner databases. */
   /*
    * <!--SNIPPET get_dbadmin_client-->
@@ -103,5 +103,6 @@ public interface Spanner extends Service<SpannerOptions> {
    * a hard limit on number of sessions in Cloud Spanner and not calling this method can lead to
    * unused sessions piling up on the backend.
    */
+  @Override
   void close();
 }

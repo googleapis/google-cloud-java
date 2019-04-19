@@ -54,7 +54,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -65,7 +65,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRule>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -76,7 +76,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -88,10 +88,10 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       this.unknownFields = unknownFields.build();
@@ -293,11 +293,10 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     com.google.privacy.dlp.v2.InspectionRuleSet other =
         (com.google.privacy.dlp.v2.InspectionRuleSet) obj;
 
-    boolean result = true;
-    result = result && getInfoTypesList().equals(other.getInfoTypesList());
-    result = result && getRulesList().equals(other.getRulesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getInfoTypesList().equals(other.getInfoTypesList())) return false;
+    if (!getRulesList().equals(other.getRulesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -505,7 +504,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
           new com.google.privacy.dlp.v2.InspectionRuleSet(this);
       int from_bitField0_ = bitField0_;
       if (infoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -514,7 +513,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         result.infoTypes_ = infoTypesBuilder_.build();
       }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -528,35 +527,35 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -660,7 +659,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>(infoTypes_);
         bitField0_ |= 0x00000001;
       }
@@ -998,10 +997,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
                 com.google.privacy.dlp.v2.InfoType,
                 com.google.privacy.dlp.v2.InfoType.Builder,
                 com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                infoTypes_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                infoTypes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         infoTypes_ = null;
       }
       return infoTypesBuilder_;
@@ -1011,7 +1007,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         rules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRule>(rules_);
         bitField0_ |= 0x00000002;
       }
@@ -1349,10 +1345,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
                 com.google.privacy.dlp.v2.InspectionRule,
                 com.google.privacy.dlp.v2.InspectionRule.Builder,
                 com.google.privacy.dlp.v2.InspectionRuleOrBuilder>(
-                rules_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                rules_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -1360,7 +1353,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

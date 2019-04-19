@@ -115,7 +115,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -391,25 +391,24 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.AddonsConfig other = (com.google.container.v1.AddonsConfig) obj;
 
-    boolean result = true;
-    result = result && (hasHttpLoadBalancing() == other.hasHttpLoadBalancing());
+    if (hasHttpLoadBalancing() != other.hasHttpLoadBalancing()) return false;
     if (hasHttpLoadBalancing()) {
-      result = result && getHttpLoadBalancing().equals(other.getHttpLoadBalancing());
+      if (!getHttpLoadBalancing().equals(other.getHttpLoadBalancing())) return false;
     }
-    result = result && (hasHorizontalPodAutoscaling() == other.hasHorizontalPodAutoscaling());
+    if (hasHorizontalPodAutoscaling() != other.hasHorizontalPodAutoscaling()) return false;
     if (hasHorizontalPodAutoscaling()) {
-      result = result && getHorizontalPodAutoscaling().equals(other.getHorizontalPodAutoscaling());
+      if (!getHorizontalPodAutoscaling().equals(other.getHorizontalPodAutoscaling())) return false;
     }
-    result = result && (hasKubernetesDashboard() == other.hasKubernetesDashboard());
+    if (hasKubernetesDashboard() != other.hasKubernetesDashboard()) return false;
     if (hasKubernetesDashboard()) {
-      result = result && getKubernetesDashboard().equals(other.getKubernetesDashboard());
+      if (!getKubernetesDashboard().equals(other.getKubernetesDashboard())) return false;
     }
-    result = result && (hasNetworkPolicyConfig() == other.hasNetworkPolicyConfig());
+    if (hasNetworkPolicyConfig() != other.hasNetworkPolicyConfig()) return false;
     if (hasNetworkPolicyConfig()) {
-      result = result && getNetworkPolicyConfig().equals(other.getNetworkPolicyConfig());
+      if (!getNetworkPolicyConfig().equals(other.getNetworkPolicyConfig())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -656,35 +655,35 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -740,7 +739,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.HttpLoadBalancing httpLoadBalancing_ = null;
+    private com.google.container.v1.HttpLoadBalancing httpLoadBalancing_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.HttpLoadBalancing,
             com.google.container.v1.HttpLoadBalancing.Builder,
@@ -931,7 +930,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return httpLoadBalancingBuilder_;
     }
 
-    private com.google.container.v1.HorizontalPodAutoscaling horizontalPodAutoscaling_ = null;
+    private com.google.container.v1.HorizontalPodAutoscaling horizontalPodAutoscaling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.HorizontalPodAutoscaling,
             com.google.container.v1.HorizontalPodAutoscaling.Builder,
@@ -1135,7 +1134,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return horizontalPodAutoscalingBuilder_;
     }
 
-    private com.google.container.v1.KubernetesDashboard kubernetesDashboard_ = null;
+    private com.google.container.v1.KubernetesDashboard kubernetesDashboard_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.KubernetesDashboard,
             com.google.container.v1.KubernetesDashboard.Builder,
@@ -1317,7 +1316,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return kubernetesDashboardBuilder_;
     }
 
-    private com.google.container.v1.NetworkPolicyConfig networkPolicyConfig_ = null;
+    private com.google.container.v1.NetworkPolicyConfig networkPolicyConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NetworkPolicyConfig,
             com.google.container.v1.NetworkPolicyConfig.Builder,
@@ -1519,7 +1518,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

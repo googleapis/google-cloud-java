@@ -99,7 +99,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -311,21 +311,20 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest other =
         (com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) obj;
 
-    boolean result = true;
-    result = result && (hasInput() == other.hasInput());
+    if (hasInput() != other.hasInput()) return false;
     if (hasInput()) {
-      result = result && getInput().equals(other.getInput());
+      if (!getInput().equals(other.getInput())) return false;
     }
-    result = result && (hasVoice() == other.hasVoice());
+    if (hasVoice() != other.hasVoice()) return false;
     if (hasVoice()) {
-      result = result && getVoice().equals(other.getVoice());
+      if (!getVoice().equals(other.getVoice())) return false;
     }
-    result = result && (hasAudioConfig() == other.hasAudioConfig());
+    if (hasAudioConfig() != other.hasAudioConfig()) return false;
     if (hasAudioConfig()) {
-      result = result && getAudioConfig().equals(other.getAudioConfig());
+      if (!getAudioConfig().equals(other.getAudioConfig())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -559,35 +558,35 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -642,7 +641,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.cloud.texttospeech.v1.SynthesisInput input_ = null;
+    private com.google.cloud.texttospeech.v1.SynthesisInput input_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1.SynthesisInput,
             com.google.cloud.texttospeech.v1.SynthesisInput.Builder,
@@ -824,7 +823,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       return inputBuilder_;
     }
 
-    private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_ = null;
+    private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1.VoiceSelectionParams,
             com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
@@ -1006,7 +1005,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       return voiceBuilder_;
     }
 
-    private com.google.cloud.texttospeech.v1.AudioConfig audioConfig_ = null;
+    private com.google.cloud.texttospeech.v1.AudioConfig audioConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1.AudioConfig,
             com.google.cloud.texttospeech.v1.AudioConfig.Builder,
@@ -1190,7 +1189,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

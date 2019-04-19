@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.BackendBucketStub;
 import com.google.cloud.compute.v1.stub.BackendBucketStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -225,10 +226,10 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
    *   AddSignedUrlKeyBackendBucketHttpRequest request = AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setSignedUrlKeyResource(signedUrlKeyResource)
    *     .build();
    *   Operation response = backendBucketClient.addSignedUrlKeyBackendBucket(request);
@@ -252,10 +253,10 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
    *   AddSignedUrlKeyBackendBucketHttpRequest request = AddSignedUrlKeyBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setSignedUrlKeyResource(signedUrlKeyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.addSignedUrlKeyBackendBucketCallable().futureCall(request);
@@ -328,9 +329,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   DeleteBackendBucketHttpRequest request = DeleteBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .build();
    *   Operation response = backendBucketClient.deleteBackendBucket(request);
    * }
@@ -352,9 +353,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   DeleteBackendBucketHttpRequest request = DeleteBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.deleteBackendBucketCallable().futureCall(request);
    *   // Do something
@@ -437,10 +438,10 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   String keyName = "";
    *   DeleteSignedUrlKeyBackendBucketHttpRequest request = DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setKeyName(keyName)
    *     .build();
    *   Operation response = backendBucketClient.deleteSignedUrlKeyBackendBucket(request);
@@ -464,10 +465,10 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   String keyName = "";
    *   DeleteSignedUrlKeyBackendBucketHttpRequest request = DeleteSignedUrlKeyBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setKeyName(keyName)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.deleteSignedUrlKeyBackendBucketCallable().futureCall(request);
@@ -543,9 +544,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   GetBackendBucketHttpRequest request = GetBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .build();
    *   BackendBucket response = backendBucketClient.getBackendBucket(request);
    * }
@@ -568,9 +569,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   GetBackendBucketHttpRequest request = GetBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .build();
    *   ApiFuture&lt;BackendBucket&gt; future = backendBucketClient.getBackendBucketCallable().futureCall(request);
    *   // Do something
@@ -656,10 +657,10 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   InsertBackendBucketHttpRequest request = InsertBackendBucketHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
    *   Operation response = backendBucketClient.insertBackendBucket(request);
@@ -683,10 +684,10 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   InsertBackendBucketHttpRequest request = InsertBackendBucketHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setBackendBucketResource(backendBucketResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketClient.insertBackendBucketCallable().futureCall(request);
@@ -761,9 +762,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListBackendBucketsHttpRequest request = ListBackendBucketsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (BackendBucket element : backendBucketClient.listBackendBuckets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -788,9 +789,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListBackendBucketsHttpRequest request = ListBackendBucketsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListBackendBucketsPagedResponse&gt; future = backendBucketClient.listBackendBucketsPagedCallable().futureCall(request);
    *   // Do something
@@ -814,9 +815,9 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListBackendBucketsHttpRequest request = ListBackendBucketsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     BackendBucketList response = backendBucketClient.listBackendBucketsCallable().call(request);
@@ -926,11 +927,11 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setBackendBucketResource(backendBucketResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -955,11 +956,11 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setBackendBucketResource(backendBucketResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1059,11 +1060,11 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setBackendBucketResource(backendBucketResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1087,11 +1088,11 @@ public class BackendBucketClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   String formattedBackendBucket = ProjectGlobalBackendBucketName.format("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
-   *     .setBackendBucket(backendBucket.toString())
+   *     .setBackendBucket(formattedBackendBucket)
    *     .setBackendBucketResource(backendBucketResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1157,7 +1158,8 @@ public class BackendBucketClient implements BackgroundResource {
             public ListBackendBucketsPagedResponse apply(ListBackendBucketsPage input) {
               return new ListBackendBucketsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListBackendBucketsPagedResponse(ListBackendBucketsPage page) {

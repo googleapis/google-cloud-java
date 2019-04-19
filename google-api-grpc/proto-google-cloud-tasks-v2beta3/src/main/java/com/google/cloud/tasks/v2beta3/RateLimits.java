@@ -10,10 +10,8 @@ package com.google.cloud.tasks.v2beta3;
  * Rate limits.
  * This message determines the maximum rate that tasks can be dispatched by a
  * queue, regardless of whether the dispatch is a first task attempt or a retry.
- * Note: The debugging command,
- * [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask], will run a task
- * even if the queue has reached its
- * [RateLimits][google.cloud.tasks.v2beta3.RateLimits].
+ * Note: The debugging command, [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask], will run a task
+ * even if the queue has reached its [RateLimits][google.cloud.tasks.v2beta3.RateLimits].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.RateLimits}
@@ -28,11 +26,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private RateLimits() {
-    maxDispatchesPerSecond_ = 0D;
-    maxBurstSize_ = 0;
-    maxConcurrentDispatches_ = 0;
-  }
+  private RateLimits() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -75,7 +69,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -116,8 +110,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * The maximum rate at which tasks are dispatched from this queue.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-   * the maximum allowed value
+   * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
    *   is 500.
    * This field has the same meaning as
    * [rate in
@@ -157,9 +150,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * `queue.yaml/xml`, `max_burst_size` is equal to
    * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
    * Since `max_burst_size` is output only, if
-   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called
-   * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
-   * based on the value of
+   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called on a queue
+   * created by `queue.yaml/xml`, `max_burst_size` will be reset based
+   * on the value of
    * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second],
    * regardless of whether
    * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second]
@@ -253,15 +246,12 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tasks.v2beta3.RateLimits other =
         (com.google.cloud.tasks.v2beta3.RateLimits) obj;
 
-    boolean result = true;
-    result =
-        result
-            && (java.lang.Double.doubleToLongBits(getMaxDispatchesPerSecond())
-                == java.lang.Double.doubleToLongBits(other.getMaxDispatchesPerSecond()));
-    result = result && (getMaxBurstSize() == other.getMaxBurstSize());
-    result = result && (getMaxConcurrentDispatches() == other.getMaxConcurrentDispatches());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Double.doubleToLongBits(getMaxDispatchesPerSecond())
+        != java.lang.Double.doubleToLongBits(other.getMaxDispatchesPerSecond())) return false;
+    if (getMaxBurstSize() != other.getMaxBurstSize()) return false;
+    if (getMaxConcurrentDispatches() != other.getMaxConcurrentDispatches()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -387,10 +377,8 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    * Rate limits.
    * This message determines the maximum rate that tasks can be dispatched by a
    * queue, regardless of whether the dispatch is a first task attempt or a retry.
-   * Note: The debugging command,
-   * [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask], will run a task
-   * even if the queue has reached its
-   * [RateLimits][google.cloud.tasks.v2beta3.RateLimits].
+   * Note: The debugging command, [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask], will run a task
+   * even if the queue has reached its [RateLimits][google.cloud.tasks.v2beta3.RateLimits].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.RateLimits}
@@ -473,35 +461,35 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -562,8 +550,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * The maximum rate at which tasks are dispatched from this queue.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-     * the maximum allowed value
+     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
      *   is 500.
      * This field has the same meaning as
      * [rate in
@@ -582,8 +569,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * The maximum rate at which tasks are dispatched from this queue.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-     * the maximum allowed value
+     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
      *   is 500.
      * This field has the same meaning as
      * [rate in
@@ -605,8 +591,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * The maximum rate at which tasks are dispatched from this queue.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
-     * the maximum allowed value
+     * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
      *   is 500.
      * This field has the same meaning as
      * [rate in
@@ -648,9 +633,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * `queue.yaml/xml`, `max_burst_size` is equal to
      * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
      * Since `max_burst_size` is output only, if
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called
-     * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
-     * based on the value of
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called on a queue
+     * created by `queue.yaml/xml`, `max_burst_size` will be reset based
+     * on the value of
      * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second],
      * regardless of whether
      * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second]
@@ -687,9 +672,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * `queue.yaml/xml`, `max_burst_size` is equal to
      * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
      * Since `max_burst_size` is output only, if
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called
-     * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
-     * based on the value of
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called on a queue
+     * created by `queue.yaml/xml`, `max_burst_size` will be reset based
+     * on the value of
      * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second],
      * regardless of whether
      * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second]
@@ -729,9 +714,9 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      * `queue.yaml/xml`, `max_burst_size` is equal to
      * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
      * Since `max_burst_size` is output only, if
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called
-     * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
-     * based on the value of
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called on a queue
+     * created by `queue.yaml/xml`, `max_burst_size` will be reset based
+     * on the value of
      * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second],
      * regardless of whether
      * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second]
@@ -820,7 +805,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -22,8 +22,8 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -84,7 +84,7 @@ public class TextToSpeechClientTest {
     ListVoicesResponse actualResponse = client.listVoices(languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockTextToSpeech.getRequests();
+    List<AbstractMessage> actualRequests = mockTextToSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListVoicesRequest actualRequest = (ListVoicesRequest) actualRequests.get(0);
 
@@ -126,7 +126,7 @@ public class TextToSpeechClientTest {
     SynthesizeSpeechResponse actualResponse = client.synthesizeSpeech(input, voice, audioConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockTextToSpeech.getRequests();
+    List<AbstractMessage> actualRequests = mockTextToSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SynthesizeSpeechRequest actualRequest = (SynthesizeSpeechRequest) actualRequests.get(0);
 

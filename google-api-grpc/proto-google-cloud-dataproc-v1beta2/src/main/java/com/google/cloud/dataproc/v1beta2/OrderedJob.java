@@ -156,7 +156,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000080;
@@ -186,7 +186,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000200;
               }
@@ -195,7 +195,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -207,7 +207,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -953,40 +953,38 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dataproc.v1beta2.OrderedJob other =
         (com.google.cloud.dataproc.v1beta2.OrderedJob) obj;
 
-    boolean result = true;
-    result = result && getStepId().equals(other.getStepId());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && (hasScheduling() == other.hasScheduling());
+    if (!getStepId().equals(other.getStepId())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasScheduling() != other.hasScheduling()) return false;
     if (hasScheduling()) {
-      result = result && getScheduling().equals(other.getScheduling());
+      if (!getScheduling().equals(other.getScheduling())) return false;
     }
-    result = result && getPrerequisiteStepIdsList().equals(other.getPrerequisiteStepIdsList());
-    result = result && getJobTypeCase().equals(other.getJobTypeCase());
-    if (!result) return false;
+    if (!getPrerequisiteStepIdsList().equals(other.getPrerequisiteStepIdsList())) return false;
+    if (!getJobTypeCase().equals(other.getJobTypeCase())) return false;
     switch (jobTypeCase_) {
       case 2:
-        result = result && getHadoopJob().equals(other.getHadoopJob());
+        if (!getHadoopJob().equals(other.getHadoopJob())) return false;
         break;
       case 3:
-        result = result && getSparkJob().equals(other.getSparkJob());
+        if (!getSparkJob().equals(other.getSparkJob())) return false;
         break;
       case 4:
-        result = result && getPysparkJob().equals(other.getPysparkJob());
+        if (!getPysparkJob().equals(other.getPysparkJob())) return false;
         break;
       case 5:
-        result = result && getHiveJob().equals(other.getHiveJob());
+        if (!getHiveJob().equals(other.getHiveJob())) return false;
         break;
       case 6:
-        result = result && getPigJob().equals(other.getPigJob());
+        if (!getPigJob().equals(other.getPigJob())) return false;
         break;
       case 7:
-        result = result && getSparkSqlJob().equals(other.getSparkSqlJob());
+        if (!getSparkSqlJob().equals(other.getSparkSqlJob())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1295,7 +1293,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.scheduling_ = schedulingBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000200);
       }
@@ -1308,35 +1306,35 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2987,7 +2985,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.dataproc.v1beta2.JobScheduling scheduling_ = null;
+    private com.google.cloud.dataproc.v1beta2.JobScheduling scheduling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.JobScheduling,
             com.google.cloud.dataproc.v1beta2.JobScheduling.Builder,
@@ -3173,7 +3171,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePrerequisiteStepIdsIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
         bitField0_ |= 0x00000200;
       }
@@ -3323,7 +3321,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

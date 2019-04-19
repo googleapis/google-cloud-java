@@ -12,7 +12,7 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -22,7 +22,7 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
@@ -32,12 +32,132 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
    */
   com.google.cloud.automl.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location for the input content.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+   */
+  boolean hasBigquerySource();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location for the input content.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery location for the input content.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  int getParamsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  boolean containsParams(java.lang.String key);
+  /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getParams();
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getParamsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Additional domain-specific parameters describing the semantic of the
+   * imported data, any string must be up to 25000
+   * characters long.
+   * *  For Tables:
+   *    `schema_inference_version` - (integer) Required. The version of the
+   *        algorithm that should be used for the initial inference of the
+   *        schema (columns' DataTypes) of the table the data is being imported
+   *        into. Allowed values: "1".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; params = 2;</code>
+   */
+  java.lang.String getParamsOrThrow(java.lang.String key);
 
   public com.google.cloud.automl.v1beta1.InputConfig.SourceCase getSourceCase();
 }

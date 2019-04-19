@@ -8,6 +8,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * <pre>
  * A document resource.
+ * Note: resource `projects.agent.knowledgeBases.documents` is deprecated,
+ * please use `projects.knowledgeBases.documents` instead.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
@@ -77,7 +79,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           case 32:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -90,7 +92,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                   knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000008;
                 }
@@ -113,9 +115,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               source_ = s;
               break;
             }
+          case 74:
+            {
+              sourceCase_ = 9;
+              source_ = input.readBytes();
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -127,7 +135,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -313,7 +321,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
   public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     CONTENT_URI(5),
+    @java.lang.Deprecated
     CONTENT(6),
+    RAW_CONTENT(9),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -332,6 +342,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return CONTENT_URI;
         case 6:
           return CONTENT;
+        case 9:
+          return RAW_CONTENT;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -644,10 +656,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getContent() {
     java.lang.Object ref = "";
     if (sourceCase_ == 6) {
@@ -670,10 +685,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = "";
     if (sourceCase_ == 6) {
@@ -689,6 +707,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RAW_CONTENT_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * </pre>
+   *
+   * <code>bytes raw_content = 9;</code>
+   */
+  public com.google.protobuf.ByteString getRawContent() {
+    if (sourceCase_ == 9) {
+      return (com.google.protobuf.ByteString) source_;
+    }
+    return com.google.protobuf.ByteString.EMPTY;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -728,6 +764,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, source_);
     }
+    if (sourceCase_ == 9) {
+      output.writeBytes(9, (com.google.protobuf.ByteString) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -765,6 +804,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, source_);
     }
+    if (sourceCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              9, (com.google.protobuf.ByteString) source_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -781,25 +825,26 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.v2beta1.Document other =
         (com.google.cloud.dialogflow.v2beta1.Document) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getMimeType().equals(other.getMimeType());
-    result = result && knowledgeTypes_.equals(other.knowledgeTypes_);
-    result = result && getSourceCase().equals(other.getSourceCase());
-    if (!result) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getMimeType().equals(other.getMimeType())) return false;
+    if (!knowledgeTypes_.equals(other.knowledgeTypes_)) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 5:
-        result = result && getContentUri().equals(other.getContentUri());
+        if (!getContentUri().equals(other.getContentUri())) return false;
         break;
       case 6:
-        result = result && getContent().equals(other.getContent());
+        if (!getContent().equals(other.getContent())) return false;
+        break;
+      case 9:
+        if (!getRawContent().equals(other.getRawContent())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -827,6 +872,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getContent().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + RAW_CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getRawContent().hashCode();
         break;
       case 0:
       default:
@@ -936,6 +985,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A document resource.
+   * Note: resource `projects.agent.knowledgeBases.documents` is deprecated,
+   * please use `projects.knowledgeBases.documents` instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
@@ -1018,7 +1069,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.mimeType_ = mimeType_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
         bitField0_ = (bitField0_ & ~0x00000008);
       }
@@ -1029,6 +1080,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (sourceCase_ == 6) {
         result.source_ = source_;
       }
+      if (sourceCase_ == 9) {
+        result.source_ = source_;
+      }
       result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -1037,35 +1091,35 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1115,6 +1169,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             sourceCase_ = 6;
             source_ = other.source_;
             onChanged();
+            break;
+          }
+        case RAW_CONTENT:
+          {
+            setRawContent(other.getRawContent());
             break;
           }
         case SOURCE_NOT_SET:
@@ -1472,7 +1531,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> knowledgeTypes_ = java.util.Collections.emptyList();
 
     private void ensureKnowledgeTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>(knowledgeTypes_);
         bitField0_ |= 0x00000008;
       }
@@ -1813,10 +1872,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getContent() {
       java.lang.Object ref = "";
       if (sourceCase_ == 6) {
@@ -1839,10 +1901,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 6) {
@@ -1865,10 +1930,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setContent(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1884,10 +1952,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearContent() {
       if (sourceCase_ == 6) {
         sourceCase_ = 0;
@@ -1902,10 +1973,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1917,9 +1991,63 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     */
+    public com.google.protobuf.ByteString getRawContent() {
+      if (sourceCase_ == 9) {
+        return (com.google.protobuf.ByteString) source_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     */
+    public Builder setRawContent(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 9;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     */
+    public Builder clearRawContent() {
+      if (sourceCase_ == 9) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

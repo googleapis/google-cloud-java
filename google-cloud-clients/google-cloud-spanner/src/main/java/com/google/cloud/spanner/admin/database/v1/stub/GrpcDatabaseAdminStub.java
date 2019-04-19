@@ -24,7 +24,9 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -47,6 +49,7 @@ import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -201,40 +204,121 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
         GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
             .setMethodDescriptor(listDatabasesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListDatabasesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListDatabasesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateDatabaseRequest, Operation> createDatabaseTransportSettings =
         GrpcCallSettings.<CreateDatabaseRequest, Operation>newBuilder()
             .setMethodDescriptor(createDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateDatabaseRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateDatabaseRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
         GrpcCallSettings.<GetDatabaseRequest, Database>newBuilder()
             .setMethodDescriptor(getDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetDatabaseRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetDatabaseRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateDatabaseDdlRequest, Operation> updateDatabaseDdlTransportSettings =
         GrpcCallSettings.<UpdateDatabaseDdlRequest, Operation>newBuilder()
             .setMethodDescriptor(updateDatabaseDdlMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateDatabaseDdlRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateDatabaseDdlRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("database", String.valueOf(request.getDatabase()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DropDatabaseRequest, Empty> dropDatabaseTransportSettings =
         GrpcCallSettings.<DropDatabaseRequest, Empty>newBuilder()
             .setMethodDescriptor(dropDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DropDatabaseRequest>() {
+                  @Override
+                  public Map<String, String> extract(DropDatabaseRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("database", String.valueOf(request.getDatabase()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetDatabaseDdlRequest, GetDatabaseDdlResponse>
         getDatabaseDdlTransportSettings =
             GrpcCallSettings.<GetDatabaseDdlRequest, GetDatabaseDdlResponse>newBuilder()
                 .setMethodDescriptor(getDatabaseDdlMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetDatabaseDdlRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetDatabaseDdlRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("database", String.valueOf(request.getDatabase()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.listDatabasesCallable =

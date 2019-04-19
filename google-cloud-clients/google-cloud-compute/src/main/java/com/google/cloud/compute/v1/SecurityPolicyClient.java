@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.SecurityPolicyStub;
 import com.google.cloud.compute.v1.stub.SecurityPolicyStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -224,10 +225,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   AddRuleSecurityPolicyHttpRequest request = AddRuleSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   Operation response = securityPolicyClient.addRuleSecurityPolicy(request);
@@ -250,10 +251,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   AddRuleSecurityPolicyHttpRequest request = AddRuleSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPolicyClient.addRuleSecurityPolicyCallable().futureCall(request);
@@ -326,9 +327,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   DeleteSecurityPolicyHttpRequest request = DeleteSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   Operation response = securityPolicyClient.deleteSecurityPolicy(request);
    * }
@@ -350,9 +351,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   DeleteSecurityPolicyHttpRequest request = DeleteSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPolicyClient.deleteSecurityPolicyCallable().futureCall(request);
    *   // Do something
@@ -424,9 +425,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   GetSecurityPolicyHttpRequest request = GetSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   SecurityPolicy response = securityPolicyClient.getSecurityPolicy(request);
    * }
@@ -448,9 +449,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   GetSecurityPolicyHttpRequest request = GetSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   ApiFuture&lt;SecurityPolicy&gt; future = securityPolicyClient.getSecurityPolicyCallable().futureCall(request);
    *   // Do something
@@ -532,10 +533,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
    *   Integer priority = 0;
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   GetRuleSecurityPolicyHttpRequest request = GetRuleSecurityPolicyHttpRequest.newBuilder()
    *     .setPriority(priority)
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   SecurityPolicyRule response = securityPolicyClient.getRuleSecurityPolicy(request);
    * }
@@ -558,10 +559,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
    *   Integer priority = 0;
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   GetRuleSecurityPolicyHttpRequest request = GetRuleSecurityPolicyHttpRequest.newBuilder()
    *     .setPriority(priority)
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   ApiFuture&lt;SecurityPolicyRule&gt; future = securityPolicyClient.getRuleSecurityPolicyCallable().futureCall(request);
    *   // Do something
@@ -647,10 +648,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   InsertSecurityPolicyHttpRequest request = InsertSecurityPolicyHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setSecurityPolicyResource(securityPolicyResource)
    *     .build();
    *   Operation response = securityPolicyClient.insertSecurityPolicy(request);
@@ -673,10 +674,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   InsertSecurityPolicyHttpRequest request = InsertSecurityPolicyHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setSecurityPolicyResource(securityPolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPolicyClient.insertSecurityPolicyCallable().futureCall(request);
@@ -751,9 +752,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSecurityPoliciesHttpRequest request = ListSecurityPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (SecurityPolicy element : securityPolicyClient.listSecurityPolicies(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -778,9 +779,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSecurityPoliciesHttpRequest request = ListSecurityPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListSecurityPoliciesPagedResponse&gt; future = securityPolicyClient.listSecurityPoliciesPagedCallable().futureCall(request);
    *   // Do something
@@ -804,9 +805,9 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListSecurityPoliciesHttpRequest request = ListSecurityPoliciesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     SecurityPolicyList response = securityPolicyClient.listSecurityPoliciesCallable().call(request);
@@ -915,11 +916,11 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSecurityPolicyHttpRequest request = PatchSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .setSecurityPolicyResource(securityPolicyResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -943,11 +944,11 @@ public class SecurityPolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
    *   PatchSecurityPolicyHttpRequest request = PatchSecurityPolicyHttpRequest.newBuilder()
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .setSecurityPolicyResource(securityPolicyResource)
    *     .addAllFieldMask(fieldMask)
    *     .build();
@@ -1042,11 +1043,11 @@ public class SecurityPolicyClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
    *   Integer priority = 0;
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   PatchRuleSecurityPolicyHttpRequest request = PatchRuleSecurityPolicyHttpRequest.newBuilder()
    *     .setPriority(priority)
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   Operation response = securityPolicyClient.patchRuleSecurityPolicy(request);
@@ -1070,11 +1071,11 @@ public class SecurityPolicyClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
    *   Integer priority = 0;
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   PatchRuleSecurityPolicyHttpRequest request = PatchRuleSecurityPolicyHttpRequest.newBuilder()
    *     .setPriority(priority)
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPolicyClient.patchRuleSecurityPolicyCallable().futureCall(request);
@@ -1157,10 +1158,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
    *   Integer priority = 0;
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   RemoveRuleSecurityPolicyHttpRequest request = RemoveRuleSecurityPolicyHttpRequest.newBuilder()
    *     .setPriority(priority)
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   Operation response = securityPolicyClient.removeRuleSecurityPolicy(request);
    * }
@@ -1183,10 +1184,10 @@ public class SecurityPolicyClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPolicyClient securityPolicyClient = SecurityPolicyClient.create()) {
    *   Integer priority = 0;
-   *   ProjectGlobalSecurityPolicyName securityPolicy = ProjectGlobalSecurityPolicyName.of("[PROJECT]", "[SECURITY_POLICY]");
+   *   String formattedSecurityPolicy = ProjectGlobalSecurityPolicyName.format("[PROJECT]", "[SECURITY_POLICY]");
    *   RemoveRuleSecurityPolicyHttpRequest request = RemoveRuleSecurityPolicyHttpRequest.newBuilder()
    *     .setPriority(priority)
-   *     .setSecurityPolicy(securityPolicy.toString())
+   *     .setSecurityPolicy(formattedSecurityPolicy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPolicyClient.removeRuleSecurityPolicyCallable().futureCall(request);
    *   // Do something
@@ -1250,7 +1251,8 @@ public class SecurityPolicyClient implements BackgroundResource {
             public ListSecurityPoliciesPagedResponse apply(ListSecurityPoliciesPage input) {
               return new ListSecurityPoliciesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSecurityPoliciesPagedResponse(ListSecurityPoliciesPage page) {

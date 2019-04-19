@@ -35,8 +35,41 @@ public interface OriginalDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the protocol used for this request.
+   * This field is AoG-specific.
+   * </pre>
+   *
+   * <code>string version = 2;</code>
+   */
+  com.google.protobuf.ByteString getVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -46,8 +79,18 @@ public interface OriginalDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -57,8 +100,18 @@ public interface OriginalDetectIntentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is set to the value of `QueryParameters.payload` field
-   * passed in the request.
+   * Optional. This field is set to the value of the `QueryParameters.payload`
+   * field passed in the request. Some integrations that query a Dialogflow
+   * agent may provide additional information in the payload.
+   * In particular for the Telephony Gateway this field has the form:
+   * &lt;pre&gt;{
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }&lt;/pre&gt;
+   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Edition agents and populated with the caller ID in [E.164
+   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>

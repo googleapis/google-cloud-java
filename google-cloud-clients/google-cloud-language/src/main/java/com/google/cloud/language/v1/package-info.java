@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Natural Language API.
+ * A client to Cloud Natural Language API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -30,7 +30,8 @@
  * <code>
  * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
- *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
+ *   EncodingType encodingType = EncodingType.NONE;
+ *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document, encodingType);
  * }
  * </code>
  * </pre>

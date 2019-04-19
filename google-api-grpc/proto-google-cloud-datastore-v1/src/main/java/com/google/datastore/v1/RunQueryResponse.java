@@ -81,7 +81,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -241,17 +241,16 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
     com.google.datastore.v1.RunQueryResponse other = (com.google.datastore.v1.RunQueryResponse) obj;
 
-    boolean result = true;
-    result = result && (hasBatch() == other.hasBatch());
+    if (hasBatch() != other.hasBatch()) return false;
     if (hasBatch()) {
-      result = result && getBatch().equals(other.getBatch());
+      if (!getBatch().equals(other.getBatch())) return false;
     }
-    result = result && (hasQuery() == other.hasQuery());
+    if (hasQuery() != other.hasQuery()) return false;
     if (hasQuery()) {
-      result = result && getQuery().equals(other.getQuery());
+      if (!getQuery().equals(other.getQuery())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -470,35 +469,35 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -548,7 +547,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.datastore.v1.QueryResultBatch batch_ = null;
+    private com.google.datastore.v1.QueryResultBatch batch_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.QueryResultBatch,
             com.google.datastore.v1.QueryResultBatch.Builder,
@@ -729,7 +728,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       return batchBuilder_;
     }
 
-    private com.google.datastore.v1.Query query_ = null;
+    private com.google.datastore.v1.Query query_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.Query,
             com.google.datastore.v1.Query.Builder,
@@ -905,7 +904,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

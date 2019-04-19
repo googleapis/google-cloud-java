@@ -886,7 +886,13 @@ public interface Storage extends Service<StorageOptions> {
       MD5,
       EXT_HEADERS,
       SERVICE_ACCOUNT_CRED,
+      SIGNATURE_VERSION,
       HOST_NAME
+    }
+
+    enum SignatureVersion {
+      V2,
+      V4
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -935,6 +941,23 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
+    }
+
+    /**
+     * Use if signature version should be V2. This is the default if neither this or {@code
+     * withV4Signature()} is called.
+     */
+    public static SignUrlOption withV2Signature() {
+      return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V2);
+    }
+
+    /**
+     * Use if signature version should be V4. Note that V4 Signed URLs can't have an expiration
+     * longer than 7 days. V2 will be the default if neither this or {@code withV2Signature()} is
+     * called.
+     */
+    public static SignUrlOption withV4Signature() {
+      return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V4);
     }
 
     /**
@@ -2069,6 +2092,27 @@ public interface Storage extends Service<StorageOptions> {
   WriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
+   * Accepts signed URL and return a channel for writing content.
+   *
+   * <p>Example of writing content through a writer using signed URL.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * byte[] content = "Hello, World!".getBytes(UTF_8);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+   * URL signedURL = storage.signUrl(blobInfo, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+   * try (WriteChannel writer = storage.writer(signedURL)) {
+   *    writer.write(ByteBuffer.wrap(content, 0, content.length));
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  WriteChannel writer(URL signedURL);
+
+  /**
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
@@ -2099,6 +2143,16 @@ public interface Storage extends Service<StorageOptions> {
    * String blobName = "my_blob_name";
    * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
    *     TimeUnit.DAYS);
+   * }</pre>
+   *
+   * <p>Example of creating a signed URL passing the {@link SignUrlOption#withV4Signature()} option,
+   * which enables V4 signing.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     7, TimeUnit.DAYS, Storage.SignUrlOption.withV4Signature());
    * }</pre>
    *
    * <p>Example of creating a signed URL passing the {@link

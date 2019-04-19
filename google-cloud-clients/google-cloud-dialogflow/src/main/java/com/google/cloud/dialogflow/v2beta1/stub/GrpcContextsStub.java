@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Context;
 import com.google.cloud.dialogflow.v2beta1.CreateContextRequest;
@@ -32,10 +33,12 @@ import com.google.cloud.dialogflow.v2beta1.GetContextRequest;
 import com.google.cloud.dialogflow.v2beta1.ListContextsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListContextsResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateContextRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -150,26 +153,80 @@ public class GrpcContextsStub extends ContextsStub {
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
             .setMethodDescriptor(listContextsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListContextsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListContextsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetContextRequest, Context> getContextTransportSettings =
         GrpcCallSettings.<GetContextRequest, Context>newBuilder()
             .setMethodDescriptor(getContextMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetContextRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetContextRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
         GrpcCallSettings.<CreateContextRequest, Context>newBuilder()
             .setMethodDescriptor(createContextMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateContextRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateContextRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateContextRequest, Context> updateContextTransportSettings =
         GrpcCallSettings.<UpdateContextRequest, Context>newBuilder()
             .setMethodDescriptor(updateContextMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateContextRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateContextRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("context.name", String.valueOf(request.getContext().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteContextRequest, Empty> deleteContextTransportSettings =
         GrpcCallSettings.<DeleteContextRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteContextMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteContextRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteContextRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsTransportSettings =
         GrpcCallSettings.<DeleteAllContextsRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAllContextsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAllContextsRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAllContextsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listContextsCallable =

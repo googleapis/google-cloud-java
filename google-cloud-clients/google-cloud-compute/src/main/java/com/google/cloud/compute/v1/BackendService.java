@@ -35,6 +35,7 @@ public final class BackendService implements ApiMessage {
   private final BackendServiceCdnPolicy cdnPolicy;
   private final ConnectionDraining connectionDraining;
   private final String creationTimestamp;
+  private final List<String> customRequestHeaders;
   private final String description;
   private final Boolean enableCDN;
   private final String fingerprint;
@@ -59,6 +60,7 @@ public final class BackendService implements ApiMessage {
     this.cdnPolicy = null;
     this.connectionDraining = null;
     this.creationTimestamp = null;
+    this.customRequestHeaders = null;
     this.description = null;
     this.enableCDN = null;
     this.fingerprint = null;
@@ -84,6 +86,7 @@ public final class BackendService implements ApiMessage {
       BackendServiceCdnPolicy cdnPolicy,
       ConnectionDraining connectionDraining,
       String creationTimestamp,
+      List<String> customRequestHeaders,
       String description,
       Boolean enableCDN,
       String fingerprint,
@@ -106,6 +109,7 @@ public final class BackendService implements ApiMessage {
     this.cdnPolicy = cdnPolicy;
     this.connectionDraining = connectionDraining;
     this.creationTimestamp = creationTimestamp;
+    this.customRequestHeaders = customRequestHeaders;
     this.description = description;
     this.enableCDN = enableCDN;
     this.fingerprint = fingerprint;
@@ -141,6 +145,9 @@ public final class BackendService implements ApiMessage {
     }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
+    }
+    if ("customRequestHeaders".equals(fieldName)) {
+      return customRequestHeaders;
     }
     if ("description".equals(fieldName)) {
       return description;
@@ -242,6 +249,11 @@ public final class BackendService implements ApiMessage {
   /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
+  }
+
+  /** Headers that the HTTP/S load balancer should add to proxied requests. */
+  public List<String> getCustomRequestHeadersList() {
+    return customRequestHeaders;
   }
 
   /**
@@ -422,6 +434,7 @@ public final class BackendService implements ApiMessage {
     private BackendServiceCdnPolicy cdnPolicy;
     private ConnectionDraining connectionDraining;
     private String creationTimestamp;
+    private List<String> customRequestHeaders;
     private String description;
     private Boolean enableCDN;
     private String fingerprint;
@@ -458,6 +471,9 @@ public final class BackendService implements ApiMessage {
       }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
+      }
+      if (other.getCustomRequestHeadersList() != null) {
+        this.customRequestHeaders = other.customRequestHeaders;
       }
       if (other.getDescription() != null) {
         this.description = other.description;
@@ -519,6 +535,7 @@ public final class BackendService implements ApiMessage {
       this.cdnPolicy = source.cdnPolicy;
       this.connectionDraining = source.connectionDraining;
       this.creationTimestamp = source.creationTimestamp;
+      this.customRequestHeaders = source.customRequestHeaders;
       this.description = source.description;
       this.enableCDN = source.enableCDN;
       this.fingerprint = source.fingerprint;
@@ -612,6 +629,29 @@ public final class BackendService implements ApiMessage {
     /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
+      return this;
+    }
+
+    /** Headers that the HTTP/S load balancer should add to proxied requests. */
+    public List<String> getCustomRequestHeadersList() {
+      return customRequestHeaders;
+    }
+
+    /** Headers that the HTTP/S load balancer should add to proxied requests. */
+    public Builder addAllCustomRequestHeaders(List<String> customRequestHeaders) {
+      if (this.customRequestHeaders == null) {
+        this.customRequestHeaders = new LinkedList<>();
+      }
+      this.customRequestHeaders.addAll(customRequestHeaders);
+      return this;
+    }
+
+    /** Headers that the HTTP/S load balancer should add to proxied requests. */
+    public Builder addCustomRequestHeaders(String customRequestHeaders) {
+      if (this.customRequestHeaders == null) {
+        this.customRequestHeaders = new LinkedList<>();
+      }
+      this.customRequestHeaders.add(customRequestHeaders);
       return this;
     }
 
@@ -961,6 +1001,7 @@ public final class BackendService implements ApiMessage {
           cdnPolicy,
           connectionDraining,
           creationTimestamp,
+          customRequestHeaders,
           description,
           enableCDN,
           fingerprint,
@@ -987,6 +1028,7 @@ public final class BackendService implements ApiMessage {
       newBuilder.setCdnPolicy(this.cdnPolicy);
       newBuilder.setConnectionDraining(this.connectionDraining);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
+      newBuilder.addAllCustomRequestHeaders(this.customRequestHeaders);
       newBuilder.setDescription(this.description);
       newBuilder.setEnableCDN(this.enableCDN);
       newBuilder.setFingerprint(this.fingerprint);
@@ -1025,6 +1067,9 @@ public final class BackendService implements ApiMessage {
         + ", "
         + "creationTimestamp="
         + creationTimestamp
+        + ", "
+        + "customRequestHeaders="
+        + customRequestHeaders
         + ", "
         + "description="
         + description
@@ -1091,6 +1136,7 @@ public final class BackendService implements ApiMessage {
           && Objects.equals(this.cdnPolicy, that.getCdnPolicy())
           && Objects.equals(this.connectionDraining, that.getConnectionDraining())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.customRequestHeaders, that.getCustomRequestHeadersList())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.enableCDN, that.getEnableCDN())
           && Objects.equals(this.fingerprint, that.getFingerprint())
@@ -1120,6 +1166,7 @@ public final class BackendService implements ApiMessage {
         cdnPolicy,
         connectionDraining,
         creationTimestamp,
+        customRequestHeaders,
         description,
         enableCDN,
         fingerprint,

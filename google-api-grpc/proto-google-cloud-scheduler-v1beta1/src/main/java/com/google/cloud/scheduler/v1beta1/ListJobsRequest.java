@@ -7,8 +7,7 @@ package com.google.cloud.scheduler.v1beta1;
  *
  *
  * <pre>
- * Request message for listing jobs using
- * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+ * Request message for listing jobs using [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.ListJobsRequest}
@@ -25,7 +24,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   private ListJobsRequest() {
     parent_ = "";
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -74,7 +72,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -181,13 +179,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-   * returned from the previous call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-   * an error to switch the value of
-   * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-   * iterating through pages.
+   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+   * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+   * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -210,13 +205,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-   * returned from the previous call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-   * an error to switch the value of
-   * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-   * iterating through pages.
+   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+   * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+   * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -290,12 +282,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.scheduler.v1beta1.ListJobsRequest other =
         (com.google.cloud.scheduler.v1beta1.ListJobsRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -415,8 +406,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for listing jobs using
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+   * Request message for listing jobs using [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.ListJobsRequest}
@@ -499,35 +489,35 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -752,13 +742,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-     * returned from the previous call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-     * an error to switch the value of
-     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-     * iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -781,13 +768,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-     * returned from the previous call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-     * an error to switch the value of
-     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-     * iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -810,13 +794,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-     * returned from the previous call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-     * an error to switch the value of
-     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-     * iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -837,13 +818,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-     * returned from the previous call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-     * an error to switch the value of
-     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-     * iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -861,13 +839,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
-     * returned from the previous call to
-     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
-     * an error to switch the value of
-     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
-     * iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
+     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
+     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -885,7 +860,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

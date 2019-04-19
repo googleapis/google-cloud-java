@@ -105,7 +105,7 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on job‘s
+   * Enable email notification to project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -116,7 +116,7 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on job‘s
+   * Enable email notification to project owners and editors on job's
    * completion/failure.
    * </pre>
    *
@@ -127,7 +127,7 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on job‘s
+   * Enable email notification to project owners and editors on job's
    * completion/failure.
    * </pre>
    *

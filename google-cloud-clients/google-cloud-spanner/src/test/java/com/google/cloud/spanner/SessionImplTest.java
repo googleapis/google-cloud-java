@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.ListValue;
@@ -66,9 +67,11 @@ public class SessionImplTest {
   @Captor private ArgumentCaptor<Map<SpannerRpc.Option, Object>> optionsCaptor;
   private Map<SpannerRpc.Option, Object> options;
 
+  @SuppressWarnings("unchecked")
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
@@ -81,10 +84,109 @@ public class SessionImplTest {
                 Mockito.anyMapOf(String.class, String.class),
                 optionsCaptor.capture()))
         .thenReturn(sessionProto);
+    Transaction txn = Transaction.newBuilder().setId(ByteString.copyFromUtf8("TEST")).build();
+    Mockito.when(
+            rpc.beginTransaction(
+                Mockito.any(BeginTransactionRequest.class), Mockito.any(Map.class)))
+        .thenReturn(txn);
+    CommitResponse commitResponse =
+        CommitResponse.newBuilder()
+            .setCommitTimestamp(com.google.protobuf.Timestamp.getDefaultInstance())
+            .build();
+    Mockito.when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.any(Map.class)))
+        .thenReturn(commitResponse);
     session = spanner.createSession(db);
     // We expect the same options, "options", on all calls on "session".
     options = optionsCaptor.getValue();
-    Mockito.reset(rpc);
+  }
+
+  private void doNestedRwTransaction() {
+    session
+        .readWriteTransaction()
+        .run(
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws SpannerException {
+                session
+                    .readWriteTransaction()
+                    .run(
+                        new TransactionCallable<Void>() {
+                          @Override
+                          public Void run(TransactionContext transaction) throws Exception {
+                            return null;
+                          }
+                        });
+
+                return null;
+              }
+            });
+  }
+
+  @Test
+  public void nestedReadWriteTxnThrows() {
+    try {
+      doNestedRwTransaction();
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
+
+  @Test
+  public void nestedReadOnlyTxnThrows() {
+    try {
+      session
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws SpannerException {
+                  session.readOnlyTransaction().getReadTimestamp();
+
+                  return null;
+                }
+              });
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
+
+  @Test
+  public void nestedSingleUseReadTxnThrows() {
+    try {
+      session
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws SpannerException {
+                  session.singleUseReadOnlyTransaction();
+                  return null;
+                }
+              });
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage()).contains("not supported");
+    }
+  }
+
+  @Test
+  public void nestedTxnSucceedsWhenAllowed() {
+    session
+        .readWriteTransaction()
+        .allowNestedTransaction()
+        .run(
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws SpannerException {
+                session.singleUseReadOnlyTransaction();
+                return null;
+              }
+            });
   }
 
   @Test

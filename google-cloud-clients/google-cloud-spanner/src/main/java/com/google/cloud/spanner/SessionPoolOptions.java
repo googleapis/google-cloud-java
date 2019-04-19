@@ -98,7 +98,7 @@ public class SessionPoolOptions {
      * Maximum number of sessions that this pool will have. If current numbers of sessions in the
      * pool is less than this and they are all busy, then a new session will be created for any new
      * operation. If current number of in use sessions is same as this and a new request comes, pool
-     * can either block or fail. Defaults to 2000.
+     * can either block or fail. Defaults to 400.
      */
     public Builder setMaxSessions(int maxSessions) {
       this.maxSessions = maxSessions;

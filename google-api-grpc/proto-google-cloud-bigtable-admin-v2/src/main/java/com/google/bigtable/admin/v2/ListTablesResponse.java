@@ -54,7 +54,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tables_ = new java.util.ArrayList<com.google.bigtable.admin.v2.Table>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -72,7 +72,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -84,7 +84,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         tables_ = java.util.Collections.unmodifiableList(tables_);
       }
       this.unknownFields = unknownFields.build();
@@ -270,11 +270,10 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
     com.google.bigtable.admin.v2.ListTablesResponse other =
         (com.google.bigtable.admin.v2.ListTablesResponse) obj;
 
-    boolean result = true;
-    result = result && getTablesList().equals(other.getTablesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTablesList().equals(other.getTablesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -476,7 +475,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (tablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           tables_ = java.util.Collections.unmodifiableList(tables_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -492,35 +491,35 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -602,7 +601,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureTablesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         tables_ = new java.util.ArrayList<com.google.bigtable.admin.v2.Table>(tables_);
         bitField0_ |= 0x00000001;
       }
@@ -940,10 +939,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
                 com.google.bigtable.admin.v2.Table,
                 com.google.bigtable.admin.v2.Table.Builder,
                 com.google.bigtable.admin.v2.TableOrBuilder>(
-                tables_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                tables_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         tables_ = null;
       }
       return tablesBuilder_;
@@ -1055,7 +1051,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

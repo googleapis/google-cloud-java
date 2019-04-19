@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
@@ -32,12 +33,16 @@ import com.google.cloud.dialogflow.v2beta1.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse;
+import com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest;
+import com.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -86,6 +91,24 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<UpdateDocumentRequest, Operation>
+      updateDocumentMethodDescriptor =
+          MethodDescriptor.<UpdateDocumentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Documents/UpdateDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ReloadDocumentRequest, Operation>
+      reloadDocumentMethodDescriptor =
+          MethodDescriptor.<ReloadDocumentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Documents/ReloadDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReloadDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -100,6 +123,8 @@ public class GrpcDocumentsStub extends DocumentsStub {
   private final UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable;
   private final OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationCallable;
+  private final UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable;
+  private final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -143,18 +168,80 @@ public class GrpcDocumentsStub extends DocumentsStub {
     GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
         GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
             .setMethodDescriptor(listDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListDocumentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListDocumentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         GrpcCallSettings.<GetDocumentRequest, Document>newBuilder()
             .setMethodDescriptor(getDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateDocumentRequest, Operation> createDocumentTransportSettings =
         GrpcCallSettings.<CreateDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(createDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteDocumentRequest, Operation> deleteDocumentTransportSettings =
         GrpcCallSettings.<DeleteDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateDocumentRequest, Operation> updateDocumentTransportSettings =
+        GrpcCallSettings.<UpdateDocumentRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("document.name", String.valueOf(request.getDocument().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ReloadDocumentRequest, Operation> reloadDocumentTransportSettings =
+        GrpcCallSettings.<ReloadDocumentRequest, Operation>newBuilder()
+            .setMethodDescriptor(reloadDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ReloadDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(ReloadDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listDocumentsCallable =
@@ -184,6 +271,12 @@ public class GrpcDocumentsStub extends DocumentsStub {
             settings.deleteDocumentOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.updateDocumentCallable =
+        callableFactory.createUnaryCallable(
+            updateDocumentTransportSettings, settings.updateDocumentSettings(), clientContext);
+    this.reloadDocumentCallable =
+        callableFactory.createUnaryCallable(
+            reloadDocumentTransportSettings, settings.reloadDocumentSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -224,6 +317,14 @@ public class GrpcDocumentsStub extends DocumentsStub {
 
   public UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable() {
     return deleteDocumentCallable;
+  }
+
+  public UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
+    return updateDocumentCallable;
+  }
+
+  public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
+    return reloadDocumentCallable;
   }
 
   @Override

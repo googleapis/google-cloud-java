@@ -30,7 +30,6 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
     url_ = "";
     userAgent_ = "";
     referrer_ = "";
-    responseStatusCode_ = 0;
     remoteIp_ = "";
   }
 
@@ -100,7 +99,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -443,15 +442,14 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
     com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext other =
         (com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext) obj;
 
-    boolean result = true;
-    result = result && getMethod().equals(other.getMethod());
-    result = result && getUrl().equals(other.getUrl());
-    result = result && getUserAgent().equals(other.getUserAgent());
-    result = result && getReferrer().equals(other.getReferrer());
-    result = result && (getResponseStatusCode() == other.getResponseStatusCode());
-    result = result && getRemoteIp().equals(other.getRemoteIp());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getMethod().equals(other.getMethod())) return false;
+    if (!getUrl().equals(other.getUrl())) return false;
+    if (!getUserAgent().equals(other.getUserAgent())) return false;
+    if (!getReferrer().equals(other.getReferrer())) return false;
+    if (getResponseStatusCode() != other.getResponseStatusCode()) return false;
+    if (!getRemoteIp().equals(other.getRemoteIp())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -677,35 +675,35 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1309,7 +1307,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -14,12 +14,10 @@ public interface UpdateQueueRequestOrBuilder
    * <pre>
    * Required.
    * The queue to create or update.
-   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be
-   * specified.
+   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
-   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be
-   * changed.
+   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
@@ -31,12 +29,10 @@ public interface UpdateQueueRequestOrBuilder
    * <pre>
    * Required.
    * The queue to create or update.
-   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be
-   * specified.
+   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
-   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be
-   * changed.
+   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
@@ -48,12 +44,10 @@ public interface UpdateQueueRequestOrBuilder
    * <pre>
    * Required.
    * The queue to create or update.
-   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be
-   * specified.
+   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
-   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be
-   * changed.
+   * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>

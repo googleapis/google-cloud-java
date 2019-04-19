@@ -7,8 +7,7 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for
- * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+ * Request message for [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.CreateTaskRequest}
@@ -84,7 +83,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -175,12 +174,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-   * The user can optionally specify a task
-   * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-   * then the system will generate a random unique task id, which will be set in
-   * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-   * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-   * set or is in the past then Cloud Tasks will set it to the current time.
+   * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+   * name is not specified then the system will generate a random
+   * unique task id, which will be set in the task returned in the
+   * [response][google.cloud.tasks.v2beta3.Task.name].
+   * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+   * past then Cloud Tasks will set it to the current time.
    * Task De-duplication:
    * Explicitly specifying a task ID enables task de-duplication.  If
    * a task's ID is identical to that of an existing task or a task
@@ -192,10 +191,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * queue.xml, then another task with the same name can't be created
    * for ~9days after the original task was deleted or executed.
    * Because there is an extra lookup cost to identify duplicate task
-   * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * calls have significantly increased latency. Using hashed strings for the
-   * task id or for the prefix of the task id is recommended. Choosing task ids
-   * that are sequential or have sequential prefixes, for example using a
+   * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+   * increased latency. Using hashed strings for the task id or for
+   * the prefix of the task id is recommended. Choosing task ids that
+   * are sequential or have sequential prefixes, for example using a
    * timestamp, causes an increase in latency and error rates in all
    * task commands. The infrastructure relies on an approximately
    * uniform distribution of task ids to store and serve tasks
@@ -215,12 +214,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-   * The user can optionally specify a task
-   * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-   * then the system will generate a random unique task id, which will be set in
-   * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-   * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-   * set or is in the past then Cloud Tasks will set it to the current time.
+   * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+   * name is not specified then the system will generate a random
+   * unique task id, which will be set in the task returned in the
+   * [response][google.cloud.tasks.v2beta3.Task.name].
+   * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+   * past then Cloud Tasks will set it to the current time.
    * Task De-duplication:
    * Explicitly specifying a task ID enables task de-duplication.  If
    * a task's ID is identical to that of an existing task or a task
@@ -232,10 +231,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * queue.xml, then another task with the same name can't be created
    * for ~9days after the original task was deleted or executed.
    * Because there is an extra lookup cost to identify duplicate task
-   * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * calls have significantly increased latency. Using hashed strings for the
-   * task id or for the prefix of the task id is recommended. Choosing task ids
-   * that are sequential or have sequential prefixes, for example using a
+   * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+   * increased latency. Using hashed strings for the task id or for
+   * the prefix of the task id is recommended. Choosing task ids that
+   * are sequential or have sequential prefixes, for example using a
    * timestamp, causes an increase in latency and error rates in all
    * task commands. The infrastructure relies on an approximately
    * uniform distribution of task ids to store and serve tasks
@@ -255,12 +254,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-   * The user can optionally specify a task
-   * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-   * then the system will generate a random unique task id, which will be set in
-   * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-   * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-   * set or is in the past then Cloud Tasks will set it to the current time.
+   * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+   * name is not specified then the system will generate a random
+   * unique task id, which will be set in the task returned in the
+   * [response][google.cloud.tasks.v2beta3.Task.name].
+   * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+   * past then Cloud Tasks will set it to the current time.
    * Task De-duplication:
    * Explicitly specifying a task ID enables task de-duplication.  If
    * a task's ID is identical to that of an existing task or a task
@@ -272,10 +271,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * queue.xml, then another task with the same name can't be created
    * for ~9days after the original task was deleted or executed.
    * Because there is an extra lookup cost to identify duplicate task
-   * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * calls have significantly increased latency. Using hashed strings for the
-   * task id or for the prefix of the task id is recommended. Choosing task ids
-   * that are sequential or have sequential prefixes, for example using a
+   * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+   * increased latency. Using hashed strings for the task id or for
+   * the prefix of the task id is recommended. Choosing task ids that
+   * are sequential or have sequential prefixes, for example using a
    * timestamp, causes an increase in latency and error rates in all
    * task commands. The infrastructure relies on an approximately
    * uniform distribution of task ids to store and serve tasks
@@ -294,17 +293,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The response_view specifies which subset of the
-   * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-   * By default response_view is
-   * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-   * retrieved by default because some data, such as payloads, might be
-   * desirable to return only when needed because of its large size or because
-   * of the sensitivity of data that it contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-   * requires `cloudtasks.tasks.fullView` [Google
-   * IAM](https://cloud.google.com/iam/) permission on the
-   * [Task][google.cloud.tasks.v2beta3.Task] resource.
+   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+   * returned.
+   * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+   * information is retrieved by default because some data, such as
+   * payloads, might be desirable to return only when needed because
+   * of its large size or because of the sensitivity of data that it
+   * contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -316,17 +314,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The response_view specifies which subset of the
-   * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-   * By default response_view is
-   * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-   * retrieved by default because some data, such as payloads, might be
-   * desirable to return only when needed because of its large size or because
-   * of the sensitivity of data that it contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-   * requires `cloudtasks.tasks.fullView` [Google
-   * IAM](https://cloud.google.com/iam/) permission on the
-   * [Task][google.cloud.tasks.v2beta3.Task] resource.
+   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+   * returned.
+   * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+   * information is retrieved by default because some data, such as
+   * payloads, might be desirable to return only when needed because
+   * of its large size or because of the sensitivity of data that it
+   * contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -395,15 +392,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     com.google.cloud.tasks.v2beta3.CreateTaskRequest other =
         (com.google.cloud.tasks.v2beta3.CreateTaskRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasTask() == other.hasTask());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasTask() != other.hasTask()) return false;
     if (hasTask()) {
-      result = result && getTask().equals(other.getTask());
+      if (!getTask().equals(other.getTask())) return false;
     }
-    result = result && responseView_ == other.responseView_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (responseView_ != other.responseView_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -525,8 +521,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for
-   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   * Request message for [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.CreateTaskRequest}
@@ -617,35 +612,35 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -809,7 +804,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta3.Task task_ = null;
+    private com.google.cloud.tasks.v2beta3.Task task_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.Task,
             com.google.cloud.tasks.v2beta3.Task.Builder,
@@ -823,12 +818,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -840,10 +835,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -863,12 +858,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -880,10 +875,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -907,12 +902,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -924,10 +919,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -957,12 +952,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -974,10 +969,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -1004,12 +999,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -1021,10 +1016,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -1056,12 +1051,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -1073,10 +1068,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -1104,12 +1099,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -1121,10 +1116,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -1146,12 +1141,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -1163,10 +1158,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -1190,12 +1185,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
-     * The user can optionally specify a task
-     * [name][google.cloud.tasks.v2beta3.Task.name]. If a name is not specified
-     * then the system will generate a random unique task id, which will be set in
-     * the task returned in the [response][google.cloud.tasks.v2beta3.Task.name].
-     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not
-     * set or is in the past then Cloud Tasks will set it to the current time.
+     * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
+     * name is not specified then the system will generate a random
+     * unique task id, which will be set in the task returned in the
+     * [response][google.cloud.tasks.v2beta3.Task.name].
+     * If [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] is not set or is in the
+     * past then Cloud Tasks will set it to the current time.
      * Task De-duplication:
      * Explicitly specifying a task ID enables task de-duplication.  If
      * a task's ID is identical to that of an existing task or a task
@@ -1207,10 +1202,10 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * queue.xml, then another task with the same name can't be created
      * for ~9days after the original task was deleted or executed.
      * Because there is an extra lookup cost to identify duplicate task
-     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * calls have significantly increased latency. Using hashed strings for the
-     * task id or for the prefix of the task id is recommended. Choosing task ids
-     * that are sequential or have sequential prefixes, for example using a
+     * names, these [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
+     * increased latency. Using hashed strings for the task id or for
+     * the prefix of the task id is recommended. Choosing task ids that
+     * are sequential or have sequential prefixes, for example using a
      * timestamp, causes an increase in latency and error rates in all
      * task commands. The infrastructure relies on an approximately
      * uniform distribution of task ids to store and serve tasks
@@ -1241,17 +1236,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -1263,17 +1257,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -1287,17 +1280,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -1312,17 +1304,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -1340,17 +1331,16 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 3;</code>
@@ -1364,7 +1354,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

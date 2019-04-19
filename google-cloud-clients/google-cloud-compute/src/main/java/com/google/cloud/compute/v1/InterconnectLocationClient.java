@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectLocationStub;
 import com.google.cloud.compute.v1.stub.InterconnectLocationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -218,9 +219,9 @@ public class InterconnectLocationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   String formattedInterconnectLocation = ProjectGlobalInterconnectLocationName.format("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   GetInterconnectLocationHttpRequest request = GetInterconnectLocationHttpRequest.newBuilder()
-   *     .setInterconnectLocation(interconnectLocation.toString())
+   *     .setInterconnectLocation(formattedInterconnectLocation)
    *     .build();
    *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(request);
    * }
@@ -244,9 +245,9 @@ public class InterconnectLocationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   String formattedInterconnectLocation = ProjectGlobalInterconnectLocationName.format("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   GetInterconnectLocationHttpRequest request = GetInterconnectLocationHttpRequest.newBuilder()
-   *     .setInterconnectLocation(interconnectLocation.toString())
+   *     .setInterconnectLocation(formattedInterconnectLocation)
    *     .build();
    *   ApiFuture&lt;InterconnectLocation&gt; future = interconnectLocationClient.getInterconnectLocationCallable().futureCall(request);
    *   // Do something
@@ -321,9 +322,9 @@ public class InterconnectLocationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInterconnectLocationsHttpRequest request = ListInterconnectLocationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (InterconnectLocation element : interconnectLocationClient.listInterconnectLocations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -348,9 +349,9 @@ public class InterconnectLocationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInterconnectLocationsHttpRequest request = ListInterconnectLocationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListInterconnectLocationsPagedResponse&gt; future = interconnectLocationClient.listInterconnectLocationsPagedCallable().futureCall(request);
    *   // Do something
@@ -375,9 +376,9 @@ public class InterconnectLocationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListInterconnectLocationsHttpRequest request = ListInterconnectLocationsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InterconnectLocationList response = interconnectLocationClient.listInterconnectLocationsCallable().call(request);
@@ -455,7 +456,8 @@ public class InterconnectLocationClient implements BackgroundResource {
                 ListInterconnectLocationsPage input) {
               return new ListInterconnectLocationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectLocationsPagedResponse(ListInterconnectLocationsPage page) {

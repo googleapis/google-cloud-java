@@ -77,7 +77,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 assetTypes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -109,7 +109,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -121,7 +121,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -464,20 +464,19 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.asset.v1beta1.ExportAssetsRequest other =
         (com.google.cloud.asset.v1beta1.ExportAssetsRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasReadTime() == other.hasReadTime());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasReadTime() != other.hasReadTime()) return false;
     if (hasReadTime()) {
-      result = result && getReadTime().equals(other.getReadTime());
+      if (!getReadTime().equals(other.getReadTime())) return false;
     }
-    result = result && getAssetTypesList().equals(other.getAssetTypesList());
-    result = result && contentType_ == other.contentType_;
-    result = result && (hasOutputConfig() == other.hasOutputConfig());
+    if (!getAssetTypesList().equals(other.getAssetTypesList())) return false;
+    if (contentType_ != other.contentType_) return false;
+    if (hasOutputConfig() != other.hasOutputConfig()) return false;
     if (hasOutputConfig()) {
-      result = result && getOutputConfig().equals(other.getOutputConfig());
+      if (!getOutputConfig().equals(other.getOutputConfig())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -701,7 +700,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.readTime_ = readTimeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -719,35 +718,35 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -927,7 +926,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.Timestamp readTime_ = null;
+    private com.google.protobuf.Timestamp readTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1142,7 +1141,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
         bitField0_ |= 0x00000004;
       }
@@ -1398,7 +1397,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.asset.v1beta1.OutputConfig outputConfig_ = null;
+    private com.google.cloud.asset.v1beta1.OutputConfig outputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1beta1.OutputConfig,
             com.google.cloud.asset.v1beta1.OutputConfig.Builder,
@@ -1591,7 +1590,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

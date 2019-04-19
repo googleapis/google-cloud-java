@@ -105,6 +105,20 @@ public interface PrimitiveTransformationOrBuilder
   /** <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code> */
   com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder();
 
+  /**
+   * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   */
+  boolean hasCryptoDeterministicConfig();
+  /**
+   * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   */
+  com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig();
+  /**
+   * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   */
+  com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
+      getCryptoDeterministicConfigOrBuilder();
+
   public com.google.privacy.dlp.v2.PrimitiveTransformation.TransformationCase
       getTransformationCase();
 }

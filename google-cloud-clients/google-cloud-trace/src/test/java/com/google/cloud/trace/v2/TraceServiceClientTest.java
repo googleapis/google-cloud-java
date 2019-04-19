@@ -25,8 +25,8 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.ProjectName;
 import com.google.devtools.cloudtrace.v2.Span;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -88,7 +88,7 @@ public class TraceServiceClientTest {
 
     client.batchWriteSpans(name, spans);
 
-    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchWriteSpansRequest actualRequest = (BatchWriteSpansRequest) actualRequests.get(0);
 

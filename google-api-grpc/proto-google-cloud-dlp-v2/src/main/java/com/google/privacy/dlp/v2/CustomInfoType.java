@@ -146,7 +146,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 detectionRules_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
@@ -167,7 +167,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -179,7 +179,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -495,7 +495,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -631,7 +631,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     words_ = new com.google.protobuf.LazyStringArrayList();
                     mutable_bitField0_ |= 0x00000001;
                   }
@@ -640,7 +640,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -653,7 +653,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             words_ = words_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -785,10 +785,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList other =
             (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) obj;
 
-        boolean result = true;
-        result = result && getWordsList().equals(other.getWordsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getWordsList().equals(other.getWordsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -981,7 +980,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result =
               new com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList(this);
           int from_bitField0_ = bitField0_;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             words_ = words_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -992,23 +991,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -1016,13 +1015,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -1087,7 +1086,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureWordsIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             words_ = new com.google.protobuf.LazyStringArrayList(words_);
             bitField0_ |= 0x00000001;
           }
@@ -1247,7 +1246,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -1487,21 +1486,19 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.CustomInfoType.Dictionary other =
           (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) obj;
 
-      boolean result = true;
-      result = result && getSourceCase().equals(other.getSourceCase());
-      if (!result) return false;
+      if (!getSourceCase().equals(other.getSourceCase())) return false;
       switch (sourceCase_) {
         case 1:
-          result = result && getWordList().equals(other.getWordList());
+          if (!getWordList().equals(other.getWordList())) return false;
           break;
         case 3:
-          result = result && getCloudStoragePath().equals(other.getCloudStoragePath());
+          if (!getCloudStoragePath().equals(other.getCloudStoragePath())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1741,23 +1738,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1765,13 +1762,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2270,7 +2267,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2404,7 +2401,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
     private Regex() {
       pattern_ = "";
-      groupIndexes_ = java.util.Collections.emptyList();
+      groupIndexes_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -2440,31 +2437,30 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               }
             case 16:
               {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  groupIndexes_ = new java.util.ArrayList<java.lang.Integer>();
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  groupIndexes_ = newIntList();
                   mutable_bitField0_ |= 0x00000002;
                 }
-                groupIndexes_.add(input.readInt32());
+                groupIndexes_.addInt(input.readInt32());
                 break;
               }
             case 18:
               {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
-                    && input.getBytesUntilLimit() > 0) {
-                  groupIndexes_ = new java.util.ArrayList<java.lang.Integer>();
+                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                  groupIndexes_ = newIntList();
                   mutable_bitField0_ |= 0x00000002;
                 }
                 while (input.getBytesUntilLimit() > 0) {
-                  groupIndexes_.add(input.readInt32());
+                  groupIndexes_.addInt(input.readInt32());
                 }
                 input.popLimit(limit);
                 break;
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2476,8 +2472,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          groupIndexes_ = java.util.Collections.unmodifiableList(groupIndexes_);
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          groupIndexes_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2548,7 +2544,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GROUP_INDEXES_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Integer> groupIndexes_;
+    private com.google.protobuf.Internal.IntList groupIndexes_;
     /**
      *
      *
@@ -2586,7 +2582,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 group_indexes = 2;</code>
      */
     public int getGroupIndexes(int index) {
-      return groupIndexes_.get(index);
+      return groupIndexes_.getInt(index);
     }
 
     private int groupIndexesMemoizedSerializedSize = -1;
@@ -2614,7 +2610,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         output.writeUInt32NoTag(groupIndexesMemoizedSerializedSize);
       }
       for (int i = 0; i < groupIndexes_.size(); i++) {
-        output.writeInt32NoTag(groupIndexes_.get(i));
+        output.writeInt32NoTag(groupIndexes_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2632,7 +2628,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         int dataSize = 0;
         for (int i = 0; i < groupIndexes_.size(); i++) {
           dataSize +=
-              com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(groupIndexes_.get(i));
+              com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(groupIndexes_.getInt(i));
         }
         size += dataSize;
         if (!getGroupIndexesList().isEmpty()) {
@@ -2657,11 +2653,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.CustomInfoType.Regex other =
           (com.google.privacy.dlp.v2.CustomInfoType.Regex) obj;
 
-      boolean result = true;
-      result = result && getPattern().equals(other.getPattern());
-      result = result && getGroupIndexesList().equals(other.getGroupIndexesList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getPattern().equals(other.getPattern())) return false;
+      if (!getGroupIndexesList().equals(other.getGroupIndexesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2826,7 +2821,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         pattern_ = "";
 
-        groupIndexes_ = java.util.Collections.emptyList();
+        groupIndexes_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -2858,8 +2853,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.pattern_ = pattern_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          groupIndexes_ = java.util.Collections.unmodifiableList(groupIndexes_);
+        if (((bitField0_ & 0x00000002) != 0)) {
+          groupIndexes_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.groupIndexes_ = groupIndexes_;
@@ -2870,23 +2865,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2894,13 +2889,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3065,11 +3060,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private java.util.List<java.lang.Integer> groupIndexes_ = java.util.Collections.emptyList();
+      private com.google.protobuf.Internal.IntList groupIndexes_ = emptyIntList();
 
       private void ensureGroupIndexesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          groupIndexes_ = new java.util.ArrayList<java.lang.Integer>(groupIndexes_);
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          groupIndexes_ = mutableCopy(groupIndexes_);
           bitField0_ |= 0x00000002;
         }
       }
@@ -3084,7 +3079,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 group_indexes = 2;</code>
        */
       public java.util.List<java.lang.Integer> getGroupIndexesList() {
-        return java.util.Collections.unmodifiableList(groupIndexes_);
+        return ((bitField0_ & 0x00000002) != 0)
+            ? java.util.Collections.unmodifiableList(groupIndexes_)
+            : groupIndexes_;
       }
       /**
        *
@@ -3110,7 +3107,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 group_indexes = 2;</code>
        */
       public int getGroupIndexes(int index) {
-        return groupIndexes_.get(index);
+        return groupIndexes_.getInt(index);
       }
       /**
        *
@@ -3124,7 +3121,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder setGroupIndexes(int index, int value) {
         ensureGroupIndexesIsMutable();
-        groupIndexes_.set(index, value);
+        groupIndexes_.setInt(index, value);
         onChanged();
         return this;
       }
@@ -3140,7 +3137,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder addGroupIndexes(int value) {
         ensureGroupIndexesIsMutable();
-        groupIndexes_.add(value);
+        groupIndexes_.addInt(value);
         onChanged();
         return this;
       }
@@ -3171,7 +3168,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 group_indexes = 2;</code>
        */
       public Builder clearGroupIndexes() {
-        groupIndexes_ = java.util.Collections.emptyList();
+        groupIndexes_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -3180,7 +3177,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3286,7 +3283,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               break;
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -3357,9 +3354,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.CustomInfoType.SurrogateType other =
           (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) obj;
 
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3557,23 +3553,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -3581,13 +3577,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3636,7 +3632,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3797,7 +3793,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -3876,10 +3872,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         super(builder);
       }
 
-      private Proximity() {
-        windowBefore_ = 0;
-        windowAfter_ = 0;
-      }
+      private Proximity() {}
 
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -3917,7 +3910,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -4031,11 +4024,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity other =
             (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity) obj;
 
-        boolean result = true;
-        result = result && (getWindowBefore() == other.getWindowBefore());
-        result = result && (getWindowAfter() == other.getWindowAfter());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (getWindowBefore() != other.getWindowBefore()) return false;
+        if (getWindowAfter() != other.getWindowAfter()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -4242,23 +4234,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -4266,13 +4258,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -4419,7 +4411,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -4580,7 +4572,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -4770,21 +4762,19 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment other =
             (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment) obj;
 
-        boolean result = true;
-        result = result && getAdjustmentCase().equals(other.getAdjustmentCase());
-        if (!result) return false;
+        if (!getAdjustmentCase().equals(other.getAdjustmentCase())) return false;
         switch (adjustmentCase_) {
           case 1:
-            result = result && getFixedLikelihoodValue() == other.getFixedLikelihoodValue();
+            if (getFixedLikelihoodValue() != other.getFixedLikelihoodValue()) return false;
             break;
           case 2:
-            result = result && (getRelativeLikelihood() == other.getRelativeLikelihood());
+            if (getRelativeLikelihood() != other.getRelativeLikelihood()) return false;
             break;
           case 0:
           default:
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -5012,23 +5002,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -5036,13 +5026,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -5282,7 +5272,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -5567,7 +5557,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -5814,21 +5804,20 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule other =
             (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) obj;
 
-        boolean result = true;
-        result = result && (hasHotwordRegex() == other.hasHotwordRegex());
+        if (hasHotwordRegex() != other.hasHotwordRegex()) return false;
         if (hasHotwordRegex()) {
-          result = result && getHotwordRegex().equals(other.getHotwordRegex());
+          if (!getHotwordRegex().equals(other.getHotwordRegex())) return false;
         }
-        result = result && (hasProximity() == other.hasProximity());
+        if (hasProximity() != other.hasProximity()) return false;
         if (hasProximity()) {
-          result = result && getProximity().equals(other.getProximity());
+          if (!getProximity().equals(other.getProximity())) return false;
         }
-        result = result && (hasLikelihoodAdjustment() == other.hasLikelihoodAdjustment());
+        if (hasLikelihoodAdjustment() != other.hasLikelihoodAdjustment()) return false;
         if (hasLikelihoodAdjustment()) {
-          result = result && getLikelihoodAdjustment().equals(other.getLikelihoodAdjustment());
+          if (!getLikelihoodAdjustment().equals(other.getLikelihoodAdjustment())) return false;
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -6071,23 +6060,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -6095,13 +6084,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -6160,7 +6149,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_ = null;
+        private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.CustomInfoType.Regex,
                 com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
@@ -6342,7 +6331,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           return hotwordRegexBuilder_;
         }
 
-        private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity_ = null;
+        private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder,
@@ -6596,7 +6585,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
 
         private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
-            likelihoodAdjustment_ = null;
+            likelihoodAdjustment_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder,
@@ -6812,7 +6801,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -6999,18 +6988,16 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.CustomInfoType.DetectionRule other =
           (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) obj;
 
-      boolean result = true;
-      result = result && getTypeCase().equals(other.getTypeCase());
-      if (!result) return false;
+      if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 1:
-          result = result && getHotwordRule().equals(other.getHotwordRule());
+          if (!getHotwordRule().equals(other.getHotwordRule())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7221,23 +7208,23 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -7245,13 +7232,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -7548,7 +7535,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8123,34 +8110,32 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.CustomInfoType other = (com.google.privacy.dlp.v2.CustomInfoType) obj;
 
-    boolean result = true;
-    result = result && (hasInfoType() == other.hasInfoType());
+    if (hasInfoType() != other.hasInfoType()) return false;
     if (hasInfoType()) {
-      result = result && getInfoType().equals(other.getInfoType());
+      if (!getInfoType().equals(other.getInfoType())) return false;
     }
-    result = result && likelihood_ == other.likelihood_;
-    result = result && getDetectionRulesList().equals(other.getDetectionRulesList());
-    result = result && exclusionType_ == other.exclusionType_;
-    result = result && getTypeCase().equals(other.getTypeCase());
-    if (!result) return false;
+    if (likelihood_ != other.likelihood_) return false;
+    if (!getDetectionRulesList().equals(other.getDetectionRulesList())) return false;
+    if (exclusionType_ != other.exclusionType_) return false;
+    if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 2:
-        result = result && getDictionary().equals(other.getDictionary());
+        if (!getDictionary().equals(other.getDictionary())) return false;
         break;
       case 3:
-        result = result && getRegex().equals(other.getRegex());
+        if (!getRegex().equals(other.getRegex())) return false;
         break;
       case 4:
-        result = result && getSurrogateType().equals(other.getSurrogateType());
+        if (!getSurrogateType().equals(other.getSurrogateType())) return false;
         break;
       case 5:
-        result = result && getStoredType().equals(other.getStoredType());
+        if (!getStoredType().equals(other.getStoredType())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -8422,7 +8407,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -8439,35 +8424,35 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -8589,7 +8574,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.privacy.dlp.v2.InfoType infoType_ = null;
+    private com.google.privacy.dlp.v2.InfoType infoType_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InfoType,
             com.google.privacy.dlp.v2.InfoType.Builder,
@@ -9731,7 +9716,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         detectionRules_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
                 detectionRules_);
@@ -10137,7 +10122,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
@@ -10230,7 +10215,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

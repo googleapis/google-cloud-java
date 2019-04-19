@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.securitycenter.v1beta1.stub.SecurityCenterStub;
 import com.google.cloud.securitycenter.v1beta1.stub.SecurityCenterStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -2067,7 +2068,8 @@ public class SecurityCenterClient implements BackgroundResource {
             public GroupAssetsPagedResponse apply(GroupAssetsPage input) {
               return new GroupAssetsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private GroupAssetsPagedResponse(GroupAssetsPage page) {
@@ -2146,7 +2148,8 @@ public class SecurityCenterClient implements BackgroundResource {
             public GroupFindingsPagedResponse apply(GroupFindingsPage input) {
               return new GroupFindingsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private GroupFindingsPagedResponse(GroupFindingsPage page) {
@@ -2227,7 +2230,8 @@ public class SecurityCenterClient implements BackgroundResource {
             public ListAssetsPagedResponse apply(ListAssetsPage input) {
               return new ListAssetsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAssetsPagedResponse(ListAssetsPage page) {
@@ -2313,7 +2317,8 @@ public class SecurityCenterClient implements BackgroundResource {
             public ListFindingsPagedResponse apply(ListFindingsPage input) {
               return new ListFindingsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListFindingsPagedResponse(ListFindingsPage page) {
@@ -2392,7 +2397,8 @@ public class SecurityCenterClient implements BackgroundResource {
             public ListSourcesPagedResponse apply(ListSourcesPage input) {
               return new ListSourcesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSourcesPagedResponse(ListSourcesPage page) {

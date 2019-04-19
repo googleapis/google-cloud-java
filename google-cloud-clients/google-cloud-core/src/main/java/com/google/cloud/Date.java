@@ -21,15 +21,12 @@ import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /** Represents a Date without time, such as 2017-03-17. Date is timezone independent. */
 @BetaApi("This is going to be replaced with LocalDate from threetenbp")
 public final class Date implements Comparable<Date>, Serializable {
 
   // Date format "yyyy-mm-dd"
-  private static final Pattern FORMAT_REGEXP = Pattern.compile("(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d)");
   private static final long serialVersionUID = 8067099123096783929L;
   private final int year;
   private final int month;
@@ -57,14 +54,19 @@ public final class Date implements Comparable<Date>, Serializable {
 
   /** @param date Data in RFC 3339 date format (yyyy-mm-dd). */
   public static Date parseDate(String date) {
-    Matcher matcher = FORMAT_REGEXP.matcher(date);
-    if (!matcher.matches()) {
-      throw new IllegalArgumentException("Invalid date: " + date);
+    Preconditions.checkNotNull(date);
+    final String invalidDate = "Invalid date: " + date;
+    Preconditions.checkArgument(date.length() == 10, invalidDate);
+    Preconditions.checkArgument(date.charAt(4) == '-', invalidDate);
+    Preconditions.checkArgument(date.charAt(7) == '-', invalidDate);
+    try {
+      int year = Integer.parseInt(date.substring(0, 4));
+      int month = Integer.parseInt(date.substring(5, 7));
+      int dayOfMonth = Integer.parseInt(date.substring(8, 10));
+      return new Date(year, month, dayOfMonth);
+    } catch (NumberFormatException e) {
+      throw new IllegalArgumentException(invalidDate, e);
     }
-    int year = Integer.parseInt(matcher.group(1));
-    int month = Integer.parseInt(matcher.group(2));
-    int dayOfMonth = Integer.parseInt(matcher.group(3));
-    return new Date(year, month, dayOfMonth);
   }
 
   /**

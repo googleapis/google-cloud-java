@@ -139,9 +139,9 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -151,9 +151,9 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -163,9 +163,9 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -175,9 +175,9 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -188,9 +188,9 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. The collection of session entity types to replace or extend
-   * developer entities with for this query only. The entity synonyms apply
-   * to all languages.
+   * Optional. Additional session entity types to replace or extend developer
+   * entity types with. The entity synonyms apply to all languages and persist
+   * for the session of this query.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
@@ -231,4 +231,45 @@ public interface QueryParametersOrBuilder
    * <code>.google.protobuf.Struct payload = 6;</code>
    */
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
+   */
+  boolean hasSentimentAnalysisRequestConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the type of sentiment analysis to perform. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
+      getSentimentAnalysisRequestConfigOrBuilder();
 }

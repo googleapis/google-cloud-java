@@ -198,10 +198,7 @@ public final class OsLoginProto {
     }
 
     private PosixAccount() {
-      primary_ = false;
       username_ = "";
-      uid_ = 0L;
-      gid_ = 0L;
       homeDirectory_ = "";
       shell_ = "";
       gecos_ = "";
@@ -292,7 +289,7 @@ public final class OsLoginProto {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -722,18 +719,17 @@ public final class OsLoginProto {
       com.google.cloud.oslogin.common.OsLoginProto.PosixAccount other =
           (com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) obj;
 
-      boolean result = true;
-      result = result && (getPrimary() == other.getPrimary());
-      result = result && getUsername().equals(other.getUsername());
-      result = result && (getUid() == other.getUid());
-      result = result && (getGid() == other.getGid());
-      result = result && getHomeDirectory().equals(other.getHomeDirectory());
-      result = result && getShell().equals(other.getShell());
-      result = result && getGecos().equals(other.getGecos());
-      result = result && getSystemId().equals(other.getSystemId());
-      result = result && getAccountId().equals(other.getAccountId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getPrimary() != other.getPrimary()) return false;
+      if (!getUsername().equals(other.getUsername())) return false;
+      if (getUid() != other.getUid()) return false;
+      if (getGid() != other.getGid()) return false;
+      if (!getHomeDirectory().equals(other.getHomeDirectory())) return false;
+      if (!getShell().equals(other.getShell())) return false;
+      if (!getGecos().equals(other.getGecos())) return false;
+      if (!getSystemId().equals(other.getSystemId())) return false;
+      if (!getAccountId().equals(other.getAccountId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -969,23 +965,23 @@ public final class OsLoginProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -993,13 +989,13 @@ public final class OsLoginProto {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1782,7 +1778,7 @@ public final class OsLoginProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1914,7 +1910,6 @@ public final class OsLoginProto {
 
     private SshPublicKey() {
       key_ = "";
-      expirationTimeUsec_ = 0L;
       fingerprint_ = "";
     }
 
@@ -1963,7 +1958,7 @@ public final class OsLoginProto {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2157,12 +2152,11 @@ public final class OsLoginProto {
       com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey other =
           (com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) obj;
 
-      boolean result = true;
-      result = result && getKey().equals(other.getKey());
-      result = result && (getExpirationTimeUsec() == other.getExpirationTimeUsec());
-      result = result && getFingerprint().equals(other.getFingerprint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKey().equals(other.getKey())) return false;
+      if (getExpirationTimeUsec() != other.getExpirationTimeUsec()) return false;
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2368,23 +2362,23 @@ public final class OsLoginProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2392,13 +2386,13 @@ public final class OsLoginProto {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2700,7 +2694,7 @@ public final class OsLoginProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override

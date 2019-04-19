@@ -13,9 +13,12 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
+-  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (GA)
+-  [Cloud KMS](google-cloud-clients/google-cloud-kms) (GA)
 -  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
 -  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (GA)
+-  [Cloud Speech](google-cloud-clients/google-cloud-speech) (GA)
 -  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
 -  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
@@ -29,10 +32,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
--  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
--  [Cloud KMS](google-cloud-clients/google-cloud-kms) (Beta)
--  [Cloud Speech](google-cloud-clients/google-cloud-speech) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
@@ -43,6 +43,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
+-  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
@@ -66,7 +67,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.82.0-alpha</version>
+        <version>0.88.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -85,11 +86,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.64.0'
+compile 'com.google.cloud:google-cloud-storage:1.70.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.64.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.70.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -110,7 +111,7 @@ If you are running into problems with version conflicts, the easiest way to solv
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.82.0-alpha</version>
+        <version>0.88.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

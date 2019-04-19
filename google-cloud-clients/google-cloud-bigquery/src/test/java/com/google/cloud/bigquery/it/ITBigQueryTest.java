@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Date;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -92,6 +93,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -111,6 +113,7 @@ public class ITBigQueryTest {
 
   private static final byte[] BYTES = {0xD, 0xE, 0xA, 0xD};
   private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
+  private static final Long EXPIRATION_MS = 86400000L;
   private static final Logger LOG = Logger.getLogger(ITBigQueryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
@@ -436,6 +439,7 @@ public class ITBigQueryTest {
     assertNotNull(remoteTable.getCreationTime());
     assertNotNull(remoteTable.getLastModifiedTime());
     assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
     assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertEquals(
         partitioning, remoteTable.<StandardTableDefinition>getDefinition().getTimePartitioning());
@@ -468,6 +472,7 @@ public class ITBigQueryTest {
     assertNull(remoteTable.getDefinition().getSchema());
     assertNull(remoteTable.getLastModifiedTime());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getTimePartitioning());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getClustering());
@@ -606,6 +611,68 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testListTablesWithPartitioning() {
+    String tableName = "test_list_tables_partitioning";
+    TimePartitioning timePartitioning = TimePartitioning.of(Type.DAY, EXPIRATION_MS);
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(TABLE_SCHEMA)
+            .setTimePartitioning(timePartitioning)
+            .build();
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    Table createdPartitioningTable = bigquery.create(tableInfo);
+    assertNotNull(createdPartitioningTable);
+    try {
+      Page<Table> tables = bigquery.listTables(DATASET);
+      boolean found = false;
+      Iterator<Table> tableIterator = tables.getValues().iterator();
+      while (tableIterator.hasNext() && !found) {
+        StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
+        if (standardTableDefinition.getTimePartitioning() != null
+            && standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
+            && standardTableDefinition
+                .getTimePartitioning()
+                .getExpirationMs()
+                .equals(EXPIRATION_MS)) {
+          found = true;
+        }
+      }
+      assertTrue(found);
+    } finally {
+      createdPartitioningTable.delete();
+    }
+  }
+
+  @Test
+  public void testListPartitions() throws InterruptedException {
+    String tableName = "test_table_partitions";
+    Date date = Date.fromJavaUtilDate(new java.util.Date());
+    String partitionDate = date.toString().replaceAll("-", "");
+    TableId tableId = TableId.of(DATASET, tableName + "$" + partitionDate);
+    String query =
+        String.format(
+            "CREATE OR REPLACE TABLE  %s.%s ( StringField STRING )"
+                + " PARTITION BY DATE(_PARTITIONTIME) "
+                + "OPTIONS( partition_expiration_days=1)",
+            DATASET, tableName);
+    Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(query).build()));
+    job.waitFor();
+    assertTrue(job.isDone());
+    try {
+      Map<String, Object> row = new HashMap<String, Object>();
+      row.put("StringField", "StringValue");
+      InsertAllRequest request = InsertAllRequest.newBuilder(tableId).addRow(row).build();
+      InsertAllResponse response = bigquery.insertAll(request);
+      assertFalse(response.hasErrors());
+      assertEquals(0, response.getInsertErrors().size());
+      List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
+      assertEquals(1, partitions.size());
+    } finally {
+      bigquery.delete(DATASET, tableName);
+    }
+  }
+
+  @Test
   public void testUpdateTable() {
     String tableName = "test_update_table";
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
@@ -707,6 +774,7 @@ public class ITBigQueryTest {
     assertNull(updatedTable.getDefinition().getSchema());
     assertNull(updatedTable.getLastModifiedTime());
     assertNull(updatedTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNull(updatedTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
     assertNull(updatedTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertTrue(createdTable.delete());
   }

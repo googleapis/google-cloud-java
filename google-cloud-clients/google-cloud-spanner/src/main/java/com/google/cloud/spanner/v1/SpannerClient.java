@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.spanner.v1.BeginTransactionRequest;
@@ -36,6 +37,8 @@ import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -525,7 +528,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -548,7 +552,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -570,7 +575,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -593,7 +599,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -708,6 +715,96 @@ public class SpannerClient implements BackgroundResource {
   public final ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlCallable() {
     return stub.executeStreamingSqlCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Executes a batch of SQL DML statements. This method allows many statements to be run with lower
+   * latency than submitting them sequentially with
+   * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+   *
+   * <p>Statements are executed in order, sequentially.
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+   * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed.
+   * If a statement fails, its error status will be returned as part of the
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will stop at the first
+   * failed statement; the remaining statements will not run.
+   *
+   * <p>ExecuteBatchDml is expected to return an OK status with a response even if there was an
+   * error while processing one of the DML statements. Clients must inspect response.status to
+   * determine if there were any errors while processing the request.
+   *
+   * <p>See more details in [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   TransactionSelector transaction = TransactionSelector.newBuilder().build();
+   *   List&lt;ExecuteBatchDmlRequest.Statement&gt; statements = new ArrayList&lt;&gt;();
+   *   long seqno = 0L;
+   *   ExecuteBatchDmlRequest request = ExecuteBatchDmlRequest.newBuilder()
+   *     .setSession(session.toString())
+   *     .setTransaction(transaction)
+   *     .addAllStatements(statements)
+   *     .setSeqno(seqno)
+   *     .build();
+   *   ExecuteBatchDmlResponse response = spannerClient.executeBatchDml(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest request) {
+    return executeBatchDmlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Executes a batch of SQL DML statements. This method allows many statements to be run with lower
+   * latency than submitting them sequentially with
+   * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+   *
+   * <p>Statements are executed in order, sequentially.
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+   * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed.
+   * If a statement fails, its error status will be returned as part of the
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will stop at the first
+   * failed statement; the remaining statements will not run.
+   *
+   * <p>ExecuteBatchDml is expected to return an OK status with a response even if there was an
+   * error while processing one of the DML statements. Clients must inspect response.status to
+   * determine if there were any errors while processing the request.
+   *
+   * <p>See more details in [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   TransactionSelector transaction = TransactionSelector.newBuilder().build();
+   *   List&lt;ExecuteBatchDmlRequest.Statement&gt; statements = new ArrayList&lt;&gt;();
+   *   long seqno = 0L;
+   *   ExecuteBatchDmlRequest request = ExecuteBatchDmlRequest.newBuilder()
+   *     .setSession(session.toString())
+   *     .setTransaction(transaction)
+   *     .addAllStatements(statements)
+   *     .setSeqno(seqno)
+   *     .build();
+   *   ApiFuture&lt;ExecuteBatchDmlResponse&gt; future = spannerClient.executeBatchDmlCallable().futureCall(request);
+   *   // Do something
+   *   ExecuteBatchDmlResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlCallable() {
+    return stub.executeBatchDmlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1302,10 +1399,10 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String sql = "";
    *   PartitionQueryRequest request = PartitionQueryRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setSql(sql)
    *     .build();
    *   PartitionResponse response = spannerClient.partitionQuery(request);
@@ -1336,10 +1433,10 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String sql = "";
    *   PartitionQueryRequest request = PartitionQueryRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setSql(sql)
    *     .build();
    *   ApiFuture&lt;PartitionResponse&gt; future = spannerClient.partitionQueryCallable().futureCall(request);
@@ -1370,11 +1467,11 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String table = "";
    *   KeySet keySet = KeySet.newBuilder().build();
    *   PartitionReadRequest request = PartitionReadRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setTable(table)
    *     .setKeySet(keySet)
    *     .build();
@@ -1407,11 +1504,11 @@ public class SpannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SpannerClient spannerClient = SpannerClient.create()) {
-   *   String formattedSession = SessionName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
    *   String table = "";
    *   KeySet keySet = KeySet.newBuilder().build();
    *   PartitionReadRequest request = PartitionReadRequest.newBuilder()
-   *     .setSession(formattedSession)
+   *     .setSession(session.toString())
    *     .setTable(table)
    *     .setKeySet(keySet)
    *     .build();
@@ -1475,7 +1572,8 @@ public class SpannerClient implements BackgroundResource {
             public ListSessionsPagedResponse apply(ListSessionsPage input) {
               return new ListSessionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSessionsPagedResponse(ListSessionsPage page) {

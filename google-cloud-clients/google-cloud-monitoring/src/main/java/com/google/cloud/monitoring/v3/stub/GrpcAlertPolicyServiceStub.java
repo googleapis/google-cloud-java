@@ -23,7 +23,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.monitoring.v3.AlertPolicy;
 import com.google.monitoring.v3.CreateAlertPolicyRequest;
 import com.google.monitoring.v3.DeleteAlertPolicyRequest;
@@ -35,6 +37,7 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -151,22 +154,68 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
         listAlertPoliciesTransportSettings =
             GrpcCallSettings.<ListAlertPoliciesRequest, ListAlertPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listAlertPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListAlertPoliciesRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListAlertPoliciesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetAlertPolicyRequest, AlertPolicy> getAlertPolicyTransportSettings =
         GrpcCallSettings.<GetAlertPolicyRequest, AlertPolicy>newBuilder()
             .setMethodDescriptor(getAlertPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetAlertPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetAlertPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyTransportSettings =
         GrpcCallSettings.<CreateAlertPolicyRequest, AlertPolicy>newBuilder()
             .setMethodDescriptor(createAlertPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateAlertPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateAlertPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyTransportSettings =
         GrpcCallSettings.<DeleteAlertPolicyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAlertPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAlertPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAlertPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyTransportSettings =
         GrpcCallSettings.<UpdateAlertPolicyRequest, AlertPolicy>newBuilder()
             .setMethodDescriptor(updateAlertPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateAlertPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateAlertPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put(
+                        "alert_policy.name", String.valueOf(request.getAlertPolicy().getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listAlertPoliciesCallable =

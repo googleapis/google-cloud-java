@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupStub;
 import com.google.cloud.compute.v1.stub.InstanceGroupStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -226,10 +227,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   AddInstancesInstanceGroupHttpRequest request = AddInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
    *     .build();
    *   Operation response = instanceGroupClient.addInstancesInstanceGroup(request);
@@ -253,10 +254,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   AddInstancesInstanceGroupHttpRequest request = AddInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.addInstancesInstanceGroupCallable().futureCall(request);
@@ -333,9 +334,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstanceGroupsHttpRequest request = AggregatedListInstanceGroupsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (InstanceGroupsScopedList element : instanceGroupClient.aggregatedListInstanceGroups(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -360,9 +361,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstanceGroupsHttpRequest request = AggregatedListInstanceGroupsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListInstanceGroupsPagedResponse&gt; future = instanceGroupClient.aggregatedListInstanceGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -387,9 +388,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListInstanceGroupsHttpRequest request = AggregatedListInstanceGroupsHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     InstanceGroupAggregatedList response = instanceGroupClient.aggregatedListInstanceGroupsCallable().call(request);
@@ -476,9 +477,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   DeleteInstanceGroupHttpRequest request = DeleteInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .build();
    *   Operation response = instanceGroupClient.deleteInstanceGroup(request);
    * }
@@ -502,9 +503,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   DeleteInstanceGroupHttpRequest request = DeleteInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.deleteInstanceGroupCallable().futureCall(request);
    *   // Do something
@@ -579,9 +580,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   GetInstanceGroupHttpRequest request = GetInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .build();
    *   InstanceGroup response = instanceGroupClient.getInstanceGroup(request);
    * }
@@ -604,9 +605,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   GetInstanceGroupHttpRequest request = GetInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .build();
    *   ApiFuture&lt;InstanceGroup&gt; future = instanceGroupClient.getInstanceGroupCallable().futureCall(request);
    *   // Do something
@@ -694,10 +695,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   InsertInstanceGroupHttpRequest request = InsertInstanceGroupHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setInstanceGroupResource(instanceGroupResource)
    *     .build();
    *   Operation response = instanceGroupClient.insertInstanceGroup(request);
@@ -721,10 +722,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   InsertInstanceGroupHttpRequest request = InsertInstanceGroupHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setInstanceGroupResource(instanceGroupResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.insertInstanceGroupCallable().futureCall(request);
@@ -799,9 +800,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstanceGroupsHttpRequest request = ListInstanceGroupsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (InstanceGroup element : instanceGroupClient.listInstanceGroups(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -826,9 +827,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstanceGroupsHttpRequest request = ListInstanceGroupsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListInstanceGroupsPagedResponse&gt; future = instanceGroupClient.listInstanceGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -852,9 +853,9 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListInstanceGroupsHttpRequest request = ListInstanceGroupsHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     InstanceGroupList response = instanceGroupClient.listInstanceGroupsCallable().call(request);
@@ -953,10 +954,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
    *   ListInstancesInstanceGroupsHttpRequest request = ListInstancesInstanceGroupsHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
    *     .build();
    *   for (InstanceWithNamedPorts element : instanceGroupClient.listInstancesInstanceGroups(request).iterateAll()) {
@@ -982,10 +983,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
    *   ListInstancesInstanceGroupsHttpRequest request = ListInstancesInstanceGroupsHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;ListInstancesInstanceGroupsPagedResponse&gt; future = instanceGroupClient.listInstancesInstanceGroupsPagedCallable().futureCall(request);
@@ -1011,10 +1012,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
    *   ListInstancesInstanceGroupsHttpRequest request = ListInstancesInstanceGroupsHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
    *     .build();
    *   while (true) {
@@ -1127,10 +1128,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   RemoveInstancesInstanceGroupHttpRequest request = RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
    *     .build();
    *   Operation response = instanceGroupClient.removeInstancesInstanceGroup(request);
@@ -1159,10 +1160,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   RemoveInstancesInstanceGroupHttpRequest request = RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.removeInstancesInstanceGroupCallable().futureCall(request);
@@ -1249,10 +1250,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   SetNamedPortsInstanceGroupHttpRequest request = SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
    *     .build();
    *   Operation response = instanceGroupClient.setNamedPortsInstanceGroup(request);
@@ -1275,10 +1276,10 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
-   *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
+   *   String formattedInstanceGroup = ProjectZoneInstanceGroupName.format("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
    *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   SetNamedPortsInstanceGroupHttpRequest request = SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-   *     .setInstanceGroup(instanceGroup.toString())
+   *     .setInstanceGroup(formattedInstanceGroup)
    *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceGroupClient.setNamedPortsInstanceGroupCallable().futureCall(request);
@@ -1350,7 +1351,8 @@ public class InstanceGroupClient implements BackgroundResource {
                 AggregatedListInstanceGroupsPage input) {
               return new AggregatedListInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstanceGroupsPagedResponse(AggregatedListInstanceGroupsPage page) {
@@ -1446,7 +1448,8 @@ public class InstanceGroupClient implements BackgroundResource {
             public ListInstanceGroupsPagedResponse apply(ListInstanceGroupsPage input) {
               return new ListInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceGroupsPagedResponse(ListInstanceGroupsPage page) {
@@ -1534,7 +1537,8 @@ public class InstanceGroupClient implements BackgroundResource {
                 ListInstancesInstanceGroupsPage input) {
               return new ListInstancesInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesInstanceGroupsPagedResponse(ListInstancesInstanceGroupsPage page) {

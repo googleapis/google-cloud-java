@@ -18,10 +18,9 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
-import com.google.cloud.spanner.SpannerImpl.MultiUseReadOnlyTransaction;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;

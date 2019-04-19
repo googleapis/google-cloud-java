@@ -12,6 +12,107 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Details of a Delete operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+   */
+  boolean hasDeleteDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of a Delete operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+   */
+  com.google.cloud.automl.v1beta1.DeleteOperationMetadata getDeleteDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of a Delete operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
+   */
+  com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder getDeleteDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+   * </code>
+   */
+  boolean hasDeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.DeployModelOperationMetadata getDeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder
+      getDeployModelDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  boolean hasUndeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata getUndeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder
+      getUndeployModelDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
@@ -47,7 +148,181 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  boolean hasImportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  com.google.cloud.automl.v1beta1.ImportDataOperationMetadata getImportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder
+      getImportDataDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+   * </code>
+   */
+  boolean hasBatchPredictDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata getBatchPredictDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder
+      getBatchPredictDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  boolean hasExportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  com.google.cloud.automl.v1beta1.ExportDataOperationMetadata getExportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder
+      getExportDataDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+   * </code>
+   */
+  boolean hasExportModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ExportModelOperationMetadata getExportModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder
+      getExportModelDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportEvaluatedExamples operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+   * </code>
+   */
+  boolean hasExportEvaluatedExamplesDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportEvaluatedExamples operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+      getExportEvaluatedExamplesDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportEvaluatedExamples operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder
+      getExportEvaluatedExamplesDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Progress of operation. Range: [0, 100].
+   * Not used currently.
    * </pre>
    *
    * <code>int32 progress_percent = 13;</code>

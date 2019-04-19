@@ -25,8 +25,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   private Subscription() {
     name_ = "";
     topic_ = "";
-    ackDeadlineSeconds_ = 0;
-    retainAckedMessages_ = false;
   }
 
   @java.lang.Override
@@ -109,7 +107,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000040;
@@ -118,6 +116,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(
                       LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 80:
+            {
+              enableMessageOrdering_ = input.readBool();
               break;
             }
           case 90:
@@ -138,7 +141,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -547,6 +550,27 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ENABLE_MESSAGE_ORDERING_FIELD_NUMBER = 10;
+  private boolean enableMessageOrdering_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, messages published with the same `ordering_key` in `PubsubMessage`
+   * will be delivered to the subscribers in the order in which they
+   * are received by the Pub/Sub system. Otherwise, they may be delivered in
+   * any order.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>bool enable_message_ordering = 10;</code>
+   */
+  public boolean getEnableMessageOrdering() {
+    return enableMessageOrdering_;
+  }
+
   public static final int EXPIRATION_POLICY_FIELD_NUMBER = 11;
   private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_;
   /**
@@ -646,6 +670,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
+    if (enableMessageOrdering_ != false) {
+      output.writeBool(10, enableMessageOrdering_);
+    }
     if (expirationPolicy_ != null) {
       output.writeMessage(11, getExpirationPolicy());
     }
@@ -688,6 +715,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
     }
+    if (enableMessageOrdering_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableMessageOrdering_);
+    }
     if (expirationPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpirationPolicy());
     }
@@ -706,26 +736,26 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.pubsub.v1.Subscription other = (com.google.pubsub.v1.Subscription) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getTopic().equals(other.getTopic());
-    result = result && (hasPushConfig() == other.hasPushConfig());
+    if (!getName().equals(other.getName())) return false;
+    if (!getTopic().equals(other.getTopic())) return false;
+    if (hasPushConfig() != other.hasPushConfig()) return false;
     if (hasPushConfig()) {
-      result = result && getPushConfig().equals(other.getPushConfig());
+      if (!getPushConfig().equals(other.getPushConfig())) return false;
     }
-    result = result && (getAckDeadlineSeconds() == other.getAckDeadlineSeconds());
-    result = result && (getRetainAckedMessages() == other.getRetainAckedMessages());
-    result = result && (hasMessageRetentionDuration() == other.hasMessageRetentionDuration());
+    if (getAckDeadlineSeconds() != other.getAckDeadlineSeconds()) return false;
+    if (getRetainAckedMessages() != other.getRetainAckedMessages()) return false;
+    if (hasMessageRetentionDuration() != other.hasMessageRetentionDuration()) return false;
     if (hasMessageRetentionDuration()) {
-      result = result && getMessageRetentionDuration().equals(other.getMessageRetentionDuration());
+      if (!getMessageRetentionDuration().equals(other.getMessageRetentionDuration())) return false;
     }
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && (hasExpirationPolicy() == other.hasExpirationPolicy());
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getEnableMessageOrdering() != other.getEnableMessageOrdering()) return false;
+    if (hasExpirationPolicy() != other.hasExpirationPolicy()) return false;
     if (hasExpirationPolicy()) {
-      result = result && getExpirationPolicy().equals(other.getExpirationPolicy());
+      if (!getExpirationPolicy().equals(other.getExpirationPolicy())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -755,6 +785,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + ENABLE_MESSAGE_ORDERING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMessageOrdering());
     if (hasExpirationPolicy()) {
       hash = (37 * hash) + EXPIRATION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getExpirationPolicy().hashCode();
@@ -944,6 +976,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         messageRetentionDurationBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      enableMessageOrdering_ = false;
+
       if (expirationPolicyBuilder_ == null) {
         expirationPolicy_ = null;
       } else {
@@ -994,6 +1028,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.enableMessageOrdering_ = enableMessageOrdering_;
       if (expirationPolicyBuilder_ == null) {
         result.expirationPolicy_ = expirationPolicy_;
       } else {
@@ -1006,35 +1041,35 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1070,6 +1105,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         mergeMessageRetentionDuration(other.getMessageRetentionDuration());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.getEnableMessageOrdering() != false) {
+        setEnableMessageOrdering(other.getEnableMessageOrdering());
+      }
       if (other.hasExpirationPolicy()) {
         mergeExpirationPolicy(other.getExpirationPolicy());
       }
@@ -1332,7 +1370,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.pubsub.v1.PushConfig pushConfig_ = null;
+    private com.google.pubsub.v1.PushConfig pushConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.PushConfig,
             com.google.pubsub.v1.PushConfig.Builder,
@@ -1697,7 +1735,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Duration messageRetentionDuration_ = null;
+    private com.google.protobuf.Duration messageRetentionDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -2110,7 +2148,69 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_ = null;
+    private boolean enableMessageOrdering_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
+    public boolean getEnableMessageOrdering() {
+      return enableMessageOrdering_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
+    public Builder setEnableMessageOrdering(boolean value) {
+
+      enableMessageOrdering_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
+    public Builder clearEnableMessageOrdering() {
+
+      enableMessageOrdering_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.pubsub.v1.ExpirationPolicy,
             com.google.pubsub.v1.ExpirationPolicy.Builder,
@@ -2366,7 +2466,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

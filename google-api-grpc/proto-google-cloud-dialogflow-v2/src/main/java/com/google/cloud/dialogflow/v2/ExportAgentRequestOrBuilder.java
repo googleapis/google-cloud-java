@@ -35,9 +35,11 @@ public interface ExportAgentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Google Cloud Storage URI to export the agent to.
-   * Note: The URI must start with
-   * "gs://". If left unspecified, the serialized agent is returned inline.
+   * Optional. The
+   * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+   * URI to export the agent to.
+   * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
    * <code>string agent_uri = 2;</code>
@@ -47,9 +49,11 @@ public interface ExportAgentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Google Cloud Storage URI to export the agent to.
-   * Note: The URI must start with
-   * "gs://". If left unspecified, the serialized agent is returned inline.
+   * Optional. The
+   * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+   * URI to export the agent to.
+   * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
    * <code>string agent_uri = 2;</code>

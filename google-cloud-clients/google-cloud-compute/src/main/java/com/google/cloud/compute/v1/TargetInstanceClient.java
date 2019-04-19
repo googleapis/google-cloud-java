@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.TargetInstanceStub;
 import com.google.cloud.compute.v1.stub.TargetInstanceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -214,9 +215,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetInstancesHttpRequest request = AggregatedListTargetInstancesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (TargetInstancesScopedList element : targetInstanceClient.aggregatedListTargetInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -241,9 +242,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetInstancesHttpRequest request = AggregatedListTargetInstancesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;AggregatedListTargetInstancesPagedResponse&gt; future = targetInstanceClient.aggregatedListTargetInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -268,9 +269,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   AggregatedListTargetInstancesHttpRequest request = AggregatedListTargetInstancesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     TargetInstanceAggregatedList response = targetInstanceClient.aggregatedListTargetInstancesCallable().call(request);
@@ -351,9 +352,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   String formattedTargetInstance = ProjectZoneTargetInstanceName.format("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   DeleteTargetInstanceHttpRequest request = DeleteTargetInstanceHttpRequest.newBuilder()
-   *     .setTargetInstance(targetInstance.toString())
+   *     .setTargetInstance(formattedTargetInstance)
    *     .build();
    *   Operation response = targetInstanceClient.deleteTargetInstance(request);
    * }
@@ -375,9 +376,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   String formattedTargetInstance = ProjectZoneTargetInstanceName.format("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   DeleteTargetInstanceHttpRequest request = DeleteTargetInstanceHttpRequest.newBuilder()
-   *     .setTargetInstance(targetInstance.toString())
+   *     .setTargetInstance(formattedTargetInstance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetInstanceClient.deleteTargetInstanceCallable().futureCall(request);
    *   // Do something
@@ -452,9 +453,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   String formattedTargetInstance = ProjectZoneTargetInstanceName.format("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   GetTargetInstanceHttpRequest request = GetTargetInstanceHttpRequest.newBuilder()
-   *     .setTargetInstance(targetInstance.toString())
+   *     .setTargetInstance(formattedTargetInstance)
    *     .build();
    *   TargetInstance response = targetInstanceClient.getTargetInstance(request);
    * }
@@ -477,9 +478,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   String formattedTargetInstance = ProjectZoneTargetInstanceName.format("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   GetTargetInstanceHttpRequest request = GetTargetInstanceHttpRequest.newBuilder()
-   *     .setTargetInstance(targetInstance.toString())
+   *     .setTargetInstance(formattedTargetInstance)
    *     .build();
    *   ApiFuture&lt;TargetInstance&gt; future = targetInstanceClient.getTargetInstanceCallable().futureCall(request);
    *   // Do something
@@ -567,10 +568,10 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   InsertTargetInstanceHttpRequest request = InsertTargetInstanceHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setTargetInstanceResource(targetInstanceResource)
    *     .build();
    *   Operation response = targetInstanceClient.insertTargetInstance(request);
@@ -594,10 +595,10 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   InsertTargetInstanceHttpRequest request = InsertTargetInstanceHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .setTargetInstanceResource(targetInstanceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetInstanceClient.insertTargetInstanceCallable().futureCall(request);
@@ -672,9 +673,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListTargetInstancesHttpRequest request = ListTargetInstancesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   for (TargetInstance element : targetInstanceClient.listTargetInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -699,9 +700,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListTargetInstancesHttpRequest request = ListTargetInstancesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   ApiFuture&lt;ListTargetInstancesPagedResponse&gt; future = targetInstanceClient.listTargetInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -725,9 +726,9 @@ public class TargetInstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+   *   String formattedZone = ProjectZoneName.format("[PROJECT]", "[ZONE]");
    *   ListTargetInstancesHttpRequest request = ListTargetInstancesHttpRequest.newBuilder()
-   *     .setZone(zone.toString())
+   *     .setZone(formattedZone)
    *     .build();
    *   while (true) {
    *     TargetInstanceList response = targetInstanceClient.listTargetInstancesCallable().call(request);
@@ -807,7 +808,8 @@ public class TargetInstanceClient implements BackgroundResource {
                 AggregatedListTargetInstancesPage input) {
               return new AggregatedListTargetInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListTargetInstancesPagedResponse(AggregatedListTargetInstancesPage page) {
@@ -903,7 +905,8 @@ public class TargetInstanceClient implements BackgroundResource {
             public ListTargetInstancesPagedResponse apply(ListTargetInstancesPage input) {
               return new ListTargetInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTargetInstancesPagedResponse(ListTargetInstancesPage page) {

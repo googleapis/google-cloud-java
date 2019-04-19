@@ -77,6 +77,55 @@ public abstract class FieldValue {
         }
       };
 
+  static class NumericIncrementFieldValue extends FieldValue {
+    final Number operand;
+
+    NumericIncrementFieldValue(Number operand) {
+      this.operand = operand;
+    }
+
+    @Override
+    boolean includeInDocumentMask() {
+      return false;
+    }
+
+    @Override
+    boolean includeInDocumentTransform() {
+      return true;
+    }
+
+    @Override
+    String getMethodName() {
+      return "FieldValue.increment()";
+    }
+
+    @Override
+    FieldTransform toProto(FieldPath path) {
+      FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
+      fieldTransform.setFieldPath(path.getEncodedPath());
+      fieldTransform.setIncrement(
+          UserDataConverter.encodeValue(path, operand, UserDataConverter.ARGUMENT));
+      return fieldTransform.build();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      NumericIncrementFieldValue that = (NumericIncrementFieldValue) o;
+      return Objects.equals(operand, that.operand);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(operand);
+    }
+  }
+
   static class ArrayUnionFieldValue extends FieldValue {
     final List<Object> elements;
 
@@ -205,11 +254,44 @@ public abstract class FieldValue {
   }
 
   /**
-   * Returns a special value that can be used with set() or update() that tells the server to union
-   * the given elements with any array value that already exists on the server. Each specified
-   * element that doesn't already exist in the array will be added to the end. If the field being
-   * modified is not already an array it will be overwritten with an array containing exactly the
-   * specified elements.
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to increment the field's current value by the given value.
+   *
+   * <p>If the current field value is an integer, possible integer overflows are resolved to
+   * Long.MAX_VALUE or Long.MIN_VALUE. If the current field value is a double, both values will be
+   * interpreted as doubles and the arithmetic will follow IEEE 754 semantics.
+   *
+   * <p>If the current field is not an integer or double, or if the field does not yet exist, the
+   * transformation will set the field to the given value.
+   *
+   * @return The FieldValue sentinel for use in a call to set(), create() or update().
+   */
+  @Nonnull
+  public static FieldValue increment(long l) {
+    return new NumericIncrementFieldValue(l);
+  }
+
+  /**
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to increment the field's current value by the given value.
+   *
+   * <p>If the current value is an integer or a double, both the current and the given value will be
+   * interpreted as doubles and all arithmetic will follow IEEE 754 semantics. Otherwise, the
+   * transformation will set the field to the given value.
+   *
+   * @return The FieldValue sentinel for use in a call to set(), create() or update().
+   */
+  @Nonnull
+  public static FieldValue increment(double d) {
+    return new NumericIncrementFieldValue(d);
+  }
+
+  /**
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to union the given elements with any array value that already exists on the server. Each
+   * specified element that doesn't already exist in the array will be added to the end. If the
+   * field being modified is not already an array it will be overwritten with an array containing
+   * exactly the specified elements.
    *
    * @param elements The elements to union into the array.
    * @return The FieldValue sentinel for use in a call to set() or update().
@@ -221,10 +303,10 @@ public abstract class FieldValue {
   }
 
   /**
-   * Returns a special value that can be used with set() or update() that tells the server to remove
-   * the given elements from any array value that already exists on the server. All instances of
-   * each element specified will be removed from the array. If the field being modified is not
-   * already an array it will be overwritten with an empty array.
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to remove the given elements from any array value that already exists on the server. All
+   * instances of each element specified will be removed from the array. If the field being modified
+   * is not already an array it will be overwritten with an empty array.
    *
    * @param elements The elements to remove from the array.
    * @return The FieldValue sentinel for use in a call to set() or update().

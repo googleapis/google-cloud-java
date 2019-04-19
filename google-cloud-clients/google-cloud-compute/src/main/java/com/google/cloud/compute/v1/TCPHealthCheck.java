@@ -27,6 +27,7 @@ import javax.annotation.Nullable;
 public final class TCPHealthCheck implements ApiMessage {
   private final Integer port;
   private final String portName;
+  private final String portSpecification;
   private final String proxyHeader;
   private final String request;
   private final String response;
@@ -34,15 +35,22 @@ public final class TCPHealthCheck implements ApiMessage {
   private TCPHealthCheck() {
     this.port = null;
     this.portName = null;
+    this.portSpecification = null;
     this.proxyHeader = null;
     this.request = null;
     this.response = null;
   }
 
   private TCPHealthCheck(
-      Integer port, String portName, String proxyHeader, String request, String response) {
+      Integer port,
+      String portName,
+      String portSpecification,
+      String proxyHeader,
+      String request,
+      String response) {
     this.port = port;
     this.portName = portName;
+    this.portSpecification = portSpecification;
     this.proxyHeader = proxyHeader;
     this.request = request;
     this.response = response;
@@ -55,6 +63,9 @@ public final class TCPHealthCheck implements ApiMessage {
     }
     if ("portName".equals(fieldName)) {
       return portName;
+    }
+    if ("portSpecification".equals(fieldName)) {
+      return portSpecification;
     }
     if ("proxyHeader".equals(fieldName)) {
       return proxyHeader;
@@ -100,6 +111,19 @@ public final class TCPHealthCheck implements ApiMessage {
    */
   public String getPortName() {
     return portName;
+  }
+
+  /**
+   * Specifies how port is selected for health checking, can be one of following values:
+   * USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The
+   * portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port
+   * specified for each network endpoint is used for health checking. For other backends, the port
+   * or named port specified in the Backend Service is used for health checking.
+   *
+   * <p>If not specified, TCP health check follows behavior specified in port and portName fields.
+   */
+  public String getPortSpecification() {
+    return portSpecification;
   }
 
   /**
@@ -152,6 +176,7 @@ public final class TCPHealthCheck implements ApiMessage {
   public static class Builder {
     private Integer port;
     private String portName;
+    private String portSpecification;
     private String proxyHeader;
     private String request;
     private String response;
@@ -165,6 +190,9 @@ public final class TCPHealthCheck implements ApiMessage {
       }
       if (other.getPortName() != null) {
         this.portName = other.portName;
+      }
+      if (other.getPortSpecification() != null) {
+        this.portSpecification = other.portSpecification;
       }
       if (other.getProxyHeader() != null) {
         this.proxyHeader = other.proxyHeader;
@@ -181,6 +209,7 @@ public final class TCPHealthCheck implements ApiMessage {
     Builder(TCPHealthCheck source) {
       this.port = source.port;
       this.portName = source.portName;
+      this.portSpecification = source.portSpecification;
       this.proxyHeader = source.proxyHeader;
       this.request = source.request;
       this.response = source.response;
@@ -217,6 +246,33 @@ public final class TCPHealthCheck implements ApiMessage {
      */
     public Builder setPortName(String portName) {
       this.portName = portName;
+      return this;
+    }
+
+    /**
+     * Specifies how port is selected for health checking, can be one of following values:
+     * USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The
+     * portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port
+     * specified for each network endpoint is used for health checking. For other backends, the port
+     * or named port specified in the Backend Service is used for health checking.
+     *
+     * <p>If not specified, TCP health check follows behavior specified in port and portName fields.
+     */
+    public String getPortSpecification() {
+      return portSpecification;
+    }
+
+    /**
+     * Specifies how port is selected for health checking, can be one of following values:
+     * USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The
+     * portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port
+     * specified for each network endpoint is used for health checking. For other backends, the port
+     * or named port specified in the Backend Service is used for health checking.
+     *
+     * <p>If not specified, TCP health check follows behavior specified in port and portName fields.
+     */
+    public Builder setPortSpecification(String portSpecification) {
+      this.portSpecification = portSpecification;
       return this;
     }
 
@@ -275,13 +331,14 @@ public final class TCPHealthCheck implements ApiMessage {
 
     public TCPHealthCheck build() {
 
-      return new TCPHealthCheck(port, portName, proxyHeader, request, response);
+      return new TCPHealthCheck(port, portName, portSpecification, proxyHeader, request, response);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setPort(this.port);
       newBuilder.setPortName(this.portName);
+      newBuilder.setPortSpecification(this.portSpecification);
       newBuilder.setProxyHeader(this.proxyHeader);
       newBuilder.setRequest(this.request);
       newBuilder.setResponse(this.response);
@@ -297,6 +354,9 @@ public final class TCPHealthCheck implements ApiMessage {
         + ", "
         + "portName="
         + portName
+        + ", "
+        + "portSpecification="
+        + portSpecification
         + ", "
         + "proxyHeader="
         + proxyHeader
@@ -318,6 +378,7 @@ public final class TCPHealthCheck implements ApiMessage {
       TCPHealthCheck that = (TCPHealthCheck) o;
       return Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
+          && Objects.equals(this.portSpecification, that.getPortSpecification())
           && Objects.equals(this.proxyHeader, that.getProxyHeader())
           && Objects.equals(this.request, that.getRequest())
           && Objects.equals(this.response, that.getResponse());
@@ -327,6 +388,6 @@ public final class TCPHealthCheck implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(port, portName, proxyHeader, request, response);
+    return Objects.hash(port, portName, portSpecification, proxyHeader, request, response);
   }
 }

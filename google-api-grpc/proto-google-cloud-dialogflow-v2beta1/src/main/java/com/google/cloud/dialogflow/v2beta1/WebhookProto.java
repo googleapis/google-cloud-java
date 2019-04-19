@@ -35,35 +35,37 @@ public final class WebhookProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/dialogflow/v2beta1/webhoo"
           + "k.proto\022\037google.cloud.dialogflow.v2beta1"
-          + "\032\034google/api/annotations.proto\032-google/c"
-          + "loud/dialogflow/v2beta1/context.proto\032,g"
-          + "oogle/cloud/dialogflow/v2beta1/intent.pr"
-          + "oto\032-google/cloud/dialogflow/v2beta1/ses"
-          + "sion.proto\032\034google/protobuf/struct.proto"
-          + "\"\261\002\n\016WebhookRequest\022\017\n\007session\030\004 \001(\t\022\023\n\013"
-          + "response_id\030\001 \001(\t\022B\n\014query_result\030\002 \001(\0132"
-          + ",.google.cloud.dialogflow.v2beta1.QueryR"
-          + "esult\022O\n\031alternative_query_results\030\005 \003(\013"
-          + "2,.google.cloud.dialogflow.v2beta1.Query"
-          + "Result\022d\n\036original_detect_intent_request"
-          + "\030\003 \001(\0132<.google.cloud.dialogflow.v2beta1"
-          + ".OriginalDetectIntentRequest\"\333\002\n\017Webhook"
-          + "Response\022\030\n\020fulfillment_text\030\001 \001(\t\022M\n\024fu"
-          + "lfillment_messages\030\002 \003(\0132/.google.cloud."
-          + "dialogflow.v2beta1.Intent.Message\022\016\n\006sou"
-          + "rce\030\003 \001(\t\022(\n\007payload\030\004 \001(\0132\027.google.prot"
-          + "obuf.Struct\022A\n\017output_contexts\030\005 \003(\0132(.g"
-          + "oogle.cloud.dialogflow.v2beta1.Context\022I"
-          + "\n\024followup_event_input\030\006 \001(\0132+.google.cl"
-          + "oud.dialogflow.v2beta1.EventInput\022\027\n\017end"
-          + "_interaction\030\010 \001(\010\"h\n\033OriginalDetectInte"
-          + "ntRequest\022\016\n\006source\030\001 \001(\t\022\017\n\007version\030\002 \001"
-          + "(\t\022(\n\007payload\030\003 \001(\0132\027.google.protobuf.St"
-          + "ructB\252\001\n#com.google.cloud.dialogflow.v2b"
-          + "eta1B\014WebhookProtoP\001ZIgoogle.golang.org/"
-          + "genproto/googleapis/cloud/dialogflow/v2b"
-          + "eta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.D"
-          + "ialogflow.V2beta1b\006proto3"
+          + "\032-google/cloud/dialogflow/v2beta1/contex"
+          + "t.proto\032,google/cloud/dialogflow/v2beta1"
+          + "/intent.proto\032-google/cloud/dialogflow/v"
+          + "2beta1/session.proto\0329google/cloud/dialo"
+          + "gflow/v2beta1/session_entity_type.proto\032"
+          + "\034google/protobuf/struct.proto\032\034google/ap"
+          + "i/annotations.proto\"\261\002\n\016WebhookRequest\022\017"
+          + "\n\007session\030\004 \001(\t\022\023\n\013response_id\030\001 \001(\t\022B\n\014"
+          + "query_result\030\002 \001(\0132,.google.cloud.dialog"
+          + "flow.v2beta1.QueryResult\022O\n\031alternative_"
+          + "query_results\030\005 \003(\0132,.google.cloud.dialo"
+          + "gflow.v2beta1.QueryResult\022d\n\036original_de"
+          + "tect_intent_request\030\003 \001(\0132<.google.cloud"
+          + ".dialogflow.v2beta1.OriginalDetectIntent"
+          + "Request\"\333\002\n\017WebhookResponse\022\030\n\020fulfillme"
+          + "nt_text\030\001 \001(\t\022M\n\024fulfillment_messages\030\002 "
+          + "\003(\0132/.google.cloud.dialogflow.v2beta1.In"
+          + "tent.Message\022\016\n\006source\030\003 \001(\t\022(\n\007payload\030"
+          + "\004 \001(\0132\027.google.protobuf.Struct\022A\n\017output"
+          + "_contexts\030\005 \003(\0132(.google.cloud.dialogflo"
+          + "w.v2beta1.Context\022I\n\024followup_event_inpu"
+          + "t\030\006 \001(\0132+.google.cloud.dialogflow.v2beta"
+          + "1.EventInput\022\027\n\017end_interaction\030\010 \001(\010\"h\n"
+          + "\033OriginalDetectIntentRequest\022\016\n\006source\030\001"
+          + " \001(\t\022\017\n\007version\030\002 \001(\t\022(\n\007payload\030\003 \001(\0132\027"
+          + ".google.protobuf.StructB\252\001\n#com.google.c"
+          + "loud.dialogflow.v2beta1B\014WebhookProtoP\001Z"
+          + "Igoogle.golang.org/genproto/googleapis/c"
+          + "loud/dialogflow/v2beta1;dialogflow\370\001\001\242\002\002"
+          + "DF\252\002\037Google.Cloud.Dialogflow.V2beta1b\006pr"
+          + "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -76,11 +78,12 @@ public final class WebhookProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.dialogflow.v2beta1.ContextProto.getDescriptor(),
           com.google.cloud.dialogflow.v2beta1.IntentProto.getDescriptor(),
           com.google.cloud.dialogflow.v2beta1.SessionProto.getDescriptor(),
+          com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dialogflow_v2beta1_WebhookRequest_descriptor =
@@ -117,11 +120,12 @@ public final class WebhookProto {
             new java.lang.String[] {
               "Source", "Version", "Payload",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.ContextProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.IntentProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.SessionProto.getDescriptor();
+    com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

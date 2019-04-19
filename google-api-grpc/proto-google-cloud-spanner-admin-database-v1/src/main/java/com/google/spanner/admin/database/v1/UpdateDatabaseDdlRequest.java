@@ -76,7 +76,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 statements_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -92,7 +92,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -104,7 +104,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         statements_ = statements_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -363,12 +363,11 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
     com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest other =
         (com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest) obj;
 
-    boolean result = true;
-    result = result && getDatabase().equals(other.getDatabase());
-    result = result && getStatementsList().equals(other.getStatementsList());
-    result = result && getOperationId().equals(other.getOperationId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getDatabase().equals(other.getDatabase())) return false;
+    if (!getStatementsList().equals(other.getStatementsList())) return false;
+    if (!getOperationId().equals(other.getOperationId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -583,7 +582,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.database_ = database_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         statements_ = statements_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -596,35 +595,35 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -790,7 +789,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         statements_ = new com.google.protobuf.LazyStringArrayList(statements_);
         bitField0_ |= 0x00000002;
       }
@@ -1115,7 +1114,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

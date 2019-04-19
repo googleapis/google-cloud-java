@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.LicenseStub;
 import com.google.cloud.compute.v1.stub.LicenseStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -208,9 +209,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
+   *   String formattedLicense = ProjectGlobalLicenseName.format("[PROJECT]", "[LICENSE]");
    *   DeleteLicenseHttpRequest request = DeleteLicenseHttpRequest.newBuilder()
-   *     .setLicense(license.toString())
+   *     .setLicense(formattedLicense)
    *     .build();
    *   Operation response = licenseClient.deleteLicense(request);
    * }
@@ -232,9 +233,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
+   *   String formattedLicense = ProjectGlobalLicenseName.format("[PROJECT]", "[LICENSE]");
    *   DeleteLicenseHttpRequest request = DeleteLicenseHttpRequest.newBuilder()
-   *     .setLicense(license.toString())
+   *     .setLicense(formattedLicense)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = licenseClient.deleteLicenseCallable().futureCall(request);
    *   // Do something
@@ -304,9 +305,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
+   *   String formattedLicense = ProjectGlobalLicenseName.format("[PROJECT]", "[LICENSE]");
    *   GetLicenseHttpRequest request = GetLicenseHttpRequest.newBuilder()
-   *     .setLicense(license.toString())
+   *     .setLicense(formattedLicense)
    *     .build();
    *   License response = licenseClient.getLicense(request);
    * }
@@ -328,9 +329,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
+   *   String formattedLicense = ProjectGlobalLicenseName.format("[PROJECT]", "[LICENSE]");
    *   GetLicenseHttpRequest request = GetLicenseHttpRequest.newBuilder()
-   *     .setLicense(license.toString())
+   *     .setLicense(formattedLicense)
    *     .build();
    *   ApiFuture&lt;License&gt; future = licenseClient.getLicenseCallable().futureCall(request);
    *   // Do something
@@ -404,9 +405,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyLicenseHttpRequest request = GetIamPolicyLicenseHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   Policy response = licenseClient.getIamPolicyLicense(request);
    * }
@@ -429,9 +430,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyLicenseHttpRequest request = GetIamPolicyLicenseHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = licenseClient.getIamPolicyLicenseCallable().futureCall(request);
    *   // Do something
@@ -510,10 +511,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   License licenseResource = License.newBuilder().build();
    *   InsertLicenseHttpRequest request = InsertLicenseHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setLicenseResource(licenseResource)
    *     .build();
    *   Operation response = licenseClient.insertLicense(request);
@@ -536,10 +537,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   License licenseResource = License.newBuilder().build();
    *   InsertLicenseHttpRequest request = InsertLicenseHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .setLicenseResource(licenseResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = licenseClient.insertLicenseCallable().futureCall(request);
@@ -625,9 +626,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListLicensesHttpRequest request = ListLicensesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   for (License element : licenseClient.listLicenses(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -655,9 +656,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListLicensesHttpRequest request = ListLicensesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   ApiFuture&lt;ListLicensesPagedResponse&gt; future = licenseClient.listLicensesPagedCallable().futureCall(request);
    *   // Do something
@@ -685,9 +686,9 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   String formattedProject = ProjectName.format("[PROJECT]");
    *   ListLicensesHttpRequest request = ListLicensesHttpRequest.newBuilder()
-   *     .setProject(project.toString())
+   *     .setProject(formattedProject)
    *     .build();
    *   while (true) {
    *     LicensesListResponse response = licenseClient.listLicensesCallable().call(request);
@@ -778,10 +779,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyLicenseHttpRequest request = SetIamPolicyLicenseHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   Policy response = licenseClient.setIamPolicyLicense(request);
@@ -804,10 +805,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyLicenseHttpRequest request = SetIamPolicyLicenseHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = licenseClient.setIamPolicyLicenseCallable().futureCall(request);
@@ -890,10 +891,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsLicenseHttpRequest request = TestIamPermissionsLicenseHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = licenseClient.testIamPermissionsLicense(request);
@@ -917,10 +918,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsLicenseHttpRequest request = TestIamPermissionsLicenseHttpRequest.newBuilder()
-   *     .setResource(resource.toString())
+   *     .setResource(formattedResource)
    *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = licenseClient.testIamPermissionsLicenseCallable().futureCall(request);
@@ -985,7 +986,8 @@ public class LicenseClient implements BackgroundResource {
             public ListLicensesPagedResponse apply(ListLicensesPage input) {
               return new ListLicensesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListLicensesPagedResponse(ListLicensesPage page) {

@@ -38,6 +38,7 @@ public final class InstanceProperties implements ApiMessage {
   private final List<NetworkInterface> networkInterfaces;
   private final Scheduling scheduling;
   private final List<ServiceAccount> serviceAccounts;
+  private final ShieldedInstanceConfig shieldedInstanceConfig;
   private final Tags tags;
 
   private InstanceProperties() {
@@ -52,6 +53,7 @@ public final class InstanceProperties implements ApiMessage {
     this.networkInterfaces = null;
     this.scheduling = null;
     this.serviceAccounts = null;
+    this.shieldedInstanceConfig = null;
     this.tags = null;
   }
 
@@ -67,6 +69,7 @@ public final class InstanceProperties implements ApiMessage {
       List<NetworkInterface> networkInterfaces,
       Scheduling scheduling,
       List<ServiceAccount> serviceAccounts,
+      ShieldedInstanceConfig shieldedInstanceConfig,
       Tags tags) {
     this.canIpForward = canIpForward;
     this.description = description;
@@ -79,6 +82,7 @@ public final class InstanceProperties implements ApiMessage {
     this.networkInterfaces = networkInterfaces;
     this.scheduling = scheduling;
     this.serviceAccounts = serviceAccounts;
+    this.shieldedInstanceConfig = shieldedInstanceConfig;
     this.tags = tags;
   }
 
@@ -116,6 +120,9 @@ public final class InstanceProperties implements ApiMessage {
     }
     if ("serviceAccounts".equals(fieldName)) {
       return serviceAccounts;
+    }
+    if ("shieldedInstanceConfig".equals(fieldName)) {
+      return shieldedInstanceConfig;
     }
     if ("tags".equals(fieldName)) {
       return tags;
@@ -222,6 +229,10 @@ public final class InstanceProperties implements ApiMessage {
     return serviceAccounts;
   }
 
+  public ShieldedInstanceConfig getShieldedInstanceConfig() {
+    return shieldedInstanceConfig;
+  }
+
   /**
    * A list of tags to apply to the instances that are created from this template. The tags identify
    * valid sources or targets for network firewalls. The setTags method can modify this list of
@@ -265,6 +276,7 @@ public final class InstanceProperties implements ApiMessage {
     private List<NetworkInterface> networkInterfaces;
     private Scheduling scheduling;
     private List<ServiceAccount> serviceAccounts;
+    private ShieldedInstanceConfig shieldedInstanceConfig;
     private Tags tags;
 
     Builder() {}
@@ -304,6 +316,9 @@ public final class InstanceProperties implements ApiMessage {
       if (other.getServiceAccountsList() != null) {
         this.serviceAccounts = other.serviceAccounts;
       }
+      if (other.getShieldedInstanceConfig() != null) {
+        this.shieldedInstanceConfig = other.shieldedInstanceConfig;
+      }
       if (other.getTags() != null) {
         this.tags = other.tags;
       }
@@ -322,6 +337,7 @@ public final class InstanceProperties implements ApiMessage {
       this.networkInterfaces = source.networkInterfaces;
       this.scheduling = source.scheduling;
       this.serviceAccounts = source.serviceAccounts;
+      this.shieldedInstanceConfig = source.shieldedInstanceConfig;
       this.tags = source.tags;
     }
 
@@ -555,6 +571,15 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    public ShieldedInstanceConfig getShieldedInstanceConfig() {
+      return shieldedInstanceConfig;
+    }
+
+    public Builder setShieldedInstanceConfig(ShieldedInstanceConfig shieldedInstanceConfig) {
+      this.shieldedInstanceConfig = shieldedInstanceConfig;
+      return this;
+    }
+
     /**
      * A list of tags to apply to the instances that are created from this template. The tags
      * identify valid sources or targets for network firewalls. The setTags method can modify this
@@ -588,6 +613,7 @@ public final class InstanceProperties implements ApiMessage {
           networkInterfaces,
           scheduling,
           serviceAccounts,
+          shieldedInstanceConfig,
           tags);
     }
 
@@ -604,6 +630,7 @@ public final class InstanceProperties implements ApiMessage {
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
+      newBuilder.setShieldedInstanceConfig(this.shieldedInstanceConfig);
       newBuilder.setTags(this.tags);
       return newBuilder;
     }
@@ -645,6 +672,9 @@ public final class InstanceProperties implements ApiMessage {
         + "serviceAccounts="
         + serviceAccounts
         + ", "
+        + "shieldedInstanceConfig="
+        + shieldedInstanceConfig
+        + ", "
         + "tags="
         + tags
         + "}";
@@ -668,6 +698,7 @@ public final class InstanceProperties implements ApiMessage {
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
           && Objects.equals(this.scheduling, that.getScheduling())
           && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
+          && Objects.equals(this.shieldedInstanceConfig, that.getShieldedInstanceConfig())
           && Objects.equals(this.tags, that.getTags());
     }
     return false;
@@ -687,6 +718,7 @@ public final class InstanceProperties implements ApiMessage {
         networkInterfaces,
         scheduling,
         serviceAccounts,
+        shieldedInstanceConfig,
         tags);
   }
 }

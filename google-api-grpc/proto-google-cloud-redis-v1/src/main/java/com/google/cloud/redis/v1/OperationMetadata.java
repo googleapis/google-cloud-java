@@ -26,7 +26,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     target_ = "";
     verb_ = "";
     statusDetail_ = "";
-    cancelRequested_ = false;
     apiVersion_ = "";
   }
 
@@ -119,7 +118,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -497,22 +496,21 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     com.google.cloud.redis.v1.OperationMetadata other =
         (com.google.cloud.redis.v1.OperationMetadata) obj;
 
-    boolean result = true;
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && getTarget().equals(other.getTarget());
-    result = result && getVerb().equals(other.getVerb());
-    result = result && getStatusDetail().equals(other.getStatusDetail());
-    result = result && (getCancelRequested() == other.getCancelRequested());
-    result = result && getApiVersion().equals(other.getApiVersion());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTarget().equals(other.getTarget())) return false;
+    if (!getVerb().equals(other.getVerb())) return false;
+    if (!getStatusDetail().equals(other.getStatusDetail())) return false;
+    if (getCancelRequested() != other.getCancelRequested()) return false;
+    if (!getApiVersion().equals(other.getApiVersion())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -755,35 +753,35 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -852,7 +850,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1031,7 +1029,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1628,7 +1626,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

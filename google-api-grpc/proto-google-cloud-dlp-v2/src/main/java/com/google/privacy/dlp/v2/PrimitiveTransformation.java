@@ -228,9 +228,29 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
               transformationCase_ = 11;
               break;
             }
+          case 98:
+            {
+              com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder subBuilder = null;
+              if (transformationCase_ == 12) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_)
+                        .toBuilder();
+              }
+              transformation_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CryptoDeterministicConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_);
+                transformation_ = subBuilder.buildPartial();
+              }
+              transformationCase_ = 12;
+              break;
+            }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -276,6 +296,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     TIME_PART_CONFIG(8),
     CRYPTO_HASH_CONFIG(9),
     DATE_SHIFT_CONFIG(11),
+    CRYPTO_DETERMINISTIC_CONFIG(12),
     TRANSFORMATION_NOT_SET(0);
     private final int value;
 
@@ -310,6 +331,8 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           return CRYPTO_HASH_CONFIG;
         case 11:
           return DATE_SHIFT_CONFIG;
+        case 12:
+          return CRYPTO_DETERMINISTIC_CONFIG;
         case 0:
           return TRANSFORMATION_NOT_SET;
         default:
@@ -553,6 +576,33 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return com.google.privacy.dlp.v2.DateShiftConfig.getDefaultInstance();
   }
 
+  public static final int CRYPTO_DETERMINISTIC_CONFIG_FIELD_NUMBER = 12;
+  /**
+   * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   */
+  public boolean hasCryptoDeterministicConfig() {
+    return transformationCase_ == 12;
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   */
+  public com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig() {
+    if (transformationCase_ == 12) {
+      return (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_;
+    }
+    return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
+   */
+  public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
+      getCryptoDeterministicConfigOrBuilder() {
+    if (transformationCase_ == 12) {
+      return (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_;
+    }
+    return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -596,6 +646,10 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
     if (transformationCase_ == 11) {
       output.writeMessage(11, (com.google.privacy.dlp.v2.DateShiftConfig) transformation_);
+    }
+    if (transformationCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_);
     }
     unknownFields.writeTo(output);
   }
@@ -656,6 +710,11 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.privacy.dlp.v2.DateShiftConfig) transformation_);
     }
+    if (transformationCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -672,48 +731,50 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     com.google.privacy.dlp.v2.PrimitiveTransformation other =
         (com.google.privacy.dlp.v2.PrimitiveTransformation) obj;
 
-    boolean result = true;
-    result = result && getTransformationCase().equals(other.getTransformationCase());
-    if (!result) return false;
+    if (!getTransformationCase().equals(other.getTransformationCase())) return false;
     switch (transformationCase_) {
       case 1:
-        result = result && getReplaceConfig().equals(other.getReplaceConfig());
+        if (!getReplaceConfig().equals(other.getReplaceConfig())) return false;
         break;
       case 2:
-        result = result && getRedactConfig().equals(other.getRedactConfig());
+        if (!getRedactConfig().equals(other.getRedactConfig())) return false;
         break;
       case 3:
-        result = result && getCharacterMaskConfig().equals(other.getCharacterMaskConfig());
+        if (!getCharacterMaskConfig().equals(other.getCharacterMaskConfig())) return false;
         break;
       case 4:
-        result =
-            result && getCryptoReplaceFfxFpeConfig().equals(other.getCryptoReplaceFfxFpeConfig());
+        if (!getCryptoReplaceFfxFpeConfig().equals(other.getCryptoReplaceFfxFpeConfig()))
+          return false;
         break;
       case 5:
-        result =
-            result && getFixedSizeBucketingConfig().equals(other.getFixedSizeBucketingConfig());
+        if (!getFixedSizeBucketingConfig().equals(other.getFixedSizeBucketingConfig()))
+          return false;
         break;
       case 6:
-        result = result && getBucketingConfig().equals(other.getBucketingConfig());
+        if (!getBucketingConfig().equals(other.getBucketingConfig())) return false;
         break;
       case 7:
-        result =
-            result && getReplaceWithInfoTypeConfig().equals(other.getReplaceWithInfoTypeConfig());
+        if (!getReplaceWithInfoTypeConfig().equals(other.getReplaceWithInfoTypeConfig()))
+          return false;
         break;
       case 8:
-        result = result && getTimePartConfig().equals(other.getTimePartConfig());
+        if (!getTimePartConfig().equals(other.getTimePartConfig())) return false;
         break;
       case 9:
-        result = result && getCryptoHashConfig().equals(other.getCryptoHashConfig());
+        if (!getCryptoHashConfig().equals(other.getCryptoHashConfig())) return false;
         break;
       case 11:
-        result = result && getDateShiftConfig().equals(other.getDateShiftConfig());
+        if (!getDateShiftConfig().equals(other.getDateShiftConfig())) return false;
+        break;
+      case 12:
+        if (!getCryptoDeterministicConfig().equals(other.getCryptoDeterministicConfig()))
+          return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -763,6 +824,10 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       case 11:
         hash = (37 * hash) + DATE_SHIFT_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getDateShiftConfig().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CRYPTO_DETERMINISTIC_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getCryptoDeterministicConfig().hashCode();
         break;
       case 0:
       default:
@@ -1011,6 +1076,13 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           result.transformation_ = dateShiftConfigBuilder_.build();
         }
       }
+      if (transformationCase_ == 12) {
+        if (cryptoDeterministicConfigBuilder_ == null) {
+          result.transformation_ = transformation_;
+        } else {
+          result.transformation_ = cryptoDeterministicConfigBuilder_.build();
+        }
+      }
       result.transformationCase_ = transformationCase_;
       onBuilt();
       return result;
@@ -1018,35 +1090,35 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1111,6 +1183,11 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         case DATE_SHIFT_CONFIG:
           {
             mergeDateShiftConfig(other.getDateShiftConfig());
+            break;
+          }
+        case CRYPTO_DETERMINISTIC_CONFIG:
+          {
+            mergeCryptoDeterministicConfig(other.getCryptoDeterministicConfig());
             break;
           }
         case TRANSFORMATION_NOT_SET:
@@ -2553,9 +2630,172 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return dateShiftConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CryptoDeterministicConfig,
+            com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder,
+            com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder>
+        cryptoDeterministicConfigBuilder_;
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public boolean hasCryptoDeterministicConfig() {
+      return transformationCase_ == 12;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig() {
+      if (cryptoDeterministicConfigBuilder_ == null) {
+        if (transformationCase_ == 12) {
+          return (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_;
+        }
+        return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
+      } else {
+        if (transformationCase_ == 12) {
+          return cryptoDeterministicConfigBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public Builder setCryptoDeterministicConfig(
+        com.google.privacy.dlp.v2.CryptoDeterministicConfig value) {
+      if (cryptoDeterministicConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transformation_ = value;
+        onChanged();
+      } else {
+        cryptoDeterministicConfigBuilder_.setMessage(value);
+      }
+      transformationCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public Builder setCryptoDeterministicConfig(
+        com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder builderForValue) {
+      if (cryptoDeterministicConfigBuilder_ == null) {
+        transformation_ = builderForValue.build();
+        onChanged();
+      } else {
+        cryptoDeterministicConfigBuilder_.setMessage(builderForValue.build());
+      }
+      transformationCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public Builder mergeCryptoDeterministicConfig(
+        com.google.privacy.dlp.v2.CryptoDeterministicConfig value) {
+      if (cryptoDeterministicConfigBuilder_ == null) {
+        if (transformationCase_ == 12
+            && transformation_
+                != com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance()) {
+          transformation_ =
+              com.google.privacy.dlp.v2.CryptoDeterministicConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transformation_ = value;
+        }
+        onChanged();
+      } else {
+        if (transformationCase_ == 12) {
+          cryptoDeterministicConfigBuilder_.mergeFrom(value);
+        }
+        cryptoDeterministicConfigBuilder_.setMessage(value);
+      }
+      transformationCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public Builder clearCryptoDeterministicConfig() {
+      if (cryptoDeterministicConfigBuilder_ == null) {
+        if (transformationCase_ == 12) {
+          transformationCase_ = 0;
+          transformation_ = null;
+          onChanged();
+        }
+      } else {
+        if (transformationCase_ == 12) {
+          transformationCase_ = 0;
+          transformation_ = null;
+        }
+        cryptoDeterministicConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder
+        getCryptoDeterministicConfigBuilder() {
+      return getCryptoDeterministicConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
+        getCryptoDeterministicConfigOrBuilder() {
+      if ((transformationCase_ == 12) && (cryptoDeterministicConfigBuilder_ != null)) {
+        return cryptoDeterministicConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (transformationCase_ == 12) {
+          return (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_;
+        }
+        return com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CryptoDeterministicConfig,
+            com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder,
+            com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder>
+        getCryptoDeterministicConfigFieldBuilder() {
+      if (cryptoDeterministicConfigBuilder_ == null) {
+        if (!(transformationCase_ == 12)) {
+          transformation_ =
+              com.google.privacy.dlp.v2.CryptoDeterministicConfig.getDefaultInstance();
+        }
+        cryptoDeterministicConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CryptoDeterministicConfig,
+                com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder,
+                com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder>(
+                (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_,
+                getParentForChildren(),
+                isClean());
+        transformation_ = null;
+      }
+      transformationCase_ = 12;
+      onChanged();
+      ;
+      return cryptoDeterministicConfigBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

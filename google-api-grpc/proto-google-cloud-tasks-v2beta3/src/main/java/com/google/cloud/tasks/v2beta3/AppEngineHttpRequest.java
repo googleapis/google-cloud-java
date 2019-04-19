@@ -11,10 +11,8 @@ package com.google.cloud.tasks.v2beta3;
  * The message defines the HTTP request that is sent to an App Engine app when
  * the task is dispatched.
  * This proto can only be used for tasks in a queue which has
- * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue]
- * set.
- * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
- * requires
+ * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] set.
+ * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] requires
  * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
  * Google IAM permission for the project
  * and the following scope:
@@ -31,15 +29,13 @@ package com.google.cloud.tasks.v2beta3;
  * Google, you cannot explicitly set the protocol (for example, HTTP or HTTPS).
  * The request to the handler, however, will appear to have used the HTTP
  * protocol.
- * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to
- * construct the URL that the task is delivered to can be set at the queue-level
- * or task-level:
+ * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to construct the URL that the task is
+ * delivered to can be set at the queue-level or task-level:
  * * If set,
  *    [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
  *    is used for all tasks in the queue, no matter what the setting
  *    is for the
- *    [task-level
- *    app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+ *    [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
  * The `url` that the task will be sent to is:
  * * `url =` [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] `+`
  *   [relative_uri][google.cloud.tasks.v2beta3.AppEngineHttpRequest.relative_uri]
@@ -135,7 +131,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
@@ -154,7 +150,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -256,8 +252,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -273,8 +268,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -292,8 +286,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -393,9 +386,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-   * sets the following headers:
+   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+   * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -414,10 +406,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -448,9 +438,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-   * sets the following headers:
+   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+   * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -469,10 +458,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -495,9 +482,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-   * sets the following headers:
+   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+   * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -516,10 +502,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -546,9 +530,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-   * sets the following headers:
+   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+   * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -567,10 +550,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -594,8 +575,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * HTTP request body.
    * A request body is allowed only if the HTTP method is POST or PUT. It is
-   * an error to set a body on a task with an incompatible
-   * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+   * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 5;</code>
@@ -681,17 +661,16 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.tasks.v2beta3.AppEngineHttpRequest other =
         (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) obj;
 
-    boolean result = true;
-    result = result && httpMethod_ == other.httpMethod_;
-    result = result && (hasAppEngineRouting() == other.hasAppEngineRouting());
+    if (httpMethod_ != other.httpMethod_) return false;
+    if (hasAppEngineRouting() != other.hasAppEngineRouting()) return false;
     if (hasAppEngineRouting()) {
-      result = result && getAppEngineRouting().equals(other.getAppEngineRouting());
+      if (!getAppEngineRouting().equals(other.getAppEngineRouting())) return false;
     }
-    result = result && getRelativeUri().equals(other.getRelativeUri());
-    result = result && internalGetHeaders().equals(other.internalGetHeaders());
-    result = result && getBody().equals(other.getBody());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getRelativeUri().equals(other.getRelativeUri())) return false;
+    if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
+    if (!getBody().equals(other.getBody())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -823,10 +802,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * The message defines the HTTP request that is sent to an App Engine app when
    * the task is dispatched.
    * This proto can only be used for tasks in a queue which has
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue]
-   * set.
-   * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
-   * requires
+   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] set.
+   * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] requires
    * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
    * Google IAM permission for the project
    * and the following scope:
@@ -843,15 +820,13 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * Google, you cannot explicitly set the protocol (for example, HTTP or HTTPS).
    * The request to the handler, however, will appear to have used the HTTP
    * protocol.
-   * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to
-   * construct the URL that the task is delivered to can be set at the queue-level
-   * or task-level:
+   * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to construct the URL that the task is
+   * delivered to can be set at the queue-level or task-level:
    * * If set,
    *    [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    *    is used for all tasks in the queue, no matter what the setting
    *    is for the
-   *    [task-level
-   *    app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   *    [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * The `url` that the task will be sent to is:
    * * `url =` [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] `+`
    *   [relative_uri][google.cloud.tasks.v2beta3.AppEngineHttpRequest.relative_uri]
@@ -990,35 +965,35 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1201,7 +1176,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRouting_ = null;
+    private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRouting_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.AppEngineRouting,
             com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder,
@@ -1215,8 +1190,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1232,8 +1206,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1255,8 +1228,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1282,8 +1254,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1307,8 +1278,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1338,8 +1308,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1363,8 +1332,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1382,8 +1350,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1405,8 +1372,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level
-     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1582,9 +1548,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1603,10 +1568,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1637,9 +1600,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1658,10 +1620,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1684,9 +1644,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1705,10 +1664,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1736,9 +1693,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1757,10 +1713,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1795,9 +1749,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1816,10 +1769,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1851,9 +1802,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1872,10 +1822,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1905,9 +1853,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a
-     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
-     * sets the following headers:
+     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
+     * Tasks sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1926,10 +1873,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the
-     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
-     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
-     * documentation.
+     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
+     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -1946,8 +1891,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the HTTP method is POST or PUT. It is
-     * an error to set a body on a task with an incompatible
-     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
@@ -1961,8 +1905,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the HTTP method is POST or PUT. It is
-     * an error to set a body on a task with an incompatible
-     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
@@ -1982,8 +1925,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the HTTP method is POST or PUT. It is
-     * an error to set a body on a task with an incompatible
-     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
@@ -1997,7 +1939,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

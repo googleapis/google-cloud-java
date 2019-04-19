@@ -61,7 +61,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 columns_ = new java.util.ArrayList<com.google.bigtable.v2.Column>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -71,7 +71,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -83,7 +83,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         columns_ = java.util.Collections.unmodifiableList(columns_);
       }
       this.unknownFields = unknownFields.build();
@@ -272,11 +272,10 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.Family other = (com.google.bigtable.v2.Family) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getColumnsList().equals(other.getColumnsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (!getColumnsList().equals(other.getColumnsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -474,7 +473,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
       int to_bitField0_ = 0;
       result.name_ = name_;
       if (columnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -489,35 +488,35 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -717,7 +716,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         columns_ = new java.util.ArrayList<com.google.bigtable.v2.Column>(columns_);
         bitField0_ |= 0x00000002;
       }
@@ -1053,10 +1052,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.v2.Column,
                 com.google.bigtable.v2.Column.Builder,
                 com.google.bigtable.v2.ColumnOrBuilder>(
-                columns_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                columns_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         columns_ = null;
       }
       return columnsBuilder_;
@@ -1064,7 +1060,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

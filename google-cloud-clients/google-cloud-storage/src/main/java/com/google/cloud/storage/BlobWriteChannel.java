@@ -24,6 +24,7 @@ import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.v1.StorageRpc;
+import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -34,8 +35,16 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     this(options, blob, open(options, blob, optionsMap));
   }
 
+  BlobWriteChannel(StorageOptions options, URL signedURL) {
+    this(options, open(signedURL, options));
+  }
+
   BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
     super(options, blobInfo, uploadId);
+  }
+
+  BlobWriteChannel(StorageOptions options, String uploadId) {
+    super(options, null, uploadId);
   }
 
   @Override
@@ -81,6 +90,46 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
+  }
+
+  private static String open(final URL signedURL, final StorageOptions options) {
+    try {
+      return runWithRetries(
+          new Callable<String>() {
+            @Override
+            public String call() {
+              if (!isValidSignedURL(signedURL.getQuery())) {
+                throw new StorageException(2, "invalid signedURL");
+              }
+              return options.getStorageRpcV1().open(signedURL.toString());
+            }
+          },
+          options.getRetrySettings(),
+          StorageImpl.EXCEPTION_HANDLER,
+          options.getClock());
+    } catch (RetryHelper.RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  private static boolean isValidSignedURL(String signedURLQuery) {
+    boolean isValid = true;
+    if (signedURLQuery.startsWith("X-Goog-Algorithm=")) {
+      if (!signedURLQuery.contains("&X-Goog-Credential=")
+          || !signedURLQuery.contains("&X-Goog-Date=")
+          || !signedURLQuery.contains("&X-Goog-Expires=")
+          || !signedURLQuery.contains("&X-Goog-SignedHeaders=")
+          || !signedURLQuery.contains("&X-Goog-Signature=")) {
+        isValid = false;
+      }
+    } else if (signedURLQuery.startsWith("GoogleAccessId=")) {
+      if (!signedURLQuery.contains("&Expires=") || !signedURLQuery.contains("&Signature=")) {
+        isValid = false;
+      }
+    } else {
+      isValid = false;
+    }
+    return isValid;
   }
 
   static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, BlobInfo> {

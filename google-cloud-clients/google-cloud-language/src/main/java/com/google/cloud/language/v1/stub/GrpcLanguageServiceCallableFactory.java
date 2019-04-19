@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Google Cloud Natural Language API.
+ * gRPC callable factory implementation for Cloud Natural Language API.
  *
  * <p>This class is for advanced usage.
  */

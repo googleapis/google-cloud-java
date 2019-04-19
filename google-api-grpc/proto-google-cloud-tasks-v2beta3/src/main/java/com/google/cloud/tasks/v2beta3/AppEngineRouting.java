@@ -94,7 +94,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -136,18 +136,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * By default, the task is sent to the service which is the default
    * service when the task is attempted.
    * For some queues or tasks which were created using the App Engine
-   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-   * not parsable into
+   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+   * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+   * which were created using the App Engine SDK use a custom domain
+   * name; custom domains are not parsed by Cloud Tasks. If
+   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
    * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
    * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-   * example, some tasks which were created using the App Engine SDK use a
-   * custom domain name; custom domains are not parsed by Cloud Tasks. If
-   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-   * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-   * empty string.
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
    * </pre>
    *
    * <code>string service = 1;</code>
@@ -171,18 +169,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * By default, the task is sent to the service which is the default
    * service when the task is attempted.
    * For some queues or tasks which were created using the App Engine
-   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-   * not parsable into
+   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+   * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+   * which were created using the App Engine SDK use a custom domain
+   * name; custom domains are not parsed by Cloud Tasks. If
+   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
    * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
    * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-   * example, some tasks which were created using the App Engine SDK use a
-   * custom domain name; custom domains are not parsed by Cloud Tasks. If
-   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-   * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-   * empty string.
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
    * </pre>
    *
    * <code>string service = 1;</code>
@@ -209,18 +205,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * By default, the task is sent to the version which is the default
    * version when the task is attempted.
    * For some queues or tasks which were created using the App Engine
-   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-   * not parsable into
+   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+   * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+   * which were created using the App Engine SDK use a custom domain
+   * name; custom domains are not parsed by Cloud Tasks. If
+   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
    * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
    * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-   * example, some tasks which were created using the App Engine SDK use a
-   * custom domain name; custom domains are not parsed by Cloud Tasks. If
-   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-   * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-   * empty string.
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -244,18 +238,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * By default, the task is sent to the version which is the default
    * version when the task is attempted.
    * For some queues or tasks which were created using the App Engine
-   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-   * not parsable into
+   * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+   * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+   * which were created using the App Engine SDK use a custom domain
+   * name; custom domains are not parsed by Cloud Tasks. If
+   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
    * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
    * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-   * example, some tasks which were created using the App Engine SDK use a
-   * custom domain name; custom domains are not parsed by Cloud Tasks. If
-   * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-   * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-   * empty string.
+   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -344,11 +336,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * Output only. The host that the task is sent to.
    * The host is constructed from the domain name of the app associated with
    * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-   * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-   * which were created using the App Engine SDK might have a custom domain
-   * name.
+   * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+   * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+   * the App Engine SDK might have a custom domain name.
    * For more information, see
    * [How Requests are
    * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -374,11 +364,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * Output only. The host that the task is sent to.
    * The host is constructed from the domain name of the app associated with
    * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-   * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-   * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-   * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-   * which were created using the App Engine SDK might have a custom domain
-   * name.
+   * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+   * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+   * the App Engine SDK might have a custom domain name.
    * For more information, see
    * [How Requests are
    * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -461,13 +449,12 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
     com.google.cloud.tasks.v2beta3.AppEngineRouting other =
         (com.google.cloud.tasks.v2beta3.AppEngineRouting) obj;
 
-    boolean result = true;
-    result = result && getService().equals(other.getService());
-    result = result && getVersion().equals(other.getVersion());
-    result = result && getInstance().equals(other.getInstance());
-    result = result && getHost().equals(other.getHost());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getService().equals(other.getService())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getInstance().equals(other.getInstance())) return false;
+    if (!getHost().equals(other.getHost())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -686,35 +673,35 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -784,18 +771,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the service which is the default
      * service when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -819,18 +804,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the service which is the default
      * service when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -854,18 +837,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the service which is the default
      * service when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -887,18 +868,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the service which is the default
      * service when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -917,18 +896,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the service which is the default
      * service when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string service = 1;</code>
@@ -953,18 +930,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the version which is the default
      * version when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -988,18 +963,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the version which is the default
      * version when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -1023,18 +996,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the version which is the default
      * version when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -1056,18 +1027,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the version which is the default
      * version when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -1086,18 +1055,16 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * By default, the task is sent to the version which is the default
      * version when the task is attempted.
      * For some queues or tasks which were created using the App Engine
-     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is
-     * not parsable into
+     * Task Queue API, [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable
+     * into [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
+     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For example, some tasks
+     * which were created using the App Engine SDK use a custom domain
+     * name; custom domains are not parsed by Cloud Tasks. If
+     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable, then
      * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
      * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. For
-     * example, some tasks which were created using the App Engine SDK use a
-     * custom domain name; custom domains are not parsed by Cloud Tasks. If
-     * [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] is not parsable,
-     * then [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the
-     * empty string.
+     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance] are the empty string.
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -1265,11 +1232,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * Output only. The host that the task is sent to.
      * The host is constructed from the domain name of the app associated with
      * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-     * which were created using the App Engine SDK might have a custom domain
-     * name.
+     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+     * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+     * the App Engine SDK might have a custom domain name.
      * For more information, see
      * [How Requests are
      * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -1295,11 +1260,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * Output only. The host that the task is sent to.
      * The host is constructed from the domain name of the app associated with
      * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-     * which were created using the App Engine SDK might have a custom domain
-     * name.
+     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+     * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+     * the App Engine SDK might have a custom domain name.
      * For more information, see
      * [How Requests are
      * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -1325,11 +1288,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * Output only. The host that the task is sent to.
      * The host is constructed from the domain name of the app associated with
      * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-     * which were created using the App Engine SDK might have a custom domain
-     * name.
+     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+     * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+     * the App Engine SDK might have a custom domain name.
      * For more information, see
      * [How Requests are
      * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -1353,11 +1314,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * Output only. The host that the task is sent to.
      * The host is constructed from the domain name of the app associated with
      * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-     * which were created using the App Engine SDK might have a custom domain
-     * name.
+     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+     * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+     * the App Engine SDK might have a custom domain name.
      * For more information, see
      * [How Requests are
      * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -1378,11 +1337,9 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * Output only. The host that the task is sent to.
      * The host is constructed from the domain name of the app associated with
      * the queue's project ID (for example &lt;app-id&gt;.appspot.com), and the
-     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service],
-     * [version][google.cloud.tasks.v2beta3.AppEngineRouting.version], and
-     * [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks
-     * which were created using the App Engine SDK might have a custom domain
-     * name.
+     * [service][google.cloud.tasks.v2beta3.AppEngineRouting.service], [version][google.cloud.tasks.v2beta3.AppEngineRouting.version],
+     * and [instance][google.cloud.tasks.v2beta3.AppEngineRouting.instance]. Tasks which were created using
+     * the App Engine SDK might have a custom domain name.
      * For more information, see
      * [How Requests are
      * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
@@ -1403,7 +1360,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

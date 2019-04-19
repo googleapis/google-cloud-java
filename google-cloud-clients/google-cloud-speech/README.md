@@ -10,9 +10,6 @@ Java idiomatic client for [Google Cloud Speech][cloud-speech].
 - [Product Documentation][speech-product-docs]
 - [Client Library Documentation][speech-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 
@@ -22,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>0.82.0-beta</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-speech:0.82.0-beta'
+compile 'com.google.cloud:google-cloud-speech:1.0.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "0.82.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.0.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -134,4 +131,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-speech]: https://cloud.google.com/speech/
 [speech-product-docs]: https://cloud.google.com/speech/docs
-[speech-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/speech/v1beta1/package-summary.html
+[speech-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/speech/v1/package-summary.html

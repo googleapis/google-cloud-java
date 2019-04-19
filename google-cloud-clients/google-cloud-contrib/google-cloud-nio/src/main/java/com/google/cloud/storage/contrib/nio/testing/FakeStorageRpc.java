@@ -313,6 +313,11 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
+  public String open(String signedURL) {
+    return null;
+  }
+
+  @Override
   public void write(
       String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length, boolean last)
       throws StorageException {

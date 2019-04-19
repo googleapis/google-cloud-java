@@ -7,8 +7,7 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for
- * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
+ * Request message for [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.CreateQueueRequest}
@@ -76,7 +75,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -169,8 +168,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-   * an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -184,8 +182,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-   * an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -199,8 +196,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-   * an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -260,14 +256,13 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.tasks.v2beta3.CreateQueueRequest other =
         (com.google.cloud.tasks.v2beta3.CreateQueueRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && (hasQueue() == other.hasQueue());
+    if (!getParent().equals(other.getParent())) return false;
+    if (hasQueue() != other.hasQueue()) return false;
     if (hasQueue()) {
-      result = result && getQueue().equals(other.getQueue());
+      if (!getQueue().equals(other.getQueue())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -387,8 +382,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for
-   * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
+   * Request message for [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.CreateQueueRequest}
@@ -476,35 +470,35 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -676,7 +670,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta3.Queue queue_ = null;
+    private com.google.cloud.tasks.v2beta3.Queue queue_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.Queue,
             com.google.cloud.tasks.v2beta3.Queue.Builder,
@@ -688,8 +682,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -703,8 +696,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -722,8 +714,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -747,8 +738,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -769,8 +759,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -798,8 +787,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -821,8 +809,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -838,8 +825,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -857,8 +843,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
-     * an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -882,7 +867,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

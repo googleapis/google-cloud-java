@@ -7,8 +7,7 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for getting a task using
- * [GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+ * Request message for getting a task using [GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.GetTaskRequest}
@@ -68,7 +67,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -153,17 +152,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response_view specifies which subset of the
-   * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-   * By default response_view is
-   * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-   * retrieved by default because some data, such as payloads, might be
-   * desirable to return only when needed because of its large size or because
-   * of the sensitivity of data that it contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-   * requires `cloudtasks.tasks.fullView` [Google
-   * IAM](https://cloud.google.com/iam/) permission on the
-   * [Task][google.cloud.tasks.v2beta3.Task] resource.
+   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+   * returned.
+   * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+   * information is retrieved by default because some data, such as
+   * payloads, might be desirable to return only when needed because
+   * of its large size or because of the sensitivity of data that it
+   * contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -175,17 +173,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response_view specifies which subset of the
-   * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-   * By default response_view is
-   * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-   * retrieved by default because some data, such as payloads, might be
-   * desirable to return only when needed because of its large size or because
-   * of the sensitivity of data that it contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-   * requires `cloudtasks.tasks.fullView` [Google
-   * IAM](https://cloud.google.com/iam/) permission on the
-   * [Task][google.cloud.tasks.v2beta3.Task] resource.
+   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+   * returned.
+   * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+   * information is retrieved by default because some data, such as
+   * payloads, might be desirable to return only when needed because
+   * of its large size or because of the sensitivity of data that it
+   * contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+   * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -248,11 +245,10 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tasks.v2beta3.GetTaskRequest other =
         (com.google.cloud.tasks.v2beta3.GetTaskRequest) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && responseView_ == other.responseView_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (responseView_ != other.responseView_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -370,8 +366,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for getting a task using
-   * [GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * Request message for getting a task using [GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.GetTaskRequest}
@@ -451,35 +446,35 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -639,17 +634,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -661,17 +655,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -685,17 +678,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -710,17 +702,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -738,17 +729,16 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the
-     * [Task][google.cloud.tasks.v2beta3.Task] will be returned.
-     * By default response_view is
-     * [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all information is
-     * retrieved by default because some data, such as payloads, might be
-     * desirable to return only when needed because of its large size or because
-     * of the sensitivity of data that it contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
-     * requires `cloudtasks.tasks.fullView` [Google
-     * IAM](https://cloud.google.com/iam/) permission on the
-     * [Task][google.cloud.tasks.v2beta3.Task] resource.
+     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
+     * returned.
+     * By default response_view is [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]; not all
+     * information is retrieved by default because some data, such as
+     * payloads, might be desirable to return only when needed because
+     * of its large size or because of the sensitivity of data that it
+     * contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
+     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
+     * permission on the [Task][google.cloud.tasks.v2beta3.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View response_view = 2;</code>
@@ -762,7 +752,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

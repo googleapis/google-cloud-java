@@ -18,7 +18,7 @@ package com.google.cloud.dialogflow.v2;
  *     is_final: true
  * 5.  transcript: " that's"
  * 6.  transcript: " that is"
- * 7.  recognition_event_type: `RECOGNITION_EVENT_END_OF_SINGLE_UTTERANCE`
+ * 7.  message_type: `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`
  * 8.  transcript: " that is the question"
  *     is_final: true
  * Only two of the responses contain final results (#4 and #8 indicated by
@@ -26,7 +26,7 @@ package com.google.cloud.dialogflow.v2;
  * or not to be that is the question".
  * In each response we populate:
  * *  for `MESSAGE_TYPE_TRANSCRIPT`: `transcript` and possibly `is_final`.
- * *  for `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`: only `event_type`.
+ * *  for `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`: only `message_type`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.StreamingRecognitionResult}
@@ -44,8 +44,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   private StreamingRecognitionResult() {
     messageType_ = 0;
     transcript_ = "";
-    isFinal_ = false;
-    confidence_ = 0F;
   }
 
   @java.lang.Override
@@ -98,7 +96,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -330,7 +328,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Transcript text representing the words that the user spoke.
-   * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+   * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
    * </pre>
    *
    * <code>string transcript = 2;</code>
@@ -351,7 +349,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Transcript text representing the words that the user spoke.
-   * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+   * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
    * </pre>
    *
    * <code>string transcript = 2;</code>
@@ -374,11 +372,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * If `false`, the `StreamingRecognitionResult` represents an
    * interim result that may change. If `true`, the recognizer will not return
    * any further hypotheses about this piece of the audio. May only be populated
-   * for `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+   * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
    * </pre>
    *
    * <code>bool is_final = 3;</code>
@@ -476,16 +473,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     com.google.cloud.dialogflow.v2.StreamingRecognitionResult other =
         (com.google.cloud.dialogflow.v2.StreamingRecognitionResult) obj;
 
-    boolean result = true;
-    result = result && messageType_ == other.messageType_;
-    result = result && getTranscript().equals(other.getTranscript());
-    result = result && (getIsFinal() == other.getIsFinal());
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getConfidence())
-                == java.lang.Float.floatToIntBits(other.getConfidence()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (messageType_ != other.messageType_) return false;
+    if (!getTranscript().equals(other.getTranscript())) return false;
+    if (getIsFinal() != other.getIsFinal()) return false;
+    if (java.lang.Float.floatToIntBits(getConfidence())
+        != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -619,7 +613,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *     is_final: true
    * 5.  transcript: " that's"
    * 6.  transcript: " that is"
-   * 7.  recognition_event_type: `RECOGNITION_EVENT_END_OF_SINGLE_UTTERANCE`
+   * 7.  message_type: `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`
    * 8.  transcript: " that is the question"
    *     is_final: true
    * Only two of the responses contain final results (#4 and #8 indicated by
@@ -627,7 +621,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * or not to be that is the question".
    * In each response we populate:
    * *  for `MESSAGE_TYPE_TRANSCRIPT`: `transcript` and possibly `is_final`.
-   * *  for `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`: only `event_type`.
+   * *  for `MESSAGE_TYPE_END_OF_SINGLE_UTTERANCE`: only `message_type`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.StreamingRecognitionResult}
@@ -713,35 +707,35 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -891,7 +885,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -912,7 +906,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -933,7 +927,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -952,7 +946,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -968,7 +962,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Transcript text representing the words that the user spoke.
-     * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * Populated if and only if `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>string transcript = 2;</code>
@@ -989,11 +983,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * If `false`, the `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, the recognizer will not return
      * any further hypotheses about this piece of the audio. May only be populated
-     * for `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>bool is_final = 3;</code>
@@ -1005,11 +998,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * If `false`, the `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, the recognizer will not return
      * any further hypotheses about this piece of the audio. May only be populated
-     * for `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>bool is_final = 3;</code>
@@ -1024,11 +1016,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * If `false`, the `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, the recognizer will not return
      * any further hypotheses about this piece of the audio. May only be populated
-     * for `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
+     * for `message_type` = `MESSAGE_TYPE_TRANSCRIPT`.
      * </pre>
      *
      * <code>bool is_final = 3;</code>
@@ -1101,7 +1092,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

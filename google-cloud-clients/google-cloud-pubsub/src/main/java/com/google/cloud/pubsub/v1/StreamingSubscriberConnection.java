@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
@@ -151,26 +153,20 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     @Override
     public void onResponse(StreamingPullResponse response) {
       channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
-      messageDispatcher.processReceivedMessages(
-          response.getReceivedMessagesList(),
-          new Runnable() {
-            @Override
-            public void run() {
-              // Only request more if we're not shutdown.
-              // If errorFuture is done, the stream has either failed or hung up,
-              // and we don't need to request.
-              if (isAlive() && !errorFuture.isDone()) {
-                lock.lock();
-                try {
-                  thisController.request(1);
-                } catch (Exception e) {
-                  logger.log(Level.WARNING, "cannot request more messages", e);
-                } finally {
-                  lock.unlock();
-                }
-              }
-            }
-          });
+      messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
+      // Only request more if we're not shutdown.
+      // If errorFuture is done, the stream has either failed or hung up,
+      // and we don't need to request.
+      if (isAlive() && !errorFuture.isDone()) {
+        lock.lock();
+        try {
+          thisController.request(1);
+        } catch (Exception e) {
+          logger.log(Level.WARNING, "cannot request more messages", e);
+        } finally {
+          lock.unlock();
+        }
+      }
     }
 
     @Override
@@ -297,7 +293,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .addAllAckIds(idChunk)
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
                         .build());
-        ApiFutures.addCallback(future, loggingCallback);
+        ApiFutures.addCallback(future, loggingCallback, directExecutor());
       }
     }
 
@@ -309,7 +305,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                       .setSubscription(subscription)
                       .addAllAckIds(idChunk)
                       .build());
-      ApiFutures.addCallback(future, loggingCallback);
+      ApiFutures.addCallback(future, loggingCallback, directExecutor());
     }
   }
 }

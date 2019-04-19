@@ -117,6 +117,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     return ((InstanceStubSettings) getStubSettings()).getSerialPortOutputInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to getShieldedInstanceIdentityInstance. */
+  public UnaryCallSettings<GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+      getShieldedInstanceIdentityInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).getShieldedInstanceIdentityInstanceSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertInstance. */
   public UnaryCallSettings<InsertInstanceHttpRequest, Operation> insertInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).insertInstanceSettings();
@@ -200,6 +206,16 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     return ((InstanceStubSettings) getStubSettings()).setServiceAccountInstanceSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * setShieldedInstanceIntegrityPolicyInstance.
+   */
+  public UnaryCallSettings<SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+      setShieldedInstanceIntegrityPolicyInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings())
+        .setShieldedInstanceIntegrityPolicyInstanceSettings();
+  }
+
   /** Returns the object with the settings used for calls to setTagsInstance. */
   public UnaryCallSettings<SetTagsInstanceHttpRequest, Operation> setTagsInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).setTagsInstanceSettings();
@@ -243,6 +259,15 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   public UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
       updateNetworkInterfaceInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).updateNetworkInterfaceInstanceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateShieldedInstanceConfigInstance.
+   */
+  public UnaryCallSettings<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+      updateShieldedInstanceConfigInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings())
+        .updateShieldedInstanceConfigInstanceSettings();
   }
 
   public static final InstanceSettings create(InstanceStubSettings stub) throws IOException {
@@ -402,6 +427,15 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
       return getStubSettingsBuilder().getSerialPortOutputInstanceSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to getShieldedInstanceIdentityInstance.
+     */
+    public UnaryCallSettings.Builder<
+            GetShieldedInstanceIdentityInstanceHttpRequest, ShieldedInstanceIdentity>
+        getShieldedInstanceIdentityInstanceSettings() {
+      return getStubSettingsBuilder().getShieldedInstanceIdentityInstanceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertInstance. */
     public UnaryCallSettings.Builder<InsertInstanceHttpRequest, Operation>
         insertInstanceSettings() {
@@ -489,6 +523,16 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
       return getStubSettingsBuilder().setServiceAccountInstanceSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * setShieldedInstanceIntegrityPolicyInstance.
+     */
+    public UnaryCallSettings.Builder<
+            SetShieldedInstanceIntegrityPolicyInstanceHttpRequest, Operation>
+        setShieldedInstanceIntegrityPolicyInstanceSettings() {
+      return getStubSettingsBuilder().setShieldedInstanceIntegrityPolicyInstanceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setTagsInstance. */
     public UnaryCallSettings.Builder<SetTagsInstanceHttpRequest, Operation>
         setTagsInstanceSettings() {
@@ -533,6 +577,14 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     public UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
         updateNetworkInterfaceInstanceSettings() {
       return getStubSettingsBuilder().updateNetworkInterfaceInstanceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateShieldedInstanceConfigInstance.
+     */
+    public UnaryCallSettings.Builder<UpdateShieldedInstanceConfigInstanceHttpRequest, Operation>
+        updateShieldedInstanceConfigInstanceSettings() {
+      return getStubSettingsBuilder().updateShieldedInstanceConfigInstanceSettings();
     }
 
     @Override

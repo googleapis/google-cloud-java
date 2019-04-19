@@ -7,8 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for
- * [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
+ * The request message for [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteIntentRequest}
@@ -60,7 +59,7 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -98,7 +97,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the intent to delete.
+   * Required. The name of the intent to delete. If this intent has direct or
+   * indirect followup intents, we also delete them.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -119,7 +119,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the intent to delete.
+   * Required. The name of the intent to delete. If this intent has direct or
+   * indirect followup intents, we also delete them.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -182,10 +183,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
     com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest other =
         (com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -302,8 +302,7 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for
-   * [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
+   * The request message for [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteIntentRequest}
@@ -380,35 +379,35 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -463,7 +462,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -484,7 +484,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -505,7 +506,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -524,7 +526,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -540,7 +543,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the intent to delete.
+     * Required. The name of the intent to delete. If this intent has direct or
+     * indirect followup intents, we also delete them.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -559,7 +563,7 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

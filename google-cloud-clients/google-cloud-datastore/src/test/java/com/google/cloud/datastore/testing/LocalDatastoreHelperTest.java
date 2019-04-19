@@ -17,6 +17,7 @@
 package com.google.cloud.datastore.testing;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -54,6 +55,23 @@ public class LocalDatastoreHelperTest {
     helper = LocalDatastoreHelper.create();
     assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+  }
+
+  @Test
+  public void testCreatePort() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75, 8888);
+    DatastoreOptions options = helper.getOptions(NAMESPACE);
+    assertTrue(options.getHost().endsWith("8888"));
+    assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
+    helper = LocalDatastoreHelper.create();
+    options = helper.getOptions(NAMESPACE);
+    assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
+    assertFalse(options.getHost().endsWith("8888"));
+    assertFalse(options.getHost().endsWith("8080"));
+    helper = LocalDatastoreHelper.create(9999);
+    options = helper.getOptions(NAMESPACE);
+    assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(options.getHost().endsWith("9999"));
   }
 
   @Test
