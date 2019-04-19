@@ -38,7 +38,7 @@ import org.threeten.bp.Instant;
 
 /**
  * Fake implementation of {@link ScheduledExecutorService} that allows tests control the reference
- * time of the executor and decide when to execute any outstanding task.
+ * time of the executor and decide when to addTask any outstanding task.
  */
 public class FakeScheduledExecutorService extends AbstractExecutorService
     implements ScheduledExecutorService {
@@ -116,7 +116,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   }
 
   /**
-   * This will advance the reference time of the executor and execute (in the same thread) any
+   * This will advance the reference time of the executor and addTask (in the same thread) any
    * outstanding callable which execution time has passed.
    */
   public void advanceTime(Duration toAdvance) {

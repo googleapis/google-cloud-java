@@ -25,13 +25,12 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 interface CancellableRunnable extends Runnable {
   void cancel(Throwable e);
@@ -52,81 +51,82 @@ final class SequentialExecutorService {
    * tasks with the same key sequentially. Tasks with the same key will be run only when its
    * predecessor has been completed while tasks with different keys can be run in parallel.
    */
-  private abstract static class SequentialExecutor {
+  private abstract static class SequentialExecutor<R extends Runnable> {
     // Maps keys to tasks.
-    protected final Map<String, Deque<Runnable>> tasksByKey;
+    protected final Map<String, Deque<R>> tasksByKey;
     protected final Executor executor;
 
-    private SequentialExecutor(Executor executor) {
+    protected SequentialExecutor(Executor executor) {
       this.executor = executor;
       this.tasksByKey = new HashMap<>();
     }
 
-    protected void execute(final String key, Runnable task) {
-      Deque<Runnable> newTasks;
+    protected void addTask(final String key, R task) {
       synchronized (tasksByKey) {
-        newTasks = tasksByKey.get(key);
+        Deque<R> tasks = tasksByKey.get(key);
         // If this key is already being handled, add it to the queue and return.
-        if (newTasks != null) {
-          newTasks.add(task);
+        if (tasks != null) {
+          tasks.add(task);
           return;
         }
 
-        newTasks = new ConcurrentLinkedDeque();
-        newTasks.add(task);
-        tasksByKey.put(key, newTasks);
+        tasks = new ConcurrentLinkedDeque<>();
+        tasks.add(task);
+        tasksByKey.put(key, tasks);
       }
 
-      callNextTaskAsync(key, newTasks);
+      callNextTaskAsync(key);
     }
 
-    protected void callNextTaskAsync(final String key, final Deque<Runnable> tasks) {
+    protected void callNextTaskAsync(final String key) {
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
               // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
-              Runnable task = tasks.poll();
-              if (task != null) {
-                task.run();
-                postTaskExecution(key, tasks);
+              Deque<R> tasks;
+              synchronized (tasksByKey) {
+                tasks = tasksByKey.get(key);
+              }
+              if (tasks != null) {
+                R task = tasks.poll();
+                if (task != null) {
+                  // TODO(sduskis): what should we do if this fails?
+                  task.run();
+                }
+                if (tasks.isEmpty()) {
+                  synchronized (tasksByKey) {
+                    // Note that there can be a race if a task is added to `tasks` at this point.
+                    // However, tasks.add() is called only inside the block synchronized by
+                    // `tasksByKey` object in the addTask() function. Therefore, we are safe to
+                    // remove `tasks` here.  This is not optimal, but correct.
+                    tasksByKey.remove(key);
+                  }
+                }
               }
             }
           });
     }
-
-    protected void postTaskExecution(String key, Deque<Runnable> tasks) {
-      // Do nothing in this class, but provide an opportunity for a subclass to do something
-      // interesting.
-    }
   }
 
   @BetaApi
-  static class AutoExecutor extends SequentialExecutor {
+  static class AutoExecutor extends SequentialExecutor<Runnable> {
     AutoExecutor(Executor executor) {
       super(executor);
     }
 
     /** Runs synchronous {@code Runnable} tasks sequentially. */
-    void submit(String key, Runnable task) {
-      super.execute(key, task);
-    }
-
-    @Override
-    /** Once a task is done, automatically run the next task in the queue. */
-    protected void postTaskExecution(final String key, final Deque<Runnable> tasks) {
-      synchronized (tasksByKey) {
-        if (tasks.isEmpty()) {
-          // Note that there can be a race if a task is added to `tasks` at this point. However,
-          // tasks.add() is called only inside the block synchronized by `tasksByKey` object
-          // in the execute() function. Therefore, we are safe to remove `tasks` here. This is not
-          // optimal, but correct.
-          tasksByKey.remove(key);
-          return;
-        }
-      }
-
-      callNextTaskAsync(key, tasks);
+    void submit(final String key, final Runnable task) {
+      addTask(
+          key,
+          new Runnable() {
+            @Override
+            public void run() {
+              // TODO (sduskis): what happens if run fails.
+              task.run();
+              callNextTaskAsync(key);
+            }
+          });
     }
   }
 
@@ -135,10 +135,7 @@ final class SequentialExecutorService {
    * fails, other tasks with the same key that have not been executed will be cancelled.
    */
   @BetaApi
-  static class CallbackExecutor extends SequentialExecutor {
-    private static final Logger logger =
-        Logger.getLogger(SequentialExecutorService.SequentialExecutor.class.getName());
-
+  static class CallbackExecutor extends SequentialExecutor<CancellableRunnable> {
     CallbackExecutor(Executor executor) {
       super(executor);
     }
@@ -153,7 +150,7 @@ final class SequentialExecutorService {
      *   <li>Creates an `ApiFuture` that can be used for tracking progress.
      *   <li>Creates a `CancellableRunnable` out of the `Callable`
      *   <li>Adds the `CancellableRunnable` to the task queue
-     *   <li>Once the task is ready to be run, it will execute the `Callable`
+     *   <li>Once the task is ready to be run, it will addTask the `Callable`
      *   <li>When the `Callable` completes one of two things happens:
      *       <ol>
      *         <li>On success:
@@ -179,8 +176,8 @@ final class SequentialExecutorService {
       final SettableApiFuture<T> future = SettableApiFuture.create();
 
       // Step 2: create the CancellableRunnable
-      // Step 3: add the task to queue via `execute`
-      execute(
+      // Step 3: add the task to queue via `addTask`
+      addTask(
           key,
           new CancellableRunnable() {
             private boolean cancelled = false;
@@ -202,7 +199,7 @@ final class SequentialExecutorService {
                       @Override
                       public void onSuccess(T msg) {
                         future.set(msg);
-                        resume(key);
+                        callNextTaskAsync(key);
                       }
 
                       // Step 5.2: on failure
@@ -230,40 +227,18 @@ final class SequentialExecutorService {
       return future;
     }
 
-    /** Executes the next queued task associated with {@code key}. */
-    private void resume(String key) {
-      Deque<Runnable> tasks;
-      synchronized (tasksByKey) {
-        tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          return;
-        }
-        if (tasks.isEmpty()) {
-          tasksByKey.remove(key);
-          return;
-        }
-      }
-      callNextTaskAsync(key, tasks);
-    }
-
     /** Cancels every task in the queue assoicated with {@code key}. */
     private void cancelQueuedTasks(final String key, Throwable e) {
-      // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
+      // TODO(kimkyung-goog): Ensure addTask() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
-        final Deque<Runnable> tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          return;
-        }
-        while (!tasks.isEmpty()) {
-          Runnable task = tasks.poll();
-          if (task instanceof CancellableRunnable) {
-            ((CancellableRunnable) task).cancel(e);
-          } else {
-            logger.log(
-                Level.WARNING,
-                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+        Deque<CancellableRunnable> tasks = tasksByKey.get(key);
+        if (tasks != null) {
+          for (Iterator<CancellableRunnable> iterator = tasks.iterator(); iterator.hasNext(); ) {
+            iterator.next().cancel(e);
+            iterator.remove();
           }
+          tasksByKey.remove(key);
         }
       }
     }

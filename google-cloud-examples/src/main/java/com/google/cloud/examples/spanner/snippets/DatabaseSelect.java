@@ -31,7 +31,7 @@ import com.google.cloud.spanner.Statement;
 
 /**
  * A quick start code for Cloud Spanner. It demonstrates how to setup the Cloud Spanner client and
- * execute a simple query using it against an existing database.
+ * addTask a simple query using it against an existing database.
  */
 public class DatabaseSelect {
   public static void main(String... args) throws Exception {

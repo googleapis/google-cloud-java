@@ -205,8 +205,8 @@ public final class SequentialExecutorServiceTest {
 
   @Test
   public void SequentialExecutorRunsTasksAutomatically() throws Exception {
-    int numKeys = 100;
-    int numTasks = 100;
+    int numKeys = 50;
+    int numTasks = 50;
     SequentialExecutorService.AutoExecutor sequentialExecutor =
         new SequentialExecutorService.AutoExecutor(executorProvider.getExecutor());
     CountDownLatch remainingTasksCount = new CountDownLatch(numKeys * numTasks);
@@ -223,7 +223,7 @@ public final class SequentialExecutorServiceTest {
       for (int taskId = 0; taskId < numTasks; taskId++) {
         SleepingSyncTask task =
             new SleepingSyncTask(
-                taskId, 10, startedTasksSequence, completedTasksSequence, remainingTasksCount);
+                taskId, 5, startedTasksSequence, completedTasksSequence, remainingTasksCount);
         sequentialExecutor.submit(key, task);
       }
     }
