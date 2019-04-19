@@ -172,7 +172,7 @@ public class ITTransactionManagerTest {
           Thread.sleep(e.getRetryDelayInMillis() / 1000);
           // It is possible that it was txn2 that aborted.
           // In that case we should just retry without resetting anything.
-          if(manager1.getState() == TransactionState.ABORTED) {
+          if (manager1.getState() == TransactionState.ABORTED) {
             txn1 = manager1.resetForRetry();
           }
         }
