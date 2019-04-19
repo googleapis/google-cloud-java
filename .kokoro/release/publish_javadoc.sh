@@ -16,7 +16,7 @@
 set -eo pipefail
 
 if [[ -z "${CREDENTIALS}" ]]; then
-  CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713-docuploader_service_account
+  CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713_docuploader_service_account
 fi
 
 if [[ -z "${STAGING_BUCKET}" ]]; then
