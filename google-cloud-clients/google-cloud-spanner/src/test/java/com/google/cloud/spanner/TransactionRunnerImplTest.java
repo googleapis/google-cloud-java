@@ -156,16 +156,26 @@ public class TransactionRunnerImplTest {
 
   @Test
   public void batchDmlAborted() {
-    batchDmlException(Code.ABORTED_VALUE);
+    long updateCount[] = batchDmlException(Code.ABORTED_VALUE);
+    assertThat(updateCount.length).isEqualTo(2);
+    assertThat(updateCount[0]).isEqualTo(1L);
+    assertThat(updateCount[1]).isEqualTo(1L);
   }
 
   @Test
   public void batchDmlFailedPrecondition() {
-    batchDmlException(Code.FAILED_PRECONDITION_VALUE);
+    try {
+      batchDmlException(Code.FAILED_PRECONDITION_VALUE);
+      fail("Expected exception");
+    } catch (SpannerBatchUpdateException e) {
+      assertThat(e.getUpdateCounts().length).isEqualTo(1);
+      assertThat(e.getUpdateCounts()[0]).isEqualTo(1L);
+      assertThat(e.getCode() == Code.FAILED_PRECONDITION_VALUE);
+    }
   }
 
   @SuppressWarnings("unchecked")
-  private void batchDmlException(int status) {
+  private long[] batchDmlException(int status) {
     Preconditions.checkArgument(status != Code.OK_VALUE);
     TransactionContextImpl transaction =
         new TransactionContextImpl(session, ByteString.copyFromUtf8("test"), rpc, 10);
@@ -199,35 +209,20 @@ public class TransactionRunnerImplTest {
     when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.anyMap())).thenReturn(commitResponse);
     final Statement statement = Statement.of("UPDATE FOO SET BAR=1");
     final AtomicInteger numCalls = new AtomicInteger(0);
-    SpannerBatchUpdateException exception = null;
-    long updateCount[];
-    try {
-      updateCount =
-          runner.run(
-              new TransactionCallable<long[]>() {
-                @Override
-                public long[] run(TransactionContext transaction) throws Exception {
-                  numCalls.incrementAndGet();
-                  return transaction.batchUpdate(Arrays.asList(statement, statement));
-                }
-              });
-    } catch (SpannerBatchUpdateException e) {
-      exception = e;
-      updateCount = e.getUpdateCounts();
-    }
+    long updateCount[] =
+        runner.run(
+            new TransactionCallable<long[]>() {
+              @Override
+              public long[] run(TransactionContext transaction) throws Exception {
+                numCalls.incrementAndGet();
+                return transaction.batchUpdate(Arrays.asList(statement, statement));
+              }
+            });
     if (status == Code.ABORTED_VALUE) {
       // Assert that the method ran twice because the first response aborted.
       assertThat(numCalls.get()).isEqualTo(2);
-      assertThat(updateCount.length).isEqualTo(2);
-      assertThat(updateCount[0]).isEqualTo(1L);
-      assertThat(updateCount[1]).isEqualTo(1L);
-    } else {
-      // Assert that the method ran once because the first response threw an exception.
-      assertThat(numCalls.get()).isEqualTo(1);
-      assertThat(updateCount.length).isEqualTo(1);
-      assertThat(updateCount[0]).isEqualTo(1L);
-      assertThat(exception.getCode() == status);
     }
+    return updateCount;
   }
 
   private void runTransaction(final Exception exception) {
