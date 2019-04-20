@@ -74,6 +74,11 @@ public final class InstanceGroupManagerVersion implements ApiMessage {
     return null;
   }
 
+  /**
+   * The URL of the instance template that is specified for this managed instance group. The group
+   * uses this template to create new instances in the managed instance group until the `targetSize`
+   * for this version is reached.
+   */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
@@ -145,10 +150,20 @@ public final class InstanceGroupManagerVersion implements ApiMessage {
       this.targetSize = source.targetSize;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create new instances in the managed instance group until the
+     * `targetSize` for this version is reached.
+     */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create new instances in the managed instance group until the
+     * `targetSize` for this version is reached.
+     */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;

@@ -253,8 +253,8 @@ public final class HealthCheck implements ApiMessage {
   }
 
   /**
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the
-   * default is TCP. Exactly one of the protocol-specific health check field must be specified,
+   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified,
+   * the default is TCP. Exactly one of the protocol-specific health check field must be specified,
    * which must match type field.
    */
   public String getType() {
@@ -562,18 +562,18 @@ public final class HealthCheck implements ApiMessage {
     }
 
     /**
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the
-     * default is TCP. Exactly one of the protocol-specific health check field must be specified,
-     * which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not
+     * specified, the default is TCP. Exactly one of the protocol-specific health check field must
+     * be specified, which must match type field.
      */
     public String getType() {
       return type;
     }
 
     /**
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the
-     * default is TCP. Exactly one of the protocol-specific health check field must be specified,
-     * which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not
+     * specified, the default is TCP. Exactly one of the protocol-specific health check field must
+     * be specified, which must match type field.
      */
     public Builder setType(String type) {
       this.type = type;

@@ -149,7 +149,11 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
     return key;
   }
 
-  /** A Node Template resource. */
+  /**
+   * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
+   * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
+   * v1.nodeTemplates ==)
+   */
   public NodeTemplate getNodeTemplateResource() {
     return nodeTemplateResource;
   }
@@ -325,12 +329,20 @@ public final class InsertNodeTemplateHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** A Node Template resource. */
+    /**
+     * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
+     * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
+     * v1.nodeTemplates ==)
+     */
     public NodeTemplate getNodeTemplateResource() {
       return nodeTemplateResource;
     }
 
-    /** A Node Template resource. */
+    /**
+     * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
+     * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
+     * v1.nodeTemplates ==)
+     */
     public Builder setNodeTemplateResource(NodeTemplate nodeTemplateResource) {
       this.nodeTemplateResource = nodeTemplateResource;
       return this;
