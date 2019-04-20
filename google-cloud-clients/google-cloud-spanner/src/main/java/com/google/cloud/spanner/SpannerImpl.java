@@ -24,7 +24,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.paging.Page;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
@@ -36,9 +35,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.protobuf.Any;
-import com.google.protobuf.InvalidProtocolBufferException;
-import com.google.protobuf.Message;
 import io.grpc.Context;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
@@ -66,11 +62,6 @@ import javax.annotation.concurrent.GuardedBy;
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final int MIN_BACKOFF_MS = 1000;
   private static final int MAX_BACKOFF_MS = 32000;
-  private static final PathTemplate OP_NAME_TEMPLATE =
-      PathTemplate.create(
-          "projects/{project}/instances/{instance}/databases/{database}/operations/{operation}");
-  private static final PathTemplate PROJECT_NAME_TEMPLATE =
-      PathTemplate.create("projects/{project}");
 
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Tracer tracer = Tracing.getTracer();
@@ -341,16 +332,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       checkArgument(prev == null, "Duplicate option %s", option.rpcOption());
     }
     return ImmutableMap.copyOf(tmp);
-  }
-
-  private static <T extends Message> T unpack(Any response, Class<T> clazz)
-      throws SpannerException {
-    try {
-      return response.unpack(clazz);
-    } catch (InvalidProtocolBufferException e) {
-      throw SpannerExceptionFactory.newSpannerException(
-          ErrorCode.INTERNAL, "Error unpacking response", e);
-    }
   }
 
   abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
