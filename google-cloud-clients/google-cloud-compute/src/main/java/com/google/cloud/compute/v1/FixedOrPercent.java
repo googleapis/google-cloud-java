@@ -77,7 +77,7 @@ public final class FixedOrPercent implements ApiMessage {
   /**
    * [Output Only] Absolute value of VM instances calculated based on the specific mode.
    *
-   * <p>- If the value is fixed, then the caculated value is equal to the fixed value. - If the
+   * <p>- If the value is fixed, then the calculated value is equal to the fixed value. - If the
    * value is a percent, then the calculated value is percent/100 &#42; targetSize. For example, the
    * calculated value of a 80% of a managed instance group with 150 instances would be (80/100 &#42;
    * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
@@ -151,7 +151,7 @@ public final class FixedOrPercent implements ApiMessage {
     /**
      * [Output Only] Absolute value of VM instances calculated based on the specific mode.
      *
-     * <p>- If the value is fixed, then the caculated value is equal to the fixed value. - If the
+     * <p>- If the value is fixed, then the calculated value is equal to the fixed value. - If the
      * value is a percent, then the calculated value is percent/100 &#42; targetSize. For example,
      * the calculated value of a 80% of a managed instance group with 150 instances would be (80/100
      * &#42; 150) = 120 VM instances. If there is a remainder, the number is rounded up.
@@ -163,7 +163,7 @@ public final class FixedOrPercent implements ApiMessage {
     /**
      * [Output Only] Absolute value of VM instances calculated based on the specific mode.
      *
-     * <p>- If the value is fixed, then the caculated value is equal to the fixed value. - If the
+     * <p>- If the value is fixed, then the calculated value is equal to the fixed value. - If the
      * value is a percent, then the calculated value is percent/100 &#42; targetSize. For example,
      * the calculated value of a 80% of a managed instance group with 150 instances would be (80/100
      * &#42; 150) = 120 VM instances. If there is a remainder, the number is rounded up.
