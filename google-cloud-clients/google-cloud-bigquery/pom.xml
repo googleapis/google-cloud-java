@@ -39,6 +39,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
+      <version>v2-rev431-1.24.1</version>
       <scope>compile</scope>
     </dependency>
 
