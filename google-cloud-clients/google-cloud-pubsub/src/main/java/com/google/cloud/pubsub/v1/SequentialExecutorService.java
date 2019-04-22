@@ -23,12 +23,12 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
 
 interface CancellableRunnable extends Runnable {
@@ -52,7 +52,7 @@ final class SequentialExecutorService {
    */
   private abstract static class SequentialExecutor<R extends Runnable> {
     // Maps keys to tasks.
-    protected final Map<String, Deque<R>> tasksByKey;
+    protected final Map<String, Queue<R>> tasksByKey;
     protected final Executor executor;
 
     private SequentialExecutor(Executor executor) {
@@ -62,14 +62,14 @@ final class SequentialExecutorService {
 
     protected void execute(final String key, R task) {
       synchronized (tasksByKey) {
-        Deque<R> newTasks = tasksByKey.get(key);
+        Queue<R> newTasks = tasksByKey.get(key);
         // If this key is already being handled, add it to the queue and return.
         if (newTasks != null) {
           newTasks.add(task);
           return;
         }
 
-        newTasks = new ConcurrentLinkedDeque();
+        newTasks = new ConcurrentLinkedQueue();
         newTasks.add(task);
         tasksByKey.put(key, newTasks);
       }
@@ -82,7 +82,7 @@ final class SequentialExecutorService {
           new Runnable() {
             @Override
             public void run() {
-              Deque<R> tasks;
+              Queue<R> tasks;
               synchronized (tasksByKey) {
                 tasks = tasksByKey.get(key);
                 if (tasks != null && tasks.isEmpty()) {
@@ -221,12 +221,12 @@ final class SequentialExecutorService {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
-        final Deque<CancellableRunnable> tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          return;
-        }
-        while (!tasks.isEmpty()) {
-          tasks.poll().cancel(e);
+        final Queue<CancellableRunnable> tasks = tasksByKey.get(key);
+        if (tasks != null) {
+          while (!tasks.isEmpty()) {
+            tasks.poll().cancel(e);
+          }
+          tasksByKey.remove(key);
         }
       }
     }
