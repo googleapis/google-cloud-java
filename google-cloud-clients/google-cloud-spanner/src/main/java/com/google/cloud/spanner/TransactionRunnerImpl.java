@@ -28,6 +28,7 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
+import com.google.rpc.Code;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
@@ -270,7 +271,12 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();
       }
 
-      if (response.getStatus().getCode() != 0) {
+      // If one of the DML statements was aborted, we should throw an aborted exception.
+      // In all other cases, we should throw a BatchUpdateException.
+      if (response.getStatus().getCode() == Code.ABORTED_VALUE) {
+        throw newSpannerException(
+            ErrorCode.fromRpcStatus(response.getStatus()), response.getStatus().getMessage());
+      } else if (response.getStatus().getCode() != 0) {
         throw newSpannerBatchUpdateException(
             ErrorCode.fromRpcStatus(response.getStatus()),
             response.getStatus().getMessage(),
