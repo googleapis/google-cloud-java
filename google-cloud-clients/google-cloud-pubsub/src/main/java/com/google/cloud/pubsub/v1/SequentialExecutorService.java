@@ -26,9 +26,10 @@ import com.google.api.core.SettableApiFuture;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +55,7 @@ final class SequentialExecutorService {
    */
   private abstract static class SequentialExecutor {
     // Maps keys to tasks.
-    protected final Map<String, Deque<Runnable>> tasksByKey;
+    protected final Map<String, Queue<Runnable>> tasksByKey;
     protected final Executor executor;
 
     private SequentialExecutor(Executor executor) {
@@ -63,7 +64,7 @@ final class SequentialExecutorService {
     }
 
     protected void execute(final String key, Runnable task) {
-      Deque<Runnable> newTasks;
+      Queue<Runnable> newTasks;
       synchronized (tasksByKey) {
         newTasks = tasksByKey.get(key);
         // If this key is already being handled, add it to the queue and return.
@@ -72,7 +73,7 @@ final class SequentialExecutorService {
           return;
         }
 
-        newTasks = new ConcurrentLinkedDeque();
+        newTasks = new ConcurrentLinkedQueue<>();
         newTasks.add(task);
         tasksByKey.put(key, newTasks);
       }
@@ -80,7 +81,7 @@ final class SequentialExecutorService {
       callNextTaskAsync(key, newTasks);
     }
 
-    protected void callNextTaskAsync(final String key, final Deque<Runnable> tasks) {
+    protected void callNextTaskAsync(final String key, final Queue<Runnable> tasks) {
       executor.execute(
           new Runnable() {
             @Override
@@ -95,7 +96,7 @@ final class SequentialExecutorService {
           });
     }
 
-    protected void postTaskExecution(String key, Deque<Runnable> tasks) {
+    protected void postTaskExecution(String key, Queue<Runnable> tasks) {
       // Do nothing in this class, but provide an opportunity for a subclass to do something
       // interesting.
     }
@@ -114,7 +115,7 @@ final class SequentialExecutorService {
 
     @Override
     /** Once a task is done, automatically run the next task in the queue. */
-    protected void postTaskExecution(final String key, final Deque<Runnable> tasks) {
+    protected void postTaskExecution(final String key, final Queue<Runnable> tasks) {
       synchronized (tasksByKey) {
         if (tasks.isEmpty()) {
           // Note that there can be a race if a task is added to `tasks` at this point. However,
@@ -232,7 +233,7 @@ final class SequentialExecutorService {
 
     /** Executes the next queued task associated with {@code key}. */
     private void resume(String key) {
-      Deque<Runnable> tasks;
+      Queue<Runnable> tasks;
       synchronized (tasksByKey) {
         tasks = tasksByKey.get(key);
         if (tasks == null) {
@@ -251,7 +252,7 @@ final class SequentialExecutorService {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
       synchronized (tasksByKey) {
-        final Deque<Runnable> tasks = tasksByKey.get(key);
+        final Queue<Runnable> tasks = tasksByKey.get(key);
         if (tasks == null) {
           return;
         }
