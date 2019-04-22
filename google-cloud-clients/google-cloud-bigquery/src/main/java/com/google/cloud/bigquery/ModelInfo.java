@@ -174,6 +174,8 @@ public class ModelInfo implements Serializable {
 
     public ModelId getModelId() { return modelId; }
 
+    public String getModelType() { return modelType; }
+
     public String getDescription() { return description; }
 
     public String getFriendlyName() { return friendlyName; }
@@ -193,6 +195,7 @@ public class ModelInfo implements Serializable {
         return MoreObjects.toStringHelper(this)
                 .add("modelId", modelId)
                 .add("etag", etag)
+                .add("modelType", modelType)
                 .add("description", description)
                 .add("friendlyName", friendlyName)
                 .add("creationTime", creationTime)

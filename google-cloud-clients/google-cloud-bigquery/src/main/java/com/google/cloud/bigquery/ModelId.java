@@ -69,7 +69,7 @@ public final class ModelId implements Serializable {
         return new ModelId(checkNotNull(project), checkNotNull(dataset), checkNotNull(model));
     }
 
-    /** Creates a model identity given data and table identifiers. **/
+    /** Creates a model identity given dataset and model identifiers. **/
     public static ModelId of(String dataset, String model) {
         return new ModelId(null, checkNotNull(dataset), checkNotNull(model));
     }
