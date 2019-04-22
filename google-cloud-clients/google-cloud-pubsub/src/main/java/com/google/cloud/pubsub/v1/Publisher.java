@@ -234,30 +234,30 @@ public class Publisher {
     messagesBatchLock.lock();
     try {
       // Check if the next message makes the current batch exceed the max batch byte size.
-      MessagesBatch messageBatch = messagesBatches.get(orderingKey);
-      if (messageBatch == null) {
-        messageBatch = new MessagesBatch(orderingKey);
-        messagesBatches.put(orderingKey, messageBatch);
+      MessagesBatch messagesBatch = messagesBatches.get(orderingKey);
+      if (messagesBatch == null) {
+        messagesBatch = new MessagesBatch(orderingKey);
+        messagesBatches.put(orderingKey, messagesBatch);
       }
-      if (!messageBatch.isEmpty()
+      if (!messagesBatch.isEmpty()
           && hasBatchingBytes()
-          && messageBatch.getBatchedBytes() + messageSize >= getMaxBatchBytes()) {
-        batchToSend = messageBatch.popOutstandingBatch();
+          && messagesBatch.getBatchedBytes() + messageSize >= getMaxBatchBytes()) {
+        batchToSend = messagesBatch.popOutstandingBatch();
       }
 
       // Border case if the message to send is greater or equals to the max batch size then can't
       // be included in the current batch and instead sent immediately.
       if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
-        messageBatch.addMessage(outstandingPublish, messageSize);
+        messagesBatch.addMessage(outstandingPublish, messageSize);
         // If after adding the message we have reached the batch max messages then we have a batch
         // to send.
-        if (messageBatch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
-          batchToSend = messageBatch.popOutstandingBatch();
+        if (messagesBatch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
+          batchToSend = messagesBatch.popOutstandingBatch();
         }
       }
 
       // Setup the next duration based delivery alarm if there are messages batched.
-      if (!messageBatch.isEmpty()) {
+      if (!messagesBatch.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else {
         messagesBatches.remove(orderingKey);
