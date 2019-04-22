@@ -280,6 +280,97 @@ public class GCRulesTest {
     assertThat(actual.toProto()).isEqualTo(expected);
   }
 
+  @Test
+  public void multipleSetters() {
+    com.google.protobuf.Duration seconds =
+        com.google.protobuf.Duration.newBuilder().setSeconds(1).build();
+    // Only the last setXXX() value persists after build().
+    GcRule proto_gcRule = GcRule.newBuilder().setMaxNumVersions(5).setMaxAge(seconds).build();
+
+    GCRules.GCRule model_gcRule = GCRULES.maxAge(Duration.ofSeconds(1));
+    assertThat(GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+  }
+
+  @Test
+  public void unionOfRules() {
+    GcRule proto_gcRule =
+        GcRule.newBuilder()
+            .setUnion(
+                Union.newBuilder()
+                    .addRules(buildAgeRule(10, 0))
+                    .addRules(buildVersionsRule(1))
+                    .addRules(buildAgeRule(20, 2)))
+            .build();
+
+    GCRules.GCRule model_gcRule =
+        GCRULES
+            .union()
+            .rule(GCRULES.maxAge(Duration.ofSeconds(10)))
+            .rule(GCRULES.maxVersions(1))
+            .rule(GCRULES.maxAge(Duration.ofSeconds(20, 2)));
+    assertThat(GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+  }
+
+  @Test
+  public void intersectionWithFromProto() {
+    GcRule proto_gcRule =
+        GcRule.newBuilder()
+            .setIntersection(
+                Intersection.newBuilder()
+                    .addRules(buildAgeRule(10, 5))
+                    .addRules(buildVersionsRule(1))
+                    .addRules(buildVersionsRule(2)))
+            .build();
+
+    GCRules.GCRule model_gcRule =
+        GCRules.GCRULES
+            .intersection()
+            .rule(GCRULES.maxAge(org.threeten.bp.Duration.ofSeconds(10, 5)))
+            .rule(GCRULES.maxVersions(1))
+            .rule(GCRULES.maxVersions(2));
+    assertThat(GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+  }
+
+  @Test
+  public void intersectionAndUnion() {
+    GcRule proto_gcRule =
+        GcRule.newBuilder()
+            .setUnion(
+                Union.newBuilder()
+                    .addRules(
+                        GcRule.newBuilder()
+                            .setIntersection(
+                                Intersection.newBuilder()
+                                    .addRules(buildVersionsRule(10))
+                                    .addRules(buildAgeRule(2, 4))
+                                    .build())
+                            .build())
+                    .addRules(
+                        GcRule.newBuilder()
+                            .setIntersection(
+                                Intersection.newBuilder()
+                                    .addRules(buildVersionsRule(1))
+                                    .addRules(buildAgeRule(1, 1))
+                                    .build())
+                            .build()))
+            .build();
+
+    GCRules.GCRule model_gcRule =
+        GCRULES
+            .union()
+            .rule(
+                GCRULES
+                    .intersection()
+                    .rule(GCRULES.maxVersions(10))
+                    .rule(GCRULES.maxAge(Duration.ofSeconds(2, 4))))
+            .rule(
+                GCRULES
+                    .intersection()
+                    .rule(GCRULES.maxVersions(1))
+                    .rule(GCRULES.maxAge(Duration.ofSeconds(1, 1))));
+    assertThat(GCRules.GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+  }
+
   public static GcRule buildAgeRule(long seconds, int nanos) {
     com.google.protobuf.Duration.Builder duartionBuilder =
         com.google.protobuf.Duration.newBuilder();
