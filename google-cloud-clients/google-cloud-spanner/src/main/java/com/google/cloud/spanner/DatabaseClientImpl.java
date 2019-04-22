@@ -188,7 +188,7 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(PARTITION_DML_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return runWithSessionRetry(
-          SessionMode.READ_WRITE,
+          SessionMode.READ, // PartitionedUpdate does not need a prepared tx.
           new Function<Session, Long>() {
             @Override
             public Long apply(Session session) {
@@ -213,7 +213,10 @@ class DatabaseClientImpl implements DatabaseClient {
       try {
         return callable.apply(session);
       } catch (SessionNotFoundException e) {
-        session = pool.replaceReadWriteSession(e, session);
+        session =
+            sessionMode == SessionMode.READ
+                ? pool.replaceReadSession(e, session)
+                : pool.replaceReadWriteSession(e, session);
       }
     }
   }

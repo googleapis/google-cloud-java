@@ -1245,7 +1245,7 @@ final class SessionPool {
     return sess;
   }
 
-  private PooledSession replaceReadSession(SessionNotFoundException e, PooledSession session) {
+  PooledSession replaceReadSession(SessionNotFoundException e, PooledSession session) {
     if (!options.isFailIfSessionNotFound() && session.allowReplacing) {
       closeSessionAsync(session);
       return getReadSession();
