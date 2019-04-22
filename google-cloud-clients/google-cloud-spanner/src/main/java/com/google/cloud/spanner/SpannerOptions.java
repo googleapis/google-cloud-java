@@ -239,8 +239,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * different gRPC clients: {@link Spanner}, {@link DatabaseAdminClient} and {@link
      * InstanceAdminClient}. Instead of calling this method, you should set specific {@link
      * RetrySettings} for each of the underlying gRPC clients by calling respectively {@link
-     * #spannerStubSettingsBuilder()}, {@link #databaseAdminStubSettingsBuilder()} or {@link
-     * #instanceAdminStubSettingsBuilder()}.
+     * #getSpannerStubSettingsBuilder()}, {@link #getDatabaseAdminStubSettingsBuilder()} or {@link
+     * #getInstanceAdminStubSettingsBuilder()}.
      */
     @Override
     public Builder setRetrySettings(RetrySettings retrySettings) {
@@ -261,7 +261,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *
      * <pre><code>
      * builder
-     *     .spannerStubSettingsBuilder()
+     *     .getSpannerStubSettingsBuilder()
      *     .applyToAllUnaryMethods(
      *         new ApiFunction&lt;UnaryCallSettings.Builder&lt;?, ?&gt;, Void&gt;() {
      *           public Void apply(Builder&lt;?, ?&gt; input) {
@@ -271,7 +271,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *         });
      * </code></pre>
      */
-    public SpannerStubSettings.Builder spannerStubSettingsBuilder() {
+    public SpannerStubSettings.Builder getSpannerStubSettingsBuilder() {
       return spannerStubSettingsBuilder;
     }
 
@@ -287,7 +287,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *
      * <pre><code>
      * builder
-     *     .instanceAdminStubSettingsBuilder()
+     *     .getInstanceAdminStubSettingsBuilder()
      *     .applyToAllUnaryMethods(
      *         new ApiFunction&lt;UnaryCallSettings.Builder&lt;?, ?&gt;, Void&gt;() {
      *           public Void apply(Builder&lt;?, ?&gt; input) {
@@ -297,7 +297,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *         });
      * </code></pre>
      */
-    public InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder() {
+    public InstanceAdminStubSettings.Builder getInstanceAdminStubSettingsBuilder() {
       return instanceAdminStubSettingsBuilder;
     }
 
@@ -313,7 +313,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *
      * <pre><code>
      * builder
-     *     .databaseAdminStubSettingsBuilder()
+     *     .getDatabaseAdminStubSettingsBuilder()
      *     .applyToAllUnaryMethods(
      *         new ApiFunction&lt;UnaryCallSettings.Builder&lt;?, ?&gt;, Void&gt;() {
      *           public Void apply(Builder&lt;?, ?&gt; input) {
@@ -323,7 +323,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *         });
      * </code></pre>
      */
-    public DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder() {
+    public DatabaseAdminStubSettings.Builder getDatabaseAdminStubSettingsBuilder() {
       return databaseAdminStubSettingsBuilder;
     }
 

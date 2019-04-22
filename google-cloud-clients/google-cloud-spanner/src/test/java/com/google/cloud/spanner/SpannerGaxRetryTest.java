@@ -218,7 +218,7 @@ public class SpannerGaxRetryTest {
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance());
     builder
-        .spannerStubSettingsBuilder()
+        .getSpannerStubSettingsBuilder()
         .applyToAllUnaryMethods(
             new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
               @Override
@@ -227,16 +227,16 @@ public class SpannerGaxRetryTest {
                 return null;
               }
             });
-    builder.spannerStubSettingsBuilder().commitSettings().setRetrySettings(commitRetrySettings);
+    builder.getSpannerStubSettingsBuilder().commitSettings().setRetrySettings(commitRetrySettings);
     builder
-        .spannerStubSettingsBuilder()
+        .getSpannerStubSettingsBuilder()
         .executeStreamingSqlSettings()
         .setRetrySettings(retrySettings);
-    builder.spannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
+    builder.getSpannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(retrySettings);
     if (!enableGaxRetries) {
       // Disable retries by removing all retryable codes.
       builder
-          .spannerStubSettingsBuilder()
+          .getSpannerStubSettingsBuilder()
           .applyToAllUnaryMethods(
               new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                 @Override
@@ -246,11 +246,11 @@ public class SpannerGaxRetryTest {
                 }
               });
       builder
-          .spannerStubSettingsBuilder()
+          .getSpannerStubSettingsBuilder()
           .executeStreamingSqlSettings()
           .setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
       builder
-          .spannerStubSettingsBuilder()
+          .getSpannerStubSettingsBuilder()
           .streamingReadSettings()
           .setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
     }

@@ -241,7 +241,7 @@ public class DatabaseAdminGaxTest {
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance());
     builder
-        .databaseAdminStubSettingsBuilder()
+        .getDatabaseAdminStubSettingsBuilder()
         .applyToAllUnaryMethods(
             new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
               @Override
@@ -251,22 +251,22 @@ public class DatabaseAdminGaxTest {
               }
             });
     builder
-        .databaseAdminStubSettingsBuilder()
+        .getDatabaseAdminStubSettingsBuilder()
         .createDatabaseOperationSettings()
         .setInitialCallSettings(
             builder
-                .databaseAdminStubSettingsBuilder()
+                .getDatabaseAdminStubSettingsBuilder()
                 .createDatabaseOperationSettings()
                 .getInitialCallSettings()
                 .toBuilder()
                 .setRetrySettings(retrySettings)
                 .build());
     builder
-        .databaseAdminStubSettingsBuilder()
+        .getDatabaseAdminStubSettingsBuilder()
         .updateDatabaseDdlOperationSettings()
         .setInitialCallSettings(
             builder
-                .databaseAdminStubSettingsBuilder()
+                .getDatabaseAdminStubSettingsBuilder()
                 .updateDatabaseDdlOperationSettings()
                 .getInitialCallSettings()
                 .toBuilder()
@@ -275,7 +275,7 @@ public class DatabaseAdminGaxTest {
     if (!enableGaxRetries) {
       // Disable retries by removing all retryable codes.
       builder
-          .databaseAdminStubSettingsBuilder()
+          .getDatabaseAdminStubSettingsBuilder()
           .applyToAllUnaryMethods(
               new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                 @Override
@@ -285,11 +285,11 @@ public class DatabaseAdminGaxTest {
                 }
               });
       builder
-          .databaseAdminStubSettingsBuilder()
+          .getDatabaseAdminStubSettingsBuilder()
           .createDatabaseOperationSettings()
           .setInitialCallSettings(
               builder
-                  .databaseAdminStubSettingsBuilder()
+                  .getDatabaseAdminStubSettingsBuilder()
                   .createDatabaseOperationSettings()
                   .getInitialCallSettings()
                   .toBuilder()
@@ -297,11 +297,11 @@ public class DatabaseAdminGaxTest {
                   .setRetryableCodes(ImmutableSet.<StatusCode.Code>of())
                   .build());
       builder
-          .databaseAdminStubSettingsBuilder()
+          .getDatabaseAdminStubSettingsBuilder()
           .updateDatabaseDdlOperationSettings()
           .setInitialCallSettings(
               builder
-                  .databaseAdminStubSettingsBuilder()
+                  .getDatabaseAdminStubSettingsBuilder()
                   .updateDatabaseDdlOperationSettings()
                   .getInitialCallSettings()
                   .toBuilder()

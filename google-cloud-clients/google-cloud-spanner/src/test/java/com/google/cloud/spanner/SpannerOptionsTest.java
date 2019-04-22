@@ -149,7 +149,7 @@ public class SpannerOptionsTest {
             .setTotalTimeout(Duration.ofSeconds(9999L))
             .build();
     SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("test-project");
-    SpannerStubSettings.Builder stubSettingsBuilder = builder.spannerStubSettingsBuilder();
+    SpannerStubSettings.Builder stubSettingsBuilder = builder.getSpannerStubSettingsBuilder();
     List<? extends UnaryCallSettings.Builder<?, ?>> unaryCallSettingsBuilders =
         Arrays.asList(
             stubSettingsBuilder.beginTransactionSettings(),
@@ -243,7 +243,7 @@ public class SpannerOptionsTest {
             .build();
     SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("test-project");
     DatabaseAdminStubSettings.Builder stubSettingsBuilder =
-        builder.databaseAdminStubSettingsBuilder();
+        builder.getDatabaseAdminStubSettingsBuilder();
     List<? extends UnaryCallSettings.Builder<?, ?>> unaryCallSettingsBuilders =
         Arrays.asList(
             stubSettingsBuilder.dropDatabaseSettings(),
@@ -307,7 +307,7 @@ public class SpannerOptionsTest {
             .build();
     SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("test-project");
     InstanceAdminStubSettings.Builder stubSettingsBuilder =
-        builder.instanceAdminStubSettingsBuilder();
+        builder.getInstanceAdminStubSettingsBuilder();
     List<? extends UnaryCallSettings.Builder<?, ?>> unaryCallSettingsBuilders =
         Arrays.asList(
             stubSettingsBuilder.deleteInstanceSettings(),

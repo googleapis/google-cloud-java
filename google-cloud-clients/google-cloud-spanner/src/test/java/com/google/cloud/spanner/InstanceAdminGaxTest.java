@@ -244,7 +244,7 @@ public class InstanceAdminGaxTest {
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance());
     builder
-        .instanceAdminStubSettingsBuilder()
+        .getInstanceAdminStubSettingsBuilder()
         .applyToAllUnaryMethods(
             new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
               @Override
@@ -254,22 +254,22 @@ public class InstanceAdminGaxTest {
               }
             });
     builder
-        .instanceAdminStubSettingsBuilder()
+        .getInstanceAdminStubSettingsBuilder()
         .createInstanceOperationSettings()
         .setInitialCallSettings(
             builder
-                .instanceAdminStubSettingsBuilder()
+                .getInstanceAdminStubSettingsBuilder()
                 .createInstanceOperationSettings()
                 .getInitialCallSettings()
                 .toBuilder()
                 .setRetrySettings(retrySettings)
                 .build());
     builder
-        .instanceAdminStubSettingsBuilder()
+        .getInstanceAdminStubSettingsBuilder()
         .updateInstanceOperationSettings()
         .setInitialCallSettings(
             builder
-                .instanceAdminStubSettingsBuilder()
+                .getInstanceAdminStubSettingsBuilder()
                 .updateInstanceOperationSettings()
                 .getInitialCallSettings()
                 .toBuilder()
@@ -278,7 +278,7 @@ public class InstanceAdminGaxTest {
     if (!enableGaxRetries) {
       // Disable retries by removing all retryable codes.
       builder
-          .instanceAdminStubSettingsBuilder()
+          .getInstanceAdminStubSettingsBuilder()
           .applyToAllUnaryMethods(
               new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                 @Override
@@ -288,11 +288,11 @@ public class InstanceAdminGaxTest {
                 }
               });
       builder
-          .instanceAdminStubSettingsBuilder()
+          .getInstanceAdminStubSettingsBuilder()
           .createInstanceOperationSettings()
           .setInitialCallSettings(
               builder
-                  .instanceAdminStubSettingsBuilder()
+                  .getInstanceAdminStubSettingsBuilder()
                   .createInstanceOperationSettings()
                   .getInitialCallSettings()
                   .toBuilder()
@@ -300,11 +300,11 @@ public class InstanceAdminGaxTest {
                   .setRetryableCodes(ImmutableSet.<StatusCode.Code>of())
                   .build());
       builder
-          .instanceAdminStubSettingsBuilder()
+          .getInstanceAdminStubSettingsBuilder()
           .updateInstanceOperationSettings()
           .setInitialCallSettings(
               builder
-                  .instanceAdminStubSettingsBuilder()
+                  .getInstanceAdminStubSettingsBuilder()
                   .updateInstanceOperationSettings()
                   .getInitialCallSettings()
                   .toBuilder()
