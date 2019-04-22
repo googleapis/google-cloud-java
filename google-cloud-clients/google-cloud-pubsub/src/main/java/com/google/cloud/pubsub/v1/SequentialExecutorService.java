@@ -63,9 +63,8 @@ final class SequentialExecutorService {
     }
 
     protected void execute(final String key, Runnable task) {
-      Deque<Runnable> newTasks;
       synchronized (tasksByKey) {
-        newTasks = tasksByKey.get(key);
+        Deque<Runnable> newTasks = tasksByKey.get(key);
         // If this key is already being handled, add it to the queue and return.
         if (newTasks != null) {
           newTasks.add(task);
@@ -77,27 +76,31 @@ final class SequentialExecutorService {
         tasksByKey.put(key, newTasks);
       }
 
-      callNextTaskAsync(key, newTasks);
+      callNextTaskAsync(key);
     }
 
-    protected void callNextTaskAsync(final String key, final Deque<Runnable> tasks) {
+    protected void callNextTaskAsync(final String key) {
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
-              Runnable task = tasks.poll();
-              if (task != null) {
-                task.run();
-                postTaskExecution(key, tasks);
+              Deque<Runnable> tasks;
+              synchronized (tasksByKey) {
+                tasks = tasksByKey.get(key);
+                if (tasks != null && tasks.isEmpty()) {
+                  tasksByKey.remove(key);
+                  tasks = null;
+                }
+              }
+              if (tasks != null) {
+                // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
+                Runnable task = tasks.poll();
+                if (task != null) {
+                  task.run();
+                }
               }
             }
           });
-    }
-
-    protected void postTaskExecution(String key, Deque<Runnable> tasks) {
-      // Do nothing in this class, but provide an opportunity for a subclass to do something
-      // interesting.
     }
   }
 
@@ -108,25 +111,13 @@ final class SequentialExecutorService {
     }
 
     /** Runs synchronous {@code Runnable} tasks sequentially. */
-    void submit(String key, Runnable task) {
-      super.execute(key, task);
-    }
-
-    @Override
-    /** Once a task is done, automatically run the next task in the queue. */
-    protected void postTaskExecution(final String key, final Deque<Runnable> tasks) {
-      synchronized (tasksByKey) {
-        if (tasks.isEmpty()) {
-          // Note that there can be a race if a task is added to `tasks` at this point. However,
-          // tasks.add() is called only inside the block synchronized by `tasksByKey` object
-          // in the execute() function. Therefore, we are safe to remove `tasks` here. This is not
-          // optimal, but correct.
-          tasksByKey.remove(key);
-          return;
+    void submit(final String key, final Runnable task) {
+      super.execute(key, new Runnable() {
+        @Override public void run() {
+          task.run();
+          callNextTaskAsync(key);
         }
-      }
-
-      callNextTaskAsync(key, tasks);
+      });
     }
   }
 
@@ -202,7 +193,7 @@ final class SequentialExecutorService {
                       @Override
                       public void onSuccess(T msg) {
                         future.set(msg);
-                        resume(key);
+                        callNextTaskAsync(key);
                       }
 
                       // Step 5.2: on failure
@@ -228,22 +219,6 @@ final class SequentialExecutorService {
             }
           });
       return future;
-    }
-
-    /** Executes the next queued task associated with {@code key}. */
-    private void resume(String key) {
-      Deque<Runnable> tasks;
-      synchronized (tasksByKey) {
-        tasks = tasksByKey.get(key);
-        if (tasks == null) {
-          return;
-        }
-        if (tasks.isEmpty()) {
-          tasksByKey.remove(key);
-          return;
-        }
-      }
-      callNextTaskAsync(key, tasks);
     }
 
     /** Cancels every task in the queue assoicated with {@code key}. */
