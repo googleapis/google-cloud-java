@@ -610,7 +610,9 @@ public class NodeTemplateClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region The name of the region for this request.
-   * @param nodeTemplateResource A Node Template resource.
+   * @param nodeTemplateResource A Node Template resource. To learn more about node templates and
+   *     sole-tenant nodes, read the Sole-tenant nodes documentation. (== resource_for
+   *     beta.nodeTemplates ==) (== resource_for v1.nodeTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -641,7 +643,9 @@ public class NodeTemplateClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region The name of the region for this request.
-   * @param nodeTemplateResource A Node Template resource.
+   * @param nodeTemplateResource A Node Template resource. To learn more about node templates and
+   *     sole-tenant nodes, read the Sole-tenant nodes documentation. (== resource_for
+   *     beta.nodeTemplates ==) (== resource_for v1.nodeTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

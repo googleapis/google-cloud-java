@@ -162,7 +162,9 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
   }
 
   /**
-   * A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+   * A NodeGroup resource. To create a node group, you must first create a node templates. To learn
+   * more about node groups and sole-tenant nodes, read the Sole-tenant nodes documentation. (==
+   * resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
    */
   public NodeGroup getNodeGroupResource() {
     return nodeGroupResource;
@@ -356,14 +358,18 @@ public final class InsertNodeGroupHttpRequest implements ApiMessage {
     }
 
     /**
-     * A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+     * A NodeGroup resource. To create a node group, you must first create a node templates. To
+     * learn more about node groups and sole-tenant nodes, read the Sole-tenant nodes documentation.
+     * (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
      */
     public NodeGroup getNodeGroupResource() {
       return nodeGroupResource;
     }
 
     /**
-     * A NodeGroup resource. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
+     * A NodeGroup resource. To create a node group, you must first create a node templates. To
+     * learn more about node groups and sole-tenant nodes, read the Sole-tenant nodes documentation.
+     * (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups ==)
      */
     public Builder setNodeGroupResource(NodeGroup nodeGroupResource) {
       this.nodeGroupResource = nodeGroupResource;
