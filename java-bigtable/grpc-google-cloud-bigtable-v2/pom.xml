@@ -28,4 +28,25 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <show>protected</show>
+          <nohelp>true</nohelp>
+          <doclint>none</doclint>
+          <splitindex>true</splitindex>
+          <offlineLinks>
+            <offlineLink>
+              <url>${project.javadoc.protobufBaseURL}</url>
+              <location>../../../../proto-google-cloud-bigtable-v2/target/site/apidocs/</location>
+            </offlineLink>
+          </offlineLinks>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
