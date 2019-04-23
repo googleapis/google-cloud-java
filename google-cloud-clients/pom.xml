@@ -150,6 +150,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
     <bom.version>0.88.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
@@ -754,7 +755,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.0</version>
         <reportSets>
           <reportSet>
             <id>html</id>
@@ -788,7 +789,7 @@
             </group>
             <group>
               <title>Stub packages</title>
-              <packages>com.google.cloud.asset.v1.stub:com.google.cloud.asset.v1beta1.stub:com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.bigquerystorage.v1beta1.stub:com.google.cloud.bigtable-admin.v2.stub:com.google.cloud.bigtable.v2.stub:com.google.cloud.container.v1.stub:com.google.cloud.containeranalysis.v1beta1.stub:com.google.cloud.datacatalog.v1beta1.stub:com.google.cloud.datalabeling.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.error-reporting.v1beta1.stub:com.google.cloud.firestore-admin.v1.stub:com.google.cloud.firestore.v1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iamcredentials.v1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.os-login.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.scheduler.v1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner-admin-database.v1.stub:com.google.cloud.spanner-admin-instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.talent.v4beta1.stub:com.google.cloud.tasks.v2.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.tasks.v2beta3.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.translate.v3beta1.stub:com.google.cloud.video-intelligence.v1.stub:com.google.cloud.video-intelligence.v1beta1.stub:com.google.cloud.video-intelligence.v1beta2.stub:com.google.cloud.video-intelligence.v1p1beta1.stub:com.google.cloud.video-intelligence.v1p2beta1.stub:com.google.cloud.video-intelligence.v1p3beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.vision.v1p4beta1.stub:com.google.cloud.webrisk.v1beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
+              <packages>com.google.cloud.asset.v1.stub:com.google.cloud.asset.v1beta1.stub:com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquery.datatransfer.v1.stub:com.google.cloud.bigquery.storage.v1beta1.stub*:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.bigtable.v2.stub:com.google.cloud.bigtable.data.v2.stub*:com.google.cloud.compute.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.containeranalysis.v1beta1.stub:com.google.cloud.datacatalog.v1beta1.stub:com.google.cloud.datalabeling.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.devtools.containeranalysis.v1beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore-admin.v1.stub:com.google.cloud.firestore.v1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iam.credentials.v1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.oslogin.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.scheduler.v1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner.admin.database.v1.stub:com.google.cloud.spanner.admin.instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.talent.v4beta1.stub:com.google.cloud.tasks.v2.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.tasks.v2beta3.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.translate.v3beta1.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.videointelligence.v1p2beta1.stub:com.google.cloud.videointelligence.v1p3beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.vision.v1p4beta1.stub:com.google.cloud.webrisk.v1beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
             </group>
             <group>
               <title>Deprecated packages</title>
@@ -796,11 +797,18 @@
             </group>
           </groups>
           <links>
+            <link>https://grpc.io/grpc-java/javadoc/</link>
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-            <link>http://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-            <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
+            <link>https://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
+            <link>https://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
             <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
           </links>
+          <offlineLinks>
+            <offlineLink>
+              <url>${project.javadoc.protobufBaseURL}</url>
+              <location>../../../target/site/apidocs/</location>
+            </offlineLink>
+          </offlineLinks>
         </configuration>
       </plugin>
     </plugins>
@@ -827,7 +835,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -836,12 +844,6 @@
                 </goals>
               </execution>
             </executions>
-            <configuration>
-              <links>
-                <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-              </links>
-              <doclint>none</doclint>
-            </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
