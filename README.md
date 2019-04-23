@@ -33,6 +33,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
+-  [Cloud Tasks](google-cloud-clients/google-cloud-tasks) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
@@ -49,6 +50,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
 -  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
 -  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
+-  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (Alpha)
 -  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
 
