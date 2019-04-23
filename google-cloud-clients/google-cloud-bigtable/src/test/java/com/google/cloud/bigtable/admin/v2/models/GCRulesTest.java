@@ -281,19 +281,8 @@ public class GCRulesTest {
   }
 
   @Test
-  public void multipleSetters() {
-    com.google.protobuf.Duration seconds =
-        com.google.protobuf.Duration.newBuilder().setSeconds(1).build();
-    // Only the last setXXX() value persists after build().
-    GcRule proto_gcRule = GcRule.newBuilder().setMaxNumVersions(5).setMaxAge(seconds).build();
-
-    GCRules.GCRule model_gcRule = GCRULES.maxAge(Duration.ofSeconds(1));
-    assertThat(GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
-  }
-
-  @Test
   public void unionOfRules() {
-    GcRule proto_gcRule =
+    GcRule protoGCRule =
         GcRule.newBuilder()
             .setUnion(
                 Union.newBuilder()
@@ -302,18 +291,18 @@ public class GCRulesTest {
                     .addRules(buildAgeRule(20, 2)))
             .build();
 
-    GCRules.GCRule model_gcRule =
+    GCRules.GCRule modelGCRule =
         GCRULES
             .union()
             .rule(GCRULES.maxAge(Duration.ofSeconds(10)))
             .rule(GCRULES.maxVersions(1))
             .rule(GCRULES.maxAge(Duration.ofSeconds(20, 2)));
-    assertThat(GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+    assertThat(GCRULES.fromProto(protoGCRule)).isEqualTo(modelGCRule);
   }
 
   @Test
   public void intersectionWithFromProto() {
-    GcRule proto_gcRule =
+    GcRule protoGCRule =
         GcRule.newBuilder()
             .setIntersection(
                 Intersection.newBuilder()
@@ -322,18 +311,18 @@ public class GCRulesTest {
                     .addRules(buildVersionsRule(2)))
             .build();
 
-    GCRules.GCRule model_gcRule =
+    GCRules.GCRule modelGCRule =
         GCRules.GCRULES
             .intersection()
             .rule(GCRULES.maxAge(org.threeten.bp.Duration.ofSeconds(10, 5)))
             .rule(GCRULES.maxVersions(1))
             .rule(GCRULES.maxVersions(2));
-    assertThat(GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+    assertThat(GCRULES.fromProto(protoGCRule)).isEqualTo(modelGCRule);
   }
 
   @Test
-  public void intersectionAndUnion() {
-    GcRule proto_gcRule =
+  public void unionOfIntersectionFromProto() {
+    GcRule protoGCRule =
         GcRule.newBuilder()
             .setUnion(
                 Union.newBuilder()
@@ -355,7 +344,7 @@ public class GCRulesTest {
                             .build()))
             .build();
 
-    GCRules.GCRule model_gcRule =
+    GCRules.GCRule modelGCRule =
         GCRULES
             .union()
             .rule(
@@ -368,7 +357,7 @@ public class GCRulesTest {
                     .intersection()
                     .rule(GCRULES.maxVersions(1))
                     .rule(GCRULES.maxAge(Duration.ofSeconds(1, 1))));
-    assertThat(GCRules.GCRULES.fromProto(proto_gcRule)).isEqualTo(model_gcRule);
+    assertThat(GCRules.GCRULES.fromProto(protoGCRule)).isEqualTo(modelGCRule);
   }
 
   public static GcRule buildAgeRule(long seconds, int nanos) {
