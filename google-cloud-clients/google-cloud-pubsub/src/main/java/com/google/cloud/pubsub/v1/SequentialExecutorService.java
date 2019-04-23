@@ -24,6 +24,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.Callable;
@@ -67,38 +68,42 @@ final class SequentialExecutorService {
         if (newTasks != null) {
           newTasks.add(task);
           return;
+        } else {
+          newTasks = new LinkedList<>();
+          newTasks.add(task);
+          tasksByKey.put(key, newTasks);
         }
-
-        newTasks = new ConcurrentLinkedQueue();
-        newTasks.add(task);
-        tasksByKey.put(key, newTasks);
       }
 
       callNextTaskAsync(key);
     }
 
     protected void callNextTaskAsync(final String key) {
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              Queue<R> tasks;
-              synchronized (tasksByKey) {
-                tasks = tasksByKey.get(key);
-                if (tasks != null && tasks.isEmpty()) {
-                  tasksByKey.remove(key);
-                  tasks = null;
-                }
-              }
-              if (tasks != null) {
-                // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
-                R task = tasks.poll();
-                if (task != null) {
-                  task.run();
-                }
+      boolean executeTask = true;
+      synchronized (tasksByKey) {
+        Queue<R> tasks = tasksByKey.get(key);
+        if (tasks != null && tasks.isEmpty()) {
+          // Only remove the Queue after all tasks were completed
+          tasksByKey.remove(key);
+          executeTask = false;
+        }
+      }
+      if (executeTask) {
+        executor.execute(new Runnable() {
+          @Override public void run() {
+            R task = null;
+            synchronized (tasksByKey) {
+              Queue<R> tasks = tasksByKey.get(key);
+              if (tasks != null && !tasks.isEmpty()) {
+                task = tasks.poll();
               }
             }
-          });
+            if (task != null) {
+              task.run();
+            }
+          }
+        });
+      }
     }
   }
 
@@ -112,8 +117,11 @@ final class SequentialExecutorService {
     void submit(final String key, final Runnable task) {
       super.execute(key, new Runnable() {
         @Override public void run() {
-          task.run();
-          callNextTaskAsync(key);
+          try {
+            task.run();
+          } finally {
+            callNextTaskAsync(key);
+          }
         }
       });
     }
@@ -125,6 +133,9 @@ final class SequentialExecutorService {
    */
   @BetaApi
   static class CallbackExecutor extends SequentialExecutor<CancellableRunnable> {
+    static CancellationException CANCELLATION_EXCEPTION = new CancellationException(
+        "Execution cancelled because executing previous runnable failed.");
+
     CallbackExecutor(Executor executor) {
       super(executor);
     }
@@ -166,53 +177,42 @@ final class SequentialExecutorService {
 
       // Step 2: create the CancellableRunnable
       // Step 3: add the task to queue via `execute`
-      execute(
-          key,
-          new CancellableRunnable() {
-            private boolean cancelled = false;
+      CancellableRunnable task = new CancellableRunnable() {
+        private boolean cancelled = false;
 
-            @Override
-            public void run() {
-              // the task was cancelled
-              if (cancelled) {
-                return;
+        @Override public void run() {
+          // the task was cancelled
+          if (cancelled) {
+            return;
+          }
+
+          try {
+            // Step 4: call the `Callable`
+            ApiFutureCallback<T> callback = new ApiFutureCallback<T>() {
+              // Step 5.1: on success
+              @Override public void onSuccess(T msg) {
+                future.set(msg);
+                callNextTaskAsync(key);
               }
 
-              try {
-                // Step 4: call the `Callable`
-                ApiFuture<T> callResult = callable.call();
-                ApiFutures.addCallback(
-                    callResult,
-                    new ApiFutureCallback<T>() {
-                      // Step 5.1: on success
-                      @Override
-                      public void onSuccess(T msg) {
-                        future.set(msg);
-                        callNextTaskAsync(key);
-                      }
-
-                      // Step 5.2: on failure
-                      @Override
-                      public void onFailure(Throwable e) {
-                        future.setException(e);
-                        cancelQueuedTasks(
-                            key,
-                            new CancellationException(
-                                "Execution cancelled because executing previous runnable failed."));
-                      }
-                    },
-                    directExecutor());
-              } catch (Exception e) {
+              // Step 5.2: on failure
+              @Override public void onFailure(Throwable e) {
                 future.setException(e);
+                cancelQueuedTasks(key, CANCELLATION_EXCEPTION);
               }
-            }
+            };
+            ApiFutures.addCallback(callable.call(), callback, directExecutor());
+          } catch (Exception e) {
+            cancel(e);
+          }
+        }
 
-            @Override
-            public void cancel(Throwable e) {
-              this.cancelled = true;
-              future.setException(e);
-            }
-          });
+        @Override public void cancel(Throwable e) {
+          this.cancelled = true;
+          future.setException(e);
+        }
+      };
+      execute(key, task);
       return future;
     }
 

@@ -387,27 +387,16 @@ public class Publisher {
         };
 
     if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
-      // If ordering key is empty, publish the batch using the normal executor.
-      Runnable task =
-          new Runnable() {
-            public void run() {
-              ApiFutures.addCallback(
-                  publishCall(outstandingBatch), futureCallback, directExecutor());
-            }
-          };
-      executor.execute(task);
+      ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
-      Callable<ApiFuture<PublishResponse>> func =
-          new Callable<ApiFuture<PublishResponse>>() {
-            public ApiFuture<PublishResponse> call() {
-              return publishCall(outstandingBatch);
-            }
-          };
-      ApiFutures.addCallback(
-          sequentialExecutor.submit(outstandingBatch.orderingKey, func),
-          futureCallback,
-          directExecutor());
+      sequentialExecutor.submit(outstandingBatch.orderingKey, new Callable<ApiFuture<PublishResponse>>() {
+        public ApiFuture<PublishResponse> call() {
+          ApiFuture<PublishResponse> future = publishCall(outstandingBatch);
+          ApiFutures.addCallback(future, futureCallback, directExecutor());
+          return future;
+        }
+      });
     }
   }
 

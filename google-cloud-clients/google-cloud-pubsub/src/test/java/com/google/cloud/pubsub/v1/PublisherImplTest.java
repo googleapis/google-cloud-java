@@ -70,8 +70,6 @@ public class PublisherImplTest {
 
   private Server testServer;
 
-  class FakeException extends Exception {}
-
   @Before
   public void setUp() throws Exception {
     testPublisherServiceImpl = new FakePublisherServiceImpl();
