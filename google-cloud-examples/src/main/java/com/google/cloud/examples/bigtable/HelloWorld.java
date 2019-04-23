@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
+
 // [END bigtable_hw_imports_veneer]
 
 /**
