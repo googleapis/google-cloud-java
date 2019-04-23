@@ -176,8 +176,7 @@ public interface SearchProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -187,8 +186,7 @@ public interface SearchProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -198,8 +196,7 @@ public interface SearchProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -209,8 +206,7 @@ public interface SearchProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
@@ -221,8 +217,7 @@ public interface SearchProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * The profile entities that match the specified
-   * [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
+   * The profile entities that match the specified [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>

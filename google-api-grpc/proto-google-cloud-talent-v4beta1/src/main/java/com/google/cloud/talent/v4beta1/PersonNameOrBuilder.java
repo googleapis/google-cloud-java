@@ -38,7 +38,8 @@ public interface PersonNameOrBuilder
    *
    * <pre>
    * Optional.
-   * A person's name in a structured way (last name, first name, suffix, etc.)
+   * A person's name in a structured way (last name, first name, suffix, and
+   * so on.)
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
@@ -49,7 +50,8 @@ public interface PersonNameOrBuilder
    *
    * <pre>
    * Optional.
-   * A person's name in a structured way (last name, first name, suffix, etc.)
+   * A person's name in a structured way (last name, first name, suffix, and
+   * so on.)
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
@@ -60,7 +62,8 @@ public interface PersonNameOrBuilder
    *
    * <pre>
    * Optional.
-   * A person's name in a structured way (last name, first name, suffix, etc.)
+   * A person's name in a structured way (last name, first name, suffix, and
+   * so on.)
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>

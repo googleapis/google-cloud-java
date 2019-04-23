@@ -42,9 +42,8 @@ public interface ProfileQueryOrBuilder
    * search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
-   * If
-   * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
-   * is specified, the result doesn't contain profiles from that location.
+   * If [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated] is specified, the result doesn't contain
+   * profiles from that location.
    * For example, search for profiles with addresses in "New York City".
    * </pre>
    *
@@ -60,9 +59,8 @@ public interface ProfileQueryOrBuilder
    * search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
-   * If
-   * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
-   * is specified, the result doesn't contain profiles from that location.
+   * If [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated] is specified, the result doesn't contain
+   * profiles from that location.
    * For example, search for profiles with addresses in "New York City".
    * </pre>
    *
@@ -78,9 +76,8 @@ public interface ProfileQueryOrBuilder
    * search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
-   * If
-   * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
-   * is specified, the result doesn't contain profiles from that location.
+   * If [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated] is specified, the result doesn't contain
+   * profiles from that location.
    * For example, search for profiles with addresses in "New York City".
    * </pre>
    *
@@ -96,9 +93,8 @@ public interface ProfileQueryOrBuilder
    * search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
-   * If
-   * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
-   * is specified, the result doesn't contain profiles from that location.
+   * If [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated] is specified, the result doesn't contain
+   * profiles from that location.
    * For example, search for profiles with addresses in "New York City".
    * </pre>
    *
@@ -115,9 +111,8 @@ public interface ProfileQueryOrBuilder
    * search against.
    * If a location filter isn't specified, profiles fitting the other search
    * criteria are retrieved regardless of where they're located.
-   * If
-   * [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated]
-   * is specified, the result doesn't contain profiles from that location.
+   * If [LocationFilter.negated][google.cloud.talent.v4beta1.LocationFilter.negated] is specified, the result doesn't contain
+   * profiles from that location.
    * For example, search for profiles with addresses in "New York City".
    * </pre>
    *
@@ -134,9 +129,8 @@ public interface ProfileQueryOrBuilder
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
-   * If
-   * [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated]
-   * is specified, the result won't contain profiles with the job titles.
+   * If [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated] is specified, the result won't contain
+   * profiles with the job titles.
    * For example, search for profiles with a job title "Product Manager".
    * </pre>
    *
@@ -152,9 +146,8 @@ public interface ProfileQueryOrBuilder
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
-   * If
-   * [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated]
-   * is specified, the result won't contain profiles with the job titles.
+   * If [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated] is specified, the result won't contain
+   * profiles with the job titles.
    * For example, search for profiles with a job title "Product Manager".
    * </pre>
    *
@@ -170,9 +163,8 @@ public interface ProfileQueryOrBuilder
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
-   * If
-   * [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated]
-   * is specified, the result won't contain profiles with the job titles.
+   * If [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated] is specified, the result won't contain
+   * profiles with the job titles.
    * For example, search for profiles with a job title "Product Manager".
    * </pre>
    *
@@ -188,9 +180,8 @@ public interface ProfileQueryOrBuilder
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
-   * If
-   * [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated]
-   * is specified, the result won't contain profiles with the job titles.
+   * If [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated] is specified, the result won't contain
+   * profiles with the job titles.
    * For example, search for profiles with a job title "Product Manager".
    * </pre>
    *
@@ -207,9 +198,8 @@ public interface ProfileQueryOrBuilder
    * If a job title isn't specified, profiles with any titles are retrieved.
    * If multiple values are specified, profiles are retrieved with any of the
    * specified job titles.
-   * If
-   * [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated]
-   * is specified, the result won't contain profiles with the job titles.
+   * If [JobTitleFilter.negated][google.cloud.talent.v4beta1.JobTitleFilter.negated] is specified, the result won't contain
+   * profiles with the job titles.
    * For example, search for profiles with a job title "Product Manager".
    * </pre>
    *
@@ -227,9 +217,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
    * employers are retrieved.
-   * If
-   * [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated]
-   * is specified, the result won't contain profiles that match the employers.
+   * If [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated] is specified, the result won't contain
+   * profiles that match the employers.
    * For example, search for profiles that have working experience at "Google
    * LLC".
    * </pre>
@@ -247,9 +236,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
    * employers are retrieved.
-   * If
-   * [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated]
-   * is specified, the result won't contain profiles that match the employers.
+   * If [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated] is specified, the result won't contain
+   * profiles that match the employers.
    * For example, search for profiles that have working experience at "Google
    * LLC".
    * </pre>
@@ -267,9 +255,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
    * employers are retrieved.
-   * If
-   * [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated]
-   * is specified, the result won't contain profiles that match the employers.
+   * If [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated] is specified, the result won't contain
+   * profiles that match the employers.
    * For example, search for profiles that have working experience at "Google
    * LLC".
    * </pre>
@@ -287,9 +274,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
    * employers are retrieved.
-   * If
-   * [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated]
-   * is specified, the result won't contain profiles that match the employers.
+   * If [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated] is specified, the result won't contain
+   * profiles that match the employers.
    * For example, search for profiles that have working experience at "Google
    * LLC".
    * </pre>
@@ -308,9 +294,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple employer filters are specified, profiles with any matching
    * employers are retrieved.
-   * If
-   * [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated]
-   * is specified, the result won't contain profiles that match the employers.
+   * If [EmployerFilter.negated][google.cloud.talent.v4beta1.EmployerFilter.negated] is specified, the result won't contain
+   * profiles that match the employers.
    * For example, search for profiles that have working experience at "Google
    * LLC".
    * </pre>
@@ -329,9 +314,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple education filters are specified, profiles that match any
    * education filters are retrieved.
-   * If
-   * [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated]
-   * is specified, the result won't contain profiles that match the educations.
+   * If [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated] is specified, the result won't contain
+   * profiles that match the educations.
    * For example, search for profiles with a master degree.
    * </pre>
    *
@@ -348,9 +332,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple education filters are specified, profiles that match any
    * education filters are retrieved.
-   * If
-   * [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated]
-   * is specified, the result won't contain profiles that match the educations.
+   * If [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated] is specified, the result won't contain
+   * profiles that match the educations.
    * For example, search for profiles with a master degree.
    * </pre>
    *
@@ -367,9 +350,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple education filters are specified, profiles that match any
    * education filters are retrieved.
-   * If
-   * [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated]
-   * is specified, the result won't contain profiles that match the educations.
+   * If [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated] is specified, the result won't contain
+   * profiles that match the educations.
    * For example, search for profiles with a master degree.
    * </pre>
    *
@@ -386,9 +368,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple education filters are specified, profiles that match any
    * education filters are retrieved.
-   * If
-   * [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated]
-   * is specified, the result won't contain profiles that match the educations.
+   * If [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated] is specified, the result won't contain
+   * profiles that match the educations.
    * For example, search for profiles with a master degree.
    * </pre>
    *
@@ -406,9 +387,8 @@ public interface ProfileQueryOrBuilder
    * retrieved.
    * If multiple education filters are specified, profiles that match any
    * education filters are retrieved.
-   * If
-   * [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated]
-   * is specified, the result won't contain profiles that match the educations.
+   * If [EducationFilter.negated][google.cloud.talent.v4beta1.EducationFilter.negated] is specified, the result won't contain
+   * profiles that match the educations.
    * For example, search for profiles with a master degree.
    * </pre>
    *
@@ -425,8 +405,8 @@ public interface ProfileQueryOrBuilder
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
-   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated]
-   * is specified, the result won't contain profiles that match the skills.
+   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated] is specified, the result won't contain profiles
+   * that match the skills.
    * For example, search for profiles that have "Java" and "Python" in skill
    * list.
    * </pre>
@@ -443,8 +423,8 @@ public interface ProfileQueryOrBuilder
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
-   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated]
-   * is specified, the result won't contain profiles that match the skills.
+   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated] is specified, the result won't contain profiles
+   * that match the skills.
    * For example, search for profiles that have "Java" and "Python" in skill
    * list.
    * </pre>
@@ -461,8 +441,8 @@ public interface ProfileQueryOrBuilder
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
-   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated]
-   * is specified, the result won't contain profiles that match the skills.
+   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated] is specified, the result won't contain profiles
+   * that match the skills.
    * For example, search for profiles that have "Java" and "Python" in skill
    * list.
    * </pre>
@@ -479,8 +459,8 @@ public interface ProfileQueryOrBuilder
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
-   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated]
-   * is specified, the result won't contain profiles that match the skills.
+   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated] is specified, the result won't contain profiles
+   * that match the skills.
    * For example, search for profiles that have "Java" and "Python" in skill
    * list.
    * </pre>
@@ -498,8 +478,8 @@ public interface ProfileQueryOrBuilder
    * If a skill filter isn't specified, profiles with any skills are retrieved.
    * If multiple skill filters are specified, profiles that match any skill
    * filters are retrieved.
-   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated]
-   * is specified, the result won't contain profiles that match the skills.
+   * If [SkillFilter.negated][google.cloud.talent.v4beta1.SkillFilter.negated] is specified, the result won't contain profiles
+   * that match the skills.
    * For example, search for profiles that have "Java" and "Python" in skill
    * list.
    * </pre>
@@ -852,81 +832,6 @@ public interface ProfileQueryOrBuilder
    *
    * <pre>
    * Optional.
-   * The application last stage filters specify the last stage of job
-   * application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationLastStageFilter application_last_stage_filters = 12;
-   * </code>
-   */
-  java.util.List<com.google.cloud.talent.v4beta1.ApplicationLastStageFilter>
-      getApplicationLastStageFiltersList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application last stage filters specify the last stage of job
-   * application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationLastStageFilter application_last_stage_filters = 12;
-   * </code>
-   */
-  com.google.cloud.talent.v4beta1.ApplicationLastStageFilter getApplicationLastStageFilters(
-      int index);
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application last stage filters specify the last stage of job
-   * application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationLastStageFilter application_last_stage_filters = 12;
-   * </code>
-   */
-  int getApplicationLastStageFiltersCount();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application last stage filters specify the last stage of job
-   * application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationLastStageFilter application_last_stage_filters = 12;
-   * </code>
-   */
-  java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationLastStageFilterOrBuilder>
-      getApplicationLastStageFiltersOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application last stage filters specify the last stage of job
-   * application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationLastStageFilter application_last_stage_filters = 12;
-   * </code>
-   */
-  com.google.cloud.talent.v4beta1.ApplicationLastStageFilterOrBuilder
-      getApplicationLastStageFiltersOrBuilder(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
    * The application job filters specify the job applied for in the application.
    * </pre>
    *
@@ -991,78 +896,8 @@ public interface ProfileQueryOrBuilder
    *
    * <pre>
    * Optional.
-   * The application status filters specify the status of job application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationStatusFilter application_status_filters = 14;
-   * </code>
-   */
-  java.util.List<com.google.cloud.talent.v4beta1.ApplicationStatusFilter>
-      getApplicationStatusFiltersList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application status filters specify the status of job application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationStatusFilter application_status_filters = 14;
-   * </code>
-   */
-  com.google.cloud.talent.v4beta1.ApplicationStatusFilter getApplicationStatusFilters(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application status filters specify the status of job application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationStatusFilter application_status_filters = 14;
-   * </code>
-   */
-  int getApplicationStatusFiltersCount();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application status filters specify the status of job application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationStatusFilter application_status_filters = 14;
-   * </code>
-   */
-  java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationStatusFilterOrBuilder>
-      getApplicationStatusFiltersOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The application status filters specify the status of job application.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationStatusFilter application_status_filters = 14;
-   * </code>
-   */
-  com.google.cloud.talent.v4beta1.ApplicationStatusFilterOrBuilder
-      getApplicationStatusFiltersOrBuilder(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
    * This filter specifies a structured syntax to match against the
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
-   * that are marked as `filterable`.
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes] that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
    * String custom attributes: supported operators are =, != where the left of
    * the operator is a custom field key and the right of the operator is a
@@ -1081,17 +916,16 @@ public interface ProfileQueryOrBuilder
    * (key1 = "TEST" OR LOWER(key1)="test" OR NOT EMPTY(key1))
    * </pre>
    *
-   * <code>string custom_field_filter = 15;</code>
+   * <code>string custom_attribute_filter = 15;</code>
    */
-  java.lang.String getCustomFieldFilter();
+  java.lang.String getCustomAttributeFilter();
   /**
    *
    *
    * <pre>
    * Optional.
    * This filter specifies a structured syntax to match against the
-   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
-   * that are marked as `filterable`.
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes] that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
    * String custom attributes: supported operators are =, != where the left of
    * the operator is a custom field key and the right of the operator is a
@@ -1110,7 +944,7 @@ public interface ProfileQueryOrBuilder
    * (key1 = "TEST" OR LOWER(key1)="test" OR NOT EMPTY(key1))
    * </pre>
    *
-   * <code>string custom_field_filter = 15;</code>
+   * <code>string custom_attribute_filter = 15;</code>
    */
-  com.google.protobuf.ByteString getCustomFieldFilterBytes();
+  com.google.protobuf.ByteString getCustomAttributeFilterBytes();
 }
