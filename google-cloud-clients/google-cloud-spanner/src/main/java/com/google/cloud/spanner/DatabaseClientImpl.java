@@ -42,10 +42,12 @@ class DatabaseClientImpl implements DatabaseClient {
     this.pool = pool;
   }
 
+  @VisibleForTesting
   PooledSession getReadSession() {
     return pool.getReadSession();
   }
 
+  @VisibleForTesting
   PooledSession getReadWriteSession() {
     return pool.getReadWriteSession();
   }
@@ -60,7 +62,6 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return runWithSessionRetry(
-          SessionMode.READ_WRITE,
           new Function<Session, Timestamp>() {
             @Override
             public Timestamp apply(Session session) {
@@ -80,7 +81,6 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return runWithSessionRetry(
-          SessionMode.READ_WRITE,
           new Function<Session, Timestamp>() {
             @Override
             public Timestamp apply(Session session) {
@@ -188,7 +188,6 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(PARTITION_DML_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return runWithSessionRetry(
-          SessionMode.READ, // PartitionedUpdate does not need a prepared tx.
           new Function<Session, Long>() {
             @Override
             public Long apply(Session session) {
@@ -201,22 +200,13 @@ class DatabaseClientImpl implements DatabaseClient {
     }
   }
 
-  private enum SessionMode {
-    READ,
-    READ_WRITE;
-  }
-
-  private <T> T runWithSessionRetry(SessionMode sessionMode, Function<Session, T> callable) {
-    PooledSession session =
-        sessionMode == SessionMode.READ ? getReadSession() : getReadWriteSession();
+  private <T> T runWithSessionRetry(Function<Session, T> callable) {
+    PooledSession session = getReadWriteSession();
     while (true) {
       try {
         return callable.apply(session);
       } catch (SessionNotFoundException e) {
-        session =
-            sessionMode == SessionMode.READ
-                ? pool.replaceReadSession(e, session)
-                : pool.replaceReadWriteSession(e, session);
+        session = pool.replaceReadWriteSession(e, session);
       }
     }
   }
