@@ -292,7 +292,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
-
   /** Helper class for gRPC calls that can return paginated results. */
   abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
