@@ -146,7 +146,7 @@ class FakeStorageRpc implements StorageRpc {
           maxResults = (Long) e.getValue();
           break;
         case USER_PROJECT:
-          //prevent unsupported operation
+          // prevent unsupported operation
           break;
         default:
           throw new UnsupportedOperationException("Unknown option: " + e.getKey());
