@@ -32,11 +32,11 @@ pushd ${ROOT_DIR}
 python3 -m pip install gcp-docuploader
 
 # compile all packages
-mvn clean install -B -DskipTests=true
+#mvn clean install -B -DskipTests=true
 
 build_and_publish_site() {
   DIRECTORY=$1
-  NAME=$1
+  NAME=$2
   VERSION=$(grep ${NAME}: ${ROOT_DIR}/versions.txt | cut -d: -f3)
 
   pushd ${DIRECTORY}
@@ -67,8 +67,7 @@ do
   for directory in `ls -d ${folder}/*/ | grep -v target | grep -v src`
   do
     artifact=$(echo ${directory} | cut -d'/' -f2)
-
-    build_and_publish_site artifact
+    build_and_publish_site ${folder} ${artifact}
   done
 done
 
