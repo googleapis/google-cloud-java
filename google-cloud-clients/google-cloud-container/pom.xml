@@ -96,11 +96,11 @@
           <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-container-v1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-container-v1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-container-v1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-container-v1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-container-v1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-container-v1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>

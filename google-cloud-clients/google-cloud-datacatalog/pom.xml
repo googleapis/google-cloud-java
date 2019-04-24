@@ -84,4 +84,30 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <show>protected</show>
+          <nohelp>true</nohelp>
+          <doclint>none</doclint>
+          <splitindex>true</splitindex>
+          <offlineLinks>
+            <offlineLink>
+              <url>https://googleapis.dev/java/proto-google-cloud-datacatalog-v1beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:released} -->
+              <location>../../../../../google-api-grpc/proto-google-cloud-datacatalog-v1beta1/target/site/apidocs/</location>
+            </offlineLink>
+            <offlineLink>
+              <url>https://googleapis.dev/java/grpc-google-cloud-datacatalog-v1beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:released} -->
+              <location>../../../../../google-api-grpc/grpc-google-cloud-datacatalog-v1beta1/target/site/apidocs/</location>
+            </offlineLink>
+          </offlineLinks>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

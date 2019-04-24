@@ -103,19 +103,19 @@
           <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-scheduler-v1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-scheduler-v1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-scheduler-v1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
-              <location>../../../../../google-api-grpc/grpc-google-cloud-scheduler-v1/target/site/apidocs/</location>
+              <url>https://googleapis.dev/java/grpc-google-cloud-scheduler-v1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-scheduler-v1:released} -->
+              <grpc>../../../../../google-api-grpc/grpc-google-cloud-scheduler-v1/target/site/apidocs/</grpc>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-scheduler-v1beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-scheduler-v1beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-scheduler-v1beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-scheduler-v1beta1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>

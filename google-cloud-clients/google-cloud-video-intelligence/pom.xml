@@ -127,51 +127,51 @@
           <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-video-intelligence-v1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-video-intelligence-v1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-video-intelligence-v1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-video-intelligence-v1beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-video-intelligence-v1beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-video-intelligence-v1beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1beta2/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-video-intelligence-v1beta2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-video-intelligence-v1beta2/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta2:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-video-intelligence-v1beta2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1p1beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p1beta1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-video-intelligence-v1p1beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-video-intelligence-v1p1beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-video-intelligence-v1p1beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1p2beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p2beta1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-video-intelligence-v1p2beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-video-intelligence-v1p2beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p2beta1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-video-intelligence-v1p2beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1p3beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p3beta1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-video-intelligence-v1p3beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-video-intelligence-v1p3beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p3beta1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-video-intelligence-v1p3beta1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>

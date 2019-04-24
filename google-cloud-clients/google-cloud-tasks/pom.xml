@@ -99,27 +99,27 @@
           <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-tasks-v2/0.53.0/</url><!-- {x-version-update:proto-google-cloud-tasks-v2:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-tasks-v2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-tasks-v2/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-tasks-v2:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-tasks-v2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-tasks-v2beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-tasks-v2beta2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-tasks-v2beta2/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-tasks-v2beta2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-tasks-v2beta3/0.53.0/</url><!-- {x-version-update:proto-google-cloud-tasks-v2beta3:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-tasks-v2beta3/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-tasks-v2beta3/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-tasks-v2beta3:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-tasks-v2beta3/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>

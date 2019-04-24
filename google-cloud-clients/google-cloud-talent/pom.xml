@@ -98,11 +98,11 @@
           <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-talent-v4beta11/0.53.0/</url><!-- {x-version-update:proto-google-cloud-talent-v4beta1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-talent-v4beta1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-talent-v4beta1/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-talent-v4beta1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>

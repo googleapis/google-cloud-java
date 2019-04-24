@@ -152,19 +152,19 @@
           <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-bigtable-v2/0.53.0/</url><!-- {x-version-update:proto-google-cloud-bigtable-v1:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-bigtable-v2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-bigtable-v2/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-bigtable-v1:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-bigtable-v2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-bigtable-admin-v2/0.53.0/</url><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:released} -->
               <location>../../../../../google-api-grpc/proto-google-cloud-bigtable-admin-v2/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/grpc-google-cloud-bigtable-admin-v2/0.53.0/</url><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:released} -->
               <location>../../../../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>
