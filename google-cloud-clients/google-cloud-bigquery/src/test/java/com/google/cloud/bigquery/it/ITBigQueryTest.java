@@ -60,6 +60,9 @@ import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
+import com.google.cloud.bigquery.Model;
+import com.google.cloud.bigquery.ModelId;
+import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -89,6 +92,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.rmi.Remote;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -118,6 +122,7 @@ public class ITBigQueryTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -149,13 +154,13 @@ public class ITBigQueryTest {
           .build();
   private static final Field RECORD_FIELD_SCHEMA =
       Field.newBuilder(
-              "RecordField",
-              LegacySQLTypeName.RECORD,
-              TIMESTAMP_FIELD_SCHEMA,
-              STRING_FIELD_SCHEMA,
-              INTEGER_ARRAY_FIELD_SCHEMA,
-              BOOLEAN_FIELD_SCHEMA,
-              BYTES_FIELD_SCHEMA)
+          "RecordField",
+          LegacySQLTypeName.RECORD,
+          TIMESTAMP_FIELD_SCHEMA,
+          STRING_FIELD_SCHEMA,
+          INTEGER_ARRAY_FIELD_SCHEMA,
+          BOOLEAN_FIELD_SCHEMA,
+          BYTES_FIELD_SCHEMA)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("RecordDescription")
           .build();
@@ -261,7 +266,8 @@ public class ITBigQueryTest {
   private static BigQuery bigquery;
   private static Storage storage;
 
-  @Rule public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() throws InterruptedException, TimeoutException {
@@ -279,9 +285,11 @@ public class ITBigQueryTest {
     DatasetInfo info =
         DatasetInfo.newBuilder(DATASET).setDescription(DESCRIPTION).setLabels(LABELS).build();
     bigquery.create(info);
+    DatasetInfo info2 = DatasetInfo.newBuilder(MODEL_DATASET).setDescription("java model lifecycle").build();
+    bigquery.create(info2);
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(
-                TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
+            TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
             .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
             .setSchema(TABLE_SCHEMA)
             .build();
@@ -294,6 +302,7 @@ public class ITBigQueryTest {
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
     }
     if (storage != null) {
       boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
@@ -498,10 +507,10 @@ public class ITBigQueryTest {
     assertEquals(TABLE_SCHEMA, remoteTable.getDefinition().getSchema());
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(
-                "SELECT TimestampField, StringField, IntegerArrayField, BooleanField FROM "
-                    + DATASET
-                    + "."
-                    + tableName)
+            "SELECT TimestampField, StringField, IntegerArrayField, BooleanField FROM "
+                + DATASET
+                + "."
+                + tableName)
             .setDefaultDataset(DatasetId.of(DATASET))
             .setUseLegacySql(true)
             .build();
@@ -539,9 +548,9 @@ public class ITBigQueryTest {
     TableId tableId = TableId.of(DATASET, tableName);
     ViewDefinition viewDefinition =
         ViewDefinition.newBuilder(
-                String.format(
-                    "SELECT TimestampField, StringField, BooleanField FROM %s.%s",
-                    DATASET, TABLE_ID.getTable()))
+            String.format(
+                "SELECT TimestampField, StringField, BooleanField FROM %s.%s",
+                DATASET, TABLE_ID.getTable()))
             .setUseLegacySql(true)
             .build();
     TableInfo tableInfo = TableInfo.of(tableId, viewDefinition);
@@ -631,9 +640,9 @@ public class ITBigQueryTest {
         if (standardTableDefinition.getTimePartitioning() != null
             && standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
             && standardTableDefinition
-                .getTimePartitioning()
-                .getExpirationMs()
-                .equals(EXPIRATION_MS)) {
+            .getTimePartitioning()
+            .getExpirationMs()
+            .equals(EXPIRATION_MS)) {
           found = true;
         }
       }
@@ -716,9 +725,9 @@ public class ITBigQueryTest {
     Table table = bigquery.create(TableInfo.of(tableId, tableDefinition));
     assertThat(table.getDefinition()).isInstanceOf(StandardTableDefinition.class);
     assertThat(
-            ((StandardTableDefinition) table.getDefinition())
-                .getTimePartitioning()
-                .getExpirationMs())
+        ((StandardTableDefinition) table.getDefinition())
+            .getTimePartitioning()
+            .getExpirationMs())
         .isNull();
 
     table =
@@ -732,9 +741,9 @@ public class ITBigQueryTest {
             .build()
             .update(BigQuery.TableOption.fields(BigQuery.TableField.TIME_PARTITIONING));
     assertThat(
-            ((StandardTableDefinition) table.getDefinition())
-                .getTimePartitioning()
-                .getExpirationMs())
+        ((StandardTableDefinition) table.getDefinition())
+            .getTimePartitioning()
+            .getExpirationMs())
         .isEqualTo(42L);
 
     table =
@@ -748,9 +757,9 @@ public class ITBigQueryTest {
             .build()
             .update(BigQuery.TableOption.fields(BigQuery.TableField.TIME_PARTITIONING));
     assertThat(
-            ((StandardTableDefinition) table.getDefinition())
-                .getTimePartitioning()
-                .getExpirationMs())
+        ((StandardTableDefinition) table.getDefinition())
+            .getTimePartitioning()
+            .getExpirationMs())
         .isNull();
 
     table.delete();
@@ -1043,6 +1052,56 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testModelLifecycle() throws InterruptedException {
+
+    String modelName = RemoteBigQueryHelper.generateModelName();
+
+    // Create a model using SQL.
+    String sql = "CREATE MODEL `" + MODEL_DATASET + "." + modelName + "`"
+        + "OPTIONS ( "
+        + "model_type='linear_reg', "
+        + "max_iteration=1, "
+        + "learn_rate=0.4, "
+        + "learn_rate_strategy='constant' "
+        + ") AS ( "
+        + "	SELECT 'a' AS f1, 2.0 AS label "
+        + "UNION ALL "
+        + "SELECT 'b' AS f1, 3.8 AS label "
+        + ")";
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(sql).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+    job.waitFor();
+    assertNull(job.getStatus().getError());
+
+    // Model is created.  Fetch.
+    ModelId modelId = ModelId.of(MODEL_DATASET, modelName);
+    Model model = bigquery.getModel(modelId);
+    assertNotNull(model);
+    assertEquals(model.getModelType(), "LINEAR_REGRESSION");
+
+    // Mutate metadata.
+    ModelInfo info = model.toBuilder().setDescription("TEST").build();
+    Model afterUpdate = bigquery.update(info);
+    assertEquals(afterUpdate.getDescription(), "TEST");
+
+    // Ensure model is present in listModels.
+    Page<Model> models = bigquery.listModels(MODEL_DATASET);
+    Boolean found = false;
+    for (Model m : models.getValues()) {
+      if (m.getModelId().getModel().equals(modelName)) {
+        found = true;
+        break;
+      }
+    }
+    assertTrue(found);
+
+    // Delete the model.
+    assertTrue(bigquery.delete(modelId));
+  }
+
+  @Test
   public void testQuery() throws InterruptedException {
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
     QueryJobConfiguration config =
@@ -1089,7 +1148,7 @@ public class ITBigQueryTest {
     QueryParameterValue timestampParameter =
         QueryParameterValue.timestamp("2014-01-01 07:00:00.000000+00:00");
     QueryParameterValue intArrayParameter =
-        QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+        QueryParameterValue.array(new Integer[]{3, 4}, Integer.class);
     QueryParameterValue int64Parameter = QueryParameterValue.int64(5);
     QueryParameterValue float64Parameter = QueryParameterValue.float64(0.5);
     QueryParameterValue numericParameter =
@@ -1119,7 +1178,7 @@ public class ITBigQueryTest {
             + " AND IntegerField IN UNNEST(@integerList)";
     QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
     QueryParameterValue intArrayParameter =
-        QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+        QueryParameterValue.array(new Integer[]{3, 4}, Integer.class);
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setDefaultDataset(DatasetId.of(DATASET))
@@ -1135,7 +1194,7 @@ public class ITBigQueryTest {
   @Test
   public void testBytesParameter() throws Exception {
     String query = "SELECT BYTE_LENGTH(@p) AS length";
-    QueryParameterValue bytesParameter = QueryParameterValue.bytes(new byte[] {1, 3});
+    QueryParameterValue bytesParameter = QueryParameterValue.bytes(new byte[]{1, 3});
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setDefaultDataset(DatasetId.of(DATASET))
@@ -1522,11 +1581,11 @@ public class ITBigQueryTest {
       // Test query
       {
         assertThat(
-                bigquery
-                    .query(
-                        QueryJobConfiguration.of(query),
-                        JobId.newBuilder().setLocation(location).build())
-                    .iterateAll())
+            bigquery
+                .query(
+                    QueryJobConfiguration.of(query),
+                    JobId.newBuilder().setLocation(location).build())
+                .iterateAll())
             .isEmpty();
 
         try {

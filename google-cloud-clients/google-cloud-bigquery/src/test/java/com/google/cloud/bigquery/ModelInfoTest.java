@@ -63,10 +63,26 @@ public class ModelInfoTest {
   }
 
   @Test
+  public void testOf() {
+    ModelInfo modelInfo = ModelInfo.of(MODEL_ID);
+    assertEquals(MODEL_ID, modelInfo.getModelId());
+    assertNull(modelInfo.getEtag());
+    assertNull(modelInfo.getCreationTime());
+    assertNull(modelInfo.getLastModifiedTime());
+    assertNull(modelInfo.getExpirationTime());
+    assertNull(modelInfo.getDescription());
+    assertNull(modelInfo.getFriendlyName());
+  }
+
+  @Test
   public void testToAndFromPb() {
     compareModelInfo(MODEL_INFO, ModelInfo.fromPb(MODEL_INFO.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    assertEquals("project", MODEL_INFO.setProjectId("project").getModelId().getProject());
+  }
 
   private void compareModelInfo(ModelInfo expected, ModelInfo value) {
     assertEquals(expected, value);
