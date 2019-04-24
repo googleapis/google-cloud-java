@@ -390,13 +390,15 @@ public class Publisher {
       ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
-      sequentialExecutor.submit(outstandingBatch.orderingKey, new Callable<ApiFuture<PublishResponse>>() {
-        public ApiFuture<PublishResponse> call() {
-          ApiFuture<PublishResponse> future = publishCall(outstandingBatch);
-          ApiFutures.addCallback(future, futureCallback, directExecutor());
-          return future;
-        }
-      });
+      sequentialExecutor.submit(
+          outstandingBatch.orderingKey,
+          new Callable<ApiFuture<PublishResponse>>() {
+            public ApiFuture<PublishResponse> call() {
+              ApiFuture<PublishResponse> future = publishCall(outstandingBatch);
+              ApiFutures.addCallback(future, futureCallback, directExecutor());
+              return future;
+            }
+          });
     }
   }
 

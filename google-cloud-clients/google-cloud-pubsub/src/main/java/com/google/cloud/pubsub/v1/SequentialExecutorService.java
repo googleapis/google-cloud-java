@@ -29,7 +29,6 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
 
 interface CancellableRunnable extends Runnable {
@@ -89,20 +88,22 @@ final class SequentialExecutorService {
         }
       }
       if (executeTask) {
-        executor.execute(new Runnable() {
-          @Override public void run() {
-            R task = null;
-            synchronized (tasksByKey) {
-              Queue<R> tasks = tasksByKey.get(key);
-              if (tasks != null && !tasks.isEmpty()) {
-                task = tasks.poll();
+        executor.execute(
+            new Runnable() {
+              @Override
+              public void run() {
+                R task = null;
+                synchronized (tasksByKey) {
+                  Queue<R> tasks = tasksByKey.get(key);
+                  if (tasks != null && !tasks.isEmpty()) {
+                    task = tasks.poll();
+                  }
+                }
+                if (task != null) {
+                  task.run();
+                }
               }
-            }
-            if (task != null) {
-              task.run();
-            }
-          }
-        });
+            });
       }
     }
   }
@@ -115,15 +116,18 @@ final class SequentialExecutorService {
 
     /** Runs synchronous {@code Runnable} tasks sequentially. */
     void submit(final String key, final Runnable task) {
-      super.execute(key, new Runnable() {
-        @Override public void run() {
-          try {
-            task.run();
-          } finally {
-            callNextTaskAsync(key);
-          }
-        }
-      });
+      super.execute(
+          key,
+          new Runnable() {
+            @Override
+            public void run() {
+              try {
+                task.run();
+              } finally {
+                callNextTaskAsync(key);
+              }
+            }
+          });
     }
   }
 
@@ -133,8 +137,9 @@ final class SequentialExecutorService {
    */
   @BetaApi
   static class CallbackExecutor extends SequentialExecutor<CancellableRunnable> {
-    static CancellationException CANCELLATION_EXCEPTION = new CancellationException(
-        "Execution cancelled because executing previous runnable failed.");
+    static CancellationException CANCELLATION_EXCEPTION =
+        new CancellationException(
+            "Execution cancelled because executing previous runnable failed.");
 
     CallbackExecutor(Executor executor) {
       super(executor);
@@ -177,41 +182,47 @@ final class SequentialExecutorService {
 
       // Step 2: create the CancellableRunnable
       // Step 3: add the task to queue via `execute`
-      CancellableRunnable task = new CancellableRunnable() {
-        private boolean cancelled = false;
+      CancellableRunnable task =
+          new CancellableRunnable() {
+            private boolean cancelled = false;
 
-        @Override public void run() {
-          // the task was cancelled
-          if (cancelled) {
-            return;
-          }
-
-          try {
-            // Step 4: call the `Callable`
-            ApiFutureCallback<T> callback = new ApiFutureCallback<T>() {
-              // Step 5.1: on success
-              @Override public void onSuccess(T msg) {
-                future.set(msg);
-                callNextTaskAsync(key);
+            @Override
+            public void run() {
+              // the task was cancelled
+              if (cancelled) {
+                return;
               }
 
-              // Step 5.2: on failure
-              @Override public void onFailure(Throwable e) {
-                future.setException(e);
-                cancelQueuedTasks(key, CANCELLATION_EXCEPTION);
-              }
-            };
-            ApiFutures.addCallback(callable.call(), callback, directExecutor());
-          } catch (Exception e) {
-            cancel(e);
-          }
-        }
+              try {
+                // Step 4: call the `Callable`
+                ApiFutureCallback<T> callback =
+                    new ApiFutureCallback<T>() {
+                      // Step 5.1: on success
+                      @Override
+                      public void onSuccess(T msg) {
+                        future.set(msg);
+                        callNextTaskAsync(key);
+                      }
 
-        @Override public void cancel(Throwable e) {
-          this.cancelled = true;
-          future.setException(e);
-        }
-      };
+                      // Step 5.2: on failure
+                      @Override
+                      public void onFailure(Throwable e) {
+                        future.setException(e);
+                        cancelQueuedTasks(key, CANCELLATION_EXCEPTION);
+                      }
+                    };
+                ApiFutures.addCallback(callable.call(), callback, directExecutor());
+              } catch (Exception e) {
+                cancel(e);
+              }
+            }
+
+            @Override
+            public void cancel(Throwable e) {
+              this.cancelled = true;
+              future.setException(e);
+            }
+          };
       execute(key, task);
       return future;
     }
