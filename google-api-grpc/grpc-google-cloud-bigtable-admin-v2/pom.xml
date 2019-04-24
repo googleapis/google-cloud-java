@@ -38,10 +38,9 @@
           <show>protected</show>
           <nohelp>true</nohelp>
           <doclint>none</doclint>
-          <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-bigtable-admin-v2/0.53.0/</url><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:released} -->
               <location>../../../../proto-google-cloud-bigtable-admin-v2/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>

@@ -38,10 +38,9 @@
           <show>protected</show>
           <nohelp>true</nohelp>
           <doclint>none</doclint>
-          <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-video-intelligence-v1beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta1:released} -->
               <location>../../../../proto-google-cloud-video-intelligence-v1beta1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>
