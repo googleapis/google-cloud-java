@@ -346,11 +346,11 @@ public final class InstanceGroupManager implements ApiMessage {
   /**
    * Specifies the instance templates used by this managed instance group to create instances.
    *
-   * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
-   * instance group. This field overrides the top-level instanceTemplate field. Read more about the
-   * relationships between these fields. Exactly one version must leave the targetSize field unset.
-   * That version will be applied to all remaining instances. For more information, read about
-   * canary updates.
+   * <p>Each version is defined by an instanceTemplate and a name. Every version can appear at most
+   * once per instance group. This field overrides the top-level instanceTemplate field. Read more
+   * about the relationships between these fields. Exactly one version must leave the targetSize
+   * field unset. That version will be applied to all remaining instances. For more information,
+   * read about canary updates.
    */
   public List<InstanceGroupManagerVersion> getVersionsList() {
     return versions;
@@ -843,11 +843,11 @@ public final class InstanceGroupManager implements ApiMessage {
     /**
      * Specifies the instance templates used by this managed instance group to create instances.
      *
-     * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
-     * instance group. This field overrides the top-level instanceTemplate field. Read more about
-     * the relationships between these fields. Exactly one version must leave the targetSize field
-     * unset. That version will be applied to all remaining instances. For more information, read
-     * about canary updates.
+     * <p>Each version is defined by an instanceTemplate and a name. Every version can appear at
+     * most once per instance group. This field overrides the top-level instanceTemplate field. Read
+     * more about the relationships between these fields. Exactly one version must leave the
+     * targetSize field unset. That version will be applied to all remaining instances. For more
+     * information, read about canary updates.
      */
     public List<InstanceGroupManagerVersion> getVersionsList() {
       return versions;
@@ -856,11 +856,11 @@ public final class InstanceGroupManager implements ApiMessage {
     /**
      * Specifies the instance templates used by this managed instance group to create instances.
      *
-     * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
-     * instance group. This field overrides the top-level instanceTemplate field. Read more about
-     * the relationships between these fields. Exactly one version must leave the targetSize field
-     * unset. That version will be applied to all remaining instances. For more information, read
-     * about canary updates.
+     * <p>Each version is defined by an instanceTemplate and a name. Every version can appear at
+     * most once per instance group. This field overrides the top-level instanceTemplate field. Read
+     * more about the relationships between these fields. Exactly one version must leave the
+     * targetSize field unset. That version will be applied to all remaining instances. For more
+     * information, read about canary updates.
      */
     public Builder addAllVersions(List<InstanceGroupManagerVersion> versions) {
       if (this.versions == null) {
@@ -873,11 +873,11 @@ public final class InstanceGroupManager implements ApiMessage {
     /**
      * Specifies the instance templates used by this managed instance group to create instances.
      *
-     * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
-     * instance group. This field overrides the top-level instanceTemplate field. Read more about
-     * the relationships between these fields. Exactly one version must leave the targetSize field
-     * unset. That version will be applied to all remaining instances. For more information, read
-     * about canary updates.
+     * <p>Each version is defined by an instanceTemplate and a name. Every version can appear at
+     * most once per instance group. This field overrides the top-level instanceTemplate field. Read
+     * more about the relationships between these fields. Exactly one version must leave the
+     * targetSize field unset. That version will be applied to all remaining instances. For more
+     * information, read about canary updates.
      */
     public Builder addVersions(InstanceGroupManagerVersion versions) {
       if (this.versions == null) {

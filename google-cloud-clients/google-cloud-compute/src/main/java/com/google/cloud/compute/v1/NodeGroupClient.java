@@ -838,8 +838,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * @param initialNodeCount Initial count of nodes in the node group.
    * @param zone The name of the zone for this request.
-   * @param nodeGroupResource A NodeGroup resource. (== resource_for beta.nodeGroups ==) (==
-   *     resource_for v1.nodeGroups ==)
+   * @param nodeGroupResource A NodeGroup resource. To create a node group, you must first create a
+   *     node templates. To learn more about node groups and sole-tenant nodes, read the Sole-tenant
+   *     nodes documentation. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups
+   *     ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -872,8 +874,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * @param initialNodeCount Initial count of nodes in the node group.
    * @param zone The name of the zone for this request.
-   * @param nodeGroupResource A NodeGroup resource. (== resource_for beta.nodeGroups ==) (==
-   *     resource_for v1.nodeGroups ==)
+   * @param nodeGroupResource A NodeGroup resource. To create a node group, you must first create a
+   *     node templates. To learn more about node groups and sole-tenant nodes, read the Sole-tenant
+   *     nodes documentation. (== resource_for beta.nodeGroups ==) (== resource_for v1.nodeGroups
+   *     ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

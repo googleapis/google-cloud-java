@@ -93,12 +93,12 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void createSourceTest() {
-    String name = "name3373707";
+    SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Source expectedResponse =
         Source.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -142,14 +142,14 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void createFindingTest() {
-    String name = "name3373707";
+    FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     String parent2 = "parent21175163357";
     String resourceName = "resourceName979421212";
     String category = "category50511102";
     String externalUri = "externalUri-1385596168";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setParent(parent2)
             .setResourceName(resourceName)
             .setCategory(category)
@@ -283,12 +283,12 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSourceTest() {
-    String name2 = "name2-1052831874";
+    SourceName name2 = SourceName.of("[ORGANIZATION]", "[SOURCE]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Source expectedResponse =
         Source.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -476,14 +476,14 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void setFindingStateTest() {
-    String name2 = "name2-1052831874";
+    FindingName name2 = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     String parent = "parent-995424086";
     String resourceName = "resourceName979421212";
     String category = "category50511102";
     String externalUri = "externalUri-1385596168";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setParent(parent)
             .setResourceName(resourceName)
             .setCategory(category)
@@ -616,14 +616,14 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateFindingTest() {
-    String name = "name3373707";
+    FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     String parent = "parent-995424086";
     String resourceName = "resourceName979421212";
     String category = "category50511102";
     String externalUri = "externalUri-1385596168";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setParent(parent)
             .setResourceName(resourceName)
             .setCategory(category)
@@ -711,12 +711,12 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSourceTest() {
-    String name = "name3373707";
+    SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Source expectedResponse =
         Source.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
