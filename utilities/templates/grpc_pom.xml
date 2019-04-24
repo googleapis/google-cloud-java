@@ -39,10 +39,9 @@
           <show>protected</show>
           <nohelp>true</nohelp>
           <doclint>none</doclint>
-          <splitindex>true</splitindex>
           <offlineLinks>
             <offlineLink>
-              <url>${project.javadoc.protobufBaseURL}</url>
+              <url>https://googleapis.dev/java/proto-google-cloud-{{service}}-{{api_version}/0.0.0/</url><!-- {x-version-update:proto-google-cloud-{{service}}-{{api_version}}:released} -->
               <location>../../../../proto-google-cloud-{{service}}-{{api_version}}/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>
