@@ -434,9 +434,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public boolean delete(ModelId modelId) {
     final ModelId completeModelId =
         modelId.setProjectId(
-        Strings.isNullOrEmpty(modelId.getProject())
-          ? getOptions().getProjectId()
-            : modelId.getProject());
+            Strings.isNullOrEmpty(modelId.getProject())
+                ? getOptions().getProjectId()
+                : modelId.getProject());
     try {
       return runWithRetries(
           new Callable<Boolean>() {
@@ -575,6 +575,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
+  public Model getModel(String datasetId, String modelId, ModelOption... options) {
+    return getModel(ModelId.of(datasetId, modelId), options);
+  }
+
+  @Override
   public Model getModel(ModelId modelId, ModelOption... options) {
     final ModelId completeModelId =
         modelId.setProjectId(
@@ -699,7 +704,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>>>() {
                 @Override
                 public Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>>
-                call() {
+                    call() {
                   return serviceOptions
                       .getBigQueryRpcV2()
                       .listModels(datasetId.getProject(), datasetId.getDataset(), optionsMap);

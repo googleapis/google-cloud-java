@@ -136,8 +136,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     TYPE("modelType"),
     VIEW("view");
 
-    static final List<? extends FieldSelector> REQUIRED_FIELDS =
-        ImmutableList.of(MODEL_REFERENCE);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(MODEL_REFERENCE);
 
     private final String selector;
 
@@ -943,6 +942,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Returns the requested model or {@code null} if not found.
    *
+   * @throws BigQueryException upon failure
+   */
+  Model getModel(String datasetId, String modelId, ModelOption... options);
+
+  /**
+   * Returns the requested model or {@code null} if not found.
+   *
    * <p>Example of getting a model.
    *
    * <pre>{@code
@@ -999,14 +1005,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   Page<Table> listTables(DatasetId datasetId, TableListOption... options);
 
-  /**
-   * Lists the models in the dataset.
-   */
+  /** Lists the models in the dataset. */
   Page<Model> listModels(String datasetId, ModelListOption... options);
 
-  /**
-   * Lists the models in the dataset.
-   */
+  /** Lists the models in the dataset. */
   Page<Model> listModels(DatasetId datasetId, ModelListOption... options);
 
   /**

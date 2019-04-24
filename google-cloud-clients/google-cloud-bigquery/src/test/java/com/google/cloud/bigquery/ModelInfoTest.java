@@ -40,7 +40,6 @@ public class ModelInfoTest {
           .setFriendlyName(FRIENDLY_NAME)
           .build();
 
-
   @Test
   public void testToBuilder() {
     compareModelInfo(MODEL_INFO, MODEL_INFO.toBuilder().build());

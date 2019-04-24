@@ -319,8 +319,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Model getModel(String projectId, String datasetId, String modelId,
-      Map<Option, ?> options) {
+  public Model getModel(
+      String projectId, String datasetId, String modelId, Map<Option, ?> options) {
     try {
       return bigquery
           .models()
@@ -348,8 +348,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setPageToken(Option.PAGE_TOKEN.getString(options))
               .execute();
       Iterable<Model> models = modelList.getModels();
-      return Tuple.of(
-          modelList.getNextPageToken(), models);
+      return Tuple.of(modelList.getNextPageToken(), models);
     } catch (IOException ex) {
       throw translate(ex);
     }

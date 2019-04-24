@@ -60,5 +60,4 @@ public class ModelIdTest {
     assertEquals(expected.getDataset(), value.getDataset());
     assertEquals(expected.hashCode(), value.hashCode());
   }
-
 }
