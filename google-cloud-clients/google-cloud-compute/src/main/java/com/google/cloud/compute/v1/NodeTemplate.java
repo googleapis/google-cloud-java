@@ -25,7 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A Node Template resource. */
+/**
+ * A Node Template resource. To learn more about node templates and sole-tenant nodes, read the
+ * Sole-tenant nodes documentation. (== resource_for beta.nodeTemplates ==) (== resource_for
+ * v1.nodeTemplates ==)
+ */
 public final class NodeTemplate implements ApiMessage {
   private final String creationTimestamp;
   private final String description;

@@ -131,13 +131,13 @@ public class ProductSearchClient implements BackgroundResource {
   private static final PathTemplate LOCATION_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
 
-  private static final PathTemplate PRODUCT_SET_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/productSets/{product_set}");
-
   private static final PathTemplate PRODUCT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/products/{product}");
+
+  private static final PathTemplate PRODUCT_SET_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/productSets/{product_set}");
 
   private static final PathTemplate REFERENCE_IMAGE_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
@@ -156,6 +156,19 @@ public class ProductSearchClient implements BackgroundResource {
   }
 
   /**
+   * Formats a string containing the fully-qualified path to represent a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
+  public static final String formatProductName(String project, String location, String product) {
+    return PRODUCT_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "location", location,
+        "product", product);
+  }
+
+  /**
    * Formats a string containing the fully-qualified path to represent a product_set resource.
    *
    * @deprecated Use the {@link ProductSetName} class instead.
@@ -167,19 +180,6 @@ public class ProductSearchClient implements BackgroundResource {
         "project", project,
         "location", location,
         "product_set", productSet);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String formatProductName(String project, String location, String product) {
-    return PRODUCT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "product", product);
   }
 
   /**
@@ -218,6 +218,36 @@ public class ProductSearchClient implements BackgroundResource {
   }
 
   /**
+   * Parses the project from the given fully-qualified path which represents a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromProductName(String productName) {
+    return PRODUCT_PATH_TEMPLATE.parse(productName).get("project");
+  }
+
+  /**
+   * Parses the location from the given fully-qualified path which represents a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
+  public static final String parseLocationFromProductName(String productName) {
+    return PRODUCT_PATH_TEMPLATE.parse(productName).get("location");
+  }
+
+  /**
+   * Parses the product from the given fully-qualified path which represents a product resource.
+   *
+   * @deprecated Use the {@link ProductName} class instead.
+   */
+  @Deprecated
+  public static final String parseProductFromProductName(String productName) {
+    return PRODUCT_PATH_TEMPLATE.parse(productName).get("product");
+  }
+
+  /**
    * Parses the project from the given fully-qualified path which represents a product_set resource.
    *
    * @deprecated Use the {@link ProductSetName} class instead.
@@ -247,36 +277,6 @@ public class ProductSearchClient implements BackgroundResource {
   @Deprecated
   public static final String parseProductSetFromProductSetName(String productSetName) {
     return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("product_set");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromProductName(String productName) {
-    return PRODUCT_PATH_TEMPLATE.parse(productName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromProductName(String productName) {
-    return PRODUCT_PATH_TEMPLATE.parse(productName).get("location");
-  }
-
-  /**
-   * Parses the product from the given fully-qualified path which represents a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String parseProductFromProductName(String productName) {
-    return PRODUCT_PATH_TEMPLATE.parse(productName).get("product");
   }
 
   /**

@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** A Zone resource. (== resource_for beta.zones ==) (== resource_for v1.zones ==) */
+/** A Zone resource. (== resource_for beta.zones ==) (== resource_for v1.zones ==) Next ID: 17 */
 public final class Zone implements ApiMessage {
   private final List<String> availableCpuPlatforms;
   private final String creationTimestamp;
