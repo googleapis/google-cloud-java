@@ -37,6 +37,12 @@ public class ModelIdTest {
   }
 
   @Test
+  public void testEquals() {
+    compareModelIds(MODEL, ModelId.of("dataset", "model"));
+    compareModelIds(MODEL_COMPLETE, ModelId.of("project", "dataset", "model"));
+  }
+
+  @Test
   public void testToPbAndFromPb() {
     compareModelIds(MODEL, ModelId.fromPb(MODEL.toPb()));
     compareModelIds(MODEL_COMPLETE, ModelId.fromPb(MODEL_COMPLETE.toPb()));
@@ -44,7 +50,7 @@ public class ModelIdTest {
 
   @Test
   public void testSetProjectId() {
-    ModelId differentProjectTable = ModelId.of("differentProject", "dataset", "table");
+    ModelId differentProjectTable = ModelId.of("differentProject", "dataset", "model");
     assertEquals(differentProjectTable, MODEL.setProjectId("differentProject"));
   }
 

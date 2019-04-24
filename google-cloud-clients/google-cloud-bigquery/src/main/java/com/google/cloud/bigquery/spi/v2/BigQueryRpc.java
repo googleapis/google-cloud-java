@@ -20,6 +20,7 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
+import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -155,6 +156,36 @@ public interface BigQueryRpc extends ServiceRpc {
    * @throws BigQueryException upon failure
    */
   boolean deleteTable(String projectId, String datasetId, String tableId);
+
+  /**
+   * Updates table information.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Model patch(Model model, Map<Option, ?> options);
+
+  /**
+   * Returns the requested model or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Model getModel(String projectId, String datasetId, String modelId, Map<Option, ?> options);
+
+  /**
+   * Lists the dataset's models. Partial information is returned on a model.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Tuple<String, Iterable<Model>> listModels(
+      String projectId, String dataset, Map<Option, ?> options);
+
+  /**
+   * Delete the requested model.
+   *
+   * @return {@code true} if model was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
+  boolean deleteModel(String projectId, String datasetId, String modelId);
 
   /**
    * Sends an insert all request.

@@ -101,6 +101,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
+  private static class ModelPageFetcher implements NextPageFetcher<Model> {
+
+    private static final long serialVersionUID = 8611248811504201187L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
+    private final DatasetId datasetId;
+
+    ModelPageFetcher(
+        DatasetId datasetId,
+        BigQueryOptions serviceOptions,
+        String cursor,
+        Map<BigQueryRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.datasetId = datasetId;
+    }
+
+    @Override
+    public Page<Model> getNextPage() {
+      return listModels(datasetId, serviceOptions, requestOptions);
+    }
+  }
+
   private static class JobPageFetcher implements NextPageFetcher<Job> {
 
     private static final long serialVersionUID = 8536533282558245472L;
@@ -408,9 +432,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public boolean delete(ModelId modelId) {
-    final ModelId completeModelId =  modelId.setProjectId(
+    final ModelId completeModelId =
+        modelId.setProjectId(
         Strings.isNullOrEmpty(modelId.getProject())
-          ? getOptions.getProjectId()
+          ? getOptions().getProjectId()
             : modelId.getProject());
     try {
       return runWithRetries(
@@ -603,7 +628,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public Page<Model> listModels(DatasetId datasetId, ModelListOption... options) {
     DatasetId completeDatasetId = datasetId.setProjectId(getOptions().getProjectId());
-    return listTables(completeDatasetId, getOptions(), optionMap(options));
+    return listModels(completeDatasetId, getOptions(), optionMap(options));
   }
 
   @Override
@@ -671,9 +696,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>> result =
           runWithRetries(
               new Callable<
-                  Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>>>() {
+                  Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>>>() {
                 @Override
-                public Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>>
+                public Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>>
                 call() {
                   return serviceOptions
                       .getBigQueryRpcV2()
@@ -694,7 +719,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               });
       return new PageImpl<>(
-          new TablePageFetcher(datasetId, serviceOptions, cursor, optionsMap), cursor, models);
+          new ModelPageFetcher(datasetId, serviceOptions, cursor, optionsMap), cursor, models);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

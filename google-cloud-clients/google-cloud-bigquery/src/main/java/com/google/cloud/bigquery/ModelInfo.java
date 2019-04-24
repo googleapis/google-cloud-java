@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +25,6 @@ import com.google.api.services.bigquery.model.Model;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import jdk.internal.joptsimple.internal.Strings;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -46,6 +46,9 @@ public class ModelInfo implements Serializable {
                 }
             };
 
+    private static final long serialVersionUID = 609769793337719407L;
+
+
     private final String etag;
     private final ModelId modelId;
     private final String description;
@@ -57,6 +60,7 @@ public class ModelInfo implements Serializable {
     private final Labels labels;
 
 
+    /** A builder for {@code ModelInfo} objects. **/
     public abstract static class Builder {
 
         public abstract Builder setDescription(String description);
@@ -73,7 +77,6 @@ public class ModelInfo implements Serializable {
         abstract Builder setModelType(String modelType);
         abstract Builder setCreationTime(Long creation);
         abstract Builder setLastModifiedTime(Long lastModifiedTime);
-
 
         public abstract ModelInfo build();
     }
@@ -178,6 +181,7 @@ public class ModelInfo implements Serializable {
     ModelInfo(BuilderImpl builder) {
         this.modelId = checkNotNull(builder.modelId);
         this.etag = builder.etag;
+        this.modelType = builder.modelType;
         this.description = builder.description;
         this.friendlyName = builder.friendlyName;
         this.creationTime = builder.creationTime;
@@ -222,7 +226,7 @@ public class ModelInfo implements Serializable {
     }
 
     @Override
-    public int hashcode() { return Objects.hash(modelId); }
+    public int hashCode() { return Objects.hash(modelId); }
 
     @Override
     public boolean equals(Object obj) {
