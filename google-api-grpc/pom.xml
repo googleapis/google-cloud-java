@@ -1019,6 +1019,7 @@
           <doclint>none</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
+          <splitindex>true</splitindex>
           <links>
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>https://grpc.io/grpc-java/javadoc/</link>
