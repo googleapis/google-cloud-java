@@ -222,14 +222,7 @@ public class Publisher {
         }
       }
       // Setup the next duration based delivery alarm if there are messages batched.
-      if (!messagesBatch.isEmpty()) {
-        setupDurationBasedPublishAlarm();
-      } else if (currentAlarmFuture != null) {
-        logger.log(Level.FINER, "Cancelling alarm, no more messages");
-        if (activeAlarm.getAndSet(false)) {
-          currentAlarmFuture.cancel(false);
-        }
-      }
+      setupAlarm();
     } finally {
       messagesBatchLock.unlock();
     }
@@ -266,22 +259,29 @@ public class Publisher {
     return publishResult;
   }
 
-  private void setupDurationBasedPublishAlarm() {
-    if (!activeAlarm.getAndSet(true)) {
-      long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
-      logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
-      currentAlarmFuture =
-          executor.schedule(
-              new Runnable() {
-                @Override
-                public void run() {
-                  logger.log(Level.FINER, "Sending messages based on schedule.");
-                  activeAlarm.getAndSet(false);
-                  publishAllOutstanding();
-                }
-              },
-              delayThresholdMs,
-              TimeUnit.MILLISECONDS);
+  private void setupAlarm() {
+    if (!messagesBatch.isEmpty()) {
+      if (!activeAlarm.getAndSet(true)) {
+        long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
+        logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+        currentAlarmFuture =
+            executor.schedule(
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    logger.log(Level.FINER, "Sending messages based on schedule.");
+                    activeAlarm.getAndSet(false);
+                    publishAllOutstanding();
+                  }
+                },
+                delayThresholdMs,
+                TimeUnit.MILLISECONDS);
+      }
+    } else if (currentAlarmFuture != null) {
+      logger.log(Level.FINER, "Cancelling alarm, no more messages");
+      if (activeAlarm.getAndSet(false)) {
+        currentAlarmFuture.cancel(false);
+      }
     }
   }
 
