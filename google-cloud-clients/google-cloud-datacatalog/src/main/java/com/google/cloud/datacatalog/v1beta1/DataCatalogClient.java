@@ -100,24 +100,12 @@ public class DataCatalogClient implements BackgroundResource {
   private final DataCatalogSettings settings;
   private final DataCatalogStub stub;
 
-  private static final PathTemplate LOCATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
-
   private static final PathTemplate ENTRY_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String formatLocationName(String project, String location) {
-    return LOCATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location);
-  }
+  private static final PathTemplate LOCATION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
 
   /**
    * Formats a string containing the fully-qualified path to represent a entry resource.
@@ -135,23 +123,15 @@ public class DataCatalogClient implements BackgroundResource {
   }
 
   /**
-   * Parses the project from the given fully-qualified path which represents a location resource.
+   * Formats a string containing the fully-qualified path to represent a location resource.
    *
    * @deprecated Use the {@link LocationName} class instead.
    */
   @Deprecated
-  public static final String parseProjectFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
+  public static final String formatLocationName(String project, String location) {
+    return LOCATION_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "location", location);
   }
 
   /**
@@ -192,6 +172,26 @@ public class DataCatalogClient implements BackgroundResource {
   @Deprecated
   public static final String parseEntryFromEntryName(String entryName) {
     return ENTRY_PATH_TEMPLATE.parse(entryName).get("entry");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromLocationName(String locationName) {
+    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
+  }
+
+  /**
+   * Parses the location from the given fully-qualified path which represents a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
+   */
+  @Deprecated
+  public static final String parseLocationFromLocationName(String locationName) {
+    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
   }
 
   /** Constructs an instance of DataCatalogClient with default settings. */
