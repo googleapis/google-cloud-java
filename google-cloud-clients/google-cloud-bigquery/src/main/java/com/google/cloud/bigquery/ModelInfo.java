@@ -1,3 +1,19 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.cloud.bigquery;
 
 import java.io.Serializable;
@@ -87,7 +103,7 @@ public class ModelInfo implements Serializable {
         }
 
         BuilderImpl(Model modelPb) {
-            this.modelId = ModelId.fromPb((modelPb.getModelReference());
+            this.modelId = ModelId.fromPb(modelPb.getModelReference());
             if (modelPb.getLastModifiedTime() != null) {
                 this.setLastModifiedTime(modelPb.getLastModifiedTime().longValue());
             }
@@ -232,7 +248,17 @@ public class ModelInfo implements Serializable {
     }
 
     Model toPb() {
-        Model modelPb =
+        Model modelPb = new Model();
+        modelPb.setModelReference(modelId.toPb());
+        modelPb.setEtag(etag);
+        modelPb.setModelType(modelType);
+        modelPb.setDescription(description);
+        modelPb.setFriendlyName(friendlyName);
+        modelPb.setCreationTime(creationTime);
+        modelPb.setLastModifiedTime(lastModifiedTime);
+        modelPb.setExpirationTime(expirationTime);
+        modelPb.setLabels(labels.toPb());
+        return modelPb;
     }
 
     static ModelInfo fromPb(Model modelPb) { return new BuilderImpl(modelPb).build(); }

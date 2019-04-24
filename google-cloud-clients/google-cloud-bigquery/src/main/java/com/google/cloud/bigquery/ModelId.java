@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-
-
 package com.google.cloud.bigquery;
 
 import java.io.Serializable;
