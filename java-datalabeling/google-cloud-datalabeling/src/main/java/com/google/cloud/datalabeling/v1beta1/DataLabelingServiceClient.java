@@ -114,39 +114,43 @@ public class DataLabelingServiceClient implements BackgroundResource {
   private final DataLabelingServiceStub stub;
   private final OperationsClient operationsClient;
 
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
+  private static final PathTemplate ANNOTATED_DATASET_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}");
 
   private static final PathTemplate ANNOTATION_SPEC_SET_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/annotationSpecSets/{annotation_spec_set}");
 
+  private static final PathTemplate DATA_ITEM_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/datasets/{dataset}/dataItems/{data_item}");
+
   private static final PathTemplate DATASET_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/datasets/{dataset}");
-
-  private static final PathTemplate ANNOTATED_DATASET_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}");
 
   private static final PathTemplate EXAMPLE_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}/examples/{example}");
 
-  private static final PathTemplate DATA_ITEM_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/datasets/{dataset}/dataItems/{data_item}");
-
   private static final PathTemplate INSTRUCTION_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/instructions/{instruction}");
 
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
+
   /**
-   * Formats a string containing the fully-qualified path to represent a project resource.
+   * Formats a string containing the fully-qualified path to represent a annotated_dataset resource.
    *
-   * @deprecated Use the {@link ProjectName} class instead.
+   * @deprecated Use the {@link AnnotatedDatasetName} class instead.
    */
   @Deprecated
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  public static final String formatAnnotatedDatasetName(
+      String project, String dataset, String annotatedDataset) {
+    return ANNOTATED_DATASET_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "dataset", dataset,
+        "annotated_dataset", annotatedDataset);
   }
 
   /**
@@ -163,6 +167,19 @@ public class DataLabelingServiceClient implements BackgroundResource {
   }
 
   /**
+   * Formats a string containing the fully-qualified path to represent a data_item resource.
+   *
+   * @deprecated Use the {@link DataItemName} class instead.
+   */
+  @Deprecated
+  public static final String formatDataItemName(String project, String dataset, String dataItem) {
+    return DATA_ITEM_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "dataset", dataset,
+        "data_item", dataItem);
+  }
+
+  /**
    * Formats a string containing the fully-qualified path to represent a dataset resource.
    *
    * @deprecated Use the {@link DatasetName} class instead.
@@ -172,20 +189,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
     return DATASET_PATH_TEMPLATE.instantiate(
         "project", project,
         "dataset", dataset);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a annotated_dataset resource.
-   *
-   * @deprecated Use the {@link AnnotatedDatasetName} class instead.
-   */
-  @Deprecated
-  public static final String formatAnnotatedDatasetName(
-      String project, String dataset, String annotatedDataset) {
-    return ANNOTATED_DATASET_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset,
-        "annotated_dataset", annotatedDataset);
   }
 
   /**
@@ -204,19 +207,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
   }
 
   /**
-   * Formats a string containing the fully-qualified path to represent a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String formatDataItemName(String project, String dataset, String dataItem) {
-    return DATA_ITEM_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "dataset", dataset,
-        "data_item", dataItem);
-  }
-
-  /**
    * Formats a string containing the fully-qualified path to represent a instruction resource.
    *
    * @deprecated Use the {@link InstructionName} class instead.
@@ -229,58 +219,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
   }
 
   /**
-   * Parses the project from the given fully-qualified path which represents a project resource.
+   * Formats a string containing the fully-qualified path to represent a project resource.
    *
    * @deprecated Use the {@link ProjectName} class instead.
    */
   @Deprecated
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a annotation_spec_set
-   * resource.
-   *
-   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromAnnotationSpecSetName(String annotationSpecSetName) {
-    return ANNOTATION_SPEC_SET_PATH_TEMPLATE.parse(annotationSpecSetName).get("project");
-  }
-
-  /**
-   * Parses the annotation_spec_set from the given fully-qualified path which represents a
-   * annotation_spec_set resource.
-   *
-   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseAnnotationSpecSetFromAnnotationSpecSetName(
-      String annotationSpecSetName) {
-    return ANNOTATION_SPEC_SET_PATH_TEMPLATE
-        .parse(annotationSpecSetName)
-        .get("annotation_spec_set");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a dataset resource.
-   *
-   * @deprecated Use the {@link DatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromDatasetName(String datasetName) {
-    return DATASET_PATH_TEMPLATE.parse(datasetName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a dataset resource.
-   *
-   * @deprecated Use the {@link DatasetName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromDatasetName(String datasetName) {
-    return DATASET_PATH_TEMPLATE.parse(datasetName).get("dataset");
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
   /**
@@ -315,6 +260,81 @@ public class DataLabelingServiceClient implements BackgroundResource {
   public static final String parseAnnotatedDatasetFromAnnotatedDatasetName(
       String annotatedDatasetName) {
     return ANNOTATED_DATASET_PATH_TEMPLATE.parse(annotatedDatasetName).get("annotated_dataset");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a annotation_spec_set
+   * resource.
+   *
+   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromAnnotationSpecSetName(String annotationSpecSetName) {
+    return ANNOTATION_SPEC_SET_PATH_TEMPLATE.parse(annotationSpecSetName).get("project");
+  }
+
+  /**
+   * Parses the annotation_spec_set from the given fully-qualified path which represents a
+   * annotation_spec_set resource.
+   *
+   * @deprecated Use the {@link AnnotationSpecSetName} class instead.
+   */
+  @Deprecated
+  public static final String parseAnnotationSpecSetFromAnnotationSpecSetName(
+      String annotationSpecSetName) {
+    return ANNOTATION_SPEC_SET_PATH_TEMPLATE
+        .parse(annotationSpecSetName)
+        .get("annotation_spec_set");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a data_item resource.
+   *
+   * @deprecated Use the {@link DataItemName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromDataItemName(String dataItemName) {
+    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("project");
+  }
+
+  /**
+   * Parses the dataset from the given fully-qualified path which represents a data_item resource.
+   *
+   * @deprecated Use the {@link DataItemName} class instead.
+   */
+  @Deprecated
+  public static final String parseDatasetFromDataItemName(String dataItemName) {
+    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("dataset");
+  }
+
+  /**
+   * Parses the data_item from the given fully-qualified path which represents a data_item resource.
+   *
+   * @deprecated Use the {@link DataItemName} class instead.
+   */
+  @Deprecated
+  public static final String parseDataItemFromDataItemName(String dataItemName) {
+    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("data_item");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a dataset resource.
+   *
+   * @deprecated Use the {@link DatasetName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromDatasetName(String datasetName) {
+    return DATASET_PATH_TEMPLATE.parse(datasetName).get("project");
+  }
+
+  /**
+   * Parses the dataset from the given fully-qualified path which represents a dataset resource.
+   *
+   * @deprecated Use the {@link DatasetName} class instead.
+   */
+  @Deprecated
+  public static final String parseDatasetFromDatasetName(String datasetName) {
+    return DATASET_PATH_TEMPLATE.parse(datasetName).get("dataset");
   }
 
   /**
@@ -359,36 +379,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
   }
 
   /**
-   * Parses the project from the given fully-qualified path which represents a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromDataItemName(String dataItemName) {
-    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("project");
-  }
-
-  /**
-   * Parses the dataset from the given fully-qualified path which represents a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String parseDatasetFromDataItemName(String dataItemName) {
-    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("dataset");
-  }
-
-  /**
-   * Parses the data_item from the given fully-qualified path which represents a data_item resource.
-   *
-   * @deprecated Use the {@link DataItemName} class instead.
-   */
-  @Deprecated
-  public static final String parseDataItemFromDataItemName(String dataItemName) {
-    return DATA_ITEM_PATH_TEMPLATE.parse(dataItemName).get("data_item");
-  }
-
-  /**
    * Parses the project from the given fully-qualified path which represents a instruction resource.
    *
    * @deprecated Use the {@link InstructionName} class instead.
@@ -407,6 +397,16 @@ public class DataLabelingServiceClient implements BackgroundResource {
   @Deprecated
   public static final String parseInstructionFromInstructionName(String instructionName) {
     return INSTRUCTION_PATH_TEMPLATE.parse(instructionName).get("instruction");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a project resource.
+   *
+   * @deprecated Use the {@link ProjectName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
   /** Constructs an instance of DataLabelingServiceClient with default settings. */
