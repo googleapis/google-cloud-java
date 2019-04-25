@@ -633,7 +633,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setRequestByteThreshold((Long) null)
+              .setRequestByteThreshold(null)
               .build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
@@ -692,7 +692,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setElementCountThreshold((Long) null)
+              .setElementCountThreshold(null)
               .build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
