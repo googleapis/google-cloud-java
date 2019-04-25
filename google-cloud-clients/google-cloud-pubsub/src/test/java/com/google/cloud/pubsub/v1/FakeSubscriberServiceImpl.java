@@ -61,7 +61,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   private final BlockingQueue<PullResponse> pullResponses = new LinkedBlockingDeque<>();
   private int currentStream;
 
-  public static enum CloseSide {
+  public enum CloseSide {
     SERVER,
     CLIENT
   }
@@ -74,10 +74,6 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
       Preconditions.checkNotNull(ackId);
       this.ackId = ackId;
       this.seconds = seconds;
-    }
-
-    public String getAckId() {
-      return ackId;
     }
 
     public long getSeconds() {
@@ -207,23 +203,6 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     return stream.requestObserver;
   }
 
-  public void sendStreamingResponse(StreamingPullResponse pullResponse)
-      throws InterruptedException {
-    waitForRegistedSubscription();
-    synchronized (openedStreams) {
-      waitForOpenedStreams(1);
-      openedStreams.get(getAndAdvanceCurrentStream()).responseObserver.onNext(pullResponse);
-    }
-  }
-
-  public void setMessageAckDeadlineSeconds(int ackDeadline) {
-    messageAckDeadline.set(ackDeadline);
-  }
-
-  public void enqueuePullResponse(PullResponse response) {
-    pullResponses.add(response);
-  }
-
   @Override
   public void getSubscription(
       GetSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
@@ -235,12 +214,6 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
             .setTopic("fake-topic")
             .build());
     responseObserver.onCompleted();
-  }
-
-  /** Returns the number of times getSubscription is called. */
-  @InternalApi
-  int getSubscriptionCalledCount() {
-    return getSubscriptionCalled.get();
   }
 
   @Override
@@ -293,26 +266,6 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     return subscription;
   }
 
-  public List<String> waitAndConsumeReceivedAcks(int expectedCount) throws InterruptedException {
-    synchronized (acks) {
-      waitAtLeast(acks, expectedCount);
-      List<String> receivedAcksCopy = ImmutableList.copyOf(acks.subList(0, expectedCount));
-      acks.subList(0, expectedCount).clear();
-      return receivedAcksCopy;
-    }
-  }
-
-  public List<ModifyAckDeadline> waitAndConsumeModifyAckDeadlines(int expectedCount)
-      throws InterruptedException {
-    synchronized (modAckDeadlines) {
-      waitAtLeast(modAckDeadlines, expectedCount);
-      List<ModifyAckDeadline> modAckDeadlinesCopy =
-          ImmutableList.copyOf(modAckDeadlines.subList(0, expectedCount));
-      modAckDeadlines.subList(0, expectedCount).clear();
-      return modAckDeadlinesCopy;
-    }
-  }
-
   public int waitForClosedStreams(int expectedCount) throws InterruptedException {
     synchronized (closedStreams) {
       waitAtLeast(closedStreams, expectedCount);
@@ -338,50 +291,6 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
         throw new IllegalStateException("timed out, last state: " + collection);
       }
       collection.wait(untilMillis - now);
-    }
-  }
-
-  public void waitForStreamAckDeadline(int expectedValue) throws InterruptedException {
-    synchronized (messageAckDeadline) {
-      while (messageAckDeadline.get() != expectedValue) {
-        messageAckDeadline.wait();
-      }
-    }
-  }
-
-  public int getOpenedStreamsCount() {
-    return openedStreams.size();
-  }
-
-  public int getClosedStreamsCount() {
-    return closedStreams.size();
-  }
-
-  public List<String> getAcks() {
-    return acks;
-  }
-
-  public List<ModifyAckDeadline> getModifyAckDeadlines() {
-    return modAckDeadlines;
-  }
-
-  public void reset() {
-    synchronized (subscriptionInitialized) {
-      synchronized (openedStreams) {
-        synchronized (acks) {
-          synchronized (modAckDeadlines) {
-            openedStreams.clear();
-            closedStreams.clear();
-            acks.clear();
-            modAckDeadlines.clear();
-            subscriptionInitialized.set(false);
-            subscription = "";
-            pullResponses.clear();
-            receivedPullRequest.clear();
-            currentStream = 0;
-          }
-        }
-      }
     }
   }
 
