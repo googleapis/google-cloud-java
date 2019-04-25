@@ -12,8 +12,7 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -25,8 +24,7 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -37,8 +35,7 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -49,8 +46,7 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -62,8 +58,7 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The Job entities that match the specified
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;

@@ -13,36 +13,8 @@ public interface ApplicationJobFilterOrBuilder
    *
    * <pre>
    * Optional.
-   * The job resource name in the application. The API does an exact match on
-   * the [Job.name][google.cloud.talent.v4beta1.Job.name] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
-   * </pre>
-   *
-   * <code>string job = 1;</code>
-   */
-  java.lang.String getJob();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The job resource name in the application. The API does an exact match on
-   * the [Job.name][google.cloud.talent.v4beta1.Job.name] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
-   * </pre>
-   *
-   * <code>string job = 1;</code>
-   */
-  com.google.protobuf.ByteString getJobBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
    * The job requisition id in the application. The API does an exact match on
-   * the [Job.requisistion_id][] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * the [Job.requisistion_id][] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
@@ -54,8 +26,7 @@ public interface ApplicationJobFilterOrBuilder
    * <pre>
    * Optional.
    * The job requisition id in the application. The API does an exact match on
-   * the [Job.requisistion_id][] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * the [Job.requisistion_id][] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_requisition_id = 2;</code>
@@ -68,8 +39,7 @@ public interface ApplicationJobFilterOrBuilder
    * <pre>
    * Optional.
    * The job title in the application. The API does an exact match on the
-   * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_title = 3;</code>
@@ -81,8 +51,7 @@ public interface ApplicationJobFilterOrBuilder
    * <pre>
    * Optional.
    * The job title in the application. The API does an exact match on the
-   * [Job.title][google.cloud.talent.v4beta1.Job.title] of
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
+   * [Job.title][google.cloud.talent.v4beta1.Job.title] of [Application.job][google.cloud.talent.v4beta1.Application.job] in profiles.
    * </pre>
    *
    * <code>string job_title = 3;</code>
@@ -94,9 +63,8 @@ public interface ApplicationJobFilterOrBuilder
    *
    * <pre>
    * Optional.
-   * If true, the API excludes all profiles with any
-   * [Application.job][google.cloud.talent.v4beta1.Application.job] matching the
-   * filters.
+   * If true, the API excludes all profiles with any [Application.job][google.cloud.talent.v4beta1.Application.job]
+   * matching the filters.
    * </pre>
    *
    * <code>bool negated = 4;</code>

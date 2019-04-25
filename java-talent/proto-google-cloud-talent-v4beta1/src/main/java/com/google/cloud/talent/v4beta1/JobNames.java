@@ -20,11 +20,11 @@ public class JobNames {
   private JobNames() {}
 
   public static JobName parse(String resourceNameString) {
-    if (JobOldName.isParsableFrom(resourceNameString)) {
-      return JobOldName.parse(resourceNameString);
+    if (JobWithTenantName.isParsableFrom(resourceNameString)) {
+      return JobWithTenantName.parse(resourceNameString);
     }
-    if (JobNewName.isParsableFrom(resourceNameString)) {
-      return JobNewName.parse(resourceNameString);
+    if (JobWithoutTenantName.isParsableFrom(resourceNameString)) {
+      return JobWithoutTenantName.parse(resourceNameString);
     }
     return UntypedJobName.parse(resourceNameString);
   }
