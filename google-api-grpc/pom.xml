@@ -13,7 +13,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
+    <!-- We are currently using the *-android version to support JDK7. -->
+    <guava.version>27.1-android</guava.version>
   </properties>
   <developers>
     <developer>
@@ -1010,7 +1011,6 @@
           <reportSet>
             <id>html</id>
             <reports>
-              <report>aggregate</report>
               <report>javadoc</report>
             </reports>
           </reportSet>
@@ -1023,6 +1023,7 @@
           <links>
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>https://grpc.io/grpc-java/javadoc/</link>
+            <link>https://google.github.io/guava/releases/${guava.version}/api/docs/</link>
             <link>https://googleapis.github.io/common-protos-java/1.14.0/apidocs/</link>
           </links>
         </configuration>
