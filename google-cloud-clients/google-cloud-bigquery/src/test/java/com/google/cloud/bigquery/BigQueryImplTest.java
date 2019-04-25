@@ -1016,7 +1016,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.deleteModel(PROJECT, DATASET, MODEL)).andReturn(true);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    assertTrue(bigquery.delete(DATASET, MODEL));
+    assertTrue(bigquery.delete(ModelId.of(DATASET, MODEL)));
   }
 
   @Test

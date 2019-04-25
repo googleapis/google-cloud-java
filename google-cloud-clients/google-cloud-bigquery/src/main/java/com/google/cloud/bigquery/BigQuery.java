@@ -748,22 +748,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Deletes the requested table.
    *
-   * <p>Example of deleting a table.
-   *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * boolean deleted = bigquery.delete(datasetName, tableName);
-   * if (deleted) {
-   *   // the table was deleted
-   * } else {
-   *   // the table was not found
-   * }
-   * }</pre>
+   * @deprecated Now that BigQuery datasets contain multiple resource types, this
+   *   invocation is ambiguous.  Please use more strongly typed version of {@code #delete}.
+   *   This will continue to target tables.
    *
    * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
+  @Deprecated
   boolean delete(String datasetId, String tableId);
 
   /**
