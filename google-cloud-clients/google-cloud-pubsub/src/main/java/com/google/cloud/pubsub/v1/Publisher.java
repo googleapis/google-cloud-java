@@ -372,11 +372,7 @@ public class Publisher {
       this.batchSizeBytes = batchSizeBytes;
     }
 
-    public int getAttempt() {
-      return attempt;
-    }
-
-    public int size() {
+    int size() {
       return outstandingPublishes.size();
     }
   }
