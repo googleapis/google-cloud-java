@@ -17,8 +17,6 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.client.util.Preconditions;
-import com.google.api.core.InternalApi;
-import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
