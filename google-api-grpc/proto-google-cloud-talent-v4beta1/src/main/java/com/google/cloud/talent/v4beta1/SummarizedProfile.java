@@ -8,8 +8,7 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * Output only.
- * Profile entry with metadata inside
- * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+ * Profile entry with metadata inside [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.SummarizedProfile}
@@ -432,8 +431,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Output only.
-   * Profile entry with metadata inside
-   * [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
+   * Profile entry with metadata inside [SearchProfilesResponse][google.cloud.talent.v4beta1.SearchProfilesResponse].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SummarizedProfile}

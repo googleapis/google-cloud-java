@@ -36,8 +36,7 @@ public interface ProfileEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * </pre>
    *
    * <code>repeated string profiles = 2;</code>
@@ -48,8 +47,7 @@ public interface ProfileEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * </pre>
    *
    * <code>repeated string profiles = 2;</code>
@@ -60,8 +58,7 @@ public interface ProfileEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * </pre>
    *
    * <code>repeated string profiles = 2;</code>
@@ -72,8 +69,7 @@ public interface ProfileEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated
-   * with this client event.
+   * The [profile name(s)][google.cloud.talent.v4beta1.Profile.name] associated with this client event.
    * </pre>
    *
    * <code>repeated string profiles = 2;</code>

@@ -100,7 +100,7 @@ public class CompanyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createCompanyTest() {
-    CompanyName name = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
     String displayName = "displayName1615086568";
     String externalId = "externalId-1153075697";
     String headquartersAddress = "headquartersAddress-1879520036";
@@ -163,7 +163,7 @@ public class CompanyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getCompanyTest() {
-    CompanyName name2 = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    CompanyName name2 = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
     String displayName = "displayName1615086568";
     String externalId = "externalId-1153075697";
     String headquartersAddress = "headquartersAddress-1879520036";
@@ -188,7 +188,7 @@ public class CompanyServiceClientTest {
             .build();
     mockCompanyService.addResponse(expectedResponse);
 
-    CompanyName name = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
 
     Company actualResponse = client.getCompany(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -211,7 +211,7 @@ public class CompanyServiceClientTest {
     mockCompanyService.addException(exception);
 
     try {
-      CompanyName name = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+      CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
 
       client.getCompany(name);
       Assert.fail("No exception raised");
@@ -223,7 +223,7 @@ public class CompanyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateCompanyTest() {
-    CompanyName name = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
     String displayName = "displayName1615086568";
     String externalId = "externalId-1153075697";
     String headquartersAddress = "headquartersAddress-1879520036";
@@ -286,7 +286,7 @@ public class CompanyServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockCompanyService.addResponse(expectedResponse);
 
-    CompanyName name = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
 
     client.deleteCompany(name);
 
@@ -308,7 +308,7 @@ public class CompanyServiceClientTest {
     mockCompanyService.addException(exception);
 
     try {
-      CompanyName name = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+      CompanyName name = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
 
       client.deleteCompany(name);
       Assert.fail("No exception raised");

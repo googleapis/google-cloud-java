@@ -66,7 +66,7 @@ public interface AddressOrBuilder
    * <pre>
    * Optional.
    * Structured address that contains street address, city, state, country,
-   * etc.
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -78,7 +78,7 @@ public interface AddressOrBuilder
    * <pre>
    * Optional.
    * Structured address that contains street address, city, state, country,
-   * etc.
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -90,7 +90,7 @@ public interface AddressOrBuilder
    * <pre>
    * Optional.
    * Structured address that contains street address, city, state, country,
-   * etc.
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
