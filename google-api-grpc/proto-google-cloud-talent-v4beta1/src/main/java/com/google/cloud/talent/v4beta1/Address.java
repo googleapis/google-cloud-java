@@ -267,7 +267,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * Structured address that contains street address, city, state, country,
-   * etc.
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -281,7 +281,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * Structured address that contains street address, city, state, country,
-   * etc.
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -298,7 +298,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * Structured address that contains street address, city, state, country,
-   * etc.
+   * and so on.
    * </pre>
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -999,7 +999,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1013,7 +1013,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1037,7 +1037,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1061,7 +1061,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1082,7 +1082,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1113,7 +1113,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1140,7 +1140,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1154,7 +1154,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
@@ -1175,7 +1175,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Structured address that contains street address, city, state, country,
-     * etc.
+     * and so on.
      * </pre>
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>

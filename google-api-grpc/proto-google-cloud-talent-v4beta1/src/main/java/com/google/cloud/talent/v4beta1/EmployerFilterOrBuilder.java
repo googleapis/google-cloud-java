@@ -36,11 +36,8 @@ public interface EmployerFilterOrBuilder
    *
    * <pre>
    * Optional.
-   * Define set of
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-   * against.
-   * Defaults to
-   * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+   * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+   * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>
@@ -51,11 +48,8 @@ public interface EmployerFilterOrBuilder
    *
    * <pre>
    * Optional.
-   * Define set of
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
-   * against.
-   * Defaults to
-   * [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
+   * Define set of [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search against.
+   * Defaults to [EmployerFilterMode.ALL_EMPLOYMENT_RECORDS][google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode.ALL_EMPLOYMENT_RECORDS].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode mode = 2;</code>

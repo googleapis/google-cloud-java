@@ -283,7 +283,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   Job response = jobServiceClient.getJob(name);
    * }
    * </code></pre>
@@ -311,7 +311,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   Job response = jobServiceClient.getJob(name.toString());
    * }
    * </code></pre>
@@ -338,7 +338,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   GetJobRequest request = GetJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -361,7 +361,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   GetJobRequest request = GetJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -462,7 +462,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   jobServiceClient.deleteJob(name);
    * }
    * </code></pre>
@@ -492,7 +492,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   jobServiceClient.deleteJob(name.toString());
    * }
    * </code></pre>
@@ -521,7 +521,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -546,7 +546,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+   *   JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
    *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();

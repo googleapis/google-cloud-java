@@ -154,7 +154,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * Full Degree name.
-   * For example, "B.S.", "Master of Arts", etc.
+   * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -177,7 +177,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional.
    * Full Degree name.
-   * For example, "B.S.", "Master of Arts", etc.
+   * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -716,7 +716,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Full Degree name.
-     * For example, "B.S.", "Master of Arts", etc.
+     * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -739,7 +739,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Full Degree name.
-     * For example, "B.S.", "Master of Arts", etc.
+     * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -762,7 +762,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Full Degree name.
-     * For example, "B.S.", "Master of Arts", etc.
+     * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -783,7 +783,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Full Degree name.
-     * For example, "B.S.", "Master of Arts", etc.
+     * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -801,7 +801,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional.
      * Full Degree name.
-     * For example, "B.S.", "Master of Arts", etc.
+     * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
      *

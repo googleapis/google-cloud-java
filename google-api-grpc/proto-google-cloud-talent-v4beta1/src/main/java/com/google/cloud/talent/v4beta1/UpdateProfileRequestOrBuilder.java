@@ -72,6 +72,7 @@ public interface UpdateProfileRequestOrBuilder
    * * certifications
    * * recruitingNotes
    * * customAttributes
+   * * groupId
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -107,6 +108,7 @@ public interface UpdateProfileRequestOrBuilder
    * * certifications
    * * recruitingNotes
    * * customAttributes
+   * * groupId
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -142,6 +144,7 @@ public interface UpdateProfileRequestOrBuilder
    * * certifications
    * * recruitingNotes
    * * customAttributes
+   * * groupId
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
