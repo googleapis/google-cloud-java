@@ -123,7 +123,7 @@ public class MessageDispatcherTest {
   }
 
   @Test
-  public void testReceipt() throws Exception {
+  public void testReceipt() {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks)
@@ -160,7 +160,7 @@ public class MessageDispatcherTest {
   }
 
   @Test
-  public void testExtension_Close() throws Exception {
+  public void testExtension_Close() {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)

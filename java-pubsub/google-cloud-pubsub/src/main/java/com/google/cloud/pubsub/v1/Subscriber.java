@@ -149,7 +149,7 @@ public class Subscriber extends AbstractApiService {
       closeables.add(
           new AutoCloseable() {
             @Override
-            public void close() throws IOException {
+            public void close() {
               alarmsExecutor.shutdown();
             }
           });

@@ -87,35 +87,6 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   }
 
   /**
-   * This allows for adding expectations on future work to be scheduled ( {@link
-   * FakeScheduledExecutorService#schedule} or {@link
-   * FakeScheduledExecutorService#scheduleAtFixedRate} or {@link
-   * FakeScheduledExecutorService#scheduleWithFixedDelay}) based on its delay.
-   */
-  public void setupScheduleExpectation(Duration delay) {
-    synchronized (expectedWorkQueue) {
-      expectedWorkQueue.add(delay);
-    }
-  }
-
-  /**
-   * Blocks the current thread until all the work {@link
-   * FakeScheduledExecutorService#setupScheduleExpectation(Duration) expected} has been scheduled in
-   * the executor.
-   */
-  public void waitForExpectedWork() {
-    synchronized (expectedWorkQueue) {
-      while (!expectedWorkQueue.isEmpty()) {
-        try {
-          expectedWorkQueue.wait();
-        } catch (InterruptedException e) {
-          // Wait uninterruptibly
-        }
-      }
-    }
-  }
-
-  /**
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
    */
@@ -232,7 +203,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     return callable.getScheduledFuture();
   }
 
-  static enum PendingCallableType {
+  enum PendingCallableType {
     NORMAL,
     FIXED_RATE,
     FIXED_DELAY
@@ -252,7 +223,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       pendingCallable =
           new Callable<T>() {
             @Override
-            public T call() throws Exception {
+            public T call() {
               runnable.run();
               return null;
             }

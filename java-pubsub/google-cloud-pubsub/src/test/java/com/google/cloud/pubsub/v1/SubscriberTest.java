@@ -140,7 +140,7 @@ public class SubscriberTest {
     }
   }
 
-  private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
+  private Subscriber startSubscriber(Builder testSubscriberBuilder) {
     Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();
     return subscriber;
