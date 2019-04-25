@@ -410,20 +410,25 @@ public class Publisher {
    * <p>Call this method to make sure all resources are freed properly.
    */
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
-    long startDuration = System.currentTimeMillis();
-    long remainingDuration = TimeUnit.MILLISECONDS.convert(duration, unit);
+    final long startDuration = System.currentTimeMillis();
+    final long totalDurationMs = TimeUnit.MILLISECONDS.convert(duration, unit);
     messagesWaiter.waitNoMessages();
-    remainingDuration = getRemainingDuration(remainingDuration, startDuration);
-    startDuration = System.currentTimeMillis();
-    boolean isAwaited = publisherStub.awaitTermination(remainingDuration, TimeUnit.MILLISECONDS);
+    long remainingDuration = getRemainingDuration(startDuration, totalDurationMs);
+    boolean isAwaited =
+        remainingDuration < totalDurationMs
+            ? publisherStub.awaitTermination(remainingDuration, TimeUnit.MILLISECONDS)
+            : false;
     if (isAwaited) {
       for (AutoCloseable closeable : closeables) {
         ExecutorAsBackgroundResource executorAsBackgroundResource =
             (ExecutorAsBackgroundResource) closeable;
-        remainingDuration = getRemainingDuration(remainingDuration, startDuration);
-        startDuration = System.currentTimeMillis();
+        remainingDuration = getRemainingDuration(startDuration, totalDurationMs);
+        System.out.println(remainingDuration);
         isAwaited =
-            executorAsBackgroundResource.awaitTermination(remainingDuration, TimeUnit.MILLISECONDS);
+            remainingDuration < totalDurationMs
+                ? executorAsBackgroundResource.awaitTermination(
+                    getRemainingDuration(startDuration, totalDurationMs), TimeUnit.MILLISECONDS)
+                : false;
         if (!isAwaited) {
           return false;
         }
@@ -434,8 +439,8 @@ public class Publisher {
     return true;
   }
 
-  private long getRemainingDuration(long remainingDuration, long startDuration) {
-    return remainingDuration - (System.currentTimeMillis() - startDuration);
+  private long getRemainingDuration(long startDuration, long totalDurationMs) {
+    return totalDurationMs - (System.currentTimeMillis() - startDuration);
   }
 
   private boolean hasBatchingBytes() {
