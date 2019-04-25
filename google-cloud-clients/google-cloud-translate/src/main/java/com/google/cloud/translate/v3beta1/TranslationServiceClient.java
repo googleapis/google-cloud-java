@@ -114,24 +114,12 @@ public class TranslationServiceClient implements BackgroundResource {
   private final TranslationServiceStub stub;
   private final OperationsClient operationsClient;
 
-  private static final PathTemplate LOCATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
-
   private static final PathTemplate GLOSSARY_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/glossaries/{glossary}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String formatLocationName(String project, String location) {
-    return LOCATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location);
-  }
+  private static final PathTemplate LOCATION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
 
   /**
    * Formats a string containing the fully-qualified path to represent a glossary resource.
@@ -147,23 +135,15 @@ public class TranslationServiceClient implements BackgroundResource {
   }
 
   /**
-   * Parses the project from the given fully-qualified path which represents a location resource.
+   * Formats a string containing the fully-qualified path to represent a location resource.
    *
    * @deprecated Use the {@link LocationName} class instead.
    */
   @Deprecated
-  public static final String parseProjectFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
+  public static final String formatLocationName(String project, String location) {
+    return LOCATION_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "location", location);
   }
 
   /**
@@ -194,6 +174,26 @@ public class TranslationServiceClient implements BackgroundResource {
   @Deprecated
   public static final String parseGlossaryFromGlossaryName(String glossaryName) {
     return GLOSSARY_PATH_TEMPLATE.parse(glossaryName).get("glossary");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
+   */
+  @Deprecated
+  public static final String parseProjectFromLocationName(String locationName) {
+    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
+  }
+
+  /**
+   * Parses the location from the given fully-qualified path which represents a location resource.
+   *
+   * @deprecated Use the {@link LocationName} class instead.
+   */
+  @Deprecated
+  public static final String parseLocationFromLocationName(String locationName) {
+    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
   }
 
   /** Constructs an instance of TranslationServiceClient with default settings. */

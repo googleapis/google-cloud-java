@@ -20,11 +20,11 @@ public class CompanyNames {
   private CompanyNames() {}
 
   public static CompanyName parse(String resourceNameString) {
-    if (CompanyOldName.isParsableFrom(resourceNameString)) {
-      return CompanyOldName.parse(resourceNameString);
+    if (CompanyWithTenantName.isParsableFrom(resourceNameString)) {
+      return CompanyWithTenantName.parse(resourceNameString);
     }
-    if (CompanyNewName.isParsableFrom(resourceNameString)) {
-      return CompanyNewName.parse(resourceNameString);
+    if (CompanyWithoutTenantName.isParsableFrom(resourceNameString)) {
+      return CompanyWithoutTenantName.parse(resourceNameString);
     }
     return UntypedCompanyName.parse(resourceNameString);
   }

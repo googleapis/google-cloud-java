@@ -8,9 +8,8 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * A resource that represents the profile for a job candidate (also referred to
- * as a "single-source profile"). A profile belongs to a
- * [Company][google.cloud.talent.v4beta1.Company], which is the
- * company/organization that owns the profile.
+ * as a "single-source profile"). A profile belongs to a [Company][google.cloud.talent.v4beta1.Company], which is
+ * the company/organization that owns the profile.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.Profile}
@@ -661,21 +660,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The cluster id of the profile to associate with other profile(s) for the
    * same candidate.
-   * A random UUID is assigned if
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-   * ensure global uniqueness, customized
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-   * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-   * must be at least one other profile with the same system generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-   * error is thrown.
+   * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+   * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+   * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
    * This is used to link multiple profiles to the same candidate. For example,
    * a client has a candidate with two profiles, where one was created recently
    * and the other one was created 5 years ago. These two profiles may be very
    * different. The clients can create the first profile and get a generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-   * when the second profile is created, indicating these two profiles are
-   * referring to the same candidate.
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+   * indicating these two profiles are referring to the same candidate.
    * </pre>
    *
    * <code>string group_id = 5;</code>
@@ -698,21 +692,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The cluster id of the profile to associate with other profile(s) for the
    * same candidate.
-   * A random UUID is assigned if
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-   * ensure global uniqueness, customized
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-   * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-   * must be at least one other profile with the same system generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-   * error is thrown.
+   * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+   * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+   * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
    * This is used to link multiple profiles to the same candidate. For example,
    * a client has a candidate with two profiles, where one was created recently
    * and the other one was created 5 years ago. These two profiles may be very
    * different. The clients can create the first profile and get a generated
-   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-   * when the second profile is created, indicating these two profiles are
-   * referring to the same candidate.
+   * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+   * indicating these two profiles are referring to the same candidate.
    * </pre>
    *
    * <code>string group_id = 5;</code>
@@ -865,20 +854,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * The profile contents in HR-XML format.
    * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
    * information about Human Resources XML.
-   * Users can create a profile with only
-   * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-   * example, the API parses the
-   * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-   * creates a profile with all structured fields populated, for example.
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-   * error is thrown if the
-   * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-   * parsed.
-   * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-   * provided during profile creation or update, any other structured data
-   * provided in the profile is ignored. The API populates these fields by
-   * parsing the HR-XML.
+   * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+   * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+   * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+   * can't be parsed.
+   * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+   * any other structured data provided in the profile is ignored. The
+   * API populates these fields by parsing the HR-XML.
    * </pre>
    *
    * <code>string resume_hrxml = 10;</code>
@@ -902,20 +885,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * The profile contents in HR-XML format.
    * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
    * information about Human Resources XML.
-   * Users can create a profile with only
-   * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-   * example, the API parses the
-   * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-   * creates a profile with all structured fields populated, for example.
-   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-   * error is thrown if the
-   * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-   * parsed.
-   * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-   * provided during profile creation or update, any other structured data
-   * provided in the profile is ignored. The API populates these fields by
-   * parsing the HR-XML.
+   * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+   * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+   * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+   * can't be parsed.
+   * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+   * any other structured data provided in the profile is ignored. The
+   * API populates these fields by parsing the HR-XML.
    * </pre>
    *
    * <code>string resume_hrxml = 10;</code>
@@ -1290,12 +1267,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
@@ -1310,12 +1283,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
@@ -1330,12 +1299,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
@@ -1349,12 +1314,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
@@ -1368,12 +1329,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional.
-   * Available contact information besides
-   * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-   * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-   * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-   * example, Hang-out, Skype.
+   * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+   * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
@@ -1399,10 +1356,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -1424,10 +1379,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -1449,10 +1402,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -1473,10 +1424,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -1497,10 +1446,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * change is.
    * For example, only job title is changed from "software engineer" to "senior
    * software engineer".
-   * * Provide
-   * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-   * for the current employment if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -1524,10 +1471,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -1547,10 +1492,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -1571,10 +1514,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -1594,10 +1535,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -1617,10 +1556,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * * List each education type separately, no matter how minor the change is.
    * For example, the profile contains the education experience from the same
    * school but different degrees.
-   * * Provide
-   * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-   * for the current education if possible. If not, it's inferred from user
-   * inputs.
+   * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+   * possible. If not, it's inferred from user inputs.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -1713,8 +1650,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -1729,8 +1665,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -1746,8 +1681,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -1762,8 +1696,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -1778,8 +1711,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * The individual or collaborative activities which the candidate has
    * participated in, for example, open-source projects, class assignments that
-   * aren't listed in
-   * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+   * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -2139,8 +2071,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2177,8 +2108,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2207,8 +2137,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2242,8 +2171,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Optional.
    * A map of fields to hold both filterable and non-filterable custom profile
    * attributes that aren't covered by the provided structured fields. See
-   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-   * details.
+   * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
    * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
    * by default. These are filterable when the `filterable` flag is set to
@@ -2800,9 +2728,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A resource that represents the profile for a job candidate (also referred to
-   * as a "single-source profile"). A profile belongs to a
-   * [Company][google.cloud.talent.v4beta1.Company], which is the
-   * company/organization that owns the profile.
+   * as a "single-source profile"). A profile belongs to a [Company][google.cloud.talent.v4beta1.Company], which is
+   * the company/organization that owns the profile.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.Profile}
@@ -4112,21 +4039,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The cluster id of the profile to associate with other profile(s) for the
      * same candidate.
-     * A random UUID is assigned if
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-     * ensure global uniqueness, customized
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-     * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-     * must be at least one other profile with the same system generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-     * error is thrown.
+     * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+     * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+     * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
      * This is used to link multiple profiles to the same candidate. For example,
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
@@ -4149,21 +4071,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The cluster id of the profile to associate with other profile(s) for the
      * same candidate.
-     * A random UUID is assigned if
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-     * ensure global uniqueness, customized
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-     * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-     * must be at least one other profile with the same system generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-     * error is thrown.
+     * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+     * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+     * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
      * This is used to link multiple profiles to the same candidate. For example,
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
@@ -4186,21 +4103,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The cluster id of the profile to associate with other profile(s) for the
      * same candidate.
-     * A random UUID is assigned if
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-     * ensure global uniqueness, customized
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-     * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-     * must be at least one other profile with the same system generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-     * error is thrown.
+     * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+     * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+     * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
      * This is used to link multiple profiles to the same candidate. For example,
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
@@ -4221,21 +4133,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The cluster id of the profile to associate with other profile(s) for the
      * same candidate.
-     * A random UUID is assigned if
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-     * ensure global uniqueness, customized
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-     * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-     * must be at least one other profile with the same system generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-     * error is thrown.
+     * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+     * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+     * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
      * This is used to link multiple profiles to the same candidate. For example,
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
@@ -4253,21 +4160,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The cluster id of the profile to associate with other profile(s) for the
      * same candidate.
-     * A random UUID is assigned if
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To
-     * ensure global uniqueness, customized
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported.
-     * If [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there
-     * must be at least one other profile with the same system generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an
-     * error is thrown.
+     * A random UUID is assigned if [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't provided. To ensure
+     * global uniqueness, customized [group_id][google.cloud.talent.v4beta1.Profile.group_id] isn't supported. If
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id] is set, there must be at least one other profile with the
+     * same system generated [group_id][google.cloud.talent.v4beta1.Profile.group_id], otherwise an error is thrown.
      * This is used to link multiple profiles to the same candidate. For example,
      * a client has a candidate with two profiles, where one was created recently
      * and the other one was created 5 years ago. These two profiles may be very
      * different. The clients can create the first profile and get a generated
-     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it
-     * when the second profile is created, indicating these two profiles are
-     * referring to the same candidate.
+     * [group_id][google.cloud.talent.v4beta1.Profile.group_id], and assign it when the second profile is created,
+     * indicating these two profiles are referring to the same candidate.
      * </pre>
      *
      * <code>string group_id = 5;</code>
@@ -4852,20 +4754,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * The profile contents in HR-XML format.
      * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
-     * Users can create a profile with only
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-     * example, the API parses the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-     * creates a profile with all structured fields populated, for example.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-     * error is thrown if the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-     * parsed.
-     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-     * provided during profile creation or update, any other structured data
-     * provided in the profile is ignored. The API populates these fields by
-     * parsing the HR-XML.
+     * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+     * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+     * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+     * can't be parsed.
+     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+     * any other structured data provided in the profile is ignored. The
+     * API populates these fields by parsing the HR-XML.
      * </pre>
      *
      * <code>string resume_hrxml = 10;</code>
@@ -4889,20 +4785,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * The profile contents in HR-XML format.
      * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
-     * Users can create a profile with only
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-     * example, the API parses the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-     * creates a profile with all structured fields populated, for example.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-     * error is thrown if the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-     * parsed.
-     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-     * provided during profile creation or update, any other structured data
-     * provided in the profile is ignored. The API populates these fields by
-     * parsing the HR-XML.
+     * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+     * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+     * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+     * can't be parsed.
+     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+     * any other structured data provided in the profile is ignored. The
+     * API populates these fields by parsing the HR-XML.
      * </pre>
      *
      * <code>string resume_hrxml = 10;</code>
@@ -4926,20 +4816,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * The profile contents in HR-XML format.
      * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
-     * Users can create a profile with only
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-     * example, the API parses the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-     * creates a profile with all structured fields populated, for example.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-     * error is thrown if the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-     * parsed.
-     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-     * provided during profile creation or update, any other structured data
-     * provided in the profile is ignored. The API populates these fields by
-     * parsing the HR-XML.
+     * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+     * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+     * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+     * can't be parsed.
+     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+     * any other structured data provided in the profile is ignored. The
+     * API populates these fields by parsing the HR-XML.
      * </pre>
      *
      * <code>string resume_hrxml = 10;</code>
@@ -4961,20 +4845,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * The profile contents in HR-XML format.
      * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
-     * Users can create a profile with only
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-     * example, the API parses the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-     * creates a profile with all structured fields populated, for example.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-     * error is thrown if the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-     * parsed.
-     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-     * provided during profile creation or update, any other structured data
-     * provided in the profile is ignored. The API populates these fields by
-     * parsing the HR-XML.
+     * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+     * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+     * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+     * can't be parsed.
+     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+     * any other structured data provided in the profile is ignored. The
+     * API populates these fields by parsing the HR-XML.
      * </pre>
      *
      * <code>string resume_hrxml = 10;</code>
@@ -4993,20 +4871,14 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * The profile contents in HR-XML format.
      * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
-     * Users can create a profile with only
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For
-     * example, the API parses the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and
-     * creates a profile with all structured fields populated, for example.
-     * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], etc. An
-     * error is thrown if the
-     * [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] can't be
-     * parsed.
-     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is
-     * provided during profile creation or update, any other structured data
-     * provided in the profile is ignored. The API populates these fields by
-     * parsing the HR-XML.
+     * Users can create a profile with only [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] field. For example,
+     * the API parses the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] and creates a profile with all
+     * structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+     * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml]
+     * can't be parsed.
+     * If the [resume_hrxml][google.cloud.talent.v4beta1.Profile.resume_hrxml] is provided during profile creation or update,
+     * any other structured data provided in the profile is ignored. The
+     * API populates these fields by parsing the HR-XML.
      * </pre>
      *
      * <code>string resume_hrxml = 10;</code>
@@ -6909,12 +6781,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -6934,12 +6802,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -6958,12 +6822,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -6983,12 +6843,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7014,12 +6870,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7042,12 +6894,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7073,12 +6921,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7104,12 +6948,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7132,12 +6972,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7160,12 +6996,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7189,12 +7021,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7216,12 +7044,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7243,12 +7067,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7264,12 +7084,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7289,12 +7105,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7314,12 +7126,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7336,12 +7144,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7359,12 +7163,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Available contact information besides
-     * [addresses][google.cloud.talent.v4beta1.Profile.addresses],
-     * [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
-     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and
-     * [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For
-     * example, Hang-out, Skype.
+     * Available contact information besides [addresses][google.cloud.talent.v4beta1.Profile.addresses], [email_addresses][google.cloud.talent.v4beta1.Profile.email_addresses],
+     * [phone_numbers][google.cloud.talent.v4beta1.Profile.phone_numbers] and [personal_uris][google.cloud.talent.v4beta1.Profile.personal_uris]. For example, Hang-out, Skype.
      * </pre>
      *
      * <code>
@@ -7427,10 +7227,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7456,10 +7254,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7484,10 +7280,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7512,10 +7306,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7547,10 +7339,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7579,10 +7369,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7613,10 +7401,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7648,10 +7434,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7680,10 +7464,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7712,10 +7494,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7744,10 +7524,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7775,10 +7553,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7806,10 +7582,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7831,10 +7605,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7860,10 +7632,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7889,10 +7659,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7914,10 +7682,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -7940,10 +7706,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * change is.
      * For example, only job title is changed from "software engineer" to "senior
      * software engineer".
-     * * Provide
-     * [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current]
-     * for the current employment if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EmploymentRecord.is_current][google.cloud.talent.v4beta1.EmploymentRecord.is_current] for the current employment if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
@@ -8003,10 +7767,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8031,10 +7793,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8058,10 +7818,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8085,10 +7843,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8119,10 +7875,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8150,10 +7904,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8183,10 +7935,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8217,10 +7967,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8248,10 +7996,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8279,10 +8025,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8310,10 +8054,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8340,10 +8082,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8370,10 +8110,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8394,10 +8132,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8422,10 +8158,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8450,10 +8184,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8474,10 +8206,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8499,10 +8229,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * * List each education type separately, no matter how minor the change is.
      * For example, the profile contains the education experience from the same
      * school but different degrees.
-     * * Provide
-     * [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current]
-     * for the current education if possible. If not, it's inferred from user
-     * inputs.
+     * * Provide [EducationRecord.is_current][google.cloud.talent.v4beta1.EducationRecord.is_current] for the current education if
+     * possible. If not, it's inferred from user inputs.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
@@ -8940,8 +8668,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -8960,8 +8687,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -8980,8 +8706,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9000,8 +8725,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9026,8 +8750,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9050,8 +8773,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9076,8 +8798,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9102,8 +8823,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9125,8 +8845,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9149,8 +8868,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9173,8 +8891,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9196,8 +8913,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9219,8 +8935,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9235,8 +8950,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9255,8 +8969,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9276,8 +8989,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9293,8 +9005,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -9310,8 +9021,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * The individual or collaborative activities which the candidate has
      * participated in, for example, open-source projects, class assignments that
-     * aren't listed in
-     * [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
+     * aren't listed in [employment_records][google.cloud.talent.v4beta1.Profile.employment_records].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
@@ -10777,8 +10487,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -10815,8 +10524,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -10845,8 +10553,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -10880,8 +10587,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -10923,8 +10629,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -10962,8 +10667,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to
@@ -10999,8 +10703,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Optional.
      * A map of fields to hold both filterable and non-filterable custom profile
      * attributes that aren't covered by the provided structured fields. See
-     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
-     * details.
+     * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
      * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
      * by default. These are filterable when the `filterable` flag is set to

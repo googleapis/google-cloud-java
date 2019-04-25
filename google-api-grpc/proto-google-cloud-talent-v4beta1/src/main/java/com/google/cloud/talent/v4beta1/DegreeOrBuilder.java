@@ -37,7 +37,7 @@ public interface DegreeOrBuilder
    * <pre>
    * Optional.
    * Full Degree name.
-   * For example, "B.S.", "Master of Arts", etc.
+   * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -50,7 +50,7 @@ public interface DegreeOrBuilder
    * <pre>
    * Optional.
    * Full Degree name.
-   * For example, "B.S.", "Master of Arts", etc.
+   * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
    *

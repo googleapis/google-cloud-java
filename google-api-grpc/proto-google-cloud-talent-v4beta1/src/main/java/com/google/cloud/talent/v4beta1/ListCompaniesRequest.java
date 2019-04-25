@@ -233,9 +233,8 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    * Optional.
    * Set to true if the companies requested must have open jobs.
    * Defaults to false.
-   * If true, at most
-   * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
-   * companies are fetched, among which only those with open jobs are returned.
+   * If true, at most [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of companies are fetched, among which
+   * only those with open jobs are returned.
    * </pre>
    *
    * <code>bool require_open_jobs = 4;</code>
@@ -884,9 +883,8 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * Optional.
      * Set to true if the companies requested must have open jobs.
      * Defaults to false.
-     * If true, at most
-     * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
-     * companies are fetched, among which only those with open jobs are returned.
+     * If true, at most [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of companies are fetched, among which
+     * only those with open jobs are returned.
      * </pre>
      *
      * <code>bool require_open_jobs = 4;</code>
@@ -901,9 +899,8 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * Optional.
      * Set to true if the companies requested must have open jobs.
      * Defaults to false.
-     * If true, at most
-     * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
-     * companies are fetched, among which only those with open jobs are returned.
+     * If true, at most [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of companies are fetched, among which
+     * only those with open jobs are returned.
      * </pre>
      *
      * <code>bool require_open_jobs = 4;</code>
@@ -921,9 +918,8 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * Optional.
      * Set to true if the companies requested must have open jobs.
      * Defaults to false.
-     * If true, at most
-     * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
-     * companies are fetched, among which only those with open jobs are returned.
+     * If true, at most [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of companies are fetched, among which
+     * only those with open jobs are returned.
      * </pre>
      *
      * <code>bool require_open_jobs = 4;</code>

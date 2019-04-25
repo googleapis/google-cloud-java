@@ -189,6 +189,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * * certifications
    * * recruitingNotes
    * * customAttributes
+   * * groupId
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -226,6 +227,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * * certifications
    * * recruitingNotes
    * * customAttributes
+   * * groupId
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -263,6 +265,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * * certifications
    * * recruitingNotes
    * * customAttributes
+   * * groupId
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -855,6 +858,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -892,6 +896,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -935,6 +940,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -982,6 +988,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1026,6 +1033,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1075,6 +1083,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1120,6 +1129,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1159,6 +1169,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1202,6 +1213,7 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * certifications
      * * recruitingNotes
      * * customAttributes
+     * * groupId
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -555,8 +555,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required.
      * Controls over how important the score of
-     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-     * gets applied to job's final ranking position.
+     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+     * ranking position.
      * An error is thrown if not specified.
      * </pre>
      *
@@ -571,8 +571,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required.
      * Controls over how important the score of
-     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-     * gets applied to job's final ranking position.
+     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+     * ranking position.
      * An error is thrown if not specified.
      * </pre>
      *
@@ -593,10 +593,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and relevance score is used to determine job's final ranking position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
-     * the operator is either a numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-     * key, integer/double value or an expression that can be evaluated to a
-     * number.
+     * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+     * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 100 characters in length.
      * Sample ranking expression
@@ -616,10 +614,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and relevance score is used to determine job's final ranking position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
-     * the operator is either a numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-     * key, integer/double value or an expression that can be evaluated to a
-     * number.
+     * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+     * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 100 characters in length.
      * Sample ranking expression
@@ -635,8 +631,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Input only.
-   * Custom ranking information for
-   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * Custom ranking information for [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo}
@@ -732,8 +727,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The importance level for
-     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression].
+     * The importance level for [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression].
      * </pre>
      *
      * Protobuf enum {@code
@@ -1000,8 +994,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required.
      * Controls over how important the score of
-     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-     * gets applied to job's final ranking position.
+     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+     * ranking position.
      * An error is thrown if not specified.
      * </pre>
      *
@@ -1018,8 +1012,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required.
      * Controls over how important the score of
-     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-     * gets applied to job's final ranking position.
+     * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+     * ranking position.
      * An error is thrown if not specified.
      * </pre>
      *
@@ -1051,10 +1045,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and relevance score is used to determine job's final ranking position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
-     * the operator is either a numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-     * key, integer/double value or an expression that can be evaluated to a
-     * number.
+     * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+     * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 100 characters in length.
      * Sample ranking expression
@@ -1084,10 +1076,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and relevance score is used to determine job's final ranking position.
      * The syntax for this expression is a subset of Google SQL syntax.
      * Supported operators are: +, -, *, /, where the left and right side of
-     * the operator is either a numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-     * key, integer/double value or an expression that can be evaluated to a
-     * number.
+     * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+     * integer/double value or an expression that can be evaluated to a number.
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 100 characters in length.
      * Sample ranking expression
@@ -1290,8 +1280,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only.
-     * Custom ranking information for
-     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Custom ranking information for [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo}
@@ -1469,8 +1458,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Required.
        * Controls over how important the score of
-       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-       * gets applied to job's final ranking position.
+       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+       * ranking position.
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1487,8 +1476,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Required.
        * Controls over how important the score of
-       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-       * gets applied to job's final ranking position.
+       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+       * ranking position.
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1507,8 +1496,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Required.
        * Controls over how important the score of
-       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-       * gets applied to job's final ranking position.
+       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+       * ranking position.
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1533,8 +1522,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Required.
        * Controls over how important the score of
-       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-       * gets applied to job's final ranking position.
+       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+       * ranking position.
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1559,8 +1548,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Required.
        * Controls over how important the score of
-       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression]
-       * gets applied to job's final ranking position.
+       * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ranking_expression] gets applied to job's final
+       * ranking position.
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1586,10 +1575,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * and relevance score is used to determine job's final ranking position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
-       * the operator is either a numeric
-       * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-       * key, integer/double value or an expression that can be evaluated to a
-       * number.
+       * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+       * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 100 characters in length.
        * Sample ranking expression
@@ -1619,10 +1606,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * and relevance score is used to determine job's final ranking position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
-       * the operator is either a numeric
-       * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-       * key, integer/double value or an expression that can be evaluated to a
-       * number.
+       * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+       * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 100 characters in length.
        * Sample ranking expression
@@ -1652,10 +1637,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * and relevance score is used to determine job's final ranking position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
-       * the operator is either a numeric
-       * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-       * key, integer/double value or an expression that can be evaluated to a
-       * number.
+       * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+       * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 100 characters in length.
        * Sample ranking expression
@@ -1683,10 +1666,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * and relevance score is used to determine job's final ranking position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
-       * the operator is either a numeric
-       * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-       * key, integer/double value or an expression that can be evaluated to a
-       * number.
+       * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+       * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 100 characters in length.
        * Sample ranking expression
@@ -1711,10 +1692,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * and relevance score is used to determine job's final ranking position.
        * The syntax for this expression is a subset of Google SQL syntax.
        * Supported operators are: +, -, *, /, where the left and right side of
-       * the operator is either a numeric
-       * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
-       * key, integer/double value or an expression that can be evaluated to a
-       * number.
+       * the operator is either a numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes] key,
+       * integer/double value or an expression that can be evaluated to a number.
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 100 characters in length.
        * Sample ranking expression
@@ -1851,8 +1830,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional.
    * Mode of a search.
-   * Defaults to
-   * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+   * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -1866,8 +1844,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional.
    * Mode of a search.
-   * Defaults to
-   * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+   * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -2046,23 +2023,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * bucket(1, MAX, "positive number") or bucket(1, 10).
    * Job histogram facets:
    * * company_id: histogram by [Job.distributor_company_id][].
-   * * company_display_name: histogram by
-   * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-   * * employment_type: histogram by
-   * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-   * for example, "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by
-   * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-   * "SMALL", "MEDIUM", "BIG".
+   * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+   * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+   * "FULL_TIME", "PART_TIME".
+   * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+   * "MEDIUM", "BIG".
    * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
    * Must specify list of numeric buckets in spec.
    * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
    * Must specify list of numeric buckets in spec.
    * * degree_type: histogram by the [Job.degree_type][], for example,
    * "Bachelors", "Masters".
-   * * job_level: histogram by the
-   * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-   * "Entry Level".
+   * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+   * Level".
    * * country: histogram by the country code of jobs, for example, "US", "FR".
    * * admin1: histogram by the admin1 code of jobs, which is a global
    * placeholder referring to the state, province, or the particular term a
@@ -2076,14 +2049,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
    * of a city center can change, customers may need to refresh them
    * periodically.
-   * * locale: histogram by the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en-US", "fr-FR".
-   * * language: histogram by the language subtag of the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en", "fr".
-   * * category: histogram by the
-   * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+   * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+   * "fr-FR".
+   * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+   * for example, "en", "fr".
+   * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
    * "COMPUTER_AND_IT", "HEALTHCARE".
    * * base_compensation_unit: histogram by the [CompensationUnit][] of base
    * salary, for example, "WEEKLY", "MONTHLY".
@@ -2093,12 +2063,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Must specify list of numeric buckets to group results by.
    * * annualized_total_compensation: histogram by the total annualized salary.
    * Must specify list of numeric buckets to group results by.
-   * * string_custom_attribute: histogram by string
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * string_custom_attribute["key1"].
-   * * numeric_custom_attribute: histogram by numeric
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    * group results by.
@@ -2144,23 +2112,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * bucket(1, MAX, "positive number") or bucket(1, 10).
    * Job histogram facets:
    * * company_id: histogram by [Job.distributor_company_id][].
-   * * company_display_name: histogram by
-   * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-   * * employment_type: histogram by
-   * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-   * for example, "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by
-   * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-   * "SMALL", "MEDIUM", "BIG".
+   * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+   * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+   * "FULL_TIME", "PART_TIME".
+   * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+   * "MEDIUM", "BIG".
    * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
    * Must specify list of numeric buckets in spec.
    * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
    * Must specify list of numeric buckets in spec.
    * * degree_type: histogram by the [Job.degree_type][], for example,
    * "Bachelors", "Masters".
-   * * job_level: histogram by the
-   * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-   * "Entry Level".
+   * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+   * Level".
    * * country: histogram by the country code of jobs, for example, "US", "FR".
    * * admin1: histogram by the admin1 code of jobs, which is a global
    * placeholder referring to the state, province, or the particular term a
@@ -2174,14 +2138,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
    * of a city center can change, customers may need to refresh them
    * periodically.
-   * * locale: histogram by the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en-US", "fr-FR".
-   * * language: histogram by the language subtag of the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en", "fr".
-   * * category: histogram by the
-   * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+   * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+   * "fr-FR".
+   * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+   * for example, "en", "fr".
+   * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
    * "COMPUTER_AND_IT", "HEALTHCARE".
    * * base_compensation_unit: histogram by the [CompensationUnit][] of base
    * salary, for example, "WEEKLY", "MONTHLY".
@@ -2191,12 +2152,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Must specify list of numeric buckets to group results by.
    * * annualized_total_compensation: histogram by the total annualized salary.
    * Must specify list of numeric buckets to group results by.
-   * * string_custom_attribute: histogram by string
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * string_custom_attribute["key1"].
-   * * numeric_custom_attribute: histogram by numeric
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    * group results by.
@@ -2243,23 +2202,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * bucket(1, MAX, "positive number") or bucket(1, 10).
    * Job histogram facets:
    * * company_id: histogram by [Job.distributor_company_id][].
-   * * company_display_name: histogram by
-   * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-   * * employment_type: histogram by
-   * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-   * for example, "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by
-   * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-   * "SMALL", "MEDIUM", "BIG".
+   * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+   * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+   * "FULL_TIME", "PART_TIME".
+   * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+   * "MEDIUM", "BIG".
    * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
    * Must specify list of numeric buckets in spec.
    * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
    * Must specify list of numeric buckets in spec.
    * * degree_type: histogram by the [Job.degree_type][], for example,
    * "Bachelors", "Masters".
-   * * job_level: histogram by the
-   * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-   * "Entry Level".
+   * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+   * Level".
    * * country: histogram by the country code of jobs, for example, "US", "FR".
    * * admin1: histogram by the admin1 code of jobs, which is a global
    * placeholder referring to the state, province, or the particular term a
@@ -2273,14 +2228,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
    * of a city center can change, customers may need to refresh them
    * periodically.
-   * * locale: histogram by the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en-US", "fr-FR".
-   * * language: histogram by the language subtag of the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en", "fr".
-   * * category: histogram by the
-   * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+   * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+   * "fr-FR".
+   * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+   * for example, "en", "fr".
+   * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
    * "COMPUTER_AND_IT", "HEALTHCARE".
    * * base_compensation_unit: histogram by the [CompensationUnit][] of base
    * salary, for example, "WEEKLY", "MONTHLY".
@@ -2290,12 +2242,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Must specify list of numeric buckets to group results by.
    * * annualized_total_compensation: histogram by the total annualized salary.
    * Must specify list of numeric buckets to group results by.
-   * * string_custom_attribute: histogram by string
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * string_custom_attribute["key1"].
-   * * numeric_custom_attribute: histogram by numeric
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    * group results by.
@@ -2341,23 +2291,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * bucket(1, MAX, "positive number") or bucket(1, 10).
    * Job histogram facets:
    * * company_id: histogram by [Job.distributor_company_id][].
-   * * company_display_name: histogram by
-   * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-   * * employment_type: histogram by
-   * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-   * for example, "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by
-   * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-   * "SMALL", "MEDIUM", "BIG".
+   * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+   * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+   * "FULL_TIME", "PART_TIME".
+   * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+   * "MEDIUM", "BIG".
    * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
    * Must specify list of numeric buckets in spec.
    * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
    * Must specify list of numeric buckets in spec.
    * * degree_type: histogram by the [Job.degree_type][], for example,
    * "Bachelors", "Masters".
-   * * job_level: histogram by the
-   * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-   * "Entry Level".
+   * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+   * Level".
    * * country: histogram by the country code of jobs, for example, "US", "FR".
    * * admin1: histogram by the admin1 code of jobs, which is a global
    * placeholder referring to the state, province, or the particular term a
@@ -2371,14 +2317,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
    * of a city center can change, customers may need to refresh them
    * periodically.
-   * * locale: histogram by the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en-US", "fr-FR".
-   * * language: histogram by the language subtag of the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en", "fr".
-   * * category: histogram by the
-   * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+   * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+   * "fr-FR".
+   * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+   * for example, "en", "fr".
+   * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
    * "COMPUTER_AND_IT", "HEALTHCARE".
    * * base_compensation_unit: histogram by the [CompensationUnit][] of base
    * salary, for example, "WEEKLY", "MONTHLY".
@@ -2388,12 +2331,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Must specify list of numeric buckets to group results by.
    * * annualized_total_compensation: histogram by the total annualized salary.
    * Must specify list of numeric buckets to group results by.
-   * * string_custom_attribute: histogram by string
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * string_custom_attribute["key1"].
-   * * numeric_custom_attribute: histogram by numeric
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    * group results by.
@@ -2439,23 +2380,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * bucket(1, MAX, "positive number") or bucket(1, 10).
    * Job histogram facets:
    * * company_id: histogram by [Job.distributor_company_id][].
-   * * company_display_name: histogram by
-   * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-   * * employment_type: histogram by
-   * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-   * for example, "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by
-   * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-   * "SMALL", "MEDIUM", "BIG".
+   * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+   * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+   * "FULL_TIME", "PART_TIME".
+   * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+   * "MEDIUM", "BIG".
    * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
    * Must specify list of numeric buckets in spec.
    * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
    * Must specify list of numeric buckets in spec.
    * * degree_type: histogram by the [Job.degree_type][], for example,
    * "Bachelors", "Masters".
-   * * job_level: histogram by the
-   * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-   * "Entry Level".
+   * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+   * Level".
    * * country: histogram by the country code of jobs, for example, "US", "FR".
    * * admin1: histogram by the admin1 code of jobs, which is a global
    * placeholder referring to the state, province, or the particular term a
@@ -2469,14 +2406,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
    * of a city center can change, customers may need to refresh them
    * periodically.
-   * * locale: histogram by the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en-US", "fr-FR".
-   * * language: histogram by the language subtag of the
-   * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-   * example, "en", "fr".
-   * * category: histogram by the
-   * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+   * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+   * "fr-FR".
+   * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+   * for example, "en", "fr".
+   * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
    * "COMPUTER_AND_IT", "HEALTHCARE".
    * * base_compensation_unit: histogram by the [CompensationUnit][] of base
    * salary, for example, "WEEKLY", "MONTHLY".
@@ -2486,12 +2420,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Must specify list of numeric buckets to group results by.
    * * annualized_total_compensation: histogram by the total annualized salary.
    * Must specify list of numeric buckets to group results by.
-   * * string_custom_attribute: histogram by string
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * string_custom_attribute["key1"].
-   * * numeric_custom_attribute: histogram by numeric
-   * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+   * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
    * Values can be accessed via square bracket notations like
    * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    * group results by.
@@ -2554,9 +2486,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Optional.
    * An integer that specifies the current offset (that is, starting result
    * location, amongst the jobs deemed by the API as relevant) in search
-   * results. This field is only considered if
-   * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
-   * unset.
+   * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
    * For example, 0 means to  return results starting from the first matching
    * job, and 10 means to return from the 11th job. This can be used for
    * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -2595,9 +2525,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional.
    * The token specifying the current offset within
-   * search results. See
-   * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-   * for an explanation of how to obtain the next set of query results.
+   * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+   * an explanation of how to obtain the next set of query results.
    * </pre>
    *
    * <code>string page_token = 11;</code>
@@ -2619,9 +2548,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional.
    * The token specifying the current offset within
-   * search results. See
-   * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-   * for an explanation of how to obtain the next set of query results.
+   * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+   * an explanation of how to obtain the next set of query results.
    * </pre>
    *
    * <code>string page_token = 11;</code>
@@ -2651,31 +2579,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * * "relevance desc": By relevance descending, as determined by the API
    * algorithms. Relevance thresholding of query results is only available
    * with this ordering.
-   * * "posting`_`publish`_`time desc": By
-   * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
    * descending.
-   * * "posting`_`update`_`time desc": By
-   * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+   * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
    * descending.
    * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-   * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-   * descending.
+   * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
    * * "annualized`_`base`_`compensation": By job's
-   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-   * ascending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "annualized`_`base`_`compensation desc": By job's
-   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-   * descending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "annualized`_`total`_`compensation": By job's
-   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-   * ascending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "annualized`_`total`_`compensation desc": By job's
-   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-   * descending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "custom`_`ranking desc": By the relevance score adjusted to the
    * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
    * factor assigned by
@@ -2720,31 +2645,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * * "relevance desc": By relevance descending, as determined by the API
    * algorithms. Relevance thresholding of query results is only available
    * with this ordering.
-   * * "posting`_`publish`_`time desc": By
-   * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
    * descending.
-   * * "posting`_`update`_`time desc": By
-   * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+   * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
    * descending.
    * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-   * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-   * descending.
+   * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
    * * "annualized`_`base`_`compensation": By job's
-   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-   * ascending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "annualized`_`base`_`compensation desc": By job's
-   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-   * descending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "annualized`_`total`_`compensation": By job's
-   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-   * ascending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "annualized`_`total`_`compensation desc": By job's
-   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-   * descending. Jobs whose annualized base compensation is unspecified are put
-   * at the end of search results.
+   * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+   * whose annualized base compensation is unspecified are put at the end of
+   * search results.
    * * "custom`_`ranking desc": By the relevance score adjusted to the
    * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
    * factor assigned by
@@ -2792,9 +2714,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
-   * Defaults to
-   * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-   * if no value is specified.
+   * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+   * is specified.
    * </pre>
    *
    * <code>
@@ -2815,9 +2736,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
-   * Defaults to
-   * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-   * if no value is specified.
+   * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+   * is specified.
    * </pre>
    *
    * <code>
@@ -2898,16 +2818,13 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional.
    * Controls whether to disable exact keyword match on [Job.job_title][],
-   * [Job.description][google.cloud.talent.v4beta1.Job.description],
-   * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
-   * [Job.locations][0],
-   * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When
-   * disable keyword match is turned off, a keyword match returns jobs that do
-   * not match given category filters when there are matching keywords. For
-   * example, for the query "program manager," a result is returned even if the
-   * job posting has the title "software developer," which doesn't fall into
-   * "program manager" ontology, but does have "program manager" appearing in
-   * its description.
+   * [Job.description][google.cloud.talent.v4beta1.Job.description], [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name], [Job.locations][0],
+   * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When disable keyword match is turned off, a
+   * keyword match returns jobs that do not match given category filters when
+   * there are matching keywords. For example, for the query "program manager,"
+   * a result is returned even if the job posting has the title "software
+   * developer," which doesn't fall into "program manager" ontology, but does
+   * have "program manager" appearing in its description.
    * For queries like "cloud" that don't contain title or
    * location specific ontology, jobs with "cloud" keyword matches are returned
    * regardless of this flag's value.
@@ -3675,8 +3592,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Mode of a search.
-     * Defaults to
-     * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+     * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -3690,8 +3606,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Mode of a search.
-     * Defaults to
-     * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+     * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -3707,8 +3622,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Mode of a search.
-     * Defaults to
-     * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+     * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -3727,8 +3641,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Mode of a search.
-     * Defaults to
-     * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+     * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -3749,8 +3662,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Mode of a search.
-     * Defaults to
-     * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
+     * Defaults to [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode search_mode = 2;</code>
@@ -4328,23 +4240,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4358,14 +4266,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -4375,12 +4280,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -4431,23 +4334,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4461,14 +4360,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -4478,12 +4374,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -4533,23 +4427,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4563,14 +4453,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -4580,12 +4467,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -4635,23 +4520,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4665,14 +4546,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -4682,12 +4560,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -4744,23 +4620,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4774,14 +4646,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -4791,12 +4660,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -4850,23 +4717,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4880,14 +4743,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -4897,12 +4757,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -4958,23 +4816,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -4988,14 +4842,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5005,12 +4856,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5067,23 +4916,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5097,14 +4942,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5114,12 +4956,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5173,23 +5013,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5203,14 +5039,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5220,12 +5053,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5279,23 +5110,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5309,14 +5136,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5326,12 +5150,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5385,23 +5207,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5415,14 +5233,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5432,12 +5247,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5490,23 +5303,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5520,14 +5329,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5537,12 +5343,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5595,23 +5399,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5625,14 +5425,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5642,12 +5439,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5694,23 +5489,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5724,14 +5515,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5741,12 +5529,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5797,23 +5583,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5827,14 +5609,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5844,12 +5623,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5900,23 +5677,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -5930,14 +5703,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -5947,12 +5717,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -5999,23 +5767,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -6029,14 +5793,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -6046,12 +5807,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -6099,23 +5858,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * bucket(1, MAX, "positive number") or bucket(1, 10).
      * Job histogram facets:
      * * company_id: histogram by [Job.distributor_company_id][].
-     * * company_display_name: histogram by
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
-     * * employment_type: histogram by
-     * [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types],
-     * for example, "FULL_TIME", "PART_TIME".
-     * * company_size: histogram by
-     * [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example,
-     * "SMALL", "MEDIUM", "BIG".
+     * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
+     * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4beta1.Job.employment_types], for example,
+     * "FULL_TIME", "PART_TIME".
+     * * company_size: histogram by [CompanySize][google.cloud.talent.v4beta1.CompanySize], for example, "SMALL",
+     * "MEDIUM", "BIG".
      * * publish_time_in_month: histogram by the [Job.publish_time][] in months.
      * Must specify list of numeric buckets in spec.
      * * publish_time_in_year: histogram by the [Job.publish_time][] in years.
      * Must specify list of numeric buckets in spec.
      * * degree_type: histogram by the [Job.degree_type][], for example,
      * "Bachelors", "Masters".
-     * * job_level: histogram by the
-     * [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example,
-     * "Entry Level".
+     * * job_level: histogram by the [Job.job_level][google.cloud.talent.v4beta1.Job.job_level], for example, "Entry
+     * Level".
      * * country: histogram by the country code of jobs, for example, "US", "FR".
      * * admin1: histogram by the admin1 code of jobs, which is a global
      * placeholder referring to the state, province, or the particular term a
@@ -6129,14 +5884,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * and longitude), for example, 37.4038522,-122.0987765. Since the coordinates
      * of a city center can change, customers may need to refresh them
      * periodically.
-     * * locale: histogram by the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en-US", "fr-FR".
-     * * language: histogram by the language subtag of the
-     * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for
-     * example, "en", "fr".
-     * * category: histogram by the
-     * [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
+     * * locale: histogram by the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code], for example, "en-US",
+     * "fr-FR".
+     * * language: histogram by the language subtag of the [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
+     * for example, "en", "fr".
+     * * category: histogram by the [JobCategory][google.cloud.talent.v4beta1.JobCategory], for example,
      * "COMPUTER_AND_IT", "HEALTHCARE".
      * * base_compensation_unit: histogram by the [CompensationUnit][] of base
      * salary, for example, "WEEKLY", "MONTHLY".
@@ -6146,12 +5898,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Must specify list of numeric buckets to group results by.
      * * annualized_total_compensation: histogram by the total annualized salary.
      * Must specify list of numeric buckets to group results by.
-     * * string_custom_attribute: histogram by string
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * string_custom_attribute: histogram by string [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * string_custom_attribute["key1"].
-     * * numeric_custom_attribute: histogram by numeric
-     * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
+     * * numeric_custom_attribute: histogram by numeric [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes].
      * Values can be accessed via square bracket notations like
      * numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      * group results by.
@@ -6285,9 +6035,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Optional.
      * An integer that specifies the current offset (that is, starting result
      * location, amongst the jobs deemed by the API as relevant) in search
-     * results. This field is only considered if
-     * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
-     * unset.
+     * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -6306,9 +6054,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Optional.
      * An integer that specifies the current offset (that is, starting result
      * location, amongst the jobs deemed by the API as relevant) in search
-     * results. This field is only considered if
-     * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
-     * unset.
+     * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -6330,9 +6076,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Optional.
      * An integer that specifies the current offset (that is, starting result
      * location, amongst the jobs deemed by the API as relevant) in search
-     * results. This field is only considered if
-     * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
-     * unset.
+     * results. This field is only considered if [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is unset.
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -6408,9 +6152,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * The token specifying the current offset within
-     * search results. See
-     * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-     * for an explanation of how to obtain the next set of query results.
+     * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+     * an explanation of how to obtain the next set of query results.
      * </pre>
      *
      * <code>string page_token = 11;</code>
@@ -6432,9 +6175,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * The token specifying the current offset within
-     * search results. See
-     * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-     * for an explanation of how to obtain the next set of query results.
+     * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+     * an explanation of how to obtain the next set of query results.
      * </pre>
      *
      * <code>string page_token = 11;</code>
@@ -6456,9 +6198,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * The token specifying the current offset within
-     * search results. See
-     * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-     * for an explanation of how to obtain the next set of query results.
+     * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+     * an explanation of how to obtain the next set of query results.
      * </pre>
      *
      * <code>string page_token = 11;</code>
@@ -6478,9 +6219,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * The token specifying the current offset within
-     * search results. See
-     * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-     * for an explanation of how to obtain the next set of query results.
+     * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+     * an explanation of how to obtain the next set of query results.
      * </pre>
      *
      * <code>string page_token = 11;</code>
@@ -6497,9 +6237,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * The token specifying the current offset within
-     * search results. See
-     * [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token]
-     * for an explanation of how to obtain the next set of query results.
+     * search results. See [SearchJobsResponse.next_page_token][google.cloud.talent.v4beta1.SearchJobsResponse.next_page_token] for
+     * an explanation of how to obtain the next set of query results.
      * </pre>
      *
      * <code>string page_token = 11;</code>
@@ -6527,31 +6266,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * * "relevance desc": By relevance descending, as determined by the API
      * algorithms. Relevance thresholding of query results is only available
      * with this ordering.
-     * * "posting`_`publish`_`time desc": By
-     * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
      * descending.
-     * * "posting`_`update`_`time desc": By
-     * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+     * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
      * descending.
      * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-     * descending.
+     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
      * * "annualized`_`base`_`compensation": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`base`_`compensation desc": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation desc": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "custom`_`ranking desc": By the relevance score adjusted to the
      * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
      * factor assigned by
@@ -6596,31 +6332,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * * "relevance desc": By relevance descending, as determined by the API
      * algorithms. Relevance thresholding of query results is only available
      * with this ordering.
-     * * "posting`_`publish`_`time desc": By
-     * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
      * descending.
-     * * "posting`_`update`_`time desc": By
-     * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+     * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
      * descending.
      * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-     * descending.
+     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
      * * "annualized`_`base`_`compensation": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`base`_`compensation desc": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation desc": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "custom`_`ranking desc": By the relevance score adjusted to the
      * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
      * factor assigned by
@@ -6665,31 +6398,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * * "relevance desc": By relevance descending, as determined by the API
      * algorithms. Relevance thresholding of query results is only available
      * with this ordering.
-     * * "posting`_`publish`_`time desc": By
-     * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
      * descending.
-     * * "posting`_`update`_`time desc": By
-     * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+     * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
      * descending.
      * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-     * descending.
+     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
      * * "annualized`_`base`_`compensation": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`base`_`compensation desc": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation desc": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "custom`_`ranking desc": By the relevance score adjusted to the
      * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
      * factor assigned by
@@ -6732,31 +6462,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * * "relevance desc": By relevance descending, as determined by the API
      * algorithms. Relevance thresholding of query results is only available
      * with this ordering.
-     * * "posting`_`publish`_`time desc": By
-     * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
      * descending.
-     * * "posting`_`update`_`time desc": By
-     * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+     * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
      * descending.
      * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-     * descending.
+     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
      * * "annualized`_`base`_`compensation": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`base`_`compensation desc": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation desc": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "custom`_`ranking desc": By the relevance score adjusted to the
      * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
      * factor assigned by
@@ -6796,31 +6523,28 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * * "relevance desc": By relevance descending, as determined by the API
      * algorithms. Relevance thresholding of query results is only available
      * with this ordering.
-     * * "posting`_`publish`_`time desc": By
-     * [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * * "posting`_`publish`_`time desc": By [Job.posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
      * descending.
-     * * "posting`_`update`_`time desc": By
-     * [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
+     * * "posting`_`update`_`time desc": By [Job.posting_update_time][google.cloud.talent.v4beta1.Job.posting_update_time]
      * descending.
      * * "title": By [Job.title][google.cloud.talent.v4beta1.Job.title] ascending.
-     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title]
-     * descending.
+     * * "title desc": By [Job.title][google.cloud.talent.v4beta1.Job.title] descending.
      * * "annualized`_`base`_`compensation": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`base`_`compensation desc": By job's
-     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_base_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_base_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * ascending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] ascending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "annualized`_`total`_`compensation desc": By job's
-     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range]
-     * descending. Jobs whose annualized base compensation is unspecified are put
-     * at the end of search results.
+     * [CompensationInfo.annualized_total_compensation_range][google.cloud.talent.v4beta1.CompensationInfo.annualized_total_compensation_range] descending. Jobs
+     * whose annualized base compensation is unspecified are put at the end of
+     * search results.
      * * "custom`_`ranking desc": By the relevance score adjusted to the
      * [SearchJobsRequest.custom_ranking_info.ranking_expression][] with weight
      * factor assigned by
@@ -6866,9 +6590,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
-     * Defaults to
-     * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-     * if no value is specified.
+     * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+     * is specified.
      * </pre>
      *
      * <code>
@@ -6889,9 +6612,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
-     * Defaults to
-     * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-     * if no value is specified.
+     * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+     * is specified.
      * </pre>
      *
      * <code>
@@ -6914,9 +6636,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
-     * Defaults to
-     * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-     * if no value is specified.
+     * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+     * is specified.
      * </pre>
      *
      * <code>
@@ -6944,9 +6665,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
-     * Defaults to
-     * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-     * if no value is specified.
+     * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+     * is specified.
      * </pre>
      *
      * <code>
@@ -6974,9 +6694,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
-     * Defaults to
-     * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
-     * if no value is specified.
+     * Defaults to [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE] if no value
+     * is specified.
      * </pre>
      *
      * <code>
@@ -7224,16 +6943,13 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Controls whether to disable exact keyword match on [Job.job_title][],
-     * [Job.description][google.cloud.talent.v4beta1.Job.description],
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
-     * [Job.locations][0],
-     * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When
-     * disable keyword match is turned off, a keyword match returns jobs that do
-     * not match given category filters when there are matching keywords. For
-     * example, for the query "program manager," a result is returned even if the
-     * job posting has the title "software developer," which doesn't fall into
-     * "program manager" ontology, but does have "program manager" appearing in
-     * its description.
+     * [Job.description][google.cloud.talent.v4beta1.Job.description], [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name], [Job.locations][0],
+     * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When disable keyword match is turned off, a
+     * keyword match returns jobs that do not match given category filters when
+     * there are matching keywords. For example, for the query "program manager,"
+     * a result is returned even if the job posting has the title "software
+     * developer," which doesn't fall into "program manager" ontology, but does
+     * have "program manager" appearing in its description.
      * For queries like "cloud" that don't contain title or
      * location specific ontology, jobs with "cloud" keyword matches are returned
      * regardless of this flag's value.
@@ -7255,16 +6971,13 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Controls whether to disable exact keyword match on [Job.job_title][],
-     * [Job.description][google.cloud.talent.v4beta1.Job.description],
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
-     * [Job.locations][0],
-     * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When
-     * disable keyword match is turned off, a keyword match returns jobs that do
-     * not match given category filters when there are matching keywords. For
-     * example, for the query "program manager," a result is returned even if the
-     * job posting has the title "software developer," which doesn't fall into
-     * "program manager" ontology, but does have "program manager" appearing in
-     * its description.
+     * [Job.description][google.cloud.talent.v4beta1.Job.description], [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name], [Job.locations][0],
+     * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When disable keyword match is turned off, a
+     * keyword match returns jobs that do not match given category filters when
+     * there are matching keywords. For example, for the query "program manager,"
+     * a result is returned even if the job posting has the title "software
+     * developer," which doesn't fall into "program manager" ontology, but does
+     * have "program manager" appearing in its description.
      * For queries like "cloud" that don't contain title or
      * location specific ontology, jobs with "cloud" keyword matches are returned
      * regardless of this flag's value.
@@ -7289,16 +7002,13 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional.
      * Controls whether to disable exact keyword match on [Job.job_title][],
-     * [Job.description][google.cloud.talent.v4beta1.Job.description],
-     * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name],
-     * [Job.locations][0],
-     * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When
-     * disable keyword match is turned off, a keyword match returns jobs that do
-     * not match given category filters when there are matching keywords. For
-     * example, for the query "program manager," a result is returned even if the
-     * job posting has the title "software developer," which doesn't fall into
-     * "program manager" ontology, but does have "program manager" appearing in
-     * its description.
+     * [Job.description][google.cloud.talent.v4beta1.Job.description], [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name], [Job.locations][0],
+     * [Job.qualifications][google.cloud.talent.v4beta1.Job.qualifications]. When disable keyword match is turned off, a
+     * keyword match returns jobs that do not match given category filters when
+     * there are matching keywords. For example, for the query "program manager,"
+     * a result is returned even if the job posting has the title "software
+     * developer," which doesn't fall into "program manager" ontology, but does
+     * have "program manager" appearing in its description.
      * For queries like "cloud" that don't contain title or
      * location specific ontology, jobs with "cloud" keyword matches are returned
      * regardless of this flag's value.
