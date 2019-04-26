@@ -775,6 +775,16 @@
         <artifactId>grpc-google-cloud-webrisk-v1beta1</artifactId>
         <version>0.4.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-webrisk-v1beta1:current}-->
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-phishingprotection-v1beta1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-phishingprotection-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-phishingprotection-v1beta1:current}-->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -807,6 +817,7 @@
     <module>grpc-google-cloud-logging-v2</module>
     <module>grpc-google-cloud-monitoring-v3</module>
     <module>grpc-google-cloud-os-login-v1</module>
+    <module>grpc-google-cloud-phishingprotection-v1beta1</module>
     <module>grpc-google-cloud-pubsub-v1</module>
     <module>grpc-google-cloud-redis-v1beta1</module>
     <module>grpc-google-cloud-redis-v1</module>
@@ -872,6 +883,7 @@
     <module>proto-google-cloud-logging-v2</module>
     <module>proto-google-cloud-monitoring-v3</module>
     <module>proto-google-cloud-os-login-v1</module>
+    <module>proto-google-cloud-phishingprotection-v1beta1</module>
     <module>proto-google-cloud-pubsub-v1</module>
     <module>proto-google-cloud-redis-v1beta1</module>
     <module>proto-google-cloud-redis-v1</module>
