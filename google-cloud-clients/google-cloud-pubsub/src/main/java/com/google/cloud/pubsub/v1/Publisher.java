@@ -25,6 +25,8 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorAsBackgroundResource;
 import com.google.api.gax.core.ExecutorProvider;
@@ -40,6 +42,7 @@ import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
@@ -86,7 +89,8 @@ public class Publisher {
   private final BatchingSettings batchingSettings;
 
   private final Lock messagesBatchLock;
-  private MessagesBatch messagesBatch;
+  private List<OutstandingPublish> messagesBatch;
+  private int batchedBytes;
 
   private final AtomicBoolean activeAlarm;
 
@@ -94,7 +98,7 @@ public class Publisher {
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
-  private final List<AutoCloseable> closeables;
+  private final BackgroundResource backgroundResources;
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
   private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
@@ -115,15 +119,14 @@ public class Publisher {
     this.batchingSettings = builder.batchingSettings;
     this.messageTransform = builder.messageTransform;
 
-    messagesBatch = new MessagesBatch();
+    messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
+
+    List<BackgroundResource> backgroundResourceList = new ArrayList<>();
     if (builder.executorProvider.shouldAutoClose()) {
-      closeables =
-          Collections.<AutoCloseable>singletonList(new ExecutorAsBackgroundResource(executor));
-    } else {
-      closeables = Collections.emptyList();
+      backgroundResourceList.add(new ExecutorAsBackgroundResource(executor));
     }
 
     // Publisher used to take maxAttempt == 0 to mean infinity, but to GAX it means don't retry.
@@ -151,7 +154,8 @@ public class Publisher {
         .setRetrySettings(retrySettings)
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
-
+    backgroundResourceList.add(publisherStub);
+    backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessageWaiter();
   }
@@ -197,75 +201,96 @@ public class Publisher {
     }
 
     message = messageTransform.apply(message);
-    List<OutstandingBatch> batchesToSend = new ArrayList<>();
-    final OutstandingPublish outstandingPublish = new OutstandingPublish(message);
+    final int messageSize = message.getSerializedSize();
+    OutstandingBatch batchToSend = null;
+    SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
+    final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
     messagesBatchLock.lock();
     try {
       // Check if the next message makes the current batch exceed the max batch byte size.
       if (!messagesBatch.isEmpty()
           && hasBatchingBytes()
-          && messagesBatch.getBatchedBytes() + outstandingPublish.messageSize
-              >= getMaxBatchBytes()) {
-        batchesToSend.add(messagesBatch.popOutstandingBatch());
+          && batchedBytes + messageSize >= getMaxBatchBytes()) {
+        batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
+        messagesBatch = new LinkedList<>();
+        batchedBytes = 0;
       }
 
-      messagesBatch.addMessage(outstandingPublish, outstandingPublish.messageSize);
+      // Border case if the message to send is greater or equals to the max batch size then can't
+      // be included in the current batch and instead sent immediately.
+      if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
+        batchedBytes += messageSize;
+        messagesBatch.add(outstandingPublish);
 
-      // Border case: If the message to send is greater or equals to the max batch size then send it
-      // immediately.
-      // Alternatively if after adding the message we have reached the batch max messages then we
-      // have a batch to send.
-      if ((hasBatchingBytes() && outstandingPublish.messageSize >= getMaxBatchBytes())
-          || messagesBatch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
-        batchesToSend.add(messagesBatch.popOutstandingBatch());
+        // If after adding the message we have reached the batch max messages then we have a batch
+        // to send.
+        if (messagesBatch.size() == getBatchingSettings().getElementCountThreshold()) {
+          batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
+          messagesBatch = new LinkedList<>();
+          batchedBytes = 0;
+        }
       }
       // Setup the next duration based delivery alarm if there are messages batched.
-      setupAlarm();
+      if (!messagesBatch.isEmpty()) {
+        setupDurationBasedPublishAlarm();
+      } else if (currentAlarmFuture != null) {
+        logger.log(Level.FINER, "Cancelling alarm, no more messages");
+        if (activeAlarm.getAndSet(false)) {
+          currentAlarmFuture.cancel(false);
+        }
+      }
     } finally {
       messagesBatchLock.unlock();
     }
 
     messagesWaiter.incrementPendingMessages(1);
 
-    if (!batchesToSend.isEmpty()) {
-      for (final OutstandingBatch batch : batchesToSend) {
-        logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        executor.execute(
-            new Runnable() {
-              @Override
-              public void run() {
-                publishOutstandingBatch(batch);
-              }
-            });
-      }
+    if (batchToSend != null) {
+      logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
+      final OutstandingBatch finalBatchToSend = batchToSend;
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              publishOutstandingBatch(finalBatchToSend);
+            }
+          });
     }
 
-    return outstandingPublish.publishResult;
+    // If the message is over the size limit, it was not added to the pending messages and it will
+    // be sent in its own batch immediately.
+    if (hasBatchingBytes() && messageSize >= getMaxBatchBytes()) {
+      logger.log(
+          Level.FINER, "Message exceeds the max batch bytes, scheduling it for immediate send.");
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              publishOutstandingBatch(
+                  new OutstandingBatch(ImmutableList.of(outstandingPublish), messageSize));
+            }
+          });
+    }
+
+    return publishResult;
   }
 
-  private void setupAlarm() {
-    if (!messagesBatch.isEmpty()) {
-      if (!activeAlarm.getAndSet(true)) {
-        long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
-        logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
-        currentAlarmFuture =
-            executor.schedule(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    logger.log(Level.FINER, "Sending messages based on schedule.");
-                    activeAlarm.getAndSet(false);
-                    publishAllOutstanding();
-                  }
-                },
-                delayThresholdMs,
-                TimeUnit.MILLISECONDS);
-      }
-    } else if (currentAlarmFuture != null) {
-      logger.log(Level.FINER, "Cancelling alarm, no more messages");
-      if (activeAlarm.getAndSet(false)) {
-        currentAlarmFuture.cancel(false);
-      }
+  private void setupDurationBasedPublishAlarm() {
+    if (!activeAlarm.getAndSet(true)) {
+      long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
+      logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+      currentAlarmFuture =
+          executor.schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  logger.log(Level.FINER, "Sending messages based on schedule.");
+                  activeAlarm.getAndSet(false);
+                  publishAllOutstanding();
+                }
+              },
+              delayThresholdMs,
+              TimeUnit.MILLISECONDS);
     }
   }
 
@@ -281,25 +306,24 @@ public class Publisher {
       if (messagesBatch.isEmpty()) {
         return;
       }
-      batchToSend = messagesBatch.popOutstandingBatch();
+      batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
+      messagesBatch = new LinkedList<>();
+      batchedBytes = 0;
     } finally {
       messagesBatchLock.unlock();
     }
     publishOutstandingBatch(batchToSend);
   }
 
-  private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
+  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
     publishRequest.setTopic(topicName);
     for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    return publisherStub.publishCallable().futureCall(publishRequest.build());
-  }
-
-  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
-    ApiFutureCallback<PublishResponse> futureCallback =
+    ApiFutures.addCallback(
+        publisherStub.publishCallable().futureCall(publishRequest.build()),
         new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -338,9 +362,7 @@ public class Publisher {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
-        };
-
-    ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
+        });
   }
 
   private static final class OutstandingBatch {
@@ -356,18 +378,21 @@ public class Publisher {
       this.batchSizeBytes = batchSizeBytes;
     }
 
-    int size() {
+    public int getAttempt() {
+      return attempt;
+    }
+
+    public int size() {
       return outstandingPublishes.size();
     }
   }
 
   private static final class OutstandingPublish {
-    final SettableApiFuture<String> publishResult;
-    final PubsubMessage message;
-    final int messageSize;
+    SettableApiFuture<String> publishResult;
+    PubsubMessage message;
 
-    OutstandingPublish(PubsubMessage message) {
-      this.publishResult = SettableApiFuture.create();
+    OutstandingPublish(SettableApiFuture<String> publishResult, PubsubMessage message) {
+      this.publishResult = publishResult;
       this.message = message;
       this.messageSize = message.getSerializedSize();
     }
@@ -397,10 +422,7 @@ public class Publisher {
       currentAlarmFuture.cancel(false);
     }
     publishAllOutstanding();
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
-    publisherStub.shutdown();
+    backgroundResources.shutdown();
   }
 
   /**
@@ -410,37 +432,7 @@ public class Publisher {
    * <p>Call this method to make sure all resources are freed properly.
    */
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
-    final long startDuration = System.currentTimeMillis();
-    final long totalDurationMs = TimeUnit.MILLISECONDS.convert(duration, unit);
-    messagesWaiter.waitNoMessages();
-    long remainingDuration = getRemainingDuration(startDuration, totalDurationMs);
-    boolean isAwaited =
-        remainingDuration < totalDurationMs
-            ? publisherStub.awaitTermination(remainingDuration, TimeUnit.MILLISECONDS)
-            : false;
-    if (isAwaited) {
-      for (AutoCloseable closeable : closeables) {
-        ExecutorAsBackgroundResource executorAsBackgroundResource =
-            (ExecutorAsBackgroundResource) closeable;
-        remainingDuration = getRemainingDuration(startDuration, totalDurationMs);
-        System.out.println(remainingDuration);
-        isAwaited =
-            remainingDuration < totalDurationMs
-                ? executorAsBackgroundResource.awaitTermination(
-                    getRemainingDuration(startDuration, totalDurationMs), TimeUnit.MILLISECONDS)
-                : false;
-        if (!isAwaited) {
-          return false;
-        }
-      }
-    } else {
-      return false;
-    }
-    return true;
-  }
-
-  private long getRemainingDuration(long startDuration, long totalDurationMs) {
-    return totalDurationMs - (System.currentTimeMillis() - startDuration);
+    return backgroundResources.awaitTermination(duration, unit);
   }
 
   private boolean hasBatchingBytes() {

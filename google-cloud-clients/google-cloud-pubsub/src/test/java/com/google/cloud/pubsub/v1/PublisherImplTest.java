@@ -586,7 +586,6 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     publisher.shutdown();
     assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
-    assertTrue(publishFuture1.isDone());
   }
 
   @Test
