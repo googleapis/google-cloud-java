@@ -69,17 +69,17 @@ def add_to_versions(ctx: Context) -> None:
     # Add new versions unless the artifacts already exist in the versions.txt manifest
     ctx.google_cloud_version = next((v for v in versions if v.module == ctx.google_cloud_artifact), None)
     if not ctx.google_cloud_version:
-        ctx.google_cloud_version = releasetool.ArtifactVersions(f"{ctx.google_cloud_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        ctx.google_cloud_version = releasetool.ArtifactVersions(f"{ctx.google_cloud_artifact}:0.0.0:0.0.1-SNAPSHOT")
         versions.append(ctx.google_cloud_version)
 
     ctx.proto_version = next((v for v in versions if v.module == ctx.proto_artifact), None)
     if not ctx.proto_version:
-        ctx.proto_version = releasetool.ArtifactVersions(f"{ctx.proto_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        ctx.proto_version = releasetool.ArtifactVersions(f"{ctx.proto_artifact}:0.0.0:0.0.1-SNAPSHOT")
         versions.append(ctx.proto_version)
 
     ctx.grpc_version = next((v for v in versions if v.module == ctx.grpc_artifact), None)
     if not ctx.grpc_version:
-        ctx.grpc_version = releasetool.ArtifactVersions(f"{ctx.grpc_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        ctx.grpc_version = releasetool.ArtifactVersions(f"{ctx.grpc_artifact}:0.0.0:0.0.1-SNAPSHOT")
         versions.append(ctx.grpc_version)
 
     # sort by name
@@ -224,13 +224,17 @@ def main():
     parser = argparse.ArgumentParser(description="Create a new client")
     parser.add_argument("-v", required=True, help="API version (i.e. v1)")
     parser.add_argument("-c", required=True, help="Path to config in googleapis/googleapis")
-    parser.add_argument("-s", required=True, help="Service name")
+    parser.add_argument("-s", required=True, help="Service name (i.e. dialogflow)")
+    parser.add_argument("-n", required=True, help="Client name (i.e. Google Cloud Pub/Sub)")
+    parser.add_argument("-d", required=True, help="API description for README")
     args = parser.parse_args()
 
     ctx = Context(
         api_version=args.v,
         service=args.s,
-        artman_config=args.c
+        artman_config=args.c,
+        name=args.n,
+        description=args.d
     )
 
     add_to_versions(ctx)
