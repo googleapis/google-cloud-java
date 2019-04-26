@@ -23,7 +23,7 @@ common_templates = gcp.CommonTemplates()
 
 versions = ['{{version}}']
 service = '{{service}}'
-config_pattern = '/google/cloud/{{service}}/artman_{{service}}_{version}.yaml'
+config_pattern = {% if config_path %}"{{config_path}}"{% else %}'/google/cloud/{{service}}/artman_{{service}}_{version}.yaml'{% endif %}
 
 for version in versions:
     library = gapic.java_library(

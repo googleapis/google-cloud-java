@@ -41,6 +41,8 @@ class Context:
         pathlib.Path(os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")))
     description: str = "FIXME"
     name: str = "FIXME"
+    product_overview_url: str = "FIXME"
+    product_docs_url: str = "FIXME"
     versions: List[str] = None
     jinja_env: Environment = None
 
@@ -212,7 +214,9 @@ def write_readme(ctx: Context) -> None:
         description=ctx.description,
         name=ctx.name,
         service=ctx.service,
-        version=ctx.google_cloud_version
+        version=ctx.google_cloud_version,
+        product_overview_url=ctx.product_overview_url,
+        product_docs_url=ctx.product_docs_url,
     )
     path = ctx.root_directory / "google-cloud-clients" / ctx.google_cloud_artifact / "README.md"
     directory = os.path.dirname(path)
@@ -223,10 +227,12 @@ def write_readme(ctx: Context) -> None:
 def main():
     parser = argparse.ArgumentParser(description="Create a new client")
     parser.add_argument("-v", required=True, help="API version (i.e. v1)")
-    parser.add_argument("-c", required=True, help="Path to config in googleapis/googleapis")
+    parser.add_argument("-c", help="Path to config in googleapis/googleapis")
     parser.add_argument("-s", required=True, help="Service name (i.e. dialogflow)")
     parser.add_argument("-n", required=True, help="Client name (i.e. Google Cloud Pub/Sub)")
     parser.add_argument("-d", required=True, help="API description for README")
+    parser.add_argument("--docs-url", required=True, help="URL to the product docs page")
+    parser.add_argument("--overview-url", required=True, help="URL to the product overview page")
     args = parser.parse_args()
 
     ctx = Context(
@@ -234,7 +240,9 @@ def main():
         service=args.s,
         artman_config=args.c,
         name=args.n,
-        description=args.d
+        description=args.d,
+        product_docs_url=args.docs_url,
+        product_overview_url=args.overview_url
     )
 
     add_to_versions(ctx)
