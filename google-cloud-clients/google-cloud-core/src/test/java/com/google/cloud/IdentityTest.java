@@ -141,11 +141,6 @@ public class IdentityTest {
     Identity.valueOf("");
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testValueOfThreePart() {
-    Identity.valueOf("a:b:c");
-  }
-
   @Test
   public void testUnrecognizedToString() {
     assertEquals("a:b", Identity.valueOf("a:b").strValue());
