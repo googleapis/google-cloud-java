@@ -38,24 +38,23 @@ build_and_publish_site() {
   NAME=$1
   VERSION=$(grep ${NAME}: ${ROOT_DIR}/versions.txt | cut -d: -f3)
 
-  echo ${NAME}
-  pushd ${NAME}
+  if [[ -d "${NAME}/target/site/apidocs" ]]
+  then
+    pushd ${NAME}/target/site/apidocs
 
-  pushd target/site/apidocs
+    # create metadata
+    python3 -m docuploader create-metadata \
+      --name ${NAME} \
+      --version ${VERSION} \
+      --language java
 
-  # create metadata
-  python3 -m docuploader create-metadata \
-    --name ${NAME} \
-    --version ${VERSION} \
-    --language java
+    # upload docs
+    python3 -m docuploader upload . \
+      --credentials ${CREDENTIALS} \
+      --staging-bucket ${STAGING_BUCKET}
 
-  # upload docs
-  python3 -m docuploader upload . \
-    --credentials ${CREDENTIALS} \
-    --staging-bucket ${STAGING_BUCKET}
-
-  popd
-  popd
+    popd
+  fi
 }
 
 # build javadocs for all artifacts
