@@ -108,7 +108,7 @@
             </offlineLink>
             <offlineLink>
               <url>https://googleapis.dev/java/grpc-google-cloud-scheduler-v1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-scheduler-v1:released} -->
-              <grpc>../../../../../google-api-grpc/grpc-google-cloud-scheduler-v1/target/site/apidocs/</grpc>
+              <location>../../../../../google-api-grpc/grpc-google-cloud-scheduler-v1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
               <url>https://googleapis.dev/java/proto-google-cloud-scheduler-v1beta1/0.53.0/</url><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:released} -->
