@@ -928,5 +928,15 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <id>java7-tests</id>
+      <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+      </properties>
+      <activation>
+        <jdk>1.7</jdk>
+      </activation>
+    </profile>
   </profiles>
 </project>
