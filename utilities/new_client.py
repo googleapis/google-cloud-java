@@ -33,6 +33,8 @@ class Context:
     artman_config: str = None
     google_cloud_artifact: str = None
     google_cloud_version: releasetool.Version = None
+    google_cloud_parent_version: releasetool.Version = None
+    grpc_api_parent_version: releasetool.Version = None
     grpc_artifact: str = None
     grpc_version: releasetool.Version = None
     proto_artifact: str = None
@@ -67,6 +69,9 @@ def add_to_versions(ctx: Context) -> None:
                 continue
 
             versions.append(releasetool.ArtifactVersions(version_line))
+
+    ctx.google_cloud_parent_version = next((v for v in versions if v.module == "google-cloud-clients"), None)
+    ctx.grpc_api_parent_version = next((v for v in versions if v.module == "google-api-grpc"), None)
 
     # Add new versions unless the artifacts already exist in the versions.txt manifest
     ctx.google_cloud_version = next((v for v in versions if v.module == ctx.google_cloud_artifact), None)
@@ -165,13 +170,14 @@ def write_synthfile(ctx: Context) -> None:
         os.makedirs(directory)
     synth.dump(str(path))
 
-def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
+def write_pom(template: str, path: str, ctx: Context, version: str, parent_version: str) -> None:
     """Creates a pom.xml file from a template."""
     template = ctx.jinja_env.get_template(template)
     pom = template.stream(
         api_version=ctx.api_version,
         description=ctx.description,
         name=ctx.name,
+        parent_version=parent_version,
         service=ctx.service,
         version=version
     )
@@ -252,6 +258,7 @@ def main():
         ctx=ctx,
         template="cloud_pom.xml",
         path=ctx.root_directory / "google-cloud-clients" / ctx.google_cloud_artifact / "pom.xml",
+        parent_version=ctx.google_cloud_parent_version.current,
         version=ctx.google_cloud_version.current
     )
     add_module_to_pom(
@@ -292,12 +299,14 @@ def main():
         ctx=ctx,
         template="proto_pom.xml",
         path=ctx.root_directory / "google-api-grpc" / ctx.proto_artifact / "pom.xml",
+        parent_version=ctx.grpc_api_parent_version.current,
         version=ctx.proto_version.current
     )
     write_pom(
         ctx=ctx,
         template="grpc_pom.xml",
         path=ctx.root_directory / "google-api-grpc" / ctx.grpc_artifact / "pom.xml",
+        parent_version=ctx.grpc_api_parent_version.current,
         version=ctx.grpc_version.current
     )
     add_module_to_pom(
