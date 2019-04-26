@@ -256,7 +256,7 @@ def main():
     )
     add_module_to_pom(
         pom=ctx.root_directory / "google-cloud-clients/pom.xml",
-        module_name="google-cloud-iamcredentials"
+        module_name=ctx.google_cloud_artifact
     )
     add_dependency_management_to_pom(
         pom=ctx.root_directory /  "google-api-grpc/pom.xml",
