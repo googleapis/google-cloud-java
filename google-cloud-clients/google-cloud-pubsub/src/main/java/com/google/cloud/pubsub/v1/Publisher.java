@@ -263,7 +263,6 @@ public class Publisher {
 
     messagesWaiter.incrementPendingMessages(1);
 
-
     if (!batchesToSend.isEmpty()) {
       publishAllOutstanding();
       for (final OutstandingBatch batch : batchesToSend) {
