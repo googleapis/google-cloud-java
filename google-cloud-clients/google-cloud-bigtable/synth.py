@@ -49,7 +49,7 @@ def generate_data_api(gapic):
   ]
 
   # Paths are relative to the destination, which is the current working directory
-  pkg_private = [
+  internal_only = [
     "src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java",
     'src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java',
     "src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java",
@@ -60,7 +60,7 @@ def generate_data_api(gapic):
   s.copy(library / 'grpc-google-cloud-bigtable-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
   s.copy(library / 'proto-google-cloud-bigtable-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
 
-  make_package_private(pkg_private)
+  make_internal_only(internal_only)
 
   java.format_code('../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
   java.format_code('../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
@@ -79,17 +79,14 @@ def generate_admin_api(gapic):
   ]
 
   # Paths are relative to the destination, which is the current working directory
-  pkg_private = [
+  internal_only = [
     'src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminCallableFactory.java',
     'src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java',
     'src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java',
     'src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java',
     'src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java',
-    'src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java'
-  ]
+    'src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java',
 
-  # Paths are relative to the destination, which is the current working directory
-  internal_only = [
     'src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java',
     'src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java',
     'src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClient.java',
@@ -100,7 +97,6 @@ def generate_admin_api(gapic):
   s.copy(library / 'grpc-google-cloud-bigtable-admin-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/src')
   s.copy(library / 'proto-google-cloud-bigtable-admin-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-admin-v2/src')
 
-  make_package_private(pkg_private)
   make_internal_only(internal_only)
 
   java.format_code('../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/src')
@@ -122,13 +118,5 @@ def make_internal_only(sources):
             before=r'/\*\*.+?\*/\n(?:^@[^\n]*\n)*(?=public [a-zA-B ]*class)',
             after='/** For internal use only. */\n@InternalApi\n',
             flags=re.MULTILINE | re.DOTALL)
-
-def make_package_private(sources):
-  """Strips all toplevel classes' public visibility."""
-  s.replace(sources,
-            before=r'^public (?=.*(?:class|interface) )',
-            after='',
-            flags=re.MULTILINE)
-
 
 main()

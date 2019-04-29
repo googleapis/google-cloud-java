@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -49,38 +50,12 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
-import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * Settings class to configure an instance of {@link BigtableStub}.
- *
- * <p>The default instance has everything set to sensible defaults:
- *
- * <ul>
- *   <li>The default service address (bigtable.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
- * </ul>
- *
- * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of mutateRow to 30 seconds:
- *
- * <pre>
- * <code>
- * BigtableStubSettings.Builder baseBigtableDataSettingsBuilder =
- *     BigtableStubSettings.newBuilder();
- * baseBigtableDataSettingsBuilder.mutateRowSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
- * BigtableStubSettings baseBigtableDataSettings = baseBigtableDataSettingsBuilder.build();
- * </code>
- * </pre>
- */
-@Generated("by gapic-generator")
-@BetaApi
-class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
+/** For internal use only. */
+@InternalApi
+public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()

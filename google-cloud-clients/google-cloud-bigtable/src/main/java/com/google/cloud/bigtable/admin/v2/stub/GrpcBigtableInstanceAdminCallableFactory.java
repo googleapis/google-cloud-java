@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
@@ -32,17 +33,11 @@ import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.OperationsStub;
-import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * gRPC callable factory implementation for Cloud Bigtable Admin API.
- *
- * <p>This class is for advanced usage.
- */
-@Generated("by gapic-generator")
-@BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-class GrpcBigtableInstanceAdminCallableFactory implements GrpcStubCallableFactory {
+/** For internal use only. */
+@InternalApi
+public class GrpcBigtableInstanceAdminCallableFactory implements GrpcStubCallableFactory {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
       GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,

@@ -19,6 +19,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.Li
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -57,17 +58,11 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * gRPC stub implementation for Cloud Bigtable Admin API.
- *
- * <p>This class is for advanced usage and reflects the underlying API directly.
- */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
+/** For internal use only. */
+@InternalApi
+public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
 
   private static final MethodDescriptor<CreateTableRequest, Table> createTableMethodDescriptor =
       MethodDescriptor.<CreateTableRequest, Table>newBuilder()
