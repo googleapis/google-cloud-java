@@ -388,7 +388,6 @@ public class Publisher {
   private static final class OutstandingPublish {
     SettableApiFuture<String> publishResult;
     PubsubMessage message;
-    final int messageSize;
 
     OutstandingPublish(SettableApiFuture<String> publishResult, PubsubMessage message) {
       this.publishResult = publishResult;
