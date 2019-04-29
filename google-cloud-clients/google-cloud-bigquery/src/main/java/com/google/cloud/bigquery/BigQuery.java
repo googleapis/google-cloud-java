@@ -877,7 +877,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * ModelInfo modelInfo = beforeModel.toBuilder()
    *     .setDescription(newDescription)
    *     .build();
-   * Model afterModel = bigquery.update(moddelInfo);
+   * Model afterModel = bigquery.update(modelInfo);
    * }</pre>
    *
    * <p>Example of updating a model by changing its expiration.
