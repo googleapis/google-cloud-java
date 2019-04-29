@@ -19,6 +19,9 @@ import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
+# TODO: try to move the GAPIC surface hiding to the gapic-generator:
+# https://github.com/googleapis/gapic-generator/issues/2742
+
 def main():
   gapic = gcp.GAPICGenerator()
 
