@@ -23,12 +23,13 @@ common_templates = gcp.CommonTemplates()
 
 versions = ['{{version}}']
 service = '{{service}}'
+config_pattern = {% if config_path %}"{{config_path}}"{% else %}'/google/cloud/{{service}}/artman_{{service}}_{version}.yaml'{% endif %}
 
 for version in versions:
     library = gapic.java_library(
         service=service,
         version=version,
-        config_path=f'{{config_path}}',
+        config_path=config_pattern.format(version=version),
         artman_output_name='')
 
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')

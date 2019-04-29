@@ -40,13 +40,13 @@ import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -197,91 +197,75 @@ public class Publisher {
     }
 
     message = messageTransform.apply(message);
-    final int messageSize = message.getSerializedSize();
-    OutstandingBatch batchToSend = null;
-    SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
-    final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
+    List<OutstandingBatch> batchesToSend = new ArrayList<>();
+    final OutstandingPublish outstandingPublish = new OutstandingPublish(message);
     messagesBatchLock.lock();
     try {
       // Check if the next message makes the current batch exceed the max batch byte size.
       if (!messagesBatch.isEmpty()
           && hasBatchingBytes()
-          && messagesBatch.getBatchedBytes() + messageSize >= getMaxBatchBytes()) {
-        batchToSend = messagesBatch.popOutstandingBatch();
+          && messagesBatch.getBatchedBytes() + outstandingPublish.messageSize
+              >= getMaxBatchBytes()) {
+        batchesToSend.add(messagesBatch.popOutstandingBatch());
       }
 
-      // Border case if the message to send is greater or equals to the max batch size then can't
-      // be included in the current batch and instead sent immediately.
-      if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
-        messagesBatch.addMessage(outstandingPublish, messageSize);
+      messagesBatch.addMessage(outstandingPublish, outstandingPublish.messageSize);
 
-        // If after adding the message we have reached the batch max messages then we have a batch
-        // to send.
-        if (messagesBatch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
-          batchToSend = messagesBatch.popOutstandingBatch();
-        }
+      // Border case: If the message to send is greater or equals to the max batch size then send it
+      // immediately.
+      // Alternatively if after adding the message we have reached the batch max messages then we
+      // have a batch to send.
+      if ((hasBatchingBytes() && outstandingPublish.messageSize >= getMaxBatchBytes())
+          || messagesBatch.getMessagesCount() == getBatchingSettings().getElementCountThreshold()) {
+        batchesToSend.add(messagesBatch.popOutstandingBatch());
       }
       // Setup the next duration based delivery alarm if there are messages batched.
-      if (!messagesBatch.isEmpty()) {
-        setupDurationBasedPublishAlarm();
-      } else if (currentAlarmFuture != null) {
-        logger.log(Level.FINER, "Cancelling alarm, no more messages");
-        if (activeAlarm.getAndSet(false)) {
-          currentAlarmFuture.cancel(false);
-        }
-      }
+      setupAlarm();
     } finally {
       messagesBatchLock.unlock();
     }
 
     messagesWaiter.incrementPendingMessages(1);
 
-    if (batchToSend != null) {
-      logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-      final OutstandingBatch finalBatchToSend = batchToSend;
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              publishOutstandingBatch(finalBatchToSend);
-            }
-          });
+    if (!batchesToSend.isEmpty()) {
+      for (final OutstandingBatch batch : batchesToSend) {
+        logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
+        executor.execute(
+            new Runnable() {
+              @Override
+              public void run() {
+                publishOutstandingBatch(batch);
+              }
+            });
+      }
     }
 
-    // If the message is over the size limit, it was not added to the pending messages and it will
-    // be sent in its own batch immediately.
-    if (hasBatchingBytes() && messageSize >= getMaxBatchBytes()) {
-      logger.log(
-          Level.FINER, "Message exceeds the max batch bytes, scheduling it for immediate send.");
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              publishOutstandingBatch(
-                  new OutstandingBatch(ImmutableList.of(outstandingPublish), messageSize));
-            }
-          });
-    }
-
-    return publishResult;
+    return outstandingPublish.publishResult;
   }
 
-  private void setupDurationBasedPublishAlarm() {
-    if (!activeAlarm.getAndSet(true)) {
-      long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
-      logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
-      currentAlarmFuture =
-          executor.schedule(
-              new Runnable() {
-                @Override
-                public void run() {
-                  logger.log(Level.FINER, "Sending messages based on schedule.");
-                  activeAlarm.getAndSet(false);
-                  publishAllOutstanding();
-                }
-              },
-              delayThresholdMs,
-              TimeUnit.MILLISECONDS);
+  private void setupAlarm() {
+    if (!messagesBatch.isEmpty()) {
+      if (!activeAlarm.getAndSet(true)) {
+        long delayThresholdMs = getBatchingSettings().getDelayThreshold().toMillis();
+        logger.log(Level.FINER, "Setting up alarm for the next {0} ms.", delayThresholdMs);
+        currentAlarmFuture =
+            executor.schedule(
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    logger.log(Level.FINER, "Sending messages based on schedule.");
+                    activeAlarm.getAndSet(false);
+                    publishAllOutstanding();
+                  }
+                },
+                delayThresholdMs,
+                TimeUnit.MILLISECONDS);
+      }
+    } else if (currentAlarmFuture != null) {
+      logger.log(Level.FINER, "Cancelling alarm, no more messages");
+      if (activeAlarm.getAndSet(false)) {
+        currentAlarmFuture.cancel(false);
+      }
     }
   }
 
@@ -372,22 +356,20 @@ public class Publisher {
       this.batchSizeBytes = batchSizeBytes;
     }
 
-    public int getAttempt() {
-      return attempt;
-    }
-
-    public int size() {
+    int size() {
       return outstandingPublishes.size();
     }
   }
 
   private static final class OutstandingPublish {
-    SettableApiFuture<String> publishResult;
-    PubsubMessage message;
+    final SettableApiFuture<String> publishResult;
+    final PubsubMessage message;
+    final int messageSize;
 
-    OutstandingPublish(SettableApiFuture<String> publishResult, PubsubMessage message) {
-      this.publishResult = publishResult;
+    OutstandingPublish(PubsubMessage message) {
+      this.publishResult = SettableApiFuture.create();
       this.message = message;
+      this.messageSize = message.getSerializedSize();
     }
   }
 

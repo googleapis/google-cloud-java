@@ -69,9 +69,7 @@ public interface TenantOrBuilder
    * Optional.
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is
-   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-   * if it's unset.
+   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -84,9 +82,7 @@ public interface TenantOrBuilder
    * Optional.
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is
-   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
-   * if it's unset.
+   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>

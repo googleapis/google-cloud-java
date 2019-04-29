@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>{{version}}</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>{{parent_version}}</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-{{service}}</site.installationModule>

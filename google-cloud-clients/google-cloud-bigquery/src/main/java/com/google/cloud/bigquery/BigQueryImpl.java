@@ -820,9 +820,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     try {
       final TableId completeTableId =
           tableId.setProjectId(
-              Strings.isNullOrEmpty(serviceOptions.getProjectId())
-                  ? tableId.getProject()
-                  : serviceOptions.getProjectId());
+              Strings.isNullOrEmpty(tableId.getProject())
+                  ? serviceOptions.getProjectId()
+                  : tableId.getProject());
       TableDataList result =
           runWithRetries(
               new Callable<TableDataList>() {
