@@ -1075,6 +1075,21 @@
         <artifactId>google-cloud-phishingprotection</artifactId>
         <version>0.0.1-SNAPSHOT</version><!--{x-version-update:google-cloud-phishingprotection:current}-->
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-recaptchaenterprise-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-recaptchaenterprise-v1beta1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-recaptchaenterprise-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-recaptchaenterprise-v1beta1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-recaptchaenterprise</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:google-cloud-recaptchaenterprise:current}-->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
