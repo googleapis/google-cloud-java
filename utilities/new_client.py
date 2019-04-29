@@ -220,7 +220,7 @@ def write_readme(ctx: Context) -> None:
         description=ctx.description,
         name=ctx.name,
         service=ctx.service,
-        version=ctx.google_cloud_version,
+        version=ctx.google_cloud_version.released,
         product_overview_url=ctx.product_overview_url,
         product_docs_url=ctx.product_docs_url,
     )
