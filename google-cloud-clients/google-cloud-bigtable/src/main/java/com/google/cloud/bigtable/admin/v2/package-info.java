@@ -22,5 +22,4 @@
  * @see com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient for instance level API.
  * @see com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient for table level API.
  */
-
 package com.google.cloud.bigtable.admin.v2;
