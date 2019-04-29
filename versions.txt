@@ -48,6 +48,7 @@ google-cloud-nio-examples:0.89.0-alpha:0.89.1-alpha-SNAPSHOT
 google-cloud-notification:0.89.0-beta:0.89.1-beta-SNAPSHOT
 google-cloud-os-login:0.89.0-alpha:0.89.1-alpha-SNAPSHOT
 google-cloud-pubsub:1.71.0:1.71.1-SNAPSHOT
+google-cloud-recaptchaenterprise:0.0.0:0.0.1-SNAPSHOT
 google-cloud-redis:0.89.0-alpha:0.89.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.89.0-alpha:0.89.1-alpha-SNAPSHOT
 google-cloud-scheduler:0.89.0-alpha:0.89.1-alpha-SNAPSHOT
@@ -95,6 +96,7 @@ grpc-google-cloud-logging-v2:0.54.0:0.54.1-SNAPSHOT
 grpc-google-cloud-monitoring-v3:1.53.0:1.53.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.54.0:0.54.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.53.0:1.53.1-SNAPSHOT
+grpc-google-cloud-recaptchaenterprise-v1beta1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-redis-v1:0.54.0:0.54.1-SNAPSHOT
 grpc-google-cloud-redis-v1beta1:0.54.0:0.54.1-SNAPSHOT
 grpc-google-cloud-scheduler-v1:0.54.0:0.54.1-SNAPSHOT
@@ -159,6 +161,7 @@ proto-google-cloud-logging-v2:0.54.0:0.54.1-SNAPSHOT
 proto-google-cloud-monitoring-v3:1.53.0:1.53.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.54.0:0.54.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.53.0:1.53.1-SNAPSHOT
+proto-google-cloud-recaptchaenterprise-v1beta1:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-redis-v1:0.54.0:0.54.1-SNAPSHOT
 proto-google-cloud-redis-v1beta1:0.54.0:0.54.1-SNAPSHOT
 proto-google-cloud-scheduler-v1:0.54.0:0.54.1-SNAPSHOT
