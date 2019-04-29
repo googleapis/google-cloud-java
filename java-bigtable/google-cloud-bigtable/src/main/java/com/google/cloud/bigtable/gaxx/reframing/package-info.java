@@ -19,5 +19,10 @@
  * <p>It is intended for situations when a stream needs to be transformed in such a way where the
  * incoming responses do not map 1:1 to the output responses. This is used to transform
  * ReadRowsResponse chunks into logical rows, but is generic enough to be used for other purposes.
+ *
+ * <p>For internal use, public for technical reasons.
  */
+@InternalApi
 package com.google.cloud.bigtable.gaxx.reframing;
+
+import com.google.api.core.InternalApi;

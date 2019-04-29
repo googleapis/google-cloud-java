@@ -15,12 +15,15 @@
  */
 package com.google.cloud.bigtable.gaxx.retrying;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import org.threeten.bp.Duration;
 
+/** For internal use, public for technical reasons. */
+@InternalApi
 public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<ResponseT> {
   // Duration to sleep on if the error is DEADLINE_EXCEEDED.
   public static final Duration DEADLINE_SLEEP_DURATION = Duration.ofMillis(1);
