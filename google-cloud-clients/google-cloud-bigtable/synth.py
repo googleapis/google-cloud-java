@@ -119,7 +119,7 @@ def make_internal_only(sources):
   s.replace(sources,
 
             before=r'/\*\*.+?\*/\n(?:^@[^\n]*\n)*(?=public [a-zA-B ]*class)',
-            after='/** For internal use only. */\n@InternalApi\n',
+            after='/** For internal use only. */\n@Generated("by gapic-generator")\n@InternalApi\n',
             flags=re.MULTILINE | re.DOTALL)
 
 main()

@@ -31,9 +31,11 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */
+@Generated("by gapic-generator")
 @InternalApi
 public abstract class BigtableStub implements BackgroundResource {
 

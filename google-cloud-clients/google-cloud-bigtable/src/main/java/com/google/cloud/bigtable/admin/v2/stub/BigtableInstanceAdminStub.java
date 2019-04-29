@@ -55,9 +55,11 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */
+@Generated("by gapic-generator")
 @InternalApi
 public abstract class BigtableInstanceAdminStub implements BackgroundResource {
 

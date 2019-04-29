@@ -73,9 +73,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /** For internal use only. */
+@Generated("by gapic-generator")
 @InternalApi
 public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   private final BaseBigtableInstanceAdminSettings settings;

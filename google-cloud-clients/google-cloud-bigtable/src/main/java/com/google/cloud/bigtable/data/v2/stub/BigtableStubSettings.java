@@ -50,10 +50,12 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */
+@Generated("by gapic-generator")
 @InternalApi
 public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   /** The default scopes of the service. */

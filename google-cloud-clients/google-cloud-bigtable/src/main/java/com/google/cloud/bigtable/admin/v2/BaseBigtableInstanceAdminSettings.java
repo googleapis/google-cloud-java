@@ -65,9 +65,11 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */
+@Generated("by gapic-generator")
 @InternalApi
 public class BaseBigtableInstanceAdminSettings
     extends ClientSettings<BaseBigtableInstanceAdminSettings> {

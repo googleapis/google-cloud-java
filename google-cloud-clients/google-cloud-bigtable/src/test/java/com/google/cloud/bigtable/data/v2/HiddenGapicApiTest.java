@@ -38,10 +38,10 @@ public class HiddenGapicApiTest {
   @Parameters
   public static Object[] data() {
     return new Object[] {
-        BigtableStub.class,
-        BigtableStubSettings.class,
-        GrpcBigtableStub.class,
-        GrpcBigtableCallableFactory.class
+      BigtableStub.class,
+      BigtableStubSettings.class,
+      GrpcBigtableStub.class,
+      GrpcBigtableCallableFactory.class
     };
   }
 

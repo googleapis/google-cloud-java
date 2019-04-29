@@ -40,16 +40,16 @@ public class HiddenGapicApiTest {
   @Parameters
   public static Object[] data() {
     return new Object[] {
-        GrpcBigtableInstanceAdminCallableFactory.class,
-        GrpcBigtableInstanceAdminStub.class,
-        BaseBigtableInstanceAdminSettings.class,
-        GrpcBigtableTableAdminCallableFactory.class,
-        GrpcBigtableTableAdminStub.class,
-        BaseBigtableTableAdminSettings.class,
-        BigtableInstanceAdminStub.class,
-        BigtableTableAdminStub.class,
-        BaseBigtableInstanceAdminClient.class,
-        BaseBigtableTableAdminClient.class,
+      GrpcBigtableInstanceAdminCallableFactory.class,
+      GrpcBigtableInstanceAdminStub.class,
+      BaseBigtableInstanceAdminSettings.class,
+      GrpcBigtableTableAdminCallableFactory.class,
+      GrpcBigtableTableAdminStub.class,
+      BaseBigtableTableAdminSettings.class,
+      BigtableInstanceAdminStub.class,
+      BigtableTableAdminStub.class,
+      BaseBigtableInstanceAdminClient.class,
+      BaseBigtableTableAdminClient.class,
     };
   }
 

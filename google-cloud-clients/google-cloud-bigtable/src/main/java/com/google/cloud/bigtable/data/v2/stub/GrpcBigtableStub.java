@@ -42,9 +42,11 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */
+@Generated("by gapic-generator")
 @InternalApi
 public class GrpcBigtableStub extends BigtableStub {
 
