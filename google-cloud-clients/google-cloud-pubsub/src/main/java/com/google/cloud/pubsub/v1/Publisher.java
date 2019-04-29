@@ -196,7 +196,8 @@ public class Publisher {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
 
-    final OutstandingPublish outstandingPublish = new OutstandingPublish(messageTransform.apply(message));
+    final OutstandingPublish outstandingPublish =
+        new OutstandingPublish(messageTransform.apply(message));
     List<OutstandingBatch> batchesToSend;
     messagesBatchLock.lock();
     try {
