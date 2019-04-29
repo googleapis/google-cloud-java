@@ -86,7 +86,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi
-public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableTableAdminSettings> {
+class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableTableAdminSettings> {
   /** Returns the object with the settings used for calls to createTable. */
   public UnaryCallSettings<CreateTableRequest, Table> createTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).createTableSettings();

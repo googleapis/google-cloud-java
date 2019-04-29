@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -54,16 +55,10 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
-import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * Base stub class for Cloud Bigtable Admin API.
- *
- * <p>This class is for advanced usage and reflects the underlying API directly.
- */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+/** For internal use only. */
+@InternalApi
 public abstract class BigtableInstanceAdminStub implements BackgroundResource {
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")

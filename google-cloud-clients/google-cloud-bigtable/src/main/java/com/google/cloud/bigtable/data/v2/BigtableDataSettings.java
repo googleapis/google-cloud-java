@@ -228,7 +228,8 @@ public final class BigtableDataSettings {
     /**
      * Initializes a new Builder with sane defaults for all settings.
      *
-     * <p>Most defaults are extracted from BaseBigtableDataSettings, however some of the more
+     * <p>Most defaults are extracted from {@link
+     * com.google.cloud.bigtable.data.v2.stub.BigtableStubSettings}, however some of the more
      * complex defaults are configured explicitly here. Once the overlayed defaults are configured,
      * the base settings are augmented to work with overlayed functionality (like disabling retries
      * in the underlying GAPIC client for batching).

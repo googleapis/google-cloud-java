@@ -75,7 +75,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
+class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
       createInstanceMethodDescriptor =

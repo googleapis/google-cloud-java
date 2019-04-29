@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-public class GrpcBigtableStub extends BigtableStub {
+class GrpcBigtableStub extends BigtableStub {
 
   private static final MethodDescriptor<ReadRowsRequest, ReadRowsResponse>
       readRowsMethodDescriptor =

@@ -80,7 +80,7 @@ import org.threeten.bp.Duration;
  */
 @Generated("by gapic-generator")
 @BetaApi
-public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
+class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()

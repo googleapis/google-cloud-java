@@ -41,7 +41,7 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-public abstract class BigtableStub implements BackgroundResource {
+abstract class BigtableStub implements BackgroundResource {
 
   public ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
     throw new UnsupportedOperationException("Not implemented: readRowsCallable()");
