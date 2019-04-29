@@ -163,7 +163,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
