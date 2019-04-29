@@ -170,13 +170,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Filter by `base compensation entry's` unit. A job is a match if and
      * only if the job contains a base CompensationEntry and the base
-     * CompensationEntry's unit matches provided
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units]. Populate
-     * one or more
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
+     * CompensationEntry's unit matches provided [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * Populate one or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
      * </pre>
      *
      * <code>UNIT_ONLY = 1;</code>
@@ -190,12 +187,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * is a match if and only if the job contains a base CompensationEntry, and
      * the base entry's unit matches provided [compensation_units][] and amount
      * or range overlaps with provided [compensation_range][].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
-     * Set exactly one
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units] and
-     * populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
+     * Set exactly one [units][google.cloud.talent.v4beta1.CompensationFilter.units] and populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
      * </pre>
      *
      * <code>UNIT_AND_AMOUNT = 2;</code>
@@ -206,9 +200,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized base compensation amount and `base compensation
-     * entry's` unit. Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit. Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_BASE_AMOUNT = 3;</code>
@@ -219,9 +211,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized total compensation amount and `base compensation
-     * entry's` unit . Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit . Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_TOTAL_AMOUNT = 4;</code>
@@ -246,13 +236,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Filter by `base compensation entry's` unit. A job is a match if and
      * only if the job contains a base CompensationEntry and the base
-     * CompensationEntry's unit matches provided
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units]. Populate
-     * one or more
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
+     * CompensationEntry's unit matches provided [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * Populate one or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
      * </pre>
      *
      * <code>UNIT_ONLY = 1;</code>
@@ -266,12 +253,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * is a match if and only if the job contains a base CompensationEntry, and
      * the base entry's unit matches provided [compensation_units][] and amount
      * or range overlaps with provided [compensation_range][].
-     * See
-     * [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
-     * for definition of base compensation entry.
-     * Set exactly one
-     * [units][google.cloud.talent.v4beta1.CompensationFilter.units] and
-     * populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
+     * See [CompensationInfo.CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry] for definition of
+     * base compensation entry.
+     * Set exactly one [units][google.cloud.talent.v4beta1.CompensationFilter.units] and populate [range][google.cloud.talent.v4beta1.CompensationFilter.range].
      * </pre>
      *
      * <code>UNIT_AND_AMOUNT = 2;</code>
@@ -282,9 +266,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized base compensation amount and `base compensation
-     * entry's` unit. Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit. Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_BASE_AMOUNT = 3;</code>
@@ -295,9 +277,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filter by annualized total compensation amount and `base compensation
-     * entry's` unit . Populate
-     * [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or
-     * more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
+     * entry's` unit . Populate [range][google.cloud.talent.v4beta1.CompensationFilter.range] and zero or more [units][google.cloud.talent.v4beta1.CompensationFilter.units].
      * </pre>
      *
      * <code>ANNUALIZED_TOTAL_AMOUNT = 4;</code>

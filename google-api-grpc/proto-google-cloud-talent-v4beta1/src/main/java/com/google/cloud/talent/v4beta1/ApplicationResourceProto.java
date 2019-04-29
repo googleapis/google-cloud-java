@@ -26,12 +26,12 @@ public final class ApplicationResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/talent/v4beta1/applicatio"
-          + "n.proto\022\033google.cloud.talent.v4beta1\032\034go"
-          + "ogle/api/annotations.proto\032(google/cloud"
-          + "/talent/v4beta1/common.proto\032%google/clo"
-          + "ud/talent/v4beta1/job.proto\032\037google/prot"
-          + "obuf/timestamp.proto\032\036google/protobuf/wr"
-          + "appers.proto\032\026google/type/date.proto\"\302\007\n"
+          + "n.proto\022\033google.cloud.talent.v4beta1\032(go"
+          + "ogle/cloud/talent/v4beta1/common.proto\032%"
+          + "google/cloud/talent/v4beta1/job.proto\032\037g"
+          + "oogle/protobuf/timestamp.proto\032\036google/p"
+          + "rotobuf/wrappers.proto\032\026google/type/date"
+          + ".proto\032\034google/api/annotations.proto\"\302\007\n"
           + "\013Application\022\014\n\004name\030\001 \001(\t\022\023\n\013external_i"
           + "d\030\037 \001(\t\022\017\n\007profile\030\002 \001(\t\022\013\n\003job\030\004 \001(\t\022\017\n"
           + "\007company\030\005 \001(\t\022+\n\020application_date\030\007 \001(\013"
@@ -72,12 +72,12 @@ public final class ApplicationResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.type.DateProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_talent_v4beta1_Application_descriptor =
@@ -103,12 +103,12 @@ public final class ApplicationResourceProto {
               "IsMatch",
               "JobTitleSnippet",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
