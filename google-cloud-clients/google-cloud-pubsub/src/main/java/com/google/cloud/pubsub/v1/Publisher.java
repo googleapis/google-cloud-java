@@ -313,19 +313,21 @@ public class Publisher {
    */
   public void publishAllOutstanding() {
     messagesBatchLock.lock();
+    List<MessagesBatch> toSend;
     try {
-      for (MessagesBatch batch : messagesBatches.values()) {
-        if (!batch.isEmpty()) {
-          // TODO(kimkyung-goog): Do not release `messagesBatchLock` when publishing a batch. If
-          // it's released, the order of publishing cannot be guaranteed if `publish()` is called
-          // while this function is running. This locking mechanism needs to be improved if it
-          // causes any performance degradation.
-          publishOutstandingBatch(batch.popOutstandingBatch());
-        }
-      }
+      toSend = new ArrayList<>(messagesBatches.values());
       messagesBatches.clear();
     } finally {
       messagesBatchLock.unlock();
+    }
+    for (MessagesBatch batch : toSend) {
+      if (!batch.isEmpty()) {
+        // TODO(kimkyung-goog): Do not release `messagesBatchLock` when publishing a batch. If
+        // it's released, the order of publishing cannot be guaranteed if `publish()` is called
+        // while this function is running. This locking mechanism needs to be improved if it
+        // causes any performance degradation.
+        publishOutstandingBatch(batch.popOutstandingBatch());
+      }
     }
   }
 
