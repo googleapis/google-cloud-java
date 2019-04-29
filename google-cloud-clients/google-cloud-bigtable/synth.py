@@ -37,6 +37,7 @@ def generate_data_api(gapic):
 
   # Excludes are relative to source `gapic-google-cloud-bigtable-v2/src`
   excludes = [
+    "build.gradle",
     "pom.xml",
     "README.md",
     "src/main/java/com/google/cloud/bigtable/data/v2/package-info.java",
