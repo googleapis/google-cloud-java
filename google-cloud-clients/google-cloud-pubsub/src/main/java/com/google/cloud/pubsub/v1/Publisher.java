@@ -361,10 +361,6 @@ public class Publisher {
     return batchingSettings;
   }
 
-  private long getMaxBatchBytes() {
-    return getBatchingSettings().getRequestByteThreshold();
-  }
-
   /**
    * Schedules immediate publishing of any outstanding messages and waits until all are processed.
    *
@@ -395,10 +391,6 @@ public class Publisher {
    */
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return publisherStub.awaitTermination(duration, unit);
-  }
-
-  private boolean hasBatchingBytes() {
-    return getMaxBatchBytes() > 0;
   }
 
   /**
