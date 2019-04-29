@@ -146,6 +146,11 @@ public class IdentityTest {
     assertEquals("a:b", Identity.valueOf("a:b").strValue());
   }
 
+  @Test
+  public void testValueOfThreePart() {
+    assertEquals("a:b:c", Identity.valueOf("a:b:c").strValue());
+  }
+
   private void compareIdentities(Identity expected, Identity actual) {
     assertEquals(expected, actual);
     assertEquals(expected.getType(), actual.getType());

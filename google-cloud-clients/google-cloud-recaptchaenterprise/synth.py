@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
 
-versions = ['{{version}}']
-service = '{{service}}'
-config_pattern = {% if config_path %}"{{config_path}}"{% else %}'/google/cloud/{{service}}/artman_{{service}}_{version}.yaml'{% endif %}
+versions = ['v1beta1']
+service = 'recaptchaenterprise'
+config_pattern = '/google/cloud/recaptchaenterprise/artman_recaptchaenterprise_{version}.yaml'
 
 for version in versions:
     library = gapic.java_library(

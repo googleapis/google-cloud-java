@@ -1,10 +1,10 @@
-Google Cloud Java Client for {{name}}
+Google Cloud Java Client for reCAPTCHA Enterprise
 ===================================================
 
-Java idiomatic client for [{{name}}][product-overview].
+Java idiomatic client for [reCAPTCHA Enterprise][product-overview].
 
 [![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-{{service}}.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-{{service}}.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-recaptchaenterprise.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-recaptchaenterprise.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 - [Product Documentation][product-docs]
@@ -16,22 +16,22 @@ Java idiomatic client for [{{name}}][product-overview].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-{{service}}:released})
+[//]: # ({x-version-update-start:google-cloud-recaptchaenterprise:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-{{service}}</artifactId>
-  <version>0.71.0-beta</version>
+  <artifactId>google-cloud-recaptchaenterprise</artifactId>
+  <version>0.0.1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-{{service}}:0.71.0-beta'
+compile 'com.google.cloud:google-cloud-recaptchaenterprise:0.0.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-{{service}}" % "0.71.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "0.0.1"
 ```
 [//]: # ({x-version-update-end})
 
@@ -40,20 +40,20 @@ Authentication
 
 See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication) section in the base directory's README.
 
-About {{name}}
+About reCAPTCHA Enterprise
 ----------------------------
 
-[{{name}}][product-overview] {{description}}
+[reCAPTCHA Enterprise][product-overview] Help protect your website from fraudulent activity, spam, and abuse.
 
-See the [{{name}} client library docs][lib-docs] to learn how to use this {{name}} Client Library.
+See the [reCAPTCHA Enterprise client library docs][lib-docs] to learn how to use this reCAPTCHA Enterprise Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the {{name}} API enabled. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the reCAPTCHA Enterprise API enabled. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `google-cloud-{{service}}` library.  See the [Quickstart](#quickstart) section to add `google-cloud-{{service}}` as a dependency in your code.
+You'll need to obtain the `google-cloud-recaptchaenterprise` library.  See the [Quickstart](#quickstart) section to add `google-cloud-recaptchaenterprise` as a dependency in your code.
 
 Troubleshooting
 ---------------
@@ -62,7 +62,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-{{name}} uses gRPC for the transport layer.
+reCAPTCHA Enterprise uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -95,6 +95,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[product-overview]: {{product_overview_url}}
-[product-docs]: {{product_docs_url}}
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/{{service}}/{{api_version}}/package-summary.html
+[product-overview]: https://cloud.google.com/recaptcha-enterprise/
+[product-docs]: https://cloud.google.com/recaptcha-enterprise/docs/
+[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/recaptchaenterprise/v1beta1/package-summary.html
