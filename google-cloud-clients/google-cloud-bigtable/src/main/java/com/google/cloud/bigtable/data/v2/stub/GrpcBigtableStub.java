@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -45,13 +45,9 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * gRPC stub implementation for Cloud Bigtable API.
- *
- * <p>This class is for advanced usage and reflects the underlying API directly.
- */
+/** For internal use only. */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@InternalApi
 public class GrpcBigtableStub extends BigtableStub {
 
   private static final MethodDescriptor<ReadRowsRequest, ReadRowsResponse>
