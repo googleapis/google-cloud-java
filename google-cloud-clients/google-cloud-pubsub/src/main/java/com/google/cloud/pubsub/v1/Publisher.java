@@ -314,13 +314,13 @@ public class Publisher {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
-    PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
-    publishRequest.setTopic(topicName);
-    for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
-      publishRequest.addMessages(outstandingPublish.message);
-    }
-
-    return publisherStub.publishCallable().futureCall(publishRequest.build());
+    return publisherStub
+        .publishCallable()
+        .futureCall(
+            PublishRequest.newBuilder()
+                .setTopic(topicName)
+                .addAllMessages(outstandingBatch.getMessages())
+                .build());
   }
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
@@ -399,6 +399,14 @@ public class Publisher {
 
     int size() {
       return outstandingPublishes.size();
+    }
+
+    private List<PubsubMessage> getMessages() {
+      List<PubsubMessage> results = new ArrayList<>(outstandingPublishes.size());
+      for (OutstandingPublish outstandingPublish : outstandingPublishes) {
+        results.add(outstandingPublish.message);
+      }
+      return results;
     }
   }
 
@@ -500,8 +508,8 @@ public class Publisher {
     static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
     static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
-    static final Duration DEFAULT_RPC_TIMEOUT = Duration.ofSeconds(10);
-    static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
+    private static final Duration DEFAULT_RPC_TIMEOUT = Duration.ofSeconds(10);
+    private static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
@@ -532,19 +540,19 @@ public class Publisher {
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
 
-    boolean enableMessageOrdering = DEFAULT_ENABLE_MESSAGE_ORDERING;
+    private boolean enableMessageOrdering = DEFAULT_ENABLE_MESSAGE_ORDERING;
 
-    TransportChannelProvider channelProvider =
+    private TransportChannelProvider channelProvider =
         TopicAdminSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
 
-    HeaderProvider headerProvider = new NoHeaderProvider();
-    HeaderProvider internalHeaderProvider =
+    private HeaderProvider headerProvider = new NoHeaderProvider();
+    private HeaderProvider internalHeaderProvider =
         TopicAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    CredentialsProvider credentialsProvider =
+    private CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
-    ApiFunction<PubsubMessage, PubsubMessage> messageTransform =
+    private ApiFunction<PubsubMessage, PubsubMessage> messageTransform =
         new ApiFunction<PubsubMessage, PubsubMessage>() {
           @Override
           public PubsubMessage apply(PubsubMessage input) {
