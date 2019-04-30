@@ -192,7 +192,7 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
+        <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M3</version>
         <configuration>
           <excludes>
@@ -231,6 +231,34 @@
             <configuration>
               <excludes combine.self="override"></excludes>
           </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>bigtableITTest</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>3.0.0-M3</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <includes>
+                <include>com.google.cloud.examples.bigtable/IT*.java</include>
+              </includes>
+              <parallel>classes</parallel>
+              <perCoreThreadCount>true</perCoreThreadCount>
+              <threadCount>2</threadCount>
+            </configuration>
           </plugin>
         </plugins>
       </build>
