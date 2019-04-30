@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2;
+package com.google.cloud.recaptchaenterprise.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;
@@ -23,11 +23,11 @@ import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 @BetaApi
-public class MockBigtable implements MockGrpcService {
-  private final MockBigtableImpl serviceImpl;
+public class MockRecaptchaEnterpriseServiceV1Beta1 implements MockGrpcService {
+  private final MockRecaptchaEnterpriseServiceV1Beta1Impl serviceImpl;
 
-  public MockBigtable() {
-    serviceImpl = new MockBigtableImpl();
+  public MockRecaptchaEnterpriseServiceV1Beta1() {
+    serviceImpl = new MockRecaptchaEnterpriseServiceV1Beta1Impl();
   }
 
   @Override

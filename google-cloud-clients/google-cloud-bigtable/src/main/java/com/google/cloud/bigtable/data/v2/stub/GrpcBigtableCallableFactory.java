@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
@@ -35,13 +36,9 @@ import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * gRPC callable factory implementation for Cloud Bigtable API.
- *
- * <p>This class is for advanced usage.
- */
+/** For internal use only. */
 @Generated("by gapic-generator")
-@BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+@InternalApi
 public class GrpcBigtableCallableFactory implements GrpcStubCallableFactory {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
