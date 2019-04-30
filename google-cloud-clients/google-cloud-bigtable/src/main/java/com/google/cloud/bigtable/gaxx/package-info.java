@@ -13,5 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/** General purpose utilities that might be moved to gax at some point in the future. */
+/**
+ * General purpose utilities that might be moved to gax at some point in the future.
+ *
+ * <p>For internal use, public for technical reasons.
+ */
+@InternalApi
 package com.google.cloud.bigtable.gaxx;
+
+import com.google.api.core.InternalApi;

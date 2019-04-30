@@ -19,6 +19,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -64,78 +65,9 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
-/**
- * Service Description: Service for creating, configuring, and deleting Cloud Bigtable tables.
- *
- * <p>Provides access to the table schemas only, not the data stored within the tables.
- *
- * <p>This class provides the ability to make remote calls to the backing service through method
- * calls that map to API methods. Sample code to get started:
- *
- * <pre>
- * <code>
- * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
- *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
- *   String tableId = "";
- *   Table table = Table.newBuilder().build();
- *   Table response = baseBigtableTableAdminClient.createTable(parent, tableId, table);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the baseBigtableTableAdminClient object to clean up
- * resources such as threads. In the example above, try-with-resources is used, which automatically
- * calls close().
- *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
- *
- * <p>See the individual methods for example code.
- *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist with
- * these names, this class includes a format method for each type of name, and additionally a parse
- * method to extract the individual identifiers contained within names that are returned.
- *
- * <p>This class can be customized by passing in a custom instance of BaseBigtableTableAdminSettings
- * to create(). For example:
- *
- * <p>To customize credentials:
- *
- * <pre>
- * <code>
- * BaseBigtableTableAdminSettings baseBigtableTableAdminSettings =
- *     BaseBigtableTableAdminSettings.newBuilder()
- *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
- *         .build();
- * BaseBigtableTableAdminClient baseBigtableTableAdminClient =
- *     BaseBigtableTableAdminClient.create(baseBigtableTableAdminSettings);
- * </code>
- * </pre>
- *
- * To customize the endpoint:
- *
- * <pre>
- * <code>
- * BaseBigtableTableAdminSettings baseBigtableTableAdminSettings =
- *     BaseBigtableTableAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
- * BaseBigtableTableAdminClient baseBigtableTableAdminClient =
- *     BaseBigtableTableAdminClient.create(baseBigtableTableAdminSettings);
- * </code>
- * </pre>
- */
+/** For internal use only. */
 @Generated("by gapic-generator")
-@BetaApi
+@InternalApi
 public class BaseBigtableTableAdminClient implements BackgroundResource {
   private final BaseBigtableTableAdminSettings settings;
   private final BigtableTableAdminStub stub;
