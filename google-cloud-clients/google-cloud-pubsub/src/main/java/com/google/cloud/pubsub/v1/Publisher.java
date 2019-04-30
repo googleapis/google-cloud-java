@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub.v1;
 
-import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -47,7 +46,6 @@ import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
