@@ -19,6 +19,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -67,33 +68,9 @@ import java.util.List;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * Settings class to configure an instance of {@link BaseBigtableInstanceAdminClient}.
- *
- * <p>The default instance has everything set to sensible defaults:
- *
- * <ul>
- *   <li>The default service address (bigtableadmin.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
- * </ul>
- *
- * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of getInstance to 30 seconds:
- *
- * <pre>
- * <code>
- * BaseBigtableInstanceAdminSettings.Builder baseBigtableInstanceAdminSettingsBuilder =
- *     BaseBigtableInstanceAdminSettings.newBuilder();
- * baseBigtableInstanceAdminSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
- * BaseBigtableInstanceAdminSettings baseBigtableInstanceAdminSettings = baseBigtableInstanceAdminSettingsBuilder.build();
- * </code>
- * </pre>
- */
+/** For internal use only. */
 @Generated("by gapic-generator")
-@BetaApi
+@InternalApi
 public class BaseBigtableInstanceAdminSettings
     extends ClientSettings<BaseBigtableInstanceAdminSettings> {
   /** Returns the object with the settings used for calls to createInstance. */

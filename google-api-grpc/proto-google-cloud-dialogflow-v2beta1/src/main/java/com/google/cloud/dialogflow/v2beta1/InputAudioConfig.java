@@ -7,7 +7,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Instructs the speech recognizer how to process the audio content.
+ * Instructs the speech recognizer on how to process the audio content.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.InputAudioConfig}
@@ -27,6 +27,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     languageCode_ = "";
     phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     model_ = "";
+    modelVariant_ = 0;
   }
 
   @java.lang.Override
@@ -87,6 +88,13 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
               java.lang.String s = input.readStringRequireUtf8();
 
               model_ = s;
+              break;
+            }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              modelVariant_ = rawValue;
               break;
             }
           default:
@@ -361,6 +369,38 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int MODEL_VARIANT_FIELD_NUMBER = 10;
+  private int modelVariant_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+   */
+  public int getModelVariantValue() {
+    return modelVariant_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+   */
+  public com.google.cloud.dialogflow.v2beta1.SpeechModelVariant getModelVariant() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dialogflow.v2beta1.SpeechModelVariant result =
+        com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.valueOf(modelVariant_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -391,6 +431,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!getModelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, model_);
+    }
+    if (modelVariant_
+        != com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.SPEECH_MODEL_VARIANT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, modelVariant_);
     }
     unknownFields.writeTo(output);
   }
@@ -423,6 +468,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, model_);
     }
+    if (modelVariant_
+        != com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.SPEECH_MODEL_VARIANT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, modelVariant_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -444,6 +494,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getPhraseHintsList().equals(other.getPhraseHintsList())) return false;
     if (!getModel().equals(other.getModel())) return false;
+    if (modelVariant_ != other.modelVariant_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -467,6 +518,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + MODEL_VARIANT_FIELD_NUMBER;
+    hash = (53 * hash) + modelVariant_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -571,7 +624,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Instructs the speech recognizer how to process the audio content.
+   * Instructs the speech recognizer on how to process the audio content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.InputAudioConfig}
@@ -622,6 +675,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000008);
       model_ = "";
 
+      modelVariant_ = 0;
+
       return this;
     }
 
@@ -660,6 +715,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       result.phraseHints_ = phraseHints_;
       result.model_ = model_;
+      result.modelVariant_ = modelVariant_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -734,6 +790,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
         onChanged();
+      }
+      if (other.modelVariant_ != 0) {
+        setModelVariantValue(other.getModelVariantValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1343,6 +1402,84 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
 
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int modelVariant_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+     */
+    public int getModelVariantValue() {
+      return modelVariant_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+     */
+    public Builder setModelVariantValue(int value) {
+      modelVariant_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SpeechModelVariant getModelVariant() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.v2beta1.SpeechModelVariant result =
+          com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.valueOf(modelVariant_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.SpeechModelVariant.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+     */
+    public Builder setModelVariant(com.google.cloud.dialogflow.v2beta1.SpeechModelVariant value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelVariant_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+     */
+    public Builder clearModelVariant() {
+
+      modelVariant_ = 0;
       onChanged();
       return this;
     }

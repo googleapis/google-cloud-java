@@ -148,7 +148,9 @@ public class IdentityTest {
 
   @Test
   public void testValueOfThreePart() {
-    assertEquals("a:b:c", Identity.valueOf("a:b:c").strValue());
+    Identity identity = Identity.valueOf("a:b:c");
+    assertEquals("A", identity.getType().name());
+    assertEquals("b:c", identity.getValue());
   }
 
   private void compareIdentities(Identity expected, Identity actual) {

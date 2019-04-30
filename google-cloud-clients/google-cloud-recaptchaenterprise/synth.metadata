@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-04-29T22:56:01.195702Z",
+  "updateTime": "2019-04-30T07:50:11.577507Z",
   "sources": [
     {
       "generator": {
@@ -21,21 +21,11 @@
     {
       "client": {
         "source": "googleapis",
-        "apiName": "bigtable",
-        "apiVersion": "v2",
+        "apiName": "recaptchaenterprise",
+        "apiVersion": "v1beta1",
         "language": "java",
         "generator": "gapic",
-        "config": "google/bigtable/artman_bigtable.yaml"
-      }
-    },
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "bigtable-admin",
-        "apiVersion": "v2",
-        "language": "java",
-        "generator": "gapic",
-        "config": "google/bigtable/admin/artman_bigtableadmin.yaml"
+        "config": "google/cloud/recaptchaenterprise/artman_recaptchaenterprise_v1beta1.yaml"
       }
     }
   ]
