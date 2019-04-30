@@ -272,13 +272,13 @@ public class Publisher {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
-    PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
-    publishRequest.setTopic(topicName);
-    for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
-      publishRequest.addMessages(outstandingPublish.message);
-    }
-
-    return publisherStub.publishCallable().futureCall(publishRequest.build());
+    return publisherStub
+        .publishCallable()
+        .futureCall(
+            PublishRequest.newBuilder()
+                .setTopic(topicName)
+                .addAllMessages(outstandingBatch.getMessages())
+                .build());
   }
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
@@ -341,6 +341,14 @@ public class Publisher {
 
     int size() {
       return outstandingPublishes.size();
+    }
+
+    private List<PubsubMessage> getMessages() {
+      List<PubsubMessage> results = new ArrayList<>(outstandingPublishes.size());
+      for (OutstandingPublish outstandingPublish : outstandingPublishes) {
+        results.add(outstandingPublish.message);
+      }
+      return results;
     }
   }
 
