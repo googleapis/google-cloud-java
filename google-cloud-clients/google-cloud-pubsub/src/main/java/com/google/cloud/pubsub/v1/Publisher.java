@@ -25,6 +25,8 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorAsBackgroundResource;
 import com.google.api.gax.core.ExecutorProvider;
@@ -47,7 +49,6 @@ import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -94,7 +95,7 @@ public class Publisher {
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
-  private final List<AutoCloseable> closeables;
+  private final BackgroundResource backgroundResources;
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
   private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
@@ -119,11 +120,9 @@ public class Publisher {
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
+    List<BackgroundResource> backgroundResourceList = new ArrayList<>();
     if (builder.executorProvider.shouldAutoClose()) {
-      closeables =
-          Collections.<AutoCloseable>singletonList(new ExecutorAsBackgroundResource(executor));
-    } else {
-      closeables = Collections.emptyList();
+      backgroundResourceList.add(new ExecutorAsBackgroundResource(executor));
     }
 
     // Publisher used to take maxAttempt == 0 to mean infinity, but to GAX it means don't retry.
@@ -151,7 +150,8 @@ public class Publisher {
         .setRetrySettings(retrySettings)
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
-
+    backgroundResourceList.add(publisherStub);
+    backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessageWaiter();
   }
@@ -397,11 +397,7 @@ public class Publisher {
       currentAlarmFuture.cancel(false);
     }
     publishAllOutstanding();
-    messagesWaiter.waitNoMessages();
-    for (AutoCloseable closeable : closeables) {
-      closeable.close();
-    }
-    publisherStub.shutdown();
+    backgroundResources.shutdown();
   }
 
   /**
@@ -411,7 +407,7 @@ public class Publisher {
    * <p>Call this method to make sure all resources are freed properly.
    */
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
-    return publisherStub.awaitTermination(duration, unit);
+    return backgroundResources.awaitTermination(duration, unit);
   }
 
   private boolean hasBatchingBytes() {
