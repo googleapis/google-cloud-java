@@ -54,14 +54,14 @@ fi
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
-if [[ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]]; then
+if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" ]]; then
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
 
-case $JOB_TYPE in
+case ${JOB_TYPE} in
 test)
     mvn test -B
-    bash $KOKORO_GFILE_DIR/codecov.sh
+    bash ${KOKORO_GFILE_DIR}/codecov.sh
     ;;
 lint)
     mvn com.coveo:fmt-maven-plugin:check
