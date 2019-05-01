@@ -293,7 +293,7 @@ public class Publisher {
                             + "if this frequently occurs",
                         result.getMessageIdsCount(), outstandingBatch.size())));
               } else {
-                outstandingBatch.onSuccess(result.getMessageIds());
+                outstandingBatch.onSuccess(result.getMessageIdsList());
               }
             } finally {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
