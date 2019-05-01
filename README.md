@@ -45,7 +45,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [BigQuery Storge](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
+-  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 -  [Cloud Data Catalog](google-cloud-clients/google-cloud-datacatalog) (Alpha)
