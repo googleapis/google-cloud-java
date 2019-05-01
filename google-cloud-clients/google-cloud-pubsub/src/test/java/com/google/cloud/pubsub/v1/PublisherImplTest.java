@@ -363,10 +363,6 @@ public class PublisherImplTest {
     // Verify that messages with "OrderB" were delivered in order.
     assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture3.get()));
 
-    assertTrue(publishFuture1.isDone());
-    assertTrue(publishFuture2.isDone());
-    assertTrue(publishFuture3.isDone());
-
     publisher.shutdown();
   }
 
