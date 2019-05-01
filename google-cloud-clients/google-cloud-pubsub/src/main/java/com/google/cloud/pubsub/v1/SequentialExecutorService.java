@@ -23,10 +23,14 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
+
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
@@ -147,6 +151,8 @@ final class SequentialExecutorService {
         new CancellationException(
             "Execution cancelled because executing previous runnable failed.");
 
+    private final Set<String> keysWithErrors = Collections.synchronizedSet(new HashSet<String>());
+
     CallbackExecutor(Executor executor) {
       super(executor);
     }
@@ -186,6 +192,11 @@ final class SequentialExecutorService {
       // Step 1: create a future for the user
       final SettableApiFuture<T> future = SettableApiFuture.create();
 
+      if (keysWithErrors.contains(key)) {
+        future.setException(CANCELLATION_EXCEPTION);
+        return future;
+      }
+
       // Step 2: create the CancellableRunnable
       // Step 3: add the task to queue via `execute`
       CancellableRunnable task =
@@ -213,6 +224,7 @@ final class SequentialExecutorService {
                       // Step 5.2: on failure
                       @Override
                       public void onFailure(Throwable e) {
+                        keysWithErrors.add(key);
                         future.setException(e);
                         cancelQueuedTasks(key, CANCELLATION_EXCEPTION);
                       }
@@ -233,7 +245,11 @@ final class SequentialExecutorService {
       return future;
     }
 
-    /** Cancels every task in the queue assoicated with {@code key}. */
+    void resumePublish(String key) {
+      keysWithErrors.remove(key);
+    }
+
+    /** Cancels every task in the queue associated with {@code key}. */
     private void cancelQueuedTasks(final String key, Throwable e) {
       // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
       // so that no more tasks are scheduled.
