@@ -220,7 +220,7 @@ public class Publisher {
 
     final String orderingKey = message.getOrderingKey();
     Preconditions.checkState(
-        orderingKey != null && !orderingKey.isEmpty() && !enableMessageOrdering,
+        orderingKey.isEmpty() || enableMessageOrdering,
         "Cannot publish a message with an ordering key when message ordering is not enabled.");
 
     final OutstandingPublish outstandingPublish =
@@ -357,7 +357,7 @@ public class Publisher {
           @Override
           public void onSuccess(PublishResponse result) {
             try {
-              if (result.getMessageIdsCount() != outstandingBatch.size()) {
+              if (result == null || result.getMessageIdsCount() != outstandingBatch.size()) {
                 outstandingBatch.onFailure(
                     new IllegalStateException(
                         String.format(
@@ -387,15 +387,15 @@ public class Publisher {
       ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
-      sequentialExecutor.submit(
-          outstandingBatch.orderingKey,
-          new Callable<ApiFuture<PublishResponse>>() {
-            public ApiFuture<PublishResponse> call() {
-              ApiFuture<PublishResponse> future = publishCall(outstandingBatch);
-              ApiFutures.addCallback(future, futureCallback, directExecutor());
-              return future;
-            }
-          });
+      ApiFuture<PublishResponse> future =
+          sequentialExecutor.submit(
+              outstandingBatch.orderingKey,
+              new Callable<ApiFuture<PublishResponse>>() {
+                public ApiFuture<PublishResponse> call() {
+                  return publishCall(outstandingBatch);
+                }
+              });
+      ApiFutures.addCallback(future, futureCallback, directExecutor());
     }
   }
 
