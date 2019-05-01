@@ -675,12 +675,12 @@
         <artifactId>grpc-google-cloud-scheduler-v1</artifactId>
         <version>0.54.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
       </dependency>
-        <dependency>
-            <groupId>com.google.api.grpc</groupId>
-            <artifactId>proto-google-cloud-scheduler-v1</artifactId>
-            <version>0.54.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
-        </dependency>
-        <dependency>
+      <dependency>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>proto-google-cloud-scheduler-v1</artifactId>
+          <version>0.54.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1beta1</artifactId>
         <version>0.54.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
@@ -1059,6 +1059,21 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-webrisk</artifactId>
         <version>0.4.1-alpha-SNAPSHOT</version><!--{x-version-update:google-cloud-webrisk:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-phishingprotection-v1beta1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-phishingprotection-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-phishingprotection-v1beta1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-phishingprotection</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!--{x-version-update:google-cloud-phishingprotection:current}-->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

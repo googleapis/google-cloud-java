@@ -358,23 +358,15 @@ public class Publisher {
           public void onSuccess(PublishResponse result) {
             try {
               if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                Throwable t =
+                outstandingBatch.onFailure(
                     new IllegalStateException(
                         String.format(
                             "The publish result count %s does not match "
                                 + "the expected %s results. Please contact Cloud Pub/Sub support "
                                 + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
-                  oustandingMessage.publishResult.setException(t);
-                }
-                return;
-              }
-
-              Iterator<OutstandingPublish> messagesResultsIt =
-                  outstandingBatch.outstandingPublishes.iterator();
-              for (String messageId : result.getMessageIdsList()) {
-                messagesResultsIt.next().publishResult.set(messageId);
+                            result.getMessageIdsCount(), outstandingBatch.size())));
+              } else {
+                outstandingBatch.onSuccess(result.getMessageIdsList());
               }
             } finally {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
@@ -384,9 +376,7 @@ public class Publisher {
           @Override
           public void onFailure(Throwable t) {
             try {
-              for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
-                outstandingPublish.publishResult.setException(t);
-              }
+              outstandingBatch.onFailure(t);
             } finally {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
@@ -436,6 +426,19 @@ public class Publisher {
       }
       return results;
     }
+
+    private void onFailure(Throwable t) {
+      for (OutstandingPublish outstandingPublish : outstandingPublishes) {
+        outstandingPublish.publishResult.setException(t);
+      }
+    }
+
+    private void onSuccess(Iterable<String> results) {
+      Iterator<OutstandingPublish> messagesResultsIt = outstandingPublishes.iterator();
+      for (String messageId : results) {
+        messagesResultsIt.next().publishResult.set(messageId);
+      }
+    }
   }
 
   private static final class OutstandingPublish {
@@ -463,9 +466,8 @@ public class Publisher {
    * pending messages are lost.
    */
   public void shutdown() {
-    if (shutdown.getAndSet(true)) {
-      throw new IllegalStateException("Cannot shut down a publisher already shut-down.");
-    }
+    Preconditions.checkState(
+        !shutdown.getAndSet(true), "Cannot shut down a publisher already shut-down.");
     if (currentAlarmFuture != null && activeAlarm.getAndSet(false)) {
       currentAlarmFuture.cancel(false);
     }
