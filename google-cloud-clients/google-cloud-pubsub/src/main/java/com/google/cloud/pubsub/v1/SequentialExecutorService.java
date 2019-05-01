@@ -60,6 +60,12 @@ final class SequentialExecutorService {
       this.tasksByKey = new HashMap<>();
     }
 
+    boolean hasTasksInflight(String key) {
+      synchronized (tasksByKey) {
+        return tasksByKey.containsKey(key);
+      }
+    }
+
     protected void execute(final String key, R task) {
       synchronized (tasksByKey) {
         Queue<R> newTasks = tasksByKey.get(key);

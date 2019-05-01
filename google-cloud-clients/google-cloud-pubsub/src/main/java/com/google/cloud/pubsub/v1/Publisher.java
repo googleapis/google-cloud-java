@@ -49,7 +49,6 @@ import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -94,14 +93,14 @@ public class Publisher {
   private final boolean enableMessageOrdering;
 
   private final Lock messagesBatchLock;
-  private final Map<String, MessagesBatch> messagesBatches;
+  final Map<String, MessagesBatch> messagesBatches;
 
   private final AtomicBoolean activeAlarm;
 
   private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
-  private final SequentialExecutorService.CallbackExecutor sequentialExecutor;
+  final SequentialExecutorService.CallbackExecutor sequentialExecutor;
   private final AtomicBoolean shutdown;
   private final BackgroundResource backgroundResources;
   private final MessageWaiter messagesWaiter;
@@ -251,7 +250,7 @@ public class Publisher {
     messagesWaiter.incrementPendingMessages(1);
 
     if (!batchesToSend.isEmpty()) {
-      publishAllOutstanding();
+      publishAllWithoutInflight();
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
         executor.execute(
@@ -279,7 +278,7 @@ public class Publisher {
                   public void run() {
                     logger.log(Level.FINER, "Sending messages based on schedule.");
                     activeAlarm.getAndSet(false);
-                    publishAllOutstanding();
+                    publishAllWithoutInflight();
                   }
                 },
                 delayThresholdMs,
@@ -316,6 +315,35 @@ public class Publisher {
     }
   }
 
+  /**
+   * Publish any outstanding batches if non-empty and there are no other batches in flight. This
+   * method sends buffered messages, but does not wait for the send operations to complete. To wait
+   * for messages to send, call {@code get} on the futures returned from {@code publish}.
+   */
+  private void publishAllWithoutInflight() {
+    messagesBatchLock.lock();
+    try {
+      Iterator<Map.Entry<String, MessagesBatch>> it = messagesBatches.entrySet().iterator();
+      while (it.hasNext()) {
+        Map.Entry<String, MessagesBatch> entry = it.next();
+        MessagesBatch batch = entry.getValue();
+        String key = entry.getKey();
+        if (batch.isEmpty()) {
+          it.remove();
+        } else if (key.isEmpty() || !sequentialExecutor.hasTasksInflight(key)) {
+          // TODO(kimkyung-goog): Do not release `messagesBatchLock` when publishing a batch. If
+          // it's released, the order of publishing cannot be guaranteed if `publish()` is called
+          // while this function is running. This locking mechanism needs to be improved if it
+          // causes any performance degradation.
+          publishOutstandingBatch(batch.popOutstandingBatch());
+          it.remove();
+        }
+      }
+    } finally {
+      messagesBatchLock.unlock();
+    }
+  }
+
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
     return publisherStub
         .publishCallable()
@@ -333,13 +361,9 @@ public class Publisher {
           public void onSuccess(PublishResponse result) {
             try {
               if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                Throwable t =
-                    new IllegalStateException(
-                        String.format(
-                            "The publish result count %s does not match "
-                                + "the expected %s results. Please contact Cloud Pub/Sub support "
-                                + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBatch.size()));
+                Throwable t = new IllegalStateException(String.format(
+                    "The publish result count %s does not match " + "the expected %s results. Please contact Cloud Pub/Sub support "
+                        + "if this frequently occurs", result.getMessageIdsCount(), outstandingBatch.size()));
                 for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
                   oustandingMessage.publishResult.setException(t);
                 }
@@ -437,7 +461,7 @@ public class Publisher {
    * should be invoked prior to deleting the {@link Publisher} object in order to ensure that no
    * pending messages are lost.
    */
-  public void shutdown() throws Exception {
+  public void shutdown() {
     if (shutdown.getAndSet(true)) {
       throw new IllegalStateException("Cannot shut down a publisher already shut-down.");
     }

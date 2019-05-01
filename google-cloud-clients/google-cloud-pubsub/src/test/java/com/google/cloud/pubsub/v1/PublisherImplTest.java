@@ -47,6 +47,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -409,6 +410,42 @@ public class PublisherImplTest {
     assertEquals("1", publishFuture1.get());
 
     assertEquals(4, testPublisherServiceImpl.getCapturedRequests().size());
+    publisher.shutdown();
+  }
+
+
+  @Test
+  public void testEnableMessageOrdering_dontSendWhileInflight() throws Exception {
+    // Set maxAttempts to 1 and enableMessageOrdering to true at the same time.
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(2L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+
+    sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
+
+    // The timer goes off, and the first message is sent.
+    fakeExecutor.advanceTime(Duration.ofSeconds(10));
+    publisher.sequentialExecutor.hasTasksInflight("orderA");
+    assertFalse(publisher.messagesBatches.containsKey("orderA"));
+
+    // The timer goes off, but the first message is in complete.
+    sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
+    fakeExecutor.advanceTime(Duration.ofSeconds(10));
+    publisher.sequentialExecutor.hasTasksInflight("orderA");
+    assertTrue(publisher.messagesBatches.containsKey("orderA"));
+
+    // The batch should now be full.
+    sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
+    publisher.sequentialExecutor.hasTasksInflight("orderA");
+    assertFalse(publisher.messagesBatches.containsKey("orderA"));
+
     publisher.shutdown();
   }
 
