@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.COLLECTION_ID;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_SNAPSHOT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.endAt;
@@ -25,6 +26,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.offset;
 import static com.google.cloud.firestore.LocalFirestoreHelper.order;
 import static com.google.cloud.firestore.LocalFirestoreHelper.query;
 import static com.google.cloud.firestore.LocalFirestoreHelper.queryResponse;
+import static com.google.cloud.firestore.LocalFirestoreHelper.reference;
 import static com.google.cloud.firestore.LocalFirestoreHelper.select;
 import static com.google.cloud.firestore.LocalFirestoreHelper.startAt;
 import static com.google.cloud.firestore.LocalFirestoreHelper.unaryFilter;
@@ -72,7 +74,7 @@ public class QueryTest {
 
   @Before
   public void before() {
-    query = firestoreMock.collection("coll");
+    query = firestoreMock.collection(COLLECTION_ID);
   }
 
   @Test
@@ -183,11 +185,7 @@ public class QueryTest {
     query.whereEqualTo(FieldPath.documentId(), "doc").get().get();
 
     RunQueryRequest expectedRequest =
-        query(
-            filter(
-                Operator.EQUAL,
-                "__name__",
-                Value.newBuilder().setReferenceValue(DOCUMENT_NAME).build()));
+        query(filter(Operator.EQUAL, "__name__", reference(DOCUMENT_NAME)));
 
     assertEquals(expectedRequest, runQuery.getValue());
   }
@@ -287,8 +285,7 @@ public class QueryTest {
 
     query.startAt(SINGLE_FIELD_SNAPSHOT).get();
 
-    Value documentBoundary =
-        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+    Value documentBoundary = reference(DOCUMENT_NAME);
 
     RunQueryRequest queryRequest =
         query(
@@ -309,8 +306,7 @@ public class QueryTest {
 
     query.orderBy(FieldPath.documentId()).startAt(SINGLE_FIELD_SNAPSHOT).get();
 
-    Value documentBoundary =
-        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+    Value documentBoundary = reference(DOCUMENT_NAME);
 
     RunQueryRequest queryRequest =
         query(
@@ -331,8 +327,7 @@ public class QueryTest {
 
     query.orderBy("foo", Query.Direction.DESCENDING).startAt(SINGLE_FIELD_SNAPSHOT).get();
 
-    Value documentBoundary =
-        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+    Value documentBoundary = reference(DOCUMENT_NAME);
 
     RunQueryRequest queryRequest =
         query(
@@ -360,8 +355,7 @@ public class QueryTest {
         .startAt(SINGLE_FIELD_SNAPSHOT)
         .get();
 
-    Value documentBoundary =
-        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+    Value documentBoundary = reference(DOCUMENT_NAME);
 
     RunQueryRequest queryRequest =
         query(
@@ -387,8 +381,7 @@ public class QueryTest {
 
     query.whereEqualTo("foo", "bar").startAt(SINGLE_FIELD_SNAPSHOT).get();
 
-    Value documentBoundary =
-        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/doc").build();
+    Value documentBoundary = reference(DOCUMENT_NAME);
 
     RunQueryRequest queryRequest =
         query(
@@ -408,10 +401,9 @@ public class QueryTest {
             streamObserverCapture.capture(),
             Matchers.<ServerStreamingCallable>any());
 
-    query.orderBy("foo").orderBy(FieldPath.documentId()).startAt("bar", "foo").get().get();
+    query.orderBy("foo").orderBy(FieldPath.documentId()).startAt("bar", "doc").get().get();
 
-    Value documentBoundary =
-        Value.newBuilder().setReferenceValue(query.getResourcePath().toString() + "/foo").build();
+    Value documentBoundary = reference(DOCUMENT_NAME);
 
     RunQueryRequest queryRequest =
         query(
@@ -503,6 +495,43 @@ public class QueryTest {
         query(order("foo", StructuredQuery.Direction.ASCENDING), endAt(false));
 
     assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void withCollectionGroup() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    Query query = firestoreMock.collectionGroup(COLLECTION_ID);
+    query = query.whereGreaterThan(FieldPath.documentId(), "coll/doc");
+    query = query.orderBy(FieldPath.documentId());
+    query = query.endAt("coll/doc");
+    query.get();
+
+    RunQueryRequest queryRequest =
+        query(
+            /* transactionId= */ null,
+            /* allDescendants= */ true,
+            filter(Operator.GREATER_THAN, "__name__", reference(DOCUMENT_NAME)),
+            order("__name__", StructuredQuery.Direction.ASCENDING),
+            endAt(reference(DOCUMENT_NAME), false));
+
+    assertEquals(queryRequest, runQuery.getValue());
+  }
+
+  @Test
+  public void collectionGroupCannotContainSlashes() {
+    try {
+      Query query = firestoreMock.collectionGroup("foo/bar");
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals(
+          "Invalid collectionId 'foo/bar'. Collection IDs must not contain '/'.", e.getMessage());
+    }
   }
 
   @Test(expected = IllegalStateException.class)

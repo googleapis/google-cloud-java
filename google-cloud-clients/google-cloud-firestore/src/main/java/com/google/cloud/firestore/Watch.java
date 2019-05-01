@@ -172,7 +172,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     target.setQuery(
         QueryTarget.newBuilder()
             .setStructuredQuery(query.buildQuery())
-            .setParent(query.getResourcePath().getParent().getName())
+            .setParent(query.options.getParentPath().getName())
             .build());
     target.setTargetId(WATCH_TARGET_ID);
 
