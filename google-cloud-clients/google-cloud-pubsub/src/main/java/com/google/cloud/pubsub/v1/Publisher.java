@@ -240,6 +240,9 @@ public class Publisher {
       }
 
       batchesToSend = messagesBatch.add(outstandingPublish);
+      if (!batchesToSend.isEmpty() && messagesBatch.isEmpty()) {
+        messagesBatches.remove(orderingKey);
+      }
       setupAlarm();
     } finally {
       messagesBatchLock.unlock();
