@@ -21,9 +21,9 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
 
-versions = ['{{version}}']
-service = '{{service}}'
-config_pattern = {% if config_path %}"{{config_path}}"{% else %}'/google/cloud/{{service}}/artman_{{service}}_{version}.yaml'{% endif %}
+versions = ['v1beta1']
+service = 'phishingprotection'
+config_pattern = '/google/cloud/phishingprotection/artman_phishingprotection_{version}.yaml'
 
 for version in versions:
     library = gapic.java_library(
