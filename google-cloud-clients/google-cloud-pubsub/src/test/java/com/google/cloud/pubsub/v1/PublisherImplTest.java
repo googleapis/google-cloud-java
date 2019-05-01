@@ -47,7 +47,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -412,7 +411,6 @@ public class PublisherImplTest {
     assertEquals(4, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
   }
-
 
   @Test
   public void testEnableMessageOrdering_dontSendWhileInflight() throws Exception {

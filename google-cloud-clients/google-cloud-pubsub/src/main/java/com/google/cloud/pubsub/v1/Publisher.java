@@ -216,15 +216,12 @@ public class Publisher {
    * @return the message ID wrapped in a future.
    */
   public ApiFuture<String> publish(PubsubMessage message) {
-    if (shutdown.get()) {
-      throw new IllegalStateException("Cannot publish on a shut-down publisher.");
-    }
+    Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
 
     final String orderingKey = message.getOrderingKey();
-    if (orderingKey != null && !orderingKey.isEmpty() && !enableMessageOrdering) {
-      throw new IllegalStateException(
-          "Cannot publish a message with an ordering key when message ordering is not enabled.");
-    }
+    Preconditions.checkState(
+        orderingKey != null && !orderingKey.isEmpty() && !enableMessageOrdering,
+        "Cannot publish a message with an ordering key when message ordering is not enabled.");
 
     final OutstandingPublish outstandingPublish =
         new OutstandingPublish(messageTransform.apply(message));
@@ -361,9 +358,13 @@ public class Publisher {
           public void onSuccess(PublishResponse result) {
             try {
               if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                Throwable t = new IllegalStateException(String.format(
-                    "The publish result count %s does not match " + "the expected %s results. Please contact Cloud Pub/Sub support "
-                        + "if this frequently occurs", result.getMessageIdsCount(), outstandingBatch.size()));
+                Throwable t =
+                    new IllegalStateException(
+                        String.format(
+                            "The publish result count %s does not match "
+                                + "the expected %s results. Please contact Cloud Pub/Sub support "
+                                + "if this frequently occurs",
+                            result.getMessageIdsCount(), outstandingBatch.size()));
                 for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
                   oustandingMessage.publishResult.setException(t);
                 }
