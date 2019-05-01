@@ -286,12 +286,13 @@ public class Publisher {
           public void onSuccess(PublishResponse result) {
             try {
               if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                outstandingBatch.onFailure(new IllegalStateException(
-                    String.format(
-                        "The publish result count %s does not match "
-                            + "the expected %s results. Please contact Cloud Pub/Sub support "
-                            + "if this frequently occurs",
-                        result.getMessageIdsCount(), outstandingBatch.size())));
+                outstandingBatch.onFailure(
+                    new IllegalStateException(
+                        String.format(
+                            "The publish result count %s does not match "
+                                + "the expected %s results. Please contact Cloud Pub/Sub support "
+                                + "if this frequently occurs",
+                            result.getMessageIdsCount(), outstandingBatch.size())));
               } else {
                 outstandingBatch.onSuccess(result.getMessageIdsList());
               }
@@ -344,7 +345,7 @@ public class Publisher {
       }
     }
 
-    private void onSuccess(Iterable<String> results){
+    private void onSuccess(Iterable<String> results) {
       Iterator<OutstandingPublish> messagesResultsIt = outstandingPublishes.iterator();
       for (String messageId : results) {
         messagesResultsIt.next().publishResult.set(messageId);
