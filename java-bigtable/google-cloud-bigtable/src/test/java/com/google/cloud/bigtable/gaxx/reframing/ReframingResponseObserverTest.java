@@ -335,7 +335,7 @@ public class ReframingResponseObserverTest {
     innerCallable.call("request", middleware);
 
     Truth.assertThat(outerObserver.getFinalError()).isInstanceOf(IllegalStateException.class);
-    Truth.assertThat(outerObserver.getFinalError()).hasMessage("fake error");
+    Truth.assertThat(outerObserver.getFinalError()).hasMessageThat().isEqualTo("fake error");
     Truth.assertThat(outerObserver.popNextResponse()).isEqualTo("a");
     Truth.assertThat(outerObserver.popNextResponse()).isNull();
   }
@@ -365,7 +365,7 @@ public class ReframingResponseObserverTest {
     StreamControllerStash<String> lastCall = innerCallable.popLastCall();
 
     Truth.assertThat(outerObserver.getFinalError()).isInstanceOf(IllegalStateException.class);
-    Truth.assertThat(outerObserver.getFinalError()).hasMessage("fake error");
+    Truth.assertThat(outerObserver.getFinalError()).hasMessageThat().isEqualTo("fake error");
     Truth.assertThat(outerObserver.popNextResponse()).isEqualTo("a");
     Truth.assertThat(outerObserver.popNextResponse()).isNull();
     Truth.assertThat(popCount.get()).isEqualTo(2);
