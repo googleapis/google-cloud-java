@@ -148,21 +148,6 @@ public class Publisher {
           .setTotalTimeout(Duration.ofNanos(Long.MAX_VALUE));
     }
 
-    Set<StatusCode.Code> retryCodes;
-    if (enableMessageOrdering) {
-      retryCodes = EnumSet.allOf(StatusCode.Code.class);
-    } else {
-      retryCodes =
-          EnumSet.of(
-              StatusCode.Code.ABORTED,
-              StatusCode.Code.CANCELLED,
-              StatusCode.Code.DEADLINE_EXCEEDED,
-              StatusCode.Code.INTERNAL,
-              StatusCode.Code.RESOURCE_EXHAUSTED,
-              StatusCode.Code.UNKNOWN,
-              StatusCode.Code.UNAVAILABLE);
-    }
-
     PublisherStubSettings.Builder stubSettings =
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
@@ -170,7 +155,14 @@ public class Publisher {
             .setTransportChannelProvider(builder.channelProvider);
     stubSettings
         .publishSettings()
-        .setRetryableCodes(retryCodes)
+        .setRetryableCodes(EnumSet.of(
+            StatusCode.Code.ABORTED,
+            StatusCode.Code.CANCELLED,
+            StatusCode.Code.DEADLINE_EXCEEDED,
+            StatusCode.Code.INTERNAL,
+            StatusCode.Code.RESOURCE_EXHAUSTED,
+            StatusCode.Code.UNKNOWN,
+            StatusCode.Code.UNAVAILABLE))
         .setRetrySettings(retrySettingsBuilder.build())
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
@@ -261,6 +253,18 @@ public class Publisher {
     }
 
     return outstandingPublish.publishResult;
+  }
+
+  /**
+   * There may be non-recoverable problems with a request for an ordering key. In that case, all
+   * subsequent requests will fail until this method is called.  If the key is not currently paused,
+   * calling this method will be a no-op.
+   *
+   * @param key The key for which to resume publishing.
+   */
+  public void resumePublish(String key) {
+    Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
+    sequentialExecutor.resumePublish(key);
   }
 
   private void setupAlarm() {
