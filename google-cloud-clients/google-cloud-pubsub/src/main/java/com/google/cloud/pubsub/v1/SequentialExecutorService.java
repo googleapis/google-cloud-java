@@ -23,7 +23,6 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.SettableApiFuture;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;

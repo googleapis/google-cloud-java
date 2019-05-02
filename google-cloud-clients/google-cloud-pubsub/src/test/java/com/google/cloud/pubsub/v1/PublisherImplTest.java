@@ -449,13 +449,12 @@ public class PublisherImplTest {
    * Make sure that resume publishing works as expected:
    *
    * <ol>
-   *   <li> publish with key orderA which returns a failure.</li>
-   *   <li> publish with key orderA again, which should fail immediately</li>
-   *   <li> publish with key orderB, which should succeed</li>
-   *   <li> resume publishing on key orderA</li>
-   *   <li> publish with key orderA, which should now succeed</li>
+   *   <li>publish with key orderA which returns a failure.
+   *   <li>publish with key orderA again, which should fail immediately
+   *   <li>publish with key orderB, which should succeed
+   *   <li>resume publishing on key orderA
+   *   <li>publish with key orderA, which should now succeed
    * </ol>
-   *
    */
   public void testResumePublish() throws Exception {
     Publisher publisher =
@@ -514,7 +513,8 @@ public class PublisherImplTest {
     ApiFuture<String> future5 = sendTestMessageWithOrderingKey(publisher, "m5", "orderB");
     ApiFuture<String> future6 = sendTestMessageWithOrderingKey(publisher, "m6", "orderB");
 
-    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("5").addMessageIds("6"));
+    testPublisherServiceImpl.addPublishResponse(
+        PublishResponse.newBuilder().addMessageIds("5").addMessageIds("6"));
 
     Assert.assertEquals("5", future5.get());
     Assert.assertEquals("6", future6.get());
@@ -525,7 +525,8 @@ public class PublisherImplTest {
     ApiFuture<String> future7 = sendTestMessageWithOrderingKey(publisher, "m7", "orderA");
     ApiFuture<String> future8 = sendTestMessageWithOrderingKey(publisher, "m8", "orderA");
 
-    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("7").addMessageIds("8"));
+    testPublisherServiceImpl.addPublishResponse(
+        PublishResponse.newBuilder().addMessageIds("7").addMessageIds("8"));
 
     Assert.assertEquals("7", future7.get());
     Assert.assertEquals("8", future8.get());

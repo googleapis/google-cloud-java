@@ -55,7 +55,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -155,14 +154,15 @@ public class Publisher {
             .setTransportChannelProvider(builder.channelProvider);
     stubSettings
         .publishSettings()
-        .setRetryableCodes(EnumSet.of(
-            StatusCode.Code.ABORTED,
-            StatusCode.Code.CANCELLED,
-            StatusCode.Code.DEADLINE_EXCEEDED,
-            StatusCode.Code.INTERNAL,
-            StatusCode.Code.RESOURCE_EXHAUSTED,
-            StatusCode.Code.UNKNOWN,
-            StatusCode.Code.UNAVAILABLE))
+        .setRetryableCodes(
+            EnumSet.of(
+                StatusCode.Code.ABORTED,
+                StatusCode.Code.CANCELLED,
+                StatusCode.Code.DEADLINE_EXCEEDED,
+                StatusCode.Code.INTERNAL,
+                StatusCode.Code.RESOURCE_EXHAUSTED,
+                StatusCode.Code.UNKNOWN,
+                StatusCode.Code.UNAVAILABLE))
         .setRetrySettings(retrySettingsBuilder.build())
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
@@ -257,7 +257,7 @@ public class Publisher {
 
   /**
    * There may be non-recoverable problems with a request for an ordering key. In that case, all
-   * subsequent requests will fail until this method is called.  If the key is not currently paused,
+   * subsequent requests will fail until this method is called. If the key is not currently paused,
    * calling this method will be a no-op.
    *
    * @param key The key for which to resume publishing.
