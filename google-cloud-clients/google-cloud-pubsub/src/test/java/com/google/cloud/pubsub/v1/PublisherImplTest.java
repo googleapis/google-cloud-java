@@ -520,7 +520,7 @@ public class PublisherImplTest {
     Assert.assertEquals("6", future6.get());
 
     // Resume publishing of "orderA", which should now succeed
-    publisher.resumePublishing("orderA");
+    publisher.resumePublish("orderA");
 
     ApiFuture<String> future7 = sendTestMessageWithOrderingKey(publisher, "m7", "orderA");
     ApiFuture<String> future8 = sendTestMessageWithOrderingKey(publisher, "m8", "orderA");

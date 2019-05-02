@@ -257,11 +257,12 @@ public class Publisher {
 
   /**
    * There may be non-recoverable problems with a request for an ordering key. In that case, all
-   * subsequent requests will fail until this method is called.
+   * subsequent requests will fail until this method is called.  If the key is not currently paused,
+   * calling this method will be a no-op.
    *
    * @param key The key for which to resume publishing.
    */
-  public void resumePublishing(String key) {
+  public void resumePublish(String key) {
     Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
     sequentialExecutor.resumePublish(key);
   }
