@@ -42,8 +42,8 @@ import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-import junit.framework.Assert;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -80,7 +80,7 @@ public class ITPubSubTest {
   }
 
   @AfterClass
-  public static void tearDownClass() throws Exception {
+  public static void tearDownClass() {
     topicAdminClient.close();
     subscriptionAdminClient.close();
   }
@@ -114,7 +114,7 @@ public class ITPubSubTest {
   }
 
   @Test
-  public void testVPCPushSubscriber() throws Exception {
+  public void testVPCPushSubscriber() {
     assumeTrue(IS_VPC_TEST);
     ProjectTopicName topicName =
         ProjectTopicName.of(projectId, formatForTest("testing-vpc-push-subscriber-topic"));

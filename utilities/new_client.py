@@ -33,6 +33,8 @@ class Context:
     artman_config: str = None
     google_cloud_artifact: str = None
     google_cloud_version: releasetool.Version = None
+    google_cloud_parent_version: releasetool.Version = None
+    grpc_api_parent_version: releasetool.Version = None
     grpc_artifact: str = None
     grpc_version: releasetool.Version = None
     proto_artifact: str = None
@@ -41,6 +43,8 @@ class Context:
         pathlib.Path(os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")))
     description: str = "FIXME"
     name: str = "FIXME"
+    product_overview_url: str = "FIXME"
+    product_docs_url: str = "FIXME"
     versions: List[str] = None
     jinja_env: Environment = None
 
@@ -66,20 +70,23 @@ def add_to_versions(ctx: Context) -> None:
 
             versions.append(releasetool.ArtifactVersions(version_line))
 
+    ctx.google_cloud_parent_version = next((v for v in versions if v.module == "google-cloud-clients"), None)
+    ctx.grpc_api_parent_version = next((v for v in versions if v.module == "google-api-grpc"), None)
+
     # Add new versions unless the artifacts already exist in the versions.txt manifest
     ctx.google_cloud_version = next((v for v in versions if v.module == ctx.google_cloud_artifact), None)
     if not ctx.google_cloud_version:
-        ctx.google_cloud_version = releasetool.ArtifactVersions(f"{ctx.google_cloud_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        ctx.google_cloud_version = releasetool.ArtifactVersions(f"{ctx.google_cloud_artifact}:0.0.0:0.0.1-SNAPSHOT")
         versions.append(ctx.google_cloud_version)
 
     ctx.proto_version = next((v for v in versions if v.module == ctx.proto_artifact), None)
     if not ctx.proto_version:
-        ctx.proto_version = releasetool.ArtifactVersions(f"{ctx.proto_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        ctx.proto_version = releasetool.ArtifactVersions(f"{ctx.proto_artifact}:0.0.0:0.0.1-SNAPSHOT")
         versions.append(ctx.proto_version)
 
     ctx.grpc_version = next((v for v in versions if v.module == ctx.grpc_artifact), None)
     if not ctx.grpc_version:
-        ctx.grpc_version = releasetool.ArtifactVersions(f"{ctx.grpc_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        ctx.grpc_version = releasetool.ArtifactVersions(f"{ctx.grpc_artifact}:0.0.0:0.0.1-SNAPSHOT")
         versions.append(ctx.grpc_version)
 
     # sort by name
@@ -163,13 +170,14 @@ def write_synthfile(ctx: Context) -> None:
         os.makedirs(directory)
     synth.dump(str(path))
 
-def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
+def write_pom(template: str, path: str, ctx: Context, version: str, parent_version: str) -> None:
     """Creates a pom.xml file from a template."""
     template = ctx.jinja_env.get_template(template)
     pom = template.stream(
         api_version=ctx.api_version,
         description=ctx.description,
         name=ctx.name,
+        parent_version=parent_version,
         service=ctx.service,
         version=version
     )
@@ -212,7 +220,9 @@ def write_readme(ctx: Context) -> None:
         description=ctx.description,
         name=ctx.name,
         service=ctx.service,
-        version=ctx.google_cloud_version
+        version=ctx.google_cloud_version.released,
+        product_overview_url=ctx.product_overview_url,
+        product_docs_url=ctx.product_docs_url,
     )
     path = ctx.root_directory / "google-cloud-clients" / ctx.google_cloud_artifact / "README.md"
     directory = os.path.dirname(path)
@@ -223,14 +233,22 @@ def write_readme(ctx: Context) -> None:
 def main():
     parser = argparse.ArgumentParser(description="Create a new client")
     parser.add_argument("-v", required=True, help="API version (i.e. v1)")
-    parser.add_argument("-c", required=True, help="Path to config in googleapis/googleapis")
-    parser.add_argument("-s", required=True, help="Service name")
+    parser.add_argument("-c", help="Path to config in googleapis/googleapis")
+    parser.add_argument("-s", required=True, help="Service name (i.e. dialogflow)")
+    parser.add_argument("-n", required=True, help="Client name (i.e. Google Cloud Pub/Sub)")
+    parser.add_argument("-d", required=True, help="API description for README")
+    parser.add_argument("--docs-url", required=True, help="URL to the product docs page")
+    parser.add_argument("--overview-url", required=True, help="URL to the product overview page")
     args = parser.parse_args()
 
     ctx = Context(
         api_version=args.v,
         service=args.s,
-        artman_config=args.c
+        artman_config=args.c,
+        name=args.n,
+        description=args.d,
+        product_docs_url=args.docs_url,
+        product_overview_url=args.overview_url
     )
 
     add_to_versions(ctx)
@@ -240,11 +258,12 @@ def main():
         ctx=ctx,
         template="cloud_pom.xml",
         path=ctx.root_directory / "google-cloud-clients" / ctx.google_cloud_artifact / "pom.xml",
+        parent_version=ctx.google_cloud_parent_version.current,
         version=ctx.google_cloud_version.current
     )
     add_module_to_pom(
         pom=ctx.root_directory / "google-cloud-clients/pom.xml",
-        module_name="google-cloud-iamcredentials"
+        module_name=ctx.google_cloud_artifact
     )
     add_dependency_management_to_pom(
         pom=ctx.root_directory /  "google-api-grpc/pom.xml",
@@ -280,12 +299,14 @@ def main():
         ctx=ctx,
         template="proto_pom.xml",
         path=ctx.root_directory / "google-api-grpc" / ctx.proto_artifact / "pom.xml",
+        parent_version=ctx.grpc_api_parent_version.current,
         version=ctx.proto_version.current
     )
     write_pom(
         ctx=ctx,
         template="grpc_pom.xml",
         path=ctx.root_directory / "google-api-grpc" / ctx.grpc_artifact / "pom.xml",
+        parent_version=ctx.grpc_api_parent_version.current,
         version=ctx.grpc_version.current
     )
     add_module_to_pom(

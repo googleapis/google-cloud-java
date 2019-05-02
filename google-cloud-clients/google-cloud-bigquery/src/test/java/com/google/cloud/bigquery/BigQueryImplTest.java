@@ -1246,8 +1246,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listTableData(OTHER_PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
         .andReturn(TABLE_DATA_PB);
     EasyMock.replay(bigqueryRpcMock);
-    BigQueryOptions bigQueryOptions =
-        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    BigQueryOptions bigQueryOptions = createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
     bigquery = bigQueryOptions.getService();
     Page<FieldValueList> page = bigquery.listTableData(tableId);
     assertEquals(CURSOR, page.getNextPageToken());

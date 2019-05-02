@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,12 +23,13 @@ common_templates = gcp.CommonTemplates()
 
 versions = ['{{version}}']
 service = '{{service}}'
+config_pattern = {% if config_path %}"{{config_path}}"{% else %}'/google/cloud/{{service}}/artman_{{service}}_{version}.yaml'{% endif %}
 
 for version in versions:
     library = gapic.java_library(
         service=service,
         version=version,
-        config_path=f'{{config_path}}',
+        config_path=config_pattern.format(version=version),
         artman_output_name='')
 
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')

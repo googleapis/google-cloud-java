@@ -138,7 +138,7 @@ public class ITTransactionTest {
     for (int i = 0; i < numThreads; ++i) {
       expectedResults.add(i + 1L);
     }
-    assertThat(results).containsAllIn(expectedResults);
+    assertThat(results).containsAtLeastElementsIn(expectedResults);
     assertThat(Sets.newHashSet(commitTimestamps)).hasSize(numThreads);
 
     assertThat(

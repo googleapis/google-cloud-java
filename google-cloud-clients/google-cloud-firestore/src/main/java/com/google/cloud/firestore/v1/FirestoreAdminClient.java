@@ -43,6 +43,7 @@ import com.google.firestore.admin.v1.ListFieldsRequest;
 import com.google.firestore.admin.v1.ListFieldsResponse;
 import com.google.firestore.admin.v1.ListIndexesRequest;
 import com.google.firestore.admin.v1.ListIndexesResponse;
+import com.google.firestore.admin.v1.ParentName;
 import com.google.firestore.admin.v1.UpdateFieldRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -62,9 +63,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
- *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+ *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
  *   Index index = Index.newBuilder().build();
- *   Operation response = firestoreAdminClient.createIndex(formattedParent, index);
+ *   Operation response = firestoreAdminClient.createIndex(parent, index);
  * }
  * </code>
  * </pre>
@@ -184,9 +185,41 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   Index index = Index.newBuilder().build();
-   *   Operation response = firestoreAdminClient.createIndex(formattedParent, index);
+   *   Operation response = firestoreAdminClient.createIndex(parent, index);
+   * }
+   * </code></pre>
+   *
+   * @param parent A parent name of the form
+   *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
+   * @param index The composite index to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation createIndex(ParentName parent, Index index) {
+
+    CreateIndexRequest request =
+        CreateIndexRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIndex(index)
+            .build();
+    return createIndex(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a composite index. This returns a
+   * [google.longrunning.Operation][google.longrunning.Operation] which may be used to track the
+   * status of the creation. The metadata for the operation will be the type
+   * [IndexOperationMetadata][google.firestore.admin.v1.IndexOperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   Index index = Index.newBuilder().build();
+   *   Operation response = firestoreAdminClient.createIndex(parent.toString(), index);
    * }
    * </code></pre>
    *
@@ -213,10 +246,10 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   Index index = Index.newBuilder().build();
    *   CreateIndexRequest request = CreateIndexRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setIndex(index)
    *     .build();
    *   Operation response = firestoreAdminClient.createIndex(request);
@@ -241,10 +274,10 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   Index index = Index.newBuilder().build();
    *   CreateIndexRequest request = CreateIndexRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setIndex(index)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firestoreAdminClient.createIndexCallable().futureCall(request);
@@ -265,8 +298,35 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
-   *   for (Index element : firestoreAdminClient.listIndexes(formattedParent).iterateAll()) {
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   for (Index element : firestoreAdminClient.listIndexes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent A parent name of the form
+   *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIndexesPagedResponse listIndexes(ParentName parent) {
+    ListIndexesRequest request =
+        ListIndexesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listIndexes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists composite indexes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   for (Index element : firestoreAdminClient.listIndexes(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -289,9 +349,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListIndexesRequest request = ListIndexesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Index element : firestoreAdminClient.listIndexes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -314,9 +374,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListIndexesRequest request = ListIndexesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListIndexesPagedResponse&gt; future = firestoreAdminClient.listIndexesPagedCallable().futureCall(request);
    *   // Do something
@@ -339,9 +399,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListIndexesRequest request = ListIndexesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListIndexesResponse response = firestoreAdminClient.listIndexesCallable().call(request);
@@ -867,8 +927,38 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
-   *   for (Field element : firestoreAdminClient.listFields(formattedParent).iterateAll()) {
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   for (Field element : firestoreAdminClient.listFields(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent A parent name of the form
+   *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFieldsPagedResponse listFields(ParentName parent) {
+    ListFieldsRequest request =
+        ListFieldsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listFields(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the field configuration and metadata for this database.
+   *
+   * <p>Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields]
+   * only supports listing fields that have been explicitly overridden. To issue this query, call
+   * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the
+   * filter set to `indexConfig.usesAncestorConfig:false`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   for (Field element : firestoreAdminClient.listFields(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -896,9 +986,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListFieldsRequest request = ListFieldsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Field element : firestoreAdminClient.listFields(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -926,9 +1016,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListFieldsRequest request = ListFieldsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListFieldsPagedResponse&gt; future = firestoreAdminClient.listFieldsPagedCallable().futureCall(request);
    *   // Do something
@@ -955,9 +1045,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   ParentName parent = ParentName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListFieldsRequest request = ListFieldsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListFieldsResponse response = firestoreAdminClient.listFieldsCallable().call(request);

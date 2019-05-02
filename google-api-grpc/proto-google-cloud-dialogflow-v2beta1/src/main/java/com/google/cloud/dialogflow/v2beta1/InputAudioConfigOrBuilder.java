@@ -174,4 +174,25 @@ public interface InputAudioConfigOrBuilder
    * <code>string model = 7;</code>
    */
   com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+   */
+  int getModelVariantValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant model_variant = 10;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SpeechModelVariant getModelVariant();
 }

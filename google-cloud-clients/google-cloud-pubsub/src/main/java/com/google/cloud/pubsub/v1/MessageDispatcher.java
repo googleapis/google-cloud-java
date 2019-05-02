@@ -24,7 +24,6 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
-import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
@@ -33,14 +32,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
-import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -91,9 +87,6 @@ class MessageDispatcher {
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
 
-  private final LinkedBlockingDeque<OutstandingMessageBatch> outstandingMessageBatches =
-      new LinkedBlockingDeque<>();
-
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
 
@@ -109,10 +102,6 @@ class MessageDispatcher {
     private PendingModifyAckDeadline(int deadlineExtensionSeconds, Collection<String> ackIds) {
       this.ackIds = new ArrayList<String>(ackIds);
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
-    }
-
-    public void addAckId(String ackId) {
-      ackIds.add(ackId);
     }
 
     @Override
@@ -136,7 +125,7 @@ class MessageDispatcher {
     private final long receivedTimeMillis;
     private final Instant totalExpiration;
 
-    AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
+    private AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       this.receivedTimeMillis = clock.millisTime();
@@ -155,7 +144,6 @@ class MessageDispatcher {
       }
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
-      processOutstandingBatches();
     }
 
     @Override
@@ -190,7 +178,7 @@ class MessageDispatcher {
     }
   }
 
-  public interface AckProcessor {
+  interface AckProcessor {
     void sendAckOperations(
         List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
@@ -219,7 +207,7 @@ class MessageDispatcher {
     this.clock = clock;
   }
 
-  public void start() {
+  void start() {
     final Runnable setExtendDeadline =
         new Runnable() {
           @Override
@@ -272,7 +260,7 @@ class MessageDispatcher {
     }
   }
 
-  public void stop() {
+  void stop() {
     messagesWaiter.waitNoMessages();
     jobLock.lock();
     try {
@@ -296,50 +284,19 @@ class MessageDispatcher {
     return messageDeadlineSeconds.get();
   }
 
-  static class OutstandingMessageBatch {
-    private final Deque<OutstandingMessage> messages;
-    private final Runnable doneCallback;
+  private static class OutstandingMessage {
+    private final ReceivedMessage receivedMessage;
+    private final AckHandler ackHandler;
 
-    static class OutstandingMessage {
-      private final ReceivedMessage receivedMessage;
-      private final AckHandler ackHandler;
-
-      public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
-        this.receivedMessage = receivedMessage;
-        this.ackHandler = ackHandler;
-      }
-
-      public ReceivedMessage receivedMessage() {
-        return receivedMessage;
-      }
-
-      public AckHandler ackHandler() {
-        return ackHandler;
-      }
-    }
-
-    public OutstandingMessageBatch(Runnable doneCallback) {
-      this.messages = new LinkedList<>();
-      this.doneCallback = doneCallback;
-    }
-
-    public void addMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
-      this.messages.add(new OutstandingMessage(receivedMessage, ackHandler));
-    }
-
-    public Deque<OutstandingMessage> messages() {
-      return messages;
+    private OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
+      this.receivedMessage = receivedMessage;
+      this.ackHandler = ackHandler;
     }
   }
 
-  public void processReceivedMessages(List<ReceivedMessage> messages, Runnable doneCallback) {
-    if (messages.isEmpty()) {
-      doneCallback.run();
-      return;
-    }
-
+  void processReceivedMessages(List<ReceivedMessage> messages) {
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
-    OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
+    List<OutstandingMessage> outstandingBatch = new ArrayList<>(messages.size());
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
           new AckHandler(
@@ -355,42 +312,25 @@ class MessageDispatcher {
         // totally expire so that pubsub service sends us the message again.
         continue;
       }
-      outstandingBatch.addMessage(message, ackHandler);
+      outstandingBatch.add(new OutstandingMessage(message, ackHandler));
       pendingReceipts.add(message.getAckId());
     }
 
-    if (outstandingBatch.messages.isEmpty()) {
-      doneCallback.run();
-      return;
-    }
-
-    messagesWaiter.incrementPendingMessages(outstandingBatch.messages.size());
-    outstandingMessageBatches.add(outstandingBatch);
-    processOutstandingBatches();
+    processBatch(outstandingBatch);
   }
 
-  private void processOutstandingBatches() {
-    for (OutstandingMessageBatch nextBatch = outstandingMessageBatches.poll();
-        nextBatch != null;
-        nextBatch = outstandingMessageBatches.poll()) {
-      for (OutstandingMessage nextMessage = nextBatch.messages.poll();
-          nextMessage != null;
-          nextMessage = nextBatch.messages.poll()) {
-        try {
-          // This is a non-blocking flow controller.
-          flowController.reserve(1, nextMessage.receivedMessage.getMessage().getSerializedSize());
-        } catch (FlowController.MaxOutstandingElementCountReachedException
-            | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
-          // Unwind previous changes in the batches outstanding.
-          nextBatch.messages.addFirst(nextMessage);
-          outstandingMessageBatches.addFirst(nextBatch);
-          return;
-        } catch (FlowControlException unexpectedException) {
-          throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
-        }
-        processOutstandingMessage(nextMessage.receivedMessage.getMessage(), nextMessage.ackHandler);
+  private void processBatch(List<OutstandingMessage> batch) {
+    messagesWaiter.incrementPendingMessages(batch.size());
+    for (OutstandingMessage message : batch) {
+      // This is a blocking flow controller.  We have already incremented MessageWaiter, so
+      // shutdown will block on processing of all these messages anyway.
+      try {
+        flowController.reserve(1, message.receivedMessage.getMessage().getSerializedSize());
+      } catch (FlowControlException unexpectedException) {
+        // This should be a blocking flow controller and never throw an exception.
+        throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
       }
-      nextBatch.doneCallback.run();
+      processOutstandingMessage(message.receivedMessage.getMessage(), message.ackHandler);
     }
   }
 
@@ -436,8 +376,7 @@ class MessageDispatcher {
   /** Compute the ideal deadline, set subsequent modacks to this deadline, and return it. */
   @InternalApi
   int computeDeadlineSeconds() {
-    long secLong = ackLatencyDistribution.getNthPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
-    int sec = Ints.saturatedCast(secLong);
+    int sec = ackLatencyDistribution.getPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
 
     // Use Ints.constrainToRange when we get guava 21.
     if (sec < Subscriber.MIN_ACK_DEADLINE_SECONDS) {

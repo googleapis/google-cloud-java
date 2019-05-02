@@ -100,8 +100,8 @@ public class JobServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createJobTest() {
-    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
-    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+    CompanyName company = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -167,8 +167,8 @@ public class JobServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getJobTest() {
-    JobName name2 = JobOldName.of("[PROJECT]", "[JOBS]");
-    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    JobName name2 = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+    CompanyName company = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -196,7 +196,7 @@ public class JobServiceClientTest {
             .build();
     mockJobService.addResponse(expectedResponse);
 
-    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+    JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
 
     Job actualResponse = client.getJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -219,7 +219,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+      JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
 
       client.getJob(name);
       Assert.fail("No exception raised");
@@ -231,8 +231,8 @@ public class JobServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateJobTest() {
-    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
-    CompanyName company = CompanyOldName.of("[PROJECT]", "[COMPANY]");
+    JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
+    CompanyName company = CompanyWithTenantName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -298,7 +298,7 @@ public class JobServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockJobService.addResponse(expectedResponse);
 
-    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+    JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
 
     client.deleteJob(name);
 
@@ -320,7 +320,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+      JobName name = JobWithTenantName.of("[PROJECT]", "[TENANT]", "[JOBS]");
 
       client.deleteJob(name);
       Assert.fail("No exception raised");

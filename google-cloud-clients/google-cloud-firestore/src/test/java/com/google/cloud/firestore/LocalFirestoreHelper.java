@@ -43,6 +43,7 @@ import com.google.firestore.v1.RollbackRequest;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.RunQueryResponse;
 import com.google.firestore.v1.StructuredQuery;
+import com.google.firestore.v1.StructuredQuery.CollectionSelector;
 import com.google.firestore.v1.StructuredQuery.CompositeFilter;
 import com.google.firestore.v1.StructuredQuery.FieldFilter;
 import com.google.firestore.v1.StructuredQuery.UnaryFilter;
@@ -73,6 +74,7 @@ import org.mockito.stubbing.Answer;
 public final class LocalFirestoreHelper {
 
   public static final String DATABASE_NAME;
+  public static final String COLLECTION_ID;
   public static final String DOCUMENT_PATH;
   public static final String DOCUMENT_NAME;
   public static final ByteString TRANSACTION_ID;
@@ -467,16 +469,21 @@ public final class LocalFirestoreHelper {
   }
 
   public static RunQueryRequest query(StructuredQuery... query) {
-    return query(null, query);
+    return query(null, false, query);
   }
 
   public static RunQueryRequest query(
-      @Nullable ByteString transactionId, StructuredQuery... query) {
+      @Nullable ByteString transactionId, boolean allDescendants, StructuredQuery... query) {
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
     request.setParent(LocalFirestoreHelper.DATABASE_NAME + "/documents");
     StructuredQuery.Builder structuredQuery = request.getStructuredQueryBuilder();
-    structuredQuery.addFrom(
-        StructuredQuery.CollectionSelector.newBuilder().setCollectionId("coll"));
+
+    CollectionSelector collectionSelector =
+        CollectionSelector.newBuilder()
+            .setCollectionId("coll")
+            .setAllDescendants(allDescendants)
+            .build();
+    structuredQuery.addFrom(collectionSelector);
 
     for (StructuredQuery option : query) {
       structuredQuery.mergeFrom(option);
@@ -588,6 +595,10 @@ public final class LocalFirestoreHelper {
     return result.build();
   }
 
+  public static Value reference(String value) {
+    return Value.newBuilder().setReferenceValue(value).build();
+  }
+
   public static StructuredQuery.FieldReference.Builder field(String fieldPath) {
     return StructuredQuery.FieldReference.newBuilder().setFieldPath(fieldPath);
   }
@@ -686,6 +697,7 @@ public final class LocalFirestoreHelper {
     BLOB = Blob.fromBytes(new byte[] {1, 2, 3});
 
     DATABASE_NAME = "projects/test-project/databases/(default)";
+    COLLECTION_ID = "coll";
     DOCUMENT_PATH = "coll/doc";
     DOCUMENT_NAME = DATABASE_NAME + "/documents/" + DOCUMENT_PATH;
 

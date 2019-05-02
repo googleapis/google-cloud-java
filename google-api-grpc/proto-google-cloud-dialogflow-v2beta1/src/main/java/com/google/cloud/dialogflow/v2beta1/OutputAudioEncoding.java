@@ -158,7 +158,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(3);
   }
 
   private static final OutputAudioEncoding[] VALUES = values();

@@ -42,12 +42,13 @@ public final class OrganizationSettingsOuterClass {
           + ".v1.OrganizationSettings.AssetDiscoveryC"
           + "onfig.InclusionMode\"N\n\rInclusionMode\022\036\n\032"
           + "INCLUSION_MODE_UNSPECIFIED\020\000\022\020\n\014INCLUDE_"
-          + "ONLY\020\001\022\013\n\007EXCLUDE\020\002J\004\010\004\020\005J\004\010\005\020\006B\266\001\n\"com."
+          + "ONLY\020\001\022\013\n\007EXCLUDE\020\002J\004\010\004\020\005J\004\010\005\020\006B\332\001\n\"com."
           + "google.cloud.securitycenter.v1P\001ZLgoogle"
           + ".golang.org/genproto/googleapis/cloud/se"
           + "curitycenter/v1;securitycenter\252\002\036Google."
           + "Cloud.SecurityCenter.V1\312\002\036Google\\Cloud\\S"
-          + "ecurityCenter\\V1b\006proto3"
+          + "ecurityCenter\\V1\352\002!Google::Cloud::Securi"
+          + "tyCenter::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

@@ -25,7 +25,7 @@ final class StatusUtil {
     // Static class, not instantiable.
   }
 
-  public static boolean isRetryable(Throwable error) {
+  static boolean isRetryable(Throwable error) {
     if (!(error instanceof ApiException)) {
       return true;
     }
