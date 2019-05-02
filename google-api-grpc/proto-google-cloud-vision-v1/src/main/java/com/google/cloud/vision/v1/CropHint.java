@@ -115,7 +115,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The bounding polygon for the crop region. The coordinates of the bounding
-   * box are in the original image's scale, as returned in `ImageParams`.
+   * box are in the original image's scale.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -128,7 +128,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The bounding polygon for the crop region. The coordinates of the bounding
-   * box are in the original image's scale, as returned in `ImageParams`.
+   * box are in the original image's scale.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -143,7 +143,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The bounding polygon for the crop region. The coordinates of the bounding
-   * box are in the original image's scale, as returned in `ImageParams`.
+   * box are in the original image's scale.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -551,7 +551,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -564,7 +564,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -583,7 +583,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -606,7 +606,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -627,7 +627,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -654,7 +654,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -675,7 +675,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -690,7 +690,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
@@ -709,7 +709,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The bounding polygon for the crop region. The coordinates of the bounding
-     * box are in the original image's scale, as returned in `ImageParams`.
+     * box are in the original image's scale.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>

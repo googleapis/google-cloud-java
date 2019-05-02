@@ -42,19 +42,19 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ImageAnnotatorClientTest {
-  private static MockProductSearch mockProductSearch;
   private static MockImageAnnotator mockImageAnnotator;
+  private static MockProductSearch mockProductSearch;
   private static MockServiceHelper serviceHelper;
   private ImageAnnotatorClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockProductSearch = new MockProductSearch();
     mockImageAnnotator = new MockImageAnnotator();
+    mockProductSearch = new MockProductSearch();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockProductSearch, mockImageAnnotator));
+            "in-process-1", Arrays.<MockGrpcService>asList(mockImageAnnotator, mockProductSearch));
     serviceHelper.start();
   }
 
@@ -115,6 +115,96 @@ public class ImageAnnotatorClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchAnnotateFilesTest() {
+    BatchAnnotateFilesResponse expectedResponse = BatchAnnotateFilesResponse.newBuilder().build();
+    mockImageAnnotator.addResponse(expectedResponse);
+
+    List<AnnotateFileRequest> requests = new ArrayList<>();
+
+    BatchAnnotateFilesResponse actualResponse = client.batchAnnotateFiles(requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchAnnotateFilesRequest actualRequest = (BatchAnnotateFilesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchAnnotateFilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockImageAnnotator.addException(exception);
+
+    try {
+      List<AnnotateFileRequest> requests = new ArrayList<>();
+
+      client.batchAnnotateFiles(requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asyncBatchAnnotateImagesTest() throws Exception {
+    AsyncBatchAnnotateImagesResponse expectedResponse =
+        AsyncBatchAnnotateImagesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("asyncBatchAnnotateImagesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockImageAnnotator.addResponse(resultOperation);
+
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+    OutputConfig outputConfig = OutputConfig.newBuilder().build();
+
+    AsyncBatchAnnotateImagesResponse actualResponse =
+        client.asyncBatchAnnotateImagesAsync(requests, outputConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsyncBatchAnnotateImagesRequest actualRequest =
+        (AsyncBatchAnnotateImagesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asyncBatchAnnotateImagesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockImageAnnotator.addException(exception);
+
+    try {
+      List<AnnotateImageRequest> requests = new ArrayList<>();
+      OutputConfig outputConfig = OutputConfig.newBuilder().build();
+
+      client.asyncBatchAnnotateImagesAsync(requests, outputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

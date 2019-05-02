@@ -113,6 +113,18 @@ public final class ImageAnnotatorProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_BatchAnnotateImagesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_AnnotateFileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_BatchAnnotateFilesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_BatchAnnotateFilesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1_AsyncAnnotateFileRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_AsyncAnnotateFileRequest_fieldAccessorTable;
@@ -120,6 +132,14 @@ public final class ImageAnnotatorProto {
       internal_static_google_cloud_vision_v1_AsyncAnnotateFileResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1_AsyncAnnotateFileResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -301,57 +321,82 @@ public final class ImageAnnotatorProto {
           + "s\030\016 \001(\0132,.google.cloud.vision.v1.Product"
           + "SearchResults\022!\n\005error\030\t \001(\0132\022.google.rp"
           + "c.Status\022?\n\007context\030\025 \001(\0132..google.cloud"
-          + ".vision.v1.ImageAnnotationContext\"\223\001\n\024An"
+          + ".vision.v1.ImageAnnotationContext\"\250\001\n\024An"
           + "notateFileResponse\0229\n\014input_config\030\001 \001(\013"
           + "2#.google.cloud.vision.v1.InputConfig\022@\n"
           + "\tresponses\030\002 \003(\0132-.google.cloud.vision.v"
-          + "1.AnnotateImageResponse\"\\\n\032BatchAnnotate"
-          + "ImagesRequest\022>\n\010requests\030\001 \003(\0132,.google"
-          + ".cloud.vision.v1.AnnotateImageRequest\"_\n"
-          + "\033BatchAnnotateImagesResponse\022@\n\tresponse"
-          + "s\030\001 \003(\0132-.google.cloud.vision.v1.Annotat"
-          + "eImageResponse\"\202\002\n\030AsyncAnnotateFileRequ"
-          + "est\0229\n\014input_config\030\001 \001(\0132#.google.cloud"
-          + ".vision.v1.InputConfig\0221\n\010features\030\002 \003(\013"
-          + "2\037.google.cloud.vision.v1.Feature\022;\n\rima"
-          + "ge_context\030\003 \001(\0132$.google.cloud.vision.v"
-          + "1.ImageContext\022;\n\routput_config\030\004 \001(\0132$."
-          + "google.cloud.vision.v1.OutputConfig\"X\n\031A"
-          + "syncAnnotateFileResponse\022;\n\routput_confi"
-          + "g\030\001 \001(\0132$.google.cloud.vision.v1.OutputC"
-          + "onfig\"d\n\036AsyncBatchAnnotateFilesRequest\022"
-          + "B\n\010requests\030\001 \003(\01320.google.cloud.vision."
-          + "v1.AsyncAnnotateFileRequest\"g\n\037AsyncBatc"
-          + "hAnnotateFilesResponse\022D\n\tresponses\030\001 \003("
-          + "\01321.google.cloud.vision.v1.AsyncAnnotate"
-          + "FileResponse\"W\n\013InputConfig\0225\n\ngcs_sourc"
-          + "e\030\001 \001(\0132!.google.cloud.vision.v1.GcsSour"
-          + "ce\022\021\n\tmime_type\030\002 \001(\t\"c\n\014OutputConfig\022?\n"
-          + "\017gcs_destination\030\001 \001(\0132&.google.cloud.vi"
-          + "sion.v1.GcsDestination\022\022\n\nbatch_size\030\002 \001"
-          + "(\005\"\030\n\tGcsSource\022\013\n\003uri\030\001 \001(\t\"\035\n\016GcsDesti"
-          + "nation\022\013\n\003uri\030\001 \001(\t\"\210\002\n\021OperationMetadat"
-          + "a\022>\n\005state\030\001 \001(\0162/.google.cloud.vision.v"
-          + "1.OperationMetadata.State\022/\n\013create_time"
-          + "\030\005 \001(\0132\032.google.protobuf.Timestamp\022/\n\013up"
-          + "date_time\030\006 \001(\0132\032.google.protobuf.Timest"
-          + "amp\"Q\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007C"
-          + "REATED\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\022\r\n\tCANCE"
-          + "LLED\020\004*e\n\nLikelihood\022\013\n\007UNKNOWN\020\000\022\021\n\rVER"
-          + "Y_UNLIKELY\020\001\022\014\n\010UNLIKELY\020\002\022\014\n\010POSSIBLE\020\003"
-          + "\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LIKELY\020\0052\315\002\n\016ImageA"
-          + "nnotator\022\236\001\n\023BatchAnnotateImages\0222.googl"
-          + "e.cloud.vision.v1.BatchAnnotateImagesReq"
-          + "uest\0323.google.cloud.vision.v1.BatchAnnot"
-          + "ateImagesResponse\"\036\202\323\344\223\002\030\"\023/v1/images:an"
-          + "notate:\001*\022\231\001\n\027AsyncBatchAnnotateFiles\0226."
-          + "google.cloud.vision.v1.AsyncBatchAnnotat"
-          + "eFilesRequest\032\035.google.longrunning.Opera"
-          + "tion\"\'\202\323\344\223\002!\"\034/v1/files:asyncBatchAnnota"
-          + "te:\001*B{\n\032com.google.cloud.vision.v1B\023Ima"
-          + "geAnnotatorProtoP\001Z<google.golang.org/ge"
-          + "nproto/googleapis/cloud/vision/v1;vision"
-          + "\370\001\001\242\002\004GCVNb\006proto3"
+          + "1.AnnotateImageResponse\022\023\n\013total_pages\030\003"
+          + " \001(\005\"\\\n\032BatchAnnotateImagesRequest\022>\n\010re"
+          + "quests\030\001 \003(\0132,.google.cloud.vision.v1.An"
+          + "notateImageRequest\"_\n\033BatchAnnotateImage"
+          + "sResponse\022@\n\tresponses\030\001 \003(\0132-.google.cl"
+          + "oud.vision.v1.AnnotateImageResponse\"\317\001\n\023"
+          + "AnnotateFileRequest\0229\n\014input_config\030\001 \001("
+          + "\0132#.google.cloud.vision.v1.InputConfig\0221"
+          + "\n\010features\030\002 \003(\0132\037.google.cloud.vision.v"
+          + "1.Feature\022;\n\rimage_context\030\003 \001(\0132$.googl"
+          + "e.cloud.vision.v1.ImageContext\022\r\n\005pages\030"
+          + "\004 \003(\005\"Z\n\031BatchAnnotateFilesRequest\022=\n\010re"
+          + "quests\030\001 \003(\0132+.google.cloud.vision.v1.An"
+          + "notateFileRequest\"]\n\032BatchAnnotateFilesR"
+          + "esponse\022?\n\tresponses\030\001 \003(\0132,.google.clou"
+          + "d.vision.v1.AnnotateFileResponse\"\202\002\n\030Asy"
+          + "ncAnnotateFileRequest\0229\n\014input_config\030\001 "
+          + "\001(\0132#.google.cloud.vision.v1.InputConfig"
+          + "\0221\n\010features\030\002 \003(\0132\037.google.cloud.vision"
+          + ".v1.Feature\022;\n\rimage_context\030\003 \001(\0132$.goo"
+          + "gle.cloud.vision.v1.ImageContext\022;\n\routp"
+          + "ut_config\030\004 \001(\0132$.google.cloud.vision.v1"
+          + ".OutputConfig\"X\n\031AsyncAnnotateFileRespon"
+          + "se\022;\n\routput_config\030\001 \001(\0132$.google.cloud"
+          + ".vision.v1.OutputConfig\"\236\001\n\037AsyncBatchAn"
+          + "notateImagesRequest\022>\n\010requests\030\001 \003(\0132,."
+          + "google.cloud.vision.v1.AnnotateImageRequ"
+          + "est\022;\n\routput_config\030\002 \001(\0132$.google.clou"
+          + "d.vision.v1.OutputConfig\"_\n AsyncBatchAn"
+          + "notateImagesResponse\022;\n\routput_config\030\001 "
+          + "\001(\0132$.google.cloud.vision.v1.OutputConfi"
+          + "g\"d\n\036AsyncBatchAnnotateFilesRequest\022B\n\010r"
+          + "equests\030\001 \003(\01320.google.cloud.vision.v1.A"
+          + "syncAnnotateFileRequest\"g\n\037AsyncBatchAnn"
+          + "otateFilesResponse\022D\n\tresponses\030\001 \003(\01321."
+          + "google.cloud.vision.v1.AsyncAnnotateFile"
+          + "Response\"h\n\013InputConfig\0225\n\ngcs_source\030\001 "
+          + "\001(\0132!.google.cloud.vision.v1.GcsSource\022\017"
+          + "\n\007content\030\003 \001(\014\022\021\n\tmime_type\030\002 \001(\t\"c\n\014Ou"
+          + "tputConfig\022?\n\017gcs_destination\030\001 \001(\0132&.go"
+          + "ogle.cloud.vision.v1.GcsDestination\022\022\n\nb"
+          + "atch_size\030\002 \001(\005\"\030\n\tGcsSource\022\013\n\003uri\030\001 \001("
+          + "\t\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\t\"\210\002\n\021Ope"
+          + "rationMetadata\022>\n\005state\030\001 \001(\0162/.google.c"
+          + "loud.vision.v1.OperationMetadata.State\022/"
+          + "\n\013create_time\030\005 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\022/\n\013update_time\030\006 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\"Q\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\013\n\007CREATED\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DO"
+          + "NE\020\003\022\r\n\tCANCELLED\020\004*e\n\nLikelihood\022\013\n\007UNK"
+          + "NOWN\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UNLIKELY\020\002\022"
+          + "\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LIKELY"
+          + "\020\0052\211\005\n\016ImageAnnotator\022\236\001\n\023BatchAnnotateI"
+          + "mages\0222.google.cloud.vision.v1.BatchAnno"
+          + "tateImagesRequest\0323.google.cloud.vision."
+          + "v1.BatchAnnotateImagesResponse\"\036\202\323\344\223\002\030\"\023"
+          + "/v1/images:annotate:\001*\022\232\001\n\022BatchAnnotate"
+          + "Files\0221.google.cloud.vision.v1.BatchAnno"
+          + "tateFilesRequest\0322.google.cloud.vision.v"
+          + "1.BatchAnnotateFilesResponse\"\035\202\323\344\223\002\027\"\022/v"
+          + "1/files:annotate:\001*\022\234\001\n\030AsyncBatchAnnota"
+          + "teImages\0227.google.cloud.vision.v1.AsyncB"
+          + "atchAnnotateImagesRequest\032\035.google.longr"
+          + "unning.Operation\"(\202\323\344\223\002\"\"\035/v1/images:asy"
+          + "ncBatchAnnotate:\001*\022\231\001\n\027AsyncBatchAnnotat"
+          + "eFiles\0226.google.cloud.vision.v1.AsyncBat"
+          + "chAnnotateFilesRequest\032\035.google.longrunn"
+          + "ing.Operation\"\'\202\323\344\223\002!\"\034/v1/files:asyncBa"
+          + "tchAnnotate:\001*B{\n\032com.google.cloud.visio"
+          + "n.v1B\023ImageAnnotatorProtoP\001Z<google.gola"
+          + "ng.org/genproto/googleapis/cloud/vision/"
+          + "v1;vision\370\001\001\242\002\004GCVNb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -598,7 +643,7 @@ public final class ImageAnnotatorProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_AnnotateFileResponse_descriptor,
             new java.lang.String[] {
-              "InputConfig", "Responses",
+              "InputConfig", "Responses", "TotalPages",
             });
     internal_static_google_cloud_vision_v1_BatchAnnotateImagesRequest_descriptor =
         getDescriptor().getMessageTypes().get(22);
@@ -616,8 +661,32 @@ public final class ImageAnnotatorProto {
             new java.lang.String[] {
               "Responses",
             });
-    internal_static_google_cloud_vision_v1_AsyncAnnotateFileRequest_descriptor =
+    internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor =
         getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_vision_v1_AnnotateFileRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor,
+            new java.lang.String[] {
+              "InputConfig", "Features", "ImageContext", "Pages",
+            });
+    internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_BatchAnnotateFilesRequest_descriptor,
+            new java.lang.String[] {
+              "Requests",
+            });
+    internal_static_google_cloud_vision_v1_BatchAnnotateFilesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_vision_v1_BatchAnnotateFilesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_BatchAnnotateFilesResponse_descriptor,
+            new java.lang.String[] {
+              "Responses",
+            });
+    internal_static_google_cloud_vision_v1_AsyncAnnotateFileRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_vision_v1_AsyncAnnotateFileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_AsyncAnnotateFileRequest_descriptor,
@@ -625,15 +694,31 @@ public final class ImageAnnotatorProto {
               "InputConfig", "Features", "ImageContext", "OutputConfig",
             });
     internal_static_google_cloud_vision_v1_AsyncAnnotateFileResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_vision_v1_AsyncAnnotateFileResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_AsyncAnnotateFileResponse_descriptor,
             new java.lang.String[] {
               "OutputConfig",
             });
+    internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesRequest_descriptor,
+            new java.lang.String[] {
+              "Requests", "OutputConfig",
+            });
+    internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesResponse_descriptor,
+            new java.lang.String[] {
+              "OutputConfig",
+            });
     internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesRequest_descriptor,
@@ -641,7 +726,7 @@ public final class ImageAnnotatorProto {
               "Requests",
             });
     internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor,
@@ -649,15 +734,15 @@ public final class ImageAnnotatorProto {
               "Responses",
             });
     internal_static_google_cloud_vision_v1_InputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_vision_v1_InputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_InputConfig_descriptor,
             new java.lang.String[] {
-              "GcsSource", "MimeType",
+              "GcsSource", "Content", "MimeType",
             });
     internal_static_google_cloud_vision_v1_OutputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_vision_v1_OutputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_OutputConfig_descriptor,
@@ -665,7 +750,7 @@ public final class ImageAnnotatorProto {
               "GcsDestination", "BatchSize",
             });
     internal_static_google_cloud_vision_v1_GcsSource_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_vision_v1_GcsSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_GcsSource_descriptor,
@@ -673,7 +758,7 @@ public final class ImageAnnotatorProto {
               "Uri",
             });
     internal_static_google_cloud_vision_v1_GcsDestination_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_vision_v1_GcsDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_GcsDestination_descriptor,
@@ -681,7 +766,7 @@ public final class ImageAnnotatorProto {
               "Uri",
             });
     internal_static_google_cloud_vision_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_vision_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1_OperationMetadata_descriptor,

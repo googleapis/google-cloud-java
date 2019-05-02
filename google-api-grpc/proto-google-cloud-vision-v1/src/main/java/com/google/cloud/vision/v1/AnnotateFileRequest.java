@@ -7,24 +7,24 @@ package com.google.cloud.vision.v1;
  *
  *
  * <pre>
- * Request for performing Google Cloud Vision API tasks over a user-provided
- * image, with user-requested features, and with context information.
+ * A request to annotate one single file, e.g. a PDF, TIFF or GIF file.
  * </pre>
  *
- * Protobuf type {@code google.cloud.vision.v1.AnnotateImageRequest}
+ * Protobuf type {@code google.cloud.vision.v1.AnnotateFileRequest}
  */
-public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMessageV3
+public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AnnotateImageRequest)
-    AnnotateImageRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AnnotateFileRequest)
+    AnnotateFileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use AnnotateImageRequest.newBuilder() to construct.
-  private AnnotateImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AnnotateFileRequest.newBuilder() to construct.
+  private AnnotateFileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private AnnotateImageRequest() {
+  private AnnotateFileRequest() {
     features_ = java.util.Collections.emptyList();
+    pages_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private AnnotateImageRequest(
+  private AnnotateFileRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,15 +53,16 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
             break;
           case 10:
             {
-              com.google.cloud.vision.v1.Image.Builder subBuilder = null;
-              if (image_ != null) {
-                subBuilder = image_.toBuilder();
+              com.google.cloud.vision.v1.InputConfig.Builder subBuilder = null;
+              if (inputConfig_ != null) {
+                subBuilder = inputConfig_.toBuilder();
               }
-              image_ =
-                  input.readMessage(com.google.cloud.vision.v1.Image.parser(), extensionRegistry);
+              inputConfig_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1.InputConfig.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(image_);
-                image_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(inputConfig_);
+                inputConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -93,6 +94,29 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
               break;
             }
+          case 32:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                pages_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              pages_.addInt(input.readInt32());
+              break;
+            }
+          case 34:
+            {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                pages_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                pages_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -110,6 +134,9 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
       }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        pages_.makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -117,57 +144,59 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
-        .internal_static_google_cloud_vision_v1_AnnotateImageRequest_descriptor;
+        .internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
-        .internal_static_google_cloud_vision_v1_AnnotateImageRequest_fieldAccessorTable
+        .internal_static_google_cloud_vision_v1_AnnotateFileRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.AnnotateImageRequest.class,
-            com.google.cloud.vision.v1.AnnotateImageRequest.Builder.class);
+            com.google.cloud.vision.v1.AnnotateFileRequest.class,
+            com.google.cloud.vision.v1.AnnotateFileRequest.Builder.class);
   }
 
   private int bitField0_;
-  public static final int IMAGE_FIELD_NUMBER = 1;
-  private com.google.cloud.vision.v1.Image image_;
+  public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
+  private com.google.cloud.vision.v1.InputConfig inputConfig_;
   /**
    *
    *
    * <pre>
-   * The image to be processed.
+   * Required. Information about the input file.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.Image image = 1;</code>
+   * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
    */
-  public boolean hasImage() {
-    return image_ != null;
+  public boolean hasInputConfig() {
+    return inputConfig_ != null;
   }
   /**
    *
    *
    * <pre>
-   * The image to be processed.
+   * Required. Information about the input file.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.Image image = 1;</code>
+   * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
    */
-  public com.google.cloud.vision.v1.Image getImage() {
-    return image_ == null ? com.google.cloud.vision.v1.Image.getDefaultInstance() : image_;
+  public com.google.cloud.vision.v1.InputConfig getInputConfig() {
+    return inputConfig_ == null
+        ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
   /**
    *
    *
    * <pre>
-   * The image to be processed.
+   * Required. Information about the input file.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.Image image = 1;</code>
+   * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
    */
-  public com.google.cloud.vision.v1.ImageOrBuilder getImageOrBuilder() {
-    return getImage();
+  public com.google.cloud.vision.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
+    return getInputConfig();
   }
 
   public static final int FEATURES_FIELD_NUMBER = 2;
@@ -176,7 +205,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested features.
+   * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -188,7 +217,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested features.
+   * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -201,7 +230,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested features.
+   * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -213,7 +242,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested features.
+   * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -225,7 +254,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested features.
+   * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -240,7 +269,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Additional context that may accompany the image.
+   * Additional context that may accompany the image(s) in the file.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -252,7 +281,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Additional context that may accompany the image.
+   * Additional context that may accompany the image(s) in the file.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -266,7 +295,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Additional context that may accompany the image.
+   * Additional context that may accompany the image(s) in the file.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -274,6 +303,74 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.vision.v1.ImageContextOrBuilder getImageContextOrBuilder() {
     return getImageContext();
   }
+
+  public static final int PAGES_FIELD_NUMBER = 4;
+  private com.google.protobuf.Internal.IntList pages_;
+  /**
+   *
+   *
+   * <pre>
+   * Pages of the file to perform image annotation.
+   * Pages starts from 1, we assume the first page of the file is page 1.
+   * At most 5 pages are supported per request. Pages can be negative.
+   * Page 1 means the first page.
+   * Page 2 means the second page.
+   * Page -1 means the last page.
+   * Page -2 means the second to the last page.
+   * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+   * If this field is empty, by default the service performs image annotation
+   * for the first 5 pages of the file.
+   * </pre>
+   *
+   * <code>repeated int32 pages = 4;</code>
+   */
+  public java.util.List<java.lang.Integer> getPagesList() {
+    return pages_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Pages of the file to perform image annotation.
+   * Pages starts from 1, we assume the first page of the file is page 1.
+   * At most 5 pages are supported per request. Pages can be negative.
+   * Page 1 means the first page.
+   * Page 2 means the second page.
+   * Page -1 means the last page.
+   * Page -2 means the second to the last page.
+   * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+   * If this field is empty, by default the service performs image annotation
+   * for the first 5 pages of the file.
+   * </pre>
+   *
+   * <code>repeated int32 pages = 4;</code>
+   */
+  public int getPagesCount() {
+    return pages_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Pages of the file to perform image annotation.
+   * Pages starts from 1, we assume the first page of the file is page 1.
+   * At most 5 pages are supported per request. Pages can be negative.
+   * Page 1 means the first page.
+   * Page 2 means the second page.
+   * Page -1 means the last page.
+   * Page -2 means the second to the last page.
+   * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+   * If this field is empty, by default the service performs image annotation
+   * for the first 5 pages of the file.
+   * </pre>
+   *
+   * <code>repeated int32 pages = 4;</code>
+   */
+  public int getPages(int index) {
+    return pages_.getInt(index);
+  }
+
+  private int pagesMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
 
@@ -289,14 +386,22 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (image_ != null) {
-      output.writeMessage(1, getImage());
+    getSerializedSize();
+    if (inputConfig_ != null) {
+      output.writeMessage(1, getInputConfig());
     }
     for (int i = 0; i < features_.size(); i++) {
       output.writeMessage(2, features_.get(i));
     }
     if (imageContext_ != null) {
       output.writeMessage(3, getImageContext());
+    }
+    if (getPagesList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(pagesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < pages_.size(); i++) {
+      output.writeInt32NoTag(pages_.getInt(i));
     }
     unknownFields.writeTo(output);
   }
@@ -307,14 +412,26 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (image_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getImage());
+    if (inputConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputConfig());
     }
     for (int i = 0; i < features_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, features_.get(i));
     }
     if (imageContext_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getImageContext());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < pages_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(pages_.getInt(i));
+      }
+      size += dataSize;
+      if (!getPagesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      pagesMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -326,21 +443,22 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.vision.v1.AnnotateImageRequest)) {
+    if (!(obj instanceof com.google.cloud.vision.v1.AnnotateFileRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.AnnotateImageRequest other =
-        (com.google.cloud.vision.v1.AnnotateImageRequest) obj;
+    com.google.cloud.vision.v1.AnnotateFileRequest other =
+        (com.google.cloud.vision.v1.AnnotateFileRequest) obj;
 
-    if (hasImage() != other.hasImage()) return false;
-    if (hasImage()) {
-      if (!getImage().equals(other.getImage())) return false;
+    if (hasInputConfig() != other.hasInputConfig()) return false;
+    if (hasInputConfig()) {
+      if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
     if (!getFeaturesList().equals(other.getFeaturesList())) return false;
     if (hasImageContext() != other.hasImageContext()) return false;
     if (hasImageContext()) {
       if (!getImageContext().equals(other.getImageContext())) return false;
     }
+    if (!getPagesList().equals(other.getPagesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -352,9 +470,9 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasImage()) {
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
+    if (hasInputConfig()) {
+      hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getInputConfig().hashCode();
     }
     if (getFeaturesCount() > 0) {
       hash = (37 * hash) + FEATURES_FIELD_NUMBER;
@@ -364,76 +482,80 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + IMAGE_CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getImageContext().hashCode();
     }
+    if (getPagesCount() > 0) {
+      hash = (37 * hash) + PAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getPagesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(byte[] data)
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseDelimitedFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseDelimitedFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest parseFrom(
+  public static com.google.cloud.vision.v1.AnnotateFileRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -450,7 +572,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.vision.v1.AnnotateImageRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.vision.v1.AnnotateFileRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -468,32 +590,31 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request for performing Google Cloud Vision API tasks over a user-provided
-   * image, with user-requested features, and with context information.
+   * A request to annotate one single file, e.g. a PDF, TIFF or GIF file.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.vision.v1.AnnotateImageRequest}
+   * Protobuf type {@code google.cloud.vision.v1.AnnotateFileRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.AnnotateImageRequest)
-      com.google.cloud.vision.v1.AnnotateImageRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.AnnotateFileRequest)
+      com.google.cloud.vision.v1.AnnotateFileRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto
-          .internal_static_google_cloud_vision_v1_AnnotateImageRequest_descriptor;
+          .internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto
-          .internal_static_google_cloud_vision_v1_AnnotateImageRequest_fieldAccessorTable
+          .internal_static_google_cloud_vision_v1_AnnotateFileRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.AnnotateImageRequest.class,
-              com.google.cloud.vision.v1.AnnotateImageRequest.Builder.class);
+              com.google.cloud.vision.v1.AnnotateFileRequest.class,
+              com.google.cloud.vision.v1.AnnotateFileRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.vision.v1.AnnotateImageRequest.newBuilder()
+    // Construct using com.google.cloud.vision.v1.AnnotateFileRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -512,11 +633,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (imageBuilder_ == null) {
-        image_ = null;
+      if (inputConfigBuilder_ == null) {
+        inputConfig_ = null;
       } else {
-        image_ = null;
-        imageBuilder_ = null;
+        inputConfig_ = null;
+        inputConfigBuilder_ = null;
       }
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
@@ -530,23 +651,25 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         imageContext_ = null;
         imageContextBuilder_ = null;
       }
+      pages_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto
-          .internal_static_google_cloud_vision_v1_AnnotateImageRequest_descriptor;
+          .internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.vision.v1.AnnotateImageRequest getDefaultInstanceForType() {
-      return com.google.cloud.vision.v1.AnnotateImageRequest.getDefaultInstance();
+    public com.google.cloud.vision.v1.AnnotateFileRequest getDefaultInstanceForType() {
+      return com.google.cloud.vision.v1.AnnotateFileRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.vision.v1.AnnotateImageRequest build() {
-      com.google.cloud.vision.v1.AnnotateImageRequest result = buildPartial();
+    public com.google.cloud.vision.v1.AnnotateFileRequest build() {
+      com.google.cloud.vision.v1.AnnotateFileRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -554,15 +677,15 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
-    public com.google.cloud.vision.v1.AnnotateImageRequest buildPartial() {
-      com.google.cloud.vision.v1.AnnotateImageRequest result =
-          new com.google.cloud.vision.v1.AnnotateImageRequest(this);
+    public com.google.cloud.vision.v1.AnnotateFileRequest buildPartial() {
+      com.google.cloud.vision.v1.AnnotateFileRequest result =
+          new com.google.cloud.vision.v1.AnnotateFileRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (imageBuilder_ == null) {
-        result.image_ = image_;
+      if (inputConfigBuilder_ == null) {
+        result.inputConfig_ = inputConfig_;
       } else {
-        result.image_ = imageBuilder_.build();
+        result.inputConfig_ = inputConfigBuilder_.build();
       }
       if (featuresBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
@@ -578,6 +701,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.imageContext_ = imageContextBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        pages_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.pages_ = pages_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -618,19 +746,18 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.vision.v1.AnnotateImageRequest) {
-        return mergeFrom((com.google.cloud.vision.v1.AnnotateImageRequest) other);
+      if (other instanceof com.google.cloud.vision.v1.AnnotateFileRequest) {
+        return mergeFrom((com.google.cloud.vision.v1.AnnotateFileRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.vision.v1.AnnotateImageRequest other) {
-      if (other == com.google.cloud.vision.v1.AnnotateImageRequest.getDefaultInstance())
-        return this;
-      if (other.hasImage()) {
-        mergeImage(other.getImage());
+    public Builder mergeFrom(com.google.cloud.vision.v1.AnnotateFileRequest other) {
+      if (other == com.google.cloud.vision.v1.AnnotateFileRequest.getDefaultInstance()) return this;
+      if (other.hasInputConfig()) {
+        mergeInputConfig(other.getInputConfig());
       }
       if (featuresBuilder_ == null) {
         if (!other.features_.isEmpty()) {
@@ -662,6 +789,16 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       if (other.hasImageContext()) {
         mergeImageContext(other.getImageContext());
       }
+      if (!other.pages_.isEmpty()) {
+        if (pages_.isEmpty()) {
+          pages_ = other.pages_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensurePagesIsMutable();
+          pages_.addAll(other.pages_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -677,11 +814,11 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vision.v1.AnnotateImageRequest parsedMessage = null;
+      com.google.cloud.vision.v1.AnnotateFileRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1.AnnotateImageRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.vision.v1.AnnotateFileRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -693,58 +830,60 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private com.google.cloud.vision.v1.Image image_;
+    private com.google.cloud.vision.v1.InputConfig inputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1.Image,
-            com.google.cloud.vision.v1.Image.Builder,
-            com.google.cloud.vision.v1.ImageOrBuilder>
-        imageBuilder_;
+            com.google.cloud.vision.v1.InputConfig,
+            com.google.cloud.vision.v1.InputConfig.Builder,
+            com.google.cloud.vision.v1.InputConfigOrBuilder>
+        inputConfigBuilder_;
     /**
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public boolean hasImage() {
-      return imageBuilder_ != null || image_ != null;
+    public boolean hasInputConfig() {
+      return inputConfigBuilder_ != null || inputConfig_ != null;
     }
     /**
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public com.google.cloud.vision.v1.Image getImage() {
-      if (imageBuilder_ == null) {
-        return image_ == null ? com.google.cloud.vision.v1.Image.getDefaultInstance() : image_;
+    public com.google.cloud.vision.v1.InputConfig getInputConfig() {
+      if (inputConfigBuilder_ == null) {
+        return inputConfig_ == null
+            ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
+            : inputConfig_;
       } else {
-        return imageBuilder_.getMessage();
+        return inputConfigBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public Builder setImage(com.google.cloud.vision.v1.Image value) {
-      if (imageBuilder_ == null) {
+    public Builder setInputConfig(com.google.cloud.vision.v1.InputConfig value) {
+      if (inputConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        image_ = value;
+        inputConfig_ = value;
         onChanged();
       } else {
-        imageBuilder_.setMessage(value);
+        inputConfigBuilder_.setMessage(value);
       }
 
       return this;
@@ -753,17 +892,17 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public Builder setImage(com.google.cloud.vision.v1.Image.Builder builderForValue) {
-      if (imageBuilder_ == null) {
-        image_ = builderForValue.build();
+    public Builder setInputConfig(com.google.cloud.vision.v1.InputConfig.Builder builderForValue) {
+      if (inputConfigBuilder_ == null) {
+        inputConfig_ = builderForValue.build();
         onChanged();
       } else {
-        imageBuilder_.setMessage(builderForValue.build());
+        inputConfigBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -772,22 +911,24 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public Builder mergeImage(com.google.cloud.vision.v1.Image value) {
-      if (imageBuilder_ == null) {
-        if (image_ != null) {
-          image_ =
-              com.google.cloud.vision.v1.Image.newBuilder(image_).mergeFrom(value).buildPartial();
+    public Builder mergeInputConfig(com.google.cloud.vision.v1.InputConfig value) {
+      if (inputConfigBuilder_ == null) {
+        if (inputConfig_ != null) {
+          inputConfig_ =
+              com.google.cloud.vision.v1.InputConfig.newBuilder(inputConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
-          image_ = value;
+          inputConfig_ = value;
         }
         onChanged();
       } else {
-        imageBuilder_.mergeFrom(value);
+        inputConfigBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -796,18 +937,18 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public Builder clearImage() {
-      if (imageBuilder_ == null) {
-        image_ = null;
+    public Builder clearInputConfig() {
+      if (inputConfigBuilder_ == null) {
+        inputConfig_ = null;
         onChanged();
       } else {
-        image_ = null;
-        imageBuilder_ = null;
+        inputConfig_ = null;
+        inputConfigBuilder_ = null;
       }
 
       return this;
@@ -816,56 +957,58 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public com.google.cloud.vision.v1.Image.Builder getImageBuilder() {
+    public com.google.cloud.vision.v1.InputConfig.Builder getInputConfigBuilder() {
 
       onChanged();
-      return getImageFieldBuilder().getBuilder();
+      return getInputConfigFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
-    public com.google.cloud.vision.v1.ImageOrBuilder getImageOrBuilder() {
-      if (imageBuilder_ != null) {
-        return imageBuilder_.getMessageOrBuilder();
+    public com.google.cloud.vision.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
+      if (inputConfigBuilder_ != null) {
+        return inputConfigBuilder_.getMessageOrBuilder();
       } else {
-        return image_ == null ? com.google.cloud.vision.v1.Image.getDefaultInstance() : image_;
+        return inputConfig_ == null
+            ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
+            : inputConfig_;
       }
     }
     /**
      *
      *
      * <pre>
-     * The image to be processed.
+     * Required. Information about the input file.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.Image image = 1;</code>
+     * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1.Image,
-            com.google.cloud.vision.v1.Image.Builder,
-            com.google.cloud.vision.v1.ImageOrBuilder>
-        getImageFieldBuilder() {
-      if (imageBuilder_ == null) {
-        imageBuilder_ =
+            com.google.cloud.vision.v1.InputConfig,
+            com.google.cloud.vision.v1.InputConfig.Builder,
+            com.google.cloud.vision.v1.InputConfigOrBuilder>
+        getInputConfigFieldBuilder() {
+      if (inputConfigBuilder_ == null) {
+        inputConfigBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.vision.v1.Image,
-                com.google.cloud.vision.v1.Image.Builder,
-                com.google.cloud.vision.v1.ImageOrBuilder>(
-                getImage(), getParentForChildren(), isClean());
-        image_ = null;
+                com.google.cloud.vision.v1.InputConfig,
+                com.google.cloud.vision.v1.InputConfig.Builder,
+                com.google.cloud.vision.v1.InputConfigOrBuilder>(
+                getInputConfig(), getParentForChildren(), isClean());
+        inputConfig_ = null;
       }
-      return imageBuilder_;
+      return inputConfigBuilder_;
     }
 
     private java.util.List<com.google.cloud.vision.v1.Feature> features_ =
@@ -888,7 +1031,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -904,7 +1047,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -920,7 +1063,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -936,7 +1079,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -958,7 +1101,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -978,7 +1121,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1000,7 +1143,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1022,7 +1165,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1041,7 +1184,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1061,7 +1204,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1081,7 +1224,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1100,7 +1243,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1119,7 +1262,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1131,7 +1274,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1147,7 +1290,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1164,7 +1307,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1177,7 +1320,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1190,7 +1333,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested features.
+     * Required. Requested features.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
@@ -1226,7 +1369,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1238,7 +1381,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1256,7 +1399,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1278,7 +1421,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1298,7 +1441,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1324,7 +1467,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1344,7 +1487,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1358,7 +1501,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1376,7 +1519,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Additional context that may accompany the image.
+     * Additional context that may accompany the image(s) in the file.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
@@ -1398,6 +1541,176 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       return imageContextBuilder_;
     }
 
+    private com.google.protobuf.Internal.IntList pages_ = emptyIntList();
+
+    private void ensurePagesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        pages_ = mutableCopy(pages_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public java.util.List<java.lang.Integer> getPagesList() {
+      return ((bitField0_ & 0x00000008) != 0)
+          ? java.util.Collections.unmodifiableList(pages_)
+          : pages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public int getPagesCount() {
+      return pages_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public int getPages(int index) {
+      return pages_.getInt(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public Builder setPages(int index, int value) {
+      ensurePagesIsMutable();
+      pages_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public Builder addPages(int value) {
+      ensurePagesIsMutable();
+      pages_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public Builder addAllPages(java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensurePagesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pages_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pages of the file to perform image annotation.
+     * Pages starts from 1, we assume the first page of the file is page 1.
+     * At most 5 pages are supported per request. Pages can be negative.
+     * Page 1 means the first page.
+     * Page 2 means the second page.
+     * Page -1 means the last page.
+     * Page -2 means the second to the last page.
+     * If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+     * If this field is empty, by default the service performs image annotation
+     * for the first 5 pages of the file.
+     * </pre>
+     *
+     * <code>repeated int32 pages = 4;</code>
+     */
+    public Builder clearPages() {
+      pages_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -1409,42 +1722,42 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.AnnotateImageRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.AnnotateFileRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.AnnotateImageRequest)
-  private static final com.google.cloud.vision.v1.AnnotateImageRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.AnnotateFileRequest)
+  private static final com.google.cloud.vision.v1.AnnotateFileRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.vision.v1.AnnotateImageRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.vision.v1.AnnotateFileRequest();
   }
 
-  public static com.google.cloud.vision.v1.AnnotateImageRequest getDefaultInstance() {
+  public static com.google.cloud.vision.v1.AnnotateFileRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnnotateImageRequest> PARSER =
-      new com.google.protobuf.AbstractParser<AnnotateImageRequest>() {
+  private static final com.google.protobuf.Parser<AnnotateFileRequest> PARSER =
+      new com.google.protobuf.AbstractParser<AnnotateFileRequest>() {
         @java.lang.Override
-        public AnnotateImageRequest parsePartialFrom(
+        public AnnotateFileRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AnnotateImageRequest(input, extensionRegistry);
+          return new AnnotateFileRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<AnnotateImageRequest> parser() {
+  public static com.google.protobuf.Parser<AnnotateFileRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AnnotateImageRequest> getParserForType() {
+  public com.google.protobuf.Parser<AnnotateFileRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.vision.v1.AnnotateImageRequest getDefaultInstanceForType() {
+  public com.google.cloud.vision.v1.AnnotateFileRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -66,6 +66,28 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
     return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateImagesSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchAnnotateFiles. */
+  public UnaryCallSettings<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
+      batchAnnotateFilesSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateFilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncBatchAnnotateImages. */
+  public UnaryCallSettings<AsyncBatchAnnotateImagesRequest, Operation>
+      asyncBatchAnnotateImagesSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings()).asyncBatchAnnotateImagesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncBatchAnnotateImages. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
+      asyncBatchAnnotateImagesOperationSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings())
+        .asyncBatchAnnotateImagesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
   public UnaryCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
       asyncBatchAnnotateFilesSettings() {
@@ -183,6 +205,27 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
     public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesSettings() {
       return getStubSettingsBuilder().batchAnnotateImagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchAnnotateFiles. */
+    public UnaryCallSettings.Builder<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
+        batchAnnotateFilesSettings() {
+      return getStubSettingsBuilder().batchAnnotateFilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncBatchAnnotateImages. */
+    public UnaryCallSettings.Builder<AsyncBatchAnnotateImagesRequest, Operation>
+        asyncBatchAnnotateImagesSettings() {
+      return getStubSettingsBuilder().asyncBatchAnnotateImagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncBatchAnnotateImages. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
+        asyncBatchAnnotateImagesOperationSettings() {
+      return getStubSettingsBuilder().asyncBatchAnnotateImagesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
