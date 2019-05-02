@@ -1,0 +1,10 @@
+target/
+bin/
+*.iml
+.idea
+.project
+.settings
+.classpath
+.DS_Store
+node_modules/
+package-lock.json
