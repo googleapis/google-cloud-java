@@ -15,7 +15,7 @@
  */
 
 // DO NOT MODIFY! AUTO-GENERATED!
-// This file is auto-generated on 2019-04-24.
+// This file is auto-generated on 2019-05-02.
 
 package com.google.cloud.monitoring.v3;
 
@@ -46,8 +46,7 @@ public class VPCServiceControlTest {
   }
 
   private static void doTest(Delay delayedInside, Delay delayedOutside) {
-    if ((System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null)
-        && (System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("True"))) {
+    if ((IS_INSIDE_VPCSC != null) && (IS_INSIDE_VPCSC.equalsIgnoreCase("true"))) {
       Assert.assertTrue(isRejected(delayedOutside));
       Assert.assertTrue(!(isRejected(delayedInside)));
     } else {
@@ -59,6 +58,7 @@ public class VPCServiceControlTest {
   static final String PROJECT_OUTSIDE =
       System.getenv("GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT");
   static final String PROJECT_INSIDE = System.getenv("PROJECT_ID");
+  static final String IS_INSIDE_VPCSC = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC");
 
   @BeforeClass
   public static void setUpClass() {
@@ -548,6 +548,188 @@ public class VPCServiceControlTest {
           @Override
           public void eval() {
             client.listTimeSeries(nameOutside, "", intervalOutside, viewOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createNotificationChannelTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    final ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+    final NotificationChannel resourceInside = NotificationChannel.newBuilder().build();
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.createNotificationChannel(nameInside, resourceInside);
+          }
+        };
+    final ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+    final NotificationChannel resourceOutside = NotificationChannel.newBuilder().build();
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.createNotificationChannel(nameOutside, resourceOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteNotificationChannelTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    final NotificationChannelName nameInside =
+        NotificationChannelName.of(PROJECT_INSIDE, "MockNotificationChannel");
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.deleteNotificationChannel(nameInside, true);
+          }
+        };
+    final NotificationChannelName nameOutside =
+        NotificationChannelName.of(PROJECT_OUTSIDE, "MockNotificationChannel");
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.deleteNotificationChannel(nameOutside, true);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getNotificationChannelTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    final NotificationChannelName nameInside =
+        NotificationChannelName.of(PROJECT_INSIDE, "MockNotificationChannel");
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.getNotificationChannel(nameInside);
+          }
+        };
+    final NotificationChannelName nameOutside =
+        NotificationChannelName.of(PROJECT_OUTSIDE, "MockNotificationChannel");
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.getNotificationChannel(nameOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getNotificationChannelDescriptorTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    final NotificationChannelDescriptorName nameInside =
+        NotificationChannelDescriptorName.of(PROJECT_INSIDE, "MockNotificationChannelDescriptor");
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.getNotificationChannelDescriptor(nameInside);
+          }
+        };
+    final NotificationChannelDescriptorName nameOutside =
+        NotificationChannelDescriptorName.of(PROJECT_OUTSIDE, "MockNotificationChannelDescriptor");
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.getNotificationChannelDescriptor(nameOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listNotificationChannelDescriptorsTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    final ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.listNotificationChannelDescriptors(nameInside);
+          }
+        };
+    final ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.listNotificationChannelDescriptors(nameOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listNotificationChannelsTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    final ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.listNotificationChannels(nameInside);
+          }
+        };
+    final ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.listNotificationChannels(nameOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateNotificationChannelTest() throws Exception {
+    final NotificationChannelServiceClient client = NotificationChannelServiceClient.create();
+    NotificationChannelName nameInside =
+        NotificationChannelName.of(PROJECT_INSIDE, "MockNotificationChannel");
+    final NotificationChannel resourceInside =
+        NotificationChannel.newBuilder().setName(nameInside.toString()).build();
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.updateNotificationChannel(FieldMask.newBuilder().build(), resourceInside);
+          }
+        };
+    NotificationChannelName nameOutside =
+        NotificationChannelName.of(PROJECT_OUTSIDE, "MockNotificationChannel");
+    final NotificationChannel resourceOutside =
+        NotificationChannel.newBuilder().setName(nameOutside.toString()).build();
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.updateNotificationChannel(FieldMask.newBuilder().build(), resourceOutside);
           }
         };
     doTest(delayedInside, delayedOutside);
