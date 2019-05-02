@@ -21,6 +21,10 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest;
 import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse;
+import com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest;
+import com.google.cloud.vision.v1.AsyncBatchAnnotateImagesResponse;
+import com.google.cloud.vision.v1.BatchAnnotateFilesRequest;
+import com.google.cloud.vision.v1.BatchAnnotateFilesResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.OperationMetadata;
@@ -46,6 +50,24 @@ public abstract class ImageAnnotatorStub implements BackgroundResource {
   public UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchAnnotateImagesCallable()");
+  }
+
+  public UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
+      batchAnnotateFilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchAnnotateFilesCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
+      asyncBatchAnnotateImagesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: asyncBatchAnnotateImagesOperationCallable()");
+  }
+
+  public UnaryCallable<AsyncBatchAnnotateImagesRequest, Operation>
+      asyncBatchAnnotateImagesCallable() {
+    throw new UnsupportedOperationException("Not implemented: asyncBatchAnnotateImagesCallable()");
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")

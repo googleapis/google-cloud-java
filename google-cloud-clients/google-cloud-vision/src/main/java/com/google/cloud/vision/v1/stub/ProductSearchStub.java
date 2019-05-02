@@ -71,6 +71,31 @@ public abstract class ProductSearchStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: createProductSetCallable()");
+  }
+
+  public UnaryCallable<ListProductSetsRequest, ListProductSetsPagedResponse>
+      listProductSetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProductSetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> listProductSetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProductSetsCallable()");
+  }
+
+  public UnaryCallable<GetProductSetRequest, ProductSet> getProductSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getProductSetCallable()");
+  }
+
+  public UnaryCallable<UpdateProductSetRequest, ProductSet> updateProductSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateProductSetCallable()");
+  }
+
+  public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteProductSetCallable()");
+  }
+
   public UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     throw new UnsupportedOperationException("Not implemented: createProductCallable()");
   }
@@ -95,6 +120,14 @@ public abstract class ProductSearchStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteProductCallable()");
   }
 
+  public UnaryCallable<CreateReferenceImageRequest, ReferenceImage> createReferenceImageCallable() {
+    throw new UnsupportedOperationException("Not implemented: createReferenceImageCallable()");
+  }
+
+  public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteReferenceImageCallable()");
+  }
+
   public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>
       listReferenceImagesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listReferenceImagesPagedCallable()");
@@ -107,39 +140,6 @@ public abstract class ProductSearchStub implements BackgroundResource {
 
   public UnaryCallable<GetReferenceImageRequest, ReferenceImage> getReferenceImageCallable() {
     throw new UnsupportedOperationException("Not implemented: getReferenceImageCallable()");
-  }
-
-  public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteReferenceImageCallable()");
-  }
-
-  public UnaryCallable<CreateReferenceImageRequest, ReferenceImage> createReferenceImageCallable() {
-    throw new UnsupportedOperationException("Not implemented: createReferenceImageCallable()");
-  }
-
-  public UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
-    throw new UnsupportedOperationException("Not implemented: createProductSetCallable()");
-  }
-
-  public UnaryCallable<ListProductSetsRequest, ListProductSetsPagedResponse>
-      listProductSetsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listProductSetsPagedCallable()");
-  }
-
-  public UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> listProductSetsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listProductSetsCallable()");
-  }
-
-  public UnaryCallable<GetProductSetRequest, ProductSet> getProductSetCallable() {
-    throw new UnsupportedOperationException("Not implemented: getProductSetCallable()");
-  }
-
-  public UnaryCallable<UpdateProductSetRequest, ProductSet> updateProductSetCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateProductSetCallable()");
-  }
-
-  public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteProductSetCallable()");
   }
 
   public UnaryCallable<AddProductToProductSetRequest, Empty> addProductToProductSetCallable() {

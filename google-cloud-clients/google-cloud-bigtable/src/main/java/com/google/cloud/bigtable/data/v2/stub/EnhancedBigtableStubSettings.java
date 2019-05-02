@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -74,11 +73,7 @@ import org.threeten.bp.Duration;
  *
  * BigtableDataSettings settings = builder.build();
  * }</pre>
- *
- * <p>This class is considered an internal implementation detail and not meant to be used by
- * applications.
  */
-@InternalApi
 public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableStubSettings> {
   // The largest message that can be received is a 256 MB ReadRowsResponse.
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;

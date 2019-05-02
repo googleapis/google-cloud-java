@@ -459,7 +459,7 @@ public class TransactionTest {
     assertEquals(3, requests.size());
 
     assertEquals(begin(), requests.get(0));
-    assertEquals(query(TRANSACTION_ID), requests.get(1));
+    assertEquals(query(TRANSACTION_ID, /* allDescendants= */ false), requests.get(1));
     assertEquals(commit(TRANSACTION_ID), requests.get(2));
   }
 
