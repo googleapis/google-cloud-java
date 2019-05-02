@@ -57,8 +57,10 @@ com.google.firestore.v1
 com.google.firestore.v1beta1
 com.google.logging.v2
 com.google.monitoring.v3
+com.google.phishingprotection.v1beta1
 com.google.privacy.dlp.v2
 com.google.pubsub.v1
+com.google.recaptchaenterprise.v1beta1
 com.google.spanner.admin.database.v1
 com.google.spanner.admin.instance.v1
 com.google.spanner.v1
