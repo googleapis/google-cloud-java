@@ -171,6 +171,6 @@ public class ITDatabaseAdminTest {
       dbIdsGot.add(db.getId().getDatabase());
       page = page.getNextPage();
     }
-    assertThat(dbIdsGot).containsAllIn(dbIds);
+    assertThat(dbIdsGot).containsAtLeastElementsIn(dbIds);
   }
 }

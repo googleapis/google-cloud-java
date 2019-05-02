@@ -408,12 +408,12 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>0.42</version>
+        <version>0.44</version>
       </dependency>
       <dependency>
         <groupId>org.checkerframework</groupId>
         <artifactId>checker-compat-qual</artifactId>
-        <version>2.5.3</version>
+        <version>2.5.5</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
