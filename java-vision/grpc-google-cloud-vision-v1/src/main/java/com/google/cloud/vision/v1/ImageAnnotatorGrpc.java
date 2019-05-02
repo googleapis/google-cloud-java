@@ -87,6 +87,127 @@ public final class ImageAnnotatorGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchAnnotateFilesMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+          com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+      METHOD_BATCH_ANNOTATE_FILES = getBatchAnnotateFilesMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+          com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+      getBatchAnnotateFilesMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+          com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+      getBatchAnnotateFilesMethod() {
+    return getBatchAnnotateFilesMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+          com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+      getBatchAnnotateFilesMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+            com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+        getBatchAnnotateFilesMethod;
+    if ((getBatchAnnotateFilesMethod = ImageAnnotatorGrpc.getBatchAnnotateFilesMethod) == null) {
+      synchronized (ImageAnnotatorGrpc.class) {
+        if ((getBatchAnnotateFilesMethod = ImageAnnotatorGrpc.getBatchAnnotateFilesMethod)
+            == null) {
+          ImageAnnotatorGrpc.getBatchAnnotateFilesMethod =
+              getBatchAnnotateFilesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+                          com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.vision.v1.ImageAnnotator", "BatchAnnotateFiles"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vision.v1.BatchAnnotateFilesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vision.v1.BatchAnnotateFilesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ImageAnnotatorMethodDescriptorSupplier("BatchAnnotateFiles"))
+                      .build();
+        }
+      }
+    }
+    return getBatchAnnotateFilesMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getAsyncBatchAnnotateImagesMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+          com.google.longrunning.Operation>
+      METHOD_ASYNC_BATCH_ANNOTATE_IMAGES = getAsyncBatchAnnotateImagesMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+          com.google.longrunning.Operation>
+      getAsyncBatchAnnotateImagesMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+          com.google.longrunning.Operation>
+      getAsyncBatchAnnotateImagesMethod() {
+    return getAsyncBatchAnnotateImagesMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+          com.google.longrunning.Operation>
+      getAsyncBatchAnnotateImagesMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+            com.google.longrunning.Operation>
+        getAsyncBatchAnnotateImagesMethod;
+    if ((getAsyncBatchAnnotateImagesMethod = ImageAnnotatorGrpc.getAsyncBatchAnnotateImagesMethod)
+        == null) {
+      synchronized (ImageAnnotatorGrpc.class) {
+        if ((getAsyncBatchAnnotateImagesMethod =
+                ImageAnnotatorGrpc.getAsyncBatchAnnotateImagesMethod)
+            == null) {
+          ImageAnnotatorGrpc.getAsyncBatchAnnotateImagesMethod =
+              getAsyncBatchAnnotateImagesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.vision.v1.ImageAnnotator", "AsyncBatchAnnotateImages"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ImageAnnotatorMethodDescriptorSupplier("AsyncBatchAnnotateImages"))
+                      .build();
+        }
+      }
+    }
+    return getAsyncBatchAnnotateImagesMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getAsyncBatchAnnotateFilesMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.vision.v1.AsyncBatchAnnotateFilesRequest,
@@ -192,6 +313,44 @@ public final class ImageAnnotatorGrpc {
      *
      *
      * <pre>
+     * Service that performs image detection and annotation for a batch of files.
+     * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
+     * </pre>
+     */
+    public void batchAnnotateFiles(
+        com.google.cloud.vision.v1.BatchAnnotateFilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchAnnotateFilesMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Run asynchronous image detection and annotation for a list of images.
+     * Progress and results can be retrieved through the
+     * `google.longrunning.Operations` interface.
+     * `Operation.metadata` contains `OperationMetadata` (metadata).
+     * `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
+     * This service will write image annotation outputs to json files in customer
+     * GCS bucket, each json file containing BatchAnnotateImagesResponse proto.
+     * </pre>
+     */
+    public void asyncBatchAnnotateImages(
+        com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getAsyncBatchAnnotateImagesMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Run asynchronous image detection and annotation for a list of generic
      * files, such as PDF files, which may contain multiple pages and multiple
      * images per page. Progress and results can be retrieved through the
@@ -216,6 +375,20 @@ public final class ImageAnnotatorGrpc {
                       com.google.cloud.vision.v1.BatchAnnotateImagesRequest,
                       com.google.cloud.vision.v1.BatchAnnotateImagesResponse>(
                       this, METHODID_BATCH_ANNOTATE_IMAGES)))
+          .addMethod(
+              getBatchAnnotateFilesMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vision.v1.BatchAnnotateFilesRequest,
+                      com.google.cloud.vision.v1.BatchAnnotateFilesResponse>(
+                      this, METHODID_BATCH_ANNOTATE_FILES)))
+          .addMethod(
+              getAsyncBatchAnnotateImagesMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_ASYNC_BATCH_ANNOTATE_IMAGES)))
           .addMethod(
               getAsyncBatchAnnotateFilesMethodHelper(),
               asyncUnaryCall(
@@ -263,6 +436,50 @@ public final class ImageAnnotatorGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getBatchAnnotateImagesMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service that performs image detection and annotation for a batch of files.
+     * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
+     * </pre>
+     */
+    public void batchAnnotateFiles(
+        com.google.cloud.vision.v1.BatchAnnotateFilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchAnnotateFilesMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Run asynchronous image detection and annotation for a list of images.
+     * Progress and results can be retrieved through the
+     * `google.longrunning.Operations` interface.
+     * `Operation.metadata` contains `OperationMetadata` (metadata).
+     * `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
+     * This service will write image annotation outputs to json files in customer
+     * GCS bucket, each json file containing BatchAnnotateImagesResponse proto.
+     * </pre>
+     */
+    public void asyncBatchAnnotateImages(
+        com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAsyncBatchAnnotateImagesMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -331,6 +548,43 @@ public final class ImageAnnotatorGrpc {
      *
      *
      * <pre>
+     * Service that performs image detection and annotation for a batch of files.
+     * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
+     * </pre>
+     */
+    public com.google.cloud.vision.v1.BatchAnnotateFilesResponse batchAnnotateFiles(
+        com.google.cloud.vision.v1.BatchAnnotateFilesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchAnnotateFilesMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Run asynchronous image detection and annotation for a list of images.
+     * Progress and results can be retrieved through the
+     * `google.longrunning.Operations` interface.
+     * `Operation.metadata` contains `OperationMetadata` (metadata).
+     * `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
+     * This service will write image annotation outputs to json files in customer
+     * GCS bucket, each json file containing BatchAnnotateImagesResponse proto.
+     * </pre>
+     */
+    public com.google.longrunning.Operation asyncBatchAnnotateImages(
+        com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAsyncBatchAnnotateImagesMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Run asynchronous image detection and annotation for a list of generic
      * files, such as PDF files, which may contain multiple pages and multiple
      * images per page. Progress and results can be retrieved through the
@@ -389,6 +643,46 @@ public final class ImageAnnotatorGrpc {
      *
      *
      * <pre>
+     * Service that performs image detection and annotation for a batch of files.
+     * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
+     * This service will extract at most 5 (customers can specify which 5 in
+     * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+     * file provided and perform detection and annotation for each image
+     * extracted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vision.v1.BatchAnnotateFilesResponse>
+        batchAnnotateFiles(com.google.cloud.vision.v1.BatchAnnotateFilesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchAnnotateFilesMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Run asynchronous image detection and annotation for a list of images.
+     * Progress and results can be retrieved through the
+     * `google.longrunning.Operations` interface.
+     * `Operation.metadata` contains `OperationMetadata` (metadata).
+     * `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
+     * This service will write image annotation outputs to json files in customer
+     * GCS bucket, each json file containing BatchAnnotateImagesResponse proto.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        asyncBatchAnnotateImages(
+            com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAsyncBatchAnnotateImagesMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Run asynchronous image detection and annotation for a list of generic
      * files, such as PDF files, which may contain multiple pages and multiple
      * images per page. Progress and results can be retrieved through the
@@ -406,7 +700,9 @@ public final class ImageAnnotatorGrpc {
   }
 
   private static final int METHODID_BATCH_ANNOTATE_IMAGES = 0;
-  private static final int METHODID_ASYNC_BATCH_ANNOTATE_FILES = 1;
+  private static final int METHODID_BATCH_ANNOTATE_FILES = 1;
+  private static final int METHODID_ASYNC_BATCH_ANNOTATE_IMAGES = 2;
+  private static final int METHODID_ASYNC_BATCH_ANNOTATE_FILES = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -430,6 +726,17 @@ public final class ImageAnnotatorGrpc {
               (com.google.cloud.vision.v1.BatchAnnotateImagesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.BatchAnnotateImagesResponse>)
                   responseObserver);
+          break;
+        case METHODID_BATCH_ANNOTATE_FILES:
+          serviceImpl.batchAnnotateFiles(
+              (com.google.cloud.vision.v1.BatchAnnotateFilesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.BatchAnnotateFilesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ASYNC_BATCH_ANNOTATE_IMAGES:
+          serviceImpl.asyncBatchAnnotateImages(
+              (com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_ASYNC_BATCH_ANNOTATE_FILES:
           serviceImpl.asyncBatchAnnotateFiles(
@@ -501,6 +808,8 @@ public final class ImageAnnotatorGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ImageAnnotatorFileDescriptorSupplier())
                       .addMethod(getBatchAnnotateImagesMethodHelper())
+                      .addMethod(getBatchAnnotateFilesMethodHelper())
+                      .addMethod(getAsyncBatchAnnotateImagesMethodHelper())
                       .addMethod(getAsyncBatchAnnotateFilesMethodHelper())
                       .build();
         }
