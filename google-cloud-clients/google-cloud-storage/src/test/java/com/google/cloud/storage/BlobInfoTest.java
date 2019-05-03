@@ -80,6 +80,7 @@ public class BlobInfoTest {
   private static final Boolean EVENT_BASED_HOLD = true;
   private static final Boolean TEMPORARY_HOLD = true;
   private static final Long RETENTION_EXPIRATION_TIME = 10L;
+
   private Storage serviceMockReturnsOptions = createMock(Storage.class);
   private StorageOptions mockOptions = createMock(StorageOptions.class);
   private static final BlobInfo BLOB_INFO =
@@ -116,7 +117,6 @@ public class BlobInfoTest {
   private static final BlobInfo BLOB_METADATA_INFO =
       BlobInfo.newBuilder("b", "n/").setMetadata("n1", "v1").setMetadata("n2", "v2").build();
   private Storage storage;
-  private Blob blob;
 
   @Before
   public void setUp() {
@@ -332,13 +332,9 @@ public class BlobInfoTest {
     expect(storage.update(eq(expectedUpdatedBlob), new Storage.BlobTargetOption[0]))
         .andReturn(expectedUpdatedBlob);
     replay(storage);
-    initializeBlob();
+    Blob blob= new Blob(storage, new BlobInfo.BuilderImpl(BLOB_METADATA_INFO));
     expectedUpdatedBlob = new Blob(storage, new BlobInfo.BuilderImpl(expectedUpdatedBlob));
     expectedUpdatedBlob = expectedUpdatedBlob.update();
     assertNotEquals(metaDataOldValue, expectedUpdatedBlob.getMetadata().get("n1").toString());
-  }
-
-  private void initializeBlob() {
-    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_METADATA_INFO));
   }
 }
