@@ -1266,7 +1266,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   securityCenterClient.runAssetDiscoveryAsync(parent).get();
+   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(parent).get();
    * }
    * </code></pre>
    *
@@ -1276,7 +1276,8 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(OrganizationName parent) {
+  public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
+      OrganizationName parent) {
 
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder()
@@ -1297,7 +1298,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
+   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
    * }
    * </code></pre>
    *
@@ -1307,7 +1308,8 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(String parent) {
+  public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
+      String parent) {
 
     RunAssetDiscoveryRequest request =
         RunAssetDiscoveryRequest.newBuilder().setParent(parent).build();
@@ -1329,7 +1331,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   securityCenterClient.runAssetDiscoveryAsync(request).get();
+   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1338,7 +1340,7 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Empty> runAssetDiscoveryAsync(
+  public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       RunAssetDiscoveryRequest request) {
     return runAssetDiscoveryOperationCallable().futureCall(request);
   }
@@ -1358,14 +1360,14 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Empty, Empty&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
+   *   OperationFuture&lt;RunAssetDiscoveryResponse, Empty&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
    *   // Do something
-   *   future.get();
+   *   RunAssetDiscoveryResponse response = future.get();
    * }
    * </code></pre>
    */
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<RunAssetDiscoveryRequest, Empty, Empty>
+  public final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     return stub.runAssetDiscoveryOperationCallable();
   }
@@ -1387,7 +1389,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityCenterClient.runAssetDiscoveryCallable().futureCall(request);
    *   // Do something
-   *   future.get();
+   *   Operation response = future.get();
    * }
    * </code></pre>
    */

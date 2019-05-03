@@ -47,6 +47,7 @@ import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
+import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.Source;
@@ -263,7 +264,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable;
   private final UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable;
-  private final OperationCallable<RunAssetDiscoveryRequest, Empty, Empty>
+  private final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable;
   private final UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
@@ -719,7 +720,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RunAssetDiscoveryRequest, Empty, Empty>
+  public OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     return runAssetDiscoveryOperationCallable;
   }
