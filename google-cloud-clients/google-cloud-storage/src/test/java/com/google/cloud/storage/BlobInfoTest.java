@@ -19,10 +19,9 @@ package com.google.cloud.storage;
 import static com.google.cloud.storage.Acl.Project.ProjectRole.VIEWERS;
 import static com.google.cloud.storage.Acl.Role.READER;
 import static com.google.cloud.storage.Acl.Role.WRITER;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.easymock.EasyMock.*;
+import static org.easymock.EasyMock.replay;
+import static org.junit.Assert.*;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.Acl.Project;
@@ -33,6 +32,7 @@ import com.google.common.collect.ImmutableMap;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
+import org.junit.Before;
 import org.junit.Test;
 
 public class BlobInfoTest {
@@ -73,7 +73,8 @@ public class BlobInfoTest {
   private static final Boolean EVENT_BASED_HOLD = true;
   private static final Boolean TEMPORARY_HOLD = true;
   private static final Long RETENTION_EXPIRATION_TIME = 10L;
-
+  private Storage serviceMockReturnsOptions = createMock(Storage.class);
+  private StorageOptions mockOptions = createMock(StorageOptions.class);
   private static final BlobInfo BLOB_INFO =
       BlobInfo.newBuilder("b", "n", GENERATION)
           .setAcl(ACL)
@@ -105,6 +106,15 @@ public class BlobInfoTest {
           .build();
   private static final BlobInfo DIRECTORY_INFO =
       BlobInfo.newBuilder("b", "n/").setSize(0L).setIsDirectory(true).build();
+  private static final BlobInfo BLOB_METADATA_INFO =
+      BlobInfo.newBuilder("b", "n/").setMetadata("n1", "v1").setMetadata("n2", "v2").build();
+  private Storage storage;
+  private Blob blob;
+
+  @Before
+  public void setUp() {
+    storage = createStrictMock(Storage.class);
+  }
 
   @Test
   public void testCustomerEncryption() {
@@ -301,5 +311,27 @@ public class BlobInfoTest {
   @Test
   public void testBlobId() {
     assertEquals(BlobId.of("b", "n", GENERATION), BLOB_INFO.getBlobId());
+  }
+
+  @Test
+  public void testUpdateMetadata() {
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(2);
+    replay(serviceMockReturnsOptions);
+    Blob metaDataBlob =
+        new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(BLOB_METADATA_INFO));
+    String metaDataOldValue = metaDataBlob.getMetadata().get("n1");
+    Blob expectedUpdatedBlob = metaDataBlob.toBuilder().setMetadata("n1", "v3").build();
+    expect(storage.getOptions()).andReturn(mockOptions).times(2);
+    expect(storage.update(eq(expectedUpdatedBlob), new Storage.BlobTargetOption[0]))
+        .andReturn(expectedUpdatedBlob);
+    replay(storage);
+    initializeBlob();
+    expectedUpdatedBlob = new Blob(storage, new BlobInfo.BuilderImpl(expectedUpdatedBlob));
+    expectedUpdatedBlob = expectedUpdatedBlob.update();
+    assertNotEquals(metaDataOldValue, expectedUpdatedBlob.getMetadata().get("n1").toString());
+  }
+
+  private void initializeBlob() {
+    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_METADATA_INFO));
   }
 }

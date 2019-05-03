@@ -263,6 +263,9 @@ public class BlobInfo implements Serializable {
     /** Sets the blob's user provided metadata. */
     public abstract Builder setMetadata(Map<String, String> metadata);
 
+    /** Sets the blob's user provided metadata for single field. */
+    public abstract Builder setMetadata(String key, String value);
+
     abstract Builder setMetageneration(Long metageneration);
 
     abstract Builder setDeleteTime(Long deleteTime);
@@ -488,6 +491,17 @@ public class BlobInfo implements Serializable {
       } else {
         this.metadata = (Map<String, String>) Data.nullOf(ImmutableEmptyMap.class);
       }
+      return this;
+    }
+
+    @Override
+    public Builder setMetadata(String key, String value) {
+      checkNotNull(key);
+      checkNotNull(value);
+      if (this.metadata == null) {
+        this.metadata = new HashMap<>();
+      }
+      this.metadata.put(key, value);
       return this;
     }
 

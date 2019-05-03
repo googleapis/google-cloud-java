@@ -364,6 +364,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    public Builder setMetadata(String key, String value) {
+      infoBuilder.setMetadata(key, value);
+      return this;
+    }
+
+    @Override
     public Builder setStorageClass(StorageClass storageClass) {
       infoBuilder.setStorageClass(storageClass);
       return this;
