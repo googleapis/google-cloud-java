@@ -223,7 +223,6 @@ final class SequentialExecutorService {
                       // Step 5.2: on failure
                       @Override
                       public void onFailure(Throwable e) {
-                        keysWithErrors.add(key);
                         future.setException(e);
                         cancelQueuedTasks(key, CANCELLATION_EXCEPTION);
                       }
@@ -250,8 +249,7 @@ final class SequentialExecutorService {
 
     /** Cancels every task in the queue associated with {@code key}. */
     private void cancelQueuedTasks(final String key, Throwable e) {
-      // TODO(kimkyung-goog): Ensure execute() fails once cancelQueueTasks() has been ever invoked,
-      // so that no more tasks are scheduled.
+      keysWithErrors.add(key);
       synchronized (tasksByKey) {
         final Queue<CancellableRunnable> tasks = tasksByKey.get(key);
         if (tasks != null) {
