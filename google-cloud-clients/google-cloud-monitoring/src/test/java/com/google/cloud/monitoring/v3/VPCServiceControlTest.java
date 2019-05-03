@@ -15,7 +15,7 @@
  */
 
 // DO NOT MODIFY! AUTO-GENERATED!
-// This file is auto-generated on 2019-05-02.
+// This file is auto-generated on 2019-05-03.
 
 package com.google.cloud.monitoring.v3;
 
@@ -730,6 +730,138 @@ public class VPCServiceControlTest {
           @Override
           public void eval() {
             client.updateNotificationChannel(FieldMask.newBuilder().build(), resourceOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createUptimeCheckConfigTest() throws Exception {
+    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
+    final ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+    final UptimeCheckConfig resourceInside = UptimeCheckConfig.newBuilder().build();
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.createUptimeCheckConfig(nameInside.toString(), resourceInside);
+          }
+        };
+    final ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+    final UptimeCheckConfig resourceOutside = UptimeCheckConfig.newBuilder().build();
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.createUptimeCheckConfig(nameOutside.toString(), resourceOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteUptimeCheckConfigTest() throws Exception {
+    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
+    final UptimeCheckConfigName nameInside =
+        UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.deleteUptimeCheckConfig(nameInside);
+          }
+        };
+    final UptimeCheckConfigName nameOutside =
+        UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.deleteUptimeCheckConfig(nameOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getUptimeCheckConfigTest() throws Exception {
+    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
+    final UptimeCheckConfigName nameInside =
+        UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.getUptimeCheckConfig(nameInside);
+          }
+        };
+    final UptimeCheckConfigName nameOutside =
+        UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.getUptimeCheckConfig(nameOutside);
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listUptimeCheckConfigsTest() throws Exception {
+    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
+    final ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.listUptimeCheckConfigs(nameInside.toString());
+          }
+        };
+    final ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.listUptimeCheckConfigs(nameOutside.toString());
+          }
+        };
+    doTest(delayedInside, delayedOutside);
+    client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateUptimeCheckConfigTest() throws Exception {
+    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
+    UptimeCheckConfigName nameInside =
+        UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+    final UptimeCheckConfig resourceInside =
+        UptimeCheckConfig.newBuilder().setName(nameInside.toString()).build();
+    Delay delayedInside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.updateUptimeCheckConfig(resourceInside);
+          }
+        };
+    UptimeCheckConfigName nameOutside =
+        UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+    final UptimeCheckConfig resourceOutside =
+        UptimeCheckConfig.newBuilder().setName(nameOutside.toString()).build();
+    Delay delayedOutside =
+        new Delay() {
+          @Override
+          public void eval() {
+            client.updateUptimeCheckConfig(resourceOutside);
           }
         };
     doTest(delayedInside, delayedOutside);
