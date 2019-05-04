@@ -190,7 +190,6 @@ public class GapicSpannerRpc implements SpannerRpc {
                         options.getInterceptorProvider(),
                         SpannerInterceptorProvider.createDefault()))
                 .setHeaderProvider(mergedHeaderProvider)
-                .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
                 .build());
 
     CredentialsProvider credentialsProvider =
@@ -208,6 +207,8 @@ public class GapicSpannerRpc implements SpannerRpc {
             .withCheckInterval(checkInterval)
             .withClock(NanoClock.getDefaultClock());
 
+    InstantiatingExecutorProvider executorProvider =
+        InstantiatingExecutorProvider.newBuilder().build();
     // Disabling retry for now because spanner handles retry in SpannerImpl.
     // We will finally want to improve gax but for smooth transitioning we
     // preserve the retry in SpannerImpl
@@ -218,6 +219,7 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcSpannerStub.create(
               SpannerStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
+                  .setExecutorProvider(executorProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
@@ -234,6 +236,7 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcInstanceAdminStub.create(
               InstanceAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
+                  .setExecutorProvider(executorProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
@@ -249,6 +252,7 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcDatabaseAdminStub.create(
               DatabaseAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
+                  .setExecutorProvider(executorProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
