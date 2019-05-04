@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner;
+package com.google.cloud.spanner.spi.v1;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -25,7 +25,16 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.spanner.DatabaseAdminClient;
+import com.google.cloud.spanner.DatabaseClient;
+import com.google.cloud.spanner.DatabaseId;
+import com.google.cloud.spanner.InstanceAdminClient;
+import com.google.cloud.spanner.MockSpannerServiceImpl;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Spanner;
+import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.admin.database.v1.MockDatabaseAdminImpl;
 import com.google.cloud.spanner.admin.instance.v1.MockInstanceAdminImpl;
 import com.google.protobuf.ListValue;
@@ -116,7 +125,7 @@ public class GapicSpannerRpcTest {
   }
 
   private static final int NUM_CHANNELS = 4;
-  private static final Pattern GAX_THREAD_NAME = Pattern.compile("Gax-[0-9]+");
+  private static final Pattern GAX_THREAD_NAME = Pattern.compile("Spanner-Gax-[0-9]+");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
   private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
 
@@ -210,7 +219,9 @@ public class GapicSpannerRpcTest {
                 })
             .setExecutorProvider(
                 channelOption == ChannelOption.WITH_EXECUTOR
-                    ? InstantiatingExecutorProvider.newBuilder().build()
+                    ? InstantiatingExecutorProvider.newBuilder()
+                        .setThreadFactory(GapicSpannerRpc.SPANNER_THREAD_FACTORY)
+                        .build()
                     : null)
             .setEndpoint(endpoint)
             .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
