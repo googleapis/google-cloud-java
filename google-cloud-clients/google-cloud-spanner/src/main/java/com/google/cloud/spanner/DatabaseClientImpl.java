@@ -36,7 +36,7 @@ class DatabaseClientImpl implements DatabaseClient {
     TraceUtil.exportSpans(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION, PARTITION_DML_TRANSACTION);
   }
 
-  private final SessionPool pool;
+  @VisibleForTesting final SessionPool pool;
 
   DatabaseClientImpl(SessionPool pool) {
     this.pool = pool;
@@ -50,11 +50,6 @@ class DatabaseClientImpl implements DatabaseClient {
   @VisibleForTesting
   PooledSession getReadWriteSession() {
     return pool.getReadWriteSession();
-  }
-
-  @VisibleForTesting
-  int getNumberOfAvailableWritePreparedSessions() {
-    return pool.getNumberOfAvailableWritePreparedSessions();
   }
 
   @Override

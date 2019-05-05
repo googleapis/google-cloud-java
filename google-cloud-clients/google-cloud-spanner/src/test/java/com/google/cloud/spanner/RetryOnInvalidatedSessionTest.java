@@ -245,7 +245,7 @@ public class RetryOnInvalidatedSessionTest {
     service.shutdown();
     service.awaitTermination(10L, TimeUnit.SECONDS);
     Stopwatch watch = Stopwatch.createStarted();
-    while (((DatabaseClientImpl) client).getNumberOfAvailableWritePreparedSessions() == 0) {
+    while (((DatabaseClientImpl) client).pool.getNumberOfAvailableWritePreparedSessions() == 0) {
       if (watch.elapsed(TimeUnit.MILLISECONDS) > 1000L) {
         fail("No read/write sessions prepared");
       }
