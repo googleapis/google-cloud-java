@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner.spi.v1;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -124,6 +123,7 @@ public class GapicSpannerRpcTest {
     server.shutdown();
   }
 
+  private static final int NUMBER_OF_TEST_RUNS = 2;
   private static final int NUM_CHANNELS = 4;
   private static final Pattern GAX_THREAD_NAME = Pattern.compile("Spanner-Gax-[0-9]+");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
@@ -131,26 +131,32 @@ public class GapicSpannerRpcTest {
 
   /**
    * This test should not leak any threads as it does not set any executor on the channel provider.
+   *
+   * @throws InterruptedException
    */
   @Test
-  public void testNumberOfThreadsWithoutExecutorOnChannelProvider() {
+  public void testNumberOfThreadsWithoutExecutorOnChannelProvider() throws InterruptedException {
     testLeakedThreads(ChannelOption.WITHOUT_EXECUTOR, false);
   }
 
   /**
    * This test shows how setting an executor on the channel provider will leak the created threads
    * after the {@link Spanner} instance is closed.
+   *
+   * @throws InterruptedException
    */
   @Test
-  public void testNumberOfThreadsWithExecutorOnChannelProvider() {
+  public void testNumberOfThreadsWithExecutorOnChannelProvider() throws InterruptedException {
     testLeakedThreads(ChannelOption.WITH_EXECUTOR, true);
   }
 
-  private void testLeakedThreads(ChannelOption channelOption, boolean expectLeakedThreads) {
-    int expectedNumberOfThreads = 0;
-    for (int i = 0; i < 2; i++) {
+  private void testLeakedThreads(ChannelOption channelOption, boolean expectLeakedThreads)
+      throws InterruptedException {
+    for (int i = 0; i < NUMBER_OF_TEST_RUNS; i++) {
       // Get the base number of Gax threads.
-      int originalThreadNumber = checkNumberOfGaxThreads(-1);
+      int prevThreadNumber = -1;
+      int currentThreadNumber = getNumberOfGaxThreads();
+      // Create Spanner instance.
       SpannerOptions options = createSpannerOptions(channelOption);
       Spanner spanner = options.getService();
       // Get a database client and do a query. This should initiate threads for the Spanner service.
@@ -162,45 +168,32 @@ public class GapicSpannerRpcTest {
         }
       }
       // Check the number of threads after the query.
-      if (expectLeakedThreads) {
-        expectedNumberOfThreads += NUM_CHANNELS;
-      } else {
-        expectedNumberOfThreads = originalThreadNumber + NUM_CHANNELS;
-      }
-      assertThat(
-          checkNumberOfGaxThreads(expectedNumberOfThreads), is(equalTo(expectedNumberOfThreads)));
+      prevThreadNumber = currentThreadNumber;
+      currentThreadNumber = getNumberOfGaxThreads();
+      assertThat(currentThreadNumber > prevThreadNumber, is(true));
 
       // Then do a request to the InstanceAdmin service and check the number of threads.
       mockGetInstanceResponse();
       InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
       instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
-      if (expectLeakedThreads) {
-        expectedNumberOfThreads += NUM_CHANNELS;
-      } else {
-        expectedNumberOfThreads = originalThreadNumber + 2 * NUM_CHANNELS;
-      }
-      assertThat(
-          checkNumberOfGaxThreads(expectedNumberOfThreads), is(equalTo(expectedNumberOfThreads)));
+      prevThreadNumber = currentThreadNumber;
+      currentThreadNumber = getNumberOfGaxThreads();
+      assertThat(currentThreadNumber > prevThreadNumber, is(true));
 
       // Then do a request to the DatabaseAdmin service and check the number of threads.
       mockGetDatabaseResponse();
       DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
       databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
-      if (expectLeakedThreads) {
-        expectedNumberOfThreads += NUM_CHANNELS;
-      } else {
-        expectedNumberOfThreads = originalThreadNumber + 3 * NUM_CHANNELS;
-      }
-      assertThat(
-          checkNumberOfGaxThreads(expectedNumberOfThreads), is(equalTo(expectedNumberOfThreads)));
+      prevThreadNumber = currentThreadNumber;
+      currentThreadNumber = getNumberOfGaxThreads();
+      assertThat(currentThreadNumber > prevThreadNumber, is(true));
 
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
-      if (!expectLeakedThreads) {
-        expectedNumberOfThreads = originalThreadNumber;
-      }
-      assertThat(
-          checkNumberOfGaxThreads(expectedNumberOfThreads), is(equalTo(expectedNumberOfThreads)));
+      // Wait a little to allow the thread to actually shutdown.
+      Thread.sleep(100L);
+      Runtime.getRuntime().gc();
+      assertThat(getNumberOfGaxThreads() > 0, is(expectLeakedThreads));
     }
   }
 
@@ -236,42 +229,20 @@ public class GapicSpannerRpcTest {
         .build();
   }
 
-  private int checkNumberOfGaxThreads(int expected) {
-    final int MAX_LOOPS = 15;
-    int loops = 0;
-    while (true) {
-      ThreadGroup group = Thread.currentThread().getThreadGroup();
-      while (group.getParent() != null) {
-        group = group.getParent();
-      }
-      Thread[] threads = new Thread[500];
-      int numberOfThreads = group.enumerate(threads);
-      int res = 0;
-      for (int i = 0; i < numberOfThreads; i++) {
-        if (GAX_THREAD_NAME.matcher(threads[i].getName()).matches()) {
-          res++;
-        }
-      }
-      // It could take some time before the threads are actually shutdown, so it could be that we
-      // need to wait a little and try again.
-      if (expected > -1) {
-        if (res == expected) {
-          return res;
-        } else {
-          if (loops > MAX_LOOPS) {
-            return res;
-          }
-          loops++;
-          try {
-            Thread.sleep(loops * 50L);
-          } catch (InterruptedException e) {
-            return res;
-          }
-        }
-      } else {
-        return res;
+  private int getNumberOfGaxThreads() {
+    ThreadGroup group = Thread.currentThread().getThreadGroup();
+    while (group.getParent() != null) {
+      group = group.getParent();
+    }
+    Thread[] threads = new Thread[100 * NUMBER_OF_TEST_RUNS];
+    int numberOfThreads = group.enumerate(threads);
+    int res = 0;
+    for (int i = 0; i < numberOfThreads; i++) {
+      if (GAX_THREAD_NAME.matcher(threads[i].getName()).matches()) {
+        res++;
       }
     }
+    return res;
   }
 
   private void mockGetInstanceResponse() {
