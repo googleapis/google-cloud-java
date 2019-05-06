@@ -114,8 +114,6 @@ import org.threeten.bp.Duration;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
-  // Thread factory to use to create our worker threads
-
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
@@ -581,6 +579,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(idleTimeout);
   }
 
+  @Override
   public void shutdown() {
     this.spannerStub.close();
     this.instanceAdminStub.close();
