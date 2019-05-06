@@ -58,7 +58,7 @@ google-cloud-spanner:1.17.0:1.17.1-SNAPSHOT
 google-cloud-speech:1.2.0:1.2.1-SNAPSHOT
 google-cloud-storage:1.72.0:1.72.1-SNAPSHOT
 google-cloud-talent:0.7.0-beta:0.7.1-beta-SNAPSHOT
-google-cloud-tasks:0.90.0-beta:0.90.1-beta-SNAPSHOT
+google-cloud-tasks:1.0.0:1.0.1-SNAPSHOT
 google-cloud-testing:0.90.0-alpha:0.90.1-alpha-SNAPSHOT
 google-cloud-texttospeech:0.90.0-beta:0.90.1-beta-SNAPSHOT
 google-cloud-trace:0.90.0-beta:0.90.1-beta-SNAPSHOT
@@ -112,7 +112,7 @@ grpc-google-cloud-speech-v1:1.2.0:1.2.1-SNAPSHOT
 grpc-google-cloud-speech-v1beta1:0.55.0:0.55.1-SNAPSHOT
 grpc-google-cloud-speech-v1p1beta1:0.55.0:0.55.1-SNAPSHOT
 grpc-google-cloud-talent-v4beta1:0.7.0-beta:0.7.1-beta-SNAPSHOT
-grpc-google-cloud-tasks-v2:0.55.0:0.55.1-SNAPSHOT
+grpc-google-cloud-tasks-v2:1.0.0:1.0.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta2:0.55.0:0.55.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta3:0.55.0:0.55.1-SNAPSHOT
 grpc-google-cloud-texttospeech-v1:0.55.0:0.55.1-SNAPSHOT
@@ -178,7 +178,7 @@ proto-google-cloud-speech-v1:1.2.0:1.2.1-SNAPSHOT
 proto-google-cloud-speech-v1beta1:0.55.0:0.55.1-SNAPSHOT
 proto-google-cloud-speech-v1p1beta1:0.55.0:0.55.1-SNAPSHOT
 proto-google-cloud-talent-v4beta1:0.7.0-beta:0.7.1-beta-SNAPSHOT
-proto-google-cloud-tasks-v2:0.55.0:0.55.1-SNAPSHOT
+proto-google-cloud-tasks-v2:1.0.0:1.0.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta2:0.55.0:0.55.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta3:0.55.0:0.55.1-SNAPSHOT
 proto-google-cloud-texttospeech-v1:0.55.0:0.55.1-SNAPSHOT
