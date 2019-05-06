@@ -68,7 +68,7 @@ public class LocalDatastoreHelperTest {
     assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
     assertFalse(options.getHost().endsWith("8888"));
     assertFalse(options.getHost().endsWith("8080"));
-    helper = LocalDatastoreHelper.create(9999);
+    helper = LocalDatastoreHelper.create(Integer.valueOf(9999));
     options = helper.getOptions(NAMESPACE);
     assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
     assertTrue(options.getHost().endsWith("9999"));
