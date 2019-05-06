@@ -653,7 +653,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-scheduler</artifactId>
-        <version>0.90.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
