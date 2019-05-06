@@ -22,7 +22,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -54,7 +53,6 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
@@ -111,27 +109,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
   // Thread factory to use to create our worker threads
-  @VisibleForTesting
-  static final ThreadFactory SPANNER_THREAD_FACTORY =
-      new ThreadFactory() {
-        private final AtomicInteger threadCount = new AtomicInteger();
-
-        @Override
-        public Thread newThread(Runnable runnable) {
-          Thread thread = new Thread(runnable);
-          thread.setName("Spanner-Gax-" + threadCount.incrementAndGet());
-          thread.setDaemon(true);
-          return thread;
-        }
-      };
 
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
@@ -224,8 +207,6 @@ public class GapicSpannerRpc implements SpannerRpc {
             .withCheckInterval(checkInterval)
             .withClock(NanoClock.getDefaultClock());
 
-    InstantiatingExecutorProvider executorProvider =
-        InstantiatingExecutorProvider.newBuilder().setThreadFactory(SPANNER_THREAD_FACTORY).build();
     // Disabling retry for now because spanner handles retry in SpannerImpl.
     // We will finally want to improve gax but for smooth transitioning we
     // preserve the retry in SpannerImpl
@@ -236,7 +217,6 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcSpannerStub.create(
               SpannerStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
-                  .setExecutorProvider(executorProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
@@ -253,7 +233,6 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcInstanceAdminStub.create(
               InstanceAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
-                  .setExecutorProvider(executorProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
@@ -269,7 +248,6 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcDatabaseAdminStub.create(
               DatabaseAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
-                  .setExecutorProvider(executorProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(

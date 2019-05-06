@@ -20,7 +20,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.NoCredentials;
@@ -61,11 +60,6 @@ import org.junit.runners.JUnit4;
 /** Tests that opening and closing multiple Spanner instances does not leak any threads. */
 @RunWith(JUnit4.class)
 public class GapicSpannerRpcTest {
-  private enum ChannelOption {
-    WITH_EXECUTOR,
-    WITHOUT_EXECUTOR;
-  }
-
   private static final Statement SELECT1AND2 =
       Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
   private static final ResultSetMetadata SELECT1AND2_METADATA =
@@ -125,39 +119,18 @@ public class GapicSpannerRpcTest {
 
   private static final int NUMBER_OF_TEST_RUNS = 2;
   private static final int NUM_CHANNELS = 4;
-  private static final Pattern GAX_THREAD_NAME = Pattern.compile("Spanner-Gax-[0-9]+");
+  private static final Pattern GAX_THREAD_NAME = Pattern.compile("Gax-[0-9]+");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
   private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
 
-  /**
-   * This test should not leak any threads as it does not set any executor on the channel provider.
-   *
-   * @throws InterruptedException
-   */
   @Test
-  public void testNumberOfThreadsWithoutExecutorOnChannelProvider() throws InterruptedException {
-    testLeakedThreads(ChannelOption.WITHOUT_EXECUTOR, false);
-  }
-
-  /**
-   * This test shows how setting an executor on the channel provider will leak the created threads
-   * after the {@link Spanner} instance is closed.
-   *
-   * @throws InterruptedException
-   */
-  @Test
-  public void testNumberOfThreadsWithExecutorOnChannelProvider() throws InterruptedException {
-    testLeakedThreads(ChannelOption.WITH_EXECUTOR, true);
-  }
-
-  private void testLeakedThreads(ChannelOption channelOption, boolean expectLeakedThreads)
-      throws InterruptedException {
+  public void testCloseAllThreadsWhenClosingSpanner() throws InterruptedException {
     for (int i = 0; i < NUMBER_OF_TEST_RUNS; i++) {
       // Get the base number of Gax threads.
       int prevThreadNumber = -1;
       int currentThreadNumber = getNumberOfGaxThreads();
       // Create Spanner instance.
-      SpannerOptions options = createSpannerOptions(channelOption);
+      SpannerOptions options = createSpannerOptions();
       Spanner spanner = options.getService();
       // Get a database client and do a query. This should initiate threads for the Spanner service.
       DatabaseClient client =
@@ -167,12 +140,21 @@ public class GapicSpannerRpcTest {
           // Do nothing, just consume the result set.
         }
       }
-      // Check the number of threads after the query.
+      // Check the number of threads after the query. Doing a request should initialize a thread
+      // pool
+      // for the underlying SpannerClient.
       prevThreadNumber = currentThreadNumber;
       currentThreadNumber = getNumberOfGaxThreads();
-      assertThat(currentThreadNumber > prevThreadNumber, is(true));
+      assertThat(
+          String.format(
+              "current number of thread is not greater than previous number of threads. current: %d, prev: %d, run: %d",
+              currentThreadNumber, prevThreadNumber, i),
+          currentThreadNumber > prevThreadNumber,
+          is(true));
 
       // Then do a request to the InstanceAdmin service and check the number of threads.
+      //  Doing a request should initialize a thread pool
+      // for the underlying InstanceAdminClient.
       mockGetInstanceResponse();
       InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
       instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
@@ -181,6 +163,8 @@ public class GapicSpannerRpcTest {
       assertThat(currentThreadNumber > prevThreadNumber, is(true));
 
       // Then do a request to the DatabaseAdmin service and check the number of threads.
+      // Doing a request should initialize a thread pool
+      // for the underlying DatabaseAdminClient.
       mockGetDatabaseResponse();
       DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
       databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
@@ -190,14 +174,14 @@ public class GapicSpannerRpcTest {
 
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
-      // Wait a little to allow the thread to actually shutdown.
+      // Wait a little to allow the threads to actually shutdown.
       Thread.sleep(100L);
       Runtime.getRuntime().gc();
-      assertThat(getNumberOfGaxThreads() > 0, is(expectLeakedThreads));
+      assertThat(getNumberOfGaxThreads() == 0, is(true));
     }
   }
 
-  private SpannerOptions createSpannerOptions(ChannelOption channelOption) {
+  private SpannerOptions createSpannerOptions() {
     String endpoint = address.getHostString() + ":" + server.getPort();
     @SuppressWarnings("rawtypes")
     TransportChannelProvider channelProvider =
@@ -210,12 +194,7 @@ public class GapicSpannerRpcTest {
                     return input;
                   }
                 })
-            .setExecutorProvider(
-                channelOption == ChannelOption.WITH_EXECUTOR
-                    ? InstantiatingExecutorProvider.newBuilder()
-                        .setThreadFactory(GapicSpannerRpc.SPANNER_THREAD_FACTORY)
-                        .build()
-                    : null)
+            // Do not set an ExecutorProvider on the ChannelProvider
             .setEndpoint(endpoint)
             .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
             .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
