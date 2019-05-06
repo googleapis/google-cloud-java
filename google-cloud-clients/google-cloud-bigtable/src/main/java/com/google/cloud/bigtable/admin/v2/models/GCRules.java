@@ -30,7 +30,11 @@ import org.threeten.bp.Duration;
 
 // TODO(igorbernstein2): the distinction between GcRule & GCRule is too subtle, use fully qualified
 // names for the protos.
-/** Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model */
+/**
+ * Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model
+ *
+ * <p>Note: GCRule are only applied when compaction starts for the table.
+ */
 @BetaApi
 public final class GCRules {
   /** Factory method to create GCRules - entry point into the DSL. */

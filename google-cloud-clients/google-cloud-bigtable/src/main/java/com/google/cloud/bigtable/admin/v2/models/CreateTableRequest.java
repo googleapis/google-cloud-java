@@ -70,6 +70,8 @@ public final class CreateTableRequest {
    *
    * @param familyId
    * @param gcRule
+   *
+   * @see GCRule for available options.
    */
   public CreateTableRequest addFamily(String familyId, GCRule gcRule) {
     Preconditions.checkNotNull(familyId);

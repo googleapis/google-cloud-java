@@ -177,9 +177,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
+   * GCRules.GCRule rule = GCRules.GCRULES.union()
+   *     .rule(GCRules.GCRULES.maxAge(Duration.ofSeconds(1)))
+   *     .rule(GCRules.GCRULES.maxVersions(1));
+   *
    * Table table = client.createTable(
    *   CreateTableRequest.of("my-table")
-   *     .addFamily("cf2", GCRULES.maxVersions(1)
+   *     .addFamily("cf2", rule
    * );
    * }</pre>
    *
@@ -196,9 +200,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
+   * GCRules.GCRule rule = GCRules.GCRULES.intersection()
+   *     .rule(GCRules.GCRULES.maxAge(1, TimeUnit.SECONDS))
+   *     .rule(GCRules.GCRULES.maxVersions(1)
+   * );
    * ApiFuture<Table> tableFuture = client.createTableAsync(
    *   CreateTableRequest.of("my-table")
-   *     .addFamily("cf", GCRules.GCRULES.maxVersions(1))
+   *     .addFamily("cf", rule)
    * );
    *
    * ApiFutures.addCallback(
