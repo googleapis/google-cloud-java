@@ -78,10 +78,10 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     }
   }
 
-  private LocalDatastoreHelper(double consistency, int port) {
+  private LocalDatastoreHelper(double consistency, Integer port) {
     super(
         "datastore",
-        port > 0 ? port : BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
+        port != null ? port : BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
         PROJECT_ID_PREFIX + UUID.randomUUID().toString());
     Path tmpDirectory = null;
     try {
@@ -162,7 +162,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    *     consistency of non-ancestor queries; non-ancestor queries are eventually consistent.
    */
   public static LocalDatastoreHelper create(double consistency) {
-    return create(consistency, 0);
+    return create(consistency, null);
   }
 
   /**
@@ -175,7 +175,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    * @param port the port to be used to start the emulator service. Note that setting this to 0 the
    *     emulator will search for a free random port.
    */
-  public static LocalDatastoreHelper create(double consistency, int port) {
+  public static LocalDatastoreHelper create(double consistency, Integer port) {
     return new LocalDatastoreHelper(consistency, port);
   }
 
