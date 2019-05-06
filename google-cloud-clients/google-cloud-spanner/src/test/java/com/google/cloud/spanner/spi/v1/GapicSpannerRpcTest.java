@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -129,6 +130,7 @@ public class GapicSpannerRpcTest {
       // Get the base number of Gax threads.
       int prevThreadNumber = -1;
       int currentThreadNumber = getNumberOfGaxThreads();
+      int originalNumberOfThreads = currentThreadNumber;
       // Create Spanner instance.
       SpannerOptions options = createSpannerOptions();
       Spanner spanner = options.getService();
@@ -175,9 +177,10 @@ public class GapicSpannerRpcTest {
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait a little to allow the threads to actually shutdown.
-      Thread.sleep(100L);
+      Thread.sleep(500L);
       Runtime.getRuntime().gc();
-      assertThat(getNumberOfGaxThreads() == 0, is(true));
+      // The number of threads should drop to the original number of threads.
+      assertThat(getNumberOfGaxThreads(), is(equalTo(originalNumberOfThreads)));
     }
   }
 
