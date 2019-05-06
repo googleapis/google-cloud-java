@@ -186,7 +186,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    * @param port the port to be used to start the emulator service. Note that setting this to 0 the
    *     emulator will search for a free random port.
    */
-  public static LocalDatastoreHelper create(int port) {
+  public static LocalDatastoreHelper create(Integer port) {
     return new LocalDatastoreHelper(DEFAULT_CONSISTENCY, port);
   }
 
