@@ -177,13 +177,14 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * GCRules.GCRule rule = GCRules.GCRULES.union()
-   *     .rule(GCRules.GCRULES.maxAge(Duration.ofSeconds(1)))
-   *     .rule(GCRules.GCRULES.maxVersions(1));
+   * GCRules.GCRule removeAnyMatched = GCRULES
+   *   .union()
+   *   .rule(GCRULES.maxAge(Duration.ofDays(30)))
+   *   .rule(GCRULES.maxVersions(5));
    *
    * Table table = client.createTable(
    *   CreateTableRequest.of("my-table")
-   *     .addFamily("cf2", rule
+   *     .addFamily("cf2", removeAnyMatched)
    * );
    * }</pre>
    *
@@ -200,13 +201,14 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * GCRules.GCRule rule = GCRules.GCRULES.intersection()
-   *     .rule(GCRules.GCRULES.maxAge(1, TimeUnit.SECONDS))
-   *     .rule(GCRules.GCRULES.maxVersions(1)
-   * );
+   * GCRules.GCRule removeAllMatched = GCRULES
+   *   .intersection()
+   *   .rule(GCRULES.maxAge(120, TimeUnit.HOURS))
+   *   .rule(GCRULES.maxVersions(10));
+   *
    * ApiFuture<Table> tableFuture = client.createTableAsync(
    *   CreateTableRequest.of("my-table")
-   *     .addFamily("cf", rule)
+   *     .addFamily("cf", removeAllMatched)
    * );
    *
    * ApiFutures.addCallback(
