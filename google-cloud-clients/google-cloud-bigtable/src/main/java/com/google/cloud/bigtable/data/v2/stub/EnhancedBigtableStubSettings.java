@@ -55,6 +55,24 @@ import org.threeten.bp.Duration;
  *   <li>The default service address (bigtable.googleapis.com) and default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>Here is the default for Bigtable operation:
+ *       <ul>
+ *         For non-streaming operations i.e. {@link #readRowSettings()}, {@link
+ *         #sampleRowKeysSettings()}, {@link #checkAndMutateRowSettings()} {@link
+ *         #mutateRowSettings()}, {@link #bulkMutateRowsSettings()} {@link
+ *         #readModifyWriteRowSettings()}:
+ *         <li>Default timeout for {@link RetrySettings#getInitialRpcTimeout()} is 20_000ms.
+ *         <li>Default timeout for {@link RetrySettings#getMaxAttempts()} is 20_000ms.
+ *         <li>Default timeout for {@link RetrySettings#getTotalTimeout()} is 600_000ms or 10min.
+ *       </ul>
+ *       <ul>
+ *         For streaming operation i.e. {@link #readRowsSettings()}:
+ *         <li>Default timeout for {@link ServerStreamingCallSettings#getIdleTimeout()} is
+ *             300_000ms.
+ *         <li>Default timeout for {@link RetrySettings#getInitialRpcTimeout()} is 20_000ms.
+ *         <li>Default timeout for {@link RetrySettings#getMaxAttempts()} is 20_000ms.
+ *         <li>Default timeout for {@link RetrySettings#getTotalTimeout()} is 3_600_000ms or 60min.
+ *       </ul>
  * </ul>
  *
  * <p>The only required setting is the instance name.
