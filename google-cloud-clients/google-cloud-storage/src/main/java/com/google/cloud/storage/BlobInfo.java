@@ -497,7 +497,6 @@ public class BlobInfo implements Serializable {
     @Override
     public Builder setMetadata(String key, String value) {
       checkNotNull(key);
-      checkNotNull(value);
       if (this.metadata == null) {
         this.metadata = new HashMap<>();
       }

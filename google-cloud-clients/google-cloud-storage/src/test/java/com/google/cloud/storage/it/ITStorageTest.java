@@ -21,6 +21,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -2583,5 +2584,89 @@ public class ITStorageTest {
 
     assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testUpdateBlobMetadata() {
+    String blobName = "test-update-blob-metadata";
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setMetadata("k1", "v1")
+            .setMetadata("k2", "v2")
+            .build();
+    Blob remoteBlob = storage.create(blob);
+    assertNotNull(remoteBlob);
+    Blob updatedBlob =
+        remoteBlob
+            .toBuilder()
+            .setContentType(CONTENT_TYPE)
+            .setMetadata("k2", "v3")
+            .build()
+            .update();
+    assertNotNull(updatedBlob);
+    assertEquals(blob.getName(), updatedBlob.getName());
+    assertEquals(blob.getBucket(), updatedBlob.getBucket());
+    assertNotEquals(blob.getMetadata(), updatedBlob.getMetadata());
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testUpdateBlobReplaceSingleMetadata() {
+    String blobName = "test-update-blob-replace-metadata";
+    ImmutableMap<String, String> newMetadata = ImmutableMap.of("k1", "v2");
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata("k1", "v1")
+            .build();
+    Blob remoteBlob = storage.create(blob);
+    assertNotNull(remoteBlob);
+    Blob updatedBlob = remoteBlob.toBuilder().setMetadata(null).build().update();
+    assertNotNull(updatedBlob);
+    assertNull(updatedBlob.getMetadata());
+    updatedBlob = remoteBlob.toBuilder().setMetadata("k1", "v2").build().update();
+    assertEquals(blob.getName(), updatedBlob.getName());
+    assertEquals(blob.getBucket(), updatedBlob.getBucket());
+    assertEquals(newMetadata, updatedBlob.getMetadata());
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testUpdateBlobMergeSingleMetadata() {
+    String blobName = "test-update-blob-merge-metadata";
+    ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "a", "k2", "b");
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata("k1", "a")
+            .build();
+    Blob remoteBlob = storage.create(blob);
+    assertNotNull(remoteBlob);
+    Blob updatedBlob = remoteBlob.toBuilder().setMetadata("k2", "b").build().update();
+    assertNotNull(updatedBlob);
+    assertEquals(blob.getName(), updatedBlob.getName());
+    assertEquals(blob.getBucket(), updatedBlob.getBucket());
+    assertEquals(expectedMetadata, updatedBlob.getMetadata());
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testUpdateBlobUnsetSingleMetadata() {
+    String blobName = "test-update-blob-unset-metadata";
+    ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "a");
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata("k1", "a")
+            .setMetadata("k2", "b")
+            .build();
+    Blob remoteBlob = storage.create(blob);
+    assertNotNull(remoteBlob);
+    Blob updatedBlob = remoteBlob.toBuilder().setMetadata("k2", null).build().update();
+    assertNotNull(updatedBlob);
+    assertEquals(blob.getName(), updatedBlob.getName());
+    assertEquals(blob.getBucket(), updatedBlob.getBucket());
+    assertEquals(expectedMetadata, updatedBlob.getMetadata());
+    assertTrue(remoteBlob.delete());
   }
 }
