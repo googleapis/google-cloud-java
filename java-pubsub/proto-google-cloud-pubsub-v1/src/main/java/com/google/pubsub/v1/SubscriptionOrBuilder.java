@@ -141,10 +141,6 @@ public interface SubscriptionOrBuilder
    * &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
    * Seek to a timestamp&lt;/a&gt;.
-   * &lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>bool retain_acked_messages = 7;</code>
@@ -160,10 +156,7 @@ public interface SubscriptionOrBuilder
    * If `retain_acked_messages` is true, then this also configures the retention
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
-   * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
@@ -178,10 +171,7 @@ public interface SubscriptionOrBuilder
    * If `retain_acked_messages` is true, then this also configures the retention
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
-   * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
@@ -196,10 +186,7 @@ public interface SubscriptionOrBuilder
    * If `retain_acked_messages` is true, then this also configures the retention
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
-   * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
@@ -292,9 +279,6 @@ public interface SubscriptionOrBuilder
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
    * value for `expiration_policy.ttl` is 1 day.
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -310,9 +294,6 @@ public interface SubscriptionOrBuilder
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
    * value for `expiration_policy.ttl` is 1 day.
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
@@ -328,9 +309,6 @@ public interface SubscriptionOrBuilder
    * operations on the subscription. If `expiration_policy` is not set, a
    * *default policy* with `ttl` of 31 days will be used. The minimum allowed
    * value for `expiration_policy.ttl` is 1 day.
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>

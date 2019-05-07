@@ -1362,10 +1362,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Lists the existing snapshots. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1395,10 +1392,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Lists the existing snapshots. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1425,10 +1419,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Lists the existing snapshots. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1456,10 +1447,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Lists the existing snapshots. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1487,10 +1475,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Lists the existing snapshots. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1525,17 +1510,15 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a snapshot.
-   * &lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API
-   * might be changed in backward-incompatible ways and is not recommended for production use. It is
-   * not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already
-   * exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
-   * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
-   * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
-   * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
-   * assign a random name for this snapshot on the same project as the subscription, conforming to
-   * the [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
-   * generated name is populated in the returned Snapshot object. Note that for REST API requests,
-   * you must specify a name in the request.
+   * &lt;br&gt;&lt;br&gt;If the snapshot already exists, returns `ALREADY_EXISTS`. If the requested
+   * subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription is too old
+   * -- and the resulting snapshot would expire in less than 1 hour -- then `FAILED_PRECONDITION` is
+   * returned. See also the `Snapshot.expire_time` field. If the name is not provided in the
+   * request, the server will assign a random name for this snapshot on the same project as the
+   * subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is
+   * populated in the returned Snapshot object. Note that for REST API requests, you must specify a
+   * name in the request.
    *
    * <p>Sample code:
    *
@@ -1577,17 +1560,15 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a snapshot.
-   * &lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API
-   * might be changed in backward-incompatible ways and is not recommended for production use. It is
-   * not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already
-   * exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
-   * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
-   * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
-   * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
-   * assign a random name for this snapshot on the same project as the subscription, conforming to
-   * the [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
-   * generated name is populated in the returned Snapshot object. Note that for REST API requests,
-   * you must specify a name in the request.
+   * &lt;br&gt;&lt;br&gt;If the snapshot already exists, returns `ALREADY_EXISTS`. If the requested
+   * subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription is too old
+   * -- and the resulting snapshot would expire in less than 1 hour -- then `FAILED_PRECONDITION` is
+   * returned. See also the `Snapshot.expire_time` field. If the name is not provided in the
+   * request, the server will assign a random name for this snapshot on the same project as the
+   * subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is
+   * populated in the returned Snapshot object. Note that for REST API requests, you must specify a
+   * name in the request.
    *
    * <p>Sample code:
    *
@@ -1625,17 +1606,15 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a snapshot.
-   * &lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API
-   * might be changed in backward-incompatible ways and is not recommended for production use. It is
-   * not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already
-   * exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
-   * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
-   * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
-   * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
-   * assign a random name for this snapshot on the same project as the subscription, conforming to
-   * the [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
-   * generated name is populated in the returned Snapshot object. Note that for REST API requests,
-   * you must specify a name in the request.
+   * &lt;br&gt;&lt;br&gt;If the snapshot already exists, returns `ALREADY_EXISTS`. If the requested
+   * subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription is too old
+   * -- and the resulting snapshot would expire in less than 1 hour -- then `FAILED_PRECONDITION` is
+   * returned. See also the `Snapshot.expire_time` field. If the name is not provided in the
+   * request, the server will assign a random name for this snapshot on the same project as the
+   * subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is
+   * populated in the returned Snapshot object. Note that for REST API requests, you must specify a
+   * name in the request.
    *
    * <p>Sample code:
    *
@@ -1664,17 +1643,15 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a snapshot.
-   * &lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API
-   * might be changed in backward-incompatible ways and is not recommended for production use. It is
-   * not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt; If the snapshot already
-   * exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
-   * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
-   * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
-   * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
-   * assign a random name for this snapshot on the same project as the subscription, conforming to
-   * the [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
-   * generated name is populated in the returned Snapshot object. Note that for REST API requests,
-   * you must specify a name in the request.
+   * &lt;br&gt;&lt;br&gt;If the snapshot already exists, returns `ALREADY_EXISTS`. If the requested
+   * subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription is too old
+   * -- and the resulting snapshot would expire in less than 1 hour -- then `FAILED_PRECONDITION` is
+   * returned. See also the `Snapshot.expire_time` field. If the name is not provided in the
+   * request, the server will assign a random name for this snapshot on the same project as the
+   * subscription, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is
+   * populated in the returned Snapshot object. Note that for REST API requests, you must specify a
+   * name in the request.
    *
    * <p>Sample code:
    *
@@ -1701,11 +1678,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Updates an existing snapshot. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy. Note that certain properties of a
-   * snapshot are not modifiable.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1743,11 +1716,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Updates an existing snapshot. Snapshots are used in &lt;a
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy. Note that certain properties of a
-   * snapshot are not modifiable.
+   * state of messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1785,12 +1754,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all
-   * messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new
-   * one may be created with the same name, but the new one has no association with the old snapshot
-   * or its subscription, unless the same subscription is specified.
+   * snapshot.&lt;br&gt;&lt;br&gt; When the snapshot is deleted, all messages retained in the
+   * snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with
+   * the same name, but the new one has no association with the old snapshot or its subscription,
+   * unless the same subscription is specified.
    *
    * <p>Sample code:
    *
@@ -1820,12 +1787,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all
-   * messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new
-   * one may be created with the same name, but the new one has no association with the old snapshot
-   * or its subscription, unless the same subscription is specified.
+   * snapshot.&lt;br&gt;&lt;br&gt; When the snapshot is deleted, all messages retained in the
+   * snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with
+   * the same name, but the new one has no association with the old snapshot or its subscription,
+   * unless the same subscription is specified.
    *
    * <p>Sample code:
    *
@@ -1853,12 +1818,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all
-   * messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new
-   * one may be created with the same name, but the new one has no association with the old snapshot
-   * or its subscription, unless the same subscription is specified.
+   * snapshot.&lt;br&gt;&lt;br&gt; When the snapshot is deleted, all messages retained in the
+   * snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with
+   * the same name, but the new one has no association with the old snapshot or its subscription,
+   * unless the same subscription is specified.
    *
    * <p>Sample code:
    *
@@ -1885,12 +1848,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a
-   * snapshot.&lt;br&gt;&lt;br&gt; &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release.
-   * This API might be changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy. When the snapshot is deleted, all
-   * messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new
-   * one may be created with the same name, but the new one has no association with the old snapshot
-   * or its subscription, unless the same subscription is specified.
+   * snapshot.&lt;br&gt;&lt;br&gt; When the snapshot is deleted, all messages retained in the
+   * snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with
+   * the same name, but the new one has no association with the old snapshot or its subscription,
+   * unless the same subscription is specified.
    *
    * <p>Sample code:
    *
@@ -1917,10 +1878,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a snapshot. Note that
-   * both the subscription and the snapshot must be on the same topic.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
+   * both the subscription and the snapshot must be on the same topic.
    *
    * <p>Sample code:
    *
@@ -1948,10 +1906,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
    * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
    * state of messages in an existing subscription to the state captured by a snapshot. Note that
-   * both the subscription and the snapshot must be on the same topic.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in
-   * backward-incompatible ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
+   * both the subscription and the snapshot must be on the same topic.
    *
    * <p>Sample code:
    *

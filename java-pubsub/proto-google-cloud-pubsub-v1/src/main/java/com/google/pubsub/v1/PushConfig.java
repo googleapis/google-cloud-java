@@ -145,9 +145,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
      * have the iam.serviceAccounts.actAs permission for the service account.
-     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -160,9 +159,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
      * have the iam.serviceAccounts.actAs permission for the service account.
-     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -307,9 +305,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
      * have the iam.serviceAccounts.actAs permission for the service account.
-     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -332,9 +329,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      * [Service account
      * email](https://cloud.google.com/iam/docs/service-accounts)
      * to be used for generating the OIDC token. The caller (for
-     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
      * have the iam.serviceAccounts.actAs permission for the service account.
-     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
      * </pre>
      *
      * <code>string service_account_email = 1;</code>
@@ -750,9 +746,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
        * have the iam.serviceAccounts.actAs permission for the service account.
-       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -775,9 +770,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
        * have the iam.serviceAccounts.actAs permission for the service account.
-       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -800,9 +794,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
        * have the iam.serviceAccounts.actAs permission for the service account.
-       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -823,9 +816,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
        * have the iam.serviceAccounts.actAs permission for the service account.
-       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
        * </pre>
        *
        * <code>string service_account_email = 1;</code>
@@ -843,9 +835,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
        * [Service account
        * email](https://cloud.google.com/iam/docs/service-accounts)
        * to be used for generating the OIDC token. The caller (for
-       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig RPCs) must
        * have the iam.serviceAccounts.actAs permission for the service account.
-       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
        * </pre>
        *
        * <code>string service_account_email = 1;</code>

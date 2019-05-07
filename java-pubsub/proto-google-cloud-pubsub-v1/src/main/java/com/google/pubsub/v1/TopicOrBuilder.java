@@ -143,4 +143,35 @@ public interface TopicOrBuilder
    * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
    */
   com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Cloud KMS CryptoKey to be used to protect access
+   * to messages published on this topic.
+   * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string kms_key_name = 5;</code>
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Cloud KMS CryptoKey to be used to protect access
+   * to messages published on this topic.
+   * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string kms_key_name = 5;</code>
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
 }

@@ -7,10 +7,7 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * Request for the `ListSnapshots` method.&lt;br&gt;&lt;br&gt;
- * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
- * changed in backward-incompatible ways and is not recommended for production
- * use. It is not subject to any SLA or deprecation policy.
+ * Request for the `ListSnapshots` method.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.ListSnapshotsRequest}
@@ -395,10 +392,7 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request for the `ListSnapshots` method.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * Request for the `ListSnapshots` method.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.ListSnapshotsRequest}

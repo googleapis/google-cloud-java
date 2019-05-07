@@ -12,10 +12,7 @@ package com.google.pubsub.v1;
  * operations, which allow
  * you to manage message acknowledgments in bulk. That is, you can set the
  * acknowledgment state of messages in an existing subscription to the state
- * captured by a snapshot.&lt;br&gt;&lt;br&gt;
- * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
- * changed in backward-incompatible ways and is not recommended for production
- * use. It is not subject to any SLA or deprecation policy.
+ * captured by a snapshot.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.Snapshot}
@@ -600,10 +597,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    * operations, which allow
    * you to manage message acknowledgments in bulk. That is, you can set the
    * acknowledgment state of messages in an existing subscription to the state
-   * captured by a snapshot.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
-   * changed in backward-incompatible ways and is not recommended for production
-   * use. It is not subject to any SLA or deprecation policy.
+   * captured by a snapshot.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.Snapshot}

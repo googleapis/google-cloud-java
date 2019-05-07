@@ -107,7 +107,9 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void createTopicTest() {
     ProjectTopicName name2 = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-    Topic expectedResponse = Topic.newBuilder().setName(name2.toString()).build();
+    String kmsKeyName = "kmsKeyName2094986649";
+    Topic expectedResponse =
+        Topic.newBuilder().setName(name2.toString()).setKmsKeyName(kmsKeyName).build();
     mockPublisher.addResponse(expectedResponse);
 
     ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
@@ -194,7 +196,9 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void getTopicTest() {
     ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
-    Topic expectedResponse = Topic.newBuilder().setName(name.toString()).build();
+    String kmsKeyName = "kmsKeyName2094986649";
+    Topic expectedResponse =
+        Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
     mockPublisher.addResponse(expectedResponse);
 
     ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
