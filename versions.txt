@@ -52,7 +52,7 @@ google-cloud-pubsub:1.72.0:1.72.1-SNAPSHOT
 google-cloud-recaptchaenterprise:0.1.0:0.1.1-SNAPSHOT
 google-cloud-redis:0.90.0-alpha:0.90.1-alpha-SNAPSHOT
 google-cloud-resourcemanager:0.90.0-alpha:0.90.1-alpha-SNAPSHOT
-google-cloud-scheduler:0.90.0-alpha:0.90.1-alpha-SNAPSHOT
+google-cloud-scheduler:0.90.0:0.90.1-SNAPSHOT
 google-cloud-securitycenter:0.90.0-alpha:0.90.1-alpha-SNAPSHOT
 google-cloud-spanner:1.17.0:1.17.1-SNAPSHOT
 google-cloud-speech:1.2.0:1.2.1-SNAPSHOT
