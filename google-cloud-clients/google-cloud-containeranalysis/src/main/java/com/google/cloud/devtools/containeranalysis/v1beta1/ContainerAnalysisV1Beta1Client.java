@@ -199,9 +199,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being specified. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
@@ -236,9 +235,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being specified. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
@@ -328,9 +326,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(IamResourceName resource) {
@@ -360,9 +357,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
-   *     usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
@@ -444,9 +440,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested.
-   *     `resource` is usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
    *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
@@ -481,9 +476,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested.
-   *     `resource` is usually specified as a path. For example, a Project resource is specified as
-   *     `projects/{project}`.
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
    *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
