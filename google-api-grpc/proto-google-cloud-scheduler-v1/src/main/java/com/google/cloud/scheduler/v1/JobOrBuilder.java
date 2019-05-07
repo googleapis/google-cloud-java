@@ -449,5 +449,60 @@ public interface JobOrBuilder
    */
   com.google.cloud.scheduler.v1.RetryConfigOrBuilder getRetryConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  boolean hasAttemptDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  com.google.protobuf.Duration getAttemptDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for job attempts. If the request handler does not respond by
+   * this deadline then the request is cancelled and the attempt is marked as a
+   * `DEADLINE_EXCEEDED` failure. The failed attempt can be viewed in
+   * execution logs. Cloud Scheduler will retry the job according
+   * to the [RetryConfig][google.cloud.scheduler.v1.RetryConfig].
+   * The allowed duration for this deadline is:
+   * * For [HTTP targets][google.cloud.scheduler.v1.Job.http_target], between 15 seconds and 30 minutes.
+   * * For [App Engine HTTP targets][google.cloud.scheduler.v1.Job.app_engine_http_target], between 15
+   *   seconds and 24 hours.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getAttemptDeadlineOrBuilder();
+
   public com.google.cloud.scheduler.v1.Job.TargetCase getTargetCase();
 }
