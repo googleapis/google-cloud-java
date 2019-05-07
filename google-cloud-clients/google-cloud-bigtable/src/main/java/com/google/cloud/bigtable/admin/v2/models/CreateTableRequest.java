@@ -73,8 +73,9 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addFamily(String familyId, GCRule gcRule) {
     Preconditions.checkNotNull(familyId);
-    requestBuilder.getTableBuilder().putColumnFamilies(
-        familyId, ColumnFamily.newBuilder().setGcRule(gcRule.toProto()).build());
+    requestBuilder
+        .getTableBuilder()
+        .putColumnFamilies(familyId, ColumnFamily.newBuilder().setGcRule(gcRule.toProto()).build());
     return this;
   }
 
@@ -112,8 +113,6 @@ public final class CreateTableRequest {
     Preconditions.checkNotNull(projectId);
     Preconditions.checkNotNull(instanceId);
 
-    return requestBuilder
-        .setParent(NameUtil.formatInstanceName(projectId, instanceId))
-        .build();
+    return requestBuilder.setParent(NameUtil.formatInstanceName(projectId, instanceId)).build();
   }
 }
