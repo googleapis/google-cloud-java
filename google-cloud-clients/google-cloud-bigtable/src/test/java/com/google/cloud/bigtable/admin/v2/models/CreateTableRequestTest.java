@@ -16,18 +16,18 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
-import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.Duration;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class CreateTableRequestTest {
@@ -59,7 +59,9 @@ public class CreateTableRequestTest {
                         ColumnFamily.newBuilder()
                             .setGcRule(
                                 GcRule.newBuilder()
-                                    .setMaxAge(Duration.newBuilder().setSeconds(100 * 60 * 60))
+                                    .setMaxAge(
+                                        com.google.protobuf.Duration.newBuilder()
+                                            .setSeconds(100 * 60 * 60))
                                     .build())
                             .build()))
             .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
@@ -69,7 +71,7 @@ public class CreateTableRequestTest {
                 com.google.bigtable.admin.v2.CreateTableRequest.Split.newBuilder()
                     .setKey(secondSplitKey))
             .build();
-    Truth.assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
   }
 
   @Test
@@ -80,14 +82,14 @@ public class CreateTableRequestTest {
             .addFamily("another-family", GCRULES.maxAge(100, TimeUnit.HOURS))
             .addSplit(splitKey);
 
-    Truth.assertThat(request)
+    assertThat(request)
         .isEqualTo(
             CreateTableRequest.of(TABLE_ID)
                 .addFamily("family-id")
-                .addFamily("another-family", GCRULES.maxAge(org.threeten.bp.Duration.ofHours(100)))
+                .addFamily("another-family", GCRULES.maxAge(Duration.ofHours(100)))
                 .addSplit(splitKey));
 
-    Truth.assertThat(request)
+    assertThat(request)
         .isNotEqualTo(
             CreateTableRequest.of(TABLE_ID)
                 .addFamily("family-id")
@@ -100,11 +102,11 @@ public class CreateTableRequestTest {
     CreateTableRequest request =
         CreateTableRequest.of(TABLE_ID).addFamily("family-id").addSplit(splitKey);
 
-    Truth.assertThat(request.hashCode())
+    assertThat(request.hashCode())
         .isEqualTo(
             CreateTableRequest.of(TABLE_ID).addFamily("family-id").addSplit(splitKey).hashCode());
 
-    Truth.assertThat(request.hashCode())
+    assertThat(request.hashCode())
         .isNotEqualTo(CreateTableRequest.of(TABLE_ID).addFamily("other-family").hashCode());
   }
 }
