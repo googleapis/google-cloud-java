@@ -22,7 +22,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -115,7 +114,6 @@ import org.threeten.bp.Duration;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
-
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
@@ -190,7 +188,6 @@ public class GapicSpannerRpc implements SpannerRpc {
                         options.getInterceptorProvider(),
                         SpannerInterceptorProvider.createDefault()))
                 .setHeaderProvider(mergedHeaderProvider)
-                .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
                 .build());
 
     CredentialsProvider credentialsProvider =
@@ -582,6 +579,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(idleTimeout);
   }
 
+  @Override
   public void shutdown() {
     this.spannerStub.close();
     this.instanceAdminStub.close();

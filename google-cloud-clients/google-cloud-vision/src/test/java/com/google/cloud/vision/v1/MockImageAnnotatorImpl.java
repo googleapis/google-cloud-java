@@ -74,6 +74,37 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
   }
 
   @Override
+  public void batchAnnotateFiles(
+      BatchAnnotateFilesRequest request,
+      StreamObserver<BatchAnnotateFilesResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchAnnotateFilesResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchAnnotateFilesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void asyncBatchAnnotateImages(
+      AsyncBatchAnnotateImagesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void asyncBatchAnnotateFiles(
       AsyncBatchAnnotateFilesRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();

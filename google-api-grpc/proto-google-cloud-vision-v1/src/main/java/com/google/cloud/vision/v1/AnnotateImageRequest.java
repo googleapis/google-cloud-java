@@ -8,7 +8,7 @@ package com.google.cloud.vision.v1;
  *
  * <pre>
  * Request for performing Google Cloud Vision API tasks over a user-provided
- * image, with user-requested features.
+ * image, with user-requested features, and with context information.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.AnnotateImageRequest}
@@ -469,7 +469,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Request for performing Google Cloud Vision API tasks over a user-provided
-   * image, with user-requested features.
+   * image, with user-requested features, and with context information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.AnnotateImageRequest}
