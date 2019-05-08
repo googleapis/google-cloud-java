@@ -16,8 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.cloud.bigquery.ModelIdTest.MODEL;
-import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.eq;
@@ -30,8 +28,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.paging.Page;
-import com.google.cloud.PageImpl;
 import org.junit.After;
 import org.junit.Test;
 
@@ -39,7 +35,6 @@ public class ModelTest {
 
   private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
   private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
-
 
   private static final ModelId MODEL_ID = ModelId.of("dataset", "model");
   private static final String ETAG = "etag";
@@ -63,7 +58,6 @@ public class ModelTest {
   private Model expectedModel;
   private Model model;
 
-
   private void initializeExpectedModel(int optionsCalls) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
@@ -80,19 +74,19 @@ public class ModelTest {
     verify(bigquery, serviceMockReturnsOptions);
   }
 
-
   @Test
   public void testBuilder() {
     initializeExpectedModel(2);
     replay(bigquery);
-    Model builtModel = new Model.Builder(serviceMockReturnsOptions, MODEL_ID)
-        .setEtag(ETAG)
-        .setCreationTime(CREATION_TIME)
-        .setExpirationTime(EXPIRATION_TIME)
-        .setLastModifiedTime(LAST_MODIFIED_TIME)
-        .setDescription(DESCRIPTION)
-        .setFriendlyName(FRIENDLY_NAME)
-        .build();
+    Model builtModel =
+        new Model.Builder(serviceMockReturnsOptions, MODEL_ID)
+            .setEtag(ETAG)
+            .setCreationTime(CREATION_TIME)
+            .setExpirationTime(EXPIRATION_TIME)
+            .setLastModifiedTime(LAST_MODIFIED_TIME)
+            .setDescription(DESCRIPTION)
+            .setFriendlyName(FRIENDLY_NAME)
+            .build();
     assertEquals(ETAG, builtModel.getEtag());
     assertSame(serviceMockReturnsOptions, builtModel.getBigQuery());
   }
@@ -194,7 +188,6 @@ public class ModelTest {
     initializeModel();
     assertFalse(model.delete());
   }
-
 
   private void compareModel(Model expected, Model value) {
     assertEquals(expected, value);

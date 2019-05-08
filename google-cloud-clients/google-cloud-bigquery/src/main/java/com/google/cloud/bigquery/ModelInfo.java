@@ -27,11 +27,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Google BigQuery ML model information.  Models are not created directly via the API, but by issuing
+ * Google BigQuery ML model information. Models are not created directly via the API, but by issuing
  * a CREATE MODEL query.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create">CREATE
- * MODEL statement</a>
+ * @see <a
+ *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create">CREATE
+ *     MODEL statement</a>
  */
 public class ModelInfo implements Serializable {
 
@@ -62,24 +63,18 @@ public class ModelInfo implements Serializable {
   private final Long expirationTime;
   private final Labels labels;
 
-  /**
-   * A builder for {@code ModelInfo} objects.
-   */
+  /** A builder for {@code ModelInfo} objects. */
   public abstract static class Builder {
 
-    /**
-     * Sets the user description for this model.
-     **/
+    /** Sets the user description for this model. */
     public abstract Builder setDescription(String description);
 
-    /**
-     * Sets the user-friendly name for this model.
-     */
+    /** Sets the user-friendly name for this model. */
     public abstract Builder setFriendlyName(String friendlyName);
 
     /**
      * Set the time when this model expires, in milliseconds since the epoch. If not present, the
-     * model persists indefinitely.  Expired models will be deleted.
+     * model persists indefinitely. Expired models will be deleted.
      */
     public abstract Builder setExpirationTime(Long expirationTime);
 
@@ -102,9 +97,7 @@ public class ModelInfo implements Serializable {
 
     abstract Builder setLastModifiedTime(Long lastModifiedTime);
 
-    /**
-     * Creates a {@code ModelInfo} object.
-     */
+    /** Creates a {@code ModelInfo} object. */
     public abstract ModelInfo build();
   }
 
@@ -120,8 +113,7 @@ public class ModelInfo implements Serializable {
     private Long expirationTime;
     private Labels labels = Labels.ZERO;
 
-    BuilderImpl() {
-    }
+    BuilderImpl() {}
 
     BuilderImpl(ModelInfo modelInfo) {
       this.etag = modelInfo.etag;
@@ -221,66 +213,50 @@ public class ModelInfo implements Serializable {
     this.labels = builder.labels;
   }
 
-  /**
-   * Returns the hash of the model resource.
-   */
+  /** Returns the hash of the model resource. */
   public String getEtag() {
     return etag;
   }
 
-  /**
-   * Returns the model identity.
-   */
+  /** Returns the model identity. */
   public ModelId getModelId() {
     return modelId;
   }
 
-  /**
-   * Returns the type of the ML model.
-   */
+  /** Returns the type of the ML model. */
   public String getModelType() {
     return modelType;
   }
 
-  /**
-   * Returns the user description of the model.
-   */
+  /** Returns the user description of the model. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the user-friendly name for the model.
-   */
+  /** Returns the user-friendly name for the model. */
   public String getFriendlyName() {
     return friendlyName;
   }
 
-  /**
-   * Returns the time when this model was created, in milliseconds since the epoch.
-   */
+  /** Returns the time when this model was created, in milliseconds since the epoch. */
   public Long getCreationTime() {
     return creationTime;
   }
 
-  /**
-   * Returns the time when this table was last modified, in milliseconds since the epoch.
-   */
+  /** Returns the time when this table was last modified, in milliseconds since the epoch. */
   public Long getLastModifiedTime() {
     return lastModifiedTime;
   }
 
   /**
-   * Returns this this model expires, in milliseconds since the epoch.  If not present, the model
-   * will persist indefinitely.  Expired models will be deleted.
+   * Returns this this model expires, in milliseconds since the epoch. If not present, the model
+   * will persist indefinitely. Expired models will be deleted.
    */
   public Long getExpirationTime() {
     return expirationTime;
   }
 
-  /**
-   * Returns a map for labels applied to the model.
-   */
+  /** Returns a map for labels applied to the model. */
   public Map<String, String> getLabels() {
     return labels.userMap();
   }
@@ -313,8 +289,8 @@ public class ModelInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(ModelInfo.class)
-        && Objects.equals(toPb(), ((ModelInfo) obj).toPb());
+            && obj.getClass().equals(ModelInfo.class)
+            && Objects.equals(toPb(), ((ModelInfo) obj).toPb());
   }
 
   /** Returns a builder for a {@code ModelInfo} object given table identity. */

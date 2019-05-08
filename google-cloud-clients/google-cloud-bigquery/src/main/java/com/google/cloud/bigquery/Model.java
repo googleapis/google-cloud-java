@@ -128,8 +128,8 @@ public class Model extends ModelInfo {
   }
 
   /**
-   * Fetches current model's state from the service. Returns {@code null} if the model does not exist.
-   * A new {@code Model} is returned.
+   * Fetches current model's state from the service. Returns {@code null} if the model does not
+   * exist. A new {@code Model} is returned.
    *
    * @param options model options
    * @return a {@code Model} object with latest information or {@code null} if not found
