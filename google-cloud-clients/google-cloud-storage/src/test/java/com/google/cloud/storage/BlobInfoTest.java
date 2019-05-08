@@ -332,7 +332,7 @@ public class BlobInfoTest {
     expect(storage.update(eq(expectedUpdatedBlob), new Storage.BlobTargetOption[0]))
         .andReturn(expectedUpdatedBlob);
     replay(storage);
-    Blob blob= new Blob(storage, new BlobInfo.BuilderImpl(BLOB_METADATA_INFO));
+    Blob blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_METADATA_INFO));
     expectedUpdatedBlob = new Blob(storage, new BlobInfo.BuilderImpl(expectedUpdatedBlob));
     expectedUpdatedBlob = expectedUpdatedBlob.update();
     assertNotEquals(metaDataOldValue, expectedUpdatedBlob.getMetadata().get("n1").toString());
