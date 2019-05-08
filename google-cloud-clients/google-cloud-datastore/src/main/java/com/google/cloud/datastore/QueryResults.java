@@ -70,4 +70,18 @@ public interface QueryResults<V> extends Iterator<V> {
 
   /** Returns MoreResults state of the query after the current batch. */
   QueryResultBatch.MoreResultsType getMoreResults();
+
+  /**
+   * Returns the number of entities count.
+   *
+   * <p>A simple use case to count entities:
+   *
+   * <pre>{@code
+   * Query.newKeyQueryBuilder().setKind("Kind")
+   *                 .setOffset(Integer.MAX_VALUE).setLimit(0).build()
+   * QueryResults<Key> result = datasore.run(query);
+   * int count = results.getCountEntities();
+   * </pre>
+   */
+  int getCountEntities();
 }
