@@ -55,7 +55,7 @@ import org.threeten.bp.Duration;
  *   <li>The default service address (bigtable.googleapis.com) and default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
- *   <li>Here is the default for Bigtable operation:
+ *   <li>These are the default timeouts used Bigtable operations.
  *       <ul>
  *         For non-streaming operations i.e. {@link #readRowSettings()}, {@link
  *         #sampleRowKeysSettings()}, {@link #checkAndMutateRowSettings()} {@link
