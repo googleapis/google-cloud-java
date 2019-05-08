@@ -801,7 +801,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required.
    * Client side application identifier, used to uniquely identify the
-   * recruiter.
+   * application.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -824,7 +824,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required.
    * Client side application identifier, used to uniquely identify the
-   * recruiter.
+   * application.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -848,8 +848,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the candidate of this application.
+   * Output only. Resource name of the candidate of this application.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -872,8 +871,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * Resource name of the candidate of this application.
+   * Output only. Resource name of the candidate of this application.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -2284,7 +2282,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * Client side application identifier, used to uniquely identify the
-     * recruiter.
+     * application.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -2307,7 +2305,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * Client side application identifier, used to uniquely identify the
-     * recruiter.
+     * application.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -2330,7 +2328,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * Client side application identifier, used to uniquely identify the
-     * recruiter.
+     * application.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -2351,7 +2349,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * Client side application identifier, used to uniquely identify the
-     * recruiter.
+     * application.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -2369,7 +2367,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * Client side application identifier, used to uniquely identify the
-     * recruiter.
+     * application.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -2391,8 +2389,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the candidate of this application.
+     * Output only. Resource name of the candidate of this application.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -2415,8 +2412,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the candidate of this application.
+     * Output only. Resource name of the candidate of this application.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -2439,8 +2435,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the candidate of this application.
+     * Output only. Resource name of the candidate of this application.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -2461,8 +2456,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the candidate of this application.
+     * Output only. Resource name of the candidate of this application.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".
@@ -2480,8 +2474,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * Resource name of the candidate of this application.
+     * Output only. Resource name of the candidate of this application.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
      * for example, "projects/api-test-project/tenants/foo/profiles/bar".

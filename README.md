@@ -21,6 +21,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Speech](google-cloud-clients/google-cloud-speech) (GA)
 -  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
 -  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
+-  [Cloud Tasks](google-cloud-clients/google-cloud-tasks) (GA)
 -  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
 -  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
 -  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (GA)
@@ -33,25 +34,31 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
--  [Cloud Tasks](google-cloud-clients/google-cloud-tasks) (Beta)
+-  [Cloud Phishing Protection](google-cloud-clients/google-cloud-phishingprotection) (Beta)
+-  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (Beta)
+-  [Cloud Talent Solution](google-cloud-clients/google-cloud-talent) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
 -  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
+-  [reCAPTCHA Enterprise](google-cloud-clients/google-cloud-recaptchaenterprise) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
 -  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
+-  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
+-  [Cloud Data Catalog](google-cloud-clients/google-cloud-datacatalog) (Alpha)
 -  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
+-  [Cloud IAM Service Account Credentials API](google-cloud-clients/google-cloud-iamcredentials) (Alpha)
 -  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
 -  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
 -  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
--  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (Alpha)
 -  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
+-  [Cloud Web Risk](google-cloud-clients/google-cloud-webrisk) (Alpha)
 -  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
 
 Quickstart
@@ -69,7 +76,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.89.0-alpha</version>
+        <version>0.91.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -88,11 +95,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.71.0'
+compile 'com.google.cloud:google-cloud-storage:1.73.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.71.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.73.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -113,7 +120,7 @@ If you are running into problems with version conflicts, the easiest way to solv
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.89.0-alpha</version>
+        <version>0.91.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

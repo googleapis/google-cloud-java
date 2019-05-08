@@ -15,45 +15,11 @@
  */
 
 /**
- * A client to Cloud Bigtable Admin API.
+ * Clients for the Cloud Bigtable admin API.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
+ * <p>These APIs allow callers to create and manage Cloud Bigtable resources.
  *
- * <p>=============================== BaseBigtableInstanceAdminClient
- * ===============================
- *
- * <p>Service Description: Service for creating, configuring, and deleting Cloud Bigtable Instances
- * and Clusters. Provides access to the Instance and Cluster schemas only, not the tables' metadata
- * or data stored in those tables.
- *
- * <p>Sample for BaseBigtableInstanceAdminClient:
- *
- * <pre>
- * <code>
- * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
- *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
- *   Instance response = baseBigtableInstanceAdminClient.getInstance(name);
- * }
- * </code>
- * </pre>
- *
- * ============================ BaseBigtableTableAdminClient ============================
- *
- * <p>Service Description: Service for creating, configuring, and deleting Cloud Bigtable tables.
- *
- * <p>Provides access to the table schemas only, not the data stored within the tables.
- *
- * <p>Sample for BaseBigtableTableAdminClient:
- *
- * <pre>
- * <code>
- * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
- *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
- *   String tableId = "";
- *   Table table = Table.newBuilder().build();
- *   Table response = baseBigtableTableAdminClient.createTable(parent, tableId, table);
- * }
- * </code>
- * </pre>
+ * @see com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient for instance level API.
+ * @see com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient for table level API.
  */
 package com.google.cloud.bigtable.admin.v2;

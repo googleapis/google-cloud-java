@@ -89,7 +89,7 @@ public class VideoIntelligenceServiceClientTest {
             .build();
     mockVideoIntelligenceService.addResponse(resultOperation);
 
-    String inputUri = "gs://demomaker/cat.mp4";
+    String inputUri = "gs://videodemomaker/cat.mp4";
     Feature featuresElement = Feature.LABEL_DETECTION;
     List<Feature> features = Arrays.asList(featuresElement);
 
@@ -115,7 +115,7 @@ public class VideoIntelligenceServiceClientTest {
     mockVideoIntelligenceService.addException(exception);
 
     try {
-      String inputUri = "gs://demomaker/cat.mp4";
+      String inputUri = "gs://videodemomaker/cat.mp4";
       Feature featuresElement = Feature.LABEL_DETECTION;
       List<Feature> features = Arrays.asList(featuresElement);
 

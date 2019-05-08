@@ -17,6 +17,7 @@
 package com.google.cloud.firestore.it;
 
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
+import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -33,6 +34,7 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.EventListener;
 import com.google.cloud.firestore.FieldMask;
+import com.google.cloud.firestore.FieldPath;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreException;
@@ -106,6 +108,14 @@ public class ITSystemTest {
     DocumentReference documentReference = randomColl.document();
     documentReference.update(Precondition.NONE, key, value, fields).get();
     return documentReference;
+  }
+
+  private List<String> querySnapshotToIds(QuerySnapshot querySnapshot) {
+    List<String> documentIds = new ArrayList<>();
+    for (QueryDocumentSnapshot snapshot : querySnapshot.getDocuments()) {
+      documentIds.add(snapshot.getId());
+    }
+    return documentIds;
   }
 
   @Test
@@ -994,6 +1004,128 @@ public class ITSystemTest {
     doc2.set(Collections.singletonMap("foo", (Object) FieldValue.arrayRemove("baz"))).get();
 
     assertTrue(containsQuery.get().get().isEmpty());
+  }
+
+  @Test
+  public void testCollectionGroupQueries() throws ExecutionException, InterruptedException {
+    // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
+    // for predictable ordering.
+    String collectionGroup = "b" + randomColl.getId();
+
+    String[] docPaths =
+        new String[] {
+          "abc/123/${collectionGroup}/cg-doc1",
+          "abc/123/${collectionGroup}/cg-doc2",
+          "${collectionGroup}/cg-doc3",
+          "${collectionGroup}/cg-doc4",
+          "def/456/${collectionGroup}/cg-doc5",
+          "${collectionGroup}/virtual-doc/nested-coll/not-cg-doc",
+          "x${collectionGroup}/not-cg-doc",
+          "${collectionGroup}x/not-cg-doc",
+          "abc/123/${collectionGroup}x/not-cg-doc",
+          "abc/123/x${collectionGroup}/not-cg-doc",
+          "abc/${collectionGroup}"
+        };
+    WriteBatch batch = firestore.batch();
+    for (String path : docPaths) {
+      batch.set(
+          firestore.document(path.replace("${collectionGroup}", collectionGroup)), map("x", 1));
+    }
+    batch.commit().get();
+
+    QuerySnapshot querySnapshot = firestore.collectionGroup(collectionGroup).get().get();
+    assertEquals(
+        asList("cg-doc1", "cg-doc2", "cg-doc3", "cg-doc4", "cg-doc5"),
+        querySnapshotToIds(querySnapshot));
+  }
+
+  @Test
+  public void testCollectionGroupQueriesWithStartAtEndAtWithArbitraryDocumentIds()
+      throws ExecutionException, InterruptedException {
+    // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
+    // for predictable ordering.
+    String collectionGroup = "b" + randomColl.getId();
+
+    String[] docPaths =
+        new String[] {
+          "a/a/${collectionGroup}/cg-doc1",
+          "a/b/a/b/${collectionGroup}/cg-doc2",
+          "a/b/${collectionGroup}/cg-doc3",
+          "a/b/c/d/${collectionGroup}/cg-doc4",
+          "a/c/${collectionGroup}/cg-doc5",
+          "${collectionGroup}/cg-doc6",
+          "a/b/nope/nope"
+        };
+    WriteBatch batch = firestore.batch();
+    for (String path : docPaths) {
+      batch.set(
+          firestore.document(path.replace("${collectionGroup}", collectionGroup)), map("x", 1));
+    }
+    batch.commit().get();
+
+    QuerySnapshot querySnapshot =
+        firestore
+            .collectionGroup(collectionGroup)
+            .orderBy(FieldPath.documentId())
+            .startAt("a/b")
+            .endAt("a/b0")
+            .get()
+            .get();
+    assertEquals(asList("cg-doc2", "cg-doc3", "cg-doc4"), querySnapshotToIds(querySnapshot));
+
+    querySnapshot =
+        firestore
+            .collectionGroup(collectionGroup)
+            .orderBy(FieldPath.documentId())
+            .startAfter("a/b")
+            .endBefore("a/b/" + collectionGroup + "/cg-doc3")
+            .get()
+            .get();
+    assertEquals(asList("cg-doc2"), querySnapshotToIds(querySnapshot));
+  }
+
+  @Test
+  public void testCollectionGroupQueriesWithWhereFiltersOnArbitraryDocumentIds()
+      throws ExecutionException, InterruptedException {
+    // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
+    // for predictable ordering.
+    String collectionGroup = "b" + randomColl.getId();
+
+    String[] docPaths =
+        new String[] {
+          "a/a/${collectionGroup}/cg-doc1",
+          "a/b/a/b/${collectionGroup}/cg-doc2",
+          "a/b/${collectionGroup}/cg-doc3",
+          "a/b/c/d/${collectionGroup}/cg-doc4",
+          "a/c/${collectionGroup}/cg-doc5",
+          "${collectionGroup}/cg-doc6",
+          "a/b/nope/nope"
+        };
+
+    WriteBatch batch = firestore.batch();
+    for (String path : docPaths) {
+      batch.set(
+          firestore.document(path.replace("${collectionGroup}", collectionGroup)), map("x", 1));
+    }
+    batch.commit().get();
+
+    QuerySnapshot querySnapshot =
+        firestore
+            .collectionGroup(collectionGroup)
+            .whereGreaterThanOrEqualTo(FieldPath.documentId(), "a/b")
+            .whereLessThanOrEqualTo(FieldPath.documentId(), "a/b0")
+            .get()
+            .get();
+    assertEquals(asList("cg-doc2", "cg-doc3", "cg-doc4"), querySnapshotToIds(querySnapshot));
+
+    querySnapshot =
+        firestore
+            .collectionGroup(collectionGroup)
+            .whereGreaterThan(FieldPath.documentId(), "a/b")
+            .whereLessThan(FieldPath.documentId(), "a/b/" + collectionGroup + "/cg-doc3")
+            .get()
+            .get();
+    assertEquals(asList("cg-doc2"), querySnapshotToIds(querySnapshot));
   }
 
   @Test

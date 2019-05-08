@@ -45,10 +45,6 @@ public final class SessionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_StreamingRecognitionResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_dialogflow_v2_InputAudioConfig_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_dialogflow_v2_InputAudioConfig_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_TextInput_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_TextInput_fieldAccessorTable;
@@ -153,11 +149,7 @@ public final class SessionProto {
           + "ype\022\022\n\ntranscript\030\002 \001(\t\022\020\n\010is_final\030\003 \001("
           + "\010\022\022\n\nconfidence\030\004 \001(\002\"X\n\013MessageType\022\034\n\030"
           + "MESSAGE_TYPE_UNSPECIFIED\020\000\022\016\n\nTRANSCRIPT"
-          + "\020\001\022\033\n\027END_OF_SINGLE_UTTERANCE\020\002\"\235\001\n\020Inpu"
-          + "tAudioConfig\022A\n\016audio_encoding\030\001 \001(\0162).g"
-          + "oogle.cloud.dialogflow.v2.AudioEncoding\022"
-          + "\031\n\021sample_rate_hertz\030\002 \001(\005\022\025\n\rlanguage_c"
-          + "ode\030\003 \001(\t\022\024\n\014phrase_hints\030\004 \003(\t\"0\n\tTextI"
+          + "\020\001\022\033\n\027END_OF_SINGLE_UTTERANCE\020\002\"0\n\tTextI"
           + "nput\022\014\n\004text\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001("
           + "\t\"^\n\nEventInput\022\014\n\004name\030\001 \001(\t\022+\n\nparamet"
           + "ers\030\002 \001(\0132\027.google.protobuf.Struct\022\025\n\rla"
@@ -166,26 +158,20 @@ public final class SessionProto {
           + "ent\030\001 \001(\010\"^\n\027SentimentAnalysisResult\022C\n\024"
           + "query_text_sentiment\030\001 \001(\0132%.google.clou"
           + "d.dialogflow.v2.Sentiment\"-\n\tSentiment\022\r"
-          + "\n\005score\030\001 \001(\002\022\021\n\tmagnitude\030\002 \001(\002*\373\001\n\rAud"
-          + "ioEncoding\022\036\n\032AUDIO_ENCODING_UNSPECIFIED"
-          + "\020\000\022\034\n\030AUDIO_ENCODING_LINEAR_16\020\001\022\027\n\023AUDI"
-          + "O_ENCODING_FLAC\020\002\022\030\n\024AUDIO_ENCODING_MULA"
-          + "W\020\003\022\026\n\022AUDIO_ENCODING_AMR\020\004\022\031\n\025AUDIO_ENC"
-          + "ODING_AMR_WB\020\005\022\033\n\027AUDIO_ENCODING_OGG_OPU"
-          + "S\020\006\022)\n%AUDIO_ENCODING_SPEEX_WITH_HEADER_"
-          + "BYTE\020\0072\326\002\n\010Sessions\022\264\001\n\014DetectIntent\022/.g"
-          + "oogle.cloud.dialogflow.v2.DetectIntentRe"
-          + "quest\0320.google.cloud.dialogflow.v2.Detec"
-          + "tIntentResponse\"A\202\323\344\223\002;\"6/v2/{session=pr"
-          + "ojects/*/agent/sessions/*}:detectIntent:"
-          + "\001*\022\222\001\n\025StreamingDetectIntent\0228.google.cl"
-          + "oud.dialogflow.v2.StreamingDetectIntentR"
-          + "equest\0329.google.cloud.dialogflow.v2.Stre"
-          + "amingDetectIntentResponse\"\000(\0010\001B\233\001\n\036com."
-          + "google.cloud.dialogflow.v2B\014SessionProto"
-          + "P\001ZDgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/dialogflow/v2;dialogflow\370\001\001\242\002\002DF"
-          + "\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "\n\005score\030\001 \001(\002\022\021\n\tmagnitude\030\002 \001(\0022\326\002\n\010Ses"
+          + "sions\022\264\001\n\014DetectIntent\022/.google.cloud.di"
+          + "alogflow.v2.DetectIntentRequest\0320.google"
+          + ".cloud.dialogflow.v2.DetectIntentRespons"
+          + "e\"A\202\323\344\223\002;\"6/v2/{session=projects/*/agent"
+          + "/sessions/*}:detectIntent:\001*\022\222\001\n\025Streami"
+          + "ngDetectIntent\0228.google.cloud.dialogflow"
+          + ".v2.StreamingDetectIntentRequest\0329.googl"
+          + "e.cloud.dialogflow.v2.StreamingDetectInt"
+          + "entResponse\"\000(\0010\001B\233\001\n\036com.google.cloud.d"
+          + "ialogflow.v2B\014SessionProtoP\001ZDgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/dialog"
+          + "flow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Clou"
+          + "d.Dialogflow.V2b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -303,16 +289,8 @@ public final class SessionProto {
             new java.lang.String[] {
               "MessageType", "Transcript", "IsFinal", "Confidence",
             });
-    internal_static_google_cloud_dialogflow_v2_InputAudioConfig_descriptor =
-        getDescriptor().getMessageTypes().get(8);
-    internal_static_google_cloud_dialogflow_v2_InputAudioConfig_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_dialogflow_v2_InputAudioConfig_descriptor,
-            new java.lang.String[] {
-              "AudioEncoding", "SampleRateHertz", "LanguageCode", "PhraseHints",
-            });
     internal_static_google_cloud_dialogflow_v2_TextInput_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_dialogflow_v2_TextInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_TextInput_descriptor,
@@ -320,7 +298,7 @@ public final class SessionProto {
               "Text", "LanguageCode",
             });
     internal_static_google_cloud_dialogflow_v2_EventInput_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dialogflow_v2_EventInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_EventInput_descriptor,
@@ -328,7 +306,7 @@ public final class SessionProto {
               "Name", "Parameters", "LanguageCode",
             });
     internal_static_google_cloud_dialogflow_v2_SentimentAnalysisRequestConfig_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_dialogflow_v2_SentimentAnalysisRequestConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SentimentAnalysisRequestConfig_descriptor,
@@ -336,7 +314,7 @@ public final class SessionProto {
               "AnalyzeQueryTextSentiment",
             });
     internal_static_google_cloud_dialogflow_v2_SentimentAnalysisResult_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_dialogflow_v2_SentimentAnalysisResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SentimentAnalysisResult_descriptor,
@@ -344,7 +322,7 @@ public final class SessionProto {
               "QueryTextSentiment",
             });
     internal_static_google_cloud_dialogflow_v2_Sentiment_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dialogflow_v2_Sentiment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_Sentiment_descriptor,

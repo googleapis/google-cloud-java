@@ -235,6 +235,231 @@ public class ImageAnnotatorClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Service that performs image detection and annotation for a batch of files. Now only
+   * "application/pdf", "image/tiff" and "image/gif" are supported.
+   *
+   * <p>This service will extract at most 5 (customers can specify which 5 in
+   * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and
+   * perform detection and annotation for each image extracted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   BatchAnnotateFilesResponse response = imageAnnotatorClient.batchAnnotateFiles(requests);
+   * }
+   * </code></pre>
+   *
+   * @param requests The list of file annotation requests. Right now we support only one
+   *     AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchAnnotateFilesResponse batchAnnotateFiles(List<AnnotateFileRequest> requests) {
+
+    BatchAnnotateFilesRequest request =
+        BatchAnnotateFilesRequest.newBuilder().addAllRequests(requests).build();
+    return batchAnnotateFiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Service that performs image detection and annotation for a batch of files. Now only
+   * "application/pdf", "image/tiff" and "image/gif" are supported.
+   *
+   * <p>This service will extract at most 5 (customers can specify which 5 in
+   * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and
+   * perform detection and annotation for each image extracted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   BatchAnnotateFilesRequest request = BatchAnnotateFilesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   BatchAnnotateFilesResponse response = imageAnnotatorClient.batchAnnotateFiles(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchAnnotateFilesResponse batchAnnotateFiles(BatchAnnotateFilesRequest request) {
+    return batchAnnotateFilesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Service that performs image detection and annotation for a batch of files. Now only
+   * "application/pdf", "image/tiff" and "image/gif" are supported.
+   *
+   * <p>This service will extract at most 5 (customers can specify which 5 in
+   * AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and
+   * perform detection and annotation for each image extracted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateFileRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   BatchAnnotateFilesRequest request = BatchAnnotateFilesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   ApiFuture&lt;BatchAnnotateFilesResponse&gt; future = imageAnnotatorClient.batchAnnotateFilesCallable().futureCall(request);
+   *   // Do something
+   *   BatchAnnotateFilesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
+      batchAnnotateFilesCallable() {
+    return stub.batchAnnotateFilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of images.
+   *
+   * <p>Progress and results can be retrieved through the `google.longrunning.Operations` interface.
+   * `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains
+   * `AsyncBatchAnnotateImagesResponse` (results).
+   *
+   * <p>This service will write image annotation outputs to json files in customer GCS bucket, each
+   * json file containing BatchAnnotateImagesResponse proto.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   AsyncBatchAnnotateImagesResponse response = imageAnnotatorClient.asyncBatchAnnotateImagesAsync(requests, outputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param requests Individual image annotation requests for this batch.
+   * @param outputConfig Required. The desired output location and metadata (e.g. format).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata>
+      asyncBatchAnnotateImagesAsync(
+          List<AnnotateImageRequest> requests, OutputConfig outputConfig) {
+
+    AsyncBatchAnnotateImagesRequest request =
+        AsyncBatchAnnotateImagesRequest.newBuilder()
+            .addAllRequests(requests)
+            .setOutputConfig(outputConfig)
+            .build();
+    return asyncBatchAnnotateImagesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of images.
+   *
+   * <p>Progress and results can be retrieved through the `google.longrunning.Operations` interface.
+   * `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains
+   * `AsyncBatchAnnotateImagesResponse` (results).
+   *
+   * <p>This service will write image annotation outputs to json files in customer GCS bucket, each
+   * json file containing BatchAnnotateImagesResponse proto.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   AsyncBatchAnnotateImagesRequest request = AsyncBatchAnnotateImagesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   AsyncBatchAnnotateImagesResponse response = imageAnnotatorClient.asyncBatchAnnotateImagesAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata>
+      asyncBatchAnnotateImagesAsync(AsyncBatchAnnotateImagesRequest request) {
+    return asyncBatchAnnotateImagesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of images.
+   *
+   * <p>Progress and results can be retrieved through the `google.longrunning.Operations` interface.
+   * `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains
+   * `AsyncBatchAnnotateImagesResponse` (results).
+   *
+   * <p>This service will write image annotation outputs to json files in customer GCS bucket, each
+   * json file containing BatchAnnotateImagesResponse proto.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   AsyncBatchAnnotateImagesRequest request = AsyncBatchAnnotateImagesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;AsyncBatchAnnotateImagesResponse, OperationMetadata&gt; future = imageAnnotatorClient.asyncBatchAnnotateImagesOperationCallable().futureCall(request);
+   *   // Do something
+   *   AsyncBatchAnnotateImagesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<
+          AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
+      asyncBatchAnnotateImagesOperationCallable() {
+    return stub.asyncBatchAnnotateImagesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run asynchronous image detection and annotation for a list of images.
+   *
+   * <p>Progress and results can be retrieved through the `google.longrunning.Operations` interface.
+   * `Operation.metadata` contains `OperationMetadata` (metadata). `Operation.response` contains
+   * `AsyncBatchAnnotateImagesResponse` (results).
+   *
+   * <p>This service will write image annotation outputs to json files in customer GCS bucket, each
+   * json file containing BatchAnnotateImagesResponse proto.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   AsyncBatchAnnotateImagesRequest request = AsyncBatchAnnotateImagesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = imageAnnotatorClient.asyncBatchAnnotateImagesCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AsyncBatchAnnotateImagesRequest, Operation>
+      asyncBatchAnnotateImagesCallable() {
+    return stub.asyncBatchAnnotateImagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Run asynchronous image detection and annotation for a list of generic files, such as PDF files,
    * which may contain multiple pages and multiple images per page. Progress and results can be
    * retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains

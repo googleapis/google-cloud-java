@@ -28,15 +28,17 @@ public final class TenantResourceProto {
       "\n(google/cloud/talent/v4beta1/tenant.pro"
           + "to\022\033google.cloud.talent.v4beta1\032(google/"
           + "cloud/talent/v4beta1/common.proto\032\034googl"
-          + "e/api/annotations.proto\"\302\001\n\006Tenant\022\014\n\004na"
+          + "e/api/annotations.proto\"\370\001\n\006Tenant\022\014\n\004na"
           + "me\030\001 \001(\t\022\023\n\013external_id\030\002 \001(\t\022E\n\nusage_t"
           + "ype\030\003 \001(\01621.google.cloud.talent.v4beta1."
-          + "Tenant.DataUsageType\"N\n\rDataUsageType\022\037\n"
-          + "\033DATA_USAGE_TYPE_UNSPECIFIED\020\000\022\016\n\nAGGREG"
-          + "ATED\020\001\022\014\n\010ISOLATED\020\002B\201\001\n\037com.google.clou"
-          + "d.talent.v4beta1B\023TenantResourceProtoP\001Z"
-          + "Agoogle.golang.org/genproto/googleapis/c"
-          + "loud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "Tenant.DataUsageType\0224\n,keyword_searchab"
+          + "le_profile_custom_attributes\030\004 \003(\t\"N\n\rDa"
+          + "taUsageType\022\037\n\033DATA_USAGE_TYPE_UNSPECIFI"
+          + "ED\020\000\022\016\n\nAGGREGATED\020\001\022\014\n\010ISOLATED\020\002B\201\001\n\037c"
+          + "om.google.cloud.talent.v4beta1B\023TenantRe"
+          + "sourceProtoP\001ZAgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/talent/v4beta1;talent"
+          + "\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -59,7 +61,7 @@ public final class TenantResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Tenant_descriptor,
             new java.lang.String[] {
-              "Name", "ExternalId", "UsageType",
+              "Name", "ExternalId", "UsageType", "KeywordSearchableProfileCustomAttributes",
             });
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

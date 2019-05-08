@@ -15,25 +15,8 @@
  */
 
 /**
- * A client to Cloud Bigtable API.
+ * A client for the Cloud Bigtable data API.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>====================== BaseBigtableDataClient ======================
- *
- * <p>Service Description: Service for reading from and writing to existing Bigtable tables.
- *
- * <p>Sample for BaseBigtableDataClient:
- *
- * <pre>
- * <code>
- * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
- *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
- *   ByteString rowKey = ByteString.copyFromUtf8("");
- *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
- *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName, rowKey, mutations);
- * }
- * </code>
- * </pre>
+ * @see com.google.cloud.bigtable.data.v2.BigtableDataClient for usage.
  */
 package com.google.cloud.bigtable.data.v2;
