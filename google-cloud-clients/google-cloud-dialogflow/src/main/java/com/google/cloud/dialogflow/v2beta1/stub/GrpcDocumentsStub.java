@@ -124,6 +124,8 @@ public class GrpcDocumentsStub extends DocumentsStub {
   private final OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationCallable;
   private final UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable;
+  private final OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
+      updateDocumentOperationCallable;
   private final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable;
 
   private final GrpcStubCallableFactory callableFactory;
@@ -274,6 +276,12 @@ public class GrpcDocumentsStub extends DocumentsStub {
     this.updateDocumentCallable =
         callableFactory.createUnaryCallable(
             updateDocumentTransportSettings, settings.updateDocumentSettings(), clientContext);
+    this.updateDocumentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDocumentTransportSettings,
+            settings.updateDocumentOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.reloadDocumentCallable =
         callableFactory.createUnaryCallable(
             reloadDocumentTransportSettings, settings.reloadDocumentSettings(), clientContext);
@@ -317,6 +325,12 @@ public class GrpcDocumentsStub extends DocumentsStub {
 
   public UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable() {
     return deleteDocumentCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
+      updateDocumentOperationCallable() {
+    return updateDocumentOperationCallable;
   }
 
   public UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
