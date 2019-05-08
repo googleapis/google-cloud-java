@@ -540,6 +540,32 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
+   * class ClientObserver implements ResponseObserver<Row> {
+   *   private StreamController streamController;
+   *
+   *   public void onStart(StreamController streamController) {
+   *     this.streamController = streamController;
+   *     // Other initialization
+   *   }
+   *   public void onResponse(Row row) {
+   *     // Do something with Row
+   *   }
+   *   public void onError(Throwable t) {
+   *     if (t instanceof NotFoundException) {
+   *       System.out.println("Tried to read a non-existent table");
+   *     } else {
+   *       t.printStackTrace();
+   *     }
+   *   }
+   *   public void onComplete() {
+   *     // Handle stream completion
+   *   }
+   *   public void cancel() {
+   *     // Stream will be cancelled now.
+   *     streamController.cancel();
+   *   }
+   * }
+   *
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
@@ -547,22 +573,12 @@ public class BigtableDataClient implements AutoCloseable {
    *          .range("[START KEY]", "[END KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
-   *   bigtableDataClient.readRowsAsync(query, new ResponseObserver<Row>() {
-   *     public void onStart(StreamController controller) { }
-   *     public void onResponse(Row row) {
-   *       // Do something with Row
-   *     }
-   *     public void onError(Throwable t) {
-   *       if (t instanceof NotFoundException) {
-   *         System.out.println("Tried to read a non-existent table");
-   *       } else {
-   *         t.printStackTrace();
-   *       }
-   *     }
-   *     public void onComplete() {
-   *       // Handle stream completion
-   *     }
-   *   });
+   *   ClientObserver observer = new ClientObserver();
+   *
+   *   bigtableDataClient.readRowsAsync(request, observer);
+   *
+   *   // Cancels the stream.
+   *   observer.cancel();
    * }
    * }</pre>
    */
