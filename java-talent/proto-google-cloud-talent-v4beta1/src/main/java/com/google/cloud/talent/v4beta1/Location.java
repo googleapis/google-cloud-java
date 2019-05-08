@@ -7,8 +7,8 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
- * A resource that represents a location with full geographic information.
+ * Output only. A resource that represents a location with full geographic
+ * information.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.Location}
@@ -808,8 +808,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * A resource that represents a location with full geographic information.
+   * Output only. A resource that represents a location with full geographic
+   * information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.Location}

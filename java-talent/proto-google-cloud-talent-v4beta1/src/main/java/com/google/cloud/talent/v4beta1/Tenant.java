@@ -29,6 +29,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     externalId_ = "";
     usageType_ = 0;
+    keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -76,6 +77,17 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
               usageType_ = rawValue;
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                keywordSearchableProfileCustomAttributes_ =
+                    new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              keywordSearchableProfileCustomAttributes_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -90,6 +102,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        keywordSearchableProfileCustomAttributes_ =
+            keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -259,6 +275,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.Tenant.DataUsageType)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -395,6 +412,82 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int KEYWORD_SEARCHABLE_PROFILE_CUSTOM_ATTRIBUTES_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList keywordSearchableProfileCustomAttributes_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getKeywordSearchableProfileCustomAttributesList() {
+    return keywordSearchableProfileCustomAttributes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  public int getKeywordSearchableProfileCustomAttributesCount() {
+    return keywordSearchableProfileCustomAttributes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  public java.lang.String getKeywordSearchableProfileCustomAttributes(int index) {
+    return keywordSearchableProfileCustomAttributes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  public com.google.protobuf.ByteString getKeywordSearchableProfileCustomAttributesBytes(
+      int index) {
+    return keywordSearchableProfileCustomAttributes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -420,6 +513,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, usageType_);
     }
+    for (int i = 0; i < keywordSearchableProfileCustomAttributes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 4, keywordSearchableProfileCustomAttributes_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -440,6 +537,14 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, usageType_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < keywordSearchableProfileCustomAttributes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(keywordSearchableProfileCustomAttributes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getKeywordSearchableProfileCustomAttributesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -458,6 +563,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getExternalId().equals(other.getExternalId())) return false;
     if (usageType_ != other.usageType_) return false;
+    if (!getKeywordSearchableProfileCustomAttributesList()
+        .equals(other.getKeywordSearchableProfileCustomAttributesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -475,6 +582,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getExternalId().hashCode();
     hash = (37 * hash) + USAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + usageType_;
+    if (getKeywordSearchableProfileCustomAttributesCount() > 0) {
+      hash = (37 * hash) + KEYWORD_SEARCHABLE_PROFILE_CUSTOM_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getKeywordSearchableProfileCustomAttributesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -629,6 +740,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
 
       usageType_ = 0;
 
+      keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -656,9 +769,18 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4beta1.Tenant buildPartial() {
       com.google.cloud.talent.v4beta1.Tenant result =
           new com.google.cloud.talent.v4beta1.Tenant(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.externalId_ = externalId_;
       result.usageType_ = usageType_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        keywordSearchableProfileCustomAttributes_ =
+            keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.keywordSearchableProfileCustomAttributes_ = keywordSearchableProfileCustomAttributes_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -719,6 +841,18 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
       if (other.usageType_ != 0) {
         setUsageTypeValue(other.getUsageTypeValue());
       }
+      if (!other.keywordSearchableProfileCustomAttributes_.isEmpty()) {
+        if (keywordSearchableProfileCustomAttributes_.isEmpty()) {
+          keywordSearchableProfileCustomAttributes_ =
+              other.keywordSearchableProfileCustomAttributes_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureKeywordSearchableProfileCustomAttributesIsMutable();
+          keywordSearchableProfileCustomAttributes_.addAll(
+              other.keywordSearchableProfileCustomAttributes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -747,6 +881,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1055,6 +1191,209 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUsageType() {
 
       usageType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList keywordSearchableProfileCustomAttributes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureKeywordSearchableProfileCustomAttributesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        keywordSearchableProfileCustomAttributes_ =
+            new com.google.protobuf.LazyStringArrayList(keywordSearchableProfileCustomAttributes_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getKeywordSearchableProfileCustomAttributesList() {
+      return keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public int getKeywordSearchableProfileCustomAttributesCount() {
+      return keywordSearchableProfileCustomAttributes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public java.lang.String getKeywordSearchableProfileCustomAttributes(int index) {
+      return keywordSearchableProfileCustomAttributes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public com.google.protobuf.ByteString getKeywordSearchableProfileCustomAttributesBytes(
+        int index) {
+      return keywordSearchableProfileCustomAttributes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public Builder setKeywordSearchableProfileCustomAttributes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureKeywordSearchableProfileCustomAttributesIsMutable();
+      keywordSearchableProfileCustomAttributes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public Builder addKeywordSearchableProfileCustomAttributes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureKeywordSearchableProfileCustomAttributesIsMutable();
+      keywordSearchableProfileCustomAttributes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public Builder addAllKeywordSearchableProfileCustomAttributes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureKeywordSearchableProfileCustomAttributesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, keywordSearchableProfileCustomAttributes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public Builder clearKeywordSearchableProfileCustomAttributes() {
+      keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+     * corresponding `string_values` are used in keyword searches. Profiles with
+     * `string_values` under these specified field keys are returned if any
+     * of the values match the search keyword. Custom field values with
+     * parenthesis, brackets and special symbols are not searchable as-is,
+     * and must be surrounded by quotes.
+     * </pre>
+     *
+     * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+     */
+    public Builder addKeywordSearchableProfileCustomAttributesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureKeywordSearchableProfileCustomAttributesIsMutable();
+      keywordSearchableProfileCustomAttributes_.add(value);
       onChanged();
       return this;
     }
