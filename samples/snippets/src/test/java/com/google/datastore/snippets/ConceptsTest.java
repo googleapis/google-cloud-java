@@ -233,6 +233,9 @@ public class ConceptsTest {
   @Test
   public void testBasicEntity() {
     // [START datastore_basic_entity]
+    Key taskKey = datastore.newKeyFactory()
+        .setKind("Task")
+        .newKey("sampleTask");
     Entity task = Entity.newBuilder(taskKey)
         .set("category", "Personal")
         .set("done", false)
