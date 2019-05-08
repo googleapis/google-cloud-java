@@ -88,4 +88,69 @@ public interface TenantOrBuilder
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
    */
   com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  java.util.List<java.lang.String> getKeywordSearchableProfileCustomAttributesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  int getKeywordSearchableProfileCustomAttributesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  java.lang.String getKeywordSearchableProfileCustomAttributes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
+   * corresponding `string_values` are used in keyword searches. Profiles with
+   * `string_values` under these specified field keys are returned if any
+   * of the values match the search keyword. Custom field values with
+   * parenthesis, brackets and special symbols are not searchable as-is,
+   * and must be surrounded by quotes.
+   * </pre>
+   *
+   * <code>repeated string keyword_searchable_profile_custom_attributes = 4;</code>
+   */
+  com.google.protobuf.ByteString getKeywordSearchableProfileCustomAttributesBytes(int index);
 }
