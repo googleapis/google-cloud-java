@@ -134,7 +134,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
     MODEL_REFERENCE("modelReference"),
     TIME_PARTITIONING("timePartitioning"),
     TYPE("modelType"),
-    VIEW("view");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(MODEL_REFERENCE);
 

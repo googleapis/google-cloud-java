@@ -81,9 +81,10 @@ public interface BigQueryRpc extends ServiceRpc {
   Dataset getDataset(String projectId, String datasetId, Map<Option, ?> options);
 
   /**
-   * Lists the provided project's datasets. Partial information is returned on a dataset
-   * (datasetReference, friendlyName and id). To get full information use {@link #getDataset(String,
-   * String, Map)}.
+   * Lists the provided project's datasets, keyed by page token.
+   * Partial information is returned on a dataset
+   * (datasetReference, friendlyName and id). To get full information use
+   * {@link #getDataset(String, String, Map)}.
    *
    * @throws BigQueryException upon failure
    */
@@ -140,7 +141,8 @@ public interface BigQueryRpc extends ServiceRpc {
   Table getTable(String projectId, String datasetId, String tableId, Map<Option, ?> options);
 
   /**
-   * Lists the dataset's tables. Partial information is returned on a table (tableReference,
+   * Lists the dataset's tables, keyed by page token.
+   * Partial information is returned on a table (tableReference,
    * friendlyName, id and type). To get full information use {@link #getTable(String, String,
    * String, Map)}.
    *
@@ -172,7 +174,7 @@ public interface BigQueryRpc extends ServiceRpc {
   Model getModel(String projectId, String datasetId, String modelId, Map<Option, ?> options);
 
   /**
-   * Lists the dataset's models. Partial information is returned on a model.
+   * Lists the dataset's models, keyed by page token.
    *
    * @throws BigQueryException upon failure
    */

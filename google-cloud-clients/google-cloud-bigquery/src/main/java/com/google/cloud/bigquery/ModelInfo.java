@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Google BigQuery ML model information.  Models are not create directly via the API, but by issuing
+ * Google BigQuery ML model information.  Models are not created directly via the API, but by issuing
  * a CREATE MODEL query.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create">CREATE

@@ -65,12 +65,6 @@ public class Model extends ModelInfo {
     }
 
     @Override
-    Builder setModelType(String modelType) {
-      infoBuilder.setModelType(modelType);
-      return this;
-    }
-
-    @Override
     Builder setEtag(String etag) {
       infoBuilder.setEtag(etag);
       return this;
@@ -97,6 +91,12 @@ public class Model extends ModelInfo {
     @Override
     public Builder setModelId(ModelId modelId) {
       infoBuilder.setModelId(modelId);
+      return this;
+    }
+
+    @Override
+    Builder setModelType(String modelType) {
+      infoBuilder.setModelType(modelType);
       return this;
     }
 
