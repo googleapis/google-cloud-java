@@ -513,9 +513,16 @@ public class BigtableDataClient implements AutoCloseable {
    *          .range("[START KEY]", "[END KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
-   *   // Iterator style
    *   try {
-   *     for(Row row : bigtableDataClient.readRows(query)) {
+   *     ServerStream<Row> stream = bigtableDataClient.readRows(query);
+   *     int count = 0;
+   *
+   *     // Iterator style
+   *     for (Row row : stream) {
+   *       if (++count > 10) {
+   *         stream.cancel();
+   *         break;
+   *       }
    *       // Do something with row
    *     }
    *   } catch (NotFoundException e) {
@@ -540,32 +547,6 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * class ClientObserver implements ResponseObserver<Row> {
-   *   private StreamController streamController;
-   *
-   *   public void onStart(StreamController streamController) {
-   *     this.streamController = streamController;
-   *     // Other initialization
-   *   }
-   *   public void onResponse(Row row) {
-   *     // Do something with Row
-   *   }
-   *   public void onError(Throwable t) {
-   *     if (t instanceof NotFoundException) {
-   *       System.out.println("Tried to read a non-existent table");
-   *     } else {
-   *       t.printStackTrace();
-   *     }
-   *   }
-   *   public void onComplete() {
-   *     // Handle stream completion
-   *   }
-   *   public void cancel() {
-   *     // Stream will be cancelled now.
-   *     streamController.cancel();
-   *   }
-   * }
-   *
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
@@ -573,12 +554,31 @@ public class BigtableDataClient implements AutoCloseable {
    *          .range("[START KEY]", "[END KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
-   *   ClientObserver observer = new ClientObserver();
+   *   bigtableDataClient.readRowsAsync(query, new ResponseObserver<Row>() {
+   *     StreamController controller;
+   *     int count = 0;
    *
-   *   bigtableDataClient.readRowsAsync(request, observer);
-   *
-   *   // Cancels the stream.
-   *   observer.cancel();
+   *     public void onStart(StreamController controller) {
+   *       this.controller = controller;
+   *     }
+   *     public void onResponse(Row row) {
+   *       if (++count > 10) {
+   *         controller.cancel();
+   *         return;
+   *       }
+   *       // Do something with Row
+   *     }
+   *     public void onError(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onComplete() {
+   *       // Handle stream completion
+   *     }
+   *   });
    * }
    * }</pre>
    */
