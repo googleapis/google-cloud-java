@@ -594,7 +594,33 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder().build();
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(knowledgeBase);
+   * }
+   * </code></pre>
+   *
+   * @param knowledgeBase Required. The knowledge base to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KnowledgeBase updateKnowledgeBase(KnowledgeBase knowledgeBase) {
+
+    UpdateKnowledgeBaseRequest request =
+        UpdateKnowledgeBaseRequest.newBuilder().setKnowledgeBase(knowledgeBase).build();
+    return updateKnowledgeBase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified knowledge base.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder()
+   *     .setKnowledgeBase(knowledgeBase)
+   *     .build();
    *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(request);
    * }
    * </code></pre>
@@ -614,7 +640,10 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder().build();
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder()
+   *     .setKnowledgeBase(knowledgeBase)
+   *     .build();
    *   ApiFuture&lt;KnowledgeBase&gt; future = knowledgeBasesClient.updateKnowledgeBaseCallable().futureCall(request);
    *   // Do something
    *   KnowledgeBase response = future.get();
