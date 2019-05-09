@@ -283,9 +283,7 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.INTERNAL, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
