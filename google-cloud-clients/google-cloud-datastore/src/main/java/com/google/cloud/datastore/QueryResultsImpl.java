@@ -127,18 +127,19 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   }
 
   @Override
-  public int getCountEntities() {
-    return getEntitiesCount();
+  public int countEntities() {
+    return count();
   }
 
-  private int getEntitiesCount() {
+  private int count() {
     int count = 0;
     Integer limit = ((KeyQuery) this.query).getLimit();
     if (null != limit && limit == 0) {
-      count = runQueryResponsePb.getBatch().getSkippedResults();
-      while (runQueryResponsePb.getBatch().getMoreResults()
+      QueryResultBatch queryResultBatch = runQueryResponsePb.getBatch();
+      count = queryResultBatch.getSkippedResults();
+      while (queryResultBatch.getMoreResults()
           != QueryResultBatch.MoreResultsType.NO_MORE_RESULTS) {
-        count += runQueryResponsePb.getBatch().getSkippedResults();
+        count += queryResultBatch.getSkippedResults();
       }
     }
     return count;

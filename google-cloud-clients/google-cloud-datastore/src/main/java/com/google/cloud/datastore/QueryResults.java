@@ -77,11 +77,10 @@ public interface QueryResults<V> extends Iterator<V> {
    * <p>A simple use case to count entities:
    *
    * <pre>{@code
-   * Query.newKeyQueryBuilder().setKind("Kind")
-   *                 .setOffset(Integer.MAX_VALUE).setLimit(0).build()
+   * Query.newKeyQueryBuilder().setKind("Kind").setOffset(Integer.MAX_VALUE).setLimit(0).build()
    * QueryResults<Key> result = datasore.run(query);
    * int count = results.getCountEntities();
-   * </pre>
+   * }</pre>
    */
-  int getCountEntities();
+  int countEntities();
 }
