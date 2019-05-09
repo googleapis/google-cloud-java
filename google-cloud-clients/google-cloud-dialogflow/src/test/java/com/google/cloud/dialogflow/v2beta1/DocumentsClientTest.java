@@ -304,4 +304,60 @@ public class DocumentsClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateDocumentTest() throws Exception {
+    DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    String displayName = "displayName1615086568";
+    String mimeType = "mimeType-196041627";
+    String contentUri = "contentUri-388807514";
+    Document expectedResponse =
+        Document.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setMimeType(mimeType)
+            .setContentUri(contentUri)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDocumentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocuments.addResponse(resultOperation);
+
+    Document document = Document.newBuilder().build();
+
+    Document actualResponse = client.updateDocumentAsync(document).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDocumentRequest actualRequest = (UpdateDocumentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDocuments.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+
+      client.updateDocumentAsync(document).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }
