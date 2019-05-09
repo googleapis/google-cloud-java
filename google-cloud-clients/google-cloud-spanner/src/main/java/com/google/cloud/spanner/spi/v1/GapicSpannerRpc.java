@@ -22,6 +22,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -109,11 +110,31 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
+  // Thread factory to use to create our Spanner worker threads
+  private static final class SpannerThreadFactory implements ThreadFactory {
+    private final AtomicInteger threadCount = new AtomicInteger();
+    private final String serviceName;
+
+    private SpannerThreadFactory(String serviceName) {
+      this.serviceName = serviceName;
+    }
+
+    @Override
+    public Thread newThread(Runnable runnable) {
+      Thread thread = new Thread(runnable);
+      thread.setName(String.format("Gax-%s-%d", serviceName, threadCount.incrementAndGet()));
+      thread.setDaemon(true);
+      return thread;
+    }
+  };
+
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
@@ -215,6 +236,10 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcSpannerStub.create(
               SpannerStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
+                  .setExecutorProvider(
+                      InstantiatingExecutorProvider.newBuilder()
+                          .setThreadFactory(new SpannerThreadFactory("Spanner"))
+                          .build())
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
@@ -231,6 +256,10 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcInstanceAdminStub.create(
               InstanceAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
+                  .setExecutorProvider(
+                      InstantiatingExecutorProvider.newBuilder()
+                          .setThreadFactory(new SpannerThreadFactory("Spanner-InstanceAdmin"))
+                          .build())
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
@@ -246,6 +275,10 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcDatabaseAdminStub.create(
               DatabaseAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
+                  .setExecutorProvider(
+                      InstantiatingExecutorProvider.newBuilder()
+                          .setThreadFactory(new SpannerThreadFactory("Spanner-DatabaseAdmin"))
+                          .build())
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(

@@ -120,7 +120,7 @@ public class GapicSpannerRpcTest {
 
   private static final int NUMBER_OF_TEST_RUNS = 2;
   private static final int NUM_CHANNELS = 4;
-  private static final Pattern GAX_THREAD_NAME = Pattern.compile("Gax-[0-9]+");
+  private static final String GAX_THREAD_NAME = "Gax-%s-[0-9]+";
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
   private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
 
@@ -128,9 +128,7 @@ public class GapicSpannerRpcTest {
   public void testCloseAllThreadsWhenClosingSpanner() throws InterruptedException {
     for (int i = 0; i < NUMBER_OF_TEST_RUNS; i++) {
       // Get the base number of Gax threads.
-      int prevThreadNumber = -1;
-      int currentThreadNumber = getNumberOfGaxThreads();
-      int originalNumberOfThreads = currentThreadNumber;
+      int originalNumberOfThreads = getNumberOfGaxThreads(".*");
       // Create Spanner instance.
       SpannerOptions options = createSpannerOptions();
       Spanner spanner = options.getService();
@@ -143,36 +141,22 @@ public class GapicSpannerRpcTest {
         }
       }
       // Check the number of threads after the query. Doing a request should initialize a thread
-      // pool
-      // for the underlying SpannerClient.
-      prevThreadNumber = currentThreadNumber;
-      currentThreadNumber = getNumberOfGaxThreads();
-      assertThat(
-          String.format(
-              "current number of thread is not greater than previous number of threads. current: %d, prev: %d, run: %d",
-              currentThreadNumber, prevThreadNumber, i),
-          currentThreadNumber > prevThreadNumber,
-          is(true));
+      // pool for the underlying SpannerClient.
+      assertThat(getNumberOfGaxThreads("Spanner") > 0, is(true));
 
       // Then do a request to the InstanceAdmin service and check the number of threads.
-      //  Doing a request should initialize a thread pool
-      // for the underlying InstanceAdminClient.
+      // Doing a request should initialize a thread pool for the underlying InstanceAdminClient.
       mockGetInstanceResponse();
       InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
       instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
-      prevThreadNumber = currentThreadNumber;
-      currentThreadNumber = getNumberOfGaxThreads();
-      assertThat(currentThreadNumber > prevThreadNumber, is(true));
+      assertThat(getNumberOfGaxThreads("Spanner-InstanceAdmin") > 0, is(true));
 
       // Then do a request to the DatabaseAdmin service and check the number of threads.
-      // Doing a request should initialize a thread pool
-      // for the underlying DatabaseAdminClient.
+      // Doing a request should initialize a thread pool for the underlying DatabaseAdminClient.
       mockGetDatabaseResponse();
       DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
       databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
-      prevThreadNumber = currentThreadNumber;
-      currentThreadNumber = getNumberOfGaxThreads();
-      assertThat(currentThreadNumber > prevThreadNumber, is(true));
+      assertThat(getNumberOfGaxThreads("Spanner-DatabaseAdmin") > 0, is(true));
 
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
@@ -180,7 +164,7 @@ public class GapicSpannerRpcTest {
       Thread.sleep(500L);
       Runtime.getRuntime().gc();
       // The number of threads should drop to the original number of threads.
-      assertThat(getNumberOfGaxThreads(), is(equalTo(originalNumberOfThreads)));
+      assertThat(getNumberOfGaxThreads(".*"), is(equalTo(originalNumberOfThreads)));
     }
   }
 
@@ -211,7 +195,8 @@ public class GapicSpannerRpcTest {
         .build();
   }
 
-  private int getNumberOfGaxThreads() {
+  private int getNumberOfGaxThreads(String serviceName) {
+    Pattern pattern = Pattern.compile(String.format(GAX_THREAD_NAME, serviceName));
     ThreadGroup group = Thread.currentThread().getThreadGroup();
     while (group.getParent() != null) {
       group = group.getParent();
@@ -220,7 +205,7 @@ public class GapicSpannerRpcTest {
     int numberOfThreads = group.enumerate(threads);
     int res = 0;
     for (int i = 0; i < numberOfThreads; i++) {
-      if (GAX_THREAD_NAME.matcher(threads[i].getName()).matches()) {
+      if (pattern.matcher(threads[i].getName()).matches()) {
         res++;
       }
     }
