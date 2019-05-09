@@ -117,6 +117,39 @@ public interface BigQuery extends Service<BigQueryOptions> {
   }
 
   /**
+   * Fields of a BigQuery Model resource.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/models#resource">Model
+   *     Resource</a>
+   */
+  enum ModelField implements FieldSelector {
+    CREATION_TIME("creationTime"),
+    DESCRIPTION("description"),
+    ETAG("etag"),
+    EXPIRATION_TIME("expirationTime"),
+    FRIENDLY_NAME("friendlyName"),
+    LABELS("labels"),
+    LAST_MODIFIED_TIME("lastModifiedTime"),
+    LOCATION("location"),
+    MODEL_REFERENCE("modelReference"),
+    TIME_PARTITIONING("timePartitioning"),
+    TYPE("modelType");
+
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(MODEL_REFERENCE);
+
+    private final String selector;
+
+    ModelField(String selector) {
+      this.selector = selector;
+    }
+
+    @Override
+    public String getSelector() {
+      return selector;
+    }
+  }
+
+  /**
    * Fields of a BigQuery Job resource.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
@@ -212,6 +245,27 @@ public interface BigQuery extends Service<BigQueryOptions> {
   }
 
   /** Class for specifying table list options. */
+  class ModelListOption extends Option {
+
+    private static final long serialVersionUID = 8660294969063322498L;
+
+    private ModelListOption(BigQueryRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /** Returns an option to specify the maximum number of models returned per page. */
+    public static ModelListOption pageSize(long pageSize) {
+      checkArgument(pageSize >= 0);
+      return new ModelListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /** Returns an option to specify the page token from which to start listing models. */
+    public static ModelListOption pageToken(String pageToken) {
+      return new ModelListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /** Class for specifying table list options. */
   class TableListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063340498L;
@@ -250,6 +304,26 @@ public interface BigQuery extends Service<BigQueryOptions> {
     public static TableOption fields(TableField... fields) {
       return new TableOption(
           BigQueryRpc.Option.FIELDS, Helper.selector(TableField.REQUIRED_FIELDS, fields));
+    }
+  }
+
+  /** Class for specifying table get, create and update options. */
+  class ModelOption extends Option {
+
+    private static final long serialVersionUID = -1723870134095226772L;
+
+    private ModelOption(BigQueryRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the model's fields to be returned by the RPC call. If this
+     * option is not provided all model's fields are returned. {@code ModelOption.fields} can be
+     * used to specify only the fields of interest.
+     */
+    public static ModelOption fields(ModelField... fields) {
+      return new ModelOption(
+          BigQueryRpc.Option.FIELDS, Helper.selector(ModelField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -706,6 +780,29 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean delete(TableId tableId);
 
   /**
+   * Deletes the requested model.
+   *
+   * <p>Example of deleting a model.
+   *
+   * <pre>{@code
+   * String projectId = "my_project_id";
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_model_name";
+   * ModelId modelId = ModelId.of(projectId, datasetName, modelName);
+   * boolean deleted = bigquery.delete(modelId);
+   * if (deleted) {
+   *   // the model was deleted
+   * } else {
+   *   // the model was not found
+   * }
+   * }</pre>
+   *
+   * @return {@code true} if model was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
+  boolean delete(ModelId modelId);
+
+  /**
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.
@@ -766,6 +863,41 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Table update(TableInfo tableInfo, TableOption... options);
 
   /**
+   * Updates model information.
+   *
+   * <p>Example of updating a model by changing its description.
+   *
+   * <pre>{@code
+   * String datasetName = "my_dataset_name";
+   * String modelName = "my_model_name";
+   * String newDescription = "new_description";
+   * Model beforeModel = bigquery.getModel(datasetName, modelName);
+   * ModelInfo modelInfo = beforeModel.toBuilder()
+   *     .setDescription(newDescription)
+   *     .build();
+   * Model afterModel = bigquery.update(modelInfo);
+   * }</pre>
+   *
+   * <p>Example of updating a model by changing its expiration.
+   *
+   * <pre>{@code
+   * String datasetName = "my_dataset_name";
+   * String modelName = "my_model_name";
+   * Model beforeModel = bigquery.getModel(datasetName, modelName);
+   *
+   * // Set model to expire 5 days from now.
+   * long expirationMillis = DateTime.now().plusDays(5).getMillis();
+   * ModelInfo modelInfo = beforeModel.toBuilder()
+   *         .setExpirationTime(expirationMillis)
+   *         .build();
+   * Model afterModel = bigquery.update(modelInfo);
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   */
+  Model update(ModelInfo modelInfo, ModelOption... options);
+
+  /**
    * Returns the requested table or {@code null} if not found.
    *
    * <p>Example of getting a table.
@@ -796,6 +928,30 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   Table getTable(TableId tableId, TableOption... options);
+
+  /**
+   * Returns the requested model or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Model getModel(String datasetId, String modelId, ModelOption... options);
+
+  /**
+   * Returns the requested model or {@code null} if not found.
+   *
+   * <p>Example of getting a model.
+   *
+   * <pre>{@code
+   * String projectId = "my_project_id";
+   * String datasetName = "my_dataset_name";
+   * String modelName = "my_model_name";
+   * ModelId modelId = ModelId.of(projectId, datasetName, tableName);
+   * Model model = bigquery.getModel(modelId);
+   * }</pre>
+   *
+   * @throws BigQueryException upon failure
+   */
+  Model getModel(ModelId tableId, ModelOption... options);
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table: ({@link
@@ -838,6 +994,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   Page<Table> listTables(DatasetId datasetId, TableListOption... options);
+
+  /** Lists the models in the dataset. */
+  Page<Model> listModels(String datasetId, ModelListOption... options);
+
+  /** Lists the models in the dataset. */
+  Page<Model> listModels(DatasetId datasetId, ModelListOption... options);
 
   /**
    * @param tableId
