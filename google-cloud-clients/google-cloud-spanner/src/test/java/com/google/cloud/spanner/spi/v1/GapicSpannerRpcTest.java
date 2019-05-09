@@ -127,6 +127,9 @@ public class GapicSpannerRpcTest {
   @Test
   public void testCloseAllThreadsWhenClosingSpanner() throws InterruptedException {
     for (int i = 0; i < NUMBER_OF_TEST_RUNS; i++) {
+      assertThat(getNumberOfGaxThreads("Spanner"), is(equalTo(0)));
+      assertThat(getNumberOfGaxThreads("Spanner-InstanceAdmin"), is(equalTo(0)));
+      assertThat(getNumberOfGaxThreads("Spanner-DatabaseAdmin"), is(equalTo(0)));
       // Get the base number of Gax threads.
       int originalNumberOfThreads = getNumberOfGaxThreads(".*");
       // Create Spanner instance.
