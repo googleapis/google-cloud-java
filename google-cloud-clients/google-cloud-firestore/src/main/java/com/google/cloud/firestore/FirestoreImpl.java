@@ -366,7 +366,8 @@ class FirestoreImpl implements Firestore {
                               public void onSuccess(T t) {
                                 callbackResult.set(t);
                               }
-                            });
+                            },
+                            userCallbackExecutor);
                       } else {
                         callbackResult.set(callbackValue);
                       }
