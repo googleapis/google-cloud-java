@@ -188,7 +188,7 @@ public class GapicSpannerRpcTest {
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait a little to allow the threads to actually shutdown.
-      Thread.sleep(200L);
+      Thread.sleep(500L);
       assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
     }
   }
@@ -277,7 +277,7 @@ public class GapicSpannerRpcTest {
       spanner.close();
     }
     // Wait a little to allow the threads to actually shutdown.
-    Thread.sleep(200L);
+    Thread.sleep(500L);
     assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
   }
 
