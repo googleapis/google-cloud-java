@@ -513,9 +513,16 @@ public class BigtableDataClient implements AutoCloseable {
    *          .range("[START KEY]", "[END KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
-   *   // Iterator style
    *   try {
-   *     for(Row row : bigtableDataClient.readRows(query)) {
+   *     ServerStream<Row> stream = bigtableDataClient.readRows(query);
+   *     int count = 0;
+   *
+   *     // Iterator style
+   *     for (Row row : stream) {
+   *       if (++count > 10) {
+   *         stream.cancel();
+   *         break;
+   *       }
    *       // Do something with row
    *     }
    *   } catch (NotFoundException e) {
@@ -548,8 +555,17 @@ public class BigtableDataClient implements AutoCloseable {
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
    *   bigtableDataClient.readRowsAsync(query, new ResponseObserver<Row>() {
-   *     public void onStart(StreamController controller) { }
+   *     StreamController controller;
+   *     int count = 0;
+   *
+   *     public void onStart(StreamController controller) {
+   *       this.controller = controller;
+   *     }
    *     public void onResponse(Row row) {
+   *       if (++count > 10) {
+   *         controller.cancel();
+   *         return;
+   *       }
    *       // Do something with Row
    *     }
    *     public void onError(Throwable t) {
