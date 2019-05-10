@@ -233,7 +233,7 @@ public class MutationTest {
     Mutation.toProto(mutations, proto);
 
     assertThat(proto.size()).isAtLeast(1);
-    assertThat(proto.get(0)).isSameAs(existingProto);
+    assertThat(proto.get(0)).isSameInstanceAs(existingProto);
     proto.remove(0);
 
     assertThat(proto.size()).isEqualTo(5);
