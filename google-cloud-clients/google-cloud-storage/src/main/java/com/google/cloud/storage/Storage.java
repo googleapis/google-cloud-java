@@ -1722,7 +1722,7 @@ public interface Storage extends Service<StorageOptions> {
    * blobInfo's} metadata map, it will be replaced by the new value. Removing metadata can be done
    * by setting that metadata's value to {@code null}.
    *
-   * <p>Example of adding new metadata values or replacing existing ones.
+   * <p>Example of adding new metadata values or updating existing ones.
    *
    * <pre>{@code
    * String bucketName = "my_unique_bucket";
