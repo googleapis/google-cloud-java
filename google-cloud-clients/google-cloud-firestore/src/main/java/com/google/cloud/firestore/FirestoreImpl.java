@@ -352,7 +352,24 @@ class FirestoreImpl implements Firestore {
                   @Override
                   public void run() {
                     try {
-                      callbackResult.set(transactionCallback.updateCallback(transaction));
+                      T callbackValue = transactionCallback.updateCallback(transaction);
+                      if (callbackValue instanceof ApiFuture) {
+                        ApiFutures.addCallback(
+                            (ApiFuture<T>) callbackValue,
+                            new ApiFutureCallback<T>() {
+                              @Override
+                              public void onFailure(Throwable throwable) {
+                                callbackResult.setException(throwable);
+                              }
+
+                              @Override
+                              public void onSuccess(T t) {
+                                callbackResult.set(t);
+                              }
+                            });
+                      } else {
+                        callbackResult.set(callbackValue);
+                      }
                     } catch (Throwable t) {
                       callbackResult.setException(t);
                     }
