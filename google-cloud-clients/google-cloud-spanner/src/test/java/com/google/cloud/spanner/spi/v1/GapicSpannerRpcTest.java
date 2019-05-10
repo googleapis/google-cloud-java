@@ -21,8 +21,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.DatabaseClient;
@@ -51,6 +49,8 @@ import io.grpc.Server;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
@@ -119,87 +119,99 @@ public class GapicSpannerRpcTest {
   }
 
   private static final int NUMBER_OF_TEST_RUNS = 2;
-  private static final int NUM_CHANNELS = 4;
-  private static final String GAX_THREAD_NAME = "Gax-%s-[0-9]+";
-  private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-  private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
+  private static final int DEFAULT_NUM_CHANNELS = 4;
+  private static final int NUM_THREADS_PER_CHANNEL = 4;
+  private static final String SPANNER_THREAD_NAME = "Cloud-Spanner-TransportChannel";
+  private static final String THREAD_PATTERN = "%s-[0-9]+";
 
   @Test
   public void testCloseAllThreadsWhenClosingSpanner() throws InterruptedException {
     for (int i = 0; i < NUMBER_OF_TEST_RUNS; i++) {
-      assertThat(getNumberOfGaxThreads("Spanner"), is(equalTo(0)));
-      assertThat(getNumberOfGaxThreads("Spanner-InstanceAdmin"), is(equalTo(0)));
-      assertThat(getNumberOfGaxThreads("Spanner-DatabaseAdmin"), is(equalTo(0)));
-      // Get the base number of Gax threads.
-      int originalNumberOfThreads = getNumberOfGaxThreads(".*");
+      assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
       // Create Spanner instance.
       SpannerOptions options = createSpannerOptions();
       Spanner spanner = options.getService();
       // Get a database client and do a query. This should initiate threads for the Spanner service.
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
-      try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
-        while (rs.next()) {
-          // Do nothing, just consume the result set.
+      List<ResultSet> resultSets = new ArrayList<>();
+      // SpannerStub affiliates a channel with a session, so we need to use multiple sessions
+      // to ensure we also hit multiple channels.
+      for (int i2 = 0; i2 < options.getSessionPoolOptions().getMaxSessions(); i2++) {
+        ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
+        // Execute ResultSet#next() to send the query to Spanner.
+        rs.next();
+        // Delay closing the result set in order to force the use of multiple sessions.
+        // As each session is linked to one transport channel, using multiple different
+        // sessions should initialize multiple transport channels.
+        resultSets.add(rs);
+        // Check whether the number of expected threads has been reached.
+        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
+            == DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL) {
+          break;
         }
+      }
+      for (ResultSet rs : resultSets) {
+        rs.close();
       }
       // Check the number of threads after the query. Doing a request should initialize a thread
       // pool for the underlying SpannerClient.
-      assertThat(getNumberOfGaxThreads("Spanner") > 0, is(true));
+      assertThat(
+          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
+          is(equalTo(DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL)));
 
       // Then do a request to the InstanceAdmin service and check the number of threads.
       // Doing a request should initialize a thread pool for the underlying InstanceAdminClient.
-      mockGetInstanceResponse();
-      InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
-      instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
-      assertThat(getNumberOfGaxThreads("Spanner-InstanceAdmin") > 0, is(true));
+      for (int i2 = 0; i2 < DEFAULT_NUM_CHANNELS * 2; i2++) {
+        mockGetInstanceResponse();
+        InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
+        instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
+      }
+      // The number of threads should now be
+      assertThat(
+          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
+          is(equalTo(2 * DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL)));
 
       // Then do a request to the DatabaseAdmin service and check the number of threads.
       // Doing a request should initialize a thread pool for the underlying DatabaseAdminClient.
-      mockGetDatabaseResponse();
-      DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
-      databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
-      assertThat(getNumberOfGaxThreads("Spanner-DatabaseAdmin") > 0, is(true));
+      for (int i2 = 0; i2 < DEFAULT_NUM_CHANNELS * 2; i2++) {
+        mockGetDatabaseResponse();
+        DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
+        databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
+      }
+      assertThat(
+          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
+          is(equalTo(3 * DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL)));
 
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait a little to allow the threads to actually shutdown.
-      Thread.sleep(500L);
-      Runtime.getRuntime().gc();
-      // The number of threads should drop to the original number of threads.
-      assertThat(getNumberOfGaxThreads(".*"), is(equalTo(originalNumberOfThreads)));
+      Thread.sleep(200L);
+      assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
     }
   }
 
+  @SuppressWarnings("rawtypes")
   private SpannerOptions createSpannerOptions() {
     String endpoint = address.getHostString() + ":" + server.getPort();
-    @SuppressWarnings("rawtypes")
-    TransportChannelProvider channelProvider =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setChannelConfigurator(
-                new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                  @Override
-                  public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                    input.usePlaintext();
-                    return input;
-                  }
-                })
-            // Do not set an ExecutorProvider on the ChannelProvider
-            .setEndpoint(endpoint)
-            .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
-            .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
-            .setPoolSize(NUM_CHANNELS)
-            .build();
-
     return SpannerOptions.newBuilder()
         .setProjectId("[PROJECT]")
-        .setChannelProvider(channelProvider)
+        // Set a custom channel configurator to allow http instead of https.
+        .setChannelConfigurator(
+            new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+              @Override
+              public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                input.usePlaintext();
+                return input;
+              }
+            })
+        .setHost("http://" + endpoint)
         .setCredentials(NoCredentials.getInstance())
         .build();
   }
 
-  private int getNumberOfGaxThreads(String serviceName) {
-    Pattern pattern = Pattern.compile(String.format(GAX_THREAD_NAME, serviceName));
+  private int getNumberOfThreadsWithName(String serviceName) {
+    Pattern pattern = Pattern.compile(String.format(THREAD_PATTERN, serviceName));
     ThreadGroup group = Thread.currentThread().getThreadGroup();
     while (group.getParent() != null) {
       group = group.getParent();
