@@ -523,7 +523,7 @@ public class Blob extends BlobInfo {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * Map<String, String> newMetadata = new HashMap<>();
-   * newMetadata.put("keyToAdd", "value");
+   * newMetadata.put("keyToAddOrUpdate", "value");
    * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
    *     .setMetadata(newMetadata)
    *     .build());
