@@ -167,6 +167,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final int DEFAULT_TIMEOUT_SECONDS = 30 * 60;
   private static final int DEFAULT_PERIOD_SECONDS = 10;
 
+  private boolean rpcIsClosed;
   private final ManagedInstantiatingExecutorProvider executorProvider;
   private final SpannerStub spannerStub;
   private final InstanceAdminStub instanceAdminStub;
@@ -631,11 +632,17 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public void shutdown() {
+    this.rpcIsClosed = true;
     this.spannerStub.close();
     this.instanceAdminStub.close();
     this.databaseAdminStub.close();
     this.spannerWatchdog.shutdown();
     this.executorProvider.shutdown();
+  }
+
+  @Override
+  public boolean isClosed() {
+    return rpcIsClosed;
   }
 
   /**

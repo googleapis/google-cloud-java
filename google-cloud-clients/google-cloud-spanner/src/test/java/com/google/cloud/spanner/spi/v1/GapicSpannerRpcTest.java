@@ -19,9 +19,11 @@ package com.google.cloud.spanner.spi.v1;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFunction;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
@@ -189,6 +191,44 @@ public class GapicSpannerRpcTest {
       Thread.sleep(200L);
       assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
     }
+  }
+
+  @Test
+  public void testSpannerClosed() {
+    SpannerOptions options = createSpannerOptions();
+    Spanner spanner1 = options.getService();
+    Spanner spanner2 = options.getService();
+    ServiceRpc rpc1 = options.getRpc();
+    ServiceRpc rpc2 = options.getRpc();
+    // The SpannerOptions object should return the same instance.
+    assertThat(spanner1 == spanner2, is(true));
+    assertThat(rpc1 == rpc2, is(true));
+    spanner1.close();
+    // The SpannerOptions should now no longer be valid.
+    try {
+      options.getService();
+      fail("missing expected exception");
+    } catch (IllegalStateException e) {
+      // This is the expected exception.
+    }
+    // The SpannerOptions should now no longer be valid.
+    try {
+      options.getRpc();
+      fail("missing expected exception");
+    } catch (IllegalStateException e) {
+      // This is the expected exception.
+    }
+    // Creating a copy of the SpannerOptions should result in new instances.
+    options = options.toBuilder().build();
+    spanner1 = options.getService();
+    rpc1 = options.getRpc();
+    assertThat(spanner1 == spanner2, is(false));
+    assertThat(rpc1 == rpc2, is(false));
+    spanner2 = options.getService();
+    rpc2 = options.getRpc();
+    assertThat(spanner1 == spanner2, is(true));
+    assertThat(rpc1 == rpc2, is(true));
+    spanner1.close();
   }
 
   @SuppressWarnings("rawtypes")
