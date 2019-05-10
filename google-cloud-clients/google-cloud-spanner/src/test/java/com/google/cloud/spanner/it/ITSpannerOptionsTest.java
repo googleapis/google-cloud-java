@@ -136,6 +136,35 @@ public class ITSpannerOptionsTest {
     }
   }
 
+  @Test
+  public void testMultipleSpannersFromSameSpannerOptions() throws InterruptedException {
+    int baseThreadCount = getNumberOfThreadsWithName(SPANNER_THREAD_NAME);
+    SpannerOptions options = env.getTestHelper().getOptions().toBuilder().build();
+    try (Spanner spanner1 = options.getService()) {
+      // Having both in the try-with-resources block is not possible, as it is the same instance.
+      // One will be closed before the other, and the closing of the second instance would fail.
+      Spanner spanner2 = options.getService();
+      assertThat(spanner1 == spanner2, is(true));
+      DatabaseClient client1 = spanner1.getDatabaseClient(db.getId());
+      DatabaseClient client2 = spanner2.getDatabaseClient(db.getId());
+      assertThat(client1 == client2, is(true));
+      try (ResultSet rs1 =
+              client1
+                  .singleUse()
+                  .executeQuery(Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL2"));
+          ResultSet rs2 =
+              client2
+                  .singleUse()
+                  .executeQuery(Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL2")); ) {
+        while (rs1.next() && rs2.next()) {
+          // Do nothing, just consume the result sets.
+        }
+      }
+    }
+    Thread.sleep(200L);
+    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(baseThreadCount)));
+  }
+
   private int getNumberOfThreadsWithName(String serviceName) {
     Pattern pattern = Pattern.compile(String.format(THREAD_PATTERN, serviceName));
     ThreadGroup group = Thread.currentThread().getThreadGroup();

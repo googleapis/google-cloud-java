@@ -231,6 +231,56 @@ public class GapicSpannerRpcTest {
     spanner1.close();
   }
 
+  /**
+   * Tests that multiple open {@link Spanner} objects at the same time does not share any executors
+   * or worker threads, and that all of them are shutdown when the {@link Spanner} object is closed.
+   */
+  @Test
+  public void testMultipleOpenSpanners() throws InterruptedException {
+    List<Spanner> spanners = new ArrayList<>();
+    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
+    for (int openSpanners = 1; openSpanners <= 3; openSpanners++) {
+      // Create Spanner instance.
+      SpannerOptions options = createSpannerOptions();
+      Spanner spanner = options.getService();
+      spanners.add(spanner);
+      // Get a database client and do a query. This should initiate threads for the Spanner service.
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      List<ResultSet> resultSets = new ArrayList<>();
+      // SpannerStub affiliates a channel with a session, so we need to use multiple sessions
+      // to ensure we also hit multiple channels.
+      for (int sessionCount = 0;
+          sessionCount < options.getSessionPoolOptions().getMaxSessions();
+          sessionCount++) {
+        ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
+        // Execute ResultSet#next() to send the query to Spanner.
+        rs.next();
+        // Delay closing the result set in order to force the use of multiple sessions.
+        // As each session is linked to one transport channel, using multiple different
+        // sessions should initialize multiple transport channels.
+        resultSets.add(rs);
+        // Check whether the number of expected threads has been reached.
+        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
+            == DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL * openSpanners) {
+          break;
+        }
+      }
+      for (ResultSet rs : resultSets) {
+        rs.close();
+      }
+      assertThat(
+          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
+          is(equalTo(DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL * openSpanners)));
+    }
+    for (Spanner spanner : spanners) {
+      spanner.close();
+    }
+    // Wait a little to allow the threads to actually shutdown.
+    Thread.sleep(200L);
+    assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(0)));
+  }
+
   @SuppressWarnings("rawtypes")
   private SpannerOptions createSpannerOptions() {
     String endpoint = address.getHostString() + ":" + server.getPort();
