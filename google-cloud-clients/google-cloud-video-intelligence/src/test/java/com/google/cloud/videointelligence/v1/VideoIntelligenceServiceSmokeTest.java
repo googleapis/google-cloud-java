@@ -46,7 +46,7 @@ public class VideoIntelligenceServiceSmokeTest {
 
   public static void executeNoCatch() throws Exception {
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
-      String inputUri = "gs://videodemomaker/cat.mp4";
+      String inputUri = "gs://cloud-samples-data/video/cat.mp4";
       Feature featuresElement = Feature.LABEL_DETECTION;
       List<Feature> features = Arrays.asList(featuresElement);
 
