@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -359,8 +360,8 @@ public class ValueTest {
       }
       String name = "boolArray() of length " + i;
       Value v = Value.boolArray(plainIterable(data));
-      assertThat(v.isNull()).named(name).isFalse();
-      assertThat(v.getBoolArray()).named(name).containsExactly((Object[]) data).inOrder();
+      assertWithMessage(name).that(v.isNull()).isFalse();
+      assertWithMessage(name).that(v.getBoolArray()).containsExactly((Object[]) data).inOrder();
     }
   }
 
