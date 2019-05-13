@@ -19,6 +19,7 @@ package com.google.cloud.spanner.it;
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.cloud.spanner.Type.StructField;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
@@ -426,7 +427,7 @@ public class ITReadTest {
       rows.put(resultSet.getString(0), resultSet.getString(1));
     }
 
-    assertThat(rows).named("read of " + keySet).isEqualTo(expected);
+    assertWithMessage("read of " + keySet).that(rows).isEqualTo(expected);
   }
 
   private void checkRange(Source source, KeyRange range, int... expectedRows) {
