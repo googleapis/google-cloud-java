@@ -195,7 +195,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @see CreateTableRequest for available options.
-   * @see GCRules#GCRULES for available options.
+   * @see GCRules for the documentation on available garbage collection rules.
    */
   @SuppressWarnings("WeakerAccess")
   public Table createTable(CreateTableRequest request) {
@@ -239,7 +239,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @see CreateTableRequest for available options.
-   * @see GCRules#GCRULES for available options.
+   * @see GCRules for the documentation on available garbage collection rules.
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> createTableAsync(CreateTableRequest request) {
