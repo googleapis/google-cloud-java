@@ -60,6 +60,9 @@ import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
+import com.google.cloud.bigquery.Model;
+import com.google.cloud.bigquery.ModelId;
+import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -118,6 +121,7 @@ public class ITBigQueryTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -279,6 +283,9 @@ public class ITBigQueryTest {
     DatasetInfo info =
         DatasetInfo.newBuilder(DATASET).setDescription(DESCRIPTION).setLabels(LABELS).build();
     bigquery.create(info);
+    DatasetInfo info2 =
+        DatasetInfo.newBuilder(MODEL_DATASET).setDescription("java model lifecycle").build();
+    bigquery.create(info2);
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
@@ -294,6 +301,7 @@ public class ITBigQueryTest {
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
     }
     if (storage != null) {
       boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
@@ -1040,6 +1048,60 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
+  }
+
+  @Test
+  public void testModelLifecycle() throws InterruptedException {
+
+    String modelName = RemoteBigQueryHelper.generateModelName();
+
+    // Create a model using SQL.
+    String sql =
+        "CREATE MODEL `"
+            + MODEL_DATASET
+            + "."
+            + modelName
+            + "`"
+            + "OPTIONS ( "
+            + "model_type='linear_reg', "
+            + "max_iteration=1, "
+            + "learn_rate=0.4, "
+            + "learn_rate_strategy='constant' "
+            + ") AS ( "
+            + "	SELECT 'a' AS f1, 2.0 AS label "
+            + "UNION ALL "
+            + "SELECT 'b' AS f1, 3.8 AS label "
+            + ")";
+
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+    job.waitFor();
+    assertNull(job.getStatus().getError());
+
+    // Model is created.  Fetch.
+    ModelId modelId = ModelId.of(MODEL_DATASET, modelName);
+    Model model = bigquery.getModel(modelId);
+    assertNotNull(model);
+    assertEquals(model.getModelType(), "LINEAR_REGRESSION");
+
+    // Mutate metadata.
+    ModelInfo info = model.toBuilder().setDescription("TEST").build();
+    Model afterUpdate = bigquery.update(info);
+    assertEquals(afterUpdate.getDescription(), "TEST");
+
+    // Ensure model is present in listModels.
+    Page<Model> models = bigquery.listModels(MODEL_DATASET);
+    Boolean found = false;
+    for (Model m : models.getValues()) {
+      if (m.getModelId().getModel().equals(modelName)) {
+        found = true;
+        break;
+      }
+    }
+    assertTrue(found);
+
+    // Delete the model.
+    assertTrue(bigquery.delete(modelId));
   }
 
   @Test

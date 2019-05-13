@@ -108,7 +108,10 @@ public final class CloudStoragePath implements Path {
             this.bucket(),
             Storage.BlobListOption.prefix(prefix),
             // we only look at the first result, so no need for a bigger page.
-            Storage.BlobListOption.pageSize(1));
+            Storage.BlobListOption.pageSize(1),
+            fileSystem.provider().getProject() == null
+                ? null
+                : Storage.BlobListOption.userProject(fileSystem.provider().getProject()));
     for (Blob b : list.getValues()) {
       // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
       if (b.getBlobId() == null) {

@@ -42,6 +42,7 @@ public class RemoteBigQueryHelper {
 
   private static final Logger log = Logger.getLogger(RemoteBigQueryHelper.class.getName());
   private static final String DATASET_NAME_PREFIX = "gcloud_test_dataset_temp_";
+  private static final String MODEL_NAME_PREFIX = "model_";
   private final BigQueryOptions options;
   private static final int connectTimeout = 60000;
 
@@ -69,6 +70,10 @@ public class RemoteBigQueryHelper {
   /** Returns a dataset name generated using a random UUID. */
   public static String generateDatasetName() {
     return DATASET_NAME_PREFIX + UUID.randomUUID().toString().replace('-', '_');
+  }
+
+  public static String generateModelName() {
+    return MODEL_NAME_PREFIX + UUID.randomUUID().toString().replace('-', '_');
   }
 
   /**

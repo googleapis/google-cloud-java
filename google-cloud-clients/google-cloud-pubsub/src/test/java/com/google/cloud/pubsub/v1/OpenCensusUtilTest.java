@@ -56,7 +56,7 @@ public class OpenCensusUtilTest {
   // Verifies that trace contexts propagated as an attribute are set as the parent link in the
   // message receiver and that the tag context is not change (for now).
   @Test
-  public void testOpenCensusMessageReceiver() throws Exception {
+  public void testOpenCensusMessageReceiver() {
     PubsubMessage message;
     SpanContext publisherContext;
     try (Scope traceScope = OpenCensusUtil.createScopedSpan(TEST_PARENT_LINK_NAME);
@@ -143,7 +143,7 @@ public class OpenCensusUtilTest {
       Stopwatch watch = Stopwatch.createStarted();
       while (true) {
         Collection<SpanData> spanDatas = runningSpanStore.getRunningSpans(RECEIVER_FILTER);
-        if (spanDatas.size() == 1) {
+        if (spanDatas.size() == expected) {
           break;
         }
         Thread.yield();

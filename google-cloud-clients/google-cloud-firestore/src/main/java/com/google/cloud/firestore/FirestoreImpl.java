@@ -106,7 +106,10 @@ class FirestoreImpl implements Firestore {
   @Nonnull
   @Override
   public CollectionReference collection(@Nonnull String collectionPath) {
-    return new CollectionReference(this, databasePath.append(collectionPath));
+    ResourcePath path = databasePath.append(collectionPath);
+    Preconditions.checkArgument(
+        path.isCollection(), "Invalid path specified. Path should point to a collection");
+    return new CollectionReference(this, path);
   }
 
   @Nonnull
@@ -242,6 +245,16 @@ class FirestoreImpl implements Firestore {
     streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());
 
     return futureList;
+  }
+
+  @Nonnull
+  @Override
+  public Query collectionGroup(@Nonnull final String collectionId) {
+    Preconditions.checkArgument(
+        !collectionId.contains("/"),
+        String.format(
+            "Invalid collectionId '%s'. Collection IDs must not contain '/'.", collectionId));
+    return new Query(this, collectionId);
   }
 
   @Nonnull
@@ -399,6 +412,11 @@ class FirestoreImpl implements Firestore {
   /** Returns the name of the Firestore project associated with this client. */
   String getDatabaseName() {
     return databasePath.getDatabaseName().toString();
+  }
+
+  /** Returns a path to the Firestore project associated with this client. */
+  ResourcePath getResourcePath() {
+    return databasePath;
   }
 
   /** Returns the underlying RPC client. */

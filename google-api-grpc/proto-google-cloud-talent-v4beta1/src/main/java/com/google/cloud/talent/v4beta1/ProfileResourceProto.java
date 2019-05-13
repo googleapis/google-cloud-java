@@ -21,6 +21,10 @@ public final class ProfileResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_Profile_CustomAttributesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_talent_v4beta1_Resume_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_talent_v4beta1_Resume_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_talent_v4beta1_PersonName_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_PersonName_fieldAccessorTable;
@@ -90,46 +94,52 @@ public final class ProfileResourceProto {
           + "ask.proto\032\037google/protobuf/timestamp.pro"
           + "to\032\036google/protobuf/wrappers.proto\032\026goog"
           + "le/type/date.proto\032 google/type/postal_a"
-          + "ddress.proto\"\333\n\n\007Profile\022\014\n\004name\030\001 \001(\t\022\023"
+          + "ddress.proto\"\372\n\n\007Profile\022\014\n\004name\030\001 \001(\t\022\023"
           + "\n\013external_id\030\002 \001(\t\022\016\n\006source\030\003 \001(\t\022\013\n\003u"
           + "ri\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\t\022.\n\nis_hirable"
           + "\030\006 \001(\0132\032.google.protobuf.BoolValue\022/\n\013cr"
           + "eate_time\030\007 \001(\0132\032.google.protobuf.Timest"
           + "amp\022/\n\013update_time\030\010 \001(\0132\032.google.protob"
-          + "uf.Timestamp\022\024\n\014resume_hrxml\030\n \001(\t\022=\n\014pe"
-          + "rson_names\030\013 \003(\0132\'.google.cloud.talent.v"
-          + "4beta1.PersonName\0227\n\taddresses\030\014 \003(\0132$.g"
-          + "oogle.cloud.talent.v4beta1.Address\022;\n\017em"
-          + "ail_addresses\030\r \003(\0132\".google.cloud.talen"
-          + "t.v4beta1.Email\0229\n\rphone_numbers\030\016 \003(\0132\""
-          + ".google.cloud.talent.v4beta1.Phone\022?\n\rpe"
-          + "rsonal_uris\030\017 \003(\0132(.google.cloud.talent."
-          + "v4beta1.PersonalUri\022S\n\027additional_contac"
-          + "t_info\030\020 \003(\01322.google.cloud.talent.v4bet"
-          + "a1.AdditionalContactInfo\022I\n\022employment_r"
-          + "ecords\030\021 \003(\0132-.google.cloud.talent.v4bet"
-          + "a1.EmploymentRecord\022G\n\021education_records"
-          + "\030\022 \003(\0132,.google.cloud.talent.v4beta1.Edu"
-          + "cationRecord\0222\n\006skills\030\023 \003(\0132\".google.cl"
-          + "oud.talent.v4beta1.Skill\0229\n\nactivities\030\024"
-          + " \003(\0132%.google.cloud.talent.v4beta1.Activ"
-          + "ity\022>\n\014publications\030\025 \003(\0132(.google.cloud"
-          + ".talent.v4beta1.Publication\0224\n\007patents\030\026"
-          + " \003(\0132#.google.cloud.talent.v4beta1.Paten"
-          + "t\022B\n\016certifications\030\027 \003(\0132*.google.cloud"
-          + ".talent.v4beta1.Certification\022\024\n\014applica"
-          + "tions\030/ \003(\t\022\023\n\013assignments\0300 \003(\t\022U\n\021cust"
-          + "om_attributes\030\032 \003(\0132:.google.cloud.talen"
-          + "t.v4beta1.Profile.CustomAttributesEntry\022"
-          + "\021\n\tprocessed\030\033 \001(\010\022\027\n\017keyword_snippet\030\034 "
-          + "\001(\t\032e\n\025CustomAttributesEntry\022\013\n\003key\030\001 \001("
-          + "\t\022;\n\005value\030\002 \001(\0132,.google.cloud.talent.v"
-          + "4beta1.CustomAttribute:\0028\001\"\243\002\n\nPersonNam"
-          + "e\022\030\n\016formatted_name\030\001 \001(\tH\000\022W\n\017structure"
-          + "d_name\030\002 \001(\0132<.google.cloud.talent.v4bet"
-          + "a1.PersonName.PersonStructuredNameH\000\022\026\n\016"
-          + "preferred_name\030\003 \001(\t\032{\n\024PersonStructured"
-          + "Name\022\022\n\ngiven_name\030\001 \001(\t\022\026\n\016middle_initi"
+          + "uf.Timestamp\0223\n\006resume\0305 \001(\0132#.google.cl"
+          + "oud.talent.v4beta1.Resume\022=\n\014person_name"
+          + "s\030\013 \003(\0132\'.google.cloud.talent.v4beta1.Pe"
+          + "rsonName\0227\n\taddresses\030\014 \003(\0132$.google.clo"
+          + "ud.talent.v4beta1.Address\022;\n\017email_addre"
+          + "sses\030\r \003(\0132\".google.cloud.talent.v4beta1"
+          + ".Email\0229\n\rphone_numbers\030\016 \003(\0132\".google.c"
+          + "loud.talent.v4beta1.Phone\022?\n\rpersonal_ur"
+          + "is\030\017 \003(\0132(.google.cloud.talent.v4beta1.P"
+          + "ersonalUri\022S\n\027additional_contact_info\030\020 "
+          + "\003(\01322.google.cloud.talent.v4beta1.Additi"
+          + "onalContactInfo\022I\n\022employment_records\030\021 "
+          + "\003(\0132-.google.cloud.talent.v4beta1.Employ"
+          + "mentRecord\022G\n\021education_records\030\022 \003(\0132,."
+          + "google.cloud.talent.v4beta1.EducationRec"
+          + "ord\0222\n\006skills\030\023 \003(\0132\".google.cloud.talen"
+          + "t.v4beta1.Skill\0229\n\nactivities\030\024 \003(\0132%.go"
+          + "ogle.cloud.talent.v4beta1.Activity\022>\n\014pu"
+          + "blications\030\025 \003(\0132(.google.cloud.talent.v"
+          + "4beta1.Publication\0224\n\007patents\030\026 \003(\0132#.go"
+          + "ogle.cloud.talent.v4beta1.Patent\022B\n\016cert"
+          + "ifications\030\027 \003(\0132*.google.cloud.talent.v"
+          + "4beta1.Certification\022\024\n\014applications\030/ \003"
+          + "(\t\022\023\n\013assignments\0300 \003(\t\022U\n\021custom_attrib"
+          + "utes\030\032 \003(\0132:.google.cloud.talent.v4beta1"
+          + ".Profile.CustomAttributesEntry\022\021\n\tproces"
+          + "sed\030\033 \001(\010\022\027\n\017keyword_snippet\030\034 \001(\t\032e\n\025Cu"
+          + "stomAttributesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005valu"
+          + "e\030\002 \001(\0132,.google.cloud.talent.v4beta1.Cu"
+          + "stomAttribute:\0028\001\"\265\001\n\006Resume\022\031\n\021structur"
+          + "ed_resume\030\001 \001(\t\022C\n\013resume_type\030\002 \001(\0162..g"
+          + "oogle.cloud.talent.v4beta1.Resume.Resume"
+          + "Type\"K\n\nResumeType\022\033\n\027RESUME_TYPE_UNSPEC"
+          + "IFIED\020\000\022\t\n\005HRXML\020\001\022\025\n\021OTHER_RESUME_TYPE\020"
+          + "\002\"\274\002\n\nPersonName\022\030\n\016formatted_name\030\001 \001(\t"
+          + "H\000\022W\n\017structured_name\030\002 \001(\0132<.google.clo"
+          + "ud.talent.v4beta1.PersonName.PersonStruc"
+          + "turedNameH\000\022\026\n\016preferred_name\030\003 \001(\t\032\223\001\n\024"
+          + "PersonStructuredName\022\022\n\ngiven_name\030\001 \001(\t"
+          + "\022\026\n\016preferred_name\030\006 \001(\t\022\026\n\016middle_initi"
           + "al\030\002 \001(\t\022\023\n\013family_name\030\003 \001(\t\022\020\n\010suffixe"
           + "s\030\004 \003(\t\022\020\n\010prefixes\030\005 \003(\tB\r\n\013person_name"
           + "\"\331\001\n\007Address\022<\n\005usage\030\001 \001(\0162-.google.clo"
@@ -240,7 +250,7 @@ public final class ProfileResourceProto {
               "IsHirable",
               "CreateTime",
               "UpdateTime",
-              "ResumeHrxml",
+              "Resume",
               "PersonNames",
               "Addresses",
               "EmailAddresses",
@@ -268,8 +278,16 @@ public final class ProfileResourceProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_talent_v4beta1_PersonName_descriptor =
+    internal_static_google_cloud_talent_v4beta1_Resume_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_talent_v4beta1_Resume_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_talent_v4beta1_Resume_descriptor,
+            new java.lang.String[] {
+              "StructuredResume", "ResumeType",
+            });
+    internal_static_google_cloud_talent_v4beta1_PersonName_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_talent_v4beta1_PersonName_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_PersonName_descriptor,
@@ -282,10 +300,10 @@ public final class ProfileResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_PersonName_PersonStructuredName_descriptor,
             new java.lang.String[] {
-              "GivenName", "MiddleInitial", "FamilyName", "Suffixes", "Prefixes",
+              "GivenName", "PreferredName", "MiddleInitial", "FamilyName", "Suffixes", "Prefixes",
             });
     internal_static_google_cloud_talent_v4beta1_Address_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_talent_v4beta1_Address_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Address_descriptor,
@@ -293,7 +311,7 @@ public final class ProfileResourceProto {
               "Usage", "UnstructuredAddress", "StructuredAddress", "Current", "Address",
             });
     internal_static_google_cloud_talent_v4beta1_Email_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_talent_v4beta1_Email_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Email_descriptor,
@@ -301,7 +319,7 @@ public final class ProfileResourceProto {
               "Usage", "EmailAddress",
             });
     internal_static_google_cloud_talent_v4beta1_Phone_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_talent_v4beta1_Phone_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Phone_descriptor,
@@ -309,7 +327,7 @@ public final class ProfileResourceProto {
               "Usage", "Type", "Number", "WhenAvailable",
             });
     internal_static_google_cloud_talent_v4beta1_PersonalUri_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_talent_v4beta1_PersonalUri_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_PersonalUri_descriptor,
@@ -317,7 +335,7 @@ public final class ProfileResourceProto {
               "Uri",
             });
     internal_static_google_cloud_talent_v4beta1_AdditionalContactInfo_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_talent_v4beta1_AdditionalContactInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_AdditionalContactInfo_descriptor,
@@ -325,7 +343,7 @@ public final class ProfileResourceProto {
               "Usage", "Name", "ContactId",
             });
     internal_static_google_cloud_talent_v4beta1_EmploymentRecord_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_talent_v4beta1_EmploymentRecord_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_EmploymentRecord_descriptor,
@@ -345,7 +363,7 @@ public final class ProfileResourceProto {
               "EmployerNameSnippet",
             });
     internal_static_google_cloud_talent_v4beta1_EducationRecord_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_talent_v4beta1_EducationRecord_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_EducationRecord_descriptor,
@@ -364,7 +382,7 @@ public final class ProfileResourceProto {
               "Degree",
             });
     internal_static_google_cloud_talent_v4beta1_Degree_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_talent_v4beta1_Degree_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Degree_descriptor,
@@ -372,7 +390,7 @@ public final class ProfileResourceProto {
               "DegreeType", "DegreeName", "FieldsOfStudy",
             });
     internal_static_google_cloud_talent_v4beta1_Activity_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_talent_v4beta1_Activity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Activity_descriptor,
@@ -389,7 +407,7 @@ public final class ProfileResourceProto {
               "SkillsUsedSnippet",
             });
     internal_static_google_cloud_talent_v4beta1_Publication_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_talent_v4beta1_Publication_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Publication_descriptor,
@@ -405,7 +423,7 @@ public final class ProfileResourceProto {
               "Isbn",
             });
     internal_static_google_cloud_talent_v4beta1_Patent_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_talent_v4beta1_Patent_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Patent_descriptor,

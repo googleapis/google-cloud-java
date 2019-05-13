@@ -290,9 +290,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>
@@ -314,9 +316,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>
@@ -1199,9 +1203,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -1223,9 +1229,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -1247,9 +1255,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -1269,9 +1279,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -1288,9 +1300,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>

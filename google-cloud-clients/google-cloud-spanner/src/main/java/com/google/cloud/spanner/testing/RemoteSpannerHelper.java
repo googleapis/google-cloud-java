@@ -47,7 +47,7 @@ public class RemoteSpannerHelper {
   private static int dbPrefix = new Random().nextInt(Integer.MAX_VALUE);
   private final List<Database> dbs = new ArrayList<>();
 
-  private RemoteSpannerHelper(SpannerOptions options, InstanceId instanceId, Spanner client) {
+  protected RemoteSpannerHelper(SpannerOptions options, InstanceId instanceId, Spanner client) {
     this.options = options;
     this.instanceId = instanceId;
     this.client = client;

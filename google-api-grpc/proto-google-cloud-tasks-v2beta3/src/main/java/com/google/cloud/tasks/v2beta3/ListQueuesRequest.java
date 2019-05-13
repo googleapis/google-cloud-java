@@ -169,7 +169,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * field can be used as a filter and several operators as supported.
    * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
    * described in
-   * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   * [Stackdriver's Advanced Logs
+   * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "state: PAUSED".
    * Note that using filters might cause fewer queues than the
    * requested page_size to be returned.
@@ -196,7 +197,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * field can be used as a filter and several operators as supported.
    * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
    * described in
-   * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   * [Stackdriver's Advanced Logs
+   * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "state: PAUSED".
    * Note that using filters might cause fewer queues than the
    * requested page_size to be returned.
@@ -768,7 +770,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * field can be used as a filter and several operators as supported.
      * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
      * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "state: PAUSED".
      * Note that using filters might cause fewer queues than the
      * requested page_size to be returned.
@@ -795,7 +798,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * field can be used as a filter and several operators as supported.
      * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
      * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "state: PAUSED".
      * Note that using filters might cause fewer queues than the
      * requested page_size to be returned.
@@ -822,7 +826,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * field can be used as a filter and several operators as supported.
      * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
      * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "state: PAUSED".
      * Note that using filters might cause fewer queues than the
      * requested page_size to be returned.
@@ -847,7 +852,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * field can be used as a filter and several operators as supported.
      * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
      * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "state: PAUSED".
      * Note that using filters might cause fewer queues than the
      * requested page_size to be returned.
@@ -869,7 +875,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * field can be used as a filter and several operators as supported.
      * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
      * described in
-     * [Stackdriver's Advanced Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+     * [Stackdriver's Advanced Logs
+     * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "state: PAUSED".
      * Note that using filters might cause fewer queues than the
      * requested page_size to be returned.

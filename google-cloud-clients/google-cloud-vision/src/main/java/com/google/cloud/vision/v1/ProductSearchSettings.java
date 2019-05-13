@@ -53,13 +53,13 @@ import javax.annotation.Generated;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createProduct to 30 seconds:
+ * example, to set the total timeout of createProductSet to 30 seconds:
  *
  * <pre>
  * <code>
  * ProductSearchSettings.Builder productSearchSettingsBuilder =
  *     ProductSearchSettings.newBuilder();
- * productSearchSettingsBuilder.createProductSettings().getRetrySettings().toBuilder()
+ * productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ProductSearchSettings productSearchSettings = productSearchSettingsBuilder.build();
  * </code>
@@ -67,6 +67,33 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class ProductSearchSettings extends ClientSettings<ProductSearchSettings> {
+  /** Returns the object with the settings used for calls to createProductSet. */
+  public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).createProductSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listProductSets. */
+  public PagedCallSettings<
+          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
+      listProductSetsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).listProductSetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getProductSet. */
+  public UnaryCallSettings<GetProductSetRequest, ProductSet> getProductSetSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).getProductSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateProductSet. */
+  public UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).updateProductSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteProductSet. */
+  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).deleteProductSetSettings();
+  }
+
   /** Returns the object with the settings used for calls to createProduct. */
   public UnaryCallSettings<CreateProductRequest, Product> createProductSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).createProductSettings();
@@ -93,6 +120,17 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
     return ((ProductSearchStubSettings) getStubSettings()).deleteProductSettings();
   }
 
+  /** Returns the object with the settings used for calls to createReferenceImage. */
+  public UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
+      createReferenceImageSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).createReferenceImageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteReferenceImage. */
+  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).deleteReferenceImageSettings();
+  }
+
   /** Returns the object with the settings used for calls to listReferenceImages. */
   public PagedCallSettings<
           ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
@@ -103,44 +141,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
   /** Returns the object with the settings used for calls to getReferenceImage. */
   public UnaryCallSettings<GetReferenceImageRequest, ReferenceImage> getReferenceImageSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).getReferenceImageSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteReferenceImage. */
-  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).deleteReferenceImageSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createReferenceImage. */
-  public UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
-      createReferenceImageSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).createReferenceImageSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createProductSet. */
-  public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).createProductSetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listProductSets. */
-  public PagedCallSettings<
-          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
-      listProductSetsSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).listProductSetsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getProductSet. */
-  public UnaryCallSettings<GetProductSetRequest, ProductSet> getProductSetSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).getProductSetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateProductSet. */
-  public UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).updateProductSetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteProductSet. */
-  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).deleteProductSetSettings();
   }
 
   /** Returns the object with the settings used for calls to addProductToProductSet. */
@@ -274,60 +274,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createProduct. */
-    public UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings() {
-      return getStubSettingsBuilder().createProductSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listProducts. */
-    public PagedCallSettings.Builder<
-            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
-        listProductsSettings() {
-      return getStubSettingsBuilder().listProductsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getProduct. */
-    public UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings() {
-      return getStubSettingsBuilder().getProductSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateProduct. */
-    public UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings() {
-      return getStubSettingsBuilder().updateProductSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteProduct. */
-    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
-      return getStubSettingsBuilder().deleteProductSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listReferenceImages. */
-    public PagedCallSettings.Builder<
-            ListReferenceImagesRequest,
-            ListReferenceImagesResponse,
-            ListReferenceImagesPagedResponse>
-        listReferenceImagesSettings() {
-      return getStubSettingsBuilder().listReferenceImagesSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getReferenceImage. */
-    public UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
-        getReferenceImageSettings() {
-      return getStubSettingsBuilder().getReferenceImageSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
-    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
-        deleteReferenceImageSettings() {
-      return getStubSettingsBuilder().deleteReferenceImageSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createReferenceImage. */
-    public UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
-        createReferenceImageSettings() {
-      return getStubSettingsBuilder().createReferenceImageSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createProductSet. */
     public UnaryCallSettings.Builder<CreateProductSetRequest, ProductSet>
         createProductSetSettings() {
@@ -355,6 +301,60 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
     /** Returns the builder for the settings used for calls to deleteProductSet. */
     public UnaryCallSettings.Builder<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
       return getStubSettingsBuilder().deleteProductSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createProduct. */
+    public UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings() {
+      return getStubSettingsBuilder().createProductSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listProducts. */
+    public PagedCallSettings.Builder<
+            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+        listProductsSettings() {
+      return getStubSettingsBuilder().listProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProduct. */
+    public UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings() {
+      return getStubSettingsBuilder().getProductSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateProduct. */
+    public UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings() {
+      return getStubSettingsBuilder().updateProductSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProduct. */
+    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
+      return getStubSettingsBuilder().deleteProductSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createReferenceImage. */
+    public UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
+        createReferenceImageSettings() {
+      return getStubSettingsBuilder().createReferenceImageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
+    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
+        deleteReferenceImageSettings() {
+      return getStubSettingsBuilder().deleteReferenceImageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listReferenceImages. */
+    public PagedCallSettings.Builder<
+            ListReferenceImagesRequest,
+            ListReferenceImagesResponse,
+            ListReferenceImagesPagedResponse>
+        listReferenceImagesSettings() {
+      return getStubSettingsBuilder().listReferenceImagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getReferenceImage. */
+    public UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
+        getReferenceImageSettings() {
+      return getStubSettingsBuilder().getReferenceImageSettings();
     }
 
     /** Returns the builder for the settings used for calls to addProductToProductSet. */

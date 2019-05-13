@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.ColumnFamily;
-import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Objects;
@@ -38,10 +37,8 @@ import javax.annotation.Nonnull;
  */
 public final class CreateTableRequest {
   // TODO(igorbernstein): rename to requestBuilder
-  private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest =
+  private final com.google.bigtable.admin.v2.CreateTableRequest.Builder requestBuilder =
       com.google.bigtable.admin.v2.CreateTableRequest.newBuilder();
-  // TODO(igorbernstein): use the embedded TableBuilder in createTableRequest
-  private final Table.Builder tableRequest = Table.newBuilder();
 
   public static CreateTableRequest of(String tableId) {
     return new CreateTableRequest(tableId);
@@ -53,7 +50,7 @@ public final class CreateTableRequest {
    * @param tableId
    */
   private CreateTableRequest(String tableId) {
-    createTableRequest.setTableId(tableId);
+    requestBuilder.setTableId(tableId);
   }
 
   /**
@@ -63,7 +60,7 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addFamily(String familyId) {
     Preconditions.checkNotNull(familyId);
-    tableRequest.putColumnFamilies(familyId, ColumnFamily.getDefaultInstance());
+    requestBuilder.getTableBuilder().putColumnFamilies(familyId, ColumnFamily.getDefaultInstance());
     return this;
   }
 
@@ -76,8 +73,9 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addFamily(String familyId, GCRule gcRule) {
     Preconditions.checkNotNull(familyId);
-    tableRequest.putColumnFamilies(
-        familyId, ColumnFamily.newBuilder().setGcRule(gcRule.toProto()).build());
+    requestBuilder
+        .getTableBuilder()
+        .putColumnFamilies(familyId, ColumnFamily.newBuilder().setGcRule(gcRule.toProto()).build());
     return this;
   }
 
@@ -88,7 +86,7 @@ public final class CreateTableRequest {
    */
   public CreateTableRequest addSplit(ByteString key) {
     Preconditions.checkNotNull(key);
-    createTableRequest.addInitialSplitsBuilder().setKey(key);
+    requestBuilder.addInitialSplitsBuilder().setKey(key);
     return this;
   }
 
@@ -101,13 +99,12 @@ public final class CreateTableRequest {
       return false;
     }
     CreateTableRequest that = (CreateTableRequest) o;
-    return Objects.equal(createTableRequest, that.createTableRequest)
-        && Objects.equal(tableRequest, that.tableRequest);
+    return Objects.equal(requestBuilder.build(), that.requestBuilder.build());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(createTableRequest, tableRequest);
+    return Objects.hashCode(requestBuilder.build());
   }
 
   @InternalApi
@@ -116,9 +113,6 @@ public final class CreateTableRequest {
     Preconditions.checkNotNull(projectId);
     Preconditions.checkNotNull(instanceId);
 
-    return createTableRequest
-        .setParent(NameUtil.formatInstanceName(projectId, instanceId))
-        .setTable(tableRequest.build())
-        .build();
+    return requestBuilder.setParent(NameUtil.formatInstanceName(projectId, instanceId)).build();
   }
 }

@@ -193,4 +193,99 @@ public interface HttpTargetOrBuilder
    * <code>bytes body = 4;</code>
    */
   com.google.protobuf.ByteString getBody();
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
+   */
+  boolean hasOauthToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
+   */
+  com.google.cloud.scheduler.v1.OAuthToken getOauthToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
+   * will be generated and attached as an `Authorization` header in the HTTP
+   * request.
+   * This type of authorization should be used when sending requests to a GCP
+   * endpoint.
+   * </pre>
+   *
+   * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
+   */
+  com.google.cloud.scheduler.v1.OAuthTokenOrBuilder getOauthTokenOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints or Cloud Run.
+   * </pre>
+   *
+   * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
+   */
+  boolean hasOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints or Cloud Run.
+   * </pre>
+   *
+   * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
+   */
+  com.google.cloud.scheduler.v1.OidcToken getOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, an
+   * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
+   * token will be generated and attached as an `Authorization` header in the
+   * HTTP request.
+   * This type of authorization should be used when sending requests to third
+   * party endpoints or Cloud Run.
+   * </pre>
+   *
+   * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
+   */
+  com.google.cloud.scheduler.v1.OidcTokenOrBuilder getOidcTokenOrBuilder();
+
+  public com.google.cloud.scheduler.v1.HttpTarget.AuthorizationHeaderCase
+      getAuthorizationHeaderCase();
 }

@@ -923,8 +923,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void createQueue(
@@ -946,8 +947,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void updateQueue(
@@ -967,8 +969,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void deleteQueue(
@@ -1024,7 +1027,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public void resumeQueue(
@@ -1359,8 +1363,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void createQueue(
@@ -1385,8 +1390,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void updateQueue(
@@ -1409,8 +1415,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void deleteQueue(
@@ -1475,7 +1482,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public void resumeQueue(
@@ -1727,8 +1735,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.cloud.tasks.v2beta3.Queue createQueue(
@@ -1750,8 +1759,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.cloud.tasks.v2beta3.Queue updateQueue(
@@ -1771,8 +1781,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.protobuf.Empty deleteQueue(
@@ -1828,7 +1839,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public com.google.cloud.tasks.v2beta3.Queue resumeQueue(
@@ -2047,8 +2059,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
@@ -2070,8 +2083,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>
@@ -2091,8 +2105,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2148,7 +2163,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2beta3.Queue>

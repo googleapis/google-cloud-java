@@ -43,6 +43,7 @@ import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -67,8 +68,6 @@ public class PublisherImplTest {
   private FakePublisherServiceImpl testPublisherServiceImpl;
 
   private Server testServer;
-
-  class FakeException extends Exception {}
 
   @Before
   public void setUp() throws Exception {
@@ -454,7 +453,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setRequestByteThreshold((Long) null)
+              .setRequestByteThreshold(null)
               .build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
@@ -513,7 +512,7 @@ public class PublisherImplTest {
       builder.setBatchingSettings(
           Publisher.Builder.DEFAULT_BATCHING_SETTINGS
               .toBuilder()
-              .setElementCountThreshold((Long) null)
+              .setElementCountThreshold(null)
               .build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
@@ -570,6 +569,40 @@ public class PublisherImplTest {
     } catch (IllegalArgumentException expected) {
       // Expected
     }
+  }
+
+  @Test
+  public void testAwaitTermination() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setMaxAttempts(0)
+                    .build())
+            .build();
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    publisher.shutdown();
+    assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
+  }
+
+  @Test
+  public void testShutDown() throws Exception {
+    ApiFuture apiFuture = EasyMock.mock(ApiFuture.class);
+    Publisher publisher = EasyMock.mock(Publisher.class);
+    EasyMock.expect(
+            publisher.publish(
+                PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("A")).build()))
+        .andReturn(apiFuture);
+    EasyMock.expect(publisher.awaitTermination(1, TimeUnit.MINUTES)).andReturn(true);
+    publisher.shutdown();
+    EasyMock.expectLastCall().once();
+    EasyMock.replay(publisher);
+    sendTestMessage(publisher, "A");
+    publisher.shutdown();
+    assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
   }
 
   private Builder getTestPublisherBuilder() {

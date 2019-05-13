@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks</artifactId>
-  <version>0.89.0-beta</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-tasks:0.89.0-beta'
+compile 'com.google.cloud:google-cloud-tasks:1.0.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "0.89.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "1.0.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -97,4 +97,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-tasks]: https://cloud.google.com/tasks
 [tasks]: https://cloud.google.com/tasks/docs
-[tasks-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/tasks/v2beta2/package-summary.html
+[tasks-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/tasks/v2/package-summary.html

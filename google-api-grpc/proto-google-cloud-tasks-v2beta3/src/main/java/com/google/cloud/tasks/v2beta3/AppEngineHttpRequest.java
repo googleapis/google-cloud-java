@@ -10,8 +10,6 @@ package com.google.cloud.tasks.v2beta3;
  * App Engine HTTP request.
  * The message defines the HTTP request that is sent to an App Engine app when
  * the task is dispatched.
- * This proto can only be used for tasks in a queue which has
- * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] set.
  * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] requires
  * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
  * Google IAM permission for the project
@@ -801,8 +799,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * App Engine HTTP request.
    * The message defines the HTTP request that is sent to an App Engine app when
    * the task is dispatched.
-   * This proto can only be used for tasks in a queue which has
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] set.
    * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] requires
    * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
    * Google IAM permission for the project

@@ -512,17 +512,33 @@ public class Blob extends BlobInfo {
    * current blob metadata are at their latest version use the {@code metagenerationMatch} option:
    * {@code newBlob.update(BlobTargetOption.metagenerationMatch())}.
    *
-   * <p>Original metadata are merged with metadata in the provided in this {@code blob}. To replace
-   * metadata instead you first have to unset them. Unsetting metadata can be done by setting this
-   * {@code blob}'s metadata to {@code null}.
+   * <p>Original metadata are merged with metadata in the provided {@code blobInfo}. If the original
+   * metadata already contains a key specified in the provided {@code blobInfo's} metadata map, it
+   * will be replaced by the new value. Removing metadata can be done by setting that metadata's
+   * value to {@code null}.
    *
-   * <p>Example of replacing blob's metadata.
+   * <p>Example of adding new metadata values or updating existing ones.
    *
    * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
    * Map<String, String> newMetadata = new HashMap<>();
-   * newMetadata.put("key", "value");
-   * blob.toBuilder().setMetadata(null).build().update();
-   * Blob updatedBlob = blob.toBuilder().setMetadata(newMetadata).build().update();
+   * newMetadata.put("keyToAddOrUpdate", "value");
+   * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
+   *     .setMetadata(newMetadata)
+   *     .build());
+   * }</pre>
+   *
+   * <p>Example of removing metadata values.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * Map<String, String> newMetadata = new HashMap<>();
+   * newMetadata.put("keyToRemove", null);
+   * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
+   *     .setMetadata(newMetadata)
+   *     .build());
    * }</pre>
    *
    * @param options update options

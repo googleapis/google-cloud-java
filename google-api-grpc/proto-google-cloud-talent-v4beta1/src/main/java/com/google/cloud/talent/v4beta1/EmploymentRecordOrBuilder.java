@@ -14,17 +14,6 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional.
    * Start date of the employment.
-   * It can be a partial date (only year, or only year and month), but must be
-   * valid. Otherwise an error is thrown.
-   * Examples:
-   * {"year": 2017, "month": 2, "day": 28} is valid.
-   * {"year": 2020, "month": 1, "date": 31} is valid.
-   * {"year": 2018, "month": 12} is valid (partial date).
-   * {"year": 2018} is valid (partial date).
-   * {"year": 2015, "day": 21} is not valid (month is missing but day is
-   * presented).
-   * {"year": 2018, "month": 13} is not valid (invalid month).
-   * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -36,17 +25,6 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional.
    * Start date of the employment.
-   * It can be a partial date (only year, or only year and month), but must be
-   * valid. Otherwise an error is thrown.
-   * Examples:
-   * {"year": 2017, "month": 2, "day": 28} is valid.
-   * {"year": 2020, "month": 1, "date": 31} is valid.
-   * {"year": 2018, "month": 12} is valid (partial date).
-   * {"year": 2018} is valid (partial date).
-   * {"year": 2015, "day": 21} is not valid (month is missing but day is
-   * presented).
-   * {"year": 2018, "month": 13} is not valid (invalid month).
-   * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
@@ -58,17 +36,6 @@ public interface EmploymentRecordOrBuilder
    * <pre>
    * Optional.
    * Start date of the employment.
-   * It can be a partial date (only year, or only year and month), but must be
-   * valid. Otherwise an error is thrown.
-   * Examples:
-   * {"year": 2017, "month": 2, "day": 28} is valid.
-   * {"year": 2020, "month": 1, "date": 31} is valid.
-   * {"year": 2018, "month": 12} is valid (partial date).
-   * {"year": 2018} is valid (partial date).
-   * {"year": 2015, "day": 21} is not valid (month is missing but day is
-   * presented).
-   * {"year": 2018, "month": 13} is not valid (invalid month).
-   * {"year": 2017, "month": 1, "day": 32} is not valid (invalid day).
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>

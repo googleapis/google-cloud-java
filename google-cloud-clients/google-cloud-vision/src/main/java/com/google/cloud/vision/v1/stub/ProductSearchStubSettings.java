@@ -98,13 +98,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of createProduct to 30 seconds:
+ * example, to set the total timeout of createProductSet to 30 seconds:
  *
  * <pre>
  * <code>
  * ProductSearchStubSettings.Builder productSearchSettingsBuilder =
  *     ProductSearchStubSettings.newBuilder();
- * productSearchSettingsBuilder.createProductSettings().getRetrySettings().toBuilder()
+ * productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ProductSearchStubSettings productSearchSettings = productSearchSettingsBuilder.build();
  * </code>
@@ -119,21 +119,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .add("https://www.googleapis.com/auth/cloud-vision")
           .build();
 
-  private final UnaryCallSettings<CreateProductRequest, Product> createProductSettings;
-  private final PagedCallSettings<
-          ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
-      listProductsSettings;
-  private final UnaryCallSettings<GetProductRequest, Product> getProductSettings;
-  private final UnaryCallSettings<UpdateProductRequest, Product> updateProductSettings;
-  private final UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings;
-  private final PagedCallSettings<
-          ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
-      listReferenceImagesSettings;
-  private final UnaryCallSettings<GetReferenceImageRequest, ReferenceImage>
-      getReferenceImageSettings;
-  private final UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings;
-  private final UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
-      createReferenceImageSettings;
   private final UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings;
   private final PagedCallSettings<
           ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
@@ -141,6 +126,21 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   private final UnaryCallSettings<GetProductSetRequest, ProductSet> getProductSetSettings;
   private final UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings;
   private final UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings;
+  private final UnaryCallSettings<CreateProductRequest, Product> createProductSettings;
+  private final PagedCallSettings<
+          ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+      listProductsSettings;
+  private final UnaryCallSettings<GetProductRequest, Product> getProductSettings;
+  private final UnaryCallSettings<UpdateProductRequest, Product> updateProductSettings;
+  private final UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings;
+  private final UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
+      createReferenceImageSettings;
+  private final UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings;
+  private final PagedCallSettings<
+          ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
+      listReferenceImagesSettings;
+  private final UnaryCallSettings<GetReferenceImageRequest, ReferenceImage>
+      getReferenceImageSettings;
   private final UnaryCallSettings<AddProductToProductSetRequest, Empty>
       addProductToProductSetSettings;
   private final UnaryCallSettings<RemoveProductFromProductSetRequest, Empty>
@@ -154,6 +154,33 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   private final OperationCallSettings<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsOperationSettings;
+
+  /** Returns the object with the settings used for calls to createProductSet. */
+  public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
+    return createProductSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listProductSets. */
+  public PagedCallSettings<
+          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
+      listProductSetsSettings() {
+    return listProductSetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getProductSet. */
+  public UnaryCallSettings<GetProductSetRequest, ProductSet> getProductSetSettings() {
+    return getProductSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateProductSet. */
+  public UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings() {
+    return updateProductSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteProductSet. */
+  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
+    return deleteProductSetSettings;
+  }
 
   /** Returns the object with the settings used for calls to createProduct. */
   public UnaryCallSettings<CreateProductRequest, Product> createProductSettings() {
@@ -181,6 +208,17 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return deleteProductSettings;
   }
 
+  /** Returns the object with the settings used for calls to createReferenceImage. */
+  public UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
+      createReferenceImageSettings() {
+    return createReferenceImageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteReferenceImage. */
+  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
+    return deleteReferenceImageSettings;
+  }
+
   /** Returns the object with the settings used for calls to listReferenceImages. */
   public PagedCallSettings<
           ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
@@ -191,44 +229,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   /** Returns the object with the settings used for calls to getReferenceImage. */
   public UnaryCallSettings<GetReferenceImageRequest, ReferenceImage> getReferenceImageSettings() {
     return getReferenceImageSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteReferenceImage. */
-  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
-    return deleteReferenceImageSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createReferenceImage. */
-  public UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
-      createReferenceImageSettings() {
-    return createReferenceImageSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createProductSet. */
-  public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
-    return createProductSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listProductSets. */
-  public PagedCallSettings<
-          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
-      listProductSetsSettings() {
-    return listProductSetsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getProductSet. */
-  public UnaryCallSettings<GetProductSetRequest, ProductSet> getProductSetSettings() {
-    return getProductSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateProductSet. */
-  public UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings() {
-    return updateProductSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteProductSet. */
-  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
-    return deleteProductSetSettings;
   }
 
   /** Returns the object with the settings used for calls to addProductToProductSet. */
@@ -332,20 +332,20 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   protected ProductSearchStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    createProductSettings = settingsBuilder.createProductSettings().build();
-    listProductsSettings = settingsBuilder.listProductsSettings().build();
-    getProductSettings = settingsBuilder.getProductSettings().build();
-    updateProductSettings = settingsBuilder.updateProductSettings().build();
-    deleteProductSettings = settingsBuilder.deleteProductSettings().build();
-    listReferenceImagesSettings = settingsBuilder.listReferenceImagesSettings().build();
-    getReferenceImageSettings = settingsBuilder.getReferenceImageSettings().build();
-    deleteReferenceImageSettings = settingsBuilder.deleteReferenceImageSettings().build();
-    createReferenceImageSettings = settingsBuilder.createReferenceImageSettings().build();
     createProductSetSettings = settingsBuilder.createProductSetSettings().build();
     listProductSetsSettings = settingsBuilder.listProductSetsSettings().build();
     getProductSetSettings = settingsBuilder.getProductSetSettings().build();
     updateProductSetSettings = settingsBuilder.updateProductSetSettings().build();
     deleteProductSetSettings = settingsBuilder.deleteProductSetSettings().build();
+    createProductSettings = settingsBuilder.createProductSettings().build();
+    listProductsSettings = settingsBuilder.listProductsSettings().build();
+    getProductSettings = settingsBuilder.getProductSettings().build();
+    updateProductSettings = settingsBuilder.updateProductSettings().build();
+    deleteProductSettings = settingsBuilder.deleteProductSettings().build();
+    createReferenceImageSettings = settingsBuilder.createReferenceImageSettings().build();
+    deleteReferenceImageSettings = settingsBuilder.deleteReferenceImageSettings().build();
+    listReferenceImagesSettings = settingsBuilder.listReferenceImagesSettings().build();
+    getReferenceImageSettings = settingsBuilder.getReferenceImageSettings().build();
     addProductToProductSetSettings = settingsBuilder.addProductToProductSetSettings().build();
     removeProductFromProductSetSettings =
         settingsBuilder.removeProductFromProductSetSettings().build();
@@ -354,6 +354,45 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     importProductSetsOperationSettings =
         settingsBuilder.importProductSetsOperationSettings().build();
   }
+
+  private static final PagedListDescriptor<
+          ListProductSetsRequest, ListProductSetsResponse, ProductSet>
+      LIST_PRODUCT_SETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListProductSetsRequest, ListProductSetsResponse, ProductSet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProductSetsRequest injectToken(
+                ListProductSetsRequest payload, String token) {
+              return ListProductSetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProductSetsRequest injectPageSize(
+                ListProductSetsRequest payload, int pageSize) {
+              return ListProductSetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProductSetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProductSetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
+              return payload.getProductSetsList() != null
+                  ? payload.getProductSetsList()
+                  : ImmutableList.<ProductSet>of();
+            }
+          };
 
   private static final PagedListDescriptor<ListProductsRequest, ListProductsResponse, Product>
       LIST_PRODUCTS_PAGE_STR_DESC =
@@ -432,45 +471,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           };
 
   private static final PagedListDescriptor<
-          ListProductSetsRequest, ListProductSetsResponse, ProductSet>
-      LIST_PRODUCT_SETS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListProductSetsRequest, ListProductSetsResponse, ProductSet>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListProductSetsRequest injectToken(
-                ListProductSetsRequest payload, String token) {
-              return ListProductSetsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListProductSetsRequest injectPageSize(
-                ListProductSetsRequest payload, int pageSize) {
-              return ListProductSetsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListProductSetsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListProductSetsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
-              return payload.getProductSetsList() != null
-                  ? payload.getProductSetsList()
-                  : ImmutableList.<ProductSet>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
           ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
       LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -515,6 +515,23 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           };
 
   private static final PagedListResponseFactory<
+          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
+      LIST_PRODUCT_SETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListProductSetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> callable,
+                ListProductSetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProductSetsResponse> futureResponse) {
+              PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> pageContext =
+                  PageContext.create(callable, LIST_PRODUCT_SETS_PAGE_STR_DESC, request, context);
+              return ListProductSetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       LIST_PRODUCTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -553,23 +570,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
-      LIST_PRODUCT_SETS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>() {
-            @Override
-            public ApiFuture<ListProductSetsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> callable,
-                ListProductSetsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListProductSetsResponse> futureResponse) {
-              PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> pageContext =
-                  PageContext.create(callable, LIST_PRODUCT_SETS_PAGE_STR_DESC, request, context);
-              return ListProductSetsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListProductsInProductSetRequest,
           ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
@@ -598,24 +598,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   public static class Builder extends StubSettings.Builder<ProductSearchStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings;
-    private final PagedCallSettings.Builder<
-            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
-        listProductsSettings;
-    private final UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings;
-    private final UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings;
-    private final UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings;
-    private final PagedCallSettings.Builder<
-            ListReferenceImagesRequest,
-            ListReferenceImagesResponse,
-            ListReferenceImagesPagedResponse>
-        listReferenceImagesSettings;
-    private final UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
-        getReferenceImageSettings;
-    private final UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
-        deleteReferenceImageSettings;
-    private final UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
-        createReferenceImageSettings;
     private final UnaryCallSettings.Builder<CreateProductSetRequest, ProductSet>
         createProductSetSettings;
     private final PagedCallSettings.Builder<
@@ -626,6 +608,24 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
         updateProductSetSettings;
     private final UnaryCallSettings.Builder<DeleteProductSetRequest, Empty>
         deleteProductSetSettings;
+    private final UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings;
+    private final PagedCallSettings.Builder<
+            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+        listProductsSettings;
+    private final UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings;
+    private final UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings;
+    private final UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings;
+    private final UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
+        createReferenceImageSettings;
+    private final UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
+        deleteReferenceImageSettings;
+    private final PagedCallSettings.Builder<
+            ListReferenceImagesRequest,
+            ListReferenceImagesResponse,
+            ListReferenceImagesPagedResponse>
+        listReferenceImagesSettings;
+    private final UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
+        getReferenceImageSettings;
     private final UnaryCallSettings.Builder<AddProductToProductSetRequest, Empty>
         addProductToProductSetSettings;
     private final UnaryCallSettings.Builder<RemoveProductFromProductSetRequest, Empty>
@@ -682,6 +682,16 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      createProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listProductSetsSettings = PagedCallSettings.newBuilder(LIST_PRODUCT_SETS_PAGE_STR_FACT);
+
+      getProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listProductsSettings = PagedCallSettings.newBuilder(LIST_PRODUCTS_PAGE_STR_FACT);
@@ -692,24 +702,14 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
       deleteProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listReferenceImagesSettings =
           PagedCallSettings.newBuilder(LIST_REFERENCE_IMAGES_PAGE_STR_FACT);
 
       getReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listProductSetsSettings = PagedCallSettings.newBuilder(LIST_PRODUCT_SETS_PAGE_STR_FACT);
-
-      getProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      updateProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       addProductToProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -724,20 +724,20 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createProductSettings,
-              listProductsSettings,
-              getProductSettings,
-              updateProductSettings,
-              deleteProductSettings,
-              listReferenceImagesSettings,
-              getReferenceImageSettings,
-              deleteReferenceImageSettings,
-              createReferenceImageSettings,
               createProductSetSettings,
               listProductSetsSettings,
               getProductSetSettings,
               updateProductSetSettings,
               deleteProductSetSettings,
+              createProductSettings,
+              listProductsSettings,
+              getProductSettings,
+              updateProductSettings,
+              deleteProductSettings,
+              createReferenceImageSettings,
+              deleteReferenceImageSettings,
+              listReferenceImagesSettings,
+              getReferenceImageSettings,
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
               listProductsInProductSetSettings,
@@ -756,6 +756,31 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .createProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listProductSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createProductSettings()
@@ -783,13 +808,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .listReferenceImagesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getReferenceImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .createReferenceImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -798,32 +818,12 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .createReferenceImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listProductSetsSettings()
+          .listReferenceImagesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .getProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteProductSetSettings()
+          .getReferenceImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -877,20 +877,20 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     protected Builder(ProductSearchStubSettings settings) {
       super(settings);
 
-      createProductSettings = settings.createProductSettings.toBuilder();
-      listProductsSettings = settings.listProductsSettings.toBuilder();
-      getProductSettings = settings.getProductSettings.toBuilder();
-      updateProductSettings = settings.updateProductSettings.toBuilder();
-      deleteProductSettings = settings.deleteProductSettings.toBuilder();
-      listReferenceImagesSettings = settings.listReferenceImagesSettings.toBuilder();
-      getReferenceImageSettings = settings.getReferenceImageSettings.toBuilder();
-      deleteReferenceImageSettings = settings.deleteReferenceImageSettings.toBuilder();
-      createReferenceImageSettings = settings.createReferenceImageSettings.toBuilder();
       createProductSetSettings = settings.createProductSetSettings.toBuilder();
       listProductSetsSettings = settings.listProductSetsSettings.toBuilder();
       getProductSetSettings = settings.getProductSetSettings.toBuilder();
       updateProductSetSettings = settings.updateProductSetSettings.toBuilder();
       deleteProductSetSettings = settings.deleteProductSetSettings.toBuilder();
+      createProductSettings = settings.createProductSettings.toBuilder();
+      listProductsSettings = settings.listProductsSettings.toBuilder();
+      getProductSettings = settings.getProductSettings.toBuilder();
+      updateProductSettings = settings.updateProductSettings.toBuilder();
+      deleteProductSettings = settings.deleteProductSettings.toBuilder();
+      createReferenceImageSettings = settings.createReferenceImageSettings.toBuilder();
+      deleteReferenceImageSettings = settings.deleteReferenceImageSettings.toBuilder();
+      listReferenceImagesSettings = settings.listReferenceImagesSettings.toBuilder();
+      getReferenceImageSettings = settings.getReferenceImageSettings.toBuilder();
       addProductToProductSetSettings = settings.addProductToProductSetSettings.toBuilder();
       removeProductFromProductSetSettings =
           settings.removeProductFromProductSetSettings.toBuilder();
@@ -900,20 +900,20 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createProductSettings,
-              listProductsSettings,
-              getProductSettings,
-              updateProductSettings,
-              deleteProductSettings,
-              listReferenceImagesSettings,
-              getReferenceImageSettings,
-              deleteReferenceImageSettings,
-              createReferenceImageSettings,
               createProductSetSettings,
               listProductSetsSettings,
               getProductSetSettings,
               updateProductSetSettings,
               deleteProductSetSettings,
+              createProductSettings,
+              listProductsSettings,
+              getProductSettings,
+              updateProductSettings,
+              deleteProductSettings,
+              createReferenceImageSettings,
+              deleteReferenceImageSettings,
+              listReferenceImagesSettings,
+              getReferenceImageSettings,
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
               listProductsInProductSetSettings,
@@ -934,60 +934,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to createProduct. */
-    public UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings() {
-      return createProductSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listProducts. */
-    public PagedCallSettings.Builder<
-            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
-        listProductsSettings() {
-      return listProductsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getProduct. */
-    public UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings() {
-      return getProductSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateProduct. */
-    public UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings() {
-      return updateProductSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteProduct. */
-    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
-      return deleteProductSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listReferenceImages. */
-    public PagedCallSettings.Builder<
-            ListReferenceImagesRequest,
-            ListReferenceImagesResponse,
-            ListReferenceImagesPagedResponse>
-        listReferenceImagesSettings() {
-      return listReferenceImagesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getReferenceImage. */
-    public UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
-        getReferenceImageSettings() {
-      return getReferenceImageSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
-    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
-        deleteReferenceImageSettings() {
-      return deleteReferenceImageSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createReferenceImage. */
-    public UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
-        createReferenceImageSettings() {
-      return createReferenceImageSettings;
     }
 
     /** Returns the builder for the settings used for calls to createProductSet. */
@@ -1017,6 +963,60 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     /** Returns the builder for the settings used for calls to deleteProductSet. */
     public UnaryCallSettings.Builder<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
       return deleteProductSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createProduct. */
+    public UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings() {
+      return createProductSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listProducts. */
+    public PagedCallSettings.Builder<
+            ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+        listProductsSettings() {
+      return listProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProduct. */
+    public UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings() {
+      return getProductSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateProduct. */
+    public UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings() {
+      return updateProductSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProduct. */
+    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
+      return deleteProductSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createReferenceImage. */
+    public UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
+        createReferenceImageSettings() {
+      return createReferenceImageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
+    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
+        deleteReferenceImageSettings() {
+      return deleteReferenceImageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReferenceImages. */
+    public PagedCallSettings.Builder<
+            ListReferenceImagesRequest,
+            ListReferenceImagesResponse,
+            ListReferenceImagesPagedResponse>
+        listReferenceImagesSettings() {
+      return listReferenceImagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getReferenceImage. */
+    public UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
+        getReferenceImageSettings() {
+      return getReferenceImageSettings;
     }
 
     /** Returns the builder for the settings used for calls to addProductToProductSet. */

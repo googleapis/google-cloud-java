@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -68,13 +69,9 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
-/**
- * gRPC stub implementation for Cloud Bigtable Admin API.
- *
- * <p>This class is for advanced usage and reflects the underlying API directly.
- */
+/** For internal use only. */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@InternalApi
 public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>

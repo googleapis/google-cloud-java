@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -54,7 +55,7 @@ public class ValueBinderTest {
         continue;
       }
       Method binderMethod = findBinderMethod(method);
-      assertThat(binderMethod).named("Binder for " + method.toString()).isNotNull();
+      assertWithMessage("Binder for " + method.toString()).that(binderMethod).isNotNull();
 
       if (method.getName().toLowerCase().contains("struct")) {
         // Struct / Array-of-struct binding methods.

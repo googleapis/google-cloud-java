@@ -326,15 +326,42 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
-   * Specifies the fraction of operations to write to
-   * [Stackdriver Logging](https://cloud.google.com/logging/docs/).
-   * This field may contain any value between 0.0 and 1.0, inclusive.
-   * 0.0 is the default and means that no operations are logged.
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
    * </pre>
    *
-   * <code>double log_sampling_ratio = 10;</code>
+   * <code>.google.cloud.tasks.v2beta3.StackdriverLoggingConfig stackdriver_logging_config = 10;
+   * </code>
    */
-  double getLogSamplingRatio();
+  boolean hasStackdriverLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.StackdriverLoggingConfig stackdriver_logging_config = 10;
+   * </code>
+   */
+  com.google.cloud.tasks.v2beta3.StackdriverLoggingConfig getStackdriverLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for writing logs to
+   * [Stackdriver Logging](https://cloud.google.com/logging/docs/). If this
+   * field is unset, then no logs are written.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.StackdriverLoggingConfig stackdriver_logging_config = 10;
+   * </code>
+   */
+  com.google.cloud.tasks.v2beta3.StackdriverLoggingConfigOrBuilder
+      getStackdriverLoggingConfigOrBuilder();
 
   public com.google.cloud.tasks.v2beta3.Queue.QueueTypeCase getQueueTypeCase();
 }

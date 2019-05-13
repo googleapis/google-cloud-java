@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.Type.StructField;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.fail;
 import static org.junit.runners.Parameterized.Parameter;
 
@@ -352,17 +353,17 @@ public class AbstractStructReaderTypesTest {
         getterByIndex(method.getName(), columnIndex);
         fail("Expected ISE for " + method);
       } catch (IllegalStateException e) {
-        assertThat(e.getMessage()).named("Exception for " + method).contains("was " + type);
-        assertThat(e.getMessage())
-            .named("Exception for " + method)
+        assertWithMessage("Exception for " + method).that(e.getMessage()).contains("was " + type);
+        assertWithMessage("Exception for " + method)
+            .that(e.getMessage())
             .contains("Column " + columnIndex);
       }
       try {
         getterByName(method.getName(), "F1");
         fail("Expected ISE for " + method);
       } catch (IllegalStateException e) {
-        assertThat(e.getMessage()).named("Exception for " + method).contains("was " + type);
-        assertThat(e.getMessage()).named("Exception for " + method).contains("Column F1");
+        assertWithMessage("Exception for " + method).that(e.getMessage()).contains("was " + type);
+        assertWithMessage("Exception for " + method).that(e.getMessage()).contains("Column F1");
       }
     }
   }
