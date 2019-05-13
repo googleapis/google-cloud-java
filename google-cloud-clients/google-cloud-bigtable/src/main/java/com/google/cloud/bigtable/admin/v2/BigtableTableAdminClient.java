@@ -29,6 +29,7 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTable
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.GCRules;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
@@ -177,13 +178,24 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // A table with a single column family, which retains only the latest value.
    * Table table = client.createTable(
    *   CreateTableRequest.of("my-table")
-   *     .addFamily("cf2", GCRULES.maxVersions(1)
+   *     .addFamily("cf2", GCRULES.maxVersions(1))
+   * );
+   *
+   * // Another table with more complex garbage collection rules.
+   * Table table = client.createTable(
+   *   CreateTableRequest.of("my-table")
+   *     .addFamily("cf2", GCRULES.union()
+   *       .rule(GCRULES.maxAge(Duration.ofDays(30)))
+   *       .rule(GCRULES.maxVersions(5))
+   *     )
    * );
    * }</pre>
    *
    * @see CreateTableRequest for available options.
+   * @see GCRules for the documentation on available garbage collection rules.
    */
   @SuppressWarnings("WeakerAccess")
   public Table createTable(CreateTableRequest request) {
@@ -196,9 +208,19 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // A table with a single column family, which retains values up to 7 days.
    * ApiFuture<Table> tableFuture = client.createTableAsync(
    *   CreateTableRequest.of("my-table")
-   *     .addFamily("cf", GCRules.GCRULES.maxVersions(1))
+   *     .addFamily("cf", GCRULES.maxAge(Duration.ofDays(7)))
+   * );
+   *
+   * // Another table with more complex garbage collection rules.
+   * ApiFuture<Table> tableFuture = client.createTableAsync(
+   *   CreateTableRequest.of("my-table")
+   *     .addFamily("cf", GCRULES.intersection()
+   *       .rule(GCRULES.maxAge(120, TimeUnit.HOURS))
+   *       .rule(GCRULES.maxVersions(10))
+   *     )
    * );
    *
    * ApiFutures.addCallback(
@@ -217,6 +239,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @see CreateTableRequest for available options.
+   * @see GCRules for the documentation on available garbage collection rules.
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> createTableAsync(CreateTableRequest request) {
