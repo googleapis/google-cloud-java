@@ -142,7 +142,8 @@ public class Publisher {
       retrySettingsBuilder.setMaxAttempts(Integer.MAX_VALUE);
     }
     if (enableMessageOrdering) {
-      // TODO: is there a way to have the default retry settings for requests without an ordering key?
+      // TODO: is there a way to have the default retry settings for requests without an ordering
+      // key?
       retrySettingsBuilder
           .setMaxAttempts(Integer.MAX_VALUE)
           .setTotalTimeout(Duration.ofNanos(Long.MAX_VALUE));
