@@ -36,7 +36,6 @@ import javax.annotation.Nonnull;
  * </ul>
  */
 public final class CreateTableRequest {
-  // TODO(igorbernstein): rename to requestBuilder
   private final com.google.bigtable.admin.v2.CreateTableRequest.Builder requestBuilder =
       com.google.bigtable.admin.v2.CreateTableRequest.newBuilder();
 
@@ -44,20 +43,12 @@ public final class CreateTableRequest {
     return new CreateTableRequest(tableId);
   }
 
-  /**
-   * Configures table with the specified id
-   *
-   * @param tableId
-   */
+  /** Configures table with the specified id */
   private CreateTableRequest(String tableId) {
     requestBuilder.setTableId(tableId);
   }
 
-  /**
-   * Adds a new columnFamily to the configuration
-   *
-   * @param familyId
-   */
+  /** Adds a new columnFamily to the configuration */
   public CreateTableRequest addFamily(String familyId) {
     Preconditions.checkNotNull(familyId);
     requestBuilder.getTableBuilder().putColumnFamilies(familyId, ColumnFamily.getDefaultInstance());
@@ -68,8 +59,7 @@ public final class CreateTableRequest {
    * Adds a new columnFamily with {@link GCRule} to the configuration. Please note that calling this
    * method with the same familyId will overwrite the previous family.
    *
-   * @param familyId
-   * @param gcRule
+   * @see GCRule for available options.
    */
   public CreateTableRequest addFamily(String familyId, GCRule gcRule) {
     Preconditions.checkNotNull(familyId);
@@ -79,11 +69,7 @@ public final class CreateTableRequest {
     return this;
   }
 
-  /**
-   * Adds split at the specified key to the configuration
-   *
-   * @param key
-   */
+  /** Adds split at the specified key to the configuration */
   public CreateTableRequest addSplit(ByteString key) {
     Preconditions.checkNotNull(key);
     requestBuilder.addInitialSplitsBuilder().setKey(key);

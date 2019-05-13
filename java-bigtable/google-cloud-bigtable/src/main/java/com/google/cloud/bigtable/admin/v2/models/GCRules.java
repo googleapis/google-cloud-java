@@ -30,7 +30,13 @@ import org.threeten.bp.Duration;
 
 // TODO(igorbernstein2): the distinction between GcRule & GCRule is too subtle, use fully qualified
 // names for the protos.
-/** Wraps {@link GcRule} protocol buffer object and exposes a simpler Fluent DSL model */
+/**
+ * Wraps {@link GcRule} protocol buffer object and exposes a friendly API.
+ *
+ * <p>Note: Garbage collection executes opportunistically in the background, and so it's possible
+ * for reads to return a cell even if it matches the active GC expression for its family. Please use
+ * appropriate filters in your reads to exclude cells which are eligible for garbage collection.
+ */
 @BetaApi
 public final class GCRules {
   /** Factory method to create GCRules - entry point into the DSL. */
@@ -124,11 +130,7 @@ public final class GCRules {
       rulesList = new ArrayList<>();
     }
 
-    /**
-     * Adds a new GCRule
-     *
-     * @param rule
-     */
+    /** Adds a new GCRule */
     // TODO(igorbernstein2): consider renaming this to addRule
     public IntersectionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
@@ -189,11 +191,7 @@ public final class GCRules {
       rulesList = new ArrayList<>();
     }
 
-    /**
-     * Adds a new GCRule
-     *
-     * @param rule
-     */
+    /** Adds a new GCRule */
     public UnionRule rule(@Nonnull GCRule rule) {
       rulesList.add(rule);
       return this;
