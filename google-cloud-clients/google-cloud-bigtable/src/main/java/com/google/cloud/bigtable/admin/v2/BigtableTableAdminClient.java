@@ -97,7 +97,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   private final String projectId;
   private final String instanceId;
 
-  /** Constructs an instance of BigtableTableAdminClient with the given project and instance ids. */
+  /** Constructs an instance of BigtableTableAdminClient with the given project and instance IDs. */
   public static BigtableTableAdminClient create(
       @Nonnull String projectId, @Nonnull String instanceId) throws IOException {
     return create(
@@ -108,7 +108,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of BigtableTableAdminClient with the given instanceName.
+   * Constructs an instance of BigtableTableAdminClient with the given instance name.
    *
    * @deprecated Please {@link #create(String, String)}.
    */
@@ -126,7 +126,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     return create(settings.getProjectId(), settings.getInstanceId(), stub);
   }
 
-  /** Constructs an instance of BigtableTableAdminClient with the given instanceName and stub. */
+  /** Constructs an instance of BigtableTableAdminClient with the given instance name and stub. */
   public static BigtableTableAdminClient create(
       @Nonnull String projectId,
       @Nonnull String instanceId,
@@ -146,18 +146,18 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     this.stub = stub;
   }
 
-  /** Gets the project id of the instance whose tables this client manages. */
+  /** Gets the project ID of the instance whose tables this client manages. */
   public String getProjectId() {
     return projectId;
   }
 
-  /** Gets the id of the instance whose tables this client manages. */
+  /** Gets the ID of the instance whose tables this client manages. */
   public String getInstanceId() {
     return instanceId;
   }
 
   /**
-   * Gets the instanceName this client is associated with.
+   * Gets the instance name this client is associated with.
    *
    * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
    */
@@ -172,7 +172,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Creates a new table with the specified configuration
+   * Creates a new table with the specified configuration.
    *
    * <p>Sample code:
    *
@@ -191,7 +191,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Creates a new table with the specified configuration asynchronously
+   * Asynchronously creates a new table with the specified configuration.
    *
    * <p>Sample code:
    *
@@ -225,7 +225,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Creates, Updates and drops ColumnFamilies as per the request.
+   * Creates, updates and drops column families as specified in the request.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously creates, updates and drops ColumnFamilies as per the request.
+   * Asynchronously creates, updates, and drops column families as specified in the
+   * request.
    *
    * <p>Sample code:
    *
@@ -319,7 +320,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Deletes the table specified by tableId
+   * Deletes the table specified by the table ID.
    *
    * <p>Sample code:
    *
@@ -333,7 +334,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously deletes the table specified by tableId.
+   * Asynchronously deletes the table specified by the table ID.
    *
    * <p>Sample code:
    *
@@ -364,7 +365,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Checks if the table specified by the tableId exists
+   * Checks if the table specified by the table ID exists.
    *
    * <p>Sample code:
    *
@@ -379,7 +380,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously checks if the table specified by the tableId exists
+   * Asynchronously checks if the table specified by the table ID exists.
    *
    * <p>Sample code:
    *
@@ -434,7 +435,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Gets the table metadata by tableId.
+   * Gets the table metadata by table ID.
    *
    * <p>Sample code:
    *
@@ -455,7 +456,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously gets the table metadata by tableId.
+   * Asynchronously gets the table metadata by table ID.
    *
    * <p>Sample code:
    *
@@ -495,7 +496,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Lists all table ids in the instance.
+   * Lists all table IDs in the instance.
    *
    * <p>Sample code:
    *
@@ -512,7 +513,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously lists all table ids in the instance.
+   * Asynchronously lists all table IDs in the instance.
    *
    * <p>Sample code:
    *
@@ -547,7 +548,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
     // paginated responses while maintaining the wrapper facade.
 
-    // Fetch the first page.
+    // Fetches the first page.
     ApiFuture<ListTablesPage> firstPageFuture =
         ApiFutures.transform(
             stub.listTablesPagedCallable().futureCall(request),
@@ -559,7 +560,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
             },
             MoreExecutors.directExecutor());
 
-    // Fetch the rest of the pages by chaining the futures.
+    // Fetches the rest of the pages by chaining the futures.
     ApiFuture<List<com.google.bigtable.admin.v2.Table>> allProtos =
         ApiFutures.transformAsync(
             firstPageFuture,
@@ -584,7 +585,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
             },
             MoreExecutors.directExecutor());
 
-    // Wrap all of the accumulated protos.
+    // Wraps all of the accumulated protos.
     return ApiFutures.transform(
         allProtos,
         new ApiFunction<List<com.google.bigtable.admin.v2.Table>, List<String>>() {
@@ -601,7 +602,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Drops rows by the specified key prefix and tableId
+   * Drops rows by the specified row key prefix and table ID.
    *
    * <p>Please note that this method is considered part of the admin API and is rate limited.
    *
@@ -617,7 +618,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Drops rows by the specified key prefix and tableId asynchronously
+   * Asynchronously drops rows by the specified row key prefix and table ID.
    *
    * <p>Please note that this method is considered part of the admin API and is rate limited.
    *
@@ -647,7 +648,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Drops rows by the specified key prefix and tableId
+   * Drops rows by the specified row key prefix and table ID.
    *
    * <p>Please note that this method is considered part of the admin API and is rate limited.
    *
@@ -663,7 +664,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Drops rows by the specified key prefix and tableId asynchronously
+   * Asynchronously drops rows by the specified row key prefix and table ID.
    *
    * <p>Please note that this method is considered part of the admin API and is rate limited.
    *
@@ -699,7 +700,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Drops all data in the table
+   * Drops all data in the table.
    *
    * <p>Sample code:
    *
@@ -713,7 +714,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchornously drops all data in the table.
+   * Asynchronously drops all data in the table.
    *
    * <p>Sample code:
    *
@@ -747,8 +748,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Blocks until replication has caught up to the point this method was called. This allows callers
-   * to make sure that their mutations have been replicated across all of their clusters.
+   * Blocks the current thread until replication has caught up to the point when this method was
+   * called. This allows callers to make sure that their mutations have been replicated across all
+   * of their clusters.
    *
    * <p>Sample code
    *
@@ -769,8 +771,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Returns a future that is resolved when replication has caught up to the point this method was
-   * called. This allows callers to make sure that their mutations have been replicated across all
+   * Returns a future that is resolved when replication has caught up to the point when this method
+   * was called. This allows callers to make sure that their mutations have been replicated across all
    * of their clusters.
    *
    * <p>Sample code:
@@ -796,7 +798,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> awaitReplicationAsync(final String tableId) {
-    // TODO(igorbernstein2): remove usage of trypesafe names
+    // TODO(igorbernstein2): remove usage of typesafe names
     com.google.bigtable.admin.v2.TableName tableName =
         com.google.bigtable.admin.v2.TableName.of(projectId, instanceId, tableId);
     return stub.awaitReplicationCallable().futureCall(tableName);
