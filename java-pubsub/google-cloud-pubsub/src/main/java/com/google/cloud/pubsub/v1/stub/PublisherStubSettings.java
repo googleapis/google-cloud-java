@@ -490,6 +490,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.ABORTED,
                   StatusCode.Code.CANCELLED,
+                  StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.RESOURCE_EXHAUSTED,
                   StatusCode.Code.UNAVAILABLE,
