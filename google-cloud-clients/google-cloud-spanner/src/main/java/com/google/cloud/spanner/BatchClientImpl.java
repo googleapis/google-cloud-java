@@ -46,7 +46,7 @@ public class BatchClientImpl implements BatchClient {
 
   @Override
   public BatchReadOnlyTransaction batchReadOnlyTransaction(TimestampBound bound) {
-    SessionImpl session = (SessionImpl) spanner.createSession(db);
+    SessionImpl session = spanner.createSession(db);
     return new BatchReadOnlyTransactionImpl(spanner, session, checkNotNull(bound));
   }
 

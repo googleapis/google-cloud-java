@@ -29,6 +29,7 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableMap;
@@ -203,8 +204,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return defaultPrefetchChunks;
   }
 
-  // TODO(user): change this to return SessionImpl and modify all corresponding references.
-  Session createSession(final DatabaseId db) throws SpannerException {
+  SessionImpl createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
         optionMap(SessionOption.channelHint(random.nextLong()));
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
@@ -250,11 +250,16 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         return dbClients.get(db);
       } else {
         SessionPool pool = SessionPool.createPool(getOptions(), db, SpannerImpl.this);
-        DatabaseClientImpl dbClient = new DatabaseClientImpl(pool);
+        DatabaseClientImpl dbClient = createDatabaseClient(pool);
         dbClients.put(db, dbClient);
         return dbClient;
       }
     }
+  }
+
+  @VisibleForTesting
+  DatabaseClientImpl createDatabaseClient(SessionPool pool) {
+    return new DatabaseClientImpl(pool);
   }
 
   @Override
