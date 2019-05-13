@@ -55,7 +55,8 @@ public class KnowledgeBaseManagementIT {
 
   private static List<String> TEXTS = ImmutableList
       .of("How do I sign up?", "Is my data redundant?", "Where can I find pricing information?",
-          "Where is my data stored?", "What are my support options?");
+          "Where is my data stored?", "What are my support options?",
+          "How can I maximize the availability of my data?");
 
   @Before
   public void setUp() {
@@ -167,11 +168,11 @@ public class KnowledgeBaseManagementIT {
     for (String text : TEXTS) {
       KnowledgeAnswers knowledgeAnswers = allAnswers.get(text);
       if (knowledgeAnswers.getAnswersCount() > 0) {
-        answersFound++;
         Answer answer = knowledgeAnswers.getAnswers(0);
-        assertEquals(text, answer.getFaqQuestion());
-        assertEquals(document.getName(), answer.getSource());
-        assertThat(answer.getAnswer()).contains("Cloud Storage");
+        if (text.equals(answer.getFaqQuestion()) && document.getName().equals(answer.getSource())
+            && answer.getAnswer().contains("Cloud Storage")) {
+          answersFound++;
+        }
       }
     }
     // To make the test less flaky, check that half of the texts got a result.

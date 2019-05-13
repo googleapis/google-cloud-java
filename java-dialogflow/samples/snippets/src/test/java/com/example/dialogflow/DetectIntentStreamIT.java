@@ -16,14 +16,12 @@
 
 package com.example.dialogflow;
 
-import static org.junit.Assert.assertTrue;
-
-import com.google.cloud.dialogflow.v2.StreamingDetectIntentResponse;
+import static org.junit.Assert.assertThat;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.util.List;
-
+import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,32 +35,35 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentStreamIT {
 
+  private ByteArrayOutputStream bout;
+
   private static String audioFilePath = "resources/book_a_room.wav";
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String SESSION_ID = "fake_session_for_testing";
-  private static String LANGUAGE_CODE = "en-US";
 
   @Before
   public void setUp() {
-    System.setOut(new PrintStream(new ByteArrayOutputStream()));
+    bout = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(bout));
   }
 
   @After
   public void tearDown() {
     System.setOut(null);
+    bout.reset();
   }
 
   @Test
-  public void testStreamingDetectIntentCallable() throws Throwable {
-    List<StreamingDetectIntentResponse> response = DetectIntentStream.detectIntentStream(
-        PROJECT_ID, audioFilePath, SESSION_ID, LANGUAGE_CODE);
-    assertTrue(response.size() > 0);
-    assertTrue(response.stream().anyMatch(i -> i
-        .getQueryResult()
-        .getIntent()
-        .getDisplayName().equals("room.reservation")));
-    assertTrue(response.stream().anyMatch(i -> i
-        .getRecognitionResult()
-        .getTranscript().contains("book")));
+  public void testStreamingDetectIntentCallable() {
+    DetectIntentStream.detectIntentStream(
+        PROJECT_ID, audioFilePath, SESSION_ID);
+
+    String output = bout.toString();
+
+    assertThat(output, CoreMatchers.containsString(
+        "Intent Display Name: room.reservation"));
+
+    assertThat(output, CoreMatchers.containsString(
+        "book"));
   }
 }
