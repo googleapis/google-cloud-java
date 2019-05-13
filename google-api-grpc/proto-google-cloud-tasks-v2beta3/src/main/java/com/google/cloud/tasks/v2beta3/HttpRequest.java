@@ -576,7 +576,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
    * This type of authorization should be used when sending requests to third
-   * party endpoints.
+   * party endpoints or Cloud Run.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -593,7 +593,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
    * This type of authorization should be used when sending requests to third
-   * party endpoints.
+   * party endpoints or Cloud Run.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -613,7 +613,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
    * This type of authorization should be used when sending requests to third
-   * party endpoints.
+   * party endpoints or Cloud Run.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -1939,7 +1939,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -1956,7 +1956,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -1983,7 +1983,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2010,7 +2010,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2034,7 +2034,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2071,7 +2071,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2101,7 +2101,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2118,7 +2118,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
@@ -2142,7 +2142,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
      * This type of authorization should be used when sending requests to third
-     * party endpoints.
+     * party endpoints or Cloud Run.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.OidcToken oidc_token = 6;</code>
