@@ -179,8 +179,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the file. Currently only "application/pdf" and "image/tiff"
-   * are supported. Wildcards are not supported.
+   * The type of the file. Currently only "application/pdf", "image/tiff" and
+   * "image/gif" are supported. Wildcards are not supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -200,8 +200,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the file. Currently only "application/pdf" and "image/tiff"
-   * are supported. Wildcards are not supported.
+   * The type of the file. Currently only "application/pdf", "image/tiff" and
+   * "image/gif" are supported. Wildcards are not supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -821,8 +821,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -842,8 +842,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -863,8 +863,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -882,8 +882,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -898,8 +898,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
