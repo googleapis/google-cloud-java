@@ -560,9 +560,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request that is sent to the task's target.
-   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-   * feature. If you haven't already joined, you can [use this form to sign
-   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
    * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
    * </pre>
    *
@@ -576,9 +573,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request that is sent to the task's target.
-   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-   * feature. If you haven't already joined, you can [use this form to sign
-   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
    * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
    * </pre>
    *
@@ -595,9 +589,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request that is sent to the task's target.
-   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-   * feature. If you haven't already joined, you can [use this form to sign
-   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
    * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
    * </pre>
    *
@@ -1951,9 +1942,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -1967,9 +1955,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -1993,9 +1978,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -2019,9 +2001,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -2043,9 +2022,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -2078,9 +2054,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -2107,9 +2080,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -2123,9 +2093,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *
@@ -2146,9 +2113,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request that is sent to the task's target.
-     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
-     * feature. If you haven't already joined, you can [use this form to sign
-     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform).
      * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
      * </pre>
      *

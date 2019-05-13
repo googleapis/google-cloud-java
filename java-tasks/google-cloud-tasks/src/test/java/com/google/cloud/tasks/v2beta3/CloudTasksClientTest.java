@@ -138,9 +138,7 @@ public class CloudTasksClientTest {
   @SuppressWarnings("all")
   public void getQueueTest() {
     QueueName name2 = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    double logSamplingRatio = -1.25350193E8;
-    Queue expectedResponse =
-        Queue.newBuilder().setName(name2.toString()).setLogSamplingRatio(logSamplingRatio).build();
+    Queue expectedResponse = Queue.newBuilder().setName(name2.toString()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
     QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
@@ -179,9 +177,7 @@ public class CloudTasksClientTest {
   @SuppressWarnings("all")
   public void createQueueTest() {
     QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    double logSamplingRatio = -1.25350193E8;
-    Queue expectedResponse =
-        Queue.newBuilder().setName(name.toString()).setLogSamplingRatio(logSamplingRatio).build();
+    Queue expectedResponse = Queue.newBuilder().setName(name.toString()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -223,9 +219,7 @@ public class CloudTasksClientTest {
   @SuppressWarnings("all")
   public void updateQueueTest() {
     QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    double logSamplingRatio = -1.25350193E8;
-    Queue expectedResponse =
-        Queue.newBuilder().setName(name.toString()).setLogSamplingRatio(logSamplingRatio).build();
+    Queue expectedResponse = Queue.newBuilder().setName(name.toString()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
     Queue queue = Queue.newBuilder().build();
@@ -304,9 +298,7 @@ public class CloudTasksClientTest {
   @SuppressWarnings("all")
   public void purgeQueueTest() {
     QueueName name2 = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    double logSamplingRatio = -1.25350193E8;
-    Queue expectedResponse =
-        Queue.newBuilder().setName(name2.toString()).setLogSamplingRatio(logSamplingRatio).build();
+    Queue expectedResponse = Queue.newBuilder().setName(name2.toString()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
     QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
@@ -345,9 +337,7 @@ public class CloudTasksClientTest {
   @SuppressWarnings("all")
   public void pauseQueueTest() {
     QueueName name2 = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    double logSamplingRatio = -1.25350193E8;
-    Queue expectedResponse =
-        Queue.newBuilder().setName(name2.toString()).setLogSamplingRatio(logSamplingRatio).build();
+    Queue expectedResponse = Queue.newBuilder().setName(name2.toString()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
     QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
@@ -386,9 +376,7 @@ public class CloudTasksClientTest {
   @SuppressWarnings("all")
   public void resumeQueueTest() {
     QueueName name2 = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-    double logSamplingRatio = -1.25350193E8;
-    Queue expectedResponse =
-        Queue.newBuilder().setName(name2.toString()).setLogSamplingRatio(logSamplingRatio).build();
+    Queue expectedResponse = Queue.newBuilder().setName(name2.toString()).build();
     mockCloudTasks.addResponse(expectedResponse);
 
     QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
