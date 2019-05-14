@@ -110,6 +110,40 @@ public interface StreamingRecognitionResultOrBuilder
    *
    *
    * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  boolean hasResultEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  com.google.protobuf.Duration getResultEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * For multi-channel audio, this is the channel number corresponding to the
    * recognized result for the audio from that channel.
    * For audio_channel_count = N, its output values can range from '1' to 'N'.
@@ -118,4 +152,31 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>int32 channel_tag = 5;</code>
    */
   int getChannelTag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+   * language in this result. This language code was detected to have the most
+   * likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 6;</code>
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
+   * language in this result. This language code was detected to have the most
+   * likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 6;</code>
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }
