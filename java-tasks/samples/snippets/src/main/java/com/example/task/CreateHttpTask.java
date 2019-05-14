@@ -39,7 +39,7 @@ public class CreateHttpTask {
       // projectId = "my-project-id";
       // queueName = "my-queue";
       // location = "us-central1";
-      // url = "https://example.com/hellohandler";
+      // url = "https://example.com/taskhandler";
       String payload = "hello";
 
       // Construct the fully qualified queue name.

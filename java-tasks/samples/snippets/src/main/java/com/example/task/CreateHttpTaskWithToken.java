@@ -40,7 +40,7 @@ public class CreateHttpTaskWithToken {
       // projectId = "my-project-id";
       // queueName = "my-appengine-queue";
       // location = "us-central1";
-      // url = "https://example.com/tasks/create";
+      // url = "https://example.com/taskhandler";
       String payload = "hello";
 
       // Construct the fully qualified queue name.
