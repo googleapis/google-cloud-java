@@ -686,7 +686,7 @@ public class ProfileServiceClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setRequestMetadata(requestMetadata)
    *     .build();
-   *   for (HistogramQueryResult element : profileServiceClient.searchProfiles(request).iterateAll()) {
+   *   for (SummarizedProfile element : profileServiceClient.searchProfiles(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -721,7 +721,7 @@ public class ProfileServiceClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;SearchProfilesPagedResponse&gt; future = profileServiceClient.searchProfilesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (HistogramQueryResult element : future.get().iterateAll()) {
+   *   for (SummarizedProfile element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -754,7 +754,7 @@ public class ProfileServiceClient implements BackgroundResource {
    *     .build();
    *   while (true) {
    *     SearchProfilesResponse response = profileServiceClient.searchProfilesCallable().call(request);
-   *     for (HistogramQueryResult element : response.getHistogramQueryResultsList()) {
+   *     for (SummarizedProfile element : response.getSummarizedProfilesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -886,12 +886,12 @@ public class ProfileServiceClient implements BackgroundResource {
       extends AbstractPagedListResponse<
           SearchProfilesRequest,
           SearchProfilesResponse,
-          HistogramQueryResult,
+          SummarizedProfile,
           SearchProfilesPage,
           SearchProfilesFixedSizeCollection> {
 
     public static ApiFuture<SearchProfilesPagedResponse> createAsync(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
         ApiFuture<SearchProfilesResponse> futureResponse) {
       ApiFuture<SearchProfilesPage> futurePage =
           SearchProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -913,10 +913,10 @@ public class ProfileServiceClient implements BackgroundResource {
 
   public static class SearchProfilesPage
       extends AbstractPage<
-          SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult, SearchProfilesPage> {
+          SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile, SearchProfilesPage> {
 
     private SearchProfilesPage(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
         SearchProfilesResponse response) {
       super(context, response);
     }
@@ -927,14 +927,14 @@ public class ProfileServiceClient implements BackgroundResource {
 
     @Override
     protected SearchProfilesPage createPage(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
         SearchProfilesResponse response) {
       return new SearchProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchProfilesPage> createPageAsync(
-        PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult> context,
+        PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile> context,
         ApiFuture<SearchProfilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -944,7 +944,7 @@ public class ProfileServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           SearchProfilesRequest,
           SearchProfilesResponse,
-          HistogramQueryResult,
+          SummarizedProfile,
           SearchProfilesPage,
           SearchProfilesFixedSizeCollection> {
 
