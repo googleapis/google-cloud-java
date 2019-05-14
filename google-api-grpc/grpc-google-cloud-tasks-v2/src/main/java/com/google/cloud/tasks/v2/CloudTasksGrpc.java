@@ -884,8 +884,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void createQueue(
@@ -907,8 +908,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void updateQueue(
@@ -928,8 +930,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void deleteQueue(
@@ -985,7 +988,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public void resumeQueue(
@@ -1090,8 +1094,7 @@ public final class CloudTasksGrpc {
      * <pre>
      * Creates a task and adds it to a queue.
      * Tasks cannot be updated after creation; there is no UpdateTask command.
-     * * For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task size is
-     *   100KB.
+     * * The maximum task size is 100KB.
      * </pre>
      */
     public void createTask(
@@ -1318,8 +1321,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void createQueue(
@@ -1344,8 +1348,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void updateQueue(
@@ -1368,8 +1373,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public void deleteQueue(
@@ -1434,7 +1440,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public void resumeQueue(
@@ -1557,8 +1564,7 @@ public final class CloudTasksGrpc {
      * <pre>
      * Creates a task and adds it to a queue.
      * Tasks cannot be updated after creation; there is no UpdateTask command.
-     * * For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task size is
-     *   100KB.
+     * * The maximum task size is 100KB.
      * </pre>
      */
     public void createTask(
@@ -1685,8 +1691,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue createQueue(
@@ -1708,8 +1715,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue updateQueue(
@@ -1729,8 +1737,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.protobuf.Empty deleteQueue(
@@ -1786,7 +1795,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public com.google.cloud.tasks.v2.Queue resumeQueue(
@@ -1886,8 +1896,7 @@ public final class CloudTasksGrpc {
      * <pre>
      * Creates a task and adds it to a queue.
      * Tasks cannot be updated after creation; there is no UpdateTask command.
-     * * For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task size is
-     *   100KB.
+     * * The maximum task size is 100KB.
      * </pre>
      */
     public com.google.cloud.tasks.v2.Task createTask(
@@ -2005,8 +2014,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.Queue>
@@ -2028,8 +2038,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.Queue>
@@ -2049,8 +2060,9 @@ public final class CloudTasksGrpc {
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
-     * [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml)
-     * before using this method.
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2106,7 +2118,8 @@ public final class CloudTasksGrpc {
      * WARNING: Resuming many high-QPS queues at the same time can
      * lead to target overloading. If you are resuming high-QPS
      * queues, follow the 500/50/5 pattern described in
-     * [Managing Cloud Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.Queue>
@@ -2212,8 +2225,7 @@ public final class CloudTasksGrpc {
      * <pre>
      * Creates a task and adds it to a queue.
      * Tasks cannot be updated after creation; there is no UpdateTask command.
-     * * For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task size is
-     *   100KB.
+     * * The maximum task size is 100KB.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.Task>
