@@ -1783,8 +1783,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task
-   * size is 100KB.
+   * <p>&#42; The maximum task size is 100KB.
    *
    * <p>Sample code:
    *
@@ -1841,8 +1840,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task
-   * size is 100KB.
+   * <p>&#42; The maximum task size is 100KB.
    *
    * <p>Sample code:
    *
@@ -1896,8 +1894,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task
-   * size is 100KB.
+   * <p>&#42; The maximum task size is 100KB.
    *
    * <p>Sample code:
    *
@@ -1926,8 +1923,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Tasks cannot be updated after creation; there is no UpdateTask command.
    *
-   * <p>&#42; For [App Engine queues][google.cloud.tasks.v2.AppEngineHttpQueue], the maximum task
-   * size is 100KB.
+   * <p>&#42; The maximum task size is 100KB.
    *
    * <p>Sample code:
    *
