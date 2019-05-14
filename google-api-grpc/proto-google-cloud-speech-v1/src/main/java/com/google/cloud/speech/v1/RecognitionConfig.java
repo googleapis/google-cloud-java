@@ -105,6 +105,22 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
               enableWordTimeOffsets_ = input.readBool();
               break;
             }
+          case 74:
+            {
+              com.google.cloud.speech.v1.RecognitionMetadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1.RecognitionMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 88:
             {
               enableAutomaticPunctuation_ = input.readBool();
@@ -780,6 +796,47 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return enableAutomaticPunctuation_;
   }
 
+  public static final int METADATA_FIELD_NUMBER = 9;
+  private com.google.cloud.speech.v1.RecognitionMetadata metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Metadata regarding this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+   */
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Metadata regarding this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+   */
+  public com.google.cloud.speech.v1.RecognitionMetadata getMetadata() {
+    return metadata_ == null
+        ? com.google.cloud.speech.v1.RecognitionMetadata.getDefaultInstance()
+        : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Metadata regarding this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+   */
+  public com.google.cloud.speech.v1.RecognitionMetadataOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   public static final int MODEL_FIELD_NUMBER = 13;
   private volatile java.lang.Object model_;
   /**
@@ -952,6 +1009,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableWordTimeOffsets_ != false) {
       output.writeBool(8, enableWordTimeOffsets_);
     }
+    if (metadata_ != null) {
+      output.writeMessage(9, getMetadata());
+    }
     if (enableAutomaticPunctuation_ != false) {
       output.writeBool(11, enableAutomaticPunctuation_);
     }
@@ -999,6 +1059,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableWordTimeOffsets_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableWordTimeOffsets_);
     }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMetadata());
+    }
     if (enableAutomaticPunctuation_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableAutomaticPunctuation_);
@@ -1041,6 +1104,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
     if (getEnableWordTimeOffsets() != other.getEnableWordTimeOffsets()) return false;
     if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!getModel().equals(other.getModel())) return false;
     if (getUseEnhanced() != other.getUseEnhanced()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1078,6 +1145,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordTimeOffsets());
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
     hash = (37 * hash) + USE_ENHANCED_FIELD_NUMBER;
@@ -1254,6 +1325,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       enableAutomaticPunctuation_ = false;
 
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       model_ = "";
 
       useEnhanced_ = false;
@@ -1305,6 +1382,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
       result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
       result.model_ = model_;
       result.useEnhanced_ = useEnhanced_;
       result.bitField0_ = to_bitField0_;
@@ -1411,6 +1493,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
@@ -2464,6 +2549,188 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.speech.v1.RecognitionMetadata metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1.RecognitionMetadata,
+            com.google.cloud.speech.v1.RecognitionMetadata.Builder,
+            com.google.cloud.speech.v1.RecognitionMetadataOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public com.google.cloud.speech.v1.RecognitionMetadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null
+            ? com.google.cloud.speech.v1.RecognitionMetadata.getDefaultInstance()
+            : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public Builder setMetadata(com.google.cloud.speech.v1.RecognitionMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public Builder setMetadata(
+        com.google.cloud.speech.v1.RecognitionMetadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public Builder mergeMetadata(com.google.cloud.speech.v1.RecognitionMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+              com.google.cloud.speech.v1.RecognitionMetadata.newBuilder(metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public com.google.cloud.speech.v1.RecognitionMetadata.Builder getMetadataBuilder() {
+
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    public com.google.cloud.speech.v1.RecognitionMetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null
+            ? com.google.cloud.speech.v1.RecognitionMetadata.getDefaultInstance()
+            : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* Metadata regarding this request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1.RecognitionMetadata,
+            com.google.cloud.speech.v1.RecognitionMetadata.Builder,
+            com.google.cloud.speech.v1.RecognitionMetadataOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1.RecognitionMetadata,
+                com.google.cloud.speech.v1.RecognitionMetadata.Builder,
+                com.google.cloud.speech.v1.RecognitionMetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     private java.lang.Object model_ = "";
