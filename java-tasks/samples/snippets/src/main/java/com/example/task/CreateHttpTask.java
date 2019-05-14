@@ -37,9 +37,9 @@ public class CreateHttpTask {
     try (CloudTasksClient client = CloudTasksClient.create()) {
       // Variables provided by the system variables.
       // projectId = "my-project-id";
-      // queueName = "my-appengine-queue";
+      // queueName = "my-queue";
       // location = "us-central1";
-      // url = "https://<project-id>.appspot.com/tasks/create";
+      // url = "https://example.com/hellohandler";
       String payload = "hello";
 
       // Construct the fully qualified queue name.
