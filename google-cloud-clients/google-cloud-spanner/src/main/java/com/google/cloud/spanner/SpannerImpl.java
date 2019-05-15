@@ -244,6 +244,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
+  @Override
+  public boolean isClosed() {
+    return spannerIsClosed;
+  }
+
   /**
    * Checks that the current context is still valid, throwing a CANCELLED or DEADLINE_EXCEEDED error
    * if not.

@@ -22,6 +22,8 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
@@ -121,5 +123,111 @@ public class SpannerImplTest {
     } catch (IllegalStateException e) {
       assertThat(e.getMessage()).contains("Cloud Spanner client has been closed");
     }
+  }
+
+  @Test
+  public void exceptionIsTranslated() {
+    try {
+      SpannerImpl.runWithRetries(
+          new Callable<Object>() {
+            @Override
+            public Void call() throws Exception {
+              throw new Exception("Should be translated to SpannerException");
+            }
+          });
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
+      assertThat(e.getMessage().contains("Unexpected exception thrown"));
+    }
+  }
+
+  @Test
+  public void sslHandshakeExceptionIsNotRetryable() {
+    // Verify that a SpannerException with code UNAVAILABLE and cause SSLHandshakeException is not
+    // retryable.
+    boolean gotExpectedException = false;
+    try {
+      SpannerImpl.runWithRetries(
+          new Callable<Object>() {
+            @Override
+            public Void call() throws Exception {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE,
+                  "This exception should not be retryable",
+                  new SSLHandshakeException("some SSL handshake exception"));
+            }
+          });
+    } catch (SpannerException e) {
+      gotExpectedException = true;
+      assertThat(e.isRetryable(), is(false));
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNAVAILABLE);
+      assertThat(e.getMessage().contains("This exception should not be retryable"));
+    }
+    assertThat(gotExpectedException, is(true));
+
+    // Verify that any other SpannerException with code UNAVAILABLE is retryable.
+    SpannerImpl.runWithRetries(
+        new Callable<Object>() {
+          private boolean firstTime = true;
+
+          @Override
+          public Void call() throws Exception {
+            // Keep track of whethr this is the first call or a subsequent call to avoid an infinite
+            // loop.
+            if (firstTime) {
+              firstTime = false;
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE,
+                  "This exception should be retryable",
+                  new Exception("some other exception"));
+            }
+            return null;
+          }
+        });
+  }
+
+  @Test
+  public void testSpannerClosed() throws InterruptedException {
+    SpannerOptions options = createSpannerOptions();
+    Spanner spanner1 = options.getService();
+    Spanner spanner2 = options.getService();
+    ServiceRpc rpc1 = options.getRpc();
+    ServiceRpc rpc2 = options.getRpc();
+    // The SpannerOptions object should return the same instance.
+    assertThat(spanner1 == spanner2, is(true));
+    assertThat(rpc1 == rpc2, is(true));
+    spanner1.close();
+    // The SpannerOptions should now no longer be valid.
+    try {
+      options.getService();
+      fail("missing expected exception");
+    } catch (IllegalStateException e) {
+      // This is the expected exception.
+    }
+    // The SpannerOptions should now no longer be valid.
+    try {
+      options.getRpc();
+      fail("missing expected exception");
+    } catch (IllegalStateException e) {
+      // This is the expected exception.
+    }
+    // Creating a copy of the SpannerOptions should result in new instances.
+    options = options.toBuilder().build();
+    spanner1 = options.getService();
+    rpc1 = options.getRpc();
+    assertThat(spanner1 == spanner2, is(false));
+    assertThat(rpc1 == rpc2, is(false));
+    spanner2 = options.getService();
+    rpc2 = options.getRpc();
+    assertThat(spanner1 == spanner2, is(true));
+    assertThat(rpc1 == rpc2, is(true));
+    spanner1.close();
+  }
+
+  private SpannerOptions createSpannerOptions() {
+    return SpannerOptions.newBuilder()
+        .setProjectId("[PROJECT]")
+        .setCredentials(NoCredentials.getInstance())
+        .build();
   }
 }
