@@ -209,31 +209,22 @@ public class GapicSpannerRpcTest {
       List<ResultSet> resultSets = new ArrayList<>();
       // SpannerStub affiliates a channel with a session, so we need to use multiple sessions
       // to ensure we also hit multiple channels.
-      for (int i = 0;
-          i < 100
+      for (int sessionCount = 0;
+          sessionCount < options.getSessionPoolOptions().getMaxSessions()
               && getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
                   < options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners;
-          i++) {
-        for (int sessionCount = 0;
-            sessionCount < options.getSessionPoolOptions().getMaxSessions()
-                && getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
-                    < options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners;
-            sessionCount++) {
-          ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
-          // Execute ResultSet#next() to send the query to Spanner.
-          rs.next();
-          // Delay closing the result set in order to force the use of multiple sessions.
-          // As each session is linked to one transport channel, using multiple different
-          // sessions should initialize multiple transport channels.
-          resultSets.add(rs);
-        }
-        for (ResultSet rs : resultSets) {
-          rs.close();
-        }
+          sessionCount++) {
+        ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
+        // Execute ResultSet#next() to send the query to Spanner.
+        rs.next();
+        // Delay closing the result set in order to force the use of multiple sessions.
+        // As each session is linked to one transport channel, using multiple different
+        // sessions should initialize multiple transport channels.
+        resultSets.add(rs);
       }
-      assertThat(
-          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners)));
+      for (ResultSet rs : resultSets) {
+        rs.close();
+      }
     }
     for (Spanner spanner : spanners) {
       spanner.close();
