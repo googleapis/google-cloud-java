@@ -119,7 +119,6 @@ public class GapicSpannerRpcTest {
   }
 
   private static final int NUMBER_OF_TEST_RUNS = 2;
-  private static final int DEFAULT_NUM_CHANNELS = 4;
   private static final int NUM_THREADS_PER_CHANNEL = 4;
   private static final String SPANNER_THREAD_NAME = "Cloud-Spanner-TransportChannel";
   private static final String THREAD_PATTERN = "%s-[0-9]+";
@@ -147,7 +146,7 @@ public class GapicSpannerRpcTest {
         resultSets.add(rs);
         // Check whether the number of expected threads has been reached.
         if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
-            == DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL) {
+            == options.getNumChannels() * NUM_THREADS_PER_CHANNEL) {
           break;
         }
       }
@@ -158,11 +157,11 @@ public class GapicSpannerRpcTest {
       // pool for the underlying SpannerClient.
       assertThat(
           getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL)));
+          is(equalTo(options.getNumChannels() * NUM_THREADS_PER_CHANNEL)));
 
       // Then do a request to the InstanceAdmin service and check the number of threads.
       // Doing a request should initialize a thread pool for the underlying InstanceAdminClient.
-      for (int i2 = 0; i2 < DEFAULT_NUM_CHANNELS * 2; i2++) {
+      for (int i2 = 0; i2 < options.getNumChannels() * 2; i2++) {
         mockGetInstanceResponse();
         InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
         instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
@@ -170,18 +169,18 @@ public class GapicSpannerRpcTest {
       // The number of threads should now be
       assertThat(
           getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(2 * DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL)));
+          is(equalTo(2 * options.getNumChannels() * NUM_THREADS_PER_CHANNEL)));
 
       // Then do a request to the DatabaseAdmin service and check the number of threads.
       // Doing a request should initialize a thread pool for the underlying DatabaseAdminClient.
-      for (int i2 = 0; i2 < DEFAULT_NUM_CHANNELS * 2; i2++) {
+      for (int i2 = 0; i2 < options.getNumChannels() * 2; i2++) {
         mockGetDatabaseResponse();
         DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
         databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
       }
       assertThat(
           getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(3 * DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL)));
+          is(equalTo(3 * options.getNumChannels() * NUM_THREADS_PER_CHANNEL)));
 
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
@@ -222,7 +221,7 @@ public class GapicSpannerRpcTest {
         resultSets.add(rs);
         // Check whether the number of expected threads has been reached.
         if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
-            == DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL * openSpanners) {
+            == options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners) {
           break;
         }
       }
@@ -231,7 +230,7 @@ public class GapicSpannerRpcTest {
       }
       assertThat(
           getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(DEFAULT_NUM_CHANNELS * NUM_THREADS_PER_CHANNEL * openSpanners)));
+          is(equalTo(options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners)));
     }
     for (Spanner spanner : spanners) {
       spanner.close();
