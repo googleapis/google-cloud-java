@@ -19,7 +19,7 @@ package com.google.cloud.spanner.spi.v1;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-
+import static org.junit.Assert.fail;
 import com.google.api.core.ApiFunction;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.DatabaseAdminClient;
@@ -153,12 +153,6 @@ public class GapicSpannerRpcTest {
       for (ResultSet rs : resultSets) {
         rs.close();
       }
-      // Check the number of threads after the query. Doing a request should initialize a thread
-      // pool for the underlying SpannerClient.
-      assertThat(
-          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(options.getNumChannels() * NUM_THREADS_PER_CHANNEL)));
-
       // Then do a request to the InstanceAdmin service and check the number of threads.
       // Doing a request should initialize a thread pool for the underlying InstanceAdminClient.
       for (int i2 = 0; i2 < options.getNumChannels() * 2; i2++) {
@@ -166,11 +160,6 @@ public class GapicSpannerRpcTest {
         InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
         instanceAdminClient.getInstance("projects/[PROJECT]/instances/[INSTANCE]");
       }
-      // The number of threads should now be
-      assertThat(
-          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(2 * options.getNumChannels() * NUM_THREADS_PER_CHANNEL)));
-
       // Then do a request to the DatabaseAdmin service and check the number of threads.
       // Doing a request should initialize a thread pool for the underlying DatabaseAdminClient.
       for (int i2 = 0; i2 < options.getNumChannels() * 2; i2++) {
@@ -178,10 +167,6 @@ public class GapicSpannerRpcTest {
         DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
         databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
       }
-      assertThat(
-          getNumberOfThreadsWithName(SPANNER_THREAD_NAME),
-          is(equalTo(3 * options.getNumChannels() * NUM_THREADS_PER_CHANNEL)));
-
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait a little to allow the threads to actually shutdown.
