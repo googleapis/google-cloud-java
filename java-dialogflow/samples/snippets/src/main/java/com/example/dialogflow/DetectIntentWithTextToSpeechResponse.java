@@ -16,16 +16,16 @@
 
 package com.example.dialogflow;
 
-import com.google.cloud.dialogflow.v2beta1.DetectIntentRequest;
-import com.google.cloud.dialogflow.v2beta1.DetectIntentResponse;
-import com.google.cloud.dialogflow.v2beta1.OutputAudioConfig;
-import com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding;
-import com.google.cloud.dialogflow.v2beta1.QueryInput;
-import com.google.cloud.dialogflow.v2beta1.QueryResult;
-import com.google.cloud.dialogflow.v2beta1.SessionName;
-import com.google.cloud.dialogflow.v2beta1.SessionsClient;
-import com.google.cloud.dialogflow.v2beta1.TextInput;
-import com.google.cloud.dialogflow.v2beta1.TextInput.Builder;
+import com.google.cloud.dialogflow.v2.DetectIntentRequest;
+import com.google.cloud.dialogflow.v2.DetectIntentResponse;
+import com.google.cloud.dialogflow.v2.OutputAudioConfig;
+import com.google.cloud.dialogflow.v2.OutputAudioEncoding;
+import com.google.cloud.dialogflow.v2.QueryInput;
+import com.google.cloud.dialogflow.v2.QueryResult;
+import com.google.cloud.dialogflow.v2.SessionName;
+import com.google.cloud.dialogflow.v2.SessionsClient;
+import com.google.cloud.dialogflow.v2.TextInput;
+import com.google.cloud.dialogflow.v2.TextInput.Builder;
 import com.google.common.collect.Maps;
 
 import java.util.List;

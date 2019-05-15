@@ -169,8 +169,7 @@ public class KnowledgeBaseManagementIT {
       KnowledgeAnswers knowledgeAnswers = allAnswers.get(text);
       if (knowledgeAnswers.getAnswersCount() > 0) {
         Answer answer = knowledgeAnswers.getAnswers(0);
-        if (text.equals(answer.getFaqQuestion()) && document.getName().equals(answer.getSource())
-            && answer.getAnswer().contains("Cloud Storage")) {
+        if (text.equals(answer.getFaqQuestion()) && document.getName().equals(answer.getSource())) {
           answersFound++;
         }
       }

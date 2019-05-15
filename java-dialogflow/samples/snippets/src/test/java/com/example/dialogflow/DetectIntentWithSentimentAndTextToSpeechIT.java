@@ -19,7 +19,7 @@ package com.example.dialogflow;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.dialogflow.v2beta1.QueryResult;
+import com.google.cloud.dialogflow.v2.QueryResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
