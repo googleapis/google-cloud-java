@@ -167,6 +167,7 @@ public class GapicSpannerRpcTest {
         DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
         databaseAdminClient.getDatabase("projects/[PROJECT]/instances/[INSTANCE]", "[DATABASE]");
       }
+
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait for up to two seconds to allow the threads to actually shutdown.

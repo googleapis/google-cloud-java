@@ -105,4 +105,7 @@ public interface Spanner extends Service<SpannerOptions>, AutoCloseable {
    */
   @Override
   void close();
+
+  /** @return <code>true</code> if this {@link Spanner} object is closed. */
+  boolean isClosed();
 }
