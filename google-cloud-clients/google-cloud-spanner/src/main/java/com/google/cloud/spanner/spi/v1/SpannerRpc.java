@@ -233,6 +233,4 @@ public interface SpannerRpc extends ServiceRpc {
       throws SpannerException;
 
   public void shutdown();
-
-  boolean isClosed();
 }

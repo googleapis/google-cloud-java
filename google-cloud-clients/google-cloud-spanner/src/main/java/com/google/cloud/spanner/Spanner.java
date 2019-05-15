@@ -102,14 +102,7 @@ public interface Spanner extends Service<SpannerOptions>, AutoCloseable {
    * are done with the {@code Spanner} object, typically when your application shuts down. There is
    * a hard limit on number of sessions in Cloud Spanner and not calling this method can lead to
    * unused sessions piling up on the backend.
-   *
-   * <p>Note that {@link Spanner} objects are expensive to create and close. The lifespan of a
-   * {@link Spanner} object should normally be equal to the lifespan of your application, unless
-   * your application only needs to access Cloud Spanner during a limited part of its lifespan.
    */
   @Override
   void close();
-
-  /** @return <code>true</code> if this {@link Spanner} object is closed. */
-  boolean isClosed();
 }
