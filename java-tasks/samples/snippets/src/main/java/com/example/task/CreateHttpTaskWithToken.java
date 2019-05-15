@@ -38,7 +38,7 @@ public class CreateHttpTaskWithToken {
     try (CloudTasksClient client = CloudTasksClient.create()) {
       // Variables provided by the system variables.
       // projectId = "my-project-id";
-      // queueName = "my-appengine-queue";
+      // queueName = "my-queue";
       // location = "us-central1";
       // url = "https://example.com/taskhandler";
       String payload = "hello";
