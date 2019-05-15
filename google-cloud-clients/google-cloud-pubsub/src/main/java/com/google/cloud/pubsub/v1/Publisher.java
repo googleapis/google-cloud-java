@@ -157,14 +157,13 @@ public class Publisher {
     stubSettings
         .publishSettings()
         .setRetryableCodes(
-            EnumSet.of(
-                StatusCode.Code.ABORTED,
-                StatusCode.Code.CANCELLED,
-                StatusCode.Code.DEADLINE_EXCEEDED,
-                StatusCode.Code.INTERNAL,
-                StatusCode.Code.RESOURCE_EXHAUSTED,
-                StatusCode.Code.UNKNOWN,
-                StatusCode.Code.UNAVAILABLE))
+            StatusCode.Code.ABORTED,
+            StatusCode.Code.CANCELLED,
+            StatusCode.Code.DEADLINE_EXCEEDED,
+            StatusCode.Code.INTERNAL,
+            StatusCode.Code.RESOURCE_EXHAUSTED,
+            StatusCode.Code.UNKNOWN,
+            StatusCode.Code.UNAVAILABLE)
         .setRetrySettings(retrySettingsBuilder.build())
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
@@ -241,7 +240,10 @@ public class Publisher {
     messagesWaiter.incrementPendingMessages(1);
 
     if (!batchesToSend.isEmpty()) {
+      // TODO: if this is not an ordering keys scenario, will this do anything?
       publishAllWithoutInflight();
+
+      // TODO: if this is an ordering keys scenario, is this safe without messagesBatchLock?
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
         executor.execute(
@@ -264,7 +266,9 @@ public class Publisher {
    *
    * @param key The key for which to resume publishing.
    */
-  public void resumePublish(String key) {
+  // TODO: make this public when Ordering keys is live
+  @BetaApi
+  void resumePublish(String key) {
     Preconditions.checkState(!shutdown.get(), "Cannot publish on a shut-down publisher.");
     sequentialExecutor.resumePublish(key);
   }
@@ -338,6 +342,8 @@ public class Publisher {
           // it's released, the order of publishing cannot be guaranteed if `publish()` is called
           // while this function is running. This locking mechanism needs to be improved if it
           // causes any performance degradation.
+
+          // TODO: Will this cause a performance problem for non-ordering keys scenarios?
           publishOutstandingBatch(batch.popOutstandingBatch());
           it.remove();
         }
@@ -389,11 +395,12 @@ public class Publisher {
           }
         };
 
+    ApiFuture<PublishResponse> future;
     if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
-      ApiFutures.addCallback(publishCall(outstandingBatch), futureCallback, directExecutor());
+      future = publishCall(outstandingBatch);
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
-      ApiFuture<PublishResponse> future =
+      future =
           sequentialExecutor.submit(
               outstandingBatch.orderingKey,
               new Callable<ApiFuture<PublishResponse>>() {
@@ -401,8 +408,8 @@ public class Publisher {
                   return publishCall(outstandingBatch);
                 }
               });
-      ApiFutures.addCallback(future, futureCallback, directExecutor());
     }
+    ApiFutures.addCallback(future, futureCallback, directExecutor());
   }
 
   private static final class OutstandingBatch {
@@ -673,6 +680,8 @@ public class Publisher {
     }
 
     /** Sets the message ordering option. */
+    // TODO: make this public when Ordering keys is live
+    @BetaApi
     Builder setEnableMessageOrdering(boolean enableMessageOrdering) {
       this.enableMessageOrdering = enableMessageOrdering;
       return this;
