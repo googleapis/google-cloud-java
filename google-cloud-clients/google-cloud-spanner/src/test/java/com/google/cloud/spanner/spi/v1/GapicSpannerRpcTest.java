@@ -210,7 +210,7 @@ public class GapicSpannerRpcTest {
       // SpannerStub affiliates a channel with a session, so we need to use multiple sessions
       // to ensure we also hit multiple channels.
       for (int sessionCount = 0;
-          sessionCount < options.getSessionPoolOptions().getMaxSessions();
+          sessionCount < 100;
           sessionCount++) {
         ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
         // Execute ResultSet#next() to send the query to Spanner.
@@ -219,11 +219,6 @@ public class GapicSpannerRpcTest {
         // As each session is linked to one transport channel, using multiple different
         // sessions should initialize multiple transport channels.
         resultSets.add(rs);
-        // Check whether the number of expected threads has been reached.
-        if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME)
-            == options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners) {
-          break;
-        }
       }
       for (ResultSet rs : resultSets) {
         rs.close();
