@@ -32,6 +32,11 @@ class DatabaseClientImpl implements DatabaseClient {
   private static final String PARTITION_DML_TRANSACTION = "CloudSpanner.PartitionDMLTransaction";
   private static final Tracer tracer = Tracing.getTracer();
 
+  private enum SessionMode {
+    READ,
+    READ_WRITE
+  }
+
   static {
     TraceUtil.exportSpans(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION, PARTITION_DML_TRANSACTION);
   }
@@ -57,6 +62,7 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return runWithSessionRetry(
+          SessionMode.READ_WRITE,
           new Function<Session, Timestamp>() {
             @Override
             public Timestamp apply(Session session) {
@@ -76,6 +82,7 @@ class DatabaseClientImpl implements DatabaseClient {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return runWithSessionRetry(
+          SessionMode.READ_WRITE,
           new Function<Session, Timestamp>() {
             @Override
             public Timestamp apply(Session session) {
@@ -182,7 +189,10 @@ class DatabaseClientImpl implements DatabaseClient {
   public long executePartitionedUpdate(final Statement stmt) {
     Span span = tracer.spanBuilder(PARTITION_DML_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
+      // A partitioned update transaction does not need a prepared write session, as the transaction
+      // object will start a new transaction with specific options anyway.
       return runWithSessionRetry(
+          SessionMode.READ,
           new Function<Session, Long>() {
             @Override
             public Long apply(Session session) {
@@ -195,13 +205,17 @@ class DatabaseClientImpl implements DatabaseClient {
     }
   }
 
-  private <T> T runWithSessionRetry(Function<Session, T> callable) {
-    PooledSession session = getReadWriteSession();
+  private <T> T runWithSessionRetry(SessionMode mode, Function<Session, T> callable) {
+    PooledSession session =
+        mode == SessionMode.READ_WRITE ? getReadWriteSession() : getReadSession();
     while (true) {
       try {
         return callable.apply(session);
       } catch (SessionNotFoundException e) {
-        session = pool.replaceReadWriteSession(e, session);
+        session =
+            mode == SessionMode.READ_WRITE
+                ? pool.replaceReadWriteSession(e, session)
+                : pool.replaceReadSession(e, session);
       }
     }
   }
