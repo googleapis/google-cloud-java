@@ -673,7 +673,7 @@ public class Publisher {
     }
 
     /** Sets the message ordering option. */
-    public Builder setEnableMessageOrdering(boolean enableMessageOrdering) {
+    Builder setEnableMessageOrdering(boolean enableMessageOrdering) {
       this.enableMessageOrdering = enableMessageOrdering;
       return this;
     }
