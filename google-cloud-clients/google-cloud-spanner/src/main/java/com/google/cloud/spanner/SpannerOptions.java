@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
@@ -29,6 +30,7 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.grpc.ManagedChannelBuilder;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
@@ -46,6 +48,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
   private final TransportChannelProvider channelProvider;
+
+  @SuppressWarnings("rawtypes")
+  private final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator;
+
   private final GrpcInterceptorProvider interceptorProvider;
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
@@ -82,6 +88,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         numChannels);
 
     channelProvider = builder.channelProvider;
+    channelConfigurator = builder.channelConfigurator;
     interceptorProvider = builder.interceptorProvider;
     sessionPoolOptions =
         builder.sessionPoolOptions != null
@@ -96,6 +103,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private TransportChannelProvider channelProvider;
+
+    @SuppressWarnings("rawtypes")
+    private ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator;
+
     private GrpcInterceptorProvider interceptorProvider;
 
     /** By default, we create 4 channels per {@link SpannerOptions} */
@@ -114,6 +125,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.prefetchChunks = options.prefetchChunks;
       this.sessionLabels = options.sessionLabels;
       this.channelProvider = options.channelProvider;
+      this.channelConfigurator = options.channelConfigurator;
       this.interceptorProvider = options.interceptorProvider;
     }
 
@@ -132,6 +144,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
       this.channelProvider = channelProvider;
+      return this;
+    }
+
+    /**
+     * Sets an {@link ApiFunction} that will be used to configure the transport channel. This will
+     * only be used if no custom {@link TransportChannelProvider} has been set.
+     */
+    public Builder setChannelConfigurator(
+        @SuppressWarnings("rawtypes")
+            ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator) {
+      this.channelConfigurator = channelConfigurator;
       return this;
     }
 
@@ -212,6 +235,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public TransportChannelProvider getChannelProvider() {
     return channelProvider;
+  }
+
+  @SuppressWarnings("rawtypes")
+  public ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getChannelConfigurator() {
+    return channelConfigurator;
   }
 
   public GrpcInterceptorProvider getInterceptorProvider() {

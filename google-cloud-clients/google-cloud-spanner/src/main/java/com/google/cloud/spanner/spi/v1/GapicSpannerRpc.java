@@ -21,6 +21,7 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 import com.google.api.core.ApiFunction;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -102,6 +103,7 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Context;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
@@ -109,11 +111,49 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
+  /**
+   * {@link ExecutorProvider} that keeps track of the executors that are created and shuts these
+   * down when the {@link SpannerRpc} is closed.
+   */
+  private static final class ManagedInstantiatingExecutorProvider implements ExecutorProvider {
+    private static final int DEFAULT_THREAD_COUNT = 4;
+    private final List<ScheduledExecutorService> executors = new LinkedList<>();
+    private final ThreadFactory threadFactory;
+
+    private ManagedInstantiatingExecutorProvider(ThreadFactory threadFactory) {
+      this.threadFactory = threadFactory;
+    }
+
+    @Override
+    public boolean shouldAutoClose() {
+      return false;
+    }
+
+    @Override
+    public ScheduledExecutorService getExecutor() {
+      ScheduledExecutorService executor =
+          new ScheduledThreadPoolExecutor(DEFAULT_THREAD_COUNT, threadFactory);
+      synchronized (this) {
+        executors.add(executor);
+      }
+      return executor;
+    }
+
+    /** Shuts down all executors that have been created by this {@link ExecutorProvider}. */
+    private synchronized void shutdown() {
+      for (ScheduledExecutorService executor : executors) {
+        executor.shutdown();
+      }
+    }
+  }
+
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
@@ -127,6 +167,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final int DEFAULT_TIMEOUT_SECONDS = 30 * 60;
   private static final int DEFAULT_PERIOD_SECONDS = 10;
 
+  private final ManagedInstantiatingExecutorProvider executorProvider;
   private final SpannerStub spannerStub;
   private final InstanceAdminStub instanceAdminStub;
   private final DatabaseAdminStub databaseAdminStub;
@@ -170,16 +211,25 @@ public class GapicSpannerRpc implements SpannerRpc {
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
 
+    // Create a managed executor provider.
+    this.executorProvider =
+        new ManagedInstantiatingExecutorProvider(
+            new ThreadFactoryBuilder()
+                .setDaemon(true)
+                .setNameFormat("Cloud-Spanner-TransportChannel-%d")
+                .build());
     // First check if SpannerOptions provides a TransportChannerProvider. Create one
     // with information gathered from SpannerOptions if none is provided
     TransportChannelProvider channelProvider =
         MoreObjects.firstNonNull(
             options.getChannelProvider(),
             InstantiatingGrpcChannelProvider.newBuilder()
+                .setChannelConfigurator(options.getChannelConfigurator())
                 .setEndpoint(options.getEndpoint())
                 .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
                 .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
                 .setPoolSize(options.getNumChannels())
+                .setExecutorProvider(executorProvider)
 
                 // Then check if SpannerOptions provides an InterceptorProvider. Create a default
                 // SpannerInterceptorProvider if none is provided
@@ -585,6 +635,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     this.instanceAdminStub.close();
     this.databaseAdminStub.close();
     this.spannerWatchdog.shutdown();
+    this.executorProvider.shutdown();
   }
 
   /**
