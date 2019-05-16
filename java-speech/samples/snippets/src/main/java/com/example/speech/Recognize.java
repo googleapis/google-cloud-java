@@ -699,7 +699,6 @@ public class Recognize {
           System.out.println("Stop speaking.");
           targetDataLine.stop();
           targetDataLine.close();
-          break;
         }
         request =
             StreamingRecognizeRequest.newBuilder()
