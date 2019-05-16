@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
- * <p>It must be configured with a project id and instance id.
+ * <p>It must be configured with a project ID and instance ID.
  *
  * <p>Example usage:
  *
@@ -53,23 +53,23 @@ public final class BigtableTableAdminSettings {
   private final BigtableTableAdminStubSettings stubSettings;
 
   private BigtableTableAdminSettings(Builder builder) throws IOException {
-    this.projectId = Preconditions.checkNotNull(builder.projectId, "Project id must be set");
-    this.instanceId = Preconditions.checkNotNull(builder.instanceId, "Instance id must be set");
+    this.projectId = Preconditions.checkNotNull(builder.projectId, "Project ID must be set");
+    this.instanceId = Preconditions.checkNotNull(builder.instanceId, "Instance ID must be set");
     this.stubSettings =
         Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null").build();
   }
 
-  /** Gets the project id of instance whose tables the client will manage. */
+  /** Gets the project ID of instance whose tables the client will manage. */
   public String getProjectId() {
     return projectId;
   }
 
-  /** Gets the instance id whose tables the client will manage. */
+  /** Gets the instance ID whose tables the client will manage. */
   public String getInstanceId() {
     return instanceId;
   }
 
-  /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+  /** Gets the credentials provider to use for getting the credentials to make calls with. */
   public CredentialsProvider getCredentialsProvider() {
     return stubSettings.getCredentialsProvider();
   }
@@ -128,39 +128,39 @@ public final class BigtableTableAdminSettings {
       this.stubSettings = settings.stubSettings.toBuilder();
     }
 
-    /** Sets the project id of the instance whose tables the client will manage. */
+    /** Sets the project ID of the instance whose tables the client will manage. */
     public Builder setProjectId(@Nullable String projectId) {
       Preconditions.checkNotNull(projectId);
       this.projectId = projectId;
       return this;
     }
 
-    /** Gets the project id of the instance whose tables the client will manage. */
+    /** Gets the project ID of the instance whose tables the client will manage. */
     @Nullable
     public String getProjectId() {
       return projectId;
     }
 
-    /** Sets the instance id of the instance whose tables the client will manage. */
+    /** Sets the instance ID of the instance whose tables the client will manage. */
     public Builder setInstanceId(@Nullable String instanceId) {
       Preconditions.checkNotNull(instanceId);
       this.instanceId = instanceId;
       return this;
     }
 
-    /** Gets the instance id of the instance whose tables the client will manage. */
+    /** Gets the instance ID of the instance whose tables the client will manage. */
     @Nullable
     public String getInstanceId() {
       return instanceId;
     }
 
-    /** Sets the CredentialsProvider to use for getting the credentials to make calls with. */
+    /** Sets the credentials provider to use for getting the credentials to make calls with. */
     public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
       stubSettings.setCredentialsProvider(credentialsProvider);
       return this;
     }
 
-    /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+    /** Gets the credentials provider to use for getting the credentials to make calls with. */
     public CredentialsProvider getCredentialsProvider() {
       return stubSettings.getCredentialsProvider();
     }

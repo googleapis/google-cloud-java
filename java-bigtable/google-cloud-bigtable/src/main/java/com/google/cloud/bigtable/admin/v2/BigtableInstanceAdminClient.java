@@ -56,8 +56,8 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
- * Client for creating, configuring and delete Cloud Bigtable instances (including AppProfiles and
- * Clusters).
+ * Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and
+ * clusters.
  *
  * <p>See the individual methods for example code.
  *
@@ -102,13 +102,13 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   private final String projectId;
   private final BigtableInstanceAdminStub stub;
 
-  /** Constructs an instance of BigtableInstanceAdminClient with the given project id. */
+  /** Constructs an instance of BigtableInstanceAdminClient with the given project ID. */
   public static BigtableInstanceAdminClient create(@Nonnull String projectId) throws IOException {
     return create(BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build());
   }
 
   /**
-   * Constructs an instance of BigtableInstanceAdminClient with the given project id.
+   * Constructs an instance of BigtableInstanceAdminClient with the given project ID.
    *
    * @deprecated Please use {@link #create(String)}.
    */
@@ -124,14 +124,14 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     return create(settings.getProjectId(), settings.getStubSettings().createStub());
   }
 
-  /** Constructs an instance of BigtableInstanceAdminClient with the given project id and stub. */
+  /** Constructs an instance of BigtableInstanceAdminClient with the given project ID and stub. */
   public static BigtableInstanceAdminClient create(
       @Nonnull String projectId, @Nonnull BigtableInstanceAdminStub stub) {
     return new BigtableInstanceAdminClient(projectId, stub);
   }
 
   /**
-   * Constructs an instance of BigtableInstanceAdminClient with the given ProjectName and stub.
+   * Constructs an instance of BigtableInstanceAdminClient with the given project name and stub.
    *
    * @deprecated Please use {@link #create(String, BigtableInstanceAdminStub)}.
    */
@@ -148,13 +148,13 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     this.stub = stub;
   }
 
-  /** Gets the project id this client is associated with. */
+  /** Gets the project ID this client is associated with. */
   public String getProjectId() {
     return projectId;
   }
 
   /**
-   * Gets the ProjectName this client is associated with.
+   * Gets the project name this client is associated with.
    *
    * @deprecated Please use {@link #getProjectId()}.
    */
@@ -312,7 +312,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * Lists all of the instances in the current project.
    *
    * <p>This method will throw a {@link PartialListInstancesException} when any zone is unavailable.
-   * If partial listing are ok, the exception can be caught and inspected.
+   * If a partial list is OK, the exception can be caught and inspected.
    *
    * <p>Sample code:
    *
@@ -334,7 +334,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * Asynchronously lists all of the instances in the current project.
    *
    * <p>This method will throw a {@link PartialListInstancesException} when any zone is unavailable.
-   * If partial listing are ok, the exception can be caught and inspected.
+   * If a partial list is OK, the exception can be caught and inspected.
    *
    * <p>Sample code:
    *
@@ -373,7 +373,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         new ApiFunction<com.google.bigtable.admin.v2.ListInstancesResponse, List<Instance>>() {
           @Override
           public List<Instance> apply(com.google.bigtable.admin.v2.ListInstancesResponse proto) {
-            // NOTE: pagination is intentionally ignored. The server does not implement it and never
+            // NOTE: Pagination is intentionally ignored. The server does not implement it and never
             // will.
             Verify.verify(
                 proto.getNextPageToken().isEmpty(),
@@ -445,7 +445,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Checks if the instance specified by the instanceId exists
+   * Checks if the instance specified by the instance ID exists.
    *
    * <p>Sample code:
    *
@@ -460,7 +460,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously checks if the instance specified by the instanceId exists
+   * Asynchronously checks if the instance specified by the instance ID exists.
    *
    * <p>Sample code:
    *
@@ -561,7 +561,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Get the cluster representation by ID.
+   * Gets the cluster representation by ID.
    *
    * <p>Sample code:
    *
@@ -606,7 +606,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * Lists all clusters in the specified instance.
    *
    * <p>This method will throw a {@link PartialListClustersException} when any zone is unavailable.
-   * If partial listing are ok, the exception can be caught and inspected.
+   * If a partial list is OK, the exception can be caught and inspected.
    *
    * <p>Sample code:
    *
@@ -628,7 +628,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * Asynchronously lists all clusters in the specified instance.
    *
    * <p>This method will throw a {@link PartialListClustersException} when any zone is unavailable.
-   * If partial listing are ok, the exception can be caught and inspected.
+   * If a partial list is OK, the exception can be caught and inspected.
    *
    * <p>Sample code:
    *
@@ -663,7 +663,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         new ApiFunction<com.google.bigtable.admin.v2.ListClustersResponse, List<Cluster>>() {
           @Override
           public List<Cluster> apply(com.google.bigtable.admin.v2.ListClustersResponse proto) {
-            // NOTE: serverside pagination is not and will not be implemented, so remaining pages
+            // NOTE: Server-side pagination is not and will not be implemented, so remaining pages
             // are not fetched. However, if that assumption turns out to be wrong, fail fast to
             // avoid returning partial data.
             Verify.verify(
@@ -691,7 +691,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Resizes the cluster's node count. Please note that only clusters that belong to a PRODUCTION
+   * Modifies the cluster's node count. Please note that only clusters that belong to a production
    * instance can be resized.
    *
    * <p>Sample code:
@@ -707,8 +707,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously resizes the cluster's node count. Please note that only clusters that belong to
-   * a PRODUCTION instance can be resized.
+   * Asynchronously modifies the cluster's node count. Please note that only clusters that belong to
+   * a production instance can be resized.
    *
    * <pre>{@code
    * ApiFuture<Cluster> clusterFuture = client.resizeCluster("my-instance", "my-cluster", 30);
@@ -834,7 +834,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Get the app profile by id.
+   * Gets the app profile by ID.
    *
    * <p>Sample code:
    *
@@ -850,7 +850,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously get the app profile by id.
+   * Asynchronously gets the app profile by ID.
    *
    * <p>Sample code:
    *
@@ -919,7 +919,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
     // paginated responses while maintaining the wrapper facade.
 
-    // Fetch the first page.
+    // Fetches the first page.
     ApiFuture<ListAppProfilesPage> firstPageFuture =
         ApiFutures.transform(
             stub.listAppProfilesPagedCallable().futureCall(request),
@@ -931,7 +931,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
             },
             MoreExecutors.directExecutor());
 
-    // Fetch the rest of the pages by chaining the futures.
+    // Fetches the rest of the pages by chaining the futures.
     ApiFuture<List<com.google.bigtable.admin.v2.AppProfile>> allProtos =
         ApiFutures.transformAsync(
             firstPageFuture,
@@ -958,7 +958,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
             },
             MoreExecutors.directExecutor());
 
-    // Wrap all of the accumulated protos.
+    // Wraps all of the accumulated protos.
     return ApiFutures.transform(
         allProtos,
         new ApiFunction<List<com.google.bigtable.admin.v2.AppProfile>, List<AppProfile>>() {
@@ -1307,9 +1307,9 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously tests whether the caller has the given permissions for the the specified
-   * absolute resource name (note that the current project of the client is ignored). Returns a
-   * subset of the specified permissions that the caller has.
+   * Asynchronously tests whether the caller has the given permissions for the specified absolute
+   * resource name (note that the current project of the client is ignored). Returns a subset of the
+   * specified permissions that the caller has.
    *
    * <p>Sample code:
    *
