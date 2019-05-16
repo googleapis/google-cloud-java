@@ -264,8 +264,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously creates, updates, and drops column families as specified in the
-   * request.
+   * Asynchronously creates, updates, and drops column families as specified in the request.
    *
    * <p>Sample code:
    *
@@ -772,8 +771,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Returns a future that is resolved when replication has caught up to the point when this method
-   * was called. This allows callers to make sure that their mutations have been replicated across all
-   * of their clusters.
+   * was called. This allows callers to make sure that their mutations have been replicated across
+   * all of their clusters.
    *
    * <p>Sample code:
    *

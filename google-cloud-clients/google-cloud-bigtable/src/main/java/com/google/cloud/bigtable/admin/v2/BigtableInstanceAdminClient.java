@@ -56,8 +56,8 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
- * Client for creating, configuring and deleting Cloud Bigtable instances, app profiles,
- * and clusters.
+ * Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and
+ * clusters.
  *
  * <p>See the individual methods for example code.
  *
@@ -691,8 +691,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Modifies the cluster's node count. Please note that only clusters that belong to a
-   * production instance can be resized.
+   * Modifies the cluster's node count. Please note that only clusters that belong to a production
+   * instance can be resized.
    *
    * <p>Sample code:
    *
@@ -707,8 +707,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously modifies the cluster's node count. Please note that only clusters that
-   * belong to a production instance can be resized.
+   * Asynchronously modifies the cluster's node count. Please note that only clusters that belong to
+   * a production instance can be resized.
    *
    * <pre>{@code
    * ApiFuture<Cluster> clusterFuture = client.resizeCluster("my-instance", "my-cluster", 30);
@@ -1307,9 +1307,9 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
-   * Asynchronously tests whether the caller has the given permissions for the specified
-   * absolute resource name (note that the current project of the client is ignored). Returns a
-   * subset of the specified permissions that the caller has.
+   * Asynchronously tests whether the caller has the given permissions for the specified absolute
+   * resource name (note that the current project of the client is ignored). Returns a subset of the
+   * specified permissions that the caller has.
    *
    * <p>Sample code:
    *
