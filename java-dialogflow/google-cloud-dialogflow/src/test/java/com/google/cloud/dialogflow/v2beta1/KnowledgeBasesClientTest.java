@@ -269,4 +269,45 @@ public class KnowledgeBasesClientTest {
       // Expected exception
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateKnowledgeBaseTest() {
+    KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+    String displayName = "displayName1615086568";
+    KnowledgeBase expectedResponse =
+        KnowledgeBase.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+    mockKnowledgeBases.addResponse(expectedResponse);
+
+    KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+
+    KnowledgeBase actualResponse = client.updateKnowledgeBase(knowledgeBase);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKnowledgeBases.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateKnowledgeBaseRequest actualRequest = (UpdateKnowledgeBaseRequest) actualRequests.get(0);
+
+    Assert.assertEquals(knowledgeBase, actualRequest.getKnowledgeBase());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateKnowledgeBaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKnowledgeBases.addException(exception);
+
+    try {
+      KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+
+      client.updateKnowledgeBase(knowledgeBase);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

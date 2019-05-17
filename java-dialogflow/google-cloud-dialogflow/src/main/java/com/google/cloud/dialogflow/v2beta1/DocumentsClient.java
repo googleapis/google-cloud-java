@@ -696,16 +696,22 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
-   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder().build();
-   *   Operation response = documentsClient.updateDocument(request);
+   *   Document document = Document.newBuilder().build();
+   *   Document response = documentsClient.updateDocumentAsync(document).get();
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param document Required. The document to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation updateDocument(UpdateDocumentRequest request) {
-    return updateDocumentCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Document, KnowledgeOperationMetadata> updateDocumentAsync(
+      Document document) {
+
+    UpdateDocumentRequest request =
+        UpdateDocumentRequest.newBuilder().setDocument(document).build();
+    return updateDocumentAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -718,7 +724,64 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
-   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder().build();
+   *   Document document = Document.newBuilder().build();
+   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   Document response = documentsClient.updateDocumentAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Document, KnowledgeOperationMetadata> updateDocumentAsync(
+      UpdateDocumentRequest request) {
+    return updateDocumentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified document. Operation &lt;response:
+   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
+   *   OperationFuture&lt;Document, KnowledgeOperationMetadata&gt; future = documentsClient.updateDocumentOperationCallable().futureCall(request);
+   *   // Do something
+   *   Document response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
+      updateDocumentOperationCallable() {
+    return stub.updateDocumentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified document. Operation &lt;response:
+   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   UpdateDocumentRequest request = UpdateDocumentRequest.newBuilder()
+   *     .setDocument(document)
+   *     .build();
    *   ApiFuture&lt;Operation&gt; future = documentsClient.updateDocumentCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();

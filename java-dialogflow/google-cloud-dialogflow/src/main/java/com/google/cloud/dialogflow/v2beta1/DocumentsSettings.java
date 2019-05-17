@@ -107,6 +107,14 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     return ((DocumentsStubSettings) getStubSettings()).updateDocumentSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDocument. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
+      updateDocumentOperationSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).updateDocumentOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to reloadDocument. */
   public UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
     return ((DocumentsStubSettings) getStubSettings()).reloadDocumentSettings();
@@ -250,6 +258,15 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     /** Returns the builder for the settings used for calls to updateDocument. */
     public UnaryCallSettings.Builder<UpdateDocumentRequest, Operation> updateDocumentSettings() {
       return getStubSettingsBuilder().updateDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDocument. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
+        updateDocumentOperationSettings() {
+      return getStubSettingsBuilder().updateDocumentOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to reloadDocument. */
