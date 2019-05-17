@@ -467,15 +467,4 @@ public class SpannerGaxRetryTest {
       }
     }
   }
-
-  // TODO(loite): Check what happens when an SSLHandshakeException is thrown when using GAX.
-  @Test
-  @Ignore
-  public void singleUseSslHandshakeException() {
-    if (!enableGaxRetries) {
-      expectedException.expect(SpannerMatchers.isSpannerException(ErrorCode.UNAVAILABLE));
-    }
-    mockSpanner.addException(new SSLHandshakeException("some SSL handshake exception"));
-    ((SpannerImpl) spanner).createSession(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
-  }
 }
