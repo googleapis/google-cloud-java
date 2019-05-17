@@ -253,9 +253,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Returns the {@link SpannerStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
      *
-     * <p>The library will automatically use sensible defaults if no custom settings are set. The
-     * defaults are the same as the defaults that are used by {@link SpannerSettings}. Retries are
-     * configured for idempotent methods but not for non-idempotent methods.
+     * <p>The library will automatically use the defaults defined in {@link SpannerStubSettings} if
+     * no custom settings are set. The defaults are the same as the defaults that are used by {@link
+     * SpannerSettings}, and are generated from the file <a
+     * href="https://github.com/googleapis/googleapis/blob/master/google/spanner/v1/spanner_gapic.yaml">spanner_gapic.yaml</a>.
+     * Retries are configured for idempotent methods but not for non-idempotent methods.
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
@@ -279,9 +281,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Returns the {@link InstanceAdminStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
      *
-     * <p>The library will automatically use sensible defaults if no custom settings are set. The
-     * defaults are the same as the defaults that are used by {@link InstanceAdminSettings}. Retries
-     * are configured for idempotent methods but not for non-idempotent methods.
+     * <p>The library will automatically use the defaults defined in {@link
+     * InstanceAdminStubSettings} if no custom settings are set. The defaults are the same as the
+     * defaults that are used by {@link InstanceAdminSettings}, and are generated from the file <a
+     * href="https://github.com/googleapis/googleapis/blob/master/google/spanner/admin/instance/v1/spanner_admin_instance_gapic.yaml">spanner_admin_instance_gapic.yaml</a>.
+     * Retries are configured for idempotent methods but not for non-idempotent methods.
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
@@ -305,9 +309,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Returns the {@link DatabaseAdminStubSettings.Builder} that will be used to build the {@link
      * SpannerRpc}. Use this to set custom {@link RetrySettings} for individual gRPC methods.
      *
-     * <p>The library will automatically use sensible defaults if no custom settings are set. The
-     * defaults are the same as the defaults that are used by {@link DatabaseAdminSettings}. Retries
-     * are configured for idempotent methods but not for non-idempotent methods.
+     * <p>The library will automatically use the defaults defined in {@link
+     * DatabaseAdminStubSettings} if no custom settings are set. The defaults are the same as the
+     * defaults that are used by {@link DatabaseAdminSettings}, and are generated from the file <a
+     * href="https://github.com/googleapis/googleapis/blob/master/google/spanner/admin/database/v1/spanner_admin_database_gapic.yaml">spanner_admin_database_gapic.yaml</a>.
+     * Retries are configured for idempotent methods but not for non-idempotent methods.
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
