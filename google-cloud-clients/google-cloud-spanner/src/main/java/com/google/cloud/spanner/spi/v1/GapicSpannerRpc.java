@@ -598,6 +598,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(idleTimeout);
   }
 
+  @Override
   public void shutdown() {
     this.spannerStub.close();
     this.instanceAdminStub.close();

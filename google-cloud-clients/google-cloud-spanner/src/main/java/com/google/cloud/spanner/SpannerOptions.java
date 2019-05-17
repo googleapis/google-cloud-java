@@ -17,11 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.api.core.ApiFunction;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Map;
-import java.util.Set;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
