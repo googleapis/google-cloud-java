@@ -197,31 +197,24 @@ public class SpannerImplTest {
     assertThat(spanner1 == spanner2, is(true));
     assertThat(rpc1 == rpc2, is(true));
     spanner1.close();
-    // The SpannerOptions should now no longer be valid.
-    try {
-      options.getService();
-      fail("missing expected exception");
-    } catch (IllegalStateException e) {
-      // This is the expected exception.
-    }
-    // The SpannerOptions should now no longer be valid.
-    try {
-      options.getRpc();
-      fail("missing expected exception");
-    } catch (IllegalStateException e) {
-      // This is the expected exception.
-    }
+    // A new instance should be returned as the Spanner instance has been closed.
+    Spanner spanner3 = options.getService();
+    assertThat(spanner1 == spanner3, is(false));
+    // A new instance should be returned as the Spanner instance has been closed.
+    ServiceRpc rpc3 = options.getRpc();
+    assertThat(rpc1 == rpc3, is(false));
     // Creating a copy of the SpannerOptions should result in new instances.
     options = options.toBuilder().build();
-    spanner1 = options.getService();
-    rpc1 = options.getRpc();
-    assertThat(spanner1 == spanner2, is(false));
-    assertThat(rpc1 == rpc2, is(false));
-    spanner2 = options.getService();
-    rpc2 = options.getRpc();
-    assertThat(spanner1 == spanner2, is(true));
-    assertThat(rpc1 == rpc2, is(true));
-    spanner1.close();
+    Spanner spanner4 = options.getService();
+    ServiceRpc rpc4 = options.getRpc();
+    assertThat(spanner4 == spanner3, is(false));
+    assertThat(rpc4 == rpc3, is(false));
+    Spanner spanner5 = options.getService();
+    ServiceRpc rpc5 = options.getRpc();
+    assertThat(spanner4 == spanner5, is(true));
+    assertThat(rpc4 == rpc5, is(true));
+    spanner3.close();
+    spanner4.close();
   }
 
   private SpannerOptions createSpannerOptions() {

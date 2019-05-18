@@ -501,6 +501,16 @@ public abstract class ServiceOptions<
   }
 
   /**
+   * Creates a new service object and returns it. Subsequent calls to {@link #getService()} will
+   * return this instance.
+   */
+  @SuppressWarnings("unchecked")
+  protected ServiceT createNewService() {
+    service = serviceFactory.create((OptionsT) this);
+    return service;
+  }
+
+  /**
    * Returns a Service RPC object for the current service. For instance, when using Google Cloud
    * Storage, it returns a StorageRpc object.
    */
@@ -509,6 +519,16 @@ public abstract class ServiceOptions<
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
     }
+    return rpc;
+  }
+
+  /**
+   * Creates a new rpc object and returns it. Subsequent calls to {@link #getRpc()} will return this
+   * instance.
+   */
+  @SuppressWarnings("unchecked")
+  protected ServiceRpc createNewRpc() {
+    rpc = serviceRpcFactory.create((OptionsT) this);
     return rpc;
   }
 

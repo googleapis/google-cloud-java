@@ -437,31 +437,31 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   /**
-   * Returns a {@link Spanner} service object. Note that only the first call to this method will
-   * create a new instance, and all subsequent calls to this method will return the same instance.
-   * Calling this method after the {@link Spanner} instance has been closed will cause an exception.
+   * Returns a {@link Spanner} service object. This method will create a {@link Spanner} instance on
+   * the first call and subsequent calls to this method will return the same {@link Spanner}
+   * instance. If the instance is closed, the following call to this method will create a new {@link
+   * Spanner} instance.
    */
   @Override
   public Spanner getService() {
     Spanner spanner = super.getService();
     if (spanner.isClosed()) {
-      throw new IllegalStateException(
-          "The Spanner service of this SpannerOptions has been closed. Create a new SpannerOptions instance and call getService() on the new instance instead.");
+      spanner = createNewService();
     }
     return spanner;
   }
 
   /**
-   * Returns a {@link SpannerRpc} object. Note that only the first call to this method will create a
-   * new instance, and all subsequent calls to this method will return the same instance. Calling
-   * this method after the instance has been closed will cause an exception.
+   * Returns a {@link SpannerRpc} object. This method will create a {@link ServiceRpc} instance on
+   * the first call and subsequent calls to this method will return the same {@link ServiceRpc}
+   * instance. If the instance is closed, the following call to this method will create a new {@link
+   * ServiceRpc} instance.
    */
   @Override
   public ServiceRpc getRpc() {
     SpannerRpc rpc = (SpannerRpc) super.getRpc();
     if (rpc.isClosed()) {
-      throw new IllegalStateException(
-          "The Spanner service of this SpannerOptions has been closed. Create a new SpannerOptions instance and call getRpc() on the new instance instead.");
+      rpc = (SpannerRpc) createNewRpc();
     }
     return rpc;
   }
