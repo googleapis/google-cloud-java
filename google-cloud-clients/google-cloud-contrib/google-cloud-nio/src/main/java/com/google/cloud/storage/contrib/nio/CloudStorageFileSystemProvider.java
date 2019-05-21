@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -769,13 +769,15 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         }
         CloudStorageObjectAttributes ret;
         ret = new CloudStorageObjectAttributes(blobInfo);
-        // There exists a file with this name, yes. But should we pretend it's a directory?
-        // Because the web UI will allow the user to "create directories" by creating files
-        // whose name ends in slash (and these files aren't always zero-size).
-        // If we're set to use pseudo directories and the file name looks like a path,
-        // then say it's a directory. We pass null to avoid trying to actually list files;
-        // if the path doesn't end in "/" we'll truthfully say it's a file. Yes it's also
-        // a directory but we don't want to do a prefix search every time the user stats a file.
+        /*
+          There exists a file with this name, yes. But should we pretend it's a directory?
+          The web UI will allow the user to "create directories" by creating files
+          whose name ends in slash (and these files aren't always zero-size).
+          If we're set to use pseudo directories and the file name looks like a path,
+          then say it's a directory. We pass null to avoid trying to actually list files;
+          if the path doesn't end in "/" we'll truthfully say it's a file. Yes it may also be
+          a directory but we don't want to do a prefix search every time the user stats a file.
+        */
         if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
           @SuppressWarnings("unchecked")
           A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
