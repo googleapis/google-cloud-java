@@ -355,6 +355,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Returns the list of all knowledge bases of the specified agent.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void listKnowledgeBases(
@@ -369,6 +371,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Retrieves the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void getKnowledgeBase(
@@ -383,6 +387,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Creates a knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void createKnowledgeBase(
@@ -397,6 +403,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Deletes the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void deleteKnowledgeBase(
@@ -410,6 +418,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Updates the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void updateKnowledgeBase(
@@ -488,6 +498,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Returns the list of all knowledge bases of the specified agent.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void listKnowledgeBases(
@@ -505,6 +517,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Retrieves the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void getKnowledgeBase(
@@ -522,6 +536,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Creates a knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void createKnowledgeBase(
@@ -539,6 +555,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Deletes the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void deleteKnowledgeBase(
@@ -555,6 +573,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Updates the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public void updateKnowledgeBase(
@@ -597,6 +617,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Returns the list of all knowledge bases of the specified agent.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse listKnowledgeBases(
@@ -610,6 +632,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Retrieves the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase(
@@ -623,6 +647,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Creates a knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase createKnowledgeBase(
@@ -636,6 +662,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Deletes the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.protobuf.Empty deleteKnowledgeBase(
@@ -649,6 +677,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Updates the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase updateKnowledgeBase(
@@ -687,6 +717,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Returns the list of all knowledge bases of the specified agent.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -701,6 +733,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Retrieves the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -715,6 +749,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Creates a knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -730,6 +766,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Deletes the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -744,6 +782,8 @@ public final class KnowledgeBasesGrpc {
      *
      * <pre>
      * Updates the specified knowledge base.
+     * Note: The `projects.agent.knowledgeBases` resource is deprecated;
+     * only use `projects.knowledgeBases`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

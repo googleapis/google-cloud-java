@@ -173,6 +173,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Returns the list of all documents of the knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -200,6 +203,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Returns the list of all documents of the knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -223,6 +229,9 @@ public class DocumentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the list of all documents of the knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
    *
@@ -249,6 +258,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Returns the list of all documents of the knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -273,6 +285,9 @@ public class DocumentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the list of all documents of the knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
    *
@@ -305,6 +320,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Retrieves the specified document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -329,6 +347,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Retrieves the specified document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -351,6 +372,9 @@ public class DocumentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
    *
@@ -375,6 +399,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Retrieves the specified document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -396,6 +423,9 @@ public class DocumentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
    *
    * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
@@ -432,6 +462,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -464,6 +497,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -495,6 +531,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -524,6 +563,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Creates a new document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -550,6 +592,9 @@ public class DocumentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
@@ -581,6 +626,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -608,6 +656,9 @@ public class DocumentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
    *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
@@ -638,6 +689,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -665,6 +719,9 @@ public class DocumentsClient implements BackgroundResource {
   /**
    * Deletes the specified document.
    *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
    * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
@@ -688,8 +745,12 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified document. Operation &lt;response:
-   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * Updates the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
@@ -716,8 +777,12 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified document. Operation &lt;response:
-   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * Updates the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
@@ -744,8 +809,12 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified document. Operation &lt;response:
-   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * Updates the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
@@ -770,8 +839,12 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified document. Operation &lt;response:
-   * [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
+   * Updates the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
@@ -797,8 +870,12 @@ public class DocumentsClient implements BackgroundResource {
    * Reloads the specified document from its specified source, content_uri or content. The
    * previously loaded content of the document will be deleted. Note: Even when the content of the
    * document has not changed, there still may be side effects because of internal implementation
-   * changes. Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-   * metadata:
+   * changes.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
@@ -822,8 +899,12 @@ public class DocumentsClient implements BackgroundResource {
    * Reloads the specified document from its specified source, content_uri or content. The
    * previously loaded content of the document will be deleted. Note: Even when the content of the
    * document has not changed, there still may be side effects because of internal implementation
-   * changes. Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-   * metadata:
+   * changes.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document], metadata:
    * [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
    *
    * <p>Sample code:
