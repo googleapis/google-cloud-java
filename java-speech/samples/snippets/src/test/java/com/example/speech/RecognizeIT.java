@@ -113,22 +113,22 @@ public class RecognizeIT {
   @Test
   public void testAutoPunctuation() throws Exception {
     Recognize.transcribeFileWithAutomaticPunctuation(audioFileName);
-    String got = bout.toString().toLowerCase();
-    assertThat(got).contains("how old is the brooklyn bridge");
+    String got = bout.toString();
+    assertThat(got).contains("How old is the Brooklyn Bridge?");
   }
 
   @Test
   public void testGcsAutoPunctuation() throws Exception {
     Recognize.transcribeGcsWithAutomaticPunctuation(gcsAudioPath);
-    String got = bout.toString().toLowerCase();
-    assertThat(got).contains("how old is the brooklyn bridge");
+    String got = bout.toString();
+    assertThat(got).contains("How old is the Brooklyn Bridge?");
   }
 
   @Test
   public void testStreamAutoPunctuation() throws Exception {
     Recognize.streamingTranscribeWithAutomaticPunctuation(audioFileName);
-    String got = bout.toString().toLowerCase();
-    assertThat(got).contains("how old is the brooklyn bridge");
+    String got = bout.toString();
+    assertThat(got).contains("How old is the Brooklyn Bridge?");
   }
 
   @Test
