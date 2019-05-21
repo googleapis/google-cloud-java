@@ -6321,6 +6321,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>ACTIONS_ON_GOOGLE = 8;</code>
        */
       ACTIONS_ON_GOOGLE(8),
+      /**
+       *
+       *
+       * <pre>
+       * Google Hangouts.
+       * </pre>
+       *
+       * <code>GOOGLE_HANGOUTS = 11;</code>
+       */
+      GOOGLE_HANGOUTS(11),
       UNRECOGNIZED(-1),
       ;
 
@@ -6474,6 +6484,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>ACTIONS_ON_GOOGLE = 8;</code>
        */
       public static final int ACTIONS_ON_GOOGLE_VALUE = 8;
+      /**
+       *
+       *
+       * <pre>
+       * Google Hangouts.
+       * </pre>
+       *
+       * <code>GOOGLE_HANGOUTS = 11;</code>
+       */
+      public static final int GOOGLE_HANGOUTS_VALUE = 11;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -6509,6 +6529,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return VIBER;
           case 8:
             return ACTIONS_ON_GOOGLE;
+          case 11:
+            return GOOGLE_HANGOUTS;
           default:
             return null;
         }
@@ -30885,8 +30907,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -30903,8 +30925,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -30918,8 +30940,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -30934,8 +30956,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -30949,8 +30971,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -34431,8 +34453,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34449,8 +34471,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34464,8 +34486,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34480,8 +34502,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34502,8 +34524,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34524,8 +34546,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34546,8 +34568,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34564,8 +34586,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34579,8 +34601,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34594,8 +34616,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34612,8 +34634,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
@@ -34630,8 +34652,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of platforms for which the first response will be
-     * taken from among the messages assigned to the DEFAULT_PLATFORM.
+     * Optional. The list of platforms for which the first responses will be
+     * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
      * </pre>
      *
      * <code>
