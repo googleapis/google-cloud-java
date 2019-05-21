@@ -492,8 +492,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -506,8 +506,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -519,8 +519,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -532,8 +532,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>
@@ -545,8 +545,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of platforms for which the first response will be
-   * taken from among the messages assigned to the DEFAULT_PLATFORM.
+   * Optional. The list of platforms for which the first responses will be
+   * copied from the messages in PLATFORM_UNSPECIFIED (i.e. default platform).
    * </pre>
    *
    * <code>

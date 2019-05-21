@@ -398,6 +398,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public void listDocuments(
@@ -412,6 +414,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public void getDocument(
@@ -426,6 +430,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -441,6 +447,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -456,6 +464,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -474,6 +484,8 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -554,6 +566,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public void listDocuments(
@@ -571,6 +585,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public void getDocument(
@@ -588,6 +604,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -606,6 +624,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -624,6 +644,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -645,6 +667,8 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -687,6 +711,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse listDocuments(
@@ -700,6 +726,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Document getDocument(
@@ -713,6 +741,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -728,6 +758,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -743,6 +775,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -761,6 +795,8 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -799,6 +835,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Returns the list of all documents of the knowledge base.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -813,6 +851,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Retrieves the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -827,6 +867,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Creates a new document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -842,6 +884,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Deletes the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -857,6 +901,8 @@ public final class DocumentsGrpc {
      *
      * <pre>
      * Updates the specified document.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
@@ -875,6 +921,8 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
+     * only use `projects.knowledgeBases.documents`.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
      *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
