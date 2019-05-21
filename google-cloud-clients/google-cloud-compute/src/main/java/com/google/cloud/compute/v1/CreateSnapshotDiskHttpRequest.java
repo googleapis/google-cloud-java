@@ -162,6 +162,7 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     return fields;
   }
 
+  /** Application consistent snapshot (ie. VSS). */
   public Boolean getGuestFlush() {
     return guestFlush;
   }
@@ -358,10 +359,12 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       return this;
     }
 
+    /** Application consistent snapshot (ie. VSS). */
     public Boolean getGuestFlush() {
       return guestFlush;
     }
 
+    /** Application consistent snapshot (ie. VSS). */
     public Builder setGuestFlush(Boolean guestFlush) {
       this.guestFlush = guestFlush;
       return this;
