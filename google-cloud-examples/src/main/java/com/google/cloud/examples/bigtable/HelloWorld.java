@@ -30,8 +30,6 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 // [END bigtable_hw_imports_veneer]
 
-// [END bigtable_hw_imports_veneer]
-
 /**
  * An example of using Google Cloud Bigtable.
  *
