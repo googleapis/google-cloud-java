@@ -22,11 +22,10 @@ class OptionAllowTrailingSlash implements CloudStorageOption.Open {
 
   private OptionAllowTrailingSlash() {};
 
-  public synchronized static OptionAllowTrailingSlash getInstance() {
-    if (null==instance) {
+  public static synchronized OptionAllowTrailingSlash getInstance() {
+    if (null == instance) {
       instance = new OptionAllowTrailingSlash();
     }
     return instance;
   }
-
 }
