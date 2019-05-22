@@ -255,7 +255,7 @@ public final class Identity implements Serializable {
    * policy identities to {@code Identity} objects.
    */
   public static Identity valueOf(String identityStr) {
-    String[] info = identityStr.split(":");
+    String[] info = identityStr.split(":", 2);
     Type type = Type.valueOf(CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, info[0]));
     if (info.length == 1) {
       return new Identity(type, null);
