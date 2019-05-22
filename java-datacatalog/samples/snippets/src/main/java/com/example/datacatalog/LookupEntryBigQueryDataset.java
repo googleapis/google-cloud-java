@@ -16,6 +16,7 @@
 
 package com.example.datacatalog;
 
+// [START datacatalog_bigquery_lookup_dataset]
 import com.google.cloud.datacatalog.Entry;
 import com.google.cloud.datacatalog.LookupEntryRequest;
 import com.google.cloud.datacatalog.v1beta1.DataCatalogClient;
@@ -54,3 +55,4 @@ public class LookupEntryBigQueryDataset {
     }
   }
 }
+// [END datacatalog_bigquery_lookup_dataset]
