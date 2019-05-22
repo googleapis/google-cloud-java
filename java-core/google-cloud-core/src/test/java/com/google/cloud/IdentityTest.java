@@ -141,14 +141,16 @@ public class IdentityTest {
     Identity.valueOf("");
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testValueOfThreePart() {
-    Identity.valueOf("a:b:c");
-  }
-
   @Test
   public void testUnrecognizedToString() {
     assertEquals("a:b", Identity.valueOf("a:b").strValue());
+  }
+
+  @Test
+  public void testValueOfThreePart() {
+    Identity identity = Identity.valueOf("a:b:c");
+    assertEquals("A", identity.getType().name());
+    assertEquals("b:c", identity.getValue());
   }
 
   private void compareIdentities(Identity expected, Identity actual) {
