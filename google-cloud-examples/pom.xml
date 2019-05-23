@@ -31,10 +31,6 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigtable</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-compute</artifactId>
     </dependency>
     <dependency>
