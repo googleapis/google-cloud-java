@@ -1104,7 +1104,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The category for the product identified by the reference image. This should
-   * be either "homegoods", "apparel", or "toys".
+   * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+   * legacy categories "homegoods", "apparel", and "toys" are still supported,
+   * but these should not be used for new products.
    * This field is immutable.
    * </pre>
    *
@@ -1126,7 +1128,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The category for the product identified by the reference image. This should
-   * be either "homegoods", "apparel", or "toys".
+   * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+   * legacy categories "homegoods", "apparel", and "toys" are still supported,
+   * but these should not be used for new products.
    * This field is immutable.
    * </pre>
    *
@@ -1976,7 +1980,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods", "apparel", or "toys".
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -1998,7 +2004,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods", "apparel", or "toys".
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2020,7 +2028,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods", "apparel", or "toys".
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2040,7 +2050,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods", "apparel", or "toys".
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2057,7 +2069,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods", "apparel", or "toys".
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *

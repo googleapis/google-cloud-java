@@ -160,6 +160,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -187,6 +190,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -211,6 +217,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the list of all knowledge bases of the specified agent.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
    *
    * <p>Sample code:
    *
@@ -238,6 +247,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Returns the list of all knowledge bases of the specified agent.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -262,6 +274,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the list of all knowledge bases of the specified agent.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
    *
    * <p>Sample code:
    *
@@ -295,6 +310,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Retrieves the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -319,6 +337,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Retrieves the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -341,6 +362,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
    *
    * <p>Sample code:
    *
@@ -365,6 +389,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Retrieves the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -386,6 +413,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
    *
    * <p>Sample code:
    *
@@ -416,6 +446,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Creates a knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -445,6 +478,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Creates a knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -470,6 +506,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Creates a knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -494,6 +533,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
    *
    * <p>Sample code:
    *
@@ -521,6 +563,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Deletes the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -545,6 +590,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Deletes the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -568,6 +616,9 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Deletes the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -590,11 +641,43 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Updates the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder().build();
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(knowledgeBase);
+   * }
+   * </code></pre>
+   *
+   * @param knowledgeBase Required. The knowledge base to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KnowledgeBase updateKnowledgeBase(KnowledgeBase knowledgeBase) {
+
+    UpdateKnowledgeBaseRequest request =
+        UpdateKnowledgeBaseRequest.newBuilder().setKnowledgeBase(knowledgeBase).build();
+    return updateKnowledgeBase(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder()
+   *     .setKnowledgeBase(knowledgeBase)
+   *     .build();
    *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(request);
    * }
    * </code></pre>
@@ -610,11 +693,17 @@ public class KnowledgeBasesClient implements BackgroundResource {
   /**
    * Updates the specified knowledge base.
    *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
    * <p>Sample code:
    *
    * <pre><code>
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
-   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder().build();
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   UpdateKnowledgeBaseRequest request = UpdateKnowledgeBaseRequest.newBuilder()
+   *     .setKnowledgeBase(knowledgeBase)
+   *     .build();
    *   ApiFuture&lt;KnowledgeBase&gt; future = knowledgeBasesClient.updateKnowledgeBaseCallable().futureCall(request);
    *   // Do something
    *   KnowledgeBase response = future.get();

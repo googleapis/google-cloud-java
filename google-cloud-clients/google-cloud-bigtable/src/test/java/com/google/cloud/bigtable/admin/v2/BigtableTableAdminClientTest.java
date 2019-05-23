@@ -115,7 +115,6 @@ public class BigtableTableAdminClientTest {
         com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
             .setParent(INSTANCE_NAME)
             .setTableId(TABLE_ID)
-            .setTable(com.google.bigtable.admin.v2.Table.getDefaultInstance())
             .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse =

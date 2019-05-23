@@ -25,10 +25,21 @@ import java.util.List;
 /** Forwarding implements of StructReader */
 public class ForwardingStructReader implements StructReader {
 
-  private final StructReader delegate;
+  private StructReader delegate;
 
   public ForwardingStructReader(StructReader delegate) {
     this.delegate = Preconditions.checkNotNull(delegate);
+  }
+
+  /**
+   * Replaces the underlying {@link StructReader}. It is the responsibility of the caller to ensure
+   * that the new delegate has the same properties and is in the same state as the original
+   * delegate. This method can be used if the underlying delegate needs to be replaced after a
+   * session or transaction needed to be restarted after the {@link StructReader} had already been
+   * returned to the user.
+   */
+  void replaceDelegate(StructReader newDelegate) {
+    this.delegate = Preconditions.checkNotNull(newDelegate);
   }
 
   @Override

@@ -1,0 +1,32 @@
+{
+  "updateTime": "2019-05-02T07:49:52.840094Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.17.1",
+        "dockerImage": "googleapis/artman@sha256:a40ca4dd4ef031c0ded4df4909ffdf7b3f20d29b23e682ef991eb60ba0ca6025"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "dd42335a9a8613072bef9cbda2725e84631d7043",
+        "internalRef": "246232940"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "phishingprotection",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/phishingprotection/artman_phishingprotection_v1beta1.yaml"
+      }
+    }
+  ]
+}

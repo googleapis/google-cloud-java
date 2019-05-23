@@ -244,6 +244,37 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * *Optional* Metadata regarding this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Metadata regarding this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+   */
+  com.google.cloud.speech.v1.RecognitionMetadata getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* Metadata regarding this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
+   */
+  com.google.cloud.speech.v1.RecognitionMetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
    * explicitly specified, then we auto-select a model based on the parameters

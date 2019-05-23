@@ -1140,8 +1140,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public void deleteProductSet(
@@ -1231,8 +1229,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public void deleteProduct(
@@ -1277,8 +1273,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public void deleteReferenceImage(
@@ -1342,8 +1336,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public void removeProductFromProductSet(
@@ -1629,8 +1621,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public void deleteProductSet(
@@ -1735,8 +1725,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public void deleteProduct(
@@ -1787,8 +1775,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public void deleteReferenceImage(
@@ -1864,8 +1850,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public void removeProductFromProductSet(
@@ -2029,8 +2013,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductSet(
@@ -2119,8 +2101,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public com.google.protobuf.Empty deleteProduct(
@@ -2165,8 +2145,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public com.google.protobuf.Empty deleteReferenceImage(
@@ -2229,8 +2207,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public com.google.protobuf.Empty removeProductFromProductSet(
@@ -2385,8 +2361,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2476,8 +2450,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2523,8 +2495,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2589,8 +2559,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

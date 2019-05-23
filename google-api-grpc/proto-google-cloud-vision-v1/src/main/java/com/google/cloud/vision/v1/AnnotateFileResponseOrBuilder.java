@@ -90,4 +90,15 @@ public interface AnnotateFileResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
    */
   com.google.cloud.vision.v1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * This field gives the total number of pages in the file.
+   * </pre>
+   *
+   * <code>int32 total_pages = 3;</code>
+   */
+  int getTotalPages();
 }

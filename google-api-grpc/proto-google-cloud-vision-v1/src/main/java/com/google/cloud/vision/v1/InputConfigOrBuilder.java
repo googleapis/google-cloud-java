@@ -43,8 +43,23 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * The type of the file. Currently only "application/pdf" and "image/tiff"
-   * are supported. Wildcards are not supported.
+   * File content, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * Currently, this field only works for BatchAnnotateFiles requests. It does
+   * not work for AsyncBatchAnnotateFiles requests.
+   * </pre>
+   *
+   * <code>bytes content = 3;</code>
+   */
+  com.google.protobuf.ByteString getContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the file. Currently only "application/pdf", "image/tiff" and
+   * "image/gif" are supported. Wildcards are not supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -54,8 +69,8 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * The type of the file. Currently only "application/pdf" and "image/tiff"
-   * are supported. Wildcards are not supported.
+   * The type of the file. Currently only "application/pdf", "image/tiff" and
+   * "image/gif" are supported. Wildcards are not supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>

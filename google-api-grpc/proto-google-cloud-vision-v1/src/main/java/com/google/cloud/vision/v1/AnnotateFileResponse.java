@@ -80,6 +80,11 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
                       extensionRegistry));
               break;
             }
+          case 24:
+            {
+              totalPages_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -224,6 +229,21 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     return responses_.get(index);
   }
 
+  public static final int TOTAL_PAGES_FIELD_NUMBER = 3;
+  private int totalPages_;
+  /**
+   *
+   *
+   * <pre>
+   * This field gives the total number of pages in the file.
+   * </pre>
+   *
+   * <code>int32 total_pages = 3;</code>
+   */
+  public int getTotalPages() {
+    return totalPages_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -244,6 +264,9 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < responses_.size(); i++) {
       output.writeMessage(2, responses_.get(i));
     }
+    if (totalPages_ != 0) {
+      output.writeInt32(3, totalPages_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -258,6 +281,9 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
     }
     for (int i = 0; i < responses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, responses_.get(i));
+    }
+    if (totalPages_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalPages_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -280,6 +306,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
     if (!getResponsesList().equals(other.getResponsesList())) return false;
+    if (getTotalPages() != other.getTotalPages()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -299,6 +326,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + RESPONSES_FIELD_NUMBER;
       hash = (53 * hash) + getResponsesList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_PAGES_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalPages();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -459,6 +488,8 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       } else {
         responsesBuilder_.clear();
       }
+      totalPages_ = 0;
+
       return this;
     }
 
@@ -502,6 +533,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.responses_ = responsesBuilder_.build();
       }
+      result.totalPages_ = totalPages_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -582,6 +614,9 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
             responsesBuilder_.addAllMessages(other.responses_);
           }
         }
+      }
+      if (other.getTotalPages() != 0) {
+        setTotalPages(other.getTotalPages());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1145,6 +1180,50 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
         responses_ = null;
       }
       return responsesBuilder_;
+    }
+
+    private int totalPages_;
+    /**
+     *
+     *
+     * <pre>
+     * This field gives the total number of pages in the file.
+     * </pre>
+     *
+     * <code>int32 total_pages = 3;</code>
+     */
+    public int getTotalPages() {
+      return totalPages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field gives the total number of pages in the file.
+     * </pre>
+     *
+     * <code>int32 total_pages = 3;</code>
+     */
+    public Builder setTotalPages(int value) {
+
+      totalPages_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field gives the total number of pages in the file.
+     * </pre>
+     *
+     * <code>int32 total_pages = 3;</code>
+     */
+    public Builder clearTotalPages() {
+
+      totalPages_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

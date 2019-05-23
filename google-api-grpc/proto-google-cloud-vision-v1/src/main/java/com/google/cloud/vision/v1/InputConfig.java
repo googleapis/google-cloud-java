@@ -23,6 +23,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private InputConfig() {
+    content_ = com.google.protobuf.ByteString.EMPTY;
     mimeType_ = "";
   }
 
@@ -71,6 +72,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               mimeType_ = s;
+              break;
+            }
+          case 26:
+            {
+              content_ = input.readBytes();
               break;
             }
           default:
@@ -148,14 +154,33 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return getGcsSource();
   }
 
+  public static final int CONTENT_FIELD_NUMBER = 3;
+  private com.google.protobuf.ByteString content_;
+  /**
+   *
+   *
+   * <pre>
+   * File content, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * Currently, this field only works for BatchAnnotateFiles requests. It does
+   * not work for AsyncBatchAnnotateFiles requests.
+   * </pre>
+   *
+   * <code>bytes content = 3;</code>
+   */
+  public com.google.protobuf.ByteString getContent() {
+    return content_;
+  }
+
   public static final int MIME_TYPE_FIELD_NUMBER = 2;
   private volatile java.lang.Object mimeType_;
   /**
    *
    *
    * <pre>
-   * The type of the file. Currently only "application/pdf" and "image/tiff"
-   * are supported. Wildcards are not supported.
+   * The type of the file. Currently only "application/pdf", "image/tiff" and
+   * "image/gif" are supported. Wildcards are not supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -175,8 +200,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the file. Currently only "application/pdf" and "image/tiff"
-   * are supported. Wildcards are not supported.
+   * The type of the file. Currently only "application/pdf", "image/tiff" and
+   * "image/gif" are supported. Wildcards are not supported.
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -213,6 +238,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getMimeTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
+    if (!content_.isEmpty()) {
+      output.writeBytes(3, content_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +255,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getMimeTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
+    }
+    if (!content_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(3, content_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -247,6 +278,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGcsSource()) {
       if (!getGcsSource().equals(other.getGcsSource())) return false;
     }
+    if (!getContent().equals(other.getContent())) return false;
     if (!getMimeType().equals(other.getMimeType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -263,6 +295,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getGcsSource().hashCode();
     }
+    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMimeType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -416,6 +450,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         gcsSource_ = null;
         gcsSourceBuilder_ = null;
       }
+      content_ = com.google.protobuf.ByteString.EMPTY;
+
       mimeType_ = "";
 
       return this;
@@ -450,6 +486,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.gcsSource_ = gcsSourceBuilder_.build();
       }
+      result.content_ = content_;
       result.mimeType_ = mimeType_;
       onBuilt();
       return result;
@@ -502,6 +539,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vision.v1.InputConfig.getDefaultInstance()) return this;
       if (other.hasGcsSource()) {
         mergeGcsSource(other.getGcsSource());
+      }
+      if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
+        setContent(other.getContent());
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
@@ -717,13 +757,72 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return gcsSourceBuilder_;
     }
 
+    private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * File content, represented as a stream of bytes.
+     * Note: As with all `bytes` fields, protobuffers use a pure binary
+     * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateFiles requests. It does
+     * not work for AsyncBatchAnnotateFiles requests.
+     * </pre>
+     *
+     * <code>bytes content = 3;</code>
+     */
+    public com.google.protobuf.ByteString getContent() {
+      return content_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File content, represented as a stream of bytes.
+     * Note: As with all `bytes` fields, protobuffers use a pure binary
+     * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateFiles requests. It does
+     * not work for AsyncBatchAnnotateFiles requests.
+     * </pre>
+     *
+     * <code>bytes content = 3;</code>
+     */
+    public Builder setContent(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      content_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File content, represented as a stream of bytes.
+     * Note: As with all `bytes` fields, protobuffers use a pure binary
+     * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateFiles requests. It does
+     * not work for AsyncBatchAnnotateFiles requests.
+     * </pre>
+     *
+     * <code>bytes content = 3;</code>
+     */
+    public Builder clearContent() {
+
+      content_ = getDefaultInstance().getContent();
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object mimeType_ = "";
     /**
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -743,8 +842,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -764,8 +863,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -783,8 +882,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
@@ -799,8 +898,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the file. Currently only "application/pdf" and "image/tiff"
-     * are supported. Wildcards are not supported.
+     * The type of the file. Currently only "application/pdf", "image/tiff" and
+     * "image/gif" are supported. Wildcards are not supported.
      * </pre>
      *
      * <code>string mime_type = 2;</code>
