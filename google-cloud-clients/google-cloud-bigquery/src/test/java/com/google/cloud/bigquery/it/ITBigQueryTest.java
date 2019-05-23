@@ -1083,6 +1083,11 @@ public class ITBigQueryTest {
     Model model = bigquery.getModel(modelId);
     assertNotNull(model);
     assertEquals(model.getModelType(), "LINEAR_REGRESSION");
+    // Compare the extended model metadata.
+    assertEquals(model.getFeatureColumns().get(0).getName(), "f1");
+    assertEquals(model.getLabelColumns().get(0).getName(), "predicted_label");
+    assertEquals(
+        model.getTrainingRuns().get(0).getTrainingOptions().getLearnRateStrategy(), "CONSTANT");
 
     // Mutate metadata.
     ModelInfo info = model.toBuilder().setDescription("TEST").build();
