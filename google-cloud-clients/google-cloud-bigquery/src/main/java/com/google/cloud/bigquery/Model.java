@@ -110,19 +110,19 @@ public class Model extends ModelInfo {
     }
 
     @Override
-    public Builder setTrainingRuns(List<TrainingRun> trainingRunList) {
+    Builder setTrainingRuns(List<TrainingRun> trainingRunList) {
       infoBuilder.setTrainingRuns(trainingRunList);
       return this;
     }
 
     @Override
-    public Builder setLabelColumns(List<StandardSqlField> labelColumnList) {
+    Builder setLabelColumns(List<StandardSqlField> labelColumnList) {
       infoBuilder.setLabelColumns(labelColumnList);
       return this;
     }
 
     @Override
-    public Builder setFeatureColumns(List<StandardSqlField> featureColumnList) {
+    Builder setFeatureColumns(List<StandardSqlField> featureColumnList) {
       infoBuilder.setFeatureColumns(featureColumnList);
       return this;
     }
