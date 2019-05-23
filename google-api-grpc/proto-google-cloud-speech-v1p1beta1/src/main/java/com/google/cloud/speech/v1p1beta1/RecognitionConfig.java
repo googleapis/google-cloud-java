@@ -336,6 +336,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>SPEEX_WITH_HEADER_BYTE = 7;</code>
      */
     SPEEX_WITH_HEADER_BYTE(7),
+    /**
+     *
+     *
+     * <pre>
+     * MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     * kbps). When using this encoding, `sample_rate_hertz` can be optionally
+     * unset if not known.
+     * </pre>
+     *
+     * <code>MP3 = 8;</code>
+     */
+    MP3(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -438,6 +450,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>SPEEX_WITH_HEADER_BYTE = 7;</code>
      */
     public static final int SPEEX_WITH_HEADER_BYTE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     * kbps). When using this encoding, `sample_rate_hertz` can be optionally
+     * unset if not known.
+     * </pre>
+     *
+     * <code>MP3 = 8;</code>
+     */
+    public static final int MP3_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -471,6 +495,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           return OGG_OPUS;
         case 7:
           return SPEEX_WITH_HEADER_BYTE;
+        case 8:
+          return MP3;
         default:
           return null;
       }
