@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.util.Iterator;
 import org.junit.AfterClass;
