@@ -85,6 +85,14 @@ public final class JobsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1beta2_PigJob_PropertiesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1beta2_SparkRJob_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1beta2_SparkRJob_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1beta2_SparkRJob_PropertiesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1beta2_SparkRJob_PropertiesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataproc_v1beta2_JobPlacement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1beta2_JobPlacement_fieldAccessorTable;
@@ -225,106 +233,115 @@ public final class JobsProto {
           + "g\0326\n\024ScriptVariablesEntry\022\013\n\003key\030\001 \001(\t\022\r"
           + "\n\005value\030\002 \001(\t:\0028\001\0321\n\017PropertiesEntry\022\013\n\003"
           + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\t\n\007queries\""
-          + ":\n\014JobPlacement\022\024\n\014cluster_name\030\001 \001(\t\022\024\n"
-          + "\014cluster_uuid\030\002 \001(\t\"\314\003\n\tJobStatus\022=\n\005sta"
-          + "te\030\001 \001(\0162..google.cloud.dataproc.v1beta2"
-          + ".JobStatus.State\022\017\n\007details\030\002 \001(\t\0224\n\020sta"
-          + "te_start_time\030\006 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022C\n\010substate\030\007 \001(\01621.google.cloud"
-          + ".dataproc.v1beta2.JobStatus.Substate\"\251\001\n"
-          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007PENDING"
-          + "\020\001\022\016\n\nSETUP_DONE\020\010\022\013\n\007RUNNING\020\002\022\022\n\016CANCE"
-          + "L_PENDING\020\003\022\022\n\016CANCEL_STARTED\020\007\022\r\n\tCANCE"
-          + "LLED\020\004\022\010\n\004DONE\020\005\022\t\n\005ERROR\020\006\022\023\n\017ATTEMPT_F"
-          + "AILURE\020\t\"H\n\010Substate\022\017\n\013UNSPECIFIED\020\000\022\r\n"
-          + "\tSUBMITTED\020\001\022\n\n\006QUEUED\020\002\022\020\n\014STALE_STATUS"
-          + "\020\003\"2\n\014JobReference\022\022\n\nproject_id\030\001 \001(\t\022\016"
-          + "\n\006job_id\030\002 \001(\t\"\226\002\n\017YarnApplication\022\014\n\004na"
-          + "me\030\001 \001(\t\022C\n\005state\030\002 \001(\01624.google.cloud.d"
-          + "ataproc.v1beta2.YarnApplication.State\022\020\n"
-          + "\010progress\030\003 \001(\002\022\024\n\014tracking_url\030\004 \001(\t\"\207\001"
-          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\007\n\003NEW\020\001\022"
-          + "\016\n\nNEW_SAVING\020\002\022\r\n\tSUBMITTED\020\003\022\014\n\010ACCEPT"
-          + "ED\020\004\022\013\n\007RUNNING\020\005\022\014\n\010FINISHED\020\006\022\n\n\006FAILE"
-          + "D\020\007\022\n\n\006KILLED\020\010\"\362\007\n\003Job\022>\n\treference\030\001 \001"
-          + "(\0132+.google.cloud.dataproc.v1beta2.JobRe"
-          + "ference\022>\n\tplacement\030\002 \001(\0132+.google.clou"
-          + "d.dataproc.v1beta2.JobPlacement\022>\n\nhadoo"
-          + "p_job\030\003 \001(\0132(.google.cloud.dataproc.v1be"
-          + "ta2.HadoopJobH\000\022<\n\tspark_job\030\004 \001(\0132\'.goo"
-          + "gle.cloud.dataproc.v1beta2.SparkJobH\000\022@\n"
-          + "\013pyspark_job\030\005 \001(\0132).google.cloud.datapr"
-          + "oc.v1beta2.PySparkJobH\000\022:\n\010hive_job\030\006 \001("
-          + "\0132&.google.cloud.dataproc.v1beta2.HiveJo"
-          + "bH\000\0228\n\007pig_job\030\007 \001(\0132%.google.cloud.data"
-          + "proc.v1beta2.PigJobH\000\022C\n\rspark_sql_job\030\014"
-          + " \001(\0132*.google.cloud.dataproc.v1beta2.Spa"
-          + "rkSqlJobH\000\0228\n\006status\030\010 \001(\0132(.google.clou"
-          + "d.dataproc.v1beta2.JobStatus\022@\n\016status_h"
-          + "istory\030\r \003(\0132(.google.cloud.dataproc.v1b"
-          + "eta2.JobStatus\022I\n\021yarn_applications\030\t \003("
-          + "\0132..google.cloud.dataproc.v1beta2.YarnAp"
-          + "plication\022\024\n\014submitted_by\030\n \001(\t\022\"\n\032drive"
-          + "r_output_resource_uri\030\021 \001(\t\022 \n\030driver_co"
-          + "ntrol_files_uri\030\017 \001(\t\022>\n\006labels\030\022 \003(\0132.."
-          + "google.cloud.dataproc.v1beta2.Job.Labels"
-          + "Entry\022@\n\nscheduling\030\024 \001(\0132,.google.cloud"
-          + ".dataproc.v1beta2.JobScheduling\022\020\n\010job_u"
-          + "uid\030\026 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001B\n\n\010type_job\".\n\rJobSched"
-          + "uling\022\035\n\025max_failures_per_hour\030\001 \001(\005\"{\n\020"
-          + "SubmitJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006"
-          + "region\030\003 \001(\t\022/\n\003job\030\002 \001(\0132\".google.cloud"
-          + ".dataproc.v1beta2.Job\022\022\n\nrequest_id\030\004 \001("
-          + "\t\"C\n\rGetJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016"
-          + "\n\006region\030\003 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\225\002\n\017ListJ"
-          + "obsRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006region"
-          + "\030\006 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
-          + "\003 \001(\t\022\024\n\014cluster_name\030\004 \001(\t\022Y\n\021job_state"
-          + "_matcher\030\005 \001(\0162>.google.cloud.dataproc.v"
-          + "1beta2.ListJobsRequest.JobStateMatcher\022\016"
-          + "\n\006filter\030\007 \001(\t\"6\n\017JobStateMatcher\022\007\n\003ALL"
-          + "\020\000\022\n\n\006ACTIVE\020\001\022\016\n\nNON_ACTIVE\020\002\"\250\001\n\020Updat"
-          + "eJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006regio"
-          + "n\030\002 \001(\t\022\016\n\006job_id\030\003 \001(\t\022/\n\003job\030\004 \001(\0132\".g"
-          + "oogle.cloud.dataproc.v1beta2.Job\022/\n\013upda"
-          + "te_mask\030\005 \001(\0132\032.google.protobuf.FieldMas"
-          + "k\"]\n\020ListJobsResponse\0220\n\004jobs\030\001 \003(\0132\".go"
-          + "ogle.cloud.dataproc.v1beta2.Job\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"F\n\020CancelJobRequest\022\022\n\n"
-          + "project_id\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022\016\n\006job_"
-          + "id\030\002 \001(\t\"F\n\020DeleteJobRequest\022\022\n\nproject_"
-          + "id\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022\016\n\006job_id\030\002 \001(\t"
-          + "2\213\010\n\rJobController\022\250\001\n\tSubmitJob\022/.googl"
-          + "e.cloud.dataproc.v1beta2.SubmitJobReques"
-          + "t\032\".google.cloud.dataproc.v1beta2.Job\"F\202"
-          + "\323\344\223\002@\";/v1beta2/projects/{project_id}/re"
-          + "gions/{region}/jobs:submit:\001*\022\241\001\n\006GetJob"
-          + "\022,.google.cloud.dataproc.v1beta2.GetJobR"
-          + "equest\032\".google.cloud.dataproc.v1beta2.J"
-          + "ob\"E\202\323\344\223\002?\022=/v1beta2/projects/{project_i"
-          + "d}/regions/{region}/jobs/{job_id}\022\251\001\n\010Li"
-          + "stJobs\022..google.cloud.dataproc.v1beta2.L"
-          + "istJobsRequest\032/.google.cloud.dataproc.v"
-          + "1beta2.ListJobsResponse\"<\202\323\344\223\0026\0224/v1beta"
-          + "2/projects/{project_id}/regions/{region}"
-          + "/jobs\022\254\001\n\tUpdateJob\022/.google.cloud.datap"
-          + "roc.v1beta2.UpdateJobRequest\032\".google.cl"
-          + "oud.dataproc.v1beta2.Job\"J\202\323\344\223\002D2=/v1bet"
-          + "a2/projects/{project_id}/regions/{region"
-          + "}/jobs/{job_id}:\003job\022\261\001\n\tCancelJob\022/.goo"
-          + "gle.cloud.dataproc.v1beta2.CancelJobRequ"
-          + "est\032\".google.cloud.dataproc.v1beta2.Job\""
-          + "O\202\323\344\223\002I\"D/v1beta2/projects/{project_id}/"
-          + "regions/{region}/jobs/{job_id}:cancel:\001*"
-          + "\022\233\001\n\tDeleteJob\022/.google.cloud.dataproc.v"
-          + "1beta2.DeleteJobRequest\032\026.google.protobu"
-          + "f.Empty\"E\202\323\344\223\002?*=/v1beta2/projects/{proj"
-          + "ect_id}/regions/{region}/jobs/{job_id}Bw"
-          + "\n!com.google.cloud.dataproc.v1beta2B\tJob"
-          + "sProtoP\001ZEgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/dataproc/v1beta2;dataprocb"
-          + "\006proto3"
+          + "\242\002\n\tSparkRJob\022\027\n\017main_r_file_uri\030\001 \001(\t\022\014"
+          + "\n\004args\030\002 \003(\t\022\021\n\tfile_uris\030\003 \003(\t\022\024\n\014archi"
+          + "ve_uris\030\004 \003(\t\022L\n\nproperties\030\005 \003(\01328.goog"
+          + "le.cloud.dataproc.v1beta2.SparkRJob.Prop"
+          + "ertiesEntry\022D\n\016logging_config\030\006 \001(\0132,.go"
+          + "ogle.cloud.dataproc.v1beta2.LoggingConfi"
+          + "g\0321\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\":\n\014JobPlacement\022\024\n\014cluster_"
+          + "name\030\001 \001(\t\022\024\n\014cluster_uuid\030\002 \001(\t\"\314\003\n\tJob"
+          + "Status\022=\n\005state\030\001 \001(\0162..google.cloud.dat"
+          + "aproc.v1beta2.JobStatus.State\022\017\n\007details"
+          + "\030\002 \001(\t\0224\n\020state_start_time\030\006 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022C\n\010substate\030\007 \001(\01621"
+          + ".google.cloud.dataproc.v1beta2.JobStatus"
+          + ".Substate\"\251\001\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\013\n\007PENDING\020\001\022\016\n\nSETUP_DONE\020\010\022\013\n\007RUNNI"
+          + "NG\020\002\022\022\n\016CANCEL_PENDING\020\003\022\022\n\016CANCEL_START"
+          + "ED\020\007\022\r\n\tCANCELLED\020\004\022\010\n\004DONE\020\005\022\t\n\005ERROR\020\006"
+          + "\022\023\n\017ATTEMPT_FAILURE\020\t\"H\n\010Substate\022\017\n\013UNS"
+          + "PECIFIED\020\000\022\r\n\tSUBMITTED\020\001\022\n\n\006QUEUED\020\002\022\020\n"
+          + "\014STALE_STATUS\020\003\"2\n\014JobReference\022\022\n\nproje"
+          + "ct_id\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\226\002\n\017YarnAppl"
+          + "ication\022\014\n\004name\030\001 \001(\t\022C\n\005state\030\002 \001(\01624.g"
+          + "oogle.cloud.dataproc.v1beta2.YarnApplica"
+          + "tion.State\022\020\n\010progress\030\003 \001(\002\022\024\n\014tracking"
+          + "_url\030\004 \001(\t\"\207\001\n\005State\022\025\n\021STATE_UNSPECIFIE"
+          + "D\020\000\022\007\n\003NEW\020\001\022\016\n\nNEW_SAVING\020\002\022\r\n\tSUBMITTE"
+          + "D\020\003\022\014\n\010ACCEPTED\020\004\022\013\n\007RUNNING\020\005\022\014\n\010FINISH"
+          + "ED\020\006\022\n\n\006FAILED\020\007\022\n\n\006KILLED\020\010\"\263\010\n\003Job\022>\n\t"
+          + "reference\030\001 \001(\0132+.google.cloud.dataproc."
+          + "v1beta2.JobReference\022>\n\tplacement\030\002 \001(\0132"
+          + "+.google.cloud.dataproc.v1beta2.JobPlace"
+          + "ment\022>\n\nhadoop_job\030\003 \001(\0132(.google.cloud."
+          + "dataproc.v1beta2.HadoopJobH\000\022<\n\tspark_jo"
+          + "b\030\004 \001(\0132\'.google.cloud.dataproc.v1beta2."
+          + "SparkJobH\000\022@\n\013pyspark_job\030\005 \001(\0132).google"
+          + ".cloud.dataproc.v1beta2.PySparkJobH\000\022:\n\010"
+          + "hive_job\030\006 \001(\0132&.google.cloud.dataproc.v"
+          + "1beta2.HiveJobH\000\0228\n\007pig_job\030\007 \001(\0132%.goog"
+          + "le.cloud.dataproc.v1beta2.PigJobH\000\022?\n\013sp"
+          + "ark_r_job\030\025 \001(\0132(.google.cloud.dataproc."
+          + "v1beta2.SparkRJobH\000\022C\n\rspark_sql_job\030\014 \001"
+          + "(\0132*.google.cloud.dataproc.v1beta2.Spark"
+          + "SqlJobH\000\0228\n\006status\030\010 \001(\0132(.google.cloud."
+          + "dataproc.v1beta2.JobStatus\022@\n\016status_his"
+          + "tory\030\r \003(\0132(.google.cloud.dataproc.v1bet"
+          + "a2.JobStatus\022I\n\021yarn_applications\030\t \003(\0132"
+          + "..google.cloud.dataproc.v1beta2.YarnAppl"
+          + "ication\022\024\n\014submitted_by\030\n \001(\t\022\"\n\032driver_"
+          + "output_resource_uri\030\021 \001(\t\022 \n\030driver_cont"
+          + "rol_files_uri\030\017 \001(\t\022>\n\006labels\030\022 \003(\0132..go"
+          + "ogle.cloud.dataproc.v1beta2.Job.LabelsEn"
+          + "try\022@\n\nscheduling\030\024 \001(\0132,.google.cloud.d"
+          + "ataproc.v1beta2.JobScheduling\022\020\n\010job_uui"
+          + "d\030\026 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001B\n\n\010type_job\".\n\rJobSchedul"
+          + "ing\022\035\n\025max_failures_per_hour\030\001 \001(\005\"{\n\020Su"
+          + "bmitJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006re"
+          + "gion\030\003 \001(\t\022/\n\003job\030\002 \001(\0132\".google.cloud.d"
+          + "ataproc.v1beta2.Job\022\022\n\nrequest_id\030\004 \001(\t\""
+          + "C\n\rGetJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006"
+          + "region\030\003 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\225\002\n\017ListJob"
+          + "sRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006region\030\006"
+          + " \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\022\024\n\014cluster_name\030\004 \001(\t\022Y\n\021job_state_m"
+          + "atcher\030\005 \001(\0162>.google.cloud.dataproc.v1b"
+          + "eta2.ListJobsRequest.JobStateMatcher\022\016\n\006"
+          + "filter\030\007 \001(\t\"6\n\017JobStateMatcher\022\007\n\003ALL\020\000"
+          + "\022\n\n\006ACTIVE\020\001\022\016\n\nNON_ACTIVE\020\002\"\250\001\n\020UpdateJ"
+          + "obRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006region\030"
+          + "\002 \001(\t\022\016\n\006job_id\030\003 \001(\t\022/\n\003job\030\004 \001(\0132\".goo"
+          + "gle.cloud.dataproc.v1beta2.Job\022/\n\013update"
+          + "_mask\030\005 \001(\0132\032.google.protobuf.FieldMask\""
+          + "]\n\020ListJobsResponse\0220\n\004jobs\030\001 \003(\0132\".goog"
+          + "le.cloud.dataproc.v1beta2.Job\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"F\n\020CancelJobRequest\022\022\n\npr"
+          + "oject_id\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022\016\n\006job_id"
+          + "\030\002 \001(\t\"F\n\020DeleteJobRequest\022\022\n\nproject_id"
+          + "\030\001 \001(\t\022\016\n\006region\030\003 \001(\t\022\016\n\006job_id\030\002 \001(\t2\213"
+          + "\010\n\rJobController\022\250\001\n\tSubmitJob\022/.google."
+          + "cloud.dataproc.v1beta2.SubmitJobRequest\032"
+          + "\".google.cloud.dataproc.v1beta2.Job\"F\202\323\344"
+          + "\223\002@\";/v1beta2/projects/{project_id}/regi"
+          + "ons/{region}/jobs:submit:\001*\022\241\001\n\006GetJob\022,"
+          + ".google.cloud.dataproc.v1beta2.GetJobReq"
+          + "uest\032\".google.cloud.dataproc.v1beta2.Job"
+          + "\"E\202\323\344\223\002?\022=/v1beta2/projects/{project_id}"
+          + "/regions/{region}/jobs/{job_id}\022\251\001\n\010List"
+          + "Jobs\022..google.cloud.dataproc.v1beta2.Lis"
+          + "tJobsRequest\032/.google.cloud.dataproc.v1b"
+          + "eta2.ListJobsResponse\"<\202\323\344\223\0026\0224/v1beta2/"
+          + "projects/{project_id}/regions/{region}/j"
+          + "obs\022\254\001\n\tUpdateJob\022/.google.cloud.datapro"
+          + "c.v1beta2.UpdateJobRequest\032\".google.clou"
+          + "d.dataproc.v1beta2.Job\"J\202\323\344\223\002D2=/v1beta2"
+          + "/projects/{project_id}/regions/{region}/"
+          + "jobs/{job_id}:\003job\022\261\001\n\tCancelJob\022/.googl"
+          + "e.cloud.dataproc.v1beta2.CancelJobReques"
+          + "t\032\".google.cloud.dataproc.v1beta2.Job\"O\202"
+          + "\323\344\223\002I\"D/v1beta2/projects/{project_id}/re"
+          + "gions/{region}/jobs/{job_id}:cancel:\001*\022\233"
+          + "\001\n\tDeleteJob\022/.google.cloud.dataproc.v1b"
+          + "eta2.DeleteJobRequest\032\026.google.protobuf."
+          + "Empty\"E\202\323\344\223\002?*=/v1beta2/projects/{projec"
+          + "t_id}/regions/{region}/jobs/{job_id}Bw\n!"
+          + "com.google.cloud.dataproc.v1beta2B\tJobsP"
+          + "rotoP\001ZEgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/dataproc/v1beta2;dataprocb\006p"
+          + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -535,8 +552,24 @@ public final class JobsProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_dataproc_v1beta2_JobPlacement_descriptor =
+    internal_static_google_cloud_dataproc_v1beta2_SparkRJob_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_dataproc_v1beta2_SparkRJob_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1beta2_SparkRJob_descriptor,
+            new java.lang.String[] {
+              "MainRFileUri", "Args", "FileUris", "ArchiveUris", "Properties", "LoggingConfig",
+            });
+    internal_static_google_cloud_dataproc_v1beta2_SparkRJob_PropertiesEntry_descriptor =
+        internal_static_google_cloud_dataproc_v1beta2_SparkRJob_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dataproc_v1beta2_SparkRJob_PropertiesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1beta2_SparkRJob_PropertiesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataproc_v1beta2_JobPlacement_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dataproc_v1beta2_JobPlacement_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_JobPlacement_descriptor,
@@ -544,7 +577,7 @@ public final class JobsProto {
               "ClusterName", "ClusterUuid",
             });
     internal_static_google_cloud_dataproc_v1beta2_JobStatus_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_dataproc_v1beta2_JobStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_JobStatus_descriptor,
@@ -552,7 +585,7 @@ public final class JobsProto {
               "State", "Details", "StateStartTime", "Substate",
             });
     internal_static_google_cloud_dataproc_v1beta2_JobReference_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_dataproc_v1beta2_JobReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_JobReference_descriptor,
@@ -560,7 +593,7 @@ public final class JobsProto {
               "ProjectId", "JobId",
             });
     internal_static_google_cloud_dataproc_v1beta2_YarnApplication_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dataproc_v1beta2_YarnApplication_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_YarnApplication_descriptor,
@@ -568,7 +601,7 @@ public final class JobsProto {
               "Name", "State", "Progress", "TrackingUrl",
             });
     internal_static_google_cloud_dataproc_v1beta2_Job_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_dataproc_v1beta2_Job_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_Job_descriptor,
@@ -580,6 +613,7 @@ public final class JobsProto {
               "PysparkJob",
               "HiveJob",
               "PigJob",
+              "SparkRJob",
               "SparkSqlJob",
               "Status",
               "StatusHistory",
@@ -601,7 +635,7 @@ public final class JobsProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dataproc_v1beta2_JobScheduling_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_dataproc_v1beta2_JobScheduling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_JobScheduling_descriptor,
@@ -609,7 +643,7 @@ public final class JobsProto {
               "MaxFailuresPerHour",
             });
     internal_static_google_cloud_dataproc_v1beta2_SubmitJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_dataproc_v1beta2_SubmitJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_SubmitJobRequest_descriptor,
@@ -617,7 +651,7 @@ public final class JobsProto {
               "ProjectId", "Region", "Job", "RequestId",
             });
     internal_static_google_cloud_dataproc_v1beta2_GetJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_dataproc_v1beta2_GetJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_GetJobRequest_descriptor,
@@ -625,7 +659,7 @@ public final class JobsProto {
               "ProjectId", "Region", "JobId",
             });
     internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor,
@@ -639,7 +673,7 @@ public final class JobsProto {
               "Filter",
             });
     internal_static_google_cloud_dataproc_v1beta2_UpdateJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_dataproc_v1beta2_UpdateJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_UpdateJobRequest_descriptor,
@@ -647,7 +681,7 @@ public final class JobsProto {
               "ProjectId", "Region", "JobId", "Job", "UpdateMask",
             });
     internal_static_google_cloud_dataproc_v1beta2_ListJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_dataproc_v1beta2_ListJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_ListJobsResponse_descriptor,
@@ -655,7 +689,7 @@ public final class JobsProto {
               "Jobs", "NextPageToken",
             });
     internal_static_google_cloud_dataproc_v1beta2_CancelJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_dataproc_v1beta2_CancelJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_CancelJobRequest_descriptor,
@@ -663,7 +697,7 @@ public final class JobsProto {
               "ProjectId", "Region", "JobId",
             });
     internal_static_google_cloud_dataproc_v1beta2_DeleteJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_dataproc_v1beta2_DeleteJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1beta2_DeleteJobRequest_descriptor,
