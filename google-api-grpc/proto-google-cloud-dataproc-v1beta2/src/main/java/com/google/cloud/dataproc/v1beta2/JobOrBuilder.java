@@ -241,6 +241,37 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Job is a SparkR job.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   */
+  boolean hasSparkRJob();
+  /**
+   *
+   *
+   * <pre>
+   * Job is a SparkR job.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.SparkRJob getSparkRJob();
+  /**
+   *
+   *
+   * <pre>
+   * Job is a SparkR job.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Job is a SparkSql job.
    * </pre>
    *
