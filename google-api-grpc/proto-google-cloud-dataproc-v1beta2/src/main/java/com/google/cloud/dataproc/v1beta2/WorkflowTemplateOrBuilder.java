@@ -16,6 +16,7 @@ public interface WorkflowTemplateOrBuilder
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
+   * .
    * </pre>
    *
    * <code>string id = 2;</code>
@@ -29,6 +30,7 @@ public interface WorkflowTemplateOrBuilder
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
+   * .
    * </pre>
    *
    * <code>string id = 2;</code>

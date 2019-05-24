@@ -89,8 +89,8 @@ public interface GceClusterConfigOrBuilder
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
    * A full URL, partial URI, or short name are valid. Examples:
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/sub0`
-   * * `projects/[project_id]/regions/us-east1/sub0`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
+   * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `sub0`
    * </pre>
    *
@@ -104,8 +104,8 @@ public interface GceClusterConfigOrBuilder
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
    * A full URL, partial URI, or short name are valid. Examples:
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/sub0`
-   * * `projects/[project_id]/regions/us-east1/sub0`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
+   * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `sub0`
    * </pre>
    *
@@ -355,4 +355,35 @@ public interface GceClusterConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
   java.lang.String getMetadataOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reservation Affinity for consuming Zonal reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity reservation_affinity = 11;</code>
+   */
+  boolean hasReservationAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reservation Affinity for consuming Zonal reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity reservation_affinity = 11;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.ReservationAffinity getReservationAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reservation Affinity for consuming Zonal reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity reservation_affinity = 11;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.ReservationAffinityOrBuilder getReservationAffinityOrBuilder();
 }
