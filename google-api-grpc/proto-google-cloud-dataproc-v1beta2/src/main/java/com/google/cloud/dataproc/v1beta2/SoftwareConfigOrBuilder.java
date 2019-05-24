@@ -18,7 +18,7 @@ public interface SoftwareConfigOrBuilder
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
    * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
-   * If unspecified, it defaults to the latest version.
+   * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -34,7 +34,7 @@ public interface SoftwareConfigOrBuilder
    * such as "1.2" (including a subminor version, such as "1.2.29"), or the
    * ["preview"
    * version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
-   * If unspecified, it defaults to the latest version.
+   * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -46,8 +46,8 @@ public interface SoftwareConfigOrBuilder
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
-   * Property keys are specified in `prefix:property` format, such as
-   * `core:fs.defaultFS`. The following are supported prefixes
+   * Property keys are specified in `prefix:property` format, for example
+   * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
@@ -70,8 +70,8 @@ public interface SoftwareConfigOrBuilder
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
-   * Property keys are specified in `prefix:property` format, such as
-   * `core:fs.defaultFS`. The following are supported prefixes
+   * Property keys are specified in `prefix:property` format, for example
+   * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
@@ -97,8 +97,8 @@ public interface SoftwareConfigOrBuilder
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
-   * Property keys are specified in `prefix:property` format, such as
-   * `core:fs.defaultFS`. The following are supported prefixes
+   * Property keys are specified in `prefix:property` format, for example
+   * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
@@ -121,8 +121,8 @@ public interface SoftwareConfigOrBuilder
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
-   * Property keys are specified in `prefix:property` format, such as
-   * `core:fs.defaultFS`. The following are supported prefixes
+   * Property keys are specified in `prefix:property` format, for example
+   * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
@@ -145,8 +145,8 @@ public interface SoftwareConfigOrBuilder
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
-   * Property keys are specified in `prefix:property` format, such as
-   * `core:fs.defaultFS`. The following are supported prefixes
+   * Property keys are specified in `prefix:property` format, for example
+   * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
@@ -164,4 +164,55 @@ public interface SoftwareConfigOrBuilder
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
   java.lang.String getPropertiesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of optional components to activate on the cluster.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   */
+  java.util.List<com.google.cloud.dataproc.v1beta2.Component> getOptionalComponentsList();
+  /**
+   *
+   *
+   * <pre>
+   * The set of optional components to activate on the cluster.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   */
+  int getOptionalComponentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The set of optional components to activate on the cluster.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.Component getOptionalComponents(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The set of optional components to activate on the cluster.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   */
+  java.util.List<java.lang.Integer> getOptionalComponentsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * The set of optional components to activate on the cluster.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.Component optional_components = 3;</code>
+   */
+  int getOptionalComponentsValue(int index);
 }

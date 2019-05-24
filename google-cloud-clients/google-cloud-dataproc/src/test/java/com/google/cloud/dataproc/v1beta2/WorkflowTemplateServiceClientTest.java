@@ -47,6 +47,7 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class WorkflowTemplateServiceClientTest {
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
@@ -56,6 +57,7 @@ public class WorkflowTemplateServiceClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
@@ -63,7 +65,10 @@ public class WorkflowTemplateServiceClientTest {
         new MockServiceHelper(
             "in-process-1",
             Arrays.<MockGrpcService>asList(
-                mockClusterController, mockJobController, mockWorkflowTemplateService));
+                mockAutoscalingPolicyService,
+                mockClusterController,
+                mockJobController,
+                mockWorkflowTemplateService));
     serviceHelper.start();
   }
 
@@ -297,11 +302,10 @@ public class WorkflowTemplateServiceClientTest {
             .build();
     mockWorkflowTemplateService.addResponse(resultOperation);
 
-    String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+    RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
     WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
 
-    Empty actualResponse =
-        client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+    Empty actualResponse = client.instantiateInlineWorkflowTemplateAsync(parent, template).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
@@ -309,7 +313,7 @@ public class WorkflowTemplateServiceClientTest {
     InstantiateInlineWorkflowTemplateRequest actualRequest =
         (InstantiateInlineWorkflowTemplateRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, RegionName.parse(actualRequest.getParent()));
     Assert.assertEquals(template, actualRequest.getTemplate());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -324,10 +328,10 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addException(exception);
 
     try {
-      String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+      RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
       WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
 
-      client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+      client.instantiateInlineWorkflowTemplateAsync(parent, template).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

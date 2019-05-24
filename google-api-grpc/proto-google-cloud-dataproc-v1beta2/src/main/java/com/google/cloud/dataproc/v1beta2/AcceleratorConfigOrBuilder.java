@@ -13,8 +13,9 @@ public interface AcceleratorConfigOrBuilder
    *
    * <pre>
    * Full URL, partial URI, or short name of the accelerator type resource to
-   * expose to this instance. See [Compute Engine AcceleratorTypes](
-   * /compute/docs/reference/beta/acceleratorTypes)
+   * expose to this instance. See
+   * [Compute Engine
+   * AcceleratorTypes](/compute/docs/reference/beta/acceleratorTypes)
    * Examples
    * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
@@ -34,8 +35,9 @@ public interface AcceleratorConfigOrBuilder
    *
    * <pre>
    * Full URL, partial URI, or short name of the accelerator type resource to
-   * expose to this instance. See [Compute Engine AcceleratorTypes](
-   * /compute/docs/reference/beta/acceleratorTypes)
+   * expose to this instance. See
+   * [Compute Engine
+   * AcceleratorTypes](/compute/docs/reference/beta/acceleratorTypes)
    * Examples
    * * `https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80`

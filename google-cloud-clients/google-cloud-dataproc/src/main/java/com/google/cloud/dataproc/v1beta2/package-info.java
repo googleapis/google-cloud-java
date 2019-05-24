@@ -19,7 +19,24 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= ClusterControllerClient =======================
+ * <p>============================== AutoscalingPolicyServiceClient ==============================
+ *
+ * <p>Service Description: The API interface for managing autoscaling policies in the Google Cloud
+ * Dataproc API.
+ *
+ * <p>Sample for AutoscalingPolicyServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
+ *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+ *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
+ *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(parent, policy);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================= ClusterControllerClient =======================
  *
  * <p>Service Description: The ClusterControllerService provides methods to manage clusters of
  * Compute Engine instances.

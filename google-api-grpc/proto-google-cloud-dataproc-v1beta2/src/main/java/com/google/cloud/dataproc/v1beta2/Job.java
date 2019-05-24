@@ -185,10 +185,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 yarnApplications_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               yarnApplications_.add(
                   input.readMessage(
@@ -221,10 +221,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 statusHistory_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               statusHistory_.add(
                   input.readMessage(
@@ -247,10 +247,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00004000;
+                mutable_bitField0_ |= 0x00008000;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -274,6 +274,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 170:
+            {
+              com.google.cloud.dataproc.v1beta2.SparkRJob.Builder subBuilder = null;
+              if (typeJobCase_ == 21) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.SparkRJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 21;
+              break;
+            }
           case 178:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -295,10 +311,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -342,6 +358,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     PYSPARK_JOB(5),
     HIVE_JOB(6),
     PIG_JOB(7),
+    SPARK_R_JOB(21),
     SPARK_SQL_JOB(12),
     TYPEJOB_NOT_SET(0);
     private final int value;
@@ -367,6 +384,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           return HIVE_JOB;
         case 7:
           return PIG_JOB;
+        case 21:
+          return SPARK_R_JOB;
         case 12:
           return SPARK_SQL_JOB;
         case 0:
@@ -697,6 +716,50 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
+  }
+
+  public static final int SPARK_R_JOB_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Job is a SparkR job.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   */
+  public boolean hasSparkRJob() {
+    return typeJobCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Job is a SparkR job.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.SparkRJob getSparkRJob() {
+    if (typeJobCase_ == 21) {
+      return (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_;
+    }
+    return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Job is a SparkR job.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder() {
+    if (typeJobCase_ == 21) {
+      return (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_;
+    }
+    return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
   }
 
   public static final int SPARK_SQL_JOB_FIELD_NUMBER = 12;
@@ -1333,6 +1396,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (scheduling_ != null) {
       output.writeMessage(20, getScheduling());
     }
+    if (typeJobCase_ == 21) {
+      output.writeMessage(21, (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_);
+    }
     if (!getJobUuidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, jobUuid_);
     }
@@ -1413,6 +1479,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (scheduling_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getScheduling());
     }
+    if (typeJobCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_);
+    }
     if (!getJobUuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
     }
@@ -1470,6 +1541,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         break;
       case 7:
         if (!getPigJob().equals(other.getPigJob())) return false;
+        break;
+      case 21:
+        if (!getSparkRJob().equals(other.getSparkRJob())) return false;
         break;
       case 12:
         if (!getSparkSqlJob().equals(other.getSparkSqlJob())) return false;
@@ -1544,6 +1618,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 7:
         hash = (37 * hash) + PIG_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getPigJob().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + SPARK_R_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getSparkRJob().hashCode();
         break;
       case 12:
         hash = (37 * hash) + SPARK_SQL_JOB_FIELD_NUMBER;
@@ -1739,13 +1817,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         statusHistoryBuilder_.clear();
       }
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         yarnApplicationsBuilder_.clear();
       }
@@ -1840,6 +1918,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           result.typeJob_ = pigJobBuilder_.build();
         }
       }
+      if (typeJobCase_ == 21) {
+        if (sparkRJobBuilder_ == null) {
+          result.typeJob_ = typeJob_;
+        } else {
+          result.typeJob_ = sparkRJobBuilder_.build();
+        }
+      }
       if (typeJobCase_ == 12) {
         if (sparkSqlJobBuilder_ == null) {
           result.typeJob_ = typeJob_;
@@ -1853,18 +1938,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.statusHistory_ = statusHistory_;
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
       if (yarnApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.yarnApplications_ = yarnApplications_;
       } else {
@@ -1945,7 +2030,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1958,7 +2043,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -1972,7 +2057,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.yarnApplications_.isEmpty()) {
           if (yarnApplications_.isEmpty()) {
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureYarnApplicationsIsMutable();
             yarnApplications_.addAll(other.yarnApplications_);
@@ -1985,7 +2070,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             yarnApplicationsBuilder_.dispose();
             yarnApplicationsBuilder_ = null;
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             yarnApplicationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getYarnApplicationsFieldBuilder()
@@ -2039,6 +2124,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         case PIG_JOB:
           {
             mergePigJob(other.getPigJob());
+            break;
+          }
+        case SPARK_R_JOB:
+          {
+            mergeSparkRJob(other.getSparkRJob());
             break;
           }
         case SPARK_SQL_JOB:
@@ -3504,6 +3594,208 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.SparkRJob,
+            com.google.cloud.dataproc.v1beta2.SparkRJob.Builder,
+            com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder>
+        sparkRJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public boolean hasSparkRJob() {
+      return typeJobCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.SparkRJob getSparkRJob() {
+      if (sparkRJobBuilder_ == null) {
+        if (typeJobCase_ == 21) {
+          return (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_;
+        }
+        return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
+      } else {
+        if (typeJobCase_ == 21) {
+          return sparkRJobBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public Builder setSparkRJob(com.google.cloud.dataproc.v1beta2.SparkRJob value) {
+      if (sparkRJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        typeJob_ = value;
+        onChanged();
+      } else {
+        sparkRJobBuilder_.setMessage(value);
+      }
+      typeJobCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public Builder setSparkRJob(
+        com.google.cloud.dataproc.v1beta2.SparkRJob.Builder builderForValue) {
+      if (sparkRJobBuilder_ == null) {
+        typeJob_ = builderForValue.build();
+        onChanged();
+      } else {
+        sparkRJobBuilder_.setMessage(builderForValue.build());
+      }
+      typeJobCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public Builder mergeSparkRJob(com.google.cloud.dataproc.v1beta2.SparkRJob value) {
+      if (sparkRJobBuilder_ == null) {
+        if (typeJobCase_ == 21
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.SparkRJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          typeJob_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeJobCase_ == 21) {
+          sparkRJobBuilder_.mergeFrom(value);
+        }
+        sparkRJobBuilder_.setMessage(value);
+      }
+      typeJobCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public Builder clearSparkRJob() {
+      if (sparkRJobBuilder_ == null) {
+        if (typeJobCase_ == 21) {
+          typeJobCase_ = 0;
+          typeJob_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeJobCase_ == 21) {
+          typeJobCase_ = 0;
+          typeJob_ = null;
+        }
+        sparkRJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.SparkRJob.Builder getSparkRJobBuilder() {
+      return getSparkRJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder() {
+      if ((typeJobCase_ == 21) && (sparkRJobBuilder_ != null)) {
+        return sparkRJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeJobCase_ == 21) {
+          return (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_;
+        }
+        return com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Job is a SparkR job.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.SparkRJob,
+            com.google.cloud.dataproc.v1beta2.SparkRJob.Builder,
+            com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder>
+        getSparkRJobFieldBuilder() {
+      if (sparkRJobBuilder_ == null) {
+        if (!(typeJobCase_ == 21)) {
+          typeJob_ = com.google.cloud.dataproc.v1beta2.SparkRJob.getDefaultInstance();
+        }
+        sparkRJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.SparkRJob,
+                com.google.cloud.dataproc.v1beta2.SparkRJob.Builder,
+                com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder>(
+                (com.google.cloud.dataproc.v1beta2.SparkRJob) typeJob_,
+                getParentForChildren(),
+                isClean());
+        typeJob_ = null;
+      }
+      typeJobCase_ = 21;
+      onChanged();
+      ;
+      return sparkRJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.SparkSqlJob,
             com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder,
             com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder>
@@ -3908,10 +4200,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>(statusHistory_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -4127,7 +4419,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -4251,7 +4543,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
                 com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -4263,11 +4555,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureYarnApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         yarnApplications_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>(
                 yarnApplications_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -4508,7 +4800,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearYarnApplications() {
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         yarnApplicationsBuilder_.clear();
@@ -4649,7 +4941,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1beta2.YarnApplication.Builder,
                 com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>(
                 yarnApplications_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         yarnApplications_ = null;

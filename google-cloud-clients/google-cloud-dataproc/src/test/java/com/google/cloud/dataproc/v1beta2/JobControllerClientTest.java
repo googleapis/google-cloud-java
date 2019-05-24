@@ -41,6 +41,7 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class JobControllerClientTest {
+  private static MockAutoscalingPolicyService mockAutoscalingPolicyService;
   private static MockClusterController mockClusterController;
   private static MockJobController mockJobController;
   private static MockWorkflowTemplateService mockWorkflowTemplateService;
@@ -50,6 +51,7 @@ public class JobControllerClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockAutoscalingPolicyService = new MockAutoscalingPolicyService();
     mockClusterController = new MockClusterController();
     mockJobController = new MockJobController();
     mockWorkflowTemplateService = new MockWorkflowTemplateService();
@@ -57,7 +59,10 @@ public class JobControllerClientTest {
         new MockServiceHelper(
             "in-process-1",
             Arrays.<MockGrpcService>asList(
-                mockClusterController, mockJobController, mockWorkflowTemplateService));
+                mockAutoscalingPolicyService,
+                mockClusterController,
+                mockJobController,
+                mockWorkflowTemplateService));
     serviceHelper.start();
   }
 
