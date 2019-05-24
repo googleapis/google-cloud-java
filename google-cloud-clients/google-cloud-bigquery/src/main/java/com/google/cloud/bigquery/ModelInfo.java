@@ -18,11 +18,17 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Model;
+import com.google.api.services.bigquery.model.StandardSqlField;
+import com.google.api.services.bigquery.model.TrainingRun;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -62,6 +68,9 @@ public class ModelInfo implements Serializable {
   private final Long lastModifiedTime;
   private final Long expirationTime;
   private final Labels labels;
+  private final ImmutableList<TrainingRun> trainingRunList;
+  private final ImmutableList<StandardSqlField> featureColumnList;
+  private final ImmutableList<StandardSqlField> labelColumnList;
 
   /** A builder for {@code ModelInfo} objects. */
   public abstract static class Builder {
@@ -97,6 +106,12 @@ public class ModelInfo implements Serializable {
 
     abstract Builder setLastModifiedTime(Long lastModifiedTime);
 
+    abstract Builder setTrainingRuns(List<TrainingRun> trainingRunList);
+
+    abstract Builder setLabelColumns(List<StandardSqlField> labelColumnList);
+
+    abstract Builder setFeatureColumns(List<StandardSqlField> featureColumnList);
+
     /** Creates a {@code ModelInfo} object. */
     public abstract ModelInfo build();
   }
@@ -112,6 +127,9 @@ public class ModelInfo implements Serializable {
     private Long lastModifiedTime;
     private Long expirationTime;
     private Labels labels = Labels.ZERO;
+    private List<TrainingRun> trainingRunList = Collections.emptyList();
+    private List<StandardSqlField> labelColumnList = Collections.emptyList();
+    private List<StandardSqlField> featureColumnList = Collections.emptyList();
 
     BuilderImpl() {}
 
@@ -124,6 +142,9 @@ public class ModelInfo implements Serializable {
       this.creationTime = modelInfo.creationTime;
       this.lastModifiedTime = modelInfo.lastModifiedTime;
       this.expirationTime = modelInfo.expirationTime;
+      this.trainingRunList = modelInfo.trainingRunList;
+      this.labelColumnList = modelInfo.labelColumnList;
+      this.featureColumnList = modelInfo.featureColumnList;
     }
 
     BuilderImpl(Model modelPb) {
@@ -139,6 +160,15 @@ public class ModelInfo implements Serializable {
       this.lastModifiedTime = modelPb.getLastModifiedTime();
       this.expirationTime = modelPb.getExpirationTime();
       this.labels = Labels.fromPb(modelPb.getLabels());
+      if (modelPb.getTrainingRuns() != null) {
+        this.trainingRunList = modelPb.getTrainingRuns();
+      }
+      if (modelPb.getLabelColumns() != null) {
+        this.labelColumnList = modelPb.getLabelColumns();
+      }
+      if (modelPb.getFeatureColumns() != null) {
+        this.featureColumnList = modelPb.getFeatureColumns();
+      }
     }
 
     @Override
@@ -196,6 +226,24 @@ public class ModelInfo implements Serializable {
     }
 
     @Override
+    Builder setTrainingRuns(List<TrainingRun> trainingRunList) {
+      this.trainingRunList = checkNotNull(trainingRunList);
+      return this;
+    }
+
+    @Override
+    Builder setLabelColumns(List<StandardSqlField> labelColumnList) {
+      this.labelColumnList = checkNotNull(labelColumnList);
+      return this;
+    }
+
+    @Override
+    Builder setFeatureColumns(List<StandardSqlField> featureColumnList) {
+      this.featureColumnList = checkNotNull(featureColumnList);
+      return this;
+    }
+
+    @Override
     public ModelInfo build() {
       return new ModelInfo(this);
     }
@@ -211,6 +259,9 @@ public class ModelInfo implements Serializable {
     this.lastModifiedTime = builder.lastModifiedTime;
     this.expirationTime = builder.expirationTime;
     this.labels = builder.labels;
+    this.trainingRunList = ImmutableList.copyOf(builder.trainingRunList);
+    this.labelColumnList = ImmutableList.copyOf(builder.labelColumnList);
+    this.featureColumnList = ImmutableList.copyOf(builder.featureColumnList);
   }
 
   /** Returns the hash of the model resource. */
@@ -261,6 +312,24 @@ public class ModelInfo implements Serializable {
     return labels.userMap();
   }
 
+  /** Returns metadata about each training run iteration. */
+  @BetaApi
+  public ImmutableList<TrainingRun> getTrainingRuns() {
+    return trainingRunList;
+  }
+
+  /** Returns information about the label columns for this model. */
+  @BetaApi
+  public ImmutableList<StandardSqlField> getLabelColumns() {
+    return labelColumnList;
+  }
+
+  /** Returns information about the feature columns for this model. */
+  @BetaApi
+  public ImmutableList<StandardSqlField> getFeatureColumns() {
+    return featureColumnList;
+  }
+
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -277,6 +346,9 @@ public class ModelInfo implements Serializable {
         .add("lastModifiedTime", lastModifiedTime)
         .add("expirationTime", expirationTime)
         .add("labels", labels)
+        .add("trainingRuns", trainingRunList)
+        .add("labelColumns", labelColumnList)
+        .add("featureColumns", featureColumnList)
         .toString();
   }
 
@@ -321,6 +393,9 @@ public class ModelInfo implements Serializable {
     modelPb.setLastModifiedTime(lastModifiedTime);
     modelPb.setExpirationTime(expirationTime);
     modelPb.setLabels(labels.toPb());
+    modelPb.setTrainingRuns(trainingRunList);
+    modelPb.setLabelColumns(labelColumnList);
+    modelPb.setFeatureColumns(featureColumnList);
     return modelPb;
   }
 

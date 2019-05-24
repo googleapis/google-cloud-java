@@ -18,9 +18,12 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.bigquery.model.StandardSqlField;
+import com.google.api.services.bigquery.model.TrainingRun;
 import com.google.cloud.bigquery.BigQuery.ModelOption;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -103,6 +106,24 @@ public class Model extends ModelInfo {
     @Override
     public Builder setLabels(Map<String, String> labels) {
       infoBuilder.setLabels(labels);
+      return this;
+    }
+
+    @Override
+    Builder setTrainingRuns(List<TrainingRun> trainingRunList) {
+      infoBuilder.setTrainingRuns(trainingRunList);
+      return this;
+    }
+
+    @Override
+    Builder setLabelColumns(List<StandardSqlField> labelColumnList) {
+      infoBuilder.setLabelColumns(labelColumnList);
+      return this;
+    }
+
+    @Override
+    Builder setFeatureColumns(List<StandardSqlField> featureColumnList) {
+      infoBuilder.setFeatureColumns(featureColumnList);
       return this;
     }
 
