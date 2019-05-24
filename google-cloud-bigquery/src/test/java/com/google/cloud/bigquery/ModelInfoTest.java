@@ -18,6 +18,10 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import com.google.api.services.bigquery.model.TrainingOptions;
+import com.google.api.services.bigquery.model.TrainingRun;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Test;
 
 public class ModelInfoTest {
@@ -30,6 +34,12 @@ public class ModelInfoTest {
   private static final String DESCRIPTION = "description";
   private static final String FRIENDLY_NAME = "friendlyname";
 
+  private static final TrainingOptions TRAINING_OPTIONS =
+      new TrainingOptions().setDataSplitColumn("foo").setEarlyStop(true).setLossType("bar");
+  private static final TrainingRun TRAINING_RUN =
+      new TrainingRun().setTrainingOptions(TRAINING_OPTIONS);
+  private static final List<TrainingRun> TRAINING_RUN_LIST = Arrays.asList(TRAINING_RUN);
+
   private static final ModelInfo MODEL_INFO =
       ModelInfo.newBuilder(MODEL_ID)
           .setEtag(ETAG)
@@ -38,6 +48,7 @@ public class ModelInfoTest {
           .setLastModifiedTime(LAST_MODIFIED_TIME)
           .setDescription(DESCRIPTION)
           .setFriendlyName(FRIENDLY_NAME)
+          .setTrainingRuns(TRAINING_RUN_LIST)
           .build();
 
   @Test
@@ -59,6 +70,7 @@ public class ModelInfoTest {
     assertEquals(EXPIRATION_TIME, MODEL_INFO.getExpirationTime());
     assertEquals(DESCRIPTION, MODEL_INFO.getDescription());
     assertEquals(FRIENDLY_NAME, MODEL_INFO.getFriendlyName());
+    assertEquals(TRAINING_OPTIONS, MODEL_INFO.getTrainingRuns().get(0).getTrainingOptions());
   }
 
   @Test
@@ -71,6 +83,9 @@ public class ModelInfoTest {
     assertNull(modelInfo.getExpirationTime());
     assertNull(modelInfo.getDescription());
     assertNull(modelInfo.getFriendlyName());
+    assertEquals(modelInfo.getTrainingRuns().isEmpty(), true);
+    assertEquals(modelInfo.getLabelColumns().isEmpty(), true);
+    assertEquals(modelInfo.getFeatureColumns().isEmpty(), true);
   }
 
   @Test
@@ -94,5 +109,8 @@ public class ModelInfoTest {
     assertEquals(expected.getFriendlyName(), value.getFriendlyName());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.getTrainingRuns(), value.getTrainingRuns());
+    assertEquals(expected.getLabelColumns(), value.getLabelColumns());
+    assertEquals(expected.getFeatureColumns(), value.getFeatureColumns());
   }
 }
