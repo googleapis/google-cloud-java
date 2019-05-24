@@ -62,6 +62,7 @@ def version_from_pom(pom_file: str) -> str:
         tree = etree.parse(str(pom_file))
         return tree.xpath("/a:project/a:version", namespaces={'a': 'http://maven.apache.org/POM/4.0.0'})[0].text
     except OSError:
+        warnings.warn("No file: " + str(pom_file))
         return None
 
 IGNORED_SERVICES = [
@@ -96,7 +97,7 @@ def all_services():
                 artifact = Artifact(
                     name=os.path.basename(proto_module),
                     group_id="com.google.api.grpc",
-                    version=version_from_pom(ROOT / submodule / "pom.xml")
+                    version=version_from_pom(ROOT / "google-api-grpc" / submodule / "pom.xml")
                 )
                 submodules.append(artifact)
                 api_versions.append(submodule.replace(f"proto-google-cloud-{service}-", ''))
@@ -104,7 +105,7 @@ def all_services():
                 artifact = Artifact(
                     name=os.path.basename(grpc_module),
                     group_id="com.google.api.grpc",
-                    version=version_from_pom(ROOT / submodule / "pom.xml")
+                    version=version_from_pom(ROOT / "google-api-grpc" / submodule / "pom.xml")
                 )
                 submodules.append(artifact)
             submodules.append(
