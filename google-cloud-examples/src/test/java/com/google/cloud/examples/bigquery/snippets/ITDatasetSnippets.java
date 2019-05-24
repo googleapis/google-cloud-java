@@ -128,7 +128,7 @@ public class ITDatasetSnippets {
     assertEquals(expectedTableName, actualTable.getTableId().getTable());
     assertFalse(iterator.hasNext());
 
-    bigquery.delete(DATASET, expectedTableName);
+    bigquery.delete(TableId.of(DATASET, expectedTableName));
   }
 
   @Test
@@ -141,7 +141,7 @@ public class ITDatasetSnippets {
     assertNotNull(actualTable);
     assertEquals(expectedTableName, actualTable.getTableId().getTable());
 
-    bigquery.delete(DATASET, expectedTableName);
+    bigquery.delete(TableId.of(DATASET, expectedTableName));
   }
 
   @Test
@@ -157,6 +157,6 @@ public class ITDatasetSnippets {
     Field actualField = actualTable.getDefinition().getSchema().getFields().get(0);
     assertEquals(expectedFieldName, actualField.getName());
 
-    bigquery.delete(DATASET, expectedTableName);
+    bigquery.delete(TableId.of(DATASET, expectedTableName));
   }
 }
