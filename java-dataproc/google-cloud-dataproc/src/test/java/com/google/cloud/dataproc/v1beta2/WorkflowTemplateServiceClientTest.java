@@ -255,9 +255,11 @@ public class WorkflowTemplateServiceClientTest {
             .build();
     mockWorkflowTemplateService.addResponse(resultOperation);
 
+    WorkflowTemplateName name =
+        WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
     Map<String, String> parameters = new HashMap<>();
 
-    Empty actualResponse = client.instantiateWorkflowTemplateAsync(parameters).get();
+    Empty actualResponse = client.instantiateWorkflowTemplateAsync(name, parameters).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
@@ -265,6 +267,7 @@ public class WorkflowTemplateServiceClientTest {
     InstantiateWorkflowTemplateRequest actualRequest =
         (InstantiateWorkflowTemplateRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, WorkflowTemplateName.parse(actualRequest.getName()));
     Assert.assertEquals(parameters, actualRequest.getParametersMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -279,9 +282,11 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addException(exception);
 
     try {
+      WorkflowTemplateName name =
+          WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
       Map<String, String> parameters = new HashMap<>();
 
-      client.instantiateWorkflowTemplateAsync(parameters).get();
+      client.instantiateWorkflowTemplateAsync(name, parameters).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
