@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-os-login-parent</artifactId>
+  <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
+  <packaging>pom</packaging>
+  <name>Os Login Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-os-login</url>
+  <description>
+    Parent project for Os Login
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-clients</artifactId>
+    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+  </parent>
+  <properties>
+    <site.installationModule>google-cloud-os-login-parent</site.installationModule>
+  </properties>
+
+  <modules>
+    <module>proto-google-cloud-os-login-v1</module>
+    <module>grpc-google-cloud-os-login-v1</module>
+    <module>google-cloud-os-login</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-os-login-v1</artifactId>
+        <version>0.58.1-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-os-login-v1</artifactId>
+        <version>0.58.1-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-os-login</artifactId>
+        <version>0.93.1-alpha-SNAPSHOT</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.0</version>
+        <reportSets>
+          <reportSet>
+            <id>html</id>
+            <reports>
+              <report>aggregate</report>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <doclint>none</doclint>
+          <show>protected</show>
+          <nohelp>true</nohelp>
+          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+          <groups>
+            <group>
+              <title>API packages</title>
+              <packages>com.google.cloud*</packages>
+            </group>
+            <group>
+              <title>Test helpers packages</title>
+              <packages>com.google.cloud.os-login.testing</packages>
+            </group>
+            <group>
+              <title>SPI packages</title>
+              <packages>com.google.cloud.os-login.spi*</packages>
+            </group>
+            <group>
+              <title>Stub packages</title>
+              <packages></packages>
+            </group>
+          </groups>
+
+          <links>
+            <link>https://grpc.io/grpc-java/javadoc/</link>
+            <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
+            <link>https://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
+            <link>https://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
+            <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
+          </links>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

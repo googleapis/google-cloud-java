@@ -77,7 +77,6 @@
     </license>
   </licenses>
   <modules>
-    <module>google-api-grpc</module>
     <module>google-cloud-clients</module>
     <module>google-cloud-examples</module>
     <module>google-cloud-testing</module>
