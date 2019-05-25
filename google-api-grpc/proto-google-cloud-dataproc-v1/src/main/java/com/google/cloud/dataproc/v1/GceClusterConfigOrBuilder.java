@@ -89,8 +89,8 @@ public interface GceClusterConfigOrBuilder
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
    * A full URL, partial URI, or short name are valid. Examples:
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/sub0`
-   * * `projects/[project_id]/regions/us-east1/sub0`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
+   * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `sub0`
    * </pre>
    *
@@ -104,8 +104,8 @@ public interface GceClusterConfigOrBuilder
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
    * A full URL, partial URI, or short name are valid. Examples:
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/sub0`
-   * * `projects/[project_id]/regions/us-east1/sub0`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
+   * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `sub0`
    * </pre>
    *
