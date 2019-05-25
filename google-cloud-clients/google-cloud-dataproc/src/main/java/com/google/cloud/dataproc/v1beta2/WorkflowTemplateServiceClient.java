@@ -497,11 +497,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   Map&lt;String, String&gt; parameters = new HashMap&lt;&gt;();
-   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(parameters).get();
+   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name, parameters).get();
    * }
    * </code></pre>
    *
+   * @param name Required. The "resource name" of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    * @param parameters Optional. Map from parameter names to values that should be used for those
    *     parameters. Values may not exceed 100 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -509,10 +513,61 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      Map<String, String> parameters) {
+      WorkflowTemplateName name, Map<String, String> parameters) {
 
     InstantiateWorkflowTemplateRequest request =
-        InstantiateWorkflowTemplateRequest.newBuilder().putAllParameters(parameters).build();
+        InstantiateWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .putAllParameters(parameters)
+            .build();
+    return instantiateWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata][google.cloud.dataproc.v1beta2.WorkflowMetadata].
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   Map&lt;String, String&gt; parameters = new HashMap&lt;&gt;();
+   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name.toString(), parameters).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The "resource name" of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * @param parameters Optional. Map from parameter names to values that should be used for those
+   *     parameters. Values may not exceed 100 characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      String name, Map<String, String> parameters) {
+
+    InstantiateWorkflowTemplateRequest request =
+        InstantiateWorkflowTemplateRequest.newBuilder()
+            .setName(name)
+            .putAllParameters(parameters)
+            .build();
     return instantiateWorkflowTemplateAsync(request);
   }
 
