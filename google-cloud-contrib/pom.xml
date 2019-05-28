@@ -1,220 +1,46 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-clients</artifactId>
+  <artifactId>google-cloud-contrib</artifactId>
+  <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
   <packaging>pom</packaging>
-  <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
-  <name>Google Cloud</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients</url>
+  <name>Google Cloud Contributions</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib</url>
   <description>
-    Java idiomatic client for Google Cloud Platform services.
+    Contains packages that provide higher-level abstraction/functionality for common Google Cloud use cases.
   </description>
-  <developers>
-    <developer>
-      <id>garrettjonesgoogle</id>
-      <name>Garrett Jones</name>
-      <email>garrettjones@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>pongad</id>
-      <name>Michael Darakananda</name>
-      <email>pongad@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>shinfan</id>
-      <name>Shin Fan</name>
-      <email>shinfan@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>michaelbausor</id>
-      <name>Micheal Bausor</name>
-      <email>michaelbausor@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>vam-google</id>
-      <name>Vadym Matsishevskyi</name>
-      <email>vam@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>tswast</id>
-      <name>Tim Swast</name>
-      <email>tswast@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>neozwu</id>
-      <name>Neo Wu</name>
-      <email>neowu@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>lesv</id>
-      <name>Les Vogel</name>
-      <email>lesv@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>schmidt_sebastian</id>
-      <name>Sebastian Schmidt</name>
-      <email>mrschmidt@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>andreamlin</id>
-      <name>Andrea Lin</name>
-      <email>andrealin@google.com</email>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-      <id>hzyi-google</id>
-      <name>Hanzhen Yi</name>
-      <email>hzyi@google.com</email>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
-    <url>https://github.com/googleapis/google-cloud-java</url>
-    <tag>HEAD</tag>
-  </scm>
-  <ciManagement>
-    <system>Circle CI</system>
-    <url>https://circleci.com/gh/googleapis/google-cloud-java</url>
-  </ciManagement>
-  <issueManagement>
-    <url>https://github.com/googleapis/google-cloud-java/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <site>
-      <id>github-pages-site</id>
-      <name>Deployment through GitHub's site deployment plugin</name>
-      <url>site/google-cloud-clients</url>
-    </site>
-  </distributionManagement>
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
+
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
-    <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.93.2-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
-    <api-client.version>1.28.0</api-client.version>
-    <!-- make sure to keep gax version in sync with google-cloud-bom -->
-    <gax.version>1.44.0</gax.version>
-    <api.common.java.version>1.8.1</api.common.java.version>
-    <google.auth.version>0.15.0</google.auth.version>
-    <grpc.version>1.19.0</grpc.version>
+    <site.installationModule>google-cloud-contrib</site.installationModule>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>27.1-android</guava.version>
     <http-client-bom.version>1.29.1</http-client-bom.version>
-    <oauth-client.version>1.28.0</oauth-client.version>
     <protobuf.version>3.7.1</protobuf.version>
-    <!-- make sure to keep opencensus version in sync with grpc -->
-    <opencensus.version>0.19.2</opencensus.version>
-    <!-- make sure to keep version in sync with google-http-client -->
-    <apache.httpclient.version>4.5.5</apache.httpclient.version>
+    <grpc.version>1.19.0</grpc.version>
+    <google.auth.version>0.15.0</google.auth.version>
     <!-- test dependency versions -->
     <easymock.version>3.4</easymock.version>
     <objenesis.version>2.6</objenesis.version>
-    <google.cloud.core.version>1.75.0</google.cloud.core.version>
   </properties>
-  <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
-  <dependencies>
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
-      <version>1.3.2</version>
-      <scope>compile</scope>
-    </dependency>
-  </dependencies>
+
+  <modules>
+    <module>google-cloud-nio</module>
+    <module>google-cloud-nio-examples</module>
+    <module>google-cloud-logging-logback</module>
+  </modules>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-bom</artifactId>
-        <version>${http-client-bom.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-storage</artifactId>
+        <version>1.75.0</version>
       </dependency>
-
       <dependency>
-        <groupId>com.google.oauth-client</groupId>
-        <artifactId>google-oauth-client-bom</artifactId>
-        <version>${oauth-client.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.api-client</groupId>
-        <artifactId>google-api-client-bom</artifactId>
-        <version>${api-client.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-bom</artifactId>
-        <version>${gax.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-logging</artifactId>
+        <version>1.75.0</version>
       </dependency>
 
       <dependency>
@@ -224,7 +50,11 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-oauth2-http</artifactId>
+        <version>${google.auth.version}</version>
+      </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-credentials</artifactId>
@@ -232,68 +62,9 @@
       </dependency>
 
       <dependency>
-        <groupId>commons-fileupload</groupId>
-        <artifactId>commons-fileupload</artifactId>
-        <version>1.3.3</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <version>${google.cloud.core.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-grpc</artifactId>
-        <version>${google.cloud.core.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-http</artifactId>
-        <version>${google.cloud.core.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <version>${google.cloud.core.version}</version>
-        <type>test-jar</type>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>api-common</artifactId>
-        <version>1.8.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-common-protos</artifactId>
-        <version>1.15.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-common-protos</artifactId>
-        <version>1.15.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-iam-v1</artifactId>
-        <version>0.12.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-iam-v1</artifactId>
-        <version>0.12.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>jsr305</artifactId>
-        <version>3.0.2</version>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-core</artifactId>
+        <version>1.3</version>
       </dependency>
       <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -301,9 +72,24 @@
         <version>${protobuf.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java-util</artifactId>
-        <version>${protobuf.version}</version>
+        <groupId>com.google.api</groupId>
+        <artifactId>api-common</artifactId>
+        <version>1.8.1</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-common-protos</artifactId>
+        <version>1.15.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>2.3.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>3.0.2</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -314,27 +100,6 @@
         <groupId>com.google.auto.value</groupId>
         <artifactId>auto-value</artifactId>
         <version>1.4</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>${google.auth.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.opencensus</groupId>
-        <artifactId>opencensus-api</artifactId>
-        <version>${opencensus.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.opencensus</groupId>
-        <artifactId>opencensus-contrib-grpc-util</artifactId>
-        <version>${opencensus.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.opencensus</groupId>
-        <artifactId>opencensus-contrib-http-util</artifactId>
-        <version>${opencensus.version}</version>
       </dependency>
       <!-- testlib deps. Only put testlib dependencies here, which are testlib packages
       that correspond to another non-test package. Put pure test dependencies (e.g.
@@ -350,14 +115,9 @@
         <version>4.12</version>
       </dependency>
       <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-core</artifactId>
-        <version>1.3</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.errorprone</groupId>
-        <artifactId>error_prone_annotations</artifactId>
-        <version>2.3.2</version>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>0.44</version>
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
@@ -376,83 +136,26 @@
         <version>${objenesis.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>1.9.5</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.truth</groupId>
-        <artifactId>truth</artifactId>
-        <version>0.44</version>
-      </dependency>
-      <dependency>
         <groupId>org.checkerframework</groupId>
         <artifactId>checker-compat-qual</artifactId>
         <version>2.5.5</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-bom</artifactId>
+        <version>${http-client-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java-util</artifactId>
+        <version>${protobuf.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
-  <modules>
-    <module>asset</module>
-    <module>automl</module>
-    <module>bigquery</module>
-    <module>bigquerydatatransfer</module>
-    <module>bigquerystorage</module>
-    <module>bigtable</module>
-    <module>compute</module>
-    <module>container</module>
-    <module>containeranalysis</module>
-    <module>datacatalog</module>
-    <module>datalabeling</module>
-    <module>dataproc</module>
-    <module>datastore</module>
-    <module>dialogflow</module>
-    <module>dlp</module>
-    <module>dns</module>
-    <module>errorreporting</module>
-    <module>firestore</module>
-    <module>iamcredentials</module>
-    <module>iot</module>
-    <module>kms</module>
-    <module>language</module>
-    <module>logging</module>
-    <module>monitoring</module>
-    <module>os-login</module>
-    <module>phishingprotection</module>
-    <module>pubsub</module>
-    <module>recaptchaenterprise</module>
-    <module>redis</module>
-    <module>resourcemanager</module>
-    <module>scheduler</module>
-    <module>securitycenter</module>
-    <module>spanner</module>
-    <module>speech</module>
-    <module>storage</module>
-    <module>talent</module>
-    <module>tasks</module>
-    <module>texttospeech</module>
-    <module>trace</module>
-    <module>translate</module>
-    <module>video-intelligence</module>
-    <module>vision</module>
-    <module>webrisk</module>
-    <module>websecurityscanner</module>
-  </modules>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>http://repo.maven.apache.org/maven2</url>
-    </pluginRepository>
-  </pluginRepositories>
   <build>
     <pluginManagement>
       <plugins>
@@ -484,6 +187,13 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
