@@ -69,19 +69,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p3beta1</artifactId>
-        <version>1.57.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
-        <version>1.57.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p4beta1</artifactId>
-        <version>1.57.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
