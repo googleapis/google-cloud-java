@@ -45,7 +45,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
-        <version>1.57.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
