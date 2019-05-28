@@ -394,6 +394,8 @@
   </dependencyManagement>
 
   <modules>
+    <module>core</module>
+
     <module>asset</module>
     <module>automl</module>
     <module>bigquery</module>
@@ -438,6 +440,9 @@
     <module>vision</module>
     <module>webrisk</module>
     <module>websecurityscanner</module>
+
+    <module>google-cloud-contrib</module>
+    <module>google-cloud-notification</module>
   </modules>
 
   <pluginRepositories>
