@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-websecurityscanner</artifactId>
-        <version>0.93.1-alpha-SNAPSHOT</version>
+        <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
       </dependency>
 
     </dependencies>

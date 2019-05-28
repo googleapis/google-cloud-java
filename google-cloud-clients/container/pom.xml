@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-container-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-container-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container</artifactId>
-        <version>0.93.1-beta-SNAPSHOT</version>
+        <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
       </dependency>
 
     </dependencies>

@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>1.75.1-SNAPSHOT</version>
+        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
 
     </dependencies>

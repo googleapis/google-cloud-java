@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.57.1-SNAPSHOT</version>
+        <version>1.57.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-        <version>1.57.1-SNAPSHOT</version>
+        <version>1.57.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
-        <version>1.75.1-SNAPSHOT</version>
+        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
       </dependency>
 
     </dependencies>

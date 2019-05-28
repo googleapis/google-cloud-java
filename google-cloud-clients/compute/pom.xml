@@ -29,7 +29,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>0.93.1-alpha-SNAPSHOT</version>
+        <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
 
       <dependency>

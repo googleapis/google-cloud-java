@@ -29,13 +29,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery</artifactId>
-        <version>1.75.1-SNAPSHOT</version>
+        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
-        <version>1.75.1-SNAPSHOT</version>
+        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
       </dependency>
 
       <dependency>

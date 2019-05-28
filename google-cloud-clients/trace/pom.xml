@@ -33,31 +33,31 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace</artifactId>
-        <version>0.93.1-beta-SNAPSHOT</version>
+        <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
       </dependency>
 
     </dependencies>
