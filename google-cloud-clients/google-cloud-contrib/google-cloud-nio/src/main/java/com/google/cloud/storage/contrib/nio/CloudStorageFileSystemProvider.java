@@ -401,7 +401,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throws IOException {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
+    boolean allowSlash = options.contains(OptionAllowTrailingSlash.getInstance());
+    if (!allowSlash && cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     BlobId file = cloudPath.getBlobId();
@@ -816,8 +817,16 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         }
         CloudStorageObjectAttributes ret;
         ret = new CloudStorageObjectAttributes(blobInfo);
-        // if size is 0 it could be a folder
-        if (ret.size() == 0 && cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+        /*
+          There exists a file with this name, yes. But should we pretend it's a directory?
+          The web UI will allow the user to "create directories" by creating files
+          whose name ends in slash (and these files aren't always zero-size).
+          If we're set to use pseudo directories and the file name looks like a path,
+          then say it's a directory. We pass null to avoid trying to actually list files;
+          if the path doesn't end in "/" we'll truthfully say it's a file. Yes it may also be
+          a directory but we don't want to do a prefix search every time the user stats a file.
+        */
+        if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(null)) {
           @SuppressWarnings("unchecked")
           A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
           return result;
