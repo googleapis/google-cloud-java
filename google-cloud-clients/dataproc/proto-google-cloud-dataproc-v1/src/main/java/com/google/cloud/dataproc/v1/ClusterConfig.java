@@ -212,12 +212,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A Cloud Storage staging bucket used for sharing generated
-   * SSH keys and config. If you do not specify a staging bucket, Cloud
-   * Dataproc will determine an appropriate Cloud Storage location (US,
+   * Optional. A Google Cloud Storage bucket used to stage job
+   * dependencies, config files, and job driver console output.
+   * If you do not specify a staging bucket, Cloud
+   * Dataproc will determine a Cloud Storage location (US,
    * ASIA, or EU) for your cluster's staging bucket according to the Google
-   * Compute Engine zone where your cluster is deployed, and then it will create
-   * and manage this project-level, per-location bucket for you.
+   * Compute Engine zone where your cluster is deployed, and then create
+   * and manage this project-level, per-location bucket (see
+   * [Cloud Dataproc staging
+   * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1;</code>
@@ -237,12 +240,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A Cloud Storage staging bucket used for sharing generated
-   * SSH keys and config. If you do not specify a staging bucket, Cloud
-   * Dataproc will determine an appropriate Cloud Storage location (US,
+   * Optional. A Google Cloud Storage bucket used to stage job
+   * dependencies, config files, and job driver console output.
+   * If you do not specify a staging bucket, Cloud
+   * Dataproc will determine a Cloud Storage location (US,
    * ASIA, or EU) for your cluster's staging bucket according to the Google
-   * Compute Engine zone where your cluster is deployed, and then it will create
-   * and manage this project-level, per-location bucket for you.
+   * Compute Engine zone where your cluster is deployed, and then create
+   * and manage this project-level, per-location bucket (see
+   * [Cloud Dataproc staging
+   * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
    * <code>string config_bucket = 1;</code>
@@ -265,7 +271,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The shared Compute Engine config settings for
+   * Optional. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -278,7 +284,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The shared Compute Engine config settings for
+   * Optional. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -293,7 +299,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The shared Compute Engine config settings for
+   * Optional. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -1197,12 +1203,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage staging bucket used for sharing generated
-     * SSH keys and config. If you do not specify a staging bucket, Cloud
-     * Dataproc will determine an appropriate Cloud Storage location (US,
+     * Optional. A Google Cloud Storage bucket used to stage job
+     * dependencies, config files, and job driver console output.
+     * If you do not specify a staging bucket, Cloud
+     * Dataproc will determine a Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
-     * Compute Engine zone where your cluster is deployed, and then it will create
-     * and manage this project-level, per-location bucket for you.
+     * Compute Engine zone where your cluster is deployed, and then create
+     * and manage this project-level, per-location bucket (see
+     * [Cloud Dataproc staging
+     * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1;</code>
@@ -1222,12 +1231,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage staging bucket used for sharing generated
-     * SSH keys and config. If you do not specify a staging bucket, Cloud
-     * Dataproc will determine an appropriate Cloud Storage location (US,
+     * Optional. A Google Cloud Storage bucket used to stage job
+     * dependencies, config files, and job driver console output.
+     * If you do not specify a staging bucket, Cloud
+     * Dataproc will determine a Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
-     * Compute Engine zone where your cluster is deployed, and then it will create
-     * and manage this project-level, per-location bucket for you.
+     * Compute Engine zone where your cluster is deployed, and then create
+     * and manage this project-level, per-location bucket (see
+     * [Cloud Dataproc staging
+     * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1;</code>
@@ -1247,12 +1259,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage staging bucket used for sharing generated
-     * SSH keys and config. If you do not specify a staging bucket, Cloud
-     * Dataproc will determine an appropriate Cloud Storage location (US,
+     * Optional. A Google Cloud Storage bucket used to stage job
+     * dependencies, config files, and job driver console output.
+     * If you do not specify a staging bucket, Cloud
+     * Dataproc will determine a Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
-     * Compute Engine zone where your cluster is deployed, and then it will create
-     * and manage this project-level, per-location bucket for you.
+     * Compute Engine zone where your cluster is deployed, and then create
+     * and manage this project-level, per-location bucket (see
+     * [Cloud Dataproc staging
+     * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1;</code>
@@ -1270,12 +1285,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage staging bucket used for sharing generated
-     * SSH keys and config. If you do not specify a staging bucket, Cloud
-     * Dataproc will determine an appropriate Cloud Storage location (US,
+     * Optional. A Google Cloud Storage bucket used to stage job
+     * dependencies, config files, and job driver console output.
+     * If you do not specify a staging bucket, Cloud
+     * Dataproc will determine a Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
-     * Compute Engine zone where your cluster is deployed, and then it will create
-     * and manage this project-level, per-location bucket for you.
+     * Compute Engine zone where your cluster is deployed, and then create
+     * and manage this project-level, per-location bucket (see
+     * [Cloud Dataproc staging
+     * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1;</code>
@@ -1290,12 +1308,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage staging bucket used for sharing generated
-     * SSH keys and config. If you do not specify a staging bucket, Cloud
-     * Dataproc will determine an appropriate Cloud Storage location (US,
+     * Optional. A Google Cloud Storage bucket used to stage job
+     * dependencies, config files, and job driver console output.
+     * If you do not specify a staging bucket, Cloud
+     * Dataproc will determine a Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
-     * Compute Engine zone where your cluster is deployed, and then it will create
-     * and manage this project-level, per-location bucket for you.
+     * Compute Engine zone where your cluster is deployed, and then create
+     * and manage this project-level, per-location bucket (see
+     * [Cloud Dataproc staging
+     * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
      * <code>string config_bucket = 1;</code>
@@ -1321,7 +1342,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1334,7 +1355,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1353,7 +1374,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1376,7 +1397,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1397,7 +1418,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1424,7 +1445,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1445,7 +1466,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1460,7 +1481,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1479,7 +1500,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The shared Compute Engine config settings for
+     * Optional. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *

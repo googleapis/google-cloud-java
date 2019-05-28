@@ -713,9 +713,61 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(parent, template).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The "resource name" of the workflow template region, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}`
+   * @param template Required. The workflow template to instantiate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
+      RegionName parent, WorkflowTemplate template) {
+
+    InstantiateInlineWorkflowTemplateRequest request =
+        InstantiateInlineWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return instantiateInlineWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(parent.toString(), template).get();
    * }
    * </code></pre>
    *
@@ -765,10 +817,10 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   InstantiateInlineWorkflowTemplateRequest request = InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setTemplate(template)
    *     .build();
    *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(request).get();
@@ -812,10 +864,10 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   InstantiateInlineWorkflowTemplateRequest request = InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setTemplate(template)
    *     .build();
    *   OperationFuture&lt;Empty, WorkflowMetadata&gt; future = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateOperationCallable().futureCall(request);
@@ -857,10 +909,10 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   InstantiateInlineWorkflowTemplateRequest request = InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setTemplate(template)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateCallable().futureCall(request);
