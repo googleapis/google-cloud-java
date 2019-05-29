@@ -5,10 +5,10 @@
   <artifactId>google-cloud-errorreporting-parent</artifactId>
   <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   <packaging>pom</packaging>
-  <name>Errorreporting Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-errorreporting</url>
+  <name>Google Cloud Error Reporting Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/errorreporting/google-cloud-errorreporting</url>
   <description>
-    Parent project for Errorreporting
+    Parent project for Google Cloud Error Reporting
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

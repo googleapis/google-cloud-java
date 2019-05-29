@@ -5,10 +5,10 @@
   <artifactId>google-cloud-bigquerystorage-parent</artifactId>
   <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   <packaging>pom</packaging>
-  <name>Bigquerystorage Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigquerystorage</url>
+  <name>Google Cloud BigQuery Storage Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/bigquerystorage/google-cloud-bigquerystorage</url>
   <description>
-    Parent project for Bigquerystorage
+    Parent project for Google Cloud BigQuery Storage
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

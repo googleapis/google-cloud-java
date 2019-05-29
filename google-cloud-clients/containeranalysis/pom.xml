@@ -5,10 +5,10 @@
   <artifactId>google-cloud-containeranalysis-parent</artifactId>
   <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <packaging>pom</packaging>
-  <name>Containeranalysis Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-containeranalysis</url>
+  <name>Google Cloud Container Analysis Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/containeranalysis/google-cloud-containeranalysis</url>
   <description>
-    Parent project for Containeranalysis
+    Parent project for Google Cloud Container Analysis
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -5,10 +5,10 @@
   <artifactId>google-cloud-logging-parent</artifactId>
   <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
   <packaging>pom</packaging>
-  <name>Logging Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-logging</url>
+  <name>Google Cloud Logging Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/logging/google-cloud-logging</url>
   <description>
-    Parent project for Logging
+    Parent project for Google Cloud Logging
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -5,10 +5,10 @@
   <artifactId>google-cloud-redis-parent</artifactId>
   <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
   <packaging>pom</packaging>
-  <name>Redis Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-redis</url>
+  <name>Google Cloud Redis Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/redis/google-cloud-redis</url>
   <description>
-    Parent project for Redis
+    Parent project for Google Cloud Redis
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -5,10 +5,10 @@
   <artifactId>google-cloud-talent-parent</artifactId>
   <version>0.10.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-talent:current} -->
   <packaging>pom</packaging>
-  <name>Talent Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-talent</url>
+  <name>Google Cloud Talent Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/talent/google-cloud-talent</url>
   <description>
-    Parent project for Talent
+    Parent project for Google Cloud Talent
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

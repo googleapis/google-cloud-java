@@ -5,10 +5,10 @@
   <artifactId>google-cloud-scheduler-parent</artifactId>
   <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   <packaging>pom</packaging>
-  <name>Scheduler Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-scheduler</url>
+  <name>Google Cloud Scheduler Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/scheduler/google-cloud-scheduler</url>
   <description>
-    Parent project for Scheduler
+    Parent project for Google Cloud Scheduler
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -41,10 +41,9 @@ build_and_publish_site() {
   pushd ${DIRECTORY}
 
   # build the docs
-  mvn site
-  mvn site:stage -DtopSiteURL=https://googleapis.dev/java/${NAME}/${VERSION}
+  mvn javadoc:aggregate
 
-  pushd target/staging/site/${NAME}/apidocs
+  pushd target/site/apidocs
 
   # create metadata
   python3 -m docuploader create-metadata \
@@ -62,5 +61,4 @@ build_and_publish_site() {
 }
 
 # TODO (chingor): split all the artifacts
-build_and_publish_site google-api-grpc
 build_and_publish_site google-cloud-clients

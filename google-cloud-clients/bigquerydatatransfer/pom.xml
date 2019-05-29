@@ -5,10 +5,10 @@
   <artifactId>google-cloud-bigquerydatatransfer-parent</artifactId>
   <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   <packaging>pom</packaging>
-  <name>Bigquerydatatransfer Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigquerydatatransfer</url>
+  <name>Google Cloud BigQuery Data Transfer Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/bigquerydatatransfer/google-cloud-bigquerydatatransfer</url>
   <description>
-    Parent project for Bigquerydatatransfer
+    Parent project for Google Cloud BigQuery Data Transfer
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

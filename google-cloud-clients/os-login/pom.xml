@@ -5,10 +5,10 @@
   <artifactId>google-cloud-os-login-parent</artifactId>
   <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
   <packaging>pom</packaging>
-  <name>Os Login Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-os-login</url>
+  <name>Google Cloud OS Login Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/os-login/google-cloud-os-login</url>
   <description>
-    Parent project for Os Login
+    Parent project for Google Cloud OS Login
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

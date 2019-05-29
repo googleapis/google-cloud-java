@@ -5,10 +5,10 @@
   <artifactId>google-cloud-securitycenter-parent</artifactId>
   <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
   <packaging>pom</packaging>
-  <name>Securitycenter Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-securitycenter</url>
+  <name>Google Cloud Security Center Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/securitycenter/google-cloud-securitycenter</url>
   <description>
-    Parent project for Securitycenter
+    Parent project for Google Cloud Security Center
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

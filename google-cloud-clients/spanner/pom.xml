@@ -5,10 +5,10 @@
   <artifactId>google-cloud-spanner-parent</artifactId>
   <version>1.20.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
   <packaging>pom</packaging>
-  <name>Spanner Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-spanner</url>
+  <name>Google Cloud Spanner Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/spanner/google-cloud-spanner</url>
   <description>
-    Parent project for Spanner
+    Parent project for Google Cloud Spanner
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

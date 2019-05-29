@@ -5,10 +5,10 @@
   <artifactId>google-cloud-dlp-parent</artifactId>
   <version>0.93.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
   <packaging>pom</packaging>
-  <name>Dlp Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-dlp</url>
+  <name>Google Cloud Data Loss Prevention Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/dlp/google-cloud-dlp</url>
   <description>
-    Parent project for Dlp
+    Parent project for Google Cloud Data Loss Prevention
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

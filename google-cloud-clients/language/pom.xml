@@ -5,10 +5,10 @@
   <artifactId>google-cloud-language-parent</artifactId>
   <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
   <packaging>pom</packaging>
-  <name>Language Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-language</url>
+  <name>Google Cloud Natural Language Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/language/google-cloud-language</url>
   <description>
-    Parent project for Language
+    Parent project for Google Cloud Natural Language
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

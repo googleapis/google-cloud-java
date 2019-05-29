@@ -5,10 +5,10 @@
   <artifactId>google-cloud-iamcredentials-parent</artifactId>
   <version>0.20.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <packaging>pom</packaging>
-  <name>Iamcredentials Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-iamcredentials</url>
+  <name>Google Cloud IAM Credentials Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/iamcredentials/google-cloud-iamcredentials</url>
   <description>
-    Parent project for Iamcredentials
+    Parent project for Google Cloud IAM Credentials
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -498,6 +498,92 @@
     </plugins>
   </build>
 
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.0</version>
+        <reportSets>
+          <reportSet>
+            <id>html</id>
+            <reports>
+              <report>aggregate</report>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <doclint>none</doclint>
+          <show>protected</show>
+          <nohelp>true</nohelp>
+          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+          <groups>
+            <group>
+              <title>API packages</title>
+              <packages>com.google.cloud*</packages>
+            </group>
+            <group>
+              <title>Test helpers packages</title>
+              <packages>com.google.cloud.bigquery.testing:com.google.cloud.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
+            </group>
+            <group>
+              <title>Example packages</title>
+              <packages>com.google.cloud.examples.*:com.google.cloud.nio.examples</packages>
+            </group>
+            <group>
+              <title>SPI packages</title>
+              <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.firestore.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
+            </group>
+            <group>
+              <title>Stub packages</title>
+              <packages>com.google.cloud.asset.v1.stub:com.google.cloud.asset.v1beta1.stub:com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.bigquerystorage.v1beta1.stub:com.google.cloud.bigtable-admin.v2.stub:com.google.cloud.bigtable.v2.stub:com.google.cloud.container.v1.stub:com.google.cloud.containeranalysis.v1beta1.stub:com.google.cloud.datacatalog.v1beta1.stub:com.google.cloud.datalabeling.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.error-reporting.v1beta1.stub:com.google.cloud.firestore-admin.v1.stub:com.google.cloud.firestore.v1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iamcredentials.v1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.os-login.v1.stub:com.google.cloud.phishingprotection.v1beta1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.recaptchaenterprise.v1beta1.stub:com.google.cloud.redis.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.scheduler.v1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner-admin-database.v1.stub:com.google.cloud.spanner-admin-instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.talent.v4beta1.stub:com.google.cloud.tasks.v2.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.tasks.v2beta3.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.translate.v3beta1.stub:com.google.cloud.video-intelligence.v1.stub:com.google.cloud.video-intelligence.v1beta1.stub:com.google.cloud.video-intelligence.v1beta2.stub:com.google.cloud.video-intelligence.v1p1beta1.stub:com.google.cloud.video-intelligence.v1p2beta1.stub:com.google.cloud.video-intelligence.v1p3beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.vision.v1p4beta1.stub:com.google.cloud.webrisk.v1beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
+            </group>
+            <group>
+              <title>Deprecated packages</title>
+              <packages>com.google.cloud.compute.deprecated*</packages>
+            </group>
+          </groups>
+
+          <!-- TODO(chingor13): Remove this once we switch to per client javadoc sites -->
+          <sourceFileExcludes>
+            <!-- TODO(igorbernstein): use a custom doclet to exclude @InternalApi classes from javadoc -->
+            <!-- Bigtable: Hide @InternalApi classes -->
+            <exclude>com/google/cloud/bigtable/gaxx/**</exclude>
+
+            <!-- Bigtable: Hide @InternalApi classes for InstanceAdmin -->
+            <exclude>com/google/cloud/bigtable/admin/v2/internal/**</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClient.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminCallableFactory.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java</exclude>
+
+            <!-- Bigtable: Hide @InternalApi classes for TableAdmin -->
+            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java</exclude>
+            <exclude>com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub.java</exclude>
+
+            <!-- Bigtable: Hide @InternalApi classes for Data -->
+            <exclude>com/google/cloud/bigtable/data/v2/internal/**</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/BaseBigtableDataClient.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/BaseBigtableDataSettings.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/BigtableStub.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub.java</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/mutaterows/**</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/readrows/**</exclude>
+          </sourceFileExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
   <profiles>
     <profile>
       <id>release</id>

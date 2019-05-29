@@ -5,10 +5,10 @@
   <artifactId>google-cloud-webrisk-parent</artifactId>
   <version>0.8.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
   <packaging>pom</packaging>
-  <name>Webrisk Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-webrisk</url>
+  <name>Google Cloud Webrisk Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/webrisk/google-cloud-webrisk</url>
   <description>
-    Parent project for Webrisk
+    Parent project for Google Cloud Webrisk
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

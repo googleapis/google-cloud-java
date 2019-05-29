@@ -5,10 +5,10 @@
   <artifactId>google-cloud-tasks-parent</artifactId>
   <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
   <packaging>pom</packaging>
-  <name>Tasks Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-tasks</url>
+  <name>Google Cloud Tasks Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/tasks/google-cloud-tasks</url>
   <description>
-    Parent project for Tasks
+    Parent project for Google Cloud Tasks
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
