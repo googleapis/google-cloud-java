@@ -12,6 +12,19 @@ public final class BatchProto {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_talent_v4beta1_JobOperationResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_talent_v4beta1_JobOperationResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_talent_v4beta1_JobOperationResult_JobResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_talent_v4beta1_JobOperationResult_JobResult_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -24,11 +37,27 @@ public final class BatchProto {
           + "o\022\033google.cloud.talent.v4beta1\032\034google/a"
           + "pi/annotations.proto\032%google/cloud/talen"
           + "t/v4beta1/job.proto\032\037google/protobuf/tim"
-          + "estamp.proto\032\027google/rpc/status.protoBx\n"
-          + "\037com.google.cloud.talent.v4beta1B\nBatchP"
-          + "rotoP\001ZAgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/talent/v4beta1;talent\242\002\003CTSb"
-          + "\006proto3"
+          + "estamp.proto\032\027google/rpc/status.proto\"\314\003"
+          + "\n\026BatchOperationMetadata\022H\n\005state\030\001 \001(\0162"
+          + "9.google.cloud.talent.v4beta1.BatchOpera"
+          + "tionMetadata.State\022\031\n\021state_description\030"
+          + "\002 \001(\t\022\025\n\rsuccess_count\030\003 \001(\005\022\025\n\rfailure_"
+          + "count\030\004 \001(\005\022\023\n\013total_count\030\005 \001(\005\022/\n\013crea"
+          + "te_time\030\006 \001(\0132\032.google.protobuf.Timestam"
+          + "p\022/\n\013update_time\030\007 \001(\0132\032.google.protobuf"
+          + ".Timestamp\022,\n\010end_time\030\010 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\"z\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\020\n\014INITIALIZING\020\001\022\016\n\nPROCESSING"
+          + "\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\016\n\nCANCELL"
+          + "ING\020\005\022\r\n\tCANCELLED\020\006\"\304\001\n\022JobOperationRes"
+          + "ult\022N\n\013job_results\030\001 \003(\01329.google.cloud."
+          + "talent.v4beta1.JobOperationResult.JobRes"
+          + "ult\032^\n\tJobResult\022-\n\003job\030\001 \001(\0132 .google.c"
+          + "loud.talent.v4beta1.Job\022\"\n\006status\030\002 \001(\0132"
+          + "\022.google.rpc.StatusBx\n\037com.google.cloud."
+          + "talent.v4beta1B\nBatchProtoP\001ZAgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/talent"
+          + "/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -47,6 +76,39 @@ public final class BatchProto {
           com.google.rpc.StatusProto.getDescriptor(),
         },
         assigner);
+    internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "State",
+              "StateDescription",
+              "SuccessCount",
+              "FailureCount",
+              "TotalCount",
+              "CreateTime",
+              "UpdateTime",
+              "EndTime",
+            });
+    internal_static_google_cloud_talent_v4beta1_JobOperationResult_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_talent_v4beta1_JobOperationResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_talent_v4beta1_JobOperationResult_descriptor,
+            new java.lang.String[] {
+              "JobResults",
+            });
+    internal_static_google_cloud_talent_v4beta1_JobOperationResult_JobResult_descriptor =
+        internal_static_google_cloud_talent_v4beta1_JobOperationResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_talent_v4beta1_JobOperationResult_JobResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_talent_v4beta1_JobOperationResult_JobResult_descriptor,
+            new java.lang.String[] {
+              "Job", "Status",
+            });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

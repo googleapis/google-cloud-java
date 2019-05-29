@@ -30,9 +30,9 @@ public final class CompanyResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/talent/v4beta1/company.pr"
-          + "oto\022\033google.cloud.talent.v4beta1\032(google"
-          + "/cloud/talent/v4beta1/common.proto\032\034goog"
-          + "le/api/annotations.proto\"\344\003\n\007Company\022\014\n\004"
+          + "oto\022\033google.cloud.talent.v4beta1\032\034google"
+          + "/api/annotations.proto\032(google/cloud/tal"
+          + "ent/v4beta1/common.proto\"\344\003\n\007Company\022\014\n\004"
           + "name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013exte"
           + "rnal_id\030\003 \001(\t\0226\n\004size\030\004 \001(\0162(.google.clo"
           + "ud.talent.v4beta1.CompanySize\022\034\n\024headqua"
@@ -61,8 +61,8 @@ public final class CompanyResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_talent_v4beta1_Company_descriptor =
@@ -93,8 +93,8 @@ public final class CompanyResourceProto {
             new java.lang.String[] {
               "HeadquartersLocation",
             });
-    com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

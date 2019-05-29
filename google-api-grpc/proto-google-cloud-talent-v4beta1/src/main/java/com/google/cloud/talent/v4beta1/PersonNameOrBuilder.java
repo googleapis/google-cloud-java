@@ -76,7 +76,8 @@ public interface PersonNameOrBuilder
    *
    * <pre>
    * Optional.
-   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if
+   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>
@@ -89,7 +90,8 @@ public interface PersonNameOrBuilder
    *
    * <pre>
    * Optional.
-   * Preferred name for the person. This field is ignored if [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
+   * Preferred name for the person. This field is ignored if
+   * [structured_name][google.cloud.talent.v4beta1.PersonName.structured_name]
    * is provided.
    * Number of characters allowed is 100.
    * </pre>

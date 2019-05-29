@@ -457,6 +457,114 @@ public final class JobServiceGrpc {
     return getSearchJobsForAlertMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchCreateJobsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      METHOD_BATCH_CREATE_JOBS = getBatchCreateJobsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      getBatchCreateJobsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      getBatchCreateJobsMethod() {
+    return getBatchCreateJobsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      getBatchCreateJobsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
+            com.google.longrunning.Operation>
+        getBatchCreateJobsMethod;
+    if ((getBatchCreateJobsMethod = JobServiceGrpc.getBatchCreateJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getBatchCreateJobsMethod = JobServiceGrpc.getBatchCreateJobsMethod) == null) {
+          JobServiceGrpc.getBatchCreateJobsMethod =
+              getBatchCreateJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.talent.v4beta1.JobService", "BatchCreateJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.talent.v4beta1.BatchCreateJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("BatchCreateJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateJobsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchUpdateJobsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      METHOD_BATCH_UPDATE_JOBS = getBatchUpdateJobsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      getBatchUpdateJobsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      getBatchUpdateJobsMethod() {
+    return getBatchUpdateJobsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      getBatchUpdateJobsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
+            com.google.longrunning.Operation>
+        getBatchUpdateJobsMethod;
+    if ((getBatchUpdateJobsMethod = JobServiceGrpc.getBatchUpdateJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getBatchUpdateJobsMethod = JobServiceGrpc.getBatchUpdateJobsMethod) == null) {
+          JobServiceGrpc.getBatchUpdateJobsMethod =
+              getBatchUpdateJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.talent.v4beta1.JobService", "BatchUpdateJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("BatchUpdateJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchUpdateJobsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static JobServiceStub newStub(io.grpc.Channel channel) {
     return new JobServiceStub(channel);
@@ -573,10 +681,12 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs that the caller has
-     * permission to search against.
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs that the caller has permission to
+     * search against.
      * </pre>
      */
     public void searchJobs(
@@ -590,14 +700,16 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * This API call is intended for the use case of targeting passive job
      * seekers (for example, job seekers who have signed up to receive email
      * alerts about potential job opportunities), and has different algorithmic
      * adjustments that are targeted to passive job seekers.
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs the caller has
-     * permission to search against.
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs the caller has permission to search
+     * against.
      * </pre>
      */
     public void searchJobsForAlert(
@@ -605,6 +717,32 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getSearchJobsForAlertMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public void batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchCreateJobsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public void batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchUpdateJobsMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -660,6 +798,18 @@ public final class JobServiceGrpc {
                       com.google.cloud.talent.v4beta1.SearchJobsRequest,
                       com.google.cloud.talent.v4beta1.SearchJobsResponse>(
                       this, METHODID_SEARCH_JOBS_FOR_ALERT)))
+          .addMethod(
+              getBatchCreateJobsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_JOBS)))
+          .addMethod(
+              getBatchUpdateJobsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_JOBS)))
           .build();
     }
   }
@@ -793,10 +943,12 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs that the caller has
-     * permission to search against.
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs that the caller has permission to
+     * search against.
      * </pre>
      */
     public void searchJobs(
@@ -813,14 +965,16 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * This API call is intended for the use case of targeting passive job
      * seekers (for example, job seekers who have signed up to receive email
      * alerts about potential job opportunities), and has different algorithmic
      * adjustments that are targeted to passive job seekers.
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs the caller has
-     * permission to search against.
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs the caller has permission to search
+     * against.
      * </pre>
      */
     public void searchJobsForAlert(
@@ -829,6 +983,38 @@ public final class JobServiceGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSearchJobsForAlertMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public void batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public void batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -941,10 +1127,12 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs that the caller has
-     * permission to search against.
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs that the caller has permission to
+     * search against.
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.SearchJobsResponse searchJobs(
@@ -957,20 +1145,48 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * This API call is intended for the use case of targeting passive job
      * seekers (for example, job seekers who have signed up to receive email
      * alerts about potential job opportunities), and has different algorithmic
      * adjustments that are targeted to passive job seekers.
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs the caller has
-     * permission to search against.
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs the caller has permission to search
+     * against.
      * </pre>
      */
     public com.google.cloud.talent.v4beta1.SearchJobsResponse searchJobsForAlert(
         com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
       return blockingUnaryCall(
           getChannel(), getSearchJobsForAlertMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchCreateJobsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchUpdateJobsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1086,10 +1302,12 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs that the caller has
-     * permission to search against.
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs that the caller has permission to
+     * search against.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1103,14 +1321,16 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * This API call is intended for the use case of targeting passive job
      * seekers (for example, job seekers who have signed up to receive email
      * alerts about potential job opportunities), and has different algorithmic
      * adjustments that are targeted to passive job seekers.
-     * This call constrains the [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs
-     * present in the database, and only returns jobs the caller has
-     * permission to search against.
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs the caller has permission to search
+     * against.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1118,6 +1338,32 @@ public final class JobServiceGrpc {
         searchJobsForAlert(com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSearchJobsForAlertMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCreateJobs(com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchUpdateJobs(com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()), request);
     }
   }
 
@@ -1129,6 +1375,8 @@ public final class JobServiceGrpc {
   private static final int METHODID_BATCH_DELETE_JOBS = 5;
   private static final int METHODID_SEARCH_JOBS = 6;
   private static final int METHODID_SEARCH_JOBS_FOR_ALERT = 7;
+  private static final int METHODID_BATCH_CREATE_JOBS = 8;
+  private static final int METHODID_BATCH_UPDATE_JOBS = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1189,6 +1437,16 @@ public final class JobServiceGrpc {
               (com.google.cloud.talent.v4beta1.SearchJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>)
                   responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_JOBS:
+          serviceImpl.batchCreateJobs(
+              (com.google.cloud.talent.v4beta1.BatchCreateJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BATCH_UPDATE_JOBS:
+          serviceImpl.batchUpdateJobs(
+              (com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1262,6 +1520,8 @@ public final class JobServiceGrpc {
                       .addMethod(getBatchDeleteJobsMethodHelper())
                       .addMethod(getSearchJobsMethodHelper())
                       .addMethod(getSearchJobsForAlertMethodHelper())
+                      .addMethod(getBatchCreateJobsMethodHelper())
+                      .addMethod(getBatchUpdateJobsMethodHelper())
                       .build();
         }
       }

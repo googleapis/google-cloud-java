@@ -26,6 +26,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   private JobEvent() {
     type_ = 0;
     jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    profile_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,13 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000002;
               }
               jobs_.add(s);
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              profile_ = s;
               break;
             }
           default:
@@ -196,7 +204,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * submitted an application for a job with a single click without
      * entering information. If a job seeker performs this action, send only
      * this event to the service. Do not also send
-     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START] or [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
+     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START]
+     * or
+     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
      * events.
      * </pre>
      *
@@ -237,8 +247,12 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * (without viewing the details of the job posting), and is redirected
      * to a different website to complete the application. If a candidate
      * performs this action, send only this event to the service. Do not also
-     * send [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
-     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH] or [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] events.
+     * send
+     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
+     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
+     * or
+     * [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW]
+     * events.
      * </pre>
      *
      * <code>APPLICATION_REDIRECT_FROM_SEARCH = 9;</code>
@@ -319,17 +333,6 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERVIEW_GRANTED = 15;</code>
      */
     INTERVIEW_GRANTED(15),
-    /**
-     *
-     *
-     * <pre>
-     * The job seeker or other entity interacting with the service showed
-     * no interest in the job.
-     * </pre>
-     *
-     * <code>NOT_INTERESTED = 16;</code>
-     */
-    NOT_INTERESTED(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -412,7 +415,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * submitted an application for a job with a single click without
      * entering information. If a job seeker performs this action, send only
      * this event to the service. Do not also send
-     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START] or [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
+     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START]
+     * or
+     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
      * events.
      * </pre>
      *
@@ -453,8 +458,12 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * (without viewing the details of the job posting), and is redirected
      * to a different website to complete the application. If a candidate
      * performs this action, send only this event to the service. Do not also
-     * send [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
-     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH] or [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] events.
+     * send
+     * [JobEventType.APPLICATION_START][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_START],
+     * [JobEventType.APPLICATION_FINISH][google.cloud.talent.v4beta1.JobEvent.JobEventType.APPLICATION_FINISH]
+     * or
+     * [JobEventType.VIEW][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW]
+     * events.
      * </pre>
      *
      * <code>APPLICATION_REDIRECT_FROM_SEARCH = 9;</code>
@@ -535,17 +544,6 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERVIEW_GRANTED = 15;</code>
      */
     public static final int INTERVIEW_GRANTED_VALUE = 15;
-    /**
-     *
-     *
-     * <pre>
-     * The job seeker or other entity interacting with the service showed
-     * no interest in the job.
-     * </pre>
-     *
-     * <code>NOT_INTERESTED = 16;</code>
-     */
-    public static final int NOT_INTERESTED_VALUE = 16;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -595,8 +593,6 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
           return SENT_CV;
         case 15:
           return INTERVIEW_GRANTED;
-        case 16:
-          return NOT_INTERESTED;
         default:
           return null;
       }
@@ -654,7 +650,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required.
-   * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+   * The type of the event (see
+   * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -667,7 +664,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required.
-   * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+   * The type of the event (see
+   * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -688,11 +686,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
@@ -705,11 +708,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
@@ -722,11 +730,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
@@ -739,17 +752,75 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
    */
   public com.google.protobuf.ByteString getJobsBytes(int index) {
     return jobs_.getByteString(index);
+  }
+
+  public static final int PROFILE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object profile_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * </pre>
+   *
+   * <code>string profile = 3;</code>
+   */
+  public java.lang.String getProfile() {
+    java.lang.Object ref = profile_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      profile_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * </pre>
+   *
+   * <code>string profile = 3;</code>
+   */
+  public com.google.protobuf.ByteString getProfileBytes() {
+    java.lang.Object ref = profile_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      profile_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -774,6 +845,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < jobs_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobs_.getRaw(i));
     }
+    if (!getProfileBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, profile_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -796,6 +870,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getJobsList().size();
     }
+    if (!getProfileBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, profile_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -813,6 +890,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
 
     if (type_ != other.type_) return false;
     if (!getJobsList().equals(other.getJobsList())) return false;
+    if (!getProfile().equals(other.getProfile())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -830,6 +908,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getJobsList().hashCode();
     }
+    hash = (37 * hash) + PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + getProfile().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -980,6 +1060,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
 
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      profile_ = "";
+
       return this;
     }
 
@@ -1015,6 +1097,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.jobs_ = jobs_;
+      result.profile_ = profile_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1078,6 +1161,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getProfile().isEmpty()) {
+        profile_ = other.profile_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1115,7 +1202,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * The type of the event (see
+     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -1128,7 +1216,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * The type of the event (see
+     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -1143,7 +1232,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * The type of the event (see
+     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -1161,7 +1251,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * The type of the event (see
+     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -1180,7 +1271,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+     * The type of the event (see
+     * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -1206,11 +1298,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1223,11 +1320,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1240,11 +1342,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1257,11 +1364,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1274,11 +1386,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1297,11 +1414,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1320,11 +1442,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1340,11 +1467,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1360,11 +1492,16 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required.
-     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-     * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-     * this field contains the identifiers of all jobs shown to the job seeker.
-     * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-     * identifier of the viewed job.
+     * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+     * this event. For example, if this is an
+     * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+     * event, this field contains the identifiers of all jobs shown to the job
+     * seeker. If this was a
+     * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+     * field contains the identifier of the viewed job.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
      * </pre>
      *
      * <code>repeated string jobs = 2;</code>
@@ -1376,6 +1513,125 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureJobsIsMutable();
       jobs_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object profile_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * </pre>
+     *
+     * <code>string profile = 3;</code>
+     */
+    public java.lang.String getProfile() {
+      java.lang.Object ref = profile_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        profile_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * </pre>
+     *
+     * <code>string profile = 3;</code>
+     */
+    public com.google.protobuf.ByteString getProfileBytes() {
+      java.lang.Object ref = profile_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        profile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * </pre>
+     *
+     * <code>string profile = 3;</code>
+     */
+    public Builder setProfile(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      profile_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * </pre>
+     *
+     * <code>string profile = 3;</code>
+     */
+    public Builder clearProfile() {
+
+      profile_ = getDefaultInstance().getProfile();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * </pre>
+     *
+     * <code>string profile = 3;</code>
+     */
+    public Builder setProfileBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      profile_ = value;
       onChanged();
       return this;
     }
