@@ -42,11 +42,11 @@ public final class JobResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/talent/v4beta1/job.proto\022"
-          + "\033google.cloud.talent.v4beta1\032(google/clo"
-          + "ud/talent/v4beta1/common.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\032\036google/protobuf"
-          + "/wrappers.proto\032 google/type/postal_addr"
-          + "ess.proto\032\034google/api/annotations.proto\""
+          + "\033google.cloud.talent.v4beta1\032\034google/api"
+          + "/annotations.proto\032(google/cloud/talent/"
+          + "v4beta1/common.proto\032\037google/protobuf/ti"
+          + "mestamp.proto\032\036google/protobuf/wrappers."
+          + "proto\032 google/type/postal_address.proto\""
           + "\247\016\n\003Job\022\014\n\004name\030\001 \001(\t\022\017\n\007company\030\002 \001(\t\022\026"
           + "\n\016requisition_id\030\003 \001(\t\022\r\n\005title\030\004 \001(\t\022\023\n"
           + "\013description\030\005 \001(\t\022\021\n\taddresses\030\006 \003(\t\022J\n"
@@ -109,11 +109,11 @@ public final class JobResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.type.PostalAddressProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_talent_v4beta1_Job_descriptor =
@@ -185,11 +185,11 @@ public final class JobResourceProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.type.PostalAddressProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

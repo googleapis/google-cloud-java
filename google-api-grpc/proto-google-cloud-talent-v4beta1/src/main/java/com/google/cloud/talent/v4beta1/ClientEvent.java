@@ -204,7 +204,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
+   * Optional but highly recommended.
    * A unique ID generated in the API responses. It can be found in
    * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
    * </pre>
@@ -226,7 +226,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
+   * Optional but highly recommended.
    * A unique ID generated in the API responses. It can be found in
    * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
    * </pre>
@@ -944,7 +944,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Optional but highly recommended.
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
      * </pre>
@@ -966,7 +966,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Optional but highly recommended.
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
      * </pre>
@@ -988,7 +988,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Optional but highly recommended.
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
      * </pre>
@@ -1008,7 +1008,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Optional but highly recommended.
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
      * </pre>
@@ -1025,7 +1025,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
+     * Optional but highly recommended.
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
      * </pre>

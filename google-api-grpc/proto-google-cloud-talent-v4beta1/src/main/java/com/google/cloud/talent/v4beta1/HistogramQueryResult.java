@@ -8,7 +8,9 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * Output only.
- * Histogram result that matches [HistogramSpec][] specified in searches.
+ * Histogram result that matches
+ * [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
+ * searches.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.HistogramQueryResult}
@@ -198,7 +200,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -225,7 +227,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -244,7 +246,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -267,7 +269,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -464,7 +466,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only.
-   * Histogram result that matches [HistogramSpec][] specified in searches.
+   * Histogram result that matches
+   * [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
+   * searches.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.HistogramQueryResult}
@@ -779,7 +783,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -806,7 +810,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -825,7 +829,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -848,7 +852,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -879,7 +883,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -907,7 +911,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -931,7 +935,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
      * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-     * example, `0-1000`, `MIN-0`, and `0-MAX`.
+     *   example, `0-1000`, `MIN-0`, and `0-MAX`.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
