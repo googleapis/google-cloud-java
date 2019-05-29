@@ -29,11 +29,6 @@ function client_has_changes() {
     return
   fi
 
-  if [[ ! -z $(git diff master google-api-grpc/*${CLIENT_NAME}*) ]]; then
-    echo "true"
-    return
-  fi
-
   echo "false"
 }
 
