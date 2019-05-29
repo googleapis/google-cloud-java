@@ -102,7 +102,7 @@ public class AwaitReplicationCallableTest {
       actualError = e.getCause();
     }
 
-    assertThat(actualError).isSameAs(fakeError);
+    assertThat(actualError).isSameInstanceAs(fakeError);
   }
 
   @Test
@@ -136,7 +136,7 @@ public class AwaitReplicationCallableTest {
       actualError = e.getCause();
     }
 
-    assertThat(actualError).isSameAs(expectedError);
+    assertThat(actualError).isSameInstanceAs(expectedError);
   }
 
   @Test

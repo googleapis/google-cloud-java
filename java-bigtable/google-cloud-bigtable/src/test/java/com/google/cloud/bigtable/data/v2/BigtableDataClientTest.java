@@ -97,7 +97,7 @@ public class BigtableDataClientTest {
 
   @Test
   public void proxyReadRowsCallableTest() {
-    assertThat(bigtableDataClient.readRowsCallable()).isSameAs(mockReadRowsCallable);
+    assertThat(bigtableDataClient.readRowsCallable()).isSameInstanceAs(mockReadRowsCallable);
   }
 
   @Test
@@ -229,7 +229,8 @@ public class BigtableDataClientTest {
 
   @Test
   public void proxySampleRowKeysCallableTest() {
-    assertThat(bigtableDataClient.sampleRowKeysCallable()).isSameAs(mockSampleRowKeysCallable);
+    assertThat(bigtableDataClient.sampleRowKeysCallable())
+        .isSameInstanceAs(mockSampleRowKeysCallable);
   }
 
   @Test
@@ -248,7 +249,7 @@ public class BigtableDataClientTest {
 
   @Test
   public void proxyMutateRowCallableTest() {
-    assertThat(bigtableDataClient.mutateRowCallable()).isSameAs(mockMutateRowCallable);
+    assertThat(bigtableDataClient.mutateRowCallable()).isSameInstanceAs(mockMutateRowCallable);
   }
 
   @Test
@@ -325,7 +326,7 @@ public class BigtableDataClientTest {
     Mockito.when(mockBulkMutateRowsBatchingCallable.futureCall(request)).thenReturn(innerResult);
 
     ApiFuture<Void> actualResult = batcher.add(request);
-    assertThat(actualResult).isSameAs(innerResult);
+    assertThat(actualResult).isSameInstanceAs(innerResult);
   }
 
   @Test
@@ -404,7 +405,7 @@ public class BigtableDataClientTest {
   @Test
   public void proxyCheckAndMutateRowCallableTest() {
     assertThat(bigtableDataClient.checkAndMutateRowCallable())
-        .isSameAs(mockStub.checkAndMutateRowCallable());
+        .isSameInstanceAs(mockStub.checkAndMutateRowCallable());
   }
 
   @Test
@@ -455,6 +456,6 @@ public class BigtableDataClientTest {
   @Test
   public void proxyReadModifyWriterRowCallableTest() {
     assertThat(bigtableDataClient.readModifyWriteRowCallable())
-        .isSameAs(mockReadModifyWriteRowCallable);
+        .isSameInstanceAs(mockReadModifyWriteRowCallable);
   }
 }
