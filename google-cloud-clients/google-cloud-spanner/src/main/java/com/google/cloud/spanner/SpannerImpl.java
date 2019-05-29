@@ -31,7 +31,6 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
@@ -49,7 +48,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -80,7 +78,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private final Random random = new Random();
   private final SpannerRpc gapicRpc;
-  private final int defaultPrefetchChunks;
 
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
@@ -91,17 +88,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
 
-  SpannerImpl(SpannerRpc gapicRpc, int defaultPrefetchChunks, SpannerOptions options) {
+  @VisibleForTesting
+  SpannerImpl(SpannerRpc gapicRpc, SpannerOptions options) {
     super(options);
     this.gapicRpc = gapicRpc;
-    this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
     this.instanceClient =
         new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
+    this(options.getSpannerRpcV1(), options);
   }
 
   static ExponentialBackOff newBackOff() {
@@ -157,43 +154,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  /**
-   * Helper to execute some work, retrying with backoff on retryable errors.
-   *
-   * <p>TODO: Consider replacing with RetryHelper from gcloud-core.
-   */
-  static <T> T runWithRetries(Callable<T> callable) {
-    // Use same backoff setting as abort, somewhat arbitrarily.
-    Span span = tracer.getCurrentSpan();
-    ExponentialBackOff backOff = newBackOff();
-    Context context = Context.current();
-    int attempt = 0;
-    while (true) {
-      attempt++;
-      try {
-        span.addAnnotation(
-            "Starting operation",
-            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
-        T result = callable.call();
-        return result;
-      } catch (SpannerException e) {
-        if (!e.isRetryable()) {
-          throw e;
-        }
-        logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
-        long delay = e.getRetryDelayInMillis();
-        if (delay != -1) {
-          backoffSleep(context, delay);
-        } else {
-          backoffSleep(context, backOff);
-        }
-      } catch (Exception e) {
-        Throwables.throwIfUnchecked(e);
-        throw newSpannerException(ErrorCode.INTERNAL, "Unexpected exception thrown", e);
-      }
-    }
-  }
-
   /** Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance. */
   SpannerRpc getRpc() {
     return gapicRpc;
@@ -201,7 +161,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   /** Returns the default setting for prefetchChunks of this {@link SpannerImpl} instance. */
   int getDefaultPrefetchChunks() {
-    return defaultPrefetchChunks;
+    return getOptions().getPrefetchChunks();
   }
 
   SessionImpl createSession(final DatabaseId db) throws SpannerException {
@@ -210,14 +170,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
-          runWithRetries(
-              new Callable<com.google.spanner.v1.Session>() {
-                @Override
-                public com.google.spanner.v1.Session call() throws Exception {
-                  return gapicRpc.createSession(
-                      db.getName(), getOptions().getSessionLabels(), options);
-                }
-              });
+          gapicRpc.createSession(db.getName(), getOptions().getSessionLabels(), options);
       span.end();
       return new SessionImpl(this, session.getName(), options);
     } catch (RuntimeException e) {
@@ -339,19 +292,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
+  /** Helper class for gRPC calls that can return paginated results. */
   abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 
     @Override
     public Page<S> getNextPage() {
-      Paginated<T> nextPage =
-          runWithRetries(
-              new Callable<Paginated<T>>() {
-                @Override
-                public Paginated<T> call() {
-                  return getNextPage(nextPageToken);
-                }
-              });
+      Paginated<T> nextPage = getNextPage(nextPageToken);
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {

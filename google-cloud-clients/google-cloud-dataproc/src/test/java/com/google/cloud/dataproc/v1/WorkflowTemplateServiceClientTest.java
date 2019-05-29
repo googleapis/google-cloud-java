@@ -302,11 +302,10 @@ public class WorkflowTemplateServiceClientTest {
             .build();
     mockWorkflowTemplateService.addResponse(resultOperation);
 
-    String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+    RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
     WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
 
-    Empty actualResponse =
-        client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+    Empty actualResponse = client.instantiateInlineWorkflowTemplateAsync(parent, template).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWorkflowTemplateService.getRequests();
@@ -314,7 +313,7 @@ public class WorkflowTemplateServiceClientTest {
     InstantiateInlineWorkflowTemplateRequest actualRequest =
         (InstantiateInlineWorkflowTemplateRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, RegionName.parse(actualRequest.getParent()));
     Assert.assertEquals(template, actualRequest.getTemplate());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -329,10 +328,10 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addException(exception);
 
     try {
-      String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+      RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
       WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
 
-      client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+      client.instantiateInlineWorkflowTemplateAsync(parent, template).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

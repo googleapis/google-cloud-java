@@ -115,11 +115,6 @@ public class ReadRowsRetryTest {
     service.expectations.add(
         RpcExpectation.create()
             .expectRequest("fake-stream", 5)
-            .respondWithStatus(Code.DEADLINE_EXCEEDED));
-
-    service.expectations.add(
-        RpcExpectation.create()
-            .expectRequest("fake-stream", 5)
             .respondWithNumberOfRows(10)
             .respondWithNumberOfRows(7)
             .respondWithStatus(Code.UNAVAILABLE));
@@ -138,11 +133,6 @@ public class ReadRowsRetryTest {
             .expectRequest("fake-stream", 17)
             .respondWithNumberOfRows(5)
             .respondWithStatus(Code.UNAVAILABLE));
-
-    service.expectations.add(
-        RpcExpectation.create()
-            .expectRequest("fake-stream", 22)
-            .respondWithStatus(Code.DEADLINE_EXCEEDED));
 
     service.expectations.add(
         RpcExpectation.create()

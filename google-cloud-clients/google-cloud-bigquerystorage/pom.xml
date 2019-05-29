@@ -41,6 +41,12 @@
             <artifactId>gax-grpc</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
         <!-- Need testing utility classes for generated gRPC clients tests -->
         <dependency>
             <groupId>com.google.api</groupId>

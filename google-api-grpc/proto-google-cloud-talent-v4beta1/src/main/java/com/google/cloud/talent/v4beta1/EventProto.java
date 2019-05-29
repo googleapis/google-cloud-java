@@ -42,29 +42,28 @@ public final class EventProto {
           + "job_event\030\005 \001(\0132%.google.cloud.talent.v4"
           + "beta1.JobEventH\000\022B\n\rprofile_event\030\006 \001(\0132"
           + ").google.cloud.talent.v4beta1.ProfileEve"
-          + "ntH\000\022\023\n\013event_notes\030\t \001(\tB\007\n\005event\"\357\003\n\010J"
+          + "ntH\000\022\023\n\013event_notes\030\t \001(\tB\007\n\005event\"\354\003\n\010J"
           + "obEvent\022@\n\004type\030\001 \001(\01622.google.cloud.tal"
           + "ent.v4beta1.JobEvent.JobEventType\022\014\n\004job"
-          + "s\030\002 \003(\t\"\222\003\n\014JobEventType\022\036\n\032JOB_EVENT_TY"
-          + "PE_UNSPECIFIED\020\000\022\016\n\nIMPRESSION\020\001\022\010\n\004VIEW"
-          + "\020\002\022\021\n\rVIEW_REDIRECT\020\003\022\025\n\021APPLICATION_STA"
-          + "RT\020\004\022\026\n\022APPLICATION_FINISH\020\005\022 \n\034APPLICAT"
-          + "ION_QUICK_SUBMISSION\020\006\022\030\n\024APPLICATION_RE"
-          + "DIRECT\020\007\022!\n\035APPLICATION_START_FROM_SEARC"
-          + "H\020\010\022$\n APPLICATION_REDIRECT_FROM_SEARCH\020"
-          + "\t\022\036\n\032APPLICATION_COMPANY_SUBMIT\020\n\022\014\n\010BOO"
-          + "KMARK\020\013\022\020\n\014NOTIFICATION\020\014\022\t\n\005HIRED\020\r\022\013\n\007"
-          + "SENT_CV\020\016\022\025\n\021INTERVIEW_GRANTED\020\017\022\022\n\016NOT_"
-          + "INTERESTED\020\020\"\330\001\n\014ProfileEvent\022H\n\004type\030\001 "
-          + "\001(\0162:.google.cloud.talent.v4beta1.Profil"
-          + "eEvent.ProfileEventType\022\020\n\010profiles\030\002 \003("
-          + "\t\022\014\n\004jobs\030\006 \003(\t\"^\n\020ProfileEventType\022\"\n\036P"
-          + "ROFILE_EVENT_TYPE_UNSPECIFIED\020\000\022\016\n\nIMPRE"
-          + "SSION\020\001\022\010\n\004VIEW\020\002\022\014\n\010BOOKMARK\020\003Bx\n\037com.g"
-          + "oogle.cloud.talent.v4beta1B\nEventProtoP\001"
-          + "ZAgoogle.golang.org/genproto/googleapis/"
-          + "cloud/talent/v4beta1;talent\242\002\003CTSb\006proto"
-          + "3"
+          + "s\030\002 \003(\t\022\017\n\007profile\030\003 \001(\t\"\376\002\n\014JobEventTyp"
+          + "e\022\036\n\032JOB_EVENT_TYPE_UNSPECIFIED\020\000\022\016\n\nIMP"
+          + "RESSION\020\001\022\010\n\004VIEW\020\002\022\021\n\rVIEW_REDIRECT\020\003\022\025"
+          + "\n\021APPLICATION_START\020\004\022\026\n\022APPLICATION_FIN"
+          + "ISH\020\005\022 \n\034APPLICATION_QUICK_SUBMISSION\020\006\022"
+          + "\030\n\024APPLICATION_REDIRECT\020\007\022!\n\035APPLICATION"
+          + "_START_FROM_SEARCH\020\010\022$\n APPLICATION_REDI"
+          + "RECT_FROM_SEARCH\020\t\022\036\n\032APPLICATION_COMPAN"
+          + "Y_SUBMIT\020\n\022\014\n\010BOOKMARK\020\013\022\020\n\014NOTIFICATION"
+          + "\020\014\022\t\n\005HIRED\020\r\022\013\n\007SENT_CV\020\016\022\025\n\021INTERVIEW_"
+          + "GRANTED\020\017\"\330\001\n\014ProfileEvent\022H\n\004type\030\001 \001(\016"
+          + "2:.google.cloud.talent.v4beta1.ProfileEv"
+          + "ent.ProfileEventType\022\020\n\010profiles\030\002 \003(\t\022\014"
+          + "\n\004jobs\030\006 \003(\t\"^\n\020ProfileEventType\022\"\n\036PROF"
+          + "ILE_EVENT_TYPE_UNSPECIFIED\020\000\022\016\n\nIMPRESSI"
+          + "ON\020\001\022\010\n\004VIEW\020\002\022\014\n\010BOOKMARK\020\003Bx\n\037com.goog"
+          + "le.cloud.talent.v4beta1B\nEventProtoP\001ZAg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -101,7 +100,7 @@ public final class EventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_JobEvent_descriptor,
             new java.lang.String[] {
-              "Type", "Jobs",
+              "Type", "Jobs", "Profile",
             });
     internal_static_google_cloud_talent_v4beta1_ProfileEvent_descriptor =
         getDescriptor().getMessageTypes().get(2);

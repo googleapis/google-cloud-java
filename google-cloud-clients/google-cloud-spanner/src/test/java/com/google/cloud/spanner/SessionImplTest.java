@@ -18,7 +18,10 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.when;
 
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -71,8 +74,11 @@ public class SessionImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     @SuppressWarnings("resource")
-    SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
     DatabaseId db = DatabaseId.of(dbName);

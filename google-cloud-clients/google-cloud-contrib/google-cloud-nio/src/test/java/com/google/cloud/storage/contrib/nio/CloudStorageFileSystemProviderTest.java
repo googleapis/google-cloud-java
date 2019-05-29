@@ -105,12 +105,20 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
+  public void test_trailingSlash_isFolder() throws Exception {
+    Path path = Paths.get(URI.create("gs://bucket/wat/"));
+    Files.write(path, SINGULARITY.getBytes(UTF_8), CloudStorageOptions.allowTrailingSlash());
+    assertThat(Files.isDirectory(path)).isTrue();
+  }
+
+  @Test
   public void testSize_trailingSlash_disablePseudoDirectories() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       Path path = fs.getPath("wat/");
       byte[] rapture = SINGULARITY.getBytes(UTF_8);
       Files.write(path, rapture);
       assertThat(Files.size(path)).isEqualTo(rapture.length);
+      Files.delete(path);
     }
   }
 
@@ -119,6 +127,7 @@ public class CloudStorageFileSystemProviderTest {
     Path path = Paths.get(URI.create("gs://bucket/wat"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     assertThat(new String(Files.readAllBytes(path), UTF_8)).isEqualTo(SINGULARITY);
+    Files.delete(path);
   }
 
   @Test
@@ -139,6 +148,7 @@ public class CloudStorageFileSystemProviderTest {
       buffer.rewind();
       assertThat(input.read(buffer)).isEqualTo(-1);
     }
+    Files.delete(path);
   }
 
   @Test
@@ -160,6 +170,7 @@ public class CloudStorageFileSystemProviderTest {
       assertThat(input.position()).isEqualTo(5);
       assertThat(new String(buffer.array(), UTF_8)).isEqualTo("hello");
     }
+    Files.delete(path);
   }
 
   @Test
@@ -667,6 +678,9 @@ public class CloudStorageFileSystemProviderTest {
     attributes = Files.readAttributes(target2, CloudStorageFileAttributes.class);
     assertThat(attributes.mimeType()).hasValue("text/palfun");
     assertThat(attributes.cacheControl()).hasValue("public; max-age=666");
+    Files.delete(source);
+    Files.delete(target1);
+    Files.delete(target2);
   }
 
   @Test
