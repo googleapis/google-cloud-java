@@ -26,6 +26,7 @@
     <module>google-cloud-nio</module>
     <module>google-cloud-nio-examples</module>
     <module>google-cloud-logging-logback</module>
+    <module>google-cloud-notification</module>
   </modules>
 
   <dependencyManagement>
@@ -33,6 +34,11 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
+        <version>1.75.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-pubsub</artifactId>
         <version>1.75.0</version>
       </dependency>
       <dependency>
