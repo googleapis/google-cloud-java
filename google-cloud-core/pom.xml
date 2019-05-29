@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core-parent</artifactId>
-  <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+  <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Core Parent</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-asset</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-core</url>
   <description>
     Parent project for Google Cloud Core
   </description>
@@ -17,7 +17,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
     <github.global.server>github</github.global.server>
-    <bom.version>0.93.2-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
+    <bom.version>0.94.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.28.0</api-client.version>
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.44.0</gax.version>
@@ -51,19 +51,19 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-grpc</artifactId>
-        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
+        <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-http</artifactId>
-        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
+        <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
       </dependency>
 
       <dependency>

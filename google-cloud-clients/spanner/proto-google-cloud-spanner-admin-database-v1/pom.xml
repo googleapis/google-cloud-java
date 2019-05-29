@@ -3,10 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
-  <version>1.20.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
+  <version>1.21.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
   <name>proto-google-cloud-spanner-admin-database-v1</name>
   <description>PROTO library for proto-google-cloud-spanner-admin-database-v1</description>
-  <parent><groupId>com.google.cloud</groupId><artifactId>google-cloud-spanner-parent</artifactId><version>1.20.1-SNAPSHOT</version></parent><dependencies>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-spanner-parent</artifactId>
+    <version>1.21.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+  </parent>
+  <dependencies>
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>

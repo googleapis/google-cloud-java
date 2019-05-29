@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks-parent</artifactId>
-  <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Tasks Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/tasks/google-cloud-tasks</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-tasks-parent</site.installationModule>
@@ -35,43 +35,43 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2</artifactId>
-        <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2:current} -->
+        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2beta3</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta3:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta3:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tasks-v2beta3</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta3:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta3:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tasks-v2</artifactId>
-        <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2:current} -->
+        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tasks</artifactId>
-        <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
       </dependency>
 
     </dependencies>

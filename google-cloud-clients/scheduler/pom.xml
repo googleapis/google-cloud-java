@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler-parent</artifactId>
-  <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+  <version>0.94.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Scheduler Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/scheduler/google-cloud-scheduler</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-scheduler-parent</site.installationModule>
@@ -33,31 +33,31 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-scheduler</artifactId>
-        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+        <version>0.94.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
       </dependency>
 
     </dependencies>

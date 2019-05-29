@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent-parent</artifactId>
-  <version>0.10.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-talent:current} -->
+  <version>0.11.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-talent:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Talent Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/talent/google-cloud-talent</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-talent-parent</site.installationModule>
@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
-        <version>0.10.1-beta-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
+        <version>0.11.1-beta-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
-        <version>0.10.1-beta-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
+        <version>0.11.1-beta-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-talent</artifactId>
-        <version>0.10.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-talent:current} -->
+        <version>0.11.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-talent:current} -->
       </dependency>
 
     </dependencies>

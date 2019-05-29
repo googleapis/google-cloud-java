@@ -3,10 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-iot-v1</artifactId>
-  <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
+  <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
   <name>proto-google-cloud-iot-v1</name>
   <description>PROTO library for proto-google-cloud-iot-v1</description>
-  <parent><groupId>com.google.cloud</groupId><artifactId>google-cloud-iot-parent</artifactId><version>0.93.1-beta-SNAPSHOT</version></parent><dependencies>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-iot-parent</artifactId>
+    <version>0.94.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-iot:current} -->
+  </parent>
+  <dependencies>
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>

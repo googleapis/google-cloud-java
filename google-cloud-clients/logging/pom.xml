@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-parent</artifactId>
-  <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+  <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Logging Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/logging/google-cloud-logging</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-logging-parent</site.installationModule>
@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
 
     </dependencies>

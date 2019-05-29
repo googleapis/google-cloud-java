@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-  <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
+  <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
   <name>grpc-google-cloud-video-intelligence-v1</name>
   <description>GRPC library for grpc-google-cloud-video-intelligence-v1</description>
-  <parent><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-intelligence-parent</artifactId><version>0.93.1-beta-SNAPSHOT</version></parent><dependencies>
+  <parent><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-intelligence-parent</artifactId><version>0.94.1-beta-SNAPSHOT</version></parent><dependencies>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>

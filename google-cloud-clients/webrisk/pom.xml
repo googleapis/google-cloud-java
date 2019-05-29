@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-webrisk-parent</artifactId>
-  <version>0.8.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+  <version>0.9.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Webrisk Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/webrisk/google-cloud-webrisk</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-webrisk-parent</site.installationModule>
@@ -31,19 +31,19 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-webrisk-v1beta1</artifactId>
-        <version>0.8.1-alpha-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-webrisk-v1beta1:current} -->
+        <version>0.9.1-alpha-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-webrisk-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-webrisk-v1beta1</artifactId>
-        <version>0.8.1-alpha-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-webrisk-v1beta1:current} -->
+        <version>0.9.1-alpha-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-webrisk-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-webrisk</artifactId>
-        <version>0.8.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+        <version>0.9.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
       </dependency>
 
     </dependencies>

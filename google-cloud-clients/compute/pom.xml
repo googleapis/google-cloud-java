@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute-parent</artifactId>
-  <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Compute Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/compute/google-cloud-compute</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute-parent</site.installationModule>
@@ -29,7 +29,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
 
       <dependency>

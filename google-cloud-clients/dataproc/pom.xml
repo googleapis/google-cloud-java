@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-parent</artifactId>
-  <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+  <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud Dataproc Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/dataproc/google-cloud-dataproc</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataproc-parent</site.installationModule>
@@ -33,31 +33,31 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1beta2</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1beta2</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:gprc-google-cloud-dataproc-v1:current} -->
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>0.94.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
       </dependency>
 
     </dependencies>
