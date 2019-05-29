@@ -89,6 +89,20 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.oauth-client</groupId>
+        <artifactId>google-oauth-client-bom</artifactId>
+        <version>${oauth-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api-client</groupId>
+        <artifactId>google-api-client-bom</artifactId>
+        <version>${api-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
         <version>3.0.2</version>
@@ -131,6 +145,23 @@
         <artifactId>proto-google-common-protos</artifactId>
         <version>1.15.0</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-common-protos</artifactId>
+        <version>1.15.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>0.12.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v1</artifactId>
+        <version>0.12.0</version>
+      </dependency>
+
       <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java-util</artifactId>
