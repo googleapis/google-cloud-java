@@ -147,9 +147,7 @@ public class Subscriber extends AbstractApiService {
           new AutoCloseable() {
             @Override
             public void close() {
-              // Force a shut down, since there are some jobs like the Watcher and MessageDispatcher
-              // that don't shut down cleanly, but don't need to stay on.
-              alarmsExecutor.shutdownNow();
+              alarmsExecutor.shutdown();
             }
           });
     }
