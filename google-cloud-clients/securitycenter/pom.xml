@@ -78,38 +78,6 @@
             </reports>
           </reportSet>
         </reportSets>
-        <configuration>
-          <doclint>none</doclint>
-          <show>protected</show>
-          <nohelp>true</nohelp>
-          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-          <groups>
-            <group>
-              <title>API packages</title>
-              <packages>com.google.cloud*</packages>
-            </group>
-            <group>
-              <title>Test helpers packages</title>
-              <packages>com.google.cloud.securitycenter.testing</packages>
-            </group>
-            <group>
-              <title>SPI packages</title>
-              <packages>com.google.cloud.securitycenter.spi*</packages>
-            </group>
-            <group>
-              <title>Stub packages</title>
-              <packages></packages>
-            </group>
-          </groups>
-
-          <links>
-            <link>https://grpc.io/grpc-java/javadoc/</link>
-            <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-            <link>https://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-            <link>https://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-            <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
-          </links>
-        </configuration>
       </plugin>
     </plugins>
   </reporting>
