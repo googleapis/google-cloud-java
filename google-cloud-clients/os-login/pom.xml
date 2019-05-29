@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-os-login-parent</artifactId>
+  <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
+  <packaging>pom</packaging>
+  <name>Os Login Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-os-login</url>
+  <description>
+    Parent project for Os Login
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-clients</artifactId>
+    <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+  </parent>
+  <properties>
+    <site.installationModule>google-cloud-os-login-parent</site.installationModule>
+  </properties>
+
+  <modules>
+    <module>proto-google-cloud-os-login-v1</module>
+    <module>grpc-google-cloud-os-login-v1</module>
+    <module>google-cloud-os-login</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-os-login-v1</artifactId>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-login-v1:current} -->
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-os-login-v1</artifactId>
+        <version>0.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-login-v1:current} -->
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-os-login</artifactId>
+        <version>0.93.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.0</version>
+        <reportSets>
+          <reportSet>
+            <id>html</id>
+            <reports>
+              <report>aggregate</report>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

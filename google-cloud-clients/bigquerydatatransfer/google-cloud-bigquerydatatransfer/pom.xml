@@ -82,11 +82,11 @@
           <offlineLinks>
             <offlineLink>
               <url>${project.javadoc.protobufBaseURL}</url>
-              <location>../../../../../google-api-grpc/proto-google-cloud-bigquerydatatransfer-v1/target/site/apidocs/</location>
+              <location>../../../../proto-google-cloud-bigquerydatatransfer-v1/target/site/apidocs/</location>
             </offlineLink>
             <offlineLink>
               <url>${project.javadoc.protobufBaseURL}</url>
-              <location>../../../../../google-api-grpc/grpc-google-cloud-bigquerydatatransfer-v1/target/site/apidocs/</location>
+              <location>../../../../grpc-google-cloud-bigquerydatatransfer-v1/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>
         </configuration>
