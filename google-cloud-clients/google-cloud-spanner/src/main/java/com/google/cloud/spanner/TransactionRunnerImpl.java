@@ -44,7 +44,6 @@ import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -124,15 +123,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final CommitRequest commitRequest = builder.build();
       Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
-        CommitResponse commitResponse =
-            SpannerImpl.runWithRetries(
-                new Callable<CommitResponse>() {
-                  @Override
-                  public CommitResponse call() throws Exception {
-                    return rpc.commit(commitRequest, session.getOptions());
-                  }
-                });
-
+        CommitResponse commitResponse = rpc.commit(commitRequest, session.getOptions());
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
               ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
@@ -239,13 +230,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final ExecuteSqlRequest.Builder builder =
           getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
       com.google.spanner.v1.ResultSet resultSet =
-          SpannerImpl.runWithRetries(
-              new Callable<com.google.spanner.v1.ResultSet>() {
-                @Override
-                public com.google.spanner.v1.ResultSet call() throws Exception {
-                  return rpc.executeQuery(builder.build(), session.getOptions());
-                }
-              });
+          rpc.executeQuery(builder.build(), session.getOptions());
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -259,13 +244,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       beforeReadOrQuery();
       final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
       com.google.spanner.v1.ExecuteBatchDmlResponse response =
-          SpannerImpl.runWithRetries(
-              new Callable<com.google.spanner.v1.ExecuteBatchDmlResponse>() {
-                @Override
-                public com.google.spanner.v1.ExecuteBatchDmlResponse call() throws Exception {
-                  return rpc.executeBatchDml(builder.build(), session.getOptions());
-                }
-              });
+          rpc.executeBatchDml(builder.build(), session.getOptions());
       long[] results = new long[response.getResultSetsCount()];
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();
