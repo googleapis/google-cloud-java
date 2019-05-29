@@ -5,10 +5,10 @@
   <artifactId>google-cloud-core-parent</artifactId>
   <version>1.75.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
   <packaging>pom</packaging>
-  <name>Asset Parent</name>
+  <name>Google Cloud Core Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-asset</url>
   <description>
-    Parent project for Core
+    Parent project for Google Cloud Core
   </description>
 
   <properties>
@@ -242,7 +242,7 @@
             <id>html</id>
             <reports>
               <report>aggregate-no-fork</report>
-              <!--<report>javadoc</report>-->
+              <report>javadoc</report>
             </reports>
           </reportSet>
         </reportSets>
@@ -251,25 +251,6 @@
           <show>protected</show>
           <nohelp>true</nohelp>
           <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-          <groups>
-            <group>
-              <title>API packages</title>
-              <packages>com.google.cloud*</packages>
-            </group>
-            <group>
-              <title>Test helpers packages</title>
-              <packages>com.google.cloud.core.testing</packages>
-            </group>
-            <group>
-              <title>SPI packages</title>
-              <packages>com.google.cloud.core.spi*</packages>
-            </group>
-            <group>
-              <title>Stub packages</title>
-              <packages></packages>
-            </group>
-          </groups>
-
           <links>
             <link>https://grpc.io/grpc-java/javadoc/</link>
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
@@ -472,7 +453,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.4</version>
+        <version>3.7.1</version>
         <configuration>
           <skipDeploy>true</skipDeploy>
         </configuration>

@@ -33,15 +33,13 @@ python3 -m pip install gcp-docuploader
 # compile all packages
 mvn clean install -B -DskipTests=true
 
-build_and_publish_site() {
+publish_site() {
   DIRECTORY=$1
-  NAME=$1
+  NAME=$2
   VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
   pushd ${DIRECTORY}
 
-  # build the docs
-  mvn javadoc:aggregate
 
   pushd target/site/apidocs
 
@@ -60,5 +58,17 @@ build_and_publish_site() {
   popd
 }
 
-# TODO (chingor): split all the artifacts
-build_and_publish_site google-cloud-clients
+# build the docs
+mvn site
+
+# publish the aggregated site
+publish_site google-cloud-clients google-cloud-clients
+
+# publish the core javadocs
+publish_site google-cloud-core google-cloud-core-parent
+
+# publish each individual client
+for client in `ls -d google-cloud-clients | grep -v src | grep -v target`; do
+  name=$(basename $client)
+  publish_site google-cloud-clients/${name} google-cloud-${name}-parent
+done
