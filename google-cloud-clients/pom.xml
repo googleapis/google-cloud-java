@@ -158,7 +158,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-api-grpc/apidocs</project.javadoc.protobufBaseURL>
+    <project.javadoc.protobufBaseURL>https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs</project.javadoc.protobufBaseURL>
     <site.installationModule>google-cloud-clients</site.installationModule>
     <google.cloud.core.version>1.75.0</google.cloud.core.version>
   </properties>
@@ -451,7 +451,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.4</version>
+        <version>3.7.1</version>
         <configuration>
           <skipDeploy>true</skipDeploy>
         </configuration>
