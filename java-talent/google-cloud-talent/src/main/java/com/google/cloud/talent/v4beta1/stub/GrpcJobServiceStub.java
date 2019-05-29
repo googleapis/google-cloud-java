@@ -25,19 +25,26 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.talent.v4beta1.BatchCreateJobsRequest;
 import com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest;
+import com.google.cloud.talent.v4beta1.BatchOperationMetadata;
+import com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest;
 import com.google.cloud.talent.v4beta1.CreateJobRequest;
 import com.google.cloud.talent.v4beta1.DeleteJobRequest;
 import com.google.cloud.talent.v4beta1.GetJobRequest;
 import com.google.cloud.talent.v4beta1.Job;
+import com.google.cloud.talent.v4beta1.JobOperationResult;
 import com.google.cloud.talent.v4beta1.ListJobsRequest;
 import com.google.cloud.talent.v4beta1.ListJobsResponse;
 import com.google.cloud.talent.v4beta1.SearchJobsRequest;
 import com.google.cloud.talent.v4beta1.SearchJobsResponse;
 import com.google.cloud.talent.v4beta1.UpdateJobRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -117,8 +124,27 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchJobsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<BatchCreateJobsRequest, Operation>
+      batchCreateJobsMethodDescriptor =
+          MethodDescriptor.<BatchCreateJobsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.talent.v4beta1.JobService/BatchCreateJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BatchUpdateJobsRequest, Operation>
+      batchUpdateJobsMethodDescriptor =
+          MethodDescriptor.<BatchUpdateJobsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.talent.v4beta1.JobService/BatchUpdateJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
@@ -132,6 +158,14 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable;
   private final UnaryCallable<SearchJobsRequest, SearchJobsForAlertPagedResponse>
       searchJobsForAlertPagedCallable;
+  private final UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable;
+  private final OperationCallable<
+          BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchCreateJobsOperationCallable;
+  private final UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable;
+  private final OperationCallable<
+          BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchUpdateJobsOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -171,6 +205,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         GrpcCallSettings.<CreateJobRequest, Job>newBuilder()
@@ -276,6 +311,32 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsTransportSettings =
+        GrpcCallSettings.<BatchCreateJobsRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchCreateJobsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchCreateJobsRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchCreateJobsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<BatchUpdateJobsRequest, Operation> batchUpdateJobsTransportSettings =
+        GrpcCallSettings.<BatchUpdateJobsRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchUpdateJobsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchUpdateJobsRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchUpdateJobsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createJobCallable =
         callableFactory.createUnaryCallable(
@@ -314,8 +375,31 @@ public class GrpcJobServiceStub extends JobServiceStub {
             searchJobsForAlertTransportSettings,
             settings.searchJobsForAlertSettings(),
             clientContext);
+    this.batchCreateJobsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateJobsTransportSettings, settings.batchCreateJobsSettings(), clientContext);
+    this.batchCreateJobsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateJobsTransportSettings,
+            settings.batchCreateJobsOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.batchUpdateJobsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateJobsTransportSettings, settings.batchUpdateJobsSettings(), clientContext);
+    this.batchUpdateJobsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchUpdateJobsTransportSettings,
+            settings.batchUpdateJobsOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
@@ -361,6 +445,26 @@ public class GrpcJobServiceStub extends JobServiceStub {
 
   public UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable() {
     return searchJobsForAlertCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchCreateJobsOperationCallable() {
+    return batchCreateJobsOperationCallable;
+  }
+
+  public UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
+    return batchCreateJobsCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchUpdateJobsOperationCallable() {
+    return batchUpdateJobsOperationCallable;
+  }
+
+  public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
+    return batchUpdateJobsCallable;
   }
 
   @Override
