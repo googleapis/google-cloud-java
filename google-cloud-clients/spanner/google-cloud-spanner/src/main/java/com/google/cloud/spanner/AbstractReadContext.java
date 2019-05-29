@@ -43,7 +43,6 @@ import com.google.spanner.v1.TransactionSelector;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracing;
 import java.util.Map;
-import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicLong;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
@@ -226,14 +225,7 @@ abstract class AbstractReadContext
                   .setSession(session.getName())
                   .setOptions(options)
                   .build();
-          Transaction transaction =
-              SpannerImpl.runWithRetries(
-                  new Callable<Transaction>() {
-                    @Override
-                    public Transaction call() throws Exception {
-                      return rpc.beginTransaction(request, session.getOptions());
-                    }
-                  });
+          Transaction transaction = rpc.beginTransaction(request, session.getOptions());
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");

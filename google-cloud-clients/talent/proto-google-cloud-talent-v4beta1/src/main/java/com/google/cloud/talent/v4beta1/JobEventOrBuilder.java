@@ -13,7 +13,8 @@ public interface JobEventOrBuilder
    *
    * <pre>
    * Required.
-   * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+   * The type of the event (see
+   * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -24,7 +25,8 @@ public interface JobEventOrBuilder
    *
    * <pre>
    * Required.
-   * The type of the event (see [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
+   * The type of the event (see
+   * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
@@ -36,11 +38,16 @@ public interface JobEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
@@ -51,11 +58,16 @@ public interface JobEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
@@ -66,11 +78,16 @@ public interface JobEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
@@ -81,14 +98,50 @@ public interface JobEventOrBuilder
    *
    * <pre>
    * Required.
-   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with this event.
-   * For example, if this is an [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION] event,
-   * this field contains the identifiers of all jobs shown to the job seeker.
-   * If this was a [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this field contains the
-   * identifier of the viewed job.
+   * The [job name(s)][google.cloud.talent.v4beta1.Job.name] associated with
+   * this event. For example, if this is an
+   * [impression][google.cloud.talent.v4beta1.JobEvent.JobEventType.IMPRESSION]
+   * event, this field contains the identifiers of all jobs shown to the job
+   * seeker. If this was a
+   * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
+   * field contains the identifier of the viewed job.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
    * </pre>
    *
    * <code>repeated string jobs = 2;</code>
    */
   com.google.protobuf.ByteString getJobsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * </pre>
+   *
+   * <code>string profile = 3;</code>
+   */
+  java.lang.String getProfile();
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
+   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * </pre>
+   *
+   * <code>string profile = 3;</code>
+   */
+  com.google.protobuf.ByteString getProfileBytes();
 }

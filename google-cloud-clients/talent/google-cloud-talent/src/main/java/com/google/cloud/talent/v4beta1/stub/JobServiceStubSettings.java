@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,11 +45,15 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.talent.v4beta1.BatchCreateJobsRequest;
 import com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest;
+import com.google.cloud.talent.v4beta1.BatchOperationMetadata;
+import com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest;
 import com.google.cloud.talent.v4beta1.CreateJobRequest;
 import com.google.cloud.talent.v4beta1.DeleteJobRequest;
 import com.google.cloud.talent.v4beta1.GetJobRequest;
 import com.google.cloud.talent.v4beta1.Job;
+import com.google.cloud.talent.v4beta1.JobOperationResult;
 import com.google.cloud.talent.v4beta1.ListJobsRequest;
 import com.google.cloud.talent.v4beta1.ListJobsResponse;
 import com.google.cloud.talent.v4beta1.SearchJobsRequest;
@@ -55,6 +63,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -109,6 +118,14 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final PagedCallSettings<
           SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
       searchJobsForAlertSettings;
+  private final UnaryCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsSettings;
+  private final OperationCallSettings<
+          BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchCreateJobsOperationSettings;
+  private final UnaryCallSettings<BatchUpdateJobsRequest, Operation> batchUpdateJobsSettings;
+  private final OperationCallSettings<
+          BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchUpdateJobsOperationSettings;
 
   /** Returns the object with the settings used for calls to createJob. */
   public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
@@ -151,6 +168,30 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   public PagedCallSettings<SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
       searchJobsForAlertSettings() {
     return searchJobsForAlertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateJobs. */
+  public UnaryCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsSettings() {
+    return batchCreateJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateJobs. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchCreateJobsOperationSettings() {
+    return batchCreateJobsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateJobs. */
+  public UnaryCallSettings<BatchUpdateJobsRequest, Operation> batchUpdateJobsSettings() {
+    return batchUpdateJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateJobs. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+      batchUpdateJobsOperationSettings() {
+    return batchUpdateJobsOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -229,6 +270,10 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     batchDeleteJobsSettings = settingsBuilder.batchDeleteJobsSettings().build();
     searchJobsSettings = settingsBuilder.searchJobsSettings().build();
     searchJobsForAlertSettings = settingsBuilder.searchJobsForAlertSettings().build();
+    batchCreateJobsSettings = settingsBuilder.batchCreateJobsSettings().build();
+    batchCreateJobsOperationSettings = settingsBuilder.batchCreateJobsOperationSettings().build();
+    batchUpdateJobsSettings = settingsBuilder.batchUpdateJobsSettings().build();
+    batchUpdateJobsOperationSettings = settingsBuilder.batchUpdateJobsOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
@@ -416,6 +461,16 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     private final PagedCallSettings.Builder<
             SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
         searchJobsForAlertSettings;
+    private final UnaryCallSettings.Builder<BatchCreateJobsRequest, Operation>
+        batchCreateJobsSettings;
+    private final OperationCallSettings.Builder<
+            BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+        batchCreateJobsOperationSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateJobsRequest, Operation>
+        batchUpdateJobsSettings;
+    private final OperationCallSettings.Builder<
+            BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+        batchUpdateJobsOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -475,6 +530,14 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       searchJobsForAlertSettings =
           PagedCallSettings.newBuilder(SEARCH_JOBS_FOR_ALERT_PAGE_STR_FACT);
 
+      batchCreateJobsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchCreateJobsOperationSettings = OperationCallSettings.newBuilder();
+
+      batchUpdateJobsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchUpdateJobsOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createJobSettings,
@@ -484,7 +547,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               listJobsSettings,
               batchDeleteJobsSettings,
               searchJobsSettings,
-              searchJobsForAlertSettings);
+              searchJobsForAlertSettings,
+              batchCreateJobsSettings,
+              batchUpdateJobsSettings);
 
       initDefaults(this);
     }
@@ -540,6 +605,62 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .batchCreateJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .batchUpdateJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+      builder
+          .batchCreateJobsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchCreateJobsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(JobOperationResult.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchUpdateJobsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchUpdateJobsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(JobOperationResult.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -554,6 +675,10 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       batchDeleteJobsSettings = settings.batchDeleteJobsSettings.toBuilder();
       searchJobsSettings = settings.searchJobsSettings.toBuilder();
       searchJobsForAlertSettings = settings.searchJobsForAlertSettings.toBuilder();
+      batchCreateJobsSettings = settings.batchCreateJobsSettings.toBuilder();
+      batchCreateJobsOperationSettings = settings.batchCreateJobsOperationSettings.toBuilder();
+      batchUpdateJobsSettings = settings.batchUpdateJobsSettings.toBuilder();
+      batchUpdateJobsOperationSettings = settings.batchUpdateJobsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -564,7 +689,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               listJobsSettings,
               batchDeleteJobsSettings,
               searchJobsSettings,
-              searchJobsForAlertSettings);
+              searchJobsForAlertSettings,
+              batchCreateJobsSettings,
+              batchUpdateJobsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -625,6 +752,34 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
         searchJobsForAlertSettings() {
       return searchJobsForAlertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateJobs. */
+    public UnaryCallSettings.Builder<BatchCreateJobsRequest, Operation> batchCreateJobsSettings() {
+      return batchCreateJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateJobs. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
+        batchCreateJobsOperationSettings() {
+      return batchCreateJobsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateJobs. */
+    public UnaryCallSettings.Builder<BatchUpdateJobsRequest, Operation> batchUpdateJobsSettings() {
+      return batchUpdateJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateJobs. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
+        batchUpdateJobsOperationSettings() {
+      return batchUpdateJobsOperationSettings;
     }
 
     @Override

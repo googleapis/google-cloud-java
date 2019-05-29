@@ -40,7 +40,7 @@ public interface HistogramQueryResultOrBuilder
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -57,7 +57,7 @@ public interface HistogramQueryResultOrBuilder
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -77,7 +77,7 @@ public interface HistogramQueryResultOrBuilder
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -94,7 +94,7 @@ public interface HistogramQueryResultOrBuilder
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
@@ -111,7 +111,7 @@ public interface HistogramQueryResultOrBuilder
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
    * * (for anonymous numeric bucket) range formatted as `&lt;low&gt;-&lt;high&gt;`, for
-   * example, `0-1000`, `MIN-0`, and `0-MAX`.
+   *   example, `0-1000`, `MIN-0`, and `0-MAX`.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>

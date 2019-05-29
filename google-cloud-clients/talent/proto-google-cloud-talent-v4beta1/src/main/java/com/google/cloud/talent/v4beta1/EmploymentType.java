@@ -63,7 +63,8 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * The job is offered as a contracted position with the understanding
    * that it's converted into a full-time position at the end of the
    * contract. Jobs of this type are also returned by a search for
-   * [EmploymentType.CONTRACTOR][google.cloud.talent.v4beta1.EmploymentType.CONTRACTOR] jobs.
+   * [EmploymentType.CONTRACTOR][google.cloud.talent.v4beta1.EmploymentType.CONTRACTOR]
+   * jobs.
    * </pre>
    *
    * <code>CONTRACT_TO_HIRE = 4;</code>
@@ -189,7 +190,8 @@ public enum EmploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * The job is offered as a contracted position with the understanding
    * that it's converted into a full-time position at the end of the
    * contract. Jobs of this type are also returned by a search for
-   * [EmploymentType.CONTRACTOR][google.cloud.talent.v4beta1.EmploymentType.CONTRACTOR] jobs.
+   * [EmploymentType.CONTRACTOR][google.cloud.talent.v4beta1.EmploymentType.CONTRACTOR]
+   * jobs.
    * </pre>
    *
    * <code>CONTRACT_TO_HIRE = 4;</code>

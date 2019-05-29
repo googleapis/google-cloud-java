@@ -31,7 +31,6 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
-import java.util.concurrent.Callable;
 
 /** Default implementation of {@link InstanceAdminClient} */
 class InstanceAdminClientImpl implements InstanceAdminClient {
@@ -49,15 +48,9 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
-    final String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
-    return SpannerImpl.runWithRetries(
-        new Callable<InstanceConfig>() {
-          @Override
-          public InstanceConfig call() {
-            return InstanceConfig.fromProto(
-                rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
-          }
-        });
+    String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
+    return InstanceConfig.fromProto(
+        rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
   }
 
   @Override
@@ -119,15 +112,9 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public Instance getInstance(String instanceId) throws SpannerException {
-    final String instanceName = new InstanceId(projectId, instanceId).getName();
-    return SpannerImpl.runWithRetries(
-        new Callable<Instance>() {
-          @Override
-          public Instance call() {
-            return Instance.fromProto(
-                rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
-          }
-        });
+    String instanceName = new InstanceId(projectId, instanceId).getName();
+    return Instance.fromProto(
+        rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
   }
 
   @Override
@@ -156,14 +143,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public void deleteInstance(final String instanceId) throws SpannerException {
-    SpannerImpl.runWithRetries(
-        new Callable<Void>() {
-          @Override
-          public Void call() {
-            rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
-            return null;
-          }
-        });
+    rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
   }
 
   @Override

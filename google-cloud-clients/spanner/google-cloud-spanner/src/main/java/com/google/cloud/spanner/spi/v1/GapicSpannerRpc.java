@@ -18,7 +18,6 @@ package com.google.cloud.spanner.spi.v1;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
@@ -33,10 +32,8 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ResponseObserver;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
@@ -45,18 +42,13 @@ import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
-import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.GrpcDatabaseAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.GrpcInstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
-import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
-import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
-import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
@@ -106,7 +98,6 @@ import io.grpc.Context;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -187,7 +178,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     return new GapicSpannerRpc(options);
   }
 
-  public GapicSpannerRpc(SpannerOptions options) {
+  public GapicSpannerRpc(final SpannerOptions options) {
     this.projectId = options.getProjectId();
     this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
 
@@ -255,57 +246,35 @@ public class GapicSpannerRpc implements SpannerRpc {
             .withCheckInterval(checkInterval)
             .withClock(NanoClock.getDefaultClock());
 
-    // Disabling retry for now because spanner handles retry in SpannerImpl.
-    // We will finally want to improve gax but for smooth transitioning we
-    // preserve the retry in SpannerImpl
     try {
-      // TODO: bump the version of gax and remove this try-catch block
-      // applyToAllUnaryMethods does not throw exception in the latest version
       this.spannerStub =
           GrpcSpannerStub.create(
-              SpannerStubSettings.newBuilder()
+              options
+                  .getSpannerStubSettings()
+                  .toBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
-                  .applyToAllUnaryMethods(
-                      new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                        @Override
-                        public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
-                          builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-                          return null;
-                        }
-                      })
                   .build());
 
       this.instanceAdminStub =
           GrpcInstanceAdminStub.create(
-              InstanceAdminStubSettings.newBuilder()
+              options
+                  .getInstanceAdminStubSettings()
+                  .toBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
-                  .applyToAllUnaryMethods(
-                      new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                        @Override
-                        public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
-                          builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-                          return null;
-                        }
-                      })
                   .build());
+
       this.databaseAdminStub =
           GrpcDatabaseAdminStub.create(
-              DatabaseAdminStubSettings.newBuilder()
+              options
+                  .getDatabaseAdminStubSettings()
+                  .toBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
                   .setStreamWatchdogProvider(watchdogProvider)
-                  .applyToAllUnaryMethods(
-                      new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                        @Override
-                        public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
-                          builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-                          return null;
-                        }
-                      })
                   .build());
     } catch (Exception e) {
       throw newSpannerException(e);
@@ -615,7 +584,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       // We are the sole consumer of the future, so cancel it.
       future.cancel(true);
       throw SpannerExceptionFactory.propagateInterrupt(e);
-    } catch (ExecutionException | CancellationException e) {
+    } catch (Exception e) {
       throw newSpannerException(context, e);
     }
   }
