@@ -139,7 +139,7 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   /** Returns the object with the settings used for calls to runAssetDiscovery. */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<RunAssetDiscoveryRequest, Empty, Empty>
+  public OperationCallSettings<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).runAssetDiscoveryOperationSettings();
   }
@@ -348,7 +348,7 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     /** Returns the builder for the settings used for calls to runAssetDiscovery. */
     @BetaApi(
         "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<RunAssetDiscoveryRequest, Empty, Empty>
+    public OperationCallSettings.Builder<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
         runAssetDiscoveryOperationSettings() {
       return getStubSettingsBuilder().runAssetDiscoveryOperationSettings();
     }

@@ -42,6 +42,7 @@ import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
+import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.Source;
@@ -137,7 +138,7 @@ public abstract class SecurityCenterStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RunAssetDiscoveryRequest, Empty, Empty>
+  public OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: runAssetDiscoveryOperationCallable()");
