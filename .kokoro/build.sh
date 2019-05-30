@@ -66,7 +66,7 @@ javadoc)
     ;;
 integration)
     DIRECTORY=$(echo ${INTEGRATION_TEST_ARGS} | cut -d' ' -f1)
-    ARGS=${INTEGRATION_TEST_ARGS/${CLIENT}/}
+    ARGS=${INTEGRATION_TEST_ARGS/${DIRECTORY}/}
     pushd ${DIRECTORY}
     mvn -B ${ARGS} -DtrimStackTrace=false -fae verify
     popd
