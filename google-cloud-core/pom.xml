@@ -11,6 +11,138 @@
     Parent project for Google Cloud Core
   </description>
 
+  <developers>
+    <developer>
+      <id>garrettjonesgoogle</id>
+      <name>Garrett Jones</name>
+      <email>garrettjones@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>pongad</id>
+      <name>Michael Darakananda</name>
+      <email>pongad@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>shinfan</id>
+      <name>Shin Fan</name>
+      <email>shinfan@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>michaelbausor</id>
+      <name>Micheal Bausor</name>
+      <email>michaelbausor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>vam-google</id>
+      <name>Vadym Matsishevskyi</name>
+      <email>vam@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>tswast</id>
+      <name>Tim Swast</name>
+      <email>tswast@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>neozwu</id>
+      <name>Neo Wu</name>
+      <email>neowu@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>lesv</id>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>schmidt_sebastian</id>
+      <name>Sebastian Schmidt</name>
+      <email>mrschmidt@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>andreamlin</id>
+      <name>Andrea Lin</name>
+      <email>andrealin@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>hzyi-google</id>
+      <name>Hanzhen Yi</name>
+      <email>hzyi@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>jart</id>
+      <name>Justine Tunney</name>
+      <email>jart@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>jean-philippe-martin</id>
+      <name>Jean-Philippe Martin</name>
+      <email>jpmartin@verily.com</email>
+      <organization>Verily</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
   <properties>
     <site.installationModule>google-cloud-core-parent</site.installationModule>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
