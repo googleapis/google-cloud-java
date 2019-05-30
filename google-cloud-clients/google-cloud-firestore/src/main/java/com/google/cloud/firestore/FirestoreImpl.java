@@ -339,9 +339,11 @@ class FirestoreImpl implements Firestore {
                             span.end();
                             resultFuture.set(userResult);
                           }
-                        });
+                        },
+                        userCallbackExecutor);
                   }
-                });
+                },
+                userCallbackExecutor);
           }
 
           private SettableApiFuture<T> invokeUserCallback() {
@@ -396,12 +398,14 @@ class FirestoreImpl implements Firestore {
                     public void onSuccess(Void ignored) {
                       resultFuture.setException(throwable);
                     }
-                  });
+                  },
+                  userCallbackExecutor);
             } else {
               resultFuture.setException(throwable);
             }
           }
-        });
+        },
+        userCallbackExecutor);
   }
 
   /** Returns whether the user has opted into receiving dates as com.google.cloud.Timestamp. */
