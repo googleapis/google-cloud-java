@@ -6,7 +6,12 @@
   <version>1.58.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
   <name>grpc-google-cloud-vision-v1p2beta1</name>
   <description>GRPC library for grpc-google-cloud-vision-v1p2beta1</description>
-  <parent><groupId>com.google.cloud</groupId><artifactId>google-cloud-vision-parent</artifactId><version>1.76.1-SNAPSHOT</version></parent><dependencies>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-vision-parent</artifactId>
+    <version>1.76.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current}-->
+  </parent>
+  <dependencies>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
