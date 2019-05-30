@@ -84,17 +84,17 @@ public class StringEnumTest {
 
   @Test
   public void testValueOf() {
-    assertThat(Letter.valueOf("A")).isSameAs(Letter.A);
-    assertThat(Letter.valueOf("B")).isSameAs(Letter.B);
-    assertThat(Letter.valueOf("C")).isSameAs(Letter.C);
+    assertThat(Letter.valueOf("A")).isSameInstanceAs(Letter.A);
+    assertThat(Letter.valueOf("B")).isSameInstanceAs(Letter.B);
+    assertThat(Letter.valueOf("C")).isSameInstanceAs(Letter.C);
     assertThat(Letter.valueOf("NonExistentLetter").toString()).isEqualTo("NonExistentLetter");
   }
 
   @Test
   public void testValueOfStrict() {
-    assertThat(Letter.valueOfStrict("A")).isSameAs(Letter.A);
-    assertThat(Letter.valueOfStrict("B")).isSameAs(Letter.B);
-    assertThat(Letter.valueOfStrict("C")).isSameAs(Letter.C);
+    assertThat(Letter.valueOfStrict("A")).isSameInstanceAs(Letter.A);
+    assertThat(Letter.valueOfStrict("B")).isSameInstanceAs(Letter.B);
+    assertThat(Letter.valueOfStrict("C")).isSameInstanceAs(Letter.C);
   }
 
   @Test
