@@ -1388,7 +1388,7 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    assertTrue(bigquery.delete(tableName));
+    assertTrue(bigquery.delete(destinationTable));
     Job queryJob = bigquery.getJob(remoteJob.getJobId());
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
     assertNotNull(statistics.getQueryPlan());
