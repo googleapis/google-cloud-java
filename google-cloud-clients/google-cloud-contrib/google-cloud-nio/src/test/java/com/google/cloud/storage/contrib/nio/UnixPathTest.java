@@ -77,9 +77,9 @@ public class UnixPathTest {
   @Test
   public void testNormalize_sameObjectOptimization() {
     UnixPath path = p("/hi/there");
-    assertThat(path.normalize()).isSameAs(path);
+    assertThat(path.normalize()).isSameInstanceAs(path);
     path = p("/hi/there/");
-    assertThat(path.normalize()).isSameAs(path);
+    assertThat(path.normalize()).isSameInstanceAs(path);
   }
 
   @Test
@@ -95,8 +95,8 @@ public class UnixPathTest {
   @Test
   public void testResolve_sameObjectOptimization() {
     UnixPath path = p("/hi/there");
-    assertThat(path.resolve(p(""))).isSameAs(path);
-    assertThat(p("hello").resolve(path)).isSameAs(path);
+    assertThat(path.resolve(p(""))).isSameInstanceAs(path);
+    assertThat(p("hello").resolve(path)).isSameInstanceAs(path);
   }
 
   @Test
