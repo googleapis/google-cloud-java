@@ -19,7 +19,7 @@ cd github/google-cloud-java/
 
 function client_has_changes() {
   CLIENT_NAME=$1
-  if [[ ! -z $(git diff master google-cloud-clients/google-cloud-core*) ]]; then
+  if [[ ! -z $(git diff master google-cloud-core*) ]]; then
     echo "true"
     return
   fi
@@ -65,7 +65,11 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
+    DIRECTORY=$(echo ${INTEGRATION_TEST_ARGS} | cut -d' ' -f1)
+    ARGS=${INTEGRATION_TEST_ARGS/${CLIENT}/}
+    pushd ${DIRECTORY}
+    mvn -B ${ARGS} -DtrimStackTrace=false -fae verify
+    popd
     ;;
 *)
     ;;
