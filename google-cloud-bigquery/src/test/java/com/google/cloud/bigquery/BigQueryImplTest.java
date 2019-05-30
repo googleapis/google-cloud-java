@@ -979,7 +979,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.deleteTable(PROJECT, DATASET, TABLE)).andReturn(true);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    assertTrue(bigquery.delete(DATASET, TABLE));
+    assertTrue(bigquery.delete(TABLE_ID));
   }
 
   @Test
