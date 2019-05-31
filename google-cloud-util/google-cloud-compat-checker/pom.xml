@@ -39,7 +39,7 @@
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <!-- We are currently using the *-android version to support JDK7. -->
-      <version>26.0-android</version>
+      <version>26.0-jre</version>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
