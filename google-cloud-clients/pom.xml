@@ -161,7 +161,7 @@
     <google.auth.version>0.15.0</google.auth.version>
     <grpc.version>1.21.0</grpc.version>
     <!-- We are currently using the *-android version to support JDK7. -->
-    <guava.version>27.1-android</guava.version>
+    <guava.version>27.1-jre</guava.version>
     <http-client-bom.version>1.29.1</http-client-bom.version>
     <oauth-client.version>1.28.0</oauth-client.version>
     <protobuf.version>3.7.1</protobuf.version>
