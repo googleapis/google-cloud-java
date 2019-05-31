@@ -200,6 +200,13 @@ public class Publisher {
     messagesBatchLock.lock();
     try {
       batchesToSend = messagesBatch.add(outstandingPublish);
+      if (!batchesToSend.isEmpty()) {
+        for (final OutstandingBatch batch : batchesToSend) {
+          logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
+          publishOutstandingBatch(batch);
+        }
+      }
+
       // Setup the next duration based delivery alarm if there are messages batched.
       setupAlarm();
     } finally {
@@ -207,19 +214,6 @@ public class Publisher {
     }
 
     messagesWaiter.incrementPendingMessages(1);
-
-    if (!batchesToSend.isEmpty()) {
-      for (final OutstandingBatch batch : batchesToSend) {
-        logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        executor.execute(
-            new Runnable() {
-              @Override
-              public void run() {
-                publishOutstandingBatch(batch);
-              }
-            });
-      }
-    }
 
     return outstandingPublish.publishResult;
   }
@@ -257,16 +251,14 @@ public class Publisher {
    */
   public void publishAllOutstanding() {
     messagesBatchLock.lock();
-    OutstandingBatch batchToSend;
     try {
       if (messagesBatch.isEmpty()) {
         return;
       }
-      batchToSend = messagesBatch.popOutstandingBatch();
+      publishOutstandingBatch(messagesBatch.popOutstandingBatch());
     } finally {
       messagesBatchLock.unlock();
     }
-    publishOutstandingBatch(batchToSend);
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
