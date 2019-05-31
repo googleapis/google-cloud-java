@@ -220,7 +220,6 @@ public class Publisher {
     List<OutstandingBatch> batchesToSend;
     messagesBatchLock.lock();
     try {
-      // Check if the next message makes the current batch exceed the max batch byte size.
       MessagesBatch messagesBatch = messagesBatches.get(orderingKey);
       if (messagesBatch == null) {
         messagesBatch = new MessagesBatch(batchingSettings, orderingKey);
@@ -232,23 +231,21 @@ public class Publisher {
         messagesBatches.remove(orderingKey);
       }
       setupAlarm();
+      if (!batchesToSend.isEmpty()) {
+        // TODO: if this is not an ordering keys scenario, will this do anything?
+        publishAllWithoutInflight();
+
+        // TODO: if this is an ordering keys scenario, is this safe without messagesBatchLock?
+        for (final OutstandingBatch batch : batchesToSend) {
+          logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
+          publishOutstandingBatch(batch);
+        }
+      }
     } finally {
       messagesBatchLock.unlock();
     }
 
     messagesWaiter.incrementPendingMessages(1);
-
-    if (!batchesToSend.isEmpty()) {
-      // TODO: if this is not an ordering keys scenario, will this do anything?
-      publishAllWithoutInflight();
-
-      // TODO: if this is an ordering keys scenario, is this safe without messagesBatchLock?
-      for (final OutstandingBatch batch : batchesToSend) {
-        logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        publishOutstandingBatch(batch);
-      }
-    }
-
     return outstandingPublish.publishResult;
   }
 
@@ -331,11 +328,6 @@ public class Publisher {
         if (batch.isEmpty()) {
           it.remove();
         } else if (key.isEmpty() || !sequentialExecutor.hasTasksInflight(key)) {
-          // TODO(kimkyung-goog): Do not release `messagesBatchLock` when publishing a batch. If
-          // it's released, the order of publishing cannot be guaranteed if `publish()` is called
-          // while this function is running. This locking mechanism needs to be improved if it
-          // causes any performance degradation.
-
           // TODO: Will this cause a performance problem for non-ordering keys scenarios?
           publishOutstandingBatch(batch.popOutstandingBatch());
           it.remove();
