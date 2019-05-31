@@ -245,13 +245,7 @@ public class Publisher {
       // TODO: if this is an ordering keys scenario, is this safe without messagesBatchLock?
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        executor.execute(
-            new Runnable() {
-              @Override
-              public void run() {
-                publishOutstandingBatch(batch);
-              }
-            });
+        publishOutstandingBatch(batch);
       }
     }
 
