@@ -46,6 +46,9 @@ import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Buckets;
 import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
+import com.google.api.services.storage.model.HmacKey;
+import com.google.api.services.storage.model.HmacKeyMetadata;
+import com.google.api.services.storage.model.HmacKeysMetadata;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
@@ -1222,6 +1225,100 @@ public class HttpStorageRpc implements StorageRpc {
           .setGeneration(generation)
           .execute()
           .getItems();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public HmacKey createHmacKey(String serviceAccountEmail) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_CREATE_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    try {
+      return storage
+          .projects()
+          .hmacKeys()
+          .create(this.options.getProjectId(), serviceAccountEmail)
+          .execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(
+      String serviceAccountEmail, String pageToken, Long maxResults) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_LIST_HMAC_KEYS);
+    Scope scope = tracer.withSpan(span);
+    try {
+      HmacKeysMetadata hmacKeysMetadata =
+          storage
+              .projects()
+              .hmacKeys()
+              .list(this.options.getProjectId())
+              .setServiceAccountEmail(serviceAccountEmail)
+              .setPageToken(pageToken)
+              .setMaxResults(maxResults)
+              .execute();
+      return Tuple.<String, Iterable<HmacKeyMetadata>>of(
+          hmacKeysMetadata.getNextPageToken(), hmacKeysMetadata.getItems());
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public HmacKeyMetadata getHmacKey(String accessId) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_GET_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    try {
+      return storage.projects().hmacKeys().get(this.options.getProjectId(), accessId).execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_UPDATE_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    try {
+      return storage
+          .projects()
+          .hmacKeys()
+          .update(options.getProjectId(), hmacKeyMetadata.getAccessId(), hmacKeyMetadata)
+          .execute();
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      throw translate(ex);
+    } finally {
+      scope.close();
+      span.end();
+    }
+  }
+
+  @Override
+  public void deleteHmacKey(String accessId) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_DELETE_HMAC_KEY);
+    Scope scope = tracer.withSpan(span);
+    try {
+      storage.projects().hmacKeys().delete(options.getProjectId(), accessId).execute();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);

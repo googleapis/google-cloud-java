@@ -72,6 +72,13 @@ class HttpStorageRpcSpans {
   static final String SPAN_NAME_PATCH_OBJECT_ACL =
       getTraceSpanName("patchAcl(ObjectAccessControl)");
   static final String SPAN_NAME_LIST_OBJECT_ACLS = getTraceSpanName("listAcls(String,String,Long)");
+  static final String SPAN_NAME_CREATE_HMAC_KEY = getTraceSpanName("createHmacKey(String)");
+  static final String SPAN_NAME_GET_HMAC_KEY = getTraceSpanName("getHmacKey(String)");
+  static final String SPAN_NAME_DELETE_HMAC_KEY = getTraceSpanName("deleteHmacKey(String)");
+  static final String SPAN_NAME_LIST_HMAC_KEYS =
+      getTraceSpanName("listHmacKeys(String,String,Long)");
+  static final String SPAN_NAME_UPDATE_HMAC_KEY =
+      getTraceSpanName("updateHmacKey(HmacKeyMetadata)");
   static final String SPAN_NAME_GET_BUCKET_IAM_POLICY =
       getTraceSpanName("getIamPolicy(String,Map)");
   static final String SPAN_NAME_SET_BUCKET_IAM_POLICY =

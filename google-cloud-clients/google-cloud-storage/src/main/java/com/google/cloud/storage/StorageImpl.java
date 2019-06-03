@@ -63,6 +63,7 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
+import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -294,6 +295,31 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     @Override
     public Page<Blob> getNextPage() {
       return listBlobs(bucket, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class HmacKeyMetadataPageFetcher implements NextPageFetcher<HmacKeyMetadata> {
+
+    private static final long serialVersionUID = 308012320541700881L;
+    private final StorageOptions serviceOptions;
+    private final ServiceAccount serviceAccount;
+    private final String nextPageToken;
+    private final Long maxResults;
+
+    HmacKeyMetadataPageFetcher(
+        StorageOptions serviceOptions,
+        ServiceAccount serviceAccount,
+        String nextPageToken,
+        Long maxResults) {
+      this.serviceOptions = serviceOptions;
+      this.serviceAccount = serviceAccount;
+      this.nextPageToken = nextPageToken;
+      this.maxResults = maxResults;
+    }
+
+    @Override
+    public Page<HmacKeyMetadata> getNextPage() {
+      return listHmacKeys(serviceOptions, serviceAccount, nextPageToken, maxResults);
     }
   }
 
@@ -1158,6 +1184,148 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
               EXCEPTION_HANDLER,
               getOptions().getClock());
       return Lists.transform(answer, Acl.FROM_OBJECT_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  public HmacKey createHmacKey(final ServiceAccount serviceAccount) {
+    try {
+      return HmacKey.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.HmacKey>() {
+                @Override
+                public com.google.api.services.storage.model.HmacKey call() {
+                  return storageRpc.createHmacKey(serviceAccount.getEmail());
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<HmacKeyMetadata> listHmacKeys(
+      final ServiceAccount serviceAccount, final String pageToken, final Long maxResults) {
+    return listHmacKeys(getOptions(), serviceAccount, pageToken, maxResults);
+  }
+
+  public Page<HmacKeyMetadata> listHmacKeys(final ServiceAccount serviceAccount) {
+    return listHmacKeys(getOptions(), serviceAccount, null, null);
+  }
+
+  @Override
+  public HmacKeyMetadata getHmacKey(final String accessId) {
+    try {
+      return HmacKeyMetadata.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.HmacKeyMetadata>() {
+                @Override
+                public com.google.api.services.storage.model.HmacKeyMetadata call() {
+                  return storageRpc.getHmacKey(accessId);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  private HmacKeyMetadata updateHmacKey(final HmacKeyMetadata hmacKeyMetadata) {
+    try {
+      return HmacKeyMetadata.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.HmacKeyMetadata>() {
+                @Override
+                public com.google.api.services.storage.model.HmacKeyMetadata call() {
+                  return storageRpc.updateHmacKey(hmacKeyMetadata.toPb());
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public HmacKeyMetadata updateHmacKeyState(
+      final HmacKeyMetadata hmacKeyMetadata, final HmacKey.HmacKeyState state) {
+    HmacKeyMetadata updatedMetadata =
+        HmacKeyMetadata.newBuilder(hmacKeyMetadata.getServiceAccount())
+            .setProjectId(hmacKeyMetadata.getProjectId())
+            .setAccessId(hmacKeyMetadata.getAccessId())
+            .setState(state)
+            .build();
+    return updateHmacKey(updatedMetadata);
+  }
+
+  @Override
+  public void deleteHmacKey(final String accessId) {
+    try {
+      runWithRetries(
+          new Callable<Void>() {
+            @Override
+            public Void call() {
+              storageRpc.deleteHmacKey(accessId);
+              return null;
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  private static Page<HmacKeyMetadata> listHmacKeys(
+      final StorageOptions serviceOptions,
+      final ServiceAccount serviceAccount,
+      final String pageToken,
+      final Long maxResults) {
+    try {
+      Tuple<String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>> result =
+          runWithRetries(
+              new Callable<
+                  Tuple<
+                      String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>>>() {
+                @Override
+                public Tuple<
+                        String, Iterable<com.google.api.services.storage.model.HmacKeyMetadata>>
+                    call() {
+                  return serviceOptions
+                      .getStorageRpcV1()
+                      .listHmacKeys(serviceAccount.getEmail(), pageToken, maxResults);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
+      String cursor = result.x();
+      final Iterable<HmacKeyMetadata> metadata =
+          result.y() == null
+              ? ImmutableList.<HmacKeyMetadata>of()
+              : Iterables.transform(
+                  result.y(),
+                  new Function<
+                      com.google.api.services.storage.model.HmacKeyMetadata, HmacKeyMetadata>() {
+                    @Override
+                    public HmacKeyMetadata apply(
+                        com.google.api.services.storage.model.HmacKeyMetadata metadataPb) {
+                      return HmacKeyMetadata.fromPb(metadataPb);
+                    }
+                  });
+      return new PageImpl<>(
+          new HmacKeyMetadataPageFetcher(serviceOptions, serviceAccount, pageToken, maxResults),
+          cursor,
+          metadata);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

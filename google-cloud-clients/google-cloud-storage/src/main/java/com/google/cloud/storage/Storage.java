@@ -35,6 +35,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
+import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
@@ -2708,6 +2709,19 @@ public interface Storage extends Service<StorageOptions> {
    */
   List<Acl> listAcls(BlobId blob);
 
+  HmacKey createHmacKey(ServiceAccount serviceAccount);
+
+  Page<HmacKeyMetadata> listHmacKeys(
+      ServiceAccount serviceAccount, String pageToken, Long maxResults);
+
+  Page<HmacKeyMetadata> listHmacKeys(ServiceAccount serviceAccount);
+
+  HmacKeyMetadata getHmacKey(String accessId);
+
+  void deleteHmacKey(String accessId);
+
+  HmacKeyMetadata updateHmacKeyState(
+      final HmacKeyMetadata hmacKeyMetadata, final HmacKey.HmacKeyState state);
   /**
    * Gets the IAM policy for the provided bucket.
    *

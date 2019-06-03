@@ -19,6 +19,8 @@ package com.google.cloud.storage.spi.v1;
 import com.google.api.core.InternalApi;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.HmacKey;
+import com.google.api.services.storage.model.HmacKeyMetadata;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
@@ -433,6 +435,17 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   List<ObjectAccessControl> listAcls(String bucket, String object, Long generation);
+
+  HmacKey createHmacKey(String serviceAccountEmail);
+
+  Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(
+      String serviceAccountEmail, String pageToken, Long maxResults);
+
+  HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata);
+
+  HmacKeyMetadata getHmacKey(String accessId);
+
+  void deleteHmacKey(String accessId);
 
   /**
    * Returns the IAM policy for the specified bucket.
