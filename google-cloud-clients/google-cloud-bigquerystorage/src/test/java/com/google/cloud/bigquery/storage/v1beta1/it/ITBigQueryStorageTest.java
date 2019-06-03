@@ -67,7 +67,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 /** Integration tests for BigQuery Storage API. */
 public class ITBigQueryStorageTest {
@@ -175,7 +174,7 @@ public class ITBigQueryStorageTest {
     // We have to read some number of rows in order to be able to resume. More details:
     // https://cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1beta1#google.cloud.bigquery.storage.v1beta1.ReadRowsRequest
 
-    long avroRowCount = SkipNumberOfRows(session.getStreams(0), /* rowsToSkip = */ 34_846);
+    long avroRowCount = ReadStreamToOffset(session.getStreams(0), /* rowOffset = */ 34_846);
 
     StreamPosition readPosition =
         StreamPosition.newBuilder()
@@ -373,18 +372,18 @@ public class ITBigQueryStorageTest {
             .setProjectId(ServiceOptions.getDefaultProjectId())
             .build();
 
-    RunQueryJobAndExpectSuccess(
-        /* destinationTableId = */ testTableId, /* query = */ "SELECT 1 AS col");
-    Instant firstSnapshot = Instant.now();
+    Job firstJob =
+        RunQueryJobAndExpectSuccess(
+            /* destinationTableId = */ testTableId, /* query = */ "SELECT 1 AS col");
 
-    RunQueryJobAndExpectSuccess(
-        /* destinationTableId = */ testTableId, /* query = */ "SELECT 2 AS col");
-    Instant secondSnapshot = Instant.now();
+    Job secondJob =
+        RunQueryJobAndExpectSuccess(
+            /* destinationTableId = */ testTableId, /* query = */ "SELECT 2 AS col");
 
     final List<Long> rowsAfterFirstSnapshot = new ArrayList<>();
     ProcessRowsAtSnapshot(
         tableReference,
-        firstSnapshot,
+        firstJob.getStatistics().getEndTime(),
         new AvroRowConsumer() {
           @Override
           public void accept(GenericRecord record) {
@@ -396,7 +395,7 @@ public class ITBigQueryStorageTest {
     final List<Long> rowsAfterSecondSnapshot = new ArrayList<>();
     ProcessRowsAtSnapshot(
         tableReference,
-        secondSnapshot,
+        secondJob.getStatistics().getEndTime(),
         new AvroRowConsumer() {
           @Override
           public void accept(GenericRecord record) {
@@ -408,14 +407,14 @@ public class ITBigQueryStorageTest {
   }
 
   /**
-   * Skips the specified number of rows from the stream. If the stream does not have the desired
-   * rows to skip, it will skip all of them.
+   * Reads to the specified row offset within the stream. If the stream does not have the desired
+   * rows to read, it will read all of them.
    *
    * @param stream
-   * @param rowsToSkip
+   * @param rowOffset
    * @return the number of requested rows to skip or the total rows read if stream had less rows.
    */
-  private long SkipNumberOfRows(Stream stream, long rowsToSkip) {
+  private long ReadStreamToOffset(Stream stream, long rowOffset) {
     StreamPosition readPosition = StreamPosition.newBuilder().setStream(stream).build();
 
     ReadRowsRequest readRowsRequest =
@@ -428,8 +427,8 @@ public class ITBigQueryStorageTest {
     while (responseIterator.hasNext()) {
       ReadRowsResponse response = responseIterator.next();
       avroRowCount += response.getAvroRows().getRowCount();
-      if (avroRowCount >= rowsToSkip) {
-        return rowsToSkip;
+      if (avroRowCount >= rowOffset) {
+        return rowOffset;
       }
     }
 
@@ -443,12 +442,12 @@ public class ITBigQueryStorageTest {
    * <p>For every row, the consumer is called for processing.
    *
    * @param tableReference
-   * @param snapshot
+   * @param snapshotInMillis
    * @param consumer
    * @throws IOException
    */
   private void ProcessRowsAtSnapshot(
-      TableReference tableReference, Instant snapshot, AvroRowConsumer consumer)
+      TableReference tableReference, Long snapshotInMillis, AvroRowConsumer consumer)
       throws IOException {
     Preconditions.checkNotNull(tableReference);
     Preconditions.checkNotNull(consumer);
@@ -460,11 +459,11 @@ public class ITBigQueryStorageTest {
             .setTableReference(tableReference)
             .setFormat(DataFormat.AVRO);
 
-    if (snapshot != null) {
+    if (snapshotInMillis != null) {
       Timestamp snapshotTimestamp =
           Timestamp.newBuilder()
-              .setSeconds(snapshot.toEpochMilli() / 1_000)
-              .setNanos((int) ((snapshot.toEpochMilli() % 1000) * 1000000))
+              .setSeconds(snapshotInMillis / 1_000)
+              .setNanos((int) ((snapshotInMillis % 1000) * 1000000))
               .build();
       createSessionRequestBuilder.setTableModifiers(
           TableModifiers.newBuilder().setSnapshotTime(snapshotTimestamp).build());
@@ -494,13 +493,15 @@ public class ITBigQueryStorageTest {
   }
 
   /**
-   * Runs a query job with WRITE_APPEND disposition to the destination table.
+   * Runs a query job with WRITE_APPEND disposition to the destination table and returns the
+   * successfully completed job.
    *
    * @param destinationTableId
    * @param query
+   * @return
    * @throws InterruptedException
    */
-  private void RunQueryJobAndExpectSuccess(TableId destinationTableId, String query)
+  private Job RunQueryJobAndExpectSuccess(TableId destinationTableId, String query)
       throws InterruptedException {
     QueryJobConfiguration configuration =
         QueryJobConfiguration.newBuilder(query)
@@ -521,5 +522,7 @@ public class ITBigQueryStorageTest {
         /* message = */ "Received a job status that is not a success: "
             + completedJob.getStatus().toString(),
         /* object = */ completedJob.getStatus().getError());
+
+    return completedJob;
   }
 }
