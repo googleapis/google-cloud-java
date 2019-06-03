@@ -236,7 +236,7 @@ public class InstanceAdminGaxTest {
             .setInitialRpcTimeout(Duration.ofMillis(200L))
             .setMaxRpcTimeout(Duration.ofMillis(200L))
             .setMaxAttempts(3)
-            .setTotalTimeout(Duration.ofMillis(500L))
+            .setTotalTimeout(Duration.ofMillis(1500L))
             .build();
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
