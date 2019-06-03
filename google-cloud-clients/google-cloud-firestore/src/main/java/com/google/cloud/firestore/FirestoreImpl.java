@@ -344,7 +344,7 @@ class FirestoreImpl implements Firestore {
                         MoreExecutors.directExecutor());
                   }
                 },
-                userCallbackExecutor);
+                MoreExecutors.directExecutor());
           }
 
           private SettableApiFuture<T> invokeUserCallback() {
@@ -400,13 +400,13 @@ class FirestoreImpl implements Firestore {
                       resultFuture.setException(throwable);
                     }
                   },
-                  userCallbackExecutor);
+                  MoreExecutors.directExecutor());
             } else {
               resultFuture.setException(throwable);
             }
           }
         },
-        userCallbackExecutor);
+        MoreExecutors.directExecutor());
   }
 
   /** Returns whether the user has opted into receiving dates as com.google.cloud.Timestamp. */
