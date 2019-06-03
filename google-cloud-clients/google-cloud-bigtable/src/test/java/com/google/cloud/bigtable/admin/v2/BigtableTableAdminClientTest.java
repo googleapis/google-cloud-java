@@ -118,7 +118,7 @@ public class BigtableTableAdminClientTest {
             .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse =
-        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build();
+        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME).build();
 
     Mockito.when(mockCreateTableCallable.futureCall(expectedRequest))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
@@ -164,7 +164,7 @@ public class BigtableTableAdminClientTest {
   public void testDeleteTable() {
     // Setup
     DeleteTableRequest expectedRequest =
-        DeleteTableRequest.newBuilder().setName(TABLE_NAME.toString()).build();
+        DeleteTableRequest.newBuilder().setName(TABLE_NAME).build();
 
     final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
@@ -190,12 +190,12 @@ public class BigtableTableAdminClientTest {
     // Setup
     GetTableRequest expectedRequest =
         GetTableRequest.newBuilder()
-            .setName(TABLE_NAME.toString())
+            .setName(TABLE_NAME)
             .setView(View.SCHEMA_VIEW)
             .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse =
-        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build();
+        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME).build();
 
     Mockito.when(mockGetTableCallable.futureCall(expectedRequest))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
@@ -286,7 +286,6 @@ public class BigtableTableAdminClientTest {
   @Test
   public void testAwaitReplication() {
     // Setup
-    @SuppressWarnings("UnnecessaryLocalVariable")
     TableName expectedRequest = TableName.parse(TABLE_NAME);
 
     final AtomicBoolean wasCalled = new AtomicBoolean(false);
@@ -312,7 +311,7 @@ public class BigtableTableAdminClientTest {
   public void testExistsTrue() {
     // Setup
     com.google.bigtable.admin.v2.Table expectedResponse =
-        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME.toString()).build();
+        com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME).build();
 
     Mockito.when(mockGetTableCallable.futureCall(Matchers.any(GetTableRequest.class)))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
