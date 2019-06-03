@@ -40,8 +40,7 @@ import org.junit.Test;
 /** Integration tests for {@link HelloWorld} */
 public class HelloWorldTest {
 
-  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
-  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
+  private static final String INSTANCE_PROPERTY_NAME = "BIGTABLE_TESTING_INSTANCE";
   private static final String TABLE_PREFIX = "table";
   private static String tableId;
   private static BigtableDataClient dataClient;
@@ -50,10 +49,17 @@ public class HelloWorldTest {
   private static String instanceId;
   private HelloWorld helloWorld;
 
+  private static String requireEnv(String varName) {
+    assertNotNull(
+        System.getenv(varName),
+        "System property '%s' is required to perform these tests.".format(varName));
+    return System.getenv(varName);
+  }
+
   @BeforeClass
   public static void beforeClass() throws IOException {
-    projectId = System.getProperty(PROJECT_PROPERTY_NAME);
-    instanceId = System.getProperty(INSTANCE_PROPERTY_NAME);
+    projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
+    instanceId = requireEnv(INSTANCE_PROPERTY_NAME);
     if (projectId == null || instanceId == null) {
       dataClient = null;
       adminClient = null;
@@ -79,13 +85,6 @@ public class HelloWorldTest {
 
   @Before
   public void setup() throws IOException {
-    if (adminClient == null || dataClient == null) {
-      throw new AssumptionViolatedException(
-          PROJECT_PROPERTY_NAME
-              + " or "
-              + INSTANCE_PROPERTY_NAME
-              + " property is not set, skipping integration tests.");
-    }
     tableId = generateTableId();
     helloWorld = new HelloWorld(projectId, instanceId, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));

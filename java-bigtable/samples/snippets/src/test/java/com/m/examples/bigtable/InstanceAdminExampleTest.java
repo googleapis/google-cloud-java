@@ -42,7 +42,6 @@ import org.junit.Test;
 /** Integration tests for {@link InstanceAdminExample} */
 public class InstanceAdminExampleTest {
 
-  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String ID_PREFIX = "instanceadmin";
   private static final String CLUSTER = "cluster";
   private static String projectId;
@@ -51,9 +50,16 @@ public class InstanceAdminExampleTest {
   private String instanceId;
   private InstanceAdminExample instanceAdmin;
 
+  private static String requireEnv(String varName) {
+    assertNotNull(
+        System.getenv(varName),
+        "System property '%s' is required to perform these tests.".format(varName));
+    return System.getenv(varName);
+  }
+
   @BeforeClass
   public static void beforeClass() throws IOException {
-    projectId = System.getProperty(PROJECT_PROPERTY_NAME);
+    projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
     if (projectId == null) {
       adminClient = null;
       return;
@@ -71,10 +77,6 @@ public class InstanceAdminExampleTest {
 
   @Before
   public void setup() throws IOException {
-    if (adminClient == null) {
-      throw new AssumptionViolatedException(
-          PROJECT_PROPERTY_NAME + " property is not set, skipping integration tests.");
-    }
     instanceId = generateId();
     clusterId = generateId();
     instanceAdmin = new InstanceAdminExample(projectId, instanceId, clusterId);
