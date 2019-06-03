@@ -29,6 +29,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.DatabaseRootName;
@@ -340,7 +341,7 @@ class FirestoreImpl implements Firestore {
                             resultFuture.set(userResult);
                           }
                         },
-                        userCallbackExecutor);
+                        MoreExecutors.directExecutor());
                   }
                 },
                 userCallbackExecutor);
