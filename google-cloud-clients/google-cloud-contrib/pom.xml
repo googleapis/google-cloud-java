@@ -21,6 +21,7 @@
     <module>google-cloud-nio</module>
     <module>google-cloud-nio-examples</module>
     <module>google-cloud-logging-logback</module>
+    <module>google-cloud-notification</module>
   </modules>
   <dependencies>
   </dependencies>
