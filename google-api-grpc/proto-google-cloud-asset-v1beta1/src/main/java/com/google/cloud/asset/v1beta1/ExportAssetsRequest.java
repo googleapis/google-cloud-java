@@ -29,6 +29,12 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExportAssetsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assetTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               assetTypes_.add(s);
               break;
@@ -121,7 +127,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -144,7 +150,6 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.asset.v1beta1.ExportAssetsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -656,7 +661,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         readTimeBuilder_ = null;
       }
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       contentType_ = 0;
 
       if (outputConfigBuilder_ == null) {
@@ -693,16 +698,15 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       com.google.cloud.asset.v1beta1.ExportAssetsRequest result =
           new com.google.cloud.asset.v1beta1.ExportAssetsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (readTimeBuilder_ == null) {
         result.readTime_ = readTime_;
       } else {
         result.readTime_ = readTimeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.assetTypes_ = assetTypes_;
       result.contentType_ = contentType_;
@@ -711,7 +715,6 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -772,7 +775,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -1141,9 +1144,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1288,7 +1291,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAssetTypes() {
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

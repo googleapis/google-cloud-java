@@ -29,6 +29,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchGetAssetsHistoryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assetNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               assetNames_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -129,7 +135,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
             com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -591,7 +596,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       parent_ = "";
 
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       contentType_ = 0;
 
       if (readTimeWindowBuilder_ == null) {
@@ -628,11 +633,10 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result =
           new com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.assetNames_ = assetNames_;
       result.contentType_ = contentType_;
@@ -641,7 +645,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       } else {
         result.readTimeWindow_ = readTimeWindowBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -699,7 +702,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -852,9 +855,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1023,7 +1026,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      */
     public Builder clearAssetNames() {
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
