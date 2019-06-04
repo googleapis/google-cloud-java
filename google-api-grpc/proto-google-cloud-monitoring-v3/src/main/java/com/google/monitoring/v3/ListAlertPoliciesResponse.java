@@ -28,6 +28,12 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListAlertPoliciesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
             com.google.monitoring.v3.ListAlertPoliciesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALERT_POLICIES_FIELD_NUMBER = 3;
   private java.util.List<com.google.monitoring.v3.AlertPolicy> alertPolicies_;
   /**
@@ -471,7 +476,6 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       com.google.monitoring.v3.ListAlertPoliciesResponse result =
           new com.google.monitoring.v3.ListAlertPoliciesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (alertPoliciesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alertPolicies_ = java.util.Collections.unmodifiableList(alertPolicies_);
@@ -482,7 +486,6 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         result.alertPolicies_ = alertPoliciesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

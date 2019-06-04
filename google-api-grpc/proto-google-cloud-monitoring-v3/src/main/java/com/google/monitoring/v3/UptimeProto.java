@@ -107,21 +107,13 @@ public final class UptimeProto {
           + "Google.Cloud.Monitoring.V3\312\002\032Google\\Clou"
           + "d\\Monitoring\\V3b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.MonitoredResourceProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.MonitoredResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+            });
     internal_static_google_monitoring_v3_InternalChecker_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_monitoring_v3_InternalChecker_fieldAccessorTable =
