@@ -32,6 +32,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CryptoKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -132,10 +138,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -396,7 +402,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose)
   }
 
-  private int bitField0_;
   private int rotationScheduleCase_ = 0;
   private java.lang.Object rotationSchedule_;
 
@@ -1321,7 +1326,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.kms.v1.CryptoKey buildPartial() {
       com.google.cloud.kms.v1.CryptoKey result = new com.google.cloud.kms.v1.CryptoKey(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (primaryBuilder_ == null) {
         result.primary_ = primary_;
@@ -1353,7 +1357,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.rotationScheduleCase_ = rotationScheduleCase_;
       onBuilt();
       return result;
