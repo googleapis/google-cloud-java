@@ -31,6 +31,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ServerConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,9 +70,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 validNodeVersions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               validNodeVersions_.add(s);
               break;
@@ -81,9 +87,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 validImageTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               validImageTypes_.add(s);
               break;
@@ -91,9 +97,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 validMasterVersions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000004;
               }
               validMasterVersions_.add(s);
               break;
@@ -112,13 +118,13 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         validNodeVersions_ = validNodeVersions_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         validImageTypes_ = validImageTypes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = validMasterVersions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -141,7 +147,6 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.ServerConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DEFAULT_CLUSTER_VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object defaultClusterVersion_;
   /**
@@ -643,13 +648,13 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       defaultClusterVersion_ = "";
 
       validNodeVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       defaultImageType_ = "";
 
       validImageTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -677,25 +682,23 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.ServerConfig buildPartial() {
       com.google.container.v1.ServerConfig result = new com.google.container.v1.ServerConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.defaultClusterVersion_ = defaultClusterVersion_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         validNodeVersions_ = validNodeVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.validNodeVersions_ = validNodeVersions_;
       result.defaultImageType_ = defaultImageType_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         validImageTypes_ = validImageTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.validImageTypes_ = validImageTypes_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = validMasterVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.validMasterVersions_ = validMasterVersions_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -752,7 +755,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.validNodeVersions_.isEmpty()) {
         if (validNodeVersions_.isEmpty()) {
           validNodeVersions_ = other.validNodeVersions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureValidNodeVersionsIsMutable();
           validNodeVersions_.addAll(other.validNodeVersions_);
@@ -766,7 +769,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.validImageTypes_.isEmpty()) {
         if (validImageTypes_.isEmpty()) {
           validImageTypes_ = other.validImageTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureValidImageTypesIsMutable();
           validImageTypes_.addAll(other.validImageTypes_);
@@ -776,7 +779,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.validMasterVersions_.isEmpty()) {
         if (validMasterVersions_.isEmpty()) {
           validMasterVersions_ = other.validMasterVersions_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureValidMasterVersionsIsMutable();
           validMasterVersions_.addAll(other.validMasterVersions_);
@@ -912,9 +915,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValidNodeVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         validNodeVersions_ = new com.google.protobuf.LazyStringArrayList(validNodeVersions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1027,7 +1030,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearValidNodeVersions() {
       validNodeVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1149,9 +1152,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValidImageTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         validImageTypes_ = new com.google.protobuf.LazyStringArrayList(validImageTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1264,7 +1267,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearValidImageTypes() {
       validImageTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1292,9 +1295,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValidMasterVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = new com.google.protobuf.LazyStringArrayList(validMasterVersions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1407,7 +1410,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearValidMasterVersions() {
       validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

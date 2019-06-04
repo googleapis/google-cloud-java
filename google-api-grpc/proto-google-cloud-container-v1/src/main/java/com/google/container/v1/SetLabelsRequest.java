@@ -33,6 +33,12 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetLabelsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,11 +85,11 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resourceLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         ResourceLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
                   input.readMessage(
@@ -153,7 +159,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
             com.google.container.v1.SetLabelsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
@@ -812,7 +817,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       com.google.container.v1.SetLabelsRequest result =
           new com.google.container.v1.SetLabelsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.zone_ = zone_;
       result.clusterId_ = clusterId_;
@@ -820,7 +824,6 @@ public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessage
       result.resourceLabels_.makeImmutable();
       result.labelFingerprint_ = labelFingerprint_;
       result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

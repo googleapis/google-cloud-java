@@ -34,6 +34,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClusterUpdate();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -120,9 +126,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 desiredLocations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               desiredLocations_.add(s);
               break;
@@ -165,7 +171,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         desiredLocations_ = desiredLocations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -188,7 +194,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.ClusterUpdate.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DESIRED_NODE_VERSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object desiredNodeVersion_;
   /**
@@ -988,7 +993,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoscalingBuilder_ = null;
       }
       desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
         desiredMasterAuthorizedNetworksConfig_ = null;
       } else {
@@ -1025,7 +1030,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       com.google.container.v1.ClusterUpdate result =
           new com.google.container.v1.ClusterUpdate(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.desiredNodeVersion_ = desiredNodeVersion_;
       result.desiredMonitoringService_ = desiredMonitoringService_;
       if (desiredAddonsConfigBuilder_ == null) {
@@ -1040,9 +1044,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredNodePoolAutoscaling_ = desiredNodePoolAutoscalingBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         desiredLocations_ = desiredLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.desiredLocations_ = desiredLocations_;
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
@@ -1052,7 +1056,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             desiredMasterAuthorizedNetworksConfigBuilder_.build();
       }
       result.desiredMasterVersion_ = desiredMasterVersion_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1127,7 +1130,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!other.desiredLocations_.isEmpty()) {
         if (desiredLocations_.isEmpty()) {
           desiredLocations_ = other.desiredLocations_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDesiredLocationsIsMutable();
           desiredLocations_.addAll(other.desiredLocations_);
@@ -2023,9 +2026,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDesiredLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         desiredLocations_ = new com.google.protobuf.LazyStringArrayList(desiredLocations_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2178,7 +2181,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDesiredLocations() {
       desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
