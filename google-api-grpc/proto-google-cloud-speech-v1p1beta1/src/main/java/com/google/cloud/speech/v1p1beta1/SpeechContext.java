@@ -28,6 +28,12 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SpeechContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -103,7 +109,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.speech.v1p1beta1.SpeechContext.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PHRASES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList phrases_;
   /**
@@ -451,14 +456,12 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.speech.v1p1beta1.SpeechContext result =
           new com.google.cloud.speech.v1p1beta1.SpeechContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         phrases_ = phrases_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.phrases_ = phrases_;
       result.boost_ = boost_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

@@ -29,6 +29,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingRecognitionResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -140,7 +146,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             com.google.cloud.speech.v1.StreamingRecognitionResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> alternatives_;
   /**
@@ -679,7 +684,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       com.google.cloud.speech.v1.StreamingRecognitionResult result =
           new com.google.cloud.speech.v1.StreamingRecognitionResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -698,7 +702,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       result.channelTag_ = channelTag_;
       result.languageCode_ = languageCode_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

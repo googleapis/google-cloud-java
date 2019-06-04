@@ -31,6 +31,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecognitionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,10 +91,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 speechContexts_ =
                     new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               speechContexts_.add(
                   input.readMessage(
@@ -157,7 +163,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
       this.unknownFields = unknownFields.build();
@@ -490,7 +496,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.speech.v1.RecognitionConfig.AudioEncoding)
   }
 
-  private int bitField0_;
   public static final int ENCODING_FIELD_NUMBER = 1;
   private int encoding_;
   /**
@@ -1317,7 +1322,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         speechContextsBuilder_.clear();
       }
@@ -1363,7 +1368,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       com.google.cloud.speech.v1.RecognitionConfig result =
           new com.google.cloud.speech.v1.RecognitionConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.encoding_ = encoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.audioChannelCount_ = audioChannelCount_;
@@ -1372,9 +1376,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.speechContexts_ = speechContexts_;
       } else {
@@ -1389,7 +1393,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       result.model_ = model_;
       result.useEnhanced_ = useEnhanced_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1465,7 +1468,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -1478,7 +1481,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -2050,10 +2053,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>(speechContexts_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2291,7 +2294,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -2428,7 +2431,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.speech.v1.SpeechContext.Builder,
                 com.google.cloud.speech.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
