@@ -27,6 +27,12 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Word();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -86,9 +92,9 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 symbols_ = new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.Symbol>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               symbols_.add(
                   input.readMessage(
@@ -114,7 +120,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         symbols_ = java.util.Collections.unmodifiableList(symbols_);
       }
       this.unknownFields = unknownFields.build();
@@ -137,7 +143,6 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p4beta1.Word.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p4beta1.TextAnnotation.TextProperty property_;
   /**
@@ -606,7 +611,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       }
       if (symbolsBuilder_ == null) {
         symbols_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         symbolsBuilder_.clear();
       }
@@ -640,7 +645,6 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1p4beta1.Word result =
           new com.google.cloud.vision.v1p4beta1.Word(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (propertyBuilder_ == null) {
         result.property_ = property_;
       } else {
@@ -652,16 +656,15 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         result.boundingBox_ = boundingBoxBuilder_.build();
       }
       if (symbolsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           symbols_ = java.util.Collections.unmodifiableList(symbols_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.symbols_ = symbols_;
       } else {
         result.symbols_ = symbolsBuilder_.build();
       }
       result.confidence_ = confidence_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -721,7 +724,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         if (!other.symbols_.isEmpty()) {
           if (symbols_.isEmpty()) {
             symbols_ = other.symbols_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSymbolsIsMutable();
             symbols_.addAll(other.symbols_);
@@ -734,7 +737,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
             symbolsBuilder_.dispose();
             symbolsBuilder_ = null;
             symbols_ = other.symbols_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             symbolsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSymbolsFieldBuilder()
@@ -1276,9 +1279,9 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSymbolsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         symbols_ = new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.Symbol>(symbols_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1504,7 +1507,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSymbols() {
       if (symbolsBuilder_ == null) {
         symbols_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         symbolsBuilder_.clear();
@@ -1633,7 +1636,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p4beta1.Symbol,
                 com.google.cloud.vision.v1p4beta1.Symbol.Builder,
                 com.google.cloud.vision.v1p4beta1.SymbolOrBuilder>(
-                symbols_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                symbols_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         symbols_ = null;
       }
       return symbolsBuilder_;

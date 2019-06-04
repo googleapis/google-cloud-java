@@ -31,6 +31,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Product();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,10 +90,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 productLabels_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1.Product.KeyValue>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               productLabels_.add(
                   input.readMessage(
@@ -108,7 +114,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         productLabels_ = java.util.Collections.unmodifiableList(productLabels_);
       }
       this.unknownFields = unknownFields.build();
@@ -207,6 +213,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KeyValue();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -219,7 +231,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -954,7 +965,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1495,7 +1505,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
 
       if (productLabelsBuilder_ == null) {
         productLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         productLabelsBuilder_.clear();
       }
@@ -1526,21 +1536,19 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Product buildPartial() {
       com.google.cloud.vision.v1.Product result = new com.google.cloud.vision.v1.Product(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.productCategory_ = productCategory_;
       if (productLabelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           productLabels_ = java.util.Collections.unmodifiableList(productLabels_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.productLabels_ = productLabels_;
       } else {
         result.productLabels_ = productLabelsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1610,7 +1618,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         if (!other.productLabels_.isEmpty()) {
           if (productLabels_.isEmpty()) {
             productLabels_ = other.productLabels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureProductLabelsIsMutable();
             productLabels_.addAll(other.productLabels_);
@@ -1623,7 +1631,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             productLabelsBuilder_.dispose();
             productLabelsBuilder_ = null;
             productLabels_ = other.productLabels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             productLabelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductLabelsFieldBuilder()
@@ -2099,10 +2107,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureProductLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         productLabels_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.Product.KeyValue>(productLabels_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2384,7 +2392,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     public Builder clearProductLabels() {
       if (productLabelsBuilder_ == null) {
         productLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         productLabelsBuilder_.clear();
@@ -2550,7 +2558,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1.Product.KeyValue.Builder,
                 com.google.cloud.vision.v1.Product.KeyValueOrBuilder>(
                 productLabels_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         productLabels_ = null;

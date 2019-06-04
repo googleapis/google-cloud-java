@@ -32,6 +32,12 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WebDetection();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -275,6 +281,12 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WebEntity();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -287,7 +299,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1156,6 +1167,12 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WebImage();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1168,7 +1185,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1888,6 +1904,12 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WebLabel();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1900,7 +1922,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2866,6 +2887,12 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WebPage();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2910,11 +2937,11 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
               }
             case 34:
               {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   fullMatchingImages_ =
                       new java.util.ArrayList<
                           com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 fullMatchingImages_.add(
                     input.readMessage(
@@ -2924,11 +2951,11 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
               }
             case 42:
               {
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   partialMatchingImages_ =
                       new java.util.ArrayList<
                           com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 partialMatchingImages_.add(
                     input.readMessage(
@@ -2950,10 +2977,10 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           fullMatchingImages_ = java.util.Collections.unmodifiableList(fullMatchingImages_);
         }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           partialMatchingImages_ = java.util.Collections.unmodifiableList(partialMatchingImages_);
         }
         this.unknownFields = unknownFields.build();
@@ -2976,7 +3003,6 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.vision.v1p4beta1.WebDetection.WebPage.Builder.class);
     }
 
-    private int bitField0_;
     public static final int URL_FIELD_NUMBER = 1;
     private volatile java.lang.Object url_;
     /**
@@ -3514,13 +3540,13 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
 
         if (fullMatchingImagesBuilder_ == null) {
           fullMatchingImages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           fullMatchingImagesBuilder_.clear();
         }
         if (partialMatchingImagesBuilder_ == null) {
           partialMatchingImages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           partialMatchingImagesBuilder_.clear();
         }
@@ -3552,29 +3578,27 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1p4beta1.WebDetection.WebPage result =
             new com.google.cloud.vision.v1p4beta1.WebDetection.WebPage(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.url_ = url_;
         result.score_ = score_;
         result.pageTitle_ = pageTitle_;
         if (fullMatchingImagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             fullMatchingImages_ = java.util.Collections.unmodifiableList(fullMatchingImages_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.fullMatchingImages_ = fullMatchingImages_;
         } else {
           result.fullMatchingImages_ = fullMatchingImagesBuilder_.build();
         }
         if (partialMatchingImagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             partialMatchingImages_ = java.util.Collections.unmodifiableList(partialMatchingImages_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.partialMatchingImages_ = partialMatchingImages_;
         } else {
           result.partialMatchingImages_ = partialMatchingImagesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3642,7 +3666,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           if (!other.fullMatchingImages_.isEmpty()) {
             if (fullMatchingImages_.isEmpty()) {
               fullMatchingImages_ = other.fullMatchingImages_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureFullMatchingImagesIsMutable();
               fullMatchingImages_.addAll(other.fullMatchingImages_);
@@ -3655,7 +3679,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
               fullMatchingImagesBuilder_.dispose();
               fullMatchingImagesBuilder_ = null;
               fullMatchingImages_ = other.fullMatchingImages_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               fullMatchingImagesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getFullMatchingImagesFieldBuilder()
@@ -3669,7 +3693,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           if (!other.partialMatchingImages_.isEmpty()) {
             if (partialMatchingImages_.isEmpty()) {
               partialMatchingImages_ = other.partialMatchingImages_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePartialMatchingImagesIsMutable();
               partialMatchingImages_.addAll(other.partialMatchingImages_);
@@ -3682,7 +3706,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
               partialMatchingImagesBuilder_.dispose();
               partialMatchingImagesBuilder_ = null;
               partialMatchingImages_ = other.partialMatchingImages_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
               partialMatchingImagesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPartialMatchingImagesFieldBuilder()
@@ -3960,11 +3984,11 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           fullMatchingImages_ = java.util.Collections.emptyList();
 
       private void ensureFullMatchingImagesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           fullMatchingImages_ =
               new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>(
                   fullMatchingImages_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -4221,7 +4245,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       public Builder clearFullMatchingImages() {
         if (fullMatchingImagesBuilder_ == null) {
           fullMatchingImages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           fullMatchingImagesBuilder_.clear();
@@ -4373,7 +4397,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.Builder,
                   com.google.cloud.vision.v1p4beta1.WebDetection.WebImageOrBuilder>(
                   fullMatchingImages_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           fullMatchingImages_ = null;
@@ -4385,11 +4409,11 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
           partialMatchingImages_ = java.util.Collections.emptyList();
 
       private void ensurePartialMatchingImagesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           partialMatchingImages_ =
               new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.WebDetection.WebImage>(
                   partialMatchingImages_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -4668,7 +4692,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
       public Builder clearPartialMatchingImages() {
         if (partialMatchingImagesBuilder_ == null) {
           partialMatchingImages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           partialMatchingImagesBuilder_.clear();
@@ -4834,7 +4858,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.vision.v1p4beta1.WebDetection.WebImage.Builder,
                   com.google.cloud.vision.v1p4beta1.WebDetection.WebImageOrBuilder>(
                   partialMatchingImages_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           partialMatchingImages_ = null;

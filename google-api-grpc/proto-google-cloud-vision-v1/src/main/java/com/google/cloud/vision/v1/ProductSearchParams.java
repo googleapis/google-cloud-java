@@ -29,6 +29,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSearchParams();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 productCategories_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               productCategories_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         productCategories_ = productCategories_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -129,7 +135,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             com.google.cloud.vision.v1.ProductSearchParams.Builder.class);
   }
 
-  private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 9;
   private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
   /**
@@ -605,7 +610,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       productSet_ = "";
 
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = "";
 
       return this;
@@ -636,20 +641,18 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       com.google.cloud.vision.v1.ProductSearchParams result =
           new com.google.cloud.vision.v1.ProductSearchParams(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (boundingPolyBuilder_ == null) {
         result.boundingPoly_ = boundingPoly_;
       } else {
         result.boundingPoly_ = boundingPolyBuilder_.build();
       }
       result.productSet_ = productSet_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         productCategories_ = productCategories_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.productCategories_ = productCategories_;
       result.filter_ = filter_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -709,7 +712,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       if (!other.productCategories_.isEmpty()) {
         if (productCategories_.isEmpty()) {
           productCategories_ = other.productCategories_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureProductCategoriesIsMutable();
           productCategories_.addAll(other.productCategories_);
@@ -1055,9 +1058,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureProductCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         productCategories_ = new com.google.protobuf.LazyStringArrayList(productCategories_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1218,7 +1221,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      */
     public Builder clearProductCategories() {
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

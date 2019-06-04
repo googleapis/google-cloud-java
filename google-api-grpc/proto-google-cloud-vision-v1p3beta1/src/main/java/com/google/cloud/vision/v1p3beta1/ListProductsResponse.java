@@ -28,6 +28,12 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListProductsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.vision.v1p3beta1.ListProductsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRODUCTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1p3beta1.Product> products_;
   /**
@@ -470,7 +475,6 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1p3beta1.ListProductsResponse result =
           new com.google.cloud.vision.v1p3beta1.ListProductsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (productsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           products_ = java.util.Collections.unmodifiableList(products_);
@@ -481,7 +485,6 @@ public final class ListProductsResponse extends com.google.protobuf.GeneratedMes
         result.products_ = productsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

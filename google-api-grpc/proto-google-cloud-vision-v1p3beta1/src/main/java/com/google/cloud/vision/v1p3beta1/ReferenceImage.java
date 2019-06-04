@@ -30,6 +30,12 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReferenceImage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,10 +75,10 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 boundingPolys_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.BoundingPoly>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               boundingPolys_.add(
                   input.readMessage(
@@ -93,7 +99,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         boundingPolys_ = java.util.Collections.unmodifiableList(boundingPolys_);
       }
       this.unknownFields = unknownFields.build();
@@ -116,7 +122,6 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -541,7 +546,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
 
       if (boundingPolysBuilder_ == null) {
         boundingPolys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         boundingPolysBuilder_.clear();
       }
@@ -573,19 +578,17 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1p3beta1.ReferenceImage result =
           new com.google.cloud.vision.v1p3beta1.ReferenceImage(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.uri_ = uri_;
       if (boundingPolysBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           boundingPolys_ = java.util.Collections.unmodifiableList(boundingPolys_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.boundingPolys_ = boundingPolys_;
       } else {
         result.boundingPolys_ = boundingPolysBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -648,7 +651,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         if (!other.boundingPolys_.isEmpty()) {
           if (boundingPolys_.isEmpty()) {
             boundingPolys_ = other.boundingPolys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureBoundingPolysIsMutable();
             boundingPolys_.addAll(other.boundingPolys_);
@@ -661,7 +664,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
             boundingPolysBuilder_.dispose();
             boundingPolysBuilder_ = null;
             boundingPolys_ = other.boundingPolys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             boundingPolysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBoundingPolysFieldBuilder()
@@ -919,10 +922,10 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBoundingPolysIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         boundingPolys_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.BoundingPoly>(boundingPolys_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1206,7 +1209,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     public Builder clearBoundingPolys() {
       if (boundingPolysBuilder_ == null) {
         boundingPolys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         boundingPolysBuilder_.clear();
@@ -1374,7 +1377,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder,
                 com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder>(
                 boundingPolys_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         boundingPolys_ = null;

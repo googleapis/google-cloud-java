@@ -27,6 +27,12 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Paragraph();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,9 +91,9 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 words_ = new java.util.ArrayList<com.google.cloud.vision.v1.Word>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               words_.add(
                   input.readMessage(com.google.cloud.vision.v1.Word.parser(), extensionRegistry));
@@ -112,7 +118,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         words_ = java.util.Collections.unmodifiableList(words_);
       }
       this.unknownFields = unknownFields.build();
@@ -135,7 +141,6 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.Paragraph.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.TextAnnotation.TextProperty property_;
   /**
@@ -597,7 +602,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
       }
       if (wordsBuilder_ == null) {
         words_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         wordsBuilder_.clear();
       }
@@ -630,7 +635,6 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vision.v1.Paragraph buildPartial() {
       com.google.cloud.vision.v1.Paragraph result = new com.google.cloud.vision.v1.Paragraph(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (propertyBuilder_ == null) {
         result.property_ = property_;
       } else {
@@ -642,16 +646,15 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
         result.boundingBox_ = boundingBoxBuilder_.build();
       }
       if (wordsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           words_ = java.util.Collections.unmodifiableList(words_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.words_ = words_;
       } else {
         result.words_ = wordsBuilder_.build();
       }
       result.confidence_ = confidence_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -711,7 +714,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
         if (!other.words_.isEmpty()) {
           if (words_.isEmpty()) {
             words_ = other.words_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureWordsIsMutable();
             words_.addAll(other.words_);
@@ -724,7 +727,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
             wordsBuilder_.dispose();
             wordsBuilder_ = null;
             words_ = other.words_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             wordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWordsFieldBuilder()
@@ -1261,9 +1264,9 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWordsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         words_ = new java.util.ArrayList<com.google.cloud.vision.v1.Word>(words_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1476,7 +1479,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWords() {
       if (wordsBuilder_ == null) {
         words_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         wordsBuilder_.clear();
@@ -1597,7 +1600,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vision.v1.Word,
                 com.google.cloud.vision.v1.Word.Builder,
                 com.google.cloud.vision.v1.WordOrBuilder>(
-                words_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                words_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         words_ = null;
       }
       return wordsBuilder_;
