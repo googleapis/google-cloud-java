@@ -28,6 +28,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Assessment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -99,9 +105,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           case 40:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 reasons_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               reasons_.add(rawValue);
               break;
@@ -112,9 +118,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   reasons_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 reasons_.add(rawValue);
               }
@@ -135,7 +141,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         reasons_ = java.util.Collections.unmodifiableList(reasons_);
       }
       this.unknownFields = unknownFields.build();
@@ -357,7 +363,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1beta1.Assessment.ClassificationReason)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -884,7 +889,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         tokenPropertiesBuilder_ = null;
       }
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -913,7 +918,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       com.google.recaptchaenterprise.v1beta1.Assessment result =
           new com.google.recaptchaenterprise.v1beta1.Assessment(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (eventBuilder_ == null) {
         result.event_ = event_;
@@ -926,12 +930,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.tokenProperties_ = tokenPropertiesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         reasons_ = java.util.Collections.unmodifiableList(reasons_);
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.reasons_ = reasons_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -998,7 +1001,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!other.reasons_.isEmpty()) {
         if (reasons_.isEmpty()) {
           reasons_ = other.reasons_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureReasonsIsMutable();
           reasons_.addAll(other.reasons_);
@@ -1556,9 +1559,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> reasons_ = java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         reasons_ = new java.util.ArrayList<java.lang.Integer>(reasons_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1685,7 +1688,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReasons() {
       reasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
