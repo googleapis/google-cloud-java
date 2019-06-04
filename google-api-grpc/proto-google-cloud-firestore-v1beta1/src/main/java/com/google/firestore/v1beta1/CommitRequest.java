@@ -29,6 +29,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommitRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,9 +67,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 writes_ = new java.util.ArrayList<com.google.firestore.v1beta1.Write>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               writes_.add(
                   input.readMessage(
@@ -89,7 +95,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         writes_ = java.util.Collections.unmodifiableList(writes_);
       }
       this.unknownFields = unknownFields.build();
@@ -112,7 +118,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1beta1.CommitRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATABASE_FIELD_NUMBER = 1;
   private volatile java.lang.Object database_;
   /**
@@ -472,7 +477,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
       if (writesBuilder_ == null) {
         writes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         writesBuilder_.clear();
       }
@@ -506,19 +511,17 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.firestore.v1beta1.CommitRequest result =
           new com.google.firestore.v1beta1.CommitRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.database_ = database_;
       if (writesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           writes_ = java.util.Collections.unmodifiableList(writes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.writes_ = writes_;
       } else {
         result.writes_ = writesBuilder_.build();
       }
       result.transaction_ = transaction_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -576,7 +579,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.writes_.isEmpty()) {
           if (writes_.isEmpty()) {
             writes_ = other.writes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureWritesIsMutable();
             writes_.addAll(other.writes_);
@@ -589,7 +592,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             writesBuilder_.dispose();
             writesBuilder_ = null;
             writes_ = other.writes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             writesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWritesFieldBuilder()
@@ -736,9 +739,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWritesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         writes_ = new java.util.ArrayList<com.google.firestore.v1beta1.Write>(writes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -964,7 +967,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWrites() {
       if (writesBuilder_ == null) {
         writes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         writesBuilder_.clear();
@@ -1092,7 +1095,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.firestore.v1beta1.Write,
                 com.google.firestore.v1beta1.Write.Builder,
                 com.google.firestore.v1beta1.WriteOrBuilder>(
-                writes_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                writes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         writes_ = null;
       }
       return writesBuilder_;

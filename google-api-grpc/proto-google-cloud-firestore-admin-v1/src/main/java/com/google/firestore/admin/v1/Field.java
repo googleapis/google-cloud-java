@@ -29,6 +29,12 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Field();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -41,7 +47,6 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -249,6 +254,12 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IndexConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -337,7 +348,6 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.admin.v1.Field.IndexConfig.Builder.class);
     }
 
-    private int bitField0_;
     public static final int INDEXES_FIELD_NUMBER = 1;
     private java.util.List<com.google.firestore.admin.v1.Index> indexes_;
     /**
@@ -767,7 +777,6 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         com.google.firestore.admin.v1.Field.IndexConfig result =
             new com.google.firestore.admin.v1.Field.IndexConfig(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (indexesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             indexes_ = java.util.Collections.unmodifiableList(indexes_);
@@ -780,7 +789,6 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         result.usesAncestorConfig_ = usesAncestorConfig_;
         result.ancestorField_ = ancestorField_;
         result.reverting_ = reverting_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }

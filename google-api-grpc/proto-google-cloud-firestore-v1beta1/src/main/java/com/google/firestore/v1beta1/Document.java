@@ -28,6 +28,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Document();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,10 +66,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fields_ =
                     com.google.protobuf.MapField.newMapField(FieldsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.firestore.v1beta1.Value>
                   fields__ =
@@ -148,7 +154,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1beta1.Document.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -773,7 +778,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       com.google.firestore.v1beta1.Document result =
           new com.google.firestore.v1beta1.Document(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.fields_ = internalGetFields();
       result.fields_.makeImmutable();
@@ -787,7 +791,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

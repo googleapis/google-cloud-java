@@ -28,6 +28,12 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchGetDocumentsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,9 +67,9 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 documents_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               documents_.add(s);
               break;
@@ -137,7 +143,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         documents_ = documents_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -160,7 +166,6 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
             com.google.firestore.v1.BatchGetDocumentsRequest.Builder.class);
   }
 
-  private int bitField0_;
   private int consistencySelectorCase_ = 0;
   private java.lang.Object consistencySelector_;
 
@@ -765,7 +770,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
       database_ = "";
 
       documents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (maskBuilder_ == null) {
         mask_ = null;
       } else {
@@ -802,11 +807,10 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
       com.google.firestore.v1.BatchGetDocumentsRequest result =
           new com.google.firestore.v1.BatchGetDocumentsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.database_ = database_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         documents_ = documents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.documents_ = documents_;
       if (maskBuilder_ == null) {
@@ -831,7 +835,6 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
           result.consistencySelector_ = readTimeBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.consistencySelectorCase_ = consistencySelectorCase_;
       onBuilt();
       return result;
@@ -890,7 +893,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
       if (!other.documents_.isEmpty()) {
         if (documents_.isEmpty()) {
           documents_ = other.documents_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDocumentsIsMutable();
           documents_.addAll(other.documents_);
@@ -1069,9 +1072,9 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDocumentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         documents_ = new com.google.protobuf.LazyStringArrayList(documents_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1208,7 +1211,7 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
      */
     public Builder clearDocuments() {
       documents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

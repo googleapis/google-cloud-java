@@ -28,6 +28,12 @@ public final class ListFieldsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListFieldsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class ListFieldsResponse extends com.google.protobuf.GeneratedMessa
             com.google.firestore.admin.v1.ListFieldsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FIELDS_FIELD_NUMBER = 1;
   private java.util.List<com.google.firestore.admin.v1.Field> fields_;
   /**
@@ -469,7 +474,6 @@ public final class ListFieldsResponse extends com.google.protobuf.GeneratedMessa
       com.google.firestore.admin.v1.ListFieldsResponse result =
           new com.google.firestore.admin.v1.ListFieldsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -480,7 +484,6 @@ public final class ListFieldsResponse extends com.google.protobuf.GeneratedMessa
         result.fields_ = fieldsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

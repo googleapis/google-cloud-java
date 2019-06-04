@@ -27,6 +27,12 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListenRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,10 +87,10 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -137,7 +143,6 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1beta1.ListenRequest.Builder.class);
   }
 
-  private int bitField0_;
   private int targetChangeCase_ = 0;
   private java.lang.Object targetChange_;
 
@@ -690,7 +695,6 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.firestore.v1beta1.ListenRequest result =
           new com.google.firestore.v1beta1.ListenRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.database_ = database_;
       if (targetChangeCase_ == 2) {
         if (addTargetBuilder_ == null) {
@@ -704,7 +708,6 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.targetChangeCase_ = targetChangeCase_;
       onBuilt();
       return result;

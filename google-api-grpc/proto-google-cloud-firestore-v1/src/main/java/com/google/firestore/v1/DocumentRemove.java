@@ -33,6 +33,12 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DocumentRemove();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -65,9 +71,9 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
             }
           case 16:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 removedTargetIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               removedTargetIds_.addInt(input.readInt32());
               break;
@@ -76,9 +82,9 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 removedTargetIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 removedTargetIds_.addInt(input.readInt32());
@@ -115,7 +121,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         removedTargetIds_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
@@ -138,7 +144,6 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.DocumentRemove.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object document_;
   /**
@@ -517,7 +522,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       document_ = "";
 
       removedTargetIds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (readTimeBuilder_ == null) {
         readTime_ = null;
       } else {
@@ -552,11 +557,10 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       com.google.firestore.v1.DocumentRemove result =
           new com.google.firestore.v1.DocumentRemove(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.document_ = document_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         removedTargetIds_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.removedTargetIds_ = removedTargetIds_;
       if (readTimeBuilder_ == null) {
@@ -564,7 +568,6 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.readTime_ = readTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -621,7 +624,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       if (!other.removedTargetIds_.isEmpty()) {
         if (removedTargetIds_.isEmpty()) {
           removedTargetIds_ = other.removedTargetIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureRemovedTargetIdsIsMutable();
           removedTargetIds_.addAll(other.removedTargetIds_);
@@ -759,9 +762,9 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.IntList removedTargetIds_ = emptyIntList();
 
     private void ensureRemovedTargetIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         removedTargetIds_ = mutableCopy(removedTargetIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -774,7 +777,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 removed_target_ids = 2;</code>
      */
     public java.util.List<java.lang.Integer> getRemovedTargetIdsList() {
-      return ((bitField0_ & 0x00000002) != 0)
+      return ((bitField0_ & 0x00000001) != 0)
           ? java.util.Collections.unmodifiableList(removedTargetIds_)
           : removedTargetIds_;
     }
@@ -858,7 +861,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRemovedTargetIds() {
       removedTargetIds_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
