@@ -28,6 +28,12 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListSinksResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -105,7 +111,6 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
             com.google.logging.v2.ListSinksResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SINKS_FIELD_NUMBER = 1;
   private java.util.List<com.google.logging.v2.LogSink> sinks_;
   /**
@@ -468,7 +473,6 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
       com.google.logging.v2.ListSinksResponse result =
           new com.google.logging.v2.ListSinksResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (sinksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sinks_ = java.util.Collections.unmodifiableList(sinks_);
@@ -479,7 +483,6 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
         result.sinks_ = sinksBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

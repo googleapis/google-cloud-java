@@ -28,6 +28,12 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListLogsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -105,7 +111,6 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
             com.google.logging.v2.ListLogsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LOG_NAMES_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList logNames_;
   /**
@@ -463,14 +468,12 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       com.google.logging.v2.ListLogsResponse result =
           new com.google.logging.v2.ListLogsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         logNames_ = logNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.logNames_ = logNames_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

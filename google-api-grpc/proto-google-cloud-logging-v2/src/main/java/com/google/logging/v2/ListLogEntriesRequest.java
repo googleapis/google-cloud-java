@@ -31,6 +31,12 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListLogEntriesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -140,7 +146,6 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
             com.google.logging.v2.ListLogEntriesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_IDS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList projectIds_;
   /**
@@ -764,7 +769,6 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
       com.google.logging.v2.ListLogEntriesRequest result =
           new com.google.logging.v2.ListLogEntriesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         projectIds_ = projectIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -779,7 +783,6 @@ public final class ListLogEntriesRequest extends com.google.protobuf.GeneratedMe
       result.orderBy_ = orderBy_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
