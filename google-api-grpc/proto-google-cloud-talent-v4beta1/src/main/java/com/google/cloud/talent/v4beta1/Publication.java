@@ -34,6 +34,12 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Publication();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -168,7 +174,6 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.Publication.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUTHORS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList authors_;
   /**
@@ -937,7 +942,6 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Publication result =
           new com.google.cloud.talent.v4beta1.Publication(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         authors_ = authors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -955,7 +959,6 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
       }
       result.publicationType_ = publicationType_;
       result.isbn_ = isbn_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

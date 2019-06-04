@@ -29,6 +29,12 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListApplicationsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,7 +130,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
             com.google.cloud.talent.v4beta1.ListApplicationsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int APPLICATIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.Application> applications_;
   /**
@@ -551,7 +556,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       com.google.cloud.talent.v4beta1.ListApplicationsResponse result =
           new com.google.cloud.talent.v4beta1.ListApplicationsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (applicationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           applications_ = java.util.Collections.unmodifiableList(applications_);
@@ -567,7 +571,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

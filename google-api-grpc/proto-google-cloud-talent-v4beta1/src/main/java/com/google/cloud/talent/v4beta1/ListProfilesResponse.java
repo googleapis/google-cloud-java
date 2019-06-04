@@ -28,6 +28,12 @@ public final class ListProfilesResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListProfilesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class ListProfilesResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.talent.v4beta1.ListProfilesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROFILES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.Profile> profiles_;
   /**
@@ -469,7 +474,6 @@ public final class ListProfilesResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.talent.v4beta1.ListProfilesResponse result =
           new com.google.cloud.talent.v4beta1.ListProfilesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (profilesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           profiles_ = java.util.Collections.unmodifiableList(profiles_);
@@ -480,7 +484,6 @@ public final class ListProfilesResponse extends com.google.protobuf.GeneratedMes
         result.profiles_ = profilesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

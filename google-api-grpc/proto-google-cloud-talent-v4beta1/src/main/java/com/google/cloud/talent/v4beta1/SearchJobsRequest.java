@@ -34,6 +34,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchJobsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -115,10 +121,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 histogramQueries_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               histogramQueries_.add(
                   input.readMessage(
@@ -200,7 +206,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
       }
       this.unknownFields = unknownFields.build();
@@ -657,6 +663,12 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CustomRankingInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -669,7 +681,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1789,7 +1800,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -3357,7 +3367,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         histogramQueriesBuilder_.clear();
       }
@@ -3409,7 +3419,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       com.google.cloud.talent.v4beta1.SearchJobsRequest result =
           new com.google.cloud.talent.v4beta1.SearchJobsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.searchMode_ = searchMode_;
       if (requestMetadataBuilder_ == null) {
@@ -3425,9 +3434,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       result.enableBroadening_ = enableBroadening_;
       result.requirePreciseResultSize_ = requirePreciseResultSize_;
       if (histogramQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.histogramQueries_ = histogramQueries_;
       } else {
@@ -3445,7 +3454,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         result.customRankingInfo_ = customRankingInfoBuilder_.build();
       }
       result.disableKeywordMatch_ = disableKeywordMatch_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3519,7 +3527,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         if (!other.histogramQueries_.isEmpty()) {
           if (histogramQueries_.isEmpty()) {
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureHistogramQueriesIsMutable();
             histogramQueries_.addAll(other.histogramQueries_);
@@ -3532,7 +3540,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             histogramQueriesBuilder_.dispose();
             histogramQueriesBuilder_ = null;
             histogramQueries_ = other.histogramQueries_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             histogramQueriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHistogramQueriesFieldBuilder()
@@ -4337,11 +4345,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureHistogramQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         histogramQueries_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>(
                 histogramQueries_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -5605,7 +5613,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearHistogramQueries() {
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         histogramQueriesBuilder_.clear();
@@ -6396,7 +6404,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.talent.v4beta1.HistogramQuery.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder>(
                 histogramQueries_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueries_ = null;

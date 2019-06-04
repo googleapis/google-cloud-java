@@ -28,6 +28,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchUpdateJobsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,9 +66,9 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 jobs_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Job>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               jobs_.add(
                   input.readMessage(
@@ -98,7 +104,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
       }
       this.unknownFields = unknownFields.build();
@@ -121,7 +127,6 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -561,7 +566,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
 
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         jobsBuilder_.clear();
       }
@@ -599,12 +604,11 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest result =
           new com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (jobsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           jobs_ = java.util.Collections.unmodifiableList(jobs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.jobs_ = jobs_;
       } else {
@@ -615,7 +619,6 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -674,7 +677,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         if (!other.jobs_.isEmpty()) {
           if (jobs_.isEmpty()) {
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureJobsIsMutable();
             jobs_.addAll(other.jobs_);
@@ -687,7 +690,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
             jobsBuilder_.dispose();
             jobsBuilder_ = null;
             jobs_ = other.jobs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             jobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getJobsFieldBuilder()
@@ -855,9 +858,9 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         jobs_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Job>(jobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1081,7 +1084,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
         jobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         jobsBuilder_.clear();
@@ -1209,7 +1212,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
                 com.google.cloud.talent.v4beta1.Job,
                 com.google.cloud.talent.v4beta1.Job.Builder,
                 com.google.cloud.talent.v4beta1.JobOrBuilder>(
-                jobs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                jobs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         jobs_ = null;
       }
       return jobsBuilder_;

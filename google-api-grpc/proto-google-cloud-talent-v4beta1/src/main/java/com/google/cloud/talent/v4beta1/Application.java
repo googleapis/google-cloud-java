@@ -37,6 +37,12 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Application();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -119,9 +125,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 interviews_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000001;
               }
               interviews_.add(
                   input.readMessage(
@@ -230,7 +236,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         interviews_ = java.util.Collections.unmodifiableList(interviews_);
       }
       this.unknownFields = unknownFields.build();
@@ -739,7 +745,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.Application.ApplicationStage)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1889,7 +1894,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
 
       if (interviewsBuilder_ == null) {
         interviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         interviewsBuilder_.clear();
       }
@@ -1951,7 +1956,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Application result =
           new com.google.cloud.talent.v4beta1.Application(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.externalId_ = externalId_;
       result.profile_ = profile_;
@@ -1965,9 +1969,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       result.stage_ = stage_;
       result.state_ = state_;
       if (interviewsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           interviews_ = java.util.Collections.unmodifiableList(interviews_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.interviews_ = interviews_;
       } else {
@@ -1996,7 +2000,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         result.isMatch_ = isMatchBuilder_.build();
       }
       result.jobTitleSnippet_ = jobTitleSnippet_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2079,7 +2082,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         if (!other.interviews_.isEmpty()) {
           if (interviews_.isEmpty()) {
             interviews_ = other.interviews_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInterviewsIsMutable();
             interviews_.addAll(other.interviews_);
@@ -2092,7 +2095,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             interviewsBuilder_.dispose();
             interviewsBuilder_ = null;
             interviews_ = other.interviews_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
             interviewsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInterviewsFieldBuilder()
@@ -3088,10 +3091,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInterviewsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         interviews_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Interview>(interviews_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3340,7 +3343,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInterviews() {
       if (interviewsBuilder_ == null) {
         interviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         interviewsBuilder_.clear();
@@ -3483,7 +3486,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Interview,
                 com.google.cloud.talent.v4beta1.Interview.Builder,
                 com.google.cloud.talent.v4beta1.InterviewOrBuilder>(
-                interviews_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                interviews_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         interviews_ = null;
       }
       return interviewsBuilder_;

@@ -33,6 +33,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompleteQueryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -73,9 +79,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 languageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               languageCodes_.add(s);
               break;
@@ -120,7 +126,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -463,7 +469,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType)
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -1130,7 +1135,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       query_ = "";
 
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageSize_ = 0;
 
       company_ = "";
@@ -1167,19 +1172,17 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.talent.v4beta1.CompleteQueryRequest result =
           new com.google.cloud.talent.v4beta1.CompleteQueryRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.query_ = query_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageCodes_ = languageCodes_;
       result.pageSize_ = pageSize_;
       result.company_ = company_;
       result.scope_ = scope_;
       result.type_ = type_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1241,7 +1244,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1520,9 +1523,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1811,7 +1814,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

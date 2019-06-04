@@ -29,6 +29,12 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListCompaniesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,7 +129,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.talent.v4beta1.ListCompaniesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int COMPANIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.Company> companies_;
   /**
@@ -550,7 +555,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.talent.v4beta1.ListCompaniesResponse result =
           new com.google.cloud.talent.v4beta1.ListCompaniesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (companiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           companies_ = java.util.Collections.unmodifiableList(companies_);
@@ -566,7 +570,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

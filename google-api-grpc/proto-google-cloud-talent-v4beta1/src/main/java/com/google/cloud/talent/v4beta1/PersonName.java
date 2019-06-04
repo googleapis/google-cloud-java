@@ -27,6 +27,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PersonName();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -369,6 +374,12 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PersonStructuredName();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -416,9 +427,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   suffixes_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 suffixes_.add(s);
                 break;
@@ -426,9 +437,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   prefixes_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000020;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 prefixes_.add(s);
                 break;
@@ -454,10 +465,10 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -480,7 +491,6 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName.Builder.class);
     }
 
-    private int bitField0_;
     public static final int GIVEN_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object givenName_;
     /**
@@ -1082,9 +1092,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         familyName_ = "";
 
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1114,22 +1124,20 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName result =
             new com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.givenName_ = givenName_;
         result.preferredName_ = preferredName_;
         result.middleInitial_ = middleInitial_;
         result.familyName_ = familyName_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           suffixes_ = suffixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.suffixes_ = suffixes_;
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           prefixes_ = prefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.prefixes_ = prefixes_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1203,7 +1211,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         if (!other.suffixes_.isEmpty()) {
           if (suffixes_.isEmpty()) {
             suffixes_ = other.suffixes_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSuffixesIsMutable();
             suffixes_.addAll(other.suffixes_);
@@ -1213,7 +1221,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
         if (!other.prefixes_.isEmpty()) {
           if (prefixes_.isEmpty()) {
             prefixes_ = other.prefixes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePrefixesIsMutable();
             prefixes_.addAll(other.prefixes_);
@@ -1718,9 +1726,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSuffixesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           suffixes_ = new com.google.protobuf.LazyStringArrayList(suffixes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1849,7 +1857,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearSuffixes() {
         suffixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1879,9 +1887,9 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -2010,7 +2018,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearPrefixes() {
         prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }

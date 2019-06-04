@@ -30,6 +30,12 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobEvent();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,9 +69,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 jobs_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               jobs_.add(s);
               break;
@@ -91,7 +97,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -642,7 +648,6 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.JobEvent.JobEventType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -1059,7 +1064,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       type_ = 0;
 
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       profile_ = "";
 
       return this;
@@ -1090,15 +1095,13 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.JobEvent result =
           new com.google.cloud.talent.v4beta1.JobEvent(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         jobs_ = jobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.jobs_ = jobs_;
       result.profile_ = profile_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1154,7 +1157,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
@@ -1288,9 +1291,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1483,7 +1486,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

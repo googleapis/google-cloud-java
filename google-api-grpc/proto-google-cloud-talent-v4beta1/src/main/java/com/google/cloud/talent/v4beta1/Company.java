@@ -38,6 +38,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Company();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -132,10 +138,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 keywordSearchableJobCustomAttributes_ =
                     new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000001;
               }
               keywordSearchableJobCustomAttributes_.add(s);
               break;
@@ -176,7 +182,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             keywordSearchableJobCustomAttributes_.getUnmodifiableView();
       }
@@ -264,6 +270,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     private DerivedInfo() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DerivedInfo();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -276,7 +288,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -972,7 +983,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1904,7 +1914,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       imageUri_ = "";
 
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (derivedInfoBuilder_ == null) {
         derivedInfo_ = null;
       } else {
@@ -1941,7 +1951,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Company result =
           new com.google.cloud.talent.v4beta1.Company(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.externalId_ = externalId_;
@@ -1952,10 +1961,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       result.websiteUri_ = websiteUri_;
       result.careerSiteUri_ = careerSiteUri_;
       result.imageUri_ = imageUri_;
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             keywordSearchableJobCustomAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.keywordSearchableJobCustomAttributes_ = keywordSearchableJobCustomAttributes_;
       if (derivedInfoBuilder_ == null) {
@@ -1964,7 +1973,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         result.derivedInfo_ = derivedInfoBuilder_.build();
       }
       result.suspended_ = suspended_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2055,7 +2063,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (!other.keywordSearchableJobCustomAttributes_.isEmpty()) {
         if (keywordSearchableJobCustomAttributes_.isEmpty()) {
           keywordSearchableJobCustomAttributes_ = other.keywordSearchableJobCustomAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureKeywordSearchableJobCustomAttributesIsMutable();
           keywordSearchableJobCustomAttributes_.addAll(other.keywordSearchableJobCustomAttributes_);
@@ -3119,10 +3127,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKeywordSearchableJobCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             new com.google.protobuf.LazyStringArrayList(keywordSearchableJobCustomAttributes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -3293,7 +3301,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKeywordSearchableJobCustomAttributes() {
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
