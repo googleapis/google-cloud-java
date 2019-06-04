@@ -31,6 +31,12 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new QueryResultBatch();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,9 +69,9 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityResults_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               entityResults_.add(
                   input.readMessage(
@@ -113,7 +119,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entityResults_ = java.util.Collections.unmodifiableList(entityResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -329,7 +335,6 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.datastore.v1.QueryResultBatch.MoreResultsType)
   }
 
-  private int bitField0_;
   public static final int SKIPPED_RESULTS_FIELD_NUMBER = 6;
   private int skippedResults_;
   /**
@@ -799,7 +804,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
 
       if (entityResultsBuilder_ == null) {
         entityResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         entityResultsBuilder_.clear();
       }
@@ -837,14 +842,13 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
       com.google.datastore.v1.QueryResultBatch result =
           new com.google.datastore.v1.QueryResultBatch(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.skippedResults_ = skippedResults_;
       result.skippedCursor_ = skippedCursor_;
       result.entityResultType_ = entityResultType_;
       if (entityResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entityResults_ = java.util.Collections.unmodifiableList(entityResults_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entityResults_ = entityResults_;
       } else {
@@ -853,7 +857,6 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
       result.endCursor_ = endCursor_;
       result.moreResults_ = moreResults_;
       result.snapshotVersion_ = snapshotVersion_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -916,7 +919,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
         if (!other.entityResults_.isEmpty()) {
           if (entityResults_.isEmpty()) {
             entityResults_ = other.entityResults_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntityResultsIsMutable();
             entityResults_.addAll(other.entityResults_);
@@ -929,7 +932,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
             entityResultsBuilder_.dispose();
             entityResultsBuilder_ = null;
             entityResults_ = other.entityResults_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entityResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntityResultsFieldBuilder()
@@ -1153,10 +1156,10 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureEntityResultsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entityResults_ =
             new java.util.ArrayList<com.google.datastore.v1.EntityResult>(entityResults_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1371,7 +1374,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     public Builder clearEntityResults() {
       if (entityResultsBuilder_ == null) {
         entityResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entityResultsBuilder_.clear();
@@ -1494,7 +1497,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
                 com.google.datastore.v1.EntityResult.Builder,
                 com.google.datastore.v1.EntityResultOrBuilder>(
                 entityResults_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         entityResults_ = null;

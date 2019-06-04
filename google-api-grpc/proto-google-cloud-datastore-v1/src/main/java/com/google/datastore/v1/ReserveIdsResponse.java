@@ -26,6 +26,12 @@ public final class ReserveIdsResponse extends com.google.protobuf.GeneratedMessa
   private ReserveIdsResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReserveIdsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
