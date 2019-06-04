@@ -297,7 +297,7 @@ public class JobTest {
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
-    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
+    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameInstanceAs(completedJob);
     assertThat(job.getQueryResults().iterateAll()).isEmpty();
     verify(status, mockOptions);
   }
@@ -345,7 +345,7 @@ public class JobTest {
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
-    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
+    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameInstanceAs(completedJob);
     assertThat(job.getQueryResults().getSchema())
         .isEqualTo(Schema.of(Field.of("field1", LegacySQLTypeName.BOOLEAN)));
     verify(status, mockOptions);
@@ -424,7 +424,7 @@ public class JobTest {
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
-    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameAs(completedJob);
+    assertThat(job.waitFor(TEST_RETRY_OPTIONS)).isSameInstanceAs(completedJob);
     assertThat(job.getQueryResults().iterateAll()).hasSize(0);
     verify(status, mockOptions);
   }

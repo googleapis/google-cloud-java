@@ -29,6 +29,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.DatabaseRootName;
@@ -339,9 +340,11 @@ class FirestoreImpl implements Firestore {
                             span.end();
                             resultFuture.set(userResult);
                           }
-                        });
+                        },
+                        MoreExecutors.directExecutor());
                   }
-                });
+                },
+                MoreExecutors.directExecutor());
           }
 
           private SettableApiFuture<T> invokeUserCallback() {
@@ -396,12 +399,14 @@ class FirestoreImpl implements Firestore {
                     public void onSuccess(Void ignored) {
                       resultFuture.setException(throwable);
                     }
-                  });
+                  },
+                  MoreExecutors.directExecutor());
             } else {
               resultFuture.setException(throwable);
             }
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /** Returns whether the user has opted into receiving dates as com.google.cloud.Timestamp. */

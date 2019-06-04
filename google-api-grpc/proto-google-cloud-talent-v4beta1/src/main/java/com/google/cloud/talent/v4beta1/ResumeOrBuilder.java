@@ -13,11 +13,14 @@ public interface ResumeOrBuilder
    *
    * <pre>
    * Optional.
-   * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
-   * is [HRXML][]. For example, the API parses this field and creates a profile
-   * with all structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
-   * parsed.
+   * Users can create a profile with only this field field, if
+   * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
+   * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
+   * the API parses this field and creates a profile with all structured fields
+   * populated, for example.
+   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
+   * An error is thrown if this field cannot be parsed.
    * If this field is provided during profile creation or update,
    * any other structured data provided in the profile is ignored. The
    * API populates these fields by parsing this field.
@@ -31,11 +34,14 @@ public interface ResumeOrBuilder
    *
    * <pre>
    * Optional.
-   * Users can create a profile with only this field field, if [resume_type][google.cloud.talent.v4beta1.Resume.resume_type]
-   * is [HRXML][]. For example, the API parses this field and creates a profile
-   * with all structured fields populated, for example. [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
-   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on. An error is thrown if this field cannot be
-   * parsed.
+   * Users can create a profile with only this field field, if
+   * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
+   * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
+   * the API parses this field and creates a profile with all structured fields
+   * populated, for example.
+   * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
+   * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
+   * An error is thrown if this field cannot be parsed.
    * If this field is provided during profile creation or update,
    * any other structured data provided in the profile is ignored. The
    * API populates these fields by parsing this field.
@@ -50,7 +56,8 @@ public interface ResumeOrBuilder
    *
    * <pre>
    * Optional.
-   * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+   * The format of
+   * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
@@ -61,7 +68,8 @@ public interface ResumeOrBuilder
    *
    * <pre>
    * Optional.
-   * The format of [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
+   * The format of
+   * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Resume.ResumeType resume_type = 2;</code>
