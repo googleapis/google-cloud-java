@@ -21,6 +21,12 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SignJwtRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -54,9 +60,9 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 delegates_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               delegates_.add(s);
               break;
@@ -82,7 +88,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         delegates_ = delegates_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -105,7 +111,6 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iam.credentials.v1.SignJwtRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -499,7 +504,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
 
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       payload_ = "";
 
       return this;
@@ -530,15 +535,13 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.iam.credentials.v1.SignJwtRequest result =
           new com.google.cloud.iam.credentials.v1.SignJwtRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.delegates_ = delegates_;
       result.payload_ = payload_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -596,7 +599,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -747,9 +750,9 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -918,7 +921,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDelegates() {
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

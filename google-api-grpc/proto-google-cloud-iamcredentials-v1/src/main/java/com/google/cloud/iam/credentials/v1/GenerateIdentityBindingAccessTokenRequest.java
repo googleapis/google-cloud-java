@@ -23,6 +23,12 @@ public final class GenerateIdentityBindingAccessTokenRequest
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GenerateIdentityBindingAccessTokenRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,9 +62,9 @@ public final class GenerateIdentityBindingAccessTokenRequest
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 scope_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               scope_.add(s);
               break;
@@ -84,7 +90,7 @@ public final class GenerateIdentityBindingAccessTokenRequest
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         scope_ = scope_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -108,7 +114,6 @@ public final class GenerateIdentityBindingAccessTokenRequest
                 .class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -580,7 +585,7 @@ public final class GenerateIdentityBindingAccessTokenRequest
       name_ = "";
 
       scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       jwt_ = "";
 
       return this;
@@ -615,15 +620,13 @@ public final class GenerateIdentityBindingAccessTokenRequest
       com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest result =
           new com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         scope_ = scope_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.scope_ = scope_;
       result.jwt_ = jwt_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -686,7 +689,7 @@ public final class GenerateIdentityBindingAccessTokenRequest
       if (!other.scope_.isEmpty()) {
         if (scope_.isEmpty()) {
           scope_ = other.scope_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureScopeIsMutable();
           scope_.addAll(other.scope_);
@@ -839,9 +842,9 @@ public final class GenerateIdentityBindingAccessTokenRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureScopeIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         scope_ = new com.google.protobuf.LazyStringArrayList(scope_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -978,7 +981,7 @@ public final class GenerateIdentityBindingAccessTokenRequest
      */
     public Builder clearScope() {
       scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
