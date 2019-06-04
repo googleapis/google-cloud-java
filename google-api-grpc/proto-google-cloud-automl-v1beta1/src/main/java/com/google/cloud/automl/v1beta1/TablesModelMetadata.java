@@ -29,6 +29,12 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TablesModelMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,10 +76,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inputFeatureColumnSpecs_ =
                     new java.util.ArrayList<com.google.cloud.automl.v1beta1.ColumnSpec>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               inputFeatureColumnSpecs_.add(
                   input.readMessage(
@@ -89,11 +95,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tablesModelColumnInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.TablesModelColumnInfo>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               tablesModelColumnInfo_.add(
                   input.readMessage(
@@ -125,10 +131,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inputFeatureColumnSpecs_ = java.util.Collections.unmodifiableList(inputFeatureColumnSpecs_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -151,7 +157,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1beta1.TablesModelMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TARGET_COLUMN_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1beta1.ColumnSpec targetColumnSpec_;
   /**
@@ -827,7 +832,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       if (inputFeatureColumnSpecsBuilder_ == null) {
         inputFeatureColumnSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         inputFeatureColumnSpecsBuilder_.clear();
       }
@@ -835,7 +840,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
 
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         tablesModelColumnInfoBuilder_.clear();
       }
@@ -871,17 +876,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       com.google.cloud.automl.v1beta1.TablesModelMetadata result =
           new com.google.cloud.automl.v1beta1.TablesModelMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (targetColumnSpecBuilder_ == null) {
         result.targetColumnSpec_ = targetColumnSpec_;
       } else {
         result.targetColumnSpec_ = targetColumnSpecBuilder_.build();
       }
       if (inputFeatureColumnSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           inputFeatureColumnSpecs_ =
               java.util.Collections.unmodifiableList(inputFeatureColumnSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.inputFeatureColumnSpecs_ = inputFeatureColumnSpecs_;
       } else {
@@ -889,9 +893,9 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       result.optimizationObjective_ = optimizationObjective_;
       if (tablesModelColumnInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tablesModelColumnInfo_ = tablesModelColumnInfo_;
       } else {
@@ -899,7 +903,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       result.trainBudgetMilliNodeHours_ = trainBudgetMilliNodeHours_;
       result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -957,7 +960,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         if (!other.inputFeatureColumnSpecs_.isEmpty()) {
           if (inputFeatureColumnSpecs_.isEmpty()) {
             inputFeatureColumnSpecs_ = other.inputFeatureColumnSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInputFeatureColumnSpecsIsMutable();
             inputFeatureColumnSpecs_.addAll(other.inputFeatureColumnSpecs_);
@@ -970,7 +973,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             inputFeatureColumnSpecsBuilder_.dispose();
             inputFeatureColumnSpecsBuilder_ = null;
             inputFeatureColumnSpecs_ = other.inputFeatureColumnSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             inputFeatureColumnSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputFeatureColumnSpecsFieldBuilder()
@@ -988,7 +991,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         if (!other.tablesModelColumnInfo_.isEmpty()) {
           if (tablesModelColumnInfo_.isEmpty()) {
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTablesModelColumnInfoIsMutable();
             tablesModelColumnInfo_.addAll(other.tablesModelColumnInfo_);
@@ -1001,7 +1004,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             tablesModelColumnInfoBuilder_.dispose();
             tablesModelColumnInfoBuilder_ = null;
             tablesModelColumnInfo_ = other.tablesModelColumnInfo_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             tablesModelColumnInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTablesModelColumnInfoFieldBuilder()
@@ -1307,11 +1310,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureInputFeatureColumnSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inputFeatureColumnSpecs_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.ColumnSpec>(
                 inputFeatureColumnSpecs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1684,7 +1687,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     public Builder clearInputFeatureColumnSpecs() {
       if (inputFeatureColumnSpecsBuilder_ == null) {
         inputFeatureColumnSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         inputFeatureColumnSpecsBuilder_.clear();
@@ -1908,7 +1911,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.automl.v1beta1.ColumnSpec.Builder,
                 com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder>(
                 inputFeatureColumnSpecs_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         inputFeatureColumnSpecs_ = null;
@@ -2114,11 +2117,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
 
     private void ensureTablesModelColumnInfoIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tablesModelColumnInfo_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>(
                 tablesModelColumnInfo_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2373,7 +2376,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     public Builder clearTablesModelColumnInfo() {
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         tablesModelColumnInfoBuilder_.clear();
@@ -2522,7 +2525,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfo.Builder,
                 com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>(
                 tablesModelColumnInfo_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         tablesModelColumnInfo_ = null;

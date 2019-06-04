@@ -28,6 +28,12 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Float64Stats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,9 +69,9 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
             }
           case 25:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 quantiles_ = newDoubleList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               quantiles_.addDouble(input.readDouble());
               break;
@@ -74,9 +80,9 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 quantiles_ = newDoubleList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 quantiles_.addDouble(input.readDouble());
@@ -86,11 +92,11 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 histogramBuckets_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               histogramBuckets_.add(
                   input.readMessage(
@@ -112,10 +118,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         quantiles_.makeImmutable(); // C
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         histogramBuckets_ = java.util.Collections.unmodifiableList(histogramBuckets_);
       }
       this.unknownFields = unknownFields.build();
@@ -200,6 +206,12 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     private HistogramBucket() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HistogramBucket();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -212,7 +224,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -873,7 +884,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int MEAN_FIELD_NUMBER = 1;
   private double mean_;
   /**
@@ -1309,10 +1319,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       standardDeviation_ = 0D;
 
       quantiles_ = emptyDoubleList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (histogramBucketsBuilder_ == null) {
         histogramBuckets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         histogramBucketsBuilder_.clear();
       }
@@ -1344,24 +1354,22 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.automl.v1beta1.Float64Stats result =
           new com.google.cloud.automl.v1beta1.Float64Stats(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.mean_ = mean_;
       result.standardDeviation_ = standardDeviation_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         quantiles_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.quantiles_ = quantiles_;
       if (histogramBucketsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           histogramBuckets_ = java.util.Collections.unmodifiableList(histogramBuckets_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.histogramBuckets_ = histogramBuckets_;
       } else {
         result.histogramBuckets_ = histogramBucketsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1420,7 +1428,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       if (!other.quantiles_.isEmpty()) {
         if (quantiles_.isEmpty()) {
           quantiles_ = other.quantiles_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureQuantilesIsMutable();
           quantiles_.addAll(other.quantiles_);
@@ -1431,7 +1439,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         if (!other.histogramBuckets_.isEmpty()) {
           if (histogramBuckets_.isEmpty()) {
             histogramBuckets_ = other.histogramBuckets_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureHistogramBucketsIsMutable();
             histogramBuckets_.addAll(other.histogramBuckets_);
@@ -1444,7 +1452,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
             histogramBucketsBuilder_.dispose();
             histogramBucketsBuilder_ = null;
             histogramBuckets_ = other.histogramBuckets_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             histogramBucketsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHistogramBucketsFieldBuilder()
@@ -1576,9 +1584,9 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.Internal.DoubleList quantiles_ = emptyDoubleList();
 
     private void ensureQuantilesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         quantiles_ = mutableCopy(quantiles_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1594,7 +1602,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated double quantiles = 3;</code>
      */
     public java.util.List<java.lang.Double> getQuantilesList() {
-      return ((bitField0_ & 0x00000004) != 0)
+      return ((bitField0_ & 0x00000001) != 0)
           ? java.util.Collections.unmodifiableList(quantiles_)
           : quantiles_;
     }
@@ -1696,7 +1704,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQuantiles() {
       quantiles_ = emptyDoubleList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1705,11 +1713,11 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         histogramBuckets_ = java.util.Collections.emptyList();
 
     private void ensureHistogramBucketsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         histogramBuckets_ =
             new java.util.ArrayList<com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket>(
                 histogramBuckets_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1999,7 +2007,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHistogramBuckets() {
       if (histogramBucketsBuilder_ == null) {
         histogramBuckets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         histogramBucketsBuilder_.clear();
@@ -2172,7 +2180,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket.Builder,
                 com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucketOrBuilder>(
                 histogramBuckets_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         histogramBuckets_ = null;

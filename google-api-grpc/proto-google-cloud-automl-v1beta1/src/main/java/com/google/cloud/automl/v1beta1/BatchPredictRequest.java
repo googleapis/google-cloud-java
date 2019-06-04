@@ -27,6 +27,12 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchPredictRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -93,10 +99,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -149,7 +155,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.automl.v1beta1.BatchPredictRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -797,7 +802,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       com.google.cloud.automl.v1beta1.BatchPredictRequest result =
           new com.google.cloud.automl.v1beta1.BatchPredictRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (inputConfigBuilder_ == null) {
         result.inputConfig_ = inputConfig_;
@@ -811,7 +815,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       }
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

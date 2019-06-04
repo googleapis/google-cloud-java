@@ -28,6 +28,12 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListColumnSpecsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,7 +113,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
             com.google.cloud.automl.v1beta1.ListColumnSpecsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int COLUMN_SPECS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec> columnSpecs_;
   /**
@@ -471,7 +476,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       com.google.cloud.automl.v1beta1.ListColumnSpecsResponse result =
           new com.google.cloud.automl.v1beta1.ListColumnSpecsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (columnSpecsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           columnSpecs_ = java.util.Collections.unmodifiableList(columnSpecs_);
@@ -482,7 +486,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         result.columnSpecs_ = columnSpecsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

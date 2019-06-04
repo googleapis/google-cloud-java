@@ -28,6 +28,12 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListModelsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.automl.v1beta1.ListModelsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MODEL_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.automl.v1beta1.Model> model_;
   /**
@@ -469,7 +474,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.automl.v1beta1.ListModelsResponse result =
           new com.google.cloud.automl.v1beta1.ListModelsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (modelBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           model_ = java.util.Collections.unmodifiableList(model_);
@@ -480,7 +484,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         result.model_ = modelBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

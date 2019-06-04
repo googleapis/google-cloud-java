@@ -38,21 +38,13 @@ public final class TableSpecOuterClass {
           + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
           + "\\AutoMl\\V1beta1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.Io.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.Io.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_TableSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_TableSpec_fieldAccessorTable =
