@@ -32,6 +32,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Document();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,9 +85,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           case 32:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               knowledgeTypes_.add(rawValue);
               break;
@@ -92,9 +98,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 knowledgeTypes_.add(rawValue);
               }
@@ -135,7 +141,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -315,7 +321,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Document.KnowledgeType)
   }
 
-  private int bitField0_;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
 
@@ -1034,7 +1039,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       mimeType_ = "";
 
       knowledgeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1065,13 +1070,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Document result =
           new com.google.cloud.dialogflow.v2beta1.Document(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.mimeType_ = mimeType_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.knowledgeTypes_ = knowledgeTypes_;
       if (sourceCase_ == 5) {
@@ -1083,7 +1087,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (sourceCase_ == 9) {
         result.source_ = source_;
       }
-      result.bitField0_ = to_bitField0_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -1149,7 +1152,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!other.knowledgeTypes_.isEmpty()) {
         if (knowledgeTypes_.isEmpty()) {
           knowledgeTypes_ = other.knowledgeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureKnowledgeTypesIsMutable();
           knowledgeTypes_.addAll(other.knowledgeTypes_);
@@ -1531,9 +1534,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> knowledgeTypes_ = java.util.Collections.emptyList();
 
     private void ensureKnowledgeTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>(knowledgeTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1650,7 +1653,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKnowledgeTypes() {
       knowledgeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

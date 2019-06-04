@@ -28,6 +28,12 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListKnowledgeBasesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -108,7 +114,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int KNOWLEDGE_BASES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> knowledgeBases_;
   /**
@@ -474,7 +479,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
       com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse result =
           new com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (knowledgeBasesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           knowledgeBases_ = java.util.Collections.unmodifiableList(knowledgeBases_);
@@ -485,7 +489,6 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
         result.knowledgeBases_ = knowledgeBasesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

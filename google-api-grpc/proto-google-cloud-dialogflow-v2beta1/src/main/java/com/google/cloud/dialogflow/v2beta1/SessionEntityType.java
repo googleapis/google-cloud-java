@@ -33,6 +33,12 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SessionEntityType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -72,11 +78,11 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entities_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2beta1.EntityType.Entity>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               entities_.add(
                   input.readMessage(
@@ -98,7 +104,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
       }
       this.unknownFields = unknownFields.build();
@@ -287,7 +293,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -700,7 +705,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
 
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         entitiesBuilder_.clear();
       }
@@ -732,19 +737,17 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
       com.google.cloud.dialogflow.v2beta1.SessionEntityType result =
           new com.google.cloud.dialogflow.v2beta1.SessionEntityType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.entityOverrideMode_ = entityOverrideMode_;
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entities_ = entities_;
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -806,7 +809,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -819,7 +822,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -1095,11 +1098,11 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EntityType.Entity>(
                 entities_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1329,7 +1332,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -1462,7 +1465,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dialogflow.v2beta1.EntityType.Entity,
                 com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder,
                 com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;
