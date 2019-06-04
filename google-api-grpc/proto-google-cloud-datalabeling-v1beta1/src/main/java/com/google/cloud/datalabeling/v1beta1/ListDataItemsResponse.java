@@ -28,6 +28,12 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListDataItemsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,7 +113,6 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATA_ITEMS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.datalabeling.v1beta1.DataItem> dataItems_;
   /**
@@ -469,7 +474,6 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse result =
           new com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (dataItemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dataItems_ = java.util.Collections.unmodifiableList(dataItems_);
@@ -480,7 +484,6 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
         result.dataItems_ = dataItemsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

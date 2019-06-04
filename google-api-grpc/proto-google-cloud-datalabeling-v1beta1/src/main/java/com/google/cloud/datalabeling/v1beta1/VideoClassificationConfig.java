@@ -31,6 +31,12 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoClassificationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -176,6 +182,12 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AnnotationSpecSetConfig();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -188,7 +200,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -893,7 +904,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
   }
 
-  private int bitField0_;
   public static final int ANNOTATION_SPEC_SET_CONFIGS_FIELD_NUMBER = 1;
   private java.util.List<
           com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig>
@@ -1280,7 +1290,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig result =
           new com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (annotationSpecSetConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           annotationSpecSetConfigs_ =
@@ -1292,7 +1301,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         result.annotationSpecSetConfigs_ = annotationSpecSetConfigsBuilder_.build();
       }
       result.applyShotDetection_ = applyShotDetection_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

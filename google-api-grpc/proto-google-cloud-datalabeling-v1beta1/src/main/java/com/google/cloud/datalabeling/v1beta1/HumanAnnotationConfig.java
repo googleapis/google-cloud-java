@@ -32,6 +32,12 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HumanAnnotationConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -113,9 +119,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
           case 74:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 contributorEmails_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               contributorEmails_.add(s);
               break;
@@ -134,7 +140,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         contributorEmails_ = contributorEmails_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -157,7 +163,6 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INSTRUCTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object instruction_;
   /**
@@ -821,7 +826,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         questionDurationBuilder_ = null;
       }
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -850,7 +855,6 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig result =
           new com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.instruction_ = instruction_;
       result.annotatedDatasetDisplayName_ = annotatedDatasetDisplayName_;
       result.annotatedDatasetDescription_ = annotatedDatasetDescription_;
@@ -862,12 +866,11 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       } else {
         result.questionDuration_ = questionDurationBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         contributorEmails_ = contributorEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.contributorEmails_ = contributorEmails_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -947,7 +950,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
       if (!other.contributorEmails_.isEmpty()) {
         if (contributorEmails_.isEmpty()) {
           contributorEmails_ = other.contributorEmails_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureContributorEmailsIsMutable();
           contributorEmails_.addAll(other.contributorEmails_);
@@ -1743,9 +1746,9 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureContributorEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         contributorEmails_ = new com.google.protobuf.LazyStringArrayList(contributorEmails_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1890,7 +1893,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      */
     public Builder clearContributorEmails() {
       contributorEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

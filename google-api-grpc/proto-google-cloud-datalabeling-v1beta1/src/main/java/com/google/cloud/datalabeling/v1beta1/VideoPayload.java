@@ -29,6 +29,12 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoPayload();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -68,10 +74,10 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 videoThumbnails_ =
                     new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.VideoThumbnail>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               videoThumbnails_.add(
                   input.readMessage(
@@ -98,7 +104,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         videoThumbnails_ = java.util.Collections.unmodifiableList(videoThumbnails_);
       }
       this.unknownFields = unknownFields.build();
@@ -121,7 +127,6 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.VideoPayload.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MIME_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object mimeType_;
   /**
@@ -531,7 +536,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
 
       if (videoThumbnailsBuilder_ == null) {
         videoThumbnails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         videoThumbnailsBuilder_.clear();
       }
@@ -565,20 +570,18 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.VideoPayload result =
           new com.google.cloud.datalabeling.v1beta1.VideoPayload(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.mimeType_ = mimeType_;
       result.videoUri_ = videoUri_;
       if (videoThumbnailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           videoThumbnails_ = java.util.Collections.unmodifiableList(videoThumbnails_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.videoThumbnails_ = videoThumbnails_;
       } else {
         result.videoThumbnails_ = videoThumbnailsBuilder_.build();
       }
       result.frameRate_ = frameRate_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -641,7 +644,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         if (!other.videoThumbnails_.isEmpty()) {
           if (videoThumbnails_.isEmpty()) {
             videoThumbnails_ = other.videoThumbnails_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureVideoThumbnailsIsMutable();
             videoThumbnails_.addAll(other.videoThumbnails_);
@@ -654,7 +657,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
             videoThumbnailsBuilder_.dispose();
             videoThumbnailsBuilder_ = null;
             videoThumbnails_ = other.videoThumbnails_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             videoThumbnailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVideoThumbnailsFieldBuilder()
@@ -891,11 +894,11 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVideoThumbnailsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         videoThumbnails_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.VideoThumbnail>(
                 videoThumbnails_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1114,7 +1117,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVideoThumbnails() {
       if (videoThumbnailsBuilder_ == null) {
         videoThumbnails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         videoThumbnailsBuilder_.clear();
@@ -1242,7 +1245,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.VideoThumbnail.Builder,
                 com.google.cloud.datalabeling.v1beta1.VideoThumbnailOrBuilder>(
                 videoThumbnails_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         videoThumbnails_ = null;
