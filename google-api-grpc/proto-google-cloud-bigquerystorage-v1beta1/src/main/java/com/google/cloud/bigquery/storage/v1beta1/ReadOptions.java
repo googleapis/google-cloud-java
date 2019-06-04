@@ -130,6 +130,12 @@ public final class ReadOptions {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TableReadOptions();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -207,7 +213,6 @@ public final class ReadOptions {
               com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SELECTED_FIELDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList selectedFields_;
     /**
@@ -590,14 +595,12 @@ public final class ReadOptions {
         com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result =
             new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.selectedFields_ = selectedFields_;
         result.rowRestriction_ = rowRestriction_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1078,16 +1081,9 @@ public final class ReadOptions {
           + "/googleapis/cloud/bigquery/storage/v1bet"
           + "a1;storageb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable =

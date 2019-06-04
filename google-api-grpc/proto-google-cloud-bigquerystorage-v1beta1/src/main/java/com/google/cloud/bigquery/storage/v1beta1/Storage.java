@@ -201,6 +201,12 @@ public final class Storage {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Stream();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -213,7 +219,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -932,6 +937,12 @@ public final class Storage {
     private StreamPosition() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StreamPosition();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -944,7 +955,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1947,6 +1957,12 @@ public final class Storage {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadSession();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1994,11 +2010,11 @@ public final class Storage {
               }
             case 34:
               {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   streams_ =
                       new java.util.ArrayList<
                           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 streams_.add(
                     input.readMessage(
@@ -2079,7 +2095,7 @@ public final class Storage {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           streams_ = java.util.Collections.unmodifiableList(streams_);
         }
         this.unknownFields = unknownFields.build();
@@ -2102,7 +2118,6 @@ public final class Storage {
               com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder.class);
     }
 
-    private int bitField0_;
     private int schemaCase_ = 0;
     private java.lang.Object schema_;
 
@@ -2726,7 +2741,7 @@ public final class Storage {
         }
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           streamsBuilder_.clear();
         }
@@ -2773,7 +2788,6 @@ public final class Storage {
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.name_ = name_;
         if (expireTimeBuilder_ == null) {
           result.expireTime_ = expireTime_;
@@ -2788,9 +2802,9 @@ public final class Storage {
           }
         }
         if (streamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.streams_ = streams_;
         } else {
@@ -2806,7 +2820,6 @@ public final class Storage {
         } else {
           result.tableModifiers_ = tableModifiersBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         result.schemaCase_ = schemaCase_;
         onBuilt();
         return result;
@@ -2873,7 +2886,7 @@ public final class Storage {
           if (!other.streams_.isEmpty()) {
             if (streams_.isEmpty()) {
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureStreamsIsMutable();
               streams_.addAll(other.streams_);
@@ -2886,7 +2899,7 @@ public final class Storage {
               streamsBuilder_.dispose();
               streamsBuilder_ = null;
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
               streamsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getStreamsFieldBuilder()
@@ -3465,11 +3478,11 @@ public final class Storage {
           java.util.Collections.emptyList();
 
       private void ensureStreamsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           streams_ =
               new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>(
                   streams_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -3691,7 +3704,7 @@ public final class Storage {
       public Builder clearStreams() {
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           streamsBuilder_.clear();
@@ -3820,7 +3833,7 @@ public final class Storage {
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>(
-                  streams_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                  streams_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           streams_ = null;
         }
         return streamsBuilder_;
@@ -4460,6 +4473,12 @@ public final class Storage {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CreateReadSessionRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -4472,7 +4491,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6228,6 +6246,12 @@ public final class Storage {
     private ReadRowsRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadRowsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -6240,7 +6264,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6997,6 +7020,12 @@ public final class Storage {
     private StreamStatus() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StreamStatus();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -7009,7 +7038,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7546,6 +7574,12 @@ public final class Storage {
     private ThrottleStatus() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ThrottleStatus();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -7558,7 +7592,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8184,6 +8217,12 @@ public final class Storage {
     private ReadRowsResponse() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadRowsResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -8196,7 +8235,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9626,6 +9664,12 @@ public final class Storage {
     private BatchCreateReadSessionStreamsRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchCreateReadSessionStreamsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -9638,7 +9682,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10554,6 +10597,12 @@ public final class Storage {
 
     private BatchCreateReadSessionStreamsResponse() {
       streams_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchCreateReadSessionStreamsResponse();
     }
 
     @java.lang.Override
@@ -11597,6 +11646,12 @@ public final class Storage {
     private FinalizeStreamRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FinalizeStreamRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -11609,7 +11664,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12359,6 +12413,12 @@ public final class Storage {
     private SplitReadStreamRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SplitReadStreamRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -12371,7 +12431,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -13164,6 +13223,12 @@ public final class Storage {
     private SplitReadStreamResponse() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SplitReadStreamResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -13176,7 +13241,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -14316,26 +14380,18 @@ public final class Storage {
           + "/bigquery/storage/v1beta1;storageb\006proto"
           + "3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_bigquery_storage_v1beta1_Stream_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_Stream_fieldAccessorTable =
