@@ -28,6 +28,12 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ThreatEntryAdditions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -115,7 +121,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
             com.google.webrisk.v1beta1.ThreatEntryAdditions.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RAW_HASHES_FIELD_NUMBER = 1;
   private java.util.List<com.google.webrisk.v1beta1.RawHashes> rawHashes_;
   /**
@@ -495,7 +500,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       com.google.webrisk.v1beta1.ThreatEntryAdditions result =
           new com.google.webrisk.v1beta1.ThreatEntryAdditions(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (rawHashesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           rawHashes_ = java.util.Collections.unmodifiableList(rawHashes_);
@@ -510,7 +514,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       } else {
         result.riceHashes_ = riceHashesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

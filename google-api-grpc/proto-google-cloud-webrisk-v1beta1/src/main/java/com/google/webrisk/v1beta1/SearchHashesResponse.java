@@ -19,6 +19,12 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchHashesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -240,6 +246,12 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ThreatHash();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -345,7 +357,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
               com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash.Builder.class);
     }
 
-    private int bitField0_;
     public static final int THREAT_TYPES_FIELD_NUMBER = 1;
     private java.util.List<java.lang.Integer> threatTypes_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
@@ -774,7 +785,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash result =
             new com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -786,7 +796,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         } else {
           result.expireTime_ = expireTimeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1380,7 +1389,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     }
   }
 
-  private int bitField0_;
   public static final int THREATS_FIELD_NUMBER = 1;
   private java.util.List<com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash> threats_;
   /**
@@ -1756,7 +1764,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       com.google.webrisk.v1beta1.SearchHashesResponse result =
           new com.google.webrisk.v1beta1.SearchHashesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (threatsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           threats_ = java.util.Collections.unmodifiableList(threats_);
@@ -1771,7 +1778,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.negativeExpireTime_ = negativeExpireTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

@@ -28,6 +28,12 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchHashesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,9 +65,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               threatTypes_.add(rawValue);
               break;
@@ -72,9 +78,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 threatTypes_.add(rawValue);
               }
@@ -95,7 +101,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -118,7 +124,6 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
             com.google.webrisk.v1beta1.SearchHashesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HASH_PREFIX_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString hashPrefix_;
   /**
@@ -446,7 +451,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       hashPrefix_ = com.google.protobuf.ByteString.EMPTY;
 
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -475,14 +480,12 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       com.google.webrisk.v1beta1.SearchHashesRequest result =
           new com.google.webrisk.v1beta1.SearchHashesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.hashPrefix_ = hashPrefix_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.threatTypes_ = threatTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -538,7 +541,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
       if (!other.threatTypes_.isEmpty()) {
         if (threatTypes_.isEmpty()) {
           threatTypes_ = other.threatTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureThreatTypesIsMutable();
           threatTypes_.addAll(other.threatTypes_);
@@ -629,9 +632,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> threatTypes_ = java.util.Collections.emptyList();
 
     private void ensureThreatTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = new java.util.ArrayList<java.lang.Integer>(threatTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -737,7 +740,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder clearThreatTypes() {
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

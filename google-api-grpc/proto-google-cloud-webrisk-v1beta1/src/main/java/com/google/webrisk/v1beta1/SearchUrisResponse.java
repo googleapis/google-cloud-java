@@ -17,6 +17,12 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
   private SearchUrisResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchUrisResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -29,7 +35,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -205,6 +210,12 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ThreatUri();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -305,7 +316,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
               com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri.Builder.class);
     }
 
-    private int bitField0_;
     public static final int THREAT_TYPES_FIELD_NUMBER = 1;
     private java.util.List<java.lang.Integer> threatTypes_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
@@ -701,7 +711,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri result =
             new com.google.webrisk.v1beta1.SearchUrisResponse.ThreatUri(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -712,7 +721,6 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
         } else {
           result.expireTime_ = expireTimeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }

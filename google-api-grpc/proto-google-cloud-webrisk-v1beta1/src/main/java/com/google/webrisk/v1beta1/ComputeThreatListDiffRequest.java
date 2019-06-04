@@ -28,6 +28,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ComputeThreatListDiffRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -226,6 +231,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Constraints();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -262,9 +273,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
             case 24:
               {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   supportedCompressions_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 supportedCompressions_.add(rawValue);
                 break;
@@ -275,9 +286,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
                 int oldLimit = input.pushLimit(length);
                 while (input.getBytesUntilLimit() > 0) {
                   int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     supportedCompressions_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000004;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   supportedCompressions_.add(rawValue);
                 }
@@ -298,7 +309,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           supportedCompressions_ = java.util.Collections.unmodifiableList(supportedCompressions_);
         }
         this.unknownFields = unknownFields.build();
@@ -321,7 +332,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
               com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MAX_DIFF_ENTRIES_FIELD_NUMBER = 1;
     private int maxDiffEntries_;
     /**
@@ -693,7 +703,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         maxDatabaseEntries_ = 0;
 
         supportedCompressions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -724,15 +734,13 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints result =
             new com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.maxDiffEntries_ = maxDiffEntries_;
         result.maxDatabaseEntries_ = maxDatabaseEntries_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           supportedCompressions_ = java.util.Collections.unmodifiableList(supportedCompressions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.supportedCompressions_ = supportedCompressions_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -797,7 +805,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         if (!other.supportedCompressions_.isEmpty()) {
           if (supportedCompressions_.isEmpty()) {
             supportedCompressions_ = other.supportedCompressions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSupportedCompressionsIsMutable();
             supportedCompressions_.addAll(other.supportedCompressions_);
@@ -941,10 +949,10 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
           java.util.Collections.emptyList();
 
       private void ensureSupportedCompressionsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           supportedCompressions_ =
               new java.util.ArrayList<java.lang.Integer>(supportedCompressions_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1059,7 +1067,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        */
       public Builder clearSupportedCompressions() {
         supportedCompressions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
