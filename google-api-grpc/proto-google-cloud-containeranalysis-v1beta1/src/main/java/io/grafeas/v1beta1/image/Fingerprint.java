@@ -29,6 +29,12 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Fingerprint();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 v2Blob_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               v2Blob_.add(s);
               break;
@@ -90,7 +96,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         v2Blob_ = v2Blob_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -113,7 +119,6 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.image.Fingerprint.Builder.class);
   }
 
-  private int bitField0_;
   public static final int V1_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object v1Name_;
   /**
@@ -487,7 +492,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       v1Name_ = "";
 
       v2Blob_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       v2Name_ = "";
 
       return this;
@@ -517,15 +522,13 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.image.Fingerprint buildPartial() {
       io.grafeas.v1beta1.image.Fingerprint result = new io.grafeas.v1beta1.image.Fingerprint(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.v1Name_ = v1Name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         v2Blob_ = v2Blob_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.v2Blob_ = v2Blob_;
       result.v2Name_ = v2Name_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -582,7 +585,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       if (!other.v2Blob_.isEmpty()) {
         if (v2Blob_.isEmpty()) {
           v2Blob_ = other.v2Blob_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureV2BlobIsMutable();
           v2Blob_.addAll(other.v2Blob_);
@@ -722,9 +725,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureV2BlobIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         v2Blob_ = new com.google.protobuf.LazyStringArrayList(v2Blob_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -837,7 +840,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearV2Blob() {
       v2Blob_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
