@@ -29,6 +29,12 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferLogsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,9 +80,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
           case 48:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 messageTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               messageTypes_.add(rawValue);
               break;
@@ -87,9 +93,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   messageTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 messageTypes_.add(rawValue);
               }
@@ -110,7 +116,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         messageTypes_ = java.util.Collections.unmodifiableList(messageTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -133,7 +139,6 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
             com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -607,7 +612,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
       pageSize_ = 0;
 
       messageTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -637,16 +642,14 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
       com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         messageTypes_ = java.util.Collections.unmodifiableList(messageTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.messageTypes_ = messageTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -713,7 +716,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
       if (!other.messageTypes_.isEmpty()) {
         if (messageTypes_.isEmpty()) {
           messageTypes_ = other.messageTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureMessageTypesIsMutable();
           messageTypes_.addAll(other.messageTypes_);
@@ -1013,9 +1016,9 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
     private java.util.List<java.lang.Integer> messageTypes_ = java.util.Collections.emptyList();
 
     private void ensureMessageTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         messageTypes_ = new java.util.ArrayList<java.lang.Integer>(messageTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1151,7 +1154,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      */
     public Builder clearMessageTypes() {
       messageTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
