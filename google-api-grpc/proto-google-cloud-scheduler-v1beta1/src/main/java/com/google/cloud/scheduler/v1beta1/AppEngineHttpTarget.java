@@ -37,6 +37,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AppEngineHttpTarget();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -93,11 +99,11 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -155,7 +161,6 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
             com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private int httpMethod_;
   /**
@@ -809,7 +814,6 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
       com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget result =
           new com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.httpMethod_ = httpMethod_;
       if (appEngineRoutingBuilder_ == null) {
         result.appEngineRouting_ = appEngineRouting_;
@@ -820,7 +824,6 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
       result.headers_ = internalGetHeaders();
       result.headers_.makeImmutable();
       result.body_ = body_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
