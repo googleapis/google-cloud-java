@@ -288,25 +288,17 @@ public final class WorkflowTemplatesProto {
           + "rg/genproto/googleapis/cloud/dataproc/v1"
           + ";dataprocb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.dataproc.v1.ClustersProto.getDescriptor(),
-          com.google.cloud.dataproc.v1.JobsProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.dataproc.v1.ClustersProto.getDescriptor(),
+              com.google.cloud.dataproc.v1.JobsProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_dataproc_v1_WorkflowTemplate_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_dataproc_v1_WorkflowTemplate_fieldAccessorTable =

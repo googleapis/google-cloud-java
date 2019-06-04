@@ -31,6 +31,12 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkflowNode();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,9 +70,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               prerequisiteStepIds_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -342,7 +348,6 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1beta2.WorkflowNode.NodeState)
   }
 
-  private int bitField0_;
   public static final int STEP_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object stepId_;
   /**
@@ -809,7 +814,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       stepId_ = "";
 
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       jobId_ = "";
 
       state_ = 0;
@@ -844,17 +849,15 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.WorkflowNode result =
           new com.google.cloud.dataproc.v1beta2.WorkflowNode(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.stepId_ = stepId_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.prerequisiteStepIds_ = prerequisiteStepIds_;
       result.jobId_ = jobId_;
       result.state_ = state_;
       result.error_ = error_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -911,7 +914,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
       if (!other.prerequisiteStepIds_.isEmpty()) {
         if (prerequisiteStepIds_.isEmpty()) {
           prerequisiteStepIds_ = other.prerequisiteStepIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensurePrerequisiteStepIdsIsMutable();
           prerequisiteStepIds_.addAll(other.prerequisiteStepIds_);
@@ -1058,9 +1061,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePrerequisiteStepIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1173,7 +1176,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

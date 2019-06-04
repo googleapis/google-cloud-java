@@ -30,6 +30,12 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WorkflowMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -129,11 +135,11 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 parameters_ =
                     com.google.protobuf.MapField.newMapField(
                         ParametersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
                   input.readMessage(
@@ -391,7 +397,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1.WorkflowMetadata.State)
   }
 
-  private int bitField0_;
   public static final int TEMPLATE_FIELD_NUMBER = 1;
   private volatile java.lang.Object template_;
   /**
@@ -1280,7 +1285,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dataproc.v1.WorkflowMetadata result =
           new com.google.cloud.dataproc.v1.WorkflowMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.template_ = template_;
       result.version_ = version_;
       if (createClusterBuilder_ == null) {
@@ -1313,7 +1317,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         result.endTime_ = endTimeBuilder_.build();
       }
       result.clusterUuid_ = clusterUuid_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

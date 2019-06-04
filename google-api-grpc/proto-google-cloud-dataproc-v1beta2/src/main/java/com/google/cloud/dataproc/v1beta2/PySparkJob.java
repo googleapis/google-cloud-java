@@ -35,6 +35,12 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PySparkJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -68,9 +74,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 args_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               args_.add(s);
               break;
@@ -78,9 +84,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 pythonFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               pythonFileUris_.add(s);
               break;
@@ -88,9 +94,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               jarFileUris_.add(s);
               break;
@@ -98,9 +104,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 fileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000008;
               }
               fileUris_.add(s);
               break;
@@ -108,20 +114,20 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 archiveUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000010;
               }
               archiveUris_.add(s);
               break;
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000020;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -160,19 +166,19 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         pythonFileUris_ = pythonFileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -206,7 +212,6 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.PySparkJob.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MAIN_PYTHON_FILE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object mainPythonFileUri_;
   /**
@@ -1019,15 +1024,15 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       mainPythonFileUri_ = "";
 
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pythonFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableProperties().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
@@ -1063,31 +1068,30 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.PySparkJob result =
           new com.google.cloud.dataproc.v1beta2.PySparkJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.mainPythonFileUri_ = mainPythonFileUri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.args_ = args_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         pythonFileUris_ = pythonFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.pythonFileUris_ = pythonFileUris_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.jarFileUris_ = jarFileUris_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         fileUris_ = fileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.fileUris_ = fileUris_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         archiveUris_ = archiveUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.archiveUris_ = archiveUris_;
       result.properties_ = internalGetProperties();
@@ -1097,7 +1101,6 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1154,7 +1157,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1164,7 +1167,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.pythonFileUris_.isEmpty()) {
         if (pythonFileUris_.isEmpty()) {
           pythonFileUris_ = other.pythonFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePythonFileUrisIsMutable();
           pythonFileUris_.addAll(other.pythonFileUris_);
@@ -1174,7 +1177,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1184,7 +1187,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.fileUris_.isEmpty()) {
         if (fileUris_.isEmpty()) {
           fileUris_ = other.fileUris_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureFileUrisIsMutable();
           fileUris_.addAll(other.fileUris_);
@@ -1194,7 +1197,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.archiveUris_.isEmpty()) {
         if (archiveUris_.isEmpty()) {
           archiveUris_ = other.archiveUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureArchiveUrisIsMutable();
           archiveUris_.addAll(other.archiveUris_);
@@ -1339,9 +1342,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1470,7 +1473,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1500,9 +1503,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePythonFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         pythonFileUris_ = new com.google.protobuf.LazyStringArrayList(pythonFileUris_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1623,7 +1626,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPythonFileUris() {
       pythonFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1652,9 +1655,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1775,7 +1778,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1804,9 +1807,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1927,7 +1930,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFileUris() {
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1956,9 +1959,9 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArchiveUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2079,7 +2082,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArchiveUris() {
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

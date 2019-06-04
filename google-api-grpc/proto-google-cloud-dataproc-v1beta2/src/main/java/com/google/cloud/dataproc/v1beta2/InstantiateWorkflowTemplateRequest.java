@@ -30,6 +30,12 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InstantiateWorkflowTemplateRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,11 +80,11 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 parameters_ =
                     com.google.protobuf.MapField.newMapField(
                         ParametersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
                   input.readMessage(
@@ -139,7 +145,6 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
             com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -714,14 +719,12 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest result =
           new com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.version_ = version_;
       result.instanceId_ = instanceId_;
       result.requestId_ = requestId_;
       result.parameters_ = internalGetParameters();
       result.parameters_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

@@ -28,6 +28,12 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HiveJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,11 +87,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 scriptVariables_ =
                     com.google.protobuf.MapField.newMapField(
                         ScriptVariablesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
                   input.readMessage(
@@ -98,11 +104,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -114,9 +120,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000004;
               }
               jarFileUris_.add(s);
               break;
@@ -135,7 +141,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -171,7 +177,6 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.HiveJob.Builder.class);
   }
 
-  private int bitField0_;
   private int queriesCase_ = 0;
   private java.lang.Object queries_;
 
@@ -911,7 +916,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableScriptVariables().clear();
       internalGetMutableProperties().clear();
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       queriesCase_ = 0;
       queries_ = null;
       return this;
@@ -942,7 +947,6 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.HiveJob result =
           new com.google.cloud.dataproc.v1beta2.HiveJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (queriesCase_ == 1) {
         result.queries_ = queries_;
       }
@@ -958,12 +962,11 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       result.scriptVariables_.makeImmutable();
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.jarFileUris_ = jarFileUris_;
-      result.bitField0_ = to_bitField0_;
       result.queriesCase_ = queriesCase_;
       onBuilt();
       return result;
@@ -1022,7 +1025,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1792,9 +1795,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1923,7 +1926,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
