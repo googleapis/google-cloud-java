@@ -26,13 +26,12 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
 import com.google.spanner.v1.PartialResultSet;
+import io.opencensus.trace.Span;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.Nullable;
-
-import io.opencensus.trace.Span;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -199,7 +198,9 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r3"), "e"))
         .thenReturn(resultSet(null, "f"))
         .thenReturn(null);
-    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d", "e", "f").inOrder();
+    assertThat(consume(resumableStreamIterator))
+        .containsExactly("a", "b", "c", "d", "e", "f")
+        .inOrder();
   }
 
   @Test
