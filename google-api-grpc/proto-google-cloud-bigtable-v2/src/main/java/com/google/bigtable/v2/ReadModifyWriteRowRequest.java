@@ -30,6 +30,12 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadModifyWriteRowRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,9 +73,9 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.bigtable.v2.ReadModifyWriteRule>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               rules_.add(
                   input.readMessage(
@@ -97,7 +103,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +126,6 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
             com.google.bigtable.v2.ReadModifyWriteRowRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object tableName_;
   /**
@@ -547,7 +552,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
 
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         rulesBuilder_.clear();
       }
@@ -579,20 +584,18 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
       com.google.bigtable.v2.ReadModifyWriteRowRequest result =
           new com.google.bigtable.v2.ReadModifyWriteRowRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.tableName_ = tableName_;
       result.appProfileId_ = appProfileId_;
       result.rowKey_ = rowKey_;
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -658,7 +661,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -671,7 +674,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -971,9 +974,9 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         rules_ = new java.util.ArrayList<com.google.bigtable.v2.ReadModifyWriteRule>(rules_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1210,7 +1213,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -1346,7 +1349,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
                 com.google.bigtable.v2.ReadModifyWriteRule,
                 com.google.bigtable.v2.ReadModifyWriteRule.Builder,
                 com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;

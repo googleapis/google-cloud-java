@@ -30,6 +30,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateTableRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -84,11 +90,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 initialSplits_ =
                     new java.util.ArrayList<
                         com.google.bigtable.admin.v2.CreateTableRequest.Split>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               initialSplits_.add(
                   input.readMessage(
@@ -110,7 +116,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         initialSplits_ = java.util.Collections.unmodifiableList(initialSplits_);
       }
       this.unknownFields = unknownFields.build();
@@ -173,6 +179,12 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Split();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -185,7 +197,6 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -671,7 +682,6 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -1185,7 +1195,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
       }
       if (initialSplitsBuilder_ == null) {
         initialSplits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         initialSplitsBuilder_.clear();
       }
@@ -1217,7 +1227,6 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
       com.google.bigtable.admin.v2.CreateTableRequest result =
           new com.google.bigtable.admin.v2.CreateTableRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.tableId_ = tableId_;
       if (tableBuilder_ == null) {
@@ -1226,15 +1235,14 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
         result.table_ = tableBuilder_.build();
       }
       if (initialSplitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           initialSplits_ = java.util.Collections.unmodifiableList(initialSplits_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.initialSplits_ = initialSplits_;
       } else {
         result.initialSplits_ = initialSplitsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1300,7 +1308,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
         if (!other.initialSplits_.isEmpty()) {
           if (initialSplits_.isEmpty()) {
             initialSplits_ = other.initialSplits_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInitialSplitsIsMutable();
             initialSplits_.addAll(other.initialSplits_);
@@ -1313,7 +1321,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
             initialSplitsBuilder_.dispose();
             initialSplitsBuilder_ = null;
             initialSplits_ = other.initialSplits_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             initialSplitsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInitialSplitsFieldBuilder()
@@ -1731,11 +1739,11 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureInitialSplitsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         initialSplits_ =
             new java.util.ArrayList<com.google.bigtable.admin.v2.CreateTableRequest.Split>(
                 initialSplits_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2098,7 +2106,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
     public Builder clearInitialSplits() {
       if (initialSplitsBuilder_ == null) {
         initialSplits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         initialSplitsBuilder_.clear();
@@ -2316,7 +2324,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
                 com.google.bigtable.admin.v2.CreateTableRequest.Split.Builder,
                 com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder>(
                 initialSplits_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         initialSplits_ = null;

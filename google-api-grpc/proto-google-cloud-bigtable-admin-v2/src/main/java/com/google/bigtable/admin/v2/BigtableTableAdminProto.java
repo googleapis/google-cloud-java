@@ -227,25 +227,17 @@ public final class BigtableTableAdminProto {
           + "Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V"
           + "2b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.bigtable.admin.v2.TableProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.bigtable.admin.v2.TableProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_bigtable_admin_v2_CreateTableRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_bigtable_admin_v2_CreateTableRequest_fieldAccessorTable =

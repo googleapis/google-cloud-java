@@ -28,6 +28,12 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Cell();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,9 +70,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               labels_.add(s);
               break;
@@ -85,7 +91,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         labels_ = labels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -106,7 +112,6 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.Cell.class, com.google.bigtable.v2.Cell.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TIMESTAMP_MICROS_FIELD_NUMBER = 1;
   private long timestampMicros_;
   /**
@@ -425,7 +430,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       value_ = com.google.protobuf.ByteString.EMPTY;
 
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -452,15 +457,13 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.Cell buildPartial() {
       com.google.bigtable.v2.Cell result = new com.google.bigtable.v2.Cell(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.timestampMicros_ = timestampMicros_;
       result.value_ = value_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         labels_ = labels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.labels_ = labels_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -519,7 +522,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       if (!other.labels_.isEmpty()) {
         if (labels_.isEmpty()) {
           labels_ = other.labels_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLabelsIsMutable();
           labels_.addAll(other.labels_);
@@ -673,9 +676,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         labels_ = new com.google.protobuf.LazyStringArrayList(labels_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -788,7 +791,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLabels() {
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

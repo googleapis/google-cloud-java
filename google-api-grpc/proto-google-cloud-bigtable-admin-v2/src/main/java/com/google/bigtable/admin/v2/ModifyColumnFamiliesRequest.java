@@ -29,6 +29,12 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ModifyColumnFamiliesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,11 +67,11 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 modifications_ =
                     new java.util.ArrayList<
                         com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               modifications_.add(
                   input.readMessage(
@@ -88,7 +94,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         modifications_ = java.util.Collections.unmodifiableList(modifications_);
       }
       this.unknownFields = unknownFields.build();
@@ -244,6 +250,12 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Modification();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -256,7 +268,6 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1608,7 +1619,6 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1973,7 +1983,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
       if (modificationsBuilder_ == null) {
         modifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         modificationsBuilder_.clear();
       }
@@ -2005,18 +2015,16 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest result =
           new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (modificationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           modifications_ = java.util.Collections.unmodifiableList(modifications_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.modifications_ = modifications_;
       } else {
         result.modifications_ = modificationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2075,7 +2083,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         if (!other.modifications_.isEmpty()) {
           if (modifications_.isEmpty()) {
             modifications_ = other.modifications_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureModificationsIsMutable();
             modifications_.addAll(other.modifications_);
@@ -2088,7 +2096,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
             modificationsBuilder_.dispose();
             modificationsBuilder_ = null;
             modifications_ = other.modifications_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             modificationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getModificationsFieldBuilder()
@@ -2238,12 +2246,12 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modifications_ = java.util.Collections.emptyList();
 
     private void ensureModificationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         modifications_ =
             new java.util.ArrayList<
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>(
                 modifications_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2526,7 +2534,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public Builder clearModifications() {
       if (modificationsBuilder_ == null) {
         modifications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         modificationsBuilder_.clear();
@@ -2696,7 +2704,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder,
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>(
                 modifications_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         modifications_ = null;

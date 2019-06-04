@@ -25,6 +25,12 @@ public final class UpdateAppProfileMetadata extends com.google.protobuf.Generate
   private UpdateAppProfileMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateAppProfileMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
