@@ -28,6 +28,12 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListStoredInfoTypesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,7 +113,6 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.ListStoredInfoTypesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STORED_INFO_TYPES_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.StoredInfoType> storedInfoTypes_;
   /**
@@ -471,7 +476,6 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
       com.google.privacy.dlp.v2.ListStoredInfoTypesResponse result =
           new com.google.privacy.dlp.v2.ListStoredInfoTypesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (storedInfoTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           storedInfoTypes_ = java.util.Collections.unmodifiableList(storedInfoTypes_);
@@ -482,7 +486,6 @@ public final class ListStoredInfoTypesResponse extends com.google.protobuf.Gener
         result.storedInfoTypes_ = storedInfoTypesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

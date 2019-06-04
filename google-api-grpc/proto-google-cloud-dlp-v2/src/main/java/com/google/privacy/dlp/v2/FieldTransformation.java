@@ -27,6 +27,12 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FieldTransformation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -153,7 +159,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
   }
 
-  private int bitField0_;
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
 
@@ -713,7 +718,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       com.google.privacy.dlp.v2.FieldTransformation result =
           new com.google.privacy.dlp.v2.FieldTransformation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -742,7 +746,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
           result.transformation_ = infoTypeTransformationsBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.transformationCase_ = transformationCase_;
       onBuilt();
       return result;

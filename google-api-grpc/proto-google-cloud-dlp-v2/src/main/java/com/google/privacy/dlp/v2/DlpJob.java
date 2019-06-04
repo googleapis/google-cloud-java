@@ -31,6 +31,12 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DlpJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -166,9 +172,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000001;
               }
               errors_.add(
                   input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
@@ -188,7 +194,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -397,7 +403,6 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.DlpJob.JobState)
   }
 
-  private int bitField0_;
   private int detailsCase_ = 0;
   private java.lang.Object details_;
 
@@ -1206,7 +1211,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
 
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         errorsBuilder_.clear();
       }
@@ -1239,7 +1244,6 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.DlpJob buildPartial() {
       com.google.privacy.dlp.v2.DlpJob result = new com.google.privacy.dlp.v2.DlpJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.type_ = type_;
       result.state_ = state_;
@@ -1274,15 +1278,14 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
       result.jobTriggerName_ = jobTriggerName_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.detailsCase_ = detailsCase_;
       onBuilt();
       return result;
@@ -1360,7 +1363,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1373,7 +1376,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -2730,9 +2733,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2945,7 +2948,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -3066,7 +3069,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

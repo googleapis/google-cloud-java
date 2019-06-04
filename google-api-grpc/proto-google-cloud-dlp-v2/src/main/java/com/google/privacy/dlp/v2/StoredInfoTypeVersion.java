@@ -29,6 +29,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StoredInfoTypeVersion();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -92,9 +98,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               errors_.add(
                   input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
@@ -114,7 +120,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -137,7 +143,6 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_;
   /**
@@ -633,7 +638,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
 
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         errorsBuilder_.clear();
       }
@@ -665,7 +670,6 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       com.google.privacy.dlp.v2.StoredInfoTypeVersion result =
           new com.google.privacy.dlp.v2.StoredInfoTypeVersion(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (configBuilder_ == null) {
         result.config_ = config_;
       } else {
@@ -678,15 +682,14 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       }
       result.state_ = state_;
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -750,7 +753,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -763,7 +766,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -1259,9 +1262,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1584,7 +1587,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -1775,7 +1778,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

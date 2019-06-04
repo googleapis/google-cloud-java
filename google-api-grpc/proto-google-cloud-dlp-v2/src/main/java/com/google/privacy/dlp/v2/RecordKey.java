@@ -27,6 +27,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RecordKey();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,9 +91,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 idValues_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               idValues_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         idValues_ = idValues_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -129,7 +135,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.RecordKey.Builder.class);
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
@@ -514,7 +519,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -544,7 +549,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.RecordKey buildPartial() {
       com.google.privacy.dlp.v2.RecordKey result = new com.google.privacy.dlp.v2.RecordKey(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (typeCase_ == 2) {
         if (datastoreKeyBuilder_ == null) {
           result.type_ = type_;
@@ -559,12 +563,11 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
           result.type_ = bigQueryKeyBuilder_.build();
         }
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         idValues_ = idValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.idValues_ = idValues_;
-      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -618,7 +621,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       if (!other.idValues_.isEmpty()) {
         if (idValues_.isEmpty()) {
           idValues_ = other.idValues_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureIdValuesIsMutable();
           idValues_.addAll(other.idValues_);
@@ -943,9 +946,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIdValuesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         idValues_ = new com.google.protobuf.LazyStringArrayList(idValues_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1066,7 +1069,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIdValues() {
       idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
