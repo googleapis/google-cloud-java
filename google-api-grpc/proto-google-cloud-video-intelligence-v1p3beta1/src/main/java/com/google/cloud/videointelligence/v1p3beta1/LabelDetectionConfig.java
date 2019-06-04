@@ -28,6 +28,12 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelDetectionConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,6 +73,16 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               model_ = s;
+              break;
+            }
+          case 37:
+            {
+              frameConfidenceThreshold_ = input.readFloat();
+              break;
+            }
+          case 45:
+            {
+              videoConfidenceThreshold_ = input.readFloat();
               break;
             }
           default:
@@ -207,6 +222,46 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int FRAME_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 4;
+  private float frameConfidenceThreshold_;
+  /**
+   *
+   *
+   * <pre>
+   * The confidence threshold we perform filtering on the labels from
+   * frame-level detection. If not set, it is set to 0.4 by default. The valid
+   * range for this threshold is [0.1, 0.9]. Any value set outside of this
+   * range will be clipped.
+   * Note: for best results please follow the default threshold. We will update
+   * the default threshold everytime when we release a new model.
+   * </pre>
+   *
+   * <code>float frame_confidence_threshold = 4;</code>
+   */
+  public float getFrameConfidenceThreshold() {
+    return frameConfidenceThreshold_;
+  }
+
+  public static final int VIDEO_CONFIDENCE_THRESHOLD_FIELD_NUMBER = 5;
+  private float videoConfidenceThreshold_;
+  /**
+   *
+   *
+   * <pre>
+   * The confidence threshold we perform filtering on the labels from
+   * video-level and shot-level detections. If not set, it is set to 0.3 by
+   * default. The valid range for this threshold is [0.1, 0.9]. Any value set
+   * outside of this range will be clipped.
+   * Note: for best results please follow the default threshold. We will update
+   * the default threshold everytime when we release a new model.
+   * </pre>
+   *
+   * <code>float video_confidence_threshold = 5;</code>
+   */
+  public float getVideoConfidenceThreshold() {
+    return videoConfidenceThreshold_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -233,6 +288,12 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (!getModelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, model_);
     }
+    if (frameConfidenceThreshold_ != 0F) {
+      output.writeFloat(4, frameConfidenceThreshold_);
+    }
+    if (videoConfidenceThreshold_ != 0F) {
+      output.writeFloat(5, videoConfidenceThreshold_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -254,6 +315,12 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
     }
+    if (frameConfidenceThreshold_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, frameConfidenceThreshold_);
+    }
+    if (videoConfidenceThreshold_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, videoConfidenceThreshold_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -273,6 +340,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     if (labelDetectionMode_ != other.labelDetectionMode_) return false;
     if (getStationaryCamera() != other.getStationaryCamera()) return false;
     if (!getModel().equals(other.getModel())) return false;
+    if (java.lang.Float.floatToIntBits(getFrameConfidenceThreshold())
+        != java.lang.Float.floatToIntBits(other.getFrameConfidenceThreshold())) return false;
+    if (java.lang.Float.floatToIntBits(getVideoConfidenceThreshold())
+        != java.lang.Float.floatToIntBits(other.getVideoConfidenceThreshold())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -290,6 +361,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStationaryCamera());
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + FRAME_CONFIDENCE_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getFrameConfidenceThreshold());
+    hash = (37 * hash) + VIDEO_CONFIDENCE_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getVideoConfidenceThreshold());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +519,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
 
       model_ = "";
 
+      frameConfidenceThreshold_ = 0F;
+
+      videoConfidenceThreshold_ = 0F;
+
       return this;
     }
 
@@ -475,6 +554,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       result.labelDetectionMode_ = labelDetectionMode_;
       result.stationaryCamera_ = stationaryCamera_;
       result.model_ = model_;
+      result.frameConfidenceThreshold_ = frameConfidenceThreshold_;
+      result.videoConfidenceThreshold_ = videoConfidenceThreshold_;
       onBuilt();
       return result;
     }
@@ -536,6 +617,12 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
         onChanged();
+      }
+      if (other.getFrameConfidenceThreshold() != 0F) {
+        setFrameConfidenceThreshold(other.getFrameConfidenceThreshold());
+      }
+      if (other.getVideoConfidenceThreshold() != 0F) {
+        setVideoConfidenceThreshold(other.getVideoConfidenceThreshold());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -813,6 +900,124 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
 
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private float frameConfidenceThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * The confidence threshold we perform filtering on the labels from
+     * frame-level detection. If not set, it is set to 0.4 by default. The valid
+     * range for this threshold is [0.1, 0.9]. Any value set outside of this
+     * range will be clipped.
+     * Note: for best results please follow the default threshold. We will update
+     * the default threshold everytime when we release a new model.
+     * </pre>
+     *
+     * <code>float frame_confidence_threshold = 4;</code>
+     */
+    public float getFrameConfidenceThreshold() {
+      return frameConfidenceThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The confidence threshold we perform filtering on the labels from
+     * frame-level detection. If not set, it is set to 0.4 by default. The valid
+     * range for this threshold is [0.1, 0.9]. Any value set outside of this
+     * range will be clipped.
+     * Note: for best results please follow the default threshold. We will update
+     * the default threshold everytime when we release a new model.
+     * </pre>
+     *
+     * <code>float frame_confidence_threshold = 4;</code>
+     */
+    public Builder setFrameConfidenceThreshold(float value) {
+
+      frameConfidenceThreshold_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The confidence threshold we perform filtering on the labels from
+     * frame-level detection. If not set, it is set to 0.4 by default. The valid
+     * range for this threshold is [0.1, 0.9]. Any value set outside of this
+     * range will be clipped.
+     * Note: for best results please follow the default threshold. We will update
+     * the default threshold everytime when we release a new model.
+     * </pre>
+     *
+     * <code>float frame_confidence_threshold = 4;</code>
+     */
+    public Builder clearFrameConfidenceThreshold() {
+
+      frameConfidenceThreshold_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float videoConfidenceThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * The confidence threshold we perform filtering on the labels from
+     * video-level and shot-level detections. If not set, it is set to 0.3 by
+     * default. The valid range for this threshold is [0.1, 0.9]. Any value set
+     * outside of this range will be clipped.
+     * Note: for best results please follow the default threshold. We will update
+     * the default threshold everytime when we release a new model.
+     * </pre>
+     *
+     * <code>float video_confidence_threshold = 5;</code>
+     */
+    public float getVideoConfidenceThreshold() {
+      return videoConfidenceThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The confidence threshold we perform filtering on the labels from
+     * video-level and shot-level detections. If not set, it is set to 0.3 by
+     * default. The valid range for this threshold is [0.1, 0.9]. Any value set
+     * outside of this range will be clipped.
+     * Note: for best results please follow the default threshold. We will update
+     * the default threshold everytime when we release a new model.
+     * </pre>
+     *
+     * <code>float video_confidence_threshold = 5;</code>
+     */
+    public Builder setVideoConfidenceThreshold(float value) {
+
+      videoConfidenceThreshold_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The confidence threshold we perform filtering on the labels from
+     * video-level and shot-level detections. If not set, it is set to 0.3 by
+     * default. The valid range for this threshold is [0.1, 0.9]. Any value set
+     * outside of this range will be clipped.
+     * Note: for best results please follow the default threshold. We will update
+     * the default threshold everytime when we release a new model.
+     * </pre>
+     *
+     * <code>float video_confidence_threshold = 5;</code>
+     */
+    public Builder clearVideoConfidenceThreshold() {
+
+      videoConfidenceThreshold_ = 0F;
       onChanged();
       return this;
     }

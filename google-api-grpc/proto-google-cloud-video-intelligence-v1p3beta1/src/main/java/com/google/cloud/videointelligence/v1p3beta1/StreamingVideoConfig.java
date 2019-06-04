@@ -28,6 +28,12 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StreamingVideoConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -295,7 +300,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * <code>
@@ -309,7 +314,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * <code>
@@ -329,7 +334,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * <code>
@@ -351,7 +356,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * <code>
@@ -365,7 +370,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * <code>
@@ -385,7 +390,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * <code>
@@ -1169,7 +1174,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1183,7 +1188,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1211,7 +1216,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1236,7 +1241,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1259,7 +1264,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1298,7 +1303,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1325,7 +1330,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1340,7 +1345,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1364,7 +1369,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for SHOT_CHANGE_DETECTION.
+     * Config for STREAMING_SHOT_CHANGE_DETECTION.
      * </pre>
      *
      * <code>
@@ -1411,7 +1416,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1425,7 +1430,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1453,7 +1458,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1478,7 +1483,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1501,7 +1506,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1538,7 +1543,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1565,7 +1570,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1580,7 +1585,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
@@ -1604,7 +1609,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Config for LABEL_DETECTION.
+     * Config for STREAMING_LABEL_DETECTION.
      * </pre>
      *
      * <code>
