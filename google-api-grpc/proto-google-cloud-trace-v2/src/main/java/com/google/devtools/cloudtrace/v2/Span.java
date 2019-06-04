@@ -34,6 +34,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Span();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -46,7 +52,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -401,6 +406,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     private Attributes() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Attributes();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -493,7 +504,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Span.Attributes.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ATTRIBUTE_MAP_FIELD_NUMBER = 1;
 
     private static final class AttributeMapDefaultEntryHolder {
@@ -923,11 +933,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.Span.Attributes result =
             new com.google.devtools.cloudtrace.v2.Span.Attributes(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.attributeMap_ = internalGetAttributeMap();
         result.attributeMap_.makeImmutable();
         result.droppedAttributesCount_ = droppedAttributesCount_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1458,6 +1466,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     private TimeEvent() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TimeEvent();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1470,7 +1484,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1667,6 +1680,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       private Annotation() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Annotation();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1679,7 +1698,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -2741,6 +2759,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MessageEvent();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -2753,7 +2777,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -5051,6 +5074,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TimeEvents();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -5134,7 +5163,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Span.TimeEvents.Builder.class);
     }
 
-    private int bitField0_;
     public static final int TIME_EVENT_FIELD_NUMBER = 1;
     private java.util.List<com.google.devtools.cloudtrace.v2.Span.TimeEvent> timeEvent_;
     /**
@@ -5501,7 +5529,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.Span.TimeEvents result =
             new com.google.devtools.cloudtrace.v2.Span.TimeEvents(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (timeEventBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             timeEvent_ = java.util.Collections.unmodifiableList(timeEvent_);
@@ -5513,7 +5540,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
         result.droppedAnnotationsCount_ = droppedAnnotationsCount_;
         result.droppedMessageEventsCount_ = droppedMessageEventsCount_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6265,6 +6291,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Link();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -6277,7 +6309,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7653,6 +7684,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Links();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -7729,7 +7766,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.Span.Links.Builder.class);
     }
 
-    private int bitField0_;
     public static final int LINK_FIELD_NUMBER = 1;
     private java.util.List<com.google.devtools.cloudtrace.v2.Span.Link> link_;
     /**
@@ -8066,7 +8102,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.Span.Links result =
             new com.google.devtools.cloudtrace.v2.Span.Links(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (linkBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             link_ = java.util.Collections.unmodifiableList(link_);
@@ -8077,7 +8112,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           result.link_ = linkBuilder_.build();
         }
         result.droppedLinksCount_ = droppedLinksCount_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }

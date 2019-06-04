@@ -28,6 +28,12 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchWriteSpansRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,9 +66,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 spans_ = new java.util.ArrayList<com.google.devtools.cloudtrace.v2.Span>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               spans_.add(
                   input.readMessage(
@@ -83,7 +89,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         spans_ = java.util.Collections.unmodifiableList(spans_);
       }
       this.unknownFields = unknownFields.build();
@@ -106,7 +112,6 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
             com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -443,7 +448,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
 
       if (spansBuilder_ == null) {
         spans_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         spansBuilder_.clear();
       }
@@ -475,18 +480,16 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
       com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest result =
           new com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (spansBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           spans_ = java.util.Collections.unmodifiableList(spans_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.spans_ = spans_;
       } else {
         result.spans_ = spansBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -545,7 +548,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         if (!other.spans_.isEmpty()) {
           if (spans_.isEmpty()) {
             spans_ = other.spans_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureSpansIsMutable();
             spans_.addAll(other.spans_);
@@ -558,7 +561,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
             spansBuilder_.dispose();
             spansBuilder_ = null;
             spans_ = other.spans_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             spansBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpansFieldBuilder()
@@ -703,9 +706,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureSpansIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         spans_ = new java.util.ArrayList<com.google.devtools.cloudtrace.v2.Span>(spans_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -931,7 +934,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     public Builder clearSpans() {
       if (spansBuilder_ == null) {
         spans_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         spansBuilder_.clear();
@@ -1059,7 +1062,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
                 com.google.devtools.cloudtrace.v2.Span,
                 com.google.devtools.cloudtrace.v2.Span.Builder,
                 com.google.devtools.cloudtrace.v2.SpanOrBuilder>(
-                spans_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                spans_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         spans_ = null;
       }
       return spansBuilder_;
