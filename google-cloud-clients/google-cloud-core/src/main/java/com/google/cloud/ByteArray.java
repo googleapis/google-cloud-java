@@ -117,7 +117,7 @@ public class ByteArray implements Iterable<Byte>, Serializable {
    * @throws IndexOutOfBoundsException if the target is not large enough to hold the data
    */
   public final void copyTo(byte[] target) {
-    byteString.copyTo(target, 0, 0, length());
+    byteString.copyTo(target, 0);
   }
 
   /** Creates a {@code ByteArray} object given an array of bytes. The bytes are copied. */
