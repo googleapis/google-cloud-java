@@ -27,6 +27,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Session();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,10 +65,10 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -143,7 +149,6 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.v1.Session.class, com.google.spanner.v1.Session.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -698,7 +703,6 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.Session buildPartial() {
       com.google.spanner.v1.Session result = new com.google.spanner.v1.Session(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -712,7 +716,6 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.approximateLastUseTime_ = approximateLastUseTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

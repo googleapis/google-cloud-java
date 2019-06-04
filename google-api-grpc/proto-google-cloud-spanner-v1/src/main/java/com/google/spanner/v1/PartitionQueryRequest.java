@@ -28,6 +28,12 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PartitionQueryRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -97,11 +103,11 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 paramTypes_ =
                     com.google.protobuf.MapField.newMapField(
                         ParamTypesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
                   paramTypes__ =
@@ -172,7 +178,6 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
             com.google.spanner.v1.PartitionQueryRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
@@ -901,7 +906,6 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       com.google.spanner.v1.PartitionQueryRequest result =
           new com.google.spanner.v1.PartitionQueryRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionBuilder_ == null) {
         result.transaction_ = transaction_;
@@ -921,7 +925,6 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.partitionOptions_ = partitionOptionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

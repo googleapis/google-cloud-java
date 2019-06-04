@@ -30,6 +30,12 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PartialResultSet();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -71,9 +77,9 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 values_ = new java.util.ArrayList<com.google.protobuf.Value>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               values_.add(input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry));
               break;
@@ -118,7 +124,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         values_ = java.util.Collections.unmodifiableList(values_);
       }
       this.unknownFields = unknownFields.build();
@@ -141,7 +147,6 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             com.google.spanner.v1.PartialResultSet.Builder.class);
   }
 
-  private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.spanner.v1.ResultSetMetadata metadata_;
   /**
@@ -895,7 +900,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       }
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         valuesBuilder_.clear();
       }
@@ -937,16 +942,15 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       com.google.spanner.v1.PartialResultSet result =
           new com.google.spanner.v1.PartialResultSet(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
       if (valuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.values_ = values_;
       } else {
@@ -959,7 +963,6 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       } else {
         result.stats_ = statsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1016,7 +1019,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
         if (!other.values_.isEmpty()) {
           if (values_.isEmpty()) {
             values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureValuesIsMutable();
             values_.addAll(other.values_);
@@ -1029,7 +1032,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             valuesBuilder_.dispose();
             valuesBuilder_ = null;
             values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             valuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getValuesFieldBuilder()
@@ -1272,9 +1275,9 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     private java.util.List<com.google.protobuf.Value> values_ = java.util.Collections.emptyList();
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         values_ = new java.util.ArrayList<com.google.protobuf.Value>(values_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2135,7 +2138,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public Builder clearValues() {
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         valuesBuilder_.clear();
@@ -2667,7 +2670,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
                 com.google.protobuf.Value,
                 com.google.protobuf.Value.Builder,
                 com.google.protobuf.ValueOrBuilder>(
-                values_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                values_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         values_ = null;
       }
       return valuesBuilder_;

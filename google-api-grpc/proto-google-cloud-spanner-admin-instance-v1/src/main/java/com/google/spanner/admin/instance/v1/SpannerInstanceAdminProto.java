@@ -175,26 +175,18 @@ public final class SpannerInstanceAdminProto {
           + "le\\Cloud\\Spanner\\Admin\\Instance\\V1b\006prot"
           + "o3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.iam.v1.IamPolicyProto.getDescriptor(),
-          com.google.iam.v1.PolicyProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.iam.v1.IamPolicyProto.getDescriptor(),
+              com.google.iam.v1.PolicyProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_spanner_admin_instance_v1_InstanceConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_spanner_admin_instance_v1_InstanceConfig_fieldAccessorTable =

@@ -30,6 +30,12 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateDatabaseRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,9 +76,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 extraStatements_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               extraStatements_.add(s);
               break;
@@ -91,7 +97,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         extraStatements_ = extraStatements_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -114,7 +120,6 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
             com.google.spanner.admin.database.v1.CreateDatabaseRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -510,7 +515,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       createStatement_ = "";
 
       extraStatements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -539,15 +544,13 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       com.google.spanner.admin.database.v1.CreateDatabaseRequest result =
           new com.google.spanner.admin.database.v1.CreateDatabaseRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.createStatement_ = createStatement_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         extraStatements_ = extraStatements_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.extraStatements_ = extraStatements_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -609,7 +612,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
       if (!other.extraStatements_.isEmpty()) {
         if (extraStatements_.isEmpty()) {
           extraStatements_ = other.extraStatements_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureExtraStatementsIsMutable();
           extraStatements_.addAll(other.extraStatements_);
@@ -865,9 +868,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExtraStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         extraStatements_ = new com.google.protobuf.LazyStringArrayList(extraStatements_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1004,7 +1007,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearExtraStatements() {
       extraStatements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

@@ -32,6 +32,12 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExecuteSqlRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -101,11 +107,11 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 paramTypes_ =
                     com.google.protobuf.MapField.newMapField(
                         ParamTypesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
                   paramTypes__ =
@@ -331,7 +337,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.spanner.v1.ExecuteSqlRequest.QueryMode)
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
@@ -1146,7 +1151,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       com.google.spanner.v1.ExecuteSqlRequest result =
           new com.google.spanner.v1.ExecuteSqlRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionBuilder_ == null) {
         result.transaction_ = transaction_;
@@ -1165,7 +1169,6 @@ public final class ExecuteSqlRequest extends com.google.protobuf.GeneratedMessag
       result.queryMode_ = queryMode_;
       result.partitionToken_ = partitionToken_;
       result.seqno_ = seqno_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

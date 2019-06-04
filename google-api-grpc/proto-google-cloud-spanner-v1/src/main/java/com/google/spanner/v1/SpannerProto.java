@@ -270,29 +270,21 @@ public final class SpannerProto {
           + "panner\252\002\027Google.Cloud.Spanner.V1\312\002\027Googl"
           + "e\\Cloud\\Spanner\\V1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.rpc.StatusProto.getDescriptor(),
-          com.google.spanner.v1.KeysProto.getDescriptor(),
-          com.google.spanner.v1.MutationProto.getDescriptor(),
-          com.google.spanner.v1.ResultSetProto.getDescriptor(),
-          com.google.spanner.v1.TransactionProto.getDescriptor(),
-          com.google.spanner.v1.TypeProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
+              com.google.spanner.v1.KeysProto.getDescriptor(),
+              com.google.spanner.v1.MutationProto.getDescriptor(),
+              com.google.spanner.v1.ResultSetProto.getDescriptor(),
+              com.google.spanner.v1.TransactionProto.getDescriptor(),
+              com.google.spanner.v1.TypeProto.getDescriptor(),
+            });
     internal_static_google_spanner_v1_CreateSessionRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_spanner_v1_CreateSessionRequest_fieldAccessorTable =

@@ -28,6 +28,12 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExecuteBatchDmlRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,11 +82,11 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statements_ =
                     new java.util.ArrayList<
                         com.google.spanner.v1.ExecuteBatchDmlRequest.Statement>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               statements_.add(
                   input.readMessage(
@@ -107,7 +113,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statements_ = java.util.Collections.unmodifiableList(statements_);
       }
       this.unknownFields = unknownFields.build();
@@ -326,6 +332,12 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Statement();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -372,11 +384,11 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   paramTypes_ =
                       com.google.protobuf.MapField.newMapField(
                           ParamTypesDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
                     paramTypes__ =
@@ -431,7 +443,6 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
               com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SQL_FIELD_NUMBER = 1;
     private volatile java.lang.Object sql_;
     /**
@@ -963,7 +974,6 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
         com.google.spanner.v1.ExecuteBatchDmlRequest.Statement result =
             new com.google.spanner.v1.ExecuteBatchDmlRequest.Statement(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.sql_ = sql_;
         if (paramsBuilder_ == null) {
           result.params_ = params_;
@@ -972,7 +982,6 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
         }
         result.paramTypes_ = internalGetParamTypes();
         result.paramTypes_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1677,7 +1686,6 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
     }
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
@@ -2122,7 +2130,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
       }
       if (statementsBuilder_ == null) {
         statements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         statementsBuilder_.clear();
       }
@@ -2156,7 +2164,6 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
       com.google.spanner.v1.ExecuteBatchDmlRequest result =
           new com.google.spanner.v1.ExecuteBatchDmlRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionBuilder_ == null) {
         result.transaction_ = transaction_;
@@ -2164,16 +2171,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
         result.transaction_ = transactionBuilder_.build();
       }
       if (statementsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           statements_ = java.util.Collections.unmodifiableList(statements_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.statements_ = statements_;
       } else {
         result.statements_ = statementsBuilder_.build();
       }
       result.seqno_ = seqno_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2234,7 +2240,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
         if (!other.statements_.isEmpty()) {
           if (statements_.isEmpty()) {
             statements_ = other.statements_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStatementsIsMutable();
             statements_.addAll(other.statements_);
@@ -2247,7 +2253,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
             statementsBuilder_.dispose();
             statementsBuilder_ = null;
             statements_ = other.statements_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             statementsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatementsFieldBuilder()
@@ -2589,11 +2595,11 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statements_ =
             new java.util.ArrayList<com.google.spanner.v1.ExecuteBatchDmlRequest.Statement>(
                 statements_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2857,7 +2863,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
     public Builder clearStatements() {
       if (statementsBuilder_ == null) {
         statements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         statementsBuilder_.clear();
@@ -3011,7 +3017,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
                 com.google.spanner.v1.ExecuteBatchDmlRequest.Statement,
                 com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder,
                 com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder>(
-                statements_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                statements_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         statements_ = null;
       }
       return statementsBuilder_;
