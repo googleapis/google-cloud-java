@@ -32,6 +32,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TranslateTextRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -155,7 +161,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.translate.v3beta1.TranslateTextRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONTENTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList contents_;
   /**
@@ -832,7 +837,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.translate.v3beta1.TranslateTextRequest result =
           new com.google.cloud.translate.v3beta1.TranslateTextRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         contents_ = contents_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -848,7 +852,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.glossaryConfig_ = glossaryConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

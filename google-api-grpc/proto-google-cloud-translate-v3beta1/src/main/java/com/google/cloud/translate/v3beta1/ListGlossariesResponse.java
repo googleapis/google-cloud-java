@@ -28,6 +28,12 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListGlossariesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,7 +113,6 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.translate.v3beta1.ListGlossariesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int GLOSSARIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.translate.v3beta1.Glossary> glossaries_;
   /**
@@ -473,7 +478,6 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
       com.google.cloud.translate.v3beta1.ListGlossariesResponse result =
           new com.google.cloud.translate.v3beta1.ListGlossariesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (glossariesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           glossaries_ = java.util.Collections.unmodifiableList(glossaries_);
@@ -484,7 +488,6 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
         result.glossaries_ = glossariesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
