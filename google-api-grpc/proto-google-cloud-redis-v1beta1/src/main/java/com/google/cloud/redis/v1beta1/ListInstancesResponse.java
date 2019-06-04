@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Response for
- * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+ * Response for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesResponse}
@@ -27,6 +26,12 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     instances_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
     unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListInstancesResponse();
   }
 
   @java.lang.Override
@@ -74,9 +79,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unreachable_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               unreachable_.add(s);
               break;
@@ -98,7 +103,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instances_ = java.util.Collections.unmodifiableList(instances_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         unreachable_ = unreachable_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -121,7 +126,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.redis.v1beta1.ListInstancesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INSTANCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.redis.v1beta1.Instance> instances_;
   /**
@@ -512,8 +516,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response for
-   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+   * Response for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesResponse}
@@ -565,7 +568,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       nextPageToken_ = "";
 
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -594,7 +597,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.redis.v1beta1.ListInstancesResponse result =
           new com.google.cloud.redis.v1beta1.ListInstancesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (instancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -605,12 +607,11 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         result.instances_ = instancesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.unreachable_ = unreachable_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -695,7 +696,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -1330,9 +1331,9 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1445,7 +1446,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder clearUnreachable() {
       unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

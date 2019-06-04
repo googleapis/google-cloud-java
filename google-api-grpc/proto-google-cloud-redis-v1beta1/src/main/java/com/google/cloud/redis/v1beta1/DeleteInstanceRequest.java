@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+ * Request for [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
@@ -28,6 +27,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DeleteInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +45,6 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -100,7 +104,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -122,7 +126,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -302,8 +306,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for
-   * [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
+   * Request for [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.DeleteInstanceRequest}
@@ -465,7 +468,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -487,7 +490,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -509,7 +512,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -529,7 +532,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -546,7 +549,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>

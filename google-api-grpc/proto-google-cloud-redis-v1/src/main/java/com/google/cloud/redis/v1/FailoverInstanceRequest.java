@@ -28,6 +28,12 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FailoverInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -101,7 +106,16 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
 
   /** Protobuf enum {@code google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode} */
   public enum DataProtectionMode implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>DATA_PROTECTION_MODE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to LIMITED_DATA_LOSS if a data protection mode is not
+     * specified.
+     * </pre>
+     *
+     * <code>DATA_PROTECTION_MODE_UNSPECIFIED = 0;</code>
+     */
     DATA_PROTECTION_MODE_UNSPECIFIED(0),
     /**
      *
@@ -129,7 +143,16 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>DATA_PROTECTION_MODE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to LIMITED_DATA_LOSS if a data protection mode is not
+     * specified.
+     * </pre>
+     *
+     * <code>DATA_PROTECTION_MODE_UNSPECIFIED = 0;</code>
+     */
     public static final int DATA_PROTECTION_MODE_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -239,7 +262,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -261,7 +284,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -664,7 +687,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -686,7 +709,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -708,7 +731,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -728,7 +751,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -745,7 +768,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>

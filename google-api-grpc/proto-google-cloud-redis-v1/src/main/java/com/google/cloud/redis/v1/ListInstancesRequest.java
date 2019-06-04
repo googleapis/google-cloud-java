@@ -28,6 +28,12 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListInstancesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -112,7 +117,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -134,7 +139,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -570,7 +575,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -592,7 +597,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -614,7 +619,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -634,7 +639,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -651,7 +656,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
