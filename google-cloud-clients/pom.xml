@@ -448,7 +448,6 @@
     <module>google-cloud-language</module>
     <module>google-cloud-logging</module>
     <module>google-cloud-monitoring</module>
-    <module>google-cloud-notification</module>
     <module>google-cloud-os-login</module>
     <module>google-cloud-phishingprotection</module>
     <module>google-cloud-pubsub</module>
