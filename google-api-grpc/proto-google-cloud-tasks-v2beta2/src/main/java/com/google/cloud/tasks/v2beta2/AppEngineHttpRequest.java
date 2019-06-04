@@ -66,6 +66,12 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AppEngineHttpRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -121,11 +127,11 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -183,7 +189,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.tasks.v2beta2.AppEngineHttpRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private int httpMethod_;
   /**
@@ -944,7 +949,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.tasks.v2beta2.AppEngineHttpRequest result =
           new com.google.cloud.tasks.v2beta2.AppEngineHttpRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.httpMethod_ = httpMethod_;
       if (appEngineRoutingBuilder_ == null) {
         result.appEngineRouting_ = appEngineRouting_;
@@ -955,7 +959,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       result.headers_ = internalGetHeaders();
       result.headers_.makeImmutable();
       result.payload_ = payload_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
