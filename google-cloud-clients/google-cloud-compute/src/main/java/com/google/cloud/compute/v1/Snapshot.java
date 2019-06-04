@@ -279,10 +279,10 @@ public final class Snapshot implements ApiMessage {
    * Encrypts the snapshot using a customer-supplied encryption key.
    *
    * <p>After you encrypt a snapshot using a customer-supplied key, you must provide the same key if
-   * you use the image later For example, you must provide the encryption key when you create a disk
-   * from the encrypted snapshot in a future request.
+   * you use the snapshot later. For example, you must provide the encryption key when you create a
+   * disk from the encrypted snapshot in a future request.
    *
-   * <p>Customer-supplied encryption keys do not protect access to metadata of the disk.
+   * <p>Customer-supplied encryption keys do not protect access to metadata of the snapshot.
    *
    * <p>If you do not provide an encryption key when creating the snapshot, then the snapshot will
    * be encrypted using an automatically generated key and you do not need to provide a key to use
@@ -682,10 +682,10 @@ public final class Snapshot implements ApiMessage {
      * Encrypts the snapshot using a customer-supplied encryption key.
      *
      * <p>After you encrypt a snapshot using a customer-supplied key, you must provide the same key
-     * if you use the image later For example, you must provide the encryption key when you create a
-     * disk from the encrypted snapshot in a future request.
+     * if you use the snapshot later. For example, you must provide the encryption key when you
+     * create a disk from the encrypted snapshot in a future request.
      *
-     * <p>Customer-supplied encryption keys do not protect access to metadata of the disk.
+     * <p>Customer-supplied encryption keys do not protect access to metadata of the snapshot.
      *
      * <p>If you do not provide an encryption key when creating the snapshot, then the snapshot will
      * be encrypted using an automatically generated key and you do not need to provide a key to use
@@ -699,10 +699,10 @@ public final class Snapshot implements ApiMessage {
      * Encrypts the snapshot using a customer-supplied encryption key.
      *
      * <p>After you encrypt a snapshot using a customer-supplied key, you must provide the same key
-     * if you use the image later For example, you must provide the encryption key when you create a
-     * disk from the encrypted snapshot in a future request.
+     * if you use the snapshot later. For example, you must provide the encryption key when you
+     * create a disk from the encrypted snapshot in a future request.
      *
-     * <p>Customer-supplied encryption keys do not protect access to metadata of the disk.
+     * <p>Customer-supplied encryption keys do not protect access to metadata of the snapshot.
      *
      * <p>If you do not provide an encryption key when creating the snapshot, then the snapshot will
      * be encrypted using an automatically generated key and you do not need to provide a key to use

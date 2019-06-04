@@ -191,7 +191,10 @@ public final class InterconnectLocation implements ApiMessage {
     return city;
   }
 
-  /** [Output Only] Continent for this location. */
+  /**
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA
+   * - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   */
   public String getContinent() {
     return continent;
   }
@@ -258,9 +261,10 @@ public final class InterconnectLocation implements ApiMessage {
   }
 
   /**
-   * [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new
-   * Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new Interconnects
-   * may be provisioned.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following
+   * values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new
+   * Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new
+   * Interconnects.
    */
   public String getStatus() {
     return status;
@@ -428,12 +432,18 @@ public final class InterconnectLocation implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] Continent for this location. */
+    /**
+     * [Output Only] Continent for this location, which can take one of the following values: -
+     * AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+     */
     public String getContinent() {
       return continent;
     }
 
-    /** [Output Only] Continent for this location. */
+    /**
+     * [Output Only] Continent for this location, which can take one of the following values: -
+     * AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+     */
     public Builder setContinent(String continent) {
       this.continent = continent;
       return this;
@@ -592,18 +602,20 @@ public final class InterconnectLocation implements ApiMessage {
     }
 
     /**
-     * [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new
-     * Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new
-     * Interconnects may be provisioned.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following
+     * values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new
+     * Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new
+     * Interconnects.
      */
     public String getStatus() {
       return status;
     }
 
     /**
-     * [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new
-     * Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new
-     * Interconnects may be provisioned.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following
+     * values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new
+     * Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new
+     * Interconnects.
      */
     public Builder setStatus(String status) {
       this.status = status;
