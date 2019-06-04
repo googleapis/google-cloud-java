@@ -18,6 +18,8 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Lists;
@@ -29,6 +31,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.Nullable;
+
+import io.opencensus.trace.Span;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -36,6 +40,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.mockito.internal.util.reflection.Whitebox;
 
 /** Unit tests for {@link SpannerImpl.ResumableStreamIterator}. */
 @RunWith(JUnit4.class)
@@ -90,7 +95,7 @@ public class ResumableStreamIteratorTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   Starter starter = Mockito.mock(Starter.class);
-  AbstractResultSet.ResumableStreamIterator iterator;
+  AbstractResultSet.ResumableStreamIterator resumableStreamIterator;
 
   @Before
   public void setUp() {
@@ -98,7 +103,7 @@ public class ResumableStreamIteratorTest {
   }
 
   private void initWithLimit(int maxBufferSize) {
-    iterator =
+    resumableStreamIterator =
         new AbstractResultSet.ResumableStreamIterator(maxBufferSize, "", null) {
           @Override
           AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
@@ -116,18 +121,24 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(null, "a"))
         .thenReturn(resultSet(null, "b"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
   }
 
   @Test
-  public void simpleWithRestartTokens() {
+  public void closedSpan() {
+    Span span = mock(Span.class);
+    Whitebox.setInternalState(this.resumableStreamIterator, "span", span);
+
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null)).thenReturn(new ResultSetIterator(s1));
     Mockito.when(s1.next())
         .thenReturn(resultSet(ByteString.copyFromUtf8("r1"), "a"))
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
+
+    resumableStreamIterator.close("closed");
+    verify(span).end();
   }
 
   @Test
@@ -146,7 +157,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r3"), "c"))
         .thenReturn(resultSet(ByteString.copyFromUtf8("r4"), "d"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b", "c", "d").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d").inOrder();
   }
 
   @Test
@@ -167,7 +178,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r3"), "c"))
         .thenReturn(resultSet(ByteString.copyFromUtf8("r4"), "d"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b", "c", "d").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d").inOrder();
   }
 
   @Test
@@ -188,7 +199,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r3"), "e"))
         .thenReturn(resultSet(null, "f"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b", "c", "d", "e", "f").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d", "e", "f").inOrder();
   }
 
   @Test
@@ -201,7 +212,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(null, "X"))
         .thenReturn(resultSet(null, "X"))
         .thenThrow(new NonRetryableException(ErrorCode.FAILED_PRECONDITION, "failed by test"));
-    Iterator<String> strings = stringIterator(iterator);
+    Iterator<String> strings = stringIterator(resumableStreamIterator);
     assertThat(strings.next()).isEqualTo("a");
     assertThat(strings.next()).isEqualTo("b");
     expectedException.expect(isSpannerException(ErrorCode.FAILED_PRECONDITION));
@@ -218,7 +229,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(null, "a"))
         .thenReturn(resultSet(null, "b"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
   }
 
   @Test
@@ -231,7 +242,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r1"), "a"))
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
   }
 
   @Test
@@ -252,7 +263,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r3"), "c"))
         .thenReturn(resultSet(ByteString.copyFromUtf8("r4"), "d"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b", "c", "d").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d").inOrder();
   }
 
   @Test
@@ -271,7 +282,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(null, "a"))
         .thenReturn(resultSet(null, "b"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
   }
 
   @Test
@@ -292,7 +303,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(null, "b"))
         .thenReturn(resultSet(null, "c"))
         .thenReturn(null);
-    assertThat(consume(iterator)).containsExactly("a", "b", "c").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c").inOrder();
   }
 
   @Test
@@ -307,9 +318,9 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(null, "c"))
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "failed by test"));
 
-    assertThat(consumeAtMost(3, iterator)).containsExactly("a", "b", "c").inOrder();
+    assertThat(consumeAtMost(3, resumableStreamIterator)).containsExactly("a", "b", "c").inOrder();
     expectedException.expect(isSpannerException(ErrorCode.UNAVAILABLE));
-    iterator.next();
+    resumableStreamIterator.next();
   }
 
   @Test
@@ -329,7 +340,7 @@ public class ResumableStreamIteratorTest {
         .thenReturn(new ResultSetIterator(s2));
     Mockito.when(s2.next()).thenReturn(resultSet(null, "d")).thenReturn(null);
 
-    assertThat(consume(iterator)).containsExactly("a", "b", "c", "d").inOrder();
+    assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d").inOrder();
   }
 
   static PartialResultSet resultSet(@Nullable ByteString resumeToken, String... data) {
