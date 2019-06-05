@@ -29,6 +29,12 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OutdatedLibrary();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               learnMoreUrls_.add(s);
               break;
@@ -90,7 +96,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -113,7 +119,6 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LIBRARY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object libraryName_;
   /**
@@ -486,7 +491,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       version_ = "";
 
       learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -515,15 +520,13 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary result =
           new com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.libraryName_ = libraryName_;
       result.version_ = version_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.learnMoreUrls_ = learnMoreUrls_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -585,7 +588,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       if (!other.learnMoreUrls_.isEmpty()) {
         if (learnMoreUrls_.isEmpty()) {
           learnMoreUrls_ = other.learnMoreUrls_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLearnMoreUrlsIsMutable();
           learnMoreUrls_.addAll(other.learnMoreUrls_);
@@ -816,9 +819,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLearnMoreUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList(learnMoreUrls_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -931,7 +934,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearLearnMoreUrls() {
       learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
