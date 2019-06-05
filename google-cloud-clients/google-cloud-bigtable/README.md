@@ -1,4 +1,4 @@
-# Google Cloud Java Client for Bigtable
+# Google Cloud Bigtable Client for Java
 
 Java idiomatic client for [Cloud Bigtable][cloud-bigtable]. Please note that this client is under
 heavy development and is not ready for production use. Please continue to use the 
