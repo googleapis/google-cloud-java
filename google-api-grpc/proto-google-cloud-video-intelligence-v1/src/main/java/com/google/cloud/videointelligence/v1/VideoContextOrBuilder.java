@@ -283,4 +283,39 @@ public interface VideoContextOrBuilder
    */
   com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder
       getTextDetectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  boolean hasObjectTrackingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.ObjectTrackingConfig getObjectTrackingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.ObjectTrackingConfigOrBuilder
+      getObjectTrackingConfigOrBuilder();
 }

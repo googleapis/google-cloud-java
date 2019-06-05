@@ -340,6 +340,72 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription>
+      getSpeechTranscriptionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.SpeechTranscription getSpeechTranscriptions(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  int getSpeechTranscriptionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder>
+      getSpeechTranscriptionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Speech transcription.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechTranscription speech_transcriptions = 11;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionOrBuilder
+      getSpeechTranscriptionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * OCR text detection and tracking.
    * Annotations for list of detected text snippets. Each will have list of
    * frame information associated with it.
@@ -470,6 +536,72 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotationOrBuilder
       getObjectAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation>
+      getLogoRecognitionAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation
+      getLogoRecognitionAnnotations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  int getLogoRecognitionAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder>
+      getLogoRecognitionAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of logos detected, tracked and recognized in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotation logo_recognition_annotations = 19;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder
+      getLogoRecognitionAnnotationsOrBuilder(int index);
 
   /**
    *

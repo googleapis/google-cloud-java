@@ -60,4 +60,29 @@ public interface TextDetectionConfigOrBuilder
    * <code>repeated string language_hints = 1;</code>
    */
   com.google.protobuf.ByteString getLanguageHintsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Model to use for text detection.
+   * Supported values: "builtin/stable" (the default if unset) and
+   * "builtin/latest".
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Model to use for text detection.
+   * Supported values: "builtin/stable" (the default if unset) and
+   * "builtin/latest".
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   */
+  com.google.protobuf.ByteString getModelBytes();
 }

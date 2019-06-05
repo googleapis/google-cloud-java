@@ -31,6 +31,12 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new VideoAnnotationResults();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,11 +69,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labelAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1beta1.LabelAnnotation>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               labelAnnotations_.add(
                   input.readMessage(
@@ -77,11 +83,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 faceAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1beta1.FaceAnnotation>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               faceAnnotations_.add(
                   input.readMessage(
@@ -91,11 +97,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 shotAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1beta1.VideoSegment>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               shotAnnotations_.add(
                   input.readMessage(
@@ -119,11 +125,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 safeSearchAnnotations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000008;
               }
               safeSearchAnnotations_.add(
                   input.readMessage(
@@ -145,16 +151,16 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         safeSearchAnnotations_ = java.util.Collections.unmodifiableList(safeSearchAnnotations_);
       }
       this.unknownFields = unknownFields.build();
@@ -177,7 +183,6 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INPUT_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object inputUri_;
   /**
@@ -837,25 +842,25 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
 
       if (labelAnnotationsBuilder_ == null) {
         labelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         labelAnnotationsBuilder_.clear();
       }
       if (faceAnnotationsBuilder_ == null) {
         faceAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         faceAnnotationsBuilder_.clear();
       }
       if (shotAnnotationsBuilder_ == null) {
         shotAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         shotAnnotationsBuilder_.clear();
       }
       if (safeSearchAnnotationsBuilder_ == null) {
         safeSearchAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         safeSearchAnnotationsBuilder_.clear();
       }
@@ -894,39 +899,38 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults result =
           new com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.inputUri_ = inputUri_;
       if (labelAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.labelAnnotations_ = labelAnnotations_;
       } else {
         result.labelAnnotations_ = labelAnnotationsBuilder_.build();
       }
       if (faceAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.faceAnnotations_ = faceAnnotations_;
       } else {
         result.faceAnnotations_ = faceAnnotationsBuilder_.build();
       }
       if (shotAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.shotAnnotations_ = shotAnnotations_;
       } else {
         result.shotAnnotations_ = shotAnnotationsBuilder_.build();
       }
       if (safeSearchAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           safeSearchAnnotations_ = java.util.Collections.unmodifiableList(safeSearchAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.safeSearchAnnotations_ = safeSearchAnnotations_;
       } else {
@@ -937,7 +941,6 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       } else {
         result.error_ = errorBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -998,7 +1001,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.labelAnnotations_.isEmpty()) {
           if (labelAnnotations_.isEmpty()) {
             labelAnnotations_ = other.labelAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLabelAnnotationsIsMutable();
             labelAnnotations_.addAll(other.labelAnnotations_);
@@ -1011,7 +1014,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             labelAnnotationsBuilder_.dispose();
             labelAnnotationsBuilder_ = null;
             labelAnnotations_ = other.labelAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             labelAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLabelAnnotationsFieldBuilder()
@@ -1025,7 +1028,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.faceAnnotations_.isEmpty()) {
           if (faceAnnotations_.isEmpty()) {
             faceAnnotations_ = other.faceAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFaceAnnotationsIsMutable();
             faceAnnotations_.addAll(other.faceAnnotations_);
@@ -1038,7 +1041,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             faceAnnotationsBuilder_.dispose();
             faceAnnotationsBuilder_ = null;
             faceAnnotations_ = other.faceAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             faceAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFaceAnnotationsFieldBuilder()
@@ -1052,7 +1055,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.shotAnnotations_.isEmpty()) {
           if (shotAnnotations_.isEmpty()) {
             shotAnnotations_ = other.shotAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureShotAnnotationsIsMutable();
             shotAnnotations_.addAll(other.shotAnnotations_);
@@ -1065,7 +1068,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             shotAnnotationsBuilder_.dispose();
             shotAnnotationsBuilder_ = null;
             shotAnnotations_ = other.shotAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
             shotAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getShotAnnotationsFieldBuilder()
@@ -1079,7 +1082,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         if (!other.safeSearchAnnotations_.isEmpty()) {
           if (safeSearchAnnotations_.isEmpty()) {
             safeSearchAnnotations_ = other.safeSearchAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSafeSearchAnnotationsIsMutable();
             safeSearchAnnotations_.addAll(other.safeSearchAnnotations_);
@@ -1092,7 +1095,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
             safeSearchAnnotationsBuilder_.dispose();
             safeSearchAnnotationsBuilder_ = null;
             safeSearchAnnotations_ = other.safeSearchAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
             safeSearchAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSafeSearchAnnotationsFieldBuilder()
@@ -1241,11 +1244,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         labelAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureLabelAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         labelAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.LabelAnnotation>(
                 labelAnnotations_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1480,7 +1483,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearLabelAnnotations() {
       if (labelAnnotationsBuilder_ == null) {
         labelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         labelAnnotationsBuilder_.clear();
@@ -1618,7 +1621,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1beta1.LabelAnnotation.Builder,
                 com.google.cloud.videointelligence.v1beta1.LabelAnnotationOrBuilder>(
                 labelAnnotations_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         labelAnnotations_ = null;
@@ -1630,11 +1633,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         faceAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureFaceAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         faceAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.FaceAnnotation>(
                 faceAnnotations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1868,7 +1871,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearFaceAnnotations() {
       if (faceAnnotationsBuilder_ == null) {
         faceAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         faceAnnotationsBuilder_.clear();
@@ -2006,7 +2009,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1beta1.FaceAnnotation.Builder,
                 com.google.cloud.videointelligence.v1beta1.FaceAnnotationOrBuilder>(
                 faceAnnotations_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         faceAnnotations_ = null;
@@ -2018,11 +2021,11 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         shotAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureShotAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         shotAnnotations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.VideoSegment>(
                 shotAnnotations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2256,7 +2259,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearShotAnnotations() {
       if (shotAnnotationsBuilder_ == null) {
         shotAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         shotAnnotationsBuilder_.clear();
@@ -2392,7 +2395,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder,
                 com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>(
                 shotAnnotations_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         shotAnnotations_ = null;
@@ -2404,12 +2407,12 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         safeSearchAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureSafeSearchAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         safeSearchAnnotations_ =
             new java.util.ArrayList<
                 com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation>(
                 safeSearchAnnotations_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2656,7 +2659,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     public Builder clearSafeSearchAnnotations() {
       if (safeSearchAnnotationsBuilder_ == null) {
         safeSearchAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         safeSearchAnnotationsBuilder_.clear();
@@ -2801,7 +2804,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                 com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation.Builder,
                 com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotationOrBuilder>(
                 safeSearchAnnotations_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         safeSearchAnnotations_ = null;
