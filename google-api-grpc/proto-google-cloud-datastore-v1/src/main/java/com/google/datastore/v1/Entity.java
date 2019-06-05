@@ -28,6 +28,12 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   private Entity() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Entity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,11 +73,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.datastore.v1.Value>
                   properties__ =
@@ -125,7 +131,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.Entity.class, com.google.datastore.v1.Entity.Builder.class);
   }
 
-  private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 1;
   private com.google.datastore.v1.Key key_;
   /**
@@ -576,7 +581,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.Entity buildPartial() {
       com.google.datastore.v1.Entity result = new com.google.datastore.v1.Entity(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (keyBuilder_ == null) {
         result.key_ = key_;
       } else {
@@ -584,7 +588,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       }
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

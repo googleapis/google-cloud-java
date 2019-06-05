@@ -29,6 +29,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CommitRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,9 +73,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mutations_ = new java.util.ArrayList<com.google.datastore.v1.Mutation>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               mutations_.add(
                   input.readMessage(com.google.datastore.v1.Mutation.parser(), extensionRegistry));
@@ -96,7 +102,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         mutations_ = java.util.Collections.unmodifiableList(mutations_);
       }
       this.unknownFields = unknownFields.build();
@@ -268,7 +274,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.datastore.v1.CommitRequest.Mode)
   }
 
-  private int bitField0_;
   private int transactionSelectorCase_ = 0;
   private java.lang.Object transactionSelector_;
 
@@ -761,7 +766,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         mutationsBuilder_.clear();
       }
@@ -795,22 +800,20 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.datastore.v1.CommitRequest result =
           new com.google.datastore.v1.CommitRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.mode_ = mode_;
       if (transactionSelectorCase_ == 1) {
         result.transactionSelector_ = transactionSelector_;
       }
       if (mutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           mutations_ = java.util.Collections.unmodifiableList(mutations_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.mutations_ = mutations_;
       } else {
         result.mutations_ = mutationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.transactionSelectorCase_ = transactionSelectorCase_;
       onBuilt();
       return result;
@@ -872,7 +875,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.mutations_.isEmpty()) {
           if (mutations_.isEmpty()) {
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureMutationsIsMutable();
             mutations_.addAll(other.mutations_);
@@ -885,7 +888,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             mutationsBuilder_.dispose();
             mutationsBuilder_ = null;
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             mutationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMutationsFieldBuilder()
@@ -1182,9 +1185,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         mutations_ = new java.util.ArrayList<com.google.datastore.v1.Mutation>(mutations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1498,7 +1501,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMutations() {
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         mutationsBuilder_.clear();
@@ -1682,7 +1685,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Mutation,
                 com.google.datastore.v1.Mutation.Builder,
                 com.google.datastore.v1.MutationOrBuilder>(
-                mutations_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                mutations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         mutations_ = null;
       }
       return mutationsBuilder_;
