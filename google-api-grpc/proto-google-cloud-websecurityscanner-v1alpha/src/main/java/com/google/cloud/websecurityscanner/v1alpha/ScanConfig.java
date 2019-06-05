@@ -32,12 +32,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ScanConfig();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,9 +77,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 startingUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               startingUrls_.add(s);
               break;
@@ -119,9 +113,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000040;
               }
               blacklistPatterns_.add(s);
               break;
@@ -147,9 +141,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 72:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000100;
               }
               targetPlatforms_.add(rawValue);
               break;
@@ -160,9 +154,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                   targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000100;
                 }
                 targetPlatforms_.add(rawValue);
               }
@@ -183,13 +177,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
       }
       this.unknownFields = unknownFields.build();
@@ -638,12 +632,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private Authentication() {}
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Authentication();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -656,6 +644,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -835,12 +824,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new GoogleAccount();
-      }
-
-      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -853,6 +836,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -1766,12 +1750,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new CustomAccount();
-      }
-
-      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1784,6 +1762,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -3972,12 +3951,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private Schedule() {}
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Schedule();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3990,6 +3963,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4786,6 +4760,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -5559,7 +5534,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       maxQps_ = 0;
 
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (authenticationBuilder_ == null) {
         authentication_ = null;
       } else {
@@ -5569,7 +5544,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       userAgent_ = 0;
 
       blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (scheduleBuilder_ == null) {
         schedule_ = null;
       } else {
@@ -5577,7 +5552,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         scheduleBuilder_ = null;
       }
       targetPlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -5606,12 +5581,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig result =
           new com.google.cloud.websecurityscanner.v1alpha.ScanConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.maxQps_ = maxQps_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.startingUrls_ = startingUrls_;
       if (authenticationBuilder_ == null) {
@@ -5620,9 +5596,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         result.authentication_ = authenticationBuilder_.build();
       }
       result.userAgent_ = userAgent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.blacklistPatterns_ = blacklistPatterns_;
       if (scheduleBuilder_ == null) {
@@ -5630,11 +5606,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.schedule_ = scheduleBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.targetPlatforms_ = targetPlatforms_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -5699,7 +5676,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.startingUrls_.isEmpty()) {
         if (startingUrls_.isEmpty()) {
           startingUrls_ = other.startingUrls_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureStartingUrlsIsMutable();
           startingUrls_.addAll(other.startingUrls_);
@@ -5715,7 +5692,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.blacklistPatterns_.isEmpty()) {
         if (blacklistPatterns_.isEmpty()) {
           blacklistPatterns_ = other.blacklistPatterns_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureBlacklistPatternsIsMutable();
           blacklistPatterns_.addAll(other.blacklistPatterns_);
@@ -5728,7 +5705,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetPlatforms_.isEmpty()) {
         if (targetPlatforms_.isEmpty()) {
           targetPlatforms_ = other.targetPlatforms_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureTargetPlatformsIsMutable();
           targetPlatforms_.addAll(other.targetPlatforms_);
@@ -6027,9 +6004,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStartingUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         startingUrls_ = new com.google.protobuf.LazyStringArrayList(startingUrls_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -6150,7 +6127,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStartingUrls() {
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -6467,9 +6444,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlacklistPatternsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList(blacklistPatterns_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -6590,7 +6567,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBlacklistPatterns() {
       blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -6804,9 +6781,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> targetPlatforms_ = java.util.Collections.emptyList();
 
     private void ensureTargetPlatformsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>(targetPlatforms_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -6939,7 +6916,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTargetPlatforms() {
       targetPlatforms_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

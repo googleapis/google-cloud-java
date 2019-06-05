@@ -28,12 +28,6 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Xss();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,6 +105,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1alpha.Xss.Builder.class);
   }
 
+  private int bitField0_;
   public static final int STACK_TRACES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList stackTraces_;
   /**
@@ -457,12 +452,14 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1alpha.Xss result =
           new com.google.cloud.websecurityscanner.v1alpha.Xss(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         stackTraces_ = stackTraces_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.stackTraces_ = stackTraces_;
       result.errorMessage_ = errorMessage_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

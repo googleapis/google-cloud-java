@@ -214,19 +214,27 @@ public final class WebSecurityScannerProto {
           + "rityscanner\312\002&Google\\Cloud\\WebSecuritySc"
           + "anner\\V1betab\006proto3"
     };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.cloud.websecurityscanner.v1beta.CrawledUrlProto.getDescriptor(),
-              com.google.cloud.websecurityscanner.v1beta.FindingProto.getDescriptor(),
-              com.google.cloud.websecurityscanner.v1beta.FindingTypeStatsProto.getDescriptor(),
-              com.google.cloud.websecurityscanner.v1beta.ScanConfigProto.getDescriptor(),
-              com.google.cloud.websecurityscanner.v1beta.ScanRunProto.getDescriptor(),
-              com.google.protobuf.EmptyProto.getDescriptor(),
-              com.google.protobuf.FieldMaskProto.getDescriptor(),
-            });
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1beta.CrawledUrlProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1beta.FindingProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1beta.FindingTypeStatsProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1beta.ScanConfigProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1beta.ScanRunProto.getDescriptor(),
+          com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
+        },
+        assigner);
     internal_static_google_cloud_websecurityscanner_v1beta_CreateScanConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1beta_CreateScanConfigRequest_fieldAccessorTable =

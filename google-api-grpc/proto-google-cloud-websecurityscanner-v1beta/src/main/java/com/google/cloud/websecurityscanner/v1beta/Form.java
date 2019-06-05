@@ -28,12 +28,6 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Form();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,9 +61,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fields_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               fields_.add(s);
               break;
@@ -88,7 +82,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         fields_ = fields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -111,6 +105,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1beta.Form.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ACTION_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object actionUri_;
   /**
@@ -428,7 +423,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       actionUri_ = "";
 
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -457,12 +452,14 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1beta.Form result =
           new com.google.cloud.websecurityscanner.v1beta.Form(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.actionUri_ = actionUri_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.fields_ = fields_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -520,7 +517,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -656,9 +653,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -771,7 +768,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

@@ -92,14 +92,22 @@ public final class ScanConfigProto {
           + "ecurityscanner\312\002&Google\\Cloud\\WebSecurit"
           + "yScanner\\V1betab\006proto3"
     };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.cloud.websecurityscanner.v1beta.ScanRunProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-            });
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1beta.ScanRunProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+        },
+        assigner);
     internal_static_google_cloud_websecurityscanner_v1beta_ScanConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1beta_ScanConfig_fieldAccessorTable =

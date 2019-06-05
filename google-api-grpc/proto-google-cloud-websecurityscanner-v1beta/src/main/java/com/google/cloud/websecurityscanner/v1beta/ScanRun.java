@@ -31,12 +31,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ScanRun();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -151,11 +145,11 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 warningTraces_ =
                     new java.util.ArrayList<
                         com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000400;
               }
               warningTraces_.add(
                   input.readMessage(
@@ -177,7 +171,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         warningTraces_ = java.util.Collections.unmodifiableList(warningTraces_);
       }
       this.unknownFields = unknownFields.build();
@@ -542,6 +536,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.websecurityscanner.v1beta.ScanRun.ResultState)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1306,7 +1301,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (warningTracesBuilder_ == null) {
         warningTraces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         warningTracesBuilder_.clear();
       }
@@ -1338,6 +1333,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1beta.ScanRun result =
           new com.google.cloud.websecurityscanner.v1beta.ScanRun(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.executionState_ = executionState_;
       result.resultState_ = resultState_;
@@ -1361,14 +1357,15 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         result.errorTrace_ = errorTraceBuilder_.build();
       }
       if (warningTracesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           warningTraces_ = java.util.Collections.unmodifiableList(warningTraces_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.warningTraces_ = warningTraces_;
       } else {
         result.warningTraces_ = warningTracesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1454,7 +1451,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         if (!other.warningTraces_.isEmpty()) {
           if (warningTraces_.isEmpty()) {
             warningTraces_ = other.warningTraces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureWarningTracesIsMutable();
             warningTraces_.addAll(other.warningTraces_);
@@ -1467,7 +1464,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             warningTracesBuilder_.dispose();
             warningTracesBuilder_ = null;
             warningTraces_ = other.warningTraces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
             warningTracesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningTracesFieldBuilder()
@@ -2591,11 +2588,11 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         warningTraces_ = java.util.Collections.emptyList();
 
     private void ensureWarningTracesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         warningTraces_ =
             new java.util.ArrayList<com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace>(
                 warningTraces_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -2852,7 +2849,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWarningTraces() {
       if (warningTracesBuilder_ == null) {
         warningTraces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         warningTracesBuilder_.clear();
@@ -3004,7 +3001,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Builder,
                 com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTraceOrBuilder>(
                 warningTraces_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         warningTraces_ = null;

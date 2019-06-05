@@ -28,12 +28,6 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListCrawledUrlsResponse();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -115,6 +109,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
             com.google.cloud.websecurityscanner.v1beta.ListCrawledUrlsResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CRAWLED_URLS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.websecurityscanner.v1beta.CrawledUrl> crawledUrls_;
   /**
@@ -484,6 +479,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
       com.google.cloud.websecurityscanner.v1beta.ListCrawledUrlsResponse result =
           new com.google.cloud.websecurityscanner.v1beta.ListCrawledUrlsResponse(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (crawledUrlsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           crawledUrls_ = java.util.Collections.unmodifiableList(crawledUrls_);
@@ -494,6 +490,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
         result.crawledUrls_ = crawledUrlsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
