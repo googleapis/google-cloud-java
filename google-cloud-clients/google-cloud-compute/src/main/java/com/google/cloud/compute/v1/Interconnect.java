@@ -287,7 +287,12 @@ public final class Interconnect implements ApiMessage {
     return interconnectAttachments;
   }
 
-  /** Type of interconnect. Note that "IT_PRIVATE" has been deprecated in favor of "DEDICATED" */
+  /**
+   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed
+   * interconnection shared between customers though a partner. - DEDICATED: A dedicated physical
+   * interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of
+   * DEDICATED.
+   */
   public String getInterconnectType() {
     return interconnectType;
   }
@@ -298,8 +303,10 @@ public final class Interconnect implements ApiMessage {
   }
 
   /**
-   * Type of link requested. This field indicates speed of each of the links in the bundle, not the
-   * entire bundle.
+   * Type of link requested, which can take one of the following values: -
+   * LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G
+   * Ethernet with LR optics. Note that this field indicates the speed of each of the links in the
+   * bundle, not the speed of the entire bundle.
    */
   public String getLinkType() {
     return linkType;
@@ -333,7 +340,14 @@ public final class Interconnect implements ApiMessage {
     return nocContactEmail;
   }
 
-  /** [Output Only] The current status of whether or not this Interconnect is functional. */
+  /**
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of
+   * the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   * use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect
+   * that has not completed turnup. No attachments may be provisioned on this Interconnect. -
+   * OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments
+   * may be provisioned or updated on this Interconnect.
+   */
   public String getOperationalStatus() {
     return operationalStatus;
   }
@@ -362,7 +376,14 @@ public final class Interconnect implements ApiMessage {
     return selfLink;
   }
 
-  /** [Output Only] The current state of whether or not this Interconnect is functional. */
+  /**
+   * [Output Only] The current state of Interconnect functionality, which can take one of the
+   * following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments
+   * may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed
+   * turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The
+   * Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated
+   * on this Interconnect.
+   */
   public String getState() {
     return state;
   }
@@ -711,12 +732,22 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
-    /** Type of interconnect. Note that "IT_PRIVATE" has been deprecated in favor of "DEDICATED" */
+    /**
+     * Type of interconnect, which can take one of the following values: - PARTNER: A
+     * partner-managed interconnection shared between customers though a partner. - DEDICATED: A
+     * dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been
+     * deprecated in favor of DEDICATED.
+     */
     public String getInterconnectType() {
       return interconnectType;
     }
 
-    /** Type of interconnect. Note that "IT_PRIVATE" has been deprecated in favor of "DEDICATED" */
+    /**
+     * Type of interconnect, which can take one of the following values: - PARTNER: A
+     * partner-managed interconnection shared between customers though a partner. - DEDICATED: A
+     * dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been
+     * deprecated in favor of DEDICATED.
+     */
     public Builder setInterconnectType(String interconnectType) {
       this.interconnectType = interconnectType;
       return this;
@@ -734,16 +765,20 @@ public final class Interconnect implements ApiMessage {
     }
 
     /**
-     * Type of link requested. This field indicates speed of each of the links in the bundle, not
-     * the entire bundle.
+     * Type of link requested, which can take one of the following values: -
+     * LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G
+     * Ethernet with LR optics. Note that this field indicates the speed of each of the links in the
+     * bundle, not the speed of the entire bundle.
      */
     public String getLinkType() {
       return linkType;
     }
 
     /**
-     * Type of link requested. This field indicates speed of each of the links in the bundle, not
-     * the entire bundle.
+     * Type of link requested, which can take one of the following values: -
+     * LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G
+     * Ethernet with LR optics. Note that this field indicates the speed of each of the links in the
+     * bundle, not the speed of the entire bundle.
      */
     public Builder setLinkType(String linkType) {
       this.linkType = linkType;
@@ -809,12 +844,26 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The current status of whether or not this Interconnect is functional. */
+    /**
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of
+     * the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     * use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect
+     * that has not completed turnup. No attachments may be provisioned on this Interconnect. -
+     * OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments
+     * may be provisioned or updated on this Interconnect.
+     */
     public String getOperationalStatus() {
       return operationalStatus;
     }
 
-    /** [Output Only] The current status of whether or not this Interconnect is functional. */
+    /**
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of
+     * the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     * use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect
+     * that has not completed turnup. No attachments may be provisioned on this Interconnect. -
+     * OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments
+     * may be provisioned or updated on this Interconnect.
+     */
     public Builder setOperationalStatus(String operationalStatus) {
       this.operationalStatus = operationalStatus;
       return this;
@@ -872,12 +921,26 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The current state of whether or not this Interconnect is functional. */
+    /**
+     * [Output Only] The current state of Interconnect functionality, which can take one of the
+     * following values: - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     * Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has
+     * not completed turnup. No attachments may be provisioned on this Interconnect. -
+     * UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be
+     * provisioned or updated on this Interconnect.
+     */
     public String getState() {
       return state;
     }
 
-    /** [Output Only] The current state of whether or not this Interconnect is functional. */
+    /**
+     * [Output Only] The current state of Interconnect functionality, which can take one of the
+     * following values: - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     * Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has
+     * not completed turnup. No attachments may be provisioned on this Interconnect. -
+     * UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be
+     * provisioned or updated on this Interconnect.
+     */
     public Builder setState(String state) {
       this.state = state;
       return this;
