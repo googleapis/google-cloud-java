@@ -30,6 +30,12 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateDatabaseDdlMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,18 +69,18 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statements_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               statements_.add(s);
               break;
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 commitTimestamps_ = new java.util.ArrayList<com.google.protobuf.Timestamp>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               commitTimestamps_.add(
                   input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry));
@@ -94,10 +100,10 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statements_ = statements_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         commitTimestamps_ = java.util.Collections.unmodifiableList(commitTimestamps_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +126,6 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
             com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATABASE_FIELD_NUMBER = 1;
   private volatile java.lang.Object database_;
   /**
@@ -531,10 +536,10 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
       database_ = "";
 
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (commitTimestampsBuilder_ == null) {
         commitTimestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         commitTimestampsBuilder_.clear();
       }
@@ -567,23 +572,21 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
       com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata result =
           new com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.database_ = database_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         statements_ = statements_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.statements_ = statements_;
       if (commitTimestampsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           commitTimestamps_ = java.util.Collections.unmodifiableList(commitTimestamps_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.commitTimestamps_ = commitTimestamps_;
       } else {
         result.commitTimestamps_ = commitTimestampsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -642,7 +645,7 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
       if (!other.statements_.isEmpty()) {
         if (statements_.isEmpty()) {
           statements_ = other.statements_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureStatementsIsMutable();
           statements_.addAll(other.statements_);
@@ -653,7 +656,7 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
         if (!other.commitTimestamps_.isEmpty()) {
           if (commitTimestamps_.isEmpty()) {
             commitTimestamps_ = other.commitTimestamps_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCommitTimestampsIsMutable();
             commitTimestamps_.addAll(other.commitTimestamps_);
@@ -666,7 +669,7 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
             commitTimestampsBuilder_.dispose();
             commitTimestampsBuilder_ = null;
             commitTimestamps_ = other.commitTimestamps_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             commitTimestampsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCommitTimestampsFieldBuilder()
@@ -807,9 +810,9 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statements_ = new com.google.protobuf.LazyStringArrayList(statements_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -930,7 +933,7 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
      */
     public Builder clearStatements() {
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -959,10 +962,10 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureCommitTimestampsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         commitTimestamps_ =
             new java.util.ArrayList<com.google.protobuf.Timestamp>(commitTimestamps_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1199,7 +1202,7 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
     public Builder clearCommitTimestamps() {
       if (commitTimestampsBuilder_ == null) {
         commitTimestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         commitTimestampsBuilder_.clear();
@@ -1335,7 +1338,7 @@ public final class UpdateDatabaseDdlMetadata extends com.google.protobuf.Generat
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>(
                 commitTimestamps_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         commitTimestamps_ = null;

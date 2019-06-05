@@ -30,6 +30,12 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PartitionReadRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -93,9 +99,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 columns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               columns_.add(s);
               break;
@@ -144,7 +150,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         columns_ = columns_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -167,7 +173,6 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
             com.google.spanner.v1.PartitionReadRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
@@ -803,7 +808,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
       index_ = "";
 
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (keySetBuilder_ == null) {
         keySet_ = null;
       } else {
@@ -844,7 +849,6 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
       com.google.spanner.v1.PartitionReadRequest result =
           new com.google.spanner.v1.PartitionReadRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.session_ = session_;
       if (transactionBuilder_ == null) {
         result.transaction_ = transaction_;
@@ -853,9 +857,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
       }
       result.table_ = table_;
       result.index_ = index_;
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         columns_ = columns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.columns_ = columns_;
       if (keySetBuilder_ == null) {
@@ -868,7 +872,6 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.partitionOptions_ = partitionOptionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -936,7 +939,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
       if (!other.columns_.isEmpty()) {
         if (columns_.isEmpty()) {
           columns_ = other.columns_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureColumnsIsMutable();
           columns_.addAll(other.columns_);
@@ -1482,9 +1485,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         columns_ = new com.google.protobuf.LazyStringArrayList(columns_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1605,7 +1608,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearColumns() {
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

@@ -30,6 +30,12 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PlanNode();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,9 +80,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 childLinks_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               childLinks_.add(
                   input.readMessage(
@@ -143,7 +149,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
       }
       this.unknownFields = unknownFields.build();
@@ -425,6 +431,12 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ChildLink();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -437,7 +449,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1433,6 +1444,12 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ShortRepresentation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1465,11 +1482,11 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   subqueries_ =
                       com.google.protobuf.MapField.newMapField(
                           SubqueriesDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> subqueries__ =
                     input.readMessage(
@@ -1523,7 +1540,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               com.google.spanner.v1.PlanNode.ShortRepresentation.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object description_;
     /**
@@ -1953,11 +1969,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         com.google.spanner.v1.PlanNode.ShortRepresentation result =
             new com.google.spanner.v1.PlanNode.ShortRepresentation(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.description_ = description_;
         result.subqueries_ = internalGetSubqueries();
         result.subqueries_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2373,7 +2387,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_;
   /**
@@ -2969,7 +2982,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
 
       if (childLinksBuilder_ == null) {
         childLinks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         childLinksBuilder_.clear();
       }
@@ -3018,14 +3031,13 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.v1.PlanNode buildPartial() {
       com.google.spanner.v1.PlanNode result = new com.google.spanner.v1.PlanNode(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.index_ = index_;
       result.kind_ = kind_;
       result.displayName_ = displayName_;
       if (childLinksBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.childLinks_ = childLinks_;
       } else {
@@ -3046,7 +3058,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.executionStats_ = executionStatsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3110,7 +3121,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         if (!other.childLinks_.isEmpty()) {
           if (childLinks_.isEmpty()) {
             childLinks_ = other.childLinks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureChildLinksIsMutable();
             childLinks_.addAll(other.childLinks_);
@@ -3123,7 +3134,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
             childLinksBuilder_.dispose();
             childLinksBuilder_ = null;
             childLinks_ = other.childLinks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             childLinksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChildLinksFieldBuilder()
@@ -3414,10 +3425,10 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureChildLinksIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         childLinks_ =
             new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>(childLinks_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3632,7 +3643,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     public Builder clearChildLinks() {
       if (childLinksBuilder_ == null) {
         childLinks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         childLinksBuilder_.clear();
@@ -3754,7 +3765,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.PlanNode.ChildLink,
                 com.google.spanner.v1.PlanNode.ChildLink.Builder,
                 com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>(
-                childLinks_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                childLinks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         childLinks_ = null;
       }
       return childLinksBuilder_;

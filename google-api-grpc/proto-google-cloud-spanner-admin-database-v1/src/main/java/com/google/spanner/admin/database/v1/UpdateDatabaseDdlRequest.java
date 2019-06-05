@@ -43,6 +43,12 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateDatabaseDdlRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statements_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               statements_.add(s);
               break;
@@ -104,7 +110,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statements_ = statements_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -127,7 +133,6 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
             com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATABASE_FIELD_NUMBER = 1;
   private volatile java.lang.Object database_;
   /**
@@ -548,7 +553,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       database_ = "";
 
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       operationId_ = "";
 
       return this;
@@ -580,15 +585,13 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest result =
           new com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.database_ = database_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         statements_ = statements_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.statements_ = statements_;
       result.operationId_ = operationId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -647,7 +650,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
       if (!other.statements_.isEmpty()) {
         if (statements_.isEmpty()) {
           statements_ = other.statements_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureStatementsIsMutable();
           statements_.addAll(other.statements_);
@@ -789,9 +792,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStatementsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statements_ = new com.google.protobuf.LazyStringArrayList(statements_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -904,7 +907,7 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      */
     public Builder clearStatements() {
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

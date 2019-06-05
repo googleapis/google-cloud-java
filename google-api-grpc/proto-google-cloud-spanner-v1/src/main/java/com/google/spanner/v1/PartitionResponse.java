@@ -28,6 +28,12 @@ public final class PartitionResponse extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PartitionResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -113,7 +119,6 @@ public final class PartitionResponse extends com.google.protobuf.GeneratedMessag
             com.google.spanner.v1.PartitionResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARTITIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.spanner.v1.Partition> partitions_;
   /**
@@ -481,7 +486,6 @@ public final class PartitionResponse extends com.google.protobuf.GeneratedMessag
       com.google.spanner.v1.PartitionResponse result =
           new com.google.spanner.v1.PartitionResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (partitionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           partitions_ = java.util.Collections.unmodifiableList(partitions_);
@@ -496,7 +500,6 @@ public final class PartitionResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.transaction_ = transactionBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

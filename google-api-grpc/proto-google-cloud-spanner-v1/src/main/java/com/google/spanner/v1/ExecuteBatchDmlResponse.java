@@ -42,6 +42,12 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ExecuteBatchDmlResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -126,7 +132,6 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
             com.google.spanner.v1.ExecuteBatchDmlResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESULT_SETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.spanner.v1.ResultSet> resultSets_;
   /**
@@ -535,7 +540,6 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
       com.google.spanner.v1.ExecuteBatchDmlResponse result =
           new com.google.spanner.v1.ExecuteBatchDmlResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (resultSetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           resultSets_ = java.util.Collections.unmodifiableList(resultSets_);
@@ -550,7 +554,6 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
       } else {
         result.status_ = statusBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
