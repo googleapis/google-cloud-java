@@ -28,6 +28,12 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListCollectionIdsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -105,7 +111,6 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
             com.google.firestore.v1.ListCollectionIdsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int COLLECTION_IDS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList collectionIds_;
   /**
@@ -452,14 +457,12 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       com.google.firestore.v1.ListCollectionIdsResponse result =
           new com.google.firestore.v1.ListCollectionIdsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         collectionIds_ = collectionIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.collectionIds_ = collectionIds_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

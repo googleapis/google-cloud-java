@@ -28,6 +28,12 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DocumentTransform();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,11 +66,11 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fieldTransforms_ =
                     new java.util.ArrayList<
                         com.google.firestore.v1beta1.DocumentTransform.FieldTransform>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               fieldTransforms_.add(
                   input.readMessage(
@@ -86,7 +92,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fieldTransforms_ = java.util.Collections.unmodifiableList(fieldTransforms_);
       }
       this.unknownFields = unknownFields.build();
@@ -476,6 +482,12 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FieldTransform();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -488,7 +500,6 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3424,7 +3435,6 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object document_;
   /**
@@ -3773,7 +3783,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
 
       if (fieldTransformsBuilder_ == null) {
         fieldTransforms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         fieldTransformsBuilder_.clear();
       }
@@ -3805,18 +3815,16 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       com.google.firestore.v1beta1.DocumentTransform result =
           new com.google.firestore.v1beta1.DocumentTransform(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.document_ = document_;
       if (fieldTransformsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fieldTransforms_ = java.util.Collections.unmodifiableList(fieldTransforms_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fieldTransforms_ = fieldTransforms_;
       } else {
         result.fieldTransforms_ = fieldTransformsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3874,7 +3882,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         if (!other.fieldTransforms_.isEmpty()) {
           if (fieldTransforms_.isEmpty()) {
             fieldTransforms_ = other.fieldTransforms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFieldTransformsIsMutable();
             fieldTransforms_.addAll(other.fieldTransforms_);
@@ -3887,7 +3895,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
             fieldTransformsBuilder_.dispose();
             fieldTransformsBuilder_ = null;
             fieldTransforms_ = other.fieldTransforms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             fieldTransformsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFieldTransformsFieldBuilder()
@@ -4026,11 +4034,11 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         fieldTransforms_ = java.util.Collections.emptyList();
 
     private void ensureFieldTransformsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fieldTransforms_ =
             new java.util.ArrayList<com.google.firestore.v1beta1.DocumentTransform.FieldTransform>(
                 fieldTransforms_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -4298,7 +4306,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public Builder clearFieldTransforms() {
       if (fieldTransformsBuilder_ == null) {
         fieldTransforms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         fieldTransformsBuilder_.clear();
@@ -4457,7 +4465,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
                 com.google.firestore.v1beta1.DocumentTransform.FieldTransform.Builder,
                 com.google.firestore.v1beta1.DocumentTransform.FieldTransformOrBuilder>(
                 fieldTransforms_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         fieldTransforms_ = null;
