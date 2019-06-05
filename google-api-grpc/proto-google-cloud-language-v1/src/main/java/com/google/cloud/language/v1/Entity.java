@@ -31,6 +31,12 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Entity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,11 +76,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
@@ -90,9 +96,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 mentions_ = new java.util.ArrayList<com.google.cloud.language.v1.EntityMention>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               mentions_.add(
                   input.readMessage(
@@ -129,7 +135,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         mentions_ = java.util.Collections.unmodifiableList(mentions_);
       }
       this.unknownFields = unknownFields.build();
@@ -581,7 +587,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.language.v1.Entity.Type)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1195,7 +1200,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
 
       if (mentionsBuilder_ == null) {
         mentions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         mentionsBuilder_.clear();
       }
@@ -1232,16 +1237,15 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.language.v1.Entity buildPartial() {
       com.google.cloud.language.v1.Entity result = new com.google.cloud.language.v1.Entity(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.type_ = type_;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
       result.salience_ = salience_;
       if (mentionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           mentions_ = java.util.Collections.unmodifiableList(mentions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.mentions_ = mentions_;
       } else {
@@ -1252,7 +1256,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.sentiment_ = sentimentBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1317,7 +1320,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         if (!other.mentions_.isEmpty()) {
           if (mentions_.isEmpty()) {
             mentions_ = other.mentions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMentionsIsMutable();
             mentions_.addAll(other.mentions_);
@@ -1330,7 +1333,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             mentionsBuilder_.dispose();
             mentionsBuilder_ = null;
             mentions_ = other.mentions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             mentionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMentionsFieldBuilder()
@@ -1778,9 +1781,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMentionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         mentions_ = new java.util.ArrayList<com.google.cloud.language.v1.EntityMention>(mentions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2006,7 +2009,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMentions() {
       if (mentionsBuilder_ == null) {
         mentions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         mentionsBuilder_.clear();
@@ -2135,7 +2138,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.language.v1.EntityMention,
                 com.google.cloud.language.v1.EntityMention.Builder,
                 com.google.cloud.language.v1.EntityMentionOrBuilder>(
-                mentions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                mentions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         mentions_ = null;
       }
       return mentionsBuilder_;

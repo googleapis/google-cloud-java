@@ -29,6 +29,12 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnalyzeEntitySentimentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,7 +113,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
             com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ENTITIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.language.v1beta2.Entity> entities_;
   /**
@@ -476,7 +481,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse result =
           new com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entitiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
@@ -487,7 +491,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         result.entities_ = entitiesBuilder_.build();
       }
       result.language_ = language_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
