@@ -51,7 +51,7 @@ public class LocalLoggingHelper {
   }
   /** Creates a channel for making requests to the in-memory service. */
   public ManagedChannel createChannel() {
-    return InProcessChannelBuilder.forName(address).usePlaintext(true).build();
+    return InProcessChannelBuilder.forName(address).usePlaintext().build();
   }
   /** Shuts down the in-memory service. */
   public void shutdownNow() {

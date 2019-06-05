@@ -1293,7 +1293,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).build();
     List<LogEntry> entriesList = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1314,9 +1314,9 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request1 =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).build();
     ListLogEntriesRequest request2 =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).setPageToken(cursor1).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).setPageToken(cursor1).build();
     List<LogEntry> descriptorList1 = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     List<LogEntry> descriptorList2 = ImmutableList.of(LOG_ENTRY1);
     ListLogEntriesResponse response1 =
@@ -1351,7 +1351,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).build();
     List<LogEntry> entriesList = ImmutableList.of();
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1373,7 +1373,7 @@ public class LoggingImplTest {
     logging = options.getService();
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
-            .addProjectIds(PROJECT)
+            .addResourceNames(PROJECT)
             .setOrderBy("timestamp desc")
             .setFilter("logName:syslog")
             .build();
@@ -1400,7 +1400,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).build();
     List<LogEntry> entriesList = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1421,9 +1421,9 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request1 =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).build();
     ListLogEntriesRequest request2 =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).setPageToken(cursor1).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).setPageToken(cursor1).build();
     List<LogEntry> descriptorList1 = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     List<LogEntry> descriptorList2 = ImmutableList.of(LOG_ENTRY1);
     ListLogEntriesResponse response1 =
@@ -1458,7 +1458,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addProjectIds(PROJECT).build();
+        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT).build();
     List<LogEntry> entriesList = ImmutableList.of();
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1480,7 +1480,7 @@ public class LoggingImplTest {
     logging = options.getService();
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
-            .addProjectIds(PROJECT)
+            .addResourceNames(PROJECT)
             .setOrderBy("timestamp desc")
             .setFilter("logName:syslog")
             .build();

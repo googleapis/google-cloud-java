@@ -44,6 +44,7 @@ import com.google.cloud.logging.v2.LoggingClient;
 import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.cloud.logging.v2.MetricsClient;
 import com.google.cloud.logging.v2.MetricsSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -96,7 +97,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
           || NoCredentials.getInstance().equals(options.getCredentials())) {
         ManagedChannel managedChannel =
             ManagedChannelBuilder.forTarget(options.getHost())
-                .usePlaintext(true)
+                .usePlaintext()
                 .executor(executor)
                 .build();
         TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
@@ -189,7 +190,8 @@ public class GrpcLoggingRpc implements LoggingRpc {
             }
             throw new LoggingException(exception);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   @Override
