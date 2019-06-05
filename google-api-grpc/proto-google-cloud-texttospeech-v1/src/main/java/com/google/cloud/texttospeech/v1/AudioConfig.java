@@ -28,6 +28,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AudioConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,9 +87,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               effectsProfileId_.add(s);
               break;
@@ -102,7 +108,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -125,7 +131,6 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1.AudioConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
@@ -588,7 +593,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       sampleRateHertz_ = 0;
 
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -617,18 +622,16 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.texttospeech.v1.AudioConfig result =
           new com.google.cloud.texttospeech.v1.AudioConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.audioEncoding_ = audioEncoding_;
       result.speakingRate_ = speakingRate_;
       result.pitch_ = pitch_;
       result.volumeGainDb_ = volumeGainDb_;
       result.sampleRateHertz_ = sampleRateHertz_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.effectsProfileId_ = effectsProfileId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -696,7 +699,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.effectsProfileId_.isEmpty()) {
         if (effectsProfileId_.isEmpty()) {
           effectsProfileId_ = other.effectsProfileId_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEffectsProfileIdIsMutable();
           effectsProfileId_.addAll(other.effectsProfileId_);
@@ -1041,9 +1044,9 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEffectsProfileIdIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1204,7 +1207,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEffectsProfileId() {
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

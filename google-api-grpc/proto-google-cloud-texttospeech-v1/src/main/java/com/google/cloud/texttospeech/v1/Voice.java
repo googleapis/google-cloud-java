@@ -29,6 +29,12 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Voice();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -118,7 +124,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1.Voice.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LANGUAGE_CODES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList languageCodes_;
   /**
@@ -543,7 +548,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.texttospeech.v1.Voice result =
           new com.google.cloud.texttospeech.v1.Voice(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -552,7 +556,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.ssmlGender_ = ssmlGender_;
       result.naturalSampleRateHertz_ = naturalSampleRateHertz_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
