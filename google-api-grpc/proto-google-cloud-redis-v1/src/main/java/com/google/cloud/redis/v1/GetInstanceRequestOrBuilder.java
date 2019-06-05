@@ -14,7 +14,7 @@ public interface GetInstanceRequestOrBuilder
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -26,7 +26,7 @@ public interface GetInstanceRequestOrBuilder
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>

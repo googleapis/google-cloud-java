@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+ * Request for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesRequest}
@@ -113,7 +112,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -135,7 +134,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -398,8 +397,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request for
-   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+   * Request for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesRequest}
@@ -574,7 +572,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -596,7 +594,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -618,7 +616,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -638,7 +636,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -655,7 +653,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
