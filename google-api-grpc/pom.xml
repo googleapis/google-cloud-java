@@ -874,6 +874,7 @@
     <module>grpc-google-cloud-vision-v1p4beta1</module>
     <module>grpc-google-cloud-webrisk-v1beta1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
+    <module>grpc-google-cloud-websecurityscanner-v1beta</module>
 
     <module>proto-google-cloud-asset-v1</module>
     <module>proto-google-cloud-asset-v1beta1</module>
@@ -941,6 +942,7 @@
     <module>proto-google-cloud-vision-v1p4beta1</module>
     <module>proto-google-cloud-webrisk-v1beta1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
+    <module>proto-google-cloud-websecurityscanner-v1beta</module>
   </modules>
 
   <build>
