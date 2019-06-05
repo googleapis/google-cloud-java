@@ -54,22 +54,14 @@ public final class InstructionOuterClass {
           + "olang.org/genproto/googleapis/cloud/data"
           + "labeling/v1beta1;datalabelingb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
+            });
     internal_static_google_cloud_datalabeling_v1beta1_Instruction_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_datalabeling_v1beta1_Instruction_fieldAccessorTable =

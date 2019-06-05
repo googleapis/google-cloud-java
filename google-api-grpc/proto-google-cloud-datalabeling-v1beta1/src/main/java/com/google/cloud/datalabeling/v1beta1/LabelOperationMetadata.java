@@ -28,6 +28,12 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LabelOperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,9 +64,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               partialFailures_.add(
                   input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
@@ -412,7 +418,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
       }
       this.unknownFields = unknownFields.build();
@@ -435,7 +441,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata.Builder.class);
   }
 
-  private int bitField0_;
   private int detailsCase_ = 0;
   private java.lang.Object details_;
 
@@ -1582,7 +1587,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         partialFailuresBuilder_.clear();
       }
@@ -1617,12 +1622,11 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata result =
           new com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.progressPercent_ = progressPercent_;
       if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.partialFailures_ = partialFailures_;
       } else {
@@ -1719,7 +1723,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
           result.details_ = textEntityExtractionDetailsBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.detailsCase_ = detailsCase_;
       onBuilt();
       return result;
@@ -1779,7 +1782,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -1792,7 +1795,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -1970,9 +1973,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2205,7 +2208,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -2339,7 +2342,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;

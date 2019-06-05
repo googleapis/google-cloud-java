@@ -28,6 +28,12 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListDatasetsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -107,7 +113,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATASETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.datalabeling.v1beta1.Dataset> datasets_;
   /**
@@ -469,7 +474,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse result =
           new com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (datasetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           datasets_ = java.util.Collections.unmodifiableList(datasets_);
@@ -480,7 +484,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
         result.datasets_ = datasetsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

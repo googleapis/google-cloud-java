@@ -27,6 +27,12 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OperatorMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -68,9 +74,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 comments_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               comments_.add(s);
               break;
@@ -89,7 +95,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         comments_ = comments_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -112,7 +118,6 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datalabeling.v1beta1.OperatorMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_;
   /**
@@ -426,7 +431,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       labelVotes_ = 0;
 
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -455,16 +460,14 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       com.google.cloud.datalabeling.v1beta1.OperatorMetadata result =
           new com.google.cloud.datalabeling.v1beta1.OperatorMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.score_ = score_;
       result.totalVotes_ = totalVotes_;
       result.labelVotes_ = labelVotes_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         comments_ = comments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.comments_ = comments_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -527,7 +530,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       if (!other.comments_.isEmpty()) {
         if (comments_.isEmpty()) {
           comments_ = other.comments_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureCommentsIsMutable();
           comments_.addAll(other.comments_);
@@ -708,9 +711,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCommentsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /** <code>repeated string comments = 4;</code> */
@@ -759,7 +762,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     /** <code>repeated string comments = 4;</code> */
     public Builder clearComments() {
       comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

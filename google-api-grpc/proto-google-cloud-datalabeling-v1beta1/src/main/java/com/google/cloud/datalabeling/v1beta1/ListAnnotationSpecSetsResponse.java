@@ -29,6 +29,12 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListAnnotationSpecSetsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -110,7 +116,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
             com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ANNOTATION_SPEC_SETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>
       annotationSpecSets_;
@@ -485,7 +490,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
       com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse result =
           new com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (annotationSpecSetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           annotationSpecSets_ = java.util.Collections.unmodifiableList(annotationSpecSets_);
@@ -496,7 +500,6 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
         result.annotationSpecSets_ = annotationSpecSetsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

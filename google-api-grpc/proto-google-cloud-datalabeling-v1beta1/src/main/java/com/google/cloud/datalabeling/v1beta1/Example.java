@@ -29,6 +29,12 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Example();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -79,10 +85,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 annotations_ =
                     new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               annotations_.add(
                   input.readMessage(
@@ -158,7 +164,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         annotations_ = java.util.Collections.unmodifiableList(annotations_);
       }
       this.unknownFields = unknownFields.build();
@@ -181,7 +187,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.Example.Builder.class);
   }
 
-  private int bitField0_;
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
 
@@ -812,7 +817,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
 
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         annotationsBuilder_.clear();
       }
@@ -846,7 +851,6 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.Example result =
           new com.google.cloud.datalabeling.v1beta1.Example(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (payloadCase_ == 2) {
         if (imagePayloadBuilder_ == null) {
           result.payload_ = payload_;
@@ -877,15 +881,14 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
       }
       result.name_ = name_;
       if (annotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           annotations_ = java.util.Collections.unmodifiableList(annotations_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.annotations_ = annotations_;
       } else {
         result.annotations_ = annotationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -944,7 +947,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         if (!other.annotations_.isEmpty()) {
           if (annotations_.isEmpty()) {
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAnnotationsIsMutable();
             annotations_.addAll(other.annotations_);
@@ -957,7 +960,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
             annotationsBuilder_.dispose();
             annotationsBuilder_ = null;
             annotations_ = other.annotations_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000001);
             annotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnnotationsFieldBuilder()
@@ -1957,10 +1960,10 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         annotations_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.Annotation>(annotations_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2189,7 +2192,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAnnotations() {
       if (annotationsBuilder_ == null) {
         annotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         annotationsBuilder_.clear();
@@ -2321,7 +2324,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.Annotation,
                 com.google.cloud.datalabeling.v1beta1.Annotation.Builder,
                 com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder>(
-                annotations_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                annotations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         annotations_ = null;
       }
       return annotationsBuilder_;

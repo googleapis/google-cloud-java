@@ -31,6 +31,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Dataset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -92,10 +98,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inputConfigs_ =
                     new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.InputConfig>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               inputConfigs_.add(
                   input.readMessage(
@@ -117,7 +123,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -140,7 +146,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.Dataset.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -654,7 +659,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         inputConfigsBuilder_.clear();
       }
@@ -686,7 +691,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.datalabeling.v1beta1.Dataset result =
           new com.google.cloud.datalabeling.v1beta1.Dataset(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
@@ -696,15 +700,14 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         result.createTime_ = createTimeBuilder_.build();
       }
       if (inputConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.inputConfigs_ = inputConfigs_;
       } else {
         result.inputConfigs_ = inputConfigsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -773,7 +776,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         if (!other.inputConfigs_.isEmpty()) {
           if (inputConfigs_.isEmpty()) {
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInputConfigsIsMutable();
             inputConfigs_.addAll(other.inputConfigs_);
@@ -786,7 +789,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             inputConfigsBuilder_.dispose();
             inputConfigsBuilder_ = null;
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             inputConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputConfigsFieldBuilder()
@@ -1307,11 +1310,11 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureInputConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inputConfigs_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.InputConfig>(
                 inputConfigs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1551,7 +1554,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         inputConfigsBuilder_.clear();
@@ -1691,7 +1694,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.InputConfig,
                 com.google.cloud.datalabeling.v1beta1.InputConfig.Builder,
                 com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder>(
-                inputConfigs_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                inputConfigs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         inputConfigs_ = null;
       }
       return inputConfigsBuilder_;
