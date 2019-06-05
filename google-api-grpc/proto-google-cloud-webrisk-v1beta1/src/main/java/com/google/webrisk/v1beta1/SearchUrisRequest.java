@@ -28,6 +28,12 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SearchUrisRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,9 +67,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               threatTypes_.add(rawValue);
               break;
@@ -74,9 +80,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 threatTypes_.add(rawValue);
               }
@@ -97,7 +103,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +126,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
             com.google.webrisk.v1beta1.SearchUrisRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object uri_;
   /**
@@ -475,7 +480,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       uri_ = "";
 
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -504,14 +509,12 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       com.google.webrisk.v1beta1.SearchUrisRequest result =
           new com.google.webrisk.v1beta1.SearchUrisRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.uri_ = uri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.threatTypes_ = threatTypes_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -568,7 +571,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       if (!other.threatTypes_.isEmpty()) {
         if (threatTypes_.isEmpty()) {
           threatTypes_ = other.threatTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureThreatTypesIsMutable();
           threatTypes_.addAll(other.threatTypes_);
@@ -703,9 +706,9 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> threatTypes_ = java.util.Collections.emptyList();
 
     private void ensureThreatTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         threatTypes_ = new java.util.ArrayList<java.lang.Integer>(threatTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -811,7 +814,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearThreatTypes() {
       threatTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
