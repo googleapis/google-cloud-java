@@ -33,6 +33,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GceClusterConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -73,9 +79,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               serviceAccountScopes_.add(s);
               break;
@@ -83,20 +89,20 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000002;
               }
               tags_.add(s);
               break;
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
@@ -155,10 +161,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -192,7 +198,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ZONE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object zoneUri_;
   /**
@@ -1070,9 +1075,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       serviceAccount_ = "";
 
       serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableMetadata().clear();
       if (reservationAffinityBuilder_ == null) {
         reservationAffinity_ = null;
@@ -1108,20 +1113,19 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dataproc.v1beta2.GceClusterConfig result =
           new com.google.cloud.dataproc.v1beta2.GceClusterConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.zoneUri_ = zoneUri_;
       result.networkUri_ = networkUri_;
       result.subnetworkUri_ = subnetworkUri_;
       result.internalIpOnly_ = internalIpOnly_;
       result.serviceAccount_ = serviceAccount_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.serviceAccountScopes_ = serviceAccountScopes_;
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.tags_ = tags_;
       result.metadata_ = internalGetMetadata();
@@ -1131,7 +1135,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         result.reservationAffinity_ = reservationAffinityBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1204,7 +1207,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!other.serviceAccountScopes_.isEmpty()) {
         if (serviceAccountScopes_.isEmpty()) {
           serviceAccountScopes_ = other.serviceAccountScopes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureServiceAccountScopesIsMutable();
           serviceAccountScopes_.addAll(other.serviceAccountScopes_);
@@ -1214,7 +1217,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1841,9 +1844,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceAccountScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2036,7 +2039,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceAccountScopes() {
       serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2074,9 +2077,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -2197,7 +2200,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

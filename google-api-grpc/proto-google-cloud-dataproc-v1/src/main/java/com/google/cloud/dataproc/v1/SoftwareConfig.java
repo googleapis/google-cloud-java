@@ -28,6 +28,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SoftwareConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -60,11 +66,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 properties_ =
                     com.google.protobuf.MapField.newMapField(
                         PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
                   input.readMessage(
@@ -76,9 +82,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
           case 24:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 optionalComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               optionalComponents_.add(rawValue);
               break;
@@ -89,9 +95,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   optionalComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 optionalComponents_.add(rawValue);
               }
@@ -112,7 +118,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
       }
       this.unknownFields = unknownFields.build();
@@ -146,7 +152,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.SoftwareConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int IMAGE_VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object imageVersion_;
   /**
@@ -702,7 +707,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableProperties().clear();
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -731,16 +736,14 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1.SoftwareConfig result =
           new com.google.cloud.dataproc.v1.SoftwareConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.imageVersion_ = imageVersion_;
       result.properties_ = internalGetProperties();
       result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.optionalComponents_ = optionalComponents_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -798,7 +801,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.optionalComponents_.isEmpty()) {
         if (optionalComponents_.isEmpty()) {
           optionalComponents_ = other.optionalComponents_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureOptionalComponentsIsMutable();
           optionalComponents_.addAll(other.optionalComponents_);
@@ -1217,9 +1220,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOptionalComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         optionalComponents_ = new java.util.ArrayList<java.lang.Integer>(optionalComponents_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1325,7 +1328,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOptionalComponents() {
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

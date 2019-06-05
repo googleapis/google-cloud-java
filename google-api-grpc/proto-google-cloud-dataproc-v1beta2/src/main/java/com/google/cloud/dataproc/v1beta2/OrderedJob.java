@@ -28,6 +28,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OrderedJob();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -156,10 +162,10 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -186,9 +192,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000002;
               }
               prerequisiteStepIds_.add(s);
               break;
@@ -207,7 +213,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -241,7 +247,6 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.OrderedJob.Builder.class);
   }
 
-  private int bitField0_;
   private int jobTypeCase_ = 0;
   private java.lang.Object jobType_;
 
@@ -1211,7 +1216,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_ = null;
       }
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000002);
       jobTypeCase_ = 0;
       jobType_ = null;
       return this;
@@ -1242,7 +1247,6 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.OrderedJob result =
           new com.google.cloud.dataproc.v1beta2.OrderedJob(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.stepId_ = stepId_;
       if (jobTypeCase_ == 2) {
         if (hadoopJobBuilder_ == null) {
@@ -1293,12 +1297,11 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.scheduling_ = schedulingBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.prerequisiteStepIds_ = prerequisiteStepIds_;
-      result.bitField0_ = to_bitField0_;
       result.jobTypeCase_ = jobTypeCase_;
       onBuilt();
       return result;
@@ -1360,7 +1363,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.prerequisiteStepIds_.isEmpty()) {
         if (prerequisiteStepIds_.isEmpty()) {
           prerequisiteStepIds_ = other.prerequisiteStepIds_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePrerequisiteStepIdsIsMutable();
           prerequisiteStepIds_.addAll(other.prerequisiteStepIds_);
@@ -3171,9 +3174,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePrerequisiteStepIdsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -3294,7 +3297,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

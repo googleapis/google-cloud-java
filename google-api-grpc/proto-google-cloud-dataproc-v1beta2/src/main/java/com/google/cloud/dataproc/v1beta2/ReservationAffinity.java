@@ -29,6 +29,12 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReservationAffinity();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 values_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               values_.add(s);
               break;
@@ -90,7 +96,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         values_ = values_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -268,7 +274,6 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1beta2.ReservationAffinity.Type)
   }
 
-  private int bitField0_;
   public static final int CONSUME_RESERVATION_TYPE_FIELD_NUMBER = 1;
   private int consumeReservationType_;
   /**
@@ -636,7 +641,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       key_ = "";
 
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -665,15 +670,13 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       com.google.cloud.dataproc.v1beta2.ReservationAffinity result =
           new com.google.cloud.dataproc.v1beta2.ReservationAffinity(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.consumeReservationType_ = consumeReservationType_;
       result.key_ = key_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         values_ = values_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -734,7 +737,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
           values_ = other.values_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureValuesIsMutable();
           values_.addAll(other.values_);
@@ -956,9 +959,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         values_ = new com.google.protobuf.LazyStringArrayList(values_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1071,7 +1074,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

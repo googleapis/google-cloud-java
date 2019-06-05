@@ -31,6 +31,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InstanceGroupConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 instanceNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               instanceNames_.add(s);
               break;
@@ -122,10 +128,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 accelerators_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000002;
               }
               accelerators_.add(
                   input.readMessage(
@@ -146,10 +152,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
       }
       this.unknownFields = unknownFields.build();
@@ -172,7 +178,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NUM_INSTANCES_FIELD_NUMBER = 1;
   private int numInstances_;
   /**
@@ -828,7 +833,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       numInstances_ = 0;
 
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       imageUri_ = "";
 
       machineTypeUri_ = "";
@@ -849,7 +854,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         acceleratorsBuilder_.clear();
       }
@@ -881,11 +886,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       com.google.cloud.dataproc.v1.InstanceGroupConfig result =
           new com.google.cloud.dataproc.v1.InstanceGroupConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.numInstances_ = numInstances_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.instanceNames_ = instanceNames_;
       result.imageUri_ = imageUri_;
@@ -902,15 +906,14 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         result.managedGroupConfig_ = managedGroupConfigBuilder_.build();
       }
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.accelerators_ = accelerators_;
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -967,7 +970,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (!other.instanceNames_.isEmpty()) {
         if (instanceNames_.isEmpty()) {
           instanceNames_ = other.instanceNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureInstanceNamesIsMutable();
           instanceNames_.addAll(other.instanceNames_);
@@ -995,7 +998,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -1008,7 +1011,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000002);
             acceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAcceleratorsFieldBuilder()
@@ -1100,9 +1103,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         instanceNames_ = new com.google.protobuf.LazyStringArrayList(instanceNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1223,7 +1226,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder clearInstanceNames() {
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1924,10 +1927,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2178,7 +2181,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -2324,7 +2327,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
                 com.google.cloud.dataproc.v1.AcceleratorConfig,
                 com.google.cloud.dataproc.v1.AcceleratorConfig.Builder,
                 com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>(
-                accelerators_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                accelerators_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;

@@ -31,6 +31,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Job();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -184,10 +190,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 yarnApplications_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000002;
               }
               yarnApplications_.add(
                   input.readMessage(
@@ -212,9 +218,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000001;
               }
               statusHistory_.add(
                   input.readMessage(
@@ -237,10 +243,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -285,10 +291,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
       this.unknownFields = unknownFields.build();
@@ -321,7 +327,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.Job.class, com.google.cloud.dataproc.v1.Job.Builder.class);
   }
 
-  private int bitField0_;
   private int typeJobCase_ = 0;
   private java.lang.Object typeJob_;
 
@@ -1671,13 +1676,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         statusHistoryBuilder_.clear();
       }
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         yarnApplicationsBuilder_.clear();
       }
@@ -1723,7 +1728,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.Job buildPartial() {
       com.google.cloud.dataproc.v1.Job result = new com.google.cloud.dataproc.v1.Job(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (referenceBuilder_ == null) {
         result.reference_ = reference_;
       } else {
@@ -1782,18 +1786,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.statusHistory_ = statusHistory_;
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
       if (yarnApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.yarnApplications_ = yarnApplications_;
       } else {
@@ -1809,7 +1813,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.scheduling_ = schedulingBuilder_.build();
       }
       result.jobUuid_ = jobUuid_;
-      result.bitField0_ = to_bitField0_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
       return result;
@@ -1873,7 +1876,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1886,7 +1889,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000001);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -1900,7 +1903,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.yarnApplications_.isEmpty()) {
           if (yarnApplications_.isEmpty()) {
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureYarnApplicationsIsMutable();
             yarnApplications_.addAll(other.yarnApplications_);
@@ -1913,7 +1916,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             yarnApplicationsBuilder_.dispose();
             yarnApplicationsBuilder_ = null;
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
             yarnApplicationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getYarnApplicationsFieldBuilder()
@@ -3824,10 +3827,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>(statusHistory_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -4043,7 +4046,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -4166,7 +4169,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.JobStatus.Builder,
                 com.google.cloud.dataproc.v1.JobStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -4178,11 +4181,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureYarnApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         yarnApplications_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>(
                 yarnApplications_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -4422,7 +4425,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearYarnApplications() {
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         yarnApplicationsBuilder_.clear();
@@ -4562,7 +4565,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.YarnApplication.Builder,
                 com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>(
                 yarnApplications_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         yarnApplications_ = null;

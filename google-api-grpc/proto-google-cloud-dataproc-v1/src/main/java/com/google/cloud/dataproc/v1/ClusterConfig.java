@@ -28,6 +28,12 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ClusterConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -108,11 +114,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 initializationActions_ =
                     new java.util.ArrayList<
                         com.google.cloud.dataproc.v1.NodeInitializationAction>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               initializationActions_.add(
                   input.readMessage(
@@ -182,7 +188,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
       }
       this.unknownFields = unknownFields.build();
@@ -205,7 +211,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.ClusterConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CONFIG_BUCKET_FIELD_NUMBER = 1;
   private volatile java.lang.Object configBucket_;
   /**
@@ -989,7 +994,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (initializationActionsBuilder_ == null) {
         initializationActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         initializationActionsBuilder_.clear();
       }
@@ -1027,7 +1032,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1.ClusterConfig result =
           new com.google.cloud.dataproc.v1.ClusterConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.configBucket_ = configBucket_;
       if (gceClusterConfigBuilder_ == null) {
         result.gceClusterConfig_ = gceClusterConfig_;
@@ -1055,9 +1059,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         result.softwareConfig_ = softwareConfigBuilder_.build();
       }
       if (initializationActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.initializationActions_ = initializationActions_;
       } else {
@@ -1068,7 +1072,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.encryptionConfig_ = encryptionConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1141,7 +1144,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.initializationActions_.isEmpty()) {
           if (initializationActions_.isEmpty()) {
             initializationActions_ = other.initializationActions_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureInitializationActionsIsMutable();
             initializationActions_.addAll(other.initializationActions_);
@@ -1154,7 +1157,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
             initializationActionsBuilder_.dispose();
             initializationActionsBuilder_ = null;
             initializationActions_ = other.initializationActions_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             initializationActionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInitializationActionsFieldBuilder()
@@ -2286,11 +2289,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         initializationActions_ = java.util.Collections.emptyList();
 
     private void ensureInitializationActionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         initializationActions_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.NodeInitializationAction>(
                 initializationActions_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2655,7 +2658,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInitializationActions() {
       if (initializationActionsBuilder_ == null) {
         initializationActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         initializationActionsBuilder_.clear();
@@ -2874,7 +2877,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.NodeInitializationAction.Builder,
                 com.google.cloud.dataproc.v1.NodeInitializationActionOrBuilder>(
                 initializationActions_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         initializationActions_ = null;

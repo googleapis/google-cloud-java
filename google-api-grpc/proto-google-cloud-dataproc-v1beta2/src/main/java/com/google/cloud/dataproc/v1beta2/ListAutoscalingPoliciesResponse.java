@@ -29,6 +29,12 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListAutoscalingPoliciesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,7 +115,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
             com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int POLICIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy> policies_;
   /**
@@ -477,7 +482,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse result =
           new com.google.cloud.dataproc.v1beta2.ListAutoscalingPoliciesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (policiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           policies_ = java.util.Collections.unmodifiableList(policies_);
@@ -488,7 +492,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         result.policies_ = policiesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

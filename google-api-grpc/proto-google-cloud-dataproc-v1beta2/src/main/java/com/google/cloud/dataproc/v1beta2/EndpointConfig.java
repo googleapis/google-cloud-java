@@ -25,6 +25,12 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
   private EndpointConfig() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EndpointConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -113,7 +119,6 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1beta2.EndpointConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int HTTP_PORTS_FIELD_NUMBER = 1;
 
   private static final class HttpPortsDefaultEntryHolder {
@@ -500,11 +505,9 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1beta2.EndpointConfig result =
           new com.google.cloud.dataproc.v1beta2.EndpointConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.httpPorts_ = internalGetHttpPorts();
       result.httpPorts_.makeImmutable();
       result.enableHttpPortAccess_ = enableHttpPortAccess_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
