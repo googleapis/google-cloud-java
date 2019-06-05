@@ -25,6 +25,12 @@ public final class ReportPhishingResponse extends com.google.protobuf.GeneratedM
   private ReportPhishingResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReportPhishingResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
