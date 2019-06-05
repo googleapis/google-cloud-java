@@ -55,21 +55,13 @@ public final class ErrorGroupServiceProto {
           + "e.Cloud.ErrorReporting.V1Beta1\312\002#Google\\"
           + "Cloud\\ErrorReporting\\V1beta1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.devtools.clouderrorreporting.v1beta1.CommonProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.devtools.clouderrorreporting.v1beta1.CommonProto.getDescriptor(),
+            });
     internal_static_google_devtools_clouderrorreporting_v1beta1_GetGroupRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_devtools_clouderrorreporting_v1beta1_GetGroupRequest_fieldAccessorTable =

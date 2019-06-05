@@ -28,6 +28,12 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListGroupStatsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,7 +130,6 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
             com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ERROR_GROUP_STATS_FIELD_NUMBER = 1;
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
       errorGroupStats_;
@@ -580,7 +585,6 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse result =
           new com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (errorGroupStatsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorGroupStats_ = java.util.Collections.unmodifiableList(errorGroupStats_);
@@ -596,7 +600,6 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
       } else {
         result.timeRangeBegin_ = timeRangeBeginBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

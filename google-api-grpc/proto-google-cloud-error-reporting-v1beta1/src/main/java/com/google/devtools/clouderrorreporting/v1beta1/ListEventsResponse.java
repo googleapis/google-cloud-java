@@ -28,6 +28,12 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListEventsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -124,7 +130,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ERROR_EVENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> errorEvents_;
   /**
@@ -558,7 +563,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result =
           new com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (errorEventsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorEvents_ = java.util.Collections.unmodifiableList(errorEvents_);
@@ -574,7 +578,6 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.timeRangeBegin_ = timeRangeBeginBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

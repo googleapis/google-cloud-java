@@ -31,6 +31,12 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListGroupStatsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -64,9 +70,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 groupId_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               groupId_.add(s);
               break;
@@ -177,7 +183,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         groupId_ = groupId_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -200,7 +206,6 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
             com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectName_;
   /**
@@ -961,7 +966,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       projectName_ = "";
 
       groupId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (serviceFilterBuilder_ == null) {
         serviceFilter_ = null;
       } else {
@@ -1024,11 +1029,10 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest result =
           new com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectName_ = projectName_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         groupId_ = groupId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.groupId_ = groupId_;
       if (serviceFilterBuilder_ == null) {
@@ -1055,7 +1059,6 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       result.order_ = order_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1116,7 +1119,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
       if (!other.groupId_.isEmpty()) {
         if (groupId_.isEmpty()) {
           groupId_ = other.groupId_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureGroupIdIsMutable();
           groupId_.addAll(other.groupId_);
@@ -1299,9 +1302,9 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupIdIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         groupId_ = new com.google.protobuf.LazyStringArrayList(groupId_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1414,7 +1417,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearGroupId() {
       groupId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
