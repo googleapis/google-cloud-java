@@ -27,6 +27,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OperationMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -52,9 +58,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             break;
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000001;
               }
               partialFailures_.add(
                   input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
@@ -298,7 +304,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
       }
       this.unknownFields = unknownFields.build();
@@ -321,7 +327,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.automl.v1beta1.OperationMetadata.Builder.class);
   }
 
-  private int bitField0_;
   private int detailsCase_ = 0;
   private java.lang.Object details_;
 
@@ -1388,7 +1393,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         partialFailuresBuilder_.clear();
       }
@@ -1434,7 +1439,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       com.google.cloud.automl.v1beta1.OperationMetadata result =
           new com.google.cloud.automl.v1beta1.OperationMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (detailsCase_ == 8) {
         if (deleteDetailsBuilder_ == null) {
           result.details_ = details_;
@@ -1500,9 +1504,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       result.progressPercent_ = progressPercent_;
       if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.partialFailures_ = partialFailures_;
       } else {
@@ -1518,7 +1522,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.detailsCase_ = detailsCase_;
       onBuilt();
       return result;
@@ -1577,7 +1580,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -1590,7 +1593,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000001);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -3732,9 +3735,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3978,7 +3981,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -4119,7 +4122,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;

@@ -25,6 +25,12 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
   private TimestampStats() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TimestampStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -197,6 +203,12 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private GranularStats() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GranularStats();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {

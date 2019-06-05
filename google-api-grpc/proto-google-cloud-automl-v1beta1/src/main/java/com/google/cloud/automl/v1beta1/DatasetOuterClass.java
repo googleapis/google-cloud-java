@@ -73,28 +73,20 @@ public final class DatasetOuterClass {
           + "ta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1"
           + "b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.getDescriptor(),
-          com.google.cloud.automl.v1beta1.DataItems.getDescriptor(),
-          com.google.cloud.automl.v1beta1.ImageProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.Tables.getDescriptor(),
-          com.google.cloud.automl.v1beta1.TextProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.TranslationProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.VideoProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.getDescriptor(),
+              com.google.cloud.automl.v1beta1.DataItems.getDescriptor(),
+              com.google.cloud.automl.v1beta1.ImageProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.Tables.getDescriptor(),
+              com.google.cloud.automl.v1beta1.TextProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.TranslationProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.VideoProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_Dataset_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_Dataset_fieldAccessorTable =

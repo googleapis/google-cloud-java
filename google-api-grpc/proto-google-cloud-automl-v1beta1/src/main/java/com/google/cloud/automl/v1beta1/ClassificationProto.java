@@ -203,6 +203,12 @@ public final class ClassificationProto {
     private ClassificationAnnotation() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClassificationAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -215,7 +221,6 @@ public final class ClassificationProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -902,6 +907,12 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VideoClassificationAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -914,7 +925,6 @@ public final class ClassificationProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2495,6 +2505,12 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClassificationEvaluationMetrics();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2530,12 +2546,12 @@ public final class ClassificationProto {
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   confidenceMetricsEntry_ =
                       new java.util.ArrayList<
                           com.google.cloud.automl.v1beta1.ClassificationProto
                               .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 confidenceMetricsEntry_.add(
                     input.readMessage(
@@ -2567,9 +2583,9 @@ public final class ClassificationProto {
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000040;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 annotationSpecId_.add(s);
                 break;
@@ -2598,10 +2614,10 @@ public final class ClassificationProto {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           confidenceMetricsEntry_ = java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
         }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -2822,6 +2838,12 @@ public final class ClassificationProto {
       private ConfidenceMetricsEntry() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ConfidenceMetricsEntry();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -2834,7 +2856,6 @@ public final class ClassificationProto {
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -4644,6 +4665,12 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ConfusionMatrix();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -4800,6 +4827,12 @@ public final class ClassificationProto {
 
         private Row() {
           exampleCount_ = emptyIntList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Row();
         }
 
         @java.lang.Override
@@ -6875,7 +6908,6 @@ public final class ClassificationProto {
       }
     }
 
-    private int bitField0_;
     public static final int AU_PRC_FIELD_NUMBER = 1;
     private float auPrc_;
     /**
@@ -7488,7 +7520,7 @@ public final class ClassificationProto {
 
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           confidenceMetricsEntryBuilder_.clear();
         }
@@ -7499,7 +7531,7 @@ public final class ClassificationProto {
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -7534,16 +7566,15 @@ public final class ClassificationProto {
             new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics(
                 this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.auPrc_ = auPrc_;
         result.baseAuPrc_ = baseAuPrc_;
         result.auRoc_ = auRoc_;
         result.logLoss_ = logLoss_;
         if (confidenceMetricsEntryBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             confidenceMetricsEntry_ =
                 java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.confidenceMetricsEntry_ = confidenceMetricsEntry_;
         } else {
@@ -7554,12 +7585,11 @@ public final class ClassificationProto {
         } else {
           result.confusionMatrix_ = confusionMatrixBuilder_.build();
         }
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.annotationSpecId_ = annotationSpecId_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7635,7 +7665,7 @@ public final class ClassificationProto {
           if (!other.confidenceMetricsEntry_.isEmpty()) {
             if (confidenceMetricsEntry_.isEmpty()) {
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureConfidenceMetricsEntryIsMutable();
               confidenceMetricsEntry_.addAll(other.confidenceMetricsEntry_);
@@ -7648,7 +7678,7 @@ public final class ClassificationProto {
               confidenceMetricsEntryBuilder_.dispose();
               confidenceMetricsEntryBuilder_ = null;
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               confidenceMetricsEntryBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConfidenceMetricsEntryFieldBuilder()
@@ -7664,7 +7694,7 @@ public final class ClassificationProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -7902,13 +7932,13 @@ public final class ClassificationProto {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
 
       private void ensureConfidenceMetricsEntryIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           confidenceMetricsEntry_ =
               new java.util.ArrayList<
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>(
                   confidenceMetricsEntry_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -8232,7 +8262,7 @@ public final class ClassificationProto {
       public Builder clearConfidenceMetricsEntry() {
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           confidenceMetricsEntryBuilder_.clear();
@@ -8428,7 +8458,7 @@ public final class ClassificationProto {
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>(
                   confidenceMetricsEntry_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           confidenceMetricsEntry_ = null;
@@ -8695,9 +8725,9 @@ public final class ClassificationProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -8810,7 +8840,7 @@ public final class ClassificationProto {
        */
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -8966,21 +8996,13 @@ public final class ClassificationProto {
           + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
           + "1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable =

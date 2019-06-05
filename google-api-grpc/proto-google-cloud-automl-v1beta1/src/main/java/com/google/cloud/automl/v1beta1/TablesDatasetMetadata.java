@@ -30,6 +30,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TablesDatasetMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -83,11 +89,11 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 targetColumnCorrelations_ =
                     com.google.protobuf.MapField.newMapField(
                         TargetColumnCorrelationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<
                       java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
@@ -161,7 +167,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.automl.v1beta1.TablesDatasetMetadata.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRIMARY_TABLE_SPEC_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object primaryTableSpecId_;
   /**
@@ -930,7 +935,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       com.google.cloud.automl.v1beta1.TablesDatasetMetadata result =
           new com.google.cloud.automl.v1beta1.TablesDatasetMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.primaryTableSpecId_ = primaryTableSpecId_;
       result.targetColumnSpecId_ = targetColumnSpecId_;
       result.weightColumnSpecId_ = weightColumnSpecId_;
@@ -942,7 +946,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       } else {
         result.statsUpdateTime_ = statsUpdateTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

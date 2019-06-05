@@ -27,6 +27,12 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ModelExportOutputConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,10 +75,10 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -149,7 +155,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
             com.google.cloud.automl.v1beta1.ModelExportOutputConfig.Builder.class);
   }
 
-  private int bitField0_;
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
 
@@ -814,7 +819,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       com.google.cloud.automl.v1beta1.ModelExportOutputConfig result =
           new com.google.cloud.automl.v1beta1.ModelExportOutputConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (destinationCase_ == 1) {
         if (gcsDestinationBuilder_ == null) {
           result.destination_ = destination_;
@@ -832,7 +836,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       result.modelFormat_ = modelFormat_;
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;

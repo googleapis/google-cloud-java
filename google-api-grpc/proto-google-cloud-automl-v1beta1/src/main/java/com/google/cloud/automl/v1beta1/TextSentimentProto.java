@@ -61,6 +61,12 @@ public final class TextSentimentProto {
     private TextSentimentAnnotation() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextSentimentAnnotation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -73,7 +79,6 @@ public final class TextSentimentProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -840,6 +845,12 @@ public final class TextSentimentProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextSentimentEvaluationMetrics();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -921,9 +932,9 @@ public final class TextSentimentProto {
             case 74:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000100;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 annotationSpecId_.add(s);
                 break;
@@ -942,7 +953,7 @@ public final class TextSentimentProto {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -967,7 +978,6 @@ public final class TextSentimentProto {
                   .Builder.class);
     }
 
-    private int bitField0_;
     public static final int PRECISION_FIELD_NUMBER = 1;
     private float precision_;
     /**
@@ -1535,7 +1545,7 @@ public final class TextSentimentProto {
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1570,7 +1580,6 @@ public final class TextSentimentProto {
             new com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics(
                 this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.precision_ = precision_;
         result.recall_ = recall_;
         result.f1Score_ = f1Score_;
@@ -1583,12 +1592,11 @@ public final class TextSentimentProto {
         } else {
           result.confusionMatrix_ = confusionMatrixBuilder_.build();
         }
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.annotationSpecId_ = annotationSpecId_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1674,7 +1682,7 @@ public final class TextSentimentProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -2285,9 +2293,9 @@ public final class TextSentimentProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -2432,7 +2440,7 @@ public final class TextSentimentProto {
        */
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2553,21 +2561,13 @@ public final class TextSentimentProto {
           + "beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1bet"
           + "a1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
+            });
     internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_fieldAccessorTable =

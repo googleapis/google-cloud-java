@@ -27,6 +27,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PredictRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -75,10 +81,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 params_ =
                     com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
                   input.readMessage(
@@ -131,7 +137,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.PredictRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -655,7 +660,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.automl.v1beta1.PredictRequest result =
           new com.google.cloud.automl.v1beta1.PredictRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (payloadBuilder_ == null) {
         result.payload_ = payload_;
@@ -664,7 +668,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       }
       result.params_ = internalGetParams();
       result.params_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

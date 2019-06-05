@@ -28,6 +28,12 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextExtractionEvaluationMetrics();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -58,12 +64,12 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 confidenceMetricsEntries_ =
                     new java.util.ArrayList<
                         com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics
                             .ConfidenceMetricsEntry>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               confidenceMetricsEntries_.add(
                   input.readMessage(
@@ -86,7 +92,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         confidenceMetricsEntries_ =
             java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
       }
@@ -184,6 +190,12 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     private ConfidenceMetricsEntry() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConfidenceMetricsEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -196,7 +208,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -983,7 +994,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     }
   }
 
-  private int bitField0_;
   public static final int AU_PRC_FIELD_NUMBER = 1;
   private float auPrc_;
   /**
@@ -1314,7 +1324,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         confidenceMetricsEntriesBuilder_.clear();
       }
@@ -1347,19 +1357,17 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics result =
           new com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.auPrc_ = auPrc_;
       if (confidenceMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           confidenceMetricsEntries_ =
               java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.confidenceMetricsEntries_ = confidenceMetricsEntries_;
       } else {
         result.confidenceMetricsEntries_ = confidenceMetricsEntriesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1419,7 +1427,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         if (!other.confidenceMetricsEntries_.isEmpty()) {
           if (confidenceMetricsEntries_.isEmpty()) {
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureConfidenceMetricsEntriesIsMutable();
             confidenceMetricsEntries_.addAll(other.confidenceMetricsEntries_);
@@ -1432,7 +1440,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
             confidenceMetricsEntriesBuilder_.dispose();
             confidenceMetricsEntriesBuilder_ = null;
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             confidenceMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConfidenceMetricsEntriesFieldBuilder()
@@ -1524,12 +1532,12 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureConfidenceMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         confidenceMetricsEntries_ =
             new java.util.ArrayList<
                 com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics
                     .ConfidenceMetricsEntry>(confidenceMetricsEntries_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1803,7 +1811,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     public Builder clearConfidenceMetricsEntries() {
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         confidenceMetricsEntriesBuilder_.clear();
@@ -1970,7 +1978,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
                 com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics
                     .ConfidenceMetricsEntryOrBuilder>(
                 confidenceMetricsEntries_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         confidenceMetricsEntries_ = null;
