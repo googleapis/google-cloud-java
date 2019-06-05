@@ -83,6 +83,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.threeten.bp.Instant;
 
@@ -415,6 +416,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private final ConcurrentMap<ByteString, Boolean> isPartitionedDmlTransaction =
       new ConcurrentHashMap<>();
   private final ConcurrentMap<ByteString, Boolean> abortedTransactions = new ConcurrentHashMap<>();
+  private final AtomicBoolean abortNextTransaction = new AtomicBoolean();
   private final ConcurrentMap<String, AtomicLong> transactionCounters = new ConcurrentHashMap<>();
   private final ConcurrentMap<String, List<ByteString>> partitionTokens = new ConcurrentHashMap<>();
   private ConcurrentMap<ByteString, Instant> transactionLastUsed = new ConcurrentHashMap<>();
@@ -519,6 +521,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       throw new IllegalArgumentException(
           "Unsupported TransactionContext type: " + transactionContext.getClass().getName());
     }
+  }
+
+  /** Instruct the mock server to abort the next transaction that is created. */
+  public void abortNextTransaction() {
+    abortNextTransaction.set(true);
   }
 
   @Override
@@ -1166,6 +1173,9 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     transactions.put(transaction.getId(), transaction);
     isPartitionedDmlTransaction.put(
         transaction.getId(), options.getModeCase() == ModeCase.PARTITIONED_DML);
+    if (abortNextTransaction.getAndSet(false)) {
+      markAbortedTransaction(transaction.getId());
+    }
     return transaction;
   }
 
