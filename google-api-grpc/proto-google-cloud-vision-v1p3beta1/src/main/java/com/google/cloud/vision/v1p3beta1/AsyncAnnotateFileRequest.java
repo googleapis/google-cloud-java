@@ -27,6 +27,12 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsyncAnnotateFileRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -68,9 +74,9 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 features_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Feature>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               features_.add(
                   input.readMessage(
@@ -123,7 +129,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
       }
       this.unknownFields = unknownFields.build();
@@ -146,7 +152,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p3beta1.InputConfig inputConfig_;
   /**
@@ -593,7 +598,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         featuresBuilder_.clear();
       }
@@ -637,16 +642,15 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest result =
           new com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (inputConfigBuilder_ == null) {
         result.inputConfig_ = inputConfig_;
       } else {
         result.inputConfig_ = inputConfigBuilder_.build();
       }
       if (featuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           features_ = java.util.Collections.unmodifiableList(features_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.features_ = features_;
       } else {
@@ -662,7 +666,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -720,7 +723,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         if (!other.features_.isEmpty()) {
           if (features_.isEmpty()) {
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFeaturesIsMutable();
             features_.addAll(other.features_);
@@ -733,7 +736,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             featuresBuilder_.dispose();
             featuresBuilder_ = null;
             features_ = other.features_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             featuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFeaturesFieldBuilder()
@@ -967,9 +970,9 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         features_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Feature>(features_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1184,7 +1187,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public Builder clearFeatures() {
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         featuresBuilder_.clear();
@@ -1306,7 +1309,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
                 com.google.cloud.vision.v1p3beta1.Feature,
                 com.google.cloud.vision.v1p3beta1.Feature.Builder,
                 com.google.cloud.vision.v1p3beta1.FeatureOrBuilder>(
-                features_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                features_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         features_ = null;
       }
       return featuresBuilder_;

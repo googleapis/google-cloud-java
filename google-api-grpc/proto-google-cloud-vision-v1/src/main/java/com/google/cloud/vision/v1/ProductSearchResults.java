@@ -28,6 +28,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ProductSearchResults();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -68,11 +74,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1.ProductSearchResults.Result>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               results_.add(
                   input.readMessage(
@@ -82,11 +88,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 productGroupedResults_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               productGroupedResults_.add(
                   input.readMessage(
@@ -108,10 +114,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         results_ = java.util.Collections.unmodifiableList(results_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -229,6 +235,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -241,7 +253,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1273,6 +1284,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GroupedResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1314,11 +1331,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   results_ =
                       new java.util.ArrayList<
                           com.google.cloud.vision.v1.ProductSearchResults.Result>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 results_.add(
                     input.readMessage(
@@ -1340,7 +1357,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
         }
         this.unknownFields = unknownFields.build();
@@ -1363,7 +1380,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               com.google.cloud.vision.v1.ProductSearchResults.GroupedResult.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
     private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
     /**
@@ -1704,7 +1720,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         }
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           resultsBuilder_.clear();
         }
@@ -1737,22 +1753,20 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         com.google.cloud.vision.v1.ProductSearchResults.GroupedResult result =
             new com.google.cloud.vision.v1.ProductSearchResults.GroupedResult(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (boundingPolyBuilder_ == null) {
           result.boundingPoly_ = boundingPoly_;
         } else {
           result.boundingPoly_ = boundingPolyBuilder_.build();
         }
         if (resultsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             results_ = java.util.Collections.unmodifiableList(results_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.results_ = results_;
         } else {
           result.results_ = resultsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1814,7 +1828,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           if (!other.results_.isEmpty()) {
             if (results_.isEmpty()) {
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureResultsIsMutable();
               results_.addAll(other.results_);
@@ -1827,7 +1841,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
               resultsBuilder_.dispose();
               resultsBuilder_ = null;
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               resultsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getResultsFieldBuilder()
@@ -2056,11 +2070,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           java.util.Collections.emptyList();
 
       private void ensureResultsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           results_ =
               new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.Result>(
                   results_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -2282,7 +2296,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       public Builder clearResults() {
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           resultsBuilder_.clear();
@@ -2410,7 +2424,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                   com.google.cloud.vision.v1.ProductSearchResults.Result,
                   com.google.cloud.vision.v1.ProductSearchResults.Result.Builder,
                   com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>(
-                  results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           results_ = null;
         }
         return resultsBuilder_;
@@ -2471,7 +2485,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
   }
 
-  private int bitField0_;
   public static final int INDEX_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp indexTime_;
   /**
@@ -2920,13 +2933,13 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       }
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         resultsBuilder_.clear();
       }
       if (productGroupedResultsBuilder_ == null) {
         productGroupedResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         productGroupedResultsBuilder_.clear();
       }
@@ -2958,31 +2971,29 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1.ProductSearchResults result =
           new com.google.cloud.vision.v1.ProductSearchResults(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (indexTimeBuilder_ == null) {
         result.indexTime_ = indexTime_;
       } else {
         result.indexTime_ = indexTimeBuilder_.build();
       }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.results_ = results_;
       } else {
         result.results_ = resultsBuilder_.build();
       }
       if (productGroupedResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.productGroupedResults_ = productGroupedResults_;
       } else {
         result.productGroupedResults_ = productGroupedResultsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3040,7 +3051,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!other.results_.isEmpty()) {
           if (results_.isEmpty()) {
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResultsIsMutable();
             results_.addAll(other.results_);
@@ -3053,7 +3064,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             resultsBuilder_.dispose();
             resultsBuilder_ = null;
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             resultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResultsFieldBuilder()
@@ -3067,7 +3078,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!other.productGroupedResults_.isEmpty()) {
           if (productGroupedResults_.isEmpty()) {
             productGroupedResults_ = other.productGroupedResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureProductGroupedResultsIsMutable();
             productGroupedResults_.addAll(other.productGroupedResults_);
@@ -3080,7 +3091,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             productGroupedResultsBuilder_.dispose();
             productGroupedResultsBuilder_ = null;
             productGroupedResults_ = other.productGroupedResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
             productGroupedResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductGroupedResultsFieldBuilder()
@@ -3318,11 +3329,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.Result>(
                 results_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -3541,7 +3552,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearResults() {
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         resultsBuilder_.clear();
@@ -3667,7 +3678,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.ProductSearchResults.Result,
                 com.google.cloud.vision.v1.ProductSearchResults.Result.Builder,
                 com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>(
-                results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;
@@ -3677,11 +3688,11 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         productGroupedResults_ = java.util.Collections.emptyList();
 
     private void ensureProductGroupedResultsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         productGroupedResults_ =
             new java.util.ArrayList<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>(
                 productGroupedResults_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3960,7 +3971,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearProductGroupedResults() {
       if (productGroupedResultsBuilder_ == null) {
         productGroupedResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         productGroupedResultsBuilder_.clear();
@@ -4126,7 +4137,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1.ProductSearchResults.GroupedResult.Builder,
                 com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder>(
                 productGroupedResults_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         productGroupedResults_ = null;

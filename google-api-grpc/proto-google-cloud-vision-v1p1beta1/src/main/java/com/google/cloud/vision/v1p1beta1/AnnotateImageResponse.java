@@ -31,6 +31,12 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnnotateImageResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -265,7 +271,6 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vision.v1p1beta1.AnnotateImageResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FACE_ANNOTATIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1p1beta1.FaceAnnotation> faceAnnotations_;
   /**
@@ -1299,7 +1304,6 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.vision.v1p1beta1.AnnotateImageResponse result =
           new com.google.cloud.vision.v1p1beta1.AnnotateImageResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (faceAnnotationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
@@ -1375,7 +1379,6 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.error_ = errorBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

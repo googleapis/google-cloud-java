@@ -28,6 +28,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AsyncBatchAnnotateImagesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -116,7 +122,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
             com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int REQUESTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> requests_;
   /**
@@ -485,7 +490,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
       com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest result =
           new com.google.cloud.vision.v1.AsyncBatchAnnotateImagesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (requestsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
@@ -500,7 +504,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

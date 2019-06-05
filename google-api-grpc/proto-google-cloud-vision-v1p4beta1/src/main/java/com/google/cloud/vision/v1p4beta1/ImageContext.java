@@ -27,6 +27,12 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ImageContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 languageHints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               languageHints_.add(s);
               break;
@@ -141,7 +147,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -164,7 +170,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p4beta1.ImageContext.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LAT_LONG_RECT_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p4beta1.LatLongRect latLongRect_;
   /**
@@ -684,7 +689,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         latLongRectBuilder_ = null;
       }
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (cropHintsParamsBuilder_ == null) {
         cropHintsParams_ = null;
       } else {
@@ -731,15 +736,14 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1p4beta1.ImageContext result =
           new com.google.cloud.vision.v1p4beta1.ImageContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (latLongRectBuilder_ == null) {
         result.latLongRect_ = latLongRect_;
       } else {
         result.latLongRect_ = latLongRectBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
       if (cropHintsParamsBuilder_ == null) {
@@ -757,7 +761,6 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.webDetectionParams_ = webDetectionParamsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -813,7 +816,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageHints_.isEmpty()) {
         if (languageHints_.isEmpty()) {
           languageHints_ = other.languageHints_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLanguageHintsIsMutable();
           languageHints_.addAll(other.languageHints_);
@@ -1046,9 +1049,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageHintsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1217,7 +1220,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguageHints() {
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

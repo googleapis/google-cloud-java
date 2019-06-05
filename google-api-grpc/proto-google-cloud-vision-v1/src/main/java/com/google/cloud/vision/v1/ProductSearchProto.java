@@ -63,23 +63,15 @@ public final class ProductSearchProto {
           + "/genproto/googleapis/cloud/vision/v1;vis"
           + "ion\370\001\001\242\002\004GCVNb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.vision.v1.GeometryProto.getDescriptor(),
-          com.google.cloud.vision.v1.ProductSearchServiceProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.vision.v1.GeometryProto.getDescriptor(),
+              com.google.cloud.vision.v1.ProductSearchServiceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_vision_v1_ProductSearchParams_fieldAccessorTable =

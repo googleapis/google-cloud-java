@@ -35,6 +35,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TextAnnotation();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -177,6 +183,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DetectedLanguage();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -189,7 +201,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -911,6 +922,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DetectedBreak();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -923,7 +940,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1882,6 +1898,12 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextProperty();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1973,7 +1995,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.vision.v1.TextAnnotation.TextProperty.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DETECTED_LANGUAGES_FIELD_NUMBER = 1;
     private java.util.List<com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage>
         detectedLanguages_;
@@ -2361,7 +2382,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.vision.v1.TextAnnotation.TextProperty result =
             new com.google.cloud.vision.v1.TextAnnotation.TextProperty(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (detectedLanguagesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
@@ -2376,7 +2396,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.detectedBreak_ = detectedBreakBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3136,7 +3155,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int PAGES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.Page> pages_;
   /**
@@ -3504,7 +3522,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.vision.v1.TextAnnotation result =
           new com.google.cloud.vision.v1.TextAnnotation(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (pagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pages_ = java.util.Collections.unmodifiableList(pages_);
@@ -3515,7 +3532,6 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         result.pages_ = pagesBuilder_.build();
       }
       result.text_ = text_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
