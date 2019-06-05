@@ -28,6 +28,12 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CustomAttribute();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -129,7 +135,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.talent.v4beta1.CustomAttribute.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STRING_VALUES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList stringValues_;
   /**
@@ -584,7 +589,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.talent.v4beta1.CustomAttribute result =
           new com.google.cloud.talent.v4beta1.CustomAttribute(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         stringValues_ = stringValues_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -596,7 +600,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       result.longValues_ = longValues_;
       result.filterable_ = filterable_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

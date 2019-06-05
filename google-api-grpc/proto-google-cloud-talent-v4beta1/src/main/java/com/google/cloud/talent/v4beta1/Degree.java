@@ -29,6 +29,12 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Degree();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fieldsOfStudy_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               fieldsOfStudy_.add(s);
               break;
@@ -90,7 +96,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fieldsOfStudy_ = fieldsOfStudy_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -113,7 +119,6 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.Degree.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DEGREE_TYPE_FIELD_NUMBER = 1;
   private int degreeType_;
   /**
@@ -493,7 +498,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       degreeName_ = "";
 
       fieldsOfStudy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -522,15 +527,13 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Degree result =
           new com.google.cloud.talent.v4beta1.Degree(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.degreeType_ = degreeType_;
       result.degreeName_ = degreeName_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fieldsOfStudy_ = fieldsOfStudy_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fieldsOfStudy_ = fieldsOfStudy_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -590,7 +593,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
       if (!other.fieldsOfStudy_.isEmpty()) {
         if (fieldsOfStudy_.isEmpty()) {
           fieldsOfStudy_ = other.fieldsOfStudy_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFieldsOfStudyIsMutable();
           fieldsOfStudy_.addAll(other.fieldsOfStudy_);
@@ -822,9 +825,9 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFieldsOfStudyIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fieldsOfStudy_ = new com.google.protobuf.LazyStringArrayList(fieldsOfStudy_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -961,7 +964,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFieldsOfStudy() {
       fieldsOfStudy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

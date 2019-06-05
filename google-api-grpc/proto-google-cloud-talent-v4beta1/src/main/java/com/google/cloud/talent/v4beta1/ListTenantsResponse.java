@@ -29,6 +29,12 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTenantsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -123,7 +129,6 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.talent.v4beta1.ListTenantsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TENANTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.Tenant> tenants_;
   /**
@@ -549,7 +554,6 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       com.google.cloud.talent.v4beta1.ListTenantsResponse result =
           new com.google.cloud.talent.v4beta1.ListTenantsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (tenantsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tenants_ = java.util.Collections.unmodifiableList(tenants_);
@@ -565,7 +569,6 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

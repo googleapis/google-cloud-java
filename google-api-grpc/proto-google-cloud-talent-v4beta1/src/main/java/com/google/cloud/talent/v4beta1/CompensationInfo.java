@@ -27,6 +27,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompensationInfo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -960,6 +966,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CompensationEntry();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -972,7 +984,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3097,6 +3108,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     private CompensationRange() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CompensationRange();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3109,7 +3126,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4126,7 +4142,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  private int bitField0_;
   public static final int ENTRIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry>
       entries_;
@@ -4652,7 +4667,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       com.google.cloud.talent.v4beta1.CompensationInfo result =
           new com.google.cloud.talent.v4beta1.CompensationInfo(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -4672,7 +4686,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       } else {
         result.annualizedTotalCompensationRange_ = annualizedTotalCompensationRangeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

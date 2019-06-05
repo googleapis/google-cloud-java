@@ -29,6 +29,12 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompensationFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 units_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               units_.add(rawValue);
               break;
@@ -75,9 +81,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   units_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 units_.add(rawValue);
               }
@@ -121,7 +127,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         units_ = java.util.Collections.unmodifiableList(units_);
       }
       this.unknownFields = unknownFields.build();
@@ -385,7 +391,6 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.talent.v4beta1.CompensationFilter.FilterType)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -842,7 +847,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       type_ = 0;
 
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (rangeBuilder_ == null) {
         range_ = null;
       } else {
@@ -879,11 +884,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       com.google.cloud.talent.v4beta1.CompensationFilter result =
           new com.google.cloud.talent.v4beta1.CompensationFilter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         units_ = java.util.Collections.unmodifiableList(units_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.units_ = units_;
       if (rangeBuilder_ == null) {
@@ -893,7 +897,6 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       }
       result.includeJobsWithUnspecifiedCompensationRange_ =
           includeJobsWithUnspecifiedCompensationRange_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -950,7 +953,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
       if (!other.units_.isEmpty()) {
         if (units_.isEmpty()) {
           units_ = other.units_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureUnitsIsMutable();
           units_.addAll(other.units_);
@@ -1082,9 +1085,9 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> units_ = java.util.Collections.emptyList();
 
     private void ensureUnitsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         units_ = new java.util.ArrayList<java.lang.Integer>(units_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1216,7 +1219,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearUnits() {
       units_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

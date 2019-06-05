@@ -28,6 +28,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CompleteQueryResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -216,6 +222,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CompletionResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -228,7 +240,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1115,7 +1126,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
   }
 
-  private int bitField0_;
   public static final int COMPLETION_RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult>
       completionResults_;
@@ -1504,7 +1514,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       com.google.cloud.talent.v4beta1.CompleteQueryResponse result =
           new com.google.cloud.talent.v4beta1.CompleteQueryResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (completionResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           completionResults_ = java.util.Collections.unmodifiableList(completionResults_);
@@ -1519,7 +1528,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
