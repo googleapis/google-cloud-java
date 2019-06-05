@@ -96,21 +96,13 @@ public final class TargetProto {
           + "oto/googleapis/cloud/scheduler/v1beta1;s"
           + "chedulerb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.protobuf.AnyProto.getDescriptor(),
+            });
     internal_static_google_cloud_scheduler_v1beta1_HttpTarget_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_scheduler_v1beta1_HttpTarget_fieldAccessorTable =

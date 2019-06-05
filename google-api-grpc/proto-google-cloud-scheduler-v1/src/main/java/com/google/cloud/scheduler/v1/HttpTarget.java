@@ -34,6 +34,12 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new HttpTarget();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -73,11 +79,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
                   input.readMessage(
@@ -171,7 +177,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.scheduler.v1.HttpTarget.Builder.class);
   }
 
-  private int bitField0_;
   private int authorizationHeaderCase_ = 0;
   private java.lang.Object authorizationHeader_;
 
@@ -918,7 +923,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.scheduler.v1.HttpTarget result =
           new com.google.cloud.scheduler.v1.HttpTarget(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.uri_ = uri_;
       result.httpMethod_ = httpMethod_;
       result.headers_ = internalGetHeaders();
@@ -938,7 +942,6 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
           result.authorizationHeader_ = oidcTokenBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.authorizationHeaderCase_ = authorizationHeaderCase_;
       onBuilt();
       return result;
