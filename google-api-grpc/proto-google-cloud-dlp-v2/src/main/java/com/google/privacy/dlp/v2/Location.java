@@ -27,6 +27,12 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -82,10 +88,10 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 contentLocations_ =
                     new java.util.ArrayList<com.google.privacy.dlp.v2.ContentLocation>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               contentLocations_.add(
                   input.readMessage(
@@ -106,7 +112,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
       }
       this.unknownFields = unknownFields.build();
@@ -129,7 +135,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Location.Builder.class);
   }
 
-  private int bitField0_;
   public static final int BYTE_RANGE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.Range byteRange_;
   /**
@@ -546,7 +551,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       }
       if (contentLocationsBuilder_ == null) {
         contentLocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         contentLocationsBuilder_.clear();
       }
@@ -577,7 +582,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Location buildPartial() {
       com.google.privacy.dlp.v2.Location result = new com.google.privacy.dlp.v2.Location(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (byteRangeBuilder_ == null) {
         result.byteRange_ = byteRange_;
       } else {
@@ -589,15 +593,14 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         result.codepointRange_ = codepointRangeBuilder_.build();
       }
       if (contentLocationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           contentLocations_ = java.util.Collections.unmodifiableList(contentLocations_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.contentLocations_ = contentLocations_;
       } else {
         result.contentLocations_ = contentLocationsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -657,7 +660,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         if (!other.contentLocations_.isEmpty()) {
           if (contentLocations_.isEmpty()) {
             contentLocations_ = other.contentLocations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureContentLocationsIsMutable();
             contentLocations_.addAll(other.contentLocations_);
@@ -670,7 +673,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
             contentLocationsBuilder_.dispose();
             contentLocationsBuilder_ = null;
             contentLocations_ = other.contentLocations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             contentLocationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContentLocationsFieldBuilder()
@@ -1131,10 +1134,10 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureContentLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         contentLocations_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.ContentLocation>(contentLocations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1361,7 +1364,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public Builder clearContentLocations() {
       if (contentLocationsBuilder_ == null) {
         contentLocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         contentLocationsBuilder_.clear();
@@ -1492,7 +1495,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.ContentLocation.Builder,
                 com.google.privacy.dlp.v2.ContentLocationOrBuilder>(
                 contentLocations_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         contentLocations_ = null;

@@ -33,6 +33,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new JobTrigger();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -95,9 +101,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 triggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               triggers_.add(
                   input.readMessage(
@@ -106,9 +112,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               errors_.add(
                   input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
@@ -180,10 +186,10 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         triggers_ = java.util.Collections.unmodifiableList(triggers_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
       }
       this.unknownFields = unknownFields.build();
@@ -420,6 +426,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     private Trigger() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Trigger();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -432,7 +444,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1188,7 +1199,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   private int jobCase_ = 0;
   private java.lang.Object job_;
 
@@ -2008,13 +2018,13 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
       if (triggersBuilder_ == null) {
         triggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         triggersBuilder_.clear();
       }
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         errorsBuilder_.clear();
       }
@@ -2067,7 +2077,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.JobTrigger buildPartial() {
       com.google.privacy.dlp.v2.JobTrigger result = new com.google.privacy.dlp.v2.JobTrigger(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.description_ = description_;
@@ -2079,18 +2088,18 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (triggersBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           triggers_ = java.util.Collections.unmodifiableList(triggers_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.triggers_ = triggers_;
       } else {
         result.triggers_ = triggersBuilder_.build();
       }
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.errors_ = errors_;
       } else {
@@ -2112,7 +2121,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         result.lastRunTime_ = lastRunTimeBuilder_.build();
       }
       result.status_ = status_;
-      result.bitField0_ = to_bitField0_;
       result.jobCase_ = jobCase_;
       onBuilt();
       return result;
@@ -2179,7 +2187,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         if (!other.triggers_.isEmpty()) {
           if (triggers_.isEmpty()) {
             triggers_ = other.triggers_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTriggersIsMutable();
             triggers_.addAll(other.triggers_);
@@ -2192,7 +2200,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             triggersBuilder_.dispose();
             triggersBuilder_ = null;
             triggers_ = other.triggers_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             triggersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTriggersFieldBuilder()
@@ -2206,7 +2214,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -2219,7 +2227,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -2723,10 +2731,10 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTriggersIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         triggers_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>(triggers_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2964,7 +2972,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTriggers() {
       if (triggersBuilder_ == null) {
         triggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         triggersBuilder_.clear();
@@ -3100,7 +3108,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.JobTrigger.Trigger,
                 com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder,
                 com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>(
-                triggers_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                triggers_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         triggers_ = null;
       }
       return triggersBuilder_;
@@ -3110,9 +3118,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3358,7 +3366,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -3500,7 +3508,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

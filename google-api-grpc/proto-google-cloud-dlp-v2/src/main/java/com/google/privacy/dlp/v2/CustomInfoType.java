@@ -30,6 +30,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CustomInfoType();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -146,11 +152,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 detectionRules_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               detectionRules_.add(
                   input.readMessage(
@@ -179,7 +185,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -433,6 +439,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private Dictionary() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Dictionary();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -445,7 +457,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -602,6 +613,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       private WordList() {
         words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new WordList();
       }
 
       @java.lang.Override
@@ -2405,6 +2422,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Regex();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2437,9 +2460,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               }
             case 16:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   groupIndexes_ = newIntList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 groupIndexes_.addInt(input.readInt32());
                 break;
@@ -2448,9 +2471,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                   groupIndexes_ = newIntList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   groupIndexes_.addInt(input.readInt32());
@@ -2472,7 +2495,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           groupIndexes_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -2495,7 +2518,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PATTERN_FIELD_NUMBER = 1;
     private volatile java.lang.Object pattern_;
     /**
@@ -2822,7 +2844,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         pattern_ = "";
 
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2851,14 +2873,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.CustomInfoType.Regex result =
             new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.pattern_ = pattern_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           groupIndexes_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.groupIndexes_ = groupIndexes_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2918,7 +2938,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (!other.groupIndexes_.isEmpty()) {
           if (groupIndexes_.isEmpty()) {
             groupIndexes_ = other.groupIndexes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureGroupIndexesIsMutable();
             groupIndexes_.addAll(other.groupIndexes_);
@@ -3063,9 +3083,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.Internal.IntList groupIndexes_ = emptyIntList();
 
       private void ensureGroupIndexesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           groupIndexes_ = mutableCopy(groupIndexes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -3079,7 +3099,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 group_indexes = 2;</code>
        */
       public java.util.List<java.lang.Integer> getGroupIndexesList() {
-        return ((bitField0_ & 0x00000002) != 0)
+        return ((bitField0_ & 0x00000001) != 0)
             ? java.util.Collections.unmodifiableList(groupIndexes_)
             : groupIndexes_;
       }
@@ -3169,7 +3189,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearGroupIndexes() {
         groupIndexes_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3257,6 +3277,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private SurrogateType() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SurrogateType();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -3747,6 +3773,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     private DetectionRule() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DetectionRule();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3759,7 +3791,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3875,6 +3906,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private Proximity() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Proximity();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -3887,7 +3924,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -4534,6 +4570,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private LikelihoodAdjustment() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LikelihoodAdjustment();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -4546,7 +4588,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -5477,6 +5518,12 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       private HotwordRule() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new HotwordRule();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -5489,7 +5536,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -7584,7 +7630,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
@@ -8335,7 +8380,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         detectionRulesBuilder_.clear();
       }
@@ -8371,7 +8416,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.CustomInfoType result =
           new com.google.privacy.dlp.v2.CustomInfoType(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (infoTypeBuilder_ == null) {
         result.infoType_ = infoType_;
       } else {
@@ -8407,16 +8451,15 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.detectionRules_ = detectionRules_;
       } else {
         result.detectionRules_ = detectionRulesBuilder_.build();
       }
       result.exclusionType_ = exclusionType_;
-      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -8477,7 +8520,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -8490,7 +8533,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000001);
             detectionRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDetectionRulesFieldBuilder()
@@ -9716,11 +9759,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         detectionRules_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
                 detectionRules_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -9973,7 +10016,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -10122,7 +10165,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;

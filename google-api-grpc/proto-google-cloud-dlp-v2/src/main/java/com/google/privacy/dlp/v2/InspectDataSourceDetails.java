@@ -25,6 +25,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
   private InspectDataSourceDetails() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InspectDataSourceDetails();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -177,6 +182,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     private RequestedOptions() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RequestedOptions();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -189,7 +200,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1158,6 +1168,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1193,10 +1209,10 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   infoTypeStats_ =
                       new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeStats>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 infoTypeStats_.add(
                     input.readMessage(
@@ -1217,7 +1233,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           infoTypeStats_ = java.util.Collections.unmodifiableList(infoTypeStats_);
         }
         this.unknownFields = unknownFields.build();
@@ -1240,7 +1256,6 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PROCESSED_BYTES_FIELD_NUMBER = 1;
     private long processedBytes_;
     /**
@@ -1575,7 +1590,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
 
         if (infoTypeStatsBuilder_ == null) {
           infoTypeStats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           infoTypeStatsBuilder_.clear();
         }
@@ -1607,19 +1622,17 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
         com.google.privacy.dlp.v2.InspectDataSourceDetails.Result result =
             new com.google.privacy.dlp.v2.InspectDataSourceDetails.Result(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.processedBytes_ = processedBytes_;
         result.totalEstimatedBytes_ = totalEstimatedBytes_;
         if (infoTypeStatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             infoTypeStats_ = java.util.Collections.unmodifiableList(infoTypeStats_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.infoTypeStats_ = infoTypeStats_;
         } else {
           result.infoTypeStats_ = infoTypeStatsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1682,7 +1695,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           if (!other.infoTypeStats_.isEmpty()) {
             if (infoTypeStats_.isEmpty()) {
               infoTypeStats_ = other.infoTypeStats_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureInfoTypeStatsIsMutable();
               infoTypeStats_.addAll(other.infoTypeStats_);
@@ -1695,7 +1708,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
               infoTypeStatsBuilder_.dispose();
               infoTypeStatsBuilder_ = null;
               infoTypeStats_ = other.infoTypeStats_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               infoTypeStatsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getInfoTypeStatsFieldBuilder()
@@ -1829,10 +1842,10 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
           java.util.Collections.emptyList();
 
       private void ensureInfoTypeStatsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           infoTypeStats_ =
               new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeStats>(infoTypeStats_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -2059,7 +2072,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
       public Builder clearInfoTypeStats() {
         if (infoTypeStatsBuilder_ == null) {
           infoTypeStats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           infoTypeStatsBuilder_.clear();
@@ -2189,7 +2202,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
                   com.google.privacy.dlp.v2.InfoTypeStats.Builder,
                   com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder>(
                   infoTypeStats_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           infoTypeStats_ = null;

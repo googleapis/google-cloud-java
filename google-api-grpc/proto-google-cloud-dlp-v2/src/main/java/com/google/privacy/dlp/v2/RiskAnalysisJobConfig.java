@@ -28,6 +28,12 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new RiskAnalysisJobConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -85,9 +91,9 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               actions_.add(
                   input.readMessage(com.google.privacy.dlp.v2.Action.parser(), extensionRegistry));
@@ -107,7 +113,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         actions_ = java.util.Collections.unmodifiableList(actions_);
       }
       this.unknownFields = unknownFields.build();
@@ -130,7 +136,6 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PRIVACY_METRIC_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.PrivacyMetric privacyMetric_;
   /**
@@ -533,7 +538,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       }
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         actionsBuilder_.clear();
       }
@@ -565,7 +570,6 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
       com.google.privacy.dlp.v2.RiskAnalysisJobConfig result =
           new com.google.privacy.dlp.v2.RiskAnalysisJobConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (privacyMetricBuilder_ == null) {
         result.privacyMetric_ = privacyMetric_;
       } else {
@@ -577,15 +581,14 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         result.sourceTable_ = sourceTableBuilder_.build();
       }
       if (actionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.actions_ = actions_;
       } else {
         result.actions_ = actionsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -646,7 +649,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         if (!other.actions_.isEmpty()) {
           if (actions_.isEmpty()) {
             actions_ = other.actions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureActionsIsMutable();
             actions_.addAll(other.actions_);
@@ -659,7 +662,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
             actionsBuilder_.dispose();
             actionsBuilder_ = null;
             actions_ = other.actions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             actionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getActionsFieldBuilder()
@@ -1067,9 +1070,9 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureActionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>(actions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1293,7 +1296,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     public Builder clearActions() {
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         actionsBuilder_.clear();
@@ -1421,7 +1424,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
                 com.google.privacy.dlp.v2.Action,
                 com.google.privacy.dlp.v2.Action.Builder,
                 com.google.privacy.dlp.v2.ActionOrBuilder>(
-                actions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                actions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         actions_ = null;
       }
       return actionsBuilder_;

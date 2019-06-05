@@ -25,6 +25,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
   private AnalyzeDataSourceRiskDetails() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AnalyzeDataSourceRiskDetails();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -409,6 +414,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NumericalStatsResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -464,9 +475,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               }
             case 34:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   quantileValues_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 quantileValues_.add(
                     input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry));
@@ -486,7 +497,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           quantileValues_ = java.util.Collections.unmodifiableList(quantileValues_);
         }
         this.unknownFields = unknownFields.build();
@@ -510,7 +521,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   .class);
     }
 
-    private int bitField0_;
     public static final int MIN_VALUE_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.Value minValue_;
     /**
@@ -920,7 +930,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
         if (quantileValuesBuilder_ == null) {
           quantileValues_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           quantileValuesBuilder_.clear();
         }
@@ -956,7 +966,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult result =
             new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (minValueBuilder_ == null) {
           result.minValue_ = minValue_;
         } else {
@@ -968,15 +977,14 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           result.maxValue_ = maxValueBuilder_.build();
         }
         if (quantileValuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             quantileValues_ = java.util.Collections.unmodifiableList(quantileValues_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.quantileValues_ = quantileValues_;
         } else {
           result.quantileValues_ = quantileValuesBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1044,7 +1052,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           if (!other.quantileValues_.isEmpty()) {
             if (quantileValues_.isEmpty()) {
               quantileValues_ = other.quantileValues_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureQuantileValuesIsMutable();
               quantileValues_.addAll(other.quantileValues_);
@@ -1057,7 +1065,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               quantileValuesBuilder_.dispose();
               quantileValuesBuilder_ = null;
               quantileValues_ = other.quantileValues_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               quantileValuesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getQuantileValuesFieldBuilder()
@@ -1467,10 +1475,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           java.util.Collections.emptyList();
 
       private void ensureQuantileValuesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           quantileValues_ =
               new java.util.ArrayList<com.google.privacy.dlp.v2.Value>(quantileValues_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -1696,7 +1704,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       public Builder clearQuantileValues() {
         if (quantileValuesBuilder_ == null) {
           quantileValues_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           quantileValuesBuilder_.clear();
@@ -1826,7 +1834,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   com.google.privacy.dlp.v2.Value.Builder,
                   com.google.privacy.dlp.v2.ValueOrBuilder>(
                   quantileValues_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           quantileValues_ = null;
@@ -1988,6 +1996,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
     private CategoricalStatsResult() {
       valueFrequencyHistogramBuckets_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CategoricalStatsResult();
     }
 
     @java.lang.Override
@@ -2196,6 +2210,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CategoricalStatsHistogramBucket();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -2236,10 +2256,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     bucketValues_ =
                         new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   bucketValues_.add(
                       input.readMessage(
@@ -2266,7 +2286,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -2291,7 +2311,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .CategoricalStatsHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int VALUE_FREQUENCY_LOWER_BOUND_FIELD_NUMBER = 1;
       private long valueFrequencyLowerBound_;
       /**
@@ -2706,7 +2725,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -2752,21 +2771,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
                       .CategoricalStatsHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.valueFrequencyLowerBound_ = valueFrequencyLowerBound_;
           result.valueFrequencyUpperBound_ = valueFrequencyUpperBound_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -2842,7 +2859,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -2855,7 +2872,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -3040,10 +3057,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -3270,7 +3287,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -3401,7 +3418,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.ValueFrequency.Builder,
                     com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -4601,6 +4618,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KAnonymityResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -4785,6 +4808,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new KAnonymityEquivalenceClass();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -4864,7 +4893,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .KAnonymityEquivalenceClass.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -5258,7 +5286,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                       .KAnonymityEquivalenceClass(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -5269,7 +5296,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
           result.equivalenceClassSize_ = equivalenceClassSize_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -6040,6 +6066,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new KAnonymityHistogramBucket();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -6080,12 +6112,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     bucketValues_ =
                         new java.util.ArrayList<
                             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                                 .KAnonymityEquivalenceClass>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   bucketValues_.add(
                       input.readMessage(
@@ -6114,7 +6146,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -6139,7 +6171,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .KAnonymityHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int EQUIVALENCE_CLASS_SIZE_LOWER_BOUND_FIELD_NUMBER = 1;
       private long equivalenceClassSizeLowerBound_;
       /**
@@ -6585,7 +6616,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -6631,21 +6662,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                       .KAnonymityHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.equivalenceClassSizeLowerBound_ = equivalenceClassSizeLowerBound_;
           result.equivalenceClassSizeUpperBound_ = equivalenceClassSizeUpperBound_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -6721,7 +6750,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -6734,7 +6763,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -6921,12 +6950,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                         .KAnonymityEquivalenceClass>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -7206,7 +7235,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -7374,7 +7403,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                         .KAnonymityEquivalenceClassOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -8565,6 +8594,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LDiversityResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -8807,6 +8842,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LDiversityEquivalenceClass();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -8853,10 +8894,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     topSensitiveValues_ =
                         new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000002;
                   }
                   topSensitiveValues_.add(
                       input.readMessage(
@@ -8881,7 +8922,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           if (((mutable_bitField0_ & 0x00000001) != 0)) {
             quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
           }
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             topSensitiveValues_ = java.util.Collections.unmodifiableList(topSensitiveValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -8906,7 +8947,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .LDiversityEquivalenceClass.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -9363,7 +9403,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
           if (topSensitiveValuesBuilder_ == null) {
             topSensitiveValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             topSensitiveValuesBuilder_.clear();
           }
@@ -9407,7 +9447,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                       .LDiversityEquivalenceClass(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -9420,15 +9459,14 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           result.equivalenceClassSize_ = equivalenceClassSize_;
           result.numDistinctSensitiveValues_ = numDistinctSensitiveValues_;
           if (topSensitiveValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               topSensitiveValues_ = java.util.Collections.unmodifiableList(topSensitiveValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.topSensitiveValues_ = topSensitiveValues_;
           } else {
             result.topSensitiveValues_ = topSensitiveValuesBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -9528,7 +9566,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.topSensitiveValues_.isEmpty()) {
               if (topSensitiveValues_.isEmpty()) {
                 topSensitiveValues_ = other.topSensitiveValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureTopSensitiveValuesIsMutable();
                 topSensitiveValues_.addAll(other.topSensitiveValues_);
@@ -9541,7 +9579,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 topSensitiveValuesBuilder_.dispose();
                 topSensitiveValuesBuilder_ = null;
                 topSensitiveValues_ = other.topSensitiveValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 topSensitiveValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getTopSensitiveValuesFieldBuilder()
@@ -10050,11 +10088,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             java.util.Collections.emptyList();
 
         private void ensureTopSensitiveValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             topSensitiveValues_ =
                 new java.util.ArrayList<com.google.privacy.dlp.v2.ValueFrequency>(
                     topSensitiveValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -10273,7 +10311,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearTopSensitiveValues() {
           if (topSensitiveValuesBuilder_ == null) {
             topSensitiveValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             topSensitiveValuesBuilder_.clear();
@@ -10399,7 +10437,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.ValueFrequency.Builder,
                     com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>(
                     topSensitiveValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             topSensitiveValues_ = null;
@@ -10615,6 +10653,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LDiversityHistogramBucket();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -10655,12 +10699,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     bucketValues_ =
                         new java.util.ArrayList<
                             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                                 .LDiversityEquivalenceClass>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   bucketValues_.add(
                       input.readMessage(
@@ -10689,7 +10733,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -10714,7 +10758,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .LDiversityHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int SENSITIVE_VALUE_FREQUENCY_LOWER_BOUND_FIELD_NUMBER = 1;
       private long sensitiveValueFrequencyLowerBound_;
       /**
@@ -11162,7 +11205,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -11208,21 +11251,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                       .LDiversityHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.sensitiveValueFrequencyLowerBound_ = sensitiveValueFrequencyLowerBound_;
           result.sensitiveValueFrequencyUpperBound_ = sensitiveValueFrequencyUpperBound_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -11298,7 +11339,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -11311,7 +11352,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -11504,12 +11545,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                         .LDiversityEquivalenceClass>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -11789,7 +11830,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -11957,7 +11998,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                         .LDiversityEquivalenceClassOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -13190,6 +13231,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KMapEstimationResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -13363,6 +13410,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new KMapEstimationQuasiIdValues();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -13442,7 +13495,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .KMapEstimationQuasiIdValues.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -13825,7 +13877,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                       .KMapEstimationQuasiIdValues(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -13836,7 +13887,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
           result.estimatedAnonymity_ = estimatedAnonymity_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -14582,6 +14632,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new KMapEstimationHistogramBucket();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -14622,12 +14678,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 }
               case 50:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     bucketValues_ =
                         new java.util.ArrayList<
                             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                                 .KMapEstimationResult.KMapEstimationQuasiIdValues>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   bucketValues_.add(
                       input.readMessage(
@@ -14656,7 +14712,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -14681,7 +14737,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .KMapEstimationHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int MIN_ANONYMITY_FIELD_NUMBER = 1;
       private long minAnonymity_;
       /**
@@ -15130,7 +15185,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -15176,21 +15231,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                       .KMapEstimationHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.minAnonymity_ = minAnonymity_;
           result.maxAnonymity_ = maxAnonymity_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -15266,7 +15319,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -15279,7 +15332,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -15466,12 +15519,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                         .KMapEstimationQuasiIdValues>(bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -15751,7 +15804,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -15919,7 +15972,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                         .KMapEstimationQuasiIdValuesOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;
@@ -17314,6 +17367,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeltaPresenceEstimationResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -17497,6 +17556,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DeltaPresenceEstimationQuasiIdValues();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -17576,7 +17641,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .DeltaPresenceEstimationQuasiIdValues.Builder.class);
       }
 
-      private int bitField0_;
       public static final int QUASI_IDS_VALUES_FIELD_NUMBER = 1;
       private java.util.List<com.google.privacy.dlp.v2.Value> quasiIdsValues_;
       /**
@@ -17972,7 +18036,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                       .DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           if (quasiIdsValuesBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               quasiIdsValues_ = java.util.Collections.unmodifiableList(quasiIdsValues_);
@@ -17983,7 +18046,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             result.quasiIdsValues_ = quasiIdsValuesBuilder_.build();
           }
           result.estimatedProbability_ = estimatedProbability_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -18752,6 +18814,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DeltaPresenceEstimationHistogramBucket();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -18792,13 +18860,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 }
               case 50:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     bucketValues_ =
                         new java.util.ArrayList<
                             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                                 .DeltaPresenceEstimationResult
                                 .DeltaPresenceEstimationQuasiIdValues>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   bucketValues_.add(
                       input.readMessage(
@@ -18828,7 +18896,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
           }
           this.unknownFields = unknownFields.build();
@@ -18853,7 +18921,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                     .DeltaPresenceEstimationHistogramBucket.Builder.class);
       }
 
-      private int bitField0_;
       public static final int MIN_PROBABILITY_FIELD_NUMBER = 1;
       private double minProbability_;
       /**
@@ -19312,7 +19379,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             bucketValuesBuilder_.clear();
           }
@@ -19359,21 +19426,19 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                   new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                       .DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.minProbability_ = minProbability_;
           result.maxProbability_ = maxProbability_;
           result.bucketSize_ = bucketSize_;
           if (bucketValuesBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               bucketValues_ = java.util.Collections.unmodifiableList(bucketValues_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.bucketValues_ = bucketValues_;
           } else {
             result.bucketValues_ = bucketValuesBuilder_.build();
           }
           result.bucketValueCount_ = bucketValueCount_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -19450,7 +19515,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             if (!other.bucketValues_.isEmpty()) {
               if (bucketValues_.isEmpty()) {
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureBucketValuesIsMutable();
                 bucketValues_.addAll(other.bucketValues_);
@@ -19463,7 +19528,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                 bucketValuesBuilder_.dispose();
                 bucketValuesBuilder_ = null;
                 bucketValues_ = other.bucketValues_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 bucketValuesBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getBucketValuesFieldBuilder()
@@ -19650,13 +19715,13 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
             bucketValues_ = java.util.Collections.emptyList();
 
         private void ensureBucketValuesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             bucketValues_ =
                 new java.util.ArrayList<
                     com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
                         .DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues>(
                     bucketValues_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -19936,7 +20001,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         public Builder clearBucketValues() {
           if (bucketValuesBuilder_ == null) {
             bucketValues_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             bucketValuesBuilder_.clear();
@@ -20108,7 +20173,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
                         .DeltaPresenceEstimationResult
                         .DeltaPresenceEstimationQuasiIdValuesOrBuilder>(
                     bucketValues_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             bucketValues_ = null;

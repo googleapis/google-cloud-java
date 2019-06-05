@@ -29,6 +29,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Error();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -68,9 +74,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 timestamps_ = new java.util.ArrayList<com.google.protobuf.Timestamp>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               timestamps_.add(
                   input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry));
@@ -90,7 +96,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         timestamps_ = java.util.Collections.unmodifiableList(timestamps_);
       }
       this.unknownFields = unknownFields.build();
@@ -112,7 +118,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Error.class, com.google.privacy.dlp.v2.Error.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DETAILS_FIELD_NUMBER = 1;
   private com.google.rpc.Status details_;
   /** <code>.google.rpc.Status details = 1;</code> */
@@ -421,7 +426,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       if (timestampsBuilder_ == null) {
         timestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         timestampsBuilder_.clear();
       }
@@ -452,22 +457,20 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Error buildPartial() {
       com.google.privacy.dlp.v2.Error result = new com.google.privacy.dlp.v2.Error(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (detailsBuilder_ == null) {
         result.details_ = details_;
       } else {
         result.details_ = detailsBuilder_.build();
       }
       if (timestampsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           timestamps_ = java.util.Collections.unmodifiableList(timestamps_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.timestamps_ = timestamps_;
       } else {
         result.timestamps_ = timestampsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -524,7 +527,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         if (!other.timestamps_.isEmpty()) {
           if (timestamps_.isEmpty()) {
             timestamps_ = other.timestamps_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureTimestampsIsMutable();
             timestamps_.addAll(other.timestamps_);
@@ -537,7 +540,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             timestampsBuilder_.dispose();
             timestampsBuilder_ = null;
             timestamps_ = other.timestamps_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             timestampsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTimestampsFieldBuilder()
@@ -679,9 +682,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTimestampsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         timestamps_ = new java.util.ArrayList<com.google.protobuf.Timestamp>(timestamps_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -894,7 +897,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTimestamps() {
       if (timestampsBuilder_ == null) {
         timestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         timestampsBuilder_.clear();
@@ -1015,7 +1018,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Timestamp,
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>(
-                timestamps_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                timestamps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         timestamps_ = null;
       }
       return timestampsBuilder_;

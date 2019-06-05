@@ -29,6 +29,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CloudStorageOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,9 +83,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           case 40:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               fileTypes_.add(rawValue);
               break;
@@ -90,9 +96,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 fileTypes_.add(rawValue);
               }
@@ -130,7 +136,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -384,6 +390,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FileSet();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -396,7 +408,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1290,7 +1301,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     }
   }
 
-  private int bitField0_;
   public static final int FILE_SET_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CloudStorageOptions.FileSet fileSet_;
   /**
@@ -1779,7 +1789,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       bytesLimitPerFilePercent_ = 0;
 
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       sampleMethod_ = 0;
 
       filesLimitPercent_ = 0;
@@ -1812,7 +1822,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       com.google.privacy.dlp.v2.CloudStorageOptions result =
           new com.google.privacy.dlp.v2.CloudStorageOptions(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (fileSetBuilder_ == null) {
         result.fileSet_ = fileSet_;
       } else {
@@ -1820,14 +1829,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       }
       result.bytesLimitPerFile_ = bytesLimitPerFile_;
       result.bytesLimitPerFilePercent_ = bytesLimitPerFilePercent_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fileTypes_ = fileTypes_;
       result.sampleMethod_ = sampleMethod_;
       result.filesLimitPercent_ = filesLimitPercent_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1889,7 +1897,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (!other.fileTypes_.isEmpty()) {
         if (fileTypes_.isEmpty()) {
           fileTypes_ = other.fileTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFileTypesIsMutable();
           fileTypes_.addAll(other.fileTypes_);
@@ -2221,9 +2229,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> fileTypes_ = java.util.Collections.emptyList();
 
     private void ensureFileTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fileTypes_ = new java.util.ArrayList<java.lang.Integer>(fileTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2349,7 +2357,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      */
     public Builder clearFileTypes() {
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

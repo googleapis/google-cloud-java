@@ -30,6 +30,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InfoTypeDescription();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,9 +76,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
           case 24:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 supportedBy_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               supportedBy_.add(rawValue);
               break;
@@ -83,9 +89,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   supportedBy_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 supportedBy_.add(rawValue);
               }
@@ -113,7 +119,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
       }
       this.unknownFields = unknownFields.build();
@@ -136,7 +142,6 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.InfoTypeDescription.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -601,7 +606,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       displayName_ = "";
 
       supportedBy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
       return this;
@@ -632,16 +637,14 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       com.google.privacy.dlp.v2.InfoTypeDescription result =
           new com.google.privacy.dlp.v2.InfoTypeDescription(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.supportedBy_ = supportedBy_;
       result.description_ = description_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -702,7 +705,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (!other.supportedBy_.isEmpty()) {
         if (supportedBy_.isEmpty()) {
           supportedBy_ = other.supportedBy_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureSupportedByIsMutable();
           supportedBy_.addAll(other.supportedBy_);
@@ -935,9 +938,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> supportedBy_ = java.util.Collections.emptyList();
 
     private void ensureSupportedByIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = new java.util.ArrayList<java.lang.Integer>(supportedBy_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1043,7 +1046,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSupportedBy() {
       supportedBy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
