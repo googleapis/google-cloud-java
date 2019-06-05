@@ -33,7 +33,7 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * <code>
@@ -72,7 +72,7 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * <code>
@@ -84,7 +84,7 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * <code>

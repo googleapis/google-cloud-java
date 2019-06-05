@@ -191,6 +191,45 @@ public interface VideoContextOrBuilder
    *
    *
    * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
+   */
+  boolean hasSpeechTranscriptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+      getSpeechTranscriptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfigOrBuilder
+      getSpeechTranscriptionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Config for TEXT_DETECTION.
    * </pre>
    *
@@ -221,4 +260,42 @@ public interface VideoContextOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfigOrBuilder
       getTextDetectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  boolean hasObjectTrackingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig getObjectTrackingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfigOrBuilder
+      getObjectTrackingConfigOrBuilder();
 }

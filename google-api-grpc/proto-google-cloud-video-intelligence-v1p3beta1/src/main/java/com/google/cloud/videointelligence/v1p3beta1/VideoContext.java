@@ -120,6 +120,25 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 50:
+            {
+              com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.Builder
+                  subBuilder = null;
+              if (speechTranscriptionConfig_ != null) {
+                subBuilder = speechTranscriptionConfig_.toBuilder();
+              }
+              speechTranscriptionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(speechTranscriptionConfig_);
+                speechTranscriptionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 66:
             {
               com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig.Builder subBuilder =
@@ -134,6 +153,24 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
               if (subBuilder != null) {
                 subBuilder.mergeFrom(textDetectionConfig_);
                 textDetectionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.Builder subBuilder =
+                  null;
+              if (objectTrackingConfig_ != null) {
+                subBuilder = objectTrackingConfig_.toBuilder();
+              }
+              objectTrackingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(objectTrackingConfig_);
+                objectTrackingConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -404,6 +441,57 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     return getExplicitContentDetectionConfig();
   }
 
+  public static final int SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+      speechTranscriptionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
+   */
+  public boolean hasSpeechTranscriptionConfig() {
+    return speechTranscriptionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+      getSpeechTranscriptionConfig() {
+    return speechTranscriptionConfig_ == null
+        ? com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+            .getDefaultInstance()
+        : speechTranscriptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfigOrBuilder
+      getSpeechTranscriptionConfigOrBuilder() {
+    return getSpeechTranscriptionConfig();
+  }
+
   public static final int TEXT_DETECTION_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig textDetectionConfig_;
   /**
@@ -449,6 +537,55 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     return getTextDetectionConfig();
   }
 
+  public static final int OBJECT_TRACKING_CONFIG_FIELD_NUMBER = 13;
+  private com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig objectTrackingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  public boolean hasObjectTrackingConfig() {
+    return objectTrackingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig
+      getObjectTrackingConfig() {
+    return objectTrackingConfig_ == null
+        ? com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.getDefaultInstance()
+        : objectTrackingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for OBJECT_TRACKING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfigOrBuilder
+      getObjectTrackingConfigOrBuilder() {
+    return getObjectTrackingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -475,8 +612,14 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (explicitContentDetectionConfig_ != null) {
       output.writeMessage(4, getExplicitContentDetectionConfig());
     }
+    if (speechTranscriptionConfig_ != null) {
+      output.writeMessage(6, getSpeechTranscriptionConfig());
+    }
     if (textDetectionConfig_ != null) {
       output.writeMessage(8, getTextDetectionConfig());
+    }
+    if (objectTrackingConfig_ != null) {
+      output.writeMessage(13, getObjectTrackingConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -504,8 +647,17 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getExplicitContentDetectionConfig());
     }
+    if (speechTranscriptionConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getSpeechTranscriptionConfig());
+    }
     if (textDetectionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTextDetectionConfig());
+    }
+    if (objectTrackingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getObjectTrackingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -539,9 +691,18 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       if (!getExplicitContentDetectionConfig().equals(other.getExplicitContentDetectionConfig()))
         return false;
     }
+    if (hasSpeechTranscriptionConfig() != other.hasSpeechTranscriptionConfig()) return false;
+    if (hasSpeechTranscriptionConfig()) {
+      if (!getSpeechTranscriptionConfig().equals(other.getSpeechTranscriptionConfig()))
+        return false;
+    }
     if (hasTextDetectionConfig() != other.hasTextDetectionConfig()) return false;
     if (hasTextDetectionConfig()) {
       if (!getTextDetectionConfig().equals(other.getTextDetectionConfig())) return false;
+    }
+    if (hasObjectTrackingConfig() != other.hasObjectTrackingConfig()) return false;
+    if (hasObjectTrackingConfig()) {
+      if (!getObjectTrackingConfig().equals(other.getObjectTrackingConfig())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -570,9 +731,17 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPLICIT_CONTENT_DETECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getExplicitContentDetectionConfig().hashCode();
     }
+    if (hasSpeechTranscriptionConfig()) {
+      hash = (37 * hash) + SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechTranscriptionConfig().hashCode();
+    }
     if (hasTextDetectionConfig()) {
       hash = (37 * hash) + TEXT_DETECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTextDetectionConfig().hashCode();
+    }
+    if (hasObjectTrackingConfig()) {
+      hash = (37 * hash) + OBJECT_TRACKING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectTrackingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -746,11 +915,23 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         explicitContentDetectionConfig_ = null;
         explicitContentDetectionConfigBuilder_ = null;
       }
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfig_ = null;
+      } else {
+        speechTranscriptionConfig_ = null;
+        speechTranscriptionConfigBuilder_ = null;
+      }
       if (textDetectionConfigBuilder_ == null) {
         textDetectionConfig_ = null;
       } else {
         textDetectionConfig_ = null;
         textDetectionConfigBuilder_ = null;
+      }
+      if (objectTrackingConfigBuilder_ == null) {
+        objectTrackingConfig_ = null;
+      } else {
+        objectTrackingConfig_ = null;
+        objectTrackingConfigBuilder_ = null;
       }
       return this;
     }
@@ -805,10 +986,20 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.explicitContentDetectionConfig_ = explicitContentDetectionConfigBuilder_.build();
       }
+      if (speechTranscriptionConfigBuilder_ == null) {
+        result.speechTranscriptionConfig_ = speechTranscriptionConfig_;
+      } else {
+        result.speechTranscriptionConfig_ = speechTranscriptionConfigBuilder_.build();
+      }
       if (textDetectionConfigBuilder_ == null) {
         result.textDetectionConfig_ = textDetectionConfig_;
       } else {
         result.textDetectionConfig_ = textDetectionConfigBuilder_.build();
+      }
+      if (objectTrackingConfigBuilder_ == null) {
+        result.objectTrackingConfig_ = objectTrackingConfig_;
+      } else {
+        result.objectTrackingConfig_ = objectTrackingConfigBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -897,8 +1088,14 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExplicitContentDetectionConfig()) {
         mergeExplicitContentDetectionConfig(other.getExplicitContentDetectionConfig());
       }
+      if (other.hasSpeechTranscriptionConfig()) {
+        mergeSpeechTranscriptionConfig(other.getSpeechTranscriptionConfig());
+      }
       if (other.hasTextDetectionConfig()) {
         mergeTextDetectionConfig(other.getTextDetectionConfig());
+      }
+      if (other.hasObjectTrackingConfig()) {
+        mergeObjectTrackingConfig(other.getObjectTrackingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1961,6 +2158,216 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       return explicitContentDetectionConfigBuilder_;
     }
 
+    private com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+        speechTranscriptionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfigOrBuilder>
+        speechTranscriptionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public boolean hasSpeechTranscriptionConfig() {
+      return speechTranscriptionConfigBuilder_ != null || speechTranscriptionConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+        getSpeechTranscriptionConfig() {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        return speechTranscriptionConfig_ == null
+            ? com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+                .getDefaultInstance()
+            : speechTranscriptionConfig_;
+      } else {
+        return speechTranscriptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public Builder setSpeechTranscriptionConfig(
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig value) {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechTranscriptionConfig_ = value;
+        onChanged();
+      } else {
+        speechTranscriptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public Builder setSpeechTranscriptionConfig(
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.Builder
+            builderForValue) {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        speechTranscriptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public Builder mergeSpeechTranscriptionConfig(
+        com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig value) {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        if (speechTranscriptionConfig_ != null) {
+          speechTranscriptionConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.newBuilder(
+                      speechTranscriptionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          speechTranscriptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        speechTranscriptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public Builder clearSpeechTranscriptionConfig() {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfig_ = null;
+        onChanged();
+      } else {
+        speechTranscriptionConfig_ = null;
+        speechTranscriptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.Builder
+        getSpeechTranscriptionConfigBuilder() {
+
+      onChanged();
+      return getSpeechTranscriptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfigOrBuilder
+        getSpeechTranscriptionConfigOrBuilder() {
+      if (speechTranscriptionConfigBuilder_ != null) {
+        return speechTranscriptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return speechTranscriptionConfig_ == null
+            ? com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig
+                .getDefaultInstance()
+            : speechTranscriptionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfigOrBuilder>
+        getSpeechTranscriptionConfigFieldBuilder() {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig,
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfig.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.SpeechTranscriptionConfigOrBuilder>(
+                getSpeechTranscriptionConfig(), getParentForChildren(), isClean());
+        speechTranscriptionConfig_ = null;
+      }
+      return speechTranscriptionConfigBuilder_;
+    }
+
     private com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig textDetectionConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p3beta1.TextDetectionConfig,
@@ -2165,6 +2572,212 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         textDetectionConfig_ = null;
       }
       return textDetectionConfigBuilder_;
+    }
+
+    private com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig objectTrackingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig,
+            com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfigOrBuilder>
+        objectTrackingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public boolean hasObjectTrackingConfig() {
+      return objectTrackingConfigBuilder_ != null || objectTrackingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig
+        getObjectTrackingConfig() {
+      if (objectTrackingConfigBuilder_ == null) {
+        return objectTrackingConfig_ == null
+            ? com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.getDefaultInstance()
+            : objectTrackingConfig_;
+      } else {
+        return objectTrackingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public Builder setObjectTrackingConfig(
+        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig value) {
+      if (objectTrackingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        objectTrackingConfig_ = value;
+        onChanged();
+      } else {
+        objectTrackingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public Builder setObjectTrackingConfig(
+        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.Builder builderForValue) {
+      if (objectTrackingConfigBuilder_ == null) {
+        objectTrackingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        objectTrackingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public Builder mergeObjectTrackingConfig(
+        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig value) {
+      if (objectTrackingConfigBuilder_ == null) {
+        if (objectTrackingConfig_ != null) {
+          objectTrackingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.newBuilder(
+                      objectTrackingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          objectTrackingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        objectTrackingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public Builder clearObjectTrackingConfig() {
+      if (objectTrackingConfigBuilder_ == null) {
+        objectTrackingConfig_ = null;
+        onChanged();
+      } else {
+        objectTrackingConfig_ = null;
+        objectTrackingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.Builder
+        getObjectTrackingConfigBuilder() {
+
+      onChanged();
+      return getObjectTrackingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfigOrBuilder
+        getObjectTrackingConfigOrBuilder() {
+      if (objectTrackingConfigBuilder_ != null) {
+        return objectTrackingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return objectTrackingConfig_ == null
+            ? com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.getDefaultInstance()
+            : objectTrackingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for OBJECT_TRACKING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig object_tracking_config = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig,
+            com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfigOrBuilder>
+        getObjectTrackingConfigFieldBuilder() {
+      if (objectTrackingConfigBuilder_ == null) {
+        objectTrackingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig,
+                com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfig.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingConfigOrBuilder>(
+                getObjectTrackingConfig(), getParentForChildren(), isClean());
+        objectTrackingConfig_ = null;
+      }
+      return objectTrackingConfigBuilder_;
     }
 
     @java.lang.Override
