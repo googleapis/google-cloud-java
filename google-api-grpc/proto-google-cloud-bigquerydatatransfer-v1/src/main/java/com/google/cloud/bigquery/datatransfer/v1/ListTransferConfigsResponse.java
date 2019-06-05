@@ -28,6 +28,12 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferConfigsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,7 +115,6 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
             com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TRANSFER_CONFIGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig> transferConfigs_;
   /**
@@ -488,7 +493,6 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
       com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (transferConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           transferConfigs_ = java.util.Collections.unmodifiableList(transferConfigs_);
@@ -499,7 +503,6 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
         result.transferConfigs_ = transferConfigsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

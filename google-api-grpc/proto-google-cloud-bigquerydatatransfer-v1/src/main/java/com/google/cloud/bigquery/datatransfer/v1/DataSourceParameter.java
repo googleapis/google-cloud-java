@@ -40,6 +40,12 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DataSourceParameter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,9 +117,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 allowedValues_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000001;
               }
               allowedValues_.add(s);
               break;
@@ -150,11 +156,11 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fields_ =
                     new java.util.ArrayList<
                         com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000002;
               }
               fields_.add(
                   input.readMessage(
@@ -200,10 +206,10 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         allowedValues_ = allowedValues_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
       }
       this.unknownFields = unknownFields.build();
@@ -463,7 +469,6 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type)
   }
 
-  private int bitField0_;
   public static final int PARAM_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object paramId_;
   /**
@@ -1389,7 +1394,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       validationRegex_ = "";
 
       allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (minValueBuilder_ == null) {
         minValue_ = null;
       } else {
@@ -1404,7 +1409,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         fieldsBuilder_.clear();
       }
@@ -1445,7 +1450,6 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter result =
           new com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.paramId_ = paramId_;
       result.displayName_ = displayName_;
       result.description_ = description_;
@@ -1453,9 +1457,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       result.required_ = required_;
       result.repeated_ = repeated_;
       result.validationRegex_ = validationRegex_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         allowedValues_ = allowedValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.allowedValues_ = allowedValues_;
       if (minValueBuilder_ == null) {
@@ -1469,9 +1473,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         result.maxValue_ = maxValueBuilder_.build();
       }
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.fields_ = fields_;
       } else {
@@ -1481,7 +1485,6 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       result.validationHelpUrl_ = validationHelpUrl_;
       result.immutable_ = immutable_;
       result.recurse_ = recurse_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1561,7 +1564,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       if (!other.allowedValues_.isEmpty()) {
         if (allowedValues_.isEmpty()) {
           allowedValues_ = other.allowedValues_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAllowedValuesIsMutable();
           allowedValues_.addAll(other.allowedValues_);
@@ -1578,7 +1581,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         if (!other.fields_.isEmpty()) {
           if (fields_.isEmpty()) {
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFieldsIsMutable();
             fields_.addAll(other.fields_);
@@ -1591,7 +1594,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
             fieldsBuilder_.dispose();
             fieldsBuilder_ = null;
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000002);
             fieldsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFieldsFieldBuilder()
@@ -2195,9 +2198,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAllowedValuesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -2310,7 +2313,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAllowedValues() {
       allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2688,11 +2691,11 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fields_ =
             new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(
                 fields_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2914,7 +2917,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         fieldsBuilder_.clear();
@@ -3044,7 +3047,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
-                fields_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                fields_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         fields_ = null;
       }
       return fieldsBuilder_;

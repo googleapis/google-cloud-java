@@ -32,6 +32,12 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferRunsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -65,9 +71,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 states_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               states_.add(rawValue);
               break;
@@ -78,9 +84,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   states_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 states_.add(rawValue);
               }
@@ -120,7 +126,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         states_ = java.util.Collections.unmodifiableList(states_);
       }
       this.unknownFields = unknownFields.build();
@@ -268,7 +274,6 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt)
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -772,7 +777,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       parent_ = "";
 
       states_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageToken_ = "";
 
       pageSize_ = 0;
@@ -808,17 +813,15 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         states_ = java.util.Collections.unmodifiableList(states_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.states_ = states_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
       result.runAttempt_ = runAttempt_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -878,7 +881,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
       if (!other.states_.isEmpty()) {
         if (states_.isEmpty()) {
           states_ = other.states_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureStatesIsMutable();
           states_.addAll(other.states_);
@@ -1035,9 +1038,9 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     private java.util.List<java.lang.Integer> states_ = java.util.Collections.emptyList();
 
     private void ensureStatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         states_ = new java.util.ArrayList<java.lang.Integer>(states_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1145,7 +1148,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      */
     public Builder clearStates() {
       states_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

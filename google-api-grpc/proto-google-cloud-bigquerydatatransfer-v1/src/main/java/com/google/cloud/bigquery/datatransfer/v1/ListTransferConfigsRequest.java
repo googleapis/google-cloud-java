@@ -29,6 +29,12 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListTransferConfigsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dataSourceIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               dataSourceIds_.add(s);
               break;
@@ -95,7 +101,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -118,7 +124,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
             com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -525,7 +530,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       parent_ = "";
 
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       pageToken_ = "";
 
       pageSize_ = 0;
@@ -560,16 +565,14 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest result =
           new com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = dataSourceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.dataSourceIds_ = dataSourceIds_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -630,7 +633,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       if (!other.dataSourceIds_.isEmpty()) {
         if (dataSourceIds_.isEmpty()) {
           dataSourceIds_ = other.dataSourceIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureDataSourceIdsIsMutable();
           dataSourceIds_.addAll(other.dataSourceIds_);
@@ -780,9 +783,9 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDataSourceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         dataSourceIds_ = new com.google.protobuf.LazyStringArrayList(dataSourceIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -895,7 +898,7 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
      */
     public Builder clearDataSourceIds() {
       dataSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
