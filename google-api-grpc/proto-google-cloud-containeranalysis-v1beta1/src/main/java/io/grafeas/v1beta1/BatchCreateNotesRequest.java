@@ -27,12 +27,6 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new BatchCreateNotesRequest();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -65,10 +59,10 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 notes_ =
                     com.google.protobuf.MapField.newMapField(NotesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, io.grafeas.v1beta1.Note> notes__ =
                   input.readMessage(
@@ -121,6 +115,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
             io.grafeas.v1beta1.BatchCreateNotesRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -535,9 +530,11 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       io.grafeas.v1beta1.BatchCreateNotesRequest result =
           new io.grafeas.v1beta1.BatchCreateNotesRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.parent_ = parent_;
       result.notes_ = internalGetNotes();
       result.notes_.makeImmutable();
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

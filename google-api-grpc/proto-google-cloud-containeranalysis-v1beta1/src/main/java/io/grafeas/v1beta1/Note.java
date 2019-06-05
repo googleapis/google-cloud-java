@@ -32,12 +32,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Note();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -91,9 +85,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 relatedUrl_ = new java.util.ArrayList<io.grafeas.v1beta1.common.RelatedUrl>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000010;
               }
               relatedUrl_.add(
                   input.readMessage(
@@ -148,9 +142,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           case 74:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000100;
               }
               relatedNoteNames_.add(s);
               break;
@@ -275,10 +269,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -298,6 +292,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.Note.class, io.grafeas.v1beta1.Note.Builder.class);
   }
 
+  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
@@ -1484,7 +1479,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
       if (relatedUrlBuilder_ == null) {
         relatedUrl_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         relatedUrlBuilder_.clear();
       }
@@ -1507,7 +1502,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1536,14 +1531,15 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.Note buildPartial() {
       io.grafeas.v1beta1.Note result = new io.grafeas.v1beta1.Note(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.shortDescription_ = shortDescription_;
       result.longDescription_ = longDescription_;
       result.kind_ = kind_;
       if (relatedUrlBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.relatedUrl_ = relatedUrl_;
       } else {
@@ -1564,9 +1560,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.relatedNoteNames_ = relatedNoteNames_;
       if (typeCase_ == 10) {
@@ -1618,6 +1614,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           result.type_ = attestationAuthorityBuilder_.build();
         }
       }
+      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -1687,7 +1684,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         if (!other.relatedUrl_.isEmpty()) {
           if (relatedUrl_.isEmpty()) {
             relatedUrl_ = other.relatedUrl_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRelatedUrlIsMutable();
             relatedUrl_.addAll(other.relatedUrl_);
@@ -1700,7 +1697,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             relatedUrlBuilder_.dispose();
             relatedUrlBuilder_ = null;
             relatedUrl_ = other.relatedUrl_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             relatedUrlBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRelatedUrlFieldBuilder()
@@ -1722,7 +1719,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (!other.relatedNoteNames_.isEmpty()) {
         if (relatedNoteNames_.isEmpty()) {
           relatedNoteNames_ = other.relatedNoteNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureRelatedNoteNamesIsMutable();
           relatedNoteNames_.addAll(other.relatedNoteNames_);
@@ -2186,9 +2183,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRelatedUrlIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         relatedUrl_ = new java.util.ArrayList<io.grafeas.v1beta1.common.RelatedUrl>(relatedUrl_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2403,7 +2400,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRelatedUrl() {
       if (relatedUrlBuilder_ == null) {
         relatedUrl_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         relatedUrlBuilder_.clear();
@@ -2524,7 +2521,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1beta1.common.RelatedUrl,
                 io.grafeas.v1beta1.common.RelatedUrl.Builder,
                 io.grafeas.v1beta1.common.RelatedUrlOrBuilder>(
-                relatedUrl_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                relatedUrl_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         relatedUrl_ = null;
       }
       return relatedUrlBuilder_;
@@ -3091,9 +3088,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRelatedNoteNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList(relatedNoteNames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -3206,7 +3203,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRelatedNoteNames() {
       relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

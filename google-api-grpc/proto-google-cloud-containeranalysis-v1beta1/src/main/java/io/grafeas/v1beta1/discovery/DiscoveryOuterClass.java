@@ -60,14 +60,22 @@ public final class DiscoveryOuterClass {
           + "ineranalysis/v1beta1/discovery;discovery"
           + "\242\002\003GRAb\006proto3"
     };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              io.grafeas.v1beta1.common.Common.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.rpc.StatusProto.getDescriptor(),
-            });
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          io.grafeas.v1beta1.common.Common.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.rpc.StatusProto.getDescriptor(),
+        },
+        assigner);
     internal_static_grafeas_v1beta1_discovery_Discovery_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_grafeas_v1beta1_discovery_Discovery_fieldAccessorTable =

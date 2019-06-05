@@ -48,15 +48,23 @@ public final class Containeranalysis {
           + "GCA\252\002*Google.Cloud.DevTools.ContainerAna"
           + "lysis.V1b\006proto3"
     };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.iam.v1.IamPolicyProto.getDescriptor(),
-              com.google.iam.v1.PolicyProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-            });
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.iam.v1.IamPolicyProto.getDescriptor(),
+          com.google.iam.v1.PolicyProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+        },
+        assigner);
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

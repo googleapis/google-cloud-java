@@ -28,12 +28,6 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new BatchCreateOccurrencesResponse();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

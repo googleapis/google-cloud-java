@@ -35,12 +35,6 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new BuildProvenance();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,9 +74,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 commands_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Command>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               commands_.add(
                   input.readMessage(
@@ -91,9 +85,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 builtArtifacts_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Artifact>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               builtArtifacts_.add(
                   input.readMessage(
@@ -184,11 +178,11 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 buildOptions_ =
                     com.google.protobuf.MapField.newMapField(
                         BuildOptionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000800;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildOptions__ =
                   input.readMessage(
@@ -218,10 +212,10 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         commands_ = java.util.Collections.unmodifiableList(commands_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         builtArtifacts_ = java.util.Collections.unmodifiableList(builtArtifacts_);
       }
       this.unknownFields = unknownFields.build();
@@ -255,6 +249,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1beta1.provenance.BuildProvenance.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -1277,13 +1272,13 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
 
       if (commandsBuilder_ == null) {
         commands_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         commandsBuilder_.clear();
       }
       if (builtArtifactsBuilder_ == null) {
         builtArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         builtArtifactsBuilder_.clear();
       }
@@ -1348,21 +1343,22 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       io.grafeas.v1beta1.provenance.BuildProvenance result =
           new io.grafeas.v1beta1.provenance.BuildProvenance(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.id_ = id_;
       result.projectId_ = projectId_;
       if (commandsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           commands_ = java.util.Collections.unmodifiableList(commands_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.commands_ = commands_;
       } else {
         result.commands_ = commandsBuilder_.build();
       }
       if (builtArtifactsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           builtArtifacts_ = java.util.Collections.unmodifiableList(builtArtifacts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.builtArtifacts_ = builtArtifacts_;
       } else {
@@ -1394,6 +1390,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
       result.buildOptions_ = internalGetBuildOptions();
       result.buildOptions_.makeImmutable();
       result.builderVersion_ = builderVersion_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1455,7 +1452,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         if (!other.commands_.isEmpty()) {
           if (commands_.isEmpty()) {
             commands_ = other.commands_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureCommandsIsMutable();
             commands_.addAll(other.commands_);
@@ -1468,7 +1465,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             commandsBuilder_.dispose();
             commandsBuilder_ = null;
             commands_ = other.commands_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             commandsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCommandsFieldBuilder()
@@ -1482,7 +1479,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         if (!other.builtArtifacts_.isEmpty()) {
           if (builtArtifacts_.isEmpty()) {
             builtArtifacts_ = other.builtArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureBuiltArtifactsIsMutable();
             builtArtifacts_.addAll(other.builtArtifacts_);
@@ -1495,7 +1492,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
             builtArtifactsBuilder_.dispose();
             builtArtifactsBuilder_ = null;
             builtArtifacts_ = other.builtArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             builtArtifactsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBuiltArtifactsFieldBuilder()
@@ -1757,9 +1754,9 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureCommandsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         commands_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Command>(commands_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1974,7 +1971,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public Builder clearCommands() {
       if (commandsBuilder_ == null) {
         commands_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         commandsBuilder_.clear();
@@ -2095,7 +2092,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1beta1.provenance.Command,
                 io.grafeas.v1beta1.provenance.Command.Builder,
                 io.grafeas.v1beta1.provenance.CommandOrBuilder>(
-                commands_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                commands_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         commands_ = null;
       }
       return commandsBuilder_;
@@ -2105,10 +2102,10 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureBuiltArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         builtArtifacts_ =
             new java.util.ArrayList<io.grafeas.v1beta1.provenance.Artifact>(builtArtifacts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2324,7 +2321,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
     public Builder clearBuiltArtifacts() {
       if (builtArtifactsBuilder_ == null) {
         builtArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         builtArtifactsBuilder_.clear();
@@ -2447,7 +2444,7 @@ public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV
                 io.grafeas.v1beta1.provenance.Artifact.Builder,
                 io.grafeas.v1beta1.provenance.ArtifactOrBuilder>(
                 builtArtifacts_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         builtArtifacts_ = null;

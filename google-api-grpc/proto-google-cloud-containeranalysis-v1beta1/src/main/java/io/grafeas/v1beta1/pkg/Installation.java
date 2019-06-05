@@ -29,12 +29,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Installation();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -67,9 +61,9 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 location_ = new java.util.ArrayList<io.grafeas.v1beta1.pkg.Location>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               location_.add(
                   input.readMessage(io.grafeas.v1beta1.pkg.Location.parser(), extensionRegistry));
@@ -89,7 +83,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         location_ = java.util.Collections.unmodifiableList(location_);
       }
       this.unknownFields = unknownFields.build();
@@ -112,6 +106,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.pkg.Installation.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -444,7 +439,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
 
       if (locationBuilder_ == null) {
         location_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         locationBuilder_.clear();
       }
@@ -475,16 +470,18 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.pkg.Installation buildPartial() {
       io.grafeas.v1beta1.pkg.Installation result = new io.grafeas.v1beta1.pkg.Installation(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       if (locationBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           location_ = java.util.Collections.unmodifiableList(location_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.location_ = location_;
       } else {
         result.location_ = locationBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -542,7 +539,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         if (!other.location_.isEmpty()) {
           if (location_.isEmpty()) {
             location_ = other.location_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureLocationIsMutable();
             location_.addAll(other.location_);
@@ -555,7 +552,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
             locationBuilder_.dispose();
             locationBuilder_ = null;
             location_ = other.location_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             locationBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationFieldBuilder()
@@ -694,9 +691,9 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLocationIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         location_ = new java.util.ArrayList<io.grafeas.v1beta1.pkg.Location>(location_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -920,7 +917,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLocation() {
       if (locationBuilder_ == null) {
         location_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         locationBuilder_.clear();
@@ -1048,7 +1045,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1beta1.pkg.Location,
                 io.grafeas.v1beta1.pkg.Location.Builder,
                 io.grafeas.v1beta1.pkg.LocationOrBuilder>(
-                location_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                location_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         location_ = null;
       }
       return locationBuilder_;

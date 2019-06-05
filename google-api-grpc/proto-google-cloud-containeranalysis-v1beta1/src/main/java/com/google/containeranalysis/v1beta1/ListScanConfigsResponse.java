@@ -28,12 +28,6 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListScanConfigsResponse();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -113,6 +107,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
             com.google.containeranalysis.v1beta1.ListScanConfigsResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SCAN_CONFIGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.containeranalysis.v1beta1.ScanConfig> scanConfigs_;
   /**
@@ -480,6 +475,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
       com.google.containeranalysis.v1beta1.ListScanConfigsResponse result =
           new com.google.containeranalysis.v1beta1.ListScanConfigsResponse(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (scanConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           scanConfigs_ = java.util.Collections.unmodifiableList(scanConfigs_);
@@ -490,6 +486,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
         result.scanConfigs_ = scanConfigsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
