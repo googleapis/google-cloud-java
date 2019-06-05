@@ -25,6 +25,12 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
   private GcRule() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GcRule();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -211,6 +216,12 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
 
     private Intersection() {
       rules_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Intersection();
     }
 
     @java.lang.Override
@@ -1190,6 +1201,12 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
 
     private Union() {
       rules_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Union();
     }
 
     @java.lang.Override

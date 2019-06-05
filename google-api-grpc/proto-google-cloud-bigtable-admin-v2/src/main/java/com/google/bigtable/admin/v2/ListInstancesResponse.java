@@ -29,6 +29,12 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListInstancesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -120,7 +126,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
             com.google.bigtable.admin.v2.ListInstancesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int INSTANCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.bigtable.admin.v2.Instance> instances_;
   /**
@@ -570,7 +575,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       com.google.bigtable.admin.v2.ListInstancesResponse result =
           new com.google.bigtable.admin.v2.ListInstancesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (instancesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -586,7 +590,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       result.failedLocations_ = failedLocations_;
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

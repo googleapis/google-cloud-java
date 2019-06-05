@@ -29,6 +29,12 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListAppProfilesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -73,9 +79,9 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 failedLocations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               failedLocations_.add(s);
               break;
@@ -97,7 +103,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         appProfiles_ = java.util.Collections.unmodifiableList(appProfiles_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         failedLocations_ = failedLocations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -120,7 +126,6 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
             com.google.bigtable.admin.v2.ListAppProfilesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int APP_PROFILES_FIELD_NUMBER = 1;
   private java.util.List<com.google.bigtable.admin.v2.AppProfile> appProfiles_;
   /**
@@ -537,7 +542,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
       nextPageToken_ = "";
 
       failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -566,7 +571,6 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
       com.google.bigtable.admin.v2.ListAppProfilesResponse result =
           new com.google.bigtable.admin.v2.ListAppProfilesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (appProfilesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           appProfiles_ = java.util.Collections.unmodifiableList(appProfiles_);
@@ -577,12 +581,11 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
         result.appProfiles_ = appProfilesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         failedLocations_ = failedLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.failedLocations_ = failedLocations_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -667,7 +670,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
       if (!other.failedLocations_.isEmpty()) {
         if (failedLocations_.isEmpty()) {
           failedLocations_ = other.failedLocations_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureFailedLocationsIsMutable();
           failedLocations_.addAll(other.failedLocations_);
@@ -1164,9 +1167,9 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFailedLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         failedLocations_ = new com.google.protobuf.LazyStringArrayList(failedLocations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1303,7 +1306,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
      */
     public Builder clearFailedLocations() {
       failedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

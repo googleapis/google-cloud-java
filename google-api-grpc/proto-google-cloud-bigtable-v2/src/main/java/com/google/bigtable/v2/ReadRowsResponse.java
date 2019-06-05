@@ -28,6 +28,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ReadRowsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -363,6 +369,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CellChunk();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -429,9 +441,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   labels_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 labels_.add(s);
                 break;
@@ -472,7 +484,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           labels_ = labels_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -495,7 +507,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
               com.google.bigtable.v2.ReadRowsResponse.CellChunk.Builder.class);
     }
 
-    private int bitField0_;
     private int rowStatusCase_ = 0;
     private java.lang.Object rowStatus_;
 
@@ -1149,7 +1160,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         timestampMicros_ = 0L;
 
         labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         value_ = com.google.protobuf.ByteString.EMPTY;
 
         valueSize_ = 0;
@@ -1184,7 +1195,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         com.google.bigtable.v2.ReadRowsResponse.CellChunk result =
             new com.google.bigtable.v2.ReadRowsResponse.CellChunk(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.rowKey_ = rowKey_;
         if (familyNameBuilder_ == null) {
           result.familyName_ = familyName_;
@@ -1197,9 +1207,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
           result.qualifier_ = qualifierBuilder_.build();
         }
         result.timestampMicros_ = timestampMicros_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           labels_ = labels_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.labels_ = labels_;
         result.value_ = value_;
@@ -1210,7 +1220,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         if (rowStatusCase_ == 9) {
           result.rowStatus_ = rowStatus_;
         }
-        result.bitField0_ = to_bitField0_;
         result.rowStatusCase_ = rowStatusCase_;
         onBuilt();
         return result;
@@ -1279,7 +1288,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         if (!other.labels_.isEmpty()) {
           if (labels_.isEmpty()) {
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLabelsIsMutable();
             labels_.addAll(other.labels_);
@@ -1922,9 +1931,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureLabelsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           labels_ = new com.google.protobuf.LazyStringArrayList(labels_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -2053,7 +2062,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearLabels() {
         labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2345,7 +2354,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  private int bitField0_;
   public static final int CHUNKS_FIELD_NUMBER = 1;
   private java.util.List<com.google.bigtable.v2.ReadRowsResponse.CellChunk> chunks_;
   /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
@@ -2643,7 +2651,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       com.google.bigtable.v2.ReadRowsResponse result =
           new com.google.bigtable.v2.ReadRowsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (chunksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           chunks_ = java.util.Collections.unmodifiableList(chunks_);
@@ -2654,7 +2661,6 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         result.chunks_ = chunksBuilder_.build();
       }
       result.lastScannedRowKey_ = lastScannedRowKey_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

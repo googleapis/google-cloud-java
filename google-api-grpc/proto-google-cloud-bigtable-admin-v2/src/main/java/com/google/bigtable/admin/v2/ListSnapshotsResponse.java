@@ -33,6 +33,12 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListSnapshotsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,7 +117,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
             com.google.bigtable.admin.v2.ListSnapshotsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SNAPSHOTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.bigtable.admin.v2.Snapshot> snapshots_;
   /**
@@ -481,7 +486,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       com.google.bigtable.admin.v2.ListSnapshotsResponse result =
           new com.google.bigtable.admin.v2.ListSnapshotsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (snapshotsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           snapshots_ = java.util.Collections.unmodifiableList(snapshots_);
@@ -492,7 +496,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         result.snapshots_ = snapshotsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
