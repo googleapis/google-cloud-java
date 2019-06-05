@@ -29,6 +29,12 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListNotificationChannelsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -108,7 +114,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
             com.google.monitoring.v3.ListNotificationChannelsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NOTIFICATION_CHANNELS_FIELD_NUMBER = 3;
   private java.util.List<com.google.monitoring.v3.NotificationChannel> notificationChannels_;
   /**
@@ -479,7 +484,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       com.google.monitoring.v3.ListNotificationChannelsResponse result =
           new com.google.monitoring.v3.ListNotificationChannelsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (notificationChannelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           notificationChannels_ = java.util.Collections.unmodifiableList(notificationChannels_);
@@ -490,7 +494,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         result.notificationChannels_ = notificationChannelsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

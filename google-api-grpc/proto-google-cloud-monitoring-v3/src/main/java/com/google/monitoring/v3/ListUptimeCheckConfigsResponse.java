@@ -29,6 +29,12 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListUptimeCheckConfigsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -113,7 +119,6 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
             com.google.monitoring.v3.ListUptimeCheckConfigsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int UPTIME_CHECK_CONFIGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.monitoring.v3.UptimeCheckConfig> uptimeCheckConfigs_;
   /**
@@ -512,7 +517,6 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
       com.google.monitoring.v3.ListUptimeCheckConfigsResponse result =
           new com.google.monitoring.v3.ListUptimeCheckConfigsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (uptimeCheckConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           uptimeCheckConfigs_ = java.util.Collections.unmodifiableList(uptimeCheckConfigs_);
@@ -524,7 +528,6 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

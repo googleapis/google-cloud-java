@@ -34,6 +34,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AlertPolicy();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -112,10 +118,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 conditions_ =
                     new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Condition>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000002;
               }
               conditions_.add(
                   input.readMessage(
@@ -142,20 +148,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case 114:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 notificationChannels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000004;
               }
               notificationChannels_.add(s);
               break;
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 userLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         UserLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
                   input.readMessage(
@@ -193,10 +199,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -495,6 +501,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Documentation();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -507,7 +519,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1454,6 +1465,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Condition();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1466,7 +1483,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1621,6 +1637,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       private Trigger() {}
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Trigger();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -1633,7 +1655,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (extensionRegistry == null) {
           throw new java.lang.NullPointerException();
         }
-        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -2788,6 +2809,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MetricThreshold();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -2864,9 +2891,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 66:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     aggregations_ = new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   aggregations_.add(
                       input.readMessage(
@@ -2882,10 +2909,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 82:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     denominatorAggregations_ =
                         new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
-                    mutable_bitField0_ |= 0x00000008;
+                    mutable_bitField0_ |= 0x00000002;
                   }
                   denominatorAggregations_.add(
                       input.readMessage(
@@ -2907,10 +2934,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
           }
-          if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             denominatorAggregations_ =
                 java.util.Collections.unmodifiableList(denominatorAggregations_);
           }
@@ -2934,7 +2961,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold.Builder.class);
       }
 
-      private int bitField0_;
       public static final int FILTER_FIELD_NUMBER = 2;
       private volatile java.lang.Object filter_;
       /**
@@ -3782,7 +3808,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             aggregationsBuilder_.clear();
           }
@@ -3790,7 +3816,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
           if (denominatorAggregationsBuilder_ == null) {
             denominatorAggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             denominatorAggregationsBuilder_.clear();
           }
@@ -3840,12 +3866,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold result =
               new com.google.monitoring.v3.AlertPolicy.Condition.MetricThreshold(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.filter_ = filter_;
           if (aggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.aggregations_ = aggregations_;
           } else {
@@ -3853,10 +3878,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           result.denominatorFilter_ = denominatorFilter_;
           if (denominatorAggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               denominatorAggregations_ =
                   java.util.Collections.unmodifiableList(denominatorAggregations_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000002);
             }
             result.denominatorAggregations_ = denominatorAggregations_;
           } else {
@@ -3874,7 +3899,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.trigger_ = triggerBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -3938,7 +3962,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.aggregations_.isEmpty()) {
               if (aggregations_.isEmpty()) {
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureAggregationsIsMutable();
                 aggregations_.addAll(other.aggregations_);
@@ -3951,7 +3975,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 aggregationsBuilder_.dispose();
                 aggregationsBuilder_ = null;
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 aggregationsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getAggregationsFieldBuilder()
@@ -3969,7 +3993,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.denominatorAggregations_.isEmpty()) {
               if (denominatorAggregations_.isEmpty()) {
                 denominatorAggregations_ = other.denominatorAggregations_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureDenominatorAggregationsIsMutable();
                 denominatorAggregations_.addAll(other.denominatorAggregations_);
@@ -3982,7 +4006,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 denominatorAggregationsBuilder_.dispose();
                 denominatorAggregationsBuilder_ = null;
                 denominatorAggregations_ = other.denominatorAggregations_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 denominatorAggregationsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getDenominatorAggregationsFieldBuilder()
@@ -4175,10 +4199,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             aggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(aggregations_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -4504,7 +4528,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder clearAggregations() {
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             aggregationsBuilder_.clear();
@@ -4697,7 +4721,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     aggregations_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             aggregations_ = null;
@@ -4858,11 +4882,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureDenominatorAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             denominatorAggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(
                     denominatorAggregations_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000002;
           }
         }
 
@@ -5225,7 +5249,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder clearDenominatorAggregations() {
           if (denominatorAggregationsBuilder_ == null) {
             denominatorAggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
           } else {
             denominatorAggregationsBuilder_.clear();
@@ -5442,7 +5466,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     denominatorAggregations_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000002) != 0),
                     getParentForChildren(),
                     isClean());
             denominatorAggregations_ = null;
@@ -6394,6 +6418,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MetricAbsence();
+      }
+
+      @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
@@ -6458,9 +6488,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
               case 42:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     aggregations_ = new java.util.ArrayList<com.google.monitoring.v3.Aggregation>();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000001;
                   }
                   aggregations_.add(
                       input.readMessage(
@@ -6482,7 +6512,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
           }
           this.unknownFields = unknownFields.build();
@@ -6505,7 +6535,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence.Builder.class);
       }
 
-      private int bitField0_;
       public static final int FILTER_FIELD_NUMBER = 1;
       private volatile java.lang.Object filter_;
       /**
@@ -7039,7 +7068,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             aggregationsBuilder_.clear();
           }
@@ -7084,12 +7113,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence result =
               new com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
           result.filter_ = filter_;
           if (aggregationsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.aggregations_ = aggregations_;
           } else {
@@ -7105,7 +7133,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.trigger_ = triggerBuilder_.build();
           }
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -7168,7 +7195,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.aggregations_.isEmpty()) {
               if (aggregations_.isEmpty()) {
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
               } else {
                 ensureAggregationsIsMutable();
                 aggregations_.addAll(other.aggregations_);
@@ -7181,7 +7208,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 aggregationsBuilder_.dispose();
                 aggregationsBuilder_ = null;
                 aggregations_ = other.aggregations_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000001);
                 aggregationsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getAggregationsFieldBuilder()
@@ -7368,10 +7395,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             java.util.Collections.emptyList();
 
         private void ensureAggregationsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             aggregations_ =
                 new java.util.ArrayList<com.google.monitoring.v3.Aggregation>(aggregations_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000001;
           }
         }
 
@@ -7697,7 +7724,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         public Builder clearAggregations() {
           if (aggregationsBuilder_ == null) {
             aggregations_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
             aggregationsBuilder_.clear();
@@ -7890,7 +7917,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     com.google.monitoring.v3.Aggregation.Builder,
                     com.google.monitoring.v3.AggregationOrBuilder>(
                     aggregations_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             aggregations_ = null;
@@ -9874,7 +9901,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -10846,7 +10872,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableUserLabels().clear();
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         conditionsBuilder_.clear();
       }
@@ -10859,7 +10885,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         enabledBuilder_ = null;
       }
       notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (creationRecordBuilder_ == null) {
         creationRecord_ = null;
       } else {
@@ -10899,7 +10925,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.AlertPolicy buildPartial() {
       com.google.monitoring.v3.AlertPolicy result = new com.google.monitoring.v3.AlertPolicy(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (documentationBuilder_ == null) {
@@ -10910,9 +10935,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       result.userLabels_ = internalGetUserLabels();
       result.userLabels_.makeImmutable();
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.conditions_ = conditions_;
       } else {
@@ -10924,9 +10949,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.enabled_ = enabledBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.notificationChannels_ = notificationChannels_;
       if (creationRecordBuilder_ == null) {
@@ -10939,7 +10964,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mutationRecord_ = mutationRecordBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -11005,7 +11029,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -11018,7 +11042,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -11037,7 +11061,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.notificationChannels_.isEmpty()) {
         if (notificationChannels_.isEmpty()) {
           notificationChannels_ = other.notificationChannels_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureNotificationChannelsIsMutable();
           notificationChannels_.addAll(other.notificationChannels_);
@@ -11731,10 +11755,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         conditions_ =
             new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy.Condition>(conditions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -11983,7 +12007,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -12127,7 +12151,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.AlertPolicy.Condition,
                 com.google.monitoring.v3.AlertPolicy.Condition.Builder,
                 com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -12431,9 +12455,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotificationChannelsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         notificationChannels_ = new com.google.protobuf.LazyStringArrayList(notificationChannels_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -12610,7 +12634,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNotificationChannels() {
       notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

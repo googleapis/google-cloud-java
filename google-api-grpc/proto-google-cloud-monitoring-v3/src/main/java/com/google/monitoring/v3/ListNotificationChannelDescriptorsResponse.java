@@ -30,6 +30,12 @@ public final class ListNotificationChannelDescriptorsResponse
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListNotificationChannelDescriptorsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,7 +117,6 @@ public final class ListNotificationChannelDescriptorsResponse
             com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CHANNEL_DESCRIPTORS_FIELD_NUMBER = 1;
   private java.util.List<com.google.monitoring.v3.NotificationChannelDescriptor>
       channelDescriptors_;
@@ -497,7 +502,6 @@ public final class ListNotificationChannelDescriptorsResponse
       com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse result =
           new com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (channelDescriptorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           channelDescriptors_ = java.util.Collections.unmodifiableList(channelDescriptors_);
@@ -508,7 +512,6 @@ public final class ListNotificationChannelDescriptorsResponse
         result.channelDescriptors_ = channelDescriptorsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

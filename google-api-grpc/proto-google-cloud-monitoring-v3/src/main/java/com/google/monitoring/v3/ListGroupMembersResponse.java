@@ -28,6 +28,12 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListGroupMembersResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -110,7 +116,6 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
             com.google.monitoring.v3.ListGroupMembersResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MEMBERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.api.MonitoredResource> members_;
   /**
@@ -501,7 +506,6 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       com.google.monitoring.v3.ListGroupMembersResponse result =
           new com.google.monitoring.v3.ListGroupMembersResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (membersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           members_ = java.util.Collections.unmodifiableList(members_);
@@ -513,7 +517,6 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

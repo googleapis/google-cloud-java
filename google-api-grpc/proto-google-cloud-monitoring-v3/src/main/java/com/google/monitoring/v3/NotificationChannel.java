@@ -35,6 +35,12 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NotificationChannel();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -81,10 +87,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -101,11 +107,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 userLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         UserLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
                   input.readMessage(
@@ -350,7 +356,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.monitoring.v3.NotificationChannel.VerificationStatus)
   }
 
-  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
@@ -1257,7 +1262,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       com.google.monitoring.v3.NotificationChannel result =
           new com.google.monitoring.v3.NotificationChannel(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.type_ = type_;
       result.name_ = name_;
       result.displayName_ = displayName_;
@@ -1272,7 +1276,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       } else {
         result.enabled_ = enabledBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

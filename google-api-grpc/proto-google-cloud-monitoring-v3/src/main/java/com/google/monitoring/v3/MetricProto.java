@@ -51,24 +51,16 @@ public final class MetricProto {
           + "e.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mon"
           + "itoring\\V3b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.LabelProto.getDescriptor(),
-          com.google.api.MetricProto.getDescriptor(),
-          com.google.api.MonitoredResourceProto.getDescriptor(),
-          com.google.monitoring.v3.CommonProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.LabelProto.getDescriptor(),
+              com.google.api.MetricProto.getDescriptor(),
+              com.google.api.MonitoredResourceProto.getDescriptor(),
+              com.google.monitoring.v3.CommonProto.getDescriptor(),
+            });
     internal_static_google_monitoring_v3_Point_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_monitoring_v3_Point_fieldAccessorTable =
