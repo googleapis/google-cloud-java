@@ -36,7 +36,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
 -  [Cloud Phishing Protection](google-cloud-clients/google-cloud-phishingprotection) (Beta)
 -  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (Beta)
--  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Alpha)
+-  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Beta)
 -  [Cloud Talent Solution](google-cloud-clients/google-cloud-talent) (Beta)
 -  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
 -  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
