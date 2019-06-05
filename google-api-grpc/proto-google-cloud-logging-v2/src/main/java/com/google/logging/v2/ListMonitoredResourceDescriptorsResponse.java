@@ -30,6 +30,12 @@ public final class ListMonitoredResourceDescriptorsResponse
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListMonitoredResourceDescriptorsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,7 +115,6 @@ public final class ListMonitoredResourceDescriptorsResponse
             com.google.logging.v2.ListMonitoredResourceDescriptorsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESOURCE_DESCRIPTORS_FIELD_NUMBER = 1;
   private java.util.List<com.google.api.MonitoredResourceDescriptor> resourceDescriptors_;
   /**
@@ -478,7 +483,6 @@ public final class ListMonitoredResourceDescriptorsResponse
       com.google.logging.v2.ListMonitoredResourceDescriptorsResponse result =
           new com.google.logging.v2.ListMonitoredResourceDescriptorsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (resourceDescriptorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           resourceDescriptors_ = java.util.Collections.unmodifiableList(resourceDescriptors_);
@@ -489,7 +493,6 @@ public final class ListMonitoredResourceDescriptorsResponse
         result.resourceDescriptors_ = resourceDescriptorsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

@@ -36,6 +36,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogMetric();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,11 +117,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labelExtractors_ =
                     com.google.protobuf.MapField.newMapField(
                         LabelExtractorsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labelExtractors__ =
                   input.readMessage(
@@ -309,7 +315,6 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.logging.v2.LogMetric.ApiVersion)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1213,7 +1218,6 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.LogMetric buildPartial() {
       com.google.logging.v2.LogMetric result = new com.google.logging.v2.LogMetric(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.filter_ = filter_;
@@ -1231,7 +1235,6 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         result.bucketOptions_ = bucketOptionsBuilder_.build();
       }
       result.version_ = version_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

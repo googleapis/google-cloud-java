@@ -28,6 +28,12 @@ public final class ListLogMetricsResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListLogMetricsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -105,7 +111,6 @@ public final class ListLogMetricsResponse extends com.google.protobuf.GeneratedM
             com.google.logging.v2.ListLogMetricsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int METRICS_FIELD_NUMBER = 1;
   private java.util.List<com.google.logging.v2.LogMetric> metrics_;
   /**
@@ -470,7 +475,6 @@ public final class ListLogMetricsResponse extends com.google.protobuf.GeneratedM
       com.google.logging.v2.ListLogMetricsResponse result =
           new com.google.logging.v2.ListLogMetricsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (metricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
@@ -481,7 +485,6 @@ public final class ListLogMetricsResponse extends com.google.protobuf.GeneratedM
         result.metrics_ = metricsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

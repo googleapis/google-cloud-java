@@ -25,6 +25,12 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
   private WriteLogEntriesPartialErrors() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new WriteLogEntriesPartialErrors();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

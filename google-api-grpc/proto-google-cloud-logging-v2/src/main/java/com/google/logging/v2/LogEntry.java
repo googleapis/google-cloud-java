@@ -31,6 +31,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LogEntry();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -151,10 +157,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -295,7 +301,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.logging.v2.LogEntry.class, com.google.logging.v2.LogEntry.Builder.class);
   }
 
-  private int bitField0_;
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
 
@@ -1722,7 +1727,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.LogEntry buildPartial() {
       com.google.logging.v2.LogEntry result = new com.google.logging.v2.LogEntry(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.logName_ = logName_;
       if (resourceBuilder_ == null) {
         result.resource_ = resource_;
@@ -1783,7 +1787,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.sourceLocation_ = sourceLocationBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;

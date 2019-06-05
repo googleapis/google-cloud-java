@@ -28,6 +28,12 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListExclusionsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
             com.google.logging.v2.ListExclusionsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int EXCLUSIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.logging.v2.LogExclusion> exclusions_;
   /**
@@ -471,7 +476,6 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       com.google.logging.v2.ListExclusionsResponse result =
           new com.google.logging.v2.ListExclusionsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (exclusionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           exclusions_ = java.util.Collections.unmodifiableList(exclusions_);
@@ -482,7 +486,6 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         result.exclusions_ = exclusionsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
