@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
+ * Request for [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.UpdateInstanceRequest}
@@ -26,6 +25,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
   private UpdateInstanceRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UpdateInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -38,7 +43,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -397,8 +401,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for
-   * [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
+   * Request for [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.UpdateInstanceRequest}

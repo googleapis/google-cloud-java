@@ -27,6 +27,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GetInstanceRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -99,7 +104,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -121,7 +126,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -461,7 +466,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -483,7 +488,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -505,7 +510,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -525,7 +530,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -542,7 +547,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. Redis instance resource name using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -14,7 +14,7 @@ public interface ListInstancesRequestOrBuilder
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -26,7 +26,7 @@ public interface ListInstancesRequestOrBuilder
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>

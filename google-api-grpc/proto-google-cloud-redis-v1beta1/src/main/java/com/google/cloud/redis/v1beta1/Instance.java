@@ -35,6 +35,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     statusMessage_ = "";
     tier_ = 0;
     authorizedNetwork_ = "";
+    persistenceIamIdentity_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Instance();
   }
 
   @java.lang.Override
@@ -77,10 +84,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -166,11 +173,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             }
           case 130:
             {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 redisConfigs_ =
                     com.google.protobuf.MapField.newMapField(
                         RedisConfigsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> redisConfigs__ =
                   input.readMessage(
@@ -196,6 +203,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               authorizedNetwork_ = s;
+              break;
+            }
+          case 170:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              persistenceIamIdentity_ = s;
               break;
             }
           default:
@@ -671,7 +685,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1beta1.Instance.Tier)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -973,8 +986,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * If not provided, latest supported version will be used. Updating the
    * version will perform an upgrade/downgrade to the new version. Currently,
    * the supported values are:
-   *  *   `REDIS_4_0` for Redis 4.0 compatibility
-   *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+   *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -998,8 +1011,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * If not provided, latest supported version will be used. Updating the
    * version will perform an upgrade/downgrade to the new version. Currently,
    * the supported values are:
-   *  *   `REDIS_4_0` for Redis 4.0 compatibility
-   *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+   *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+   *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -1516,6 +1529,57 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PERSISTENCE_IAM_IDENTITY_FIELD_NUMBER = 21;
+  private volatile java.lang.Object persistenceIamIdentity_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud IAM identity used by import / export operations to
+   * transfer data to/from Cloud Storage. Format is
+   * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+   * for a given instance so should be checked before each import/export
+   * operation.
+   * </pre>
+   *
+   * <code>string persistence_iam_identity = 21;</code>
+   */
+  public java.lang.String getPersistenceIamIdentity() {
+    java.lang.Object ref = persistenceIamIdentity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      persistenceIamIdentity_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud IAM identity used by import / export operations to
+   * transfer data to/from Cloud Storage. Format is
+   * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+   * for a given instance so should be checked before each import/export
+   * operation.
+   * </pre>
+   *
+   * <code>string persistence_iam_identity = 21;</code>
+   */
+  public com.google.protobuf.ByteString getPersistenceIamIdentityBytes() {
+    java.lang.Object ref = persistenceIamIdentity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      persistenceIamIdentity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1578,6 +1642,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getAuthorizedNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, authorizedNetwork_);
+    }
+    if (!getPersistenceIamIdentityBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, persistenceIamIdentity_);
     }
     unknownFields.writeTo(output);
   }
@@ -1653,6 +1720,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getAuthorizedNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, authorizedNetwork_);
     }
+    if (!getPersistenceIamIdentityBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, persistenceIamIdentity_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1688,6 +1758,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (tier_ != other.tier_) return false;
     if (getMemorySizeGb() != other.getMemorySizeGb()) return false;
     if (!getAuthorizedNetwork().equals(other.getAuthorizedNetwork())) return false;
+    if (!getPersistenceIamIdentity().equals(other.getPersistenceIamIdentity())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1739,6 +1810,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMemorySizeGb();
     hash = (37 * hash) + AUTHORIZED_NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getAuthorizedNetwork().hashCode();
+    hash = (37 * hash) + PERSISTENCE_IAM_IDENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getPersistenceIamIdentity().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1944,6 +2017,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       authorizedNetwork_ = "";
 
+      persistenceIamIdentity_ = "";
+
       return this;
     }
 
@@ -1972,7 +2047,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.redis.v1beta1.Instance result =
           new com.google.cloud.redis.v1beta1.Instance(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.labels_ = internalGetLabels();
@@ -1996,7 +2070,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.tier_ = tier_;
       result.memorySizeGb_ = memorySizeGb_;
       result.authorizedNetwork_ = authorizedNetwork_;
-      result.bitField0_ = to_bitField0_;
+      result.persistenceIamIdentity_ = persistenceIamIdentity_;
       onBuilt();
       return result;
     }
@@ -2101,6 +2175,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAuthorizedNetwork().isEmpty()) {
         authorizedNetwork_ = other.authorizedNetwork_;
+        onChanged();
+      }
+      if (!other.getPersistenceIamIdentity().isEmpty()) {
+        persistenceIamIdentity_ = other.persistenceIamIdentity_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2736,8 +2814,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
      * the supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility
-     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2761,8 +2839,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
      * the supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility
-     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2786,8 +2864,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
      * the supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility
-     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2809,8 +2887,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
      * the supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility
-     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2829,8 +2907,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
      * the supported values are:
-     *  *   `REDIS_4_0` for Redis 4.0 compatibility
-     *  *   `REDIS_3_2` for Redis 3.2 compatibility (default)
+     *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+     *  *   `REDIS_3_2` for Redis 3.2 compatibility
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -4009,6 +4087,120 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       authorizedNetwork_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object persistenceIamIdentity_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud IAM identity used by import / export operations to
+     * transfer data to/from Cloud Storage. Format is
+     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+     * for a given instance so should be checked before each import/export
+     * operation.
+     * </pre>
+     *
+     * <code>string persistence_iam_identity = 21;</code>
+     */
+    public java.lang.String getPersistenceIamIdentity() {
+      java.lang.Object ref = persistenceIamIdentity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        persistenceIamIdentity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud IAM identity used by import / export operations to
+     * transfer data to/from Cloud Storage. Format is
+     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+     * for a given instance so should be checked before each import/export
+     * operation.
+     * </pre>
+     *
+     * <code>string persistence_iam_identity = 21;</code>
+     */
+    public com.google.protobuf.ByteString getPersistenceIamIdentityBytes() {
+      java.lang.Object ref = persistenceIamIdentity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        persistenceIamIdentity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud IAM identity used by import / export operations to
+     * transfer data to/from Cloud Storage. Format is
+     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+     * for a given instance so should be checked before each import/export
+     * operation.
+     * </pre>
+     *
+     * <code>string persistence_iam_identity = 21;</code>
+     */
+    public Builder setPersistenceIamIdentity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      persistenceIamIdentity_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud IAM identity used by import / export operations to
+     * transfer data to/from Cloud Storage. Format is
+     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+     * for a given instance so should be checked before each import/export
+     * operation.
+     * </pre>
+     *
+     * <code>string persistence_iam_identity = 21;</code>
+     */
+    public Builder clearPersistenceIamIdentity() {
+
+      persistenceIamIdentity_ = getDefaultInstance().getPersistenceIamIdentity();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud IAM identity used by import / export operations to
+     * transfer data to/from Cloud Storage. Format is
+     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
+     * for a given instance so should be checked before each import/export
+     * operation.
+     * </pre>
+     *
+     * <code>string persistence_iam_identity = 21;</code>
+     */
+    public Builder setPersistenceIamIdentityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      persistenceIamIdentity_ = value;
       onChanged();
       return this;
     }
