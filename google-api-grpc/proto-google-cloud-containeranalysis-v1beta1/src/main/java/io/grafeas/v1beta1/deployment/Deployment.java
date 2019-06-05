@@ -31,6 +31,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Deployment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -108,9 +114,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resourceUri_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000001;
               }
               resourceUri_.add(s);
               break;
@@ -136,7 +142,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = resourceUri_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -326,7 +332,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1beta1.deployment.Deployment.Platform)
   }
 
-  private int bitField0_;
   public static final int USER_EMAIL_FIELD_NUMBER = 1;
   private volatile java.lang.Object userEmail_;
   /**
@@ -916,7 +921,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       address_ = "";
 
       resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       platform_ = 0;
 
       return this;
@@ -947,7 +952,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1beta1.deployment.Deployment result =
           new io.grafeas.v1beta1.deployment.Deployment(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.userEmail_ = userEmail_;
       if (deployTimeBuilder_ == null) {
         result.deployTime_ = deployTime_;
@@ -961,13 +965,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       result.config_ = config_;
       result.address_ = address_;
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = resourceUri_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.resourceUri_ = resourceUri_;
       result.platform_ = platform_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1038,7 +1041,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (!other.resourceUri_.isEmpty()) {
         if (resourceUri_.isEmpty()) {
           resourceUri_ = other.resourceUri_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureResourceUriIsMutable();
           resourceUri_.addAll(other.resourceUri_);
@@ -1725,9 +1728,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourceUriIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = new com.google.protobuf.LazyStringArrayList(resourceUri_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1848,7 +1851,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearResourceUri() {
       resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

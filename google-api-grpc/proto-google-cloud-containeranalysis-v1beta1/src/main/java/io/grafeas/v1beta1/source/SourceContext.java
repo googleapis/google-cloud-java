@@ -26,6 +26,12 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   private SourceContext() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SourceContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -100,10 +106,10 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -156,7 +162,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.source.SourceContext.Builder.class);
   }
 
-  private int bitField0_;
   private int contextCase_ = 0;
   private java.lang.Object context_;
 
@@ -742,7 +747,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1beta1.source.SourceContext result =
           new io.grafeas.v1beta1.source.SourceContext(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (contextCase_ == 1) {
         if (cloudRepoBuilder_ == null) {
           result.context_ = context_;
@@ -766,7 +770,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       result.contextCase_ = contextCase_;
       onBuilt();
       return result;
