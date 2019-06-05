@@ -91,38 +91,37 @@ public final class RouterInterface implements ApiMessage {
   }
 
   /**
-   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP space.
-   * The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate
-   * the address as it represents the IP address of the interface.
+   * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP
+   * address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do
+   * not truncate the address as it represents the IP address of the interface.
    */
   public String getIpRange() {
     return ipRange;
   }
 
   /**
-   * URI of the linked interconnect attachment. It must be in the same region as the router. Each
-   * interface can have at most one linked resource and it could either be a VPN Tunnel or an
-   * interconnect attachment.
+   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each
+   * interface can have one linked resource, which can be either be a VPN tunnel or an Interconnect
+   * attachment.
    */
   public String getLinkedInterconnectAttachment() {
     return linkedInterconnectAttachment;
   }
 
   /**
-   * URI of the linked VPN tunnel. It must be in the same region as the router. Each interface can
-   * have at most one linked resource and it could either be a VPN Tunnel or an interconnect
-   * attachment.
+   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface
+   * can have one linked resource, which can be either a VPN tunnel or an Interconnect attachment.
    */
   public String getLinkedVpnTunnel() {
     return linkedVpnTunnel;
   }
 
   /**
-   * [Output Only] The resource that configures and manages this interface. MANAGED_BY_USER is the
-   * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is an interface
-   * that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment
-   * of type PARTNER. Google will automatically create, update, and delete this type of interface
-   * when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the
+   * default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface
+   * that is configured and managed by Cloud Interconnect, specifically, by an
+   * InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this
+   * type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
    */
   public String getManagementType() {
     return managementType;
@@ -196,8 +195,8 @@ public final class RouterInterface implements ApiMessage {
 
     /**
      * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP
-     * space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not
-     * truncate the address as it represents the IP address of the interface.
+     * address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE:
+     * Do not truncate the address as it represents the IP address of the interface.
      */
     public String getIpRange() {
       return ipRange;
@@ -205,8 +204,8 @@ public final class RouterInterface implements ApiMessage {
 
     /**
      * IP address and range of the interface. The IP range must be in the RFC3927 link-local IP
-     * space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not
-     * truncate the address as it represents the IP address of the interface.
+     * address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE:
+     * Do not truncate the address as it represents the IP address of the interface.
      */
     public Builder setIpRange(String ipRange) {
       this.ipRange = ipRange;
@@ -214,18 +213,18 @@ public final class RouterInterface implements ApiMessage {
     }
 
     /**
-     * URI of the linked interconnect attachment. It must be in the same region as the router. Each
-     * interface can have at most one linked resource and it could either be a VPN Tunnel or an
-     * interconnect attachment.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each
+     * interface can have one linked resource, which can be either be a VPN tunnel or an
+     * Interconnect attachment.
      */
     public String getLinkedInterconnectAttachment() {
       return linkedInterconnectAttachment;
     }
 
     /**
-     * URI of the linked interconnect attachment. It must be in the same region as the router. Each
-     * interface can have at most one linked resource and it could either be a VPN Tunnel or an
-     * interconnect attachment.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each
+     * interface can have one linked resource, which can be either be a VPN tunnel or an
+     * Interconnect attachment.
      */
     public Builder setLinkedInterconnectAttachment(String linkedInterconnectAttachment) {
       this.linkedInterconnectAttachment = linkedInterconnectAttachment;
@@ -233,18 +232,16 @@ public final class RouterInterface implements ApiMessage {
     }
 
     /**
-     * URI of the linked VPN tunnel. It must be in the same region as the router. Each interface can
-     * have at most one linked resource and it could either be a VPN Tunnel or an interconnect
-     * attachment.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface
+     * can have one linked resource, which can be either a VPN tunnel or an Interconnect attachment.
      */
     public String getLinkedVpnTunnel() {
       return linkedVpnTunnel;
     }
 
     /**
-     * URI of the linked VPN tunnel. It must be in the same region as the router. Each interface can
-     * have at most one linked resource and it could either be a VPN Tunnel or an interconnect
-     * attachment.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface
+     * can have one linked resource, which can be either a VPN tunnel or an Interconnect attachment.
      */
     public Builder setLinkedVpnTunnel(String linkedVpnTunnel) {
       this.linkedVpnTunnel = linkedVpnTunnel;
@@ -252,10 +249,10 @@ public final class RouterInterface implements ApiMessage {
     }
 
     /**
-     * [Output Only] The resource that configures and manages this interface. MANAGED_BY_USER is the
-     * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is an interface
-     * that is configured and managed by Cloud Interconnect, specifically by an
-     * InterconnectAttachment of type PARTNER. Google will automatically create, update, and delete
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is
+     * the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an
+     * interface that is configured and managed by Cloud Interconnect, specifically, by an
+     * InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes
      * this type of interface when the PARTNER InterconnectAttachment is created, updated, or
      * deleted.
      */
@@ -264,10 +261,10 @@ public final class RouterInterface implements ApiMessage {
     }
 
     /**
-     * [Output Only] The resource that configures and manages this interface. MANAGED_BY_USER is the
-     * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is an interface
-     * that is configured and managed by Cloud Interconnect, specifically by an
-     * InterconnectAttachment of type PARTNER. Google will automatically create, update, and delete
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is
+     * the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an
+     * interface that is configured and managed by Cloud Interconnect, specifically, by an
+     * InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes
      * this type of interface when the PARTNER InterconnectAttachment is created, updated, or
      * deleted.
      */

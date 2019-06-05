@@ -84,7 +84,10 @@ public final class RouterBgp implements ApiMessage {
     return null;
   }
 
-  /** User-specified flag to indicate which mode to use for advertisement. */
+  /**
+   * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or
+   * CUSTOM.
+   */
   public String getAdvertiseMode() {
     return advertiseMode;
   }
@@ -172,12 +175,18 @@ public final class RouterBgp implements ApiMessage {
       this.asn = source.asn;
     }
 
-    /** User-specified flag to indicate which mode to use for advertisement. */
+    /**
+     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT
+     * or CUSTOM.
+     */
     public String getAdvertiseMode() {
       return advertiseMode;
     }
 
-    /** User-specified flag to indicate which mode to use for advertisement. */
+    /**
+     * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT
+     * or CUSTOM.
+     */
     public Builder setAdvertiseMode(String advertiseMode) {
       this.advertiseMode = advertiseMode;
       return this;
