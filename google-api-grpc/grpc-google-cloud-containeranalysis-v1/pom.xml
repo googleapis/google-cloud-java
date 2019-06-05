@@ -24,7 +24,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
+      <artifactId>proto-google-cloud-containeranalysis-v1</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
