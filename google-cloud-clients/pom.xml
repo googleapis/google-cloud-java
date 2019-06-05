@@ -215,7 +215,7 @@
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-bom</artifactId>
-        <version>${api-client.version}</version>
+        <version>${google.auth.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
