@@ -55,6 +55,8 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    * `StreamingAnnotateVideoRequest` message containing only
    * `video_config`, all subsequent `AnnotateStreamingVideoRequest`
    * messages must only contain `input_content` field.
+   * Note: as with all bytes fields, protobuffers use a pure binary
+   * representation (not base64).
    * </pre>
    *
    * <code>bytes input_content = 2;</code>
