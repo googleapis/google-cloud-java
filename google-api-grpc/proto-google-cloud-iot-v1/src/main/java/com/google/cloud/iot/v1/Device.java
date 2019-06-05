@@ -30,6 +30,12 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Device();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -134,9 +140,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               credentials_.add(
                   input.readMessage(
@@ -192,11 +198,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             }
           case 138:
             {
-              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
@@ -277,7 +283,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         credentials_ = java.util.Collections.unmodifiableList(credentials_);
       }
       this.unknownFields = unknownFields.build();
@@ -310,7 +316,6 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iot.v1.Device.class, com.google.cloud.iot.v1.Device.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -1593,7 +1598,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
 
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         credentialsBuilder_.clear();
       }
@@ -1689,14 +1694,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.iot.v1.Device buildPartial() {
       com.google.cloud.iot.v1.Device result = new com.google.cloud.iot.v1.Device(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.name_ = name_;
       result.numId_ = numId_;
       if (credentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           credentials_ = java.util.Collections.unmodifiableList(credentials_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.credentials_ = credentials_;
       } else {
@@ -1756,7 +1760,6 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.gatewayConfig_ = gatewayConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1821,7 +1824,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         if (!other.credentials_.isEmpty()) {
           if (credentials_.isEmpty()) {
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCredentialsIsMutable();
             credentials_.addAll(other.credentials_);
@@ -1834,7 +1837,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             credentialsBuilder_.dispose();
             credentialsBuilder_ = null;
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             credentialsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCredentialsFieldBuilder()
@@ -2176,10 +2179,10 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCredentialsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         credentials_ =
             new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>(credentials_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -2450,7 +2453,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCredentials() {
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         credentialsBuilder_.clear();
@@ -2607,7 +2610,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.iot.v1.DeviceCredential,
                 com.google.cloud.iot.v1.DeviceCredential.Builder,
                 com.google.cloud.iot.v1.DeviceCredentialOrBuilder>(
-                credentials_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                credentials_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         credentials_ = null;
       }
       return credentialsBuilder_;
