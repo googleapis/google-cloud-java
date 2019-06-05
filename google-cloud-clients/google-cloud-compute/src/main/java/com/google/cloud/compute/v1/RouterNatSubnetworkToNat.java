@@ -76,7 +76,7 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
     return null;
   }
 
-  /** URL for the subnetwork resource to use NAT. */
+  /** URL for the subnetwork resource that will use NAT. */
   public String getName() {
     return name;
   }
@@ -91,7 +91,7 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
   }
 
   /**
-   * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+   * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid
    * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
    * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
    */
@@ -148,12 +148,12 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
       this.sourceIpRangesToNat = source.sourceIpRangesToNat;
     }
 
-    /** URL for the subnetwork resource to use NAT. */
+    /** URL for the subnetwork resource that will use NAT. */
     public String getName() {
       return name;
     }
 
-    /** URL for the subnetwork resource to use NAT. */
+    /** URL for the subnetwork resource that will use NAT. */
     public Builder setName(String name) {
       this.name = name;
       return this;
@@ -195,7 +195,7 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
     }
 
     /**
-     * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+     * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid
      * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
      * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
      */
@@ -204,7 +204,7 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
     }
 
     /**
-     * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+     * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid
      * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
      * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
      */
@@ -217,7 +217,7 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
     }
 
     /**
-     * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+     * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid
      * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
      * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
      */
