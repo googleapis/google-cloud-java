@@ -31,6 +31,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MasterAuthorizedNetworksConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,11 +67,11 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cidrBlocks_ =
                     new java.util.ArrayList<
                         com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               cidrBlocks_.add(
                   input.readMessage(
@@ -87,7 +93,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         cidrBlocks_ = java.util.Collections.unmodifiableList(cidrBlocks_);
       }
       this.unknownFields = unknownFields.build();
@@ -182,6 +188,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CidrBlock();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -194,7 +206,6 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -929,7 +940,6 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     }
   }
 
-  private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_;
   /**
@@ -1248,7 +1258,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
       if (cidrBlocksBuilder_ == null) {
         cidrBlocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         cidrBlocksBuilder_.clear();
       }
@@ -1280,18 +1290,16 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       com.google.container.v1.MasterAuthorizedNetworksConfig result =
           new com.google.container.v1.MasterAuthorizedNetworksConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.enabled_ = enabled_;
       if (cidrBlocksBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           cidrBlocks_ = java.util.Collections.unmodifiableList(cidrBlocks_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cidrBlocks_ = cidrBlocks_;
       } else {
         result.cidrBlocks_ = cidrBlocksBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1349,7 +1357,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         if (!other.cidrBlocks_.isEmpty()) {
           if (cidrBlocks_.isEmpty()) {
             cidrBlocks_ = other.cidrBlocks_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCidrBlocksIsMutable();
             cidrBlocks_.addAll(other.cidrBlocks_);
@@ -1362,7 +1370,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             cidrBlocksBuilder_.dispose();
             cidrBlocksBuilder_ = null;
             cidrBlocks_ = other.cidrBlocks_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             cidrBlocksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCidrBlocksFieldBuilder()
@@ -1452,11 +1460,11 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         cidrBlocks_ = java.util.Collections.emptyList();
 
     private void ensureCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         cidrBlocks_ =
             new java.util.ArrayList<
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>(cidrBlocks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1703,7 +1711,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     public Builder clearCidrBlocks() {
       if (cidrBlocksBuilder_ == null) {
         cidrBlocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         cidrBlocksBuilder_.clear();
@@ -1849,7 +1857,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock,
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder,
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>(
-                cidrBlocks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                cidrBlocks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         cidrBlocks_ = null;
       }
       return cidrBlocksBuilder_;

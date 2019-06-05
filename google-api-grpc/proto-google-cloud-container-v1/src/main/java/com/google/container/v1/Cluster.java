@@ -49,6 +49,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Cluster();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,7 +68,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
-    int mutable_bitField1_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -175,9 +180,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000001;
               }
               nodePools_.add(
                   input.readMessage(com.google.container.v1.NodePool.parser(), extensionRegistry));
@@ -186,9 +191,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 locations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00000002;
               }
               locations_.add(s);
               break;
@@ -200,11 +205,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 122:
             {
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 resourceLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         ResourceLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00004000;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
                   input.readMessage(
@@ -412,9 +417,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           case 890:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField1_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField1_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               instanceGroupUrls_.add(s);
               break;
@@ -452,13 +457,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         locations_ = locations_.getUnmodifiableView();
       }
-      if (((mutable_bitField1_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -734,8 +739,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.container.v1.Cluster.Status)
   }
 
-  private int bitField0_;
-  private int bitField1_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -3164,12 +3167,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
       if (nodePoolsBuilder_ == null) {
         nodePools_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         nodePoolsBuilder_.clear();
       }
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableKubernetesAlpha_ = false;
 
       internalGetMutableResourceLabels().clear();
@@ -3240,7 +3243,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       servicesIpv4Cidr_ = "";
 
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       currentNodeCount_ = 0;
 
       expireTime_ = "";
@@ -3274,9 +3277,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.Cluster buildPartial() {
       com.google.container.v1.Cluster result = new com.google.container.v1.Cluster(this);
       int from_bitField0_ = bitField0_;
-      int from_bitField1_ = bitField1_;
-      int to_bitField0_ = 0;
-      int to_bitField1_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.initialNodeCount_ = initialNodeCount_;
@@ -3301,17 +3301,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       result.subnetwork_ = subnetwork_;
       if (nodePoolsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nodePools_ = nodePools_;
       } else {
         result.nodePools_ = nodePoolsBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.locations_ = locations_;
       result.enableKubernetesAlpha_ = enableKubernetesAlpha_;
@@ -3364,16 +3364,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       result.statusMessage_ = statusMessage_;
       result.nodeIpv4CidrSize_ = nodeIpv4CidrSize_;
       result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
-      if (((bitField1_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.instanceGroupUrls_ = instanceGroupUrls_;
       result.currentNodeCount_ = currentNodeCount_;
       result.expireTime_ = expireTime_;
       result.location_ = location_;
-      result.bitField0_ = to_bitField0_;
-      result.bitField1_ = to_bitField1_;
       onBuilt();
       return result;
     }
@@ -3467,7 +3465,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.nodePools_.isEmpty()) {
           if (nodePools_.isEmpty()) {
             nodePools_ = other.nodePools_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureNodePoolsIsMutable();
             nodePools_.addAll(other.nodePools_);
@@ -3480,7 +3478,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             nodePoolsBuilder_.dispose();
             nodePoolsBuilder_ = null;
             nodePools_ = other.nodePools_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000001);
             nodePoolsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodePoolsFieldBuilder()
@@ -3493,7 +3491,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -3574,7 +3572,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField1_ = (bitField1_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -3622,7 +3620,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
-    private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
@@ -5066,9 +5063,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodePoolsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>(nodePools_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -5305,7 +5302,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNodePools() {
       if (nodePoolsBuilder_ == null) {
         nodePools_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         nodePoolsBuilder_.clear();
@@ -5440,7 +5437,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.NodePool,
                 com.google.container.v1.NodePool.Builder,
                 com.google.container.v1.NodePoolOrBuilder>(
-                nodePools_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                nodePools_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         nodePools_ = null;
       }
       return nodePoolsBuilder_;
@@ -5450,9 +5447,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -5581,7 +5578,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -8340,9 +8337,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField1_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField1_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -8463,7 +8460,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder clearInstanceGroupUrls() {
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

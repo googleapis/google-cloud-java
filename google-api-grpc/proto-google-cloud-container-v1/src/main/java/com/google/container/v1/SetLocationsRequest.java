@@ -31,6 +31,12 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SetLocationsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -78,9 +84,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 locations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               locations_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         locations_ = locations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -129,7 +135,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
             com.google.container.v1.SetLocationsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
@@ -647,7 +652,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       clusterId_ = "";
 
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = "";
 
       return this;
@@ -678,17 +683,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       com.google.container.v1.SetLocationsRequest result =
           new com.google.container.v1.SetLocationsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.projectId_ = projectId_;
       result.zone_ = zone_;
       result.clusterId_ = clusterId_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.locations_ = locations_;
       result.name_ = name_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -753,7 +756,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -1126,9 +1129,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1281,7 +1284,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
