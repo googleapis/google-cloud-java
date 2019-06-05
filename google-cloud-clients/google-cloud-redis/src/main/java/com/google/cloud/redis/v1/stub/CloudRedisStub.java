@@ -23,8 +23,10 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1.CreateInstanceRequest;
 import com.google.cloud.redis.v1.DeleteInstanceRequest;
+import com.google.cloud.redis.v1.ExportInstanceRequest;
 import com.google.cloud.redis.v1.FailoverInstanceRequest;
 import com.google.cloud.redis.v1.GetInstanceRequest;
+import com.google.cloud.redis.v1.ImportInstanceRequest;
 import com.google.cloud.redis.v1.Instance;
 import com.google.cloud.redis.v1.ListInstancesRequest;
 import com.google.cloud.redis.v1.ListInstancesResponse;
@@ -84,13 +86,23 @@ public abstract class CloudRedisStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
-      deleteInstanceOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteInstanceOperationCallable()");
+  public OperationCallable<ImportInstanceRequest, Instance, OperationMetadata>
+      importInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importInstanceOperationCallable()");
   }
 
-  public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  public UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: importInstanceCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportInstanceRequest, Instance, OperationMetadata>
+      exportInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportInstanceCallable()");
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -101,6 +113,16 @@ public abstract class CloudRedisStub implements BackgroundResource {
 
   public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: failoverInstanceCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
+      deleteInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
   }
 
   @Override

@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for
- * [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
+ * Request for [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.CreateInstanceRequest}
@@ -124,7 +123,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -146,7 +145,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * where `location_id` refers to a GCP region
+   * where `location_id` refers to a GCP region.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -445,8 +444,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for
-   * [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
+   * Request for [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.CreateInstanceRequest}
@@ -629,7 +627,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -651,7 +649,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -673,7 +671,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -693,7 +691,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -710,7 +708,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource name of the instance location using the form:
      *     `projects/{project_id}/locations/{location_id}`
-     * where `location_id` refers to a GCP region
+     * where `location_id` refers to a GCP region.
      * </pre>
      *
      * <code>string parent = 1;</code>
