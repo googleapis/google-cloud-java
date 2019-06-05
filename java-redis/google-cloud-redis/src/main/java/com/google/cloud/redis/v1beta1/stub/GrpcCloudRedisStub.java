@@ -28,8 +28,10 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1beta1.CreateInstanceRequest;
 import com.google.cloud.redis.v1beta1.DeleteInstanceRequest;
+import com.google.cloud.redis.v1beta1.ExportInstanceRequest;
 import com.google.cloud.redis.v1beta1.FailoverInstanceRequest;
 import com.google.cloud.redis.v1beta1.GetInstanceRequest;
+import com.google.cloud.redis.v1beta1.ImportInstanceRequest;
 import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.ListInstancesRequest;
 import com.google.cloud.redis.v1beta1.ListInstancesResponse;
@@ -91,13 +93,22 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteInstanceRequest, Operation>
-      deleteInstanceMethodDescriptor =
-          MethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
+  private static final MethodDescriptor<ImportInstanceRequest, Operation>
+      importInstanceMethodDescriptor =
+          MethodDescriptor.<ImportInstanceRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/DeleteInstance")
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/ImportInstance")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(ImportInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ExportInstanceRequest, Operation>
+      exportInstanceMethodDescriptor =
+          MethodDescriptor.<ExportInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/ExportInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<FailoverInstanceRequest, Operation>
@@ -107,6 +118,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/FailoverInstance")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FailoverInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteInstanceRequest, Operation>
+      deleteInstanceMethodDescriptor =
+          MethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/DeleteInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -123,12 +143,18 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
   private final OperationCallable<UpdateInstanceRequest, Instance, Any>
       updateInstanceOperationCallable;
-  private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
-  private final OperationCallable<DeleteInstanceRequest, Empty, Any>
-      deleteInstanceOperationCallable;
+  private final UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable;
+  private final OperationCallable<ImportInstanceRequest, Instance, Any>
+      importInstanceOperationCallable;
+  private final UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable;
+  private final OperationCallable<ExportInstanceRequest, Instance, Any>
+      exportInstanceOperationCallable;
   private final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable;
   private final OperationCallable<FailoverInstanceRequest, Instance, Any>
       failoverInstanceOperationCallable;
+  private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
+  private final OperationCallable<DeleteInstanceRequest, Empty, Any>
+      deleteInstanceOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -222,13 +248,26 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
-        GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteInstanceMethodDescriptor)
+    GrpcCallSettings<ImportInstanceRequest, Operation> importInstanceTransportSettings =
+        GrpcCallSettings.<ImportInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(importInstanceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteInstanceRequest>() {
+                new RequestParamsExtractor<ImportInstanceRequest>() {
                   @Override
-                  public Map<String, String> extract(DeleteInstanceRequest request) {
+                  public Map<String, String> extract(ImportInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ExportInstanceRequest, Operation> exportInstanceTransportSettings =
+        GrpcCallSettings.<ExportInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExportInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExportInstanceRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -242,6 +281,19 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                 new RequestParamsExtractor<FailoverInstanceRequest>() {
                   @Override
                   public Map<String, String> extract(FailoverInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
+        GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteInstanceRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -276,13 +328,22 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
             settings.updateInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.deleteInstanceCallable =
+    this.importInstanceCallable =
         callableFactory.createUnaryCallable(
-            deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
-    this.deleteInstanceOperationCallable =
+            importInstanceTransportSettings, settings.importInstanceSettings(), clientContext);
+    this.importInstanceOperationCallable =
         callableFactory.createOperationCallable(
-            deleteInstanceTransportSettings,
-            settings.deleteInstanceOperationSettings(),
+            importInstanceTransportSettings,
+            settings.importInstanceOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.exportInstanceCallable =
+        callableFactory.createUnaryCallable(
+            exportInstanceTransportSettings, settings.exportInstanceSettings(), clientContext);
+    this.exportInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            exportInstanceTransportSettings,
+            settings.exportInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.failoverInstanceCallable =
@@ -292,6 +353,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
         callableFactory.createOperationCallable(
             failoverInstanceTransportSettings,
             settings.failoverInstanceOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.deleteInstanceCallable =
+        callableFactory.createUnaryCallable(
+            deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
+    this.deleteInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteInstanceTransportSettings,
+            settings.deleteInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
 
@@ -335,12 +405,21 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
-    return deleteInstanceOperationCallable;
+  public OperationCallable<ImportInstanceRequest, Instance, Any> importInstanceOperationCallable() {
+    return importInstanceOperationCallable;
   }
 
-  public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
-    return deleteInstanceCallable;
+  public UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
+    return importInstanceCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportInstanceRequest, Instance, Any> exportInstanceOperationCallable() {
+    return exportInstanceOperationCallable;
+  }
+
+  public UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
+    return exportInstanceCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -351,6 +430,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
 
   public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
     return failoverInstanceCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
+    return deleteInstanceOperationCallable;
+  }
+
+  public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
+    return deleteInstanceCallable;
   }
 
   @Override
