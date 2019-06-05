@@ -31,11 +31,6 @@
       <artifactId>google-api-services-storage</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${apache.httpclient.version}</version>
-    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
