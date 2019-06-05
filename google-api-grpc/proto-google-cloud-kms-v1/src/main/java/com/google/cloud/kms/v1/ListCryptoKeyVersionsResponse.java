@@ -29,6 +29,12 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListCryptoKeyVersionsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -113,7 +119,6 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
             com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CRYPTO_KEY_VERSIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.kms.v1.CryptoKeyVersion> cryptoKeyVersions_;
   /**
@@ -510,7 +515,6 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
       com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse result =
           new com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (cryptoKeyVersionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           cryptoKeyVersions_ = java.util.Collections.unmodifiableList(cryptoKeyVersions_);
@@ -522,7 +526,6 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

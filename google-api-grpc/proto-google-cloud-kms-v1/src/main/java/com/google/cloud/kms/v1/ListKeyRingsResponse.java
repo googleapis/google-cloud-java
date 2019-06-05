@@ -29,6 +29,12 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListKeyRingsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,7 +117,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.kms.v1.ListKeyRingsResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int KEY_RINGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.kms.v1.KeyRing> keyRings_;
   /**
@@ -504,7 +509,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.kms.v1.ListKeyRingsResponse result =
           new com.google.cloud.kms.v1.ListKeyRingsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (keyRingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           keyRings_ = java.util.Collections.unmodifiableList(keyRings_);
@@ -516,7 +520,6 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
