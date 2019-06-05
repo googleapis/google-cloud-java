@@ -36,6 +36,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Finding();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -103,11 +109,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sourceProperties_ =
                     com.google.protobuf.MapField.newMapField(
                         SourcePropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
                   sourceProperties__ =
@@ -357,7 +363,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.State)
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1266,7 +1271,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1.Finding result =
           new com.google.cloud.securitycenter.v1.Finding(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       result.parent_ = parent_;
       result.resourceName_ = resourceName_;
@@ -1290,7 +1294,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

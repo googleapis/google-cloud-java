@@ -28,6 +28,12 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new OrganizationSettings();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -212,6 +217,12 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     private AssetDiscoveryConfig() {
       projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       inclusionMode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AssetDiscoveryConfig();
     }
 
     @java.lang.Override
@@ -458,7 +469,6 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode)
     }
 
-    private int bitField0_;
     public static final int PROJECT_IDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList projectIds_;
     /**
@@ -832,14 +842,12 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
             new com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig(
                 this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           projectIds_ = projectIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.projectIds_ = projectIds_;
         result.inclusionMode_ = inclusionMode_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }

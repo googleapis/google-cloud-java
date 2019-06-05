@@ -308,33 +308,26 @@ public final class SecuritycenterService {
           + "lang.org/genproto/googleapis/cloud/secur"
           + "itycenter/v1beta1;securitycenterb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.securitycenter.v1beta1.AssetOuterClass.getDescriptor(),
-          com.google.cloud.securitycenter.v1beta1.FindingOuterClass.getDescriptor(),
-          com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.getDescriptor(),
-          com.google.cloud.securitycenter.v1beta1.SecurityMarksOuterClass.getDescriptor(),
-          com.google.cloud.securitycenter.v1beta1.SourceOuterClass.getDescriptor(),
-          com.google.iam.v1.IamPolicyProto.getDescriptor(),
-          com.google.iam.v1.PolicyProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1beta1.AssetOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1beta1.FindingOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+                  .getDescriptor(),
+              com.google.cloud.securitycenter.v1beta1.SecurityMarksOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1beta1.SourceOuterClass.getDescriptor(),
+              com.google.iam.v1.IamPolicyProto.getDescriptor(),
+              com.google.iam.v1.PolicyProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_securitycenter_v1beta1_CreateFindingRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_v1beta1_CreateFindingRequest_fieldAccessorTable =

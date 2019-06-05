@@ -31,6 +31,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Asset();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -82,11 +88,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resourceProperties_ =
                     com.google.protobuf.MapField.newMapField(
                         ResourcePropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
                   resourceProperties__ =
@@ -363,6 +369,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SecurityCenterProperties();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -417,9 +429,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   resourceOwners_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 resourceOwners_.add(s);
                 break;
@@ -438,7 +450,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -461,7 +473,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder.class);
     }
 
-    private int bitField0_;
     public static final int RESOURCE_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object resourceName_;
     /**
@@ -963,7 +974,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         resourceProject_ = "";
 
         resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -995,17 +1006,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result =
             new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.resourceName_ = resourceName_;
         result.resourceType_ = resourceType_;
         result.resourceParent_ = resourceParent_;
         result.resourceProject_ = resourceProject_;
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.resourceOwners_ = resourceOwners_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1081,7 +1090,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceOwners_.isEmpty()) {
           if (resourceOwners_.isEmpty()) {
             resourceOwners_ = other.resourceOwners_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResourceOwnersIsMutable();
             resourceOwners_.addAll(other.resourceOwners_);
@@ -1536,9 +1545,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureResourceOwnersIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           resourceOwners_ = new com.google.protobuf.LazyStringArrayList(resourceOwners_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
@@ -1651,7 +1660,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearResourceOwners() {
         resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1731,7 +1740,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -2429,7 +2437,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1beta1.Asset result =
           new com.google.cloud.securitycenter.v1beta1.Asset(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.name_ = name_;
       if (securityCenterPropertiesBuilder_ == null) {
         result.securityCenterProperties_ = securityCenterProperties_;
@@ -2453,7 +2460,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

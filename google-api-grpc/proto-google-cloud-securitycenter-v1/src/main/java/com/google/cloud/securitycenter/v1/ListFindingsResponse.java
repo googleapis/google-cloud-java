@@ -28,6 +28,12 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListFindingsResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -217,6 +223,12 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ListFindingsResult();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -229,7 +241,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1291,7 +1302,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
     }
   }
 
-  private int bitField0_;
   public static final int LIST_FINDINGS_RESULTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult>
       listFindingsResults_;
@@ -1757,7 +1767,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.securitycenter.v1.ListFindingsResponse result =
           new com.google.cloud.securitycenter.v1.ListFindingsResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (listFindingsResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           listFindingsResults_ = java.util.Collections.unmodifiableList(listFindingsResults_);
@@ -1774,7 +1783,6 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
