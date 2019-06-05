@@ -18,6 +18,11 @@ public interface SpeechContextOrBuilder
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](/speech-to-text/quotas#content).
+   * List items can also be set to classes for groups of words that represent
+   * common concepts that occur in natural language. For example, rather than
+   * providing phrase hints for every month of the year, using the $MONTH class
+   * improves the likelihood of correctly transcribing audio that includes
+   * months.
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -33,6 +38,11 @@ public interface SpeechContextOrBuilder
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](/speech-to-text/quotas#content).
+   * List items can also be set to classes for groups of words that represent
+   * common concepts that occur in natural language. For example, rather than
+   * providing phrase hints for every month of the year, using the $MONTH class
+   * improves the likelihood of correctly transcribing audio that includes
+   * months.
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -48,6 +58,11 @@ public interface SpeechContextOrBuilder
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](/speech-to-text/quotas#content).
+   * List items can also be set to classes for groups of words that represent
+   * common concepts that occur in natural language. For example, rather than
+   * providing phrase hints for every month of the year, using the $MONTH class
+   * improves the likelihood of correctly transcribing audio that includes
+   * months.
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -63,6 +78,11 @@ public interface SpeechContextOrBuilder
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](/speech-to-text/quotas#content).
+   * List items can also be set to classes for groups of words that represent
+   * common concepts that occur in natural language. For example, rather than
+   * providing phrase hints for every month of the year, using the $MONTH class
+   * improves the likelihood of correctly transcribing audio that includes
+   * months.
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
