@@ -132,10 +132,13 @@ public final class RouterBgpPeer implements ApiMessage {
   }
 
   /**
-   * User-specified list of prefix groups to advertise in custom mode. This field can only be
-   * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
-   * message). These groups will be advertised in addition to any specified prefixes. Leave this
-   * field blank to advertise no custom groups.
+   * User-specified list of prefix groups to advertise in custom mode, which can take one of the
+   * following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets.
+   * - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. - ALL_PEER_VPC_SUBNETS: Advertises
+   * peer subnets of the router's VPC network. Note that this field can only be populated if
+   * advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message).
+   * These groups are advertised in addition to any specified prefixes. Leave this field blank to
+   * advertise no custom groups.
    */
   public List<String> getAdvertisedGroupsList() {
     return advertisedGroups;
@@ -143,8 +146,8 @@ public final class RouterBgpPeer implements ApiMessage {
 
   /**
    * User-specified list of individual IP ranges to advertise in custom mode. This field can only be
-   * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
-   * message). These IP ranges will be advertised in addition to any specified groups. Leave this
+   * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the
+   * "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this
    * field blank to advertise no custom IP ranges.
    */
   public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
@@ -152,8 +155,8 @@ public final class RouterBgpPeer implements ApiMessage {
   }
 
   /**
-   * The priority of routes advertised to this BGP peer. In the case where there is more than one
-   * matching route of maximum length, the routes with lowest priority value win.
+   * The priority of routes advertised to this BGP peer. Where there is more than one matching route
+   * of maximum length, the routes with the lowest priority value win.
    */
   public Integer getAdvertisedRoutePriority() {
     return advertisedRoutePriority;
@@ -170,11 +173,11 @@ public final class RouterBgpPeer implements ApiMessage {
   }
 
   /**
-   * [Output Only] The resource that configures and manages this BGP peer. MANAGED_BY_USER is the
-   * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is a BGP peer
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the
+   * default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer
    * that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment
-   * of type PARTNER. Google will automatically create, update, and delete this type of BGP peer
-   * when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when
+   * the PARTNER InterconnectAttachment is created, updated, or deleted.
    */
   public String getManagementType() {
     return managementType;
@@ -185,15 +188,12 @@ public final class RouterBgpPeer implements ApiMessage {
     return name;
   }
 
-  /**
-   * Peer BGP Autonomous System Number (ASN). For VPN use case, this value can be different for
-   * every tunnel.
-   */
+  /** Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value. */
   public Integer getPeerAsn() {
     return peerAsn;
   }
 
-  /** IP address of the BGP interface outside Google cloud. Only IPv4 is supported. */
+  /** IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported. */
   public String getPeerIpAddress() {
     return peerIpAddress;
   }
@@ -294,9 +294,12 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     /**
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be
-     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
-     * message). These groups will be advertised in addition to any specified prefixes. Leave this
+     * User-specified list of prefix groups to advertise in custom mode, which can take one of the
+     * following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC
+     * subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. - ALL_PEER_VPC_SUBNETS:
+     * Advertises peer subnets of the router's VPC network. Note that this field can only be
+     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the
+     * "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this
      * field blank to advertise no custom groups.
      */
     public List<String> getAdvertisedGroupsList() {
@@ -304,9 +307,12 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     /**
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be
-     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
-     * message). These groups will be advertised in addition to any specified prefixes. Leave this
+     * User-specified list of prefix groups to advertise in custom mode, which can take one of the
+     * following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC
+     * subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. - ALL_PEER_VPC_SUBNETS:
+     * Advertises peer subnets of the router's VPC network. Note that this field can only be
+     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the
+     * "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this
      * field blank to advertise no custom groups.
      */
     public Builder addAllAdvertisedGroups(List<String> advertisedGroups) {
@@ -318,9 +324,12 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     /**
-     * User-specified list of prefix groups to advertise in custom mode. This field can only be
-     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
-     * message). These groups will be advertised in addition to any specified prefixes. Leave this
+     * User-specified list of prefix groups to advertise in custom mode, which can take one of the
+     * following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC
+     * subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. - ALL_PEER_VPC_SUBNETS:
+     * Advertises peer subnets of the router's VPC network. Note that this field can only be
+     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the
+     * "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this
      * field blank to advertise no custom groups.
      */
     public Builder addAdvertisedGroups(String advertisedGroups) {
@@ -334,7 +343,7 @@ public final class RouterBgpPeer implements ApiMessage {
     /**
      * User-specified list of individual IP ranges to advertise in custom mode. This field can only
      * be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in
-     * Bgp message). These IP ranges will be advertised in addition to any specified groups. Leave
+     * the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave
      * this field blank to advertise no custom IP ranges.
      */
     public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
@@ -344,7 +353,7 @@ public final class RouterBgpPeer implements ApiMessage {
     /**
      * User-specified list of individual IP ranges to advertise in custom mode. This field can only
      * be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in
-     * Bgp message). These IP ranges will be advertised in addition to any specified groups. Leave
+     * the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave
      * this field blank to advertise no custom IP ranges.
      */
     public Builder addAllAdvertisedIpRanges(List<RouterAdvertisedIpRange> advertisedIpRanges) {
@@ -358,7 +367,7 @@ public final class RouterBgpPeer implements ApiMessage {
     /**
      * User-specified list of individual IP ranges to advertise in custom mode. This field can only
      * be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in
-     * Bgp message). These IP ranges will be advertised in addition to any specified groups. Leave
+     * the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave
      * this field blank to advertise no custom IP ranges.
      */
     public Builder addAdvertisedIpRanges(RouterAdvertisedIpRange advertisedIpRanges) {
@@ -370,16 +379,16 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     /**
-     * The priority of routes advertised to this BGP peer. In the case where there is more than one
-     * matching route of maximum length, the routes with lowest priority value win.
+     * The priority of routes advertised to this BGP peer. Where there is more than one matching
+     * route of maximum length, the routes with the lowest priority value win.
      */
     public Integer getAdvertisedRoutePriority() {
       return advertisedRoutePriority;
     }
 
     /**
-     * The priority of routes advertised to this BGP peer. In the case where there is more than one
-     * matching route of maximum length, the routes with lowest priority value win.
+     * The priority of routes advertised to this BGP peer. Where there is more than one matching
+     * route of maximum length, the routes with the lowest priority value win.
      */
     public Builder setAdvertisedRoutePriority(Integer advertisedRoutePriority) {
       this.advertisedRoutePriority = advertisedRoutePriority;
@@ -409,10 +418,10 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     /**
-     * [Output Only] The resource that configures and manages this BGP peer. MANAGED_BY_USER is the
-     * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is a BGP peer
-     * that is configured and managed by Cloud Interconnect, specifically by an
-     * InterconnectAttachment of type PARTNER. Google will automatically create, update, and delete
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is
+     * the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP
+     * peer that is configured and managed by Cloud Interconnect, specifically by an
+     * InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes
      * this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or
      * deleted.
      */
@@ -421,10 +430,10 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     /**
-     * [Output Only] The resource that configures and manages this BGP peer. MANAGED_BY_USER is the
-     * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is a BGP peer
-     * that is configured and managed by Cloud Interconnect, specifically by an
-     * InterconnectAttachment of type PARTNER. Google will automatically create, update, and delete
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is
+     * the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP
+     * peer that is configured and managed by Cloud Interconnect, specifically by an
+     * InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes
      * this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or
      * deleted.
      */
@@ -444,29 +453,23 @@ public final class RouterBgpPeer implements ApiMessage {
       return this;
     }
 
-    /**
-     * Peer BGP Autonomous System Number (ASN). For VPN use case, this value can be different for
-     * every tunnel.
-     */
+    /** Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value. */
     public Integer getPeerAsn() {
       return peerAsn;
     }
 
-    /**
-     * Peer BGP Autonomous System Number (ASN). For VPN use case, this value can be different for
-     * every tunnel.
-     */
+    /** Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value. */
     public Builder setPeerAsn(Integer peerAsn) {
       this.peerAsn = peerAsn;
       return this;
     }
 
-    /** IP address of the BGP interface outside Google cloud. Only IPv4 is supported. */
+    /** IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported. */
     public String getPeerIpAddress() {
       return peerIpAddress;
     }
 
-    /** IP address of the BGP interface outside Google cloud. Only IPv4 is supported. */
+    /** IP address of the BGP interface outside Google Cloud Platform. Only IPv4 is supported. */
     public Builder setPeerIpAddress(String peerIpAddress) {
       this.peerIpAddress = peerIpAddress;
       return this;
