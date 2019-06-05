@@ -29,6 +29,12 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DetectIntentResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -96,10 +102,10 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 alternativeQueryResults_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               alternativeQueryResults_.add(
                   input.readMessage(
@@ -137,7 +143,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
       }
       this.unknownFields = unknownFields.build();
@@ -160,7 +166,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object responseId_;
   /**
@@ -745,7 +750,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       }
       if (alternativeQueryResultsBuilder_ == null) {
         alternativeQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         alternativeQueryResultsBuilder_.clear();
       }
@@ -791,7 +796,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       com.google.cloud.dialogflow.v2beta1.DetectIntentResponse result =
           new com.google.cloud.dialogflow.v2beta1.DetectIntentResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.responseId_ = responseId_;
       if (queryResultBuilder_ == null) {
         result.queryResult_ = queryResult_;
@@ -799,10 +803,10 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         result.queryResult_ = queryResultBuilder_.build();
       }
       if (alternativeQueryResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           alternativeQueryResults_ =
               java.util.Collections.unmodifiableList(alternativeQueryResults_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.alternativeQueryResults_ = alternativeQueryResults_;
       } else {
@@ -819,7 +823,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.outputAudioConfig_ = outputAudioConfigBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -881,7 +884,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         if (!other.alternativeQueryResults_.isEmpty()) {
           if (alternativeQueryResults_.isEmpty()) {
             alternativeQueryResults_ = other.alternativeQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAlternativeQueryResultsIsMutable();
             alternativeQueryResults_.addAll(other.alternativeQueryResults_);
@@ -894,7 +897,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
             alternativeQueryResultsBuilder_.dispose();
             alternativeQueryResultsBuilder_ = null;
             alternativeQueryResults_ = other.alternativeQueryResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             alternativeQueryResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAlternativeQueryResultsFieldBuilder()
@@ -1239,11 +1242,11 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
         alternativeQueryResults_ = java.util.Collections.emptyList();
 
     private void ensureAlternativeQueryResultsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         alternativeQueryResults_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(
                 alternativeQueryResults_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1551,7 +1554,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
     public Builder clearAlternativeQueryResults() {
       if (alternativeQueryResultsBuilder_ == null) {
         alternativeQueryResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         alternativeQueryResultsBuilder_.clear();
@@ -1734,7 +1737,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
                 com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
                 alternativeQueryResults_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         alternativeQueryResults_ = null;

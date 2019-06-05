@@ -31,6 +31,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new InputAudioConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 phraseHints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               phraseHints_.add(s);
               break;
@@ -111,7 +117,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -134,7 +140,6 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
@@ -672,7 +677,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       languageCode_ = "";
 
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       model_ = "";
 
       modelVariant_ = 0;
@@ -705,18 +710,16 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dialogflow.v2beta1.InputAudioConfig result =
           new com.google.cloud.dialogflow.v2beta1.InputAudioConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.audioEncoding_ = audioEncoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         phraseHints_ = phraseHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.phraseHints_ = phraseHints_;
       result.model_ = model_;
       result.modelVariant_ = modelVariant_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -780,7 +783,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!other.phraseHints_.isEmpty()) {
         if (phraseHints_.isEmpty()) {
           phraseHints_ = other.phraseHints_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensurePhraseHintsIsMutable();
           phraseHints_.addAll(other.phraseHints_);
@@ -1078,9 +1081,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePhraseHintsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         phraseHints_ = new com.google.protobuf.LazyStringArrayList(phraseHints_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -1233,7 +1236,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPhraseHints() {
       phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

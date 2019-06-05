@@ -29,6 +29,12 @@ public final class ListSessionEntityTypesResponse extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ListSessionEntityTypesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,7 +115,6 @@ public final class ListSessionEntityTypesResponse extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2.ListSessionEntityTypesResponse.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SESSION_ENTITY_TYPES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> sessionEntityTypes_;
   /**
@@ -482,7 +487,6 @@ public final class ListSessionEntityTypesResponse extends com.google.protobuf.Ge
       com.google.cloud.dialogflow.v2.ListSessionEntityTypesResponse result =
           new com.google.cloud.dialogflow.v2.ListSessionEntityTypesResponse(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (sessionEntityTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
@@ -493,7 +497,6 @@ public final class ListSessionEntityTypesResponse extends com.google.protobuf.Ge
         result.sessionEntityTypes_ = sessionEntityTypesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

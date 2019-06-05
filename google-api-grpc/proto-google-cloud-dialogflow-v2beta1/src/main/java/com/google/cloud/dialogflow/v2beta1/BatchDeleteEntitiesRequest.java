@@ -29,6 +29,12 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchDeleteEntitiesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,9 +68,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityValues_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               entityValues_.add(s);
               break;
@@ -90,7 +96,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entityValues_ = entityValues_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -113,7 +119,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -504,7 +509,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       parent_ = "";
 
       entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       languageCode_ = "";
 
       return this;
@@ -536,15 +541,13 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         entityValues_ = entityValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.entityValues_ = entityValues_;
       result.languageCode_ = languageCode_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -603,7 +606,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       if (!other.entityValues_.isEmpty()) {
         if (entityValues_.isEmpty()) {
           entityValues_ = other.entityValues_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureEntityValuesIsMutable();
           entityValues_.addAll(other.entityValues_);
@@ -750,9 +753,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEntityValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entityValues_ = new com.google.protobuf.LazyStringArrayList(entityValues_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -881,7 +884,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      */
     public Builder clearEntityValues() {
       entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
