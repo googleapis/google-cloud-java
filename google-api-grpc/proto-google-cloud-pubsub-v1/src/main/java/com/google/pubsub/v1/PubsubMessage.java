@@ -36,6 +36,12 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PubsubMessage();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -66,11 +72,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
                   input.readMessage(
@@ -153,7 +159,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.pubsub.v1.PubsubMessage.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_;
   /**
@@ -731,7 +736,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.pubsub.v1.PubsubMessage buildPartial() {
       com.google.pubsub.v1.PubsubMessage result = new com.google.pubsub.v1.PubsubMessage(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.data_ = data_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
@@ -742,7 +746,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         result.publishTime_ = publishTimeBuilder_.build();
       }
       result.orderingKey_ = orderingKey_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

@@ -28,6 +28,12 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AcknowledgeRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -61,9 +67,9 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ackIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               ackIds_.add(s);
               break;
@@ -82,7 +88,7 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         ackIds_ = ackIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -105,7 +111,6 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
             com.google.pubsub.v1.AcknowledgeRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object subscription_;
   /**
@@ -428,7 +433,7 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
       subscription_ = "";
 
       ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -457,14 +462,12 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
       com.google.pubsub.v1.AcknowledgeRequest result =
           new com.google.pubsub.v1.AcknowledgeRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.subscription_ = subscription_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         ackIds_ = ackIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ackIds_ = ackIds_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -521,7 +524,7 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
       if (!other.ackIds_.isEmpty()) {
         if (ackIds_.isEmpty()) {
           ackIds_ = other.ackIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureAckIdsIsMutable();
           ackIds_.addAll(other.ackIds_);
@@ -662,9 +665,9 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAckIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         ackIds_ = new com.google.protobuf.LazyStringArrayList(ackIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -785,7 +788,7 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearAckIds() {
       ackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

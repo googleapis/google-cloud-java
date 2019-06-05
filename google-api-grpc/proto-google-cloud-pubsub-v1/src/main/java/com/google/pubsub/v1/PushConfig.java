@@ -27,6 +27,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new PushConfig();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -59,11 +65,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 attributes_ =
                     com.google.protobuf.MapField.newMapField(
                         AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
                   input.readMessage(
@@ -225,6 +231,12 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OidcToken();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -237,7 +249,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1023,7 +1034,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  private int bitField0_;
   private int authenticationMethodCase_ = 0;
   private java.lang.Object authenticationMethod_;
 
@@ -1601,7 +1611,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.pubsub.v1.PushConfig buildPartial() {
       com.google.pubsub.v1.PushConfig result = new com.google.pubsub.v1.PushConfig(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.pushEndpoint_ = pushEndpoint_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
@@ -1612,7 +1621,6 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           result.authenticationMethod_ = oidcTokenBuilder_.build();
         }
       }
-      result.bitField0_ = to_bitField0_;
       result.authenticationMethodCase_ = authenticationMethodCase_;
       onBuilt();
       return result;
