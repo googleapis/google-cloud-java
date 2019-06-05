@@ -29,12 +29,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new FaceAnnotation();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -65,10 +59,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 segments_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.FaceSegment>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               segments_.add(
                   input.readMessage(
@@ -78,10 +72,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 frames_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.FaceFrame>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               frames_.add(
                   input.readMessage(
@@ -102,10 +96,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         segments_ = java.util.Collections.unmodifiableList(segments_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         frames_ = java.util.Collections.unmodifiableList(frames_);
       }
       this.unknownFields = unknownFields.build();
@@ -128,6 +122,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.FaceAnnotation.Builder.class);
   }
 
+  private int bitField0_;
   public static final int THUMBNAIL_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString thumbnail_;
   /**
@@ -505,13 +500,13 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         segmentsBuilder_.clear();
       }
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         framesBuilder_.clear();
       }
@@ -543,25 +538,27 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1.FaceAnnotation result =
           new com.google.cloud.videointelligence.v1.FaceAnnotation(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.thumbnail_ = thumbnail_;
       if (segmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.segments_ = segments_;
       } else {
         result.segments_ = segmentsBuilder_.build();
       }
       if (framesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           frames_ = java.util.Collections.unmodifiableList(frames_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.frames_ = frames_;
       } else {
         result.frames_ = framesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -619,7 +616,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSegmentsIsMutable();
             segments_.addAll(other.segments_);
@@ -632,7 +629,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             segmentsBuilder_.dispose();
             segmentsBuilder_ = null;
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             segmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSegmentsFieldBuilder()
@@ -646,7 +643,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (!other.frames_.isEmpty()) {
           if (frames_.isEmpty()) {
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFramesIsMutable();
             frames_.addAll(other.frames_);
@@ -659,7 +656,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             framesBuilder_.dispose();
             framesBuilder_ = null;
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             framesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFramesFieldBuilder()
@@ -752,10 +749,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSegmentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         segments_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.FaceSegment>(segments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -971,7 +968,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSegments() {
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         segmentsBuilder_.clear();
@@ -1095,7 +1092,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1.FaceSegment,
                 com.google.cloud.videointelligence.v1.FaceSegment.Builder,
                 com.google.cloud.videointelligence.v1.FaceSegmentOrBuilder>(
-                segments_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                segments_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         segments_ = null;
       }
       return segmentsBuilder_;
@@ -1105,9 +1102,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFramesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         frames_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.FaceFrame>(frames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1323,7 +1320,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFrames() {
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         framesBuilder_.clear();
@@ -1445,7 +1442,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1.FaceFrame,
                 com.google.cloud.videointelligence.v1.FaceFrame.Builder,
                 com.google.cloud.videointelligence.v1.FaceFrameOrBuilder>(
-                frames_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                frames_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         frames_ = null;
       }
       return framesBuilder_;

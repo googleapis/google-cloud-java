@@ -30,12 +30,6 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new TimestampedObject();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -94,11 +88,11 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 attributes_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               attributes_.add(
                   input.readMessage(
@@ -120,7 +114,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         attributes_ = java.util.Collections.unmodifiableList(attributes_);
       }
       this.unknownFields = unknownFields.build();
@@ -143,6 +137,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             com.google.cloud.videointelligence.v1p3beta1.TimestampedObject.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NORMALIZED_BOUNDING_BOX_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p3beta1.NormalizedBoundingBox normalizedBoundingBox_;
   /**
@@ -562,7 +557,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       }
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         attributesBuilder_.clear();
       }
@@ -595,6 +590,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
       com.google.cloud.videointelligence.v1p3beta1.TimestampedObject result =
           new com.google.cloud.videointelligence.v1p3beta1.TimestampedObject(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (normalizedBoundingBoxBuilder_ == null) {
         result.normalizedBoundingBox_ = normalizedBoundingBox_;
       } else {
@@ -606,14 +602,15 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         result.timeOffset_ = timeOffsetBuilder_.build();
       }
       if (attributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           attributes_ = java.util.Collections.unmodifiableList(attributes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.attributes_ = attributes_;
       } else {
         result.attributes_ = attributesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -675,7 +672,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         if (!other.attributes_.isEmpty()) {
           if (attributes_.isEmpty()) {
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAttributesIsMutable();
             attributes_.addAll(other.attributes_);
@@ -688,7 +685,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
             attributesBuilder_.dispose();
             attributesBuilder_ = null;
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             attributesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttributesFieldBuilder()
@@ -1133,11 +1130,11 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
         attributes_ = java.util.Collections.emptyList();
 
     private void ensureAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         attributes_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>(
                 attributes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1371,7 +1368,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
     public Builder clearAttributes() {
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         attributesBuilder_.clear();
@@ -1508,7 +1505,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute,
                 com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder>(
-                attributes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                attributes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         attributes_ = null;
       }
       return attributesBuilder_;

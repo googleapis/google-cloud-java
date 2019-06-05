@@ -27,12 +27,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ObjectTrackingAnnotation();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,11 +68,11 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 frames_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1.ObjectTrackingFrame>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000010;
               }
               frames_.add(
                   input.readMessage(
@@ -130,7 +124,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         frames_ = java.util.Collections.unmodifiableList(frames_);
       }
       this.unknownFields = unknownFields.build();
@@ -153,6 +147,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder.class);
   }
 
+  private int bitField0_;
   private int trackInfoCase_ = 0;
   private java.lang.Object trackInfo_;
 
@@ -681,7 +676,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         framesBuilder_.clear();
       }
@@ -716,6 +711,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation result =
           new com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (trackInfoCase_ == 3) {
         if (segmentBuilder_ == null) {
           result.trackInfo_ = trackInfo_;
@@ -733,14 +729,15 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
       result.confidence_ = confidence_;
       if (framesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           frames_ = java.util.Collections.unmodifiableList(frames_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.frames_ = frames_;
       } else {
         result.frames_ = framesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       result.trackInfoCase_ = trackInfoCase_;
       onBuilt();
       return result;
@@ -803,7 +800,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         if (!other.frames_.isEmpty()) {
           if (frames_.isEmpty()) {
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureFramesIsMutable();
             frames_.addAll(other.frames_);
@@ -816,7 +813,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             framesBuilder_.dispose();
             framesBuilder_ = null;
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             framesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFramesFieldBuilder()
@@ -1393,11 +1390,11 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureFramesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         frames_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.ObjectTrackingFrame>(
                 frames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1652,7 +1649,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     public Builder clearFrames() {
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         framesBuilder_.clear();
@@ -1802,7 +1799,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
                 com.google.cloud.videointelligence.v1.ObjectTrackingFrame,
                 com.google.cloud.videointelligence.v1.ObjectTrackingFrame.Builder,
                 com.google.cloud.videointelligence.v1.ObjectTrackingFrameOrBuilder>(
-                frames_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                frames_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         frames_ = null;
       }
       return framesBuilder_;

@@ -29,12 +29,6 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new SpeechTranscriptionConfig();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -77,10 +71,10 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 speechContexts_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechContext>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               speechContexts_.add(
                   input.readMessage(
@@ -95,9 +89,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             }
           case 48:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 audioTracks_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000020;
               }
               audioTracks_.addInt(input.readInt32());
               break;
@@ -106,9 +100,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
                 audioTracks_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000020;
               }
               while (input.getBytesUntilLimit() > 0) {
                 audioTracks_.addInt(input.readInt32());
@@ -145,10 +139,10 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         audioTracks_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
@@ -171,6 +165,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
   private volatile java.lang.Object languageCode_;
   /**
@@ -751,14 +746,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         speechContextsBuilder_.clear();
       }
       enableAutomaticPunctuation_ = false;
 
       audioTracks_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       enableSpeakerDiarization_ = false;
 
       diarizationSpeakerCount_ = 0;
@@ -794,27 +789,29 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig result =
           new com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.languageCode_ = languageCode_;
       result.maxAlternatives_ = maxAlternatives_;
       result.filterProfanity_ = filterProfanity_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.speechContexts_ = speechContexts_;
       } else {
         result.speechContexts_ = speechContextsBuilder_.build();
       }
       result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         audioTracks_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.audioTracks_ = audioTracks_;
       result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
       result.diarizationSpeakerCount_ = diarizationSpeakerCount_;
       result.enableWordConfidence_ = enableWordConfidence_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -881,7 +878,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -894,7 +891,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -910,7 +907,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       if (!other.audioTracks_.isEmpty()) {
         if (audioTracks_.isEmpty()) {
           audioTracks_ = other.audioTracks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureAudioTracksIsMutable();
           audioTracks_.addAll(other.audioTracks_);
@@ -1186,11 +1183,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechContext>(
                 speechContexts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1409,7 +1406,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -1536,7 +1533,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
                 com.google.cloud.videointelligence.v1.SpeechContext.Builder,
                 com.google.cloud.videointelligence.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -1606,9 +1603,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     private com.google.protobuf.Internal.IntList audioTracks_ = emptyIntList();
 
     private void ensureAudioTracksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         audioTracks_ = mutableCopy(audioTracks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1622,7 +1619,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * <code>repeated int32 audio_tracks = 6;</code>
      */
     public java.util.List<java.lang.Integer> getAudioTracksList() {
-      return ((bitField0_ & 0x00000002) != 0)
+      return ((bitField0_ & 0x00000020) != 0)
           ? java.util.Collections.unmodifiableList(audioTracks_)
           : audioTracks_;
     }
@@ -1712,7 +1709,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      */
     public Builder clearAudioTracks() {
       audioTracks_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

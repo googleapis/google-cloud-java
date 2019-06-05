@@ -27,12 +27,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new TextSegment();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -80,10 +74,10 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 frames_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextFrame>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               frames_.add(
                   input.readMessage(
@@ -104,7 +98,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         frames_ = java.util.Collections.unmodifiableList(frames_);
       }
       this.unknownFields = unknownFields.build();
@@ -127,6 +121,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1.TextSegment.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.VideoSegment segment_;
   /**
@@ -490,7 +485,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
 
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         framesBuilder_.clear();
       }
@@ -522,6 +517,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1.TextSegment result =
           new com.google.cloud.videointelligence.v1.TextSegment(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (segmentBuilder_ == null) {
         result.segment_ = segment_;
       } else {
@@ -529,14 +525,15 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
       result.confidence_ = confidence_;
       if (framesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           frames_ = java.util.Collections.unmodifiableList(frames_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.frames_ = frames_;
       } else {
         result.frames_ = framesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -597,7 +594,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         if (!other.frames_.isEmpty()) {
           if (frames_.isEmpty()) {
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFramesIsMutable();
             frames_.addAll(other.frames_);
@@ -610,7 +607,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
             framesBuilder_.dispose();
             framesBuilder_ = null;
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             framesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFramesFieldBuilder()
@@ -885,9 +882,9 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFramesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         frames_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextFrame>(frames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1103,7 +1100,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFrames() {
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         framesBuilder_.clear();
@@ -1225,7 +1222,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1.TextFrame,
                 com.google.cloud.videointelligence.v1.TextFrame.Builder,
                 com.google.cloud.videointelligence.v1.TextFrameOrBuilder>(
-                frames_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                frames_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         frames_ = null;
       }
       return framesBuilder_;

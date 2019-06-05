@@ -29,12 +29,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new LabelAnnotation();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,10 +70,10 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 categoryEntities_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.Entity>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               categoryEntities_.add(
                   input.readMessage(
@@ -88,10 +82,10 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 segments_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelSegment>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               segments_.add(
                   input.readMessage(
@@ -101,10 +95,10 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 frames_ =
                     new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelFrame>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               frames_.add(
                   input.readMessage(
@@ -126,13 +120,13 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         categoryEntities_ = java.util.Collections.unmodifiableList(categoryEntities_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         segments_ = java.util.Collections.unmodifiableList(segments_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         frames_ = java.util.Collections.unmodifiableList(frames_);
       }
       this.unknownFields = unknownFields.build();
@@ -155,6 +149,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.videointelligence.v1.LabelAnnotation.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1.Entity entity_;
   /**
@@ -660,19 +655,19 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       }
       if (categoryEntitiesBuilder_ == null) {
         categoryEntities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         categoryEntitiesBuilder_.clear();
       }
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         segmentsBuilder_.clear();
       }
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         framesBuilder_.clear();
       }
@@ -704,38 +699,40 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.videointelligence.v1.LabelAnnotation result =
           new com.google.cloud.videointelligence.v1.LabelAnnotation(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (entityBuilder_ == null) {
         result.entity_ = entity_;
       } else {
         result.entity_ = entityBuilder_.build();
       }
       if (categoryEntitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           categoryEntities_ = java.util.Collections.unmodifiableList(categoryEntities_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.categoryEntities_ = categoryEntities_;
       } else {
         result.categoryEntities_ = categoryEntitiesBuilder_.build();
       }
       if (segmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.segments_ = segments_;
       } else {
         result.segments_ = segmentsBuilder_.build();
       }
       if (framesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           frames_ = java.util.Collections.unmodifiableList(frames_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.frames_ = frames_;
       } else {
         result.frames_ = framesBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -793,7 +790,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         if (!other.categoryEntities_.isEmpty()) {
           if (categoryEntities_.isEmpty()) {
             categoryEntities_ = other.categoryEntities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCategoryEntitiesIsMutable();
             categoryEntities_.addAll(other.categoryEntities_);
@@ -806,7 +803,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             categoryEntitiesBuilder_.dispose();
             categoryEntitiesBuilder_ = null;
             categoryEntities_ = other.categoryEntities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             categoryEntitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoryEntitiesFieldBuilder()
@@ -820,7 +817,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSegmentsIsMutable();
             segments_.addAll(other.segments_);
@@ -833,7 +830,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             segmentsBuilder_.dispose();
             segmentsBuilder_ = null;
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             segmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSegmentsFieldBuilder()
@@ -847,7 +844,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         if (!other.frames_.isEmpty()) {
           if (frames_.isEmpty()) {
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFramesIsMutable();
             frames_.addAll(other.frames_);
@@ -860,7 +857,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             framesBuilder_.dispose();
             framesBuilder_ = null;
             frames_ = other.frames_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             framesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFramesFieldBuilder()
@@ -1087,11 +1084,11 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureCategoryEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         categoryEntities_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.Entity>(
                 categoryEntities_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1342,7 +1339,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     public Builder clearCategoryEntities() {
       if (categoryEntitiesBuilder_ == null) {
         categoryEntities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         categoryEntitiesBuilder_.clear();
@@ -1489,7 +1486,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.videointelligence.v1.Entity.Builder,
                 com.google.cloud.videointelligence.v1.EntityOrBuilder>(
                 categoryEntities_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         categoryEntities_ = null;
@@ -1501,10 +1498,10 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureSegmentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         segments_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelSegment>(segments_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1722,7 +1719,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     public Builder clearSegments() {
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         segmentsBuilder_.clear();
@@ -1848,7 +1845,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.videointelligence.v1.LabelSegment,
                 com.google.cloud.videointelligence.v1.LabelSegment.Builder,
                 com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder>(
-                segments_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                segments_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         segments_ = null;
       }
       return segmentsBuilder_;
@@ -1858,10 +1855,10 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureFramesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         frames_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.LabelFrame>(frames_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2077,7 +2074,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     public Builder clearFrames() {
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         framesBuilder_.clear();
@@ -2199,7 +2196,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.videointelligence.v1.LabelFrame,
                 com.google.cloud.videointelligence.v1.LabelFrame.Builder,
                 com.google.cloud.videointelligence.v1.LabelFrameOrBuilder>(
-                frames_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                frames_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         frames_ = null;
       }
       return framesBuilder_;

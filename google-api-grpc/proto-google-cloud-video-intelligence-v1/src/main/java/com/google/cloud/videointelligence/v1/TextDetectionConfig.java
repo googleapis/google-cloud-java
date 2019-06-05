@@ -28,12 +28,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new TextDetectionConfig();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,6 +105,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList languageHints_;
   /**
@@ -474,12 +469,14 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       com.google.cloud.videointelligence.v1.TextDetectionConfig result =
           new com.google.cloud.videointelligence.v1.TextDetectionConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
       result.model_ = model_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }

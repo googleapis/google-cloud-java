@@ -31,12 +31,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AnnotateVideoRequest();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -70,9 +64,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 features_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               features_.add(rawValue);
               break;
@@ -83,9 +77,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   features_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 features_.add(rawValue);
               }
@@ -142,7 +136,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
       }
       this.unknownFields = unknownFields.build();
@@ -165,6 +159,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.videointelligence.v1.AnnotateVideoRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INPUT_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object inputUri_;
   /**
@@ -741,7 +736,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       inputContent_ = com.google.protobuf.ByteString.EMPTY;
 
       features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (videoContextBuilder_ == null) {
         videoContext_ = null;
       } else {
@@ -780,11 +775,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.videointelligence.v1.AnnotateVideoRequest result =
           new com.google.cloud.videointelligence.v1.AnnotateVideoRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.inputUri_ = inputUri_;
       result.inputContent_ = inputContent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         features_ = java.util.Collections.unmodifiableList(features_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.features_ = features_;
       if (videoContextBuilder_ == null) {
@@ -794,6 +790,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       }
       result.outputUri_ = outputUri_;
       result.locationId_ = locationId_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -854,7 +851,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (!other.features_.isEmpty()) {
         if (features_.isEmpty()) {
           features_ = other.features_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureFeaturesIsMutable();
           features_.addAll(other.features_);
@@ -1099,9 +1096,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     private java.util.List<java.lang.Integer> features_ = java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         features_ = new java.util.ArrayList<java.lang.Integer>(features_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1207,7 +1204,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearFeatures() {
       features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

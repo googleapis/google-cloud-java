@@ -29,12 +29,6 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new LabelAnnotation();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -74,11 +68,11 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 locations_ =
                     new java.util.ArrayList<
                         com.google.cloud.videointelligence.v1beta1.LabelLocation>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               locations_.add(
                   input.readMessage(
@@ -100,7 +94,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         locations_ = java.util.Collections.unmodifiableList(locations_);
       }
       this.unknownFields = unknownFields.build();
@@ -123,6 +117,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.videointelligence.v1beta1.LabelAnnotation.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object description_;
   /**
@@ -508,7 +503,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
 
       if (locationsBuilder_ == null) {
         locations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         locationsBuilder_.clear();
       }
@@ -540,17 +535,19 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.videointelligence.v1beta1.LabelAnnotation result =
           new com.google.cloud.videointelligence.v1beta1.LabelAnnotation(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.description_ = description_;
       result.languageCode_ = languageCode_;
       if (locationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           locations_ = java.util.Collections.unmodifiableList(locations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.locations_ = locations_;
       } else {
         result.locations_ = locationsBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -613,7 +610,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         if (!other.locations_.isEmpty()) {
           if (locations_.isEmpty()) {
             locations_ = other.locations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLocationsIsMutable();
             locations_.addAll(other.locations_);
@@ -626,7 +623,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             locationsBuilder_.dispose();
             locationsBuilder_ = null;
             locations_ = other.locations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             locationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationsFieldBuilder()
@@ -860,11 +857,11 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         locations_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.LabelLocation>(
                 locations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1086,7 +1083,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     public Builder clearLocations() {
       if (locationsBuilder_ == null) {
         locations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         locationsBuilder_.clear();
@@ -1214,7 +1211,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.videointelligence.v1beta1.LabelLocation,
                 com.google.cloud.videointelligence.v1beta1.LabelLocation.Builder,
                 com.google.cloud.videointelligence.v1beta1.LabelLocationOrBuilder>(
-                locations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                locations_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         locations_ = null;
       }
       return locationsBuilder_;

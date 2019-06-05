@@ -27,12 +27,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new VideoContext();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -181,6 +175,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.videointelligence.v1p2beta1.VideoContext.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SEGMENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.videointelligence.v1p2beta1.VideoSegment> segments_;
   /**
@@ -785,6 +780,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.videointelligence.v1p2beta1.VideoContext result =
           new com.google.cloud.videointelligence.v1p2beta1.VideoContext(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (segmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
@@ -814,6 +810,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.textDetectionConfig_ = textDetectionConfigBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
