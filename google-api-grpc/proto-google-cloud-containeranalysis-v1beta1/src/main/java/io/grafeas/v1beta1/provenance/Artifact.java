@@ -29,6 +29,12 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Artifact();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -69,9 +75,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 names_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               names_.add(s);
               break;
@@ -90,7 +96,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         names_ = names_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -113,7 +119,6 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.provenance.Artifact.Builder.class);
   }
 
-  private int bitField0_;
   public static final int CHECKSUM_FIELD_NUMBER = 1;
   private volatile java.lang.Object checksum_;
   /**
@@ -504,7 +509,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       id_ = "";
 
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -533,15 +538,13 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1beta1.provenance.Artifact result =
           new io.grafeas.v1beta1.provenance.Artifact(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.checksum_ = checksum_;
       result.id_ = id_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         names_ = names_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.names_ = names_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -602,7 +605,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (!other.names_.isEmpty()) {
         if (names_.isEmpty()) {
           names_ = other.names_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureNamesIsMutable();
           names_.addAll(other.names_);
@@ -842,9 +845,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNamesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         names_ = new com.google.protobuf.LazyStringArrayList(names_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -989,7 +992,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNames() {
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

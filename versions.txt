@@ -76,6 +76,7 @@ grpc-google-cloud-bigquerystorage-v1beta1:0.59.0:0.59.1-SNAPSHOT
 grpc-google-cloud-bigtable-admin-v2:0.59.0:0.59.1-SNAPSHOT
 grpc-google-cloud-bigtable-v2:0.59.0:0.59.1-SNAPSHOT
 grpc-google-cloud-container-v1:0.59.0:0.59.1-SNAPSHOT
+grpc-google-cloud-containeranalysis-v1:0.59.0:0.59.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1beta1:0.59.0:0.59.1-SNAPSHOT
 grpc-google-cloud-datacatalog-v1beta1:0.7.0-alpha:0.7.1-alpha-SNAPSHOT
 grpc-google-cloud-datalabeling-v1beta1:0.59.0:0.59.1-SNAPSHOT
@@ -141,6 +142,7 @@ proto-google-cloud-bigquerystorage-v1beta1:0.59.0:0.59.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.59.0:0.59.1-SNAPSHOT
 proto-google-cloud-bigtable-v2:0.59.0:0.59.1-SNAPSHOT
 proto-google-cloud-container-v1:0.59.0:0.59.1-SNAPSHOT
+proto-google-cloud-containeranalysis-v1:0.59.0:0.59.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1beta1:0.59.0:0.59.1-SNAPSHOT
 proto-google-cloud-datacatalog-v1beta1:0.7.0-alpha:0.7.1-alpha-SNAPSHOT
 proto-google-cloud-datalabeling-v1beta1:0.59.0:0.59.1-SNAPSHOT
