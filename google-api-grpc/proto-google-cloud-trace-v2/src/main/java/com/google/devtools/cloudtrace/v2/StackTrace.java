@@ -25,6 +25,12 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
   private StackTrace() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new StackTrace();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -321,6 +326,12 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     private StackFrame() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StackFrame();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -333,7 +344,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2390,6 +2400,12 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StackFrames();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -2469,7 +2485,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.Builder.class);
     }
 
-    private int bitField0_;
     public static final int FRAME_FIELD_NUMBER = 1;
     private java.util.List<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame> frame_;
     /**
@@ -2809,7 +2824,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.cloudtrace.v2.StackTrace.StackFrames result =
             new com.google.devtools.cloudtrace.v2.StackTrace.StackFrames(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (frameBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             frame_ = java.util.Collections.unmodifiableList(frame_);
@@ -2820,7 +2834,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           result.frame_ = frameBuilder_.build();
         }
         result.droppedFramesCount_ = droppedFramesCount_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }

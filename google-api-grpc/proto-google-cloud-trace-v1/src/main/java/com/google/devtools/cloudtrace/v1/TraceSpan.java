@@ -32,6 +32,12 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new TraceSpan();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -111,10 +117,10 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -317,7 +323,6 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudtrace.v1.TraceSpan.SpanKind)
   }
 
-  private int bitField0_;
   public static final int SPAN_ID_FIELD_NUMBER = 1;
   private long spanId_;
   /**
@@ -1082,7 +1087,6 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       com.google.devtools.cloudtrace.v1.TraceSpan result =
           new com.google.devtools.cloudtrace.v1.TraceSpan(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.spanId_ = spanId_;
       result.kind_ = kind_;
       result.name_ = name_;
@@ -1099,7 +1103,6 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       result.parentSpanId_ = parentSpanId_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
