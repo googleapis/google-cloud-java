@@ -412,52 +412,28 @@ public class ITBigQueryStorageTest {
 
   @Test
   public void testColumnPartitionedTableByDateField() throws InterruptedException, IOException {
-    Field intFieldSchema =
-        Field.newBuilder("num_field", LegacySQLTypeName.INTEGER)
-            .setMode(Mode.REQUIRED)
-            .setDescription("IntegerDescription")
-            .build();
-    Field dateFieldSchema =
-        Field.newBuilder("date_field", LegacySQLTypeName.DATE)
-            .setMode(Mode.REQUIRED)
-            .setDescription("DateDescription")
-            .build();
-    com.google.cloud.bigquery.Schema tableSchema =
-        com.google.cloud.bigquery.Schema.of(intFieldSchema, dateFieldSchema);
+    String partitionedTableName = "test_column_partition_table_by_date";
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s (num_field INT64, date_field DATE) "
+                + " PARTITION BY date_field "
+                + " OPTIONS( "
+                + "   description=\"a table partitioned by date_field\" "
+                + " ) "
+                + "AS "
+                + "   SELECT 1, CAST(\"2019-01-01\" AS DATE)"
+                + "   UNION ALL"
+                + "   SELECT 2, CAST(\"2019-01-02\" AS DATE)"
+                + "   UNION ALL"
+                + "   SELECT 3, CAST(\"2019-01-03\" AS DATE)",
+            DATASET, partitionedTableName);
 
-    TableId testTableId =
-        TableId.of(/* dataset = */ DATASET, /* table = */ "test_column_partition_temp_data");
-    bigquery.create(TableInfo.of(testTableId, StandardTableDefinition.of(tableSchema)));
-
-    RunQueryAppendJobAndExpectSuccess(
-        /* destinationTableId = */ testTableId,
-        /* query = */ "SELECT 1 AS num_field, CAST(\"2019-01-01\" AS DATE) AS date_field");
-    RunQueryAppendJobAndExpectSuccess(
-        /* destinationTableId = */ testTableId,
-        /* query = */ "SELECT 2 AS num_field, CAST(\"2019-01-02\" AS DATE) AS date_field");
-    RunQueryAppendJobAndExpectSuccess(
-        /* destinationTableId = */ testTableId,
-        /* query = */ "SELECT 3 AS num_field, CAST(\"2019-01-03\" AS DATE) AS date_field");
-
-    TableId partitionedTableId =
-        TableId.of(/* dataset = */ DATASET, /* table = */ "test_column_partition_table_by_date");
-    RunQueryJobAndExpectSuccess(
-        QueryJobConfiguration.newBuilder(
-                String.format(
-                    "SELECT * FROM %s.%s", testTableId.getDataset(), testTableId.getTable()))
-            .setDestinationTable(partitionedTableId)
-            .setUseQueryCache(false)
-            .setUseLegacySql(false)
-            .setTimePartitioning(
-                TimePartitioning.newBuilder(TimePartitioning.Type.DAY)
-                    .setField("date_field")
-                    .build())
-            .build());
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
 
     TableReference tableReference =
         TableReference.newBuilder()
-            .setTableId(partitionedTableId.getTable())
-            .setDatasetId(partitionedTableId.getDataset())
+            .setTableId(partitionedTableName)
+            .setDatasetId(DATASET)
             .setProjectId(ServiceOptions.getDefaultProjectId())
             .build();
 
