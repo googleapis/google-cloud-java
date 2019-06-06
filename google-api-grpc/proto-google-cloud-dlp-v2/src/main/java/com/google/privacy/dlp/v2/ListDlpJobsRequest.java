@@ -187,13 +187,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
    *     - `trigger_name` - The resource name of the trigger that created job.
+   *     - 'end_time` - Corresponds to time the job finished.
+   *     - 'start_time` - Corresponds to time the job finished.
    * * Supported fields for risk analysis jobs:
    *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+   *     - 'end_time` - Corresponds to time the job finished.
+   *     - 'start_time` - Corresponds to time the job finished.
    * * The operator must be `=` or `!=`.
    * Examples:
    * * inspected_storage = cloud_storage AND state = done
    * * inspected_storage = cloud_storage OR inspected_storage = bigquery
    * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+   * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
    * The length of this field should be no more than 500 characters.
    * </pre>
    *
@@ -224,13 +229,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
    *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
    *     - `trigger_name` - The resource name of the trigger that created job.
+   *     - 'end_time` - Corresponds to time the job finished.
+   *     - 'start_time` - Corresponds to time the job finished.
    * * Supported fields for risk analysis jobs:
    *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+   *     - 'end_time` - Corresponds to time the job finished.
+   *     - 'start_time` - Corresponds to time the job finished.
    * * The operator must be `=` or `!=`.
    * Examples:
    * * inspected_storage = cloud_storage AND state = done
    * * inspected_storage = cloud_storage OR inspected_storage = bigquery
    * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+   * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
    * The length of this field should be no more than 500 characters.
    * </pre>
    *
@@ -900,13 +910,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - `trigger_name` - The resource name of the trigger that created job.
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * Supported fields for risk analysis jobs:
      *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * The operator must be `=` or `!=`.
      * Examples:
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+     * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -937,13 +952,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - `trigger_name` - The resource name of the trigger that created job.
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * Supported fields for risk analysis jobs:
      *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * The operator must be `=` or `!=`.
      * Examples:
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+     * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -974,13 +994,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - `trigger_name` - The resource name of the trigger that created job.
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * Supported fields for risk analysis jobs:
      *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * The operator must be `=` or `!=`.
      * Examples:
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+     * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1009,13 +1034,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - `trigger_name` - The resource name of the trigger that created job.
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * Supported fields for risk analysis jobs:
      *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * The operator must be `=` or `!=`.
      * Examples:
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+     * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1041,13 +1071,18 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED
      *     - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *     - `trigger_name` - The resource name of the trigger that created job.
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * Supported fields for risk analysis jobs:
      *     - `state` - RUNNING|CANCELED|FINISHED|FAILED
+     *     - 'end_time` - Corresponds to time the job finished.
+     *     - 'start_time` - Corresponds to time the job finished.
      * * The operator must be `=` or `!=`.
      * Examples:
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
+     * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
      * The length of this field should be no more than 500 characters.
      * </pre>
      *

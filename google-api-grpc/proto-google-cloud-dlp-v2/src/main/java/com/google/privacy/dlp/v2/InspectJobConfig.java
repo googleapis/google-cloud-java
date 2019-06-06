@@ -265,8 +265,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Actions to execute at the completion of the job. Are executed in the order
-   * provided.
+   * Actions to execute at the completion of the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -278,8 +277,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Actions to execute at the completion of the job. Are executed in the order
-   * provided.
+   * Actions to execute at the completion of the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -292,8 +290,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Actions to execute at the completion of the job. Are executed in the order
-   * provided.
+   * Actions to execute at the completion of the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -305,8 +302,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Actions to execute at the completion of the job. Are executed in the order
-   * provided.
+   * Actions to execute at the completion of the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -318,8 +314,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Actions to execute at the completion of the job. Are executed in the order
-   * provided.
+   * Actions to execute at the completion of the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1240,8 +1235,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1257,8 +1251,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1274,8 +1267,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1291,8 +1283,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1314,8 +1305,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1334,8 +1324,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1357,8 +1346,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1380,8 +1368,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1400,8 +1387,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1420,8 +1406,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1441,8 +1426,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1461,8 +1445,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1481,8 +1464,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1494,8 +1476,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1511,8 +1492,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1529,8 +1509,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1543,8 +1522,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
@@ -1557,8 +1535,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Actions to execute at the completion of the job. Are executed in the order
-     * provided.
+     * Actions to execute at the completion of the job.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
