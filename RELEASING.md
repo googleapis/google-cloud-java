@@ -48,20 +48,10 @@ To manually publish the artifacts to Maven (rather than using Kokoro), you will 
 
 ## Publish Javadoc
 
-1. Run `git clean -x -f -d` to put the repo in a clean state.
+Javadoc is now built and published to googleapis.dev via a Kokoro job. It is triggered automatically 
+if the staging job succeeds so there is no manual intervention required.
 
-2. Locally build the repo by running `mvn install -DskipTests`.
-
-3. Run `python utilities/stage_sites.py`. This script checks out `gh-pages` branch of the
-   repository, builds the documentation site and javadocs, copies them to the branch and commits it.
-   This script does not push the docs and it must be done manually on the later step. The script
-   assumes that there is no directory called `tmp_gh-pages` in the repository root. If it is
-   present, remove it before running the script.
-
-4. Run `cd tmp_gh-pages && git push && cd ..`.
-
-5. (Optional) Run `rm -rf tmp_gh-pages` to remove the generated docs directory from your local
-   machine.
+You should check back in a few hours to ensure the latest Javadocs are linked at https://googleapis.dev/java/google-cloud-clients/latest.
 
 ## Tag the release
 
