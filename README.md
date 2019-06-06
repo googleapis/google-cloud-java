@@ -76,7 +76,7 @@ If you are using Maven, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.94.0-alpha</version>
+        <version>0.95.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -95,11 +95,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.76.0'
+compile 'com.google.cloud:google-cloud-storage:1.77.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.76.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.77.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -120,7 +120,7 @@ If you are running into problems with version conflicts, the easiest way to solv
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.94.0-alpha</version>
+        <version>0.95.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
