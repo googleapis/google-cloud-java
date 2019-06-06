@@ -632,7 +632,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   static ListLogEntriesRequest listLogEntriesRequest(
       String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
-    builder.addResourceNames(projectId);
+    builder.addResourceNames("projects/" + projectId);
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
       builder.setPageSize(pageSize);
