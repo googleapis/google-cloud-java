@@ -21,7 +21,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>2.0.7.Final</version>
+      <version>2.0.25.Final</version>
     </dependency>
     <dependency>
       <!-- It may look weird to have a compile dependency on a plugin,
