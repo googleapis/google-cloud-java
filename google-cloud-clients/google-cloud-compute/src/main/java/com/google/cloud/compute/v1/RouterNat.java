@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
  */
 public final class RouterNat implements ApiMessage {
   private final Integer icmpIdleTimeoutSec;
+  private final RouterNatLogConfig logConfig;
   private final Integer minPortsPerVm;
   private final String name;
   private final String natIpAllocateOption;
@@ -45,6 +46,7 @@ public final class RouterNat implements ApiMessage {
 
   private RouterNat() {
     this.icmpIdleTimeoutSec = null;
+    this.logConfig = null;
     this.minPortsPerVm = null;
     this.name = null;
     this.natIpAllocateOption = null;
@@ -58,6 +60,7 @@ public final class RouterNat implements ApiMessage {
 
   private RouterNat(
       Integer icmpIdleTimeoutSec,
+      RouterNatLogConfig logConfig,
       Integer minPortsPerVm,
       String name,
       String natIpAllocateOption,
@@ -68,6 +71,7 @@ public final class RouterNat implements ApiMessage {
       Integer tcpTransitoryIdleTimeoutSec,
       Integer udpIdleTimeoutSec) {
     this.icmpIdleTimeoutSec = icmpIdleTimeoutSec;
+    this.logConfig = logConfig;
     this.minPortsPerVm = minPortsPerVm;
     this.name = name;
     this.natIpAllocateOption = natIpAllocateOption;
@@ -83,6 +87,9 @@ public final class RouterNat implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("icmpIdleTimeoutSec".equals(fieldName)) {
       return icmpIdleTimeoutSec;
+    }
+    if ("logConfig".equals(fieldName)) {
+      return logConfig;
     }
     if ("minPortsPerVm".equals(fieldName)) {
       return minPortsPerVm;
@@ -137,10 +144,15 @@ public final class RouterNat implements ApiMessage {
     return icmpIdleTimeoutSec;
   }
 
+  /** Configure logging on this NAT. */
+  public RouterNatLogConfig getLogConfig() {
+    return logConfig;
+  }
+
   /**
    * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of
-   * ports is allocated to a VM. This gets rounded up to the nearest power of 2. Eg. if the value of
-   * this field is 50, at least 64 ports will be allocated to a VM.
+   * ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the
+   * value of this field is 50, at least 64 ports are allocated to a VM.
    */
   public Integer getMinPortsPerVm() {
     return minPortsPerVm;
@@ -153,21 +165,31 @@ public final class RouterNat implements ApiMessage {
     return name;
   }
 
-  /** Specify the NatIpAllocateOption. If it is AUTO_ONLY, then nat_ip should be empty. */
+  /**
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY:
+   * Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs,
+   * the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform;
+   * customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   */
   public String getNatIpAllocateOption() {
     return natIpAllocateOption;
   }
 
   /**
-   * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
-   * external IP addresses assigned to the project. max_length is subject to change post alpha.
+   * A list of URLs of the IP resources used for this Nat service. These IP addresses must be valid
+   * static external IP addresses assigned to the project.
    */
   public List<String> getNatIpsList() {
     return natIps;
   }
 
   /**
-   * Specify the Nat option. If this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
+   * Specify the Nat option, which can take one of the following values: -
+   * ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. -
+   * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are
+   * allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in
+   * the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note
+   * that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
    * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in
    * any Router for this network in this region.
    */
@@ -222,6 +244,7 @@ public final class RouterNat implements ApiMessage {
 
   public static class Builder {
     private Integer icmpIdleTimeoutSec;
+    private RouterNatLogConfig logConfig;
     private Integer minPortsPerVm;
     private String name;
     private String natIpAllocateOption;
@@ -238,6 +261,9 @@ public final class RouterNat implements ApiMessage {
       if (other == RouterNat.getDefaultInstance()) return this;
       if (other.getIcmpIdleTimeoutSec() != null) {
         this.icmpIdleTimeoutSec = other.icmpIdleTimeoutSec;
+      }
+      if (other.getLogConfig() != null) {
+        this.logConfig = other.logConfig;
       }
       if (other.getMinPortsPerVm() != null) {
         this.minPortsPerVm = other.minPortsPerVm;
@@ -271,6 +297,7 @@ public final class RouterNat implements ApiMessage {
 
     Builder(RouterNat source) {
       this.icmpIdleTimeoutSec = source.icmpIdleTimeoutSec;
+      this.logConfig = source.logConfig;
       this.minPortsPerVm = source.minPortsPerVm;
       this.name = source.name;
       this.natIpAllocateOption = source.natIpAllocateOption;
@@ -293,10 +320,21 @@ public final class RouterNat implements ApiMessage {
       return this;
     }
 
+    /** Configure logging on this NAT. */
+    public RouterNatLogConfig getLogConfig() {
+      return logConfig;
+    }
+
+    /** Configure logging on this NAT. */
+    public Builder setLogConfig(RouterNatLogConfig logConfig) {
+      this.logConfig = logConfig;
+      return this;
+    }
+
     /**
      * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number
-     * of ports is allocated to a VM. This gets rounded up to the nearest power of 2. Eg. if the
-     * value of this field is 50, at least 64 ports will be allocated to a VM.
+     * of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if
+     * the value of this field is 50, at least 64 ports are allocated to a VM.
      */
     public Integer getMinPortsPerVm() {
       return minPortsPerVm;
@@ -304,8 +342,8 @@ public final class RouterNat implements ApiMessage {
 
     /**
      * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number
-     * of ports is allocated to a VM. This gets rounded up to the nearest power of 2. Eg. if the
-     * value of this field is 50, at least 64 ports will be allocated to a VM.
+     * of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if
+     * the value of this field is 50, at least 64 ports are allocated to a VM.
      */
     public Builder setMinPortsPerVm(Integer minPortsPerVm) {
       this.minPortsPerVm = minPortsPerVm;
@@ -329,28 +367,40 @@ public final class RouterNat implements ApiMessage {
       return this;
     }
 
-    /** Specify the NatIpAllocateOption. If it is AUTO_ONLY, then nat_ip should be empty. */
+    /**
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY:
+     * Uses only Nat IP addresses provided by customers. When there are not enough specified Nat
+     * IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud
+     * Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be
+     * empty.
+     */
     public String getNatIpAllocateOption() {
       return natIpAllocateOption;
     }
 
-    /** Specify the NatIpAllocateOption. If it is AUTO_ONLY, then nat_ip should be empty. */
+    /**
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY:
+     * Uses only Nat IP addresses provided by customers. When there are not enough specified Nat
+     * IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud
+     * Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be
+     * empty.
+     */
     public Builder setNatIpAllocateOption(String natIpAllocateOption) {
       this.natIpAllocateOption = natIpAllocateOption;
       return this;
     }
 
     /**
-     * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
-     * external IP addresses assigned to the project. max_length is subject to change post alpha.
+     * A list of URLs of the IP resources used for this Nat service. These IP addresses must be
+     * valid static external IP addresses assigned to the project.
      */
     public List<String> getNatIpsList() {
       return natIps;
     }
 
     /**
-     * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
-     * external IP addresses assigned to the project. max_length is subject to change post alpha.
+     * A list of URLs of the IP resources used for this Nat service. These IP addresses must be
+     * valid static external IP addresses assigned to the project.
      */
     public Builder addAllNatIps(List<String> natIps) {
       if (this.natIps == null) {
@@ -361,8 +411,8 @@ public final class RouterNat implements ApiMessage {
     }
 
     /**
-     * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
-     * external IP addresses assigned to the project. max_length is subject to change post alpha.
+     * A list of URLs of the IP resources used for this Nat service. These IP addresses must be
+     * valid static external IP addresses assigned to the project.
      */
     public Builder addNatIps(String natIps) {
       if (this.natIps == null) {
@@ -373,7 +423,12 @@ public final class RouterNat implements ApiMessage {
     }
 
     /**
-     * Specify the Nat option. If this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
+     * Specify the Nat option, which can take one of the following values: -
+     * ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. -
+     * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are
+     * allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in
+     * the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED.
+     * Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
      * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section
      * in any Router for this network in this region.
      */
@@ -382,7 +437,12 @@ public final class RouterNat implements ApiMessage {
     }
 
     /**
-     * Specify the Nat option. If this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
+     * Specify the Nat option, which can take one of the following values: -
+     * ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. -
+     * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are
+     * allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in
+     * the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED.
+     * Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
      * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section
      * in any Router for this network in this region.
      */
@@ -460,6 +520,7 @@ public final class RouterNat implements ApiMessage {
 
       return new RouterNat(
           icmpIdleTimeoutSec,
+          logConfig,
           minPortsPerVm,
           name,
           natIpAllocateOption,
@@ -474,6 +535,7 @@ public final class RouterNat implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setIcmpIdleTimeoutSec(this.icmpIdleTimeoutSec);
+      newBuilder.setLogConfig(this.logConfig);
       newBuilder.setMinPortsPerVm(this.minPortsPerVm);
       newBuilder.setName(this.name);
       newBuilder.setNatIpAllocateOption(this.natIpAllocateOption);
@@ -492,6 +554,9 @@ public final class RouterNat implements ApiMessage {
     return "RouterNat{"
         + "icmpIdleTimeoutSec="
         + icmpIdleTimeoutSec
+        + ", "
+        + "logConfig="
+        + logConfig
         + ", "
         + "minPortsPerVm="
         + minPortsPerVm
@@ -530,6 +595,7 @@ public final class RouterNat implements ApiMessage {
     if (o instanceof RouterNat) {
       RouterNat that = (RouterNat) o;
       return Objects.equals(this.icmpIdleTimeoutSec, that.getIcmpIdleTimeoutSec())
+          && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.minPortsPerVm, that.getMinPortsPerVm())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.natIpAllocateOption, that.getNatIpAllocateOption())
@@ -549,6 +615,7 @@ public final class RouterNat implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
         icmpIdleTimeoutSec,
+        logConfig,
         minPortsPerVm,
         name,
         natIpAllocateOption,

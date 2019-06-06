@@ -110,7 +110,7 @@ public final class Blob implements Serializable {
    * @throws IndexOutOfBoundsException if an offset or size is negative or too large
    */
   public void copyTo(byte[] target) {
-    byteString.copyTo(target, 0, 0, getLength());
+    byteString.copyTo(target, 0);
   }
 
   ByteString getByteString() {

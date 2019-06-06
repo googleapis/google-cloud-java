@@ -162,7 +162,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     return fields;
   }
 
-  /** Application consistent snapshot (ie. VSS). */
+  /**
+   * [Input Only] Specifies to create an application consistent snapshot by informing the OS to
+   * prepare for the snapshot process. Currently only supported on Windows instances using the
+   * Volume Shadow Copy Service (VSS).
+   */
   public Boolean getGuestFlush() {
     return guestFlush;
   }
@@ -359,12 +363,20 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Application consistent snapshot (ie. VSS). */
+    /**
+     * [Input Only] Specifies to create an application consistent snapshot by informing the OS to
+     * prepare for the snapshot process. Currently only supported on Windows instances using the
+     * Volume Shadow Copy Service (VSS).
+     */
     public Boolean getGuestFlush() {
       return guestFlush;
     }
 
-    /** Application consistent snapshot (ie. VSS). */
+    /**
+     * [Input Only] Specifies to create an application consistent snapshot by informing the OS to
+     * prepare for the snapshot process. Currently only supported on Windows instances using the
+     * Volume Shadow Copy Service (VSS).
+     */
     public Builder setGuestFlush(Boolean guestFlush) {
       this.guestFlush = guestFlush;
       return this;

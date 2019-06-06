@@ -44,6 +44,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -142,7 +143,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           public O apply(I i) {
             return function.apply(i);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   private abstract static class BasePageFetcher<T> implements AsyncPageImpl.NextPageFetcher<T> {
@@ -615,7 +617,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                   removeFromPending();
                 }
               }
-            });
+            },
+            MoreExecutors.directExecutor());
         break;
     }
   }
@@ -629,7 +632,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   static ListLogEntriesRequest listLogEntriesRequest(
       String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
-    builder.addProjectIds(projectId);
+    builder.addResourceNames("projects/" + projectId);
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
       builder.setPageSize(pageSize);
