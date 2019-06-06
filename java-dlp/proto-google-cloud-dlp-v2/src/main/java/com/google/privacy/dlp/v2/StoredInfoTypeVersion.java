@@ -100,6 +100,22 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
                   input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
               break;
             }
+          case 42:
+            {
+              com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder subBuilder = null;
+              if (stats_ != null) {
+                subBuilder = stats_.toBuilder();
+              }
+              stats_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.StoredInfoTypeStats.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stats_);
+                stats_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -367,6 +383,47 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     return errors_.get(index);
   }
 
+  public static final int STATS_FIELD_NUMBER = 5;
+  private com.google.privacy.dlp.v2.StoredInfoTypeStats stats_;
+  /**
+   *
+   *
+   * <pre>
+   * Statistics about this storedInfoType version.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   */
+  public boolean hasStats() {
+    return stats_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Statistics about this storedInfoType version.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.StoredInfoTypeStats getStats() {
+    return stats_ == null
+        ? com.google.privacy.dlp.v2.StoredInfoTypeStats.getDefaultInstance()
+        : stats_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Statistics about this storedInfoType version.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder() {
+    return getStats();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -395,6 +452,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(4, errors_.get(i));
     }
+    if (stats_ != null) {
+      output.writeMessage(5, getStats());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -417,6 +477,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     }
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, errors_.get(i));
+    }
+    if (stats_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStats());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -444,6 +507,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     }
     if (state_ != other.state_) return false;
     if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (hasStats() != other.hasStats()) return false;
+    if (hasStats()) {
+      if (!getStats().equals(other.getStats())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -468,6 +535,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
     if (getErrorsCount() > 0) {
       hash = (37 * hash) + ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getErrorsList().hashCode();
+    }
+    if (hasStats()) {
+      hash = (37 * hash) + STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getStats().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -637,6 +708,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
       } else {
         errorsBuilder_.clear();
       }
+      if (statsBuilder_ == null) {
+        stats_ = null;
+      } else {
+        stats_ = null;
+        statsBuilder_ = null;
+      }
       return this;
     }
 
@@ -685,6 +762,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
+      }
+      if (statsBuilder_ == null) {
+        result.stats_ = stats_;
+      } else {
+        result.stats_ = statsBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -772,6 +854,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
             errorsBuilder_.addAllMessages(other.errors_);
           }
         }
+      }
+      if (other.hasStats()) {
+        mergeStats(other.getStats());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1779,6 +1864,187 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
         errors_ = null;
       }
       return errorsBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.StoredInfoTypeStats stats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.StoredInfoTypeStats,
+            com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder,
+            com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder>
+        statsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public boolean hasStats() {
+      return statsBuilder_ != null || stats_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoTypeStats getStats() {
+      if (statsBuilder_ == null) {
+        return stats_ == null
+            ? com.google.privacy.dlp.v2.StoredInfoTypeStats.getDefaultInstance()
+            : stats_;
+      } else {
+        return statsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public Builder setStats(com.google.privacy.dlp.v2.StoredInfoTypeStats value) {
+      if (statsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stats_ = value;
+        onChanged();
+      } else {
+        statsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public Builder setStats(com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder builderForValue) {
+      if (statsBuilder_ == null) {
+        stats_ = builderForValue.build();
+        onChanged();
+      } else {
+        statsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public Builder mergeStats(com.google.privacy.dlp.v2.StoredInfoTypeStats value) {
+      if (statsBuilder_ == null) {
+        if (stats_ != null) {
+          stats_ =
+              com.google.privacy.dlp.v2.StoredInfoTypeStats.newBuilder(stats_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stats_ = value;
+        }
+        onChanged();
+      } else {
+        statsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public Builder clearStats() {
+      if (statsBuilder_ == null) {
+        stats_ = null;
+        onChanged();
+      } else {
+        stats_ = null;
+        statsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder getStatsBuilder() {
+
+      onChanged();
+      return getStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder() {
+      if (statsBuilder_ != null) {
+        return statsBuilder_.getMessageOrBuilder();
+      } else {
+        return stats_ == null
+            ? com.google.privacy.dlp.v2.StoredInfoTypeStats.getDefaultInstance()
+            : stats_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics about this storedInfoType version.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.StoredInfoTypeStats,
+            com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder,
+            com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder>
+        getStatsFieldBuilder() {
+      if (statsBuilder_ == null) {
+        statsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.StoredInfoTypeStats,
+                com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder,
+                com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder>(
+                getStats(), getParentForChildren(), isClean());
+        stats_ = null;
+      }
+      return statsBuilder_;
     }
 
     @java.lang.Override

@@ -196,4 +196,35 @@ public interface StoredInfoTypeVersionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
   com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Statistics about this storedInfoType version.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   */
+  boolean hasStats();
+  /**
+   *
+   *
+   * <pre>
+   * Statistics about this storedInfoType version.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   */
+  com.google.privacy.dlp.v2.StoredInfoTypeStats getStats();
+  /**
+   *
+   *
+   * <pre>
+   * Statistics about this storedInfoType version.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   */
+  com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder();
 }
