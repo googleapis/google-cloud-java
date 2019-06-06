@@ -1027,6 +1027,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
         <version>0.21.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-iamcredentials-v1:current}-->
       </dependency>

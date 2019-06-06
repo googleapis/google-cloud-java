@@ -757,6 +757,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
+        <version>0.59.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
         <version>0.21.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-iamcredentials-v1:current}-->
       </dependency>
@@ -875,6 +885,7 @@
     <module>grpc-google-cloud-vision-v1p4beta1</module>
     <module>grpc-google-cloud-webrisk-v1beta1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
+    <module>grpc-google-cloud-websecurityscanner-v1beta</module>
 
     <module>proto-google-cloud-asset-v1</module>
     <module>proto-google-cloud-asset-v1beta1</module>
@@ -943,6 +954,7 @@
     <module>proto-google-cloud-vision-v1p4beta1</module>
     <module>proto-google-cloud-webrisk-v1beta1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
+    <module>proto-google-cloud-websecurityscanner-v1beta</module>
   </modules>
 
   <build>
