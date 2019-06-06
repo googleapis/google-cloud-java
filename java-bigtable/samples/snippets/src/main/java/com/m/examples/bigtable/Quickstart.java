@@ -16,7 +16,7 @@
 
 package com.m.examples.bigtable;
 
-// START [bigtable_quickstart_veneer]
+// [START bigtable_quickstart_veneer]
 
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
@@ -56,4 +56,4 @@ public class Quickstart {
     }
   }
 }
-// END [bigtable_quickstart_veneer]
+// [END bigtable_quickstart_veneer]
