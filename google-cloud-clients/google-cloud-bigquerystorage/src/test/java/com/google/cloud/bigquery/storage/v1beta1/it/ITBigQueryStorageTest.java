@@ -37,6 +37,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageClient;
 import com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
@@ -61,7 +62,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 import org.apache.avro.Schema;
-import org.apache.avro.generic.GenericRecord;
+import org.apache.avro.generic.GenericData;
+import org.apache.avro.generic.GenericRecordBuilder;
 import org.apache.avro.util.Utf8;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -254,7 +256,7 @@ public class ITBigQueryStorageTest {
           response.getAvroRows(),
           new SimpleRowReader.AvroRowConsumer() {
             @Override
-            public void accept(GenericRecord record) {
+            public void accept(GenericData.Record record) {
               Long wordCount = (Long) record.get("word_count");
               assertWithMessage("Row not matching expectations: %s", record.toString())
                   .that(wordCount)
@@ -336,7 +338,7 @@ public class ITBigQueryStorageTest {
           response.getAvroRows(),
           new SimpleRowReader.AvroRowConsumer() {
             @Override
-            public void accept(GenericRecord record) {
+            public void accept(GenericData.Record record) {
               String rowAssertMessage =
                   String.format("Row not matching expectations: %s", record.toString());
 
@@ -373,20 +375,21 @@ public class ITBigQueryStorageTest {
             .build();
 
     Job firstJob =
-        RunQueryJobAndExpectSuccess(
+        RunQueryAppendJobAndExpectSuccess(
             /* destinationTableId = */ testTableId, /* query = */ "SELECT 1 AS col");
 
     Job secondJob =
-        RunQueryJobAndExpectSuccess(
+        RunQueryAppendJobAndExpectSuccess(
             /* destinationTableId = */ testTableId, /* query = */ "SELECT 2 AS col");
 
     final List<Long> rowsAfterFirstSnapshot = new ArrayList<>();
     ProcessRowsAtSnapshot(
-        tableReference,
-        firstJob.getStatistics().getEndTime(),
-        new AvroRowConsumer() {
+        /* tableReference = */ tableReference,
+        /* snapshotInMillis = */ firstJob.getStatistics().getEndTime(),
+        /* filter = */ null,
+        /* consumer = */ new AvroRowConsumer() {
           @Override
-          public void accept(GenericRecord record) {
+          public void accept(GenericData.Record record) {
             rowsAfterFirstSnapshot.add((Long) record.get("col"));
           }
         });
@@ -394,16 +397,133 @@ public class ITBigQueryStorageTest {
 
     final List<Long> rowsAfterSecondSnapshot = new ArrayList<>();
     ProcessRowsAtSnapshot(
-        tableReference,
-        secondJob.getStatistics().getEndTime(),
-        new AvroRowConsumer() {
+        /* tableReference = */ tableReference,
+        /* snapshotInMillis = */ secondJob.getStatistics().getEndTime(),
+        /* filter = */ null,
+        /* consumer = */ new AvroRowConsumer() {
           @Override
-          public void accept(GenericRecord record) {
+          public void accept(GenericData.Record record) {
             rowsAfterSecondSnapshot.add((Long) record.get("col"));
           }
         });
     Collections.sort(rowsAfterSecondSnapshot);
     assertEquals(Arrays.asList(1L, 2L), rowsAfterSecondSnapshot);
+  }
+
+  @Test
+  public void testColumnPartitionedTableByDateField() throws InterruptedException, IOException {
+    Field intFieldSchema =
+        Field.newBuilder("num_field", LegacySQLTypeName.INTEGER)
+            .setMode(Mode.REQUIRED)
+            .setDescription("IntegerDescription")
+            .build();
+    Field dateFieldSchema =
+        Field.newBuilder("date_field", LegacySQLTypeName.DATE)
+            .setMode(Mode.REQUIRED)
+            .setDescription("DateDescription")
+            .build();
+    com.google.cloud.bigquery.Schema tableSchema =
+        com.google.cloud.bigquery.Schema.of(intFieldSchema, dateFieldSchema);
+
+    TableId testTableId =
+        TableId.of(/* dataset = */ DATASET, /* table = */ "test_column_partition_temp_data");
+    bigquery.create(TableInfo.of(testTableId, StandardTableDefinition.of(tableSchema)));
+
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId = */ testTableId,
+        /* query = */ "SELECT 1 AS num_field, CAST(\"2019-01-01\" AS DATE) AS date_field");
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId = */ testTableId,
+        /* query = */ "SELECT 2 AS num_field, CAST(\"2019-01-02\" AS DATE) AS date_field");
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId = */ testTableId,
+        /* query = */ "SELECT 3 AS num_field, CAST(\"2019-01-03\" AS DATE) AS date_field");
+
+    TableId partitionedTableId =
+        TableId.of(/* dataset = */ DATASET, /* table = */ "test_column_partition_table_by_date");
+    RunQueryJobAndExpectSuccess(
+        QueryJobConfiguration.newBuilder(
+                String.format(
+                    "SELECT * FROM %s.%s", testTableId.getDataset(), testTableId.getTable()))
+            .setDestinationTable(partitionedTableId)
+            .setUseQueryCache(false)
+            .setUseLegacySql(false)
+            .setTimePartitioning(
+                TimePartitioning.newBuilder(TimePartitioning.Type.DAY)
+                    .setField("date_field")
+                    .build())
+            .build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(partitionedTableId.getTable())
+            .setDatasetId(partitionedTableId.getDataset())
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> unfilteredRows =
+        ReadAllRows(/* tableReference = */ tableReference, /* filter = */ null);
+    assertEquals("Actual rows read: " + unfilteredRows.toString(), 3, unfilteredRows.size());
+
+    List<GenericData.Record> partitionFilteredRows =
+        ReadAllRows(
+            /* tableReference = */ tableReference,
+            /* filter = */ "date_field = CAST(\"2019-01-02\" AS DATE)");
+    assertEquals(
+        "Actual rows read: " + partitionFilteredRows.toString(), 1, partitionFilteredRows.size());
+    assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
+  }
+
+  @Test
+  public void testIngestionTimePartitionedTable() throws InterruptedException, IOException {
+    Field intFieldSchema =
+        Field.newBuilder("num_field", LegacySQLTypeName.INTEGER)
+            .setMode(Mode.REQUIRED)
+            .setDescription("IntegerDescription")
+            .build();
+    com.google.cloud.bigquery.Schema tableSchema =
+        com.google.cloud.bigquery.Schema.of(intFieldSchema);
+
+    TableId testTableId =
+        TableId.of(/* dataset = */ DATASET, /* table = */ "test_date_partitioned_table");
+    bigquery.create(
+        TableInfo.of(
+            testTableId,
+            StandardTableDefinition.newBuilder()
+                .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+                .setSchema(tableSchema)
+                .build()));
+
+    // Simulate ingestion for 2019-01-01.
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId = */ TableId.of(
+            /* dataset = */ DATASET, /* table = */ testTableId.getTable() + "$20190101"),
+        /* query = */ "SELECT 1 AS num_field");
+
+    // Simulate ingestion for 2019-01-02.
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId = */ TableId.of(
+            /* dataset = */ DATASET, /* table = */ testTableId.getTable() + "$20190102"),
+        /* query = */ "SELECT 2 AS num_field");
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(testTableId.getTable())
+            .setDatasetId(testTableId.getDataset())
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> unfilteredRows =
+        ReadAllRows(/* tableReference = */ tableReference, /* filter = */ null);
+    assertEquals("Actual rows read: " + unfilteredRows.toString(), 2, unfilteredRows.size());
+
+    List<GenericData.Record> partitionFilteredRows =
+        ReadAllRows(
+            /* tableReference = */ tableReference,
+            /* filter = */ "_PARTITIONDATE > \"2019-01-01\"");
+    assertEquals(
+        "Actual rows read: " + partitionFilteredRows.toString(), 1, partitionFilteredRows.size());
+    assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
   }
 
   /**
@@ -436,18 +556,18 @@ public class ITBigQueryStorageTest {
   }
 
   /**
-   * Reads all the rows from the specified tableReference that are added up to timestamp defined in
-   * snapshot. If snapshot is not provided, current time will be used.
+   * Reads all the rows from the specified tableReference.
    *
    * <p>For every row, the consumer is called for processing.
    *
    * @param tableReference
-   * @param snapshotInMillis
-   * @param consumer
+   * @param snapshotInMillis Optional. If specified, all rows up to timestamp will be returned.
+   * @param filter Optional. If specified, it will be used to restrict returned data.
+   * @param consumer that receives all Avro rows.
    * @throws IOException
    */
   private void ProcessRowsAtSnapshot(
-      TableReference tableReference, Long snapshotInMillis, AvroRowConsumer consumer)
+      TableReference tableReference, Long snapshotInMillis, String filter, AvroRowConsumer consumer)
       throws IOException {
     Preconditions.checkNotNull(tableReference);
     Preconditions.checkNotNull(consumer);
@@ -467,6 +587,11 @@ public class ITBigQueryStorageTest {
               .build();
       createSessionRequestBuilder.setTableModifiers(
           TableModifiers.newBuilder().setSnapshotTime(snapshotTimestamp).build());
+    }
+
+    if (filter != null && !filter.isEmpty()) {
+      createSessionRequestBuilder.setReadOptions(
+          TableReadOptions.newBuilder().setRowRestriction(filter).build());
     }
 
     ReadSession session = client.createReadSession(createSessionRequestBuilder.build());
@@ -493,6 +618,31 @@ public class ITBigQueryStorageTest {
   }
 
   /**
+   * Reads all the rows from the specified table reference and returns a list as generic Avro
+   * records.
+   *
+   * @param tableReference
+   * @param filter Optional. If specified, it will be used to restrict returned data.
+   * @return
+   */
+  List<GenericData.Record> ReadAllRows(TableReference tableReference, String filter)
+      throws IOException {
+    final List<GenericData.Record> rows = new ArrayList<>();
+    ProcessRowsAtSnapshot(
+        /* tableReference = */ tableReference,
+        /* snapshotInMillis = */ null,
+        /* filter = */ filter,
+        new AvroRowConsumer() {
+          @Override
+          public void accept(GenericData.Record record) {
+            // clone the record since that reference will be reused by the reader.
+            rows.add(new GenericRecordBuilder(record).build());
+          }
+        });
+    return rows;
+  }
+
+  /**
    * Runs a query job with WRITE_APPEND disposition to the destination table and returns the
    * successfully completed job.
    *
@@ -501,16 +651,26 @@ public class ITBigQueryStorageTest {
    * @return
    * @throws InterruptedException
    */
-  private Job RunQueryJobAndExpectSuccess(TableId destinationTableId, String query)
+  private Job RunQueryAppendJobAndExpectSuccess(TableId destinationTableId, String query)
       throws InterruptedException {
-    QueryJobConfiguration configuration =
+    return RunQueryJobAndExpectSuccess(
         QueryJobConfiguration.newBuilder(query)
             .setDestinationTable(destinationTableId)
             .setUseQueryCache(false)
             .setUseLegacySql(false)
             .setWriteDisposition(WriteDisposition.WRITE_APPEND)
-            .build();
+            .build());
+  }
 
+  /**
+   * Runs a query job with provided configuration and returns the successfully completed job.
+   *
+   * @param configuration
+   * @return
+   * @throws InterruptedException
+   */
+  private Job RunQueryJobAndExpectSuccess(QueryJobConfiguration configuration)
+      throws InterruptedException {
     Job job = bigquery.create(JobInfo.of(configuration));
     Job completedJob =
         job.waitFor(
