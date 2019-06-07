@@ -9,9 +9,6 @@ Java idiomatic client for [Cloud Spanner][cloud-spanner].
 - [Product Documentation][spanner-product-docs]
 - [Client Library Documentation][spanner-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally make
-> backwards-incompatible changes.
-
 ## Quickstart
 
 [//]: # ({x-version-update-start:google-cloud-spanner:released})
