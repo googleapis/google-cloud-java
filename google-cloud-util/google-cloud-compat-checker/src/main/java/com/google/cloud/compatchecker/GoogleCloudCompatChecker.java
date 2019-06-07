@@ -17,7 +17,7 @@ package com.google.cloud.compatchecker;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import io.netty.handler.ssl.OpenSsl;
+import io.grpc.netty.shaded.io.netty.handler.ssl.OpenSsl;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
