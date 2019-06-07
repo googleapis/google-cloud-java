@@ -16,12 +16,15 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-compat-checker</site.installationModule>
+    <grpc.version>1.21.0</grpc.version>
+    <!-- We are currently using the *-android version to support JDK7. -->
+    <guava.version>27.1-android</guava.version>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>2.0.7.Final</version>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <!-- It may look weird to have a compile dependency on a plugin,
@@ -38,13 +41,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <!-- We are currently using the *-android version to support JDK7. -->
-      <version>26.0-android</version>
-    </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-handler</artifactId>
-      <version>4.1.36.Final</version>
+      <version>${guava.version}</version>
     </dependency>
   </dependencies>
   <dependencyManagement>
