@@ -81,13 +81,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import org.apache.http.HttpStatus;
 
 public class HttpStorageRpc implements StorageRpc {
   public static final String DEFAULT_PROJECTION = "full";
   public static final String NO_ACL_PROJECTION = "noAcl";
   private static final String ENCRYPTION_KEY_PREFIX = "x-goog-encryption-";
   private static final String SOURCE_ENCRYPTION_KEY_PREFIX = "x-goog-copy-source-encryption-";
+
+  // declare this HttpStatus code here as it's not included in java.net.HttpURLConnection
+  private static final int SC_REQUESTED_RANGE_NOT_SATISFIABLE = 416;
 
   private final StorageOptions options;
   private final Storage storage;
@@ -688,7 +690,7 @@ public class HttpStorageRpc implements StorageRpc {
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
-      if (serviceException.getCode() == HttpStatus.SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+      if (serviceException.getCode() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
         return Tuple.of(null, new byte[0]);
       }
       throw serviceException;
