@@ -51,7 +51,11 @@ if [[ "${SKIP_INTEGRATION_TESTS_IF_NO_CHANGES}" == "true" ]] &&
   fi
 fi
 
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
+mvn install -B -V \
+  -DskipTests=true \
+  -Dmaven.javadoc.skip=true \
+  -Dgcloud.download.skip=true \
+  -T 1C
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" ]]; then
