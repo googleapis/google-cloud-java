@@ -320,14 +320,19 @@ public class TranslationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Optional. Only used when making regionalized call. Format:
-   *     projects/{project-id}/locations/{location-id}.
-   *     <p>Only custom model within the same location-id can be used. Otherwise 400 is returned.
+   * @param parent Required. Location to make a regional or global call.
+   *     <p>Format: `projects/{project-id}/locations/{location-id}`.
+   *     <p>For global calls, use `projects/{project-id}/locations/global`.
+   *     <p>Only models within the same region (has same location-id) can be used. Otherwise an
+   *     INVALID_ARGUMENT (400) error is returned.
    * @param model Optional. The language detection model to be used.
-   *     projects/{project-id}/locations/{location-id}/models/language-detection/{model-id} If not
-   *     specified, default will be used.
+   *     <p>Format:
+   *     `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   *     <p>Only one language detection model is currently supported:
+   *     `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   *     <p>If not specified, the default model is used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
-   *     "text/plain". If left blank, the MIME type is assumed to be "text/html".
+   *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetectLanguageResponse detectLanguage(String parent, String model, String mimeType) {
@@ -398,18 +403,23 @@ public class TranslationServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Optional. Used for making regionalized calls. Format:
-   *     projects/{project-id}/locations/{location-id}. For global calls, use
-   *     projects/{project-id}/locations/global. If missing, the call is treated as a global call.
-   *     <p>Only custom model within the same location-id can be used. Otherwise 400 is returned.
+   * @param parent Required. Location to make a regional or global call.
+   *     <p>Format: `projects/{project-id}/locations/{location-id}`.
+   *     <p>For global calls, use `projects/{project-id}/locations/global`.
+   *     <p>Only models within the same region (have same location-id) can be used, otherwise an
+   *     INVALID_ARGUMENT (400) error is returned.
    * @param displayLanguageCode Optional. The language to use to return localized, human readable
-   *     names of supported languages. If missing, default language is ENGLISH.
-   * @param model Optional. Get supported languages of this model. The format depends on model type:
-   *     1. Custom models: projects/{project-id}/locations/{location-id}/models/{model-id}. 2.
-   *     General (built-in) models: projects/{project-id}/locations/{location-id}/models/general/nmt
-   *     projects/{project-id}/locations/{location-id}/models/general/base Returns languages
-   *     supported by the specified model. If missing, we get supported languages of Google general
-   *     NMT model.
+   *     names of supported languages. If missing, then display names are not returned in a
+   *     response.
+   * @param model Optional. Get supported languages of this model.
+   *     <p>The format depends on model type:
+   *     <p>- AutoML Translation models:
+   *     `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *     <p>- General (built-in) models:
+   *     `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *     `projects/{project-id}/locations/{location-id}/models/general/base`
+   *     <p>Returns languages supported by the specified model. If missing, we get supported
+   *     languages of Google general base (PBMT) model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SupportedLanguages getSupportedLanguages(
@@ -699,8 +709,9 @@ public class TranslationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the project from which to list all of the glossaries.
-   * @param filter Optional. Filter specifying constraints of a list operation. For example,
-   *     `tags.glossary_name="products&#42;"`. If missing, no filtering is performed.
+   * @param filter Optional. Filter specifying constraints of a list operation. Filtering is not
+   *     supported yet, and the parameter currently has no effect. If missing, no filtering is
+   *     performed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGlossariesPagedResponse listGlossaries(String parent, String filter) {

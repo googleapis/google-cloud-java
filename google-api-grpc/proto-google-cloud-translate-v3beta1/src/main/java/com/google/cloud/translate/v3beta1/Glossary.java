@@ -240,7 +240,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with UNIDIRECTIONAL.
+   * Used with unidirectional glossaries.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.Glossary.LanguageCodePair}
@@ -596,7 +596,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * Protobuf type {@code google.cloud.translation.v3beta1.Glossary.LanguageCodePair}
@@ -1075,7 +1075,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with EQUIVALENT_TERMS_SET.
+   * Used with equivalent term set glossaries.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.Glossary.LanguageCodesSet}
@@ -1396,7 +1396,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * Protobuf type {@code google.cloud.translation.v3beta1.Glossary.LanguageCodesSet}
@@ -1876,7 +1876,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with UNIDIRECTIONAL.
+   * Used with unidirectional glossaries.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -1888,7 +1888,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with UNIDIRECTIONAL.
+   * Used with unidirectional glossaries.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -1903,7 +1903,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with UNIDIRECTIONAL.
+   * Used with unidirectional glossaries.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -1921,7 +1921,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with EQUIVALENT_TERMS_SET.
+   * Used with equivalent term set glossaries.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -1934,7 +1934,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with EQUIVALENT_TERMS_SET.
+   * Used with equivalent term set glossaries.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -1950,7 +1950,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used with EQUIVALENT_TERMS_SET.
+   * Used with equivalent term set glossaries.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -2712,7 +2712,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2724,7 +2724,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2746,7 +2746,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2769,7 +2769,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2789,7 +2789,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2823,7 +2823,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2848,7 +2848,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2861,7 +2861,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2881,7 +2881,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with UNIDIRECTIONAL.
+     * Used with unidirectional glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
@@ -2921,7 +2921,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -2934,7 +2934,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -2957,7 +2957,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -2981,7 +2981,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -3002,7 +3002,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -3037,7 +3037,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -3063,7 +3063,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -3077,7 +3077,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
@@ -3098,7 +3098,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used with EQUIVALENT_TERMS_SET.
+     * Used with equivalent term set glossaries.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;

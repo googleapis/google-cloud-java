@@ -7,7 +7,7 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * Input configuration.
+ * Input configuration for BatchTranslateText request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.InputConfig}
@@ -208,6 +208,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * second column is the actual text to be
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
+   * Note that the input tsv must be RFC 4180 compliant.
+   * You could use https://github.com/Clever/csvlint to check potential
+   * formatting errors in your tsv file.
+   * csvlint --delimiter='&#92;t' your_input_file.tsv
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -231,6 +235,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * second column is the actual text to be
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
+   * Note that the input tsv must be RFC 4180 compliant.
+   * You could use https://github.com/Clever/csvlint to check potential
+   * formatting errors in your tsv file.
+   * csvlint --delimiter='&#92;t' your_input_file.tsv
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -257,6 +265,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * second column is the actual text to be
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
+   * Note that the input tsv must be RFC 4180 compliant.
+   * You could use https://github.com/Clever/csvlint to check potential
+   * formatting errors in your tsv file.
+   * csvlint --delimiter='&#92;t' your_input_file.tsv
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -457,7 +469,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input configuration.
+   * Input configuration for BatchTranslateText request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.InputConfig}
@@ -773,6 +785,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -796,6 +812,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -829,6 +849,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -862,6 +886,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -893,6 +921,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -935,6 +967,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -971,6 +1007,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -994,6 +1034,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -1024,6 +1068,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * second column is the actual text to be
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
+     * Note that the input tsv must be RFC 4180 compliant.
+     * You could use https://github.com/Clever/csvlint to check potential
+     * formatting errors in your tsv file.
+     * csvlint --delimiter='&#92;t' your_input_file.tsv
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
