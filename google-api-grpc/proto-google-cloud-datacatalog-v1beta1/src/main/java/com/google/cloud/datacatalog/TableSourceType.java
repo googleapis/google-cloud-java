@@ -124,7 +124,7 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.datacatalog.TableSpec.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.datacatalog.TableSpecOuterClass.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final TableSourceType[] VALUES = values();

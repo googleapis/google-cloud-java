@@ -12,7 +12,7 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * The table source type.
+   * Output only. The table source type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -22,7 +22,7 @@ public interface BigQueryTableSpecOrBuilder
    *
    *
    * <pre>
-   * The table source type.
+   * Output only. The table source type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
@@ -62,4 +62,40 @@ public interface BigQueryTableSpecOrBuilder
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
    */
   com.google.cloud.datacatalog.ViewSpecOrBuilder getViewSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec of a BigQuery table. This field should only be populated if
+   * table_source_type is BIGQUERY_TABLE.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   */
+  boolean hasTableSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Spec of a BigQuery table. This field should only be populated if
+   * table_source_type is BIGQUERY_TABLE.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   */
+  com.google.cloud.datacatalog.TableSpec getTableSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Spec of a BigQuery table. This field should only be populated if
+   * table_source_type is BIGQUERY_TABLE.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
+   */
+  com.google.cloud.datacatalog.TableSpecOrBuilder getTableSpecOrBuilder();
+
+  public com.google.cloud.datacatalog.BigQueryTableSpec.TypeSpecCase getTypeSpecCase();
 }

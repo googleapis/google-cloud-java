@@ -15,18 +15,50 @@
  */
 package com.google.cloud.datacatalog.v1beta1.stub;
 
+import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.SearchCatalogPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.CreateTagRequest;
+import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.CreateTagTemplateRequest;
+import com.google.cloud.datacatalog.DeleteTagRequest;
+import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.GetEntryRequest;
+import com.google.cloud.datacatalog.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.ListTagsRequest;
+import com.google.cloud.datacatalog.ListTagsResponse;
 import com.google.cloud.datacatalog.LookupEntryRequest;
+import com.google.cloud.datacatalog.RenameTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.SearchCatalogRequest;
+import com.google.cloud.datacatalog.SearchCatalogResponse;
+import com.google.cloud.datacatalog.Tag;
+import com.google.cloud.datacatalog.TagTemplate;
+import com.google.cloud.datacatalog.TagTemplateField;
+import com.google.cloud.datacatalog.UpdateEntryRequest;
+import com.google.cloud.datacatalog.UpdateTagRequest;
+import com.google.cloud.datacatalog.UpdateTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.UpdateTagTemplateRequest;
+import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -40,6 +72,30 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcDataCatalogStub extends DataCatalogStub {
 
+  private static final MethodDescriptor<SearchCatalogRequest, SearchCatalogResponse>
+      searchCatalogMethodDescriptor =
+          MethodDescriptor.<SearchCatalogRequest, SearchCatalogResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/SearchCatalog")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchCatalogRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchCatalogResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
+      MethodDescriptor.<UpdateEntryRequest, Entry>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetEntryRequest, Entry> getEntryMethodDescriptor =
+      MethodDescriptor.<GetEntryRequest, Entry>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<LookupEntryRequest, Entry> lookupEntryMethodDescriptor =
       MethodDescriptor.<LookupEntryRequest, Entry>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -47,10 +103,164 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LookupEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<CreateTagTemplateRequest, TagTemplate>
+      createTagTemplateMethodDescriptor =
+          MethodDescriptor.<CreateTagTemplateRequest, TagTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateTagTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTagTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetTagTemplateRequest, TagTemplate>
+      getTagTemplateMethodDescriptor =
+          MethodDescriptor.<GetTagTemplateRequest, TagTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetTagTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetTagTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateTagTemplateRequest, TagTemplate>
+      updateTagTemplateMethodDescriptor =
+          MethodDescriptor.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateTagTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateTagTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteTagTemplateRequest, Empty>
+      deleteTagTemplateMethodDescriptor =
+          MethodDescriptor.<DeleteTagTemplateRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTagTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTagTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateTagTemplateFieldRequest, TagTemplateField>
+      createTagTemplateFieldMethodDescriptor =
+          MethodDescriptor.<CreateTagTemplateFieldRequest, TagTemplateField>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/CreateTagTemplateField")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTagTemplateFieldRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateTagTemplateFieldRequest, TagTemplateField>
+      updateTagTemplateFieldMethodDescriptor =
+          MethodDescriptor.<UpdateTagTemplateFieldRequest, TagTemplateField>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/UpdateTagTemplateField")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateTagTemplateFieldRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<RenameTagTemplateFieldRequest, TagTemplateField>
+      renameTagTemplateFieldMethodDescriptor =
+          MethodDescriptor.<RenameTagTemplateFieldRequest, TagTemplateField>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/RenameTagTemplateField")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RenameTagTemplateFieldRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
+      deleteTagTemplateFieldMethodDescriptor =
+          MethodDescriptor.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTagTemplateField")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTagTemplateFieldRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateTagRequest, Tag> createTagMethodDescriptor =
+      MethodDescriptor.<CreateTagRequest, Tag>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateTag")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateTagRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateTagRequest, Tag> updateTagMethodDescriptor =
+      MethodDescriptor.<UpdateTagRequest, Tag>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateTag")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteTagRequest, Empty> deleteTagMethodDescriptor =
+      MethodDescriptor.<DeleteTagRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTag")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListTagsRequest, ListTagsResponse>
+      listTagsMethodDescriptor =
+          MethodDescriptor.<ListTagsRequest, ListTagsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/ListTags")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListTagsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListTagsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
+  private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
+      searchCatalogPagedCallable;
+  private final UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable;
+  private final UnaryCallable<GetEntryRequest, Entry> getEntryCallable;
   private final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable;
+  private final UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable;
+  private final UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable;
+  private final UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable;
+  private final UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable;
+  private final UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
+      createTagTemplateFieldCallable;
+  private final UnaryCallable<UpdateTagTemplateFieldRequest, TagTemplateField>
+      updateTagTemplateFieldCallable;
+  private final UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
+      renameTagTemplateFieldCallable;
+  private final UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable;
+  private final UnaryCallable<CreateTagRequest, Tag> createTagCallable;
+  private final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable;
+  private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
+  private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
+  private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -91,20 +301,411 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<SearchCatalogRequest, SearchCatalogResponse> searchCatalogTransportSettings =
+        GrpcCallSettings.<SearchCatalogRequest, SearchCatalogResponse>newBuilder()
+            .setMethodDescriptor(searchCatalogMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
+        GrpcCallSettings.<UpdateEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(updateEntryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateEntryRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateEntryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("entry.name", String.valueOf(request.getEntry().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
+        GrpcCallSettings.<GetEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(getEntryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetEntryRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetEntryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         GrpcCallSettings.<LookupEntryRequest, Entry>newBuilder()
             .setMethodDescriptor(lookupEntryMethodDescriptor)
             .build();
+    GrpcCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
+        GrpcCallSettings.<CreateTagTemplateRequest, TagTemplate>newBuilder()
+            .setMethodDescriptor(createTagTemplateMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateTagTemplateRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateTagTemplateRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateTransportSettings =
+        GrpcCallSettings.<GetTagTemplateRequest, TagTemplate>newBuilder()
+            .setMethodDescriptor(getTagTemplateMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetTagTemplateRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetTagTemplateRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateTransportSettings =
+        GrpcCallSettings.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
+            .setMethodDescriptor(updateTagTemplateMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateTagTemplateRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateTagTemplateRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put(
+                        "tag_template.name", String.valueOf(request.getTagTemplate().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateTransportSettings =
+        GrpcCallSettings.<DeleteTagTemplateRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTagTemplateMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTagTemplateRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTagTemplateRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
+        createTagTemplateFieldTransportSettings =
+            GrpcCallSettings.<CreateTagTemplateFieldRequest, TagTemplateField>newBuilder()
+                .setMethodDescriptor(createTagTemplateFieldMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateTagTemplateFieldRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateTagTemplateFieldRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
+        updateTagTemplateFieldTransportSettings =
+            GrpcCallSettings.<UpdateTagTemplateFieldRequest, TagTemplateField>newBuilder()
+                .setMethodDescriptor(updateTagTemplateFieldMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UpdateTagTemplateFieldRequest>() {
+                      @Override
+                      public Map<String, String> extract(UpdateTagTemplateFieldRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
+        renameTagTemplateFieldTransportSettings =
+            GrpcCallSettings.<RenameTagTemplateFieldRequest, TagTemplateField>newBuilder()
+                .setMethodDescriptor(renameTagTemplateFieldMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<RenameTagTemplateFieldRequest>() {
+                      @Override
+                      public Map<String, String> extract(RenameTagTemplateFieldRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldTransportSettings =
+        GrpcCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTagTemplateFieldMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTagTemplateFieldRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTagTemplateFieldRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
+        GrpcCallSettings.<CreateTagRequest, Tag>newBuilder()
+            .setMethodDescriptor(createTagMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateTagRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateTagRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
+        GrpcCallSettings.<UpdateTagRequest, Tag>newBuilder()
+            .setMethodDescriptor(updateTagMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateTagRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateTagRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("tag.name", String.valueOf(request.getTag().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
+        GrpcCallSettings.<DeleteTagRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTagMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTagRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTagRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
+        GrpcCallSettings.<ListTagsRequest, ListTagsResponse>newBuilder()
+            .setMethodDescriptor(listTagsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListTagsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListTagsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
+    this.searchCatalogCallable =
+        callableFactory.createUnaryCallable(
+            searchCatalogTransportSettings, settings.searchCatalogSettings(), clientContext);
+    this.searchCatalogPagedCallable =
+        callableFactory.createPagedCallable(
+            searchCatalogTransportSettings, settings.searchCatalogSettings(), clientContext);
+    this.updateEntryCallable =
+        callableFactory.createUnaryCallable(
+            updateEntryTransportSettings, settings.updateEntrySettings(), clientContext);
+    this.getEntryCallable =
+        callableFactory.createUnaryCallable(
+            getEntryTransportSettings, settings.getEntrySettings(), clientContext);
     this.lookupEntryCallable =
         callableFactory.createUnaryCallable(
             lookupEntryTransportSettings, settings.lookupEntrySettings(), clientContext);
+    this.createTagTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createTagTemplateTransportSettings,
+            settings.createTagTemplateSettings(),
+            clientContext);
+    this.getTagTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getTagTemplateTransportSettings, settings.getTagTemplateSettings(), clientContext);
+    this.updateTagTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateTagTemplateTransportSettings,
+            settings.updateTagTemplateSettings(),
+            clientContext);
+    this.deleteTagTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteTagTemplateTransportSettings,
+            settings.deleteTagTemplateSettings(),
+            clientContext);
+    this.createTagTemplateFieldCallable =
+        callableFactory.createUnaryCallable(
+            createTagTemplateFieldTransportSettings,
+            settings.createTagTemplateFieldSettings(),
+            clientContext);
+    this.updateTagTemplateFieldCallable =
+        callableFactory.createUnaryCallable(
+            updateTagTemplateFieldTransportSettings,
+            settings.updateTagTemplateFieldSettings(),
+            clientContext);
+    this.renameTagTemplateFieldCallable =
+        callableFactory.createUnaryCallable(
+            renameTagTemplateFieldTransportSettings,
+            settings.renameTagTemplateFieldSettings(),
+            clientContext);
+    this.deleteTagTemplateFieldCallable =
+        callableFactory.createUnaryCallable(
+            deleteTagTemplateFieldTransportSettings,
+            settings.deleteTagTemplateFieldSettings(),
+            clientContext);
+    this.createTagCallable =
+        callableFactory.createUnaryCallable(
+            createTagTransportSettings, settings.createTagSettings(), clientContext);
+    this.updateTagCallable =
+        callableFactory.createUnaryCallable(
+            updateTagTransportSettings, settings.updateTagSettings(), clientContext);
+    this.deleteTagCallable =
+        callableFactory.createUnaryCallable(
+            deleteTagTransportSettings, settings.deleteTagSettings(), clientContext);
+    this.listTagsCallable =
+        callableFactory.createUnaryCallable(
+            listTagsTransportSettings, settings.listTagsSettings(), clientContext);
+    this.listTagsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTagsTransportSettings, settings.listTagsSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  public UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
+      searchCatalogPagedCallable() {
+    return searchCatalogPagedCallable;
+  }
+
+  public UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable() {
+    return searchCatalogCallable;
+  }
+
+  public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
+    return updateEntryCallable;
+  }
+
+  public UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {
+    return getEntryCallable;
+  }
+
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     return lookupEntryCallable;
+  }
+
+  public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
+    return createTagTemplateCallable;
+  }
+
+  public UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable() {
+    return getTagTemplateCallable;
+  }
+
+  public UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable() {
+    return updateTagTemplateCallable;
+  }
+
+  public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
+    return deleteTagTemplateCallable;
+  }
+
+  public UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
+      createTagTemplateFieldCallable() {
+    return createTagTemplateFieldCallable;
+  }
+
+  public UnaryCallable<UpdateTagTemplateFieldRequest, TagTemplateField>
+      updateTagTemplateFieldCallable() {
+    return updateTagTemplateFieldCallable;
+  }
+
+  public UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
+      renameTagTemplateFieldCallable() {
+    return renameTagTemplateFieldCallable;
+  }
+
+  public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
+    return deleteTagTemplateFieldCallable;
+  }
+
+  public UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
+    return createTagCallable;
+  }
+
+  public UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
+    return updateTagCallable;
+  }
+
+  public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
+    return deleteTagCallable;
+  }
+
+  public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
+    return listTagsPagedCallable;
+  }
+
+  public UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
+    return listTagsCallable;
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

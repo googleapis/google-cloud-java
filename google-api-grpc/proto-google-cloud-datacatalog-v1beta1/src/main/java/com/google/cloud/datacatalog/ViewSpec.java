@@ -77,14 +77,14 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.datacatalog.TableSpec
+    return com.google.cloud.datacatalog.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.datacatalog.TableSpec
+    return com.google.cloud.datacatalog.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.datacatalog.ViewSpec.class,
@@ -97,7 +97,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The query that defines the table view.
+   * Output only. The query that defines the table view.
    * </pre>
    *
    * <code>string view_query = 1;</code>
@@ -117,7 +117,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The query that defines the table view.
+   * Output only. The query that defines the table view.
    * </pre>
    *
    * <code>string view_query = 1;</code>
@@ -305,14 +305,14 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.ViewSpec)
       com.google.cloud.datacatalog.ViewSpecOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.datacatalog.TableSpec
+      return com.google.cloud.datacatalog.TableSpecOuterClass
           .internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.datacatalog.TableSpec
+      return com.google.cloud.datacatalog.TableSpecOuterClass
           .internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.datacatalog.ViewSpec.class,
@@ -343,7 +343,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.datacatalog.TableSpec
+      return com.google.cloud.datacatalog.TableSpecOuterClass
           .internal_static_google_cloud_datacatalog_v1beta1_ViewSpec_descriptor;
     }
 
@@ -453,7 +453,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query that defines the table view.
+     * Output only. The query that defines the table view.
      * </pre>
      *
      * <code>string view_query = 1;</code>
@@ -473,7 +473,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query that defines the table view.
+     * Output only. The query that defines the table view.
      * </pre>
      *
      * <code>string view_query = 1;</code>
@@ -493,7 +493,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query that defines the table view.
+     * Output only. The query that defines the table view.
      * </pre>
      *
      * <code>string view_query = 1;</code>
@@ -511,7 +511,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query that defines the table view.
+     * Output only. The query that defines the table view.
      * </pre>
      *
      * <code>string view_query = 1;</code>
@@ -526,7 +526,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query that defines the table view.
+     * Output only. The query that defines the table view.
      * </pre>
      *
      * <code>string view_query = 1;</code>
