@@ -148,7 +148,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Indicates whether we should do a case-insensitive match.
+   * Optional. Indicates match is case-insensitive.
    * Default value is false if missing.
    * </pre>
    *
@@ -600,7 +600,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Indicates whether we should do a case-insensitive match.
+     * Optional. Indicates match is case-insensitive.
      * Default value is false if missing.
      * </pre>
      *
@@ -613,7 +613,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Indicates whether we should do a case-insensitive match.
+     * Optional. Indicates match is case-insensitive.
      * Default value is false if missing.
      * </pre>
      *
@@ -629,7 +629,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Indicates whether we should do a case-insensitive match.
+     * Optional. Indicates match is case-insensitive.
      * Default value is false if missing.
      * </pre>
      *

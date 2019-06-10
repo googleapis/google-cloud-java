@@ -49,6 +49,10 @@ public interface InputConfigOrBuilder
    * second column is the actual text to be
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
+   * Note that the input tsv must be RFC 4180 compliant.
+   * You could use https://github.com/Clever/csvlint to check potential
+   * formatting errors in your tsv file.
+   * csvlint --delimiter='&#92;t' your_input_file.tsv
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -70,6 +74,10 @@ public interface InputConfigOrBuilder
    * second column is the actual text to be
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
+   * Note that the input tsv must be RFC 4180 compliant.
+   * You could use https://github.com/Clever/csvlint to check potential
+   * formatting errors in your tsv file.
+   * csvlint --delimiter='&#92;t' your_input_file.tsv
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -91,6 +99,10 @@ public interface InputConfigOrBuilder
    * second column is the actual text to be
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
+   * Note that the input tsv must be RFC 4180 compliant.
+   * You could use https://github.com/Clever/csvlint to check potential
+   * formatting errors in your tsv file.
+   * csvlint --delimiter='&#92;t' your_input_file.tsv
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>

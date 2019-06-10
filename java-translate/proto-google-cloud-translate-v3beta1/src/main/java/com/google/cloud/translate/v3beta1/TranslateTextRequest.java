@@ -163,8 +163,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total contents to be less than 30k codepoints.
-   * Please use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30k codepoints.
+   * Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1;</code>
@@ -177,8 +177,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total contents to be less than 30k codepoints.
-   * Please use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30k codepoints.
+   * Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1;</code>
@@ -191,8 +191,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total contents to be less than 30k codepoints.
-   * Please use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30k codepoints.
+   * Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1;</code>
@@ -205,8 +205,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total contents to be less than 30k codepoints.
-   * Please use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30k codepoints.
+   * Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1;</code>
@@ -222,7 +222,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The format of the source text, for example, "text/html",
-   *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+   *  "text/plain". If left blank, the MIME type defaults to "text/html".
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -243,7 +243,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The format of the source text, for example, "text/html",
-   *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+   *  "text/plain". If left blank, the MIME type defaults to "text/html".
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -270,7 +270,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * known, for example, "en-US" or "sr-Latn". Supported language codes are
    * listed in Language Support. If the source language isn't specified, the API
    * attempts to identify the source language automatically and returns the
-   * the source language within the response.
+   * source language within the response.
    * </pre>
    *
    * <code>string source_language_code = 4;</code>
@@ -294,7 +294,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * known, for example, "en-US" or "sr-Latn". Supported language codes are
    * listed in Language Support. If the source language isn't specified, the API
    * attempts to identify the source language automatically and returns the
-   * the source language within the response.
+   * source language within the response.
    * </pre>
    *
    * <code>string source_language_code = 4;</code>
@@ -362,11 +362,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Only used when making regionalized call.
-   * Format:
-   * projects/{project-id}/locations/{location-id}.
-   * Only custom model/glossary within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional or global call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global`.
+   * Models and glossaries must be within the same region (have same
+   * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>string parent = 8;</code>
@@ -386,11 +386,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Only used when making regionalized call.
-   * Format:
-   * projects/{project-id}/locations/{location-id}.
-   * Only custom model/glossary within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional or global call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global`.
+   * Models and glossaries must be within the same region (have same
+   * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>string parent = 8;</code>
@@ -414,15 +414,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
-   * The format  depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
-   * For global (non-regionalized) requests, use {location-id} 'global'.
+   * The format depends on model type:
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
-   * projects/{project-id}/locations/global/models/general/nmt
+   * `projects/{project-id}/locations/global/models/general/nmt`.
    * If missing, the system decides which google base model to use.
    * </pre>
    *
@@ -444,15 +444,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
-   * The format  depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
-   * For global (non-regionalized) requests, use {location-id} 'global'.
+   * The format depends on model type:
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
+   * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
-   * projects/{project-id}/locations/global/models/general/nmt
+   * `projects/{project-id}/locations/global/models/general/nmt`.
    * If missing, the system decides which google base model to use.
    * </pre>
    *
@@ -476,8 +476,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Glossary to be applied. The glossary needs to be in the same
-   * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+   * Optional. Glossary to be applied. The glossary must be
+   * within the same region (have the same location-id) as the model, otherwise
+   * an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;</code>
@@ -489,8 +490,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Glossary to be applied. The glossary needs to be in the same
-   * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+   * Optional. Glossary to be applied. The glossary must be
+   * within the same region (have the same location-id) as the model, otherwise
+   * an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;</code>
@@ -504,8 +506,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Glossary to be applied. The glossary needs to be in the same
-   * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+   * Optional. Glossary to be applied. The glossary must be
+   * within the same region (have the same location-id) as the model, otherwise
+   * an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;</code>
@@ -978,8 +981,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -992,8 +995,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1006,8 +1009,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1020,8 +1023,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1034,8 +1037,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1054,8 +1057,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1074,8 +1077,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1091,8 +1094,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1108,8 +1111,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total contents to be less than 30k codepoints.
-     * Please use BatchTranslateText for larger text.
+     * We recommend the total content be less than 30k codepoints.
+     * Use BatchTranslateText for larger text.
      * </pre>
      *
      * <code>repeated string contents = 1;</code>
@@ -1131,7 +1134,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The format of the source text, for example, "text/html",
-     *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+     *  "text/plain". If left blank, the MIME type defaults to "text/html".
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -1152,7 +1155,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The format of the source text, for example, "text/html",
-     *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+     *  "text/plain". If left blank, the MIME type defaults to "text/html".
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -1173,7 +1176,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The format of the source text, for example, "text/html",
-     *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+     *  "text/plain". If left blank, the MIME type defaults to "text/html".
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -1192,7 +1195,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The format of the source text, for example, "text/html",
-     *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+     *  "text/plain". If left blank, the MIME type defaults to "text/html".
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -1208,7 +1211,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The format of the source text, for example, "text/html",
-     *  "text/plain". If left blank, the MIME type is assumed to be "text/html".
+     *  "text/plain". If left blank, the MIME type defaults to "text/html".
      * </pre>
      *
      * <code>string mime_type = 3;</code>
@@ -1233,7 +1236,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * known, for example, "en-US" or "sr-Latn". Supported language codes are
      * listed in Language Support. If the source language isn't specified, the API
      * attempts to identify the source language automatically and returns the
-     * the source language within the response.
+     * source language within the response.
      * </pre>
      *
      * <code>string source_language_code = 4;</code>
@@ -1257,7 +1260,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * known, for example, "en-US" or "sr-Latn". Supported language codes are
      * listed in Language Support. If the source language isn't specified, the API
      * attempts to identify the source language automatically and returns the
-     * the source language within the response.
+     * source language within the response.
      * </pre>
      *
      * <code>string source_language_code = 4;</code>
@@ -1281,7 +1284,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * known, for example, "en-US" or "sr-Latn". Supported language codes are
      * listed in Language Support. If the source language isn't specified, the API
      * attempts to identify the source language automatically and returns the
-     * the source language within the response.
+     * source language within the response.
      * </pre>
      *
      * <code>string source_language_code = 4;</code>
@@ -1303,7 +1306,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * known, for example, "en-US" or "sr-Latn". Supported language codes are
      * listed in Language Support. If the source language isn't specified, the API
      * attempts to identify the source language automatically and returns the
-     * the source language within the response.
+     * source language within the response.
      * </pre>
      *
      * <code>string source_language_code = 4;</code>
@@ -1322,7 +1325,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * known, for example, "en-US" or "sr-Latn". Supported language codes are
      * listed in Language Support. If the source language isn't specified, the API
      * attempts to identify the source language automatically and returns the
-     * the source language within the response.
+     * source language within the response.
      * </pre>
      *
      * <code>string source_language_code = 4;</code>
@@ -1442,11 +1445,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom model/glossary within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Models and glossaries must be within the same region (have same
+     * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 8;</code>
@@ -1466,11 +1469,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom model/glossary within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Models and glossaries must be within the same region (have same
+     * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 8;</code>
@@ -1490,11 +1493,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom model/glossary within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Models and glossaries must be within the same region (have same
+     * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 8;</code>
@@ -1512,11 +1515,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom model/glossary within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Models and glossaries must be within the same region (have same
+     * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 8;</code>
@@ -1531,11 +1534,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom model/glossary within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional or global call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global`.
+     * Models and glossaries must be within the same region (have same
+     * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>string parent = 8;</code>
@@ -1557,15 +1560,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
-     * The format  depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
-     * For global (non-regionalized) requests, use {location-id} 'global'.
+     * The format depends on model type:
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
-     * projects/{project-id}/locations/global/models/general/nmt
+     * `projects/{project-id}/locations/global/models/general/nmt`.
      * If missing, the system decides which google base model to use.
      * </pre>
      *
@@ -1587,15 +1590,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
-     * The format  depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
-     * For global (non-regionalized) requests, use {location-id} 'global'.
+     * The format depends on model type:
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
-     * projects/{project-id}/locations/global/models/general/nmt
+     * `projects/{project-id}/locations/global/models/general/nmt`.
      * If missing, the system decides which google base model to use.
      * </pre>
      *
@@ -1617,15 +1620,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
-     * The format  depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
-     * For global (non-regionalized) requests, use {location-id} 'global'.
+     * The format depends on model type:
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
-     * projects/{project-id}/locations/global/models/general/nmt
+     * `projects/{project-id}/locations/global/models/general/nmt`.
      * If missing, the system decides which google base model to use.
      * </pre>
      *
@@ -1645,15 +1648,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
-     * The format  depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
-     * For global (non-regionalized) requests, use {location-id} 'global'.
+     * The format depends on model type:
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
-     * projects/{project-id}/locations/global/models/general/nmt
+     * `projects/{project-id}/locations/global/models/general/nmt`.
      * If missing, the system decides which google base model to use.
      * </pre>
      *
@@ -1670,15 +1673,15 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
-     * The format  depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
-     * For global (non-regionalized) requests, use {location-id} 'global'.
+     * The format depends on model type:
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
+     * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
-     * projects/{project-id}/locations/global/models/general/nmt
+     * `projects/{project-id}/locations/global/models/general/nmt`.
      * If missing, the system decides which google base model to use.
      * </pre>
      *
@@ -1705,8 +1708,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1719,8 +1723,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1739,8 +1744,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1764,8 +1770,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1786,8 +1793,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1816,8 +1824,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1838,8 +1847,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1855,8 +1865,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;
@@ -1876,8 +1887,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Glossary to be applied. The glossary needs to be in the same
-     * region as the model, otherwise an INVALID_ARGUMENT error is returned.
+     * Optional. Glossary to be applied. The glossary must be
+     * within the same region (have the same location-id) as the model, otherwise
+     * an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.TranslateTextGlossaryConfig glossary_config = 7;

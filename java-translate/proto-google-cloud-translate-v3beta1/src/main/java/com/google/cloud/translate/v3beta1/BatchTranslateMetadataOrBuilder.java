@@ -58,7 +58,7 @@ public interface BatchTranslateMetadataOrBuilder
    * <pre>
    * Total number of characters (Unicode codepoints).
    * This is the total number of codepoints from input files times the number of
-   * target languages. It appears here shortly after the call is submitted.
+   * target languages and appears here shortly after the call is submitted.
    * </pre>
    *
    * <code>int64 total_characters = 4;</code>

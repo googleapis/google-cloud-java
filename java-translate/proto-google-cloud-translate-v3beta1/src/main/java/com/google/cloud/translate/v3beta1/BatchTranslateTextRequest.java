@@ -196,11 +196,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Only used when making regionalized call.
-   * Format:
-   * projects/{project-id}/locations/{location-id}.
-   * Only custom models/glossaries within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * The `global` location is not supported for batch translation.
+   * Only AutoML Translation models or glossaries within the same region (have
+   * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+   * error is returned.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -220,11 +221,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Only used when making regionalized call.
-   * Format:
-   * projects/{project-id}/locations/{location-id}.
-   * Only custom models/glossaries within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * The `global` location is not supported for batch translation.
+   * Only AutoML Translation models or glossaries within the same region (have
+   * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+   * error is returned.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -366,15 +368,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
-   * or a custom model built by AutoML.
+   * or an AutoML Translation model.
    * The value format depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
-   * not requested for a language pair, then default google model is used.
+   * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
    * <code>map&lt;string, string&gt; models = 4;</code>
@@ -396,15 +398,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
-   * or a custom model built by AutoML.
+   * or an AutoML Translation model.
    * The value format depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
-   * not requested for a language pair, then default google model is used.
+   * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
    * <code>map&lt;string, string&gt; models = 4;</code>
@@ -418,15 +420,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
-   * or a custom model built by AutoML.
+   * or an AutoML Translation model.
    * The value format depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
-   * not requested for a language pair, then default google model is used.
+   * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
    * <code>map&lt;string, string&gt; models = 4;</code>
@@ -444,15 +446,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
-   * or a custom model built by AutoML.
+   * or an AutoML Translation model.
    * The value format depends on model type:
-   * 1. Custom models:
-   * projects/{project-id}/locations/{location-id}/models/{model-id}.
-   * 2. General (built-in) models:
-   * projects/{project-id}/locations/{location-id}/models/general/nmt
-   * projects/{project-id}/locations/{location-id}/models/general/base
+   * - AutoML Translation models:
+   *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   * - General (built-in) models:
+   *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+   *   `projects/{project-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
-   * not requested for a language pair, then default google model is used.
+   * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
    *
    * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1250,11 +1252,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom models/glossaries within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * The `global` location is not supported for batch translation.
+     * Only AutoML Translation models or glossaries within the same region (have
+     * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+     * error is returned.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -1274,11 +1277,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom models/glossaries within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * The `global` location is not supported for batch translation.
+     * Only AutoML Translation models or glossaries within the same region (have
+     * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+     * error is returned.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -1298,11 +1302,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom models/glossaries within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * The `global` location is not supported for batch translation.
+     * Only AutoML Translation models or glossaries within the same region (have
+     * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+     * error is returned.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -1320,11 +1325,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom models/glossaries within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * The `global` location is not supported for batch translation.
+     * Only AutoML Translation models or glossaries within the same region (have
+     * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+     * error is returned.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -1339,11 +1345,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Only used when making regionalized call.
-     * Format:
-     * projects/{project-id}/locations/{location-id}.
-     * Only custom models/glossaries within the same location-id can be used.
-     * Otherwise 400 is returned.
+     * Required. Location to make a regional call.
+     * Format: `projects/{project-id}/locations/{location-id}`.
+     * The `global` location is not supported for batch translation.
+     * Only AutoML Translation models or glossaries within the same region (have
+     * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
+     * error is returned.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -1627,15 +1634,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1657,15 +1664,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1679,15 +1686,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1706,15 +1713,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1740,15 +1747,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1771,15 +1778,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>
@@ -1800,15 +1807,15 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
-     * or a custom model built by AutoML.
+     * or an AutoML Translation model.
      * The value format depends on model type:
-     * 1. Custom models:
-     * projects/{project-id}/locations/{location-id}/models/{model-id}.
-     * 2. General (built-in) models:
-     * projects/{project-id}/locations/{location-id}/models/general/nmt
-     * projects/{project-id}/locations/{location-id}/models/general/base
+     * - AutoML Translation models:
+     *   `projects/{project-id}/locations/{location-id}/models/{model-id}`
+     * - General (built-in) models:
+     *   `projects/{project-id}/locations/{location-id}/models/general/nmt`,
+     *   `projects/{project-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
-     * not requested for a language pair, then default google model is used.
+     * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
      *
      * <code>map&lt;string, string&gt; models = 4;</code>

@@ -155,7 +155,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The batch is processed, and at least one item has been successfully
+     * The batch is processed, and at least one item was successfully
      * processed.
      * </pre>
      *
@@ -166,7 +166,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The batch is done and no item has been successfully processed.
+     * The batch is done and no item was successfully processed.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -222,7 +222,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The batch is processed, and at least one item has been successfully
+     * The batch is processed, and at least one item was successfully
      * processed.
      * </pre>
      *
@@ -233,7 +233,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The batch is done and no item has been successfully processed.
+     * The batch is done and no item was successfully processed.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -413,7 +413,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
    * <pre>
    * Total number of characters (Unicode codepoints).
    * This is the total number of codepoints from input files times the number of
-   * target languages. It appears here shortly after the call is submitted.
+   * target languages and appears here shortly after the call is submitted.
    * </pre>
    *
    * <code>int64 total_characters = 4;</code>
@@ -1032,7 +1032,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * <pre>
      * Total number of characters (Unicode codepoints).
      * This is the total number of codepoints from input files times the number of
-     * target languages. It appears here shortly after the call is submitted.
+     * target languages and appears here shortly after the call is submitted.
      * </pre>
      *
      * <code>int64 total_characters = 4;</code>
@@ -1046,7 +1046,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * <pre>
      * Total number of characters (Unicode codepoints).
      * This is the total number of codepoints from input files times the number of
-     * target languages. It appears here shortly after the call is submitted.
+     * target languages and appears here shortly after the call is submitted.
      * </pre>
      *
      * <code>int64 total_characters = 4;</code>
@@ -1063,7 +1063,7 @@ public final class BatchTranslateMetadata extends com.google.protobuf.GeneratedM
      * <pre>
      * Total number of characters (Unicode codepoints).
      * This is the total number of codepoints from input files times the number of
-     * target languages. It appears here shortly after the call is submitted.
+     * target languages and appears here shortly after the call is submitted.
      * </pre>
      *
      * <code>int64 total_characters = 4;</code>

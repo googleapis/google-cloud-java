@@ -73,7 +73,7 @@ public interface ListGlossariesRequestOrBuilder
    *
    * <pre>
    * Optional. Filter specifying constraints of a list operation.
-   * For example, `tags.glossary_name="products*"`.
+   * Filtering is not supported yet, and the parameter currently has no effect.
    * If missing, no filtering is performed.
    * </pre>
    *
@@ -85,7 +85,7 @@ public interface ListGlossariesRequestOrBuilder
    *
    * <pre>
    * Optional. Filter specifying constraints of a list operation.
-   * For example, `tags.glossary_name="products*"`.
+   * Filtering is not supported yet, and the parameter currently has no effect.
    * If missing, no filtering is performed.
    * </pre>
    *

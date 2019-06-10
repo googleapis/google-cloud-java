@@ -35,7 +35,7 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates whether we should do a case-insensitive match.
+   * Optional. Indicates match is case-insensitive.
    * Default value is false if missing.
    * </pre>
    *
