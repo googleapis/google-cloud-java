@@ -302,6 +302,7 @@ public class Subscriber extends AbstractApiService {
                     closeable.close();
                   }
                   notifyStopped();
+                  subStub.shutdownNow();
                 } catch (Exception e) {
                   notifyFailed(e);
                 }
