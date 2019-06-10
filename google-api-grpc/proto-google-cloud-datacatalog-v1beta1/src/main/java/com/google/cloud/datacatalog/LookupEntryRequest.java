@@ -208,9 +208,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   * 1. cloud_pubsub.project_id.topic_id
-   * 2. bigquery.project_id.dataset_id.table_id
-   * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+   * &lt;ul&gt;
+   *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+   *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+   *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+   *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+   * &lt;/ul&gt;
+   * *_ids shoud satisfy the standard SQL rules for identifiers.
+   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
@@ -237,9 +242,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   * 1. cloud_pubsub.project_id.topic_id
-   * 2. bigquery.project_id.dataset_id.table_id
-   * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+   * &lt;ul&gt;
+   *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+   *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+   *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+   *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+   * &lt;/ul&gt;
+   * *_ids shoud satisfy the standard SQL rules for identifiers.
+   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
@@ -782,9 +792,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     * 1. cloud_pubsub.project_id.topic_id
-     * 2. bigquery.project_id.dataset_id.table_id
-     * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+     * &lt;ul&gt;
+     *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+     *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+     *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+     *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+     * &lt;/ul&gt;
+     * *_ids shoud satisfy the standard SQL rules for identifiers.
+     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -811,9 +826,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     * 1. cloud_pubsub.project_id.topic_id
-     * 2. bigquery.project_id.dataset_id.table_id
-     * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+     * &lt;ul&gt;
+     *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+     *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+     *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+     *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+     * &lt;/ul&gt;
+     * *_ids shoud satisfy the standard SQL rules for identifiers.
+     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -840,9 +860,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     * 1. cloud_pubsub.project_id.topic_id
-     * 2. bigquery.project_id.dataset_id.table_id
-     * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+     * &lt;ul&gt;
+     *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+     *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+     *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+     *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+     * &lt;/ul&gt;
+     * *_ids shoud satisfy the standard SQL rules for identifiers.
+     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -862,9 +887,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     * 1. cloud_pubsub.project_id.topic_id
-     * 2. bigquery.project_id.dataset_id.table_id
-     * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+     * &lt;ul&gt;
+     *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+     *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+     *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+     *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+     * &lt;/ul&gt;
+     * *_ids shoud satisfy the standard SQL rules for identifiers.
+     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -883,9 +913,14 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     * 1. cloud_pubsub.project_id.topic_id
-     * 2. bigquery.project_id.dataset_id.table_id
-     * 3. datacatalog.project_id.location_id.entry_group_id.entry_id
+     * &lt;ul&gt;
+     *   &lt;li&gt;cloud_pubsub.project_id.topic_id&lt;/li&gt;
+     *   &lt;li&gt;pubsub.project_id.`topic.id.with.dots`&lt;/li&gt;
+     *   &lt;li&gt;bigquery.project_id.dataset_id.table_id&lt;/li&gt;
+     *   &lt;li&gt;datacatalog.project_id.location_id.entry_group_id.entry_id&lt;/li&gt;
+     * &lt;/ul&gt;
+     * *_ids shoud satisfy the standard SQL rules for identifiers.
+     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
