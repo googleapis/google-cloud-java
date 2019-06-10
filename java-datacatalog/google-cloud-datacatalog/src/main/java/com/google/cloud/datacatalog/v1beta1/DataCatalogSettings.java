@@ -15,6 +15,9 @@
  */
 package com.google.cloud.datacatalog.v1beta1;
 
+import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.SearchCatalogPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,11 +26,38 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.datacatalog.CreateTagRequest;
+import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.CreateTagTemplateRequest;
+import com.google.cloud.datacatalog.DeleteTagRequest;
+import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.GetEntryRequest;
+import com.google.cloud.datacatalog.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.ListTagsRequest;
+import com.google.cloud.datacatalog.ListTagsResponse;
 import com.google.cloud.datacatalog.LookupEntryRequest;
+import com.google.cloud.datacatalog.RenameTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.SearchCatalogRequest;
+import com.google.cloud.datacatalog.SearchCatalogResponse;
+import com.google.cloud.datacatalog.Tag;
+import com.google.cloud.datacatalog.TagTemplate;
+import com.google.cloud.datacatalog.TagTemplateField;
+import com.google.cloud.datacatalog.UpdateEntryRequest;
+import com.google.cloud.datacatalog.UpdateTagRequest;
+import com.google.cloud.datacatalog.UpdateTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.UpdateTagTemplateRequest;
 import com.google.cloud.datacatalog.v1beta1.stub.DataCatalogStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -46,13 +76,13 @@ import javax.annotation.Generated;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of lookupEntry to 30 seconds:
+ * example, to set the total timeout of updateEntry to 30 seconds:
  *
  * <pre>
  * <code>
  * DataCatalogSettings.Builder dataCatalogSettingsBuilder =
  *     DataCatalogSettings.newBuilder();
- * dataCatalogSettingsBuilder.lookupEntrySettings().getRetrySettings().toBuilder()
+ * dataCatalogSettingsBuilder.updateEntrySettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DataCatalogSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * </code>
@@ -61,9 +91,105 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
+  /** Returns the object with the settings used for calls to searchCatalog. */
+  public PagedCallSettings<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
+      searchCatalogSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).searchCatalogSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEntry. */
+  public UnaryCallSettings<UpdateEntryRequest, Entry> updateEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).updateEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEntry. */
+  public UnaryCallSettings<GetEntryRequest, Entry> getEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).getEntrySettings();
+  }
+
   /** Returns the object with the settings used for calls to lookupEntry. */
   public UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings() {
     return ((DataCatalogStubSettings) getStubSettings()).lookupEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTagTemplate. */
+  public UnaryCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).createTagTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTagTemplate. */
+  public UnaryCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).getTagTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTagTemplate. */
+  public UnaryCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).updateTagTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTagTemplate. */
+  public UnaryCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).deleteTagTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTagTemplateField. */
+  public UnaryCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
+      createTagTemplateFieldSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).createTagTemplateFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTagTemplateField. */
+  public UnaryCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
+      updateTagTemplateFieldSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).updateTagTemplateFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to renameTagTemplateField. */
+  public UnaryCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
+      renameTagTemplateFieldSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).renameTagTemplateFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTagTemplateField. */
+  public UnaryCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).deleteTagTemplateFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTag. */
+  public UnaryCallSettings<CreateTagRequest, Tag> createTagSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).createTagSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTag. */
+  public UnaryCallSettings<UpdateTagRequest, Tag> updateTagSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).updateTagSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTag. */
+  public UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).deleteTagSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTags. */
+  public PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
+      listTagsSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).listTagsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final DataCatalogSettings create(DataCatalogStubSettings stub) throws IOException {
@@ -162,9 +288,109 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to searchCatalog. */
+    public PagedCallSettings.Builder<
+            SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
+        searchCatalogSettings() {
+      return getStubSettingsBuilder().searchCatalogSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEntry. */
+    public UnaryCallSettings.Builder<UpdateEntryRequest, Entry> updateEntrySettings() {
+      return getStubSettingsBuilder().updateEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEntry. */
+    public UnaryCallSettings.Builder<GetEntryRequest, Entry> getEntrySettings() {
+      return getStubSettingsBuilder().getEntrySettings();
+    }
+
     /** Returns the builder for the settings used for calls to lookupEntry. */
     public UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings() {
       return getStubSettingsBuilder().lookupEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTagTemplate. */
+    public UnaryCallSettings.Builder<CreateTagTemplateRequest, TagTemplate>
+        createTagTemplateSettings() {
+      return getStubSettingsBuilder().createTagTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTagTemplate. */
+    public UnaryCallSettings.Builder<GetTagTemplateRequest, TagTemplate> getTagTemplateSettings() {
+      return getStubSettingsBuilder().getTagTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTagTemplate. */
+    public UnaryCallSettings.Builder<UpdateTagTemplateRequest, TagTemplate>
+        updateTagTemplateSettings() {
+      return getStubSettingsBuilder().updateTagTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTagTemplate. */
+    public UnaryCallSettings.Builder<DeleteTagTemplateRequest, Empty> deleteTagTemplateSettings() {
+      return getStubSettingsBuilder().deleteTagTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTagTemplateField. */
+    public UnaryCallSettings.Builder<CreateTagTemplateFieldRequest, TagTemplateField>
+        createTagTemplateFieldSettings() {
+      return getStubSettingsBuilder().createTagTemplateFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTagTemplateField. */
+    public UnaryCallSettings.Builder<UpdateTagTemplateFieldRequest, TagTemplateField>
+        updateTagTemplateFieldSettings() {
+      return getStubSettingsBuilder().updateTagTemplateFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to renameTagTemplateField. */
+    public UnaryCallSettings.Builder<RenameTagTemplateFieldRequest, TagTemplateField>
+        renameTagTemplateFieldSettings() {
+      return getStubSettingsBuilder().renameTagTemplateFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTagTemplateField. */
+    public UnaryCallSettings.Builder<DeleteTagTemplateFieldRequest, Empty>
+        deleteTagTemplateFieldSettings() {
+      return getStubSettingsBuilder().deleteTagTemplateFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTag. */
+    public UnaryCallSettings.Builder<CreateTagRequest, Tag> createTagSettings() {
+      return getStubSettingsBuilder().createTagSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTag. */
+    public UnaryCallSettings.Builder<UpdateTagRequest, Tag> updateTagSettings() {
+      return getStubSettingsBuilder().updateTagSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTag. */
+    public UnaryCallSettings.Builder<DeleteTagRequest, Empty> deleteTagSettings() {
+      return getStubSettingsBuilder().deleteTagSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTags. */
+    public PagedCallSettings.Builder<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
+        listTagsSettings() {
+      return getStubSettingsBuilder().listTagsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override
