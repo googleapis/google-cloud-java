@@ -16,6 +16,7 @@
 
 package com.example.monitoring;
 
+import com.google.api.LabelDescriptor;
 import com.google.api.Metric;
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResource;
@@ -100,6 +101,10 @@ public class Snippets {
 
     MetricDescriptor descriptor = MetricDescriptor.newBuilder()
         .setType(metricType)
+        .addLabels(LabelDescriptor
+            .newBuilder()
+            .setKey("store_id")
+            .setValueType(LabelDescriptor.ValueType.STRING))
         .setDescription("This is a simple example of a custom metric.")
         .setMetricKind(MetricDescriptor.MetricKind.GAUGE)
         .setValueType(MetricDescriptor.ValueType.DOUBLE)
