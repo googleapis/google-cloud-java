@@ -7,7 +7,7 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * Output configuration.
+ * Output configuration for BatchTranslateText request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.OutputConfig}
@@ -162,12 +162,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * errors_file contains the errors during processing of the file. (details
    * below). Both translations_file and errors_file could be empty
    * strings if we have no content to output.
-   * glossary_translations_file,glossary_errors_file are always empty string
-   * if input_file is tsv. They could also be empty if we have no content to
-   * output.
+   * glossary_translations_file and glossary_errors_file are always empty
+   * strings if the input_file is tsv. They could also be empty if we have no
+   * content to output.
    * Once a row is present in index.csv, the input/output matching never
    * changes. Callers should also expect all the content in input_file are
-   * processed and ready to be consumed (that is, No partial output file is
+   * processed and ready to be consumed (that is, no partial output file is
    * written).
    * The format of translations_file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -188,8 +188,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
    * The format of errors file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_errors.[extension]
-   * If the input file extension is tsv, errors_file has the
-   * following Column 1: ID of the request provided in the input, if it's not
+   * If the input file extension is tsv, errors_file contains the following:
+   * Column 1: ID of the request provided in the input, if it's not
    * provided in the input, then the input row number is used (0-based).
    * Column 2: source sentence.
    * Column 3: Error detail for the translation. Could be empty.
@@ -228,12 +228,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * errors_file contains the errors during processing of the file. (details
    * below). Both translations_file and errors_file could be empty
    * strings if we have no content to output.
-   * glossary_translations_file,glossary_errors_file are always empty string
-   * if input_file is tsv. They could also be empty if we have no content to
-   * output.
+   * glossary_translations_file and glossary_errors_file are always empty
+   * strings if the input_file is tsv. They could also be empty if we have no
+   * content to output.
    * Once a row is present in index.csv, the input/output matching never
    * changes. Callers should also expect all the content in input_file are
-   * processed and ready to be consumed (that is, No partial output file is
+   * processed and ready to be consumed (that is, no partial output file is
    * written).
    * The format of translations_file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -254,8 +254,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
    * The format of errors file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_errors.[extension]
-   * If the input file extension is tsv, errors_file has the
-   * following Column 1: ID of the request provided in the input, if it's not
+   * If the input file extension is tsv, errors_file contains the following:
+   * Column 1: ID of the request provided in the input, if it's not
    * provided in the input, then the input row number is used (0-based).
    * Column 2: source sentence.
    * Column 3: Error detail for the translation. Could be empty.
@@ -297,12 +297,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * errors_file contains the errors during processing of the file. (details
    * below). Both translations_file and errors_file could be empty
    * strings if we have no content to output.
-   * glossary_translations_file,glossary_errors_file are always empty string
-   * if input_file is tsv. They could also be empty if we have no content to
-   * output.
+   * glossary_translations_file and glossary_errors_file are always empty
+   * strings if the input_file is tsv. They could also be empty if we have no
+   * content to output.
    * Once a row is present in index.csv, the input/output matching never
    * changes. Callers should also expect all the content in input_file are
-   * processed and ready to be consumed (that is, No partial output file is
+   * processed and ready to be consumed (that is, no partial output file is
    * written).
    * The format of translations_file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -323,8 +323,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
    * The format of errors file (for target language code 'trg') is:
    * gs://translation_test/a_b_c_'trg'_errors.[extension]
-   * If the input file extension is tsv, errors_file has the
-   * following Column 1: ID of the request provided in the input, if it's not
+   * If the input file extension is tsv, errors_file contains the following:
+   * Column 1: ID of the request provided in the input, if it's not
    * provided in the input, then the input row number is used (0-based).
    * Column 2: source sentence.
    * Column 3: Error detail for the translation. Could be empty.
@@ -522,7 +522,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output configuration.
+   * Output configuration for BatchTranslateText request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.OutputConfig}
@@ -732,12 +732,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -758,8 +758,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -798,12 +798,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -824,8 +824,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -874,12 +874,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -900,8 +900,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -950,12 +950,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -976,8 +976,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -1024,12 +1024,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -1050,8 +1050,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -1110,12 +1110,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -1136,8 +1136,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -1189,12 +1189,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -1215,8 +1215,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -1255,12 +1255,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -1281,8 +1281,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.
@@ -1328,12 +1328,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * errors_file contains the errors during processing of the file. (details
      * below). Both translations_file and errors_file could be empty
      * strings if we have no content to output.
-     * glossary_translations_file,glossary_errors_file are always empty string
-     * if input_file is tsv. They could also be empty if we have no content to
-     * output.
+     * glossary_translations_file and glossary_errors_file are always empty
+     * strings if the input_file is tsv. They could also be empty if we have no
+     * content to output.
      * Once a row is present in index.csv, the input/output matching never
      * changes. Callers should also expect all the content in input_file are
-     * processed and ready to be consumed (that is, No partial output file is
+     * processed and ready to be consumed (that is, no partial output file is
      * written).
      * The format of translations_file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_translations.[extension]
@@ -1354,8 +1354,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
      * The format of errors file (for target language code 'trg') is:
      * gs://translation_test/a_b_c_'trg'_errors.[extension]
-     * If the input file extension is tsv, errors_file has the
-     * following Column 1: ID of the request provided in the input, if it's not
+     * If the input file extension is tsv, errors_file contains the following:
+     * Column 1: ID of the request provided in the input, if it's not
      * provided in the input, then the input row number is used (0-based).
      * Column 2: source sentence.
      * Column 3: Error detail for the translation. Could be empty.

@@ -12,11 +12,11 @@ public interface DetectLanguageRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only used when making regionalized call.
-   * Format:
-   * projects/{project-id}/locations/{location-id}.
-   * Only custom model within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional or global call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global`.
+   * Only models within the same region (has same location-id) can be used.
+   * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>string parent = 5;</code>
@@ -26,11 +26,11 @@ public interface DetectLanguageRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only used when making regionalized call.
-   * Format:
-   * projects/{project-id}/locations/{location-id}.
-   * Only custom model within the same location-id can be used.
-   * Otherwise 400 is returned.
+   * Required. Location to make a regional or global call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global`.
+   * Only models within the same region (has same location-id) can be used.
+   * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
    * <code>string parent = 5;</code>
@@ -42,8 +42,11 @@ public interface DetectLanguageRequestOrBuilder
    *
    * <pre>
    * Optional. The language detection model to be used.
-   * projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}
-   * If not specified, default will be used.
+   * Format:
+   * `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   * Only one language detection model is currently supported:
+   * `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   * If not specified, the default model is used.
    * </pre>
    *
    * <code>string model = 4;</code>
@@ -54,8 +57,11 @@ public interface DetectLanguageRequestOrBuilder
    *
    * <pre>
    * Optional. The language detection model to be used.
-   * projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}
-   * If not specified, default will be used.
+   * Format:
+   * `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   * Only one language detection model is currently supported:
+   * `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   * If not specified, the default model is used.
    * </pre>
    *
    * <code>string model = 4;</code>
@@ -88,7 +94,7 @@ public interface DetectLanguageRequestOrBuilder
    *
    * <pre>
    * Optional. The format of the source text, for example, "text/html",
-   * "text/plain". If left blank, the MIME type is assumed to be "text/html".
+   * "text/plain". If left blank, the MIME type defaults to "text/html".
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -99,7 +105,7 @@ public interface DetectLanguageRequestOrBuilder
    *
    * <pre>
    * Optional. The format of the source text, for example, "text/html",
-   * "text/plain". If left blank, the MIME type is assumed to be "text/html".
+   * "text/plain". If left blank, the MIME type defaults to "text/html".
    * </pre>
    *
    * <code>string mime_type = 3;</code>

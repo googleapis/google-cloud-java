@@ -59,7 +59,7 @@ public interface TranslationOrBuilder
    * The BCP-47 language code of source text in the initial request, detected
    * automatically, if no source language was passed within the initial
    * request. If the source language was passed, auto-detection of the language
-   * does not occur and this field will be empty.
+   * does not occur and this field is empty.
    * </pre>
    *
    * <code>string detected_language_code = 4;</code>
@@ -72,7 +72,7 @@ public interface TranslationOrBuilder
    * The BCP-47 language code of source text in the initial request, detected
    * automatically, if no source language was passed within the initial
    * request. If the source language was passed, auto-detection of the language
-   * does not occur and this field will be empty.
+   * does not occur and this field is empty.
    * </pre>
    *
    * <code>string detected_language_code = 4;</code>

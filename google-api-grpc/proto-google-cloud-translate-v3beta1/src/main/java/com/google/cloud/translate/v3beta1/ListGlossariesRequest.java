@@ -227,7 +227,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. Filter specifying constraints of a list operation.
-   * For example, `tags.glossary_name="products*"`.
+   * Filtering is not supported yet, and the parameter currently has no effect.
    * If missing, no filtering is performed.
    * </pre>
    *
@@ -249,7 +249,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. Filter specifying constraints of a list operation.
-   * For example, `tags.glossary_name="products*"`.
+   * Filtering is not supported yet, and the parameter currently has no effect.
    * If missing, no filtering is performed.
    * </pre>
    *
@@ -889,7 +889,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. Filter specifying constraints of a list operation.
-     * For example, `tags.glossary_name="products*"`.
+     * Filtering is not supported yet, and the parameter currently has no effect.
      * If missing, no filtering is performed.
      * </pre>
      *
@@ -911,7 +911,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. Filter specifying constraints of a list operation.
-     * For example, `tags.glossary_name="products*"`.
+     * Filtering is not supported yet, and the parameter currently has no effect.
      * If missing, no filtering is performed.
      * </pre>
      *
@@ -933,7 +933,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. Filter specifying constraints of a list operation.
-     * For example, `tags.glossary_name="products*"`.
+     * Filtering is not supported yet, and the parameter currently has no effect.
      * If missing, no filtering is performed.
      * </pre>
      *
@@ -953,7 +953,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. Filter specifying constraints of a list operation.
-     * For example, `tags.glossary_name="products*"`.
+     * Filtering is not supported yet, and the parameter currently has no effect.
      * If missing, no filtering is performed.
      * </pre>
      *
@@ -970,7 +970,7 @@ public final class ListGlossariesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. Filter specifying constraints of a list operation.
-     * For example, `tags.glossary_name="products*"`.
+     * Filtering is not supported yet, and the parameter currently has no effect.
      * If missing, no filtering is performed.
      * </pre>
      *

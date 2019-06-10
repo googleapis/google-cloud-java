@@ -7,7 +7,7 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * The GCS location for the input content.
+ * The Google Cloud Storage location for the input content.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.GcsSource}
@@ -297,7 +297,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The GCS location for the input content.
+   * The Google Cloud Storage location for the input content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.GcsSource}
