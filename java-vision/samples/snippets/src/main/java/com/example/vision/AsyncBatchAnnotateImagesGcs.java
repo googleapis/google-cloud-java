@@ -17,7 +17,7 @@
 package com.example.vision;
 
 // [START vision_async_batch_annotate_images_beta]
-import com.google.api.core.ApiFuture;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
@@ -26,17 +26,17 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.vision.v1p4beta1.AnnotateImageRequest;
 import com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesRequest;
-import com.google.cloud.vision.v1p4beta1.BatchAnnotateImagesResponse.Builder;
+import com.google.cloud.vision.v1p4beta1.AsyncBatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1p4beta1.BatchAnnotateImagesResponse;
+import com.google.cloud.vision.v1p4beta1.BatchAnnotateImagesResponse.Builder;
 import com.google.cloud.vision.v1p4beta1.Feature;
 import com.google.cloud.vision.v1p4beta1.Feature.Type;
 import com.google.cloud.vision.v1p4beta1.GcsDestination;
 import com.google.cloud.vision.v1p4beta1.Image;
 import com.google.cloud.vision.v1p4beta1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1p4beta1.ImageSource;
+import com.google.cloud.vision.v1p4beta1.OperationMetadata;
 import com.google.cloud.vision.v1p4beta1.OutputConfig;
-
-import com.google.longrunning.Operation;
 import com.google.protobuf.util.JsonFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,6 @@ public class AsyncBatchAnnotateImagesGcs {
       throws Exception {
     // String gcsSourcePath = "gs://YOUR_BUCKET_ID/path_to_your_data";
     // String gcsDestinationPath = "gs://YOUR_BUCKET_ID/path_to_store_annotation";
-
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
       List<AnnotateImageRequest> requests = new ArrayList<>();
 
@@ -87,12 +86,13 @@ public class AsyncBatchAnnotateImagesGcs {
               .setOutputConfig(outputConfig)
               .build();
 
-      ApiFuture<Operation> future = client.asyncBatchAnnotateImagesCallable().futureCall(request);
-      // Wait for the request to finish. (The result is not used, since the API saves the result to
-      // the specified location on GCS.)
-      Operation response = future.get(180, TimeUnit.SECONDS);
 
+      OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata> response =
+              client.asyncBatchAnnotateImagesAsync(request);
       System.out.println("Waiting for the operation to finish.");
+
+      // we're not processing the response, since we'll be reading the output from GCS.
+      response.get(180, TimeUnit.SECONDS);
 
       // Once the request has completed and the output has been
       // written to GCS, we can list all the output files.

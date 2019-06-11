@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.Before;
@@ -33,9 +34,9 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  // private static final String BUCKET = PROJECT_ID;
   private static final String BUCKET = "java-docs-samples-testing";
-  private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT";
+  private static final String OUTPUT_BUCKET = PROJECT_ID;
+  private static final String OUTPUT_PREFIX = "OUTPUT_VISION_BETA_" +  UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private Detect app;
@@ -125,7 +126,7 @@ public class DetectIT {
     // Act
     AsyncBatchAnnotateImagesGcs.asyncBatchAnnotateImagesGcs(
         "gs://cloud-samples-data/vision/label/wakeupcat.jpg",
-        "gs://" + BUCKET + "/" + OUTPUT_PREFIX + "/");
+        "gs://" + OUTPUT_BUCKET + "/" + OUTPUT_PREFIX + "/");
 
     // Assert
     String got = bout.toString();
