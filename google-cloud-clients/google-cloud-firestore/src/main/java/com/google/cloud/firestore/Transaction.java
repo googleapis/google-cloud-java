@@ -20,6 +20,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BeginTransactionRequest;
 import com.google.firestore.v1.BeginTransactionResponse;
 import com.google.firestore.v1.RollbackRequest;
@@ -93,7 +94,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
             pending = true;
             return null;
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /** Commits a transaction. */
@@ -120,7 +122,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
           public Void apply(Empty beginTransactionResponse) {
             return null;
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
@@ -140,7 +143,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
           public DocumentSnapshot apply(List<DocumentSnapshot> snapshots) {
             return snapshots.isEmpty() ? null : snapshots.get(0);
           }
-        });
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
