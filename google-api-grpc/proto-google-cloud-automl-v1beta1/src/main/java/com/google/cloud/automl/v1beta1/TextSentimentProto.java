@@ -762,56 +762,48 @@ public final class TextSentimentProto {
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     java.util.List<java.lang.String> getAnnotationSpecIdList();
     /**
      *
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     int getAnnotationSpecIdCount();
     /**
      *
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     java.lang.String getAnnotationSpecId(int index);
     /**
      *
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
   }
   /**
@@ -1144,14 +1136,12 @@ public final class TextSentimentProto {
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
       return annotationSpecId_;
     }
@@ -1160,14 +1150,12 @@ public final class TextSentimentProto {
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public int getAnnotationSpecIdCount() {
       return annotationSpecId_.size();
     }
@@ -1176,14 +1164,12 @@ public final class TextSentimentProto {
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getAnnotationSpecId(int index) {
       return annotationSpecId_.get(index);
     }
@@ -1192,14 +1178,12 @@ public final class TextSentimentProto {
      *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
-     * Deprecated, remove after Boq Migration and use then
-     * TextSentimentModelMetadata.annotation_spec_count for count, and list
-     * all model evaluations to see the exact annotation_spec_ids that were
-     * used.
+     * Deprecated .
      * </pre>
      *
-     * <code>repeated string annotation_spec_id = 9;</code>
+     * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
       return annotationSpecId_.getByteString(index);
     }
@@ -2295,14 +2279,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
         return annotationSpecId_.getUnmodifiableView();
       }
@@ -2311,14 +2293,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public int getAnnotationSpecIdCount() {
         return annotationSpecId_.size();
       }
@@ -2327,14 +2307,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public java.lang.String getAnnotationSpecId(int index) {
         return annotationSpecId_.get(index);
       }
@@ -2343,14 +2321,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
       }
@@ -2359,14 +2335,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder setAnnotationSpecId(int index, java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2381,14 +2355,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder addAnnotationSpecId(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2403,14 +2375,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
         ensureAnnotationSpecIdIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecId_);
@@ -2422,14 +2392,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -2441,14 +2409,12 @@ public final class TextSentimentProto {
        *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
-       * Deprecated, remove after Boq Migration and use then
-       * TextSentimentModelMetadata.annotation_spec_count for count, and list
-       * all model evaluations to see the exact annotation_spec_ids that were
-       * used.
+       * Deprecated .
        * </pre>
        *
-       * <code>repeated string annotation_spec_id = 9;</code>
+       * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       public Builder addAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2536,22 +2502,22 @@ public final class TextSentimentProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/automl/v1beta1/text_senti"
           + "ment.proto\022\033google.cloud.automl.v1beta1\032"
-          + "\034google/api/annotations.proto\0320google/cl"
-          + "oud/automl/v1beta1/classification.proto\""
+          + "0google/cloud/automl/v1beta1/classificat"
+          + "ion.proto\032\034google/api/annotations.proto\""
           + ",\n\027TextSentimentAnnotation\022\021\n\tsentiment\030"
-          + "\001 \001(\005\"\301\002\n\036TextSentimentEvaluationMetrics"
+          + "\001 \001(\005\"\305\002\n\036TextSentimentEvaluationMetrics"
           + "\022\021\n\tprecision\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\020\n\010f"
           + "1_score\030\003 \001(\002\022\033\n\023mean_absolute_error\030\004 \001"
           + "(\002\022\032\n\022mean_squared_error\030\005 \001(\002\022\024\n\014linear"
           + "_kappa\030\006 \001(\002\022\027\n\017quadratic_kappa\030\007 \001(\002\022f\n"
           + "\020confusion_matrix\030\010 \001(\0132L.google.cloud.a"
           + "utoml.v1beta1.ClassificationEvaluationMe"
-          + "trics.ConfusionMatrix\022\032\n\022annotation_spec"
-          + "_id\030\t \003(\tB\226\001\n\037com.google.cloud.automl.v1"
-          + "beta1B\022TextSentimentProtoZAgoogle.golang"
-          + ".org/genproto/googleapis/cloud/automl/v1"
-          + "beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1bet"
-          + "a1b\006proto3"
+          + "trics.ConfusionMatrix\022\036\n\022annotation_spec"
+          + "_id\030\t \003(\tB\002\030\001B\226\001\n\037com.google.cloud.autom"
+          + "l.v1beta1B\022TextSentimentProtoZAgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/autom"
+          + "l/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V"
+          + "1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -2564,8 +2530,8 @@ public final class TextSentimentProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_descriptor =
@@ -2592,8 +2558,8 @@ public final class TextSentimentProto {
               "ConfusionMatrix",
               "AnnotationSpecId",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

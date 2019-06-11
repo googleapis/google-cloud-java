@@ -12,19 +12,8 @@ public interface TextExtractionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Output only. A confidence estimate between 0.0 and 1.0. A higher value
-   * means greater confidence in correctness of the annotation.
-   * </pre>
-   *
-   * <code>float score = 1;</code>
-   */
-  float getScore();
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. The part of the original text to which this annotation pertains.
+   * An entity annotation will set this, which is the part of the original
+   * text to which the annotation pertains.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
@@ -34,7 +23,8 @@ public interface TextExtractionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Required. The part of the original text to which this annotation pertains.
+   * An entity annotation will set this, which is the part of the original
+   * text to which the annotation pertains.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
@@ -44,10 +34,26 @@ public interface TextExtractionAnnotationOrBuilder
    *
    *
    * <pre>
-   * Required. The part of the original text to which this annotation pertains.
+   * An entity annotation will set this, which is the part of the original
+   * text to which the annotation pertains.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.TextSegment text_segment = 3;</code>
    */
   com.google.cloud.automl.v1beta1.TextSegmentOrBuilder getTextSegmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A confidence estimate between 0.0 and 1.0. A higher value
+   * means greater confidence in correctness of the annotation.
+   * </pre>
+   *
+   * <code>float score = 1;</code>
+   */
+  float getScore();
+
+  public com.google.cloud.automl.v1beta1.TextExtractionAnnotation.AnnotationCase
+      getAnnotationCase();
 }

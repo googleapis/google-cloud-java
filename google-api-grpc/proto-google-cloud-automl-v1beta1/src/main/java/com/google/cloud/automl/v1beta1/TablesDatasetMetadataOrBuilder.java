@@ -38,13 +38,9 @@ public interface TablesDatasetMetadataOrBuilder
    * This column must be non-nullable and have one of following data types
    * (otherwise model creation will error):
    * * CATEGORY
-   * * ARRAY(CATEGORY)
    * * FLOAT64
-   * Furthermore, if the type is CATEGORY or ARRAY(CATEGORY), then only up to
-   * 40 unique values may exist in that column across all rows, but for
-   * ARRAY(CATEGORY) unique values are counted as elements of the ARRAY (i.e.
-   * following 3 ARRAY-s: [A, B], [A], [B] are counted as having 2 unique
-   * values).
+   * Furthermore, if the type is CATEGORY , then only up to
+   * 100 unique values may exist in that column across all rows.
    * NOTE: Updates of this field will instantly affect any other users
    * concurrently working with the dataset.
    * </pre>
@@ -61,13 +57,9 @@ public interface TablesDatasetMetadataOrBuilder
    * This column must be non-nullable and have one of following data types
    * (otherwise model creation will error):
    * * CATEGORY
-   * * ARRAY(CATEGORY)
    * * FLOAT64
-   * Furthermore, if the type is CATEGORY or ARRAY(CATEGORY), then only up to
-   * 40 unique values may exist in that column across all rows, but for
-   * ARRAY(CATEGORY) unique values are counted as elements of the ARRAY (i.e.
-   * following 3 ARRAY-s: [A, B], [A], [B] are counted as having 2 unique
-   * values).
+   * Furthermore, if the type is CATEGORY , then only up to
+   * 100 unique values may exist in that column across all rows.
    * NOTE: Updates of this field will instantly affect any other users
    * concurrently working with the dataset.
    * </pre>
@@ -163,9 +155,9 @@ public interface TablesDatasetMetadataOrBuilder
    *
    * <pre>
    * Output only. Correlations between
-   * [target_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column],
+   * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
-   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
+   * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
    * This field may be stale, see the stats_update_time field for
@@ -182,9 +174,9 @@ public interface TablesDatasetMetadataOrBuilder
    *
    * <pre>
    * Output only. Correlations between
-   * [target_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column],
+   * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
-   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
+   * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
    * This field may be stale, see the stats_update_time field for
@@ -205,9 +197,9 @@ public interface TablesDatasetMetadataOrBuilder
    *
    * <pre>
    * Output only. Correlations between
-   * [target_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column],
+   * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
-   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
+   * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
    * This field may be stale, see the stats_update_time field for
@@ -225,9 +217,9 @@ public interface TablesDatasetMetadataOrBuilder
    *
    * <pre>
    * Output only. Correlations between
-   * [target_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column],
+   * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
-   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
+   * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
    * This field may be stale, see the stats_update_time field for
@@ -245,9 +237,9 @@ public interface TablesDatasetMetadataOrBuilder
    *
    * <pre>
    * Output only. Correlations between
-   * [target_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column],
+   * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
-   * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
+   * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
    * This field may be stale, see the stats_update_time field for

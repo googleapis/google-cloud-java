@@ -15,7 +15,7 @@ public interface ModelEvaluationOrBuilder
    * Model evaluation metrics for image, text, video and tables
    * classification.
    * Tables problem is considered a classification when the target column
-   * has either CATEGORY or ARRAY(CATEGORY) DataType.
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -30,7 +30,7 @@ public interface ModelEvaluationOrBuilder
    * Model evaluation metrics for image, text, video and tables
    * classification.
    * Tables problem is considered a classification when the target column
-   * has either CATEGORY or ARRAY(CATEGORY) DataType.
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ModelEvaluationOrBuilder
    * Model evaluation metrics for image, text, video and tables
    * classification.
    * Tables problem is considered a classification when the target column
-   * has either CATEGORY or ARRAY(CATEGORY) DataType.
+   * is CATEGORY DataType.
    * </pre>
    *
    * <code>
@@ -182,6 +182,45 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
+   * Model evaluation metrics for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+   * </code>
+   */
+  boolean hasVideoObjectTrackingEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
+      getVideoObjectTrackingEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for video object tracking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics video_object_tracking_evaluation_metrics = 14;
+   * </code>
+   */
+  com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetricsOrBuilder
+      getVideoObjectTrackingEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Evaluation metrics for text sentiment models.
    * </pre>
    *
@@ -290,12 +329,12 @@ public interface ModelEvaluationOrBuilder
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
    * The ID is empty for the overall model evaluation.
-   * For Tables classification these are the distinct values of the target
-   * column at the moment of the evaluation; for this problem annotation specs
-   * in the dataset do not exist.
-   * NOTE: Currently there is no way to obtain the display_name of the
-   * annotation spec from its ID. To see the display_names, review the model
-   * evaluations in the UI.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -308,12 +347,12 @@ public interface ModelEvaluationOrBuilder
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
    * The ID is empty for the overall model evaluation.
-   * For Tables classification these are the distinct values of the target
-   * column at the moment of the evaluation; for this problem annotation specs
-   * in the dataset do not exist.
-   * NOTE: Currently there is no way to obtain the display_name of the
-   * annotation spec from its ID. To see the display_names, review the model
-   * evaluations in the UI.
+   * For Tables annotation specs in the dataset do not exist and this ID is
+   * always not set, but for CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * the
+   * [display_name][google.cloud.automl.v1beta1.ModelEvaluation.display_name]
+   * field is used.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -324,11 +363,16 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+   * the moment when the model was trained. Because this field returns a value
+   * at model training time, for different models trained from the same dataset,
+   * the values may differ, since display names could had been changed between
+   * the two model's trainings.
+   * For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
    * The display_name is empty for the overall model evaluation.
    * </pre>
    *
@@ -339,11 +383,16 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.dispay_name] at
+   * the moment when the model was trained. Because this field returns a value
+   * at model training time, for different models trained from the same dataset,
+   * the values may differ, since display names could had been changed between
+   * the two model's trainings.
+   * For Tables CLASSIFICATION
+   * [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]
+   * distinct values of the target column at the moment of the model evaluation
+   * are populated here.
    * The display_name is empty for the overall model evaluation.
    * </pre>
    *

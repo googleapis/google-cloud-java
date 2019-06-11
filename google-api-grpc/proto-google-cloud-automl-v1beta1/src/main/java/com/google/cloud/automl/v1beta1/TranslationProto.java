@@ -38,9 +38,9 @@ public final class TranslationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/automl/v1beta1/translatio"
-          + "n.proto\022\033google.cloud.automl.v1beta1\032\034go"
-          + "ogle/api/annotations.proto\032,google/cloud"
-          + "/automl/v1beta1/data_items.proto\"X\n\032Tran"
+          + "n.proto\022\033google.cloud.automl.v1beta1\032,go"
+          + "ogle/cloud/automl/v1beta1/data_items.pro"
+          + "to\032\034google/api/annotations.proto\"X\n\032Tran"
           + "slationDatasetMetadata\022\034\n\024source_languag"
           + "e_code\030\001 \001(\t\022\034\n\024target_language_code\030\002 \001"
           + "(\t\"K\n\034TranslationEvaluationMetrics\022\022\n\nbl"
@@ -67,8 +67,8 @@ public final class TranslationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.automl.v1beta1.DataItems.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor =
@@ -103,8 +103,8 @@ public final class TranslationProto {
             new java.lang.String[] {
               "TranslatedContent",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.automl.v1beta1.DataItems.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

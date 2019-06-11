@@ -174,11 +174,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads: &#42; Image
    * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
    * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 10,000 characters, UTF-8 encoded. &#42; Text
+   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
    * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
    * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. &#42; Text Sentiment - TextSnippet,
-   * content up 500 characters, UTF-8 encoded.
+   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   *
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <p>Sample code:
    *
@@ -199,12 +200,11 @@ public class PredictionServiceClient implements BackgroundResource {
    *     <p>&#42; For Image Classification:
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
-   *     default is 0.5.
-   *     <p>&#42; For Image Object Detection: `score_threshold` - (float) When Model detects objects
-   *     on the image, it will only produce bounding boxes which have at least this confidence
-   *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
-   *     than this number of bounding boxes will be returned in the response. Default is 100, the
-   *     requested value may be limited by server.
+   *     default is 0.5. &#42; For Tables: `feature_importance` - (boolean) Whether
+   *     <p>[feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *     should be populated in the returned
+   *     <p>[TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation]. The default is
+   *     false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -225,11 +225,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads: &#42; Image
    * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
    * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 10,000 characters, UTF-8 encoded. &#42; Text
+   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
    * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
    * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. &#42; Text Sentiment - TextSnippet,
-   * content up 500 characters, UTF-8 encoded.
+   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   *
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <p>Sample code:
    *
@@ -250,12 +251,11 @@ public class PredictionServiceClient implements BackgroundResource {
    *     <p>&#42; For Image Classification:
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
-   *     default is 0.5.
-   *     <p>&#42; For Image Object Detection: `score_threshold` - (float) When Model detects objects
-   *     on the image, it will only produce bounding boxes which have at least this confidence
-   *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
-   *     than this number of bounding boxes will be returned in the response. Default is 100, the
-   *     requested value may be limited by server.
+   *     default is 0.5. &#42; For Tables: `feature_importance` - (boolean) Whether
+   *     <p>[feature_importance][[google.cloud.automl.v1beta1.TablesModelColumnInfo.feature_importance]
+   *     should be populated in the returned
+   *     <p>[TablesAnnotation(-s)][[google.cloud.automl.v1beta1.TablesAnnotation]. The default is
+   *     false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -272,11 +272,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads: &#42; Image
    * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
    * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 10,000 characters, UTF-8 encoded. &#42; Text
+   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
    * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
    * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. &#42; Text Sentiment - TextSnippet,
-   * content up 500 characters, UTF-8 encoded.
+   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   *
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <p>Sample code:
    *
@@ -305,11 +306,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads: &#42; Image
    * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
    * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 10,000 characters, UTF-8 encoded. &#42; Text
+   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
    * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
    * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. &#42; Text Sentiment - TextSnippet,
-   * content up 500 characters, UTF-8 encoded.
+   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   *
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <p>Sample code:
    *
@@ -340,7 +342,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   * &#42; Video Classification &#42; Video Object Tracking &#42; Text Extraction &#42; Tables
    *
    * <p>Sample code:
    *
@@ -378,6 +380,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *     request configuration. WARNING: Model evaluation is not done for this classification type,
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
+   *     <p>&#42; For Video Object Tracking: `score_threshold` - (float) When Model detects objects
+   *     on video frames, it will only produce bounding boxes which have at least this confidence
+   *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
+   *     than this number of bounding boxes will be returned per frame. Default is 100, the
+   *     requested value may be limited by server. `min_bounding_box_size` - (float) Only bounding
+   *     boxes with shortest edge at least that long as a relative value of video frame size will be
+   *     returned. Value in 0 to 1 range. Default is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -407,7 +416,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   * &#42; Video Classification &#42; Video Object Tracking &#42; Text Extraction &#42; Tables
    *
    * <p>Sample code:
    *
@@ -445,6 +454,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *     request configuration. WARNING: Model evaluation is not done for this classification type,
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
+   *     <p>&#42; For Video Object Tracking: `score_threshold` - (float) When Model detects objects
+   *     on video frames, it will only produce bounding boxes which have at least this confidence
+   *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
+   *     than this number of bounding boxes will be returned per frame. Default is 100, the
+   *     requested value may be limited by server. `min_bounding_box_size` - (float) Only bounding
+   *     boxes with shortest edge at least that long as a relative value of video frame size will be
+   *     returned. Value in 0 to 1 range. Default is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -474,7 +490,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   * &#42; Video Classification &#42; Video Object Tracking &#42; Text Extraction &#42; Tables
    *
    * <p>Sample code:
    *
@@ -511,7 +527,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   * &#42; Video Classification &#42; Video Object Tracking &#42; Text Extraction &#42; Tables
    *
    * <p>Sample code:
    *
@@ -546,7 +562,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Video Classification &#42; Text Extraction &#42; Tables
+   * &#42; Video Classification &#42; Video Object Tracking &#42; Text Extraction &#42; Tables
    *
    * <p>Sample code:
    *

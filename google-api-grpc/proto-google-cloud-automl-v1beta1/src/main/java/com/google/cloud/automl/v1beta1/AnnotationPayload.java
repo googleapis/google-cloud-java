@@ -173,6 +173,27 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
               detailCase_ = 7;
               break;
             }
+          case 66:
+            {
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder subBuilder =
+                  null;
+              if (detailCase_ == 8) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_)
+                        .toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 8;
+              break;
+            }
           case 74:
             {
               com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
@@ -259,6 +280,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     CLASSIFICATION(3),
     IMAGE_OBJECT_DETECTION(4),
     VIDEO_CLASSIFICATION(9),
+    VIDEO_OBJECT_TRACKING(8),
     TEXT_EXTRACTION(6),
     TEXT_SENTIMENT(7),
     TABLES(10),
@@ -284,6 +306,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
           return IMAGE_OBJECT_DETECTION;
         case 9:
           return VIDEO_CLASSIFICATION;
+        case 8:
+          return VIDEO_OBJECT_TRACKING;
         case 6:
           return TEXT_EXTRACTION;
         case 7:
@@ -502,6 +526,54 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         .getDefaultInstance();
   }
 
+  public static final int VIDEO_OBJECT_TRACKING_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video object tracking.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+   * </code>
+   */
+  public boolean hasVideoObjectTracking() {
+    return detailCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video object tracking.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation getVideoObjectTracking() {
+    if (detailCase_ == 8) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for video object tracking.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+   * </code>
+   */
+  public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder
+      getVideoObjectTrackingOrBuilder() {
+    if (detailCase_ == 8) {
+      return (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_;
+    }
+    return com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
+  }
+
   public static final int TEXT_EXTRACTION_FIELD_NUMBER = 6;
   /**
    *
@@ -692,11 +764,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+   * when the model was trained. Because this field returns a value at model
+   * training time, for different models trained using the same dataset, the
+   * returned value could be different as model owner could update the
+   * `display_name` between any two model training.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -716,11 +789,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+   * when the model was trained. Because this field returns a value at model
+   * training time, for different models trained using the same dataset, the
+   * returned value could be different as model owner could update the
+   * `display_name` between any two model training.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -776,6 +850,10 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           7, (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) detail_);
     }
+    if (detailCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_);
+    }
     if (detailCase_ == 9) {
       output.writeMessage(
           9,
@@ -828,6 +906,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
               7,
               (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) detail_);
     }
+    if (detailCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_);
+    }
     if (detailCase_ == 9) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -872,6 +955,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       case 9:
         if (!getVideoClassification().equals(other.getVideoClassification())) return false;
         break;
+      case 8:
+        if (!getVideoObjectTracking().equals(other.getVideoObjectTracking())) return false;
+        break;
       case 6:
         if (!getTextExtraction().equals(other.getTextExtraction())) return false;
         break;
@@ -915,6 +1001,10 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       case 9:
         hash = (37 * hash) + VIDEO_CLASSIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getVideoClassification().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + VIDEO_OBJECT_TRACKING_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoObjectTracking().hashCode();
         break;
       case 6:
         hash = (37 * hash) + TEXT_EXTRACTION_FIELD_NUMBER;
@@ -1137,6 +1227,13 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
           result.detail_ = videoClassificationBuilder_.build();
         }
       }
+      if (detailCase_ == 8) {
+        if (videoObjectTrackingBuilder_ == null) {
+          result.detail_ = detail_;
+        } else {
+          result.detail_ = videoObjectTrackingBuilder_.build();
+        }
+      }
       if (detailCase_ == 6) {
         if (textExtractionBuilder_ == null) {
           result.detail_ = detail_;
@@ -1238,6 +1335,11 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         case VIDEO_CLASSIFICATION:
           {
             mergeVideoClassification(other.getVideoClassification());
+            break;
+          }
+        case VIDEO_OBJECT_TRACKING:
+          {
+            mergeVideoObjectTracking(other.getVideoObjectTracking());
             break;
           }
         case TEXT_EXTRACTION:
@@ -2196,6 +2298,224 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder>
+        videoObjectTrackingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public boolean hasVideoObjectTracking() {
+      return detailCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation getVideoObjectTracking() {
+      if (videoObjectTrackingBuilder_ == null) {
+        if (detailCase_ == 8) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
+      } else {
+        if (detailCase_ == 8) {
+          return videoObjectTrackingBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public Builder setVideoObjectTracking(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation value) {
+      if (videoObjectTrackingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detail_ = value;
+        onChanged();
+      } else {
+        videoObjectTrackingBuilder_.setMessage(value);
+      }
+      detailCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public Builder setVideoObjectTracking(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder builderForValue) {
+      if (videoObjectTrackingBuilder_ == null) {
+        detail_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoObjectTrackingBuilder_.setMessage(builderForValue.build());
+      }
+      detailCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public Builder mergeVideoObjectTracking(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation value) {
+      if (videoObjectTrackingBuilder_ == null) {
+        if (detailCase_ == 8
+            && detail_
+                != com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation
+                    .getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          detail_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailCase_ == 8) {
+          videoObjectTrackingBuilder_.mergeFrom(value);
+        }
+        videoObjectTrackingBuilder_.setMessage(value);
+      }
+      detailCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public Builder clearVideoObjectTracking() {
+      if (videoObjectTrackingBuilder_ == null) {
+        if (detailCase_ == 8) {
+          detailCase_ = 0;
+          detail_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailCase_ == 8) {
+          detailCase_ = 0;
+          detail_ = null;
+        }
+        videoObjectTrackingBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder
+        getVideoObjectTrackingBuilder() {
+      return getVideoObjectTrackingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder
+        getVideoObjectTrackingOrBuilder() {
+      if ((detailCase_ == 8) && (videoObjectTrackingBuilder_ != null)) {
+        return videoObjectTrackingBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailCase_ == 8) {
+          return (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_;
+        }
+        return com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotation details for video object tracking.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder>
+        getVideoObjectTrackingFieldBuilder() {
+      if (videoObjectTrackingBuilder_ == null) {
+        if (!(detailCase_ == 8)) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
+        }
+        videoObjectTrackingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder,
+                com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_,
+                getParentForChildren(),
+                isClean());
+        detail_ = null;
+      }
+      detailCase_ = 8;
+      onChanged();
+      ;
+      return videoObjectTrackingBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.TextExtractionAnnotation,
             com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder,
             com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder>
@@ -2933,11 +3253,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+     * when the model was trained. Because this field returns a value at model
+     * training time, for different models trained using the same dataset, the
+     * returned value could be different as model owner could update the
+     * `display_name` between any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2957,11 +3278,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+     * when the model was trained. Because this field returns a value at model
+     * training time, for different models trained using the same dataset, the
+     * returned value could be different as model owner could update the
+     * `display_name` between any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -2981,11 +3303,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+     * when the model was trained. Because this field returns a value at model
+     * training time, for different models trained using the same dataset, the
+     * returned value could be different as model owner could update the
+     * `display_name` between any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -3003,11 +3326,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+     * when the model was trained. Because this field returns a value at model
+     * training time, for different models trained using the same dataset, the
+     * returned value could be different as model owner could update the
+     * `display_name` between any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>
@@ -3022,11 +3346,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-     * was trained. Because this field returns a value at model training time,
-     * for different models trained using the same dataset, the returned value
-     * could be different as model owner could update the display_name between
-     * any two model training.
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+     * when the model was trained. Because this field returns a value at model
+     * training time, for different models trained using the same dataset, the
+     * returned value could be different as model owner could update the
+     * `display_name` between any two model training.
      * </pre>
      *
      * <code>string display_name = 5;</code>

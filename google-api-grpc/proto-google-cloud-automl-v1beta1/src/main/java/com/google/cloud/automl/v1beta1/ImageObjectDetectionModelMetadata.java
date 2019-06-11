@@ -25,6 +25,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
   private ImageObjectDetectionModelMetadata() {
     modelType_ = "";
+    stopReason_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,23 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
           case 33:
             {
               nodeQps_ = input.readDouble();
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stopReason_ = s;
+              break;
+            }
+          case 48:
+            {
+              trainBudgetMilliNodeHours_ = input.readInt64();
+              break;
+            }
+          case 56:
+            {
+              trainCostMilliNodeHours_ = input.readInt64();
               break;
             }
           default:
@@ -192,6 +210,90 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     return nodeQps_;
   }
 
+  public static final int STOP_REASON_FIELD_NUMBER = 5;
+  private volatile java.lang.Object stopReason_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason that this create model operation stopped,
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+   * </pre>
+   *
+   * <code>string stop_reason = 5;</code>
+   */
+  public java.lang.String getStopReason() {
+    java.lang.Object ref = stopReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stopReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason that this create model operation stopped,
+   * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+   * </pre>
+   *
+   * <code>string stop_reason = 5;</code>
+   */
+  public com.google.protobuf.ByteString getStopReasonBytes() {
+    java.lang.Object ref = stopReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stopReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRAIN_BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 6;
+  private long trainBudgetMilliNodeHours_;
+  /**
+   *
+   *
+   * <pre>
+   * The train budget of creating this model, expressed in milli node
+   * hours i.e. 1,000 value in this field means 1 node hour. The actual
+   * `train_cost` will be equal or less than this value. If further model
+   * training ceases to provide any improvements, it will stop without using
+   * full budget and the stop_reason will be `MODEL_CONVERGED`.
+   * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
+   * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
+   * default value is 216, 000 which represents one day in wall time.
+   * </pre>
+   *
+   * <code>int64 train_budget_milli_node_hours = 6;</code>
+   */
+  public long getTrainBudgetMilliNodeHours() {
+    return trainBudgetMilliNodeHours_;
+  }
+
+  public static final int TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER = 7;
+  private long trainCostMilliNodeHours_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The actual train cost of creating this model, expressed in
+   * milli node hours, i.e. 1,000 value in this field means 1 node hour.
+   * Guaranteed to not exceed the train budget.
+   * </pre>
+   *
+   * <code>int64 train_cost_milli_node_hours = 7;</code>
+   */
+  public long getTrainCostMilliNodeHours() {
+    return trainCostMilliNodeHours_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -215,6 +317,15 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (nodeQps_ != 0D) {
       output.writeDouble(4, nodeQps_);
     }
+    if (!getStopReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stopReason_);
+    }
+    if (trainBudgetMilliNodeHours_ != 0L) {
+      output.writeInt64(6, trainBudgetMilliNodeHours_);
+    }
+    if (trainCostMilliNodeHours_ != 0L) {
+      output.writeInt64(7, trainCostMilliNodeHours_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -232,6 +343,15 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     }
     if (nodeQps_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, nodeQps_);
+    }
+    if (!getStopReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopReason_);
+    }
+    if (trainBudgetMilliNodeHours_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, trainBudgetMilliNodeHours_);
+    }
+    if (trainCostMilliNodeHours_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, trainCostMilliNodeHours_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -253,6 +373,9 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (getNodeCount() != other.getNodeCount()) return false;
     if (java.lang.Double.doubleToLongBits(getNodeQps())
         != java.lang.Double.doubleToLongBits(other.getNodeQps())) return false;
+    if (!getStopReason().equals(other.getStopReason())) return false;
+    if (getTrainBudgetMilliNodeHours() != other.getTrainBudgetMilliNodeHours()) return false;
+    if (getTrainCostMilliNodeHours() != other.getTrainCostMilliNodeHours()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -273,6 +396,12 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getNodeQps()));
+    hash = (37 * hash) + STOP_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getStopReason().hashCode();
+    hash = (37 * hash) + TRAIN_BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainBudgetMilliNodeHours());
+    hash = (37 * hash) + TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainCostMilliNodeHours());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -427,6 +556,12 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
 
       nodeQps_ = 0D;
 
+      stopReason_ = "";
+
+      trainBudgetMilliNodeHours_ = 0L;
+
+      trainCostMilliNodeHours_ = 0L;
+
       return this;
     }
 
@@ -458,6 +593,9 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       result.modelType_ = modelType_;
       result.nodeCount_ = nodeCount_;
       result.nodeQps_ = nodeQps_;
+      result.stopReason_ = stopReason_;
+      result.trainBudgetMilliNodeHours_ = trainBudgetMilliNodeHours_;
+      result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
       onBuilt();
       return result;
     }
@@ -519,6 +657,16 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       }
       if (other.getNodeQps() != 0D) {
         setNodeQps(other.getNodeQps());
+      }
+      if (!other.getStopReason().isEmpty()) {
+        stopReason_ = other.stopReason_;
+        onChanged();
+      }
+      if (other.getTrainBudgetMilliNodeHours() != 0L) {
+        setTrainBudgetMilliNodeHours(other.getTrainBudgetMilliNodeHours());
+      }
+      if (other.getTrainCostMilliNodeHours() != 0L) {
+        setTrainCostMilliNodeHours(other.getTrainCostMilliNodeHours());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -773,6 +921,220 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     public Builder clearNodeQps() {
 
       nodeQps_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object stopReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason that this create model operation stopped,
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+     * </pre>
+     *
+     * <code>string stop_reason = 5;</code>
+     */
+    public java.lang.String getStopReason() {
+      java.lang.Object ref = stopReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stopReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason that this create model operation stopped,
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+     * </pre>
+     *
+     * <code>string stop_reason = 5;</code>
+     */
+    public com.google.protobuf.ByteString getStopReasonBytes() {
+      java.lang.Object ref = stopReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stopReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason that this create model operation stopped,
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+     * </pre>
+     *
+     * <code>string stop_reason = 5;</code>
+     */
+    public Builder setStopReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      stopReason_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason that this create model operation stopped,
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+     * </pre>
+     *
+     * <code>string stop_reason = 5;</code>
+     */
+    public Builder clearStopReason() {
+
+      stopReason_ = getDefaultInstance().getStopReason();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason that this create model operation stopped,
+     * e.g. `BUDGET_REACHED`, `MODEL_CONVERGED`.
+     * </pre>
+     *
+     * <code>string stop_reason = 5;</code>
+     */
+    public Builder setStopReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      stopReason_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long trainBudgetMilliNodeHours_;
+    /**
+     *
+     *
+     * <pre>
+     * The train budget of creating this model, expressed in milli node
+     * hours i.e. 1,000 value in this field means 1 node hour. The actual
+     * `train_cost` will be equal or less than this value. If further model
+     * training ceases to provide any improvements, it will stop without using
+     * full budget and the stop_reason will be `MODEL_CONVERGED`.
+     * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
+     * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
+     * default value is 216, 000 which represents one day in wall time.
+     * </pre>
+     *
+     * <code>int64 train_budget_milli_node_hours = 6;</code>
+     */
+    public long getTrainBudgetMilliNodeHours() {
+      return trainBudgetMilliNodeHours_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The train budget of creating this model, expressed in milli node
+     * hours i.e. 1,000 value in this field means 1 node hour. The actual
+     * `train_cost` will be equal or less than this value. If further model
+     * training ceases to provide any improvements, it will stop without using
+     * full budget and the stop_reason will be `MODEL_CONVERGED`.
+     * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
+     * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
+     * default value is 216, 000 which represents one day in wall time.
+     * </pre>
+     *
+     * <code>int64 train_budget_milli_node_hours = 6;</code>
+     */
+    public Builder setTrainBudgetMilliNodeHours(long value) {
+
+      trainBudgetMilliNodeHours_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The train budget of creating this model, expressed in milli node
+     * hours i.e. 1,000 value in this field means 1 node hour. The actual
+     * `train_cost` will be equal or less than this value. If further model
+     * training ceases to provide any improvements, it will stop without using
+     * full budget and the stop_reason will be `MODEL_CONVERGED`.
+     * Note, node_hour  = actual_hour * number_of_nodes_invovled. The train budget
+     * must be between 20,000 and 2,000,000 milli node hours, inclusive. The
+     * default value is 216, 000 which represents one day in wall time.
+     * </pre>
+     *
+     * <code>int64 train_budget_milli_node_hours = 6;</code>
+     */
+    public Builder clearTrainBudgetMilliNodeHours() {
+
+      trainBudgetMilliNodeHours_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long trainCostMilliNodeHours_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The actual train cost of creating this model, expressed in
+     * milli node hours, i.e. 1,000 value in this field means 1 node hour.
+     * Guaranteed to not exceed the train budget.
+     * </pre>
+     *
+     * <code>int64 train_cost_milli_node_hours = 7;</code>
+     */
+    public long getTrainCostMilliNodeHours() {
+      return trainCostMilliNodeHours_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The actual train cost of creating this model, expressed in
+     * milli node hours, i.e. 1,000 value in this field means 1 node hour.
+     * Guaranteed to not exceed the train budget.
+     * </pre>
+     *
+     * <code>int64 train_cost_milli_node_hours = 7;</code>
+     */
+    public Builder setTrainCostMilliNodeHours(long value) {
+
+      trainCostMilliNodeHours_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The actual train cost of creating this model, expressed in
+     * milli node hours, i.e. 1,000 value in this field means 1 node hour.
+     * Guaranteed to not exceed the train budget.
+     * </pre>
+     *
+     * <code>int64 train_cost_milli_node_hours = 7;</code>
+     */
+    public Builder clearTrainCostMilliNodeHours() {
+
+      trainCostMilliNodeHours_ = 0L;
       onChanged();
       return this;
     }
