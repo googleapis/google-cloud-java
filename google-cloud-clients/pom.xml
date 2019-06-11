@@ -708,10 +708,10 @@
             <reports>
               <report>index</report>
               <report>dependency-info</report>
-              <report>project-team</report>
-              <report>cim</report>
-              <report>issue-tracking</report>
-              <report>license</report>
+              <report>team</report>
+              <report>ci-management</report>
+              <report>issue-management</report>
+              <report>licenses</report>
               <report>scm</report>
               <report>dependency-management</report>
               <report>distribution-management</report>
@@ -722,7 +722,6 @@
         </reportSets>
         <configuration>
           <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-          <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
           <artifactId>${site.installationModule}</artifactId>
           <packaging>jar</packaging>
         </configuration>
@@ -817,7 +816,7 @@
           <offlineLinks>
             <offlineLink>
               <url>${project.javadoc.protobufBaseURL}</url>
-              <location>../../../target/site/apidocs/</location>
+              <location>../../../../google-api-grpc/target/site/apidocs/</location>
             </offlineLink>
           </offlineLinks>
         </configuration>

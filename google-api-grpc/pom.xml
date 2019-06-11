@@ -1066,10 +1066,10 @@
             <reports>
               <report>index</report>
               <report>dependency-info</report>
-              <report>project-team</report>
-              <report>cim</report>
-              <report>issue-tracking</report>
-              <report>license</report>
+              <report>team</report>
+              <report>ci-management</report>
+              <report>issue-management</report>
+              <report>licenses</report>
               <report>scm</report>
               <report>dependency-management</report>
               <report>distribution-management</report>
@@ -1080,7 +1080,6 @@
         </reportSets>
         <configuration>
           <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-          <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
           <artifactId>${project.artifactId}</artifactId>
           <packaging>jar</packaging>
         </configuration>
